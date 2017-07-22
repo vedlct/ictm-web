@@ -1,0 +1,21 @@
+ftpuser: iconftp1
+ftppass:
+E1d@20!7
+ftphost: ftp.iconcollege.ac.uk
+ 
+ 
+mysql db name: ictmweb
+db user:icondb1
+db pass: 
+1cTm@20!7
+ 
+ 
+Please note I have created subdomain and directory as below,
+ 
+1) design.iconcollege.ac.uk : the directory is htdocs/design101/. please upload the design layout here. so that the client can browse the design from here.
+ 
+2) wireframe.iconcollege.ac.uk : the directory is htdocs/wireframe202/. please use this directory for all the wireframe files including cms wireframe
+ 
+3) db.iconcollege.ac.uk : the directory is htdocs/database303/. please use this directory for the database relatedfiles
+ 
+4) dev.iconcollege.ac.uk : the directory is htdocs/dev404/. please use this directory for the development using the framework.
