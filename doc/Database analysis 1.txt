@@ -1,0 +1,11 @@
+I am yet to formalise the database specification, however you can start designing the schema with following top level entities, 
+
+Courses: this entity will cover the course related information
+Pages: this entity will cover the html pages
+News;this will store all the news
+Events: this will store events
+Notices: this is for notices
+Faculties: this is for lecturer biography
+Feedbacks: this is to store and display users feedback message
+Photos: this one for all the photos info fro gallery
+please note this TOP level entities only, we will need to find relevant lookup entitoes for each entity e,g. course will have "Department", pages will have "Menu" etc,
