@@ -45,34 +45,24 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="cemail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
+                                        <label for="cemail" class="control-label col-lg-2">Menu Type <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control " id="cemail" type="email" name="email" required />
+                                            <input class="form-control " id="cemail" type="text" name="type" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="curl" class="control-label col-lg-2">Website</label>
+                                        <label for="curl" class="control-label col-lg-2">Level</label>
                                         <div class="col-lg-10">
                                             <input class="form-control " id="curl" type="url" name="url" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-2">Subject <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="subject" name="subject" minlength="5" type="text" required />
+                                        <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                            <input class="btn btn-close" type="reset" >
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="ccomment" class="control-label col-lg-2">Feedback</label>
-                                        <div class="col-lg-10">
-                                            <textarea class="form-control " id="ccomment" name="comment" required></textarea>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-primary" type="submit">Save</button>
-                                            <button class="btn btn-default" type="button">Cancel</button>
-                                        </div>
+
                                     </div>
                                 </form>
                             </div>
@@ -94,7 +84,7 @@
                 Licensing information: https://bootstrapmade.com/license/
                 Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
             -->
-            <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            <a href="#">Icon College</a> by <a href="#">A2N</a>
         </div>
     </div>
 </section>

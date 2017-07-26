@@ -38,15 +38,14 @@
                         <table class="table table-striped table-advance table-hover">
                             <tbody>
                             <tr>
-                                <th> Menu Name</th>
-                                <th> Level</th>
-                                <th> Parent Id</th>
+                                <th> Page Name</th>
+                                <th> Menu</th>
                                 <th> Action</th>
                             </tr>
                             <tr>
                                 <td>Angeline Mcclain</td>
                                 <td>0</td>
-                                <td>1</td>
+
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -58,7 +57,7 @@
                                 <td>Sung Carlson</td>
                                 <td>2</td>
 
-                                <td>1</td>
+
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -70,7 +69,7 @@
                                 <td>Bryon Osborne</td>
                                 <td>2</td>
 
-                                <td>1</td>
+
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -82,7 +81,7 @@
                                 <td>Dalia Marquez</td>
                                 <td>0</td>
 
-                                <td>0</td>
+
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -94,7 +93,7 @@
                                 <td>Selina Fitzgerald</td>
                                 <td>1</td>
 
-                                <td>2</td>
+
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
