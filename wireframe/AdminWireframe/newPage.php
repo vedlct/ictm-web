@@ -118,6 +118,19 @@
 <!--custome script for all page-->
 <script src="js/scripts.js"></script>
 
-<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+<!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
+<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor1', {
+        height: 300,
+
+        // Configure your file manager integration. This example uses CKFinder 3 for PHP.
+        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',
+        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',
+        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+        filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+    } );
+</script>
+
 </body>
 </html>
