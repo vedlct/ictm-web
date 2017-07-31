@@ -27,7 +27,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newPage.php">Create a new Sections</a></li>
+                          <li><a class="" href="newPageSection.php">Create a new Sections</a></li>
                           <li><a class="" href="managePage.php"><span>Manage Page Sections</span></a></li>
                       </ul>
                   </li>
