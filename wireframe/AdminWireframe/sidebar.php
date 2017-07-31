@@ -127,7 +127,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newmenu.php">Create a new Faculties</a></li>
+                          <li><a class="" href="create_new_faculty.php">Create a new Faculties</a></li>
                           <li><a class="" href="managemenu.php">Manage Faculties</a></li>
                       </ul>
                   </li>
@@ -160,7 +160,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newmenu.php">Create a new News</a></li>
+                          <li><a class="" href="create_new_news.php">Create a new News</a></li>
                           <li><a class="" href="managemenu.php">Manage News</a></li>
                       </ul>
                   </li>
