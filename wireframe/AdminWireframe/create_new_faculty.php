@@ -20,7 +20,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Menu</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Faculty</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
                         <li><i class="icon_document_alt"></i>Faculties</li>
@@ -145,7 +145,7 @@
                                     <div class="form-group ">
                                         <label for="faculty_intro" class="control-label col-lg-2">Faculty Intro <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="editor1" id="faculty_intro" required></textarea>
+                                            <textarea class="form-control summernote" name="faculty_intro" id="faculty_intro" required></textarea>
                                         </div>
                                     </div>
 
@@ -155,6 +155,7 @@
                                             <input class="btn btn-close" type="reset" >
                                         </div>
                                     </div>
+
                                 </form>
                             </div>
 
@@ -196,8 +197,19 @@
 <script src="js/form-validation-script.js"></script>
 <!--custome script for all page-->
 <script src="js/scripts.js"></script>
-<!--ck editor-->
-<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+<!-- editor-->
+<script>
+
+
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
+</script>
+
+<!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"></script>
 
 
 </body>

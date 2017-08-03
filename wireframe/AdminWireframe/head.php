@@ -8,13 +8,16 @@
 <title>Icon College</title>
 
 <!-- Bootstrap CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>-->
 <!-- bootstrap theme -->
 <link href="css/bootstrap-theme.css" rel="stylesheet">
 <!--external css-->
 <!-- font icon -->
 <link href="css/elegant-icons-style.css" rel="stylesheet" />
 <link href="css/font-awesome.min.css" rel="stylesheet" />
+<link href="css/font-awesome.min.css" rel="stylesheet" />
+
 <!-- Custom styles -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/style-responsive.css" rel="stylesheet" />
@@ -27,4 +30,3 @@
 <script src="js/respond.min.js"></script>
 <script src="js/lte-ie7.js"></script>
 <![endif]-->
-

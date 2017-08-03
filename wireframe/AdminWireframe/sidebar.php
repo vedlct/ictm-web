@@ -149,7 +149,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newmenu.php">Create a new Events</a></li>
+                          <li><a class="" href="create_new_events.php">Create a new Events</a></li>
                           <li><a class="" href="managemenu.php">Manage Events</a></li>
                       </ul>
                   </li>

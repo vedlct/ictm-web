@@ -3,8 +3,7 @@
 <head>
     <?php include ('head.php') ?>
     <!-- date picker      -->
-    <link rel="stylesheet" href="css/datepicker.css">
-    <link rel="stylesheet" href="css/datepicker_main.css">
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
     <!-- date picker      -->
 
 </head>
@@ -25,11 +24,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Menu</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> New News</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
-                        <li><i class="icon_document_alt"></i>Menu</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Menu</li>
+                        <li><i class="icon_document_alt"></i>News</li>
+                        <li><i class="fa fa-files-o"></i>Create a new News</li>
                     </ol>
                 </div>
             </div>
@@ -38,7 +37,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Menu
+                            News
                         </header>
                         <div class="panel-body">
                             <div class="form">
@@ -54,15 +53,22 @@
                                     <div class="form-group ">
                                         <label for="news_content" class="control-label col-lg-2">News Content <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="editor1" id="news_content" required></textarea>
+                                            <textarea class="form-control summernote" name="news_content" id="news_content" required></textarea>
                                         </div>
                                     </div>
 
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">News Date</label>
                                         <div class="col-lg-4">
-<!--                                            <input class="form-control " id="curl" type="url" name="url" />-->
-                                            <input type="text" class="form-control docs-date" name="date_from" placeholder="Pick a date">
+
+
+                                            <div class="input-group date form_datetime " data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                <input class="form-control" size="16" type="text" value="" readonly>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                                                <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
+                                            </div>
+                                            <input type="hidden" id="dtp_input1" value="" /><br/>
+
                                         </div>
 
                                         <label for="news_status" class="control-label col-lg-2">News Status <span class="required">*</span></label>
@@ -81,7 +87,7 @@
                                     </div>
 
 
-                                    <div class="form-group ">
+                                    <div class="form-group " align="center">
                                         <div class="col-lg-10">
                                             <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
@@ -118,7 +124,8 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<script src="js/jquery.js"></script>
+<!--<script src="js/jquery.js"></script>-->
+<script src="js/jquery-1.12.4.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- nice scroll -->
 <script src="js/jquery.scrollTo.min.js"></script>
@@ -130,12 +137,56 @@
 <script src="js/form-validation-script.js"></script>
 <!--custome script for all page-->
 <script src="js/scripts.js"></script>
-<!--ck editor-->
-<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+<!-- editor-->
+<script>
 
+
+    $(document).ready(function() {
+        $('.summernote').summernote();
+    });
+</script>
+
+<!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.6/summernote.js"></script>
+<!-- date picker -->
 <!--<script src="js/jquery-1.12.4.js"></script>-->
-<!-- date picker-->
-<script src="js/datepicker.js"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+<script type="text/javascript">
+    $('.form_datetime').datetimepicker({
+        //language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        forceParse: 0,
+        showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 1,
+        minView: 0,
+        maxView: 1,
+        forceParse: 0
+    });
+</script>
 
 </body>
 </html>

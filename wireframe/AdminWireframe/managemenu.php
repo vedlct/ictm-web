@@ -40,13 +40,13 @@
                             <tr>
                                 <th> Menu Name</th>
                                 <th> Level</th>
-                                <th> Page</th>
+                                <th> Parent Id</th>
                                 <th> Action</th>
                             </tr>
                             <tr>
                                 <td>Angeline Mcclain</td>
                                 <td>0</td>
-                                <td>about</td>
+                                <td>1</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -57,7 +57,8 @@
                             <tr>
                                 <td>Sung Carlson</td>
                                 <td>2</td>
-                                <td>collegelife</td>
+
+                                <td>1</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -68,7 +69,8 @@
                             <tr>
                                 <td>Bryon Osborne</td>
                                 <td>2</td>
-                                <td>Terms & Conditions</td>
+
+                                <td>1</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -80,7 +82,7 @@
                                 <td>Dalia Marquez</td>
                                 <td>0</td>
 
-                                <td>Health and Safety</td>
+                                <td>0</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
@@ -92,7 +94,7 @@
                                 <td>Selina Fitzgerald</td>
                                 <td>1</td>
 
-                                <td>Student Support</td>
+                                <td>2</td>
                                 <td>
                                     <div class="btn-group">
                                         <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>

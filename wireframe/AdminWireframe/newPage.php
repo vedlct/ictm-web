@@ -46,12 +46,14 @@
                                     </div>
                                     <div class="form-group ">
 
+
+
                                                     <div class="form-group">
                                                         <label class="control-label col-sm-2">Content</label>
                                                         <div class="col-sm-10">
                                                             <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
                                                         </div>
-                                                    </div>
+                                            </div>
                                         </div>
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
@@ -59,42 +61,30 @@
                                             <input class="form-control " id="curl" type="file" name="url" />
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>About Type</option>
-                                                <option>Terms Type</option>
-                                                <option>Health Type</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>Active</option>
-                                                <option>InActive</option>
-                                                </select>
-                                        </div>
-                                    </div>
 
 
+
+                            <div class="form-group ">
+                                <label for="cname" class="control-label col-lg-2">Menu <span class="required">*</span></label>
+                                <div class="col-lg-10">
+                                    <input class="form-control" id="cname" name="fullname"  type="text" required />
+                                </div>
+                            </div>
                             <div class="form-group ">
                                 <div class="col-lg-10">
                                     <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                     <input class="btn btn-close" type="reset" >
                                 </div>
                             </div>
-
-                            </div>
-
+                                    </div
                             </form>
                         </div>
+
+
                 </div>
         </section>
         </div>
-
+        </div>
 
         <!-- page end-->
     </section>

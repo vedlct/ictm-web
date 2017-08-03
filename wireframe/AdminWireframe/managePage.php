@@ -39,12 +39,12 @@
                             <tbody>
                             <tr>
                                 <th> Page Name</th>
-                                <th> Page Type</th>
+                                <th> Menu</th>
                                 <th> Action</th>
                             </tr>
                             <tr>
                                 <td>Angeline Mcclain</td>
-                                <td>About Type</td>
+                                <td>0</td>
 
                                 <td>
                                     <div class="btn-group">
@@ -55,7 +55,7 @@
                             </tr>
                             <tr>
                                 <td>Sung Carlson</td>
-                                <td>Terms Type</td>
+                                <td>2</td>
 
 
                                 <td>
@@ -67,7 +67,7 @@
                             </tr>
                             <tr>
                                 <td>Bryon Osborne</td>
-                                <td>Health Type</td>
+                                <td>2</td>
 
 
                                 <td>
@@ -79,7 +79,7 @@
                             </tr>
                             <tr>
                                 <td>Dalia Marquez</td>
-                                <td>Health Type</td>
+                                <td>0</td>
 
 
                                 <td>
@@ -91,7 +91,7 @@
                             </tr>
                             <tr>
                                 <td>Selina Fitzgerald</td>
-                                <td>Terms Type</td>
+                                <td>1</td>
 
 
                                 <td>

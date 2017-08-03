@@ -44,60 +44,16 @@
                                             <input class="form-control" id="cname" name="fullname" minlength="5" type="text" required />
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Menu Type <span class="required">*</span></label>
+                                    <div class="form-group ">
+                                        <label for="cemail" class="control-label col-lg-2">Menu Type <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>Top</option>
-                                                <option>MainMenu</option>
-                                                <option>KeyInfo</option>
-                                                <option>QuickLink</option>
-                                                <option>ImportantLink</option>
-                                                <option>Bottom</option>
-                                            </select>
-
-
+                                            <input class="form-control " id="cemail" type="text" name="type" required />
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Level <span class="required">*</span></label>
+                                    <div class="form-group ">
+                                        <label for="curl" class="control-label col-lg-2">Level</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>New Menu</option>
-                                                <option>About</option>
-                                                <option>Course</option>
-                                                <option>Addmission</option>
-                                                <option>College Life</option>
-                                                <option>News & Events</option>
-                                            </select>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>page</option>
-                                                <option>About</option>
-                                                <option>Course</option>
-                                                <option>Addmission</option>
-                                                <option>College Life</option>
-                                                <option>News & Events</option>
-                                            </select>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Status</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>Active</option>
-                                                <option>InActive</option>
-                                            </select>
-
-
+                                            <input class="form-control " id="curl" type="url" name="url" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
