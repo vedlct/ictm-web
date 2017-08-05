@@ -35,10 +35,10 @@ class Admin_Menu extends CI_Controller {
         }
         else
         {
+            echo "<option>New Menu</option>";
             foreach ($this->data['menuName'] as $menuName) {
 
-                echo "<option>New Menu</option>
-                        <option value='$menuName->menuId'>$menuName->menuName</option>";
+                echo "<option value='$menuName->menuId'>$menuName->menuName</option>";
             }
         }
 
@@ -46,7 +46,7 @@ class Admin_Menu extends CI_Controller {
     public function CreateNewMenu()
     {
             $this->Menum->CreateNewMenu();
-//        $this->load->view('newMenu',$this->data);
+            redirect('Admin_Menu/NewMenu');
 
     }
 

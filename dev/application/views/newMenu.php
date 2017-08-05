@@ -103,8 +103,8 @@
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus">
                                                 <option selected>Select Status</option>
-                                                <option>Active</option>
-                                                <option>InActive</option>
+                                                <option value="Active">Active</option>
+                                                <option value="Inactive">InActive</option>
                                             </select>
 
 

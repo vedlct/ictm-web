@@ -11,13 +11,18 @@ class Menum extends CI_Model
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
 
+        if ($pageId == "Select Page")
+        {
+            $pageId =null;
+        }
+
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
             'parentId' => $menuId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
-            'insertedBy'=>'',
+
 
         );
 
