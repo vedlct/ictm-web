@@ -11,14 +11,22 @@ public function insertPage() {
 
 
     $data = array(
-        'title' => $title,
-        'content' => $content,
-        'image' => $image,
-        'pagetype' => $pagetype,
-        'status' => $status
+        'pageTitle' => $title,
+        'pageContent' => $content,
+
+        'pageType' => $pagetype,
+        'pageStatus' => $status,
+        'insertedBy' => '',
+        'insertedDate' => '',
+        'lastModifiedBy' => '',
+        'lastModifiedDate' => '',
+        'approvedBy' => '',
+        'approvedBy' => '',
+        'publishingDate' => '',
+
     );
     //$data = $this->security->xss_clean($data);
-    $this->db->insert('about_banner', $data);
+    $this->db->insert('ictmpage', $data);
 }
     public function getPageIdName()
     {

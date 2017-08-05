@@ -21,7 +21,7 @@ USE `ictm` ;
 -- Table `ictm`.`ictmPage`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmPage` (
-  `pageId` INT NOT NULL COMMENT '',
+  `pageId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `pageTitle` VARCHAR(255) NOT NULL COMMENT '',
   `pageKeywords` VARCHAR(255) NULL COMMENT '',
   `pageMetaData` VARCHAR(255) NULL COMMENT '',
@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmMenu`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmMenu` (
-  `menuId` INT NOT NULL COMMENT '',
+  `menuId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `parentId` INT NULL COMMENT '',
   `pageId` INT NOT NULL COMMENT '',
   `menuName` VARCHAR(100) NOT NULL COMMENT '',
@@ -67,7 +67,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmPageSection`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmPageSection` (
-  `pageSectionId` INT NOT NULL COMMENT '',
+  `pageSectionId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `pageId` INT NOT NULL COMMENT '',
   `pageSectionTitle` VARCHAR(255) NULL COMMENT '',
   `pageSectionContent` LONGTEXT NULL COMMENT '',
@@ -91,7 +91,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmDepartment`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmDepartment` (
-  `departmentId` INT NOT NULL COMMENT '',
+  `departmentId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `departmentName` VARCHAR(255) NULL COMMENT '',
   `departmentHead` VARCHAR(100) NULL COMMENT '',
   `departmentSummary` MEDIUMTEXT NULL COMMENT '',
@@ -108,7 +108,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmCourse`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmCourse` (
-  `courseId` INT NOT NULL COMMENT '',
+  `courseId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `departmentId` INT NOT NULL COMMENT '',
   `courseCodePearson` VARCHAR(100) NULL COMMENT '',
   `courseCodeIcon` VARCHAR(100) NULL COMMENT '',
@@ -147,7 +147,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmRole`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmRole` (
-  `roleId` INT NOT NULL COMMENT '',
+  `roleId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `roleName` VARCHAR(45) NULL COMMENT '',
   `roleDesc` VARCHAR(45) NULL COMMENT '',
   `insertedBy` INT NULL COMMENT '',
@@ -163,7 +163,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmUsers`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmUsers` (
-  `userId` INT NOT NULL COMMENT '',
+  `userId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `roleId` INT NOT NULL COMMENT '',
   `userEmail` VARCHAR(100) NULL COMMENT '',
   `userPassword` VARCHAR(45) NULL COMMENT '',
@@ -190,7 +190,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmEvent`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmEvent` (
-  `eventId` INT NOT NULL COMMENT '',
+  `eventId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `eventTitle` VARCHAR(255) NULL COMMENT '',
   `eventDate` DATETIME NULL COMMENT '',
   `eventLocation` VARCHAR(45) NULL COMMENT '',
@@ -210,7 +210,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmCourseSection`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmCourseSection` (
-  `courseSectionId` INT NOT NULL COMMENT '',
+  `courseSectionId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `courseId` INT NOT NULL COMMENT '',
   `courseSectionTitle` VARCHAR(255) NULL COMMENT '',
   `courseSectionContent` LONGTEXT NULL COMMENT '',
@@ -234,7 +234,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmCourseUnits`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmCourseUnits` (
-  `courseUnitd` INT NOT NULL COMMENT '',
+  `courseUnitd` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `courseId` INT NOT NULL COMMENT '',
   `unitNumber` INT NULL COMMENT '',
   `unitCode` VARCHAR(45) NULL COMMENT '',
@@ -261,7 +261,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmUnitSection`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmUnitSection` (
-  `UnitSectionId` INT NOT NULL COMMENT '',
+  `UnitSectionId` INT NOT NULL COMMENT ''AUTO_INCREMENT,
   `courseUnitd` INT NOT NULL COMMENT '',
   `UnitSectionTitle` VARCHAR(255) NULL COMMENT '',
   `UnitSectionContent` LONGTEXT NULL COMMENT '',
@@ -285,7 +285,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmFaculty`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmFaculty` (
-  `facultyId` INT NOT NULL COMMENT '',
+  `facultyId` INT NOT NULL COMMENT ''AUTO_INCREMENT,
   `facultyName` VARCHAR(100) NULL COMMENT '',
   `facultyDegree` VARCHAR(255) NULL COMMENT '',
   `facultyPosition` VARCHAR(255) NULL COMMENT '',
@@ -309,7 +309,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmFeedback`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmFeedback` (
-  `feedbackId` INT NOT NULL COMMENT '',
+  `feedbackId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `feedbackDetails` VARCHAR(100) NULL COMMENT '',
   `feedbackName` VARCHAR(45) NULL COMMENT '',
   `feedbackPhotePath` VARCHAR(100) NULL COMMENT '',
@@ -326,7 +326,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmNotices`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmNotices` (
-  `noticeId` INT NOT NULL COMMENT '',
+  `noticeId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `noticeTitle` VARCHAR(255) NULL COMMENT '',
   `noticeContent` MEDIUMTEXT NULL COMMENT '',
   `noticeDate` DATETIME NULL COMMENT '',
@@ -344,7 +344,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmNews`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmNews` (
-  `newstId` INT NOT NULL COMMENT '',
+  `newstId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `newsTitle` VARCHAR(255) NULL COMMENT '',
   `newsContent` MEDIUMTEXT NULL COMMENT '',
   `newsDate` DATETIME NULL COMMENT '',
@@ -362,7 +362,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmPhoto`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmPhoto` (
-  `photoId` INT NOT NULL COMMENT '',
+  `photoId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `photoPath` VARCHAR(45) NULL COMMENT '',
   `photoName` VARCHAR(45) NULL COMMENT '',
   `photoDetails` LONGTEXT NULL COMMENT '',
@@ -379,7 +379,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmContactUs`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmContactUs` (
-  `contactUsId` INT NOT NULL COMMENT '',
+  `contactUsId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `contactUsname` VARCHAR(45) NULL COMMENT '',
   `contactUsEmain` VARCHAR(100) NULL COMMENT '',
   `contactUsSubject` VARCHAR(255) NULL COMMENT '',
@@ -397,7 +397,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmCollegeInfo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmCollegeInfo` (
-  `collegeInfoId` INT NOT NULL COMMENT '',
+  `collegeInfoId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `collegeName` VARCHAR(45) NULL COMMENT '',
   `collegeDomain` VARCHAR(45) NULL COMMENT '',
   `collegeAddress` VARCHAR(45) NULL COMMENT '',
@@ -422,7 +422,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmAffiliations`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmAffiliations` (
-  `AffiliationsId` INT NOT NULL COMMENT '',
+  `AffiliationsId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `AffiliationsDetails` LONGTEXT NULL COMMENT '',
   `AffiliationsPhotoPath` VARCHAR(255) NULL COMMENT '',
   `InsertedBy` VARCHAR(255) NULL COMMENT '',
@@ -438,7 +438,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmHome`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmHome` (
-  `homeId` INT NOT NULL COMMENT '',
+  `homeId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `homeTitle` VARCHAR(100) NULL COMMENT '',
   `homeDetails` MEDIUMTEXT NULL COMMENT '',
   `homePhotoPath` VARCHAR(255) NULL COMMENT '',
@@ -455,7 +455,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmRegisterInterest`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmRegisterInterest` (
-  `registerInterestId` INT NOT NULL COMMENT '',
+  `registerInterestId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `firstName` VARCHAR(100) NULL COMMENT '',
   `surName` VARCHAR(100) NULL COMMENT '',
   `address` VARCHAR(255) NULL COMMENT '',
@@ -478,7 +478,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmFacultyCourse`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmFacultyCourse` (
-  `facultyCourseId` INT NOT NULL COMMENT '',
+  `facultyCourseId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `facultyId` INT NOT NULL COMMENT '',
   `courseId` INT NOT NULL COMMENT '',
   PRIMARY KEY (`facultyCourseId`)  ,
@@ -501,7 +501,7 @@ ENGINE = InnoDB;
 -- Table `ictm`.`ictmFacultyContact`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ictm`.`ictmFacultyContact` (
-  `facultyContactId` INT NOT NULL COMMENT '',
+  `facultyContactId` INT NOT NULL COMMENT '' AUTO_INCREMENT,
   `facultyId` INT NOT NULL COMMENT '',
   `visitorName` VARCHAR(45) NULL COMMENT '',
   `visitorInterest` VARCHAR(45) NULL COMMENT '',
