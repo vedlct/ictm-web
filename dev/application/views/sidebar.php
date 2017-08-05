@@ -40,7 +40,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newMenu.php">Create a new Menu</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin_Menu/NewMenu">Create a new Menu</a></li>
                           <li><a class="" href="manageMenu.php">Manage Menu</a></li>
                       </ul>
                   </li>
