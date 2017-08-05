@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin_page/insertPage">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin_page/insertPage" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -56,7 +56,7 @@
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control " id="curl" type="file" name="url" />
+                                            <input class="form-control " id="curl" type="file" name="image"  />
                                         </div>
                                     </div>
                                     <div class="form-group">
