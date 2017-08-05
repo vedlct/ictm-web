@@ -29,4 +29,12 @@ public function insertPage() {
     //$data = $this->security->xss_clean($data);
     $this->db->insert('ictmpage', $data);
 }
+    public function getPageIdName()
+    {
+
+        $this->db->select('pageId, pageTitle');
+        $this->db->group_by('pageTitle');
+        $query = $this->db->get('ictmpage');
+        return $query->result();
+    }
 }
