@@ -3,14 +3,28 @@
 
 class Menum extends CI_Model
 {
-    public function getMenu()
+    public function CreateNewMenu()
     {
-        $query = $this->db->get('ictmmenu');
-        return $query->result();
+        $menuTitle = $this->input->post("menuTitle");
+        $menuType = $this->input->post("menuType");
+        $menuId = $this->input->post("menuId");
+        $pageId = $this->input->post("pageId");
+        $menuStatus = $this->input->post("menuStatus");
+
+        $data = array(
+            'menuName' => $menuTitle,
+            'menuType' => $menuType,
+            'parentId' => $menuId,
+            'pageId' => $pageId,
+            'menuStatus' => $menuStatus,
+            'insertedBy'=>'',
+
+        );
+
+        $this->db->insert('ictmmenu', $data);
     }
     public function getMenuName($menuType)
     {
-
         $this->db->select('menuId, menuName');
         $this->db->where('menuType', $menuType);
         $query = $this->db->get('ictmmenu');

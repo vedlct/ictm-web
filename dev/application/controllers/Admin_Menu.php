@@ -7,7 +7,7 @@ class Admin_Menu extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Menum');
-        $this->load->model('Menum');
+        $this->load->model('Admin_Pagem');
 
     }
 
@@ -19,7 +19,7 @@ class Admin_Menu extends CI_Controller {
 /*---------for creating new Menu --------------------- */
     public function NewMenu()
     {
-        $this->data['menuType']=$this->Menum->getMenu();
+        $this->data['page']=$this->Admin_Pagem->getPageIdName();
         $this->load->view('newMenu',$this->data);
     }
 
@@ -38,10 +38,16 @@ class Admin_Menu extends CI_Controller {
             foreach ($this->data['menuName'] as $menuName) {
 
                 echo "<option>New Menu</option>
-                        <option>$menuName->menuName</option>";
+                        <option value='$menuName->menuId'>$menuName->menuName</option>";
             }
         }
 
     }
-    
+    public function CreateNewMenu()
+    {
+            $this->Menum->CreateNewMenu();
+//        $this->load->view('newMenu',$this->data);
+
+    }
+
 }

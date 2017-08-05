@@ -37,16 +37,16 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin_Menu/CreateNewMenu">
                                     <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
+                                        <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="cname" name="fullname" minlength="5" type="text" required />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required />
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Menu Type <span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="menuType">Menu Type <span class="required">*</span></label>
                                         <div class="col-lg-10">
 
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)">
@@ -63,9 +63,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Level <span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="menuId">Level <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuName" id="menuName">
+                                            <select class="form-control m-bot15" name="menuId" id="menuId">
                                                 <option selected>Select Menu Type</option>
 <!--                                                <option>New Menu</option>-->
 <!--                                                <option>About</option>-->
@@ -79,24 +79,30 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page</label>
+                                        <label class="control-label col-lg-2" for="pageId">Page</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>page</option>
-                                                <option>About</option>
-                                                <option>Course</option>
-                                                <option>Addmission</option>
-                                                <option>College Life</option>
-                                                <option>News & Events</option>
+                                            <select class="form-control m-bot15" name="pageId" id="pageId">
+                                                <option selected>Select Page </option>
+                                                <?php foreach ($page as $page){?>
+
+                                                    <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
+                                                <?php }?>
+<!--                                                <option>page</option>-->
+<!--                                                <option>About</option>-->
+<!--                                                <option>Course</option>-->
+<!--                                                <option>Addmission</option>-->
+<!--                                                <option>College Life</option>-->
+<!--                                                <option>News & Events</option>-->
                                             </select>
 
 
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Status</label>
+                                        <label class="control-label col-lg-2" for="menuStatus">Status</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
+                                            <select class="form-control m-bot15" name="menuStatus" id="menuStatus">
+                                                <option selected>Select Status</option>
                                                 <option>Active</option>
                                                 <option>InActive</option>
                                             </select>
@@ -104,7 +110,7 @@
 
                                         </div>
                                     </div>
-                                    <div class="form-group ">
+                                    <div class="form-group "align="center">
                                         <div class="col-lg-10">
                                         <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
@@ -158,7 +164,7 @@
                 cache: false,
                 success:function(data) {
 
-                    document.getElementById("menuName").innerHTML = data;
+                    document.getElementById("menuId").innerHTML = data;
                     //alert(data);
 
 
