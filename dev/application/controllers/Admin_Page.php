@@ -23,6 +23,6 @@ class Admin_Page extends CI_Controller {
     public function insertPage(){
 
         $this->Admin_pagem->insertPage();
-
+        $this->load->view('newPage');
     }
 }
