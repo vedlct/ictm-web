@@ -13,16 +13,8 @@ public function insertPage() {
     $data = array(
         'pageTitle' => $title,
         'pageContent' => $content,
-
         'pageType' => $pagetype,
         'pageStatus' => $status,
-        'insertedBy' => '',
-        'insertedDate' => '',
-        'lastModifiedBy' => '',
-        'lastModifiedDate' => '',
-        'approvedBy' => '',
-        'approvedBy' => '',
-        'publishingDate' => '',
 
     );
     //$data = $this->security->xss_clean($data);

@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin_Menu/CreateNewMenu">
+                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin_Menu/CreateNewMenu" onsubmit="submitform()">
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -66,7 +66,7 @@
                                         <label class="control-label col-lg-2" for="menuId">Level <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="menuId" id="menuId">
-                                                <option selected>Select Menu Type</option>
+                                                <option selected>Select Menu</option>
 <!--                                                <option>New Menu</option>-->
 <!--                                                <option>About</option>-->
 <!--                                                <option>Course</option>-->
@@ -172,6 +172,31 @@
 
             });
         }
+    }
+    function submitform() {
+
+        var title=document.getElementById("menuTitle").value;
+        var menuType=document.getElementById("menuType").value;
+        var menuId =document.getElementById("menuId").value;
+        var menuStatus=document.getElementById("menuStatus").value;
+
+        if (title == null){
+            alert("Please Insert a Title for Menu");
+            return false;
+        }
+        if (menuType =="Select Menu Type"){
+            alert("Please Select Menu Type");
+            return false;
+        }
+        if (menuId =="Select Menu Name"){
+            alert("Please Select Level");
+            return false;
+        }
+        if (menuStatus =="Select Status"){
+            alert("Please Select Status");
+            return false;
+        }
+
     }
 
 </script>
