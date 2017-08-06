@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp Menu</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
                         <li><i class="icon_document_alt"></i>Menu</li>
                         <li><i class="fa fa-files-o"></i>Create a new Menu</li>
                     </ol>
@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin_Menu/CreateNewMenu">
+                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin_Menu/CreateNewMenu" onsubmit="return submitform()">
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -49,7 +49,7 @@
                                         <label class="control-label col-lg-2" for="menuType">Menu Type <span class="required">*</span></label>
                                         <div class="col-lg-10">
 
-                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)">
+                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option selected>Select Menu Type</option>
                                                 <option>Top</option>
                                                 <option>MainMenu</option>
@@ -63,10 +63,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">Level <span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuId" id="menuId">
-                                                <option selected>Select Menu Type</option>
+                                            <select class="form-control m-bot15" name="menuId" id="menuId" required>
+                                                <option selected>Select Menu</option>
 <!--                                                <option>New Menu</option>-->
 <!--                                                <option>About</option>-->
 <!--                                                <option>Course</option>-->
@@ -99,9 +99,9 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuStatus">Status</label>
+                                        <label class="control-label col-lg-2" for="menuStatus">Menu Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuStatus" id="menuStatus">
+                                            <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
                                                 <option selected>Select Status</option>
                                                 <option value="Active">Active</option>
                                                 <option value="Inactive">InActive</option>
@@ -172,6 +172,25 @@
 
             });
         }
+    }
+    function submitform() {
+
+        var title=document.getElementById("menuTitle").value;
+        var menuType=document.getElementById("menuType").value;
+        var menuStatus=document.getElementById("menuStatus").value;
+        if (title == null){
+            alert("Please Insert a Title for Menu");
+            return false;
+        }
+        if (menuType =="Select Menu Type"){
+            alert("Please Select Menu Type");
+            return false;
+        }
+        if (menuStatus =="Select Status"){
+            alert("Please Select Menu Status");
+            return false;
+        }
+
     }
 
 </script>

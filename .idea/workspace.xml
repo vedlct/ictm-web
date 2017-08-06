@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50e56998-553e-48f2-8b4d-b12bead2de3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/application/views/editPage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/application/views/manageMenu.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiondn0vko501f52e8lll29es519amh9u9sn" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/models/Menum.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin_Menum.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/config.php" afterPath="$PROJECT_DIR$/dev/application/config/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Menu.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Menu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newPage.php" afterPath="$PROJECT_DIR$/dev/application/views/newPage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newMenu.php" afterPath="$PROJECT_DIR$/dev/application/views/newMenu.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/sidebar.php" afterPath="$PROJECT_DIR$/dev/application/views/sidebar.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -66,8 +68,8 @@
       <file leaf-file-name="Admin_Pagem.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="80" column="44" lean-forward="false" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+            <state relative-caret-position="270">
+              <caret line="63" column="31" lean-forward="false" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -360,12 +362,12 @@
       <updated>1501915805326</updated>
       <workItem from="1501915806661" duration="339000" />
       <workItem from="1501916794958" duration="10060000" />
-      <workItem from="1501999414492" duration="11083000" />
+      <workItem from="1501999414492" duration="11784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21482000" />
+    <option name="totallyTimeSpent" value="22183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
@@ -587,8 +589,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="80" column="44" lean-forward="false" selection-start-line="80" selection-start-column="44" selection-end-line="80" selection-end-column="44" />
+        <state relative-caret-position="270">
+          <caret line="63" column="31" lean-forward="false" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
           <folding />
         </state>
       </provider>

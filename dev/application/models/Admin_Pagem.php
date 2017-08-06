@@ -18,7 +18,11 @@ public function insertPage() {
         'pageKeywords' => $keywords,
         'pageMetaData' => $metadata,
         'pageContent' => $content,
+
         'pageImage' =>$image,
+        'pageType' => $pagetype,
+        'pageStatus' => $status,
+
         'pageType' => $pagetype,
         'pageStatus' => $status,
 
@@ -57,7 +61,7 @@ public function insertPage() {
         $content = $this->input->post("content");
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
-        $image = $_FILES["Photo"]["name"];
+        $image = $_FILES["image"]["name"];
 
         if($image != null){
 

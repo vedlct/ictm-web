@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Menum extends CI_Model
+class Admin_Menum extends CI_Model
 {
     public function CreateNewMenu()
     {
@@ -10,7 +10,10 @@ class Menum extends CI_Model
         $menuId = $this->input->post("menuId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
-
+        if ($menuId == "New Menu")
+        {
+            $menuId =null;
+        }
         if ($pageId == "Select Page")
         {
             $pageId =null;
@@ -35,4 +38,17 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
+
+    public function getAllforManageMenu()
+    {
+//        $this->db->select('m.*,p.pageTitle');
+//        $this->db->from('ictmmenu m');
+//        $this->db->join('ictmpage p', 'p.pageId = m.pageId');
+//        $query = $this->db->get();
+//        return $query->result();
+
+        $query = $this->db->get('ictmmenu');
+        return $query->result();
+    }
+
 }
