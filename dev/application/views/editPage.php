@@ -64,10 +64,10 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="pagetype">
-                                                <option selected><?php echo $epd->pageType?></option>
-                                                <option>About Type</option>
-                                                <option>Terms Type</option>
-                                                <option>Health Type</option>
+                                                <option value="About Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'About Type')  echo 'selected = "selected"'; ?>>About Type</option>
+                                                <option value="Terms Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Terms Type')  echo 'selected = "selected"'; ?>>Terms Type</option>
+                                                <option value="Health Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Health Type')  echo 'selected = "selected"'; ?>>Health Type</option>
+
                                             </select>
                                         </div>
                                     </div>
