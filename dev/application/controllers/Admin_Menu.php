@@ -62,4 +62,43 @@ class Admin_Menu extends CI_Controller {
         $this->load->view('manageMenu',$this->data);
     }
 
+    public function editMenuView($menuId) // for edit menu view
+    {
+        //$menuId = $this->input->post("menuid");
+        $this->data['edit_menu']=$this->Admin_Menum->getAllMenubyId($menuId);
+        $this->data['page']=$this->Admin_Pagem->getPageIdName();
+        //print_r($menuId);
+        //print_r($this->data['edit_menu']);
+        $this->load->view('editMenu',$this->data);
+
+    }
+
+    public function editMenu($id) // for edit menu from database
+    {
+        $menuTitle = $this->input->post("menuTitle");
+        $menuType = $this->input->post("menuType");
+        $menuId = $this->input->post("menuId");
+        $pageId = $this->input->post("pageId");
+        $menuStatus = $this->input->post("menuStatus");
+        if ($menuId == "New Menu" || $menuId == "Menu")
+        {
+            $menuId =null;
+        }
+        if ($pageId == "Select Page")
+        {
+            $pageId =null;
+        }
+        $this->data['edit_menu_by_id']=$this->Admin_Menum->editMenubyId($id,$menuTitle,$menuType,$menuId,$pageId,$menuStatus);
+        redirect('Admin_Menu/ManageMenu');
+
+    }
+
+    public function deleteMenu($menuId) // delete Menu
+    {
+
+        $this->Admin_Menum->deleteMenubyId($menuId);
+
+
+    }
+    /*---------for Manage Menu ----------end-------------*/
 }
