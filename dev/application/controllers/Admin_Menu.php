@@ -95,10 +95,7 @@ class Admin_Menu extends CI_Controller {
 
     public function deleteMenu($menuId) // delete Menu
     {
-
         $this->Admin_Menum->deleteMenubyId($menuId);
-
-
     }
     /*---------for Manage Menu ----------end-------------*/
 }
