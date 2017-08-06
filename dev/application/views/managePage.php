@@ -21,8 +21,8 @@
                     <h3 class="page-header"><i class="fa fa-table"></i> Menu</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
-                        <li><i class="fa fa-table"></i>Menu</li>
-                        <li><i class="fa fa-th-list"></i>Manage Menu</li>
+                        <li><i class="fa fa-table"></i>Page</li>
+                        <li><i class="fa fa-th-list"></i>Manage Page</li>
                     </ol>
                 </div>
             </div>
@@ -32,77 +32,40 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage Menu
+                            Manage Page
                         </header>
                         <div class="panel-body">
 
                         <table class="table table-striped table-advance  table-bordered table-hover">
                             <tbody>
                             <tr>
-                                <th> Page Name</th>
+                                <th> Page Title</th>
                                 <th> Page Type</th>
+                                <th> Insert By</th>
+                                <th> Last Modified By</th>
+                                <th> Last Modified Date</th>
+                                <th> Status</th>
                                 <th> Action</th>
                             </tr>
-                            <tr>
-                                <td>Angeline Mcclain</td>
-                                <td>About Type</td>
 
+
+                            <?php foreach ($pageData as $pd){?>
+                            <tr>
+                                <td><?php echo $pd->pageTitle?></td>
+                                <td><?php echo $pd->pageType?></td>
+                                <td><?php echo $pd->insertedBy?></td>
+                                <td><?php echo $pd->lastModifiedBy?></td>
+                                <td><?php echo $pd->lastModifiedDate?></td>
+                                <td><?php echo $pd->pageStatus?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sung Carlson</td>
-                                <td>Terms Type</td>
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bryon Osborne</td>
-                                <td>Health Type</td>
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dalia Marquez</td>
-                                <td>Health Type</td>
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Selina Fitzgerald</td>
-                                <td>Terms Type</td>
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn" href="<?php echo base_url()?>Admin_page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
                                         <a class="btn " href="#"><i class="icon_trash"></i></a>
                                     </div>
                                 </td>
                             </tr>
 
+                            <?php }?>
                             </tbody>
                         </table>
                         </div>
