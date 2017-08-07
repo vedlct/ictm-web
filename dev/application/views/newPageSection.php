@@ -37,14 +37,17 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin_Page/insertPageSection">
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="level">
-                                                <option>About </option>
-                                                <option>College Life</option>
-                                                <option>Health</option>
+                                                <option>Select Page</option>
+                                               <?php foreach ($pagename as $pg) { ?>
+                                                   <option><?php echo $pg->pageTitle?></option>
+                                                   <?php
+                                               }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -60,7 +63,7 @@
                                             </div>
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-sm-10 form-group">
-                                                <textarea class="form-control summernote"  rows="6"></textarea>
+                                                <textarea class="form-control ckeditor"  name="text[]" rows="6"></textarea>
                                             </div>
                                                 <label class="control-label col-lg-2">Image #1 : </label>
                                             <div class="col-lg-10 form-group">
@@ -112,24 +115,13 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- nice scroll -->
-<script src="js/jquery.scrollTo.min.js"></script>
-<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-<!-- jquery validate js -->
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<?php include ('js.php') ?>
 
-<!-- custom form validation script for this page-->
-<script src="js/form-validation-script.js"></script>
-<!--custome script for all page-->
-<script src="js/scripts.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
-<!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
-<!--<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>-->
 <!--<script>-->
-<!--    CKEDITOR.replace( 'editor1', {-->
-<!--        height: 300,-->
+<!--    CKEDITOR.replace( 'ckeditor', {-->
+<!--        -->
 <!---->
 <!--        // Configure your file manager integration. This example uses CKFinder 3 for PHP.-->
 <!--        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',-->
@@ -147,18 +139,20 @@
                 alert("Only 10 textboxes allow");
                 return false;
             }
+        
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' : </label>' +
                 '<div class="col-lg-10 form-group">'+'<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<textarea class="form-control summernote" rows="6" name="textimage[]' + counter +
+                '<div class="col-lg-10 form-group">'+'<textarea class="form-control ckeditor" rows="6" name="textimage[]' + counter +
                  + counter + '" value="" ></textarea>'+'</div>' + '<label class="control-label col-lg-2">Image #'+ counter + ' : </label>' +
                 '<div class="col-lg-10 form-group">'+'<input class="form-control" type="file" name="textserial[]' + counter +
                 '" id="textimage' + counter + '" value="" >'+'</div>'+'<br>'
             );
             newTextBoxDiv.appendTo("#TextBoxesGroup");
-            $('.summernote').summernote();
+
+
             counter++;
         });
         $("#removeButton").click(function () {
@@ -181,20 +175,21 @@
     });
 </script>
 
+
 <script>
     function load() {
 
     }
 </script>
 
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('.summernote').summernote();
-    });
-</script>
+<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">-->
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>-->
+<!---->
+<!--<script>-->
+<!--    $(document).ready(function() {-->
+<!--        $('.summernote').summernote();-->
+<!--    });-->
+<!--</script>-->
 
 </body>
 </html>

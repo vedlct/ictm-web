@@ -59,8 +59,13 @@
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
                                     <div class="btn-group">
+<<<<<<< HEAD
                                         <a class="btn" href="<?php echo base_url()?>Admin_page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
                                         <a class="btn " data-panel-id="<?php echo $pd->pageId?>"  onclick="selectid(this)"  href="#"><i class="icon_trash"></i></a>
+=======
+                                        <a class="btn" href="<?php echo base_url()?>editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
+>>>>>>> f4b1575dcf1050eb9e6809aaa1d20e39a2093057
                                     </div>
                                 </td>
                             </tr>
@@ -85,6 +90,7 @@
 
 </section>
 <!-- container section end -->
+<!-- javascripts -->
 
 <?php include ('js.php')?>
 

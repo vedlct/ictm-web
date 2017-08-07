@@ -44,6 +44,7 @@ class Admin_Page extends CI_Controller {
         redirect('Admin_Page/managePage');
     }
 
+
     public function deletePage($pageId)    // delete Page
     {
         if ($this->session->userdata('type') == "Admin") {
@@ -55,4 +56,30 @@ class Admin_Page extends CI_Controller {
             redirect('Login');
         }
     }
+
+    /////////PageSection///////////////
+
+    public function createPageSection() {
+
+        $this->data['pagename'] = $this->Admin_pagem->getPageIdName();
+        $this->load->view('newPageSection', $this->data);                    //view create page section
+    }
+
+    public function insertPageSection(){
+
+       // $this->Admin_pagem->insertPageSection();                // insert page section
+        extract($_POST);
+
+        for ($i = 0; $i < count($textbox); $i++) {
+            echo $textbox[$i] . "<br>";
+            echo $text[$i] . "<br>";
+        }
+
+    }
+    public function managePageSection() {
+
+        $this->load->view('managePageSection');                 //view manage page section
+    }
+
+
 }

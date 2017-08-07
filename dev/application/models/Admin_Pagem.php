@@ -2,31 +2,31 @@
 
 class Admin_Pagem extends CI_Model
 {
-public function insertPage() {
-    $title = $this->input->post("title");
-    $content = $this->input->post("content");
-    $keywords = $this->input->post("keywords");
-    $metadata = $this->input->post("metadata");
-    $pagetype = $this->input->post("pagetype");
-    $status = $this->input->post("status");
+    public function insertPage()
+    {
+        $title = $this->input->post("title");
+        $content = $this->input->post("content");
+        $keywords = $this->input->post("keywords");
+        $metadata = $this->input->post("metadata");
+        $pagetype = $this->input->post("pagetype");
+        $status = $this->input->post("status");
 
 
-    $image= $_FILES["image"]["name"];
-    move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
-    $data = array(
-        'pageTitle' => $title,
-        'pageKeywords' => $keywords,
-        'pageMetaData' => $metadata,
-        'pageContent' => $content,
+        $image = $_FILES["image"]["name"];
+        move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
+        $data = array(
+            'pageTitle' => $title,
+            'pageKeywords' => $keywords,
+            'pageMetaData' => $metadata,
+            'pageContent' => $content,
+            'pageImage' => $image,
+            'pageType' => $pagetype,
+            'pageStatus' => $status,
 
-        'pageImage' =>$image,
-        'pageType' => $pagetype,
-        'pageStatus' => $status,
 
-
-    );
-    //$data = $this->security->xss_clean($data);
-    $this->db->insert('ictmpage', $data);
+        );
+        //$data = $this->security->xss_clean($data);
+        $this->db->insert('ictmpage', $data);
     }
 
     public function getPageIdName()
@@ -38,19 +38,23 @@ public function insertPage() {
         return $query->result();
     }
 
-    public function get_pagaData(){
+    public function get_pagaData()
+    {
 
         $query = $this->db->get('ictmpage');
         return $query->result();
     }
 
-    public function get_editPagaData($id){
+    public function get_editPagaData($id)
+    {
 
         $this->db->where('pageId', $id);
         $query = $this->db->get('ictmpage');
         return $query->result();
     }
-    public function updatePagaData ($id){
+
+    public function updatePagaData($id)
+    {
 
         $title = $this->input->post("title");
         $keywords = $this->input->post("keywords");
@@ -60,7 +64,7 @@ public function insertPage() {
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
 
-        if($image != null){
+        if ($image != null) {
 
             $image = $_FILES["image"]["name"];
             move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
@@ -75,7 +79,7 @@ public function insertPage() {
 
             );
 
-        }else {
+        } else {
             $data = array(
                 'pageTitle' => $title,
                 'pageKeywords' => $keywords,
@@ -87,10 +91,11 @@ public function insertPage() {
             );
 
         }
-        $this->db->where('pageId',$id);
-        $this->db->update('ictmpage',$data);
+        $this->db->where('pageId', $id);
+        $this->db->update('ictmpage', $data);
 
     }
+
 
     public function deletePagebyId($pageId)
     {
@@ -103,9 +108,14 @@ public function insertPage() {
 ////                $this->db->update('ictmmenu',$data);
 //                $this->db->delete('ictmpage');
 
-        $this->db->where('ictmpage.pageId=ictmmenu.pageId');
-        $this->db->where('pageId', $pageId);
-        $this->db->delete('ictmpage,ictmmenu');
+    }
+
+
+    public function insertPageSection()
+    {
+
 
     }
+
 }
+
