@@ -51,4 +51,48 @@ class Admin_Menum extends CI_Model
         return $query->result();
     }
 
+    public function getAllMenubyId($menuId)
+    {
+        $query = $this->db->get_where('ictmmenu', array('menuId' => $menuId));
+        return $query->result();
+    }
+
+    public function editMenubyId($id)
+    {
+        $menuTitle = $this->input->post("menuTitle");
+        $menuType = $this->input->post("menuType");
+        $menuId = $this->input->post("menuId");
+        $pageId = $this->input->post("pageId");
+        $menuStatus = $this->input->post("menuStatus");
+        if ($menuId == "New Menu" || $menuId == "Menu")
+        {
+            $menuId =null;
+        }
+        if ($pageId == "None")
+        {
+            $pageId =null;
+        }
+
+        date_default_timezone_set("Europe/London");
+        $data = array(
+            'menuName' => $menuTitle,
+            'menuType' => $menuType,
+            'parentId' => $menuId,
+            'pageId' => $pageId,
+            'menuStatus' => $menuStatus,
+            'lastModifiedDate'=>date("Y-m-d H:i:s")
+
+
+        );
+
+        $this->db->where('menuId', $id);
+        $this->db->update('ictmmenu', $data);
+    }
+
+    public function deleteMenubyId($menuId)
+    {
+        $this->db->where('menuId', $menuId);
+        $this->db->delete('ictmmenu');
+    }
+
 }

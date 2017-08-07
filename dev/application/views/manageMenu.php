@@ -38,7 +38,7 @@
                         <table class="table table-striped table-advance table-hover">
                             <tbody>
                             <tr>
-                                <th> Menu Name</th>
+                                <th> Menu Title</th>
                                 <th> Menu Type</th>
                                 <th> Menu/Sub Menu</th>
                                 <th> Page Title</th>
@@ -48,6 +48,8 @@
                                 <th> Action</th>
                             </tr>
                             <?php foreach ($menu as $menu){?>
+
+
                             <tr>
                                 <td><?php echo $menu->menuName?></td>
                                 <td><?php echo $menu->menuType?></td>
@@ -89,19 +91,22 @@
                                     ?>
                                 </td>
                                 <td>
+
                                     <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
+                                        <a class="btn" href="<?php echo base_url("Admin_Menu/editMenuView/")?><?php echo $menu->menuId ?>"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn" data-panel-id="<?php echo $menu->menuId ?>" onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                     </div>
                                 </td>
 
                             </tr>
-                            <?php }?>
 
+
+                            <?php }?>
 
                             </tbody>
                         </table>
                         </div>
+                        <div id="edit"></div>
                     </section>
                 </div>
             </div>
@@ -124,3 +129,27 @@
 
 </body>
 </html>
+
+<script>
+
+    function selectid(x) {
+
+        btn = $(x).data('panel-id');
+        //alert(btn9);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Menu/deleteMenu/")?>'+btn,
+            data:{'menuid':btn},
+            cache: false,
+            success:function(data) {
+
+                alert("Menu Deleted Successfully!!");
+                location.reload();
+            }
+
+        });
+
+
+    }
+</script>
