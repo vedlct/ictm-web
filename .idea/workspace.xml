@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50e56998-553e-48f2-8b4d-b12bead2de3c" name="Default" comment="">
-<<<<<<< HEAD
+
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/routes.php" afterPath="$PROJECT_DIR$/dev/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
-=======
+
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session5f2tglnqgq60lnipluvdml5purfqbvdu" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session6kuka11opuhltgft7cptbmf2gri4ah69" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session6o7r3e9kcuff1u8cldnurvf4q6l5vikv" />
@@ -145,7 +145,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newPageSection.php" afterPath="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/public/ckeditor/config.js" afterPath="$PROJECT_DIR$/dev/public/ckeditor/config.js" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
     </list>
     <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -164,13 +164,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
+
       <file leaf-file-name="Admin_Page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="444">
               <caret line="42" column="42" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="42" />
-=======
+
       <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -186,7 +186,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
               <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
               <folding />
             </state>
           </provider>
@@ -195,13 +195,13 @@
       <file leaf-file-name="Admin_Page.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
             <state relative-caret-position="192">
               <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
-=======
+
             <state relative-caret-position="2088">
               <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
               <folding />
             </state>
           </provider>
@@ -210,19 +210,19 @@
       <file leaf-file-name="newPageSection.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
             <state relative-caret-position="221">
               <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
-=======
+
             <state relative-caret-position="522">
               <caret line="150" column="76" lean-forward="false" selection-start-line="150" selection-start-column="76" selection-end-line="150" selection-end-column="76" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
+
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -238,13 +238,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
               <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-=======
+
       <file leaf-file-name="managePage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1107">
               <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
               <folding />
             </state>
           </provider>
@@ -253,7 +253,7 @@
       <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
             <state relative-caret-position="257">
               <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="71" selection-end-column="46" />
               <folding>
@@ -269,28 +269,28 @@
                 <marker date="1502040999309" expanded="true" signature="7193:7240" ph="..." />
                 <marker date="1502040999309" expanded="true" signature="7228:7240" ph="{...}" />
               </folding>
-=======
+
             <state relative-caret-position="558">
               <caret line="31" column="99" lean-forward="false" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="99" />
               <folding />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
+
       <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/Login.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
+
       <file leaf-file-name="Admin_Pagem.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1107">
               <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
               <folding />
             </state>
           </provider>
@@ -299,19 +299,19 @@
       <file leaf-file-name="newMenu.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/newMenu.php">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
             <state relative-caret-position="-505">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
+
             <state relative-caret-position="990">
               <caret line="55" column="97" lean-forward="false" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-<<<<<<< HEAD
+
       <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -332,8 +332,7 @@
           </provider>
         </entry>
       </file>
-=======
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -343,26 +342,26 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/dev/application/config/config.php" />
-<<<<<<< HEAD
+
         <option value="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
         <option value="$PROJECT_DIR$/dev/application/views/sidebar.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
-=======
+
         <option value="$PROJECT_DIR$/dev/application/views/editPage.php" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
         <option value="$PROJECT_DIR$/dev/application/views/newPage.php" />
         <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
         <option value="$PROJECT_DIR$/dev/application/views/sidebar.php" />
         <option value="$PROJECT_DIR$/dev/application/views/managePage.php" />
         <option value="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
-<<<<<<< HEAD
+
         <option value="$PROJECT_DIR$/dev/application/views/editPage.php" />
         <option value="$PROJECT_DIR$/dev/application/views/managePage.php" />
         <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
-=======
+
         <option value="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
       </list>
     </option>
   </component>
@@ -632,18 +631,18 @@
       <updated>1501915805326</updated>
       <workItem from="1501915806661" duration="339000" />
       <workItem from="1501916794958" duration="10060000" />
-<<<<<<< HEAD
+
       <workItem from="1501999414492" duration="11784000" />
       <workItem from="1502036029580" duration="8791000" />
-=======
+
       <workItem from="1501999414492" duration="11929000" />
       <workItem from="1502089681389" duration="13456000" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
+
     <option name="totallyTimeSpent" value="30974000" />
   </component>
   <component name="ToolWindowManager">
@@ -651,7 +650,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
+
     <option name="totallyTimeSpent" value="35784000" />
   </component>
   <component name="ToolWindowManager">
@@ -659,7 +658,7 @@
     <editor active="false" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -936,11 +935,11 @@
     <entry file="file://$PROJECT_DIR$/dev/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-<<<<<<< HEAD
+
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-=======
+
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
         </state>
       </provider>
     </entry>
@@ -955,10 +954,10 @@
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/Welcome.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-<<<<<<< HEAD
+
           <caret line="25" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
-=======
+
           <caret line="25" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
@@ -968,32 +967,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/managePageSection.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="306">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-=======
+
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="6494">
           <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
-=======
+
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
@@ -1008,74 +1007,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/editPage.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="3213">
           <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
-=======
+
         <state relative-caret-position="1062">
           <caret line="59" column="119" lean-forward="false" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="119" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
+
         <state relative-caret-position="990">
           <caret line="55" column="97" lean-forward="false" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
+
         <state relative-caret-position="531">
           <caret line="382" column="33" lean-forward="false" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
+
     <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
-=======
+
     <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
           <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
+
     <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
-=======
+
     <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="31" column="99" lean-forward="false" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="99" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
-<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
@@ -1088,19 +1086,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-505">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
+
     <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/ckeditor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11804">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/config.js">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="257">
           <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="71" selection-end-column="46" />
           <folding>
@@ -1131,33 +1129,33 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
-=======
+
         <state relative-caret-position="288">
           <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="192">
           <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
-=======
+
         <state relative-caret-position="1107">
           <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
+
         <state relative-caret-position="461">
           <caret line="53" column="16" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="16" />
-=======
+
         <state relative-caret-position="1107">
           <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
           <folding />
@@ -1176,7 +1174,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2088">
           <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
->>>>>>> 4ff65781a8e2b03bf15b447bcf9f0ddf2495bf73
+
           <folding />
         </state>
       </provider>

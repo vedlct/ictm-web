@@ -115,9 +115,32 @@ class Admin_Page extends CI_Controller {
             redirect('Login');
         }
     }
-    public function managePageSection() {
+    public function managePageSection()
+    {
 
-        $this->load->view('managePageSection');                 //view manage page section
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->data['pagename'] = $this->Admin_pagem->getPageIdName();
+            $this->load->view('managePageSection', $this->data);                 //view manage page section
+
+        } else{
+            redirect('Login');
+        }
+
+    }
+
+    public function showPageSecManageTable(){
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $id = $this->input->post("id");
+            $this->data['pagedata'] = $this->Admin_pagem->get_pageSecdata($id);
+            $this->load->view('showManagePageSec', $this->data);                 //view manage page section
+
+        } else{
+            redirect('Login');
+        }
+
     }
 
 

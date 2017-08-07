@@ -8,12 +8,10 @@ class Login extends CI_Controller {
         parent::__construct();
         $this->load->model('Loginm');
     }
-
     public function index()
     {
         $this->load->view('login');
     }
-
     public  function check_user()
     {
         if(!$this->form_validation->run('signin'))
@@ -24,35 +22,27 @@ class Login extends CI_Controller {
             $result = $this->Loginm->validate_user($_POST);
             if(!empty($result)) {
                 $id = $result->roleId;
+                echo $id;
                 $role= $this->Loginm->get_userole($id);
-                //print_r($role);
-                $data = [
 
+                $data = [
                     'username' => $result->userTitle,
                     'id'=>$result->userId,
                     'type'=>$role->roleName,
                     'loggedin'=>"true",
-
                 ];
                 $this->session->set_userdata($data);
                 if ($this->session->userdata('type') == "Admin"){
+
                     redirect('Welcome');
+                }else {
+
                 }
             }
-            else{
-                echo "<script>
-                        alert('wrong username or password');
-                     window.location.href= '" . base_url() . "Login';  
-					
-                    </script>";
-            }
         }
-
     }
     public function logout(){
-
         $this->session->sess_destroy();
         redirect('Login');
-
     }
 }
