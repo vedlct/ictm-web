@@ -49,19 +49,31 @@
 
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuType">Menu Type <span class="required">*</span></label>
+<!--                                        <div class="col-lg-10">-->
+<!---->
+<!--                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>-->
+<!--                                                <option selected>--><?php //echo $menu->menuType?><!--</option>-->
+<!--                                                <option>Select Menu Type</option>-->
+<!--                                                <option>Top</option>-->
+<!--                                                <option>MainMenu</option>-->
+<!--                                                <option>KeyInfo</option>-->
+<!--                                                <option>QuickLink</option>-->
+<!--                                                <option>ImportantLink</option>-->
+<!--                                                <option>Bottom</option>-->
+<!--                                            </select>-->
+<!---->
+<!--                                        </div>-->
                                         <div class="col-lg-10">
-
-                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
-                                                <option selected><?php echo $menu->menuType?></option>
+                                            <select class="form-control m-bot15" name="menuType" id="menuType" onclick="selectid(this)"required>
                                                 <option>Select Menu Type</option>
-                                                <option>Top</option>
-                                                <option>MainMenu</option>
-                                                <option>KeyInfo</option>
-                                                <option>QuickLink</option>
-                                                <option>ImportantLink</option>
-                                                <option>Bottom</option>
-                                            </select>
+                                                <option value="Top" <?php if (!empty($menu->menuType) && $menu->menuType == 'Top')  echo 'selected = "selected"'; ?>>Top</option>
+                                                <option value="MainMenu" <?php if (!empty($menu->menuType) && $menu->menuType == 'MainMenu')  echo 'selected = "selected"'; ?>>MainMenu</option>
+                                                <option value="KeyInfo" <?php if (!empty($menu->menuType) && $menu->menuType == 'KeyInfo')  echo 'selected = "selected"'; ?>>KeyInfo</option>
+                                                <option value="QuickLink" <?php if (!empty($menu->menuType) && $menu->menuType == 'QuickLink')  echo 'selected = "selected"'; ?>>QuickLink</option>
+                                                <option value="ImportantLink" <?php if (!empty($menu->menuType) && $menu->menuType == 'ImportantLink')  echo 'selected = "selected"'; ?>>ImportantLink</option>
+                                                <option value="Bottom" <?php if (!empty($menu->menuType) && $menu->menuType == 'Bottom')  echo 'selected = "selected"'; ?>>Bottom</option>
 
+                                            </select>
                                         </div>
                                     </div>
 
@@ -72,13 +84,15 @@
                                                 <?php if ($menu->parentId=="")
                                                 {
                                                     echo "<option  selected>Menu</option>";
-                                                }else{
+                                                }
+												else{
                                                     $p_id=$menu->parentId;
                                                     $query=$this->db->query("select menuName from ictmmenu WHERE `menuId`= '$p_id'");
-                                                    foreach ($query->result() as $r ){$mName=$r->menuName;}
-                                                    echo "<option value='$p_id' selected>$mName</option>";
-                                                }
-                                                ?>
+                                                    foreach ($query->result() as $r ){$mName=$r->menuName;}?>
+                                                    
+													<option value="<?php echo $menu->parentId?>" <?php if (!empty($menu->parentId) && $menu->parentId == $p_id)  echo 'selected = "selected"'; ?>><?php echo $mName?></option>       
+													
+                                                <?php }?>
 
                                             </select>
 
@@ -89,34 +103,47 @@
                                         <label class="control-label col-lg-2" for="pageId">Page</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="pageId" id="pageId">
-                                                <option >Select Page </option>
+
                                                 <?php if ($menu->pageId=="")
                                                 {
-                                                    echo "<option value='Select Page' selected>None</option>";
-                                                }else{
-                                                    $pa_id=$menu->pageId;
-                                                    $query=$this->db->query("select pageTitle from ictmpage WHERE `pageId`= '$pa_id'");
-                                                    foreach ($query->result() as $p ){$paTitle=$p->pageTitle;}
-                                                    echo "<option value='$pa_id' selected>$paTitle</option>";
-                                                }
+                                                    echo "<option selected>None</option>";
+
                                                 ?>
                                                 <?php foreach ($page as $page){?>
 
-                                                    <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
-                                                <?php }?>
+                                                 <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
+
+                                                <?php }} else{
+                                                    $pa_id=$menu->pageId;
+//                                                    $query=$this->db->query("select pageTitle from ictmpage WHERE `pageId`= '$pa_id'");
+//                                                    foreach ($query->result() as $p ){$paTitle=$p->pageTitle;}
+                                                    //echo "<option value='$pa_id' selected>$paTitle</option>";
+
+                                                ?>
+                                                    <option>None</option>
+                                                <?php foreach ($page as $page){?>
+
+                                                    <option value="<?php echo $page->pageId?>" <?php if (!empty($page->pageId) && $page->pageId == $pa_id)  echo 'selected = "selected"'; ?>><?php echo $page->pageTitle?></option>
+                                                <?php }}?>
                                             </select>
 
 
                                         </div>
+
+
+
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuStatus">Menu Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
-                                                <option selected><?php echo $menu->menuStatus?></option>
+<!--                                                <option selected>--><?php //echo $menu->menuStatus?><!--</option>-->
                                                 <option >Select Status</option>
-                                                <option >Active</option>
-                                                <option >InActive</option>
+<!--                                                <option >Active</option>-->
+<!--                                                <option >InActive</option>-->
+                                                <option value="Active" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == 'Active')  echo 'selected = "selected"'; ?>>Active</option>
+                                                <option value="InActive" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == 'InActive')  echo 'selected = "selected"'; ?>>InActive</option>
+
                                             </select>
 
 
@@ -160,6 +187,7 @@
 </html>
 <script>
 
+
     function selectid(x) {
 
         var btn =  document.getElementById("menuType").value;
@@ -178,8 +206,9 @@
                 cache: false,
                 success:function(data) {
 
-                    document.getElementById("menuId").innerHTML = data;
+                    //document.getElementById("menuId").innerHTML = data;
                     //alert(data);
+					$('#menuId').append(data);
 
 
                 }
