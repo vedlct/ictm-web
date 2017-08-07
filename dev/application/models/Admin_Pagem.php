@@ -92,4 +92,9 @@ public function insertPage() {
         $this->db->update('ictmpage',$data);
 
     }
+
+    public function insertPageSection(){
+
+
+    }
 }
