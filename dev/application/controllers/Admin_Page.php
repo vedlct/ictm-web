@@ -54,13 +54,8 @@ class Admin_Page extends CI_Controller {
 
     public function insertPageSection(){
 
-       // $this->Admin_pagem->insertPageSection();                // insert page section
-        extract($_POST);
-
-        for ($i = 0; $i < count($textbox); $i++) {
-            echo $textbox[$i] . "<br>";
-            echo $text[$i] . "<br>";
-        }
+        $this->Admin_pagem->insertPageSection();                // insert page section
+       redirect('Admin_Page/createPageSection');
 
     }
     public function managePageSection() {

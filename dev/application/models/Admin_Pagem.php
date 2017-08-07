@@ -95,6 +95,22 @@ public function insertPage() {
 
     public function insertPageSection(){
 
+        $pagetitle = $this->input->post("pagetitle");
+        extract($_POST);
 
+        for ($i = 0; $i < count($textbox); $i++) {
+
+            $image= $_FILES["textimage"]["name"];
+            move_uploaded_file($_FILES["textimage"]["tmp_name"], "images/" . $image);
+
+            $data = array(
+                'pageId' => $pagetitle,
+                'pageSectionTitle' => $textbox[$i],
+                'pageSectionContent' => $text[$i],
+                'pageSectionImage' => $textimage[$i]
+
+            );
+            $this->db->insert('ictmpagesection', $data);
+        }
     }
 }

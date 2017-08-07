@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50e56998-553e-48f2-8b4d-b12bead2de3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/routes.php" afterPath="$PROJECT_DIR$/dev/application/config/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newPageSection.php" afterPath="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/sidebar.php" afterPath="$PROJECT_DIR$/dev/application/views/sidebar.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,8 +42,8 @@
       <file leaf-file-name="Admin_Page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+            <state relative-caret-position="621">
+              <caret line="57" column="48" lean-forward="false" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -55,28 +52,8 @@
       <file leaf-file-name="newPageSection.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="141" column="8" lean-forward="false" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ckeditor.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/ckeditor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11804">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="149" column="109" lean-forward="false" selection-start-line="149" selection-start-column="109" selection-end-line="149" selection-end-column="109" />
               <folding />
             </state>
           </provider>
@@ -105,8 +82,8 @@
       <file leaf-file-name="Admin_Pagem.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="33" />
+            <state relative-caret-position="585">
+              <caret line="102" column="38" lean-forward="false" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -136,8 +113,8 @@
         <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
         <option value="$PROJECT_DIR$/dev/application/views/sidebar.php" />
         <option value="$PROJECT_DIR$/dev/application/views/managePage.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
+        <option value="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
         <option value="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
       </list>
     </option>
@@ -317,12 +294,12 @@
       <workItem from="1501915806661" duration="339000" />
       <workItem from="1501916794958" duration="10060000" />
       <workItem from="1501999414492" duration="11929000" />
-      <workItem from="1502089681389" duration="8072000" />
+      <workItem from="1502089681389" duration="13143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30400000" />
+    <option name="totallyTimeSpent" value="35471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
@@ -596,30 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="32" column="33" lean-forward="false" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="92" column="22" lean-forward="false" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/ckeditor.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11804">
@@ -636,10 +589,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="92" column="22" lean-forward="false" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="57" column="48" lean-forward="false" selection-start-line="57" selection-start-column="48" selection-end-line="57" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="102" column="38" lean-forward="false" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="141" column="8" lean-forward="false" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
+        <state relative-caret-position="522">
+          <caret line="149" column="109" lean-forward="false" selection-start-line="149" selection-start-column="109" selection-end-line="149" selection-end-column="109" />
           <folding />
         </state>
       </provider>

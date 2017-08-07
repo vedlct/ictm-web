@@ -41,10 +41,10 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
+                                            <select class="form-control m-bot15" name="pagetitle">
                                                 <option>Select Page</option>
                                                <?php foreach ($pagename as $pg) { ?>
-                                                   <option><?php echo $pg->pageTitle?></option>
+                                                   <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
                                                    <?php
                                                }
                                                 ?>
@@ -67,7 +67,7 @@
                                             </div>
                                                 <label class="control-label col-lg-2">Image #1 : </label>
                                             <div class="col-lg-10 form-group">
-                                            <input class="form-control" type='file' id='textserial1' name="textserial[]">
+                                            <input class="form-control" type='file' id='textserial1' name="textimage[]">
                                             </div>
                                             </div>
                                     </div>
@@ -139,19 +139,19 @@
                 alert("Only 10 textboxes allow");
                 return false;
             }
-        
+
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' : </label>' +
                 '<div class="col-lg-10 form-group">'+'<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<textarea class="form-control ckeditor" rows="6" name="textimage[]' + counter +
+                '<div class="col-lg-10 form-group">'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
                  + counter + '" value="" ></textarea>'+'</div>' + '<label class="control-label col-lg-2">Image #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<input class="form-control" type="file" name="textserial[]' + counter +
+                '<div class="col-lg-10 form-group">'+'<input class="form-control" type="file" name="textimage[]' + counter +
                 '" id="textimage' + counter + '" value="" >'+'</div>'+'<br>'
             );
             newTextBoxDiv.appendTo("#TextBoxesGroup");
-
+            CKEDITOR.replace( 'replace_element_' + counter );
 
             counter++;
         });
