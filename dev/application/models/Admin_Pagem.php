@@ -18,13 +18,11 @@ public function insertPage() {
         'pageKeywords' => $keywords,
         'pageMetaData' => $metadata,
         'pageContent' => $content,
-
         'pageImage' =>$image,
         'pageType' => $pagetype,
         'pageStatus' => $status,
 
-        'pageType' => $pagetype,
-        'pageStatus' => $status,
+
 
 
     );
