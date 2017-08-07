@@ -59,7 +59,7 @@
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn" href="<?php echo base_url()?>Admin_page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn" href="<?php echo base_url()?>editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
                                         <a class="btn " href="#"><i class="icon_trash"></i></a>
                                     </div>
                                 </td>
