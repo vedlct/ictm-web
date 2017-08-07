@@ -82,6 +82,12 @@
                                 </td>
 
                                 <td>
+                                    <?php if ($menu->lastModifiedBy==""){
+
+                                    }?>
+                                    <?php $lastmodified =$menu->lastModifiedBy;
+                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$lastmodified'");
+                                    foreach ($query->result() as $tytle ){$name=$tytle->userTitle;} echo $name;?>
 
                                 </td>
 
@@ -94,7 +100,7 @@
 
                                     <div class="btn-group">
                                         <a class="btn" href="<?php echo base_url("Admin_Menu/editMenuView/")?><?php echo $menu->menuId ?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn" data-panel-id="<?php echo $menu->menuId ?>" onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                        <a class="btn" data-panel-id="<?php echo $menu->menuId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                     </div>
                                 </td>
 
@@ -134,22 +140,24 @@
 
     function selectid(x) {
 
-        btn = $(x).data('panel-id');
-        //alert(btn9);
+        if (confirm('Are you sure you want to delete this Menu ?')) {
+            btn = $(x).data('panel-id');
 
-        $.ajax({
-            type:'POST',
-            url:'<?php echo base_url("Admin_Menu/deleteMenu/")?>'+btn,
-            data:{'menuid':btn},
-            cache: false,
-            success:function(data) {
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin_Menu/deleteMenu/")?>'+btn,
+                data:{'menuid':btn},
+                cache: false,
+                success:function(data) {
 
-                alert("Menu Deleted Successfully!!");
-                location.reload();
+                    alert("Menu Deleted Successfully!!");
+                    location.reload();
+                }
+
+            });
+        }
+        else {
+                window.location="<?php echo base_url()?>Admin_Menu/ManageMenu";
             }
-
-        });
-
-
     }
 </script>

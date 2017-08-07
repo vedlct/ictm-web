@@ -64,7 +64,7 @@
 <!---->
 <!--                                        </div>-->
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuType" id="menuType" onclick="selectid(this)"required>
+                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)"required>
                                                 <option>Select Menu Type</option>
                                                 <option value="Top" <?php if (!empty($menu->menuType) && $menu->menuType == 'Top')  echo 'selected = "selected"'; ?>>Top</option>
                                                 <option value="MainMenu" <?php if (!empty($menu->menuType) && $menu->menuType == 'MainMenu')  echo 'selected = "selected"'; ?>>MainMenu</option>
@@ -78,19 +78,20 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu <span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu </label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuId" id="menuId" required>
+                                            <select class="form-control m-bot15" name="menuId" id="menuId" >
                                                 <?php if ($menu->parentId=="")
                                                 {
                                                     echo "<option  selected>Menu</option>";
                                                 }
-												else{
+												else
+												    {
                                                     $p_id=$menu->parentId;
                                                     $query=$this->db->query("select menuName from ictmmenu WHERE `menuId`= '$p_id'");
                                                     foreach ($query->result() as $r ){$mName=$r->menuName;}?>
                                                     
-													<option value="<?php echo $menu->parentId?>" <?php if (!empty($menu->parentId) && $menu->parentId == $p_id)  echo 'selected = "selected"'; ?>><?php echo $mName?></option>       
+													<option value="<?php echo $menu->parentId?>" <?php if (!empty($menu->parentId) && $menu->parentId == $p_id)  echo 'selected = "selected"'; ?>><?php echo $mName?></option>
 													
                                                 <?php }?>
 
@@ -206,10 +207,7 @@
                 cache: false,
                 success:function(data) {
 
-                    //document.getElementById("menuId").innerHTML = data;
-                    //alert(data);
-					$('#menuId').append(data);
-
+                    document.getElementById("menuId").innerHTML = data;
 
                 }
 

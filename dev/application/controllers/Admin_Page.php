@@ -43,4 +43,16 @@ class Admin_Page extends CI_Controller {
         $this->Admin_pagem->updatePagaData($id);
         redirect('Admin_Page/managePage');
     }
+
+    public function deletePage($pageId)    // delete Page
+    {
+        if ($this->session->userdata('type') == "Admin") {
+
+           $this->Admin_pagem->deletePagebyId($pageId);
+            //echo $pageId;
+        }
+        else{
+            redirect('Login');
+        }
+    }
 }

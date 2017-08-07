@@ -39,6 +39,13 @@ class Login extends CI_Controller {
                     redirect('Welcome');
                 }
             }
+            else{
+                echo "<script>
+                        alert('wrong username or password');
+                     window.location.href= '" . base_url() . "Login';  
+					
+                    </script>";
+            }
         }
 
     }

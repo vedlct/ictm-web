@@ -23,9 +23,6 @@ public function insertPage() {
         'pageType' => $pagetype,
         'pageStatus' => $status,
 
-        'pageType' => $pagetype,
-        'pageStatus' => $status,
-
 
     );
     //$data = $this->security->xss_clean($data);
@@ -92,6 +89,23 @@ public function insertPage() {
         }
         $this->db->where('pageId',$id);
         $this->db->update('ictmpage',$data);
+
+    }
+
+    public function deletePagebyId($pageId)
+    {
+
+//            $this->db->select('m.pageId,p.*');
+//            $this->db->from('ictmmenu m');
+//            $this->db->join('ictmpage p', 'p.pageId = m.pageId');
+//
+//                $this->db->where('pageId',$pageId);
+////                $this->db->update('ictmmenu',$data);
+//                $this->db->delete('ictmpage');
+
+        $this->db->where('ictmpage.pageId=ictmmenu.pageId');
+        $this->db->where('pageId', $pageId);
+        $this->db->delete('ictmpage,ictmmenu');
 
     }
 }

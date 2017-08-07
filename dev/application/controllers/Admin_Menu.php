@@ -109,8 +109,13 @@ class Admin_Menu extends CI_Controller {
     public function editMenu($id) // for edit menu from database
     {
         if ($this->session->userdata('type') == "Admin") {
+
             $this->data['edit_menu_by_id'] = $this->Admin_Menum->editMenubyId($id);
-            redirect('Admin_Menu/ManageMenu');
+            echo "<script>
+                    alert('Menu Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin_Menu/ManageMenu';
+                    </script>";
+            //redirect('Admin_Menu/ManageMenu');
         }
         else{
             redirect('Login');
