@@ -12,36 +12,68 @@ class Admin_Page extends CI_Controller {
     }
     public function index()
     {
-        $this->load->view('home');
+        if ($this->session->userdata('type') == "Admin") {
+            $this->load->view('home');
+        }
+        else{
+            redirect('Login');
+        }
     }
 
     public function CreatePage()
     {
-        $this->load->view('newPage');
+        if ($this->session->userdata('type') == "Admin") {
+            $this->load->view('newPage');
+        }
+        else{
+            redirect('Login');
+        }
     }
 
-    public function insertPage(){
+    public function insertPage()
+    {
+        if ($this->session->userdata('type') == "Admin") {
 
-        $this->Admin_pagem->insertPage();
-        redirect('Admin_page/CreatePage');
+            $this->Admin_pagem->insertPage();
+            redirect('Admin_page/CreatePage');
+        }
+        else{
+            redirect('Login');
+        }
     }
 
-    public function managePage(){
-
-        $this->data['pageData'] = $this->Admin_pagem->get_pagaData();
-        $this->load->view('managePage', $this->data);
+    public function managePage()
+    {
+        if ($this->session->userdata('type') == "Admin") {
+            $this->data['pageData'] = $this->Admin_pagem->get_pagaData();
+            $this->load->view('managePage', $this->data);
+        }
+        else{
+            redirect('Login');
+        }
     }
 
-    public function editPageShow($id){
+    public function editPageShow($id)
+    {
 
-        $this->data['editPageData'] = $this->Admin_pagem->get_editPagaData($id);
-        $this->load->view('editPage', $this->data);
+        if ($this->session->userdata('type') == "Admin") {
+            $this->data['editPageData'] = $this->Admin_pagem->get_editPagaData($id);
+            $this->load->view('editPage', $this->data);
 
+        }
+        else{
+            redirect('Login');
+        }
     }
-    public function editPage($id){
-
-        $this->Admin_pagem->updatePagaData($id);
-        redirect('Admin_Page/managePage');
+    public function editPage($id)
+    {
+        if ($this->session->userdata('type') == "Admin") {
+            $this->Admin_pagem->updatePagaData($id);
+            redirect('Admin_Page/managePage');
+        }
+        else{
+            redirect('Login');
+        }
     }
 
 
@@ -59,22 +91,35 @@ class Admin_Page extends CI_Controller {
 
     /////////PageSection///////////////
 
-    public function createPageSection() {
+    public function createPageSection()
+    {
+        if ($this->session->userdata('type') == "Admin") {
 
-        $this->data['pagename'] = $this->Admin_pagem->getPageIdName();
-        $this->load->view('newPageSection', $this->data);                    //view create page section
+            $this->data['pagename'] = $this->Admin_pagem->getPageIdName();
+            $this->load->view('newPageSection', $this->data);                    //view create page section
+        }
+        else{
+            redirect('Login');
+        }
     }
 
-    public function insertPageSection(){
+    public function insertPageSection()
+    {
 
-       // $this->Admin_pagem->insertPageSection();                // insert page section
-        extract($_POST);
+        if ($this->session->userdata('type') == "Admin") {
 
-        for ($i = 0; $i < count($textbox); $i++) {
-            echo $textbox[$i] . "<br>";
-            echo $text[$i] . "<br>";
+            // $this->Admin_pagem->insertPageSection();                // insert page section
+            extract($_POST);
+
+            for ($i = 0; $i < count($textbox); $i++) {
+                echo $textbox[$i] . "<br>";
+                echo $text[$i] . "<br>";
+            }
+
         }
-
+        else{
+            redirect('Login');
+        }
     }
     public function managePageSection() {
 

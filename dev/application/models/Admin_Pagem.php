@@ -22,6 +22,8 @@ class Admin_Pagem extends CI_Model
             'pageImage' => $image,
             'pageType' => $pagetype,
             'pageStatus' => $status,
+            'insertedBy'=>$this->session->userdata('id'),
+            'lastModifiedBy'=>$this->session->userdata('id')
 
 
         );
@@ -63,6 +65,7 @@ class Admin_Pagem extends CI_Model
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
+        date_default_timezone_set("Europe/London");
 
         if ($image != null) {
 
@@ -76,6 +79,7 @@ class Admin_Pagem extends CI_Model
                 'pageImage' => $image,
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
+                'lastModifiedBy'=>$this->session->userdata('id')
 
             );
 
@@ -87,6 +91,8 @@ class Admin_Pagem extends CI_Model
                 'pageContent' => $content,
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
+                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
 
             );
 
@@ -103,10 +109,14 @@ class Admin_Pagem extends CI_Model
 //            $this->db->select('m.pageId,p.*');
 //            $this->db->from('ictmmenu m');
 //            $this->db->join('ictmpage p', 'p.pageId = m.pageId');
+//              $this->db->update('ictmmenu',$data);
 //
-//                $this->db->where('pageId',$pageId);
-////                $this->db->update('ictmmenu',$data);
-//                $this->db->delete('ictmpage');
+                $this->db->where('pageId',$pageId);
+                $this->db->delete('ictmmenu');
+
+                $this->db->where('pageId',$pageId);
+                $this->db->delete('ictmpage');
+
 
     }
 
