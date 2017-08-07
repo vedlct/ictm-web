@@ -7,17 +7,20 @@
   <body class="login-img3-body">
 
     <div class="container">
-        <div align="center"><font color='RED'><?php echo validation_errors(); ?></font></div>
+
       <form class="login-form" method="post" action="<?php echo base_url()?>Login/check_user">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <p><font color="red"> <?php echo form_error('username'); ?></font></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="Username" name="username" autofocus >
+              <input type="text" class="form-control" placeholder="Username" name="username" autofocus required >
+
             </div>
+            <p><font color="red"> <?php echo form_error('password'); ?></font></p>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" placeholder="Password" name="password">
+                <input type="password" class="form-control" placeholder="Password" name="password" required>
             </div>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
