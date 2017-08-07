@@ -59,8 +59,10 @@
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
                                     <div class="btn-group">
-                                        <a class="btn" href="<?php echo base_url()?>editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
+
+                                        <a class="btn" href="<?php echo base_url()?>Admin_page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn " data-panel-id="<?php echo $pd->pageId?>"  onclick="selectid(this)"  href="#"><i class="icon_trash"></i></a>
+
                                     </div>
                                 </td>
                             </tr>
@@ -76,22 +78,48 @@
         </section>
     </section>
     <!--main content end-->
-    <div class="text-right">
+
+    <div class="text-right wrapper">
         <div class="credits">
-            <!--
-                All the links in the footer should remain intact.
-                You can delete the links only if you purchased the pro version.
-                Licensing information: https://bootstrapmade.com/license/
-                Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-            -->
             <a href="#">Icon College</a> by <a href="#">A2N</a>
         </div>
     </div>
+
 </section>
 <!-- container section end -->
 <!-- javascripts -->
+
 <?php include ('js.php')?>
 
 
 </body>
 </html>
+
+<script>
+
+    function selectid(x) {
+
+        if (confirm('Are you sure you want to delete this Page ?')) {
+
+            btn = $(x).data('panel-id');
+            //alert(btn);
+
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin_Page/deletePage/")?>'+btn,
+                data:{'pageid':btn},
+                cache: false,
+                success:function(data) {
+
+                    alert("Page Deleted Successfully!!");
+                    location.reload();
+                    //alert(data);
+                }
+
+            });
+        }
+        else {
+            window.location="<?php echo base_url()?>Admin_Page/managePage";
+        }
+    }
+</script>

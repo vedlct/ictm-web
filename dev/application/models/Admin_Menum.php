@@ -25,6 +25,8 @@ class Admin_Menum extends CI_Model
             'parentId' => $menuId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
+            'lastModifiedBy'=>$this->session->userdata('id'),
+            'insertedBy'=>$this->session->userdata('id')
 
 
         );
@@ -41,9 +43,10 @@ class Admin_Menum extends CI_Model
 
     public function getAllforManageMenu()
     {
-//        $this->db->select('m.*,p.pageTitle');
+//        $this->db->select('m.*,u.userTitle as userName');
 //        $this->db->from('ictmmenu m');
-//        $this->db->join('ictmpage p', 'p.pageId = m.pageId');
+//        $this->db->join('ictmusers u', 'u.roleId = m.lastModifiedBy');
+//
 //        $query = $this->db->get();
 //        return $query->result();
 
@@ -64,6 +67,7 @@ class Admin_Menum extends CI_Model
         $menuId = $this->input->post("menuId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
+
         if ($menuId == "New Menu" || $menuId == "Menu")
         {
             $menuId =null;
@@ -80,7 +84,8 @@ class Admin_Menum extends CI_Model
             'parentId' => $menuId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
-            'lastModifiedDate'=>date("Y-m-d H:i:s")
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+            'lastModifiedBy'=>$this->session->userdata('id')
 
 
         );
