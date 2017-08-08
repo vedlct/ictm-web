@@ -39,6 +39,10 @@ class Login extends CI_Controller {
 
                 }
             }
+            echo "<script>
+                    alert(' Wrong UserName and Password !! ');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
         }
     }
     public function logout(){

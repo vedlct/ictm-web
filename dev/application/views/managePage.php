@@ -61,7 +61,7 @@
                                     <div class="btn-group">
 
                                         <a class="btn" href="<?php echo base_url()?>editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
+                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
 
                                     </div>
                                 </td>
