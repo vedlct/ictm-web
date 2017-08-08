@@ -15,8 +15,6 @@ class Loginm extends CI_Model {
     }
     public function get_userole($id)
     {
-
-
         $this->db->where('roleId', $id);
         $this->db->where('roleStatus', 'Active');
         return $this->db->get('ictmrole')->row();

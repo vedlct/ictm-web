@@ -36,85 +36,20 @@
                         </header>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="control-label col-lg-2" for="inputSuccess">Page</label>
+                                <label class="control-label col-lg-1" for="inputSuccess">Page Title</label>
                                 <div class="col-lg-10">
-                                    <select class="form-control m-bot15" name="level" onchange="showtable()">
+                                    <select class="form-control m-bot15" id="pagename" name="pagetitle" onchange="showtable()">
                                         <option>Select Page</option>
-                                        <option>About </option>
-                                        <option>Health</option>
-                                        <option>College Life</option>
-                                        <option>Addmission</option>
+                                       <?php foreach ($pagename as $pn) { ?>
+                                           <option value="<?php echo $pn->pageId?>"><?php echo $pn->pageTitle?></option>
+                                           <?php
+                                       }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
                             <div id="tableid" style="display: none">
-                                <table class="table table-striped table-advance table-bordered table-hover ">
-                                    <tbody>
-                                    <tr>
-                                        <th> Page Section Title </th>
-                                        <th> Action</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Angeline Mcclain</td>
 
-                                        <td>
-                                            <div class="btn-group">
-                                                <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Sung Carlson</td>
-
-
-
-                                        <td>
-                                            <div class="btn-group">
-                                                <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bryon Osborne</td>
-
-
-
-                                        <td>
-                                            <div class="btn-group">
-                                                <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dalia Marquez</td>
-
-
-
-                                        <td>
-                                            <div class="btn-group">
-                                                <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Selina Fitzgerald</td>
-
-
-
-                                        <td>
-                                            <div class="btn-group">
-                                                <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    </tbody>
-                                </table>
                             </div>
                     </section>
                 </div>
@@ -137,16 +72,23 @@
 </section>
 <!-- container section end -->
 <!-- javascripts -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<!-- nicescroll -->
-<script src="js/jquery.scrollTo.min.js"></script>
-<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-<!--custome script for all page-->
-<script src="js/scripts.js"></script>
+<?php include ('js.php') ?>
 
 <script>
     function showtable() {
+      var x = document.getElementById('pagename').value;
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin_Page/showPageSecManageTable")?>',
+            data:{id:x},
+            cache: false,
+            success:function(data)
+            {
+                $('#tableid').html(data);
+            }
+        });
 
         document.getElementById("tableid").style.display ="block";
     }

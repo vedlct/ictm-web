@@ -143,5 +143,11 @@ class Admin_Pagem extends CI_Model
         }
     }
 
+    public function get_pageSecdata($id){
+        $this->db->where('pageId', $id);
+        $query = $this->db->get('ictmpagesection');
+        return $query->result();
+    }
+
 }
 

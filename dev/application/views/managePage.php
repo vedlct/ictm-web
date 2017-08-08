@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i> Menu</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>">Home</a></li>
                         <li><i class="fa fa-table"></i>Page</li>
                         <li><i class="fa fa-th-list"></i>Manage Page</li>
                     </ol>
@@ -60,8 +60,8 @@
                                 <td>
                                     <div class="btn-group">
 
-                                        <a class="btn" href="<?php echo base_url()?>Admin_page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " data-panel-id="<?php echo $pd->pageId?>"  onclick="selectid(this)"  href="#"><i class="icon_trash"></i></a>
+                                        <a class="btn" href="<?php echo base_url()?>editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
 
                                     </div>
                                 </td>
@@ -90,7 +90,6 @@
 <!-- javascripts -->
 
 <?php include ('js.php')?>
-
 
 </body>
 </html>
