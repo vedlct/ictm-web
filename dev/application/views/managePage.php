@@ -98,7 +98,7 @@
 
     function selectid(x) {
 
-        if (confirm('Are you sure you want to delete this Page ?')) {
+        if (confirm('Are you sure !! All The Menu & Page Section related to this Will be Deleted !! ?')) {
 
             btn = $(x).data('panel-id');
             //alert(btn);

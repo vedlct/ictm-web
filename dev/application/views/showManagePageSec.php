@@ -12,7 +12,7 @@
             <td>
                 <div class="btn-group">
                     <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                    <a class="btn " href="#"><i class="icon_trash"></i></a>
+                    <a class="btn "data-panel-id="<?php echo $pg->pageSectionId ?>"onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                 </div>
             </td>
         </tr>
@@ -23,3 +23,24 @@
 
     </tbody>
 </table>
+<script>
+    function selectid(x) {
+        if (confirm('Are you sure you want to delete this Page Section !! ?')) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin_Page/deletePageSection/")?>'+btn,
+                data:{'pageId':btn},
+                cache: false,
+                success:function(data) {
+                    alert("Page Section Deleted Successfully!!");
+                    location.reload();
+                }
+            });
+        }
+        else {
+
+            location.reload();
+        }
+    }
+</script>

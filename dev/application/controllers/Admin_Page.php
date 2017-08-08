@@ -143,5 +143,17 @@ class Admin_Page extends CI_Controller {
 
     }
 
+    public function deletePageSection($pageSectionId)    // delete Page Section
+    {
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->Admin_pagem->deletePageSectionbyId($pageSectionId);
+            //echo $pageId;
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
 
 }
