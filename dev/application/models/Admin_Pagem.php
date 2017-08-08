@@ -79,7 +79,8 @@ class Admin_Pagem extends CI_Model
                 'pageImage' => $image,
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
-                'lastModifiedBy'=>$this->session->userdata('id')
+                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
 
             );
 
@@ -111,6 +112,10 @@ class Admin_Pagem extends CI_Model
 //            $this->db->join('ictmpage p', 'p.pageId = m.pageId');
 //              $this->db->update('ictmmenu',$data);
 //
+
+                $this->db->where('pageId',$pageId);
+                $this->db->delete('ictmpagesection');
+
                 $this->db->where('pageId',$pageId);
                 $this->db->delete('ictmmenu');
 
@@ -136,7 +141,8 @@ class Admin_Pagem extends CI_Model
                 'pageId' => $pagetitle,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
-                'pageSectionImage' => $textimage[$i]
+                'pageSectionImage' => $textimage[$i],
+                'insertedBy'=>$this->session->userdata('id'),
 
             );
             $this->db->insert('ictmpagesection', $data);

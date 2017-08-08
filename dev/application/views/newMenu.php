@@ -66,7 +66,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu <span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu </label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuId" id="menuId" required>

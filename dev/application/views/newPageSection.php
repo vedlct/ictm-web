@@ -63,7 +63,7 @@
                                             </div>
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-sm-10 form-group">
-                                                <textarea class="form-control ckeditor"  name="text[]" rows="6"></textarea>
+                                                <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
                                             </div>
                                                 <label class="control-label col-lg-2">Image #1 : </label>
                                             <div class="col-lg-10 form-group">
@@ -120,17 +120,6 @@
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
-<!--<script>-->
-<!--    CKEDITOR.replace( 'ckeditor', {-->
-<!--        -->
-<!---->
-<!--        // Configure your file manager integration. This example uses CKFinder 3 for PHP.-->
-<!--        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',-->
-<!--        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',-->
-<!--        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',-->
-<!--        filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'-->
-<!--    } );-->
-<!--</script>-->
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -183,14 +172,6 @@
     }
 </script>
 
-<!--<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">-->
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>-->
-<!---->
-<!--<script>-->
-<!--    $(document).ready(function() {-->
-<!--        $('.summernote').summernote();-->
-<!--    });-->
-<!--</script>-->
 
 </body>
 </html>
