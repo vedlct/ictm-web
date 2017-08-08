@@ -53,8 +53,20 @@
                             <tr>
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
-                                <td><?php echo $pd->insertedBy?></td>
-                                <td><?php echo $pd->lastModifiedBy?></td>
+                                <td>
+                                    <?php
+                                    $insert=$pd->insertedBy;
+                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$insert'");
+                                    foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $lastModified=$pd->lastModifiedBy;
+                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$lastModified'");
+                                    foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
+                                    ?>
+                                </td>
                                 <td><?php echo $pd->lastModifiedDate?></td>
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
@@ -98,7 +110,7 @@
 
     function selectid(x) {
 
-        if (confirm('Are you sure you want to delete this Page ?')) {
+        if (confirm('Are you sure !! All The Menu & Page Section related to this Will be Deleted !! ?')) {
 
             btn = $(x).data('panel-id');
             //alert(btn);

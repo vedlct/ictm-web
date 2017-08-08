@@ -75,9 +75,11 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="status">
-                                                <option selected><?php echo $epd->pageStatus?></option>
-                                                <option>Active</option>
-                                                <option>InActive</option>
+<!--                                                <option selected>--><?php //echo $epd->pageStatus?><!--</option>-->
+<!--                                                <option>Active</option>-->
+<!--                                                <option>InActive</option>-->
+                                                <option value="Active" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'Active')  echo 'selected = "selected"'; ?>>Active</option>
+                                                <option value="InActive" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'InActive')  echo 'selected = "selected"'; ?>>InActive</option>
                                             </select>
                                         </div>
                                     </div>

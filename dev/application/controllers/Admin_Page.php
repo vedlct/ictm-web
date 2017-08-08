@@ -146,8 +146,8 @@ class Admin_Page extends CI_Controller {
 
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->data['pagesecdata'] = $this->Admin_pagem->get_pageSecdataBySecId($id);
-            $this->load->view('editPageSection', $this->data);                 //view edit page section
+            $this->Admin_pagem->updatePagaSectionData($id);
+            redirect('Admin_Page/managePageSection');                                                                      // edit page section
 
         } else{
             redirect('Login');
@@ -166,6 +166,18 @@ class Admin_Page extends CI_Controller {
             redirect('Login');
         }
 
+    }
+
+    public function deletePageSection($pageSectionId)    // delete Page Section
+    {
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->Admin_pagem->deletePageSectionbyId($pageSectionId);
+            //echo $pageId;
+        }
+        else{
+            redirect('Login');
+        }
     }
 
 
