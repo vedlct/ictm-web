@@ -17,7 +17,9 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin_Page/CreatePage">Create a new Page</a></li>
+
                           <li><a class="" href="<?php echo base_url()?>Admin_Page/managePage"><span>Manage Page</span></a></li>
+                          <li><a class="" href="managePage.php"><span>Manage Page</span></a></li>
                       </ul>
                   </li>
 
@@ -178,4 +180,4 @@
               </ul>
               <!-- sidebar menu end-->
           </div>
-      </aside>
+</aside>

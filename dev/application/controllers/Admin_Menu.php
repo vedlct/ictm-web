@@ -19,6 +19,7 @@ class Admin_Menu extends CI_Controller {
 /*---------for creating new Menu --------------------- */
     public function NewMenu() // for new menu view
     {
+<<<<<<< HEAD
         if ($this->session->userdata('type') == "Admin") {
 
             $this->data['page'] = $this->Admin_Pagem->getPageIdName();
@@ -27,10 +28,15 @@ class Admin_Menu extends CI_Controller {
         else{
             redirect('Login');
         }
+=======
+        $this->data['page']=$this->Admin_Pagem->getPageIdName();
+        $this->load->view('newMenu',$this->data);
+>>>>>>> cbffd12b3121df84d7c484ba4106899439ff123d
     }
 
     public function getMenuLevel($menuType) // for new/sub Menu dropdown
     {
+<<<<<<< HEAD
         if ($this->session->userdata('type') == "Admin") {
             //$menuType=$this->input->post('type');
             $this->data['menuName'] = $this->Admin_Menum->getMenuName($menuType);
@@ -73,12 +79,41 @@ class Admin_Menu extends CI_Controller {
         else{
             redirect('Login');
         }
+=======
+        //$menuType=$this->input->post('type');
+        $this->data['menuName']=$this->Admin_Menum->getMenuName($menuType);
+
+        if ($this->data['menuName'] == null){
+
+            echo "<option selected>New Menu</option>";
+        }
+        else
+        {
+            echo "<option selected>New Menu</option>";
+            foreach ($this->data['menuName'] as $menuName) {
+
+                echo "<option value='$menuName->menuId'>$menuName->menuName</option>";
+            }
+        }
+
+    }
+    public function CreateNewMenu() // for insert new menu into database
+    {
+            $this->Admin_Menum->CreateNewMenu();
+            echo "<script>
+                    alert('Menu Created Successfully');
+                    window.location.href= '" . base_url() . "Admin_Menu/NewMenu';
+                    </script>";
+           // redirect('Admin_Menu/NewMenu');
+
+>>>>>>> cbffd12b3121df84d7c484ba4106899439ff123d
     }
     /*---------for creating new Menu ------end--------------- */
 
     /*---------for Manage Menu -----------------------*/
     public function ManageMenu() // for manage menu view
     {
+<<<<<<< HEAD
         if ($this->session->userdata('type') == "Admin") {
             $this->data['menu'] = $this->Admin_Menum->getAllforManageMenu();
             //print_r($this->data['menu']);
@@ -134,4 +169,11 @@ class Admin_Menu extends CI_Controller {
         }
     }
     /*---------for Manage Menu ----------end-------------*/
+=======
+        $this->data['menu']=$this->Admin_Menum->getAllforManageMenu();
+        //print_r($this->data['menu']);
+        $this->load->view('manageMenu',$this->data);
+    }
+
+>>>>>>> cbffd12b3121df84d7c484ba4106899439ff123d
 }

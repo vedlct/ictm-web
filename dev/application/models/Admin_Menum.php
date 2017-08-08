@@ -29,6 +29,8 @@ class Admin_Menum extends CI_Model
             'insertedBy'=>$this->session->userdata('id')
 
 
+
+
         );
 
         $this->db->insert('ictmmenu', $data);
@@ -43,16 +45,23 @@ class Admin_Menum extends CI_Model
 
     public function getAllforManageMenu()
     {
+
 //        $this->db->select('m.*,u.userTitle as userName');
 //        $this->db->from('ictmmenu m');
 //        $this->db->join('ictmusers u', 'u.roleId = m.lastModifiedBy');
 //
+
+//        $this->db->select('m.*,p.pageTitle');
+//        $this->db->from('ictmmenu m');
+//        $this->db->join('ictmpage p', 'p.pageId = m.pageId');
+
 //        $query = $this->db->get();
 //        return $query->result();
 
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
+
 
     public function getAllMenubyId($menuId)
     {
@@ -99,5 +108,6 @@ class Admin_Menum extends CI_Model
         $this->db->where('menuId', $menuId);
         $this->db->delete('ictmmenu');
     }
+
 
 }
