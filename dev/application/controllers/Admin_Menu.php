@@ -19,7 +19,7 @@ class Admin_Menu extends CI_Controller {
 /*---------for creating new Menu --------------------- */
     public function NewMenu() // for new menu view
     {
-<<<<<<< HEAD
+
         if ($this->session->userdata('type') == "Admin") {
 
             $this->data['page'] = $this->Admin_Pagem->getPageIdName();
@@ -28,15 +28,15 @@ class Admin_Menu extends CI_Controller {
         else{
             redirect('Login');
         }
-=======
+
         $this->data['page']=$this->Admin_Pagem->getPageIdName();
         $this->load->view('newMenu',$this->data);
->>>>>>> cbffd12b3121df84d7c484ba4106899439ff123d
+
     }
 
     public function getMenuLevel($menuType) // for new/sub Menu dropdown
     {
-<<<<<<< HEAD
+
         if ($this->session->userdata('type') == "Admin") {
             //$menuType=$this->input->post('type');
             $this->data['menuName'] = $this->Admin_Menum->getMenuName($menuType);
@@ -79,7 +79,7 @@ class Admin_Menu extends CI_Controller {
         else{
             redirect('Login');
         }
-=======
+
         //$menuType=$this->input->post('type');
         $this->data['menuName']=$this->Admin_Menum->getMenuName($menuType);
 

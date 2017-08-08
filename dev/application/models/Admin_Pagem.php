@@ -149,8 +149,49 @@ class Admin_Pagem extends CI_Model
         }
     }
 
+    public function updatePagaSectionData($id){
+
+        $title = $this->input->post("textbox");
+        $content = $this->input->post("text");
+        $image = $_FILES["textimage"]["name"];
+        date_default_timezone_set("Europe/London");
+
+        if ($image != null) {
+
+            $image = $_FILES["textimage"]["name"];
+            move_uploaded_file($_FILES["textimage"]["tmp_name"], "images/" . $image);
+            $data = array(
+                'pageSectionTitle' => $title,
+                'pageSectionContent' => $content,
+                'pageSectionImage' => $image,
+                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+            );
+
+        } else {
+            $data = array(
+                'pageSectionTitle' => $title,
+                'pageSectionContent' => $content,
+                'pageSectionImage' => $image,
+                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+            );
+
+        }
+        $this->db->where('pageSectionId', $id);
+        $this->db->update('ictmpagesection', $data);
+
+    }
+
     public function get_pageSecdata($id){
         $this->db->where('pageId', $id);
+        $query = $this->db->get('ictmpagesection');
+        return $query->result();
+    }
+
+    public function get_pageSecdataBySecId($id){
+        $this->db->where('pageSectionId', $id);
         $query = $this->db->get('ictmpagesection');
         return $query->result();
     }

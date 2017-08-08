@@ -128,6 +128,31 @@ class Admin_Page extends CI_Controller {
         }
 
     }
+    public function editPageSectionShow($id){
+
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->data['pagesecdata'] = $this->Admin_pagem->get_pageSecdataBySecId($id);
+            $this->load->view('editPageSection', $this->data);                 //view edit page section
+
+        } else{
+            redirect('Login');
+        }
+    }
+
+    public function editPageSection($id){
+
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->data['pagesecdata'] = $this->Admin_pagem->get_pageSecdataBySecId($id);
+            $this->load->view('editPageSection', $this->data);                 //view edit page section
+
+        } else{
+            redirect('Login');
+        }
+    }
 
     public function showPageSecManageTable(){
 
