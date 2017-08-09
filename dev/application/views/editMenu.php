@@ -80,7 +80,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuId">New/Sub Menu </label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuId" id="menuId" >
+                                            <select class="form-control m-bot15" name="menuId" id="menuId">
                                                 <?php if ($menu->parentId=="")
                                                 {
                                                     echo "<option  selected>Menu</option>";
@@ -218,6 +218,7 @@
 
         var title=document.getElementById("menuTitle").value;
         var menuType=document.getElementById("menuType").value;
+        var menuId=document.getElementById("menuId").value;
         var menuStatus=document.getElementById("menuStatus").value;
         if (title == null){
             alert("Please Insert a Title for Menu");
@@ -225,6 +226,10 @@
         }
         if (menuType =="Select Menu Type"){
             alert("Please Select Menu Type");
+            return false;
+        }
+        if (menuId == <?php echo $menu->menuId?>){
+            alert("!!Can't Make OWN's Sub Menu!!");
             return false;
         }
         if (menuStatus =="Select Status"){
