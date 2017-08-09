@@ -4,7 +4,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
                   <li class="active">
-                      <a class="" href="">
+                      <a class="" href="<?php echo base_url()?>Welcome">
                           <i class="icon_house_alt"></i>
                           <span>Home</span>
                       </a>

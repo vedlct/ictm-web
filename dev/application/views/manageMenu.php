@@ -31,11 +31,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
-                        <header class="panel-heading" align="center">
+                        <header class="panel-heading">
                             <b>Manage Menu</b>
                         </header>
-                        <div class="panel-body table table-responsive">
-                            <table class="table table-striped table-advance table-hover">
+                        <div class="panel-body ">
+                            <table class="table table-striped table-advance  table-bordered table-hover ">
                                 <tbody>
                                 <tr>
                                     <th> Menu Title</th>

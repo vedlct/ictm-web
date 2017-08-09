@@ -7,7 +7,8 @@ class Admin_Page extends CI_Controller {
     {
         parent::__construct();
 
-        $this->load->model('Admin_pagem');
+        $this->load->model('Admin_Pagem');
+
 
     }
     public function index()
@@ -34,7 +35,7 @@ class Admin_Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->Admin_pagem->insertPage();
+            $this->Admin_Pagem->insertPage();
             redirect('Admin_page/CreatePage');
         }
         else{
@@ -45,7 +46,7 @@ class Admin_Page extends CI_Controller {
     public function managePage()
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['pageData'] = $this->Admin_pagem->get_pagaData();
+            $this->data['pageData'] = $this->Admin_Pagem->get_pagaData();
             $this->load->view('managePage', $this->data);
         }
         else{
@@ -57,7 +58,7 @@ class Admin_Page extends CI_Controller {
     {
 
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['editPageData'] = $this->Admin_pagem->get_editPagaData($id);
+            $this->data['editPageData'] = $this->Admin_Pagem->get_editPagaData($id);
             $this->load->view('editPage', $this->data);
 
         }
@@ -68,7 +69,7 @@ class Admin_Page extends CI_Controller {
     public function editPage($id)
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->Admin_pagem->updatePagaData($id);
+            $this->Admin_Pagem->updatePagaData($id);
             redirect('Admin_Page/managePage');
         }
         else{
@@ -81,7 +82,7 @@ class Admin_Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-           $this->Admin_pagem->deletePagebyId($pageId);
+           $this->Admin_Pagem->deletePagebyId($pageId);
             //echo $pageId;
         }
         else{
@@ -95,7 +96,7 @@ class Admin_Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->data['pagename'] = $this->Admin_pagem->getPageIdName();
+            $this->data['pagename'] = $this->Admin_Pagem->getPageIdName();
             $this->load->view('newPageSection', $this->data);                    //view create page section
         }
         else{
@@ -107,7 +108,7 @@ class Admin_Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-        $this->Admin_pagem->insertPageSection();                // insert page section
+        $this->Admin_Pagem->insertPageSection();                // insert page section
        redirect('Admin_Page/createPageSection');
 
         }
@@ -120,7 +121,7 @@ class Admin_Page extends CI_Controller {
 
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->data['pagename'] = $this->Admin_pagem->getPageIdName();
+            $this->data['pagename'] = $this->Admin_Pagem->getPageIdName();
             $this->load->view('managePageSection', $this->data);                 //view manage page section
 
         } else{
@@ -133,7 +134,7 @@ class Admin_Page extends CI_Controller {
 
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->data['pagesecdata'] = $this->Admin_pagem->get_pageSecdataBySecId($id);
+            $this->data['pagesecdata'] = $this->Admin_Pagem->get_pageSecdataBySecId($id);
             $this->load->view('editPageSection', $this->data);                 //view edit page section
 
         } else{
@@ -146,8 +147,8 @@ class Admin_Page extends CI_Controller {
 
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->Admin_pagem->updatePagaSectionData($id);
-            redirect('Admin_Page/managePageSection');                                                                      // edit page section
+            $this->Admin_Pagem->updatePagaSectionData($id);
+            redirect('Admin_Page/managePageSection');                                      // edit page section
 
         } else{
             redirect('Login');
@@ -159,7 +160,7 @@ class Admin_Page extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
 
             $id = $this->input->post("id");
-            $this->data['pagedata'] = $this->Admin_pagem->get_pageSecdata($id);
+            $this->data['pagedata'] = $this->Admin_Pagem->get_pageSecdata($id);
             $this->load->view('showManagePageSec', $this->data);                 //view manage page section
 
         } else{
@@ -172,8 +173,9 @@ class Admin_Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->Admin_pagem->deletePageSectionbyId($pageSectionId);
+            $this->Admin_Pagem->deletePageSectionbyId($pageSectionId);
             //echo $pageId;
+            redirect('Admin_Page/managePageSection');
         }
         else{
             redirect('Login');

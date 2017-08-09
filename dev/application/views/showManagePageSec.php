@@ -31,7 +31,7 @@
                 <div class="btn-group">
 
                     <a class="btn" href="<?php echo base_url()?>Admin_page/editPageSectionShow/<?php echo $pg->pageSectionId?>"><i class="icon_pencil-edit"></i></a>
-                    <a class="btn " href="<?php echo base_url()?>"><i class="icon_trash"></i></a>
+                    <a class="btn " href="<?php echo base_url()?>Admin_page/deletePageSection/<?php echo $pg->pageSectionId?>"><i class="icon_trash"></i></a>
 
                 </div>
             </td>
