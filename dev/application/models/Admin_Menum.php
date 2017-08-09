@@ -54,7 +54,8 @@ class Admin_Menum extends CI_Model
 //        $this->db->select('m.*,p.pageTitle');
 //        $this->db->from('ictmmenu m');
 //        $this->db->join('ictmpage p', 'p.pageId = m.pageId');
-
+//        $this->db->where('menuId', $id);
+//
 //        $query = $this->db->get();
 //        return $query->result();
 

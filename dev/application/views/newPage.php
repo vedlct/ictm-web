@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin_page/insertPage"  enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin_page/insertPage"enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
