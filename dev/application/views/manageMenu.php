@@ -134,7 +134,7 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm('Are you sure you want to delete this Menu ?')) {
+        if (confirm("Are you sure you want to delete this Menu?All of it's Sub Menu will be Deleted!!")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',

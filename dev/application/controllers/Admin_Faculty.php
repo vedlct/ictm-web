@@ -5,7 +5,7 @@ class Admin_Faculty extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
+        $this->load->model('Admin_Coursem');
     }
 
     public function index()
@@ -17,8 +17,8 @@ class Admin_Faculty extends CI_Controller
     {
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->data['faculty_course'] = $this->Admin_Coursem->getCourseIdName();
-            $this->load->view('newFaculty');
+            $this->data['course'] = $this->Admin_Coursem->getCourseIdNameforFaculty();
+            $this->load->view('newFaculty',$this->data);
         } else {
             redirect('Login');
         }

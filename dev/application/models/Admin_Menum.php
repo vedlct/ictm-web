@@ -105,6 +105,9 @@ class Admin_Menum extends CI_Model
 
     public function deleteMenubyId($menuId)
     {
+        $this->db->where('parentId', $menuId);
+        $this->db->delete('ictmmenu');
+
         $this->db->where('menuId', $menuId);
         $this->db->delete('ictmmenu');
     }

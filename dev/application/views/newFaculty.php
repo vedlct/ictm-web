@@ -52,11 +52,21 @@
 
                                     </div>
 
-                                    <div class="form-group ">
+                                    <div id='TextBoxesGroup' class="form-group ">
                                         <label for="faculty_degree" class="control-label col-lg-2">Faculty Degree <span class="required">*</span></label>
-                                        <div class="col-lg-10">
-                                            <input class="form-control" id="faculty_degree" name="faculty_degree"  type="text" required />
+                                        <div class="col-lg-4" style="display: inline;">
+                                            <input class="form-control col-lg-4" id="faculty_degree" name="faculty_degree[]"  type="text" required />
                                         </div>
+
+                                        <div id="add_remove_button" class="form-group">
+                                            <div class="col-lg-3 form-group">
+                                                <div class="col-lg-3"></div>
+                                                <input class="btn btn-sm btn-default" type='button' value='Add Degree' id='addButton'>
+                                                <input class="btn btn-sm btn-login" type='button' value='Remove Degree' id='removeButton'>
+                                            </div>
+                                        </div>
+
+
                                     </div>
 
                                     <div class="form-group ">
@@ -134,13 +144,16 @@
                                         <div class="col-lg-10">
 
                                             <select class="form-control" id="faculty_courses" name="faculty_courses" required>
+                                                <option value="Select Course" selected>Select Course</option>
+                                                <?php foreach ($course as $course){?>
+                                                    <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>
+                                                <?php }?>
 
-                                                <option value="Select_Course" selected>Select Course</option>
-                                                <option value="CourseId">HND in Business</option>
-                                                <option value="CourseId">Master Of Gamification</option>
-                                                <option value="CourseId">Master Of Gamification</option>
-                                                <option value="CourseId">Master Of Gamification</option>
-                                                <option value="CourseId">Master Of Gamification</option>
+<!--                                                <option value="CourseId">HND in Business</option>-->
+<!--                                                <option value="CourseId">Master Of Gamification</option>-->
+<!--                                                <option value="CourseId">Master Of Gamification</option>-->
+<!--                                                <option value="CourseId">Master Of Gamification</option>-->
+<!--                                                <option value="CourseId">Master Of Gamification</option>-->
 
                                             </select>
 
@@ -191,3 +204,42 @@
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var counter = 2;
+        $("#addButton").click(function () {
+            if(counter>10){
+                alert("Only 10 textboxes allow");
+                return false;
+            }
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv'+ counter);
+            newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Degree #'+ counter + ' : </label>' +
+                '<div class="col-lg-4">'+'<input class="form-control" type="text" name="faculty_degree[]' + counter +
+                '" id="faculty_degree' + counter + '" value="" >'+'</div>'+'<br>'
+            );
+            newTextBoxDiv.appendTo("#TextBoxesGroup");
+            counter++;
+
+        });
+        $("#removeButton").click(function () {
+            if(counter==2){
+                alert("No more textbox to remove");
+                document.getElementById('Item_price').style.display = "block";
+                document.getElementById('add_remove_button').style.display = "none";
+                return false;
+            }
+            counter--;
+            $("#TextBoxDiv" + counter).remove();
+        });
+        $("#getButtonValue").click(function () {
+            var msg = '';
+            for(i=1; i<counter; i++){
+                msg += "\n Faculty Degree #" + i + " : " + $('#faculty_degree' + i).val();
+            }
+            //  alert(msg);
+        });
+    });
+</script>
