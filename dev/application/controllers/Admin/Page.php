@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_Page extends CI_Controller {
+class Page extends CI_Controller {
 
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('Admin_Pagem');
+        $this->load->model('Admin/Pagem');
 
 
     }
@@ -21,22 +21,22 @@ class Admin_Page extends CI_Controller {
         }
     }
 
-    public function CreatePage()
+    public function createPage() // create page view
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->load->view('newPage');
+            $this->load->view('Admin/newPage');
         }
         else{
             redirect('Login');
         }
     }
 
-    public function insertPage()
+    public function insertPage() // this creates a new page in database
     {
         if ($this->session->userdata('type') == "Admin") {
 
-            $this->Admin_Pagem->insertPage();
-            redirect('Admin_page/CreatePage');
+            $this->Pagem->insertPage();
+            redirect('Admin/Page/createPage');
         }
         else{
             redirect('Login');
@@ -46,8 +46,8 @@ class Admin_Page extends CI_Controller {
     public function managePage()
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['pageData'] = $this->Admin_Pagem->get_pagaData();
-            $this->load->view('managePage', $this->data);
+            $this->data['pageData'] = $this->Pagem->getPagaData();
+            $this->load->view('Admin/managePage', $this->data);
         }
         else{
             redirect('Login');

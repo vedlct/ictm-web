@@ -9,7 +9,7 @@
 <section id="container" class="">
     <!--header start-->
 
-    <?php include ('header.php')?>
+    <?php include ('topNavigation.php')?>
     <!--header end-->
 
     <!--sidebar start-->
@@ -23,7 +23,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa fa-bars"></i> Home</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="../index.html">Home</a></li>
 
                     </ol>
                 </div>

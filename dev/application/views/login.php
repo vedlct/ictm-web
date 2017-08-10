@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include('head.php') ?>
+    <?php include('Admin/head.php') ?>
 </head>
 
   <body class="login-img3-body">

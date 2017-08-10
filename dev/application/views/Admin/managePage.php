@@ -8,7 +8,7 @@
 <!-- container section start -->
 <section id="container" class="">
     <!--header start-->
-    <?php include ('header.php') ?>
+    <?php include ('topNavigation.php') ?>
     <!--header end-->
 
     <!--sidebar start-->
@@ -18,7 +18,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Page</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Page</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>">Home</a></li>
                         <li><i class="fa fa-table"></i>Page</li>
@@ -72,7 +72,7 @@
                                 <td>
                                     <div class="btn-group">
 
-                                        <a class="btn" href="<?php echo base_url()?>editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn" href="<?php echo base_url()?>Admin/Page/editPage/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
                                         <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
 
                                     </div>
@@ -117,7 +117,7 @@
 
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin_Page/deletePage/")?>'+btn,
+                url:'<?php echo base_url("Admin/Page/deletePage/")?>'+btn,
                 data:{'pageid':btn},
                 cache: false,
                 success:function(data) {
@@ -130,7 +130,7 @@
             });
         }
         else {
-            window.location="<?php echo base_url()?>Admin_Page/managePage";
+            window.location="<?php echo base_url()?>Admin/Page/managePage";
         }
     }
 </script>

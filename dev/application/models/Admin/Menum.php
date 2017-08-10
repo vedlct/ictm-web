@@ -3,7 +3,7 @@
 
 class Menum extends CI_Model
 {
-    public function createNewMenu()
+    public function createNewMenu() // this creates a new Menu in database
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
@@ -31,7 +31,7 @@ class Menum extends CI_Model
 
         $this->db->insert('ictmmenu', $data);
     }
-    public function getMenuName($menuType)
+    public function getMenuName($menuType)  //get Menu Name and id
     {
         $this->db->select('menuId, menuName');
         $this->db->where('menuType', $menuType);
@@ -39,7 +39,7 @@ class Menum extends CI_Model
         return $query->result();
     }
 
-    public function getAllforManageMenu()
+    public function getAllforManageMenu() // get all menu for mangeMenuView
     {
 
 //        $this->db->select('m.*,u.userTitle as userName');
@@ -60,13 +60,13 @@ class Menum extends CI_Model
     }
 
 
-    public function getAllMenubyId($menuId)
+    public function getAllMenubyId($menuId)  //get all information of the selected Menu
     {
         $query = $this->db->get_where('ictmmenu', array('menuId' => $menuId));
         return $query->result();
     }
 
-    public function editMenubyId($id)
+    public function editMenubyId($id)  // edit menu by id  in database
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
@@ -100,7 +100,7 @@ class Menum extends CI_Model
         $this->db->update('ictmmenu', $data);
     }
 
-    public function deleteMenubyId($menuId)
+    public function deleteMenubyId($menuId) //delete menu and it's submenu
     {
         $this->db->where('parentId', $menuId);
         $this->db->delete('ictmmenu');

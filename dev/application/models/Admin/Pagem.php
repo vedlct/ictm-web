@@ -2,7 +2,7 @@
 
 class Pagem extends CI_Model
 {
-    public function insertPage()
+    public function insertPage() // creates a new page in database
     {
         $title = $this->input->post("title");
         $content = $this->input->post("content");
@@ -41,7 +41,7 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
-    public function get_pagaData()
+    public function getPagaData()
     {
 
         $query = $this->db->get('ictmpage');

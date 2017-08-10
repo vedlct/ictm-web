@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New Page Section</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="home.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page Section</li>
                         <li><i class="fa fa-files-o"></i>Create a new Page Section</li>
                     </ol>
