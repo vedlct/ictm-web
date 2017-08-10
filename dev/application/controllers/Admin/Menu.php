@@ -1,22 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Admin_Menu extends CI_Controller {
+class Menu extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        //$this->load->model('Admin_Menum');
-        //$this->load->model('Admin_Pagem');
-       // $this->load->library('constant');
+        $this->load->model('Admin/Menum');
+        $this->load->model('Admin/Pagem');
     }
     public function index()
     {
     }
     /*---------for creating new Menu --------------------- */
-    public function NewMenu() // for new menu view
+    public function newMenu() // for new menu view
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['page'] = $this->Admin_Pagem->getPageIdName();
-            $this->load->view('newMenu', $this->data);
+            $this->data['page'] = $this->Pagem->getPageIdName();
+            $this->load->view('Admin/newMenu', $this->data);
         }
         else{
             redirect('Login');
@@ -25,8 +24,8 @@ class Admin_Menu extends CI_Controller {
     public function getMenuLevel($menuType) // for new/sub Menu dropdown
     {
         if ($this->session->userdata('type') == "Admin") {
-            //$menuType=$this->input->post('type');
-            $this->data['menuName'] = $this->Admin_Menum->getMenuName($menuType);
+
+            $this->data['menuName'] = $this->Menum->getMenuName($menuType);
             if ($this->data['menuName'] == null) {
                 echo "<option selected>New Menu</option>";
             } else {
@@ -40,19 +39,22 @@ class Admin_Menu extends CI_Controller {
             redirect('Login');
         }
     }
-    public function CreateNewMenu() // for insert new menu into database
+    public function createNewMenu() // for insert new menu into database
     {
         if ($this->session->userdata('type') == "Admin") {
             if (!$this->form_validation->run('createMenu')) {
-                $this->data['page'] = $this->Admin_Pagem->getPageIdName();
-                $this->load->view('newMenu', $this->data);
-            } else {
-                $this->Admin_Menum->CreateNewMenu();
+
+                $this->data['page'] = $this->Pagem->getPageIdName();
+                $this->load->view('Admin/newMenu', $this->data);
+            }
+            else {
+
+                $this->Menum->createNewMenu();
                 echo "<script>
                     alert('Menu Created Successfully');
-                    window.location.href= '" . base_url() . "Admin_Menu/NewMenu';
+                    window.location.href= '" . base_url() . "Admin/Menu/newMenu';
                     </script>";
-                // redirect('Admin_Menu/NewMenu');
+
             }
         }
         else{
@@ -60,13 +62,15 @@ class Admin_Menu extends CI_Controller {
         }
     }
     /*---------for creating new Menu ------end--------------- */
+
+
     /*---------for Manage Menu -----------------------*/
-    public function ManageMenu() // for manage menu view
+    public function manageMenu() // for manage menu view
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['menu'] = $this->Admin_Menum->getAllforManageMenu();
-            //print_r($this->data['menu']);
-            $this->load->view('manageMenu', $this->data);
+            $this->data['menu'] = $this->Menum->getAllforManageMenu();
+
+            $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
             redirect('Login');
@@ -76,11 +80,10 @@ class Admin_Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
             //$menuId = $this->input->post("menuid");
-            $this->data['edit_menu'] = $this->Admin_Menum->getAllMenubyId($menuId);
-            $this->data['page'] = $this->Admin_Pagem->getPageIdName();
-            //print_r($menuId);
-            //print_r($this->data['edit_menu']);
-            $this->load->view('editMenu', $this->data);
+            $this->data['edit_menu'] = $this->Menum->getAllMenubyId($menuId);
+            $this->data['page'] = $this->Pagem->getPageIdName();
+
+            $this->load->view('Admin/editMenu', $this->data);
         }
         else{
             redirect('Login');
@@ -89,12 +92,12 @@ class Admin_Menu extends CI_Controller {
     public function editMenu($id) // for edit menu from database
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['edit_menu_by_id'] = $this->Admin_Menum->editMenubyId($id);
+            $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
             echo "<script>
                     alert('Menu Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin_Menu/ManageMenu';
+                    window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
                     </script>";
-            //redirect('Admin_Menu/ManageMenu');
+
         }
         else{
             redirect('Login');
@@ -103,14 +106,11 @@ class Admin_Menu extends CI_Controller {
     public function deleteMenu($menuId)    // delete Menu
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->Admin_Menum->deleteMenubyId($menuId);
+            $this->Menum->deleteMenubyId($menuId);
         }
         else{
             redirect('Login');
         }
-    }
-    public function test() {
-        echo GREETING;
     }
     /*---------for Manage Menu ----------end-------------*/
 }

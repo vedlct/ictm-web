@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php')?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -141,7 +141,7 @@
 
                                     <div class="form-group ">
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-4" id="CourseFiled">
 
                                             <select class="form-control" id="faculty_courses" name="faculty_courses" required>
                                                 <option value="Select Course" selected>Select Course</option>
@@ -158,6 +158,15 @@
                                             </select>
 
                                         </div>
+
+                                        <div id="add_remove_button" class="form-group">
+                                            <div class="col-lg-3 form-group">
+                                                <div class="col-lg-3"></div>
+                                                <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse' onclick="addCourse()">
+                                                <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeCourse'>
+                                            </div>
+                                        </div>
+
                                     </div>
 
 
@@ -198,7 +207,7 @@
 </section>
 <!-- container section end -->
 
-<?php include ('js.php')?>
+<?php include('js.php') ?>
 
 
 </body>
@@ -242,4 +251,21 @@
             //  alert(msg);
         });
     });
+</script>
+
+<script>
+
+    function addCourse() {
+
+        var newCourse = $(document.createElement('div'))
+            .attr("id", 'Course'+ counter);
+        newCourse.after().html('<label class="control-label col-lg-2">Faculty Degree #'+ counter + ' : </label>' +
+            '<div class="col-lg-4">'+'<input class="form-control" type="text" name="faculty_degree[]' + counter +
+            '" id="faculty_degree' + counter + '" value="<?php echo $course->courseId?>" >'+'<?php echo $course->courseTitle?>'+'</div>'+'<br>'
+        );
+
+        $("#CourseFiled").append(newCourse);
+
+    }
+
 </script>

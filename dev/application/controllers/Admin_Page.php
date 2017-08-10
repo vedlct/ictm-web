@@ -109,7 +109,7 @@ class Admin_Page extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
 
         $this->Admin_Pagem->insertPageSection();                // insert page section
-       redirect('Admin_Page/createPageSection');
+        redirect('Admin_Page/createPageSection');
 
         }
         else{

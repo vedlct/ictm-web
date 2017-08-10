@@ -1,6 +1,6 @@
 <?php
 
-class Admin_Pagem extends CI_Model
+class Pagem extends CI_Model
 {
     public function insertPage()
     {

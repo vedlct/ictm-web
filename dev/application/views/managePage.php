@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php') ?>
+    <?php include('leftNavigation.php') ?>
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
@@ -101,7 +101,7 @@
 <!-- container section end -->
 <!-- javascripts -->
 
-<?php include ('js.php')?>
+<?php include('js.php') ?>
 
 </body>
 </html>
