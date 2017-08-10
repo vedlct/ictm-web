@@ -33,7 +33,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Menu
+                            New Menu
                         </header>
                         <div class="panel-body">
                             <div class="form">
@@ -64,11 +64,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu </label>
+                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuId" id="menuId" required>
-                                                <option selected>Select Menu</option>
+                                                <option selected>Select Parent Menu</option>
 
                                             </select>
 
@@ -80,7 +80,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
                                             <select class="form-control m-bot15" name="pageId" id="pageId">
-                                                <option selected>Select Page </option>
+                                                <option selected>Select Page</option>
                                                 <?php foreach ($page as $page){?>
 
                                                     <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>

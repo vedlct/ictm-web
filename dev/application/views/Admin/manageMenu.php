@@ -56,7 +56,7 @@
                                         <td>
                                             <?php if ($menu->parentId=="")
                                             {
-                                                echo "Menu";
+                                                echo Menu;
                                             }else{
                                                 $p_id=$menu->parentId;
                                                 $query=$this->db->query("select menuName from ictmmenu WHERE `menuId`= '$p_id'");
@@ -68,7 +68,7 @@
                                         <td>
                                             <?php if ($menu->pageId=="")
                                             {
-                                                echo "None";
+                                                echo None;
                                             }else{
                                                 $pa_id=$menu->pageId;
                                                 $query=$this->db->query("select pageTitle from ictmpage WHERE `pageId`= '$pa_id'");
