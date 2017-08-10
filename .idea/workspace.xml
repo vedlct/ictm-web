@@ -2,195 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9cb50ee-4f75-4ac5-bfc7-8ad4cb586a48" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin/Menu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/application/libraries/constant.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/application/models/Admin/Pagem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session00b7928eb349f3e304743e1fa7114a3e47bf1ec1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session0o71q78cvkcr2ge0jmtji1n55d2s4ajm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session1f5d9e197a2701e1fea548a26b4c25888b2cab44" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session22kja8rkn51ot62qso52hqs17h6sob52" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session2d2c90166fa3f9bb1229361c7a58a6feb645e16b" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session73b728513d5c0bb05dd69fa946d67e57204dc673" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session7ee609606a7856ba8a1bde3b8edc1d9b7fbbfc9a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session88f280e82dff945140a8bfcd7e38a4148c229257" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session8e350ae2d26f8a6bb34b361586df7fbd2ea54dc9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiona81d214840ohkorf6ottdjqobceivc46" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionbpo5ogg42u2f8ms9adud0lhfbb58aom4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessioncb5f9a6d699e9e808d02c604f6971f118f56bbe1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiondbdfbb70433d4e191d869f9693593a0bfd50cc01" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiondusrl5q4k2ec1gfh3b71vjg9148s2rtk" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionejukc9v623hhmjiqfccjckvi2hkr2h52" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionfqus28unplgtde711pj9jkhsqddfqr5g" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionhl68rtopvnoir1lu0mak2dasrcp34khm" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionjtm36fpnam4tbbk4i92cpqkvj5pattr9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionkk5v3jdfonscmnhllgh477igem8nbj4f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionq93tbj84b7i5dcp4enarcasj5ar3u1fv" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionqasi0ejchtqu49082r529efks92u4c73" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionqmnlur2ulf0qjd58n15ha77ghdkutt55" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionqsd37banrcdh9l4osaekfc614h3vcd3d" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionra1i731525eea8vm9bp0k632gv6j6po8" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionrkv7fj02feo12tdvud6j184m8vf79mc6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionta4oaj177fg09j4c6mlc8jg35g0mg3pq" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionum2p0dqm0jqq21ci1tthc8936chfcvap" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionvojqv6lj7go8aig5tidkp63np5mu6aup" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin_Menum.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/bp.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/c.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/error.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/ss.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/images/t.PNG" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session05rq3pednkegp3v4pj6b8843e96sd43a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session07204677ecrva48efl9hehep73na73a8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session08l7qndc9qocdnvldm24b4coke8solqc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0nml59ipm7uq3ejjqmjijl1h8v3lga04" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session166jcc414od57dvb7ul6mmonk1ajop9a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session17jf3b5qbelrbudlu8ntdptm23n6c2k9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session22ag4bebdu98d1h6qsdcun15gtvr1arp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session295s4gbr86je4l3kbo0d2co9405lb4o7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2lpcckbirvbhbudqnpda2rl7plel4rh9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session38o1h54hbbaecc8735s8gloudh4708mr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session3cpv2r267e3h4isbao497r1kfs3r9e59" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session3tmpur8c40g9mba57t66p4ml9g089f33" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session423serelcbc7fa04ebl9b1ftfqtd35ck" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session45rfsr8s0na3dum0dghv23m30c671ope" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4np27dc8j9hi7irqbslfr4impvu6hbtc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5f2tglnqgq60lnipluvdml5purfqbvdu" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5va3lc70mk3v358p8i62ulisrlka51p7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session63vuqf0p6jl5o9kirncgodf2d6ks08m9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session65nice6h1k1gt7k0jd5in9eqa18kt1sa" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session6kuka11opuhltgft7cptbmf2gri4ah69" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session6o7r3e9kcuff1u8cldnurvf4q6l5vikv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session6uqjqcj03hq9unatpnoic9p5mdrv0iou" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session703783ctcbnqsvksg5qedn4rqvq5oejv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7hjotlibiafs5o9jv4f660ar5sm5ih5p" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7ob8968g9h1i28jfcfaov514pm38mif3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7s39dgs2h9oelchddf4kf5pqt9ahj8vg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session84rd9bl1dk0lvqkls4otgorsbntbpf5c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session8ap4qlpcprdmtkk457568fa5cd7kuvpi" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session8enif05vptsu9lrj8n4m3c90n9ie6c1v" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session90l8cqgsumcrcvnmfka0a7hqs8015gg5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session949bv3pajp16khuovt3p32kvd5shsqb3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session95qah7c8abbrn0imt6lssspc3j3km6ba" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session98se50837dhi5038i5qg7j6c47010cbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9gef499gn89145c6t05oubjekt3m50r4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9ic0jmoijsnrlks1jm6a19uhep7hmi67" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9nnh6113538mc30tbhd818pqb92odfvk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9sf699ssj0svldimbka1ccerqi6ofd4c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9vi7e1n7e8974rbd339orvojac8o1jkj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionacjv1ir7ii0mbf4popggt4ur3dls7cs5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionae08aij7gl1kqauarmurvgbl6vi1qvkr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionaf2c2ej1nq0mgrk35b1ve9osihluuuee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionafi4l6jps3mbnt9nmj4gb8sf2f08298h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionaito4ebus2606ni2f20lcod4p0bo68i5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbheng8t63c7d4vfcgafn4369pucivtkp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbhsubd2mtika78ri09c3jh3aht16u4n7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbuek8t66rsfccet8gqal5elg7sqtbluj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionc06hloh1ph79lkloo880jbh7i7akhusb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionc4s5diaclgpvoarrd2ouaqp5n2g85cus" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioncba9jq2rrbcbrd1ggl7sg088hrl72e7b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionds073o50b9p2s4baeg4lkpqq8irtrmle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessione09av8dof565utqi4m68q5o4urqtscbo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessione6ag1v7hod693ci6eqkmo9gcojh5e7l2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioneev5djjho8up0as8h8e34m3ft00p96fc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionekubkrbhep4bcctmnficc8if3cqlr3tm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionem4a96r6irp8ve93g3gh8blbvoopvguf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionemphsu9jthn2k2bduh0ujstg6faeur0e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionencttl036lju51o2bjpfpbghhshvjvde" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionengeddqhotjfll2a1nkt05dai992ti26" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionf7ji1rqe31q54sop8m9chesogve5jdib" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfa9oefpjd4c5s6lqleqcim2du434dv90" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfdb66u4musuoeg4ovtjh2nfaam4p0pg4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfpa0lmtr9srhn6sdm2vndv8fs0fcbft0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfts57vplouv7aj9fde8qm97p9b0gd18s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiong4n64v92br0to60k5nir1tl2q1kg8ick" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiong59a44ggnfljb23u9cd1ckc0o5p654ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiongfileu8lkhlu1lsc357f3ohrtmd7pe4e" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionh02jton54q6rfam7cflpibjrsp55du56" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionh441ksiq5sth03p3q3o7v059bjg2re8p" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionh952e2m43t9a2tbj8398977vjuosdmjj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhnpnraat6hu8ldiitqp1vbhh729o7n1c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioni3g4npqrtn1qj21o98s4ju8a22ul1qkc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioni6hjml9glgq9udp0ebfb4l3mipnt1ipq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioniba5kuf6vub4lq0487787u5fh0frg97b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioniegn91jac6fidn7g3nruuki29uh0s9f1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionifete4u8m9ki4cirr4ssn6v57ca02832" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioniht0go1tm8514fpv72mhb91lpb85jrg0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionj0b7qvk1fbfbf5vento6p6te9giauupr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionjdg0g5v8dfrald5rulveugcv68b8ml2v" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionk0n1l2694bh0uvp50o2c0tidn80721k2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionk8vhfb1foo3cdvarumi2og8c8s2h0eq9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionkkp9rrp0dm2b770358bo7626ecfuo598" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionkr9b3v9g4t7e60auc7mchdip21ot47lt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionl0h81lqjff2l7tkl27ovjch1q0kfm4l2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionlp3melfd23t33rsor2a8q08e0bds65o7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionltjr16k33hpkgr2aft3stbs868g277k2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionm0n12tjltop9mu365b2gd0gm0hcsl23i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionm2usia1mg7vvvdieaceddfhr2k7g1ns8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionm6m5ni0nbkrshkgumgvb5enthk15kb4t" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionm7dr77j7uvavouaa5qdvjnu2pt2e00uf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionma0vup97m77hesjq8bptn5btpi65rikt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmabicki6o7mvjb7k8bs3vendusq1tk1m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmnv1f51qi1d6f64d105sr69bvhea93t9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmpfiiicbldo6kskrdgc04o6l4uco81ql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnefhudjmqvn1uifjpvlgpst8tusuuu6c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnjicv4a7at7nkvlu2ehkiscld8t8m4l8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnphuloj3o1vhh395rkedvbv44mmedvnb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiono08b17ei9k0srhadcjhbfaqt9p2vkmqp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiono978bpkourdl0ko17ru6rbbn8v9u9drf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionobj9701qjdrceso7a3194ntk9r52tr4n" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionouckvrm9ercs1tulijt129eojdbhg2sd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionp2pq1ju9rlf36icb5ribopv1doj0n4lp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionp7212vbl6bik55751qubmvvstg8eq4q8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpb237qjiuv5sb2jvcecmjjo3f75v46hd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpcu2brn7c9l70ngt8vu5sftb11nr583n" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpslebntg058r034n73ehknt0msiieavr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq0lmab8tcsgsifblcoflrs1k7h660e8k" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq57oln1vleqa4br4cea6tqiorb7thvt6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqbrrdkn9d1m6tjgst9e3a4htpge3fe4q" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqibls8j2iibdp59rpf02lr9ouc7gmpse" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqlllpfh11uc5n1eq6eob7bi236nkak2c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionr7kk3a3e0df6k8r8e0l7j4f2rq6hgqar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrcrhc797pc0stq9ggogsb822fietmqsv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionris66frj30uk3empffvdk8h9bea42pv8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrj2rsbi9avarvjgo5mqrboohn560b5l6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrjil4iuorth7r0l1hgkj5jhacotloil9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrsh0oandde1ehvbb32v1ealmp6v6k0r1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessions8li1kjk9dr56ipdpmfffh6ath5brp5t" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionsrrid4dg602iqc1u0bd9bq45mr36d0sv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionsubsao4qsa1fc9f2tlr26iooomjudjjn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiont67p5f8ivabp8pp1an69v6cqphn79h4o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontarj7gvh1dj4fbi6m6qfs6rtouqbp40i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontb1gplpdkvp10s3cem0s0g4dbiqt4hau" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionu74p6e1ohnf1jtmvkt7gmg0keefngua2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionv52gudn6rmek0g74m2a6t41fhv8vdi2d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionv99o5rjlad385cee73r18mviigp8nuu4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionvfejdneccm15vni21snhfh5kl2l9334l" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionvr8r5amfte1j90u6jc0sovmb44tpr1m0" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/editMenu.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/editMenu.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/head.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/head.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/header.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/topNavigation.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/js.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/js.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/manageMenu.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/manageMenu.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/newMenu.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/newMenu.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/dev/application/views/sidebar.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/leftNavigation.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/.idea/dev.iml" afterPath="$PROJECT_DIR$/dev/.idea/dev.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/.idea/workspace.xml" afterPath="$PROJECT_DIR$/dev/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/autoload.php" afterPath="$PROJECT_DIR$/dev/application/config/autoload.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Menu.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Menu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Menum.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin/Menum.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/editPage.php" afterPath="$PROJECT_DIR$/dev/application/views/editPage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/editPageSection.php" afterPath="$PROJECT_DIR$/dev/application/views/editPageSection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/home.php" afterPath="$PROJECT_DIR$/dev/application/views/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/login.php" afterPath="$PROJECT_DIR$/dev/application/views/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePageSection.php" afterPath="$PROJECT_DIR$/dev/application/views/managePageSection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newFaculty.php" afterPath="$PROJECT_DIR$/dev/application/views/newFaculty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newPage.php" afterPath="$PROJECT_DIR$/dev/application/views/newPage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newPageSection.php" afterPath="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/system/ci_sessionujt6c6eu70kdhckf9lq8s2o0vojng58s" afterPath="$PROJECT_DIR$/dev/system/ci_sessionujt6c6eu70kdhckf9lq8s2o0vojng58s" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/system/ci_sessionsdcm5vejdq62nvmne43nkivnts18565s" afterPath="$PROJECT_DIR$/dev/system/ci_sessionsdcm5vejdq62nvmne43nkivnts18565s" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -215,7 +28,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="constant.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="constant.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/libraries/constant.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
@@ -291,21 +104,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CodeIgniter.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CodeIgniter.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/system/core/CodeIgniter.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9279">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="-7695">
+              <caret line="88" column="18" lean-forward="false" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/login.php">
+      <file leaf-file-name="Common.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/system/core/Common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="25" lean-forward="false" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+            <state relative-caret-position="306">
+              <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -328,6 +141,7 @@
         <option value="$PROJECT_DIR$/dev/application/models/Admin/Menum.php" />
         <option value="$PROJECT_DIR$/dev/application/libraries/constant.php" />
         <option value="$PROJECT_DIR$/dev/application/views/Admin/newMenu.php" />
+        <option value="$PROJECT_DIR$/dev/system/core/CodeIgniter.php" />
       </list>
     </option>
   </component>
@@ -399,7 +213,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -417,11 +231,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="system" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
+              <option name="myItemId" value="libraries" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -498,15 +312,15 @@
       <option name="presentableId" value="Default" />
       <updated>1502262278438</updated>
       <workItem from="1502262283139" duration="9998000" />
-      <workItem from="1502356599080" duration="4214000" />
+      <workItem from="1502356599080" duration="5309000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14212000" />
+    <option name="totallyTimeSpent" value="15307000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -808,14 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/libraries/constant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Menu.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -827,10 +633,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/system/core/Common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="61" column="13" lean-forward="false" selection-start-line="61" selection-start-column="13" selection-end-line="61" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/system/core/CodeIgniter.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9279">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="-7695">
+          <caret line="88" column="18" lean-forward="false" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/libraries/constant.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding />
         </state>
       </provider>
