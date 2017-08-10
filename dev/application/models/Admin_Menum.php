@@ -28,9 +28,6 @@ class Admin_Menum extends CI_Model
             'lastModifiedBy'=>$this->session->userdata('id'),
             'insertedBy'=>$this->session->userdata('id')
 
-
-
-
         );
 
         $this->db->insert('ictmmenu', $data);
