@@ -13,6 +13,7 @@ define("key", "KeyInfo");
 define("quickLink", "QuickLink");
 define("important", "ImportantLink");
 define("bottom", "Bottom");
+define("alertmenu" ,"Menu Updated Successfully");
 
 define("GREETING", "Welcome to W3Schools.com!");
 class constant
