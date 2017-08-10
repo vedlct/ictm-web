@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php')?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -121,7 +121,7 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<?php include ('js.php') ?>
+<?php include('js.php') ?>
 
 <!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
 <!--<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>-->

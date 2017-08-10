@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php')?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -75,6 +75,7 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="pagetype">
+                                                <option>Select Page Type</option>
                                                 <option>About Type</option>
                                                 <option>Terms Type</option>
                                                 <option>Health Type</option>
@@ -85,6 +86,7 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="status">
+                                                <option>Select Status</option>
                                                 <option>Active</option>
                                                 <option>InActive</option>
                                                 </select>
@@ -127,7 +129,7 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<?php include ('js.php') ?>
+<?php include('js.php') ?>
 
 <!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
 <!--<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>-->

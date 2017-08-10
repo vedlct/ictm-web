@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,13 +12,13 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php') ?>
+    <?php include('leftNavigation.php') ?>
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Menu</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Page</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>">Home</a></li>
                         <li><i class="fa fa-table"></i>Page</li>
@@ -53,8 +53,20 @@
                             <tr>
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
-                                <td><?php echo $pd->insertedBy?></td>
-                                <td><?php echo $pd->lastModifiedBy?></td>
+                                <td>
+                                    <?php
+                                    $insert=$pd->insertedBy;
+                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$insert'");
+                                    foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    $lastModified=$pd->lastModifiedBy;
+                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$lastModified'");
+                                    foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
+                                    ?>
+                                </td>
                                 <td><?php echo $pd->lastModifiedDate?></td>
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
@@ -89,7 +101,7 @@
 <!-- container section end -->
 <!-- javascripts -->
 
-<?php include ('js.php')?>
+<?php include('js.php') ?>
 
 </body>
 </html>
