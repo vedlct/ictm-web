@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include('Admin/head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include('Admin/leftNavigation.php') ?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -45,7 +45,7 @@
 </section>
 <!-- container section end -->
 
-<?php include('Admin/js.php') ?>
+<?php include('js.php') ?>
 
 
 </body>
