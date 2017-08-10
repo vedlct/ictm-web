@@ -43,7 +43,7 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">Create a new Menu</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin/Menu//manageMenu">Manage Menu</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
