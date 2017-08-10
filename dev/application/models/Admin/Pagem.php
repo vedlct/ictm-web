@@ -44,6 +44,8 @@ class Pagem extends CI_Model
     public function getPagaData()
     {
 
+       // $this->db->select('*, ictmpage.lastModifiedDate as lastdata');
+        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
         $query = $this->db->get('ictmpage');
         return $query->result();
     }

@@ -54,6 +54,7 @@
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
                                 <td>
+<!--                                    --><?php //echo $pd->userTitle?>
                                     <?php
                                     $insert=$pd->insertedBy;
                                     $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$insert'");
@@ -61,6 +62,7 @@
                                     ?>
                                 </td>
                                 <td>
+<!--                                    --><?php //echo $pd->userTitle?>
                                     <?php
                                     $lastModified=$pd->lastModifiedBy;
                                     $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$lastModified'");

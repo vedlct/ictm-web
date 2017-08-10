@@ -47,7 +47,8 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
             $this->data['pageData'] = $this->Pagem->getPagaData();
-            $this->load->view('Admin/managePage', $this->data);
+          // var_dump($this->data['pageData']);
+             $this->load->view('Admin/managePage', $this->data);
         }
         else{
             redirect('Login');
@@ -108,7 +109,7 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-        $this->Admin_Pagem->insertPageSection();                // insert page section
+        $this->Admin_Pagem->insertPageSection();                                        // insert page section
         redirect('Admin_Page/createPageSection');
 
         }
@@ -122,7 +123,7 @@ class Page extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
 
             $this->data['pagename'] = $this->Admin_Pagem->getPageIdName();
-            $this->load->view('managePageSection', $this->data);                 //view manage page section
+            $this->load->view('managePageSection', $this->data);                         //view manage page section
 
         } else{
             redirect('Login');
@@ -135,7 +136,7 @@ class Page extends CI_Controller {
         if ($this->session->userdata('type') == "Admin") {
 
             $this->data['pagesecdata'] = $this->Admin_Pagem->get_pageSecdataBySecId($id);
-            $this->load->view('editPageSection', $this->data);                 //view edit page section
+            $this->load->view('editPageSection', $this->data);                          //view edit page section
 
         } else{
             redirect('Login');
@@ -161,7 +162,7 @@ class Page extends CI_Controller {
 
             $id = $this->input->post("id");
             $this->data['pagedata'] = $this->Admin_Pagem->get_pageSecdata($id);
-            $this->load->view('showManagePageSec', $this->data);                 //view manage page section
+            $this->load->view('showManagePageSec', $this->data);                        //view manage page section
 
         } else{
             redirect('Login');
@@ -169,7 +170,7 @@ class Page extends CI_Controller {
 
     }
 
-    public function deletePageSection($pageSectionId)    // delete Page Section
+    public function deletePageSection($pageSectionId)                                    // delete Page Section
     {
         if ($this->session->userdata('type') == "Admin") {
 
