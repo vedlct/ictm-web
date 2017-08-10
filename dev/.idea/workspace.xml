@@ -14,91 +14,7 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="constant.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/libraries/constant.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editPage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Admin/editPage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="655">
-              <caret line="124" column="97" lean-forward="false" selection-start-line="124" selection-start-column="97" selection-end-line="124" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="managePage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Admin/managePage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="108" column="8" lean-forward="true" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="8" />
-              <folding>
-                <marker date="1502363279681" expanded="true" signature="2270:2327" ph="select userT... ictmusers" />
-                <marker date="1502363279681" expanded="true" signature="2718:2781" ph="select userT... ictmusers" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Menum.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Admin/Menum.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1028">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newMenu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Admin/newMenu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="22" column="83" lean-forward="false" selection-start-line="22" selection-start-column="78" selection-end-line="22" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="newPage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/Admin/newPage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="97" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Page.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Pagem.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/Admin/Pagem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-341">
-              <caret line="58" column="39" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -149,9 +65,7 @@
         <option value="$PROJECT_DIR$/application/views/login.php" />
         <option value="$PROJECT_DIR$/application/views/home.php" />
         <option value="$PROJECT_DIR$/application/controllers/Welcome.php" />
-        <option value="$PROJECT_DIR$/application/views/Admin/leftNavigation.php" />
         <option value="$PROJECT_DIR$/application/views/Admin/newPage.php" />
-        <option value="$PROJECT_DIR$/application/views/Admin/home.php" />
         <option value="$PROJECT_DIR$/application/views/Admin/newMenu.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin_Menu.php" />
         <option value="$PROJECT_DIR$/application/models/Admin/Menum.php" />
@@ -160,6 +74,8 @@
         <option value="$PROJECT_DIR$/application/views/Admin/managePage.php" />
         <option value="$PROJECT_DIR$/application/views/Admin/editPage.php" />
         <option value="$PROJECT_DIR$/application/controllers/Admin/Page.php" />
+        <option value="$PROJECT_DIR$/application/views/Admin/home.php" />
+        <option value="$PROJECT_DIR$/application/views/Admin/leftNavigation.php" />
       </list>
     </option>
   </component>
@@ -463,18 +379,18 @@
       <workItem from="1502172967715" duration="8028000" />
       <workItem from="1502212843532" duration="12203000" />
       <workItem from="1502253376423" duration="12549000" />
-      <workItem from="1502350931875" duration="10206000" />
+      <workItem from="1502350931875" duration="11448000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55770000" />
+    <option name="totallyTimeSpent" value="57012000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.155527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.155527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -796,14 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -812,49 +720,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Admin/leftNavigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="77" lean-forward="false" selection-start-line="20" selection-start-column="77" selection-end-line="20" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Admin/manageMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="114" lean-forward="false" selection-start-line="100" selection-start-column="101" selection-end-line="100" selection-end-column="114" />
-          <folding>
-            <marker date="1502356984237" expanded="true" signature="2615:2668" ph="select menuN... ictmmenu" />
-            <marker date="1502356984237" expanded="true" signature="3409:3464" ph="select pageT... ictmpage" />
-            <marker date="1502356984237" expanded="true" signature="4278:4341" ph="select userT... ictmusers" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1853">
-          <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
-          <folding>
-            <marker date="1502357305788" expanded="true" signature="1792:1960" ph="..." />
-            <marker date="1502357305788" expanded="true" signature="3196:3367" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/config/autoload.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="55" column="40" lean-forward="true" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/Admin/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="23" lean-forward="false" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -893,7 +762,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/Admin/newPage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
+        <state relative-caret-position="587">
           <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="97" />
           <folding />
         </state>
@@ -930,6 +799,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/Admin/manageMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="100" column="114" lean-forward="false" selection-start-line="100" selection-start-column="101" selection-end-line="100" selection-end-column="114" />
+          <folding>
+            <marker date="1502356984237" expanded="true" signature="2615:2668" ph="select menuN... ictmmenu" />
+            <marker date="1502356984237" expanded="true" signature="3409:3464" ph="select pageT... ictmpage" />
+            <marker date="1502356984237" expanded="true" signature="4278:4341" ph="select userT... ictmusers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Welcome.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/Admin/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="47" column="15" lean-forward="false" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="109" column="9" lean-forward="false" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
+          <folding>
+            <marker date="1502357305788" expanded="true" signature="1792:1960" ph="..." />
+            <marker date="1502357305788" expanded="true" signature="3196:3367" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/Admin/leftNavigation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="45" column="82" lean-forward="false" selection-start-line="45" selection-start-column="82" selection-end-line="45" selection-end-column="82" />
           <folding />
         </state>
       </provider>
