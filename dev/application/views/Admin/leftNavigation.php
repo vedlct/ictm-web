@@ -16,9 +16,9 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin_Page/CreatePage">Create a new Page</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">Create a new Page</a></li>
 
-                          <li><a class="" href="<?php echo base_url()?>Admin_Page/managePage"><span>Manage Page</span></a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
 
                       </ul>
                   </li>

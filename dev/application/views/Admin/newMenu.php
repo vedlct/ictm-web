@@ -69,12 +69,7 @@
                                             <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuId" id="menuId" required>
                                                 <option selected>Select Menu</option>
-                                                <!--                                                <option>New Menu</option>-->
-                                                <!--                                                <option>About</option>-->
-                                                <!--                                                <option>Course</option>-->
-                                                <!--                                                <option>Addmission</option>-->
-                                                <!--                                                <option>College Life</option>-->
-                                                <!--                                                <option>News & Events</option>-->
+
                                             </select>
 
 
@@ -90,12 +85,7 @@
 
                                                     <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
                                                 <?php }?>
-                                                <!--                                                <option>page</option>-->
-                                                <!--                                                <option>About</option>-->
-                                                <!--                                                <option>Course</option>-->
-                                                <!--                                                <option>Addmission</option>-->
-                                                <!--                                                <option>College Life</option>-->
-                                                <!--                                                <option>News & Events</option>-->
+
                                             </select>
 
 

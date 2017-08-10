@@ -8,7 +8,7 @@
 <!-- container section start -->
 <section id="container" class="">
     <!--header start-->
-    <?php include ('header.php')?>
+    <?php include ('topNavigation.php')?>
     <!--header end-->
 
     <!--sidebar start-->
@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> NewPage</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Edit Page</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="home.php">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Page</li>
+                        <li><i class="fa fa-files-o"></i>Edit &nbsp Page</li>
                     </ol>
                 </div>
             </div>
@@ -33,12 +33,12 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Page
+                            Edit Page
                         </header>
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($editPageData as $epd) {?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin_page/editPage/<?php echo $epd->pageId?>"  enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/Page/editPage/<?php echo $epd->pageId?>"  enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -47,12 +47,12 @@
                                     </div>
                                     <div class="form-group ">
 
-                                        <div class="form-group">
+
                                             <label class="control-label col-sm-2">Content</label>
                                             <div class="col-sm-10">
-                                                <textarea class="form-control summernote" name="content" rows="6"><?php echo $epd->	pageContent?></textarea>
+                                                <textarea class="form-control ckeditor" name="content" rows="6"><?php echo $epd->	pageContent?></textarea>
                                             </div>
-                                        </div>
+
                                     </div>
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
@@ -106,46 +106,20 @@
     </section>
 </section>
 <!--main content end-->
-<div class="text-right">
+
+<div class="text-right wrapper">
     <div class="credits">
-        <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-        -->
         <a href="#">Icon College</a> by <a href="#">A2N</a>
     </div>
 </div>
+
 </section>
 <!-- container section end -->
-
 <!-- javascripts -->
+
 <?php include('js.php') ?>
-
-<!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
-<!--<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>-->
-<!--<script>-->
-<!--    CKEDITOR.replace( 'editor1', {-->
-<!--        height: 300,-->
-<!---->
-<!--        // Configure your file manager integration. This example uses CKFinder 3 for PHP.-->
-<!--        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',-->
-<!--        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',-->
-<!--        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',-->
-<!--        filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'-->
-<!--    } );-->
-<!--</script>-->
-
-
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('.summernote').summernote();
-    });
-</script>
 
 </body>
 </html>
+
+<script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
