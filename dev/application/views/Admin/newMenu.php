@@ -52,12 +52,12 @@
                                             <p><font color="red"> <?php echo form_error('menuType'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option selected>Select Menu Type</option>
-                                                <option>Top</option>
-                                                <option>MainMenu</option>
-                                                <option>KeyInfo</option>
-                                                <option>QuickLink</option>
-                                                <option>ImportantLink</option>
-                                                <option>Bottom</option>
+                                                <option><?php echo top?></option>
+                                                <option><?php echo mainmenu?></option>
+                                                <option><?php echo key?></option>
+                                                <option><?php echo quickLink?></option>
+                                                <option><?php echo important?></option>
+                                                <option><?php echo bottom?></option>
                                             </select>
 
                                         </div>
@@ -69,12 +69,7 @@
                                             <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuId" id="menuId" required>
                                                 <option selected>Select Menu</option>
-                                                <!--                                                <option>New Menu</option>-->
-                                                <!--                                                <option>About</option>-->
-                                                <!--                                                <option>Course</option>-->
-                                                <!--                                                <option>Addmission</option>-->
-                                                <!--                                                <option>College Life</option>-->
-                                                <!--                                                <option>News & Events</option>-->
+
                                             </select>
 
 
@@ -90,12 +85,7 @@
 
                                                     <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
                                                 <?php }?>
-                                                <!--                                                <option>page</option>-->
-                                                <!--                                                <option>About</option>-->
-                                                <!--                                                <option>Course</option>-->
-                                                <!--                                                <option>Addmission</option>-->
-                                                <!--                                                <option>College Life</option>-->
-                                                <!--                                                <option>News & Events</option>-->
+
                                             </select>
 
 

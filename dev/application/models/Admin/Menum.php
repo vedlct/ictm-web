@@ -10,11 +10,11 @@ class Menum extends CI_Model
         $menuId = $this->input->post("menuId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
-        if ($menuId == "New Menu")
+        if ($menuId == newMenu)
         {
             $menuId =null;
         }
-        if ($pageId == "Select Page")
+        if ($pageId == selectPage)
         {
             $pageId =null;
         }
@@ -74,11 +74,11 @@ class Menum extends CI_Model
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
 
-        if ($menuId == "New Menu" || $menuId == "Menu")
+        if ($menuId == newMenu || $menuId == Menu)
         {
             $menuId =null;
         }
-        if ($pageId == "None")
+        if ($pageId == None)
         {
             $pageId =null;
         }

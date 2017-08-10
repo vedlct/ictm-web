@@ -48,7 +48,7 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
-    public function get_editPagaData($id)
+    public function geteditPagaData($id)
     {
 
         $this->db->where('pageId', $id);

@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include('head.php') ?>
+    <?php include('Admin/head.php') ?>
 </head>
 
 <body>
 <!-- container section start -->
 <section id="container" class="">
     <!--header start-->
-
     <?php include ('topNavigation.php')?>
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include('leftNavigation.php') ?>
+    <?php include('Admin/leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -46,7 +45,7 @@
 </section>
 <!-- container section end -->
 
-<?php include('js.php') ?>
+<?php include('Admin/js.php') ?>
 
 
 </body>

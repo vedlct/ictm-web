@@ -58,8 +58,8 @@ class Page extends CI_Controller {
     {
 
         if ($this->session->userdata('type') == "Admin") {
-            $this->data['editPageData'] = $this->Admin_Pagem->get_editPagaData($id);
-            $this->load->view('editPage', $this->data);
+            $this->data['editPageData'] = $this->Pagem->geteditPagaData($id);
+            $this->load->view('Admin/editPage', $this->data);
 
         }
         else{
@@ -69,8 +69,8 @@ class Page extends CI_Controller {
     public function editPage($id)
     {
         if ($this->session->userdata('type') == "Admin") {
-            $this->Admin_Pagem->updatePagaData($id);
-            redirect('Admin_Page/managePage');
+            $this->Pagem->updatePagaData($id);
+            redirect('Admin/Page/managePage');
         }
         else{
             redirect('Login');
@@ -82,8 +82,8 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == "Admin") {
 
-           $this->Admin_Pagem->deletePagebyId($pageId);
-            //echo $pageId;
+           $this->Pagem->deletePagebyId($pageId);
+
         }
         else{
             redirect('Login');
