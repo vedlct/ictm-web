@@ -14,6 +14,7 @@ class Admin_Pagem extends CI_Model
 
         $image = $_FILES["image"]["name"];
         move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
+
         $data = array(
             'pageTitle' => $title,
             'pageKeywords' => $keywords,
@@ -122,23 +123,57 @@ class Admin_Pagem extends CI_Model
 
         $pagetitle = $this->input->post("pagetitle");
         extract($_POST);
+        $image= $_FILES["textimage"]["name"];
+        for ($i = 0; $i < count($image); $i++) {
 
-        for ($i = 0; $i < count($textbox); $i++) {
-
-            $image= $_FILES["textimage"]["name"];
+            //$image= $_FILES["textimage"]["name"];
             move_uploaded_file($_FILES["textimage"]["tmp_name"], "images/" . $image);
 
             $data = array(
                 'pageId' => $pagetitle,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
-                'pageSectionImage' => $textimage[$i],
+                'pageSectionImage' => $image[$i],
                 'insertedBy'=>$this->session->userdata('id'),
                 'lastModifiedBy'=>$this->session->userdata('id'),
 
             );
             $this->db->insert('ictmpagesection', $data);
         }
+    }
+
+    public function updatePagaSectionData($id){
+
+        $title = $this->input->post("textbox");
+        $content = $this->input->post("text");
+        $image = $_FILES["textimage"]["name"];
+        date_default_timezone_set("Europe/London");
+
+        if ($image != null) {
+
+            $image = $_FILES["textimage"]["name"];
+            move_uploaded_file($_FILES["textimage"]["tmp_name"], "images/" . $image);
+
+            $data = array(
+                'pageSectionTitle' => $title,
+                'pageSectionContent' => $content,
+                'pageSectionImage' => $image,
+                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s")
+            );
+        } else {
+
+            $data = array(
+                'pageSectionTitle' => $title,
+                'pageSectionContent' => $content,
+                'pageSectionImage' => $image,
+                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s")
+            );
+        }
+        $this->db->where('pageSectionId', $id);
+        $this->db->update('ictmpagesection', $data);
+
     }
 
     public function get_pageSecdata($id){
@@ -148,10 +183,20 @@ class Admin_Pagem extends CI_Model
         return $query->result();
     }
 
+
+    public function get_pageSecdataBySecId($id)
+    {
+        $this->db->where('pageSectionId', $id);
+        $query = $this->db->get('ictmpagesection');
+        return $query->result();
+
+
+    }
     public function deletePageSectionbyId($pageSectionId)
     {
         $this->db->where('pageSectionId',$pageSectionId);
         $this->db->delete('ictmpagesection');
+
 
     }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php')?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> NewPage</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Edit Page Section </h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="home.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Page</li>
+                        <li><i class="fa fa-files-o"></i>Edit new Page Section</li>
                     </ol>
                 </div>
             </div>
@@ -33,55 +33,43 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Page
+                            Page Section
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <?php foreach ($editPageData as $epd) { ?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin_page/editPage/<?php echo $epd->pageId?>"  enctype="multipart/form-data">
-                                    <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
-                                        <div class="col-lg-10">
-                                            <input class="form-control" id="cname" name="title"  type="text" value="<?php echo $epd->pageTitle?>" required />
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
+                                <?php foreach ($pagesecdata as $psd) { ?>
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin_Page/editPageSection/<?php echo $psd->pageSectionId?>">
 
-                                        <div class="form-group">
-                                            <label class="control-label col-sm-2">Content</label>
-                                            <div class="col-sm-10">
-                                                <textarea class="form-control summernote" name="content" rows="6"><?php echo $epd->	pageContent?></textarea>
+                                    <div id='TextBoxesGroup' class="form-group">
+
+
+                                            <div id="TextBoxDiv1" class="form-group">
+                                                <label class="control-label col-lg-2">Title : </label>
+                                                <div class="col-lg-10 form-group">
+                                                    <input class="form-control" type='textbox' id='textbox1'
+                                                          value="<?php echo $psd->pageSectionTitle?>" name="textbox">
+                                                </div>
+                                                <label class="control-label col-lg-2">Content : </label>
+                                                <div class="col-sm-10 form-group">
+                                                    <textarea class="form-control ckeditor" id="ckeditor" name="text"
+                                                              rows="6"><?php echo $psd->pageSectionContent?></textarea>
+                                                </div>
+                                                <label class="control-label col-lg-2">Image : </label>
+                                                <div class="col-lg-10 form-group">
+                                                    <input class="form-control" type='file' id='textserial1'
+                                                           name="textimage">
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="curl" class="control-label col-lg-2">Image</label>
-                                        <div class="col-lg-10">
-                                            <input class="form-control"  type="file" name="image"  value="<?php echo $epd->pageImage?>"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="pagetype">
-                                                <option value="About Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'About Type')  echo 'selected = "selected"'; ?>>About Type</option>
-                                                <option value="Terms Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Terms Type')  echo 'selected = "selected"'; ?>>Terms Type</option>
-                                                <option value="Health Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Health Type')  echo 'selected = "selected"'; ?>>Health Type</option>
 
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
-                                        <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="status">
-                                                <option selected><?php echo $epd->pageStatus?></option>
-                                                <option>Active</option>
-                                                <option>InActive</option>
-                                            </select>
-                                        </div>
                                     </div>
 
+<!--                                    <div id="add_remove_button" class="form-group">-->
+<!--                                        <div class="col-lg-2"></div>-->
+<!--                                        <div class="col-lg-10 form-group">-->
+<!--                                            <input class="btn btn-sm btn-login" type='button' value='Add Section' id='addButton'>-->
+<!--                                            <input class="btn btn-sm" type='button' value='Remove Section' id='removeButton'>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
                                     <div class="form-group " align="center">
                                         <div class="col-lg-10">
@@ -93,7 +81,9 @@
                             </div>
 
                             </form>
-                            <?php } ?>
+                            <?php
+                            }
+                            ?>
                         </div>
                 </div>
         </section>
@@ -119,31 +109,63 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<?php include ('js.php') ?>
+<?php include('js.php') ?>
 
-<!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
-<!--<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>-->
-<!--<script>-->
-<!--    CKEDITOR.replace( 'editor1', {-->
-<!--        height: 300,-->
-<!---->
-<!--        // Configure your file manager integration. This example uses CKFinder 3 for PHP.-->
-<!--        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',-->
-<!--        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',-->
-<!--        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',-->
-<!--        filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'-->
-<!--    } );-->
-<!--</script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
 
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var counter = 2;
+        $("#addButton").click(function () {
+            if(counter>30){
+                alert("Only 10 textboxes allow");
+                return false;
+            }
 
-<script>
-    $(document).ready(function() {
-        $('.summernote').summernote();
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv' + counter);
+            newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' : </label>' +
+                '<div class="col-lg-10 form-group">'+'<input class="form-control" type="text" name="textbox[]' + counter +
+                '" id="textbox' + counter + '" value="" >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
+                '<div class="col-lg-10 form-group">'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
+                + counter + '" value="" ></textarea>'+'</div>' + '<label class="control-label col-lg-2">Image #'+ counter + ' : </label>' +
+                '<div class="col-lg-10 form-group">'+'<input class="form-control" type="file" name="textimage[]' + counter +
+                '" id="textimage' + counter + '" value="" >'+'</div>'+'<br>'
+            );
+            newTextBoxDiv.appendTo("#TextBoxesGroup");
+            CKEDITOR.replace( 'replace_element_' + counter );
+
+            counter++;
+        });
+        $("#removeButton").click(function () {
+            if(counter==1){
+                alert("No more textbox to remove");
+                document.getElementById('Item_price').style.display = "block";
+                document.getElementById('add_remove_button').style.display = "none";
+                return false;
+            }
+            counter--;
+            $("#TextBoxDiv" + counter).remove();
+        });
+        $("#getButtonValue").click(function () {
+            var msg = '';
+            for(i=1; i<counter; i++){
+                msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val()+"\n Textimage #" + i + " : " + $('#textimage' + i).val();
+            }
+            //  alert(msg);
+        });
     });
 </script>
+
+
+<script>
+    function load() {
+
+    }
+</script>
+
 
 </body>
 </html>

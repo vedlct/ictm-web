@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('sidebar.php')?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> NewPage</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Page Section</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="home.php">Home</a></li>
-                        <li><i class="icon_document_alt"></i>Page</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Page</li>
+                        <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
+                        <li><i class="icon_document_alt"></i>Page Section</li>
+                        <li><i class="fa fa-files-o"></i>Create a new Page Section</li>
                     </ol>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin_Page/insertPageSection">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin_Page/insertPageSection" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
@@ -115,7 +115,7 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<?php include ('js.php') ?>
+<?php include('js.php') ?>
 
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>

@@ -3,8 +3,11 @@
 
 class Admin_Coursem extends CI_Model
 {
-    public function getCourseIdName(){
+    public function getCourseIdNameforFaculty(){
 
+        $this->db->select('courseId, courseTitle');
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
         
     }
 
