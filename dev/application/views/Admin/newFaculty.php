@@ -72,7 +72,7 @@
 
                                         <label for="faculty_image" class="control-label col-lg-2">Faculty Image <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" type="file" name="faculty_image" id="faculty_image" >
+                                            <input class="form-control" type="file" name="faculty_image" id="faculty_image" required>
                                         </div>
 
                                         <label for="faculty_emp_type" class="control-label col-lg-2">Faculty Employee type <span class="required">*</span></label>
