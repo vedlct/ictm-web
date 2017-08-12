@@ -83,3 +83,34 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+
+////////////////////custom constant////////////////
+
+
+define("newMenu", "New Menu");
+define("selectPage", "Select Page");
+define("Menu", "Menu");
+define("None", "None");
+
+////menu dropdown/////
+define("top", "Top");
+define("mainmenu", "MainMenu");
+define("key", "KeyInfo");
+define("quickLink", "QuickLink");
+define("important", "ImportantLink");
+define("bottom", "Bottom");
+define("alertmenu" ,"Menu Updated Successfully");
+
+define("Admin", "Admin");
+define("Active", "Active");
+define("inactive", "InActive");
+
+define("SelectStatus" , "Select Status");
+define("pageType", "Select Page Type");
+define("About", "About Type");
+define("Health", "Health Type");
+define("Terms", "Terms Type");
+
+define("selected", "selected");

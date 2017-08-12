@@ -66,12 +66,12 @@
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)"required>
                                                 <option>Select Menu Type</option>
-                                                <option value="Top" <?php if (!empty($menu->menuType) && $menu->menuType == 'Top')  echo 'selected = "selected"'; ?>>Top</option>
-                                                <option value="MainMenu" <?php if (!empty($menu->menuType) && $menu->menuType == 'MainMenu')  echo 'selected = "selected"'; ?>>MainMenu</option>
-                                                <option value="KeyInfo" <?php if (!empty($menu->menuType) && $menu->menuType == 'KeyInfo')  echo 'selected = "selected"'; ?>>KeyInfo</option>
-                                                <option value="QuickLink" <?php if (!empty($menu->menuType) && $menu->menuType == 'QuickLink')  echo 'selected = "selected"'; ?>>QuickLink</option>
-                                                <option value="ImportantLink" <?php if (!empty($menu->menuType) && $menu->menuType == 'ImportantLink')  echo 'selected = "selected"'; ?>>ImportantLink</option>
-                                                <option value="Bottom" <?php if (!empty($menu->menuType) && $menu->menuType == 'Bottom')  echo 'selected = "selected"'; ?>>Bottom</option>
+                                                <option value="<?php echo top?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'Top')  echo 'selected = "selected"'; ?>><?php echo top?></option>
+                                                <option value="<?php echo mainmenu?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'MainMenu')  echo 'selected = "selected"'; ?>><?php echo mainmenu?></option>
+                                                <option value="<?php echo key?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'KeyInfo')  echo 'selected = "selected"'; ?>><?php echo key?></option>
+                                                <option value="<?php echo quickLink?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'QuickLink')  echo 'selected = "selected"'; ?>><?php echo quickLink?></option>
+                                                <option value="<?php echo important?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'ImportantLink')  echo 'selected = "selected"'; ?>><?php echo important?></option>
+                                                <option value="<?php echo bottom?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'Bottom')  echo 'selected = "selected"'; ?>><?php echo bottom?></option>
 
                                             </select>
                                         </div>
@@ -142,8 +142,8 @@
                                                 <option >Select Status</option>
 <!--                                                <option >Active</option>-->
 <!--                                                <option >InActive</option>-->
-                                                <option value="Active" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == 'Active')  echo 'selected = "selected"'; ?>>Active</option>
-                                                <option value="InActive" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == 'InActive')  echo 'selected = "selected"'; ?>>InActive</option>
+                                                <option value="<?php echo Active?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == 'Active')  echo 'selected = "selected"'; ?>>Active</option>
+                                                <option value="<?php echo inactive?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == 'InActive')  echo 'selected = "selected"'; ?>>InActive</option>
 
                                             </select>
 

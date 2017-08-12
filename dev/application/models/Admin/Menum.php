@@ -25,7 +25,6 @@ class Menum extends CI_Model
             'parentId' => $menuId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
-            'lastModifiedBy'=>$this->session->userdata('id'),
             'insertedBy'=>$this->session->userdata('id')
         );
 
@@ -83,7 +82,7 @@ class Menum extends CI_Model
             $pageId =null;
         }
 
-        date_default_timezone_set("Europe/London");
+        //date_default_timezone_set("Europe/London");
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
