@@ -82,7 +82,7 @@ class Menum extends CI_Model
             $pageId =null;
         }
 
-        date_default_timezone_set("Europe/London");
+        //date_default_timezone_set("Europe/London");
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,

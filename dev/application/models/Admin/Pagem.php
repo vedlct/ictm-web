@@ -147,7 +147,7 @@ class Pagem extends CI_Model
 
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
-        date_default_timezone_set("Europe/London");
+        //date_default_timezone_set("Europe/London");
         
             $data = array(
                 'pageSectionTitle' => $title,

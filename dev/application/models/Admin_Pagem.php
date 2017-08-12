@@ -66,7 +66,7 @@ class Admin_Pagem extends CI_Model
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
-        date_default_timezone_set("Europe/London");
+        //date_default_timezone_set("Europe/London");
 
         if ($image != null) {
 
