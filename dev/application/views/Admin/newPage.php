@@ -75,10 +75,10 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="pagetype">
-                                                <option>Select Page Type</option>
-                                                <option>About Type</option>
-                                                <option>Terms Type</option>
-                                                <option>Health Type</option>
+                                                <option><?php echo pageType?></option>
+                                                <option><?php echo About?></option>
+                                                <option><?php echo Terms?></option>
+                                                <option><?php echo Health?></option>
                                             </select>
                                         </div>
                                     </div>
@@ -86,9 +86,9 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="status">
-                                                <option>Select Status</option>
-                                                <option>Active</option>
-                                                <option>InActive</option>
+                                                <option><?php echo SelectStatus?></option>
+                                                <option><?php echo Active?></option>
+                                                <option><?php echo inactive?></option>
                                                 </select>
                                         </div>
                                     </div>

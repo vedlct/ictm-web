@@ -24,7 +24,7 @@ class Pagem extends CI_Model
             'pageType' => $pagetype,
             'pageStatus' => $status,
             'insertedBy'=>$this->session->userdata('id'),
-            'lastModifiedBy'=>$this->session->userdata('id'),
+
 
 
         );
@@ -125,19 +125,18 @@ class Pagem extends CI_Model
 
         $pagetitle = $this->input->post("pagetitle");
         extract($_POST);
-        $image= $_FILES["textimage"]["name"];
-        for ($i = 0; $i < count($image); $i++) {
+
+        for ($i = 0; $i < count($textbox); $i++) {
 
             //$image= $_FILES["textimage"]["name"];
-            move_uploaded_file($_FILES["textimage"]["tmp_name"], "images/" . $image);
+
 
             $data = array(
                 'pageId' => $pagetitle,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
-                'pageSectionImage' => $image[$i],
                 'insertedBy'=>$this->session->userdata('id'),
-                'lastModifiedBy'=>$this->session->userdata('id'),
+
 
             );
             $this->db->insert('ictmpagesection', $data);
@@ -148,31 +147,15 @@ class Pagem extends CI_Model
 
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
-        $image = $_FILES["textimage"]["name"];
-        date_default_timezone_set("Europe/London");
-
-        if ($image != null) {
-
-            $image = $_FILES["textimage"]["name"];
-            move_uploaded_file($_FILES["textimage"]["tmp_name"], "images/" . $image);
-
+        //date_default_timezone_set("Europe/London");
+        
             $data = array(
                 'pageSectionTitle' => $title,
                 'pageSectionContent' => $content,
-                'pageSectionImage' => $image,
                 'lastModifiedBy'=>$this->session->userdata('id'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s")
             );
-        } else {
 
-            $data = array(
-                'pageSectionTitle' => $title,
-                'pageSectionContent' => $content,
-                'pageSectionImage' => $image,
-                'lastModifiedBy'=>$this->session->userdata('id'),
-                'lastModifiedDate'=>date("Y-m-d H:i:s")
-            );
-        }
         $this->db->where('pageSectionId', $id);
         $this->db->update('ictmpagesection', $data);
 

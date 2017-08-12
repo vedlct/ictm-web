@@ -30,8 +30,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin_Page/createPageSection">Create a new Sections</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin_Page/managePageSection"><span>Manage Page Sections</span></a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Page/createPageSection">Create a new Sections</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Page/managePageSection"><span>Manage Page Sections</span></a></li>
                       </ul>
                   </li>
 
@@ -65,8 +65,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newCourse.php">New Courses</a></li>
-                          <li><a class="" href="manageCourse.php">Manage Courses</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Course/createCourse">New Courses</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourse">Manage Courses</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -112,7 +112,7 @@
                       </a>
 
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin_Faculty/newFaculty">new Faculty</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">new Faculty</a></li>
                           <li><a class="" href="manageFaculty.php">Manage Faculties</a></li>
 
                       </ul>

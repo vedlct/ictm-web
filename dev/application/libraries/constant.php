@@ -15,7 +15,17 @@ define("important", "ImportantLink");
 define("bottom", "Bottom");
 define("alertmenu" ,"Menu Updated Successfully");
 
-define("GREETING", "Welcome to W3Schools.com!");
+define("Admin", "Admin");
+define("Active", "Active");
+define("inactive", "InActive");
+
+define("SelectStatus" , "Select Status");
+define("pageType", "Select Page Type");
+define("About", "About Type");
+define("Health", "Health Type");
+define("Terms", "Terms Type");
+
+define("selected", "selected");
 class constant
 {
 

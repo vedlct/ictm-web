@@ -78,8 +78,8 @@
 <!--                                                <option selected>--><?php //echo $epd->pageStatus?><!--</option>-->
 <!--                                                <option>Active</option>-->
 <!--                                                <option>InActive</option>-->
-                                                <option value="Active" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'Active')  echo 'selected = "selected"'; ?>>Active</option>
-                                                <option value="InActive" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'InActive')  echo 'selected = "selected"'; ?>>InActive</option>
+                                                <option value="<?php echo Active?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'Active')  echo 'selected = "selected"'; ?>><?php echo Active?></option>
+                                                <option value="<?php echo inactive?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'InActive')  echo 'selected = "selected"'; ?>><?php echo inactive?></option>
                                             </select>
                                         </div>
                                     </div>
