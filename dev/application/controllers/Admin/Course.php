@@ -16,7 +16,14 @@ class Course extends CI_Controller
 
      /* this will show create course page*/
     public function createCourse(){
-       $this->load->view('Admin/newCourse');
+
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->load->view('Admin/newCourse');
+        }
+        else{
+            redirect('Login');
+        }
     }
 
 
@@ -24,10 +31,24 @@ class Course extends CI_Controller
     /* this insert course */
     public  function insertCourse(){
 
+        if ($this->session->userdata('type') == Admin) {
 
+            $this->Coursem->insertCourse();
+            redirect('Admin/Course/createCourse');
+        }
+        else{
+            redirect('Login');
+        }
     }
 
     public function manageCourse(){
-        $this->load->view('Admin/manageCourse');
+
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->load->view('Admin/manageCourse');
+        }
+        else{
+            redirect('Login');
+        }
     }
 }

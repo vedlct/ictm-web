@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/insertCourse" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <div class="col-lg-6">
                                         <label for="cname" class="control-label col-lg-2">Course Name <span class="required">*</span></label>
@@ -166,6 +166,27 @@
                                             <label for="cname" class="control-label col-lg-2">Timetables<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <input class="form-control"  name="timetables"  type="text" required />
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <div class="col-lg-6">
+                                            <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control m-bot15" name="status">
+                                                    <option><?php echo SelectStatus?></option>
+                                                    <option><?php echo Active?></option>
+                                                    <option><?php echo inactive?></option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label for="curl" class="control-label col-lg-2">Image</label>
+                                            <div class="col-lg-10">
+                                                <input class="form-control " id="curl" type="file" name="image"  />
                                             </div>
                                         </div>
 
