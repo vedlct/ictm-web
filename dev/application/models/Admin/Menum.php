@@ -28,7 +28,7 @@ class Menum extends CI_Model
             'menuStatus' => $menuStatus,
             'insertedBy'=>$this->session->userdata('id'),
             'insertedDate'=>date("Y-m-d H:i:s"),
-            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
         );
 
         $this->db->insert('ictmmenu', $data);

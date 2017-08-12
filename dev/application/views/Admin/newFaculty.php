@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty">
 
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
@@ -72,7 +72,7 @@
 
                                         <label for="faculty_image" class="control-label col-lg-2">Faculty Image <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" type="file" name="faculty_image" id="faculty_image" required>
+                                            <input class="form-control" type="file" name="faculty_image" id="faculty_image" >
                                         </div>
 
                                         <label for="faculty_emp_type" class="control-label col-lg-2">Faculty Employee type <span class="required">*</span></label>
