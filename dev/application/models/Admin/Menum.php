@@ -3,6 +3,7 @@
 
 class Menum extends CI_Model
 {
+
     public function createNewMenu() // this creates a new Menu in database
     {
         $menuTitle = $this->input->post("menuTitle");
@@ -18,14 +19,16 @@ class Menum extends CI_Model
         {
             $pageId =null;
         }
-
+        date_default_timezone_set("Europe/London");
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
             'parentId' => $menuId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
-            'insertedBy'=>$this->session->userdata('id')
+            'insertedBy'=>$this->session->userdata('id'),
+            'insertedDate'=>date("Y-m-d H:i:s"),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
         );
 
         $this->db->insert('ictmmenu', $data);
@@ -41,10 +44,12 @@ class Menum extends CI_Model
     public function getAllforManageMenu() // get all menu for mangeMenuView
     {
 
-//        $this->db->select('m.*,u.userTitle as userName');
-//        $this->db->from('ictmmenu m');
-//        $this->db->join('ictmusers u', 'u.roleId = m.lastModifiedBy');
-//
+        $this->db->select('m.*,u.userTitle as userName');
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmusers u', 'm.lastModifiedBy = u.userId');
+        $query = $this->db->get();
+        return $query->result();
+
 
 //        $this->db->select('m.*,p.pageTitle');
 //        $this->db->from('ictmmenu m');
@@ -54,8 +59,8 @@ class Menum extends CI_Model
 //        $query = $this->db->get();
 //        return $query->result();
 
-        $query = $this->db->get('ictmmenu');
-        return $query->result();
+//        $query = $this->db->get('ictmmenu');
+//        return $query->result();
     }
 
 
@@ -82,7 +87,7 @@ class Menum extends CI_Model
             $pageId =null;
         }
 
-        //date_default_timezone_set("Europe/London");
+        date_default_timezone_set("Europe/London");
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,

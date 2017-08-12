@@ -1,7 +1,6 @@
-ftpuser: iconftp1
-ftppass:
-E1d@20!7
 ftphost: ftp.iconcollege.ac.uk
+ftpuser: iconftp1
+ftppass: E1d@20!7
  
  
 mysql db name: ictmweb
