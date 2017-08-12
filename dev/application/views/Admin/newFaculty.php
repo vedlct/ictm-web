@@ -80,9 +80,9 @@
 
                                             <select class="form-control" id="faculty_emp_type" name="faculty_emp_type" required >
 
-                                                <option value="Select_Type" selected>Select Type</option>
-                                                <option value="PartTime">Part Time</option>
-                                                <option value="FullTime">Full Time</option>
+                                                <option selected><?php echo SelectType?></option>
+                                                <option value="<?php echo FullTime?>"><?php echo FullTime?> </option>
+                                                <option value="<?php echo PartTime?>"><?php echo PartTime?></option>
 
                                             </select>
 
@@ -129,9 +129,9 @@
 
                                             <select class="form-control" id="faculty_status" name="faculty_status" required>
 
-                                                <option value="Select_Status" selected>Select Status</option>
-                                                <option value="Active">Active</option>
-                                                <option value="Inactive">Inactive</option>
+                                                <option value="<?php echo SelectStatus?>"selected><?php echo SelectStatus?></option>
+                                                <option value="<?php echo Active?>"><?php echo Active?></option>
+                                                <option value="<?php echo InActive?>"><?php echo InActive?></option>
 
                                             </select>
 
@@ -142,10 +142,10 @@
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
 
-                                        <div class="col-lg-4">
+                                        <div class=" form-group col-lg-7" id="CourseFiled">
 
-                                            <select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses" required>
-                                                <option value="Select Course" selected>Select Course</option>
+                                            <select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses[]" required>
+                                                <option selected><?php echo SelectCourse ?></option>
                                                 <?php foreach ($course as $course){?>
                                                     <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>
                                                 <?php }?>
@@ -153,11 +153,11 @@
                                             </select>
 
                                         </div>
-                                        <input type="text" id="CourseFiled" style="visibility: hidden"/>
-                                        <div id="add_remove_button" class="form-group">
+
+                                        <div id="add_remove_button">
                                             <div class="col-lg-3 form-group">
                                                 <div class="col-lg-3"></div>
-                                                <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse' onclick="addCourse()">
+                                                <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>
                                                 <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>
                                             </div>
                                         </div>
@@ -210,12 +210,39 @@
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
 <script type="text/javascript">
+    $(document).ready(function(){
+        var counter = 2;
+        $("#addCourse").click(function () {
 
-    function addCourse () {
-        var value= document.getElementById("faculty_courses");
+            if(counter>10){
+                alert("Only 10 textboxes allow");
+                return false;
+            }
 
-
-        }
-
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv' + counter);
+            newTextBoxDiv.after().html('<select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses[]" required>' +
+                '<option value="Select Course" selected>Select Course#'+counter+'</option>'+'<?php foreach ($course as $course){?>'+
+                '<option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>'+'<?php } ?>'+'</select>'+'<br>'
+            );
+            newTextBoxDiv.appendTo("#CourseFiled");
+            counter++;
+        });
+        $("#removeButton").click(function () {
+            if(counter==2){
+                alert("No more textbox to remove");
+                return false;
+            }
+            counter--;
+            $("#TextBoxDiv" + counter).remove();
+        });
+        $("#getButtonValue").click(function () {
+            var msg = '';
+            for(i=1; i<counter; i++){
+                msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val()+"\n Textimage #" + i + " : " + $('#textimage' + i).val();
+            }
+            //  alert(msg);
+        });
+    });
 </script>
 

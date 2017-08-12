@@ -69,8 +69,8 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == Admin) {
             $this->data['menu'] = $this->Menum->getAllforManageMenu();
-        print_r($this->data['menu']);
-            //$this->load->view('Admin/manageMenu', $this->data);
+
+            $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
             redirect('Login');
@@ -79,7 +79,7 @@ class Menu extends CI_Controller {
     public function editMenuView($menuId) // for edit menu view
     {
         if ($this->session->userdata('type') == Admin) {
-            //$menuId = $this->input->post("menuid");
+
             $this->data['edit_menu'] = $this->Menum->getAllMenubyId($menuId);
             $this->data['page'] = $this->Pagem->getPageIdName();
 

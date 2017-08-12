@@ -3,8 +3,8 @@
 
 class Menum extends CI_Model
 {
-
-    public function createNewMenu() // this creates a new Menu in database
+        // this creates a new Menu in database
+    public function createNewMenu()
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
@@ -33,44 +33,37 @@ class Menum extends CI_Model
 
         $this->db->insert('ictmmenu', $data);
     }
-    public function getMenuName($menuType)  //get Menu Name and id
+            //get Menu Name and id
+    public function getMenuName($menuType)
     {
         $this->db->select('menuId, menuName');
         $this->db->where('menuType', $menuType);
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-
-    public function getAllforManageMenu() // get all menu for mangeMenuView
+    // get all menu for mangeMenuView
+    public function getAllforManageMenu()
     {
 
-        $this->db->select('m.*,u.userTitle as userName');
+        $this->db->select('m.*,u.userTitle as insertedBy,l.userTitle as lastModifiedBy,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
-        $this->db->join('ictmusers u', 'm.lastModifiedBy = u.userId');
+        $this->db->join('ictmusers u', 'm.insertedBy = u.userId','left');
+        $this->db->join('ictmusers l', 'm.lastModifiedBy = l.userId','left');
+        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
         $query = $this->db->get();
         return $query->result();
 
-
-//        $this->db->select('m.*,p.pageTitle');
-//        $this->db->from('ictmmenu m');
-//        $this->db->join('ictmpage p', 'p.pageId = m.pageId');
-//        $this->db->where('menuId', $id);
-//
-//        $query = $this->db->get();
-//        return $query->result();
-
-//        $query = $this->db->get('ictmmenu');
-//        return $query->result();
     }
 
-
-    public function getAllMenubyId($menuId)  //get all information of the selected Menu
+        //get all information of the selected Menu
+    public function getAllMenubyId($menuId)
     {
         $query = $this->db->get_where('ictmmenu', array('menuId' => $menuId));
         return $query->result();
     }
-
-    public function editMenubyId($id)  // edit menu by id  in database
+        // edit menu by id  in database
+    public function editMenubyId($id)
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
@@ -103,8 +96,8 @@ class Menum extends CI_Model
         $this->db->where('menuId', $id);
         $this->db->update('ictmmenu', $data);
     }
-
-    public function deleteMenubyId($menuId) //delete menu and it's submenu
+    //delete menu and it's submenu
+    public function deleteMenubyId($menuId)
     {
         $this->db->where('parentId', $menuId);
         $this->db->delete('ictmmenu');

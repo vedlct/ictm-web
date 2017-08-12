@@ -43,6 +43,7 @@
                                     <th> Menu/Sub Menu</th>
                                     <th> Page Title</th>
                                     <th> Menu Status</th>
+                                    <th> Menu Inserted By</th>
                                     <th> Last Modified By</th>
                                     <th> Last Modified Date</th>
                                     <th> Action</th>
@@ -54,39 +55,23 @@
                                         <td><?php echo $menu->menuName?></td>
                                         <td><?php echo $menu->menuType?></td>
                                         <td>
-                                            <?php if ($menu->parentId=="")
-                                            {
-                                                echo Menu;
-                                            }else{
-                                                $p_id=$menu->parentId;
-                                                $query=$this->db->query("select menuName from ictmmenu WHERE `menuId`= '$p_id'");
-                                                foreach ($query->result() as $r ){$mName=$r->menuName;}
-                                                echo "SubMenu of- $mName";
-                                            }
-                                            ?>
+                                            <?php if ($menu->submenu == "")
+                                            {echo Menu;}
+                                            else{echo "SubMenu of- ".$menu->submenu;}?>
                                         </td>
                                         <td>
-                                            <?php if ($menu->pageId=="")
-                                            {
-                                                echo None;
-                                            }else{
-                                                $pa_id=$menu->pageId;
-                                                $query=$this->db->query("select pageTitle from ictmpage WHERE `pageId`= '$pa_id'");
-                                                foreach ($query->result() as $p ){$paTitle=$p->pageTitle;}
-                                                echo "$paTitle";
-                                            }
-                                            ?>
+                                            <?php if ($menu->pageTitle==""){echo "None";}else{echo $menu->pageTitle;}?>
                                         </td>
                                         <td>
                                             <?php echo $menu->menuStatus?>
                                         </td>
 
                                         <td>
-                                            <?php if ($menu->lastModifiedBy==""){
-                                            }?>
-                                            <?php $lastmodified =$menu->lastModifiedBy;
-                                            $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$lastmodified'");
-                                            foreach ($query->result() as $tytle ){$name=$tytle->userTitle;} echo $name;?>
+                                            <?php echo $menu->insertedBy?>
+                                        </td>
+
+                                        <td>
+                                            <?php if ($menu->lastModifiedBy==""){echo"Never Modified";}else{echo $menu->lastModifiedBy;} ?>
 
                                         </td>
 

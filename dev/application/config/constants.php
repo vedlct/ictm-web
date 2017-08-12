@@ -95,6 +95,8 @@ define("Menu", "Menu");
 define("None", "None");
 
 ////menu dropdown/////
+
+define("SelectMenuType", "Select Menu Type");
 define("top", "Top");
 define("mainmenu", "MainMenu");
 define("key", "KeyInfo");
@@ -103,9 +105,11 @@ define("important", "ImportantLink");
 define("bottom", "Bottom");
 define("alertmenu" ,"Menu Updated Successfully");
 
+define("SelectPage" ,"Select Page");
+
 define("Admin", "Admin");
 define("Active", "Active");
-define("inactive", "InActive");
+define("InActive", "InActive");
 
 define("SelectStatus" , "Select Status");
 define("pageType", "Select Page Type");
@@ -114,3 +118,12 @@ define("Health", "Health Type");
 define("Terms", "Terms Type");
 
 define("selected", "selected");
+
+
+////////////    faculy page      ///////////////
+define("SelectType", "Select Type");
+define("SelectCourse", "Select Course");
+define("PartTime", "Part Time");
+define("FullTime", "Full Time");
+
+
