@@ -42,7 +42,7 @@
                                     <th> Menu Type</th>
                                     <th> Menu/Sub Menu</th>
                                     <th> Page Title</th>
-                                    <th> Page Status</th>
+                                    <th> Menu Status</th>
                                     <th> Last Modified By</th>
                                     <th> Last Modified Date</th>
                                     <th> Action</th>
