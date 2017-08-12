@@ -17,7 +17,7 @@
                                     <h2 class="widget-title maincolor1">Key Info & Policies</h2>
                                     <div class="menu-others-container">
                                         <ul id="menu-others" class="menu">
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="#">Health and Safety</a></li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="health-safety.php">Health and Safety</a></li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1307"><a href="#">Prevent Duty</a></li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1308"><a href="#">Equal Opportunity</a></li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1309"><a href="#">Admissions</a></li>
@@ -39,7 +39,7 @@
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1308"><a href="#">Accommodation</a></li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1309"><a href="#">Academic Calendar</a></li>
                                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="#">HESA Data Return</a></li>
-                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="#">QAA Report</a></li>
+                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="http://www.qaa.ac.uk/reviews-and-reports/provider?UKPRN=10003239" target="_blank">QAA Report</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="row footer-content">
                         <div class="copyright col-md-6">
-                        	<a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Data Protection</a> | <a href="#">Accessibility</a> | <a href="#">Site Map</a> | <a href="#">Cookies</a><br>
+                        	<a href="terms-conditions.php">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Data Protection</a> | <a href="#">Accessibility</a> | <a href="#">Site Map</a> | <a href="#">Cookies</a><br>
                             <span style="font-size:11px">© 2017 <a href="#">Icon College</a> - All rights reserved. | Website Designed & Developed by: <a target="_blank" href="http://a2ninfotech.co.uk/">A2N Info Tech Ltd</a>.</span>
                         </div>
                         <nav class="col-md-6 footer-social">

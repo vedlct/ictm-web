@@ -11,7 +11,7 @@ class Menu extends CI_Controller {
     {
     }
     /*---------for creating new Menu --------------------- */
-    public function newMenu() // for new menu view
+    public function newMenu()    // for new menu view
     {
         if ($this->session->userdata('type') == Admin) {
             $this->data['page'] = $this->Pagem->getPageIdName();
@@ -79,7 +79,7 @@ class Menu extends CI_Controller {
     public function editMenuView($menuId) // for edit menu view
     {
         if ($this->session->userdata('type') == Admin) {
-            //$menuId = $this->input->post("menuid");
+
             $this->data['edit_menu'] = $this->Menum->getAllMenubyId($menuId);
             $this->data['page'] = $this->Pagem->getPageIdName();
 

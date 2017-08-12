@@ -30,7 +30,7 @@ jQuery(document).ready(function() {
     	parent_fieldset.find('input[type="text"], input[type="password"], textarea').each(function() {
     		if( $(this).val() == "" ) {
     			$(this).addClass('input-error');
-    			next_step = false;
+    			next_step = true;
     		}
     		else {
     			$(this).removeClass('input-error');
