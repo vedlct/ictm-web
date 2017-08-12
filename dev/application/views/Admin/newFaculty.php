@@ -146,16 +146,22 @@
 
                                             <select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses[]" required>
                                                 <option selected><?php echo SelectCourse ?></option>
-                                                <?php foreach ($course as $course){?>
+                                                <?php
+                                                $coursename= array();
+                                                $courseid=array();
+                                                foreach ($course as $course){?>
                                                     <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>
-                                                <?php }?>
+                                                <?php
+                                                array_push($coursename,$course->courseTitle );
+                                                array_push($courseid,$course->courseId );
+                                                }?>
 
                                             </select>
 
                                         </div>
 
                                         <div id="add_remove_button">
-                                            <div class="col-lg-3 form-group">
+                                            <div class="col-lg-5 form-group">
                                                 <div class="col-lg-3"></div>
                                                 <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>
                                                 <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>
@@ -212,19 +218,30 @@
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;
+
         $("#addCourse").click(function () {
 
+            var coursename= <?php echo json_encode( $coursename ) ?>;
+           var i;
+            for (i=0;i<coursename.length;i++){//
+            //     alert(coursename[i])
+            }
+            //alert(coursename);
             if(counter>10){
                 alert("Only 10 textboxes allow");
                 return false;
             }
 
+
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
-            newTextBoxDiv.after().html('<select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses[]" required>' +
-                '<option value="Select Course" selected>Select Course#'+counter+'</option>'+'<?php foreach ($course as $course){?>'+
-                '<option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>'+'<?php } ?>'+'</select>'+'<br>'
+            newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
+                '<div class="form-group col-lg-10">'+'<select class="form-control"  name="faculty_courses[]' + counter +
+                '" id="textbox' + counter + '" value="" >'+'<option selected><?php echo SelectCourse ?>'+'</option>'+
+                '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
+                '</select>'+'</div>' +'<br>'
             );
+
             newTextBoxDiv.appendTo("#CourseFiled");
             counter++;
         });
