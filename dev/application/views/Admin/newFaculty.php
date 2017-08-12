@@ -138,13 +138,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group ">
+                                    <div class="form-group"id="CourseFiled">
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
-
-                                        <div class=" form-group col-lg-7" id="CourseFiled">
-
-                                            <select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses[]" required>
+                                        <div class="col-lg-4">
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" required>
                                                 <option selected><?php echo SelectCourse ?></option>
                                                 <?php
                                                 $coursename= array();
@@ -157,15 +155,15 @@
                                                 }?>
 
                                             </select>
-
                                         </div>
 
-                                        <div id="add_remove_button">
-                                            <div class="col-lg-5 form-group">
-                                                <div class="col-lg-3"></div>
+                                        <div class="form-group col-lg-6" id="add_remove_button">
+
+                                                <div class="col-lg-2"></div>
                                                 <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>
                                                 <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>
-                                            </div>
+
+
                                         </div>
 
                                     </div>
@@ -234,9 +232,9 @@
 
 
             var newTextBoxDiv = $(document.createElement('div'))
-                .attr("id", 'TextBoxDiv' + counter);
+                .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
-                '<div class="form-group col-lg-10">'+'<select class="form-control"  name="faculty_courses[]' + counter +
+                '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[]' + counter +
                 '" id="textbox' + counter + '" value="" >'+'<option selected><?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
