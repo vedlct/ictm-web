@@ -27,7 +27,7 @@ class Facultym extends CI_Model
                 'upload_path' => "images/",
                 'allowed_types' => "jpg|png|jpeg",
                 'overwrite' => TRUE,
-                'max_size' => "2048000",
+//                'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
 
