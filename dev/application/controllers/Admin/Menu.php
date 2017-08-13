@@ -109,9 +109,7 @@ class Menu extends CI_Controller {
             $r=$this->Menum->deleteMenubyId($menuId);
             if ($r!='0'){
                 $name=array();
-//            for ($i=0;$i<count($r);$i++){
-//                array_push($name, $r[$i]);
-//            }
+
                 foreach ($r as $r){
                     array_push($name,$r->menuName);
                 }
