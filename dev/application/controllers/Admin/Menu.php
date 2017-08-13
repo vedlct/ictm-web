@@ -69,7 +69,7 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == Admin) {
             $this->data['menu'] = $this->Menum->getAllforManageMenu();
-
+            //print_r($this->data['menu']);
             $this->load->view('Admin/manageMenu', $this->data);
         }
         else{

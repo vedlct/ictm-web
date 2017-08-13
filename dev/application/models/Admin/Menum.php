@@ -26,7 +26,7 @@ class Menum extends CI_Model
             'parentId' => $menuId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
-            'insertedBy'=>$this->session->userdata('id'),
+            'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
 
         );
@@ -45,14 +45,22 @@ class Menum extends CI_Model
     public function getAllforManageMenu()
     {
 
-        $this->db->select('m.*,u.userTitle as insertedBy,l.userTitle as lastModifiedBy,menu.menuName as submenu,p.pageTitle');
+//        $this->db->select('m.*,u.userTitle as insertedBy,l.userTitle as lastModifiedBy,menu.menuName as submenu,p.pageTitle');
+//        $this->db->from('ictmmenu m');
+//        $this->db->join('ictmusers u', 'm.insertedBy = u.userId','left');
+//        $this->db->join('ictmusers l', 'm.lastModifiedBy = l.userId','left');
+//        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+//        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+//        $query = $this->db->get();
+//        return $query->result();
+
+        $this->db->select('m.*,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
-        $this->db->join('ictmusers u', 'm.insertedBy = u.userId','left');
-        $this->db->join('ictmusers l', 'm.lastModifiedBy = l.userId','left');
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
         $query = $this->db->get();
         return $query->result();
+
 
     }
 
