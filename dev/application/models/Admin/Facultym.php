@@ -65,7 +65,7 @@ class Facultym extends CI_Model
             'facultyIntro'=>$facultyIntro,
             'facultyImage'=>$facultyImage,
             'facultyStatus'=>$facultyStatus,
-            'insertedBy'=>$this->session->userdata('id'),
+            'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
 
         );

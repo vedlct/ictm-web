@@ -45,7 +45,8 @@ class Course extends CI_Controller
 
         if ($this->session->userdata('type') == Admin) {
 
-            $this->load->view('Admin/manageCourse');
+            $this->data['coursedata']= $this->Coursem->getCourseData();
+            $this->load->view('Admin/manageCourse', $this->data);
         }
         else{
             redirect('Login');

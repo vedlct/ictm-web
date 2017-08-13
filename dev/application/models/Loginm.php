@@ -6,9 +6,9 @@ class Loginm extends CI_Model {
     public function validate_user($data)
     {
 
-        $username = $this->input->post('username');
+        $useremail = $this->input->post('useremail');
         $password = $this->input->post('password');
-        $this->db->where('userTitle', $username);
+        $this->db->where('userEmail', $useremail);
         $this->db->where('UserPassword', $password);
 
         return $this->db->get('ictmusers')->row();
