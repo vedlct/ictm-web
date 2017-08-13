@@ -41,12 +41,40 @@ class Course extends CI_Controller
         }
     }
 
+    //this will show manage course
     public function manageCourse(){
 
         if ($this->session->userdata('type') == Admin) {
 
             $this->data['coursedata']= $this->Coursem->getCourseData();
             $this->load->view('Admin/manageCourse', $this->data);
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    //this will show edited data
+    public function  showEditCourse($id){
+
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->data['coursealldata']= $this->Coursem->getCourseAllData($id);
+            $this->load->view('Admin/editCourse', $this->data);
+        }
+        else{
+            redirect('Login');
+        }
+
+    }
+
+    public function editCourse($id){
+
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->data['coursealldata']= $this->Coursem->updateCourseData($id);
+
+            redirect('Admin/Course/manageCourse');
         }
         else{
             redirect('Login');

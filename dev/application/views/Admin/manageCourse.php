@@ -34,8 +34,8 @@
                         <header class="panel-heading">
                             Manage Course
                         </header>
-
-                        <table class="table table-striped table-advance table-hover">
+                        <div class="panel-body">
+                        <table class="table table-striped table-advance table-bordered table-hover">
                             <tbody>
                             <tr>
                                 <th> Course Name</th>
@@ -46,25 +46,31 @@
                                 <th> Last Modified Date</th>
                                 <th> Action</th>
                             </tr>
-                            <?php foreach ($coursedata as $cd)?>
-                            <tr>
-                                <td><?php echo $cd->courseTitle?></td>
-                                <td><?php echo $cd->courseCodeIcon?></td>
-                                <td><?php echo $cd->awardingTitle?></td>
-                                <td><?php echo $cd->insertedBy?></td>
-                                <td><?php echo $cd->lastModifiedBy?></td>
-                                <td><?php echo $cd->lastModifiedDate?></td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
+                            <?php foreach ($coursedata as $cd) { ?>
+                                <tr>
+                                    <td><?php echo $cd->courseTitle ?></td>
+                                    <td><?php echo $cd->courseCodeIcon ?></td>
+                                    <td><?php echo $cd->awardingTitle ?></td>
+                                    <td><?php echo $cd->insertedBy ?></td>
+                                    <td><?php echo $cd->lastModifiedBy ?></td>
+                                    <td><?php echo $cd->lastModifiedDate ?></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn"
+                                               href="<?php echo base_url() ?>Admin/Course/showEditCourse/<?php echo $cd->courseId ?>"><i
+                                                        class="icon_pencil-edit"></i></a>
+                                            <a class="btn " href="#"><i class="icon_trash"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
 
+                                <?php
+                            }
+                            ?>
 
                             </tbody>
                         </table>
+                        </div>
                     </section>
                 </div>
             </div>
