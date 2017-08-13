@@ -96,7 +96,7 @@ class Menum extends CI_Model
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
             'lastModifiedDate'=>date("Y-m-d H:i:s"),
-            'lastModifiedBy'=>$this->session->userdata('id')
+            'lastModifiedBy'=>$this->session->userdata('userEmail')
 
         );
 

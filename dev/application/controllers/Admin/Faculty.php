@@ -31,10 +31,10 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == Admin) {
             try {
                 $this->Facultym->createNewFaculty();
-                echo "<script>
-                    alert('Faculty Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
-                    </script>";
+//                echo "<script>
+//                    alert('Faculty Created Successfully');
+//                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+//                    </script>";
             }
             catch (Exception $e){
                 echo "<script>

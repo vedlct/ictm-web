@@ -20,7 +20,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Menu</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Course</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
                         <li><i class="icon_document_alt"></i>Course</li>
@@ -178,7 +178,7 @@
                                                 <select class="form-control m-bot15" name="status">
                                                     <option><?php echo SelectStatus?></option>
                                                     <option><?php echo Active?></option>
-                                                    <option><?php echo inactive?></option>
+                                                    <option><?php echo InActive ?></option>
                                                 </select>
                                             </div>
                                         </div>

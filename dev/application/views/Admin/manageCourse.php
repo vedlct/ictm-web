@@ -40,62 +40,28 @@
                             <tr>
                                 <th> Course Name</th>
                                 <th> Course Code</th>
+                                <th> Award</th>
+                                <th> Insert By</th>
+                                <th> Last Modified By</th>
+                                <th> Last Modified Date</th>
                                 <th> Action</th>
                             </tr>
+                            <?php foreach ($coursedata as $cd)?>
                             <tr>
-                                <td>Angeline Mcclain</td>
-                                <td>0</td>
+                                <td><?php echo $cd->courseTitle?></td>
+                                <td><?php echo $cd->courseCodeIcon?></td>
+                                <td><?php echo $cd->awardingTitle?></td>
+                                <td><?php echo $cd->insertedBy?></td>
+                                <td><?php echo $cd->lastModifiedBy?></td>
+                                <td><?php echo $cd->lastModifiedDate?></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
+                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
 
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sung Carlson</td>
-                                <td>2</td>
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bryon Osborne</td>
-                                <td>2</td>
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dalia Marquez</td>
-                                <td>0</td>
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Selina Fitzgerald</td>
-                                <td>1</td>
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
 
                             </tbody>
                         </table>

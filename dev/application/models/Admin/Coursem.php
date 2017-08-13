@@ -58,11 +58,19 @@ class Coursem extends CI_Model
             'timeTable' => $timetables,
             'courseStatus' => $status,
             'courseImage' => $image,
-            'insertedBy' => $this->session->userdata('id'),
+            'insertedBy' => $this->session->userdata('userEmail'),
             'insertedDate' => date("Y-m-d H:i:s"),
 
         );
         //$data = $this->security->xss_clean($data);
         $this->db->insert('ictmcourse', $data);
+    }
+
+    public function getCourseData(){
+
+        $this->db->select('courseTitle, courseCodeIcon, awardingTitle,insertedBy,lastModifiedBy,lastModifiedDate,courseStatus');
+        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
     }
 }
