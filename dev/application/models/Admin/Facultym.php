@@ -19,6 +19,7 @@ class Facultym extends CI_Model
         //$menuStatus = $this->input->post("faculty_courses[]");
         $facultyIntro = $this->input->post("faculty_intro");
         date_default_timezone_set("Europe/London");
+        $image=$_FILES['faculty_image']['name'];
 
         if (!empty($_FILES['faculty_image']['name'])) {
             $this->load->library('upload');
@@ -28,8 +29,8 @@ class Facultym extends CI_Model
                 'overwrite' => TRUE,
                 'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
-                'mod_mime_fix'=>FALSE,
-                'file_name' =>$facultyEmail.".jpg"
+                'mod_mime_fix'=>FALSE
+
             );
             $this->upload->initialize($config);
 
@@ -61,7 +62,7 @@ class Facultym extends CI_Model
             'facultyTwitter'=>$facultyTwitter,
             'facultyLinkedIn'=>$facultyLinkdin,
             'facultyIntro'=>$facultyIntro,
-            'facultyImage'=>$facultyEmail.".jpg",
+            'facultyImage'=>$image,
             'facultyStatus'=>$facultyStatus,
             'insertedBy'=>$this->session->userdata('id'),
             'insertedDate'=>date("Y-m-d H:i:s"),
