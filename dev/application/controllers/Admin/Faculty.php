@@ -31,10 +31,10 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == Admin) {
             try {
                 $this->Facultym->createNewFaculty();
-//                echo "<script>
-//                    alert('Faculty Created Successfully');
-//                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
-//                    </script>";
+                echo "<script>
+                    alert('Faculty Created Successfully');
+                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                    </script>";
             }
             catch (Exception $e){
                 echo "<script>
@@ -48,5 +48,18 @@ class Faculty extends CI_Controller
             {
                 redirect('Login');
             }
+    }
+
+    /*---------for Manage Faculty -----------------------*/
+    public function manageFaculty() // for manage menu view
+    {
+        if ($this->session->userdata('type') == Admin) {
+            //$this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
+            //print_r($this->data['menu']);
+            $this->load->view('Admin/manageFaculty');
+        }
+        else{
+            redirect('Login');
+        }
     }
 }

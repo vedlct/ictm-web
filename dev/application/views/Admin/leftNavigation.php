@@ -113,7 +113,7 @@
 
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">new Faculty</a></li>
-                          <li><a class="" href="manageFaculty.php">Manage Faculties</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/manageFaculty">Manage Faculties</a></li>
 
                       </ul>
                   </li>

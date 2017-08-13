@@ -97,8 +97,9 @@ class Page extends CI_Controller {
           //  echo $pageId;
             $this->data['pagedata'] =$this->Pagem->checkParentId($pageId);
 
-            $name=array();
 
+
+            $name=array();
             $y=$this->data['pagedata'];
             if (empty($y)){
                 $this->Pagem->deletePagebyId($pageId);
@@ -108,7 +109,6 @@ class Page extends CI_Controller {
                 for ($i=0;$i<count($y);$i++){
                 array_push($name, $y[$i]);
                 }
-
                 ?>
                 <script type='text/javascript'>
                 var x =<?php echo json_encode( $name ) ?>;
