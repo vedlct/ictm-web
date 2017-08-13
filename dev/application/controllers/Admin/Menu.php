@@ -103,11 +103,25 @@ class Menu extends CI_Controller {
             redirect('Login');
         }
     }
-    public function deleteMenu($menuId)    // delete Menu
+    public function deleteMenu($menuId)    // delete Menu if no Submenu
     {
         if ($this->session->userdata('type') == Admin) {
             $r=$this->Menum->deleteMenubyId($menuId);
-            echo json_encode($r);
+            if ($r!='0'){
+                $name=array();
+//            for ($i=0;$i<count($r);$i++){
+//                array_push($name, $r[$i]);
+//            }
+                foreach ($r as $r){
+                    array_push($name,$r->menuName);
+                }
+
+                $x=implode(" , ",$name);;
+                   echo $x;
+
+            }
+            else{echo $r;}
+
 
         }
         else{

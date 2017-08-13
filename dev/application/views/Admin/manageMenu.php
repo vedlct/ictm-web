@@ -121,7 +121,7 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Menu?All of it's Sub Menu will be Deleted!!")) {
+        if (confirm("Are you sure you want to delete this Menu?")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
@@ -131,8 +131,16 @@
                 success:function(data) {
 //                    alert("Menu Deleted Successfully!!");
 //                    location.reload();
-                    //if(data==1){alert(1)}
-                    alert(data)
+                    if(data=='0'){alert("Menu Deleted Successfully!!");
+                    location.reload();
+                    }
+                    else
+                    {
+                        alert('Please Delete SubMenu- '+data+' First !!');
+
+                    }
+
+
 
 
                 }

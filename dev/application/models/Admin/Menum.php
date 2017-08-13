@@ -41,18 +41,11 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
+
+
     // get all menu for mangeMenuView
     public function getAllforManageMenu()
     {
-
-//        $this->db->select('m.*,u.userTitle as insertedBy,l.userTitle as lastModifiedBy,menu.menuName as submenu,p.pageTitle');
-//        $this->db->from('ictmmenu m');
-//        $this->db->join('ictmusers u', 'm.insertedBy = u.userId','left');
-//        $this->db->join('ictmusers l', 'm.lastModifiedBy = l.userId','left');
-//        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
-//        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
-//        $query = $this->db->get();
-//        return $query->result();
 
         $this->db->select('m.*,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
@@ -70,7 +63,8 @@ class Menum extends CI_Model
         $query = $this->db->get_where('ictmmenu', array('menuId' => $menuId));
         return $query->result();
     }
-        // edit menu by id  in database
+
+        /*-------- edit menu by id  in database--------------*/
     public function editMenubyId($id)
     {
         $menuTitle = $this->input->post("menuTitle");
@@ -103,28 +97,26 @@ class Menum extends CI_Model
         $this->db->where('menuId', $id);
         $this->db->update('ictmmenu', $data);
     }
-    //delete menu and it's submenu
+
+
+    /*---------delete menu if no Submenu-----------------*/
     public function deleteMenubyId($menuId)
     {
 
         $query = $this->db->get_where('ictmmenu', array('parentId' => $menuId));
 
-        if ($query->result()==""){
+        if (empty($query->result())){
 
         $this->db->where('menuId',$menuId);
         $this->db->delete('ictmmenu');
-        return 1;
+        return 0;
         }
         else{
             return $query->result();
         }
 
 
-//        $this->db->where('parentId', $menuId);
-//        $this->db->delete('ictmmenu');
-//
-//        $this->db->where('menuId', $menuId);
-//        $this->db->delete('ictmmenu');
+
     }
 
 
