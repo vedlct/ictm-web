@@ -65,7 +65,7 @@ class Facultym extends CI_Model
             'facultyIntro'=>$facultyIntro,
             'facultyImage'=>$facultyImage,
             'facultyStatus'=>$facultyStatus,
-            'insertedBy'=>$this->session->userdata('id'),
+            'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
 
         );
@@ -84,6 +84,19 @@ class Facultym extends CI_Model
             );
             $this->db->insert('ictmfacultycourse', $data1);
         }
+
+    }
+
+    public function getAllforManageFaculty()
+    {
+
+        $this->db->select('m.*,menu.menuName as submenu,p.pageTitle');
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $query = $this->db->get();
+        return $query->result();
+
 
     }
 

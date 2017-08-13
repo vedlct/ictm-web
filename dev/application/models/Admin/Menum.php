@@ -98,7 +98,6 @@ class Menum extends CI_Model
             'lastModifiedDate'=>date("Y-m-d H:i:s"),
             'lastModifiedBy'=>$this->session->userdata('id')
 
-
         );
 
         $this->db->where('menuId', $id);
@@ -107,11 +106,25 @@ class Menum extends CI_Model
     //delete menu and it's submenu
     public function deleteMenubyId($menuId)
     {
-        $this->db->where('parentId', $menuId);
-        $this->db->delete('ictmmenu');
 
-        $this->db->where('menuId', $menuId);
+        $query = $this->db->get_where('ictmmenu', array('parentId' => $menuId));
+
+        if ($query->result()==""){
+
+        $this->db->where('menuId',$menuId);
         $this->db->delete('ictmmenu');
+        return 1;
+        }
+        else{
+            return $query->result();
+        }
+
+
+//        $this->db->where('parentId', $menuId);
+//        $this->db->delete('ictmmenu');
+//
+//        $this->db->where('menuId', $menuId);
+//        $this->db->delete('ictmmenu');
     }
 
 

@@ -106,7 +106,9 @@ class Menu extends CI_Controller {
     public function deleteMenu($menuId)    // delete Menu
     {
         if ($this->session->userdata('type') == Admin) {
-            $this->Menum->deleteMenubyId($menuId);
+            $r=$this->Menum->deleteMenubyId($menuId);
+            echo json_encode($r);
+
         }
         else{
             redirect('Login');

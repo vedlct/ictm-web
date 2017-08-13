@@ -49,4 +49,17 @@ class Faculty extends CI_Controller
                 redirect('Login');
             }
     }
+
+    /*---------for Manage Faculty -----------------------*/
+    public function manageFaculty() // for manage menu view
+    {
+        if ($this->session->userdata('type') == Admin) {
+            //$this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
+            //print_r($this->data['menu']);
+            $this->load->view('Admin/manageFaculty');
+        }
+        else{
+            redirect('Login');
+        }
+    }
 }
