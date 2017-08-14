@@ -53,7 +53,7 @@ class Faculty extends CI_Controller
 
 
     /*---------for Manage Faculty -----------------------*/
-    public function manageFaculty() // for manage menu view
+    public function manageFaculty() // for manage Faculty view
     {
         if ($this->session->userdata('type') == Admin) {
             $this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
@@ -121,7 +121,7 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function deleteFaculty($facultyId) // delete Faculty from database
+    public function deleteFaculty($facultyId) // delete Faculty and his teaching Course from database
     {
         if ($this->session->userdata('type') == Admin) {
             $this->Facultym->deleteFacultybyId($facultyId);

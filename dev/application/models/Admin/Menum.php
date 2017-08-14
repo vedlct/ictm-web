@@ -3,7 +3,7 @@
 
 class Menum extends CI_Model
 {
-        // this creates a new Menu in database
+        /*----------- this creates a new Menu in database------------*/
     public function createNewMenu()
     {
         $menuTitle = $this->input->post("menuTitle");
@@ -33,7 +33,7 @@ class Menum extends CI_Model
 
         $this->db->insert('ictmmenu', $data);
     }
-            //get Menu Name and id
+            /*-----get Menu Name and id----------*/
     public function getMenuName($menuType)
     {
         $this->db->select('menuId, menuName');
@@ -43,7 +43,7 @@ class Menum extends CI_Model
     }
 
 
-    // get all menu for mangeMenuView
+    /*---- get all menu for mangeMenuView -----*/
     public function getAllforManageMenu()
     {
 
@@ -57,7 +57,7 @@ class Menum extends CI_Model
 
     }
 
-        //get all information of the selected Menu
+        /*-- get all information of the selected Menu ---*/
     public function getAllMenubyId($menuId)
     {
         $query = $this->db->get_where('ictmmenu', array('menuId' => $menuId));
@@ -100,7 +100,7 @@ class Menum extends CI_Model
 
 
     /*---------delete menu if no Submenu-----------------*/
-    public function deleteMenubyId($menuId)
+    public function deleteMenubyId($menuId) //delete menu if no Submenu
     {
 
         $query = $this->db->get_where('ictmmenu', array('parentId' => $menuId));

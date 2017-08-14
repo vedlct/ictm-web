@@ -136,7 +136,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newEvents.php">Create a new Events</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">Create a new Event</a></li>
                           <li><a class="" href="manageEvents.php">Manage Events</a></li>
 
                       </ul>
