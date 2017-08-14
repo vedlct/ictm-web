@@ -2,175 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63edba62-38f7-4df4-ab81-0309d87a5f82" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session06mrg971889968o9v2lirtsbmsipnbr0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0n39c4shdjpblagltauaaigh2t1es0ca" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0o71q78cvkcr2ge0jmtji1n55d2s4ajm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0rnv0qi57fnfpgpsred7n6ma791m67i0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0s5u85fd8r11ai8irvu4gpklls5f7100" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session149mvblgtttm9aasufm1jc7flrngjo98" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session1h02qjjmgapqisca4b2o7v1sstvqbvkj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session1n90cviqjrgi6e34im0ps3psqetmbheg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session1tot1m41uqmb6j3m7ajpehfbtt8bo29c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session200kiqsru2oe4leoc63bil4c4ld309hn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session22kja8rkn51ot62qso52hqs17h6sob52" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session24eq2uph6n44fm8s8h3gcga1i9f8r1m5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session29k1c71a21g5cth8o60lpd8votjn9jdl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2g97dihg701dksh13epqre1nj52kujtq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2i48qigh592j85cv5s8r1dumto9qs0t0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2jlutjgm6elfbhpm2gmq731qp9bno9o0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2lpafr98h73pvpiv6fg3k2ds1v69402b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session35hr5ap8rj5ju08nps4fq7q3v5ruoise" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session3g0t9bk0hnmtdprgvj2kr1dcicm30a5o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session3io94q479hnuh2rnfmcvk2c9ge1dcvnj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4419orhdffqip1d3sfk1thaqniogmfi5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session49s36ojdqmr7833qralkbd7tbrs7mvbd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4q2r5mu8qjqtqem4s23so6s4angmgm8h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session51ak9591amiburt2lbr3041ofrvl0032" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session56soka58cuag2hu5qh0727sp42mpvl3u" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5dim1tbsbo78n929ascmp0m1r7m7uo2m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5erof49e7sht2f64p6fomlh0c42ccmu8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5f1440mqnlnnthm0ak6tde83p819a6p8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5kplvni1pmkps1ds40jajar3mv69nh5s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5lr1oo4fv1nnhlsej267lovp6r51l31u" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session65q4o0is4d6tukua7bugtfalaeujphd2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session70apjal0753kr7h15fnppcpm26nbds1h" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7chff1m1ecgngjahc9o0gepk4bl92jde" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7ctr6313d5c5b358eb0pepakdc2pjq4d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7eo8iauu73tbsbuhcejpd08f9vujmigc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session7o7jg55vtem3om9bdhdfsqhoc5kqtq9s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session813i2p9e7d8ob4je03m70bcuf57k0hnt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session8f7je97akh89ph4e8efcjj3inln5gjn0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session8g4ruulsphquj7i8m4pcb5uarf2kup8u" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session8vo57prupm8hcumh3i22d4om8i22kufd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9jh2hh35o5m7q51gac89hm9h7erv68t5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9m35t2o0g4q6rfl759er2prkkkfe7eg6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9ms53dd2k9q6j1vf84atqhlt1jvp9lf9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9stlscfjmeg05cikm39d65dmvat3o768" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiona7ddh7cp1reb3bb5ch0lps988uo995d1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiona81d214840ohkorf6ottdjqobceivc46" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiona8evioet9vpf14dvnp2pa1fv3bnh4hpn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionae2mgsh5tp1opa7fe8enerbqegh1sf38" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionafjaje8dh3sqdl8gje77agthmnnu30r4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionagrge3fst6a7biffeb67lkvualcccl8t" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionam98cn73jb2g7c3p8svsjb0h148b7f4t" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionb4t6s8qb2d2gr3mjpa0ipb9s6grbdnns" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbfshrnp08inh03v7p9vgbccmkqoq7j02" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbkg3gg3l1tf283ua97c87jljkhc8jbm3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbokinqmrllvq1sofmk09nu8vln7gvtf3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbpo5ogg42u2f8ms9adud0lhfbb58aom4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbsl6o4j4j6145reavsev56va9rc631dl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiondatlnk3d14k1a1bhanrrveqo7jgv46aj" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiondc1350aess2p83veh2b5l3dcjt3nquh9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionddb4dishstf0vnbn10m75vpee50dpk7i" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiondmamd49394g4gq1dki2u66sah72jjn1g" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiondusrl5q4k2ec1gfh3b71vjg9148s2rtk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessione0ql1vv86ks2vehm7ffhq3vng9vk4p4s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionejukc9v623hhmjiqfccjckvi2hkr2h52" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionf4icm6oarg4fi2oagor6uhqf3hcfkoda" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfekavgohq65gpdevqdtnfggq4cjtaser" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfqus28unplgtde711pj9jkhsqddfqr5g" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfvcame37s1bofcdiend2550vdric74ji" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiong3u0qteb54q9387ok23i47jojdh7014r" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiong6vh2vm274vor2soe4dcju18nnpnkn38" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiongjkqd9e9k8oicfcuag2icliholpfoqc7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiongmo099s7unqiphaagom3f9hngvkg53e3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiongr54f2g9n0bke3kjr3pnggnj6cm9h5p3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionh0c63ufu7d2f45a5c618h25dvo669ehc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionh1r5oclj3ngcutr8aosj6sni2vq7gtet" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhd2n6b80h27afh1f4sumho0ugdrpg86q" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhd70cck1d6cjkgrqds8lhpem7320kseg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhe5p05m8602aothmbku2q23d5iosm65u" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhl68rtopvnoir1lu0mak2dasrcp34khm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhltb62ltu31hord5laogqeqa410f58jv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhmqklc3aevppokhgv1fobeaoctra80ga" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhq8u73opqfcejj2j2v2c6jhr6l195e44" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhqg6j5rkl7b0gafubn068gp3nkuapmlk" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhr37kg6psrkt8441k3nt5soj8626fepl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhvc8o21lupofc2arg5i4kfof35t0k2l3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioni76e7rdqa788q3aq9oovi0isc1b1meqv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioni97kl9a0ap35iridjgm98aekjtos20ea" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioni9fg99huqso6h1mfqespgqlneeb2iqtm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionika0fkljih8297d1ahinkrkmvlfcu5sp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionir9qjiac53m5e1sj3bdrar738c5f0ekf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioniseabj4013d2v3f21447euq9kfjvmp48" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionj7n5caumstt4apnk6qt3uqf04kfo53v6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionj8lh5bo9m8dvktva0p0lhr51c0l84s9t" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionje0k4ru132bstjbusph6re1vrt8j6pur" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionjotlhvkaf4t3od4d43luic84vf43l7v8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionjtm36fpnam4tbbk4i92cpqkvj5pattr9" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionkc0ttd5a4h4c67a54ab09m835ennmu7n" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionkk5v3jdfonscmnhllgh477igem8nbj4f" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionkvrlc6hth0cbk2c5aj3te04bdiop787b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionl6qhrngcotu6s4devsgu5q1gitsm44qq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionldhogudvib7aeums5vcjmou8br5p58tn" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionm4kitrutepuoqo3f9k4s8k4lh81hjtj4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionm5hg9ob975j0lodgr4dofn0vogc5krvr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmbnba4n7cqoka2mcpt7gig4gjc2g8nse" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmcm0u9u4pmqculk3nmrrnmg7uc3hfa2c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmklq9rcse2crnodlulv3p5sj6l5uq16s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmkmmkdlglnhd5lrca60rrpho88ge8f3o" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmn0s0a3kkm4s5a2kqv09b6mlmus6rgih" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmn2urndsc7h59hb8k4l7a4ahj3fpr1of" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmqqf7mfr2jtl3145ubo7dge33u2t44h4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionn363uqhco6jnbj1937ok25k443g40j2a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionn92d4odhegg61tsh8tuhuuefu44hrnfe" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionn9t0gllbf7rh1emjen0vbr4b0oula8qm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionna7fu4b14mnvm34q08lk2kis62577m7q" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiono1om33eeani3slhln2dkovjdskr0uvjl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiono36f077jqb5ju75euiamfg8av53e6s8l" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionojlasocgosldaighj3n5fao82hlmim6m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionovthk351rpb3e5mtp06afdidgc153b95" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionp0tds3dbrrm1icttuk1rqdnju8oirb3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionp0tj0ljucbmicsfac6uedp8haoqpq7t8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpbcb9asd1b523fhprmcu7dpvbr24mhlm" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpkldebs4ofkm9cihj4etlokio4ouc0em" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpm44aob553pe38k9jb1hdkbet6ltlffp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionptasmgdk2tq6b6gj82aa0vqslkhln207" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpu90d7prdg0ak3ptto5g312qauaip37v" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpuuk31cbvr5srcb81b0hb2jml35tvcu6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq2ti6mk0idun0qsdi09sqhsd8lbmleo8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq51u4hqnjs08jnf2bgok781s3sbh5qo1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq7ritpls399a42h6bh3o5jqh3hh4igkf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq93tbj84b7i5dcp4enarcasj5ar3u1fv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqasi0ejchtqu49082r529efks92u4c73" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqavtikoih2r4kv68mg73chpd4gfkk8hi" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqfa81at5aek13tld30r9bsl8i1v4q68c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqhnrokbpctjkmse9j5j5hguj72t5r1h8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqjjk3ohdk7mb2hqa4mts9nvp5ca0gkm7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqmnlur2ulf0qjd58n15ha77ghdkutt55" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqp6b8nft5ck4eeum2hqtir2g6odjas0m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqpogec19g0ibjhl706mc2d4nma0t623p" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqsd37banrcdh9l4osaekfc614h3vcd3d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqvga753qtuo7aon92bls86rhk6ll5k62" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionr62n4gsji7viafda3s00ok6qi82ke4tr" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionr6c5bpdj4cm8q82kph6f2du6p5kif93a" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionra1i731525eea8vm9bp0k632gv6j6po8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrfhe3i6kr74ddp9hj497ahmk01irtko2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrkv7fj02feo12tdvud6j184m8vf79mc6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionrp4uermf445ldg04cht5m8ngjjh3eood" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionsdcm5vejdq62nvmne43nkivnts18565s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionse7fuc270tetaht66n9belgve3blups7" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionsl0ibdtf7mo5husr37o06ie08noiu0b4" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiont3krs59hunhnulof1smgtsjpmdjv7oeb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiont7pcnr7v0fshvj3gmuted6a7slbv2v27" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionta4oaj177fg09j4c6mlc8jg35g0mg3pq" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontafd0am1s1doi8d2imh0d3uai17i258s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionth7jf73usls53h7st9g21ejb2gl039t3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionti2d9b5p8hl1ijlfighdtu7nnahrsd51" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontie63dsvfi10noh1rhor1et0q9s6q2lh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontk0gkpanpkb5hc0i4s86bc1725om529d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontnm65frov5jgsece541qoq579rl0nloh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontop6nq1sroa9ifb7qlrdosaaksgdgrqb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionudgg5gve1dt4ai4km4tt46kmec9cs5gv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionuiv1d9ok16sndlaq7p5582as8ra3gl19" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionujt6c6eu70kdhckf9lq8s2o0vojng58s" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionum2p0dqm0jqq21ci1tthc8936chfcvap" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionupp4gp2trimd2dmoqdi8scbs7mpuig2r" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionv19kjmpo2ar5h0n76kfdththbckb35t3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionvi68qho66ci073quoblt1p5astn6vlst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionvojqv6lj7go8aig5tidkp63np5mu6aup" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/system/ci_sessionkl92d3f8k8q4gs8shakgeirp1oqal83v" afterPath="$PROJECT_DIR$/dev/system/ci_sessionkl92d3f8k8q4gs8shakgeirp1oqal83v" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -185,11 +18,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Course.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Course.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Course.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="585">
-              <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newFaculty.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newCourseSection.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -210,7 +63,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2916">
               <caret line="162" column="31" lean-forward="false" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-              <folding />
+              <folding>
+                <marker date="1502691958731" expanded="true" signature="107:7549" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -245,19 +100,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Page.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1854">
-              <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
-              <folding>
-                <marker date="1502627719573" expanded="true" signature="2705:2787" ph="..." />
-                <marker date="1502627719573" expanded="true" signature="2896:3011" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="managePage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/managePage.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -281,21 +123,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Menu.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Menu.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="990">
-              <caret line="55" column="31" lean-forward="false" selection-start-line="52" selection-start-column="15" selection-end-line="55" selection-end-column="31" />
-              <folding>
-                <marker date="1502627719569" expanded="true" signature="1789:1957" ph="..." />
-                <marker date="1502627719569" expanded="true" signature="3177:3348" ph="..." />
-                <marker date="1502627719569" expanded="true" signature="3995:4004" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>check</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -303,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/Admin/Faculty.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/Login.php" />
         <option value="$PROJECT_DIR$/dev/application/models/Admin/Facultym.php" />
@@ -316,6 +148,7 @@
         <option value="$PROJECT_DIR$/dev/application/views/Admin/editCourse.php" />
         <option value="$PROJECT_DIR$/dev/application/models/Admin/Coursem.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/Admin/Course.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php" />
       </list>
     </option>
   </component>
@@ -638,12 +471,12 @@
       <updated>1502517726961</updated>
       <workItem from="1502517728316" duration="5114000" />
       <workItem from="1502603907804" duration="19053000" />
-      <workItem from="1502691736369" duration="175000" />
+      <workItem from="1502691736369" duration="9971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24342000" />
+    <option name="totallyTimeSpent" value="34138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -699,7 +532,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2916">
           <caret line="162" column="31" lean-forward="false" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1502691958731" expanded="true" signature="107:7549" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -762,9 +597,15 @@
         <state relative-caret-position="990">
           <caret line="55" column="31" lean-forward="false" selection-start-line="52" selection-start-column="15" selection-end-line="55" selection-end-column="31" />
           <folding>
-            <marker date="1502627719569" expanded="true" signature="1789:1957" ph="..." />
-            <marker date="1502627719569" expanded="true" signature="3177:3348" ph="..." />
-            <marker date="1502627719569" expanded="true" signature="3995:4004" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="104:4023" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="1789:1957" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3177:3348" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3495:3962" ph="{...}" />
+            <marker date="1502691958716" expanded="true" signature="3558:3900" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3638:3861" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3706:3775" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3891:3900" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3915:3955" ph="..." />
           </folding>
         </state>
       </provider>
@@ -792,7 +633,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1116">
           <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1502691958731" expanded="true" signature="107:7549" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -808,6 +651,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1278">
           <caret line="71" column="46" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="71" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -823,6 +667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1278">
           <caret line="71" column="46" lean-forward="false" selection-start-line="68" selection-start-column="40" selection-end-line="71" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -831,8 +676,8 @@
         <state relative-caret-position="612">
           <caret line="36" column="33" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="36" selection-end-column="33" />
           <folding>
-            <marker date="1502627719564" expanded="true" signature="953:1136" ph="..." />
-            <marker date="1502627719564" expanded="true" signature="1217:1405" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="953:1136" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="1217:1405" ph="..." />
           </folding>
         </state>
       </provider>
@@ -861,16 +706,9 @@
         <state relative-caret-position="387">
           <caret line="67" column="61" lean-forward="false" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
           <folding>
-            <marker date="1502627719574" expanded="true" signature="1891:2059" ph="..." />
-            <marker date="1502627719574" expanded="true" signature="2896:2958" ph="SELECT * FRO... ictmfaculty" />
+            <marker date="1502691958731" expanded="true" signature="1891:2059" ph="..." />
+            <marker date="1502691958731" expanded="true" signature="2896:2958" ph="SELECT * FRO... ictmfaculty" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="221" column="68" lean-forward="true" selection-start-line="221" selection-start-column="28" selection-end-line="221" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -887,9 +725,15 @@
         <state relative-caret-position="990">
           <caret line="55" column="31" lean-forward="false" selection-start-line="52" selection-start-column="15" selection-end-line="55" selection-end-column="31" />
           <folding>
-            <marker date="1502627719569" expanded="true" signature="1789:1957" ph="..." />
-            <marker date="1502627719569" expanded="true" signature="3177:3348" ph="..." />
-            <marker date="1502627719569" expanded="true" signature="3995:4004" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="104:4023" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="1789:1957" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3177:3348" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3495:3962" ph="{...}" />
+            <marker date="1502691958716" expanded="true" signature="3558:3900" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3638:3861" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3706:3775" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3891:3900" ph="..." />
+            <marker date="1502691958716" expanded="true" signature="3915:3955" ph="..." />
           </folding>
         </state>
       </provider>
@@ -960,14 +804,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2916">
           <caret line="162" column="31" lean-forward="false" selection-start-line="162" selection-start-column="31" selection-end-line="162" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1502691958731" expanded="true" signature="107:7549" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Course.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
-          <caret line="71" column="0" lean-forward="true" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="245" column="0" lean-forward="false" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
           <folding />
         </state>
       </provider>

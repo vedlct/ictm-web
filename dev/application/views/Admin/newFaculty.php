@@ -127,7 +127,7 @@
                                         <label for="faculty_status" class="control-label col-lg-2">Faculty Status <span class="required">*</span></label>
                                         <div class="col-lg-4">
 
-                                            <select class="form-control" id="faculty_status" name="faculty_status" required>
+                                            <select class="form-control" id="faculty_status" name="faculty_status"   required>
 
                                                 <option value=""selected><?php echo SelectStatus?></option>
                                                 <option value="<?php echo Active?>"><?php echo Active?></option>
@@ -142,7 +142,7 @@
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" required>
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]"  required>
                                                 <option value="" selected><?php echo SelectCourse ?></option>
                                                 <?php
                                                 $coursename= array();
@@ -227,23 +227,30 @@
 //            }
             //alert(coursename);
             if(counter > p){
-                alert("Only "+p+" textboxes allow");
-                return false;
+                //alert("Only "+p+" textboxes allow");
+               // return false;
             }
 
 
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
-                '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[] '+ counter +
-                '" id="textbox' + counter + '" value="" required onchange="checkCourse()">'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
+                '<div class="form-group col-lg-4">'+'<select class="form-control"    name="faculty_courses[] '+ counter +
+                '" id="textbox' + counter + '" value="" required">'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
 
+           // var x = document.getElementById("faculty_courses"+counter).value;
+           // alert(x);
+
+
             newTextBoxDiv.appendTo("#CourseFiled");
             counter++;
         });
+
+
+
         $("#removeButton").click(function () {
             if(counter==2){
                 alert("No more textbox to remove");
