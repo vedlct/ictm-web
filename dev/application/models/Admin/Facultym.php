@@ -3,7 +3,8 @@
 
 class Facultym extends CI_Model
 {
-    public function createNewFaculty()
+    /*---------for creating new Faculty --------------------- */
+    public function createNewFaculty() // creates new faculty in database
     {
 
         $facultyFirstName = $this->input->post("faculty_first_name");
@@ -86,21 +87,23 @@ class Facultym extends CI_Model
         }
 
     }
+    /*---------for creating new Faculty ---------end------------ */
 
-    public function getAllforManageFaculty()
+    /*---------for Manage Faculty -----------------------*/
+    public function getAllforManageFaculty() // for manage Faculty view
     {
         $query = $this->db->get('ictmfaculty');
         return $query->result();
 
     }
 
-    public function getAllFacultybyId($facultyId)
+    public function getAllFacultybyId($facultyId) // for edit  Selected Faculty view
     {
         $query = $this->db->get_where('ictmfaculty', array('facultyId' => $facultyId));
         return $query->result();
     }
 
-    public function editFacultybyId($id)
+    public function editFacultybyId($id)        // for edit Faculty by id from database
     {
         $facultyFirstName = $this->input->post("faculty_first_name");
         $facultyLastName = $this->input->post("faculty_last_name");
@@ -183,7 +186,8 @@ class Facultym extends CI_Model
         $this->db->update('ictmfaculty',$data);
     }
 
-    public function deleteFacultybyId($facultyId){
+    public function deleteFacultybyId($facultyId)  // delete Faculty and his teaching Course from database
+    {
 
         $this->db->where('facultyId',$facultyId);
         $this->db->delete('ictmfacultycourse');
@@ -192,5 +196,7 @@ class Facultym extends CI_Model
         $this->db->delete('ictmfaculty');
 
     }
+
+    /*---------for Manage Faculty ---------end--------------*/
 
 }
