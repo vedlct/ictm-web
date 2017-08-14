@@ -4,7 +4,7 @@
     <!-- view head ----->
     <?php include('head.php') ?>
     <!-- view head  end----->
-    <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
 </head>
 
 <body>
@@ -51,23 +51,18 @@
                                         <label class="control-label col-lg-2" for="eventStartDateTime">Event Start Date Time<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
-                                            <div class="input-group date form_datetime " data-date="<?php date("Y-m-d H:i:s") ?>" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                                <input class="form-control" id="eventStartDateTime" size="16" type="text"  readonly >
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                            <div class='input-group date' id='datetimepicker1'>
+                                                <input type='text' class="form-control" />
+                                                <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
                                             </div>
-                                            <input type="hidden" id="dtp_input1" /><br/>
                                         </div>
 
                                         <label class="control-label col-lg-2" for="eventEndDateTime">Event End Date Time<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
-                                            <div class="input-group date form_datetime " data-date="<?php date("Y-m-d H:i:s") ?>" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input2">
-                                                <input class="form-control" id="eventEndDateTime" size="16" type="text" readonly >
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                                                <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
-                                            </div>
-                                            <input type="hidden" id="dtp_input2" /><br/>
+
                                         </div>
 
                                     </div>
@@ -154,79 +149,13 @@
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
-<script>
-    function selectid(x) {
-        var btn =  document.getElementById("menuType").value;
-        //alert(btn);
-        if (btn == "Select Menu Type"){
-            alert("Select a valid Menu Type");
-        }
-        else
-        {
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url("Admin/Menu/getMenuLevel/")?>'+btn,
-                data:{'type': btn},
-                cache: false,
-                success:function(data) {
-                    document.getElementById("menuId").innerHTML = data;
-                    //alert(data);
-                }
-            });
-        }
-    }
-    function submitform() {
-        var title=document.getElementById("menuTitle").value;
-        var menuType=document.getElementById("menuType").value;
-        var menuStatus=document.getElementById("menuStatus").value;
-        if (title == null){
-            alert("Please Insert a Title for Menu");
-            return false;
-        }
-        if (menuType =="Select Menu Type"){
-            alert("Please Select Menu Type");
-            return false;
-        }
-        if (menuStatus =="Select Status"){
-            alert("Please Select Menu Status");
-            return false;
-        }
-    }
-</script>
 
-<script type="text/javascript" src="<?php echo base_url()?>public/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="<?php echo base_url()?>public/js/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+<script type="text/javascript" src="<?php echo base_url()?>public/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
+
 
 <script type="text/javascript">
-    $('.form_datetime').datetimepicker({
-        //language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        forceParse: 0,
-        showMeridian: 1
-    });
-    $('.form_date').datetimepicker({
-        language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 2,
-        minView: 2,
-        forceParse: 0
-    });
-    $('.form_time').datetimepicker({
-        language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-        autoclose: 1,
-        todayHighlight: 1,
-        startView: 1,
-        minView: 0,
-        maxView: 1,
-        forceParse: 0
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
     });
 </script>

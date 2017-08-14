@@ -8,8 +8,8 @@ class Eventm extends CI_Model
     {
 
         $eventTitle = $this->input->post("eventTitle");
-        $eventStartDateTime = $this->input->post("dtp_input1");
-        $eventEndDateTime = $this->input->post("dtp_input2");
+        $eventStartDateTime = $this->input->post("eventStartDateTime");
+        $eventEndDateTime = $this->input->post("eventEndDateTime");
         $eventLocation = $this->input->post("eventLocation");
         $event_image = $_FILES['event_image']['name'];
         $EventType = $this->input->post("EventType");

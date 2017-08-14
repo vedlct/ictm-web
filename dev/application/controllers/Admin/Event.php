@@ -29,10 +29,15 @@ class Event extends CI_Controller
     {
         if ($this->session->userdata('type') == Admin) {
 
-            $eventStartDateTime = $this->input->post("eventStartDateTime");
-            $eventEndDateTime = $this->input->post("dtp_input2");
-            print_r($eventStartDateTime);
-            print_r($eventEndDateTime);
+            $eventStartDateTime = strtotime("08/10/2017 4:49 PM");
+
+
+            $eventEndDateTime = $this->input->post("eventEndDateTime");
+            print_r(date('Y-m-d',$eventStartDateTime));
+            //print_r($this->input->post("eventStartDateTime"));
+
+            //print_r($eventEndDateTime);
+
 
 //            try {
 //                $this->Eventm->createNewEvent();

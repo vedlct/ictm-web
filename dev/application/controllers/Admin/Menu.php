@@ -114,7 +114,7 @@ class Menu extends CI_Controller {
                     array_push($name,$r->menuName);
                 }
 
-                $x=implode(" , ",$name);;
+                $x=implode(" , ",$name);
                    echo $x;
 
             }
