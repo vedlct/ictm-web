@@ -27,7 +27,7 @@ class Facultym extends CI_Model
                 'upload_path' => "images/",
                 'allowed_types' => "jpg|png|jpeg",
                 'overwrite' => TRUE,
-//                'max_size' => "2048000",
+                //'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
 
@@ -89,14 +89,107 @@ class Facultym extends CI_Model
 
     public function getAllforManageFaculty()
     {
-
-        $this->db->select('m.*,menu.menuName as submenu,p.pageTitle');
-        $this->db->from('ictmmenu m');
-        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
-        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
-        $query = $this->db->get();
+        $query = $this->db->get('ictmfaculty');
         return $query->result();
 
+    }
+
+    public function getAllFacultybyId($facultyId)
+    {
+        $query = $this->db->get_where('ictmfaculty', array('facultyId' => $facultyId));
+        return $query->result();
+    }
+
+    public function editFacultybyId($id)
+    {
+        $facultyFirstName = $this->input->post("faculty_first_name");
+        $facultyLastName = $this->input->post("faculty_last_name");
+        $facultyDegree = $this->input->post("faculty_degree");
+        $facultyPosition = $this->input->post("faculty_position");
+        $facultyImage=$_FILES['faculty_image']['name'];
+        $facultyEmpType = $this->input->post("faculty_emp_type");
+        $facultyEmail = $this->input->post("faculty_email");
+        $facultyPhone = $this->input->post("faculty_phone");
+        $facultyTwitter = $this->input->post("faculty_twitter");
+        $facultyLinkdin = $this->input->post("faculty_linkedin");
+        $facultyStatus = $this->input->post("faculty_status");
+
+        $facultyIntro = $this->input->post("faculty_intro");
+        date_default_timezone_set("Europe/London");
+
+        if (!empty($_FILES['faculty_image']['name'])) {
+            $this->load->library('upload');
+            $config = array(
+                'upload_path' => "images/",
+                'allowed_types' => "jpg|png|jpeg",
+                'overwrite' => TRUE,
+//                'max_size' => "2048000",
+                'remove_spaces'=>FALSE,
+                'mod_mime_fix'=>FALSE,
+
+            );
+            $this->upload->initialize($config);
+
+            if($this->upload->do_upload('faculty_image')){
+                $response   =array('upload_data' => $this->upload->data());
+                //print_r($response);
+            }else{
+                $error =array('error'=>$this->upload->display_errors());
+                print_r($error);
+                return false;
+            }
+            $data = array(
+                'facultyFirstName' => $facultyFirstName,
+                'facultyLastName' => $facultyLastName,
+                'facultyDegree' => $facultyDegree,
+                'facultyPosition' => $facultyPosition,
+                'facultyEmpType' => $facultyEmpType,
+                'facultyEmail'=>$facultyEmail,
+                'faultyPhone'=>$facultyPhone,
+                'facultyTwitter'=>$facultyTwitter,
+                'facultyLinkedIn'=>$facultyLinkdin,
+                'facultyIntro'=>$facultyIntro,
+                'facultyImage'=>$facultyImage,
+                'facultyStatus'=>$facultyStatus,
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+            );
+
+        }
+        else
+        {
+            $data = array(
+                'facultyFirstName' => $facultyFirstName,
+                'facultyLastName' => $facultyLastName,
+                'facultyDegree' => $facultyDegree,
+                'facultyPosition' => $facultyPosition,
+                'facultyEmpType' => $facultyEmpType,
+                'facultyEmail'=>$facultyEmail,
+                'faultyPhone'=>$facultyPhone,
+                'facultyTwitter'=>$facultyTwitter,
+                'facultyLinkedIn'=>$facultyLinkdin,
+                'facultyIntro'=>$facultyIntro,
+
+                'facultyStatus'=>$facultyStatus,
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+            );
+        }
+
+
+        $this->db->where('facultyId', $id);
+        $this->db->update('ictmfaculty',$data);
+    }
+
+    public function deleteFacultybyId($facultyId){
+
+        $this->db->where('facultyId',$facultyId);
+        $this->db->delete('ictmfacultycourse');
+
+        $this->db->where('facultyId',$facultyId);
+        $this->db->delete('ictmfaculty');
 
     }
 

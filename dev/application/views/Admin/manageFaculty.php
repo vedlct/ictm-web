@@ -34,15 +34,16 @@
                         <header class="panel-heading">
                             <b>Manage Faculty</b>
                         </header>
-                        <div class="panel-body ">
-                            <table class="table table-striped table-advance  table-bordered table-hover ">
+                        <div class="panel-body table table-responsive ">
+                            <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>
+                                    <th> Faculty Name</th>
                                     <th> Faculty Email</th>
                                     <th> Faculty Position</th>
                                     <th> Faculty Employee Type</th>
                                     <th> Faculty Degree</th>
-                                    <th> Faculty Phone</th>
+
                                     <th> Faculty Status</th>
                                     <th> Faculty Inserted By</th>
                                     <th> Last Modified By</th>
@@ -51,52 +52,68 @@
                                 </tr>
 
 
-
+                                <?php foreach ($faculty as $faculty){?>
                                     <tr>
                                         <td>
+                                            <?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
+                                        </td>
+
+                                        <td>
+                                            <?php echo $faculty->facultyEmail?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            echo str_replace(",","<br>",$faculty->facultyPosition);
+                                            ?>
 
                                         </td>
 
                                         <td>
+                                            <?php echo $faculty->facultyEmpType?>
+                                        </td>
+
+                                        <td>
+                                            <?php
+                                            echo str_replace(",","<br>",$faculty->facultyDegree);
+                                            ?>
 
                                         </td>
 
                                         <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
+                                            <?php echo $faculty->facultyStatus?>
                                         </td>
 
                                         <td>
+                                            <?php echo $faculty->insertedBy?>
 
                                         </td>
 
                                         <td>
-
-
+                                            <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
                                         </td>
 
                                         <td>
-                                        </td>
-
-                                        <td>
+                                            <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
+                                            else
+                                                {
+                                                $timestamp = strtotime($faculty->lastModifiedDate);
+                                                $date = date('F-d-Y', $timestamp);
+                                                echo $date ;
+                                                }?>
 
                                         </td>
 
                                         <td>
 
                                             <div class="btn-group">
-                                                <a class="btn" href=""><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id=""  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                                <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
+                                                <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                             </div>
                                         </td>
 
                                     </tr>
-
+                                <?php } ?>
 
 
 
@@ -126,25 +143,22 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Menu?All of it's Sub Menu will be Deleted!!")) {
+        if (confirm("Are you sure you want to delete this Faculty?")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin/Menu/deleteMenu/")?>'+btn,
-                data:{'menuid':btn},
+                url:'<?php echo base_url("Admin/Faculty/deleteFaculty/")?>'+btn,
+                data:{},
                 cache: false,
                 success:function(data) {
-//                    alert("Menu Deleted Successfully!!");
-//                    location.reload();
-                    //if(data==1){alert(1)}
-                    alert(data)
-
+                    alert("Faculty Deleted Successfully!!");
+                    location.reload();
 
                 }
             });
         }
         else {
-            window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
+            location.reload();
         }
     }
 </script>

@@ -222,9 +222,9 @@
             var coursename= <?php echo json_encode( $coursename ) ?>;
            var i;
            var p=<?php echo count($coursename)?>;
-            for (i=0;i<coursename.length;i++){//
-            //     alert(coursename[i])
-            }
+//            for (i=0;i<coursename.length;i++){
+//                 alert(coursename[i])
+//            }
             //alert(coursename);
             if(counter > p){
                 alert("Only "+p+" textboxes allow");
@@ -236,7 +236,7 @@
                 .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
                 '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[] '+ counter +
-                '" id="textbox' + counter + '" value="" required>'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
+                '" id="textbox' + counter + '" value="" required onchange="checkCourse()">'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
@@ -261,4 +261,5 @@
         });
     });
 </script>
+
 

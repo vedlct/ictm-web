@@ -49,17 +49,88 @@ class Faculty extends CI_Controller
                 redirect('Login');
             }
     }
+    /*---------for creating new Faculty  --------end---------------*/
+
 
     /*---------for Manage Faculty -----------------------*/
     public function manageFaculty() // for manage menu view
     {
         if ($this->session->userdata('type') == Admin) {
-            //$this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
+            $this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
             //print_r($this->data['menu']);
-            $this->load->view('Admin/manageFaculty');
+            $this->load->view('Admin/manageFaculty',$this->data);
         }
         else{
             redirect('Login');
         }
     }
+
+    public function editFacultyView($facultyId) // for edit  Selected Faculty view
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->data['editFaculty'] = $this->Facultym->getAllFacultybyId($facultyId);
+            $this->data['facultyCourse'] = $this->Coursem->getFacultyCourseIdName($facultyId);
+            $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
+
+            $this->load->view('Admin/editFaculty', $this->data);
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function addCoursetoFaculty($courseId) //add Course to selected faculty
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $r=$this->Coursem->addCoursetoFaculty($courseId);
+            echo $r;
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function deleteCoursetoFaculty($id) //delete  Course to selected faculty
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->Coursem->deleteCoursetoFaculty($id);
+
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function editFacultybyId($id) // for edit Faculty by id from database
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->Facultym->editFacultybyId($id);
+
+            echo "<script>
+                    alert('Faculty Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
+                    </script>";
+
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function deleteFaculty($facultyId) // delete Faculty from database
+    {
+        if ($this->session->userdata('type') == Admin) {
+            $this->Facultym->deleteFacultybyId($facultyId);
+        }
+
+        else{
+            redirect('Login');
+        }
+    }
+    /*---------for Manage Faculty ----------end-------------*/
+
 }
