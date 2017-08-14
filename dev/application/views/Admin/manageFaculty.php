@@ -34,8 +34,8 @@
                         <header class="panel-heading">
                             <b>Manage Faculty</b>
                         </header>
-                        <div class="panel-body ">
-                            <table class="table table-striped table-advance  table-bordered table-hover ">
+                        <div class="panel-body table table-responsive ">
+                            <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>
                                     <th> Faculty Name</th>
@@ -108,7 +108,7 @@
 
                                             <div class="btn-group">
                                                 <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id=""  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                                <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                             </div>
                                         </td>
 
@@ -143,25 +143,22 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Menu?All of it's Sub Menu will be Deleted!!")) {
+        if (confirm("Are you sure you want to delete this Faculty?")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin/Menu/deleteMenu/")?>'+btn,
-                data:{'menuid':btn},
+                url:'<?php echo base_url("Admin/Faculty/deleteFaculty/")?>'+btn,
+                data:{},
                 cache: false,
                 success:function(data) {
-//                    alert("Menu Deleted Successfully!!");
-//                    location.reload();
-                    //if(data==1){alert(1)}
-                    alert(data)
-
+                    alert("Faculty Deleted Successfully!!");
+                    location.reload();
 
                 }
             });
         }
         else {
-            window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
+            location.reload();
         }
     }
 </script>

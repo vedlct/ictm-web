@@ -71,7 +71,7 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <label for="faculty_image" class="control-label col-lg-2">Faculty Image <span class="required">*</span></label>
+                                        <label for="faculty_image" class="control-label col-lg-2">Faculty Image</label>
                                         <div class="col-lg-4">
                                             <input class="form-control" type="file" name="faculty_image" id="faculty_image"/><span><?php echo $editFaculty->facultyImage?></span>
                                         </div>
@@ -82,8 +82,6 @@
                                             <select class="form-control" id="faculty_emp_type" name="faculty_emp_type" required >
 
                                                 <option value=""><?php echo SelectType?></option>
-<!--                                                <option value="--><?php //echo FullTime?><!--">--><?php //echo FullTime?><!-- </option>-->
-<!--                                                <option value="--><?php //echo PartTime?><!--">--><?php //echo PartTime?><!--</option>-->
 
                                                 <option value="<?php echo FullTime ?>" <?php if (!empty($editFaculty->facultyEmpType) && $editFaculty->facultyEmpType == FullTime)  echo 'selected = "selected"'; ?>><?php echo FullTime?></option>
                                                 <option value="<?php echo PartTime ?>" <?php if (!empty($editFaculty->facultyEmpType) && $editFaculty->facultyEmpType == PartTime)  echo 'selected = "selected"'; ?>><?php echo PartTime?></option>
@@ -147,7 +145,8 @@
                                     <div class="form-group">
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
 
-                                        <div class="col-lg-4" id="CourseTable">
+                                        <div class="col-lg-4" >
+                                            <div class="form-group" id="CourseTable">
                                             <table class="table table-striped table-advance  table-bordered table-hover ">
                                                 <tbody>
                                                 <tr>
@@ -172,8 +171,9 @@
                                                 <?php } ?>
                                                 </tbody>
                                             </table>
-
+                                            </div>
                                         </div>
+
 
                                         <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
                                         <div class="col-lg-3">
@@ -190,39 +190,6 @@
                                         </div>
 
                                     </div>
-<!--                                    --><?php //foreach ($facultyCourse as $facultyCourse ){?>
-<!--                                    <div class="form-group"id="CourseFiled">-->
-<!---->
-<!--                                        <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>-->
-<!--                                        <div class="col-lg-4">-->
-<!--                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" required>-->
-<!--                                                <option value="" >--><?php //echo SelectCourse ?><!--</option>-->
-<!--                                                --><?php
-//                                                $coursename= array();
-//                                                $courseid=array();
-//                                                foreach ($course as $course){?>
-<!--                                                    <option value="--><?php //echo $facultyCourse->courseId?><!--"--><?php //if (!empty($facultyCourse->courseId) && $facultyCourse->courseId ==$course->courseId)echo 'selected = "selected"'; ?><!-- >--><?php //echo $facultyCourse->courseTitle ?><!--</option>-->
-<!--                                                    --><?php
-//                                                    array_push($coursename,$course->courseTitle );
-//                                                    array_push($courseid,$course->courseId );
-//                                                }?>
-<!---->
-<!--                                            </select>-->
-<!--                                        </div>-->
-<!---->
-<!--                                        <div class="form-group col-lg-6" id="add_remove_button">-->
-<!---->
-<!--                                            <div class="col-lg-2"></div>-->
-<!--                                            <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>-->
-<!--                                            <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>-->
-<!---->
-<!---->
-<!--                                        </div>-->
-<!---->
-<!--                                    </div>-->
-<!---->
-<!--                                    --><?php //} ?>
-
 
                                     <div class="form-group ">
                                         <label for="faculty_intro" class="control-label col-lg-2">Faculty Intro <span class="required">*</span></label>

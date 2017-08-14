@@ -183,4 +183,14 @@ class Facultym extends CI_Model
         $this->db->update('ictmfaculty',$data);
     }
 
+    public function deleteFacultybyId($facultyId){
+
+        $this->db->where('facultyId',$facultyId);
+        $this->db->delete('ictmfacultycourse');
+
+        $this->db->where('facultyId',$facultyId);
+        $this->db->delete('ictmfaculty');
+
+    }
+
 }

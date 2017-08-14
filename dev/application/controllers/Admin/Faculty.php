@@ -49,6 +49,8 @@ class Faculty extends CI_Controller
                 redirect('Login');
             }
     }
+    /*---------for creating new Faculty  --------end---------------*/
+
 
     /*---------for Manage Faculty -----------------------*/
     public function manageFaculty() // for manage menu view
@@ -63,7 +65,7 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function editFacultyView($facultyId) // for edit menu view
+    public function editFacultyView($facultyId) // for edit  Selected Faculty view
     {
         if ($this->session->userdata('type') == Admin) {
 
@@ -78,7 +80,7 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function addCoursetoFaculty($courseId)
+    public function addCoursetoFaculty($courseId) //add Course to selected faculty
     {
         if ($this->session->userdata('type') == Admin) {
 
@@ -90,7 +92,7 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function deleteCoursetoFaculty($id)
+    public function deleteCoursetoFaculty($id) //delete  Course to selected faculty
     {
         if ($this->session->userdata('type') == Admin) {
 
@@ -102,7 +104,7 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function editFacultybyId($id) // for edit Faculty from database
+    public function editFacultybyId($id) // for edit Faculty by id from database
     {
         if ($this->session->userdata('type') == Admin) {
 
@@ -118,5 +120,17 @@ class Faculty extends CI_Controller
             redirect('Login');
         }
     }
+
+    public function deleteFaculty($facultyId) // delete Faculty from database
+    {
+        if ($this->session->userdata('type') == Admin) {
+            $this->Facultym->deleteFacultybyId($facultyId);
+        }
+
+        else{
+            redirect('Login');
+        }
+    }
+    /*---------for Manage Faculty ----------end-------------*/
 
 }
