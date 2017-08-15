@@ -142,7 +142,7 @@
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" required>
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" onchange="selectid(this)"required>
                                                 <option value="" selected><?php echo SelectCourse ?></option>
                                                 <?php
                                                 $coursename= array();
@@ -217,10 +217,13 @@
     $(document).ready(function(){
         var counter = 2;
 
+
+
         $("#addCourse").click(function () {
 
             var coursename= <?php echo json_encode( $coursename ) ?>;
            var i;
+
            var p=<?php echo count($coursename)?>;
 //            for (i=0;i<coursename.length;i++){
 //                 alert(coursename[i])
@@ -231,12 +234,15 @@
                 return false;
             }
 
-
+            function selectid(){
+                var menuType=document.getElementById("textbox"+counter).value;
+                alert(menuType);
+            }
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
                 '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[] '+ counter +
-                '" id="textbox' + counter + '" value="" required onchange="checkCourse()">'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
+                '" id="textbox' + counter +'" data-panel-id="textbox'+ counter+'"onchange="selectid(this)"'+'" value="" required>'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
@@ -277,6 +283,14 @@
             alert( 'Please enter a Faculty Intro' );
             return false;
         }
+    }
+
+</script>
+<script>
+
+    function selectid(x){
+        //btn = $(x).data('panel-id');
+        alert(1);
     }
 
 </script>
