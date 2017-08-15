@@ -142,7 +142,7 @@
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" onchange="selectid(this)"required>
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]"required>
                                                 <option value="" selected><?php echo SelectCourse ?></option>
                                                 <?php
                                                 $coursename= array();
@@ -214,9 +214,9 @@
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
 <script type="text/javascript">
+    var newArray = [];
     $(document).ready(function(){
         var counter = 2;
-
 
 
         $("#addCourse").click(function () {
@@ -224,25 +224,46 @@
             var coursename= <?php echo json_encode( $coursename ) ?>;
            var i;
 
-           var p=<?php echo count($coursename)?>;
+           /*------- for check Faculty Course value ---------*/
+           
+            if(counter == '2')
+            {
+                var id=document.getElementById("faculty_courses").value;
+                if(id==""){alert("Please Select a Course First!!");
+                    return false;
+                }
+            }
+        else{
+                var id=document.getElementById("faculty_courses"+(counter-1)).value;
+                if(id=="") {
+                    alert("Please Select a Course First!!");
+                    return false;
+                }
+            }
+            newArray.push(id);
+//            newArray.push({courseid:id});
+            //alert(id);
+
+            /*-----------for check Faculty Course value --end-------*/
+
+
+           var p=<?php echo count($coursename)?>
+
 //            for (i=0;i<coursename.length;i++){
 //                 alert(coursename[i])
 //            }
             //alert(coursename);
+
             if(counter > p){
-                alert("Only "+p+" textboxes allow");
+                alert("Only "+p+" Faculty Course Field is allowed");
                 return false;
             }
 
-            function selectid(){
-                var menuType=document.getElementById("textbox"+counter).value;
-                alert(menuType);
-            }
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
                 '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[] '+ counter +
-                '" id="textbox' + counter +'" data-panel-id="textbox'+ counter+'"onchange="selectid(this)"'+'" value="" required>'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
+                '" id="faculty_courses' + counter +'" data-panel-id="'+ counter+'"onchange="selectid(this)"'+'" value="" required>'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
@@ -251,21 +272,42 @@
             counter++;
         });
         $("#removeButton").click(function () {
+
             if(counter==2){
-                alert("No more textbox to remove");
+
+                var id=document.getElementById("faculty_courses").value;
+                alert("No more faculty course to remove");
+                document.getElementById("faculty_courses").selectedIndex= 0;
                 return false;
             }
+            else{
+                var id=document.getElementById("faculty_courses"+(counter-1)).value;
+            }
+            var index = newArray.indexOf(id);
+            newArray.splice(index, 1);
+
             counter--;
             $("#TextBoxDiv" + counter).remove();
         });
-        $("#getButtonValue").click(function () {
-            var msg = '';
-            for(i=1; i<counter; i++){
-                msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val()+"\n Textimage #" + i + " : " + $('#textimage' + i).val();
-            }
-            //  alert(msg);
-        });
+
     });
+
+
+    function selectid(x){
+
+        btn = $(x).data('panel-id');
+        var courseId=document.getElementById("faculty_courses"+btn).value;
+        for (var k = 0; k < newArray.length; k++) {
+            if (newArray[k]==courseId) {
+                alert("Allready added the Course");
+                document.getElementById("faculty_courses"+btn).selectedIndex= 0;
+                break;
+            }
+        }
+        //alert(JSON.stringify(newArray));
+        //alert(courseId);
+
+    }
 </script>
 <script>
 
@@ -286,13 +328,6 @@
     }
 
 </script>
-<script>
 
-    function selectid(x){
-        //btn = $(x).data('panel-id');
-        alert(1);
-    }
-
-</script>
 
 
