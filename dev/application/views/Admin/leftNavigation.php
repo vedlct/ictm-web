@@ -137,7 +137,7 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">Create a new Event</a></li>
-                          <li><a class="" href="manageEvents.php">Manage Events</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
 
                       </ul>
                   </li>

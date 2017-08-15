@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="submitform()">
+                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="return submitform()">
 
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
@@ -96,12 +96,12 @@
 
                                             <label for="faculty_email" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
                                             <div class="col-lg-4">
-                                                <input class="form-control" id="faculty_email" name="faculty_email"  type="text" required />
+                                                <input class="form-control" id="faculty_email" name="faculty_email"  type="email" required />
                                             </div>
 
                                             <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                             <div class="col-lg-4">
-                                                <input class="form-control" id="faculty_phone" name="faculty_phone"  type="text" required />
+                                                <input class="form-control" id="faculty_phone" name="faculty_phone"  type="text" placeholder="11 digit phone number" required />
                                             </div>
 
 
@@ -260,6 +260,25 @@
             //  alert(msg);
         });
     });
+</script>
+<script>
+
+    function submitform() {
+        var messageLength = CKEDITOR.instances['faculty_intro'].getData().replace(/<[^>]*>/gi, '').length;
+        var phone=document.getElementById("faculty_phone").value;
+        var chk=/^[0-9]{11}$/;
+
+        if(!phone.match(chk)) {
+            alert( 'Please enter a valid Phone number!!' );
+            return false;
+        }
+
+        if( !messageLength ) {
+            alert( 'Please enter a Faculty Intro' );
+            return false;
+        }
+    }
+
 </script>
 
 

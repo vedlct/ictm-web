@@ -5,7 +5,7 @@
     <?php include('head.php') ?>
     <!-- view head  end----->
     <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
-<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
 </head>
 
 <body>
@@ -22,11 +22,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp Event</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Edit &nbsp Event</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Home</a></li>
-                        <li><i class="icon_document_alt"></i>Event</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Event</li>
+                        <li><i class="icon_document_alt"></i>Events</li>
+                        <li><i class="fa fa-files-o"></i>Edit Event</li>
                     </ol>
                 </div>
             </div>
@@ -35,16 +35,17 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            New Event
+                            Edit Event
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewEvent" method="POST" action="<?php echo base_url() ?>Admin/Event/createNewEvent" enctype="multipart/form-data" onsubmit="return onsumit()">
+                                <?php foreach ($editEvent as $editEvent){?>
+                                <form class="form-validate form-horizontal" id="CreateNewEvent" method="POST" action="<?php echo base_url() ?>Admin/Event/editEventbyId/<?php echo $editEvent->eventId?>" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="eventTitle" class="control-label col-lg-2">Event Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventTitle'); ?></font></p>
-                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" required />
+                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" value="<?php echo $editEvent->eventTitle?>" required />
                                         </div>
                                     </div>
 
@@ -53,7 +54,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
-                                                <input type='text'name="eventStartDateTime"value="" class="form-control" required/>
+                                                <input type='text'name="eventStartDateTime" value="<?php echo date('d-m-Y H:i A',strtotime($editEvent->eventStartDate))?>" class="form-control"/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -64,7 +65,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker2'>
-                                                <input type='text' name="eventEndDateTime" value="" class="form-control" required/>
+                                                <input type='text' name="eventEndDateTime" value="<?php echo date('d-m-Y T H:i A',strtotime($editEvent->eventEndDate))?>" class="form-control"/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -78,7 +79,7 @@
                                         <label class="control-label col-lg-2" for="menuId">Event Location<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventLocation'); ?></font></p>
-                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" required />
+                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" value="<?php echo $editEvent->eventLocation ?>" required />
 
                                             </select>
 
@@ -91,12 +92,13 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
                                             <input class="form-control" type="file" name="event_image" id="event_image"/>
+                                            <span><?php echo $editEvent->eventPhotoPath?></span>
                                         </div>
 
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('EventType'); ?></font></p>
-                                            <input class="form-control" type="text" name="EventType" id="EventType" required/>
+                                            <input class="form-control" type="text" name="EventType" id="EventType" value="<?php echo $editEvent->eventType ?>" required/>
                                         </div>
 
 
@@ -108,8 +110,11 @@
                                             <p><font color="red"> <?php echo form_error('eventStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="eventStatus" id="eventStatus" required>
                                                 <option value="" selected><?php echo SelectStatus?></option>
-                                                <option value="<?php echo Active?>"><?php echo Active?></option>
-                                                <option value="<?php echo InActive?>"><?php echo InActive?></option>
+<!--                                                <option value="--><?php //echo Active?><!--">--><?php //echo Active?><!--</option>-->
+<!--                                                <option value="--><?php //echo InActive?><!--">--><?php //echo InActive?><!--</option>-->
+                                                <option value="<?php echo Active ?>" <?php if (!empty($editEvent->eventStatus) && $editEvent->eventStatus == Active)  echo 'selected = "selected"'; ?>><?php echo Active?></option>
+                                                <option value="<?php echo InActive ?>" <?php if (!empty($editEvent->eventStatus) && $editEvent->eventStatus == InActive)  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
+
                                             </select>
 
 
@@ -119,7 +124,7 @@
                                     <div class="form-group ">
                                         <label for="eventContent" class="control-label col-lg-2">Event Content<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="eventContent"id="eventContent"required></textarea>
+                                            <textarea class="form-control ckeditor" name="eventContent" id="eventContent" required><?php echo $editEvent->eventContent ?></textarea>
                                         </div>
                                     </div>
 
@@ -132,6 +137,7 @@
 
                             </div>
                             </form>
+                            <?php } ?>
                         </div>
 
                 </div>
@@ -169,17 +175,6 @@
         $('.datetimepicker').datetimepicker({
             format: 'DD-MM-YYYY h:m A'
         });
-
+        //$('#datetimepicker2').datetimepicker();
     });
-</script>
-
-<script type="text/javascript">
-    function onsumit(){
-        var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
-        if( !messageLength ) {
-            alert( 'Please enter a Event Content' );
-            return false;
-        }
-
-    }
 </script>

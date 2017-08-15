@@ -8,8 +8,8 @@
 <title>Icon College</title>
 
 <!-- Bootstrap CSS -->
-<link href="<?php echo base_url()?>public/css/bootstrap.min.css" rel="stylesheet"/>
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>-->
+<!--<link href="--><?php //echo base_url()?><!--public/css/bootstrap.min.css" rel="stylesheet"/>-->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>
 <!-- bootstrap theme -->
 <link href="<?php echo base_url()?>public/css/bootstrap-theme.css" rel="stylesheet">
 <!--external css-->
@@ -18,6 +18,7 @@
 <link href="<?php echo base_url()?>public/css/font-awesome.min.css" rel="stylesheet" />
 <link href="<?php echo base_url()?>public/css/elegant-icons-style.css" rel="stylesheet" />
 <!--<link href="--><?php //echo base_url()?><!--public/css/font-awesome.min.css" rel="stylesheet" />-->
+
 
 <!-- Custom styles -->
 <link href="<?php echo base_url()?>public/css/style.css" rel="stylesheet">

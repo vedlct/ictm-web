@@ -18,11 +18,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Faculty</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Event</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Home</a></li>
-                        <li><i class="fa fa-table"></i>Faculty</li>
-                        <li><i class="fa fa-th-list"></i>Manage Faculty</li>
+                        <li><i class="fa fa-table"></i>Event</li>
+                        <li><i class="fa fa-th-list"></i>Manage Event</li>
                     </ol>
                 </div>
             </div>
@@ -32,83 +32,86 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <b>Manage Faculty</b>
+                            <b>Manage Event</b>
                         </header>
                         <div class="panel-body table table-responsive ">
                             <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>
-                                    <th> Faculty Name</th>
-                                    <th> Faculty Email</th>
-                                    <th> Faculty Position</th>
-                                    <th> Faculty Employee Type</th>
-                                    <th> Faculty Degree</th>
+                                    <th> Event Title</th>
+                                    <th> Event Start</th>
+                                    <th> Event End</th>
+                                    <th> Event Location</th>
+                                    <th> Event Type</th>
 
-                                    <th> Faculty Status</th>
-                                    <th> Faculty Inserted By</th>
+                                    <th> Event Status</th>
+                                    <th> Event Inserted By</th>
                                     <th> Last Modified By</th>
                                     <th> Last Modified Date</th>
                                     <th> Action</th>
                                 </tr>
 
+                                <?php foreach ($events as $events){?>
 
-                                <?php foreach ($faculty as $faculty){?>
                                     <tr>
                                         <td>
-                                            <?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
-                                        </td>
-
-                                        <td>
-                                            <?php echo $faculty->facultyEmail?>
+                                            <?php echo $events->eventTitle?>
                                         </td>
 
                                         <td>
                                             <?php
-                                            echo str_replace(",","<br>",$faculty->facultyPosition);
+
+                                            echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->eventStartDate)),1);
                                             ?>
 
                                         </td>
 
                                         <td>
-                                            <?php echo $faculty->facultyEmpType?>
-                                        </td>
-
-                                        <td>
                                             <?php
-                                            echo str_replace(",","<br>",$faculty->facultyDegree);
+                                            echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->eventEndDate)),1);
                                             ?>
 
-                                        </td>
-
-                                        <td>
-                                            <?php echo $faculty->facultyStatus?>
-                                        </td>
-
-                                        <td>
-                                            <?php echo $faculty->insertedBy?>
 
                                         </td>
 
                                         <td>
-                                            <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
+                                            <?php echo $events->eventLocation?>
                                         </td>
 
                                         <td>
-                                            <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
+                                            <?php echo $events->eventType?>
+
+                                        </td>
+
+                                        <td>
+                                            <?php echo $events->eventStatus?>
+                                        </td>
+
+                                        <td>
+                                            <?php echo $events->insertedBy?>
+
+                                        </td>
+
+                                        <td>
+                                            <?php if ($events->lastModifiedBy==""){echo"Never Modified";}else{echo $events->lastModifiedBy;} ?>
+                                        </td>
+
+                                        <td>
+                                            <?php if ($events->lastModifiedDate==""){echo"Never Modified";}
                                             else
-                                                {
-                                                $timestamp = strtotime($faculty->lastModifiedDate);
+                                            {
+                                                $timestamp = strtotime($events->lastModifiedDate);
                                                 $date = date('d-F-Y', $timestamp);
                                                 echo $date ;
-                                                }?>
+                                            }?>
 
                                         </td>
 
                                         <td>
 
                                             <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                                <a class="btn" href="<?php echo base_url("Admin/Event/editEventView/")?><?php echo $events->eventId ?>"><i class="icon_pencil-edit"></i></a>
+                                                <a class="btn" data-panel-id="<?php echo $events->eventId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                             </div>
                                         </td>
 
@@ -143,15 +146,15 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Faculty?")) {
+        if (confirm("Are you sure you want to delete this Event?")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin/Faculty/deleteFaculty/")?>'+btn,
+                url:'<?php echo base_url("Admin/Event/deleteEvent/")?>'+btn,
                 data:{},
                 cache: false,
                 success:function(data) {
-                    alert("Faculty Deleted Successfully!!");
+                    alert("Event Deleted Successfully!!");
                     location.reload();
 
                 }
