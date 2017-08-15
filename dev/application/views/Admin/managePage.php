@@ -75,7 +75,7 @@
                                     <div class="btn-group">
 
                                         <a class="btn" href="<?php echo base_url()?>Admin/Page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="" href="<?php echo base_url()?>Admin/Page/deletePage2/<?php echo $pd->pageId?>"><i class="icon_trash"></i></a>
 
                                     </div>
                                 </td>

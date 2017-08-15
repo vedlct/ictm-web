@@ -90,6 +90,42 @@ class Page extends CI_Controller {
             redirect('Login');
         }
     }
+    public function deletePage2($pageId)    // delete Page
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+          //  echo $pageId;
+            $this->data['pagedata'] =$this->Pagem->checkParentId($pageId);
+
+
+
+            $name=array();
+            $y=$this->data['pagedata'];
+            if (empty($y)){
+                $this->Pagem->deletePagebyId($pageId);
+            }else{
+
+
+                for ($i=0;$i<count($y);$i++){
+                array_push($name, $y[$i]);
+                }
+                ?>
+                <script type='text/javascript'>
+                var x =<?php echo json_encode( $name ) ?>;
+                alert('Please Delete '+x+' First');
+                </script>
+
+                <?php
+                echo "<script>
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+                }
+            //print_r($this->data['pagedata']);
+        }
+        else{
+            redirect('Login');
+        }
+    }
 
     /////////PageSection///////////////
 

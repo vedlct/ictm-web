@@ -75,9 +75,11 @@
 
                                         </td>
 
-                                        <td><?php $timestamp = strtotime($menu->lastModifiedDate);
+                                        <td><?php if ($menu->lastModifiedDate==""){echo"Never Modified";}
+                                            else{
+                                            $timestamp = strtotime($menu->lastModifiedDate);
                                             $date = date('F-d-Y', $timestamp);
-                                            echo $date ;
+                                            echo $date ;}
                                             ?>
                                         </td>
                                         <td>
@@ -119,7 +121,7 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Menu?All of it's Sub Menu will be Deleted!!")) {
+        if (confirm("Are you sure you want to delete this Menu?")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
@@ -127,8 +129,20 @@
                 data:{'menuid':btn},
                 cache: false,
                 success:function(data) {
-                    alert("Menu Deleted Successfully!!");
+//                    alert("Menu Deleted Successfully!!");
+//                    location.reload();
+                    if(data=='0'){alert("Menu Deleted Successfully!!");
                     location.reload();
+                    }
+                    else
+                    {
+                        alert('Please Delete SubMenu- '+data+' First !!');
+
+                    }
+
+
+
+
                 }
             });
         }

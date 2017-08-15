@@ -23,7 +23,7 @@
             <li class="dropdown">
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
 
-                    <span class="username">Admin</span>
+                    <span class="username"><?php echo $this->session->userdata('userEmail')?> </span>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu extended logout">

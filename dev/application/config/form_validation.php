@@ -4,9 +4,9 @@ $config = array (
 
 	'signin' => array (
 		array(
-		        'field' => 'username',
-		        'label' => 'UserName',
-		        'rules' => 'required',
+		        'field' => 'useremail',
+		        'label' => 'UserEmail',
+		        'rules' => 'required|valid_email',
 
 		     ),
 		array(

@@ -25,7 +25,7 @@ class Login extends CI_Controller {
                 $role= $this->Loginm->get_userole($id);
 
                 $data = [
-                    'username' => $result->userTitle,
+                    'userEmail' => $result->userEmail,
                     'id'=>$result->userId,
                     'type'=>$role->roleName,
                     'loggedin'=>"true",
@@ -38,9 +38,11 @@ class Login extends CI_Controller {
 
 
                 }
-            }else {
+            }
+            else
+            {
                 echo "<script>
-                    alert(' Wrong UserName and Password !! ');
+                    alert(' Wrong UserEmail and Password !! ');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
             }

@@ -69,7 +69,7 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == Admin) {
             $this->data['menu'] = $this->Menum->getAllforManageMenu();
-
+            //print_r($this->data['menu']);
             $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
@@ -103,10 +103,26 @@ class Menu extends CI_Controller {
             redirect('Login');
         }
     }
-    public function deleteMenu($menuId)    // delete Menu
+    public function deleteMenu($menuId)    // delete Menu if no Submenu
     {
         if ($this->session->userdata('type') == Admin) {
-            $this->Menum->deleteMenubyId($menuId);
+            $r=$this->Menum->deleteMenubyId($menuId);
+            if ($r!='0'){
+                $name=array();
+//            for ($i=0;$i<count($r);$i++){
+//                array_push($name, $r[$i]);
+//            }
+                foreach ($r as $r){
+                    array_push($name,$r->menuName);
+                }
+
+                $x=implode(" , ",$name);;
+                   echo $x;
+
+            }
+            else{echo $r;}
+
+
         }
         else{
             redirect('Login');

@@ -23,7 +23,7 @@ class Pagem extends CI_Model
             'pageImage' => $image,
             'pageType' => $pagetype,
             'pageStatus' => $status,
-            'insertedBy'=>$this->session->userdata('id'),
+            'insertedBy'=>$this->session->userdata('userEmail'),
 
 
 
@@ -82,7 +82,7 @@ class Pagem extends CI_Model
                 'pageImage' => $image,
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
-                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
 
             );
@@ -95,7 +95,7 @@ class Pagem extends CI_Model
                 'pageContent' => $content,
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
-                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
 
             );
@@ -106,6 +106,30 @@ class Pagem extends CI_Model
 
     }
 
+    public  function checkParentId($pageId){
+
+        $pagereturn = array();
+
+        $this->db->select('	pageSectionTitle');
+        $this->db->where('pageId',$pageId);
+        $query = $this->db->get('ictmpagesection');
+
+        foreach ( $query->result() as $pg){
+            array_push($pagereturn, $pg->pageSectionTitle);
+        }
+
+        $this->db->select('menuName');
+        $this->db->where('pageId',$pageId);
+        $query1 = $this->db->get('ictmmenu');
+
+        foreach ( $query1->result() as $mn){
+            array_push($pagereturn, $mn->menuName);
+        }
+        return $pagereturn;
+
+
+
+    }
 
     public function deletePagebyId($pageId)
     {
@@ -135,7 +159,7 @@ class Pagem extends CI_Model
                 'pageId' => $pagetitle,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
-                'insertedBy'=>$this->session->userdata('id'),
+                'insertedBy'=>$this->session->userdata('userEmail'),
 
 
             );
@@ -152,7 +176,7 @@ class Pagem extends CI_Model
             $data = array(
                 'pageSectionTitle' => $title,
                 'pageSectionContent' => $content,
-                'lastModifiedBy'=>$this->session->userdata('id'),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s")
             );
 

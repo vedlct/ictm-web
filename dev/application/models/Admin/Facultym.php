@@ -3,20 +3,21 @@
 
 class Facultym extends CI_Model
 {
-    public function createNewFaculty(){
+    public function createNewFaculty()
+    {
 
         $facultyFirstName = $this->input->post("faculty_first_name");
         $facultyLastName = $this->input->post("faculty_last_name");
         $facultyDegree = $this->input->post("faculty_degree");
         $facultyPosition = $this->input->post("faculty_position");
-
+        $facultyImage=$_FILES['faculty_image']['name'];
         $facultyEmpType = $this->input->post("faculty_emp_type");
         $facultyEmail = $this->input->post("faculty_email");
         $facultyPhone = $this->input->post("faculty_phone");
         $facultyTwitter = $this->input->post("faculty_twitter");
         $facultyLinkdin = $this->input->post("faculty_linkedin");
         $facultyStatus = $this->input->post("faculty_status");
-        //$menuStatus = $this->input->post("faculty_courses[]");
+        $facultyCourse = $this->input->post("faculty_courses[]");
         $facultyIntro = $this->input->post("faculty_intro");
         date_default_timezone_set("Europe/London");
         $image=$_FILES['faculty_image']['name'];
@@ -27,9 +28,13 @@ class Facultym extends CI_Model
                 'upload_path' => "images/",
                 'allowed_types' => "jpg|png|jpeg",
                 'overwrite' => TRUE,
-                'max_size' => "2048000",
+//                'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
+<<<<<<< HEAD
                 'mod_mime_fix'=>FALSE
+=======
+                'mod_mime_fix'=>FALSE,
+>>>>>>> b237141230be098a740290bf39b38bd62259bd2f
 
             );
             $this->upload->initialize($config);
@@ -51,6 +56,7 @@ class Facultym extends CI_Model
                     </script>";
             return false;
         }
+
         $data = array(
             'facultyFirstName' => $facultyFirstName,
             'facultyLastName' => $facultyLastName,
@@ -62,13 +68,44 @@ class Facultym extends CI_Model
             'facultyTwitter'=>$facultyTwitter,
             'facultyLinkedIn'=>$facultyLinkdin,
             'facultyIntro'=>$facultyIntro,
+<<<<<<< HEAD
             'facultyImage'=>$image,
+=======
+            'facultyImage'=>$facultyImage,
+>>>>>>> b237141230be098a740290bf39b38bd62259bd2f
             'facultyStatus'=>$facultyStatus,
-            'insertedBy'=>$this->session->userdata('id'),
+            'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
 
         );
         $this->db->insert('ictmfaculty', $data);
+
+        $query = $this->db->query("SELECT * FROM `ictmfaculty` ORDER  BY `facultyId` DESC limit 1 ");
+
+        foreach ($query->result() as $r){
+
+            $facultyId=$r->facultyId;
+        }
+        for ($i = 0; $i < count($facultyCourse); $i++) {
+            $data1=array(
+                'courseId'=>$facultyCourse[$i],
+                'facultyId'=>$facultyId
+            );
+            $this->db->insert('ictmfacultycourse', $data1);
+        }
+
+    }
+
+    public function getAllforManageFaculty()
+    {
+
+        $this->db->select('m.*,menu.menuName as submenu,p.pageTitle');
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $query = $this->db->get();
+        return $query->result();
+
 
     }
 

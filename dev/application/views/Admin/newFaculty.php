@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty">
+                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="submitform()">
 
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
@@ -80,7 +80,7 @@
 
                                             <select class="form-control" id="faculty_emp_type" name="faculty_emp_type" required >
 
-                                                <option selected><?php echo SelectType?></option>
+                                                <option value="" selected><?php echo SelectType?></option>
                                                 <option value="<?php echo FullTime?>"><?php echo FullTime?> </option>
                                                 <option value="<?php echo PartTime?>"><?php echo PartTime?></option>
 
@@ -111,12 +111,12 @@
 
                                         <label for="faculty_twitter" class="control-label col-lg-2">Faculty Twitter</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" required />
+                                            <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" />
                                         </div>
 
                                         <label for="faculty_linkedin" class="control-label col-lg-2">Faculty LinkedIn</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" required />
+                                            <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" />
                                         </div>
 
                                     </div>
@@ -129,7 +129,7 @@
 
                                             <select class="form-control" id="faculty_status" name="faculty_status" required>
 
-                                                <option value="<?php echo SelectStatus?>"selected><?php echo SelectStatus?></option>
+                                                <option value=""selected><?php echo SelectStatus?></option>
                                                 <option value="<?php echo Active?>"><?php echo Active?></option>
                                                 <option value="<?php echo InActive?>"><?php echo InActive?></option>
 
@@ -138,14 +138,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group ">
+                                    <div class="form-group"id="CourseFiled">
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
-
-                                        <div class=" form-group col-lg-7" id="CourseFiled">
-
-                                            <select class="form-control col-lg-4" id="faculty_courses" name="faculty_courses[]" required>
-                                                <option selected><?php echo SelectCourse ?></option>
+                                        <div class="col-lg-4">
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" required>
+                                                <option value="" selected><?php echo SelectCourse ?></option>
                                                 <?php
                                                 $coursename= array();
                                                 $courseid=array();
@@ -157,15 +155,15 @@
                                                 }?>
 
                                             </select>
-
                                         </div>
 
-                                        <div id="add_remove_button">
-                                            <div class="col-lg-5 form-group">
-                                                <div class="col-lg-3"></div>
+                                        <div class="form-group col-lg-6" id="add_remove_button">
+
+                                                <div class="col-lg-2"></div>
                                                 <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>
                                                 <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>
-                                            </div>
+
+
                                         </div>
 
                                     </div>
@@ -223,21 +221,22 @@
 
             var coursename= <?php echo json_encode( $coursename ) ?>;
            var i;
+           var p=<?php echo count($coursename)?>;
             for (i=0;i<coursename.length;i++){//
             //     alert(coursename[i])
             }
             //alert(coursename);
-            if(counter>10){
-                alert("Only 10 textboxes allow");
+            if(counter > p){
+                alert("Only "+p+" textboxes allow");
                 return false;
             }
 
 
             var newTextBoxDiv = $(document.createElement('div'))
-                .attr("id", 'TextBoxDiv' + counter);
+                .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
-                '<div class="form-group col-lg-10">'+'<select class="form-control"  name="faculty_courses[]' + counter +
-                '" id="textbox' + counter + '" value="" >'+'<option selected><?php echo SelectCourse ?>'+'</option>'+
+                '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[] '+ counter +
+                '" id="textbox' + counter + '" value="" required>'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );

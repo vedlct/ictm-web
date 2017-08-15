@@ -14,6 +14,7 @@ class Faculty extends CI_Controller
     }
 
     /*---------for creating new Faculty --------------------- */
+
     public function newFaculty() // for new Faculty view
     {
         if ($this->session->userdata('type') == Admin) {
@@ -25,7 +26,8 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function createNewFaculty(){
+    public function createNewFaculty() // creates new faculty in database
+    {
         if ($this->session->userdata('type') == Admin) {
             try {
                 $this->Facultym->createNewFaculty();
@@ -46,5 +48,18 @@ class Faculty extends CI_Controller
             {
                 redirect('Login');
             }
+    }
+
+    /*---------for Manage Faculty -----------------------*/
+    public function manageFaculty() // for manage menu view
+    {
+        if ($this->session->userdata('type') == Admin) {
+            //$this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
+            //print_r($this->data['menu']);
+            $this->load->view('Admin/manageFaculty');
+        }
+        else{
+            redirect('Login');
+        }
     }
 }
