@@ -126,7 +126,7 @@
                                         <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
 <!--                                                <option selected>--><?php //echo $menu->menuStatus?><!--</option>-->
-                                                <option >Select Status</option>
+                                                <option ><?php echo SelectStatus?></option>
 <!--                                                <option >Active</option>-->
 <!--                                                <option >InActive</option>-->
                                                 <option value="<?php echo Active ?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == Active)  echo 'selected = "selected"'; ?>><?php echo Active?></option>

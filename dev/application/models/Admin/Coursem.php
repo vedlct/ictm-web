@@ -3,7 +3,7 @@
 
 class Coursem extends CI_Model
 {
-    /* this function return course name for faculty use*/
+    /* this function return course name and id for faculty use*/
     public function getCourseIdNameforFaculty(){
 
         $this->db->select('courseId, courseTitle');
@@ -162,4 +162,43 @@ class Coursem extends CI_Model
         $this->db->where('courseId', $id);
         $this->db->update('ictmcourse', $data);
     }
+
+    public function getFacultyCourseIdName($facultyId){
+
+        $this->db->select('f.*,c.courseTitle');
+        $this->db->from('ictmfacultycourse f');
+        $this->db->group_by('courseId');
+        $this->db->join('ictmcourse c', 'f.courseId = c.courseId','left');
+        $this->db->where('facultyId', $facultyId);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function addCoursetoFaculty($courseId){
+
+
+        $facultyId=$this->input->post('facultyId');
+
+        $query = $this->db->get_where('ictmfacultycourse', array('facultyId' => $facultyId,'courseId'=>$courseId));
+
+        if (empty($query->result())){
+
+            $data=array(
+                'facultyId' => $facultyId,
+                'courseId'=>$courseId
+            );
+            $this->db->insert('ictmfacultycourse', $data);
+            return 0;
+        }
+        else{
+            return 1;
+        }
+    }
+
+    public function deleteCoursetoFaculty($id){
+
+        $this->db->where('facultyCourseId',$id);
+        $this->db->delete('ictmfacultycourse');
+    }
+
 }
