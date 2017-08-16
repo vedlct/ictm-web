@@ -78,7 +78,7 @@
                                         <td><?php if ($menu->lastModifiedDate==""){echo"Never Modified";}
                                             else{
                                             $timestamp = strtotime($menu->lastModifiedDate);
-                                            $date = date('F-d-Y', $timestamp);
+                                            $date = date('d-F-Y', $timestamp);
                                             echo $date ;}
                                             ?>
                                         </td>

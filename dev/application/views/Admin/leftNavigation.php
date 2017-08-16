@@ -53,8 +53,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newDepartment.php">New Department</a></li>
-                          <li><a class="" href="manageDepartment.php">Manage Departments</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Department/newDepartment">New Department</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Department/manageDepartment">Manage Departments</a></li>
                       </ul>
                   </li>
 
@@ -76,8 +76,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newCourseSection.php">New Sections</a></li>
-                          <li><a class="" href="manageCourseSection.php">Manage Course </a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Course/createCourseSec">New Sections</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourseSec">Manage Course </a></li>
                       </ul>
                   </li>
 
@@ -137,7 +137,7 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">Create a new Event</a></li>
-                          <li><a class="" href="manageEvents.php">Manage Events</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
 
                       </ul>
                   </li>
@@ -148,8 +148,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newNews.php">Create a new News</a></li>
-                          <li><a class="" href="manageNews.php">Manage News</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/News/newNews">Create a new News</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/News/manageNews">Manage News</a></li>
 
                       </ul>
                   </li>

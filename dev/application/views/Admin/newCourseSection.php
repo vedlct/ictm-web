@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <!-- view head ----->
+    <?php include('head.php') ?>
+    <!-- view head  end----->
 </head>
 
 <body>
 <!-- container section start -->
 <section id="container" class="">
     <!--header start-->
-    <?php include ('topNavigation.php.php')?>
+    <?php include ('topNavigation.php')?>
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('leftNavigation.php')?>
+    <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
 
     <!--main content start-->
@@ -20,9 +22,9 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> Course Section</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> New Course Section</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="home.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
                         <li><i class="icon_document_alt"></i>Course Section</li>
                         <li><i class="fa fa-files-o"></i>Create a new Course Section</li>
                     </ol>
@@ -37,17 +39,17 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/insertCourseSec" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Course</label>
+                                        <label class="control-label col-lg-2" for="inputSuccess">Course Title</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="level">
-                                                <option>BTEC Level 5 HND in Business </option>
-                                                <option>BTEC HND in Health and Social Care</option>
-                                                <option>BTEC HND in Computing and Systems Development</option>
-                                                <option>BTEC HND in Electrical and Electronic Engineering</option>
-                                                <option>BTEC Level 5 HND in Travel and Tourism Management</option>
-                                                <option>BTEC Level 5 HND in Hospitality Management</option>
+                                            <select class="form-control m-bot15" name="coursetitle">
+                                                <option>Select Course</option>
+                                                <?php foreach ($coursetitle as $ct) { ?>
+                                                    <option value="<?php echo $ct->courseId?>"><?php echo $ct->courseTitle?></option>
+                                                    <?php
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -63,11 +65,7 @@
                                             </div>
                                             <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-sm-10 form-group">
-                                                <textarea class="form-control summernote"  rows="6"></textarea>
-                                            </div>
-                                            <label class="control-label col-lg-2">Image #1 : </label>
-                                            <div class="col-lg-10 form-group">
-                                                <input class="form-control" type='file' id='textserial1' name="textserial[]">
+                                                <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -79,40 +77,8 @@
                                             <input class="btn btn-sm" type='button' value='Remove Section' id='removeButton'>
                                         </div>
                                     </div>
-                                    <!--                                    <div class="form-group ">-->
-                                    <!--                                        <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>-->
-                                    <!--                                        <div class="col-lg-10">-->
-                                    <!--                                            <input class="form-control" id="cname" name="fullname"  type="text" required />-->
-                                    <!--                                        </div>-->
-                                    <!--                                    </div>-->
-                                    <!--                                    <div class="form-group ">-->
-                                    <!---->
-                                    <!--                                        <div class="form-group">-->
-                                    <!--                                            <label class="control-label col-sm-2">Content</label>-->
-                                    <!--                                            <div class="col-sm-10">-->
-                                    <!--                                                <textarea class="form-control summernote" name="editor1" rows="6"></textarea>-->
-                                    <!--                                            </div>-->
-                                    <!--                                        </div>-->
-                                    <!--                                    </div>-->
-                                    <!--                                    <div class="form-group ">-->
-                                    <!--                                        <label for="curl" class="control-label col-lg-2">Image</label>-->
-                                    <!--                                        <div class="col-lg-10">-->
-                                    <!--                                            <input class="form-control " id="curl" type="file" name="url" />-->
-                                    <!--                                        </div>-->
-                                    <!--                                    </div>-->
-                                    <!---->
-                                    <!--                                    <div class="form-group">-->
-                                    <!--                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>-->
-                                    <!--                                        <div class="col-lg-10">-->
-                                    <!--                                            <select class="form-control m-bot15" name="level">-->
-                                    <!--                                                <option>Active</option>-->
-                                    <!--                                                <option>InActive</option>-->
-                                    <!--                                            </select>-->
-                                    <!--                                        </div>-->
-                                    <!--                                    </div>-->
-                                    <!---->
-                                    <!---->
-                                    <div class="form-group ">
+
+                                    <div class="form-group " align="center">
                                         <div class="col-lg-10">
                                             <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
@@ -147,21 +113,11 @@
 <!-- container section end -->
 
 <!-- javascripts -->
-<?php include ('js.php')?>
+<?php include('js.php') ?>
 
-<!--<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>-->
-<!--<script src="http://cdn.ckeditor.com/4.7.1/standard-all/ckeditor.js"></script>-->
-<!--<script>-->
-<!--    CKEDITOR.replace( 'editor1', {-->
-<!--        height: 300,-->
-<!---->
-<!--        // Configure your file manager integration. This example uses CKFinder 3 for PHP.-->
-<!--        filebrowserBrowseUrl: '/ckfinder/ckfinder.html',-->
-<!--        filebrowserImageBrowseUrl: '/ckfinder/ckfinder.html?type=Images',-->
-<!--        filebrowserUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',-->
-<!--        filebrowserImageUploadUrl: '/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'-->
-<!--    } );-->
-<!--</script>-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -171,18 +127,18 @@
                 alert("Only 10 textboxes allow");
                 return false;
             }
+
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' : </label>' +
                 '<div class="col-lg-10 form-group">'+'<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<textarea class="form-control summernote" rows="6" name="textimage[]' + counter +
-                + counter + '" value="" ></textarea>'+'</div>' + '<label class="control-label col-lg-2">Image #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<input class="form-control" type="file" name="textserial[]' + counter +
-                '" id="textimage' + counter + '" value="" >'+'</div>'+'<br>'
+                '<div class="col-lg-10 form-group">'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
+                + counter + '" value="" ></textarea>'+'</div>'+'<br>'
             );
             newTextBoxDiv.appendTo("#TextBoxesGroup");
-            $('.summernote').summernote();
+            CKEDITOR.replace( 'replace_element_' + counter );
+
             counter++;
         });
         $("#removeButton").click(function () {
@@ -205,20 +161,13 @@
     });
 </script>
 
+
 <script>
     function load() {
 
     }
 </script>
 
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
-
-<script>
-    $(document).ready(function() {
-        $('.summernote').summernote();
-    });
-</script>
 
 </body>
 </html>

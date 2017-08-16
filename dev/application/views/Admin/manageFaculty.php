@@ -98,7 +98,7 @@
                                             else
                                                 {
                                                 $timestamp = strtotime($faculty->lastModifiedDate);
-                                                $date = date('F-d-Y', $timestamp);
+                                                $date = date('d-F-Y', $timestamp);
                                                 echo $date ;
                                                 }?>
 

@@ -4,7 +4,8 @@
     <!-- view head ----->
     <?php include('head.php') ?>
     <!-- view head  end----->
-    <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.min.css" rel="stylesheet" media="screen">
+    <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
 </head>
 
 <body>
@@ -38,7 +39,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewEvent" method="POST" action="<?php echo base_url() ?>Admin/Event/createNewEvent" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="CreateNewEvent" method="POST" action="<?php echo base_url() ?>Admin/Event/createNewEvent" enctype="multipart/form-data" onsubmit="return onsumit()">
                                     <div class="form-group ">
                                         <label for="eventTitle" class="control-label col-lg-2">Event Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -51,8 +52,8 @@
                                         <label class="control-label col-lg-2" for="eventStartDateTime">Event Start Date Time<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
-                                            <div class='input-group date' id='datetimepicker1'>
-                                                <input type='text' class="form-control" />
+                                            <div class='input-group date datetimepicker' id='datetimepicker1'>
+                                                <input type='text'name="eventStartDateTime"value="" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -62,6 +63,12 @@
                                         <label class="control-label col-lg-2" for="eventEndDateTime">Event End Date Time<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
+                                            <div class='input-group date datetimepicker' id='datetimepicker2'>
+                                                <input type='text' name="eventEndDateTime" value="" class="form-control" required/>
+                                                <span class="input-group-addon">
+                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                </span>
+                                            </div>
 
                                         </div>
 
@@ -112,7 +119,7 @@
                                     <div class="form-group ">
                                         <label for="eventContent" class="control-label col-lg-2">Event Content<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="eventContent" id="eventContent" required></textarea>
+                                            <textarea class="form-control ckeditor" name="eventContent"id="eventContent"required></textarea>
                                         </div>
                                     </div>
 
@@ -149,13 +156,22 @@
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
-
-
-<script type="text/javascript" src="<?php echo base_url()?>public/js/bootstrap-datetimepicker.min.js" charset="UTF-8"></script>
-
-
+<script type="text/javascript" src="<?php echo base_url()?>public/js/moment.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/js/datepicker.min.js"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>-->
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker1').datetimepicker();
+        $('.datetimepicker').datetimepicker({
+            format: 'DD-MM-YYYY h:m A'
+        });
     });
+</script>
+<script type="text/javascript">
+    function onsumit(){
+        var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !messageLength ) {
+            alert( 'Please enter a Event Content' );
+            return false;
+        }
+    }
 </script>

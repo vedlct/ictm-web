@@ -80,4 +80,47 @@ class Course extends CI_Controller
             redirect('Login');
         }
     }
+
+
+    /////////////////Course Section////////////////////
+
+    //this will show course section
+    public  function createCourseSec(){
+
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->data['coursetitle']= $this->Coursem->getCourseTitle();
+            $this->load->view('Admin/newCourseSection', $this->data);
+        }
+        else{
+            redirect('Login');
+        }
+
+
+    }
+    //this will insert ta course section data
+    public  function insertCourseSec(){
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->Coursem->insertCourseSec();
+            redirect('Admin/Course/createCourseSec');
+        }
+        else{
+            redirect('Login');
+        }
+    }
+    //this will show manage course section
+    public  function manageCourseSec(){
+        $this->load->view('Admin/manageCourseSection');
+
+
+    }
+    //this will show Edit course section
+    public  function showEditCourseSec(){
+
+    }
+    //this will edit course section
+    public  function editCourseSec(){
+
+    }
 }

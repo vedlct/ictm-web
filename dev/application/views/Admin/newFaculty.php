@@ -10,7 +10,6 @@
     <!--header start-->
     <?php include ('topNavigation.php')?>
     <!--header end-->
-
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
@@ -37,7 +36,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="submitform()">
+                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="return submitform()">
 
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
@@ -86,26 +85,26 @@
 
                                             </select>
 
-                                    </div>
+                                        </div>
 
-                                    <div class="form-group ">
+                                        <div class="form-group ">
 
 
                                         </div>
 
 
-                                            <label for="faculty_email" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
-                                            <div class="col-lg-4">
-                                                <input class="form-control" id="faculty_email" name="faculty_email"  type="text" required />
-                                            </div>
+                                        <label for="faculty_email" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
+                                        <div class="col-lg-4">
+                                            <input class="form-control" id="faculty_email" name="faculty_email"  type="email" required />
+                                        </div>
 
-                                            <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
-                                            <div class="col-lg-4">
-                                                <input class="form-control" id="faculty_phone" name="faculty_phone"  type="text" required />
-                                            </div>
+                                        <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
+                                        <div class="col-lg-4">
+                                            <input class="form-control" id="faculty_phone" name="faculty_phone"  type="text" placeholder="11 digit phone number" required />
+                                        </div>
 
 
-                                     </div>
+                                    </div>
 
                                     <div class="form-group ">
 
@@ -142,16 +141,16 @@
 
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]" required>
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses[]"required>
                                                 <option value="" selected><?php echo SelectCourse ?></option>
                                                 <?php
                                                 $coursename= array();
                                                 $courseid=array();
                                                 foreach ($course as $course){?>
                                                     <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>
-                                                <?php
-                                                array_push($coursename,$course->courseTitle );
-                                                array_push($courseid,$course->courseId );
+                                                    <?php
+                                                    array_push($coursename,$course->courseTitle );
+                                                    array_push($courseid,$course->courseId );
                                                 }?>
 
                                             </select>
@@ -159,9 +158,9 @@
 
                                         <div class="form-group col-lg-6" id="add_remove_button">
 
-                                                <div class="col-lg-2"></div>
-                                                <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>
-                                                <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>
+                                            <div class="col-lg-2"></div>
+                                            <input class="btn btn-sm btn-default" type='button' value='Add Course' id='addCourse'>
+                                            <input class="btn btn-sm btn-login" type='button' value='Remove Course' id='removeButton'>
 
 
                                         </div>
@@ -214,52 +213,94 @@
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
 <script type="text/javascript">
+    var newArray = [];
     $(document).ready(function(){
         var counter = 2;
-
         $("#addCourse").click(function () {
-
             var coursename= <?php echo json_encode( $coursename ) ?>;
-           var i;
-           var p=<?php echo count($coursename)?>;
+            var i;
+            /*------- for check Faculty Course value ---------*/
+
+            if(counter == '2')
+            {
+                var id=document.getElementById("faculty_courses").value;
+                if(id==""){alert("Please Select a Course First!!");
+                    return false;
+                }
+            }
+            else{
+                var id=document.getElementById("faculty_courses"+(counter-1)).value;
+                if(id=="") {
+                    alert("Please Select a Course First!!");
+                    return false;
+                }
+            }
+            newArray.push(id);
+//            newArray.push({courseid:id});
+            //alert(id);
+            /*-----------for check Faculty Course value --end-------*/
+            var p=<?php echo count($coursename)?>
 //            for (i=0;i<coursename.length;i++){
 //                 alert(coursename[i])
 //            }
             //alert(coursename);
             if(counter > p){
-                alert("Only "+p+" textboxes allow");
+                alert("Only "+p+" Faculty Course Field is allowed");
                 return false;
             }
-
-
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id",'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
                 '<div class="form-group col-lg-4">'+'<select class="form-control"  name="faculty_courses[] '+ counter +
-                '" id="textbox' + counter + '" value="" required onchange="checkCourse()">'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
+                '" id="faculty_courses' + counter +'" data-panel-id="'+ counter+'"onchange="selectid(this)"'+'" value="" required>'+'<option selected value="" >'+'<?php echo SelectCourse ?>'+'</option>'+
                 '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
-
             newTextBoxDiv.appendTo("#CourseFiled");
             counter++;
         });
         $("#removeButton").click(function () {
             if(counter==2){
-                alert("No more textbox to remove");
+                var id=document.getElementById("faculty_courses").value;
+                alert("No more faculty course to remove");
+                document.getElementById("faculty_courses").selectedIndex= 0;
                 return false;
             }
+            else{
+                var id=document.getElementById("faculty_courses"+(counter-1)).value;
+            }
+            var index = newArray.indexOf(id);
+            newArray.splice(index, 1);
             counter--;
             $("#TextBoxDiv" + counter).remove();
         });
-        $("#getButtonValue").click(function () {
-            var msg = '';
-            for(i=1; i<counter; i++){
-                msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val()+"\n Textimage #" + i + " : " + $('#textimage' + i).val();
-            }
-            //  alert(msg);
-        });
     });
+    function selectid(x){
+        btn = $(x).data('panel-id');
+        var courseId=document.getElementById("faculty_courses"+btn).value;
+        for (var k = 0; k < newArray.length; k++) {
+            if (newArray[k]==courseId) {
+                alert("Allready added the Course");
+                document.getElementById("faculty_courses"+btn).selectedIndex= 0;
+                break;
+            }
+        }
+        //alert(JSON.stringify(newArray));
+        //alert(courseId);
+    }
 </script>
-
-
+<script>
+    function submitform() {
+        var messageLength = CKEDITOR.instances['faculty_intro'].getData().replace(/<[^>]*>/gi, '').length;
+        var phone=document.getElementById("faculty_phone").value;
+        var chk=/^[0-9]{11}$/;
+        if(!phone.match(chk)) {
+            alert( 'Please enter a valid Phone number!!' );
+            return false;
+        }
+        if( !messageLength ) {
+            alert( 'Please enter a Faculty Intro' );
+            return false;
+        }
+    }
+</script>

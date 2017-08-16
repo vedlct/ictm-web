@@ -74,6 +74,13 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
+    public function getCourseTitle(){
+
+        $this->db->select('courseId,courseTitle');
+        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+    }
 
     public function getCourseAllData($id){
 
@@ -201,4 +208,25 @@ class Coursem extends CI_Model
         $this->db->delete('ictmfacultycourse');
     }
 
+    /////////course section ///////////////
+
+    public function insertCourseSec()
+    {
+
+        $coursetitle = $this->input->post("coursetitle");
+        extract($_POST);
+        date_default_timezone_set("Europe/London");
+        for ($i = 0; $i < count($textbox); $i++) {
+
+            $data = array(
+                'courseId' => $coursetitle,
+                'courseSectionTitle' => $textbox[$i],
+                'courseSectionContent' => $text[$i],
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
+
+            );
+            $this->db->insert('ictmcoursesection', $data);
+        }
+    }
 }
