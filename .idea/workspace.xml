@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63edba62-38f7-4df4-ab81-0309d87a5f82" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/Course.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin/Course.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Coursem.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin/Coursem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php" afterPath="$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php" />
-    </list>
+    <list default="true" id="63edba62-38f7-4df4-ab81-0309d87a5f82" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +29,7 @@
         <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Coursem.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="765">
-              <caret line="230" column="5" lean-forward="true" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
+              <caret line="230" column="5" lean-forward="false" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -73,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newPageSection.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="56" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+              <caret line="56" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,7 +91,7 @@
         <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Pagem.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="684">
-              <caret line="173" column="51" lean-forward="true" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="51" />
+              <caret line="173" column="51" lean-forward="false" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -107,9 +103,7 @@
             <state relative-caret-position="585">
               <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
-                <marker date="1502867877745" expanded="true" signature="860:1031" ph="..." />
-                <marker date="1502867877745" expanded="true" signature="1112:1300" ph="..." />
-                <marker date="1502867877745" expanded="true" signature="2479:2653" ph="..." />
+                <marker date="1502886142758" expanded="true" signature="2795:2984" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -504,15 +498,15 @@
       <workItem from="1502517728316" duration="5114000" />
       <workItem from="1502603907804" duration="19053000" />
       <workItem from="1502691736369" duration="10746000" />
-      <workItem from="1502864079162" duration="7524000" />
+      <workItem from="1502864079162" duration="7839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42437000" />
+    <option name="totallyTimeSpent" value="42752000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -586,9 +580,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1502867877745" expanded="true" signature="860:1031" ph="..." />
-            <marker date="1502867877745" expanded="true" signature="1112:1300" ph="..." />
-            <marker date="1502867877745" expanded="true" signature="2479:2653" ph="..." />
+            <marker date="1502886142758" expanded="true" signature="2795:2984" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -913,9 +905,7 @@
         <state relative-caret-position="585">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
-            <marker date="1502867877745" expanded="true" signature="860:1031" ph="..." />
-            <marker date="1502867877745" expanded="true" signature="1112:1300" ph="..." />
-            <marker date="1502867877745" expanded="true" signature="2479:2653" ph="..." />
+            <marker date="1502886142758" expanded="true" signature="2795:2984" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -949,7 +939,7 @@
     <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newPageSection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="56" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <caret line="56" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -983,7 +973,7 @@
     <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Pagem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="684">
-          <caret line="173" column="51" lean-forward="true" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="51" />
+          <caret line="173" column="51" lean-forward="false" selection-start-line="173" selection-start-column="7" selection-end-line="173" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -999,7 +989,7 @@
     <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Coursem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
-          <caret line="230" column="5" lean-forward="true" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
+          <caret line="230" column="5" lean-forward="false" selection-start-line="230" selection-start-column="5" selection-end-line="230" selection-end-column="5" />
           <folding />
         </state>
       </provider>
