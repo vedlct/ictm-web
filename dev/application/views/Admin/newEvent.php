@@ -52,7 +52,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class="input-group date form_datetime " data-date="<?php date("Y-m-d H:i:s") ?>" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                                <input class="form-control" id="eventStartDateTime" size="16" type="text"  readonly >
+                                                <input class="form-control" name="eventStartDateTime" id="eventStartDateTime" size="16" type="text"  readonly >
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
                                             </div>
@@ -63,7 +63,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class="input-group date form_datetime " data-date="<?php date("Y-m-d H:i:s") ?>" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input2">
-                                                <input class="form-control" id="eventEndDateTime" size="16" type="text" readonly >
+                                                <input class="form-control" name="eventEndDateTime" id="eventEndDateTime" size="16" type="text" readonly >
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                                                 <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
                                             </div>
