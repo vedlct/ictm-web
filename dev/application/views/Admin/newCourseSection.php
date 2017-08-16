@@ -39,11 +39,11 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Page/insertCourseSec" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/insertCourseSec" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Course Title</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="pagetitle">
+                                            <select class="form-control m-bot15" name="coursetitle">
                                                 <option>Select Course</option>
                                                 <?php foreach ($coursetitle as $ct) { ?>
                                                     <option value="<?php echo $ct->courseId?>"><?php echo $ct->courseTitle?></option>
