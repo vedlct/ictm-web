@@ -6,7 +6,7 @@ class Event extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin/Eventm');
-//        $this->load->model('Admin/Facultym');
+
     }
 
     public function index()
@@ -27,26 +27,23 @@ class Event extends CI_Controller
 
     public function createNewEvent() // creates new faculty in database
     {
+        //format: 'YYYY-MM-DDTHH:mm:ss' (for calender view)
+
         if ($this->session->userdata('type') == Admin) {
 
-            $eventStartDateTime = $this->input->post("eventStartDateTime");
-            $eventEndDateTime = $this->input->post("dtp_input2");
-            print_r($eventStartDateTime);
-            print_r($eventEndDateTime);
-
-//            try {
-//                $this->Eventm->createNewEvent();
-//                echo "<script>
-//                    alert('Event Created Successfully');
-//                    window.location.href= '" . base_url() . "Admin/Event/newEvent';
-//                    </script>";
-//            }
-//            catch (Exception $e){
-//                echo "<script>
-//                    alert('Something Went Wrong!! please try again');
-//                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
-//                    </script>";
-//            }
+            try {
+                $this->Eventm->createNewEvent();
+                echo "<script>
+                    alert('Event Created Successfully');
+                    window.location.href= '" . base_url() . "Admin/Event/newEvent';
+                    </script>";
+            }
+            catch (Exception $e){
+                echo "<script>
+                    alert('Something Went Wrong!! please try again');
+                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                    </script>";
+            }
 
         }
         else
@@ -55,4 +52,59 @@ class Event extends CI_Controller
         }
     }
     /*---------for creating new Faculty  --------end---------------*/
+
+    /*---------for Manage Event -----------------------*/
+    public function manageEvent() // for manage Event view
+    {
+        if ($this->session->userdata('type') == Admin) {
+            $this->data['events'] = $this->Eventm->getAllforManageEvent();
+            //print_r($this->data['events']);
+            $this->load->view('Admin/manageEvent',$this->data);
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function editEventView($eventId) // for edit  Selected Event view
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->data['editEvent'] = $this->Eventm->getAllEventbyId($eventId);
+
+            $this->load->view('Admin/editEvent', $this->data);
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function editEventbyId($id) // for edit Event by id from database
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->Eventm->editEventbyId($id);
+
+            echo "<script>
+                    alert('Event Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Event/ManageEvent';
+                    </script>";
+
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function deleteEvent($eventId) // delete Faculty and his teaching Course from database
+    {
+        if ($this->session->userdata('type') == Admin) {
+            $this->Eventm->deleteEventbyId($eventId);
+        }
+
+        else{
+            redirect('Login');
+        }
+    }
+    /*---------for Manage Faculty ----------end-------------*/
 }

@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i>Manage Faculty</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i>Edit Faculty</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Welcome">Home</a></li>
                         <li><i class="icon_document_alt"></i>Faculties</li>
-                        <li><i class="fa fa-files-o"></i>Manage Faculty</li>
+                        <li><i class="fa fa-files-o"></i>Edit Faculty</li>
                     </ol>
                 </div>
             </div>
@@ -33,12 +33,12 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage Faculty
+                            Edit Faculty
                         </header>
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($editFaculty as $editFaculty){?>
-                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/editFacultybyId/<?php echo $editFaculty->facultyId?>">
+                                <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/editFacultybyId/<?php echo $editFaculty->facultyId?>" onsubmit="return submitform()">
 
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
@@ -99,12 +99,12 @@
 
                                         <label for="faculty_email" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" id="faculty_email" name="faculty_email"  type="text" required value="<?php echo $editFaculty->facultyEmail?>"/>
+                                            <input class="form-control" id="faculty_email" name="faculty_email"  type="email" required value="<?php echo $editFaculty->facultyEmail?>"/>
                                         </div>
 
                                         <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" id="faculty_phone" name="faculty_phone"  type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
+                                            <input class="form-control" id="faculty_phone" name="faculty_phone" placeholder="11 digit phone number" type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
                                         </div>
 
 
@@ -284,6 +284,25 @@
 
                 }
         });
+    }
+
+</script>
+<script>
+
+    function submitform() {
+        var messageLength = CKEDITOR.instances['faculty_intro'].getData().replace(/<[^>]*>/gi, '').length;
+        var phone=document.getElementById("faculty_phone").value;
+        var chk=/^[0-9]{11}$/;
+
+        if(!phone.match(chk)) {
+            alert( 'Please enter a valid Phone number!!' );
+            return false;
+        }
+
+        if( !messageLength ) {
+            alert( 'Please enter a Faculty Intro' );
+            return false;
+        }
     }
 
 </script>
