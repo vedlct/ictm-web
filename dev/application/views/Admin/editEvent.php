@@ -40,7 +40,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($editEvent as $editEvent){?>
-                                <form class="form-validate form-horizontal" id="CreateNewEvent" method="POST" action="<?php echo base_url() ?>Admin/Event/editEventbyId/<?php echo $editEvent->eventId?>" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="CreateNewEvent" method="POST" action="<?php echo base_url() ?>Admin/Event/editEventbyId/<?php echo $editEvent->eventId?>" enctype="multipart/form-data" onsubmit="return onsumit()">
                                     <div class="form-group ">
                                         <label for="eventTitle" class="control-label col-lg-2">Event Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -177,4 +177,15 @@
         });
         //$('#datetimepicker2').datetimepicker();
     });
+</script>
+
+<script type="text/javascript">
+    function onsumit(){
+        var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !messageLength ) {
+            alert( 'Please enter a Event Content' );
+            return false;
+        }
+
+    }
 </script>

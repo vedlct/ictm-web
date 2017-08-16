@@ -15,7 +15,7 @@ class Event extends CI_Controller
 
     /*---------for creating new Event --------------------- */
 
-    public function newEvent() // for new Faculty view
+    public function newEvent() // for new Event view
     {
         if ($this->session->userdata('type') == Admin) {
 
@@ -25,7 +25,7 @@ class Event extends CI_Controller
         }
     }
 
-    public function createNewEvent() // creates new faculty in database
+    public function createNewEvent() // creates new Event in database
     {
         //format: 'YYYY-MM-DDTHH:mm:ss' (for calender view)
 
@@ -51,7 +51,7 @@ class Event extends CI_Controller
             redirect('Login');
         }
     }
-    /*---------for creating new Faculty  --------end---------------*/
+    /*---------for creating new Event  --------end---------------*/
 
     /*---------for Manage Event -----------------------*/
     public function manageEvent() // for manage Event view
@@ -96,7 +96,7 @@ class Event extends CI_Controller
         }
     }
 
-    public function deleteEvent($eventId) // delete Faculty and his teaching Course from database
+    public function deleteEvent($eventId) // delete Event from database
     {
         if ($this->session->userdata('type') == Admin) {
             $this->Eventm->deleteEventbyId($eventId);
