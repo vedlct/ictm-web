@@ -74,6 +74,13 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
+    public function getCourseTitle(){
+
+        $this->db->select('courseId,courseTitle');
+        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+    }
 
     public function getCourseAllData($id){
 

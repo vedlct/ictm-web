@@ -5,7 +5,7 @@
     <?php include('head.php') ?>
     <!-- view head  end----->
     <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
-<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
+    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
 </head>
 
 <body>
@@ -156,23 +156,16 @@
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
-
-
 <script type="text/javascript" src="<?php echo base_url()?>public/js/moment.js"></script>
-<!--<script type="text/javascript" src="--><?php //echo base_url()?><!--public/js/bootstrap-datetimepicker.min.js"></script>-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-
+<script type="text/javascript" src="<?php echo base_url()?>public/js/datepicker.min.js"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>-->
 <script type="text/javascript">
-
     $(function () {
-
         $('.datetimepicker').datetimepicker({
             format: 'DD-MM-YYYY h:m A'
         });
-
     });
 </script>
-
 <script type="text/javascript">
     function onsumit(){
         var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
@@ -180,6 +173,5 @@
             alert( 'Please enter a Event Content' );
             return false;
         }
-
     }
 </script>
