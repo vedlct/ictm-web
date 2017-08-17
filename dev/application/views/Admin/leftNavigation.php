@@ -169,7 +169,7 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="collegeinfo.php" class="">
+                      <a href="<?php echo base_url()?>Admin/CollegeInfo/createCollegeInfo" class="">
                           <i class="icon_info"></i>
                           <span>College Info</span>
 
