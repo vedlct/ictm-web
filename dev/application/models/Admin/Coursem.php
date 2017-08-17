@@ -244,6 +244,7 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcoursesection');
         return $query->result();
     }
+    //this will update course section data
     public function updateCourseSectionData($id){
 
         $title = $this->input->post("textbox");
