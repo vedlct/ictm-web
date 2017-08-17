@@ -111,16 +111,48 @@ class Course extends CI_Controller
     }
     //this will show manage course section
     public  function manageCourseSec(){
-        $this->load->view('Admin/manageCourseSection');
+        $this->data['coursetitle']= $this->Coursem->getCourseTitle();
+        $this->load->view('Admin/manageCourseSection', $this->data);
 
+
+    }
+    //this is the ajax controller . this will show the course section manage table
+    public function showCourseSecManageTable(){
+
+        if ($this->session->userdata('type') == Admin) {
+
+            $id = $this->input->post("id");
+            $this->data['coursedata'] = $this->Coursem->getCourseSecData($id);
+            $this->load->view('Admin/showManageCourseSec', $this->data);                        //view manage page section
+
+        } else{
+            redirect('Login');
+        }
 
     }
     //this will show Edit course section
-    public  function showEditCourseSec(){
+    public  function showEditCourseSec($id){
 
+           if ($this->session->userdata('type') == Admin) {
+
+
+               $this->data['coursedataall'] = $this->Coursem->getCourseSecAllData($id);
+               $this->load->view('Admin/editCourseSection', $this->data);
+
+           } else{
+               redirect('Login');
+           }
     }
     //this will edit course section
-    public  function editCourseSec(){
+    public  function editCourseSec($id){
 
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->Coursem->updateCourseSectionData($id);
+            redirect('Admin/Course/manageCourseSec');                                      // edit page section
+
+        } else{
+            redirect('Login');
+        }
     }
 }

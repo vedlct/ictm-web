@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> Edit Page Section </h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Edit Course Section </h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
-                        <li><i class="icon_document_alt"></i>Page</li>
-                        <li><i class="fa fa-files-o"></i>Edit new Page Section</li>
+                        <li><i class="icon_document_alt"></i>Course</li>
+                        <li><i class="fa fa-files-o"></i>Edit new Course Section</li>
                     </ol>
                 </div>
             </div>
@@ -37,8 +37,8 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <?php foreach ($pagesecdata as $psd) { ?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Page/editPageSection/<?php echo $psd->pageSectionId?>">
+                                <?php foreach ($coursedataall as $cd) { ?>
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/editCourseSec/<?php echo $cd->courseSectionId?>">
 
                                     <div id='TextBoxesGroup' class="form-group">
 
@@ -47,12 +47,12 @@
                                                 <label class="control-label col-lg-2">Title : </label>
                                                 <div class="col-lg-10 form-group">
                                                     <input class="form-control" type='textbox' id='textbox1'
-                                                          value="<?php echo $psd->pageSectionTitle?>" name="textbox">
+                                                          value="<?php echo $cd->courseSectionTitle?>" name="textbox">
                                                 </div>
                                                 <label class="control-label col-lg-2">Content : </label>
                                                 <div class="col-sm-10 form-group">
                                                     <textarea class="form-control ckeditor" id="ckeditor" name="text"
-                                                              rows="6"><?php echo $psd->pageSectionContent?></textarea>
+                                                              rows="6"><?php echo $cd->courseSectionContent?></textarea>
                                                 </div>
 
                                             </div>

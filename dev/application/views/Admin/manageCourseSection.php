@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('head.php') ?>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
     <!--header end-->
 
     <!--sidebar start-->
-    <?php include ('leftNavigation.php') ?>
+    <?php include('leftNavigation.php') ?>
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
@@ -35,92 +35,25 @@
                             Manage Course Section
                         </header>
                         <div class="panel-body">
-                        <div class="form-group">
-                            <label class="control-label col-lg-2" for="inputSuccess">Course</label>
-                            <div class="col-lg-10">
-                                <select class="form-control m-bot15" name="level" onchange="showtable()">
-                                    <option>BTEC Level 5 HND in Business </option>
-                                    <option>BTEC HND in Health and Social Care</option>
-                                    <option>BTEC HND in Computing and Systems Development</option>
-                                    <option>BTEC HND in Electrical and Electronic Engineering</option>
-                                    <option>BTEC Level 5 HND in Travel and Tourism Management</option>
-                                    <option>BTEC Level 5 HND in Hospitality Management</option>
-                                </select>
+                            <div class="form-group">
+                                <label class="control-label col-lg-1" for="inputSuccess">Course Title</label>
+                                <div class="col-lg-10">
+                                    <select class="form-control m-bot15" id="coursename" name="coursetitle" onchange="showtable()">
+                                        <option>Select Page</option>
+                                        <?php foreach ($coursetitle as $ct) { ?>
+                                            <option value="<?php echo $ct->courseId?>"><?php echo $ct->courseTitle?></option>
+                                            <?php
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
                             <div id="tableid" style="display: none">
-                        <table class="table table-striped table-advance table-bordered table-hover ">
-                            <tbody>
-                            <tr>
-                                <th> Course Section Title </th>
-                                <th> Action</th>
-                            </tr>
-                            <tr>
-                                <td>Angeline Mcclain</td>
 
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Sung Carlson</td>
-
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Bryon Osborne</td>
-
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Dalia Marquez</td>
-
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Selina Fitzgerald</td>
-
-
-
-                                <td>
-                                    <div class="btn-group">
-                                        <a class="btn" href="#"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " href="#"><i class="icon_trash"></i></a>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            </tbody>
-                        </table>
                             </div>
                     </section>
                 </div>
             </div>
-        </div>
             <!-- page end-->
         </section>
     </section>
@@ -139,12 +72,25 @@
 </section>
 <!-- container section end -->
 <!-- javascripts -->
-<?php include ('js.php')?>
+<?php include('js.php') ?>
 
 <script>
     function showtable() {
+        var x = document.getElementById('coursename').value;
 
-document.getElementById("tableid").style.display ="block";
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin/Course/showCourseSecManageTable")?>',
+            data:{id:x},
+            cache: false,
+            success:function(data)
+            {
+                $('#tableid').html(data);
+            }
+        });
+
+        document.getElementById("tableid").style.display ="block";
     }
 </script>
 </body>
