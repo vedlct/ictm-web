@@ -67,7 +67,11 @@ class Newsm extends CI_Model
     /*---------for Manage News -----------------------*/
     public function getAllforManageNews() // for manage News view
     {
-        $query = $this->db->get('ictmnews');
+//        $query = $this->db->get('ictmnews');
+//        return $query->result();
+        $this->db->select('newsId,newsTitle,newsDate,newsType,newsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmnews');
+        $query = $this->db->get();
         return $query->result();
 
     }

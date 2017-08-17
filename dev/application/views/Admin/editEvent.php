@@ -98,7 +98,14 @@
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('EventType'); ?></font></p>
-                                            <input class="form-control" type="text" name="EventType" id="EventType" value="<?php echo $editEvent->eventType ?>" required/>
+<!--                                            <input class="form-control" type="text" name="EventType" id="EventType" value="--><?php //echo $editEvent->eventType ?><!--" required/>-->
+                                            <select class="form-control m-bot15" name="EventType" id="EventType" required>
+                                                <option value="" selected><?php echo SelectType?></option>
+                                                <?php for($i=0;$i<count(EventType);$i++){?>
+                                                    <option value="<?php echo EventType[$i]?>" <?php if (!empty($editEvent->eventType) && $editEvent->eventType ==  EventType[$i])  echo 'selected = "selected"'; ?>><?php echo EventType[$i]?></option>
+                                                <?php } ?>
+
+                                            </select>
                                         </div>
 
 
@@ -165,8 +172,7 @@
 
 
 <script type="text/javascript" src="<?php echo base_url()?>public/js/moment.js"></script>
-<!--<script type="text/javascript" src="--><?php //echo base_url()?><!--public/js/bootstrap-datetimepicker.min.js"></script>-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/js/datepicker.min.js"></script>
 
 <script type="text/javascript">
 

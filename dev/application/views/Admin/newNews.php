@@ -75,7 +75,14 @@
                                         <label class="control-label col-lg-2" for="newsType">News Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('newsType'); ?></font></p>
-                                            <input class="form-control" type="text" name="newsType" id="newsType" required/>
+<!--                                            <input class="form-control" type="text" name="newsType" id="newsType" required/>-->
+                                            <select class="form-control m-bot15" name="newsType" id="newsType" required>
+                                                <option value="" selected><?php echo SelectType?></option>
+                                            <?php for($i=0;$i<count(NewsType);$i++){?>
+                                                <option value="<?php echo NewsType[$i]?>"><?php echo NewsType[$i]?></option>
+                                            <?php } ?>
+                                            </select>
+
                                         </div>
 
                                         <label class="control-label col-lg-2" for="newsStatus">News Status<span class="required">*</span></label>
@@ -138,8 +145,7 @@
 
 
 <script type="text/javascript" src="<?php echo base_url()?>public/js/moment.js"></script>
-<!--<script type="text/javascript" src="--><?php //echo base_url()?><!--public/js/bootstrap-datetimepicker.min.js"></script>-->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/js/datepicker.min.js"></script>
 
 <script type="text/javascript">
 

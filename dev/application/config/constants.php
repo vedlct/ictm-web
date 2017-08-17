@@ -126,4 +126,12 @@ define("SelectCourse", "Select Course");
 define("PartTime", "Part Time");
 define("FullTime", "Full Time");
 
+/////////////// News Page ///////////////
+
+define ("NewsType",array ("Announcement", "News", "Press Release"));
+
+
+/////////////  Event Page ////////////////////
+define ("EventType",array ("Seminar", "Training", "Festival"));
+
 

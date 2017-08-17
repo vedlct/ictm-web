@@ -77,4 +77,45 @@ class Department extends CI_Controller
             redirect('Login');
         }
     }
+
+    public function editDepartmentbyId($departmentId) // for edit Department by id from database
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            $this->Departmentm->editDepartmentbyId($departmentId);
+
+            echo "<script>
+                    alert('Department Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Department/ManageDepartment';
+                    </script>";
+        }
+        else{
+            redirect('Login');
+        }
+    }
+
+    public function deleteDepartment($departmentId)    // delete Department if no Submenu
+    {
+        if ($this->session->userdata('type') == Admin) {
+            $r=$this->Departmentm->deleteDepartmentId($departmentId);
+            if ($r!='0'){
+                $name=array();
+
+                foreach ($r as $r){
+                    array_push($name,$r->courseTitle);
+                }
+
+                $x=implode(" , ",$name);
+                echo $x;
+
+            }
+            else{echo $r;}
+
+
+        }
+        else{
+            redirect('Login');
+        }
+    }
+    /*---------for Manage Menu ----------end-------------*/
 }
