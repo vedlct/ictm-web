@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp Menu</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Menu</li>
                         <li><i class="fa fa-files-o"></i>Create a new Menu</li>
                     </ol>
@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu" onsubmit="return submitform()">
+                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu">
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -51,8 +51,8 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuType'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
-                                                <option selected><?php echo SelectMenuType ?></option>
-                                                <option><?php echo top?></option>
+                                                <option value="" selected><?php echo SelectMenuType ?></option>
+                                                <option value="<?php echo top?>"><?php echo top?></option>
                                                 <option><?php echo mainmenu?></option>
                                                 <option><?php echo key?></option>
                                                 <option><?php echo quickLink?></option>
@@ -64,11 +64,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu</label>
+                                        <label class="control-label col-lg-2" for="menuId">New Menu/Sub Menu of</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
-                                            <select class="form-control m-bot15" name="menuId" id="menuId" required>
-                                                <option selected>Select Parent Menu</option>
+                                            <select class="form-control m-bot15" name="menuId" id="menuId">
+                                                <option value="" selected>Select Parent Menu</option>
 
                                             </select>
 
@@ -80,7 +80,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
                                             <select class="form-control m-bot15" name="pageId" id="pageId">
-                                                <option selected><?php echo SelectPage ?></option>
+                                                <option value="" selected><?php echo SelectPage ?></option>
                                                 <?php foreach ($page as $page){?>
 
                                                     <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
@@ -96,7 +96,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
-                                                <option selected><?php echo SelectStatus?></option>
+                                                <option value="" selected><?php echo SelectStatus?></option>
                                                 <option value="<?php echo Active?>"><?php echo Active?></option>
                                                 <option value="<?php echo InActive?>"><?php echo InActive?></option>
                                             </select>
@@ -139,8 +139,8 @@
 <script>
     function selectid(x) {
         var btn =  document.getElementById("menuType").value;
-        //alert(btn);
-        if (btn == "Select Menu Type"){
+
+        if (btn == ""){
             alert("Select a valid Menu Type");
         }
         else
@@ -152,26 +152,9 @@
                 cache: false,
                 success:function(data) {
                     document.getElementById("menuId").innerHTML = data;
-                    //alert(data);
+
                 }
             });
-        }
-    }
-    function submitform() {
-        var title=document.getElementById("menuTitle").value;
-        var menuType=document.getElementById("menuType").value;
-        var menuStatus=document.getElementById("menuStatus").value;
-        if (title == null){
-            alert("Please Insert a Title for Menu");
-            return false;
-        }
-        if (menuType =="Select Menu Type"){
-            alert("Please Select Menu Type");
-            return false;
-        }
-        if (menuStatus =="Select Status"){
-            alert("Please Select Menu Status");
-            return false;
         }
     }
 </script>

@@ -21,15 +21,15 @@ class Menu extends CI_Controller {
             redirect('Login');
         }
     }
-    public function getMenuLevel($menuType) // for new/sub Menu dropdown
+    public function getMenuLevel($menuType) // for new Menu/sub Menu dropdown
     {
         if ($this->session->userdata('type') == Admin) {
 
             $this->data['menuName'] = $this->Menum->getMenuName($menuType);
             if ($this->data['menuName'] == null) {
-                echo "<option selected>New Menu</option>";
+                echo "<option value='' selected>New Menu</option>";
             } else {
-                echo "<option selected>New Menu</option>";
+                echo "<option value='' selected>New Menu</option>";
                 foreach ($this->data['menuName'] as $menuName) {
                     echo "<option value='$menuName->menuId'>$menuName->menuName</option>";
                 }
@@ -39,6 +39,7 @@ class Menu extends CI_Controller {
             redirect('Login');
         }
     }
+
     public function createNewMenu() // for insert new menu into database
     {
         if ($this->session->userdata('type') == Admin) {
@@ -76,7 +77,7 @@ class Menu extends CI_Controller {
             redirect('Login');
         }
     }
-    public function editMenuView($menuId) // for edit menu view
+    public function editMenuView($menuId)  // for edit menu view
     {
         if ($this->session->userdata('type') == Admin) {
 
@@ -84,26 +85,37 @@ class Menu extends CI_Controller {
             $this->data['page'] = $this->Pagem->getPageIdName();
 
             $this->load->view('Admin/editMenu', $this->data);
-        }
-        else{
-            redirect('Login');
-        }
-    }
-    public function editMenu($id) // for edit menu from database
-    {
-        if ($this->session->userdata('type') == Admin) {
-            $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
-            echo "<script>
-                    alert('Menu Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
-                    </script>";
 
         }
         else{
             redirect('Login');
         }
     }
-    public function deleteMenu($menuId)    // delete Menu if no Submenu
+    public function editMenu($id) // for edit menu in database
+    {
+        if ($this->session->userdata('type') == Admin) {
+
+            if (!$this->form_validation->run('editMenu')) {
+
+                $this->data['edit_menu'] = $this->Menum->getAllMenubyId($id);
+                $this->data['page'] = $this->Pagem->getPageIdName();
+
+                $this->load->view('Admin/editMenu', $this->data);
+            }
+            else {
+
+                $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
+                echo "<script>
+                    alert('Menu Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
+                    </script>";
+            }
+        }
+        else{
+            redirect('Login');
+        }
+    }
+    public function deleteMenu($menuId)    // delete Menu if no SubMenu
     {
         if ($this->session->userdata('type') == Admin) {
             $r=$this->Menum->deleteMenubyId($menuId);
