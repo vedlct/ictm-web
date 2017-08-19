@@ -53,22 +53,8 @@
                             <tr>
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
-                                <td>
-<!--                                    --><?php //echo $pd->userTitle?>
-                                    <?php
-                                    $insert=$pd->insertedBy;
-                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$insert'");
-                                    foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
-                                    ?>
-                                </td>
-                                <td>
-<!--                                    --><?php //echo $pd->userTitle?>
-                                    <?php
-                                    $lastModified=$pd->lastModifiedBy;
-                                    $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$lastModified'");
-                                    foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
-                                    ?>
-                                </td>
+                                <td><?php echo $pd->insertBy?></td>
+                                <td></td>
                                 <td><?php echo $pd->lastModifiedDate?></td>
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>

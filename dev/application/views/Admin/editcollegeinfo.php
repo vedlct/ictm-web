@@ -112,9 +112,7 @@
                                         <div class="col-lg-4">
                                             <input class="form-control" id="college_linkedin" name="college_linkedin" value="<?php echo $infd->collegeLinkedIn?>" type="text" required />
                                         </div>
-
-
-
+                                        
                                     </div>
 
                                     <div class="form-group ">
