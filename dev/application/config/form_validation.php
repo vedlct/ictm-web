@@ -121,17 +121,17 @@ $config = array (
             'rules' => 'required',
 
         ),
-        array(
-            'field' => 'keywords',
-            'label' => 'Page Keywords',
-            'rules' => 'required'
-        ),
-        array(
-            'field' => 'metadata',
-            'label' => 'Page MetaData',
-            'rules' => 'required',
-
-        ),
+//        array(
+//            'field' => 'keywords',
+//            'label' => 'Page Keywords',
+//            'rules' => 'required'
+//        ),
+//        array(
+//            'field' => 'metadata',
+//            'label' => 'Page MetaData',
+//            'rules' => 'required',
+//
+//        ),
         array(
             'field' => 'content',
             'label' => 'Page Content',
@@ -171,21 +171,17 @@ $config = array (
             'label' => 'Page Section Content',
             'rules' => 'xss_clean'
         ),
-        array(
-            'field' => 'image',
-            'label' => 'Image',
-            'rules' => 'callback_val_img_check'
-        ),
-        array(
-            'field' => 'pagetype',
-            'label' => 'Page Type',
-            'rules' => 'required'
-        ),
-        array(
-            'field' => 'status',
-            'label' => 'Page Status',
-            'rules' => 'required'
-        ),
+
+//        array(
+//            'field' => 'pagetype',
+//            'label' => 'Page Type',
+//            'rules' => 'required'
+//        ),
+//        array(
+//            'field' => 'status',
+//            'label' => 'Page Status',
+//            'rules' => 'required'
+//        ),
     ),
 			 
 );
