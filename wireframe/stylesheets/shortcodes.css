@@ -329,7 +329,7 @@
 }
 
 .post-scroller-item {
-    padding-bottom:30px;
+    padding-bottom:15px;
 }
 
 .post-scroller-item .post-content-mini h4 {
@@ -366,7 +366,7 @@
 }
 
 .post-item-mini {
-    padding-bottom:30px;
+    padding-bottom:8px;
     border-bottom:solid 1px #eaeaea;
 }
 
@@ -545,6 +545,10 @@
 
 .shortcode-blog-excerpt {
     margin-bottom: 9px;
+}
+
+.shortcode-blog-excerpt a {
+    color:#0000A0;
 }
 
 .post-item .content-pad .flat-button {
@@ -2778,7 +2782,7 @@ body.mobile .event-item:hover .event-thumbnail img {
 
 .project-portfolio.v1 .item .item-content .item-title,
 .member-single-post .content-pad .item-content .item-title {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
     color: #343434;
     margin-bottom: 15px;

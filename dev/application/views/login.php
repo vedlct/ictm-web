@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include ('head.php') ?>
+    <?php include('Admin/head.php') ?>
 </head>
 
   <body class="login-img3-body">
@@ -11,11 +11,10 @@
       <form class="login-form" method="post" action="<?php echo base_url()?>Login/check_user">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
-            <p><font color="red"> <?php echo form_error('username'); ?></font></p>
+            <p><font color="red"> <?php echo form_error('useremail'); ?></font></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" placeholder="Username" name="username" autofocus required >
-
+              <input type="email" class="form-control" placeholder="UserEmail" name="useremail" autofocus required >
             </div>
             <p><font color="red"> <?php echo form_error('password'); ?></font></p>
             <div class="input-group">
@@ -30,18 +29,7 @@
             <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
         </div>
       </form>
-    <div class="text-right">
-            <div class="credits">
 
-                <!--
-                    All the links in the footer should remain intact.
-                    You can delete the links only if you purchased the pro version.
-                    Licensing information: https://bootstrapmade.com/license/
-                    Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-                -->
-<!--                <a href="https://bootstrapmade.com/free-business-bootstrap-themes-website-templates/">Business Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>-->
-            </div>
-        </div>
     </div>
 
 

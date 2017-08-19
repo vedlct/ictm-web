@@ -22,28 +22,32 @@ class Login extends CI_Controller {
             $result = $this->Loginm->validate_user($_POST);
             if(!empty($result)) {
                 $id = $result->roleId;
-                echo $id;
                 $role= $this->Loginm->get_userole($id);
 
                 $data = [
-                    'username' => $result->userTitle,
+                    'userEmail' => $result->userEmail,
                     'id'=>$result->userId,
                     'type'=>$role->roleName,
                     'loggedin'=>"true",
                 ];
                 $this->session->set_userdata($data);
-                if ($this->session->userdata('type') == "Admin"){
+                if ($this->session->userdata('type') == Admin){
 
-                    redirect('Welcome');
+                    redirect('Admin/Home');
                 }else {
+
 
                 }
             }
-            
-            echo "<script>
-                    alert(' Wrong UserName and Password !! ');
+
+
+            else
+            {
+                echo "<script>
+                    alert(' Wrong UserEmail and Password !! ');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
+            }
         }
     }
     public function logout(){

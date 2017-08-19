@@ -4,16 +4,18 @@
         <div class="tp-banner-container">
             <div class="tp-banner" >
                 <ul>
-                    <li data-transition="slideright" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
+                    <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                         <img src="images/slides/1.jpg" alt="slider-image">
 
                         <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                             <div class="title main-color-1 font-2">Do you have A levels but missed your Offer from University?</div>
                         </div>
+                        
+                        <!-- arrow code in "revolution-slider.css:2438". its hidden now -->
 
                     </li>
 
-                    <li data-transition="slideright" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
+                    <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                         <img src="images/slides/2.jpg" alt="slider-image">
 
                         <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
@@ -21,7 +23,7 @@
                         </div>
                     </li>
                     
-                    <li data-transition="slideright" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
+                    <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                         <img src="images/slides/3.jpg" alt="slider-image">
 
                         <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
@@ -55,8 +57,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                                <h4><a class="post-title-mini main-color-1-hover" href="#" title="Prospectus">Prospectus</a></h4>
-                                                                <div class="post-excerpt-mini">On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</div>
+                                                                <h4><a class="post-title-mini main-color-1-hover" href="pdf-files/ICON-College-Prospectus.pdf" target="_blank" title="Prospectus">Prospectus</a></h4>
+                                                                <div class="post-excerpt-mini">The BTEC Higher National Diploma (HND) is a specialist programme with a strong work-related emphasis. Click here for our latest prospectus.</div>
                                                             </div>
                                                         </div>
                                                     </div><!--/post-item-mini-->
@@ -77,8 +79,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                                <h4><a class="post-title-mini main-color-1-hover" href="#" title="Apply Online">Apply Online</a></h4>
-                                                                <div class="post-excerpt-mini">To take a trivial example which of us ever undertakes laborious physical exercise except.</div>
+                                                                <h4><a class="post-title-mini main-color-1-hover" href="pdf-files/Application_Form.pdf" target="_blank" title="Apply Online">Application Form</a></h4>
+                                                                <div class="post-excerpt-mini">The qualifications aim to widen access to higher education and enhance the career prospects of those who undertake them. Click here for downloading the application form.</div>
                                                             </div>
                                                         </div>
                                                     </div><!--/post-item-mini-->
@@ -99,8 +101,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                                <h4><a class="post-title-mini main-color-1-hover" href="#" title="Register Interest">Register Interest</a></h4>
-                                                                <div class="post-excerpt-mini">Some People and Students in front of the new and futuristic building of the University of Economics and Business in Vienna.</div>
+                                                                <h4><a class="post-title-mini main-color-1-hover" href="register-inetrest.php" title="Register Interest">Register Interest</a></h4>
+                                                                <div class="post-excerpt-mini">The Level 5 Higher National Diploma is recognised by Higher Education providers as meeting admission requirements to many relevant business-related courses.</div>
                                                             </div>
                                                         </div>
                                                     </div><!--/post-item-mini-->
@@ -122,7 +124,7 @@
                                                             </div>
                                                             <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
                                                                 <h4><a class="post-title-mini main-color-1-hover" href="contact.php" title="Contact Us">Contact Us</a></h4>
-                                                                <div class="post-excerpt-mini">Nor again is there anyone who loves or pursues or desires to obtain pain of itself but because occasionally circumstances.</div>
+                                                                <div class="post-excerpt-mini">UK and EU students may be entitled to a student loan from the Student Loans Company to cover the cost of their tuition fees.</div>
                                                             </div>
                                                         </div>
                                                     </div><!--/post-item-mini-->
@@ -151,24 +153,24 @@
                         <div class="col-md-4">
                             <div class="post">
                                 <h1 class="title">About ICON College</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                                <a class="flat-button button-button_30 btn-default " href="#" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
+                                <p>ICON College is a modern, friendly and dynamic independent College for higher education in the heart of London, offering high quality education and training with very competitive tuition fees. It was established in 2003. Our students come from many countries including UK, Portugal, Romania, Lithuania, Hungary, Bulgaria, Latvia, France, Italy, Germany, Nigeria, Ireland, Spain, Austria & Poland.</p>
+                                <a class="flat-button button-button_30 btn-default " href="about.php" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="post">
-                                <h1 class="title">Quality Teaching</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                                <a class="flat-button button-button_30 btn-default " href="#" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
+                                <h1 class="title">Quality Education</h1>
+                                <p>All our lecturers are highly qualified and experienced. High quality lecture notes are provided for all courses. By looking at our accreditations you can be confident that you arejoining a quality college, with courses leading to recognised UK qualifications. The range of courses offered at ICON College is growing. Please check our website or ask us for the latest list of courses, if you don't see the course you are looking for.</p>
+                                <a class="flat-button button-button_30 btn-default " href="course.php" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
 
                         <div class="col-md-4">
                             <div class="post">
-                                <h1 class="title">Student Funding</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis.</p>
-                                <a class="flat-button button-button_30 btn-default " href="#" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
+                                <h1 class="title">Competitive Fees</h1>
+                                <p>Our goal is to provide you with a quality education at an affordable price, which we achieve by keeping our adminis­tration costs and overheads low. Studying at ICON College can save you UK university fees, whilst you can still achieve a UK University awarded degree or UK recognised qualification.</p>
+                                <a class="flat-button button-button_30 btn-default " href="loans.php" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div><!--/row--> 

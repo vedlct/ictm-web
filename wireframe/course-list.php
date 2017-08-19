@@ -38,7 +38,7 @@
                                     <div class="content-pad">
                                         <div class="item-content">
                                             <h3 class="item-title">
-                                                <a href="#" title="Your Career Starts Here" class="main-color-1-hover">Department of Business and Management Studies</a>
+                                                <a href="department.php" title="Your Career Starts Here" class="main-color-1-hover">Department of Business and Management Studies</a>
                                             </h3>
                                             <div class="shortcode-blog-excerpt"><strong><a href="course-detail.php">BTEC Level 5 HND in Business</a></strong></div>
                                          </div>
@@ -118,7 +118,7 @@
                                             <h3 class="item-title">
                                                 <a href="#" title="Your Career Starts Here" class="main-color-1-hover">Department of Travel, Tourism and Hospitality Management</a>
                                             </h3>
-                                            <div class="shortcode-blog-excerpt">
+                                            <div class="shortcode-blog-excerpt" >
                                             	<strong><a href="#">BTEC Level 5 HND in Travel and Tourism Management</a></strong><br>
                                             	<strong><a href="#">BTEC Level 5 HND in Hospitality Management</a></strong>
                                             </div>

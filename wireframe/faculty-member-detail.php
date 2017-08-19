@@ -119,7 +119,7 @@
                                                     </fieldset> 
                                                 </div>
                                                 <div class="col-md-6">
-                                                	<label><strong>Your Contact Number</label>
+                                                	<label><strong>Your Contact Number</strong></label>
                                                 	<fieldset class="style-1 contact">
                                                         <input type="text" id="contact" class="tb-my-input" name="contact" tabindex="2" value="" size="32" aria-required="true">
                                                     </fieldset> 
@@ -145,145 +145,9 @@
 
                                 <div class="widget widget-courses">
                                     <h2 class="widget-title">COURSES LIST</h2>
-                                    <ul class="recent-posts clearfix">
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/4.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Chemical Engineering</a>
-                                                <p>DECEMBER 25, 2015</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/5.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Information System</a>
-                                                <p>MARCH 11, 2015</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/6.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Work-Life Balance</a>
-                                                <p>AUGUST 21, 2015</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/7.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">The Theory Of Sport</a>
-                                                <p>OCTOBER 31, 2015</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/8.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Bachelor Of Nursing</a>
-                                                <p>JULY 24, 2015</p>
-                                            </div>
-                                        </li>
-                                    </ul><!-- /popular-news clearfix -->
+                                    <?php include ("course-sidebar.php"); ?>
                                 </div><!-- /widget-posts -->
-
-                                <div class="widget widget-posts">
-                                    <h2 class="widget-title">EVENTS LIST</h2>
-                                    <ul class="recent-posts clearfix">
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/9.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Chicago Architecture Foundation River Cruise</a>
-                                                <p>JUNE 22, 2016</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/10.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Spark Of Genius</a>
-                                                <p>JUNE 3, 2014</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/11.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">University Ranking</a>
-                                                <p>MAY 29, 2014</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/12.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">University Ranking</a>
-                                                <p>MAY 29, 2014</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/13.jpg" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">University Ranking</a>
-                                                <p>MAY 29, 2014</p>
-                                            </div>
-                                        </li>
-                                    </ul><!-- /popular-news clearfix -->
-                                </div><!-- /widget-posts -->
+                                
                             </div><!-- sidebar -->
                         </div><!-- /col-md-3 -->
                     </div>

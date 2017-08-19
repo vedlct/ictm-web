@@ -83,3 +83,55 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+
+////////////////////custom constant////////////////
+
+
+define("newMenu", "New Menu");
+define("selectPage", "Select Page");
+define("Menu", "Menu");
+define("None", "None");
+
+////menu dropdown/////
+
+define("SelectMenuType", "Select Menu Type");
+define("top", "Top");
+define("mainmenu", "MainMenu");
+define("key", "KeyInfo");
+define("quickLink", "QuickLink");
+define("important", "ImportantLink");
+define("bottom", "Bottom");
+define("alertmenu" ,"Menu Updated Successfully");
+
+define("SelectPage" ,"Select Page");
+
+define("Admin", "Admin");
+define("Active", "Active");
+define("InActive", "InActive");
+
+define("SelectStatus" , "Select Status");
+define("pageType", "Select Page Type");
+define("About", "About Type");
+define("Health", "Health Type");
+define("Terms", "Terms Type");
+
+define("selected", "selected");
+
+
+////////////    faculy page      ///////////////
+define("SelectType", "Select Type");
+define("SelectCourse", "Select Course");
+define("PartTime", "Part Time");
+define("FullTime", "Full Time");
+
+///////////// News Page ///////////////
+
+define ("NewsType",array ("Announcement", "News", "Press Release"));
+
+
+/////////////  Event Page ////////////////////
+define ("EventType",array ("Seminar", "Training", "Festival"));
+
+

@@ -33,21 +33,25 @@
 	<link rel="stylesheet" href="stylesheets/owl.theme.default.min.css">
     
     <!-- for Application Form -->
-    <link rel="stylesheet" href="stylesheets/form-elements.css">
     <link rel="stylesheet" href="stylesheets/application-form-style.css">
+    
+
 
     <!-- Favicon and touch icons  -->
     <link href="icon/apple-touch-icon-48-precomposed.php" rel="apple-touch-icon-precomposed" sizes="48x48">
     <link href="icon/apple-touch-icon-32-precomposed.php" rel="apple-touch-icon-precomposed">
     <link href="#" rel="shortcut icon">
 
+
+
     <!--[if lt IE 9]>
         <script src="javascript/html5shiv.js"></script>
         <script src="javascript/respond.min.js"></script>
     <![endif]-->
-    
+
     <script type="text/javascript" src="javascript/jquery.min.js"></script>
     <script type="text/javascript" src="javascript/owl.carousel.js"></script>
+
 
 </head>
 
@@ -68,7 +72,7 @@
                         <div class="col-md-12">
                             <nav class="navbar menu-top">
                                 <ul class="menu"> 
-                                    <li class="home"><a href="#">VLE Login</a></li>
+                                    <li class="home"><a target="_blank" href="http://icon.moodle.webanywhere.co.uk/login/index.php">VLE Login</a></li>
                                     <li><a href="#">Student Portal</a></li>                                                          
                                     <li><a href="#">Staff Login</a></li>       
                                     <li><a href="#">Alumni</a></li>                                        
@@ -94,7 +98,7 @@
                             <div class="navbar-right topnav-sidebar">
                                 <ul class="textwidget">
                                     <li>
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="fa fa-youtube"></i></a>
@@ -139,13 +143,11 @@
                                         <a href="#">About</a>
                                         <ul class="submenu">
                                             <li><a href="about.php">About ICON College</a></li>
-                                            <li><a href="#">Who are we</a></li>
-                                            <li><a href="#">Where are we</a></li>
-                                            <li><a href="#">Why Choose ICON College</a></li>
                                             <li><a href="#">Board of Directors</a></li>
                                             <li><a href="#">College Governance</a></li>
                                             <li><a href="#">Organisational Structure</a></li>
-                                            <li><a href="#">Message from the Principals</a></li>
+                                            <li><a href="#">Affiliation & Accreditations</a></li>
+                                            <li><a href="#">Policies & Procedures</a></li>
                                             <li><a href="#">Location and Maps</a></li>
                                         </ul><!-- /.submenu -->
                                     </li> 
@@ -153,33 +155,39 @@
                                         <a href="#">Courses</a>
                                         <ul class="submenu">
                                             <li><a href="course-list.php">Our Courses</a></li>
-                                            <li><a href="#">Quick Guide to Courses</a></li>
-                                            <li><a href="#">Faculty of Information Technology and Engineering</a></li>
-                                            <li><a href="#">Department of Business and Management Studies</a></li>
-                                            <li><a href="#">Department of Travel, Tourism and Hospitality Management</a></li>
-                                            <li><a href="#">Department of Health and Social Care</a></li>
+                                            <li><a href="#">Business & Management</a></li>
+                                            <li><a href="#">Information Technology & Engineering</a></li>
+                                            <li><a href="#">Health & Social Care</a></li>
+                                            <li><a href="#">Travel, Tourism & Hospitality Management</a></li>
+                                            <li><a href="faculty-members.php">Teaching Faculty</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>                                
                                     <li>
                                         <a href="#">Admission</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Admission process</a></li>
-                                            <li><a href="#">Download Application form (PDF)</a></li>
-                                            <li><a href="#">Download Application form (MS Word)</a></li>
-                                            <li><a href="#">Download prospectus (PDF)</a></li>
+                                            <li><a href="#">How to Apply</a></li>
+                                            <li><a href="#">Admission Procedure</a></li>
+                                            <li><a href="#">Admission Policy</a></li>
+                                            <li><a href="#">Loans & Maintenance</a></li>
+                                            <li><a href="login.php">Apply Now</a></li>
                                         </ul><!-- /.submenu -->
-                                    </li> 
-									<li>
-                                        <a href="#">Affiliations</a>
-                                    </li>  
-                                    <li>
-                                        <a href="faculty-members.php">Faculty</a>
                                     </li>
+                                    <li>
+                                        <a href="#">College Life</a>
+                                        <ul class="submenu">
+                                            <li><a href="#">Student Services</a></li>
+                                            <li><a href="#">Facilities</a></li>
+                                            <li><a href="#">Student Supports</a></li>
+                                            <li><a href="#">Term Dates</a></li>
+                                            <li><a href="photo-gallery.php">Photo Gallery</a></li>
+                                            <li><a href="#">Register Interest</a></li>
+                                        </ul><!-- /.submenu -->
+                                    </li>  
                                     <li>
                                         <a href="#">News & Events</a>
                                         <ul class="submenu">
                                             <li><a href="news.php">News</a></li>
-                                            <li><a href="event-grid.php">Events</a></li>
+                                            <li><a href="event-list.php">Events</a></li>
                                         </ul><!-- /.submenu -->
                                     </li>                                       
                                 </ul><!-- /.menu -->
@@ -189,3 +197,22 @@
                 </div><!-- /.container-->
             </div><!-- /.header-wrap-->
         </header><!-- /.header -->
+        
+        <script>
+        
+		$(function() {
+ 
+var pgurl = window.location.href.
+substr(window.location.href.lastIndexOf("/")+1);
+ 
+$(".mainnav li").each(function(){
+ 
+if(pgurl==''){
+$(".nav li:eq(1)").addClass("active");
+}else
+if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')
+$(this).addClass("active");
+})
+});
+        
+        </script>
