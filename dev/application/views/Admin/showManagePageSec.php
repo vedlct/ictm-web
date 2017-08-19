@@ -12,20 +12,8 @@
         <?php foreach ($pagedata as $pg) { ?>
     <tr>
             <td><?php echo $pg->pageSectionTitle ?></td>
-            <td>
-                <?php
-                $insert=$pg->insertedBy;
-                $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$insert'");
-                foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
-                ?>
-            </td>
-            <td>
-                <?php
-                $insert=$pg->lastModifiedBy;
-                $query=$this->db->query("select userTitle from ictmusers WHERE `userId`= '$insert'");
-                foreach ($query->result() as $tytle ){echo $tytle->userTitle;}
-                ?>
-            </td>
+            <td><?php echo $pg->insertedBy?></td>
+            <td><?php echo $pg->lastModifiedBy; ?></td>
             <td><?php echo $pg->lastModifiedDate ?></td>
             <td>
                 <div class="btn-group">

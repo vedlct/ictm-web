@@ -53,15 +53,15 @@
                             <tr>
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
-                                <td><?php echo $pd->insertBy?></td>
-                                <td></td>
+                                <td><?php echo $pd->insertedBy?></td>
+                                <td><?php echo $pd->lastModifiedBy?></td>
                                 <td><?php echo $pd->lastModifiedDate?></td>
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
                                     <div class="btn-group">
 
                                         <a class="btn" href="<?php echo base_url()?>Admin/Page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="" href="<?php echo base_url()?>Admin/Page/deletePage2/<?php echo $pd->pageId?>"><i class="icon_trash"></i></a>
+                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="" href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->pageId?>"><i class="icon_trash"></i></a>
 
                                     </div>
                                 </td>
