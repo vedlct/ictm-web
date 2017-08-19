@@ -75,5 +75,117 @@ $config = array (
             'rules' => 'required|alpha'
         ),
     ),
+    'createPage'=> array (
+        array(
+            'field' => 'title',
+            'label' => 'Page Title',
+            'rules' => 'required',
+
+        ),
+//        array(
+//            'field' => 'keywords',
+//            'label' => 'Page Keywords',
+//            'rules' => 'required'
+//        ),
+//        array(
+//            'field' => 'metadata',
+//            'label' => 'Page MetaData',
+//            'rules' => 'required',
+//
+//        ),
+        array(
+            'field' => 'content',
+            'label' => 'Page Content',
+            'rules' => 'xss_clean'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'pagetype',
+            'label' => 'Page Type',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'status',
+            'label' => 'Page Status',
+            'rules' => 'required'
+        ),
+    ),
+    'editPage'=> array (
+        array(
+            'field' => 'title',
+            'label' => 'Page Title',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'keywords',
+            'label' => 'Page Keywords',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'metadata',
+            'label' => 'Page MetaData',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'content',
+            'label' => 'Page Content',
+            'rules' => 'xss_clean'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'pagetype',
+            'label' => 'Page Type',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'status',
+            'label' => 'Page Status',
+            'rules' => 'required'
+        ),
+    ),
+    'createPageSection'=> array (
+        array(
+            'field' => 'pagetitle',
+            'label' => 'Page Title',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'textbox[]',
+            'label' => 'Section Title',
+            'rules' => 'required'
+        ),
+
+        array(
+            'field' => 'text[]',
+            'label' => 'Page Section Content',
+            'rules' => 'xss_clean'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'pagetype',
+            'label' => 'Page Type',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'status',
+            'label' => 'Page Status',
+            'rules' => 'required'
+        ),
+    ),
 			 
 );

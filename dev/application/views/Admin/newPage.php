@@ -41,19 +41,22 @@
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="cname" name="title"  type="text" required />
+                                            <p><font color="red"> <?php echo form_error('title'); ?></font></p>
+                                            <input class="form-control" id="title" name="title"  type="text" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="cname" name="keywords"  type="text" required />
+                                            <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
+                                            <input class="form-control" id="keywords" name="keywords"  type="text"  />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="cname" name="metadata"  type="text" required />
+                                            <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
+                                            <input class="form-control" id="metadata" name="metadata"  type="text"  />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -61,21 +64,24 @@
 
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
-                                             <textarea class="form-control ckeditor" name="content" rows="6"></textarea>
+                                             <p><font color="red"> <?php echo form_error('content'); ?></font></p>
+                                             <textarea class="form-control ckeditor" name="content" rows="6" ></textarea>
                                          </div>
 
                                         </div>
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
-                                            <input class="form-control " id="curl" type="file" name="image"  />
+                                            <p><font color="red"> <?php echo form_error('image'); ?></font></p>
+                                            <input class="form-control " id="image" type="file" name="image" />
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
+                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="pagetype">
-                                                <option><?php echo pageType?></option>
+                                            <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
+                                            <select class="form-control m-bot15" name="pagetype" required>
+                                                <option value=""><?php echo pageType?></option>
                                                 <option><?php echo About?></option>
                                                 <option><?php echo Terms?></option>
                                                 <option><?php echo Health?></option>
@@ -83,10 +89,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
+                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="status">
-                                                <option><?php echo SelectStatus?></option>
+                                            <p><font color="red"> <?php echo form_error('status'); ?></font></p>
+                                            <select class="form-control m-bot15" name="status" required>
+                                                <option value=""><?php echo SelectStatus?></option>
                                                 <option><?php echo Active?></option>
                                                 <option><?php echo InActive?></option>
                                                 </select>
@@ -114,23 +121,28 @@
     </section>
 </section>
 <!--main content end-->
-<div class="text-right">
+<div class="text-right wrapper">
     <div class="credits">
-        <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-        -->
         <a href="#">Icon College</a> by <a href="#">A2N</a>
     </div>
 </div>
+
 </section>
 <!-- container section end -->
 
-<!-- javascripts -->
-<?php include('js.php') ?>
-
+<?php include ('js.php')?>
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+
+<!--<script>-->
+<!--    function submitform() {-->
+<!--        var messageLength = CKEDITOR.instances['content'].getData().replace(/<[^>]*>/gi, '').length;-->
+<!---->
+<!--        if( !messageLength ) {-->
+<!--            alert( 'Please enter Page Content' );-->
+<!--            return false;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+

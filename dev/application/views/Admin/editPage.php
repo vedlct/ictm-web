@@ -42,7 +42,8 @@
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <input class="form-control" id="cname" name="title"  type="text" value="<?php echo $epd->pageTitle?>" required />
+                                            <p><font color="red"> <?php echo form_error('title'); ?></font></p>
+                                            <input class="form-control" id="title" name="title"  type="text" value="<?php echo $epd->pageTitle?>" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -50,6 +51,7 @@
 
                                             <label class="control-label col-sm-2">Content</label>
                                             <div class="col-sm-10">
+                                                <p><font color="red"> <?php echo form_error('content'); ?></font></p>
                                                 <textarea class="form-control ckeditor" name="content" rows="6"><?php echo $epd->	pageContent?></textarea>
                                             </div>
 
@@ -57,12 +59,14 @@
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <input class="form-control"  type="file" name="image"  value="<?php echo $epd->pageImage?>"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
                                             <select class="form-control m-bot15" name="pagetype">
                                                 <option value="About Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'About Type')  echo 'selected = "selected"'; ?>>About Type</option>
                                                 <option value="Terms Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Terms Type')  echo 'selected = "selected"'; ?>>Terms Type</option>
@@ -74,12 +78,13 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('status'); ?></font></p>
                                             <select class="form-control m-bot15" name="status">
 <!--                                                <option selected>--><?php //echo $epd->pageStatus?><!--</option>-->
 <!--                                                <option>Active</option>-->
 <!--                                                <option>InActive</option>-->
                                                 <option value="<?php echo Active?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'Active')  echo 'selected = "selected"'; ?>><?php echo Active?></option>
-                                                <option value="<?php echo inactive?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'InActive')  echo 'selected = "selected"'; ?>><?php echo inactive?></option>
+                                                <option value="<?php echo InActive?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'InActive')  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
                                             </select>
                                         </div>
                                     </div>
@@ -123,3 +128,13 @@
 </html>
 
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+<!--<script>-->
+<!--    function submitform() {-->
+<!--        var messageLength = CKEDITOR.instances['content'].getData().replace(/<[^>]*>/gi, '').length;-->
+<!---->
+<!--        if( !messageLength ) {-->
+<!--            alert( 'Please enter Page Content' );-->
+<!--            return false;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
