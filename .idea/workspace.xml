@@ -1,42 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63edba62-38f7-4df4-ab81-0309d87a5f82" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/CollegeInfo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/Course.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/Department.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/Event.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/Faculty.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin/News.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin/CollegeInfom.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Coursem.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Departmentm.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Eventm.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Facultym.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/models/Admin/Newsm.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/collegeinfo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editCourse.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editCourseSection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editDepartment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editEvent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editFaculty.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editNews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/editcollegeinfo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/manageCourse.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/manageCourseSection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/manageDepartment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/manageEvent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/manageFaculty.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/manageNews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newCourse.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newDepartment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newEvent.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/newNews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/application/views/Admin/showManageCourseSec.php" afterPath="" />
+    <list default="true" id="50e56998-553e-48f2-8b4d-b12bead2de3c" name="Default" comment="">
+
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/routes.php" afterPath="$PROJECT_DIR$/dev/application/config/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
+
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session5f2tglnqgq60lnipluvdml5purfqbvdu" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session6kuka11opuhltgft7cptbmf2gri4ah69" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session6o7r3e9kcuff1u8cldnurvf4q6l5vikv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session8ap4qlpcprdmtkk457568fa5cd7kuvpi" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessioncba9jq2rrbcbrd1ggl7sg088hrl72e7b" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionemphsu9jthn2k2bduh0ujstg6faeur0e" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionh952e2m43t9a2tbj8398977vjuosdmjj" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessioniegn91jac6fidn7g3nruuki29uh0s9f1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionk8vhfb1foo3cdvarumi2og8c8s2h0eq9" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionm6m5ni0nbkrshkgumgvb5enthk15kb4t" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionmpfiiicbldo6kskrdgc04o6l4uco81ql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionnphuloj3o1vhh395rkedvbv44mmedvnb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionris66frj30uk3empffvdk8h9bea42pv8" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session00tsjg06m0v3ppathdllgi1uioerepl1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0195umlkae01cd18hahipq0ep7ias8p2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session025fntsat6al0sn1p21rt7m1tcrevd23" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session06vrkdqp11uv9lju0mn4vcbt2bdi3d75" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0hhciq4pfq8sp1s8ai7av7pblj636ebd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0tv9aee7harmmd1uvatpb5lf1gm6scvv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0u7jsj51na3bv3iqhnfom3rldsr4jmhn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session0vfen4hvshdnv7cqr1da8k5hbpkuib44" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session18fs7k4bffac96i4d5107hhsuvfqvatp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session1nl016236i8rnlokuee5a8hpifau65b0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session22va8h4opor1qb64qehr7nu6s1i0447r" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session23ffkm2jkam6hpthlpdvebku3c47hi0m" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2glnrapldii8c904q7tcdm1pk7lc5kan" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session2vk477s79ka56jk43ql1edlghd10incj" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session3lm9dpb7bir8knburmu0tc13inp7mq12" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session3npo57lg11nmbqojtq40jr3lhcij4146" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4atn08nsmkgqnhhl4919vk595flm1jgu" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4k77nfl0mcmf9eop5jii4kohmfpn3odf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4p36hg5kac2lnl214m5smhn1n8aj4vrq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session4t2t8l2ivd94aanf5vcacc170qgaose1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5861je6nc8ijvrrg59f3f56f2jn6gt1f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session59pdaflgm1qgd3s84a37kibtajfe6kb9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5eplknfu6sc4p41v3lao9qbgukn303p2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5nk13n4tksa789rs7ijthu206efrjcqo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5spc8a6jfcbcni5bim52f1514tce6lsm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5srv74ocbcae6bl9f3otevb6ojmohaqo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session5vbj0agojnj3vspjnp8qner410jkuqq5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session62hq3e05fs8ujdv1e1373eml4angqkbe" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session656hpe1rm3eachb93fnkmgb5ujojknab" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session65aaoia9vvktqdj5l2nk5n5bcom164ve" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session713pcmrhs1s2r5mhabcsm655njv9je69" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session73g72n421tumk857bc1btskf6jvuf858" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session79pkl5ua6ngpr9rrg437l6gbsrqiil33" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session8v7mg5smadvrbg155dv8mj5695dj1dim" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9g4g8lcq7dj1pie6vor9o84alfr9so71" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9lf5otovgf1shagjb1mh0cu7l5ceoso5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_session9vuf8kpdoganas49chf6i09egjrdm4qa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionamrhd8nrdmv12jdf7vltv2e5nvt53u5e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionaqr0b3ehgg01oh6av7jinv9nchenq60k" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionatojfdnaa6glrfu1gf48a89e4vq2i61b" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionb4pqkbf8o5eg9hotf16c8ghidns2ekrp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionb77enl9ea31fdlibdbsabslo814ecnqb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionb877t05vjpirelsuatful2lvj6q1o3ro" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbc72heojl1qo67b8i5rpvgvuepbh9hsa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionbu512lu4g0pa270ps4b70mlh91lhablm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionc3ubpl0jn84btjohtinjokisfk56rafa" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionc558u1omaqj4r4chu6779kug6uqg2l28" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionc6bmmo8dn8o1g92cr1kcheubo10mc0kd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionc9l8vtlu5k3onqog1vi73pqh1eemra8p" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioncfu1s9tki1ie2u2c73agfdp0og88b1cf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioncl0gmn0mada5nonm78cr7i0ebjj60caq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiond6v8i3h10e7t3sc5qrplputud0nft6g3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiondn0vko501f52e8lll29es519amh9u9sn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionduqngg4uere9so4llj381d431gop6lh2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessione44ntlh1f13iivk17of7ptk2n0f5b2hm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessione78feov2o09hg10bvp260rau2tnjh6h1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessione96ftb4g0pfu041plb47r6itti6p659o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionechld6t022j7t4r0p1a74ed2cp98cvtv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionetc39ndrndp1gsblg8ss6sn8qca4q7p6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfcjegqg5jgjqna00liv3j5solugrc4jd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfffh791nu4vjb9i4492nhpmglm3aiae9" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfgn6jqu2ds5ecaq9jp7d8iiefjnhglme" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionfrql63gc77t0ccsead6ogngul0c7dk77" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiongrf3b7k18egdji3v2l13innar4agbteo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionh790poa847dp7h3nfclmc2v7aah5022t" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhj7is9nta3v0mp596cjbnofad02dsi0l" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhjjd8mt7tadisd28itmra9s5i6eoh70g" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhq3hkupfhrlfpn3kp937uu9grgben21k" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioni688qbo9gon8bbldbjkolrk0jsdg8255" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionig0ck3vs93r4splhpbmbrrh88gjbmt6s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionio1hu5hvrp1l2s9llu4glccho6tqsi7c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionj99j8fi7vpjauog6fu4mk16r9b5grtnv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionjgd7m6u2gbdrdn4l564fgpjb49mkifle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionjhr0a23snrqfp1qmou66bbnkurbguui6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionk0o4t76sjva82273nu2ld19v2paopkjb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionl4oci1bis64div7r87cfi17b4qiqigko" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionl8q06bikfpid6oon1abj4qivg7ekp34e" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionlcu9j00prpit36t28ef21oh3oaud0fd4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionlk16ng5uucjt54mntroeenb4et1fuo51" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionlr0h3hdmqvho4psa695bgoqh76do8jm8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmetr81ak5tshhmdmgpoea309r5umqqa6" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmmsac76m5kihu1dmf9lrj7i46r2b27ar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionmrujshrl3iimnhhio3qlu4ekr564bn6n" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionn5jthjaaemqjb2b5bovpf33g29u5v1gq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnbk5ff2fv36d2hbmh3ebhnn39qe2ce3r" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnh7g9gvm7p0rrovunrtse110qhs0ga24" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnoqj5inmuqcp45r63vb5n6uamlh9nf2v" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionnu5t3motgqkiaaltn9l5do45n696rt6f" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiono4bl5t2425ndi57lteo2dnpjjtcbpauf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionob1grcl2081uemcvjjpjsf9kds9dbv4s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionok5dmitisf437048fobhtprn7h3r55cq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionolc0310fvj5sf64aori4b3sj71u8ipro" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionos1i13nn8mgs324u5o57t3c46l2d1i5d" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionp7sodhumqn5camhhd4blaevdqa8glb16" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionpcg6hmbtih2hmj9knal448gpl4s39irk" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionq5ktk5fr6q3ut1l4eo9af95u3mnn7mnl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqahsmtsvikd0ag8kmc3kdvvlqehucafi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqcedpvl2asngmmde1tkua0ojdba57975" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionqo4rq2m3m20786h0o4g3r0rgfs43iuvo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionr1qrhe8ftncorn5070lsh88jprv8u7s5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionr3mbu7brbiciukoptncvgla5ojts2889" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionr4130lhp9eb1h390kj7cbpi3bovmthm8" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessions81rcatsn1h1sgbp14ea5jbdrd884t28" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiont3rins5hhobncorrd3brci3lni7skke7" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontcc5smekbogkf0l9ean68s3d93os7o7u" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessiontfkosd86vf9oq1vm4nkeiaus1hjrscro" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionu6iclc68d1fd94lvfbmpq18mbcksn4ss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionuag99no77tc8t22i4t52g5qr97o9aksd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionufmhm0jke2160drehlvrc612hnoi1drl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionum0do1eqpbldo7lpjnhl9fvlsvmnq950" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionum54825dnkhsr7v3ptthmbku1rsdjcvl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionuona3to1d333d9532es0dka00ibblkgt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionuqkdg5scegbe6sqp2el8fq1sst5lpl7g" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionv61coj9sbk4anp2flvj6ut85i2dpuumg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Menu.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Menu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Login.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Login.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin_Menum.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin_Menum.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" afterPath="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/editMenu.php" afterPath="$PROJECT_DIR$/dev/application/views/editMenu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/manageMenu.php" afterPath="$PROJECT_DIR$/dev/application/views/manageMenu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/managePage.php" afterPath="$PROJECT_DIR$/dev/application/views/managePage.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/newPageSection.php" afterPath="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/public/ckeditor/config.js" afterPath="$PROJECT_DIR$/dev/public/ckeditor/config.js" />
+
     </list>
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,20 +159,181 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="ictm-web" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>check</find>
-    </findStrings>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+
+      <file leaf-file-name="Admin_Page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="42" column="42" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="42" />
+
+      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="531">
+              <caret line="382" column="33" lean-forward="false" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Admin_Page.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="192">
+              <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
+
+            <state relative-caret-position="2088">
+              <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newPageSection.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="221">
+              <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
+
+            <state relative-caret-position="522">
+              <caret line="150" column="76" lean-forward="false" selection-start-line="150" selection-start-column="76" selection-end-line="150" selection-end-column="76" />
+
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="461">
+              <caret line="53" column="16" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Admin_Pagem.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+
+      <file leaf-file-name="managePage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1107">
+              <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="257">
+              <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="71" selection-end-column="46" />
+              <folding>
+                <marker date="1502040999309" expanded="true" signature="3486:4135" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="4286:4957" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="4467:4914" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="4563:4867" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="5036:5395" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="5100:5352" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="5697:6124" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="5723:6117" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="5737:6044" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="7193:7240" ph="..." />
+                <marker date="1502040999309" expanded="true" signature="7228:7240" ph="{...}" />
+              </folding>
+
+            <state relative-caret-position="558">
+              <caret line="31" column="99" lean-forward="false" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="99" />
+              <folding />
+
+            </state>
+          </provider>
+        </entry>
+      </file>
+
+      <file leaf-file-name="Login.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Login.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
+      <file leaf-file-name="Admin_Pagem.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1107">
+              <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
+
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newMenu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/newMenu.php">
+          <provider selected="true" editor-type-id="text-editor">
+
+            <state relative-caret-position="-505">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
+            <state relative-caret-position="990">
+              <caret line="55" column="97" lean-forward="false" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+
+      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="newPage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="935">
+              <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -69,34 +341,27 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/application/controllers/Admin/Faculty.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/Login.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Admin/Facultym.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Admin/Menum.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/manageCourse.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/newCourse.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/editCourse.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/Admin/Event.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php" />
-        <option value="$PROJECT_DIR$/dev/public/js/datepicker.min.js" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/newEvent.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/Admin/Course.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Admin/Coursem.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/collegeinfo.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Admin/CollegeInfom.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/Admin/CollegeInfo.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/editcollegeinfo.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/managePage.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/editPageSection.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/showManagePageSec.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/Welcome.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/leftNavigation.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Admin/Pagem.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/Admin/Page.php" />
-        <option value="$PROJECT_DIR$/dev/application/config/form_validation.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/editPage.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/Admin/newPageSection.php" />
+        <option value="$PROJECT_DIR$/dev/application/config/config.php" />
+
+        <option value="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/sidebar.php" />
+        <option value="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
+
+        <option value="$PROJECT_DIR$/dev/application/views/editPage.php" />
+
+        <option value="$PROJECT_DIR$/dev/application/views/newPage.php" />
+        <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/sidebar.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/managePage.php" />
+        <option value="$PROJECT_DIR$/dev/application/models/Admin_Pagem.php" />
+
+        <option value="$PROJECT_DIR$/dev/application/views/editPage.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/managePage.php" />
+        <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
+
+        <option value="$PROJECT_DIR$/dev/application/views/newPageSection.php" />
+        <option value="$PROJECT_DIR$/dev/application/controllers/Admin_Page.php" />
+
       </list>
     </option>
   </component>
@@ -110,8 +375,18 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -128,25 +403,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -156,11 +438,51 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckeditor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -174,11 +496,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -196,85 +518,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -292,11 +540,11 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ictm work" />
+              <option name="myItemId" value="ictm-web" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -308,11 +556,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,12 +572,6 @@
     <property name="js.eslint.eslintPackage" value="" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
@@ -351,10 +589,6 @@
     <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -365,7 +599,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
+      <command value="run-script" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -390,29 +624,41 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63edba62-38f7-4df4-ab81-0309d87a5f82" name="Default" comment="" />
-      <created>1502517726961</created>
+      <changelist id="50e56998-553e-48f2-8b4d-b12bead2de3c" name="Default" comment="" />
+      <created>1501915805326</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1502517726961</updated>
-      <workItem from="1502517728316" duration="5114000" />
-      <workItem from="1502603907804" duration="19053000" />
-      <workItem from="1502691736369" duration="10746000" />
-      <workItem from="1502864079162" duration="7855000" />
-      <workItem from="1502948040884" duration="10904000" />
-      <workItem from="1503123905905" duration="9448000" />
-      <workItem from="1503136030456" duration="254000" />
+      <updated>1501915805326</updated>
+      <workItem from="1501915806661" duration="339000" />
+      <workItem from="1501916794958" duration="10060000" />
+
+      <workItem from="1501999414492" duration="11784000" />
+      <workItem from="1502036029580" duration="8791000" />
+
+      <workItem from="1501999414492" duration="11929000" />
+      <workItem from="1502089681389" duration="13456000" />
+
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63374000" />
+
+    <option name="totallyTimeSpent" value="30974000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+
+    <option name="totallyTimeSpent" value="35784000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25321338" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -434,6 +680,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -442,198 +696,131 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Pagem.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1872">
-          <caret line="104" column="45" lean-forward="false" selection-start-line="103" selection-start-column="7" selection-end-line="104" selection-end-column="45" />
+        <state relative-caret-position="6494">
+          <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editPage.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1476">
-          <caret line="82" column="44" lean-forward="false" selection-start-line="80" selection-start-column="45" selection-end-line="82" selection-end-column="44" />
+        <state relative-caret-position="714">
+          <caret line="42" column="42" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newCourse.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        <state relative-caret-position="1037">
+          <caret line="61" column="107" selection-start-line="61" selection-start-column="107" selection-end-line="61" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Page.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1854">
-          <caret line="103" column="21" lean-forward="false" selection-start-line="103" selection-start-column="21" selection-end-line="103" selection-end-column="21" />
+        <state relative-caret-position="323">
+          <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/managePage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" column="48" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/manageCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="129" lean-forward="false" selection-start-line="59" selection-start-column="121" selection-end-line="59" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Menu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="55" column="31" lean-forward="false" selection-start-line="52" selection-start-column="15" selection-end-line="55" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Course.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Page.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/editPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1003">
+          <caret line="59" column="119" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="119" />
+          <folding>
+            <marker date="1502040999309" expanded="true" signature="3486:4135" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="4286:4957" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="4467:4914" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="4563:4867" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5036:5395" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5100:5352" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5697:6124" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5723:6117" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5737:6044" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="7193:7240" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="7228:7240" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3213">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6876">
+          <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
-          <caret line="42" column="9" lean-forward="true" selection-start-line="35" selection-start-column="7" selection-end-line="42" selection-end-column="9" />
+          <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Coursem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="195" lean-forward="false" selection-start-line="39" selection-start-column="195" selection-end-line="39" selection-end-column="195" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1278">
-          <caret line="71" column="46" lean-forward="true" selection-start-line="68" selection-start-column="40" selection-end-line="71" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Pagem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="75" column="81" lean-forward="true" selection-start-line="74" selection-start-column="10" selection-end-line="75" selection-end-column="81" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Faculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="33" lean-forward="false" selection-start-line="33" selection-start-column="17" selection-end-line="36" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Facultym.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="67" column="61" lean-forward="false" selection-start-line="67" selection-start-column="61" selection-end-line="67" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/manageCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1062">
-          <caret line="59" column="129" lean-forward="false" selection-start-line="59" selection-start-column="121" selection-end-line="59" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/public/js/datepicker.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="6478" lean-forward="false" selection-start-line="1" selection-start-column="6478" selection-end-line="1" selection-end-column="6478" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2862">
-          <caret line="159" column="86" lean-forward="false" selection-start-line="159" selection-start-column="86" selection-end-line="159" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/collegeinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="41" column="175" lean-forward="false" selection-start-line="41" selection-start-column="175" selection-end-line="41" selection-end-column="175" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/CollegeInfom.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1098">
-          <caret line="61" column="50" lean-forward="false" selection-start-line="61" selection-start-column="50" selection-end-line="61" selection-end-column="50" />
+          <caret line="61" column="107" lean-forward="false" selection-start-line="61" selection-start-column="107" selection-end-line="61" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editCourseSection.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="92" lean-forward="false" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -641,209 +828,353 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editDepartment.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/editPage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
-          <caret line="67" column="116" lean-forward="false" selection-start-line="67" selection-start-column="116" selection-end-line="67" selection-end-column="116" />
+        <state relative-caret-position="1062">
+          <caret line="59" column="119" lean-forward="false" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="119" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/CollegeInfo.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="34" column="8" lean-forward="false" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Coursem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="51" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Course.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="2" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="9" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editFaculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2466">
-          <caret line="137" column="0" lean-forward="false" selection-start-line="134" selection-start-column="47" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editcollegeinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="114" column="40" lean-forward="false" selection-start-line="114" selection-start-column="40" selection-end-line="114" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/manageMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Menum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="98" column="52" lean-forward="true" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Menu.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="990">
-          <caret line="55" column="31" lean-forward="false" selection-start-line="52" selection-start-column="15" selection-end-line="55" selection-end-column="31" />
+          <caret line="55" column="97" lean-forward="false" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/managePage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="63" column="160" lean-forward="false" selection-start-line="63" selection-start-column="160" selection-end-line="63" selection-end-column="160" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/managePageSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-963">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newCourseSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newFaculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="306" column="0" lean-forward="false" selection-start-line="306" selection-start-column="0" selection-end-line="306" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newPage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="91" column="147" lean-forward="false" selection-start-line="91" selection-start-column="40" selection-end-line="91" selection-end-column="147" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="182" column="0" lean-forward="false" selection-start-line="180" selection-start-column="50" selection-end-line="182" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="111" column="28" lean-forward="false" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editPageSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="101" lean-forward="false" selection-start-line="60" selection-start-column="101" selection-end-line="60" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Home.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePageSection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3402">
+          <caret line="189" column="0" lean-forward="false" selection-start-line="189" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6876">
+          <caret line="382" column="33" lean-forward="false" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3402">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/Welcome.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state relative-caret-position="450">
+
+          <caret line="25" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+
+          <caret line="25" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/leftNavigation.php">
+    <entry file="file://$PROJECT_DIR$/dev/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="69" lean-forward="false" selection-start-line="6" selection-start-column="69" selection-end-line="6" selection-end-column="69" />
+        <state relative-caret-position="306">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="306">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="6494">
+          <caret line="382" column="33" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
+
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin/Pagem.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/js.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="42" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin/Page.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/editPage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4539">
-          <caret line="267" column="5" lean-forward="false" selection-start-line="267" selection-start-column="5" selection-end-line="267" selection-end-column="5" />
+
+        <state relative-caret-position="3213">
+          <caret line="189" column="0" selection-start-line="189" selection-start-column="0" selection-end-line="197" selection-end-column="0" />
+
+        <state relative-caret-position="1062">
+          <caret line="59" column="119" lean-forward="false" selection-start-line="59" selection-start-column="119" selection-end-line="59" selection-end-column="119" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/showManagePageSec.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="9" lean-forward="false" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
+        <state relative-caret-position="990">
+          <caret line="55" column="97" lean-forward="false" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/form_validation.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2771">
-          <caret line="163" column="33" lean-forward="false" selection-start-line="163" selection-start-column="33" selection-end-line="163" selection-end-column="33" />
+
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
+        <state relative-caret-position="531">
+          <caret line="382" column="33" lean-forward="false" selection-start-line="382" selection-start-column="33" selection-end-line="382" selection-end-column="33" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/editPage.php">
+
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="156" lean-forward="false" selection-start-line="52" selection-start-column="156" selection-end-line="52" selection-end-column="156" />
+        <state relative-caret-position="935">
+          <caret line="55" column="97" selection-start-line="55" selection-start-column="97" selection-end-line="55" selection-end-column="97" />
+
+    <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="53" column="55" lean-forward="false" selection-start-line="53" selection-start-column="55" selection-end-line="53" selection-end-column="55" />
+
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/Admin/newPageSection.php">
+
+    <entry file="file://$PROJECT_DIR$/dev/application/models/Admin_Pagem.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="64" column="127" lean-forward="false" selection-start-line="64" selection-start-column="119" selection-end-line="64" selection-end-column="127" />
+        <state relative-caret-position="321">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+
+    <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="99" lean-forward="false" selection-start-line="31" selection-start-column="82" selection-end-line="31" selection-end-column="99" />
+
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="42" column="42" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
+    <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11804">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/public/ckeditor/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="257">
+          <caret line="64" column="39" selection-start-line="64" selection-start-column="39" selection-end-line="71" selection-end-column="46" />
+          <folding>
+            <marker date="1502040999309" expanded="true" signature="3486:4135" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="4286:4957" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="4467:4914" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="4563:4867" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5036:5395" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5100:5352" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5697:6124" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5723:6117" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="5737:6044" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="7193:7240" ph="..." />
+            <marker date="1502040999309" expanded="true" signature="7228:7240" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="92" selection-start-line="19" selection-start-column="92" selection-end-line="19" selection-end-column="92" />
+
+        <state relative-caret-position="288">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/managePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="192">
+          <caret line="61" column="92" selection-start-line="61" selection-start-column="92" selection-end-line="61" selection-end-column="92" />
+
+        <state relative-caret-position="1107">
+          <caret line="91" column="22" lean-forward="false" selection-start-line="91" selection-start-column="22" selection-end-line="91" selection-end-column="22" />
+
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+
+        <state relative-caret-position="461">
+          <caret line="53" column="16" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="16" />
+
+        <state relative-caret-position="1107">
+          <caret line="131" column="38" lean-forward="false" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/newPageSection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="150" column="76" lean-forward="false" selection-start-line="150" selection-start-column="76" selection-end-line="150" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Admin_Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2088">
+          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+
           <folding />
         </state>
       </provider>
