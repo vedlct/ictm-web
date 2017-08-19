@@ -30,7 +30,7 @@ class Menum extends CI_Model
             'insertedDate'=>date("Y-m-d H:i:s"),
 
         );
-
+        $this->security->xss_clean($data);
         $this->db->insert('ictmmenu', $data);
     }
             /*-----get Menu Name and id----------*/
@@ -100,7 +100,7 @@ class Menum extends CI_Model
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 
         );
-
+        $this->security->xss_clean($data);
         $this->db->where('menuId', $id);
         $this->db->update('ictmmenu', $data);
     }
@@ -125,9 +125,6 @@ class Menum extends CI_Model
         else{
             return $query->result();
         }
-
-
-
     }
 
 
