@@ -2,6 +2,7 @@
 
 class Pagem extends CI_Model
 {
+    //this will insert page
     public function insertPage() // creates a new page in database
     {
         $title = $this->input->post("title");
@@ -34,6 +35,7 @@ class Pagem extends CI_Model
         $this->db->insert('ictmpage', $data);
     }
 
+    //this will return pageID and pageTitle
     public function getPageIdName()
     {
 
@@ -43,6 +45,7 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
+    //this will return all page data
     public function getPagaData()
     {
 
@@ -52,6 +55,7 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
+    //this will return will page data for edit view
     public function geteditPagaData($id)
     {
 
@@ -60,6 +64,7 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
+    //this will update the page data
     public function updatePagaData($id)
     {
 
@@ -108,6 +113,9 @@ class Pagem extends CI_Model
 
     }
 
+    //this function will check the parent id for deleteing page.
+    //this will only check not deleteing anything.
+    //after check the data it will push in a array then finally return the whole array to controller
     public  function checkParentId($pageId){
 
         $pagereturn = array();
@@ -133,6 +141,7 @@ class Pagem extends CI_Model
 
     }
 
+    //this will delete page
     public function deletePagebyId($pageId)
     {
        $this->db->where('pageId',$pageId);
@@ -146,6 +155,9 @@ class Pagem extends CI_Model
     }
 
 
+    //////////////////////PAGE SECTION//////////////////////////////////
+
+    //this will insert page section data
     public function insertPageSection()
     {
 
@@ -169,6 +181,7 @@ class Pagem extends CI_Model
         }
     }
 
+    //this will upadate page section data
     public function updatePagaSectionData($id){
 
         $title = $this->input->post("textbox");
@@ -187,6 +200,7 @@ class Pagem extends CI_Model
 
     }
 
+    //this will  return page section data search by pageID
     public function get_pageSecdata($id){
 
         $this->db->where('pageId', $id);
@@ -194,7 +208,7 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
-
+    //this will  return page section data search by pageSectionID
     public function get_pageSecdataBySecId($id)
     {
         $this->db->where('pageSectionId', $id);
@@ -203,6 +217,7 @@ class Pagem extends CI_Model
 
 
     }
+    //this will delete page section data
     public function deletePageSectionbyId($pageSectionId)
     {
         $this->db->where('pageSectionId',$pageSectionId);
