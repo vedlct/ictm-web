@@ -173,6 +173,7 @@ class Pagem extends CI_Model
                 'pageId' => $pagetitle,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
+                'pageSectionStatus' => $status[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
 
 
@@ -186,11 +187,13 @@ class Pagem extends CI_Model
 
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
+        $status = $this->input->post("status");
         date_default_timezone_set("Europe/London");
         
             $data = array(
                 'pageSectionTitle' => $title,
                 'pageSectionContent' => $content,
+                'pageSectionStatus' =>$status,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s")
             );

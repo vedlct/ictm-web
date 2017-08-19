@@ -54,6 +54,14 @@
                                                     <textarea class="form-control ckeditor" id="ckeditor" name="text"
                                                               rows="6"><?php echo $psd->pageSectionContent?></textarea>
                                                 </div>
+                                                <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
+                                                <div class="col-sm-10 form-group">
+                                                    <select class="form-control m-bot15" name="status" required>
+                                                        <option value="<?php echo Active?>" <?php if (!empty($psd->pageSectionStatus) && $psd->pageSectionStatus == 'Active')  echo 'selected = "selected"'; ?>><?php echo Active?></option>
+                                                        <option value="<?php echo InActive?>" <?php if (!empty($psd->pageSectionStatus) && $psd->pageSectionStatus == 'InActive')  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
+
+                                                    </select>
+                                                </div>
 
                                             </div>
 

@@ -69,6 +69,16 @@
                                                 <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
                                                 <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
                                             </div>
+
+                                                <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
+                                            <div class="col-sm-10 form-group">
+                                                <p><font color="red"> <?php echo form_error('status[]'); ?></font></p>
+                                                <select class="form-control m-bot15" name="status[]" required>
+                                                    <option value=""><?php echo SelectStatus?></option>
+                                                    <option><?php echo Active?></option>
+                                                    <option><?php echo InActive?></option>
+                                                </select>
+                                            </div>
                                             </div>
                                     </div>
 
@@ -131,7 +141,12 @@
                 '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>'+'<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" required >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
                 '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
-                 + counter + '" value="" ></textarea>'+'</div>'+'<br>'
+                 + counter + '" value="" ></textarea>'+'</div>'
+                +'<label class="control-label col-lg-2" for="inputSuccess">Page Section Status #'+counter+'<span class="required">*</span></label>'+
+                '<div class="col-sm-10 form-group">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" name="status[]" required>' +'<option value="">'+'<?php echo SelectStatus?>'+'</option>'
+                +'<option>'+'<?php echo Active?>'+'</option>'+
+                '<option>'+'<?php echo InActive?>'+'</option>'
+                +'</select>' +'</div>'+'<br>'
             );
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             CKEDITOR.replace( 'replace_element_' + counter );
