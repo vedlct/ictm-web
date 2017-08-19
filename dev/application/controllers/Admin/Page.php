@@ -105,6 +105,11 @@ class Page extends CI_Controller {
             $y=$this->data['pagedata'];
             if (empty($y)){
                 $this->Pagem->deletePagebyId($pageId);
+                echo "<script>
+                        alert(\"Page Deleted Successfully!!\");
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+
             }else{
 
 
