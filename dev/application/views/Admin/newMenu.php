@@ -51,13 +51,10 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuType'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
-                                                <option value="" selected><?php echo SelectMenuType ?></option>
-                                                <option value="<?php echo top?>"><?php echo top?></option>
-                                                <option><?php echo mainmenu?></option>
-                                                <option><?php echo key?></option>
-                                                <option><?php echo quickLink?></option>
-                                                <option><?php echo important?></option>
-                                                <option><?php echo bottom?></option>
+                                                <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
+                                                <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                                    <option><?php echo MENU_TYPE[$i]?></option>
+                                                <?php } ?>
                                             </select>
 
                                         </div>
@@ -68,7 +65,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuId" id="menuId">
-                                                <option value="" selected>Select Parent Menu</option>
+                                                <option value="" selected><?php echo SELECT_PARENT_MENU?></option>
 
                                             </select>
 
@@ -80,7 +77,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
                                             <select class="form-control m-bot15" name="pageId" id="pageId">
-                                                <option value="" selected><?php echo SelectPage ?></option>
+                                                <option value="" selected><?php echo SELECT_PAGE ?></option>
                                                 <?php foreach ($page as $page){?>
 
                                                     <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
@@ -96,18 +93,17 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
-                                                <option value="" selected><?php echo SelectStatus?></option>
-                                                <option value="<?php echo Active?>"><?php echo Active?></option>
-                                                <option value="<?php echo InActive?>"><?php echo InActive?></option>
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                <option><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
                                             </select>
 
 
                                         </div>
                                     </div>
-                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     <div class="form-group "align="center">
                                         <div class="col-lg-10">
-
                                             <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
                                         </div>
@@ -139,11 +135,7 @@
 </body>
 </html>
 <script>
-            $.ajaxSetup({
-                data: {
-                    '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
-                }
-            });
+
     function selectid(x) {
         var btn =  document.getElementById("menuType").value;
 

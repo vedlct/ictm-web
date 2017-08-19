@@ -27,9 +27,9 @@ class Menu extends CI_Controller {
 
             $this->data['menuName'] = $this->Menum->getMenuName($menuType);
             if ($this->data['menuName'] == null) {
-                echo "<option value='' selected>New Menu</option>";
+                echo "<option value='' selected>".NEW_MENU."</option>";
             } else {
-                echo "<option value='' selected>New Menu</option>";
+                echo "<option value='' selected>".NEW_MENU."</option>";
                 foreach ($this->data['menuName'] as $menuName) {
                     echo "<option value='$menuName->menuId'>$menuName->menuName</option>";
                 }
@@ -70,7 +70,6 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == Admin) {
             $this->data['menu'] = $this->Menum->getAllforManageMenu();
-            //print_r($this->data['menu']);
             $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
