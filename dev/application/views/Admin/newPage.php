@@ -81,10 +81,10 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
                                             <select class="form-control m-bot15" name="pagetype" required>
-                                                <option value=""><?php echo pageType?></option>
-                                                <option><?php echo About?></option>
-                                                <option><?php echo Terms?></option>
-                                                <option><?php echo Health?></option>
+                                                <option value=""><?php echo SELECT_PAGE_TYPE?></option>
+                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
+                                                    <option><?php echo PAGE_TYPE[$i]?></option>
+                                                <?php } ?>
                                             </select>
                                         </div>
                                     </div>
@@ -93,9 +93,12 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('status'); ?></font></p>
                                             <select class="form-control m-bot15" name="status" required>
-                                                <option value=""><?php echo SelectStatus?></option>
-                                                <option><?php echo Active?></option>
-                                                <option><?php echo InActive?></option>
+
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+
                                                 </select>
                                         </div>
                                     </div>
@@ -135,14 +138,4 @@
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
-<!--<script>-->
-<!--    function submitform() {-->
-<!--        var messageLength = CKEDITOR.instances['content'].getData().replace(/<[^>]*>/gi, '').length;-->
-<!---->
-<!--        if( !messageLength ) {-->
-<!--            alert( 'Please enter Page Content' );-->
-<!--            return false;-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->
 

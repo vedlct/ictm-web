@@ -87,34 +87,29 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 ////////////////////custom constant////////////////
-
-
-define("NEW_MENU", "New Menu");
-define("SELECT_PAGE", "Select Page");
-define("SELECT_PARENT_MENU", "Select Parent Menu");
+define("ADMIN", "Admin");
+define("STATUS",array ("Active","InActive"));
+define("SELECT_STATUS" , "Select Status");
 define("NEVER_MODIFIED", "Never Modified");
+
+
+//////////// For Menu    /////////////////
+define("NEW_MENU", "New Menu");
+define("SELECT_PARENT_MENU", "Select Parent Menu");
 define("MENU", "Menu");
 define("NONE", "None");
-
-////menu dropdown/////
-
+define("SELECT_PAGE", "Select Page");
 define("SELECT_MENU_TYPE", "Select Menu Type");
+define("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink","Bottom"));
 
-define ("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink","Bottom"));
 
-define("Admin", "Admin");
+////////// For Page ///////////////////////
 
-define ("STATUS",array ("Active","InActive"));
-//define("Active", "Active");
-//define("InActive", "InActive");
+define("SELECT_PAGE_TYPE", "Select Page Type");
+define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
 
-define("SELECT_STATUS" , "Select Status");
-define("pageType", "Select Page Type");
-define("About", "About Type");
-define("Health", "Health Type");
-define("Terms", "Terms Type");
 
-define("selected", "selected");
+//define("selected", "selected");
 
 
 ////////////    faculy page      ///////////////

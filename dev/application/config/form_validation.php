@@ -96,7 +96,7 @@ $config = array (
 //        array(
 //            'field' => 'content',
 //            'label' => 'Page Content',
-//            'rules' => ''
+//            'rules' => 'xss_clean'
 //        ),
         array(
             'field' => 'image',
@@ -132,11 +132,11 @@ $config = array (
 //            'rules' => 'required',
 //
 //        ),
-        array(
-            'field' => 'content',
-            'label' => 'Page Content',
-            'rules' => 'encode_php_tags'
-        ),
+//        array(
+//            'field' => 'content',
+//            'label' => 'Page Content',
+//            'rules' => 'encode_php_tags'
+//        ),
         array(
             'field' => 'image',
             'label' => 'Image',

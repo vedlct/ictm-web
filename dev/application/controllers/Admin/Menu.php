@@ -13,7 +13,7 @@ class Menu extends CI_Controller {
     /*---------for creating new Menu --------------------- */
     public function newMenu()    // for new menu view
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
             $this->data['page'] = $this->Pagem->getPageIdName();
             $this->load->view('Admin/newMenu', $this->data);
         }
@@ -23,7 +23,7 @@ class Menu extends CI_Controller {
     }
     public function getMenuLevel($menuType) // for new Menu/sub Menu dropdown
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             $this->data['menuName'] = $this->Menum->getMenuName($menuType);
             if ($this->data['menuName'] == null) {
@@ -42,7 +42,7 @@ class Menu extends CI_Controller {
 
     public function createNewMenu() // for insert new menu into database
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
             if (!$this->form_validation->run('createMenu')) {
 
                 $this->data['page'] = $this->Pagem->getPageIdName();
@@ -68,7 +68,7 @@ class Menu extends CI_Controller {
     /*---------for Manage Menu -----------------------*/
     public function manageMenu() // for manage menu view
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
             $this->data['menu'] = $this->Menum->getAllforManageMenu();
             $this->load->view('Admin/manageMenu', $this->data);
         }
@@ -78,7 +78,7 @@ class Menu extends CI_Controller {
     }
     public function editMenuView($menuId)  // for edit menu view
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             $this->data['edit_menu'] = $this->Menum->getAllMenubyId($menuId);
             $this->data['page'] = $this->Pagem->getPageIdName();
@@ -92,7 +92,7 @@ class Menu extends CI_Controller {
     }
     public function editMenu($id) // for edit menu in database
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             if (!$this->form_validation->run('editMenu')) {
 
@@ -116,7 +116,7 @@ class Menu extends CI_Controller {
     }
     public function deleteMenu($menuId)    // delete Menu if no SubMenu
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
             $r=$this->Menum->deleteMenubyId($menuId);
             if ($r!='0'){
                 $name=array();
