@@ -21,7 +21,7 @@ class Facultym extends CI_Model
         $facultyCourse = $this->input->post("faculty_courses[]");
         $facultyIntro = $this->input->post("faculty_intro");
         date_default_timezone_set("Europe/London");
-        $image=$_FILES['faculty_image']['name'];
+        //$image=$_FILES['faculty_image']['name'];
 
         if (!empty($_FILES['faculty_image']['name'])) {
             $this->load->library('upload');
@@ -31,11 +31,7 @@ class Facultym extends CI_Model
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
-<<<<<<< HEAD
-                'mod_mime_fix'=>FALSE
-=======
                 'mod_mime_fix'=>FALSE,
->>>>>>> b237141230be098a740290bf39b38bd62259bd2f
 
             );
             $this->upload->initialize($config);
@@ -69,11 +65,7 @@ class Facultym extends CI_Model
             'facultyTwitter'=>$facultyTwitter,
             'facultyLinkedIn'=>$facultyLinkdin,
             'facultyIntro'=>$facultyIntro,
-<<<<<<< HEAD
-            'facultyImage'=>$image,
-=======
             'facultyImage'=>$facultyImage,
->>>>>>> b237141230be098a740290bf39b38bd62259bd2f
             'facultyStatus'=>$facultyStatus,
             'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
@@ -81,7 +73,7 @@ class Facultym extends CI_Model
         );
         $this->db->insert('ictmfaculty', $data);
 
-        $query = $this->db->query("SELECT * FROM `ictmfaculty` ORDER  BY `facultyId` DESC limit 1 ");
+        $query = $this->db->query("SELECT `facultyId` FROM `ictmfaculty` ORDER  BY `facultyId` DESC limit 1 ");
 
         foreach ($query->result() as $r){
 
@@ -101,7 +93,12 @@ class Facultym extends CI_Model
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageFaculty() // for manage Faculty view
     {
-        $query = $this->db->get('ictmfaculty');
+//        $query = $this->db->get('ictmfaculty');
+//        return $query->result();
+
+        $this->db->select('facultyId,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmfaculty');
+        $query = $this->db->get();
         return $query->result();
 
     }
@@ -182,7 +179,6 @@ class Facultym extends CI_Model
                 'facultyTwitter'=>$facultyTwitter,
                 'facultyLinkedIn'=>$facultyLinkdin,
                 'facultyIntro'=>$facultyIntro,
-
                 'facultyStatus'=>$facultyStatus,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),

@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Menu</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Menu</li>
                         <li><i class="fa fa-th-list"></i>Manage Menu</li>
                     </ol>
@@ -40,12 +40,12 @@
                                 <tr>
                                     <th> Menu Title</th>
                                     <th> Menu Type</th>
-                                    <th> Menu/Sub Menu</th>
+                                    <th> Menu/Sub Menu of</th>
                                     <th> Page Title</th>
                                     <th> Menu Status</th>
                                     <th> Menu Inserted By</th>
                                     <th> Last Modified By</th>
-                                    <th> Last Modified Date</th>
+                                    <th> Last Modified Date (d-m-Y)</th>
                                     <th> Action</th>
                                 </tr>
                                 <?php foreach ($menu as $menu){?>
@@ -78,7 +78,7 @@
                                         <td><?php if ($menu->lastModifiedDate==""){echo"Never Modified";}
                                             else{
                                             $timestamp = strtotime($menu->lastModifiedDate);
-                                            $date = date('d-F-Y', $timestamp);
+                                            $date = date('d-m-Y', $timestamp);
                                             echo $date ;}
                                             ?>
                                         </td>
@@ -129,19 +129,15 @@
                 data:{'menuid':btn},
                 cache: false,
                 success:function(data) {
-//                    alert("Menu Deleted Successfully!!");
-//                    location.reload();
+
                     if(data=='0'){alert("Menu Deleted Successfully!!");
                     location.reload();
                     }
                     else
                     {
-                        alert('Please Delete SubMenu- '+data+' First !!');
+                        alert('Please Delete Menu-( '+data+' ) First !!');
 
                     }
-
-
-
 
                 }
             });

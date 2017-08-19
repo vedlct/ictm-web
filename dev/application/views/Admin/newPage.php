@@ -88,7 +88,7 @@
                                             <select class="form-control m-bot15" name="status">
                                                 <option><?php echo SelectStatus?></option>
                                                 <option><?php echo Active?></option>
-                                                <option><?php echo inactive?></option>
+                                                <option><?php echo InActive?></option>
                                                 </select>
                                         </div>
                                     </div>

@@ -96,7 +96,12 @@
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('EventType'); ?></font></p>
-                                            <input class="form-control" type="text" name="EventType" id="EventType" required/>
+                                            <select class="form-control m-bot15" name="EventType" id="EventType" required>
+                                                <option value="" selected><?php echo SelectType?></option>
+                                                <?php for($i=0;$i<count(EventType);$i++){?>
+                                                    <option value="<?php echo EventType[$i]?>"><?php echo EventType[$i]?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
 
 

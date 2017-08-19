@@ -37,13 +37,13 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-
-                                <form class="form-validate form-horizontal" id="CreateNewDepartment" method="POST" action="<?php echo base_url() ?>Admin/Department/createNewDepartment" onsubmit="return submitform()">
+                             <?php foreach ($editDepartment as $editDepartment ){?>
+                                <form class="form-validate form-horizontal" id="CreateNewDepartment" method="POST" action="<?php echo base_url() ?>Admin/Department/editDepartmentbyId/<?php echo $editDepartment->departmentId?>" onsubmit="return submitform()">
                                     <div class="form-group ">
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('departmentName'); ?></font></p>
-                                            <input class="form-control" id="departmentName" name="departmentName"  type="text" required />
+                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo $editDepartment->departmentName?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -52,7 +52,7 @@
                                         <div class="col-lg-10">
 
                                             <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
-                                            <input class="form-control" id="departmentHead" name="departmentHead"  type="text" required />
+                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="<?php echo $editDepartment->departmentHead?>" type="text" required />
 
 
                                         </div>
@@ -64,8 +64,10 @@
                                             <p><font color="red"> <?php echo form_error('departmentStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="departmentStatus" id="departmentStatus" required>
                                                 <option value="" selected><?php echo SelectStatus?></option>
-                                                <option value="<?php echo Active?>"><?php echo Active?></option>
-                                                <option value="<?php echo InActive?>"><?php echo InActive?></option>
+<!--                                                <option value="--><?php //echo Active?><!--">--><?php //echo Active?><!--</option>-->
+<!--                                                <option value="--><?php //echo InActive?><!--">--><?php //echo InActive?><!--</option>-->
+                                                <option value="<?php echo Active ?>" <?php if (!empty($editDepartment->departmentStatus) && $editDepartment->departmentStatus == Active)  echo 'selected = "selected"'; ?>><?php echo Active?></option>
+                                                <option value="<?php echo InActive ?>" <?php if (!empty($editDepartment->departmentStatus) && $editDepartment->departmentStatus == InActive)  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
                                             </select>
 
 
@@ -75,7 +77,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="departmentSummary">departmentHead Summary</label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" required></textarea>
+                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" required><?php echo $editDepartment->departmentSummary ?></textarea>
 
 
                                         </div>
@@ -90,8 +92,9 @@
                                         </div>
                                     </div>
 
-                            </div>
-                            </form>
+                                    </div>
+                                </form>
+                            <?php }?>
                         </div>
 
                 </div>

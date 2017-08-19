@@ -33,7 +33,7 @@ class Login extends CI_Controller {
                 $this->session->set_userdata($data);
                 if ($this->session->userdata('type') == Admin){
 
-                    redirect('Welcome');
+                    redirect('Admin/Home');
                 }else {
 
 

@@ -4,18 +4,18 @@
 class Menum extends CI_Model
 {
         /*----------- this creates a new Menu in database------------*/
-    public function createNewMenu()
+    public function createNewMenu()             // for insert new menu into database
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
         $menuId = $this->input->post("menuId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
-        if ($menuId == newMenu)
+        if ($menuId == "")
         {
             $menuId =null;
         }
-        if ($pageId == selectPage)
+        if ($pageId == "")
         {
             $pageId =null;
         }
@@ -30,7 +30,7 @@ class Menum extends CI_Model
             'insertedDate'=>date("Y-m-d H:i:s"),
 
         );
-
+        $this->security->xss_clean($data);
         $this->db->insert('ictmmenu', $data);
     }
             /*-----get Menu Name and id----------*/
@@ -47,7 +47,7 @@ class Menum extends CI_Model
     public function getAllforManageMenu()
     {
 
-        $this->db->select('m.*,menu.menuName as submenu,p.pageTitle');
+        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
@@ -60,8 +60,15 @@ class Menum extends CI_Model
         /*-- get all information of the selected Menu ---*/
     public function getAllMenubyId($menuId)
     {
-        $query = $this->db->get_where('ictmmenu', array('menuId' => $menuId));
+
+        $this->db->select('m.*,menu.menuName as submenu');
+        $this->db->where('m.menuId', $menuId);
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+
+        $query = $this->db->get();
         return $query->result();
+
     }
 
         /*-------- edit menu by id  in database--------------*/
@@ -73,16 +80,16 @@ class Menum extends CI_Model
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
 
-        if ($menuId == newMenu || $menuId == Menu)
+        if ($menuId == "")
         {
             $menuId =null;
         }
-        if ($pageId == None)
+        if ($pageId == "")
         {
             $pageId =null;
         }
-
         date_default_timezone_set("Europe/London");
+
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
@@ -93,7 +100,7 @@ class Menum extends CI_Model
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 
         );
-
+        $this->security->xss_clean($data);
         $this->db->where('menuId', $id);
         $this->db->update('ictmmenu', $data);
     }
@@ -103,7 +110,11 @@ class Menum extends CI_Model
     public function deleteMenubyId($menuId) //delete menu if no Submenu
     {
 
-        $query = $this->db->get_where('ictmmenu', array('parentId' => $menuId));
+
+        $this->db->select('menuName,');
+        $this->db->where('parentId',$menuId);
+        $this->db->from('ictmmenu');
+        $query = $this->db->get();
 
         if (empty($query->result())){
 
@@ -114,9 +125,6 @@ class Menum extends CI_Model
         else{
             return $query->result();
         }
-
-
-
     }
 
 

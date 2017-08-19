@@ -14,6 +14,7 @@ class Pagem extends CI_Model
 
         $image = $_FILES["image"]["name"];
         move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
+        date_default_timezone_set("Europe/London");
 
         $data = array(
             'pageTitle' => $title,
@@ -24,11 +25,12 @@ class Pagem extends CI_Model
             'pageType' => $pagetype,
             'pageStatus' => $status,
             'insertedBy'=>$this->session->userdata('userEmail'),
+            'insertedDate'=>date("Y-m-d H:i:s"),
 
 
 
         );
-        //$data = $this->security->xss_clean($data);
+        $this->security->xss_clean($data,true);
         $this->db->insert('ictmpage', $data);
     }
 

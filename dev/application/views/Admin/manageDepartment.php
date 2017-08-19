@@ -89,7 +89,7 @@
 
                                             <div class="btn-group">
                                                 <a class="btn" href="<?php echo base_url("Admin/Department/editDepartmentView/")?><?php echo $departments->departmentId?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id=""  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                                <a class="btn" data-panel-id="<?php echo $departments->departmentId?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                             </div>
                                         </td>
 
@@ -123,23 +123,30 @@
 </body>
 </html>
 <script>
+
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Event?")) {
+        if (confirm("Are you sure you want to delete this Department?")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin/Event/deleteEvent/")?>'+btn,
-                data:{},
+                url:'<?php echo base_url("Admin/Department/deleteDepartment/")?>'+btn,
+                data:{'departmentId':btn},
                 cache: false,
                 success:function(data) {
-                    alert("Event Deleted Successfully!!");
-                    location.reload();
 
+                    if(data=='0'){alert("Department Deleted Successfully!!");
+                        location.reload();
+                    }
+                    else
+                    {
+                        alert('Please Delete Course- ( '+data+' )First !!');
+
+                    }
                 }
             });
         }
         else {
-            location.reload();
+            window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
         }
     }
 </script>

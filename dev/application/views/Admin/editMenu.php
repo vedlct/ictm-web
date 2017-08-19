@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> Edit &nbsp Menu</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Menu</li>
                         <li><i class="fa fa-files-o"></i>Manage Menu</li>
                     </ol>
@@ -33,16 +33,17 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Menu
+                            Edit Menu
                         </header>
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($edit_menu as $menu){?>
-                                <form class="form-validate form-horizontal" id="editMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/editMenu/<?php echo $menu->menuId?>" onsubmit="return submitform()">
+                                <form class="form-validate form-horizontal" id="editMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/editMenu/<?php echo $menu->menuId?>">
 
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
                                             <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo $menu->menuName?>" required />
                                         </div>
                                     </div>
@@ -51,8 +52,9 @@
                                         <label class="control-label col-lg-2" for="menuType">Menu Type <span class="required">*</span></label>
 
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('menuType'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)"required>
-                                                <option>Select Menu Type</option>
+                                                <option value="">Select Menu Type</option>
                                                 <option value="<?php echo top?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'Top')  echo 'selected = "selected"'; ?>><?php echo top?></option>
                                                 <option value="<?php echo mainmenu?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'MainMenu')  echo 'selected = "selected"'; ?>><?php echo mainmenu?></option>
                                                 <option value="<?php echo key?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'KeyInfo')  echo 'selected = "selected"'; ?>><?php echo key?></option>
@@ -67,19 +69,15 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuId">New/Sub Menu </label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="menuId" id="menuId">
-                                                <?php if ($menu->parentId=="")
+                                            <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
+                                            <select class="form-control m-bot15" name="menuId" id="menuId" onchange="chkown()">
+                                                <?php if ($menu->submenu=="")
                                                 {
-                                                    echo "<option  selected>Menu</option>";
+                                                    echo "<option  value='' selected>Menu</option>";
                                                 }
 												else
-												    {
-                                                    $p_id=$menu->parentId;
-                                                    $query=$this->db->query("select menuName from ictmmenu WHERE `menuId`= '$p_id'");
-                                                    foreach ($query->result() as $r ){$mName=$r->menuName;}?>
-                                                    
-													<option value="<?php echo $menu->parentId?>" <?php if (!empty($menu->parentId) && $menu->parentId == $p_id)  echo 'selected = "selected"'; ?>><?php echo $mName?></option>
-													
+												    {?>
+													<option value="<?php echo $menu->parentId?>" selected><?php echo $menu->submenu?></option>
                                                 <?php }?>
 
                                             </select>
@@ -90,11 +88,12 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="pageId">Page</label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
                                             <select class="form-control m-bot15" name="pageId" id="pageId">
 
                                                 <?php if ($menu->pageId=="")
                                                 {
-                                                    echo "<option selected>None</option>";
+                                                    echo "<option value='' selected>None</option>";
 
                                                 ?>
                                                 <?php foreach ($page as $page){?>
@@ -103,12 +102,9 @@
 
                                                 <?php }} else{
                                                     $pa_id=$menu->pageId;
-//                                                    $query=$this->db->query("select pageTitle from ictmpage WHERE `pageId`= '$pa_id'");
-//                                                    foreach ($query->result() as $p ){$paTitle=$p->pageTitle;}
-                                                    //echo "<option value='$pa_id' selected>$paTitle</option>";
 
                                                 ?>
-                                                    <option>None</option>
+                                                    <option value="">None</option>
                                                 <?php foreach ($page as $page){?>
 
                                                     <option value="<?php echo $page->pageId?>" <?php if (!empty($page->pageId) && $page->pageId == $pa_id)  echo 'selected = "selected"'; ?>><?php echo $page->pageTitle?></option>
@@ -124,11 +120,9 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuStatus">Menu Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('menuStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
-<!--                                                <option selected>--><?php //echo $menu->menuStatus?><!--</option>-->
-                                                <option ><?php echo SelectStatus?></option>
-<!--                                                <option >Active</option>-->
-<!--                                                <option >InActive</option>-->
+                                                <option value=""><?php echo SelectStatus?></option>
                                                 <option value="<?php echo Active ?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == Active)  echo 'selected = "selected"'; ?>><?php echo Active?></option>
                                                 <option value="<?php echo InActive ?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == InActive)  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
 
@@ -179,8 +173,8 @@
     function selectid(x) {
 
         var btn =  document.getElementById("menuType").value;
-        //alert(btn);
-        if (btn == "Select Menu Type"){
+
+        if (btn == ""){
 
             alert("Select a valid Menu Type");
         }
@@ -201,29 +195,14 @@
             });
         }
     }
-    function submitform() {
+    function chkown() {
 
-        var title=document.getElementById("menuTitle").value;
-        var menuType=document.getElementById("menuType").value;
         var menuId=document.getElementById("menuId").value;
-        var menuStatus=document.getElementById("menuStatus").value;
-        if (title == null){
-            alert("Please Insert a Title for Menu");
-            return false;
-        }
-        if (menuType =="Select Menu Type"){
-            alert("Please Select Menu Type");
-            return false;
-        }
         if (menuId == <?php echo $menu->menuId?>){
             alert("!!Can't Make OWN's Sub Menu!!");
+            document.getElementById("menuId").selectedIndex=0;
             return false;
         }
-        if (menuStatus =="Select Status"){
-            alert("Please Select Menu Status");
-            return false;
-        }
-
     }
 
 </script>

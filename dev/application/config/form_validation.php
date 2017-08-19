@@ -31,19 +31,49 @@ $config = array (
         array(
             'field' => 'menuId',
             'label' => 'New/Sub Menu',
-            'rules' => 'required',
+            'rules' => 'regex_match[/^[0-9]*$/]',
 
         ),
         array(
             'field' => 'pageId',
             'label' => 'Page',
-            'rules' => 'required'
+            'rules' => 'regex_match[/^[0-9]*$/]'
         ),
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
+            'rules' => 'required|alpha'
+        ),
+        ),
+
+    'editMenu'=> array (
+        array(
+            'field' => 'menuTitle',
+            'label' => 'Menu Name',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'menuType',
+            'label' => 'Menu Type',
             'rules' => 'required'
         ),
+        array(
+            'field' => 'menuId',
+            'label' => 'New/Sub Menu',
+            'rules' => 'regex_match[/^[0-9]*$/]',
+
         ),
+        array(
+            'field' => 'pageId',
+            'label' => 'Page',
+            'rules' => 'regex_match[/^[0-9]*$/]'
+        ),
+        array(
+            'field' => 'menuStatus',
+            'label' => 'Menu Status',
+            'rules' => 'required|alpha'
+        ),
+    ),
 			 
 );
