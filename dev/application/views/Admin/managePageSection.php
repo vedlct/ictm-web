@@ -39,7 +39,7 @@
                                 <label class="control-label col-lg-1" for="inputSuccess">Page Title</label>
                                 <div class="col-lg-10">
                                     <select class="form-control m-bot15" id="pagename" name="pagetitle" onchange="showtable()">
-                                        <option>Select Page</option>
+                                        <option value="">Select Page</option>
                                        <?php foreach ($pagename as $pn) { ?>
                                            <option value="<?php echo $pn->pageId?>"><?php echo $pn->pageTitle?></option>
                                            <?php

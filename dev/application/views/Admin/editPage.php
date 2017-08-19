@@ -47,6 +47,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
+                                        <label for="cname" class="control-label col-lg-2">Page Keywords</label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
+                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo $epd->pageKeywords?>" type="text"  />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
+                                        <label for="cname" class="control-label col-lg-2">Page MetaData</label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
+                                            <input class="form-control" id="metadata" name="metadata"  value="<?php echo $epd->pageMetaData?>" type="text"  />
+                                        </div>
+                                    </div>
+                                    <div class="form-group ">
 
                                             <label class="control-label col-sm-2">Content</label>
                                             <div class="col-sm-10">

@@ -93,11 +93,11 @@ $config = array (
 //            'rules' => 'required',
 //
 //        ),
-        array(
-            'field' => 'content',
-            'label' => 'Page Content',
-            'rules' => 'xss_clean'
-        ),
+//        array(
+//            'field' => 'content',
+//            'label' => 'Page Content',
+//            'rules' => ''
+//        ),
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -121,21 +121,21 @@ $config = array (
             'rules' => 'required',
 
         ),
-        array(
-            'field' => 'keywords',
-            'label' => 'Page Keywords',
-            'rules' => 'required'
-        ),
-        array(
-            'field' => 'metadata',
-            'label' => 'Page MetaData',
-            'rules' => 'required',
-
-        ),
+//        array(
+//            'field' => 'keywords',
+//            'label' => 'Page Keywords',
+//            'rules' => 'required'
+//        ),
+//        array(
+//            'field' => 'metadata',
+//            'label' => 'Page MetaData',
+//            'rules' => 'required',
+//
+//        ),
         array(
             'field' => 'content',
             'label' => 'Page Content',
-            'rules' => 'xss_clean'
+            'rules' => 'encode_php_tags'
         ),
         array(
             'field' => 'image',
@@ -169,21 +169,29 @@ $config = array (
         array(
             'field' => 'text[]',
             'label' => 'Page Section Content',
-            'rules' => 'xss_clean'
+            'rules' => 'encode_php_tags'
         ),
         array(
-            'field' => 'image',
-            'label' => 'Image',
-            'rules' => 'callback_val_img_check'
-        ),
-        array(
-            'field' => 'pagetype',
-            'label' => 'Page Type',
+            'field' => 'status[]',
+            'label' => 'Page Section Status',
             'rules' => 'required'
+        ),
+    ),
+    'editPageSection'=> array (
+        array(
+            'field' => 'textbox',
+            'label' => 'Section Title',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'text',
+            'label' => 'Section Content',
+            'rules' => 'encode_php_tags'
         ),
         array(
             'field' => 'status',
-            'label' => 'Page Status',
+            'label' => 'Page Section Status',
             'rules' => 'required'
         ),
     ),

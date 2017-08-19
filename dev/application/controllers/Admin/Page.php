@@ -202,6 +202,12 @@ class Page extends CI_Controller {
 
         if ($this->session->userdata('type') == Admin) {
 
+            if (!$this->form_validation->run('editPageSection')) {
+
+                $this->data['pagesecdata'] = $this->Pagem->get_pageSecdataBySecId($id);
+                $this->load->view('Admin/editPageSection', $this->data);
+            }
+
             $this->Pagem->updatePagaSectionData($id);
             redirect('Admin/Page/managePageSection');
 
@@ -242,20 +248,22 @@ class Page extends CI_Controller {
 /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
-        $this->load->library('upload');
-        $config['upload_path'] = "images/";
-        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        $image = $_FILES["image"]["name"];
+        if ($image != null) {
+            $this->load->library('upload');
+            $config['upload_path'] = "images/";
+            $config['allowed_types'] = 'jpg|png|jpeg|gif';
 //        $config['max_size']    = '2048000';
 //        $config['overwrite'] = TRUE;
 
 
-        $this->upload->initialize($config);
-        if (!$this->upload->do_upload('image'))
-        {
-            $this->form_validation->set_message('val_img_check',$this->upload->display_errors());
-            return false;
-        } else {
-            return true;
+            $this->upload->initialize($config);
+            if (!$this->upload->do_upload('image')) {
+                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
