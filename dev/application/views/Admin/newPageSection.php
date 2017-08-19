@@ -62,7 +62,7 @@
                                             <label class="control-label col-lg-2">Title #1 : <span class="required">*</span></label>
                                             <div class="col-lg-10 form-group">
                                                 <p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>
-                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]"  required>
+                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" required>
                                             </div>
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-sm-10 form-group">

@@ -163,18 +163,18 @@ $config = array (
         array(
             'field' => 'textbox[]',
             'label' => 'Section Title',
-            'rules' => 'required'
+            'rules' => 'trim|required'
         ),
 
         array(
             'field' => 'text[]',
             'label' => 'Page Section Content',
-            'rules' => 'encode_php_tags'
+            'rules' => 'trim|encode_php_tags'
         ),
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'required'
+            'rules' => 'trim|required'
         ),
     ),
     'editPageSection'=> array (

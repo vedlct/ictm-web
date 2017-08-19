@@ -248,6 +248,8 @@ class Page extends CI_Controller {
 /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
+        $image = $_FILES["image"]["name"];
+        if ($image !=null) {
         $this->load->library('upload');
         $config['upload_path'] = "images/";
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
@@ -256,12 +258,13 @@ class Page extends CI_Controller {
 
 
         $this->upload->initialize($config);
-        if (!$this->upload->do_upload('image'))
-        {
-            $this->form_validation->set_message('val_img_check',$this->upload->display_errors());
-            return false;
-        } else {
-            return true;
+
+            if (!$this->upload->do_upload('image')) {
+                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
