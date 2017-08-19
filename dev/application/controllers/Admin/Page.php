@@ -10,6 +10,7 @@ class Page extends CI_Controller {
         $this->load->model('Admin/Pagem');
 
 
+
     }
  
 
@@ -29,8 +30,14 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == Admin) {
 
-            $this->Pagem->insertPage();
-            redirect('Admin/Page/createPage');
+            if (!$this->form_validation->run('createPage')) {
+                $this->load->view('Admin/newPage');
+            }
+            else
+            {
+                $this->Pagem->insertPage();
+                redirect('Admin/Page/createPage');
+            }
         }
         else{
             redirect('Login');
@@ -67,8 +74,16 @@ class Page extends CI_Controller {
     public function editPage($id)
     {
         if ($this->session->userdata('type') == Admin) {
-            $this->Pagem->updatePagaData($id);
-            redirect('Admin/Page/managePage');
+
+            if (!$this->form_validation->run('editPage')) {
+                $this->data['editPageData'] = $this->Pagem->geteditPagaData($id);
+                $this->load->view('Admin/editPage', $this->data);
+            }
+            else
+            {
+                $this->Pagem->updatePagaData($id);
+                redirect('Admin/Page/managePage');
+            }
         }
         else{
             redirect('Login');
@@ -122,8 +137,17 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == Admin) {
 
-            $this->data['pagename'] = $this->Pagem->getPageIdName();
-            $this->load->view('Admin/newPageSection', $this->data);
+            if (!$this->form_validation->run('createPageSection')) {
+
+                $this->data['pagename'] = $this->Pagem->getPageIdName();
+                $this->load->view('Admin/newPageSection', $this->data);
+            }
+            else {
+
+                $this->data['pagename'] = $this->Pagem->getPageIdName();
+                $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
+            }
+
         }
         else{
             redirect('Login');
@@ -213,6 +237,25 @@ class Page extends CI_Controller {
         }
         else{
             redirect('Login');
+        }
+    }
+/* -------------------------------Image validation-------------------------*/
+    public function val_img_check()
+    {
+        $this->load->library('upload');
+        $config['upload_path'] = "images/";
+        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+//        $config['max_size']    = '2048000';
+//        $config['overwrite'] = TRUE;
+
+
+        $this->upload->initialize($config);
+        if (!$this->upload->do_upload('image'))
+        {
+            $this->form_validation->set_message('val_img_check',$this->upload->display_errors());
+            return false;
+        } else {
+            return true;
         }
     }
 

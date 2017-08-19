@@ -43,8 +43,8 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="pagetitle">
-                                                <option>Select Page</option>
+                                            <select class="form-control m-bot15" name="pagetitle" required>
+                                                <option value="">Select Page</option>
                                                <?php foreach ($pagename as $pg) { ?>
                                                    <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
                                                    <?php
@@ -59,12 +59,14 @@
                                     <div id='TextBoxesGroup' class="form-group">
 
                                         <div id="TextBoxDiv1" class="form-group">
-                                            <label class="control-label col-lg-2">Title #1 : </label>
+                                            <label class="control-label col-lg-2">Title #1 : <span class="required">*</span></label>
                                             <div class="col-lg-10 form-group">
-                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" >
+                                                <p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>
+                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]"  required>
                                             </div>
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-sm-10 form-group">
+                                                <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
                                                 <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
                                             </div>
                                             </div>
@@ -98,20 +100,15 @@
     </section>
 </section>
 <!--main content end-->
-<div class="text-right">
+
+<div class="text-right wrapper">
     <div class="credits">
-        <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-        -->
         <a href="#">Icon College</a> by <a href="#">A2N</a>
     </div>
 </div>
+
 </section>
 <!-- container section end -->
-
 <!-- javascripts -->
 <?php include('js.php') ?>
 
@@ -130,10 +127,10 @@
 
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
-            newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<input class="form-control" type="text" name="textbox[]' + counter +
-                '" id="textbox' + counter + '" value="" >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
+            newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' :<span class="required">*</span> </label>' +
+                '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>'+'<input class="form-control" type="text" name="textbox[]' + counter +
+                '" id="textbox' + counter + '" value="" required >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
+                '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
                  + counter + '" value="" ></textarea>'+'</div>'+'<br>'
             );
             newTextBoxDiv.appendTo("#TextBoxesGroup");
