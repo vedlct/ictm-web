@@ -135,7 +135,7 @@ $config = array (
         array(
             'field' => 'content',
             'label' => 'Page Content',
-            'rules' => 'xss_clean'
+            'rules' => 'encode_php_tags'
         ),
         array(
             'field' => 'image',
@@ -169,19 +169,31 @@ $config = array (
         array(
             'field' => 'text[]',
             'label' => 'Page Section Content',
-            'rules' => 'xss_clean'
+            'rules' => 'encode_php_tags'
         ),
+        array(
+            'field' => 'status[]',
+            'label' => 'Page Section Status',
+            'rules' => 'required'
+        ),
+    ),
+    'editPageSection'=> array (
+        array(
+            'field' => 'textbox',
+            'label' => 'Section Title',
+            'rules' => 'required',
 
-//        array(
-//            'field' => 'pagetype',
-//            'label' => 'Page Type',
-//            'rules' => 'required'
-//        ),
-//        array(
-//            'field' => 'status',
-//            'label' => 'Page Status',
-//            'rules' => 'required'
-//        ),
+        ),
+        array(
+            'field' => 'text',
+            'label' => 'Section Content',
+            'rules' => 'encode_php_tags'
+        ),
+        array(
+            'field' => 'status',
+            'label' => 'Page Section Status',
+            'rules' => 'required'
+        ),
     ),
 			 
 );

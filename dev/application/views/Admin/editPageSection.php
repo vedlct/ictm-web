@@ -44,13 +44,15 @@
 
 
                                             <div id="TextBoxDiv1" class="form-group">
-                                                <label class="control-label col-lg-2">Title : </label>
+                                                <label class="control-label col-lg-2">Title : <span class="required">*</span></label>
                                                 <div class="col-lg-10 form-group">
+                                                    <p><font color="red"> <?php echo form_error('textbox'); ?></font></p>
                                                     <input class="form-control" type='textbox' id='textbox1'
-                                                          value="<?php echo $psd->pageSectionTitle?>" name="textbox">
+                                                          value="<?php echo $psd->pageSectionTitle?>" name="textbox" required>
                                                 </div>
                                                 <label class="control-label col-lg-2">Content : </label>
                                                 <div class="col-sm-10 form-group">
+                                                    <p><font color="red"> <?php echo form_error('text'); ?></font></p>
                                                     <textarea class="form-control ckeditor" id="ckeditor" name="text"
                                                               rows="6"><?php echo $psd->pageSectionContent?></textarea>
                                                 </div>
@@ -59,13 +61,6 @@
 
                                     </div>
 
-<!--                                    <div id="add_remove_button" class="form-group">-->
-<!--                                        <div class="col-lg-2"></div>-->
-<!--                                        <div class="col-lg-10 form-group">-->
-<!--                                            <input class="btn btn-sm btn-login" type='button' value='Add Section' id='addButton'>-->
-<!--                                            <input class="btn btn-sm" type='button' value='Remove Section' id='removeButton'>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
 
                                     <div class="form-group " align="center">
                                         <div class="col-lg-10">

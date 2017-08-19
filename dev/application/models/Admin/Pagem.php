@@ -108,6 +108,7 @@ class Pagem extends CI_Model
             );
 
         }
+        $this->security->xss_clean($data,true);
         $this->db->where('pageId', $id);
         $this->db->update('ictmpage', $data);
 
@@ -177,6 +178,7 @@ class Pagem extends CI_Model
 
 
             );
+            $this->security->xss_clean($data,true);
             $this->db->insert('ictmpagesection', $data);
         }
     }
@@ -186,15 +188,17 @@ class Pagem extends CI_Model
 
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
+        $status = $this->input->post("status");
         date_default_timezone_set("Europe/London");
         
             $data = array(
                 'pageSectionTitle' => $title,
                 'pageSectionContent' => $content,
+                'pageSectionStatus' => $status,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s")
             );
-
+        $this->security->xss_clean($data,true);
         $this->db->where('pageSectionId', $id);
         $this->db->update('ictmpagesection', $data);
 

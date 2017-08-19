@@ -202,6 +202,12 @@ class Page extends CI_Controller {
 
         if ($this->session->userdata('type') == Admin) {
 
+            if (!$this->form_validation->run('editPageSection')) {
+
+                $this->data['pagesecdata'] = $this->Pagem->get_pageSecdataBySecId($id);
+                $this->load->view('Admin/editPageSection', $this->data);
+            }
+
             $this->Pagem->updatePagaSectionData($id);
             redirect('Admin/Page/managePageSection');
 
