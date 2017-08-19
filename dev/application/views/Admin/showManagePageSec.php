@@ -6,6 +6,7 @@
         <th> Insert By </th>
         <th> Last Modified By </th>
         <th> Last Modified Date </th>
+        <th> Status </th>
         <th> Action</th>
     </tr>
 
@@ -15,6 +16,7 @@
             <td><?php echo $pg->insertedBy?></td>
             <td><?php echo $pg->lastModifiedBy; ?></td>
             <td><?php echo $pg->lastModifiedDate ?></td>
+            <td><?php echo $pg->pageSectionStatus ?></td>
             <td>
                 <div class="btn-group">
 

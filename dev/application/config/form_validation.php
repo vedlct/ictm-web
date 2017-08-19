@@ -93,11 +93,11 @@ $config = array (
 //            'rules' => 'required',
 //
 //        ),
-        array(
-            'field' => 'content',
-            'label' => 'Page Content',
-            'rules' => 'xss_clean'
-        ),
+//        array(
+//            'field' => 'content',
+//            'label' => 'Page Content',
+//            'rules' => ''
+//        ),
         array(
             'field' => 'image',
             'label' => 'Image',

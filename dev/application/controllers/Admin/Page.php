@@ -249,14 +249,13 @@ class Page extends CI_Controller {
     public function val_img_check()
     {
         $image = $_FILES["image"]["name"];
-        if ($image !=null) {
-        $this->load->library('upload');
-        $config['upload_path'] = "images/";
-        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        if ($image != null) {
+            $this->load->library('upload');
+            $config['upload_path'] = "images/";
+            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+
 //        $config['max_size']    = '2048000';
 //        $config['overwrite'] = TRUE;
-
-
         $this->upload->initialize($config);
 
             if (!$this->upload->do_upload('image')) {

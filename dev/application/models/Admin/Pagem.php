@@ -174,6 +174,7 @@ class Pagem extends CI_Model
                 'pageId' => $pagetitle,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
+                'pageSectionStatus' => $status[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
 
 
