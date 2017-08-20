@@ -146,18 +146,10 @@ class Page extends CI_Controller {
     //this will show create page section
     public function createPageSection()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
-            if (!$this->form_validation->run('createPageSection')) {
-
-                $this->data['pagename'] = $this->Pagem->getPageIdName();
-                $this->load->view('Admin/newPageSection', $this->data);
-            }
-            else {
-
-                $this->data['pagename'] = $this->Pagem->getPageIdName();
-                $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
-            }
+        $this->data['pagename'] = $this->Pagem->getPageIdName();
+        $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
 
         }
         else{
@@ -168,11 +160,21 @@ class Page extends CI_Controller {
     //this will insert page section
     public function insertPageSection()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
-        $this->Pagem->insertPageSection();
-        redirect('Admin/Page/createPageSection');
+            if (!$this->form_validation->run('createPageSection')) {
 
+                $this->data['pagename'] = $this->Pagem->getPageIdName();
+                $this->load->view('Admin/newPageSection', $this->data);
+            }
+            else {
+
+                $this->Pagem->insertPageSection();
+                echo "<script>
+                    alert('Page Section Inserted Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/createPageSection';
+                    </script>";
+            }
         }
         else{
             redirect('Login');
@@ -183,7 +185,7 @@ class Page extends CI_Controller {
     public function managePageSection()
     {
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             $this->data['pagename'] = $this->Pagem->getPageIdName();
             $this->load->view('Admin/managePageSection', $this->data);
@@ -197,7 +199,7 @@ class Page extends CI_Controller {
     public function editPageSectionShow($id){
 
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             $this->data['pagesecdata'] = $this->Pagem->get_pageSecdataBySecId($id);
             $this->load->view('Admin/editPageSection', $this->data);
@@ -211,7 +213,7 @@ class Page extends CI_Controller {
     public function editPageSection($id){
 
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN ) {
 
             if (!$this->form_validation->run('editPageSection')) {
 
@@ -220,7 +222,11 @@ class Page extends CI_Controller {
             }
 
             $this->Pagem->updatePagaSectionData($id);
-            redirect('Admin/Page/managePageSection');
+            echo "<script>
+                    alert('Page Section Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    </script>";
+
 
         } else{
             redirect('Login');
@@ -231,7 +237,7 @@ class Page extends CI_Controller {
     //this will show manage page table after select the page
     public function showPageSecManageTable(){
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             $id = $this->input->post("id");
             $this->data['pagedata'] = $this->Pagem->get_pageSecdata($id);
@@ -246,10 +252,10 @@ class Page extends CI_Controller {
     //this will delete page section
     public function deletePageSection($pageSectionId)
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == ADMIN) {
 
             $this->Pagem->deletePageSectionbyId($pageSectionId);
-            //echo $pageId;
+
             redirect('Admin/Page/managePageSection');
         }
         else{

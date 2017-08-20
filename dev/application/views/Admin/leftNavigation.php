@@ -9,6 +9,19 @@
                           <span>Home</span>
                       </a>
                   </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_menu"></i>
+                          <span>Menu</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">Create a new Menu</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
+                      </ul>
+                  </li>
+
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_documents_alt"></i>
@@ -32,18 +45,6 @@
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin/Page/createPageSection">Create a new Sections</a></li>
                           <li><a class="" href="<?php echo base_url()?>Admin/Page/managePageSection"><span>Manage Page Sections</span></a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_menu"></i>
-                          <span>Menu</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">Create a new Menu</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

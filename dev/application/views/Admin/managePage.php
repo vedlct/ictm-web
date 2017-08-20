@@ -43,7 +43,7 @@
                                 <th> Page Type</th>
                                 <th> Insert By</th>
                                 <th> Last Modified By</th>
-                                <th> Last Modified Date</th>
+                                <th> Last Modified Date (d-m-Y)</th>
                                 <th> Status</th>
                                 <th> Action</th>
                             </tr>

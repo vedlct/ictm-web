@@ -223,20 +223,19 @@ class Pagem extends CI_Model
     public function insertPageSection()
     {
 
-        $pagetitle = $this->input->post("pagetitle");
+        $pageId = $this->input->post("pageId");
         extract($_POST);
+        date_default_timezone_set("Europe/London");
 
         for ($i = 0; $i < count($textbox); $i++) {
 
-            //$image= $_FILES["textimage"]["name"];
-
-
             $data = array(
-                'pageId' => $pagetitle,
+                'pageId' => $pageId,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
                 'pageSectionStatus' => $status[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
 
 
             );
@@ -269,9 +268,12 @@ class Pagem extends CI_Model
     //this will  return page section data search by pageID
     public function get_pageSecdata($id){
 
+        $this->db->select('pageSectionId,pageId,pageSectionTitle,pageSectionStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmpagesection');
         $this->db->where('pageId', $id);
-        $query = $this->db->get('ictmpagesection');
+        $query = $this->db->get();
         return $query->result();
+
     }
 
     //this will  return page section data search by pageSectionID

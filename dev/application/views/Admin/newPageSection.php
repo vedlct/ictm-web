@@ -43,8 +43,9 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="pagetitle" required>
-                                                <option value="">Select Page</option>
+                                            <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
+                                            <select class="form-control m-bot15" name="pageId" required>
+                                                <option value=""><?php echo SELECT_PAGE ?></option>
                                                <?php foreach ($pagename as $pg) { ?>
                                                    <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
                                                    <?php
@@ -73,10 +74,13 @@
                                                 <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
                                             <div class="col-sm-10 form-group">
                                                 <p><font color="red"> <?php echo form_error('status[]'); ?></font></p>
-                                                <select class="form-control m-bot15" name="status[]" required>
-                                                    <option value=""><?php echo SelectStatus?></option>
-                                                    <option><?php echo Active?></option>
-                                                    <option><?php echo InActive?></option>
+                                                <select class="form-control m-bot15" id="status1" name="status[]" required>
+
+                                                    <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                    <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                        <option><?php echo STATUS[$i]?></option>
+                                                    <?php } ?>
+
                                                 </select>
                                             </div>
                                             </div>
@@ -130,9 +134,33 @@
     $(document).ready(function(){
         var counter = 2;
         $("#addButton").click(function () {
-             if(counter>30){
-                alert("Only 10 textboxes allow");
+             if(counter>10){
+                alert("Only 10 Page Section is allowed per Time!");
                 return false;
+            }
+
+            if(counter == '2')
+            {
+                var title=document.getElementById("textbox1").value;
+                var status=document.getElementById("status1").value;
+                if(title==""){alert("Please Type Section Title First!!");
+                    return false;
+                }
+                if(status==""){alert("Please Select Section Status First!!");
+                    return false;
+                }
+            }
+            else
+            {
+
+                var title=document.getElementById("textbox"+(counter-1)).value;
+                var status=document.getElementById("status"+(counter-1)).value;
+                if(title==""){alert("Please Type Section Title First!!");
+                    return false;
+                }
+                if(status==""){alert("Please Select Section Status First!!");
+                    return false;
+                }
             }
 
             var newTextBoxDiv = $(document.createElement('div'))
@@ -143,10 +171,10 @@
                 '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
                  + counter + '" value="" ></textarea>'+'</div>'
                 +'<label class="control-label col-lg-2" for="inputSuccess">Page Section Status #'+counter+'<span class="required">*</span></label>'+
-                '<div class="col-sm-10 form-group">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" name="status[]" required>' +'<option value="">'+'<?php echo SelectStatus?>'+'</option>'
-                +'<option>'+'<?php echo Active?>'+'</option>'+
-                '<option>'+'<?php echo InActive?>'+'</option>'
-                +'</select>' +'</div>'+'<br>'
+                '<div class="col-sm-10 form-group">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" id="status'+counter+'""name="status[]" required>' +
+                '<option value="" selected><?php echo SELECT_STATUS ?></option>'+'<?php for ($i=0;$i<count(STATUS);$i++){?>'+
+                '<option><?php echo STATUS[$i]?></option>'+
+                '<?php } ?>'+'<br>'
             );
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             CKEDITOR.replace( 'replace_element_' + counter );
@@ -154,32 +182,16 @@
             counter++;
         });
         $("#removeButton").click(function () {
-            if(counter==1){
-                alert("No more textbox to remove");
-                document.getElementById('Item_price').style.display = "block";
-                document.getElementById('add_remove_button').style.display = "none";
+            if(counter=='2'){
+                alert("Atleast One Page Section is needed!!");
                 return false;
             }
             counter--;
             $("#TextBoxDiv" + counter).remove();
         });
-        $("#getButtonValue").click(function () {
-            var msg = '';
-            for(i=1; i<counter; i++){
-                msg += "\n Textbox #" + i + " : " + $('#textbox' + i).val()+"\n Textimage #" + i + " : " + $('#textimage' + i).val();
-            }
-          //  alert(msg);
-        });
+
     });
 </script>
-
-
-<script>
-    function load() {
-
-    }
-</script>
-
 
 </body>
 </html>

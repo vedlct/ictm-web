@@ -5,7 +5,7 @@
         <th> Page Section Title </th>
         <th> Insert By </th>
         <th> Last Modified By </th>
-        <th> Last Modified Date </th>
+        <th> Last Modified Date (d-m-Y) </th>
         <th> Status </th>
         <th> Action</th>
     </tr>
@@ -14,8 +14,17 @@
     <tr>
             <td><?php echo $pg->pageSectionTitle ?></td>
             <td><?php echo $pg->insertedBy?></td>
-            <td><?php echo $pg->lastModifiedBy; ?></td>
-            <td><?php echo $pg->lastModifiedDate ?></td>
+            <td>
+                <?php if ($pg->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $pg->lastModifiedBy;} ?>
+            </td>
+            <td>
+                <?php if ($pg->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                else{
+                    $timestamp = strtotime($pg->lastModifiedDate);
+                    $date = date('d-m-Y', $timestamp);
+                    echo $date ;}
+                ?>
+                </td>
             <td><?php echo $pg->pageSectionStatus ?></td>
             <td>
                 <div class="btn-group">

@@ -155,7 +155,7 @@ $config = array (
     ),
     'createPageSection'=> array (
         array(
-            'field' => 'pagetitle',
+            'field' => 'pageId',
             'label' => 'Page Title',
             'rules' => 'required',
 
@@ -166,15 +166,15 @@ $config = array (
             'rules' => 'trim|required'
         ),
 
-        array(
-            'field' => 'text[]',
-            'label' => 'Page Section Content',
-            'rules' => 'trim|encode_php_tags'
-        ),
+//        array(
+//            'field' => 'text[]',
+//            'label' => 'Page Section Content',
+//            'rules' => 'trim|encode_php_tags'
+//        ),
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'trim|required'
+            'rules' => 'required'
         ),
     ),
     'editPageSection'=> array (
