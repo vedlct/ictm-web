@@ -54,13 +54,10 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuType'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)"required>
-                                                <option value="">Select Menu Type</option>
-                                                <option value="<?php echo top?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'Top')  echo 'selected = "selected"'; ?>><?php echo top?></option>
-                                                <option value="<?php echo mainmenu?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'MainMenu')  echo 'selected = "selected"'; ?>><?php echo mainmenu?></option>
-                                                <option value="<?php echo key?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'KeyInfo')  echo 'selected = "selected"'; ?>><?php echo key?></option>
-                                                <option value="<?php echo quickLink?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'QuickLink')  echo 'selected = "selected"'; ?>><?php echo quickLink?></option>
-                                                <option value="<?php echo important?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'ImportantLink')  echo 'selected = "selected"'; ?>><?php echo important?></option>
-                                                <option value="<?php echo bottom?>" <?php if (!empty($menu->menuType) && $menu->menuType == 'Bottom')  echo 'selected = "selected"'; ?>><?php echo bottom?></option>
+                                                <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
+                                                <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                                    <option value="<?php echo MENU_TYPE[$i]?>" <?php if (!empty($menu->menuType) && $menu->menuType == MENU_TYPE[$i])  echo 'selected = "selected"'; ?>><?php echo MENU_TYPE[$i]?></option>
+                                                <?php } ?>
 
                                             </select>
                                         </div>
@@ -73,7 +70,7 @@
                                             <select class="form-control m-bot15" name="menuId" id="menuId" onchange="chkown()">
                                                 <?php if ($menu->submenu=="")
                                                 {
-                                                    echo "<option  value='' selected>Menu</option>";
+                                                    echo "<option  value='' selected>".MENU."</option>";
                                                 }
 												else
 												    {?>
@@ -93,22 +90,22 @@
 
                                                 <?php if ($menu->pageId=="")
                                                 {
-                                                    echo "<option value='' selected>None</option>";
+                                                    echo "<option value='' selected>".NONE."</option>";
 
                                                 ?>
                                                 <?php foreach ($page as $page){?>
 
                                                  <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
 
-                                                <?php }} else{
-                                                    $pa_id=$menu->pageId;
-
-                                                ?>
-                                                    <option value="">None</option>
+                                                <?php }
+                                                }
+                                                else{?>
+                                                    <option value=""><?php echo NONE?></option>
                                                 <?php foreach ($page as $page){?>
 
-                                                    <option value="<?php echo $page->pageId?>" <?php if (!empty($page->pageId) && $page->pageId == $pa_id)  echo 'selected = "selected"'; ?>><?php echo $page->pageTitle?></option>
-                                                <?php }}?>
+                                                    <option value="<?php echo $page->pageId?>" <?php if (!empty($page->pageId) && $page->pageId == $menu->pageId)  echo 'selected = "selected"'; ?>><?php echo $page->pageTitle?></option>
+                                                <?php }
+                                                }?>
                                             </select>
 
 
@@ -122,9 +119,10 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
-                                                <option value=""><?php echo SelectStatus?></option>
-                                                <option value="<?php echo Active ?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == Active)  echo 'selected = "selected"'; ?>><?php echo Active?></option>
-                                                <option value="<?php echo InActive ?>" <?php if (!empty($menu->menuStatus) && $menu->menuStatus == InActive)  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
+                                                <option value=""><?php echo SELECT_STATUS?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option value="<?php echo STATUS[$i]?>"<?php if (!empty($menu->menuStatus) && $menu->menuStatus == STATUS[$i])  echo 'selected = "selected"'; ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
 
                                             </select>
 

@@ -11,29 +11,67 @@ class Pagem extends CI_Model
         $metadata = $this->input->post("metadata");
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
-
-
         $image = $_FILES["image"]["name"];
-        move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
         date_default_timezone_set("Europe/London");
 
-        $data = array(
-            'pageTitle' => $title,
-            'pageKeywords' => $keywords,
-            'pageMetaData' => $metadata,
-            'pageContent' => $content,
-            'pageImage' => $image,
-            'pageType' => $pagetype,
-            'pageStatus' => $status,
-            'insertedBy'=>$this->session->userdata('userEmail'),
-            'insertedDate'=>date("Y-m-d H:i:s"),
+        if (!empty($_FILES['image']['name'])) {
+            $this->load->library('upload');
+            $config = array(
+                'upload_path' => "images/",
+                'allowed_types' => "jpg|png|jpeg",
+                'overwrite' => TRUE,
+                //'max_size' => "2048000",
+                'remove_spaces'=>FALSE,
+                'mod_mime_fix'=>FALSE,
 
+            );
+            $this->upload->initialize($config);
 
+            if($this->upload->do_upload('image')){
+                //$response   =array('upload_data' => $this->upload->data());
+                //print_r($response);
+            }else{
 
-        );
+                $error =array('error'=>$this->upload->display_errors());
+//              print_r($error);
+                echo "<script>
+                    var x =<?php echo json_encode( $error )?>;
+                    alert(x);
+                    window.location.href= '" . base_url() . "Admin/Page/createPage';
+                    </script>";
+            }
+            $data = array(
+                'pageTitle' => $title,
+                'pageKeywords' => $keywords,
+                'pageMetaData' => $metadata,
+                'pageContent' => $content,
+                'pageImage' => $image,
+                'pageType' => $pagetype,
+                'pageStatus' => $status,
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
+
+            );
+        }
+        else
+        {
+            $data = array(
+                'pageTitle' => $title,
+                'pageKeywords' => $keywords,
+                'pageMetaData' => $metadata,
+                'pageContent' => $content,
+
+                'pageType' => $pagetype,
+                'pageStatus' => $status,
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
+
+            );
+        }
         $this->security->xss_clean($data,true);
         $this->db->insert('ictmpage', $data);
     }
+
 
     //this will return pageID and pageTitle
     public function getPageIdName()
@@ -49,9 +87,9 @@ class Pagem extends CI_Model
     public function getPagaData()
     {
 
-       // $this->db->select('*, ictmpage.lastModifiedDate as lastdata');
-        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
-        $query = $this->db->get('ictmpage');
+        $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmpage');
+        $query = $this->db->get();
         return $query->result();
     }
 
@@ -77,10 +115,33 @@ class Pagem extends CI_Model
         $image = $_FILES["image"]["name"];
         date_default_timezone_set("Europe/London");
 
-        if ($image != null) {
+        if (!empty($_FILES['image']['name'])) {
+            $this->load->library('upload');
+            $config = array(
+                'upload_path' => "images/",
+                'allowed_types' => "jpg|png|jpeg",
+                'overwrite' => TRUE,
+                //'max_size' => "2048000",
+                'remove_spaces'=>FALSE,
+                'mod_mime_fix'=>FALSE,
 
-            $image = $_FILES["image"]["name"];
-            move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
+            );
+            $this->upload->initialize($config);
+
+            if($this->upload->do_upload('image')){
+                //$response   =array('upload_data' => $this->upload->data());
+                //print_r($response);
+            }else{
+
+                $error =array('error'=>$this->upload->display_errors());
+//              print_r($error);
+                echo "<script>
+                var x =<?php echo json_encode( $error )?>;
+                    alert(x);
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+            }
+
             $data = array(
                 'pageTitle' => $title,
                 'pageKeywords' => $keywords,
@@ -162,20 +223,19 @@ class Pagem extends CI_Model
     public function insertPageSection()
     {
 
-        $pagetitle = $this->input->post("pagetitle");
+        $pageId = $this->input->post("pageId");
         extract($_POST);
+        date_default_timezone_set("Europe/London");
 
         for ($i = 0; $i < count($textbox); $i++) {
 
-            //$image= $_FILES["textimage"]["name"];
-
-
             $data = array(
-                'pageId' => $pagetitle,
+                'pageId' => $pageId,
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
                 'pageSectionStatus' => $status[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
 
 
             );
@@ -208,9 +268,12 @@ class Pagem extends CI_Model
     //this will  return page section data search by pageID
     public function get_pageSecdata($id){
 
+        $this->db->select('pageSectionId,pageId,pageSectionTitle,pageSectionStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmpagesection');
         $this->db->where('pageId', $id);
-        $query = $this->db->get('ictmpagesection');
+        $query = $this->db->get();
         return $query->result();
+
     }
 
     //this will  return page section data search by pageSectionID

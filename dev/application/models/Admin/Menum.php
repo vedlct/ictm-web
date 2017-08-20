@@ -33,6 +33,7 @@ class Menum extends CI_Model
         $this->security->xss_clean($data);
         $this->db->insert('ictmmenu', $data);
     }
+
             /*-----get Menu Name and id----------*/
     public function getMenuName($menuType)
     {
