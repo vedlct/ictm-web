@@ -56,11 +56,11 @@
                                         <td><?php echo $menu->menuType?></td>
                                         <td>
                                             <?php if ($menu->submenu == "")
-                                            {echo Menu;}
+                                            {echo MENU;}
                                             else{echo "SubMenu of- ".$menu->submenu;}?>
                                         </td>
                                         <td>
-                                            <?php if ($menu->pageTitle==""){echo "None";}else{echo $menu->pageTitle;}?>
+                                            <?php if ($menu->pageTitle==""){echo NONE;}else{echo $menu->pageTitle;}?>
                                         </td>
                                         <td>
                                             <?php echo $menu->menuStatus?>
@@ -71,11 +71,11 @@
                                         </td>
 
                                         <td>
-                                            <?php if ($menu->lastModifiedBy==""){echo"Never Modified";}else{echo $menu->lastModifiedBy;} ?>
+                                            <?php if ($menu->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $menu->lastModifiedBy;} ?>
 
                                         </td>
 
-                                        <td><?php if ($menu->lastModifiedDate==""){echo"Never Modified";}
+                                        <td><?php if ($menu->lastModifiedDate==""){echo NEVER_MODIFIED;}
                                             else{
                                             $timestamp = strtotime($menu->lastModifiedDate);
                                             $date = date('d-m-Y', $timestamp);
@@ -120,11 +120,7 @@
 </body>
 </html>
 <script>
-    $.ajaxSetup({
-        data: {
-            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
-        }
-    });
+
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Menu?")) {
             btn = $(x).data('panel-id');

@@ -96,7 +96,7 @@ $config = array (
 //        array(
 //            'field' => 'content',
 //            'label' => 'Page Content',
-//            'rules' => ''
+//            'rules' => 'xss_clean'
 //        ),
         array(
             'field' => 'image',
@@ -132,11 +132,11 @@ $config = array (
 //            'rules' => 'required',
 //
 //        ),
-        array(
-            'field' => 'content',
-            'label' => 'Page Content',
-            'rules' => 'encode_php_tags'
-        ),
+//        array(
+//            'field' => 'content',
+//            'label' => 'Page Content',
+//            'rules' => 'encode_php_tags'
+//        ),
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -155,7 +155,7 @@ $config = array (
     ),
     'createPageSection'=> array (
         array(
-            'field' => 'pagetitle',
+            'field' => 'pageId',
             'label' => 'Page Title',
             'rules' => 'required',
 
@@ -166,15 +166,15 @@ $config = array (
             'rules' => 'trim|required'
         ),
 
-        array(
-            'field' => 'text[]',
-            'label' => 'Page Section Content',
-            'rules' => 'trim|encode_php_tags'
-        ),
+//        array(
+//            'field' => 'text[]',
+//            'label' => 'Page Section Content',
+//            'rules' => 'trim|encode_php_tags'
+//        ),
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'trim|required'
+            'rules' => 'required'
         ),
     ),
     'editPageSection'=> array (
