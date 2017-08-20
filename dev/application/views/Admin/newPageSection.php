@@ -46,10 +46,10 @@
                                             <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
                                             <select class="form-control m-bot15" name="pageId" required>
                                                 <option value=""><?php echo SELECT_PAGE ?></option>
-                                               <?php foreach ($pagename as $pg) { ?>
-                                                   <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
-                                                   <?php
-                                               }
+                                                <?php foreach ($pagename as $pg) { ?>
+                                                    <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
+                                                    <?php
+                                                }
                                                 ?>
                                             </select>
                                         </div>
@@ -57,22 +57,24 @@
 
 
 
-                                    <div id='TextBoxesGroup' class="form-group">
-
-                                        <div id="TextBoxDiv1" class="form-group">
+                                    <div id='TextBoxesGroup' >
+                                        <div class="form-group">
                                             <label class="control-label col-lg-2">Title #1 : <span class="required">*</span></label>
-                                            <div class="col-lg-10 form-group">
+                                            <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>
-                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" required>
+                                                <input class="form-control" type='textbox' id='textbox1' name="textbox[]" required>
                                             </div>
-                                                <label class="control-label col-lg-2">Content #1 : </label>
-                                            <div class="col-sm-10 form-group">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Content #1 : </label>
+                                            <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
                                                 <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
                                             </div>
-
-                                                <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
-                                            <div class="col-sm-10 form-group">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
+                                            <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('status[]'); ?></font></p>
                                                 <select class="form-control m-bot15" id="status1" name="status[]" required>
 
@@ -83,15 +85,15 @@
 
                                                 </select>
                                             </div>
-                                            </div>
+                                        </div>
                                     </div>
 
                                     <div id="add_remove_button" class="form-group">
                                         <div class="col-lg-2"></div>
-                                        <div class="col-lg-10 form-group">
-                                        <input class="btn btn-sm btn-login" type='button' value='Add Section' id='addButton'>
-                                        <input class="btn btn-sm" type='button' value='Remove Section' id='removeButton'>
-                                    </div>
+                                        <div class="col-lg-10 ">
+                                            <input class="btn btn-sm btn-login" type='button' value='Add Section' id='addButton'>
+                                            <input class="btn btn-sm" type='button' value='Remove Section' id='removeButton'>
+                                        </div>
                                     </div>
 
                                     <div class="form-group " align="center">
@@ -134,7 +136,7 @@
     $(document).ready(function(){
         var counter = 2;
         $("#addButton").click(function () {
-             if(counter>10){
+            if(counter>10){
                 alert("Only 10 Page Section is allowed per Time!");
                 return false;
             }
@@ -166,12 +168,12 @@
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' :<span class="required">*</span> </label>' +
-                '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>'+'<input class="form-control" type="text" name="textbox[]' + counter +
+                '<div class="col-lg-10 ">'+'<p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>'+'<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" required >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
-                '<div class="col-lg-10 form-group">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
-                 + counter + '" value="" ></textarea>'+'</div>'
+                '<div class="col-lg-10">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
+                + counter + '" value="" ></textarea>'+'</div>'
                 +'<label class="control-label col-lg-2" for="inputSuccess">Page Section Status #'+counter+'<span class="required">*</span></label>'+
-                '<div class="col-sm-10 form-group">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" id="status'+counter+'""name="status[]" required>' +
+                '<div class="col-lg-10">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" id="status'+counter+'"name="status[]" required>' +
                 '<option value="" selected><?php echo SELECT_STATUS ?></option>'+'<?php for ($i=0;$i<count(STATUS);$i++){?>'+
                 '<option><?php echo STATUS[$i]?></option>'+
                 '<?php } ?>'+'<br>'
@@ -195,3 +197,4 @@
 
 </body>
 </html>
+

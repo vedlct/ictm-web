@@ -18,8 +18,8 @@
             <td>
                 <div class="btn-group">
 
-                    <a class="btn" href="<?php echo base_url()?>Admin/Course/showEditCourseSec/<?php echo $cd->courseSectionId?>"><i class="icon_pencil-edit"></i></a>
-                    <a class="btn " href="<?php echo base_url()?>Admin/Course/deletePageSection/<?php echo $cd->courseSectionId?>"><i class="icon_trash"></i></a>
+                    <a class="btn" href="<?php echo base_url()?>Admin/Course/showEditCourseSec/<?php echo $cd->courseSectionId?>" ><i class="icon_pencil-edit"></i></a>
+                    <a class="btn " href="<?php echo base_url()?>Admin/Course/deletePageSection/<?php echo $cd->courseSectionId?>" ><i class="icon_trash"></i></a>
 
                 </div>
             </td>
@@ -27,28 +27,8 @@
             <?php
         }
         ?>
-    
+
+
 
     </tbody>
 </table>
-<script>
-    function selectid(x) {
-        if (confirm('Are you sure you want to delete this Page Section !! ?')) {
-            btn = $(x).data('panel-id');
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url("Admin/Page/deletePageSection/")?>'+btn,
-                data:{'pageId':btn},
-                cache: false,
-                success:function(data) {
-                    alert("Page Section Deleted Successfully!!");
-                    location.reload();
-                }
-            });
-        }
-        else {
-
-            location.reload();
-        }
-    }
-</script>
