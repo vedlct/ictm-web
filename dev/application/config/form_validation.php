@@ -78,7 +78,7 @@ $config = array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required',
+            'rules' => 'required|max_length[100]|is_unique[ictmpage.pageTitle]',
 
         ),
 //        array(
@@ -110,14 +110,14 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required'
+            'rules' => 'required|alpha'
         ),
     ),
     'editPage'=> array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required',
+            'rules' => 'required|max_length[100]',
 
         ),
 //        array(
@@ -149,7 +149,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required'
+            'rules' => 'required|alpha'
         ),
     ),
     'createPageSection'=> array (
@@ -173,7 +173,7 @@ $config = array (
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'required'
+            'rules' => 'required|alpha'
         ),
     ),
     'editPageSection'=> array (
@@ -183,15 +183,15 @@ $config = array (
             'rules' => 'required',
 
         ),
-        array(
-            'field' => 'text',
-            'label' => 'Section Content',
-            'rules' => 'encode_php_tags'
-        ),
+//        array(
+//            'field' => 'text',
+//            'label' => 'Section Content',
+//            'rules' => 'encode_php_tags'
+//        ),
         array(
             'field' => 'status',
             'label' => 'Page Section Status',
-            'rules' => 'required'
+            'rules' => 'required|alpha'
         ),
     ),
 			 

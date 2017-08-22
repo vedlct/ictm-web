@@ -19,9 +19,9 @@
             <td>
                 <?php if ($pg->lastModifiedDate==""){echo NEVER_MODIFIED;}
                 else{
-                    $timestamp = strtotime($pg->lastModifiedDate);
-                    $date = date('d-m-Y', $timestamp);
-                    echo $date ;}
+
+                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($pg->lastModifiedDate)),1);
+                }
                 ?>
                 </td>
             <td><?php echo $pg->pageSectionStatus ?></td>

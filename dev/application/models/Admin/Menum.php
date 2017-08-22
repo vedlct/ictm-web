@@ -48,17 +48,19 @@ class Menum extends CI_Model
         $this->db->select('menuName,menuType');
         $this->db->where('menuType',$menuType);
         $this->db->where('menuName',$menuTitle);
+
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
 
     public function checkUniqueMenuTitle($menuTitle,$menuType)
     {
-        $this->db->select('m.menuId,m.menuType,m.menuName,menu.menuId');
+        $this->db->select('m.*,menu.menuId');
         $this->db->from('ictmmenu m');
-        $this->db->where('menuType',$menuType);
-        $this->db->where('menuName',$menuTitle);
-        $this->db->join('ictmmenu menu', 'm.menuId = menu.menuId');
+        $this->db->join('ictmmenu menu', 'm.menuId = menu.menuId','left');
+        $this->db->where('menu.menuType',$menuType);
+        $this->db->where('menu.menuName',$menuTitle);
+
         $query = $this->db->get();
         return $query->result();
 
