@@ -20,8 +20,8 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required',
-
+//            'rules' => 'required|max_length[45]|callback_menuTitle_Check'
+            'rules' => 'required|max_length[45]'
         ),
         array(
             'field' => 'menuType',
@@ -29,10 +29,9 @@ $config = array (
             'rules' => 'required'
         ),
         array(
-            'field' => 'menuId',
-            'label' => 'New/Sub Menu',
-            'rules' => 'regex_match[/^[0-9]*$/]',
-
+            'field' => 'parentId',
+            'label' => 'Parent Menu',
+            'rules' => 'regex_match[/^[0-9]*$/]'
         ),
         array(
             'field' => 'pageId',

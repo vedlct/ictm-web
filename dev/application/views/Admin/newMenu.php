@@ -61,10 +61,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">New Menu/Sub Menu of</label>
+                                        <label class="control-label col-lg-2" for="parentId">Parent Menu</label>
                                         <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
-                                            <select class="form-control m-bot15" name="menuId" id="menuId">
+                                            <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
+                                            <select class="form-control m-bot15" name="parentId" id="parentId">
                                                 <option value="" selected><?php echo SELECT_PARENT_MENU?></option>
 
                                             </select>
@@ -150,7 +150,7 @@
                 data:{'type': btn},
                 cache: false,
                 success:function(data) {
-                    document.getElementById("menuId").innerHTML = data;
+                    document.getElementById("parentId").innerHTML = data;
 
                 }
             });

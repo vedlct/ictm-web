@@ -87,7 +87,8 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 
 ////////////////////custom constant////////////////
-define("ADMIN", "Admin");
+
+define("USER_TYPE",array ("Admin","Editor","Contributor"));
 define("STATUS",array ("Active","InActive"));
 define("SELECT_STATUS" , "Select Status");
 define("NEVER_MODIFIED", "Never Modified");

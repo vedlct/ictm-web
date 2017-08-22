@@ -8,10 +8,10 @@ class Menum extends CI_Model
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
-        $menuId = $this->input->post("menuId");
+        $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
-        if ($menuId == "")
+        if ($parentId == "")
         {
             $menuId =null;
         }
@@ -19,11 +19,11 @@ class Menum extends CI_Model
         {
             $pageId =null;
         }
-        date_default_timezone_set("Europe/London");
+
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
-            'parentId' => $menuId,
+            'parentId' => $parentId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
             'insertedBy'=>$this->session->userdata('userEmail'),
@@ -39,6 +39,15 @@ class Menum extends CI_Model
     {
         $this->db->select('menuId, menuName');
         $this->db->where('menuType', $menuType);
+        $query = $this->db->get('ictmmenu');
+        return $query->result();
+    }
+            /*----------- check MenuTitle Uniqueness Per MenuType ----------------*/
+    public function checkMenuTitleUniquePerMenuType($menuTitle,$menuType)
+    {
+        $this->db->select('menuName,menuType');
+        $this->db->where('menuType',$menuType);
+        $this->db->where('menuName',$menuTitle);
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }

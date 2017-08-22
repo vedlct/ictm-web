@@ -31,7 +31,7 @@ class Login extends CI_Controller {
                     'loggedin'=>"true",
                 ];
                 $this->session->set_userdata($data);
-                if ($this->session->userdata('type') == ADMIN){
+                if ($this->session->userdata('type') == USER_TYPE[0]){
 
                     redirect('Admin/Home');
                 }else {
