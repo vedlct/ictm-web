@@ -162,7 +162,7 @@ class Menu extends CI_Controller {
         {
             $this->data['checkMenuTitle'] = $this->Menum->checkMenuTitleUniquePerMenuType($menuTitle,$menuType);
 
-            if ($this->data['checkMenuTitle']==""){
+            if (empty($this->data['checkMenuTitle'])){
 
                 return true;
             }

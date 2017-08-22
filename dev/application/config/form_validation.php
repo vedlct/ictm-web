@@ -20,8 +20,8 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-//            'rules' => 'required|max_length[45]|callback_menuTitle_Check'
-            'rules' => 'required|max_length[45]'
+            'rules' => 'required|max_length[45]|callback_menuTitle_Check'
+           // 'rules' => 'required|max_length[45]'
         ),
         array(
             'field' => 'menuType',
