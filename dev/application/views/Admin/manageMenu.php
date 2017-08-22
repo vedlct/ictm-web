@@ -40,7 +40,7 @@
                                 <tr>
                                     <th> Menu Title</th>
                                     <th> Menu Type</th>
-                                    <th> Menu/Sub Menu of</th>
+                                    <th> Parent Menu</th>
                                     <th> Page Title</th>
                                     <th> Menu Status</th>
                                     <th> Menu Inserted By</th>
@@ -57,7 +57,7 @@
                                         <td>
                                             <?php if ($menu->submenu == "")
                                             {echo MENU;}
-                                            else{echo "SubMenu of- ".$menu->submenu;}?>
+                                            else{echo $menu->submenu;}?>
                                         </td>
                                         <td>
                                             <?php if ($menu->pageTitle==""){echo NONE;}else{echo $menu->pageTitle;}?>
@@ -76,11 +76,13 @@
                                         </td>
 
                                         <td><?php if ($menu->lastModifiedDate==""){echo NEVER_MODIFIED;}
-                                            else{
-                                            $timestamp = strtotime($menu->lastModifiedDate);
-                                            $date = date('d-m-Y', $timestamp);
-                                            echo $date ;}
+                                            else
+                                            {
+                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($menu->lastModifiedDate)),1);
+
+                                            }
                                             ?>
+
                                         </td>
                                         <td>
 

@@ -103,7 +103,7 @@ class Menu extends CI_Controller {
             redirect('Login');
         }
     }
-    public function editMenu($id) // for edit menu in database
+    public function editMenu($id)        // for edit menu in database
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
@@ -114,13 +114,23 @@ class Menu extends CI_Controller {
 
                 $this->load->view('Admin/editMenu', $this->data);
             }
-            else {
-
-                $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
-                echo "<script>
+            else
+            {
+                try {
+                    $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
+                    echo "<script>
                     alert('Menu Updated Successfully');
                     window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
                     </script>";
+                }
+                catch (Exception $e)
+                {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
+                    </script>";
+                }
+
             }
         }
         else{
@@ -130,19 +140,19 @@ class Menu extends CI_Controller {
     public function deleteMenu($menuId)    // delete Menu if no SubMenu
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-            $r=$this->Menum->deleteMenubyId($menuId);
-            if ($r!='0'){
+            $subMenuName=$this->Menum->deleteMenubyId($menuId);
+            if ($subMenuName!='0'){
                 $name=array();
 
-                foreach ($r as $r){
-                    array_push($name,$r->menuName);
+                foreach ($subMenuName as $subMenuName){
+                    array_push($name,$subMenuName->menuName);
                 }
 
                 $x=implode(" , ",$name);
                    echo $x;
 
             }
-            else{echo $r;}
+            else{echo $subMenuName;}
 
 
         }
@@ -158,11 +168,12 @@ class Menu extends CI_Controller {
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
+
         try
         {
             $this->data['checkMenuTitle'] = $this->Menum->checkMenuTitleUniquePerMenuType($menuTitle,$menuType);
 
-            if ($this->data['checkMenuTitle']==""){
+            if (empty($this->data['checkMenuTitle'])){
 
                 return true;
             }
@@ -179,5 +190,37 @@ class Menu extends CI_Controller {
 
 
     }
+
+    public function menuTitle_Check_formEditMenu()
+    {
+        $menuTitle = $this->input->post("menuTitle");
+        $menuType = $this->input->post("menuType");
+
+
+        try
+        {
+            $this->data['checkMenuTitle'] = $this->Menum->checkUniqueMenuTitle($menuTitle,$menuType);
+
+            if (empty($this->data['checkMenuTitle'])){
+
+                $this->form_validation->set_message('menuTitle_Check', 'Menu Title Allready Existed');
+                return false;
+            }
+            else{
+                return true;
+
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('menuTitle_Check', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+
+    }
+
+
+
     /*------------ for callback menuTitle_check ----- end -------*/
 }

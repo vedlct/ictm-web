@@ -64,10 +64,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="menuId">New/Sub Menu </label>
+                                        <label class="control-label col-lg-2" for="parentId">Parent Menu </label>
                                         <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('menuId'); ?></font></p>
-                                            <select class="form-control m-bot15" name="menuId" id="menuId" onchange="chkown()">
+                                            <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
+                                            <select class="form-control m-bot15" name="parentId" id="parentId" onchange="chkown()">
                                                 <?php if ($menu->submenu=="")
                                                 {
                                                     echo "<option  value='' selected>".MENU."</option>";
@@ -186,7 +186,7 @@
                 cache: false,
                 success:function(data) {
 
-                    document.getElementById("menuId").innerHTML = data;
+                    document.getElementById("parentId").innerHTML = data;
 
                 }
 
@@ -195,10 +195,10 @@
     }
     function chkown() {
 
-        var menuId=document.getElementById("menuId").value;
-        if (menuId == <?php echo $menu->menuId?>){
+        var parentId=document.getElementById("parentId").value;
+        if (parentId == <?php echo $menu->menuId?>){
             alert("!!Can't Make OWN's Sub Menu!!");
-            document.getElementById("menuId").selectedIndex=0;
+            document.getElementById("parentId").selectedIndex=0;
             return false;
         }
     }
