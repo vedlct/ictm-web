@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> Edit Page</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="home.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page</li>
                         <li><i class="fa fa-files-o"></i>Edit &nbsp Page</li>
                     </ol>
@@ -50,7 +50,7 @@
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo $epd->pageKeywords?>" type="text"  />
+                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo $epd->pageKeywords?>" type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -72,31 +72,35 @@
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
-                                            <input class="form-control"  type="file" name="image"  value="<?php echo $epd->pageImage?>"/>
+                                            <input class="form-control"  type="file" name="image" />
+                                            <a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type</label>
+                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
-                                            <select class="form-control m-bot15" name="pagetype">
-                                                <option value="About Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'About Type')  echo 'selected = "selected"'; ?>>About Type</option>
-                                                <option value="Terms Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Terms Type')  echo 'selected = "selected"'; ?>>Terms Type</option>
-                                                <option value="Health Type" <?php if (!empty($epd->pageType) && $epd->pageType == 'Health Type')  echo 'selected = "selected"'; ?>>Health Type</option>
+                                            <select class="form-control m-bot15" name="pagetype" required>
+
+                                                <option value=""><?php echo SELECT_PAGE_TYPE?></option>
+                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
+                                                    <option value="<?php echo PAGE_TYPE[$i]?>" <?php if (!empty($epd->pageType) && $epd->pageType == PAGE_TYPE[$i])  echo 'selected = "selected"'; ?>><?php echo PAGE_TYPE[$i]?></option>
+                                                <?php } ?>
 
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
+                                        <label class="control-label col-lg-2" for="inputSuccess">Page Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('status'); ?></font></p>
-                                            <select class="form-control m-bot15" name="status">
-<!--                                                <option selected>--><?php //echo $epd->pageStatus?><!--</option>-->
-<!--                                                <option>Active</option>-->
-<!--                                                <option>InActive</option>-->
-                                                <option value="<?php echo Active?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'Active')  echo 'selected = "selected"'; ?>><?php echo Active?></option>
-                                                <option value="<?php echo InActive?>" <?php if (!empty($epd->pageStatus) && $epd->pageStatus == 'InActive')  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
+                                            <select class="form-control m-bot15" name="status" required>
+
+                                                <option value=""><?php echo SELECT_STATUS?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option value="<?php echo STATUS[$i]?>"<?php if (!empty($epd->pageStatus) && $epd->pageStatus == STATUS[$i])  echo 'selected = "selected"'; ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+
                                             </select>
                                         </div>
                                     </div>
@@ -140,13 +144,3 @@
 </html>
 
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
-<!--<script>-->
-<!--    function submitform() {-->
-<!--        var messageLength = CKEDITOR.instances['content'].getData().replace(/<[^>]*>/gi, '').length;-->
-<!---->
-<!--        if( !messageLength ) {-->
-<!--            alert( 'Please enter Page Content' );-->
-<!--            return false;-->
-<!--        }-->
-<!--    }-->
-<!--</script>-->

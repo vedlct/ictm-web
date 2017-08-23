@@ -8,10 +8,10 @@ class Menum extends CI_Model
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
-        $menuId = $this->input->post("menuId");
+        $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
-        if ($menuId == "")
+        if ($parentId == "")
         {
             $menuId =null;
         }
@@ -19,11 +19,11 @@ class Menum extends CI_Model
         {
             $pageId =null;
         }
-        date_default_timezone_set("Europe/London");
+
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
-            'parentId' => $menuId,
+            'parentId' => $parentId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
             'insertedBy'=>$this->session->userdata('userEmail'),
@@ -33,6 +33,7 @@ class Menum extends CI_Model
         $this->security->xss_clean($data);
         $this->db->insert('ictmmenu', $data);
     }
+
             /*-----get Menu Name and id----------*/
     public function getMenuName($menuType)
     {
@@ -40,6 +41,29 @@ class Menum extends CI_Model
         $this->db->where('menuType', $menuType);
         $query = $this->db->get('ictmmenu');
         return $query->result();
+    }
+            /*----------- check MenuTitle Uniqueness Per MenuType ----------------*/
+    public function checkMenuTitleUniquePerMenuType($menuTitle,$menuType)
+    {
+        $this->db->select('menuName,menuType');
+        $this->db->where('menuType',$menuType);
+        $this->db->where('menuName',$menuTitle);
+
+        $query = $this->db->get('ictmmenu');
+        return $query->result();
+    }
+
+    public function checkUniqueMenuTitle($menuTitle,$menuType)
+    {
+        $this->db->select('m.*,menu.menuId');
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmmenu menu', 'm.menuId = menu.menuId','left');
+        $this->db->where('menu.menuType',$menuType);
+        $this->db->where('menu.menuName',$menuTitle);
+
+        $query = $this->db->get();
+        return $query->result();
+
     }
 
 
@@ -76,11 +100,11 @@ class Menum extends CI_Model
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
-        $menuId = $this->input->post("menuId");
+        $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
 
-        if ($menuId == "")
+        if ($parentId == "")
         {
             $menuId =null;
         }
@@ -93,7 +117,7 @@ class Menum extends CI_Model
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
-            'parentId' => $menuId,
+            'parentId' => $parentId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
             'lastModifiedDate'=>date("Y-m-d H:i:s"),

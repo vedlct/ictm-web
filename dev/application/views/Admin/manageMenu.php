@@ -40,7 +40,7 @@
                                 <tr>
                                     <th> Menu Title</th>
                                     <th> Menu Type</th>
-                                    <th> Menu/Sub Menu of</th>
+                                    <th> Parent Menu</th>
                                     <th> Page Title</th>
                                     <th> Menu Status</th>
                                     <th> Menu Inserted By</th>
@@ -56,11 +56,11 @@
                                         <td><?php echo $menu->menuType?></td>
                                         <td>
                                             <?php if ($menu->submenu == "")
-                                            {echo Menu;}
-                                            else{echo "SubMenu of- ".$menu->submenu;}?>
+                                            {echo MENU;}
+                                            else{echo $menu->submenu;}?>
                                         </td>
                                         <td>
-                                            <?php if ($menu->pageTitle==""){echo "None";}else{echo $menu->pageTitle;}?>
+                                            <?php if ($menu->pageTitle==""){echo NONE;}else{echo $menu->pageTitle;}?>
                                         </td>
                                         <td>
                                             <?php echo $menu->menuStatus?>
@@ -71,16 +71,18 @@
                                         </td>
 
                                         <td>
-                                            <?php if ($menu->lastModifiedBy==""){echo"Never Modified";}else{echo $menu->lastModifiedBy;} ?>
+                                            <?php if ($menu->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $menu->lastModifiedBy;} ?>
 
                                         </td>
 
-                                        <td><?php if ($menu->lastModifiedDate==""){echo"Never Modified";}
-                                            else{
-                                            $timestamp = strtotime($menu->lastModifiedDate);
-                                            $date = date('d-m-Y', $timestamp);
-                                            echo $date ;}
+                                        <td><?php if ($menu->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                            else
+                                            {
+                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($menu->lastModifiedDate)),1);
+
+                                            }
                                             ?>
+
                                         </td>
                                         <td>
 
@@ -120,11 +122,7 @@
 </body>
 </html>
 <script>
-    $.ajaxSetup({
-        data: {
-            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
-        }
-    });
+
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Menu?")) {
             btn = $(x).data('panel-id');

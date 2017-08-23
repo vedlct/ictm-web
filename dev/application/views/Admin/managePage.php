@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Page</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Page</li>
                         <li><i class="fa fa-th-list"></i>Manage Page</li>
                     </ol>
@@ -43,7 +43,7 @@
                                 <th> Page Type</th>
                                 <th> Insert By</th>
                                 <th> Last Modified By</th>
-                                <th> Last Modified Date</th>
+                                <th> Last Modified Date (d-m-Y)</th>
                                 <th> Status</th>
                                 <th> Action</th>
                             </tr>
@@ -54,14 +54,20 @@
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
                                 <td><?php echo $pd->insertedBy?></td>
-                                <td><?php echo $pd->lastModifiedBy?></td>
-                                <td><?php echo $pd->lastModifiedDate?></td>
+                                <td><?php if ($pd->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $pd->lastModifiedBy;} ?></td>
+                                <td><?php if ($pd->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                    else
+                                    {
+                                        echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($pd->lastModifiedDate)),1);
+                                    }
+                                    ?>
+                                    </td>
                                 <td><?php echo $pd->pageStatus?></td>
                                 <td>
                                     <div class="btn-group">
 
                                         <a class="btn" href="<?php echo base_url()?>Admin/Page/editPageShow/<?php echo $pd->pageId?>"><i class="icon_pencil-edit"></i></a>
-                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick="" href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->pageId?>"><i class="icon_trash"></i></a>
+                                        <a class="btn " data-panel-id="<?php echo $pd->pageId ?>"  onclick='return confirm("Are you sure?")' href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->pageId?>"><i class="icon_trash"></i></a>
 
                                     </div>
                                 </td>
@@ -94,31 +100,3 @@
 </body>
 </html>
 
-<script>
-
-    function selectid(x) {
-
-        if (confirm('Are you sure !! All The Menu & Page Section related to this Will be Deleted !! ?')) {
-
-            btn = $(x).data('panel-id');
-            //alert(btn);
-
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url("Admin/Page/deletePage/")?>'+btn,
-                data:{'pageid':btn},
-                cache: false,
-                success:function(data) {
-
-                    alert("Page Deleted Successfully!!");
-                    location.reload();
-                    //alert(data);
-                }
-
-            });
-        }
-        else {
-            window.location="<?php echo base_url()?>Admin/Page/managePage";
-        }
-    }
-</script>

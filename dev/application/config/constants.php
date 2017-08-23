@@ -88,36 +88,29 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 
 ////////////////////custom constant////////////////
 
+define("USER_TYPE",array ("Admin","Editor","Contributor"));
+define("STATUS",array ("Active","InActive"));
+define("SELECT_STATUS" , "Select Status");
+define("NEVER_MODIFIED", "Never Modified");
 
-define("newMenu", "New Menu");
-define("selectPage", "Select Page");
-define("Menu", "Menu");
-define("None", "None");
 
-////menu dropdown/////
+//////////// For Menu    /////////////////
+define("NEW_MENU", "New Menu");
+define("SELECT_PARENT_MENU", "Select Parent Menu");
+define("MENU", "Menu");
+define("NONE", "None");
+define("SELECT_PAGE", "Select Page");
+define("SELECT_MENU_TYPE", "Select Menu Type");
+define("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink","Bottom"));
 
-define("SelectMenuType", "Select Menu Type");
-define("top", "Top");
-define("mainmenu", "MainMenu");
-define("key", "KeyInfo");
-define("quickLink", "QuickLink");
-define("important", "ImportantLink");
-define("bottom", "Bottom");
-define("alertmenu" ,"Menu Updated Successfully");
 
-define("SelectPage" ,"Select Page");
+////////// For Page ///////////////////////
 
-define("Admin", "Admin");
-define("Active", "Active");
-define("InActive", "InActive");
+define("SELECT_PAGE_TYPE", "Select Page Type");
+define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
 
-define("SelectStatus" , "Select Status");
-define("pageType", "Select Page Type");
-define("About", "About Type");
-define("Health", "Health Type");
-define("Terms", "Terms Type");
 
-define("selected", "selected");
+//define("selected", "selected");
 
 
 ////////////    faculy page      ///////////////
@@ -126,7 +119,7 @@ define("SelectCourse", "Select Course");
 define("PartTime", "Part Time");
 define("FullTime", "Full Time");
 
-///////////// News Page ///////////////
+/////////////// News Page ///////////////
 
 define ("NewsType",array ("Announcement", "News", "Press Release"));
 

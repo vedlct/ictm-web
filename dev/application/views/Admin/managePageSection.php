@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i> Page Section</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Page Section</li>
                         <li><i class="fa fa-th-list"></i>Manage Page Section</li>
                     </ol>
@@ -36,10 +36,10 @@
                         </header>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="control-label col-lg-1" for="inputSuccess">Page Title</label>
+                                <label class="control-label col-lg-1" for="inputSuccess">Page Title<span class="required">*</span></label>
                                 <div class="col-lg-10">
-                                    <select class="form-control m-bot15" id="pagename" name="pagetitle" onchange="showtable()">
-                                        <option value="">Select Page</option>
+                                    <select class="form-control m-bot15" id="pagename" name="pagetitle" required onchange="showtable()">
+                                        <option value=""><?php echo SELECT_PAGE?></option>
                                        <?php foreach ($pagename as $pn) { ?>
                                            <option value="<?php echo $pn->pageId?>"><?php echo $pn->pageTitle?></option>
                                            <?php
@@ -81,7 +81,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin/Page/showPageSecManageTable")?>',
+            url:'<?php echo base_url("Admin/PageSection/showPageSecManageTable")?>',
             data:{id:x},
             cache: false,
             success:function(data)

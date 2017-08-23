@@ -17,7 +17,7 @@ class Page extends CI_Controller {
     // this will show create page
     public function createPage()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->load->view('Admin/newPage');
         }
         else{
@@ -28,15 +28,28 @@ class Page extends CI_Controller {
     // this will insert page
     public function insertPage()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('createPage')) {
                 $this->load->view('Admin/newPage');
             }
             else
             {
-                $this->Pagem->insertPage();
-                redirect('Admin/Page/createPage');
+                try {
+                    $this->Pagem->insertPage();
+                    echo "<script>
+                    alert('Page Created Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/createPage';
+                    </script>";
+                }
+                catch (Exception $e)
+                {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+                }
+
             }
         }
         else{
@@ -47,7 +60,7 @@ class Page extends CI_Controller {
     //this will show manage page section
     public function managePage()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->data['pageData'] = $this->Pagem->getPagaData();
 
              $this->load->view('Admin/managePage', $this->data);
@@ -61,7 +74,7 @@ class Page extends CI_Controller {
     public function editPageShow($id)
     {
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->data['editPageData'] = $this->Pagem->geteditPagaData($id);
             $this->load->view('Admin/editPage', $this->data);
 
@@ -73,7 +86,7 @@ class Page extends CI_Controller {
     //this will edit page
     public function editPage($id)
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('editPage')) {
                 $this->data['editPageData'] = $this->Pagem->geteditPagaData($id);
@@ -81,8 +94,22 @@ class Page extends CI_Controller {
             }
             else
             {
-                $this->Pagem->updatePagaData($id);
-                redirect('Admin/Page/managePage');
+                try {
+                    $this->Pagem->updatePagaData($id);
+                    echo "<script>
+                    alert('Page Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+                }
+                catch (Exception $e)
+                {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+                }
+
+
             }
         }
         else{
@@ -94,9 +121,8 @@ class Page extends CI_Controller {
     //this will delete page
     public function deletePage($pageId)
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            //  echo $pageId;
             $this->data['pagedata'] =$this->Pagem->checkParentId($pageId);
 
 
@@ -106,10 +132,9 @@ class Page extends CI_Controller {
             if (empty($y)){
                 $this->Pagem->deletePagebyId($pageId);
                 echo "<script>
-                        alert(\"Page Deleted Successfully!!\");
+                    alert('Page Deleted Successfully');
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
-
             }else{
 
 
@@ -119,15 +144,28 @@ class Page extends CI_Controller {
                 ?>
                 <script type='text/javascript'>
                     var x =<?php echo json_encode( $name ) ?>;
-                    alert('Please Delete '+x+' First');
+                    alert('Please Delete ( '+x+' ) First');
                 </script>
 
                 <?php
                 echo "<script>
+                    
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
             }
-            //print_r($this->data['pagedata']);
+        }
+        else{
+            redirect('Login');
+        }
+    }
+    //this function will show the image in edit
+    public function showImageForEdit($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['imagename'] = $this->Pagem->getImage($id);
+            $this->load->view('Admin/showImage', $this->data);
+
         }
         else{
             redirect('Login');
@@ -140,18 +178,10 @@ class Page extends CI_Controller {
     //this will show create page section
     public function createPageSection()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            if (!$this->form_validation->run('createPageSection')) {
-
-                $this->data['pagename'] = $this->Pagem->getPageIdName();
-                $this->load->view('Admin/newPageSection', $this->data);
-            }
-            else {
-
-                $this->data['pagename'] = $this->Pagem->getPageIdName();
-                $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
-            }
+        $this->data['pagename'] = $this->Pagem->getPageIdName();
+        $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
 
         }
         else{
@@ -162,11 +192,30 @@ class Page extends CI_Controller {
     //this will insert page section
     public function insertPageSection()
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-        $this->Pagem->insertPageSection();
-        redirect('Admin/Page/createPageSection');
+            if (!$this->form_validation->run('createPageSection')) {
 
+                $this->data['pagename'] = $this->Pagem->getPageIdName();
+                $this->load->view('Admin/newPageSection', $this->data);
+            }
+            else {
+                try {
+
+                    $this->Pagem->insertPageSection();
+                    echo "<script>
+                    alert('Page Section Inserted Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/createPageSection';
+                    </script>";
+                }
+                catch (Exception $e)
+                {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    </script>";
+                }
+            }
         }
         else{
             redirect('Login');
@@ -177,7 +226,7 @@ class Page extends CI_Controller {
     public function managePageSection()
     {
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['pagename'] = $this->Pagem->getPageIdName();
             $this->load->view('Admin/managePageSection', $this->data);
@@ -191,7 +240,7 @@ class Page extends CI_Controller {
     public function editPageSectionShow($id){
 
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['pagesecdata'] = $this->Pagem->get_pageSecdataBySecId($id);
             $this->load->view('Admin/editPageSection', $this->data);
@@ -205,16 +254,30 @@ class Page extends CI_Controller {
     public function editPageSection($id){
 
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0] ) {
 
             if (!$this->form_validation->run('editPageSection')) {
 
                 $this->data['pagesecdata'] = $this->Pagem->get_pageSecdataBySecId($id);
                 $this->load->view('Admin/editPageSection', $this->data);
             }
+            try {
 
-            $this->Pagem->updatePagaSectionData($id);
-            redirect('Admin/Page/managePageSection');
+                $this->Pagem->updatePagaSectionData($id);
+                echo "<script>
+                    alert('Page Section Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    </script>";
+            }
+            catch (Exception $e)
+            {
+                echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    </script>";
+            }
+
+
 
         } else{
             redirect('Login');
@@ -225,7 +288,7 @@ class Page extends CI_Controller {
     //this will show manage page table after select the page
     public function showPageSecManageTable(){
 
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $id = $this->input->post("id");
             $this->data['pagedata'] = $this->Pagem->get_pageSecdata($id);
@@ -240,11 +303,20 @@ class Page extends CI_Controller {
     //this will delete page section
     public function deletePageSection($pageSectionId)
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Pagem->deletePageSectionbyId($pageSectionId);
-            //echo $pageId;
-            redirect('Admin/Page/managePageSection');
+            try {
+                $this->Pagem->deletePageSectionbyId($pageSectionId);
+
+                redirect('Admin/Page/managePageSection');
+            }
+            catch (Exception $e)
+            {
+                echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    </script>";
+            }
         }
         else{
             redirect('Login');
