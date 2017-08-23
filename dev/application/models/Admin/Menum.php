@@ -52,6 +52,18 @@ class Menum extends CI_Model
         return $query->result();
     }
 
+    public function checkUniqueMenuTitle($menuTitle,$menuType)
+    {
+        $this->db->select('m.menuId,m.menuType,m.menuName,menu.menuId');
+        $this->db->from('ictmmenu m');
+        $this->db->where('menuType',$menuType);
+        $this->db->where('menuName',$menuTitle);
+        $this->db->join('ictmmenu menu', 'm.menuId = menu.menuId');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
 
     /*---- get all menu for mangeMenuView -----*/
     public function getAllforManageMenu()
@@ -86,11 +98,11 @@ class Menum extends CI_Model
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
-        $menuId = $this->input->post("menuId");
+        $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
 
-        if ($menuId == "")
+        if ($parentId == "")
         {
             $menuId =null;
         }
@@ -103,7 +115,7 @@ class Menum extends CI_Model
         $data = array(
             'menuName' => $menuTitle,
             'menuType' => $menuType,
-            'parentId' => $menuId,
+            'parentId' => $parentId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
             'lastModifiedDate'=>date("Y-m-d H:i:s"),

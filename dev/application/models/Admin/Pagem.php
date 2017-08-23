@@ -216,6 +216,16 @@ class Pagem extends CI_Model
        $this->db->delete('ictmpage');
     }
 
+    public function getImage($id){
+
+        $this->db->select('pageImage');
+        $this->db->where('pageId',$id);
+        $query = $this->db->get('ictmpage');
+        return $query->result();
+
+
+    }
+
 
     //////////////////////PAGE SECTION//////////////////////////////////
 

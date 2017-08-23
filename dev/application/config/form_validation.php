@@ -46,10 +46,11 @@ $config = array (
         ),
 
     'editMenu'=> array (
+
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required',
+            'rules' => 'required|max_length[45]|callback_menuTitle_Check_formEditMenu'
 
         ),
         array(
@@ -58,8 +59,8 @@ $config = array (
             'rules' => 'required'
         ),
         array(
-            'field' => 'menuId',
-            'label' => 'New/Sub Menu',
+            'field' => 'parentId',
+            'label' => 'Parent Menu',
             'rules' => 'regex_match[/^[0-9]*$/]',
 
         ),
