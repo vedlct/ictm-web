@@ -2435,6 +2435,7 @@ zoom: 1;
 /* navigation */
 .tp-leftarrow.square,
 .tp-rightarrow.square {
+	display:none;
 	position: absolute;
 	top: 704px;
 	text-align: center;

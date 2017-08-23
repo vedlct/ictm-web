@@ -378,49 +378,10 @@
                                 <div class="widget widget-posts">
                                     <div class="blog-box">
                                         <h2 class="widget-title">LATEST NEWS</h2>
-                                        <ul class="recent-posts clearfix">
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/1.jpg" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">Your Career Starts Here</a>
-                                                    <p>JUNE 3, 2014</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/2.jpg" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">Spark Of Genius</a>
-                                                    <p>JUNE 3, 2014</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/3.jpg" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">University Ranking</a>
-                                                    <p>MAY 29, 2014</p>
-                                                </div>
-                                            </li>
-                                        </ul><!-- /popular-news clearfix -->
-                                    </div><br>
-                                    
+                                        <?php include("latest-news-sidebar.php"); ?>
+                                    </div>
+                                 </div><!-- /widget-posts -->
+                                 
                                     <div class="archive-box">
                                         <h2 class="widget-title">Archive</h2>
                                         <ul style="margin-left:20px" class="recent-posts clearfix">
@@ -442,7 +403,7 @@
                                             </li>
                                         </ul><!-- /popular-news clearfix -->
                                     </div>
-                                </div><!-- /widget-posts -->
+                                
                             </div><!-- /col-md-9 -->
                         </div><!-- /col-md-3 -->
                     </div>

@@ -44,6 +44,7 @@
                             <li><a href="#tab8danger" data-toggle="tab">Purpose of the Course</a></li>
                             <li><a href="#tab9danger" data-toggle="tab">Learning Outcomes</a></li>
                             <li><a href="#tab10danger" data-toggle="tab">External Reference Points</a></li>
+                            <li><a href="application-form.php">APPLY NOW</a></li>
                         </ul>
                 
                 
@@ -496,101 +497,23 @@
                                             </tr>
                                         </tbody>              	
                                     </table>
-                                </div>
+                                </div><br>
                                 
-                                <div class="content-course">
+                                <!--<div class="content-course">
                                 	<div class="course-description">
                                     	<div class="course-action">
                                         	<div class="element-pad">
-                                            	<a href="#" class="flat-button">APPLY NOW</a>
+                                            	<a href="application-form.php" class="flat-button">APPLY NOW</a>
                                             </div>
                                         </div>
                                     </div>                              
-                                </div><br>
+                                </div><br>-->
                                 
                                 <div class="widget widget-courses">
                                     <h2 class="widget-title">COURSES LIST</h2>
-                                    <ul class="recent-posts clearfix">
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC Level 5 HND in Business</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC HND in Health and Social Care</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC HND in Computing and Systems Development</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC HND in Electrical and Electronic Engineering</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC Level 5 HND in Travel and Tourism Management</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC Level 5 HND in Hospitality Management</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                    </ul><!-- /popular-news clearfix -->
+                                    <?php include("course-sidebar.php"); ?>
                                 </div><!-- /widget-posts -->
+                                
                             </div><!-- sidebar -->
                         </div><!-- /col-md-3 -->
                     </div>

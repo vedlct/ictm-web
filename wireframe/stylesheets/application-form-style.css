@@ -1,41 +1,4 @@
 
-body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: #888;
-    line-height: 30px;
-    text-align: center;
-}
-
-strong { font-weight: 500; }
-
-a, a:hover, a:focus {
-	color: #19b9e7;
-	text-decoration: none;
-    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
-}
-
-h1, h2 {
-	margin-top: 10px;
-	font-size: 38px;
-    font-weight: 100;
-    color: #555;
-    line-height: 50px;
-}
-
-h3 {
-	font-size: 22px;
-    font-weight: 300;
-    color: #fff;
-    line-height: 30px;
-}
-
-img { max-width: 100%; }
-
-::-moz-selection { background: #19b9e7; color: #fff; text-shadow: none; }
-::selection { background: #19b9e7; color: #fff; text-shadow: none; }
-
 
 .btn-link-1 {
 	display: inline-block;
@@ -102,7 +65,7 @@ img { max-width: 100%; }
 
 .form-top {
 	overflow: hidden;
-	padding: 0 25px 15px 25px;
+	padding: 20px 25px 10px 25px;
 	background: #841a29;
 	-moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; border-radius: 4px 4px 0 0;
 	text-align: left;
@@ -110,25 +73,26 @@ img { max-width: 100%; }
 
 .form-top-left {
 	float: left;
-	width: 75%;
-	padding-top: 25px;
+	width:75%;	
 }
 
-.form-top-left h3 { margin-top: 0; }
+.form-top-left h3 { 
+	margin-top: 0;
+	font-size:20px;
+	color:#fff; 
+}
 
 .form-top-right {
 	float: left;
 	width: 25%;
-	padding-top: 5px;
-	font-size: 66px;
+	font-size: 16px;
 	color: #ddd;
-	line-height: 100px;
 	text-align: right;
 }
 
 .form-bottom {
 	padding: 25px 25px 30px 25px;
-	background: #eee;
+	background: #F4F4F4;
 	-moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; border-radius: 0 0 4px 4px;
 	text-align: left;
 }
@@ -148,6 +112,18 @@ form .form-bottom .input-error {
 form.registration-form fieldset {
 	display: none;
 }
+
+.btn-next:hover {
+	color:#fff;
+	background:#841a29;
+} 
+
+.btn-previous:hover {
+	color:#fff;
+	background:#841a29;
+}
+
+label { font-weight:bold}
 
 
 /***** Media queries *****/
