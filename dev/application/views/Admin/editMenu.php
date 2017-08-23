@@ -38,13 +38,13 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($edit_menu as $menu){?>
-                                <form class="form-validate form-horizontal" id="editMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/editMenu/<?php echo $menu->menuId?>">
+                                <form class="form-validate form-horizontal" id="editMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/editMenu/<?php echo $menu->menuId?>" onsubmit="return checklength()">
 
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo $menu->menuName?>" required onkeypress=" return checklength()"/>
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo $menu->menuName?>" required />
                                         </div>
                                     </div>
 
@@ -206,7 +206,7 @@
         var length =  document.getElementById("menuTitle").value;
 
         if (length.length >45){
-            alert("Menu Title Should be 45 Charecter Length");
+            alert("Menu Title Should not more than 45 Charecter Length");
             return false;
         }
         else

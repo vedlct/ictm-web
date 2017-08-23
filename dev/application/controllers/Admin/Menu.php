@@ -179,43 +179,42 @@ class Menu extends CI_Controller {
                 return true;
             }
             else{
-                $this->form_validation->set_message('menuTitle_Check', 'Menu Title Allready Existed');
+                $this->form_validation->set_message('menuTitleCheck', 'Menu Title Allready Existed');
                 return false;
             }
         }
         catch (Exception $e){
 
-            $this->form_validation->set_message('menuTitle_Check', 'Some thing Went Wrong !! Please Try Again!!');
+            $this->form_validation->set_message('menuTitleCheck', 'Some thing Went Wrong !! Please Try Again!!');
             return false;
         }
 
 
     }
 
-    public function menuTitle_Check_formEditMenu()
+    public function menuTitleCheckFormEditMenu()
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
+        $id=$this->uri->segment(6);
 
 
         try
         {
-            $this->data['checkMenuTitle'] = $this->Menum->checkUniqueMenuTitle($menuTitle,$menuType);
+            $this->data['checkMenuTitle'] = $this->Menum->checkUniqueMenuTitle($menuTitle,$menuType,$id);
 
             if (empty($this->data['checkMenuTitle'])){
 
                 return true;
-
             }
             else{
-                $this->form_validation->set_message('menuTitle_Check', 'Menu Title Allready Existed');
+                $this->form_validation->set_message('menuTitleCheckFormEditMenu', 'Menu Title Allready Existed');
                 return false;
-
             }
         }
         catch (Exception $e){
 
-            $this->form_validation->set_message('menuTitle_Check', 'Some thing Went Wrong !! Please Try Again!!');
+            $this->form_validation->set_message('menuTitleCheckFormEditMenu', 'Some thing Went Wrong !! Please Try Again!!');
             return false;
         }
 

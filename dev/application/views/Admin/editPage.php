@@ -38,7 +38,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($editPageData as $epd) {?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/Page/editPage/<?php echo $epd->pageId?>"  enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/Page/editPage/<?php echo $epd->pageId?>"  enctype="multipart/form-data" onsubmit="return formsubmit()">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -144,3 +144,29 @@
 </html>
 
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+<script>
+    function formsubmit() {
+        var title =  document.getElementById("title").value;
+        var keywords =  document.getElementById("keywords").value;
+        var metadata =  document.getElementById("title").value;
+
+        if (title.length >100){
+            alert("Page Title Should not more than 100 Charecter Length");
+            return false;
+        }
+        if (keywords.length >100){
+            alert("Page keywords Title Should not more than 100 Charecter Length");
+            return false;
+        }
+        if (metadata.length >100){
+            alert("Page metadata Should not more than 100 Charecter Length");
+            return false;
+        }
+        else
+        {
+            return true;
+
+        }
+    }
+
+</script>

@@ -38,7 +38,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($pagesecdata as $psd) { ?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/editPageSection/<?php echo $psd->pageSectionId?>">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/editPageSection/<?php echo $psd->pageSectionId?>" onsubmit="return formsubmited()">
 
                                     <div id='TextBoxesGroup' class="form-group">
 
@@ -110,3 +110,17 @@
 </html>
 
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+<script>
+    function formsubmited() {
+        var title =  document.getElementById("textbox1").value;
+        if (title.length >100){
+            alert("Page Title Should not more than 100 Charecter Length");
+            return false;
+        }
+        else
+        {
+            return true;
+
+        }
+    }
+</script>

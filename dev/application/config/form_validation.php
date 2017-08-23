@@ -49,7 +49,7 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required|max_length[45]|callback_menuTitle_Check_formEditMenu'
+            'rules' => 'required|max_length[45]|callback_menuTitleCheckFormEditMenu'
 
         ),
         array(

@@ -37,12 +37,12 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu">
+                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu" onsubmit="return checklength()">
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required onkeypress=" return checklength()" />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required />
                                         </div>
                                     </div>
 
@@ -160,7 +160,7 @@
         var length =  document.getElementById("menuTitle").value;
 
         if (length.length >45){
-            alert("Menu Title Should be 45 Charecter Length");
+            alert("Menu Title Should not more than 45 Charecter Length");
             return false;
         }
         else

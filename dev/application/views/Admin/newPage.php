@@ -37,26 +37,26 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/Page/insertPage"enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/Page/insertPage"enctype="multipart/form-data" onsubmit=" return formsubmit()">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                            <input class="form-control" id="title" name="title"  type="text" required onkeypress=" return checklength()"/>
+                                            <input class="form-control" id="title" name="title"  type="text" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords"  type="text"  onkeypress=" return checklength()"/>
+                                            <input class="form-control" id="keywords" name="keywords"  type="text"  />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata"  type="text"  onkeypress=" return checklength()"/>
+                                            <input class="form-control" id="metadata" name="metadata"  type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -138,21 +138,21 @@
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 <script>
-    function checklength() {
+    function formsubmit() {
         var title =  document.getElementById("title").value;
         var keywords =  document.getElementById("keywords").value;
         var metadata =  document.getElementById("title").value;
 
         if (title.length >100){
-            alert("Menu Title Should be 100 Charecter Length");
+            alert("Page Title Should not more than 100 Charecter Length");
             return false;
         }
         if (keywords.length >100){
-            alert("Menu Title Should be 100 Charecter Length");
+            alert("Page keywords Title Should not more than 100 Charecter Length");
             return false;
         }
         if (metadata.length >100){
-            alert("Menu Title Should be 100 Charecter Length");
+            alert("Page metadata Should not more than 100 Charecter Length");
             return false;
         }
         else
