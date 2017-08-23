@@ -20,8 +20,7 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required|max_length[45]|callback_menuTitle_Check'
-           // 'rules' => 'required|max_length[45]'
+            'rules' => 'required|max_length[45]|callback_menuTitleCheck'
         ),
         array(
             'field' => 'menuType',
@@ -163,7 +162,7 @@ $config = array (
         array(
             'field' => 'textbox[]',
             'label' => 'Section Title',
-            'rules' => 'trim|required'
+            'rules' => 'trim|required|max_length[100]'
         ),
 
 //        array(
@@ -181,7 +180,7 @@ $config = array (
         array(
             'field' => 'textbox',
             'label' => 'Section Title',
-            'rules' => 'required',
+            'rules' => 'required|max_length[100]',
 
         ),
 //        array(

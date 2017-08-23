@@ -164,7 +164,7 @@ class Menu extends CI_Controller {
 
 
     /*------------ for callback menuTitle_check ------------*/
-    public function menuTitle_Check()
+    public function menuTitleCheck()
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");

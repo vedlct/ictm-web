@@ -42,7 +42,7 @@
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required onkeypress=" return checklength()" />
                                         </div>
                                     </div>
 
@@ -154,6 +154,19 @@
 
                 }
             });
+        }
+    }
+    function checklength() {
+        var length =  document.getElementById("menuTitle").value;
+
+        if (length.length >45){
+            alert("Menu Title Should be 45 Charecter Length");
+            return false;
+        }
+        else
+        {
+            return true;
+
         }
     }
 </script>
