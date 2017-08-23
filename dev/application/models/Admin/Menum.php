@@ -51,18 +51,9 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-
+    /*----------- check MenuTitle Uniqueness Per MenuType ---- editMenu------------*/
     public function checkUniqueMenuTitle($menuTitle,$menuType,$id)
     {
-//        $this->db->select('m.*,menu.menuId');
-//        $this->db->from('ictmmenu m');
-//        $this->db->join('ictmmenu menu','m.menuId = menu.menuId','left');
-//        $this->db->where('menu.menuType',$menuType);
-//        $this->db->where('menu.menuName',$menuTitle);
-//        $this->db->where('menu.menuId !=',$id);
-//
-//        $query = $this->db->get();
-//        return $query->result();
 
         $this->db->select('menuName,menuType');
         $this->db->where('menuType',$menuType);
@@ -119,7 +110,7 @@ class Menum extends CI_Model
         {
             $pageId =null;
         }
-        date_default_timezone_set("Europe/London");
+
 
         $data = array(
             'menuName' => $menuTitle,

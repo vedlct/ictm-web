@@ -81,17 +81,17 @@ $config = array (
             'rules' => 'required|max_length[100]|is_unique[ictmpage.pageTitle]',
 
         ),
-//        array(
-//            'field' => 'keywords',
-//            'label' => 'Page Keywords',
-//            'rules' => 'required'
-//        ),
-//        array(
-//            'field' => 'metadata',
-//            'label' => 'Page MetaData',
-//            'rules' => 'required',
-//
-//        ),
+        array(
+            'field' => 'keywords',
+            'label' => 'Page Keywords',
+            'rules' => 'max_length[100]'
+        ),
+        array(
+            'field' => 'metadata',
+            'label' => 'Page MetaData',
+            'rules' => 'max_length[100]',
+
+        ),
 //        array(
 //            'field' => 'content',
 //            'label' => 'Page Content',
@@ -117,20 +117,20 @@ $config = array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|callback_pageCheckFormEditPage',
 
         ),
-//        array(
-//            'field' => 'keywords',
-//            'label' => 'Page Keywords',
-//            'rules' => 'required'
-//        ),
-//        array(
-//            'field' => 'metadata',
-//            'label' => 'Page MetaData',
-//            'rules' => 'required',
-//
-//        ),
+        array(
+            'field' => 'keywords',
+            'label' => 'Page Keywords',
+            'rules' => 'max_length[100]'
+        ),
+        array(
+            'field' => 'metadata',
+            'label' => 'Page MetaData',
+            'rules' => 'max_length[100]',
+
+        ),
 //        array(
 //            'field' => 'content',
 //            'label' => 'Page Content',

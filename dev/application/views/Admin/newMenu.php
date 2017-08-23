@@ -158,9 +158,8 @@
     }
     function checklength() {
         var length =  document.getElementById("menuTitle").value;
-
         if (length.length >45){
-            alert("Menu Title Should not more than 45 Charecter Length");
+            alert("Menu Name Should not more than 45 Charecter Length");
             return false;
         }
         else

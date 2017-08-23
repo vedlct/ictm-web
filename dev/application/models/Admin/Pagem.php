@@ -12,7 +12,7 @@ class Pagem extends CI_Model
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
-        date_default_timezone_set("Europe/London");
+
 
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
@@ -113,7 +113,7 @@ class Pagem extends CI_Model
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
-        date_default_timezone_set("Europe/London");
+
 
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
@@ -134,7 +134,7 @@ class Pagem extends CI_Model
             }else{
 
                 $error =array('error'=>$this->upload->display_errors());
-//              print_r($error);
+
                 echo "<script>
                 var x =<?php echo json_encode( $error )?>;
                     alert(x);
@@ -223,6 +223,18 @@ class Pagem extends CI_Model
         $query = $this->db->get('ictmpage');
         return $query->result();
 
+
+    }
+    /*----------- check Page Uniqueness ---- editPage------------*/
+    public function checkUniquePage($pageTitle,$pagetype,$id)
+    {
+
+        $this->db->select('pageTitle,pageType');
+        
+        $this->db->where('pageTitle',$pageTitle);
+        $this->db->where('pageId !=', $id);
+        $query = $this->db->get('ictmpage');
+        return $query->result();
 
     }
 

@@ -171,6 +171,36 @@ class Page extends CI_Controller {
             redirect('Login');
         }
     }
+
+    public function pageCheckFormEditPage()
+    {
+        $pageTitle = $this->input->post("title");
+        $pagetype = $this->input->post("pagetype");
+        $id=$this->uri->segment(4);
+
+
+        try
+        {
+            $this->data['checkPage'] = $this->Pagem->checkUniquePage($pageTitle,$pagetype,$id);
+
+            if (empty($this->data['checkPage'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('pageCheckFormEditPage', 'Page Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('pageCheckFormEditPage', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+
+    }
+
 /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {

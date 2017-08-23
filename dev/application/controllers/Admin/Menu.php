@@ -196,7 +196,7 @@ class Menu extends CI_Controller {
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
-        $id=$this->uri->segment(6);
+        $id=$this->uri->segment(4);
 
 
         try
