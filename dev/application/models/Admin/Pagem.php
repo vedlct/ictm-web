@@ -230,7 +230,7 @@ class Pagem extends CI_Model
     {
 
         $this->db->select('pageTitle,pageType');
-        
+
         $this->db->where('pageTitle',$pageTitle);
         $this->db->where('pageId !=', $id);
         $query = $this->db->get('ictmpage');
