@@ -1,4 +1,4 @@
-<?php
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class PageSectionm extends CI_Model
 {
@@ -8,7 +8,7 @@ class PageSectionm extends CI_Model
 
         $pageId = $this->input->post("pageId");
         extract($_POST);
-        date_default_timezone_set("Europe/London");
+
 
         for ($i = 0; $i < count($textbox); $i++) {
 

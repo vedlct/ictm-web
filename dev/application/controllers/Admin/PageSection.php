@@ -1,23 +1,26 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Page extends CI_Controller {
+class PageSection extends CI_Controller {
 
     public function __construct()
     {
         parent::__construct();
 
         $this->load->model('Admin/PageSectionm');
-
-
+        $this->load->model('Admin/Pagem');
 
     }
+    public function index()
+    {
+    }
+
     //this will show create page section
     public function createPageSection()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['pagename'] = $this->PageSectionm->getPageIdName();
+            $this->data['pagename'] = $this->Pagem->getPageIdName();
             $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
 
         }
@@ -33,7 +36,7 @@ class Page extends CI_Controller {
 
             if (!$this->form_validation->run('createPageSection')) {
 
-                $this->data['pagename'] = $this->PageSectionm->getPageIdName();
+                $this->data['pagename'] = $this->Pagem->getPageIdName();
                 $this->load->view('Admin/newPageSection', $this->data);
             }
             else {
@@ -42,14 +45,14 @@ class Page extends CI_Controller {
                     $this->PageSectionm->insertPageSection();
                     echo "<script>
                     alert('Page Section Inserted Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/createPageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
                 }
                 catch (Exception $e)
                 {
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
                 }
             }
@@ -65,7 +68,7 @@ class Page extends CI_Controller {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['pagename'] = $this->PageSectionm->getPageIdName();
+            $this->data['pagename'] = $this->Pagem->getPageIdName();
             $this->load->view('Admin/managePageSection', $this->data);
 
         } else{
@@ -103,14 +106,14 @@ class Page extends CI_Controller {
                 $this->PageSectionm->updatePagaSectionData($id);
                 echo "<script>
                     alert('Page Section Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
             }
             catch (Exception $e)
             {
                 echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
             }
 
@@ -145,13 +148,13 @@ class Page extends CI_Controller {
             try {
                 $this->PageSectionm->deletePageSectionbyId($pageSectionId);
 
-                redirect('Admin/Page/managePageSection');
+                redirect('Admin/PageSection/managePageSection');
             }
             catch (Exception $e)
             {
                 echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Page/managePageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
             }
         }
@@ -159,27 +162,4 @@ class Page extends CI_Controller {
             redirect('Login');
         }
     }
-    /* -------------------------------Image validation-------------------------*/
-    public function val_img_check()
-    {
-        $image = $_FILES["image"]["name"];
-        if ($image != null) {
-            $this->load->library('upload');
-            $config['upload_path'] = "images/";
-            $config['allowed_types'] = 'jpg|png|jpeg|gif';
-
-//        $config['max_size']    = '2048000';
-//        $config['overwrite'] = TRUE;
-            $this->upload->initialize($config);
-
-            if (!$this->upload->do_upload('image')) {
-                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-                return false;
-            } else {
-                return true;
-            }
-        }
-    }
-
-
 }

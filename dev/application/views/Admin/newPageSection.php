@@ -39,7 +39,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSectionz/insertPageSection" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/insertPageSection" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
