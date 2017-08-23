@@ -7,9 +7,6 @@ class Menu extends CI_Controller {
         $this->load->model('Admin/Menum');
         $this->load->model('Admin/Pagem');
     }
-    public function index()
-    {
-    }
     /*---------for creating new Menu --------------------- */
     public function newMenu()    // for new menu view
     {
@@ -20,7 +17,7 @@ class Menu extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function getMenuLevel($menuType) // for new Menu/sub Menu dropdown
@@ -38,12 +35,13 @@ class Menu extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     public function createNewMenu() // for insert new menu into database
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             if (!$this->form_validation->run('createMenu')) {
 
@@ -71,7 +69,7 @@ class Menu extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     /*---------for creating new Menu ------end--------------- */
@@ -86,7 +84,7 @@ class Menu extends CI_Controller {
                 $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function editMenuView($menuId)  // for edit menu view
@@ -100,11 +98,12 @@ class Menu extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function editMenu($id)        // for edit menu in database
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('editMenu')) {
@@ -134,7 +133,7 @@ class Menu extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function deleteMenu($menuId)    // delete Menu if no SubMenu
@@ -157,7 +156,7 @@ class Menu extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     /*---------for Manage Menu ----------end-------------*/

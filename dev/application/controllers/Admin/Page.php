@@ -9,8 +9,6 @@ class Page extends CI_Controller {
 
         $this->load->model('Admin/Pagem');
 
-
-
     }
  
 
@@ -21,13 +19,14 @@ class Page extends CI_Controller {
             $this->load->view('Admin/newPage');
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     // this will insert page
     public function insertPage()
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('createPage')) {
@@ -53,7 +52,7 @@ class Page extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -66,7 +65,7 @@ class Page extends CI_Controller {
              $this->load->view('Admin/managePage', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -80,12 +79,13 @@ class Page extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     //this will edit page
     public function editPage($id)
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('editPage')) {
@@ -113,7 +113,7 @@ class Page extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -155,7 +155,7 @@ class Page extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     //this function will show the image in edit
@@ -168,7 +168,7 @@ class Page extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
