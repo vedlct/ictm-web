@@ -57,7 +57,7 @@ class Menu extends CI_Controller {
                     $this->Menum->createNewMenu();
                     echo "<script>
                     alert('Menu Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
+                    window.location.href= '" . base_url() . "Admin/Menu/newMenu';
                     </script>";
                 }
                 catch (Exception $e)
@@ -169,6 +169,7 @@ class Menu extends CI_Controller {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
 
+
         try
         {
             $this->data['checkMenuTitle'] = $this->Menum->checkMenuTitleUniquePerMenuType($menuTitle,$menuType);
@@ -203,11 +204,12 @@ class Menu extends CI_Controller {
 
             if (empty($this->data['checkMenuTitle'])){
 
-                $this->form_validation->set_message('menuTitle_Check', 'Menu Title Allready Existed');
-                return false;
+                return true;
+
             }
             else{
-                return true;
+                $this->form_validation->set_message('menuTitle_Check', 'Menu Title Allready Existed');
+                return false;
 
             }
         }
