@@ -109,15 +109,11 @@ define("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink"
 define("SELECT_PAGE_TYPE", "Select Page Type");
 define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
 
-
-//define("selected", "selected");
-
-
 ////////////    faculy page      ///////////////
-define("SelectType", "Select Type");
-define("SelectCourse", "Select Course");
-define("PartTime", "Part Time");
-define("FullTime", "Full Time");
+define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
+define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));
+define("SELECT_COURSE", "Select Course");
+
 
 /////////////// News Page ///////////////
 

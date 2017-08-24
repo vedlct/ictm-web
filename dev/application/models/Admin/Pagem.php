@@ -140,6 +140,7 @@ class Pagem extends CI_Model
                     alert(x);
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
+                return false;
             }
 
             $data = array(

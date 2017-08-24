@@ -81,6 +81,19 @@
                           <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourseSec">Manage Course </a></li>
                       </ul>
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_group"></i>
+                          <span>Faculty</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">new Faculty</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/manageFaculty">Manage Faculties</a></li>
+
+                      </ul>
+                  </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
@@ -102,20 +115,6 @@
                       <ul class="sub">
                           <li><a class="" href="newPhoto.php">New Photo</a></li>
                           <li><a class="" href="managePhoto.php">Manage Photo</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_group"></i>
-                          <span>Faculties</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-
-                      <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">new Faculty</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/manageFaculty">Manage Faculties</a></li>
-
                       </ul>
                   </li>
 

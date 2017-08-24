@@ -122,9 +122,13 @@ class Menum extends CI_Model
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 
         );
-        $this->security->xss_clean($data);
-        $this->db->where('menuId', $id);
-        $this->db->update('ictmmenu', $data);
+
+            $this->security->xss_clean($data);
+            $this->db->where('menuId', $id);
+            $this->db->update('ictmmenu', $data);
+
+
+
     }
 
 

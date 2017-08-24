@@ -48,21 +48,21 @@ class Menu extends CI_Controller {
                 $this->data['page'] = $this->Pagem->getPageIdName();
                 $this->load->view('Admin/newMenu', $this->data);
             }
-            else {
+            else
+            {
                 try
                 {
-
                     $this->Menum->createNewMenu();
                     echo "<script>
                     alert('Menu Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/newMenu';
+                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
                     </script>";
                 }
                 catch (Exception $e)
                 {
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
+                    window.location.href= '" . base_url() . "Admin/Menu/newMenu';
                     </script>";
                 }
 
@@ -121,9 +121,9 @@ class Menu extends CI_Controller {
                     alert('Menu Updated Successfully');
                     window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
                     </script>";
-                }
-                catch (Exception $e)
-                {
+
+                } catch (Exception $e) {
+
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
