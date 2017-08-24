@@ -65,7 +65,6 @@ class Menu extends CI_Controller {
                     window.location.href= '" . base_url() . "Admin/Menu/newMenu';
                     </script>";
                 }
-
             }
         }
         else{
@@ -112,26 +111,26 @@ class Menu extends CI_Controller {
                 $this->data['page'] = $this->Pagem->getPageIdName();
 
                 $this->load->view('Admin/editMenu', $this->data);
-            }
-            else
-            {
-                try {
-                    $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
-                    echo "<script>
-                    alert('Menu Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
-                    </script>";
+            } else {
 
-                } catch (Exception $e) {
-
+                $this->data['error'] = $this->Menum->editMenubyId($id);
+                if (empty($this->data['error'])) {
                     echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
-                    </script>";
+                        alert('Menu Updated Successfully');
+                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
+                        </script>";
+
+                } else
+                 {
+                    print_r($this->data['error']);
+//                        echo "<script>
+//                        alert('Some thing Went Wrong !! Please Try Again!!');
+//                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
+//                        </script>";
                 }
-
             }
         }
+
         else{
             redirect('Admin/Login');
         }
@@ -168,7 +167,6 @@ class Menu extends CI_Controller {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
 
-
         try
         {
             $this->data['checkMenuTitle'] = $this->Menum->checkMenuTitleUniquePerMenuType($menuTitle,$menuType);
@@ -187,8 +185,6 @@ class Menu extends CI_Controller {
             $this->form_validation->set_message('menuTitleCheck', 'Some thing Went Wrong !! Please Try Again!!');
             return false;
         }
-
-
     }
 
     public function menuTitleCheckFormEditMenu()
@@ -217,10 +213,6 @@ class Menu extends CI_Controller {
             return false;
         }
 
-
     }
-
-
-
     /*------------ for callback menuTitle_check ----- end -------*/
 }

@@ -124,10 +124,17 @@ class Menum extends CI_Model
         );
 
             $this->security->xss_clean($data);
-            $this->db->where('menuId', $id);
-            $this->db->update('ictmmenu', $data);
 
-
+                $this->db->where('menuId', $id);
+                $error=$this->db->update('ictmmenu', $data);
+                if (empty($error))
+                {
+                    return $this->db->error();
+                }
+                else
+                {
+                    return $error=null;
+                }
 
     }
 
