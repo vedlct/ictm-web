@@ -39,7 +39,11 @@ class Facultym extends CI_Model
                 //print_r($response);
             }else{
                 $error =array('error'=>$this->upload->display_errors());
-                print_r($error);
+                $che=json_encode($error);
+                echo "<script>
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                    </script>";
                 return false;
             }
         }

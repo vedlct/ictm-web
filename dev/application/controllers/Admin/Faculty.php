@@ -30,19 +30,12 @@ class Faculty extends CI_Controller
     public function createNewFaculty() // creates new faculty in database
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-            try {
+
                 $this->Facultym->createNewFaculty();
                 echo "<script>
                     alert('Faculty Created Successfully');
                     window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
                     </script>";
-            }
-            catch (Exception $e){
-                echo "<script>
-                    alert('Something Went Wrong!! please try again');
-                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
-                    </script>";
-            }
 
         }
         else
