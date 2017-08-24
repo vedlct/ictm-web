@@ -77,8 +77,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Course/createCourseSec">New Sections</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourseSec">Manage Course </a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/createCourseSec">New Sections</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/manageCourseSec">Manage Course </a></li>
                       </ul>
                   </li>
 
