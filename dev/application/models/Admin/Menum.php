@@ -31,7 +31,17 @@ class Menum extends CI_Model
 
         );
         $this->security->xss_clean($data);
-        $this->db->insert('ictmmenu', $data);
+        $error=$this->db->insert('ictmmenu', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
     }
 
             /*-----get Menu Name and id----------*/
@@ -122,27 +132,32 @@ class Menum extends CI_Model
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 
         );
-        $this->security->xss_clean($data);
-        $this->db->where('menuId', $id);
-        $this->db->update('ictmmenu', $data);
-    }
 
+            $this->security->xss_clean($data);
+
+                $this->db->where('menuId', $id);
+                $error=$this->db->update('ictmmenu', $data);
+                if (empty($error))
+                {
+                    return $this->db->error();
+                }
+                else
+                {
+                    return $error=null;
+                }
+    }
 
     /*---------delete menu if no Submenu-----------------*/
     public function deleteMenubyId($menuId) //delete menu if no Submenu
     {
-
-
         $this->db->select('menuName,');
         $this->db->where('parentId',$menuId);
         $this->db->from('ictmmenu');
         $query = $this->db->get();
-
         if (empty($query->result())){
-
-        $this->db->where('menuId',$menuId);
-        $this->db->delete('ictmmenu');
-        return 0;
+            $this->db->where('menuId',$menuId);
+            $this->db->delete('ictmmenu');
+            return 0;
         }
         else{
             return $query->result();

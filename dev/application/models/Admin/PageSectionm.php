@@ -23,7 +23,15 @@ class PageSectionm extends CI_Model
 
             );
             $this->security->xss_clean($data,true);
-            $this->db->insert('ictmpagesection', $data);
+            $error= $this->db->insert('ictmpagesection', $data);
+        }
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
         }
     }
 
@@ -44,7 +52,15 @@ class PageSectionm extends CI_Model
         );
         $this->security->xss_clean($data,true);
         $this->db->where('pageSectionId', $id);
-        $this->db->update('ictmpagesection', $data);
+        $error= $this->db->update('ictmpagesection', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
 
     }
 

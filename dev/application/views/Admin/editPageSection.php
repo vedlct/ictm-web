@@ -40,10 +40,8 @@
                                 <?php foreach ($pagesecdata as $psd) { ?>
                                 <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/editPageSection/<?php echo $psd->pageSectionId?>" onsubmit="return formsubmited()">
 
-                                    <div id='TextBoxesGroup' class="form-group">
 
 
-                                            <div id="TextBoxDiv1" class="form-group">
                                                 <label class="control-label col-lg-2">Title : <span class="required">*</span></label>
                                                 <div class="col-lg-10 form-group">
                                                     <p><font color="red"> <?php echo form_error('textbox'); ?></font></p>
@@ -51,13 +49,13 @@
                                                           value="<?php echo $psd->pageSectionTitle?>" name="textbox" required>
                                                 </div>
                                                 <label class="control-label col-lg-2">Content : </label>
-                                                <div class="col-sm-10 form-group">
+                                                <div class="col-lg-10 form-group">
                                                     <p><font color="red"> <?php echo form_error('text'); ?></font></p>
                                                     <textarea class="form-control ckeditor" id="ckeditor" name="text"
                                                               rows="6"><?php echo $psd->pageSectionContent?></textarea>
                                                 </div>
                                                 <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
-                                                <div class="col-sm-10 form-group">
+                                                <div class="col-lg-10 form-group">
                                                     <select class="form-control m-bot15" name="status" required>
                                                         <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                         <?php for ($i=0;$i<count(STATUS);$i++){?>
@@ -67,9 +65,8 @@
                                                     </select>
                                                 </div>
 
-                                            </div>
 
-                                    </div>
+
 
 
                                     <div class="form-group " align="center">
