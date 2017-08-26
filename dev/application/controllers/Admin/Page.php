@@ -46,7 +46,7 @@ class Page extends CI_Controller {
                 }
                 else
                 {
-                    //print_r($this->data['error']);
+
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/Page/createPage';
@@ -111,7 +111,7 @@ class Page extends CI_Controller {
                 }
                 else
                 {
-                    //print_r($this->data['error']);
+
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/Page/managePage';

@@ -113,8 +113,8 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newPhoto.php">New Photo</a></li>
-                          <li><a class="" href="managePhoto.php">Manage Photo</a></li>
+                          <li><a class="" href="#">New Photo</a></li>
+                          <li><a class="" href="#">Manage Photo</a></li>
                       </ul>
                   </li>
 
@@ -162,8 +162,8 @@
                       </a>
                       <ul class="sub">
 
-                          <li><a class="" href="newFeedback.php">New Feedbacks</a></li>
-                          <li><a class="" href="manageFeedbacks.php">Manage Feedbacks</a></li>
+                          <li><a class="" href="#">New Feedbacks</a></li>
+                          <li><a class="" href="#">Manage Feedbacks</a></li>
 
                       </ul>
                   </li>
