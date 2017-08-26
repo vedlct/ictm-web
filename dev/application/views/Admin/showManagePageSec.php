@@ -29,7 +29,7 @@
                 <div class="btn-group">
 
                     <a class="btn" href="<?php echo base_url()?>Admin/PageSection/editPageSectionShow/<?php echo $pg->pageSectionId?>"><i class="icon_pencil-edit"></i></a>
-                    <a class="btn " href="<?php echo base_url()?>Admin/PageSection/deletePageSection/<?php echo $pg->pageSectionId?>" onclick='return confirm("Are you sure?")'><i class="icon_trash"></i></a>
+                    <a class="btn " href="<?php echo base_url()?>Admin/PageSection/deletePageSection/<?php echo $pg->pageSectionId?>" onclick='return confirm("Are you sure to Delete This Page Section?")'><i class="icon_trash"></i></a>
 
                 </div>
             </td>

@@ -11,10 +11,6 @@ class PageSection extends CI_Controller {
         $this->load->model('Admin/Pagem');
 
     }
-    public function index()
-    {
-    }
-
     //this will show create page section
     public function createPageSection()
     {
@@ -25,13 +21,14 @@ class PageSection extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     //this will insert page section
     public function insertPageSection()
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('createPageSection')) {
@@ -40,25 +37,30 @@ class PageSection extends CI_Controller {
                 $this->load->view('Admin/newPageSection', $this->data);
             }
             else {
-                try {
 
-                    $this->PageSectionm->insertPageSection();
+
+                    $this->data['error'] = $this->PageSectionm->insertPageSection();
+                if (empty($this->data['error'])) {
+
                     echo "<script>
                     alert('Page Section Inserted Successfully');
                     window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
+
                 }
-                catch (Exception $e)
+                else
                 {
+
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/createPageSection';
                     </script>";
                 }
+
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -72,7 +74,7 @@ class PageSection extends CI_Controller {
             $this->load->view('Admin/managePageSection', $this->data);
 
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
 
     }
@@ -86,14 +88,14 @@ class PageSection extends CI_Controller {
             $this->load->view('Admin/editPageSection', $this->data);
 
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     //this will edit the page section
     public function editPageSection($id){
 
-
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0] ) {
 
             if (!$this->form_validation->run('editPageSection')) {
@@ -101,26 +103,29 @@ class PageSection extends CI_Controller {
                 $this->data['pagesecdata'] = $this->PageSectionm->get_pageSecdataBySecId($id);
                 $this->load->view('Admin/editPageSection', $this->data);
             }
-            try {
 
-                $this->PageSectionm->updatePagaSectionData($id);
+
+                $this->data['error'] = $this->PageSectionm->updatePagaSectionData($id);
+
+            if (empty($this->data['error'])) {
+
                 echo "<script>
                     alert('Page Section Updated Successfully');
                     window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
+
             }
-            catch (Exception $e)
+            else
             {
+
                 echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
             }
 
-
-
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -135,7 +140,7 @@ class PageSection extends CI_Controller {
             $this->load->view('Admin/showManagePageSec', $this->data);
 
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
 
     }
@@ -159,7 +164,7 @@ class PageSection extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 }

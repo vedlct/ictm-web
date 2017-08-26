@@ -12,8 +12,11 @@ class Login extends CI_Controller {
     {
         $this->load->view('Admin/login');
     }
+
     public  function check_user()
     {
+        $this->load->library('form_validation');
+
         if(!$this->form_validation->run('signin'))
         {
             $this->load->view('Admin/login');

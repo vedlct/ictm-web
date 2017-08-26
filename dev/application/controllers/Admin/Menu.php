@@ -7,9 +7,6 @@ class Menu extends CI_Controller {
         $this->load->model('Admin/Menum');
         $this->load->model('Admin/Pagem');
     }
-    public function index()
-    {
-    }
     /*---------for creating new Menu --------------------- */
     public function newMenu()    // for new menu view
     {
@@ -20,7 +17,7 @@ class Menu extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function getMenuLevel($menuType) // for new Menu/sub Menu dropdown
@@ -38,40 +35,45 @@ class Menu extends CI_Controller {
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     public function createNewMenu() // for insert new menu into database
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             if (!$this->form_validation->run('createMenu')) {
 
                 $this->data['page'] = $this->Pagem->getPageIdName();
                 $this->load->view('Admin/newMenu', $this->data);
             }
-            else {
-                try
-                {
+            else
+            {
 
-                    $this->Menum->createNewMenu();
+                $this->data['error'] =$this->Menum->createNewMenu();
+
+                if (empty($this->data['error'])) {
+
                     echo "<script>
                     alert('Menu Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/newMenu';
-                    </script>";
-                }
-                catch (Exception $e)
-                {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
                     </script>";
+
+                }
+                else
+                {
+
+                    echo "<script>
+                        alert('Some thing Went Wrong !! Please Try Again!!');
+                        window.location.href= '" . base_url() . "Admin/Menu/newMenu';
+                        </script>";
                 }
 
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     /*---------for creating new Menu ------end--------------- */
@@ -86,7 +88,7 @@ class Menu extends CI_Controller {
                 $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function editMenuView($menuId)  // for edit menu view
@@ -100,11 +102,12 @@ class Menu extends CI_Controller {
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function editMenu($id)        // for edit menu in database
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('editMenu')) {
@@ -116,25 +119,27 @@ class Menu extends CI_Controller {
             }
             else
             {
-                try {
-                    $this->data['edit_menu_by_id'] = $this->Menum->editMenubyId($id);
-                    echo "<script>
-                    alert('Menu Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
-                    </script>";
-                }
-                catch (Exception $e)
-                {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
-                    </script>";
-                }
 
+                $this->data['error'] = $this->Menum->editMenubyId($id);
+                if (empty($this->data['error'])) {
+                    echo "<script>
+                        alert('Menu Updated Successfully');
+                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
+                        </script>";
+
+                } else
+                 {
+
+                        echo "<script>
+                        alert('Some thing Went Wrong !! Please Try Again!!');
+                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
+                        </script>";
+                }
             }
         }
+
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     public function deleteMenu($menuId)    // delete Menu if no SubMenu
@@ -143,21 +148,16 @@ class Menu extends CI_Controller {
             $subMenuName=$this->Menum->deleteMenubyId($menuId);
             if ($subMenuName!='0'){
                 $name=array();
-
                 foreach ($subMenuName as $subMenuName){
                     array_push($name,$subMenuName->menuName);
                 }
-
                 $x=implode(" , ",$name);
-                   echo $x;
-
+                echo $x;
             }
             else{echo $subMenuName;}
-
-
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     /*---------for Manage Menu ----------end-------------*/
@@ -168,7 +168,6 @@ class Menu extends CI_Controller {
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");
-
 
         try
         {
@@ -188,8 +187,6 @@ class Menu extends CI_Controller {
             $this->form_validation->set_message('menuTitleCheck', 'Some thing Went Wrong !! Please Try Again!!');
             return false;
         }
-
-
     }
 
     public function menuTitleCheckFormEditMenu()
@@ -218,10 +215,6 @@ class Menu extends CI_Controller {
             return false;
         }
 
-
     }
-
-
-
     /*------------ for callback menuTitle_check ----- end -------*/
 }

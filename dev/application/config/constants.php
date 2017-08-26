@@ -110,21 +110,4 @@ define("SELECT_PAGE_TYPE", "Select Page Type");
 define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
 
 
-//define("selected", "selected");
-
-
-////////////    faculy page      ///////////////
-define("SelectType", "Select Type");
-define("SelectCourse", "Select Course");
-define("PartTime", "Part Time");
-define("FullTime", "Full Time");
-
-/////////////// News Page ///////////////
-
-define ("NewsType",array ("Announcement", "News", "Press Release"));
-
-
-/////////////  Event Page ////////////////////
-define ("EventType",array ("Seminar", "Training", "Festival"));
-
 
