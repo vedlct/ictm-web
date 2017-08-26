@@ -73,7 +73,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <input class="form-control"  type="file" name="image" />
-                                            <a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
                                         </div>
                                     </div>
                                     <div class="form-group">

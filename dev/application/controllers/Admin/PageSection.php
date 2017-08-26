@@ -37,21 +37,26 @@ class PageSection extends CI_Controller {
                 $this->load->view('Admin/newPageSection', $this->data);
             }
             else {
-                try {
 
-                    $this->PageSectionm->insertPageSection();
+
+                    $this->data['error'] = $this->PageSectionm->insertPageSection();
+                if (empty($this->data['error'])) {
+
                     echo "<script>
                     alert('Page Section Inserted Successfully');
                     window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
+
                 }
-                catch (Exception $e)
+                else
                 {
+                    //print_r($this->data['error']);
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
+                    window.location.href= '" . base_url() . "Admin/PageSection/createPageSection';
                     </script>";
                 }
+
             }
         }
         else{
@@ -98,23 +103,26 @@ class PageSection extends CI_Controller {
                 $this->data['pagesecdata'] = $this->PageSectionm->get_pageSecdataBySecId($id);
                 $this->load->view('Admin/editPageSection', $this->data);
             }
-            try {
 
-                $this->PageSectionm->updatePagaSectionData($id);
+
+                $this->data['error'] = $this->PageSectionm->updatePagaSectionData($id);
+
+            if (empty($this->data['error'])) {
+
                 echo "<script>
                     alert('Page Section Updated Successfully');
                     window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
+
             }
-            catch (Exception $e)
+            else
             {
+                //print_r($this->data['error']);
                 echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
                     </script>";
             }
-
-
 
         } else{
             redirect('Admin/Login');

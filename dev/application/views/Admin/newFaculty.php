@@ -22,7 +22,7 @@
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New Faculty</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Welcome">Home</a></li>
-                        <li><i class="icon_document_alt"></i>Faculties</li>
+                        <li><i class="icon_document_alt"></i>Faculty</li>
                         <li><i class="fa fa-files-o"></i>Create New Faculty</li>
                     </ol>
                 </div>
@@ -41,11 +41,13 @@
                                     <div class="form-group ">
                                         <label for="facultyFirstName" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyFirstName'); ?></font></p>
                                             <input class="form-control" id="facultyFirstName"  name="facultyFirstName" type="text" required />
                                         </div>
 
                                         <label for="facultyLastName" class="control-label col-lg-2">Faculty Last Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyLastName'); ?></font></p>
                                             <input class="form-control" id="facultyLastName" name="facultyLastName"  type="text" required />
                                         </div>
 
@@ -54,6 +56,7 @@
                                     <div class="form-group">
                                         <label for="facultyDegree" class="control-label col-lg-2">Faculty Degree <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('facultyDegree'); ?></font></p>
                                             <input class="form-control" id="facultyDegree" name="facultyDegree"  type="text" placeholder="Write Multiple Degree with comma" required />
                                         </div>
                                     </div>
@@ -63,6 +66,7 @@
 
                                         <label for="facultyPosition" class="control-label col-lg-2">Faculty Position <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('facultyPosition'); ?></font></p>
                                             <input class="form-control" id="facultyPosition" name="facultyPosition"  type="text" placeholder="Write Multiple Position with comma"required />
                                         </div>
 
@@ -71,12 +75,13 @@
 
                                         <label for="facultyImage" class="control-label col-lg-2">Faculty Image <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyImage'); ?></font></p>
                                             <input class="form-control" type="file" name="facultyImage" id="facultyImage" required>
                                         </div>
 
                                         <label for="facultyEmpType" class="control-label col-lg-2">Faculty Employee type <span class="required">*</span></label>
                                         <div class="col-lg-4">
-
+                                            <p><font color="red"> <?php echo form_error('facultyEmpType'); ?></font></p>
                                             <select class="form-control" id="facultyEmpType" name="facultyEmpType" required >
 
                                                 <option value="" selected><?php echo SELECT_EMPLOYEE_TYPE?></option>
@@ -96,11 +101,13 @@
 
                                         <label for="facultyEmail" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyEmail'); ?></font></p>
                                             <input class="form-control" id="facultyEmail" name="facultyEmail"  type="email" required />
                                         </div>
 
                                         <label for="facultyPhone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyPhone'); ?></font></p>
                                             <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="11 digit phone number" required />
                                         </div>
 
@@ -111,11 +118,13 @@
 
                                         <label for="facultyTwitter" class="control-label col-lg-2">Faculty Twitter</label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyTwitter'); ?></font></p>
                                             <input class="form-control" id="facultyTwitter" name="facultyTwitter"  type="text" />
                                         </div>
 
                                         <label for="facultyLinkedin" class="control-label col-lg-2">Faculty LinkedIn</label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyLinkedin'); ?></font></p>
                                             <input class="form-control" id="facultyLinkedin" name="facultyLinkedin"  type="text" />
                                         </div>
 
@@ -126,7 +135,7 @@
 
                                         <label for="facultyStatus" class="control-label col-lg-2">Faculty Status <span class="required">*</span></label>
                                         <div class="col-lg-4">
-
+                                            <p><font color="red"> <?php echo form_error('facultyStatus'); ?></font></p>
                                             <select class="form-control" id="facultyStatus" name="facultyStatus" required>
 
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
@@ -143,6 +152,7 @@
 
                                         <label for="facultyCourses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('facultyCourses[]'); ?></font></p>
                                             <select class="form-control" id="facultyCourses" name="facultyCourses[]"required>
                                                 <option value="" selected><?php echo SELECT_COURSE ?></option>
                                                 <?php
@@ -173,6 +183,7 @@
                                     <div class="form-group ">
                                         <label for="facultyIntro" class="control-label col-lg-2">Faculty Intro <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('facultyIntro'); ?></font></p>
                                             <textarea class="form-control ckeditor" name="facultyIntro" id="facultyIntro" required></textarea>
                                         </div>
                                     </div>
@@ -237,9 +248,10 @@
                     return false;
                 }
             }
-            newArray.push(id);
-//            newArray.push({courseid:id});
-            //alert(id);
+            if(counter<=coursename.length){
+                newArray.push(id);
+            }
+
             /*-----------for check Faculty Course value --end-------*/
             var p=<?php echo count($coursename)?>
 //            for (i=0;i<coursename.length;i++){

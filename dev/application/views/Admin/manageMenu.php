@@ -56,7 +56,7 @@
                                         <td><?php echo $menu->menuType?></td>
                                         <td>
                                             <?php if ($menu->submenu == "")
-                                            {echo MENU;}
+                                            {echo NONE;}
                                             else{echo $menu->submenu;}?>
                                         </td>
                                         <td>
@@ -122,7 +122,6 @@
 </body>
 </html>
 <script>
-
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Menu?")) {
             btn = $(x).data('panel-id');
@@ -132,16 +131,13 @@
                 data:{'menuid':btn},
                 cache: false,
                 success:function(data) {
-
                     if(data=='0'){alert("Menu Deleted Successfully!!");
-                    location.reload();
+                        location.reload();
                     }
                     else
                     {
                         alert('Please Delete Menu-( '+data+' ) First !!');
-
                     }
-
                 }
             });
         }

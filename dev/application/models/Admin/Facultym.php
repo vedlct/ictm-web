@@ -4,9 +4,8 @@
 class Facultym extends CI_Model
 {
     /*---------for creating new Faculty --------------------- */
-    public function createNewFaculty() // creates new faculty in database
+    public function createNewFaculty()  // creates new faculty in database
     {
-
         $facultyFirstName = $this->input->post("facultyFirstName");
         $facultyLastName = $this->input->post("facultyLastName");
         $facultyDegree = $this->input->post("facultyDegree");
@@ -37,7 +36,9 @@ class Facultym extends CI_Model
             if($this->upload->do_upload('facultyImage')){
                 $response   =array('upload_data' => $this->upload->data());
                 //print_r($response);
-            }else{
+            }
+            else{
+
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
                 echo "<script>
@@ -74,25 +75,43 @@ class Facultym extends CI_Model
 
         );
         $this->security->xss_clean($data,true);
-        $this->db->insert('ictmfaculty', $data);
-
-        $query = $this->db->query("SELECT `facultyId` FROM `ictmfaculty` ORDER  BY `facultyId` DESC limit 1 ");
-
-        foreach ($query->result() as $r){
-
-            $facultyId=$r->facultyId;
+        $error=$this->db->insert('ictmfaculty', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
         }
-        for ($i = 0; $i < count($facultyCourse); $i++) {
-            $data1=array(
-                'courseId'=>$facultyCourse[$i],
-                'facultyId'=>$facultyId
-            );
-            $this->security->xss_clean($data1);
-            $this->db->insert('ictmfacultycourse', $data1);
-        }
+        else {
 
+            $this->db->select('facultyId');
+            $this->db->from('ictmfaculty');
+            $this->db->order_by('facultyId', 'DESC');
+            $this->db->limit(1);
+            $query = $this->db->get();
+
+            foreach ($query->result() as $r) {
+
+                $facultyId = $r->facultyId;
+            }
+            for ($i = 0; $i < count($facultyCourse); $i++) {
+                $data1 = array(
+                    'courseId' => $facultyCourse[$i],
+                    'facultyId' => $facultyId
+                );
+                $this->security->xss_clean($data1);
+                $error=$this->db->insert('ictmfacultycourse', $data1);
+
+            }
+                if (empty($error))
+                {
+                    return $this->db->error();
+                }
+                else{
+                    return $error=null;
+                }
+        }
     }
     /*---------for creating new Faculty ---------end------------ */
+
 
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageFaculty() // for manage Faculty view
@@ -112,6 +131,16 @@ class Facultym extends CI_Model
         return $query->result();
     }
 
+
+    public function getImage($id)  // show the facultyImage for editFaculty
+    {
+
+        $this->db->select('facultyImage');
+        $this->db->where('facultyId',$id);
+        $query = $this->db->get('ictmfaculty');
+        return $query->result();
+    }
+
     public function editFacultybyId($id)        // for edit Faculty by id from database
     {
         $facultyFirstName = $this->input->post("faculty_first_name");
@@ -127,7 +156,7 @@ class Facultym extends CI_Model
         $facultyStatus = $this->input->post("faculty_status");
 
         $facultyIntro = $this->input->post("faculty_intro");
-        date_default_timezone_set("Europe/London");
+
 
         if (!empty($_FILES['faculty_image']['name'])) {
             $this->load->library('upload');
@@ -147,7 +176,13 @@ class Facultym extends CI_Model
                 //print_r($response);
             }else{
                 $error =array('error'=>$this->upload->display_errors());
-                print_r($error);
+
+                echo "<script>
+                    var x =<?php echo json_encode( $error )?>;
+                    alert(x);
+                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                    </script>";
+
                 return false;
             }
             $data = array(
@@ -191,7 +226,15 @@ class Facultym extends CI_Model
 
 
         $this->db->where('facultyId', $id);
-        $this->db->update('ictmfaculty',$data);
+        $error=$this->db->update('ictmfaculty',$data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
     }
 
     public function deleteFacultybyId($facultyId)  // delete Faculty and his teaching Course from database

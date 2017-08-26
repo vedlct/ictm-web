@@ -50,21 +50,26 @@ class Menu extends CI_Controller {
             }
             else
             {
-                try
-                {
-                    $this->Menum->createNewMenu();
+
+                $this->data['error'] =$this->Menum->createNewMenu();
+
+                if (empty($this->data['error'])) {
+
                     echo "<script>
                     alert('Menu Created Successfully');
                     window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
                     </script>";
+
                 }
-                catch (Exception $e)
+                else
                 {
+                    //print_r($this->data['error']);
                     echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Menu/newMenu';
-                    </script>";
+                        alert('Some thing Went Wrong !! Please Try Again!!');
+                        window.location.href= '" . base_url() . "Admin/Menu/newMenu';
+                        </script>";
                 }
+
             }
         }
         else{
@@ -111,7 +116,9 @@ class Menu extends CI_Controller {
                 $this->data['page'] = $this->Pagem->getPageIdName();
 
                 $this->load->view('Admin/editMenu', $this->data);
-            } else {
+            }
+            else
+            {
 
                 $this->data['error'] = $this->Menum->editMenubyId($id);
                 if (empty($this->data['error'])) {
@@ -122,11 +129,11 @@ class Menu extends CI_Controller {
 
                 } else
                  {
-                    print_r($this->data['error']);
-//                        echo "<script>
-//                        alert('Some thing Went Wrong !! Please Try Again!!');
-//                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
-//                        </script>";
+                    //print_r($this->data['error']);
+                        echo "<script>
+                        alert('Some thing Went Wrong !! Please Try Again!!');
+                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
+                        </script>";
                 }
             }
         }
@@ -141,18 +148,13 @@ class Menu extends CI_Controller {
             $subMenuName=$this->Menum->deleteMenubyId($menuId);
             if ($subMenuName!='0'){
                 $name=array();
-
                 foreach ($subMenuName as $subMenuName){
                     array_push($name,$subMenuName->menuName);
                 }
-
                 $x=implode(" , ",$name);
-                   echo $x;
-
+                echo $x;
             }
             else{echo $subMenuName;}
-
-
         }
         else{
             redirect('Admin/Login');

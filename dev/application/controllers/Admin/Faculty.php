@@ -13,17 +13,22 @@ class Faculty extends CI_Controller
     {
 
     }
-
     /*---------for creating new Faculty --------------------- */
 
     public function newFaculty() // for new Faculty view
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
+            if (!$this->form_validation->run('createFaculty')) {
+
+                $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
+                $this->load->view('Admin/newFaculty',$this->data);
+            }
+
             $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
             $this->load->view('Admin/newFaculty',$this->data);
         } else {
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -31,16 +36,28 @@ class Faculty extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-                $this->Facultym->createNewFaculty();
+            $this->data['error'] =$this->Facultym->createNewFaculty();
+
+            if (empty($this->data['error'])) {
                 echo "<script>
                     alert('Faculty Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                    window.location.href= '" . base_url() . "Admin/Faculty/manageFaculty';
                     </script>";
+            }
+            else
+            {
+                //print_r($this->data['error']);
+                echo "<script>
+                        alert('Some thing Went Wrong !! Please Try Again!!');
+                        window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                        </script>";
+            }
+
 
         }
         else
             {
-                redirect('Login');
+                redirect('Admin/Login');
             }
     }
     /*---------for creating new Faculty  --------end---------------*/
@@ -49,80 +66,102 @@ class Faculty extends CI_Controller
     /*---------for Manage Faculty -----------------------*/
     public function manageFaculty() // for manage Faculty view
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
             $this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
-            //print_r($this->data['menu']);
             $this->load->view('Admin/manageFaculty',$this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     public function editFacultyView($facultyId) // for edit  Selected Faculty view
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['editFaculty'] = $this->Facultym->getAllFacultybyId($facultyId);
             $this->data['facultyCourse'] = $this->Coursem->getFacultyCourseIdName($facultyId);
             $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
-
             $this->load->view('Admin/editFaculty', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
-    public function addCoursetoFaculty($courseId) //add Course to selected faculty
-    {
-        if ($this->session->userdata('type') == Admin) {
+    public function showImageForEdit($id){
 
-            $r=$this->Coursem->addCoursetoFaculty($courseId);
-            echo $r;
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['facultyImage'] = $this->Facultym->getImage($id);
+            $this->load->view('Admin/showImage', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
+        }
+    }
+
+    public function addCoursetoFaculty($courseId)  //add Course to selected faculty
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $addCourse=$this->Coursem->addCoursetoFaculty($courseId);
+            echo $addCourse;
+        }
+        else{
+            redirect('Admin/Login');
         }
     }
 
     public function deleteCoursetoFaculty($id) //delete  Course to selected faculty
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Coursem->deleteCoursetoFaculty($id);
 
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     public function editFacultybyId($id) // for edit Faculty by id from database
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Facultym->editFacultybyId($id);
+            $this->data['error'] = $this->Facultym->editFacultybyId($id);
 
-            echo "<script>
+            if (empty($this->data['error'])) {
+
+                echo "<script>
                     alert('Faculty Updated Successfully');
                     window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
                     </script>";
-
+            }
+            else
+            {
+                //print_r($this->data['error']);
+                echo "<script>
+                        alert('Some thing Went Wrong !! Please Try Again!!');
+                        window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
+                        </script>";
+            }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
     public function deleteFaculty($facultyId) // delete Faculty and his teaching Course from database
     {
-        if ($this->session->userdata('type') == Admin) {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
             $this->Facultym->deleteFacultybyId($facultyId);
         }
 
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     /*---------for Manage Faculty ----------end-------------*/

@@ -34,18 +34,22 @@ class Page extends CI_Controller {
             }
             else
             {
-                try {
-                    $this->Pagem->insertPage();
+
+                $this->data['error'] = $this->Pagem->insertPage();
+                if (empty($this->data['error'])) {
+
                     echo "<script>
                     alert('Page Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/createPage';
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
+
                 }
-                catch (Exception $e)
+                else
                 {
+                    //print_r($this->data['error']);
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    window.location.href= '" . base_url() . "Admin/Page/createPage';
                     </script>";
                 }
 
@@ -94,22 +98,25 @@ class Page extends CI_Controller {
             }
             else
             {
-                try {
-                    $this->Pagem->updatePagaData($id);
+
+                $this->data['error'] = $this->Pagem->updatePagaData($id);
+
+                if (empty($this->data['error'])) {
+
                     echo "<script>
                     alert('Page Updated Successfully');
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
+
                 }
-                catch (Exception $e)
+                else
                 {
+                    //print_r($this->data['error']);
                     echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
                 }
-
-
             }
         }
         else{

@@ -69,7 +69,16 @@ class Pagem extends CI_Model
             );
         }
         $this->security->xss_clean($data,true);
-        $this->db->insert('ictmpage', $data);
+
+        $error=$this->db->insert('ictmpage', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
     }
 
 
@@ -172,7 +181,16 @@ class Pagem extends CI_Model
         }
         $this->security->xss_clean($data,true);
         $this->db->where('pageId', $id);
-        $this->db->update('ictmpage', $data);
+
+        $error=$this->db->update('ictmpage', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
 
     }
 
@@ -216,7 +234,7 @@ class Pagem extends CI_Model
        $this->db->where('pageId',$pageId);
        $this->db->delete('ictmpage');
     }
-
+     // show the pageImage for editPage
     public function getImage($id){
 
         $this->db->select('pageImage');
