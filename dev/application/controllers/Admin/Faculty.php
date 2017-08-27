@@ -93,7 +93,8 @@ class Faculty extends CI_Controller
         }
     }
 
-    public function showImageForEdit($id){
+    public function showImageForEdit($id) // show faculty image in new tab
+    {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
