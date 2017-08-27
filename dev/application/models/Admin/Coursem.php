@@ -67,6 +67,7 @@ class Coursem extends CI_Model
         $this->db->insert('ictmcourse', $data);
     }
 
+    //this function will return some course data
     public function getCourseData(){
 
         $this->db->select('courseId,courseTitle, courseCodeIcon, awardingTitle,insertedBy,lastModifiedBy,lastModifiedDate,courseStatus');
@@ -75,6 +76,7 @@ class Coursem extends CI_Model
         return $query->result();
     }
 
+    //this function will return course title and course id
     public function getCourseTitle(){
 
         $this->db->select('courseId,courseTitle');
@@ -83,11 +85,14 @@ class Coursem extends CI_Model
         return $query->result();
     }
 
-    public function getCourseAllData($id){
+    //this function will return course data
+    public function getCourseAllData(){
 
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
+
+    //this funcion will update course data
     public function updateCourseData($id){
 
         $name = $this->input->post("name");
@@ -171,6 +176,7 @@ class Coursem extends CI_Model
         $this->db->update('ictmcourse', $data);
     }
 
+    //this function will return course title and facult all data
     public function getFacultyCourseIdName($facultyId){
 
         $this->db->select('f.*,c.courseTitle');
@@ -181,6 +187,7 @@ class Coursem extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+
 
     public function addCoursetoFaculty($courseId){
 

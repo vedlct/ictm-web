@@ -70,6 +70,7 @@ class Course extends CI_Controller
 
     }
 
+    //this funtion will edit data
     public function editCourse($id){
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
