@@ -273,7 +273,7 @@ $config = array (
         array(
             'field' => 'faculty_first_name',
             'label' => 'First Name',
-            'rules' => 'required|max_length[10]',
+            'rules' => 'required|max_length[50]',
 
         ),
         array(
@@ -327,11 +327,11 @@ $config = array (
             'label' => 'Status',
             'rules' => 'required|alpha'
         ),
-        array(
-            'field' => 'faculty_courses[]',
-            'label' => 'Faculty Course',
-            'rules' => 'required|is_natural_no_zero'
-        ),
+//        array(
+//            'field' => 'faculty_courses[]',
+//            'label' => 'Faculty Course',
+//            'rules' => 'required|is_natural_no_zero'
+//        ),
         array(
             'field' => 'faculty_intro',
             'label' => 'Faculty Intro',

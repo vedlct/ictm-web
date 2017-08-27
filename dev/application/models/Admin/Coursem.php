@@ -195,7 +195,16 @@ class Coursem extends CI_Model
                 'facultyId' => $facultyId,
                 'courseId'=>$courseId
             );
+
             $this->db->insert('ictmfacultycourse', $data);
+
+            $data1=array(
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+            );
+            $this->db->where('facultyId', $facultyId);
+            $this->db->update('ictmfaculty', $data1);
+
             return 0;
         }
         else{
@@ -203,10 +212,21 @@ class Coursem extends CI_Model
         }
     }
 
-    public function deleteCoursetoFaculty($id){
+    public function deleteCoursetoFaculty($id)
+    {
+        $facultyId = $this->input->post("facultyId");
 
         $this->db->where('facultyCourseId',$id);
         $this->db->delete('ictmfacultycourse');
+
+        $data1=array(
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+        );
+        $this->db->where('facultyId', $facultyId);
+        $this->db->update('ictmfaculty', $data1);
+
+
     }
 
 

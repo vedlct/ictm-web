@@ -143,7 +143,7 @@
 </html>
 <script>
     function selectid(x) {
-        if (confirm("Are you sure you want to delete this Faculty?")) {
+        if (confirm("Are you sure you want to delete this Faculty? All of his Course will be deleted too")) {
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
