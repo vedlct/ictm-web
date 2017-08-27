@@ -19,14 +19,9 @@ class Faculty extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            if (!$this->form_validation->run('createFaculty')) {
-
-                $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
-                $this->load->view('Admin/newFaculty',$this->data);
-            }
-
             $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
             $this->load->view('Admin/newFaculty',$this->data);
+
         } else {
             redirect('Admin/Login');
         }
@@ -34,23 +29,30 @@ class Faculty extends CI_Controller
 
     public function createNewFaculty() // creates new faculty in database
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['error'] =$this->Facultym->createNewFaculty();
+            if (!$this->form_validation->run('createFaculty')) {
 
-            if (empty($this->data['error'])) {
-                echo "<script>
+                $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
+                $this->load->view('Admin/newFaculty',$this->data);
+            }
+            else {
+
+                $this->data['error'] = $this->Facultym->createNewFaculty();
+
+                if (empty($this->data['error'])) {
+                    echo "<script>
                     alert('Faculty Created Successfully');
                     window.location.href= '" . base_url() . "Admin/Faculty/manageFaculty';
                     </script>";
-            }
-            else
-            {
-                //print_r($this->data['error']);
-                echo "<script>
+                } else {
+
+                    echo "<script>
                         alert('Some thing Went Wrong !! Please Try Again!!');
                         window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
                         </script>";
+                }
             }
 
 
@@ -78,13 +80,15 @@ class Faculty extends CI_Controller
 
     public function editFacultyView($facultyId) // for edit  Selected Faculty view
     {
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == USER_TYPE[0])
+        {
 
-            $this->data['editFaculty'] = $this->Facultym->getAllFacultybyId($facultyId);
-            $this->data['facultyCourse'] = $this->Coursem->getFacultyCourseIdName($facultyId);
-            $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
-            $this->load->view('Admin/editFaculty', $this->data);
+                $this->data['editFaculty'] = $this->Facultym->getAllFacultybyId($facultyId);
+                $this->data['facultyCourse'] = $this->Coursem->getFacultyCourseIdName($facultyId);
+                $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
+                $this->load->view('Admin/editFaculty', $this->data);
         }
+
         else{
             redirect('Admin/Login');
         }
@@ -128,24 +132,33 @@ class Faculty extends CI_Controller
 
     public function editFacultybyId($id) // for edit Faculty by id from database
     {
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['error'] = $this->Facultym->editFacultybyId($id);
+            if (!$this->form_validation->run('editFaculty')) {
 
-            if (empty($this->data['error'])) {
-
-                echo "<script>
-                    alert('Faculty Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
-                    </script>";
+                $this->data['editFaculty'] = $this->Facultym->getAllFacultybyId($id);
+                $this->data['facultyCourse'] = $this->Coursem->getFacultyCourseIdName($id);
+                $this->data['course'] = $this->Coursem->getCourseIdNameforFaculty();
+                $this->load->view('Admin/editFaculty', $this->data);
             }
-            else
-            {
-                //print_r($this->data['error']);
-                echo "<script>
+            else {
+
+                $this->data['error'] = $this->Facultym->editFacultybyId($id);
+
+                if (empty($this->data['error'])) {
+
+                    echo "<script>
+                    alert('Faculty Updated Successfully');
+                    //window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
+                    </script>";
+                } else {
+
+                    echo "<script>
                         alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
+                       // window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
                         </script>";
+                }
             }
         }
         else{
@@ -165,5 +178,27 @@ class Faculty extends CI_Controller
         }
     }
     /*---------for Manage Faculty ----------end-------------*/
+
+    /* -------------------------------Image validation-------------------------*/
+    public function val_img_check()
+    {
+        $image = $_FILES['facultyImage']['name'];
+        if ($image != null) {
+            $this->load->library('upload');
+            $config['upload_path'] = "images/";
+            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+
+//        $config['max_size']    = '2048000';
+//        $config['overwrite'] = TRUE;
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('facultyImage')) {
+                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
+                return false;
+            } else {
+                return true;
+            }
+        }
+    }
 
 }

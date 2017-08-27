@@ -33,10 +33,10 @@ class Pagem extends CI_Model
             }else{
 
                 $error =array('error'=>$this->upload->display_errors());
-//              print_r($error);
+                $che=json_encode($error);
                 echo "<script>
-                    var x =<?php echo json_encode( $error )?>;
-                    alert(x);
+                    
+                    alert($che.error);
                     window.location.href= '" . base_url() . "Admin/Page/createPage';
                     </script>";
             }
@@ -143,10 +143,10 @@ class Pagem extends CI_Model
             }else{
 
                 $error =array('error'=>$this->upload->display_errors());
-
+                $che=json_encode($error);
                 echo "<script>
                 var x =<?php echo json_encode( $error )?>;
-                    alert(x);
+                    alert($che.error);
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
                 return false;

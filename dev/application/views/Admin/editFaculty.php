@@ -43,11 +43,13 @@
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('faculty_first_name'); ?></font></p>
                                             <input class="form-control" id="faculty_first_name"  name="faculty_first_name" type="text" value="<?php echo $editFaculty->facultyFirstName?>" required />
                                         </div>
 
                                         <label for="faculty_last_name" class="control-label col-lg-2">Faculty Last Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('faculty_last_name'); ?></font></p>
                                             <input class="form-control" id="faculty_last_name" name="faculty_last_name"  type="text" value="<?php echo $editFaculty->facultyLastName?>" required />
                                         </div>
 
@@ -56,6 +58,7 @@
                                     <div class="form-group">
                                         <label for="faculty_degree" class="control-label col-lg-2">Faculty Degree <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('faculty_degree'); ?></font></p>
                                             <input class="form-control" id="faculty_degree" name="faculty_degree"  type="text" placeholder="Write Multiple Degree with comma" required value="<?php echo $editFaculty->facultyDegree?>"/>
                                         </div>
                                     </div>
@@ -65,6 +68,7 @@
 
                                         <label for="faculty_position" class="control-label col-lg-2">Faculty Position <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('faculty_position'); ?></font></p>
                                             <input class="form-control" id="faculty_position" name="faculty_position"  type="text" placeholder="Write Multiple Position with comma"required value="<?php echo $editFaculty->facultyPosition?>"/>
                                         </div>
 
@@ -73,13 +77,14 @@
 
                                         <label for="faculty_image" class="control-label col-lg-2">Faculty Image</label>
                                         <div class="col-lg-4">
-                                            <input class="form-control" type="file" name="faculty_image" id="faculty_image"/>
+                                            <p><font color="red"> <?php echo form_error('facultyImage'); ?></font></p>
+                                            <input class="form-control" type="file" name="facultyImage" id="facultyImage"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Faculty/showImageForEdit/<?php echo $editFaculty->facultyId?>" target="_blank"><span> <?php echo $editFaculty->facultyImage?></span></a>
                                         </div>
 
                                         <label for="faculty_emp_type" class="control-label col-lg-2">Faculty Employee type <span class="required">*</span></label>
                                         <div class="col-lg-4">
-
+                                            <p><font color="red"> <?php echo form_error('faculty_emp_type'); ?></font></p>
                                             <select class="form-control" id="faculty_emp_type" name="faculty_emp_type" required >
 
                                                 <option value=""><?php echo SELECT_EMPLOYEE_TYPE?></option>
@@ -99,11 +104,13 @@
 
                                         <label for="faculty_email" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('faculty_email'); ?></font></p>
                                             <input class="form-control" id="faculty_email" name="faculty_email"  type="email" required value="<?php echo $editFaculty->facultyEmail?>"/>
                                         </div>
 
                                         <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('faculty_phone'); ?></font></p>
                                             <input class="form-control" id="faculty_phone" name="faculty_phone" placeholder="11 digit phone number" type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
                                         </div>
 
@@ -114,11 +121,13 @@
 
                                         <label for="faculty_twitter" class="control-label col-lg-2">Faculty Twitter</label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('faculty_twitter'); ?></font></p>
                                             <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" value="<?php echo $editFaculty->facultyTwitter?>"/>
                                         </div>
 
                                         <label for="faculty_linkedin" class="control-label col-lg-2">Faculty LinkedIn</label>
                                         <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('faculty_linkedin'); ?></font></p>
                                             <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" value="<?php echo $editFaculty->facultyLinkedIn?>"/>
                                         </div>
 
@@ -129,7 +138,7 @@
 
                                         <label for="faculty_status" class="control-label col-lg-2">Faculty Status <span class="required">*</span></label>
                                         <div class="col-lg-4">
-
+                                            <p><font color="red"> <?php echo form_error('faculty_status'); ?></font></p>
                                             <select class="form-control" id="faculty_status" name="faculty_status" required>
 
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
@@ -177,6 +186,7 @@
 
                                         <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
                                         <div class="col-lg-3">
+                                            <p><font color="red"> <?php echo form_error('faculty_courses'); ?></font></p>
                                             <select class="form-control" id="faculty_courses" name="faculty_courses">
                                                 <option value="" ><?php echo SELECT_COURSE ?></option>
                                                 <?php foreach ($course as $course){?>
@@ -194,6 +204,7 @@
                                     <div class="form-group ">
                                         <label for="faculty_intro" class="control-label col-lg-2">Faculty Intro <span class="required">*</span></label>
                                         <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('faculty_intro'); ?></font></p>
                                             <textarea class="form-control ckeditor" name="faculty_intro" id="faculty_intro" required><?php echo $editFaculty->facultyIntro?></textarea>
                                         </div>
                                     </div>
@@ -292,7 +303,7 @@
     function submitform() {
         var messageLength = CKEDITOR.instances['faculty_intro'].getData().replace(/<[^>]*>/gi, '').length;
         var phone=document.getElementById("faculty_phone").value;
-        var chk=/^[0-9]{11}$/;
+        var chk=/^[0-9]*$/;
 
         if(!phone.match(chk)) {
             alert( 'Please enter a valid Phone number!!' );

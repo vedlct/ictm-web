@@ -108,7 +108,7 @@
                                         <label for="facultyPhone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyPhone'); ?></font></p>
-                                            <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="11 digit phone number" required />
+                                            <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="phone number(only digit)" required />
                                         </div>
 
 
@@ -307,13 +307,25 @@
     function submitform() {
         var facultyIntroLength = CKEDITOR.instances['facultyIntro'].getData().replace(/<[^>]*>/gi, '').length;
         var phone=document.getElementById("facultyPhone").value;
-        var chk=/^[0-9]{11}$/;
+        var email=document.getElementById("facultyEmail").value;
+
+        var chk=/^[0-9]*$/;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!phone.match(chk)) {
             alert( 'Please enter a valid Phone number!!' );
             return false;
         }
         if( !facultyIntroLength ) {
             alert( 'Please enter a Faculty Intro' );
+            return false;
+        }
+        if(email.match(mailformat))
+        {
+            return true;
+        }
+        else
+        {
+            alert("You have entered an invalid email address!");
             return false;
         }
     }
