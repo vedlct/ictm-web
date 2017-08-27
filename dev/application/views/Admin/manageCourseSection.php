@@ -81,7 +81,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin/Course/showCourseSecManageTable")?>',
+            url:'<?php echo base_url("Admin/CourseSection/showCourseSecManageTable")?>',
             data:{id:x},
             cache: false,
             success:function(data)

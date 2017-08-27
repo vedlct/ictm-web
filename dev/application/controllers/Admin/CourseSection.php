@@ -7,6 +7,7 @@ class CourseSection extends CI_Controller
         parent::__construct();
 
         $this->load->model('Admin/CourseSectionm');
+
     }
 
     public function index()
@@ -19,7 +20,8 @@ class CourseSection extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['coursetitle']= $this->CourseSectionm->getCourseTitle();
+            $this->load->model('Admin/Coursem');
+            $this->data['coursetitle']= $this->Coursem->getCourseTitle();
             $this->load->view('Admin/newCourseSection', $this->data);
         }
         else{
@@ -41,7 +43,8 @@ class CourseSection extends CI_Controller
     }
     //this will show manage course section
     public  function manageCourseSec(){
-        $this->data['coursetitle']= $this->CourseSectionm->getCourseTitle();
+        $this->load->model('Admin/Coursem');
+        $this->data['coursetitle']= $this->Coursem->getCourseTitle();
         $this->load->view('Admin/manageCourseSection', $this->data);
 
 
@@ -85,4 +88,30 @@ class CourseSection extends CI_Controller
             redirect('Login');
         }
     }
-}
+
+    //this will delete page section
+    public function deleteCourseSection($courseSectionId){
+
+
+            if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+                try {
+                    $this->CourseSectionm->deleteCourseSectionbyId($courseSectionId);
+
+                    redirect('Admin/CourseSection/manageCourseSec');
+                }
+                catch (Exception $e)
+                {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
+                    </script>";
+                }
+            }
+            else{
+                redirect('Admin/Login');
+            }
+        }
+
+
+    }

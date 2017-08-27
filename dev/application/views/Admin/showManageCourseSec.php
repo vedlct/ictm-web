@@ -18,8 +18,8 @@
             <td>
                 <div class="btn-group">
 
-                    <a class="btn" href="<?php echo base_url()?>Admin/Course/showEditCourseSec/<?php echo $cd->courseSectionId?>"><i class="icon_pencil-edit"></i></a>
-                    <a class="btn " href="<?php echo base_url()?>Admin/Course/deletePageSection/<?php echo $cd->courseSectionId?>"><i class="icon_trash"></i></a>
+                    <a class="btn" href="<?php echo base_url()?>Admin/CourseSection/showEditCourseSec/<?php echo $cd->courseSectionId?>"><i class="icon_pencil-edit"></i></a>
+                    <a class="btn " href="<?php echo base_url()?>Admin/CourseSection/deleteCourseSection/<?php echo $cd->courseSectionId?>"><i class="icon_trash"></i></a>
 
                 </div>
             </td>
