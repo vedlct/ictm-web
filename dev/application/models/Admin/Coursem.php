@@ -37,7 +37,7 @@ class Coursem extends CI_Model
         $image = $_FILES["image"]["name"];
         move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
 
-        date_default_timezone_set("Europe/London");
+
 
         $data = array(
             'courseCodePearson' => $codeperson,
@@ -67,6 +67,7 @@ class Coursem extends CI_Model
         $this->db->insert('ictmcourse', $data);
     }
 
+    //this function will return some course data
     public function getCourseData(){
 
         $this->db->select('courseId,courseTitle, courseCodeIcon, awardingTitle,insertedBy,lastModifiedBy,lastModifiedDate,courseStatus');
@@ -75,6 +76,7 @@ class Coursem extends CI_Model
         return $query->result();
     }
 
+    //this function will return course title and course id
     public function getCourseTitle(){
 
         $this->db->select('courseId,courseTitle');
@@ -83,11 +85,14 @@ class Coursem extends CI_Model
         return $query->result();
     }
 
-    public function getCourseAllData($id){
+    //this function will return course data
+    public function getCourseAllData(){
 
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
+
+    //this funcion will update course data
     public function updateCourseData($id){
 
         $name = $this->input->post("name");
@@ -111,7 +116,6 @@ class Coursem extends CI_Model
 
         $image = $_FILES["image"]["name"];
 
-        date_default_timezone_set("Europe/London");
 
         if ($image != null) {
 
@@ -171,6 +175,7 @@ class Coursem extends CI_Model
         $this->db->update('ictmcourse', $data);
     }
 
+    //this function will return course title and facult all data
     public function getFacultyCourseIdName($facultyId){
 
         $this->db->select('f.*,c.courseTitle');
@@ -182,6 +187,8 @@ class Coursem extends CI_Model
         return $query->result();
     }
 
+
+    //this function will insert course for faculty in edit faculty section
     public function addCoursetoFaculty($courseId){
 
 
@@ -212,6 +219,7 @@ class Coursem extends CI_Model
         }
     }
 
+    //this function will delete insert course for faculty in edit faculty section
     public function deleteCoursetoFaculty($id)
     {
         $facultyId = $this->input->post("facultyId");
@@ -225,6 +233,34 @@ class Coursem extends CI_Model
         );
         $this->db->where('facultyId', $facultyId);
         $this->db->update('ictmfaculty', $data1);
+
+
+    }
+
+    public  function checkParentId($courseId){
+
+        $coursereturn = array();
+
+        $this->db->select('courseSectionTitle');
+        $this->db->where('courseId',$courseId);
+        $query = $this->db->get('ictmcoursesection');
+
+        foreach ( $query->result() as $cr){
+            array_push($coursereturn, $cr->pageSectionTitle);
+        }
+
+        $this->db->select('ictmfaculty.facultyFirstName, ictmfaculty.facultyLastName');
+        $this->db->from('ictmfacultycourse, ictmfaculty');
+        $this->db->where('ictmfacultycourse.courseId',$courseId);
+        $this->db->where('ictmfaculty.facultyId','ictmfacultycourse.facultyId');
+        $query1 = $this->db->get();
+
+        foreach ( $query1->result() as $mn){
+            $name= $mn->facultyFirstName.$mn->facultyLastName;
+            array_push($coursereturn, $name);
+        }
+        return $coursereturn;
+
 
 
     }
