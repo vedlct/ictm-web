@@ -82,32 +82,32 @@ class Facultym extends CI_Model
         }
         else {
 
-            $this->db->select('facultyId');
-            $this->db->from('ictmfaculty');
-            $this->db->order_by('facultyId', 'DESC');
-            $this->db->limit(1);
-            $query = $this->db->get();
 
-            foreach ($query->result() as $r) {
+                $this->db->select('facultyId');
+                $this->db->from('ictmfaculty');
+                $this->db->order_by('facultyId', 'DESC');
+                $this->db->limit(1);
+                $query = $this->db->get();
 
-                $facultyId = $r->facultyId;
-            }
-            for ($i = 0; $i < count($facultyCourse); $i++) {
-                $data1 = array(
-                    'courseId' => $facultyCourse[$i],
-                    'facultyId' => $facultyId
-                );
-                $this->security->xss_clean($data1);
-                $error=$this->db->insert('ictmfacultycourse', $data1);
+                foreach ($query->result() as $r) {
 
-            }
-                if (empty($error))
-                {
+                    $facultyId = $r->facultyId;
+                }
+                for ($i = 0; $i < count($facultyCourse); $i++) {
+                    $data1 = array(
+                        'courseId' => $facultyCourse[$i],
+                        'facultyId' => $facultyId
+                    );
+                    $this->security->xss_clean($data1);
+                    $error = $this->db->insert('ictmfacultycourse', $data1);
+
+                }
+                if (empty($error)) {
                     return $this->db->error();
+                } else {
+                    return $error = null;
                 }
-                else{
-                    return $error=null;
-                }
+
         }
     }
     /*---------for creating new Faculty ---------end------------ */

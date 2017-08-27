@@ -152,9 +152,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
+                                        <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses</label>
 
                                         <div class="col-lg-4" >
+
                                             <div class="form-group" id="CourseTable">
                                             <table class="table table-striped table-advance  table-bordered table-hover ">
                                                 <tbody>
@@ -186,7 +187,7 @@
 
                                         <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
                                         <div class="col-lg-3">
-                                            <p><font color="red"> <?php echo form_error('faculty_courses'); ?></font></p>
+
                                             <select class="form-control" id="faculty_courses" name="faculty_courses">
                                                 <option value="" ><?php echo SELECT_COURSE ?></option>
                                                 <?php foreach ($course as $course){?>
@@ -285,10 +286,11 @@
     function selectid1(x)
     {
         btn = $(x).data('panel-id');
+        var facultyId= <?php echo $editFaculty->facultyId?>;
         $.ajax({
                 type: 'POST',
                 url: '<?php echo base_url("Admin/Faculty/deleteCoursetoFaculty/")?>'+btn,
-                data: {},
+                data: {'facultyId': facultyId},
                 cache: false,
                 success: function (data) {
                     $('#CourseTable').load(document.URL +  ' #CourseTable');
