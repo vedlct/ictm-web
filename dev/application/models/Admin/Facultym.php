@@ -24,7 +24,7 @@ class Facultym extends CI_Model
             $this->load->library('upload');
             $config = array(
                 'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
@@ -147,7 +147,7 @@ class Facultym extends CI_Model
         $facultyLastName = $this->input->post("faculty_last_name");
         $facultyDegree = $this->input->post("faculty_degree");
         $facultyPosition = $this->input->post("faculty_position");
-        $facultyImage=$_FILES['faculty_image']['name'];
+        $facultyImage=$_FILES['facultyImage']['name'];
         $facultyEmpType = $this->input->post("faculty_emp_type");
         $facultyEmail = $this->input->post("faculty_email");
         $facultyPhone = $this->input->post("faculty_phone");
@@ -158,7 +158,7 @@ class Facultym extends CI_Model
         $facultyIntro = $this->input->post("faculty_intro");
 
 
-        if (!empty($_FILES['faculty_image']['name'])) {
+        if (!empty($_FILES['facultyImage']['name'])) {
             $this->load->library('upload');
             $config = array(
                 'upload_path' => "images/",
@@ -171,15 +171,15 @@ class Facultym extends CI_Model
             );
             $this->upload->initialize($config);
 
-            if($this->upload->do_upload('faculty_image')){
+            if($this->upload->do_upload('facultyImage')){
                 $response   =array('upload_data' => $this->upload->data());
                 //print_r($response);
             }else{
                 $error =array('error'=>$this->upload->display_errors());
-
+                $che=json_encode($error);
                 echo "<script>
                     var x =<?php echo json_encode( $error )?>;
-                    alert(x);
+                    alert($che.error);
                     window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
                     </script>";
 
