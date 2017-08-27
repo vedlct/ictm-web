@@ -37,7 +37,7 @@ class Coursem extends CI_Model
         $image = $_FILES["image"]["name"];
         move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
 
-        date_default_timezone_set("Europe/London");
+
 
         $data = array(
             'courseCodePearson' => $codeperson,
@@ -188,7 +188,7 @@ class Coursem extends CI_Model
     }
 
 
-    //this is insert course for faculty in edit faculty section 
+    //this function will insert course for faculty in edit faculty section
     public function addCoursetoFaculty($courseId){
 
 
@@ -219,6 +219,7 @@ class Coursem extends CI_Model
         }
     }
 
+    //this function will delete insert course for faculty in edit faculty section
     public function deleteCoursetoFaculty($id)
     {
         $facultyId = $this->input->post("facultyId");
@@ -232,6 +233,34 @@ class Coursem extends CI_Model
         );
         $this->db->where('facultyId', $facultyId);
         $this->db->update('ictmfaculty', $data1);
+
+
+    }
+
+    public  function checkParentId($courseId){
+
+        $coursereturn = array();
+
+        $this->db->select('courseSectionTitle');
+        $this->db->where('courseId',$courseId);
+        $query = $this->db->get('ictmcoursesection');
+
+        foreach ( $query->result() as $cr){
+            array_push($coursereturn, $cr->pageSectionTitle);
+        }
+
+        $this->db->select('ictmfaculty.facultyFirstName, ictmfaculty.facultyLastName');
+        $this->db->from('ictmfacultycourse, ictmfaculty');
+        $this->db->where('ictmfacultycourse.courseId',$courseId);
+        $this->db->where('ictmfaculty.facultyId','ictmfacultycourse.facultyId');
+        $query1 = $this->db->get();
+
+        foreach ( $query1->result() as $mn){
+            $name= $mn->facultyFirstName.$mn->facultyLastName;
+            array_push($coursereturn, $name);
+        }
+        return $coursereturn;
+
 
 
     }
