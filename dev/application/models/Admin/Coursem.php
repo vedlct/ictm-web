@@ -116,7 +116,6 @@ class Coursem extends CI_Model
 
         $image = $_FILES["image"]["name"];
 
-        date_default_timezone_set("Europe/London");
 
         if ($image != null) {
 
@@ -189,6 +188,7 @@ class Coursem extends CI_Model
     }
 
 
+    //this is insert course for faculty in edit faculty section 
     public function addCoursetoFaculty($courseId){
 
 
