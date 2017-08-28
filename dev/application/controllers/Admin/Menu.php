@@ -43,6 +43,7 @@ class Menu extends CI_Controller {
     {
         $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
+
             if (!$this->form_validation->run('createMenu')) {
 
                 $this->data['page'] = $this->Pagem->getPageIdName();

@@ -32,7 +32,7 @@ class Course extends CI_Controller
     /* this insert course */
     public function insertCourse()
     {
-
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Coursem->insertCourse();
