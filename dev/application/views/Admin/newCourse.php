@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New Course</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="index.html">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Course</li>
                         <li><i class="fa fa-files-o"></i>Create a new Course</li>
                     </ol>
@@ -189,10 +189,10 @@
 
                                     <div class="form-group ">
                                         <div class="col-lg-6">
-                                            <label class="control-label col-lg-2" for="inputSuccess">Page Status</label>
+                                            <label class="control-label col-lg-2" for="inputSuccess">Course Status<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('status'); ?></font></p>
-                                                <select class="form-control m-bot15" name="status">
+                                                <select class="form-control m-bot15" name="status" required>
                                                     <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                     <?php for ($i=0;$i<count(STATUS);$i++){?>
                                                         <option><?php echo STATUS[$i]?></option>
@@ -202,11 +202,11 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                            <label class="control-label col-lg-2" for="inputSuccess">Department</label>
+                                            <label class="control-label col-lg-2" for="inputSuccess">Department<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <p><font color="red"> <?php echo form_error('status'); ?></font></p>
-                                                <select class="form-control m-bot15" name="status">
-                                                    <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <p><font color="red"> <?php echo form_error('department'); ?></font></p>
+                                                <select class="form-control m-bot15" name="department" required>
+                                                    <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
                                                    <?php foreach ($departmentName as $dn) { ?>
                                                         <option value="<?php echo $dn->departmentId?>"><?php echo $dn->departmentName?></option>
                                                     <?php } ?>
@@ -219,7 +219,7 @@
                                         <div class="col-lg-6">
                                             <label for="curl" class="control-label col-lg-2">Image</label>
                                             <div class="col-lg-10">
-                                                <input class="form-control " id="curl" type="file" name="image"  />
+                                                <input class="form-control " id="image" type="file" name="image"  />
                                             </div>
                                         </div>
 
