@@ -112,7 +112,7 @@ class Coursem extends CI_Model
         $language = $this->input->post("language");
         $fees = $this->input->post("fees");
         $timetables = $this->input->post("timetables");
-        $status= $this->input->post("stutus");
+        $status= $this->input->post("status");
 
         $image = $_FILES["image"]["name"];
 
@@ -246,24 +246,40 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcoursesection');
 
         foreach ( $query->result() as $cr){
-            array_push($coursereturn, $cr->pageSectionTitle);
+            array_push($coursereturn, $cr->courseSectionTitle);
         }
 
-        $this->db->select('ictmfaculty.facultyFirstName, ictmfaculty.facultyLastName');
-        $this->db->from('ictmfacultycourse, ictmfaculty');
-        $this->db->where('ictmfacultycourse.courseId',$courseId);
-        $this->db->where('ictmfaculty.facultyId','ictmfacultycourse.facultyId');
-        $query1 = $this->db->get();
-
-        foreach ( $query1->result() as $mn){
-            $name= $mn->facultyFirstName.$mn->facultyLastName;
-            array_push($coursereturn, $name);
-        }
+//        $this->db->select('ictmfaculty.facultyFirstName, ictmfaculty.facultyLastName');
+//        $this->db->from('ictmfacultycourse, ictmfaculty');
+//        $this->db->where('ictmfacultycourse.courseId',$courseId);
+//        $this->db->where('ictmfaculty.facultyId','ictmfacultycourse.facultyId');
+//        $query1 = $this->db->get();
+//
+//        foreach ( $query1->result() as $mn){
+//            $name= $mn->facultyFirstName.$mn->facultyLastName;
+//            array_push($coursereturn, $name);
+//        }
         return $coursereturn;
 
 
 
     }
+    public function deleteCoursebyId($courseId){
+
+        $this->db->where('courseId',$courseId);
+        $this->db->delete('ictmfacultycourse');
+
+        $this->db->where('courseId',$courseId);
+        $this->db->delete('ictmcoursesection');
+
+        $this->db->where('courseId',$courseId);
+        $this->db->delete('ictmcourse');
+
+
+
+
+    }
+
 
 
 }

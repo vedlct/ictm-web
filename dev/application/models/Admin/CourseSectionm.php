@@ -54,4 +54,13 @@ class CourseSectionm extends CI_Model
         $this->db->where('courseSectionId', $id);
         $this->db->update('ictmcoursesection', $data);
     }
+
+    //this will delete page section data
+    public function deleteCourseSectionbyId($courseSectionId)
+    {
+        $this->db->where('courseSectionId',$courseSectionId);
+        $this->db->delete('ictmcoursesection');
+
+
+    }
 }

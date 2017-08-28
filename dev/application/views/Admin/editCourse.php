@@ -176,14 +176,32 @@
                                         <div class="col-lg-6">
                                             <label class="control-label col-lg-2" for="inputSuccess">Course Status</label>
                                             <div class="col-lg-10">
-                                                <select class="form-control m-bot15" name="status">
+                                                <select class="form-control m-bot15" name="status" required>
 
-                                                    <option value="<?php echo Active?>" <?php if (!empty($cad->courseStatus) && $cad->courseStatus == 'Active')  echo 'selected = "selected"'; ?>><?php echo Active?></option>
-                                                    <option value="<?php echo Inactive?>" <?php if (!empty($cad->courseStatus) && $cad->courseStatus == 'InActive')  echo 'selected = "selected"'; ?>><?php echo inactive?></option>
+                                                    <option value=""><?php echo SELECT_STATUS?></option>
+                                                    <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                        <option value="<?php echo STATUS[$i]?>"<?php if (!empty($cad->courseStatus) && $cad->courseStatus == STATUS[$i])  echo 'selected = "selected"'; ?>><?php echo STATUS[$i]?></option>
+                                                    <?php } ?>
 
                                                 </select>
                                             </div>
                                         </div>
+
+                                        <div class="col-lg-6">
+                                            <label class="control-label col-lg-2" for="inputSuccess">Department</label>
+                                            <div class="col-lg-10">
+                                                <select class="form-control m-bot15" name="status">
+                                                    <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                    <?php foreach ($departmentName as $dn) { ?>
+<!--                                                        <option value="--><?php //echo $dn->departmentId?><!--">--><?php //echo $dn->departmentName?><!--</option>-->
+                                                        <option value="<?php echo $dn->departmentId?>" <?php if (!empty($dn->departmentName) && $dn->departmentName == $dn->departmentName)  echo 'selected = "selected"'; ?>><?php echo $dn->departmentName?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group ">
 
                                         <div class="col-lg-6">
                                             <label for="curl" class="control-label col-lg-2">Image</label>
