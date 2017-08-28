@@ -59,7 +59,7 @@
                                             <a class="btn"
                                                href="<?php echo base_url() ?>Admin/Course/showEditCourse/<?php echo $cd->courseId ?>"><i
                                                         class="icon_pencil-edit"></i></a>
-                                            <a class="btn " href="<?php echo base_url() ?>Admin/Course/deleteCourse/<?php echo $cd->courseId ?>"><i class="icon_trash"></i></a>
+                                            <a class="btn " href="<?php echo base_url() ?>Admin/Course/deleteCourse/<?php echo $cd->courseId ?>" onclick='return confirm("Are you sure to Delete This Course Section?")'><i class="icon_trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>

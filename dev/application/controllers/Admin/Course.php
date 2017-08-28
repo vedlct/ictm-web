@@ -61,8 +61,11 @@ class Course extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
+            $this->load->model('Admin/Departmentm');
+            $this->data['departmentName'] = $this->Departmentm->gellDepartmentName();
             $this->data['coursealldata'] = $this->Coursem->getCourseAllData($id);
             $this->load->view('Admin/editCourse', $this->data);
+
         } else {
             redirect('Login');
         }

@@ -112,7 +112,7 @@ class Coursem extends CI_Model
         $language = $this->input->post("language");
         $fees = $this->input->post("fees");
         $timetables = $this->input->post("timetables");
-        $status= $this->input->post("stutus");
+        $status= $this->input->post("status");
 
         $image = $_FILES["image"]["name"];
 
