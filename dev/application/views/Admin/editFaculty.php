@@ -202,6 +202,8 @@
 
                                     </div>
 
+
+
                                     <div class="form-group ">
                                         <label for="faculty_intro" class="control-label col-lg-2">Faculty Intro <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -276,6 +278,7 @@
                             alert('This Course is Already Inserted !!!');
 
                         }
+
 
                     }
                 });

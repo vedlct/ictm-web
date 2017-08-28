@@ -82,6 +82,7 @@ class Facultym extends CI_Model
         }
         else {
 
+            if(count($facultyCourse)>0 && $facultyCourse[0]!=null) {
 
                 $this->db->select('facultyId');
                 $this->db->from('ictmfaculty');
@@ -107,6 +108,7 @@ class Facultym extends CI_Model
                 } else {
                     return $error = null;
                 }
+            }
 
         }
     }

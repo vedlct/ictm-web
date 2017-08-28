@@ -111,6 +111,7 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $addCourse=$this->Coursem->addCoursetoFaculty($courseId);
+
             echo $addCourse;
         }
         else{

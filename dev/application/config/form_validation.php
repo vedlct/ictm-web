@@ -259,8 +259,8 @@ $config = array (
         ),
         array(
             'field' => 'facultyCourses[]',
-            'label' => 'LinkedIn',
-            'rules' => 'required|is_natural_no_zero'
+            'label' => 'Faculty Course',
+            'rules' => 'is_natural_no_zero'
         ),
         array(
             'field' => 'facultyIntro',
