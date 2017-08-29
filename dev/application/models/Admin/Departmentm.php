@@ -4,7 +4,9 @@
 class Departmentm extends CI_Model
 {
     /*---------for creating new Department --------------------- */
-    public function createNewDepartment() // creates new Department in database
+
+    // creates new Department in database
+    public function createNewDepartment()
     {
         $departmentName = $this->input->post("departmentName");
         $departmentHead = $this->input->post("departmentHead");
@@ -28,7 +30,9 @@ class Departmentm extends CI_Model
     /*---------for creating new Department ---------end------------ */
 
     /*---------for Manage Department -----------------------*/
-    public function getAllforManageDepartment() // for manage Department view
+
+    // for manage Department view
+    public function getAllforManageDepartment()
     {
 //        $query = $this->db->get('ictmdepartment');
 //        return $query->result();
@@ -39,7 +43,8 @@ class Departmentm extends CI_Model
 
     }
 
-    public function getAllDepartmentbyId($departmentId) // for edit  Selected Department view
+    // for edit  Selected Department view
+    public function getAllDepartmentbyId($departmentId)
     {
         $query = $this->db->get_where('ictmdepartment', array('departmentId' => $departmentId));
         return $query->result();
@@ -53,7 +58,8 @@ class Departmentm extends CI_Model
 
     }
 
-    public function editDepartmentbyId($departmentId)        // for edit Department by id from database
+    // for edit Department by id from database
+    public function editDepartmentbyId($departmentId)
     {
         $departmentName = $this->input->post("departmentName");
         $departmentHead = $this->input->post("departmentHead");
@@ -76,7 +82,8 @@ class Departmentm extends CI_Model
     }
 
     /*---------delete Department if no Course-----------------*/
-    public function deleteDepartmentId($departmentId) //delete Department if no Course
+    //delete Department if no Course
+    public function deleteDepartmentId($departmentId)
     {
 
 //        $query = $this->db->get_where('ictmcourse', array('departmentId' => $departmentId));

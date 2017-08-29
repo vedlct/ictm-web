@@ -15,7 +15,8 @@ class Department extends CI_Controller
 
     /*---------for creating new Department --------------------- */
 
-    public function newDepartment()    // for new Department view
+    //this will view the create department page
+    public function newDepartment()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
@@ -25,6 +26,7 @@ class Department extends CI_Controller
         }
     }
 
+    //this will insert depeartment
     public function createNewDepartment() // creates new Department in database
     {
 
@@ -53,7 +55,9 @@ class Department extends CI_Controller
     /*---------for creating new Department  --------end---------------*/
 
     /*---------for Manage Department -----------------------*/
-    public function manageDepartment() // for manage Department view
+
+    //this will show manage department view
+    public function manageDepartment()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->data['departments'] = $this->Departmentm->getAllforManageDepartment();
@@ -65,6 +69,7 @@ class Department extends CI_Controller
         }
     }
 
+    //this will show edit department viwe
     public function editDepartmentView($departmentId) // for edit  Department view
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -78,6 +83,7 @@ class Department extends CI_Controller
         }
     }
 
+    //this will edit department
     public function editDepartmentbyId($departmentId) // for edit Department by id from database
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -94,6 +100,7 @@ class Department extends CI_Controller
         }
     }
 
+    //this will delete department
     public function deleteDepartment($departmentId)    // delete Department if no Submenu
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
