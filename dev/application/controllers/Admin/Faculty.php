@@ -111,6 +111,7 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $addCourse=$this->Coursem->addCoursetoFaculty($courseId);
+
             echo $addCourse;
         }
         else{
@@ -187,7 +188,7 @@ class Faculty extends CI_Controller
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
 //        $config['max_size']    = '2048000';
-//        $config['overwrite'] = TRUE;
+        $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 
             if (!$this->upload->do_upload('facultyImage')) {

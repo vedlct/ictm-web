@@ -17,7 +17,7 @@ class Coursem extends CI_Model
 
         $name = $this->input->post("name");
         $codeperson = $this->input->post("codeperson");
-        $code = $this->input->post("code");
+        $code = $this->input->post("Code");
         $award = $this->input->post("award");
         $ucascode = $this->input->post("ucasCode");
         $location = $this->input->post("location");
@@ -32,47 +32,112 @@ class Coursem extends CI_Model
         $language = $this->input->post("language");
         $fees = $this->input->post("fees");
         $timetables = $this->input->post("timetables");
-        $status= $this->input->post("stutus");
+        $status= $this->input->post("status");
+        $department= $this->input->post("department");
+        $image=$_FILES['image']['name'];
 
-        $image = $_FILES["image"]["name"];
-        move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
+//        $image = $_FILES["image"]["name"];
+//        move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
 
+        if (!empty($_FILES['image']['name'])) {
+            $this->load->library('upload');
+            $config = array(
+                'upload_path' => "images/",
+                'allowed_types' => "jpg|png|jpeg|gif",
+                'overwrite' => TRUE,
+                //'max_size' => "2048000",
+                'remove_spaces'=>FALSE,
+                'mod_mime_fix'=>FALSE,
 
+            );
+            $this->upload->initialize($config);
 
-        $data = array(
-            'courseCodePearson' => $codeperson,
-            'courseCodeIcon' => $code,
-            'ucasCode' => $ucascode,
-            'courseTitle' => $name,
-            'awardingTitle' => $award,
-            'awardingBody' => $awarddingbody,
-            'accreditationType' => $accreditation,
-            'accreditationNumber'=>$accreditationNo,
-            'courseDuration' => $duration,
-            'creditValue' => $credit,
-            'courseStructutre' => $stucture,
-            'studyMode' => $mode,
-            'studyLanguage' => $language,
-            'academicYear' => $year,
-            'courseFees' => $fees,
-            'couseLocation'=>$location,
-            'timeTable' => $timetables,
-            'courseStatus' => $status,
-            'courseImage' => $image,
-            'insertedBy' => $this->session->userdata('userEmail'),
-            'insertedDate' => date("Y-m-d H:i:s"),
+            if($this->upload->do_upload('image')){
+                //$response   =array('upload_data' => $this->upload->data());
+                //print_r($response);
+            }else{
 
-        );
-        //$data = $this->security->xss_clean($data);
-        $this->db->insert('ictmcourse', $data);
+                $error =array('error'=>$this->upload->display_errors());
+                $che=json_encode($error);
+                echo "<script>
+                    
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Course/createCourse';
+                    </script>";
+            }
+            $data = array(
+                'courseCodePearson' => $codeperson,
+                'courseCodeIcon' => $code,
+                'ucasCode' => $ucascode,
+                'courseTitle' => $name,
+                'awardingTitle' => $award,
+                'awardingBody' => $awarddingbody,
+                'accreditationType' => $accreditation,
+                'accreditationNumber'=>$accreditationNo,
+                'courseDuration' => $duration,
+                'creditValue' => $credit,
+                'courseStructutre' => $stucture,
+                'studyMode' => $mode,
+                'studyLanguage' => $language,
+                'academicYear' => $year,
+                'courseFees' => $fees,
+                'couseLocation'=>$location,
+                'timeTable' => $timetables,
+                'courseStatus' => $status,
+                'courseImage' => $image,
+                'departmentId'=>$department,
+                'insertedBy' => $this->session->userdata('userEmail'),
+                'insertedDate' => date("Y-m-d H:i:s"),
+
+            );
+        }
+        else{
+            $data = array(
+                'courseCodePearson' => $codeperson,
+                'courseCodeIcon' => $code,
+                'ucasCode' => $ucascode,
+                'courseTitle' => $name,
+                'awardingTitle' => $award,
+                'awardingBody' => $awarddingbody,
+                'accreditationType' => $accreditation,
+                'accreditationNumber'=>$accreditationNo,
+                'courseDuration' => $duration,
+                'creditValue' => $credit,
+                'courseStructutre' => $stucture,
+                'studyMode' => $mode,
+                'studyLanguage' => $language,
+                'academicYear' => $year,
+                'courseFees' => $fees,
+                'couseLocation'=>$location,
+                'timeTable' => $timetables,
+                'courseStatus' => $status,
+                'departmentId'=>$department,
+                'insertedBy' => $this->session->userdata('userEmail'),
+                'insertedDate' => date("Y-m-d H:i:s"),
+
+            );
+
+        }
+
+        $this->security->xss_clean($data,true);
+        $error=$this->db->insert('ictmcourse', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
     }
 
     //this function will return some course data
     public function getCourseData(){
 
-        $this->db->select('courseId,courseTitle, courseCodeIcon, awardingTitle,insertedBy,lastModifiedBy,lastModifiedDate,courseStatus');
-        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
-        $query = $this->db->get('ictmcourse');
+        $this->db->select('c.courseId,c.courseTitle,c.courseCodeIcon,c.awardingTitle,c.insertedBy,c.lastModifiedBy,c.lastModifiedDate,c.courseStatus,c.departmentId,v.departmentName');
+        $this->db->from('ictmcourse c');
+        $this->db->join('ictmdepartment v', 'v.departmentId = c.departmentId');
+        $query = $this->db->get();
         return $query->result();
     }
 
@@ -90,6 +155,25 @@ class Coursem extends CI_Model
 
         $query = $this->db->get('ictmcourse');
         return $query->result();
+    }
+
+    public function getCourseAllDataforEdit($id){
+
+        $this->db->where('courseId', $id);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+
+    }
+
+    // show the pageImage for editPage
+    public function getImage($id){
+
+        $this->db->select('courseImage');
+        $this->db->where('courseId',$id);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+
+
     }
 
     //this funcion will update course data
@@ -113,14 +197,40 @@ class Coursem extends CI_Model
         $fees = $this->input->post("fees");
         $timetables = $this->input->post("timetables");
         $status= $this->input->post("status");
+        $department= $this->input->post("department");
 
         $image = $_FILES["image"]["name"];
 
+//            $image = $_FILES["image"]["name"];
+//            move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
 
-        if ($image != null) {
+            if (!empty($_FILES['image']['name'])) {
+                $this->load->library('upload');
+                $config = array(
+                    'upload_path' => "images/",
+                    'allowed_types' => "jpg|png|jpeg",
+                    'overwrite' => TRUE,
+                    //'max_size' => "2048000",
+                    'remove_spaces'=>FALSE,
+                    'mod_mime_fix'=>FALSE,
 
-            $image = $_FILES["image"]["name"];
-            move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
+                );
+                $this->upload->initialize($config);
+
+                if($this->upload->do_upload('image')){
+                    //$response   =array('upload_data' => $this->upload->data());
+                    //print_r($response);
+                }else{
+
+                    $error =array('error'=>$this->upload->display_errors());
+                    $che=json_encode($error);
+                    echo "<script>
+                    
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
+                    </script>";
+                }
+
             $data = array(
                 'courseCodePearson' => $codeperson,
                 'courseCodeIcon' => $code,
@@ -141,6 +251,7 @@ class Coursem extends CI_Model
                 'timeTable' => $timetables,
                 'courseStatus' => $status,
                 'courseImage' => $image,
+                'departmentId'=>$department,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
 
@@ -165,14 +276,24 @@ class Coursem extends CI_Model
                 'couseLocation' => $location,
                 'timeTable' => $timetables,
                 'courseStatus' => $status,
+                'departmentId'=>$department,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
 
             );
         }
-        //$data = $this->security->xss_clean($data);
+        $data = $this->security->xss_clean($data,true);
         $this->db->where('courseId', $id);
-        $this->db->update('ictmcourse', $data);
+        $error=$this->db->update('ictmcourse', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
     }
 
     //this function will return course title and facult all data
@@ -277,6 +398,19 @@ class Coursem extends CI_Model
 
 
 
+
+    }
+
+    /*----------- check Course Uniqueness ---- editCourse------------*/
+    public function checkUniqueCourse($courseTitle,$department,$id)
+    {
+
+        $this->db->select('courseTitle,departmentId');
+        $this->db->where('courseTitle',$courseTitle);
+        $this->db->where('departmentId',$department);
+        $this->db->where('courseId !=', $id);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
 
     }
 

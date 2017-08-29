@@ -259,8 +259,8 @@ $config = array (
         ),
         array(
             'field' => 'facultyCourses[]',
-            'label' => 'LinkedIn',
-            'rules' => 'required|is_natural_no_zero'
+            'label' => 'Faculty Course',
+            'rules' => 'is_natural_no_zero'
         ),
         array(
             'field' => 'facultyIntro',
@@ -336,6 +336,210 @@ $config = array (
             'field' => 'faculty_intro',
             'label' => 'Faculty Intro',
             'rules' => 'required'
+        ),
+    ),
+
+    /*---------------- for Course create-------------*/
+    'createCourse'=> array (
+        array(
+            'field' => 'name',
+            'label' => 'Course Name',
+            'rules' => 'required|max_length[255]|is_unique[ictmcourse.courseTitle]',
+        ),
+        array(
+            'field' => 'codeperson',
+            'label' => 'Course Code Pearson',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'award',
+            'label' => 'Awarding Titlle',
+            'rules' => 'required|max_length[255]',
+
+        ),
+        array(
+            'field' => 'Code',
+            'label' => 'Course Code',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'location',
+            'label' => 'Course Location',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'awardingBody',
+            'label' => 'Awarding Body',
+            'rules' => 'required|max_length[255]'
+        ),
+        array(
+            'field' => 'credit',
+            'label' => 'Credit value',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'structure',
+            'label' => 'Course Structure',
+            'rules' => 'required|max_length[255]'
+        ),
+        array(
+            'field' => 'accreditation',
+            'label' => 'Accreditation',
+            'rules' => 'required|max_length[45]'
+        ),
+        array(
+            'field' => 'accreditationNo',
+            'label' => 'Accreditation No',
+            'rules' => 'required|max_length[45]'
+        ),
+        array(
+            'field' => 'duration',
+            'label' => 'Course Duration',
+            'rules' => 'required|max_length[50]'
+        ),
+        array(
+            'field' => 'year',
+            'label' => 'Academic Year',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'mode',
+            'label' => 'Study Mode',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'language',
+            'label' => 'Study Language',
+            'rules' => 'required|max_length[100]',
+
+        ),
+        array(
+            'field' => 'fees',
+            'label' => 'Course Fees',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'timetables',
+            'label' => 'Course Time Table',
+            'rules' => 'required|max_length[255]',
+
+        ),
+        array(
+            'field' => 'status',
+            'label' => 'Course Status',
+            'rules' => 'required|max_length[50]'
+        ),
+        array(
+            'field' => 'department',
+            'label' => 'Department',
+            'rules' => 'required|regex_match[/^[0-9]*$/]'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Course Image',
+            'rules' => 'callback_val_img_check'
+        ),
+    ),
+
+    /*---------------- for Course Edit-------------*/
+    'editCourse'=> array (
+        array(
+            'field' => 'name',
+            'label' => 'Course Name',
+            'rules' => 'required|max_length[255]|callback_CourseCheckFormEditCourse',
+        ),
+        array(
+            'field' => 'codeperson',
+            'label' => 'Course Code Pearson',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'award',
+            'label' => 'Awarding Titlle',
+            'rules' => 'required|max_length[255]',
+
+        ),
+        array(
+            'field' => 'code',
+            'label' => 'Course Code',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'location',
+            'label' => 'Course Location',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'awardingBody',
+            'label' => 'Awarding Body',
+            'rules' => 'required|max_length[255]'
+        ),
+        array(
+            'field' => 'credit',
+            'label' => 'Credit value',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'structure',
+            'label' => 'Course Structure',
+            'rules' => 'required|max_length[255]'
+        ),
+        array(
+            'field' => 'accreditation',
+            'label' => 'Accreditation',
+            'rules' => 'required|max_length[45]'
+        ),
+        array(
+            'field' => 'accreditationNo',
+            'label' => 'Accreditation No',
+            'rules' => 'required|max_length[45]'
+        ),
+        array(
+            'field' => 'duration',
+            'label' => 'Course Duration',
+            'rules' => 'required|max_length[50]'
+        ),
+        array(
+            'field' => 'year',
+            'label' => 'Academic Year',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'mode',
+            'label' => 'Study Mode',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'language',
+            'label' => 'Study Language',
+            'rules' => 'required|max_length[100]',
+
+        ),
+        array(
+            'field' => 'fees',
+            'label' => 'Course Fees',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'timetables',
+            'label' => 'Course Time Table',
+            'rules' => 'required|max_length[255]',
+
+        ),
+        array(
+            'field' => 'status',
+            'label' => 'Course Status',
+            'rules' => 'required|max_length[50]'
+        ),
+        array(
+            'field' => 'department',
+            'label' => 'Department',
+            'rules' => 'required|regex_match[/^[0-9]*$/]'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Course Image',
+            'rules' => 'callback_val_img_check'
         ),
     ),
 

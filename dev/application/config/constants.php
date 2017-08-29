@@ -113,6 +113,7 @@ define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
 define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
 define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));
 define("SELECT_COURSE", "Select Course");
+define("SELECT_DEPARTMENT", "Select Department");
 
 
 /////////////// News Page ///////////////

@@ -150,10 +150,10 @@
 
                                     <div class="form-group"id="CourseFiled">
 
-                                        <label for="facultyCourses" class="control-label col-lg-2">Faculty Courses <span class="required">*</span></label>
+                                        <label for="facultyCourses" class="control-label col-lg-2">Faculty Courses </label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyCourses[]'); ?></font></p>
-                                            <select class="form-control" id="facultyCourses" name="facultyCourses[]"required>
+                                            <select class="form-control" id="facultyCourses" name="facultyCourses[]">
                                                 <option value="" selected><?php echo SELECT_COURSE ?></option>
                                                 <?php
                                                 $coursename= array();

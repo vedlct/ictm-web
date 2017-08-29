@@ -24,7 +24,7 @@ class Course extends CI_Controller
             $this->data['departmentName'] = $this->Departmentm->gellDepartmentName();
             $this->load->view('Admin/newCourse', $this->data);
         } else {
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -32,13 +32,35 @@ class Course extends CI_Controller
     /* this insert course */
     public function insertCourse()
     {
-
+        $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Coursem->insertCourse();
-            redirect('Admin/Course/createCourse');
+            if (!$this->form_validation->run('createCourse')) {
+
+                $this->load->model('Admin/Departmentm');
+                $this->data['departmentName'] = $this->Departmentm->gellDepartmentName();
+                $this->load->view('Admin/newCourse', $this->data);
+
+            }
+            else {
+            $this->data['error'] =$this->Coursem->insertCourse();
+            if (empty($this->data['error'])) {
+                echo "<script>
+                    alert('Course Created Successfully');
+                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
+                    </script>";
+
+            }
+            else
+            {
+                echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Course/createCourse';
+                    </script>";
+            }
+            }
         } else {
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -47,11 +69,10 @@ class Course extends CI_Controller
     {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-
             $this->data['coursedata'] = $this->Coursem->getCourseData();
             $this->load->view('Admin/manageCourse', $this->data);
         } else {
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -63,11 +84,11 @@ class Course extends CI_Controller
 
             $this->load->model('Admin/Departmentm');
             $this->data['departmentName'] = $this->Departmentm->gellDepartmentName();
-            $this->data['coursealldata'] = $this->Coursem->getCourseAllData($id);
+            $this->data['coursealldata'] = $this->Coursem->getCourseAllDataforEdit($id);
             $this->load->view('Admin/editCourse', $this->data);
 
         } else {
-            redirect('Login');
+            redirect('Admin/Login');
         }
 
     }
@@ -75,14 +96,52 @@ class Course extends CI_Controller
     //this funtion will edit data
     public function editCourse($id)
     {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('editCourse')) {
+
+                $this->load->model('Admin/Departmentm');
+                $this->data['departmentName'] = $this->Departmentm->gellDepartmentName();
+                $this->data['coursealldata'] = $this->Coursem->getCourseAllDataforEdit($id);
+                $this->load->view('Admin/editCourse', $this->data);
+
+            }
+            else {
+
+                $this->data['error'] = $this->Coursem->updateCourseData($id);
+
+                if (empty($this->data['error'])) {
+                    echo "<script>
+                    alert('Course Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
+                    </script>";
+
+                }
+                else
+                {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
+                    </script>";
+                }
+            }
+        } else {
+            redirect('Admin/Login');
+        }
+    }
+
+    //this function will show the image in edit
+    public function showImageForEdit($id){
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['coursealldata'] = $this->Coursem->updateCourseData($id);
+            $this->data['courseImage'] = $this->Coursem->getImage($id);
+            $this->load->view('Admin/showImage', $this->data);
 
-            redirect('Admin/Course/manageCourse');
-        } else {
-            redirect('Login');
+        }
+        else{
+            redirect('Admin/Login');
         }
     }
 
@@ -122,5 +181,55 @@ class Course extends CI_Controller
             }
         }
 
+    }
+/* --------- Course Title check from editCoruse -------------------*/
+    public function CourseCheckFormEditCourse()
+    {
+        $courseTitle = $this->input->post("name");
+        $department = $this->input->post("department");
+        $id=$this->uri->segment(4);
+
+
+        try
+        {
+            $this->data['checkCourseTitle'] = $this->Coursem->checkUniqueCourse($courseTitle,$department,$id);
+
+            if (empty($this->data['checkCourseTitle'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('CourseCheckFormEditCourse', 'Course Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('CourseCheckFormEditCourse', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+
+    }
+    /* -------------------------------Image validation-------------------------*/
+    public function val_img_check()
+    {
+        $image = $_FILES["image"]["name"];
+        if ($image != null) {
+            $this->load->library('upload');
+            $config['upload_path'] = "images/";
+            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+
+//        $config['max_size']    = '2048000';
+            $config['overwrite'] = TRUE;
+            $this->upload->initialize($config);
+
+            if (!$this->upload->do_upload('image')) {
+                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
+                return false;
+            } else {
+                return true;
+            }
+        }
     }
 }

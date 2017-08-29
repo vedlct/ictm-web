@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i>Course</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="index.php">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Course</li>
                         <li><i class="fa fa-th-list"></i>Manage Course</li>
                     </ol>
@@ -39,27 +39,41 @@
                             <tbody>
                             <tr>
                                 <th> Course Name</th>
+                                <th> Department</th>
                                 <th> Course Code</th>
                                 <th> Award</th>
+                                <th> Course Status</th>
                                 <th> Insert By</th>
                                 <th> Last Modified By</th>
-                                <th> Last Modified Date</th>
+                                <th> Last Modified Date(d-m-Y)</th>
                                 <th> Action</th>
                             </tr>
                             <?php foreach ($coursedata as $cd) { ?>
                                 <tr>
                                     <td><?php echo $cd->courseTitle ?></td>
+                                    <td><?php echo $cd->departmentName ?></td>
                                     <td><?php echo $cd->courseCodeIcon ?></td>
                                     <td><?php echo $cd->awardingTitle ?></td>
+                                    <td><?php echo $cd->courseStatus ?></td>
                                     <td><?php echo $cd->insertedBy ?></td>
-                                    <td><?php echo $cd->lastModifiedBy ?></td>
-                                    <td><?php echo $cd->lastModifiedDate ?></td>
+                                    <td>
+                                        <?php if ($cd->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $cd->lastModifiedBy;} ?>
+                                    </td>
+                                    <td>
+                                        <?php if ($cd->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                        else
+                                        {
+                                            echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($cd->lastModifiedDate)),1);
+
+                                        }
+                                        ?>
+                                    </td>
                                     <td>
                                         <div class="btn-group">
                                             <a class="btn"
-                                               href="<?php echo base_url() ?>Admin/Course/showEditCourse/<?php echo $cd->courseId ?>"><i
+                                               href="<?php echo base_url() ?>Admin/Course/showEditCourse/<?php echo $cd->courseId?>"><i
                                                         class="icon_pencil-edit"></i></a>
-                                            <a class="btn " href="<?php echo base_url() ?>Admin/Course/deleteCourse/<?php echo $cd->courseId ?>" onclick='return confirm("Are you sure to Delete This Course Section?")'><i class="icon_trash"></i></a>
+                                            <a class="btn " href="<?php echo base_url() ?>Admin/Course/deleteCourse/<?php echo $cd->courseId ?>" onclick='return confirm("Are you sure to Delete This Course?")'><i class="icon_trash"></i></a>
                                         </div>
                                     </td>
                                 </tr>
