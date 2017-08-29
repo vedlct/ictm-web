@@ -10,10 +10,11 @@ class CourseSectionm extends CI_Model
 
         $coursetitle = $this->input->post("coursetitle");
         extract($_POST);
-        date_default_timezone_set("Europe/London");
+
         for ($i = 0; $i < count($textbox); $i++) {
 
             $data = array(
+
                 'courseId' => $coursetitle,
                 'courseSectionTitle' => $textbox[$i],
                 'courseSectionContent' => $text[$i],
@@ -21,12 +22,21 @@ class CourseSectionm extends CI_Model
                 'insertedDate'=>date("Y-m-d H:i:s"),
 
             );
+            $this->security->xss_clean($data,true);
             $this->db->insert('ictmcoursesection', $data);
+        }
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
         }
     }
     //this will return some course section data and search by courseid.
     public function getCourseSecData($id){
-        $this->db->select('courseSectionId,courseId, courseSectionTitle, insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('courseSectionId,courseId, courseSectionTitle,courseSectionStatus, insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->where('courseId', $id);
         $query = $this->db->get('ictmcoursesection');
         return $query->result();
@@ -42,7 +52,7 @@ class CourseSectionm extends CI_Model
 
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
-        date_default_timezone_set("Europe/London");
+
 
         $data = array(
             'courseSectionTitle' => $title,
@@ -52,10 +62,18 @@ class CourseSectionm extends CI_Model
         );
 
         $this->db->where('courseSectionId', $id);
-        $this->db->update('ictmcoursesection', $data);
+        $error=$this->db->update('ictmcoursesection', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
     }
 
-    //this will delete page section data
+    //this will delete Course section data
     public function deleteCourseSectionbyId($courseSectionId)
     {
         $this->db->where('courseSectionId',$courseSectionId);

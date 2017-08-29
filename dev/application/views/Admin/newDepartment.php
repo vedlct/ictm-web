@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp Department</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Departments</li>
                         <li><i class="fa fa-files-o"></i>Create a new Department</li>
                     </ol>
@@ -62,9 +62,10 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('departmentStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="departmentStatus" id="departmentStatus" required>
-                                                <option value="" selected><?php echo SelectStatus?></option>
-                                                <option value="<?php echo Active?>"><?php echo Active?></option>
-                                                <option value="<?php echo InActive?>"><?php echo InActive?></option>
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
                                             </select>
 
 
@@ -72,11 +73,9 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="departmentSummary">departmentHead Summary</label>
+                                        <label class="control-label col-lg-2" for="departmentSummary">department Summary</label>
                                         <div class="col-lg-10">
                                             <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" required></textarea>
-
-
                                         </div>
                                     </div>
 

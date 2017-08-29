@@ -3,7 +3,8 @@
     <tbody>
     <tr>
         <th> Course Section Title </th>
-        <th> Insert By </th>
+        <th> Course Section Status </th>
+        <th> Inserted By </th>
         <th> Last Modified By </th>
         <th> Last Modified Date </th>
         <th> Action</th>
@@ -12,9 +13,19 @@
         <?php foreach ($coursedata as $cd) { ?>
     <tr>
             <td><?php echo $cd->courseSectionTitle ?></td>
+            <td><?php echo $cd->courseSectionStatus ?></td>
             <td><?php echo $cd->insertedBy; ?></td>
-            <td><?php echo $cd->lastModifiedBy;?></td>
-            <td><?php echo $cd->lastModifiedDate ?></td>
+            <td>
+                <?php if ($cd->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $cd->lastModifiedBy;} ?>
+            </td>
+            <td>
+                <?php if ($cd->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                else{
+
+                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($cd->lastModifiedDate)),1);
+                }
+                ?>
+            </td>
             <td>
                 <div class="btn-group">
 
@@ -31,24 +42,3 @@
 
     </tbody>
 </table>
-<script>
-    function selectid(x) {
-        if (confirm('Are you sure you want to delete this Page Section !! ?')) {
-            btn = $(x).data('panel-id');
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url("Admin/Page/deletePageSection/")?>'+btn,
-                data:{'pageId':btn},
-                cache: false,
-                success:function(data) {
-                    alert("Page Section Deleted Successfully!!");
-                    location.reload();
-                }
-            });
-        }
-        else {
-
-            location.reload();
-        }
-    }
-</script>

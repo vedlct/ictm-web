@@ -2,7 +2,7 @@
     <tbody>
     <tr>
         <th> Page Section Title </th>
-        <th> Insert By </th>
+        <th> Inserted By </th>
         <th> Last Modified By </th>
         <th> Last Modified Date (d-m-Y) </th>
         <th> Status </th>

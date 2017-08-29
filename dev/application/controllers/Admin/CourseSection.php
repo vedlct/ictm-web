@@ -25,27 +25,58 @@ class CourseSection extends CI_Controller
             $this->load->view('Admin/newCourseSection', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
 
 
     }
-    //this will insert ta course section data
+    //this will insert  course section data
     public  function insertCourseSec(){
+        $this->load->library('form_validation');
+
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Coursem->insertCourseSec();
-            redirect('Admin/CourseSection/createCourseSec');
+            if (!$this->form_validation->run('createCourseSection')) {
+
+                $this->load->model('Admin/Coursem');
+                $this->data['coursetitle']= $this->Coursem->getCourseTitle();
+                $this->load->view('Admin/newCourseSection', $this->data);
+            }
+            else {
+                $this->data['error'] =$this->CourseSectionm->insertCourseSec();
+                if (empty($this->data['error'])) {
+
+                    echo "<script>
+                    alert('Course Section Inserted Successfully');
+                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
+                    </script>";
+
+                }
+                else
+                {
+
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/CourseSection/createCourseSec';
+                    </script>";
+                }
+            }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     //this will show manage course section
     public  function manageCourseSec(){
-        $this->load->model('Admin/Coursem');
-        $this->data['coursetitle']= $this->Coursem->getCourseTitle();
-        $this->load->view('Admin/manageCourseSection', $this->data);
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->load->model('Admin/Coursem');
+            $this->data['coursetitle'] = $this->Coursem->getCourseTitle();
+            $this->load->view('Admin/manageCourseSection', $this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
 
 
     }
@@ -59,7 +90,7 @@ class CourseSection extends CI_Controller
             $this->load->view('Admin/showManageCourseSec', $this->data);                        //view manage page section
 
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
 
     }
@@ -73,19 +104,42 @@ class CourseSection extends CI_Controller
             $this->load->view('Admin/editCourseSection', $this->data);
 
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     //this will edit course section
     public  function editCourseSec($id){
 
+        $this->load->library('form_validation');
+
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Coursem->updateCourseSectionData($id);
-            redirect('Admin/CourseSection/manageCourseSec');                                      // edit page section
+            if (!$this->form_validation->run('editCourseSection')) {
+
+                $this->data['coursedataall'] = $this->CourseSectionm->getCourseSecAllData($id);
+                $this->load->view('Admin/editCourseSection', $this->data);
+            }
+            else {
+
+                $this->data['error'] = $this->CourseSectionm->updateCourseSectionData($id);                       // edit Course section
+                if (empty($this->data['error'])) {
+
+                    echo "<script>
+                    alert('Course Section Updated Successfully');
+                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
+                    </script>";
+
+                } else {
+                    echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
+                    </script>";
+                }
+            }
+
 
         } else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
