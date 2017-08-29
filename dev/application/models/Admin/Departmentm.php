@@ -53,6 +53,19 @@ class Departmentm extends CI_Model
                 'insertedBy' => $this->session->userdata('userEmail'),
                 'insertedDate' => date("Y-m-d H:i:s"),
             );
+        }else{
+            $data = array(
+                'departmentName' => $departmentName,
+                'departmentHead' => $departmentHead,
+                'departmentSummary' => $departmentSummary,
+
+                'departmentStatus' => $departmentStatus,
+
+                'insertedBy' => $this->session->userdata('userEmail'),
+                'insertedDate' => date("Y-m-d H:i:s"),
+            );
+
+        }
 
             $this->security->xss_clean($data,true);
             $error = $this->db->insert('ictmdepartment', $data);
@@ -64,7 +77,7 @@ class Departmentm extends CI_Model
             {
                 return $error=null;
             }
-        }
+
     }
     /*---------for creating new Department ---------end------------ */
 

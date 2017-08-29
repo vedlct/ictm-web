@@ -309,7 +309,7 @@
         var phone=document.getElementById("facultyPhone").value;
         var email=document.getElementById("facultyEmail").value;
 
-        var chk=/^[0-9]*$/;
+        var chk=/^[0-9]{45}$/;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!phone.match(chk)) {
             alert( 'Please enter a valid Phone number!!' );

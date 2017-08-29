@@ -240,17 +240,17 @@ $config = array (
         array(
             'field' => 'facultyPhone',
             'label' => 'Phone',
-            'rules' => 'required|regex_match[/^[0-9]*$/]'
+            'rules' => 'required|regex_match[/^[0-9]{45}$/]'
         ),
         array(
             'field' => 'facultyTwitter',
             'label' => 'Twitter',
-            'rules' => 'max_length[100]'
+            'rules' => 'max_length[255]'
         ),
         array(
             'field' => 'facultyLinkedin',
             'label' => 'LinkedIn',
-            'rules' => 'max_length[100]'
+            'rules' => 'max_length[255]'
         ),
         array(
             'field' => 'facultyStatus',
@@ -310,7 +310,7 @@ $config = array (
         array(
             'field' => 'faculty_phone',
             'label' => 'Phone',
-            'rules' => 'required|regex_match[/^[0-9]*$/]'
+            'rules' => 'required|regex_match[/^[0-9]{45}$/]'
         ),
         array(
             'field' => 'faculty_twitter',
@@ -416,7 +416,7 @@ $config = array (
         array(
             'field' => 'fees',
             'label' => 'Course Fees',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[255]'
         ),
         array(
             'field' => 'timetables',
@@ -601,11 +601,6 @@ $config = array (
             'rules' => 'required|max_length[100]',
 
         ),
-//        array(
-//            'field' => 'text[]',
-//            'label' => 'Course Section Content',
-//            'rules' => '',
-//        ),
 
         array(
             'field' => 'image',

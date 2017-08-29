@@ -111,7 +111,7 @@
                                         <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_phone'); ?></font></p>
-                                            <input class="form-control" id="faculty_phone" name="faculty_phone" placeholder="11 digit phone number" type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
+                                            <input class="form-control" id="faculty_phone" name="faculty_phone" placeholder=" phone number (only digit) " type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
                                         </div>
 
 
@@ -308,7 +308,7 @@
     function submitform() {
         var messageLength = CKEDITOR.instances['faculty_intro'].getData().replace(/<[^>]*>/gi, '').length;
         var phone=document.getElementById("faculty_phone").value;
-        var chk=/^[0-9]*$/;
+        var chk=/^[0-9]{45}$/;
 
         if(!phone.match(chk)) {
             alert( 'Please enter a valid Phone number!!' );
