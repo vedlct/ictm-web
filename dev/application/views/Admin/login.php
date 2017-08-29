@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php include('head.php') ?>
+    
 </head>
 
   <body class="login-img3-body">

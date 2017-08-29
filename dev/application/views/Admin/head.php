@@ -24,6 +24,14 @@
 <link href="<?php echo base_url()?>public/css/style.css" rel="stylesheet">
 <link href="<?php echo base_url()?>public/css/style-responsive.css" rel="stylesheet" />
 
+ <noscript>
+<div align="center" class="alert alert-danger">
+
+    <span style="color: #f45e41"><strong style="color: red">Notice: </strong> &nbsp; JavaScript is not enabled. !! <br> <a style="color: green" target="_blank" href="http://enable-javascript.com/" class="alert-link">Please Enable JavaScript Safley.</a></span>
+</div>
+     <style>form,header,aside,section { display:none; }</style>
+ </noscript>
+
 
 <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 <!--[if lt IE 9]-->

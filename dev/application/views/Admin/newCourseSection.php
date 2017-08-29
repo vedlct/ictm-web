@@ -114,17 +114,16 @@
     </section>
 </section>
 <!--main content end-->
-<div class="text-right">
+<div class="text-right wrapper">
     <div class="credits">
-
         <a href="#">Icon College</a> by <a href="#">A2N</a>
     </div>
 </div>
+
 </section>
 <!-- container section end -->
 
-<!-- javascripts -->
-<?php include('js.php') ?>
+<?php include ('js.php')?>
 
 
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>

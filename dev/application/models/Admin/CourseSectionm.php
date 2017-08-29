@@ -18,12 +18,13 @@ class CourseSectionm extends CI_Model
                 'courseId' => $coursetitle,
                 'courseSectionTitle' => $textbox[$i],
                 'courseSectionContent' => $text[$i],
+                'courseSectionStatus'=>$status[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
                 'insertedDate'=>date("Y-m-d H:i:s"),
 
             );
             $this->security->xss_clean($data,true);
-            $this->db->insert('ictmcoursesection', $data);
+            $error=$this->db->insert('ictmcoursesection', $data);
         }
         if (empty($error))
         {
@@ -52,11 +53,13 @@ class CourseSectionm extends CI_Model
 
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
+        $status = $this->input->post("status");
 
 
         $data = array(
             'courseSectionTitle' => $title,
             'courseSectionContent' => $content,
+            'courseSectionStatus'=>$status,
             'lastModifiedBy'=>$this->session->userdata('userEmail'),
             'lastModifiedDate'=>date("Y-m-d H:i:s")
         );
