@@ -587,7 +587,69 @@ $config = array (
         ),
     ),
 
+    /*---------------- for Create Department-------------*/
+    'createDepartment'=> array (
+
+        array(
+            'field' => 'departmentName',
+            'label' => 'Department Name',
+            'rules' => 'required|max_length[255]|is_unique[ictmdepartment.departmentName]',
+        ),
+        array(
+            'field' => 'departmentHead',
+            'label' => 'Department Head ',
+            'rules' => 'required|max_length[100]',
+
+        ),
+//        array(
+//            'field' => 'text[]',
+//            'label' => 'Course Section Content',
+//            'rules' => '',
+//        ),
+
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'departmentStatus',
+            'label' => 'Department Status',
+            'rules' => 'required'
+        ),
+    ),
+
+    'editDepartment'=> array (
+
+        array(
+            'field' => 'departmentName',
+            'label' => 'Department Name',
+            'rules' => 'required|max_length[255]|callback_DepartmenteditUniqueCheck',
+        ),
+        array(
+            'field' => 'departmentHead',
+            'label' => 'Department Head ',
+            'rules' => 'required|max_length[100]',
+
+        ),
+//        array(
+//            'field' => 'text[]',
+//            'label' => 'Course Section Content',
+//            'rules' => '',
+//        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'departmentStatus',
+            'label' => 'Department Status',
+            'rules' => 'required'
+        ),
+    ),
 
 
-			 
+
+
 );

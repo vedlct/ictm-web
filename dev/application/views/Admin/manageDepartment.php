@@ -34,7 +34,7 @@
                         <header class="panel-heading">
                             <b>Manage Department</b>
                         </header>
-                        <div class="panel-body table table-responsive ">
+                        <div class="panel-body table  ">
                             <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>

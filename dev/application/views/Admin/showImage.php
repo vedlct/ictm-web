@@ -12,4 +12,9 @@ elseif (!empty($facultyImage)){
 elseif(!empty($courseImage)){
     foreach ($courseImage as $courseImage){?>
 <img src="<?php echo  base_url()?>images/<?php echo $courseImage->courseImage ?>" width="60%">
-<?php }}?>
+<?php }}
+elseif(!empty($deptimagename)){
+    foreach ($deptimagename as $deptimagename){?>
+        <img src="<?php echo  base_url()?>images/<?php echo $deptimagename->departmentImage ?>" width="60%">
+    <?php }}
+?>

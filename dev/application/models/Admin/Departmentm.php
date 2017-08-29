@@ -13,19 +13,58 @@ class Departmentm extends CI_Model
         $departmentStatus = $this->input->post("departmentStatus");
         $departmentSummary = $this->input->post("departmentSummary");
 
-        date_default_timezone_set("Europe/London");
+        $image = $_FILES["image"]["name"];
 
-        $data = array(
-            'departmentName' => $departmentName,
-            'departmentHead' => $departmentHead,
-            'departmentSummary' => $departmentSummary,
-            'departmentStatus' =>$departmentStatus,
 
-            'insertedBy' => $this->session->userdata('userEmail'),
-            'insertedDate' => date("Y-m-d H:i:s"),
-        );
+        if (!empty($_FILES['image']['name'])) {
+            $this->load->library('upload');
+            $config = array(
+                'upload_path' => "images/",
+                'allowed_types' => "jpg|png|jpeg",
+                'overwrite' => TRUE,
+                //'max_size' => "2048000",
+                'remove_spaces' => FALSE,
+                'mod_mime_fix' => FALSE,
 
-        $this->db->insert('ictmdepartment', $data);
+            );
+            $this->upload->initialize($config);
+
+            if ($this->upload->do_upload('image')) {
+                //$response   =array('upload_data' => $this->upload->data());
+                //print_r($response);
+            } else {
+
+                $error = array('error' => $this->upload->display_errors());
+                $che = json_encode($error);
+                echo "<script>
+                    
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Department/newDepartment';
+                    </script>";
+            }
+
+            $data = array(
+                'departmentName' => $departmentName,
+                'departmentHead' => $departmentHead,
+                'departmentSummary' => $departmentSummary,
+                'departmentImage' => $image,
+                'departmentStatus' => $departmentStatus,
+
+                'insertedBy' => $this->session->userdata('userEmail'),
+                'insertedDate' => date("Y-m-d H:i:s"),
+            );
+
+            $this->security->xss_clean($data,true);
+            $error = $this->db->insert('ictmdepartment', $data);
+            if (empty($error))
+            {
+                return $this->db->error();
+            }
+            else
+            {
+                return $error=null;
+            }
+        }
     }
     /*---------for creating new Department ---------end------------ */
 
@@ -66,19 +105,68 @@ class Departmentm extends CI_Model
         $departmentStatus = $this->input->post("departmentStatus");
         $departmentSummary = $this->input->post("departmentSummary");
 
-        date_default_timezone_set("Europe/London");
+        $image = $_FILES["image"]["name"];
+        if (!empty($_FILES['image']['name'])) {
 
+            $this->load->library('upload');
+            $config = array(
+                'upload_path' => "images/",
+                'allowed_types' => "jpg|png|jpeg",
+                'overwrite' => TRUE,
+                //'max_size' => "2048000",
+                'remove_spaces'=>FALSE,
+                'mod_mime_fix'=>FALSE,
+
+            );
+            $this->upload->initialize($config);
+
+            if($this->upload->do_upload('image')){
+                //$response   =array('upload_data' => $this->upload->data());
+                //print_r($response);
+            }else{
+
+                $error =array('error'=>$this->upload->display_errors());
+                $che=json_encode($error);
+                echo "<script>
+                var x =<?php echo json_encode( $error )?>;
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    </script>";
+                return false;
+            }
             $data = array(
                 'departmentName' => $departmentName,
                 'departmentHead' => $departmentHead,
                 'departmentSummary' => $departmentSummary,
                 'departmentStatus' =>$departmentStatus,
+                'departmentImage' => $image,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
             );
 
+        }else {
+
+
+            $data = array(
+                'departmentName' => $departmentName,
+                'departmentHead' => $departmentHead,
+                'departmentSummary' => $departmentSummary,
+                'departmentStatus' => $departmentStatus,
+                'lastModifiedBy' => $this->session->userdata('userEmail'),
+                'lastModifiedDate' => date("Y-m-d H:i:s"),
+            );
+        }
+        $this->security->xss_clean($data,true);
         $this->db->where('departmentId', $departmentId);
-        $this->db->update('ictmdepartment',$data);
+       $error = $this->db->update('ictmdepartment',$data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
     }
 
     /*---------delete Department if no Course-----------------*/
@@ -103,6 +191,29 @@ class Departmentm extends CI_Model
         }
 
 
+
+    }
+
+    // show the pageImage for editPage
+    public function getImage($id){
+
+        $this->db->select('departmentImage');
+        $this->db->where('departmentId',$id);
+        $query = $this->db->get('ictmdepartment');
+        return $query->result();
+
+    }
+
+
+    public function checkUniqueDepartment($departmentName,$id)
+    {
+
+        $this->db->select('departmentName');
+
+        $this->db->where('departmentName',$departmentName);
+        $this->db->where('departmentId !=', $id);
+        $query = $this->db->get('ictmdepartment');
+        return $query->result();
 
     }
 

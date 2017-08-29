@@ -38,7 +38,7 @@
                         <div class="panel-body">
                             <div class="form">
                              <?php foreach ($editDepartment as $editDepartment ){?>
-                                <form class="form-validate form-horizontal" id="CreateNewDepartment" method="POST" action="<?php echo base_url() ?>Admin/Department/editDepartmentbyId/<?php echo $editDepartment->departmentId?>" onsubmit="return submitform()">
+                                <form class="form-validate form-horizontal" id="CreateNewDepartment" method="POST" action="<?php echo base_url() ?>Admin/Department/editDepartmentbyId/<?php echo $editDepartment->departmentId?>" onsubmit="return submitform()" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -63,11 +63,11 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('departmentStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="departmentStatus" id="departmentStatus" required>
-                                                <option value="" selected><?php echo SelectStatus?></option>
-<!--                                                <option value="--><?php //echo Active?><!--">--><?php //echo Active?><!--</option>-->
-<!--                                                <option value="--><?php //echo InActive?><!--">--><?php //echo InActive?><!--</option>-->
-                                                <option value="<?php echo Active ?>" <?php if (!empty($editDepartment->departmentStatus) && $editDepartment->departmentStatus == Active)  echo 'selected = "selected"'; ?>><?php echo Active?></option>
-                                                <option value="<?php echo InActive ?>" <?php if (!empty($editDepartment->departmentStatus) && $editDepartment->departmentStatus == InActive)  echo 'selected = "selected"'; ?>><?php echo InActive?></option>
+                                                <option value=""><?php echo SELECT_STATUS?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option value="<?php echo STATUS[$i]?>"<?php if (!empty($editDepartment->departmentStatus) && $editDepartment->departmentStatus == STATUS[$i])  echo 'selected = "selected"'; ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+
                                             </select>
 
 
@@ -83,7 +83,14 @@
                                         </div>
                                     </div>
 
-
+                                    <div class="form-group ">
+                                        <label for="curl" class="control-label col-lg-2">Image</label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('image'); ?></font></p>
+                                            <input class="form-control " id="image" type="file" name="image" />
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Department/showImageForEdit/<?php echo $editDepartment->departmentId?>" target="_blank"><span> <?php echo $editDepartment->departmentImage?></span></a>
+                                        </div>
+                                    </div>
 
                                     <div class="form-group "align="center">
                                         <div class="col-lg-10">

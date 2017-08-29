@@ -242,7 +242,6 @@ class Pagem extends CI_Model
         $query = $this->db->get('ictmpage');
         return $query->result();
 
-
     }
     /*----------- check Page Uniqueness ---- editPage------------*/
     public function checkUniquePage($pageTitle,$pagetype,$id)

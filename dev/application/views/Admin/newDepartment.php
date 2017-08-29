@@ -37,7 +37,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewDepartment" method="POST" action="<?php echo base_url() ?>Admin/Department/createNewDepartment" onsubmit="return submitform()">
+                                <form class="form-validate form-horizontal" id="CreateNewDepartment" method="POST" action="<?php echo base_url() ?>Admin/Department/createNewDepartment" onsubmit="return submitform()" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -75,7 +75,15 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="departmentSummary">department Summary</label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" required></textarea>
+                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" ></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group ">
+                                        <label for="curl" class="control-label col-lg-2">Image</label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('image'); ?></font></p>
+                                            <input class="form-control " id="image" type="file" name="image" />
                                         </div>
                                     </div>
 
@@ -115,13 +123,3 @@
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
-<script>
-
-    function submitform() {
-        var messageLength = CKEDITOR.instances['departmentSummary'].getData().replace(/<[^>]*>/gi, '').length;
-        if( !messageLength ) {
-            alert( 'Please enter a Department Summary' );
-            return false;
-        }
-    }
-</script>
