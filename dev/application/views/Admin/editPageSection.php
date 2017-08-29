@@ -56,6 +56,7 @@
                                                 </div>
                                                 <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
                                                 <div class="col-lg-10 form-group">
+                                                    <p><font color="red"> <?php echo form_error('status'); ?></font></p>
                                                     <select class="form-control m-bot15" name="status" required>
                                                         <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                         <?php for ($i=0;$i<count(STATUS);$i++){?>

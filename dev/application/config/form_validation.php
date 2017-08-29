@@ -542,6 +542,52 @@ $config = array (
             'rules' => 'callback_val_img_check'
         ),
     ),
+    /*---------------- for Create Course Section-------------*/
+    'createCourseSection'=> array (
+        array(
+            'field' => 'coursetitle',
+            'label' => 'Course Name',
+            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]',
+        ),
+        array(
+            'field' => 'textbox[]',
+            'label' => 'Course Section Title',
+            'rules' => 'required|max_length[255]',
+
+        ),
+//        array(
+//            'field' => 'text[]',
+//            'label' => 'Course Section Content',
+//            'rules' => '',
+//        ),
+        array(
+            'field' => 'status[]',
+            'label' => 'Course Section Status',
+            'rules' => 'required'
+        ),
+    ),
+
+    /*---------------- for CourseSection edit-------------*/
+    'editCourseSection'=> array (
+        array(
+            'field' => 'textbox',
+            'label' => 'Section Title',
+            'rules' => 'required|max_length[100]',
+
+        ),
+//        array(
+//            'field' => 'text',
+//            'label' => 'Section Content',
+//            'rules' => 'encode_php_tags'
+//        ),
+        array(
+            'field' => 'status',
+            'label' => 'Course Section Status',
+            'rules' => 'required'
+        ),
+    ),
+
+
 
 			 
 );

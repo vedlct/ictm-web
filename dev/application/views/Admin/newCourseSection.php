@@ -39,12 +39,13 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/insertCourseSec" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/CourseSection/insertCourseSec" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Course Title</label>
+                                        <label class="control-label col-lg-2" for="inputSuccess">Course Title<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <select class="form-control m-bot15" name="coursetitle">
-                                                <option>Select Course</option>
+                                            <p><font color="red"> <?php echo form_error('coursetitle'); ?></font></p>
+                                            <select class="form-control m-bot15" name="coursetitle" required>
+                                                <option value=""><?php echo SELECT_COURSE?></option>
                                                 <?php foreach ($coursetitle as $ct) { ?>
                                                     <option value="<?php echo $ct->courseId?>"><?php echo $ct->courseTitle?></option>
                                                     <?php
@@ -115,12 +116,7 @@
 <!--main content end-->
 <div class="text-right">
     <div class="credits">
-        <!--
-            All the links in the footer should remain intact.
-            You can delete the links only if you purchased the pro version.
-            Licensing information: https://bootstrapmade.com/license/
-            Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
-        -->
+
         <a href="#">Icon College</a> by <a href="#">A2N</a>
     </div>
 </div>
@@ -130,7 +126,7 @@
 <!-- javascripts -->
 <?php include('js.php') ?>
 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
 
