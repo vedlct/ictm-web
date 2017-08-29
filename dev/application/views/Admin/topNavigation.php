@@ -4,7 +4,7 @@
     </div>
 
     <!--logo start-->
-    <a href="home.php" class="logo">Icon <span class="lite">College</span></a>
+    <a href="<?php echo base_url()?>Admin/Home" class="logo">Icon <span class="lite">College</span></a>
     <!--logo end-->
 
     <div class="nav search-row" id="top_menu">

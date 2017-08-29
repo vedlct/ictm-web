@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
     <?php include('head.php') ?>
+
+<!--    <noscript>-->
+<!--        <span style="color: red;align-content:center;"><strong>Notice: </strong> JavaScript is not enabled. <a href="http://enable-javascript.com/" class="alert-link">Please Enable JavaScript Safley</a>.</span>-->
+<!--             <style>form{ display:none; }</style>-->
+<!--    </noscript>-->
 </head>
 
   <body class="login-img3-body">

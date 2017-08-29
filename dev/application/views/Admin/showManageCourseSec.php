@@ -6,7 +6,7 @@
         <th> Course Section Status </th>
         <th> Inserted By </th>
         <th> Last Modified By </th>
-        <th> Last Modified Date </th>
+        <th> Last Modified Date(d-m-Y)</th>
         <th> Action</th>
     </tr>
 
