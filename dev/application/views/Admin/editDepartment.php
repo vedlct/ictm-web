@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> Edit &nbsp Department</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Departments</li>
                         <li><i class="fa fa-files-o"></i>Edit Department</li>
                     </ol>
@@ -126,14 +126,3 @@
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
-
-<script>
-
-    function submitform() {
-        var messageLength = CKEDITOR.instances['departmentSummary'].getData().replace(/<[^>]*>/gi, '').length;
-        if( !messageLength ) {
-            alert( 'Please enter a Department Summary' );
-            return false;
-        }
-    }
-</script>

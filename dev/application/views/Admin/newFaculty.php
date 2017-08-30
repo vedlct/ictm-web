@@ -21,7 +21,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i> New Faculty</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Welcome">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Faculty</li>
                         <li><i class="fa fa-files-o"></i>Create New Faculty</li>
                     </ol>
@@ -108,7 +108,7 @@
                                         <label for="facultyPhone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyPhone'); ?></font></p>
-                                            <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="phone number(only digit)" required />
+                                            <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="phone number(only digit max 45)" required />
                                         </div>
 
 
@@ -309,10 +309,14 @@
         var phone=document.getElementById("facultyPhone").value;
         var email=document.getElementById("facultyEmail").value;
 
-        var chk=/^[0-9]{45}$/;
+        var chk=/^[0-9]*$/;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!phone.match(chk)) {
             alert( 'Please enter a valid Phone number!!' );
+            return false;
+        }
+        if(phone.length >45) {
+            alert( 'Phone number must be less than 45 charecter!!' );
             return false;
         }
         if( !facultyIntroLength ) {
