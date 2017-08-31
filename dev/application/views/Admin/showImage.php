@@ -17,4 +17,8 @@ elseif(!empty($deptimagename)){
     foreach ($deptimagename as $deptimagename){?>
         <img src="<?php echo  base_url()?>images/<?php echo $deptimagename->departmentImage ?>" width="60%">
     <?php }}
+elseif(!empty($newsimage)){
+    foreach ($newsimage as $newsimage){?>
+        <img src="<?php echo  base_url()?>images/<?php echo $newsimage->newsPhoto ?>" width="60%">
+    <?php }}
 ?>
