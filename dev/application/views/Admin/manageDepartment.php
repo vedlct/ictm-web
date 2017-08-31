@@ -20,7 +20,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Department</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Departments</li>
                         <li><i class="fa fa-th-list"></i>Manage Department</li>
                     </ol>
@@ -43,7 +43,7 @@
                                     <th> Department Status</th>
                                     <th> Department Inserted By</th>
                                     <th> Last Modified By</th>
-                                    <th> Last Modified Date</th>
+                                    <th> Last Modified Date(d-m-Y)</th>
                                     <th> Action</th>
                                 </tr>
 
@@ -74,13 +74,14 @@
                                         </td>
 
                                         <td>
-                                            <?php if ($departments->lastModifiedDate==""){echo"Never Modified";}
+
+                                            <?php if ($departments->lastModifiedDate==""){echo NEVER_MODIFIED;}
                                             else
                                             {
-                                                $timestamp = strtotime($departments->lastModifiedDate);
-                                                $date = date('d-F-Y', $timestamp);
-                                                echo $date ;
-                                            }?>
+                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($departments->lastModifiedDate)),1);
+
+                                            }
+                                            ?>
 
                                         </td>
 

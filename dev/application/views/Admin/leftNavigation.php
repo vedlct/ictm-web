@@ -108,6 +108,18 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
+                          <i class="icon_clock"></i>
+                          <span>Events</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">Create a new Event</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
+
+                      </ul>
+                  </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
                           <i class="icon_image"></i>
                           <span>Photo</span>
                           <span class="menu-arrow arrow_carrot-right"></span>
@@ -129,18 +141,7 @@
                           <li><a class="" href="#">Manage Affiliations</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_clock"></i>
-                          <span>Events</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">Create a new Event</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
 
-                      </ul>
-                  </li>
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_tag"></i>

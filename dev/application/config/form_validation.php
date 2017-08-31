@@ -240,7 +240,7 @@ $config = array (
         array(
             'field' => 'facultyPhone',
             'label' => 'Phone',
-            'rules' => 'required|regex_match[/^[0-9]{45}$/]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]'
         ),
         array(
             'field' => 'facultyTwitter',
@@ -310,7 +310,7 @@ $config = array (
         array(
             'field' => 'faculty_phone',
             'label' => 'Phone',
-            'rules' => 'required|regex_match[/^[0-9]{45}$/]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]'
         ),
         array(
             'field' => 'faculty_twitter',
@@ -642,6 +642,177 @@ $config = array (
             'label' => 'Department Status',
             'rules' => 'required'
         ),
+    ),
+    /*---------------- for Create Event-------------*/
+    'createEvent'=> array (
+
+        array(
+            'field' => 'eventTitle',
+            'label' => 'Event Ttle',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'eventStartDateTime',
+            'label' => 'Event Start Time ',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'eventEndDateTime',
+            'label' => 'Event End Time ',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'eventLocation',
+            'label' => 'Event Location',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'EventType',
+            'label' => 'Event Type',
+            'rules' => 'required|max_length[50]',
+        ),
+
+        array(
+            'field' => 'event_image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'eventStatus',
+            'label' => 'Event Status',
+            'rules' => 'required|max_length[50]'
+        ),
+//        array(
+//            'field' => 'eventContent',
+//            'label' => 'Event Content',
+//            'rules' => 'required|max_length[255]'
+//        ),
+    ),
+
+    /*---------------- for Edit Event-------------*/
+    'editEvent'=> array (
+
+        array(
+            'field' => 'eventTitle',
+            'label' => 'Event Ttle',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'eventStartDateTime',
+            'label' => 'Event Start Time ',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'eventEndDateTime',
+            'label' => 'Event End Time ',
+            'rules' => 'required',
+
+        ),
+        array(
+            'field' => 'eventLocation',
+            'label' => 'Event Location',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'EventType',
+            'label' => 'Event Type',
+            'rules' => 'required|max_length[50]',
+        ),
+
+        array(
+            'field' => 'event_image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'eventStatus',
+            'label' => 'Event Status',
+            'rules' => 'required|max_length[50]'
+        ),
+//        array(
+//            'field' => 'eventContent',
+//            'label' => 'Event Content',
+//            'rules' => 'required|max_length[255]'
+//        ),
+    ),
+
+    /*---------------- for Create CollegeInfo-------------*/
+    'CollegeInfo'=> array (
+
+        array(
+            'field' => 'college_name',
+            'label' => 'College Name',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'college_location',
+            'label' => 'College Address ',
+            'rules' => 'required|max_length[1000]',
+
+        ),
+        array(
+            'field' => 'college_tel1',
+            'label' => 'College Telephone 1',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]',
+
+        ),
+        array(
+            'field' => 'college_tel2',
+            'label' => 'College Telephone 2',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[45]',
+
+        ),
+        array(
+            'field' => 'college_fax',
+            'label' => 'College Fax',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'college_email',
+            'label' => 'College Email',
+            'rules' => 'required|valid_email|max_length[100]',
+        ),
+
+        array(
+            'field' => 'college_domain',
+            'label' => 'College Domain',
+            'rules' => 'required|max_length[255]'
+        ),
+        array(
+            'field' => 'college_facebook',
+            'label' => 'College Facebook',
+            'rules' => 'required|max_length[1000]'
+        ),
+        array(
+            'field' => 'college_twitter',
+            'label' => 'College Twitter',
+            'rules' => 'required|max_length[1000]'
+        ),
+        array(
+            'field' => 'college_linkedin',
+            'label' => 'College LinkedIn',
+            'rules' => 'required|max_length[1000]',
+        ),
+        array(
+            'field' => 'college_google',
+            'label' => 'College Google',
+            'rules' => 'required|max_length[1000]',
+        ),
+
+        array(
+            'field' => 'college_youtube',
+            'label' => 'College Youtube',
+            'rules' => 'required|max_length[1000]'
+        ),
+        array(
+            'field' => 'college_status',
+            'label' => 'College Status',
+            'rules' => 'required|max_length[50]'
+        ),
+
     ),
 
     /*---------------- for Create News-------------*/

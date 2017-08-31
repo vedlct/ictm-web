@@ -22,7 +22,7 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-files-o"></i>Edit Faculty</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Welcome">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Faculties</li>
                         <li><i class="fa fa-files-o"></i>Edit Faculty</li>
                     </ol>
@@ -111,7 +111,7 @@
                                         <label for="faculty_phone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_phone'); ?></font></p>
-                                            <input class="form-control" id="faculty_phone" name="faculty_phone" placeholder=" phone number (only digit) " type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
+                                            <input class="form-control" id="faculty_phone" name="faculty_phone" placeholder=" phone number (only digit max 45) " type="text" required value="<?php echo $editFaculty->faultyPhone?>"/>
                                         </div>
 
 
@@ -308,15 +308,29 @@
     function submitform() {
         var messageLength = CKEDITOR.instances['faculty_intro'].getData().replace(/<[^>]*>/gi, '').length;
         var phone=document.getElementById("faculty_phone").value;
-        var chk=/^[0-9]{45}$/;
-
+        var email=document.getElementById("faculty_email").value;
+        var chk=/^[0-9]*$/;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
         if(!phone.match(chk)) {
             alert( 'Please enter a valid Phone number!!' );
+            return false;
+        }
+        if(phone.length >45) {
+            alert( 'Phone number must be less than 45 charecter!!' );
             return false;
         }
 
         if( !messageLength ) {
             alert( 'Please enter a Faculty Intro' );
+            return false;
+        }
+        if(email.match(mailformat))
+        {
+            return true;
+        }
+        else
+        {
+            alert("You have entered an invalid email address!");
             return false;
         }
     }

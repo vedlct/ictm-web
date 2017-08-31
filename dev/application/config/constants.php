@@ -123,5 +123,6 @@ define ("NewsType",array ("Announcement", "News", "Press Release"));
 
 /////////////  Event Page ////////////////////
 define ("EventType",array ("Seminar", "Training", "Festival"));
+define("SELECT_EVENT_TYPE", "Select Event Type");
 
 
