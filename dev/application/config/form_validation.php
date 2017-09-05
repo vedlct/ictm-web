@@ -815,7 +815,70 @@ $config = array (
 
     ),
 
+    /*---------------- for Create News-------------*/
 
+    'createNews'=> array (
 
+        array(
+            'field' => 'newsTitle',
+            'label' => 'News Title ',
+            'rules' => 'required|max_length[255]|is_unique[ictmnews.newsTitle]',
+        ),
+        array(
+            'field' => 'newsDate',
+            'label' => 'News Date',
+            'rules' => 'required',
+
+        ),
+
+        array(
+            'field' => 'news_image',
+            'label' => 'News image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'newsType',
+            'label' => 'News Type ',
+            'rules' => 'required'
+        ),
+
+        array(
+            'field' => 'newsStatus',
+            'label' => 'News Status',
+            'rules' => 'required'
+        ),
+    ),
+
+    'editNews'=> array (
+
+        array(
+            'field' => 'newsTitle',
+            'label' => 'News Title ',
+            'rules' => 'required|max_length[255]|callback_NewseditUniqueCheck',
+        ),
+        array(
+            'field' => 'newsDate',
+            'label' => 'News Date',
+            'rules' => 'required',
+
+        ),
+
+        array(
+            'field' => 'news_image',
+            'label' => 'News image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'newsType',
+            'label' => 'News Type ',
+            'rules' => 'required'
+        ),
+
+        array(
+            'field' => 'newsStatus',
+            'label' => 'News Status',
+            'rules' => 'required'
+        ),
+    ),
 
 );

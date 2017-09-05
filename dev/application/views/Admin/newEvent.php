@@ -53,7 +53,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
-                                                <input type='text'name="eventStartDateTime"value="" class="form-control" required/>
+                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime"value="" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -64,7 +64,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker2'>
-                                                <input type='text' name="eventEndDateTime" value="" class="form-control" required/>
+                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" value="" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -190,4 +190,15 @@
             return false;
         }
     }
+</script>
+<script>
+$('#eventStartDateTime').keydown(function(e) {
+e.preventDefault();
+return false;
+});
+
+$('#eventEndDateTime').keydown(function(e) {
+    e.preventDefault();
+    return false;
+});
 </script>

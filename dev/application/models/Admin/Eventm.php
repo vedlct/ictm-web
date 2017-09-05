@@ -89,8 +89,8 @@ class Eventm extends CI_Model
     {
         $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmevent');
-        $query = $this->db->get();
-        return $query->result();
+        $query1 = $this->db->get();
+        return $query1->result();
 
     }
 
