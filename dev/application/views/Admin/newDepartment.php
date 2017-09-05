@@ -24,7 +24,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Departments</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Department</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Department</li>
                     </ol>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="departmentSummary">department Summary</label>
+                                        <label class="control-label col-lg-2" for="departmentSummary">Department Summary</label>
                                         <div class="col-lg-10">
                                             <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" ></textarea>
                                         </div>

@@ -98,11 +98,14 @@
                                                 <option><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
-
-
                                         </div>
                                     </div>
-                                    <div class="form-group "align="center">
+
+                                    <div id="csrf">
+                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                    </div>
+
+                                        <div class="form-group "align="center">
                                         <div class="col-lg-10">
                                             <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
@@ -136,6 +139,12 @@
 </html>
 <script>
 
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x) {
         var btn =  document.getElementById("menuType").value;
 
@@ -151,6 +160,7 @@
                 cache: false,
                 success:function(data) {
                     document.getElementById("parentId").innerHTML = data;
+                    $('#csrf').load(document.URL +  ' #csrf');
 
                 }
             });
@@ -168,4 +178,5 @@
 
         }
     }
+
 </script>
