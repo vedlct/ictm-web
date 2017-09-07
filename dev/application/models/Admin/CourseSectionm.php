@@ -39,6 +39,7 @@ class CourseSectionm extends CI_Model
     public function getCourseSecData($id){
         $this->db->select('courseSectionId,courseId, courseSectionTitle,courseSectionStatus, insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->where('courseId', $id);
+        $this->db->order_by("courseSectionId", "desc");
         $query = $this->db->get('ictmcoursesection');
         return $query->result();
     }
@@ -84,4 +85,17 @@ class CourseSectionm extends CI_Model
 
 
     }
+
+    /*----------- check Course Section Uniqueness ---- newCourse Section------------*/
+//    public function checkUniqueSection($courseTitle,$SectionTitle)
+//    {
+//
+//        $this->db->select('courseSectionTitle,courseId');
+//        $this->db->where('courseId',$courseTitle);
+//        $this->db->where('courseSectionTitle',$SectionTitle);
+//
+//        $query = $this->db->get('ictmcoursesection');
+//        return $query->result();
+//
+//    }
 }

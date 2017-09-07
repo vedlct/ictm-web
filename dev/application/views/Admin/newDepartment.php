@@ -48,16 +48,19 @@
 
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="departmentHead">Department Head <span class="required">*</span></label>
-                                        <div class="col-lg-10">
+                                        <div class="col-lg-4">
 
-                                                <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
-                                                <input class="form-control" id="departmentHead" name="departmentHead"  type="text" required />
+                                            <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
 
+                                            <select class="form-control m-bot15" name="departmentHead" id="departmentHead" required>
+                                                <option value="" selected><?php echo SELECT_DEPARTMENT_HEAD ?></option>
+                                                <?php foreach ($facultyList as $faculty){?>
+                                                    <option value="<?php echo $faculty->facultyId?>"><?php echo $faculty->facultyFirstName?><?php echo $faculty->facultyLastName?></option>
+                                                <?php } ?>
+                                            </select>
 
                                         </div>
-                                    </div>
 
-                                    <div class="form-group">
                                         <label class="control-label col-lg-2" for="departmentStatus">Department Status<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('departmentStatus'); ?></font></p>
@@ -67,7 +70,6 @@
                                                     <option><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
-
 
                                         </div>
                                     </div>
@@ -80,10 +82,11 @@
                                     </div>
 
                                     <div class="form-group ">
-                                        <label for="curl" class="control-label col-lg-2">Image</label>
+                                        <label for="curl" class="control-label col-lg-2">Image<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
-                                            <input class="form-control " id="image" type="file" name="image" />
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control " id="image" type="file" name="image" required/>
                                         </div>
                                     </div>
 

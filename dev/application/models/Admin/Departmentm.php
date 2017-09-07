@@ -20,7 +20,7 @@ class Departmentm extends CI_Model
             $this->load->library('upload');
             $config = array(
                 'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
                 'remove_spaces' => FALSE,
@@ -86,10 +86,11 @@ class Departmentm extends CI_Model
     // for manage Department view
     public function getAllforManageDepartment()
     {
-//        $query = $this->db->get('ictmdepartment');
-//        return $query->result();
-        $this->db->select('departmentId,departmentName,departmentHead,departmentStatus,insertedBy,lastModifiedBy,lastModifiedDate');
-        $this->db->from('ictmdepartment');
+
+        $this->db->select('d.departmentId,d.departmentName,d.departmentHead,d.departmentStatus,d.insertedBy,d.lastModifiedBy,d.lastModifiedDate,f.facultyFirstName,f.facultyLastName');
+        $this->db->from('ictmdepartment d');
+        $this->db->join('ictmfaculty f', 'f.facultyId = d.departmentHead','left');
+        $this->db->order_by("d.departmentId", "desc");
         $query = $this->db->get();
         return $query->result();
 

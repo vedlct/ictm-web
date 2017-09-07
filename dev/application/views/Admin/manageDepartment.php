@@ -35,27 +35,27 @@
                             <b>Manage Department</b>
                         </header>
                         <div class="panel-body table  ">
-                            <table class="table table-striped table-advance  table-bordered table-hover">
+                            <table class="table  table-advance  table-bordered table-hover">
                                 <tbody>
-                                <tr>
-                                    <th> Department Name</th>
-                                    <th> Department Head</th>
-                                    <th> Department Status</th>
-                                    <th> Department Inserted By</th>
-                                    <th> Last Modified By</th>
-                                    <th> Last Modified Date(d-m-Y)</th>
+                                <tr align="center" bgcolor="#D3D3D3">
+                                    <th> Name</th>
+                                    <th> Head</th>
+                                    <th> Status</th>
+                                    <th> Inserted By</th>
+                                    <th> Modified By</th>
+                                    <th> Modified Date(d-m-Y)</th>
                                     <th> Action</th>
                                 </tr>
 
 
                                 <?php foreach ($departments as $departments){?>
-                                    <tr>
+                                    <tr align="center">
                                         <td>
                                             <?php echo $departments->departmentName?>
                                         </td>
 
                                         <td>
-                                            <?php echo $departments->departmentHead?>
+                                            <?php echo $departments->facultyFirstName?><?php echo $departments->facultyLastName?>
 
                                         </td>
 

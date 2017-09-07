@@ -122,6 +122,7 @@ class Facultym extends CI_Model
 
         $this->db->select('facultyId,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfaculty');
+        $this->db->order_by("facultyId", "desc");
         $query = $this->db->get();
         return $query->result();
 
@@ -251,5 +252,13 @@ class Facultym extends CI_Model
     }
 
     /*---------for Manage Faculty ---------end--------------*/
+
+    public function facultyList()  // delete Faculty and his teaching Course from database
+    {
+        $this->db->select('facultyId,facultyFirstName,facultyLastName');
+        $this->db->from('ictmfaculty');
+        $query = $this->db->get();
+        return $query->result();
+    }
 
 }

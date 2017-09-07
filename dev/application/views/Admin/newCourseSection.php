@@ -26,7 +26,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Course Section</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Course Section</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Course Section</li>
                     </ol>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Page
+                            New Course Section
                         </header>
                         <div class="panel-body">
                             <div class="form">

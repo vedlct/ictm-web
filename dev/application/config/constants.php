@@ -126,3 +126,7 @@ define ("EventType",array ("Seminar", "Training", "Festival"));
 define("SELECT_EVENT_TYPE", "Select Event Type");
 
 
+/////////////  For Department ////////////////////
+define("SELECT_DEPARTMENT_HEAD", "Select Department Head");
+
+

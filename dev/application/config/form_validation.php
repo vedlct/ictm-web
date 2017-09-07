@@ -344,7 +344,7 @@ $config = array (
         array(
             'field' => 'name',
             'label' => 'Course Name',
-            'rules' => 'required|max_length[255]|is_unique[ictmcourse.courseTitle]',
+            'rules' => 'required|max_length[255]|callback_CourseCheckFormNewCourse',
         ),
         array(
             'field' => 'codeperson',
@@ -593,12 +593,12 @@ $config = array (
         array(
             'field' => 'departmentName',
             'label' => 'Department Name',
-            'rules' => 'required|max_length[255]|is_unique[ictmdepartment.departmentName]',
+            'rules' => 'trim|required|max_length[255]|is_unique[ictmdepartment.departmentName]|xss_clean',
         ),
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'trim|required|max_length[100]|xss_clean',
 
         ),
 

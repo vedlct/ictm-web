@@ -39,13 +39,13 @@
                                 <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="return submitform()">
 
                                     <div class="form-group ">
-                                        <label for="facultyFirstName" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
+                                        <label for="facultyFirstName" class="control-label col-lg-2">First Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyFirstName'); ?></font></p>
                                             <input class="form-control" id="facultyFirstName"  name="facultyFirstName" type="text" required />
                                         </div>
 
-                                        <label for="facultyLastName" class="control-label col-lg-2">Faculty Last Name <span class="required">*</span></label>
+                                        <label for="facultyLastName" class="control-label col-lg-2">Last Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyLastName'); ?></font></p>
                                             <input class="form-control" id="facultyLastName" name="facultyLastName"  type="text" required />
@@ -73,13 +73,14 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <label for="facultyImage" class="control-label col-lg-2">Faculty Image <span class="required">*</span></label>
+                                        <label for="facultyImage" class="control-label col-lg-2">Image <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyImage'); ?></font></p>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="facultyImage" id="facultyImage" required>
                                         </div>
 
-                                        <label for="facultyEmpType" class="control-label col-lg-2">Faculty Employee type <span class="required">*</span></label>
+                                        <label for="facultyEmpType" class="control-label col-lg-2">Employee type <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyEmpType'); ?></font></p>
                                             <select class="form-control" id="facultyEmpType" name="facultyEmpType" required >
@@ -99,13 +100,13 @@
                                         </div>
 
 
-                                        <label for="facultyEmail" class="control-label col-lg-2">Faculty Email <span class="required">*</span></label>
+                                        <label for="facultyEmail" class="control-label col-lg-2">Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyEmail'); ?></font></p>
                                             <input class="form-control" id="facultyEmail" name="facultyEmail"  type="email" required />
                                         </div>
 
-                                        <label for="facultyPhone" class="control-label col-lg-2">Faculty Phone <span class="required">*</span></label>
+                                        <label for="facultyPhone" class="control-label col-lg-2">Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyPhone'); ?></font></p>
                                             <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="phone number(only digit max 45)" required />
@@ -116,13 +117,13 @@
 
                                     <div class="form-group ">
 
-                                        <label for="facultyTwitter" class="control-label col-lg-2">Faculty Twitter</label>
+                                        <label for="facultyTwitter" class="control-label col-lg-2">Twitter</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyTwitter'); ?></font></p>
                                             <input class="form-control" id="facultyTwitter" name="facultyTwitter"  type="text" />
                                         </div>
 
-                                        <label for="facultyLinkedin" class="control-label col-lg-2">Faculty LinkedIn</label>
+                                        <label for="facultyLinkedin" class="control-label col-lg-2">LinkedIn</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyLinkedin'); ?></font></p>
                                             <input class="form-control" id="facultyLinkedin" name="facultyLinkedin"  type="text" />
@@ -181,7 +182,7 @@
 
 
                                     <div class="form-group ">
-                                        <label for="facultyIntro" class="control-label col-lg-2">Faculty Intro <span class="required">*</span></label>
+                                        <label for="facultyIntro" class="control-label col-lg-2">Intro <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('facultyIntro'); ?></font></p>
                                             <textarea class="form-control ckeditor" name="facultyIntro" id="facultyIntro" required></textarea>
