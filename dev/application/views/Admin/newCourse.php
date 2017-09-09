@@ -54,7 +54,7 @@
                                                 <select class="form-control m-bot15" name="department" required>
                                                     <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
                                                     <?php foreach ($departmentName as $dn) { ?>
-                                                        <option value="<?php echo $dn->departmentId?>"><?php echo $dn->departmentName?></option>
+                                                        <option value="<?php echo $dn->departmentId?>" <?php echo set_select('department',  $dn->departmentId, False); ?>><?php echo $dn->departmentName?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -75,7 +75,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Code  <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('Code'); ?></font></p>
-                                                <input class="form-control"  name="Code"  type="text" required />
+                                                <input class="form-control"  name="Code"  value="<?php echo set_value('Code'); ?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -86,7 +86,7 @@
                                             <label for="cname" class="control-label col-lg-2">Location <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('location'); ?></font></p>
-                                                <input class="form-control"  name="location"  type="text" required />
+                                                <input class="form-control"  name="location"  value="<?php echo set_value('location'); ?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -94,7 +94,7 @@
                                             <label for="cname" class="control-label col-lg-2">Awarding body <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
-                                                <input class="form-control"  name="awardingBody"  type="text" required />
+                                                <input class="form-control"  name="awardingBody" value="<?php echo set_value('awardingBody'); ?>"  type="text" required />
                                             </div>
                                         </div>
 
@@ -105,7 +105,7 @@
                                             <label for="cname" class="control-label col-lg-2">Credit Value <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('credit'); ?></font></p>
-                                                <input class="form-control"  name="credit"  type="text" required />
+                                                <input class="form-control"  name="credit"  value="<?php echo set_value('credit'); ?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -113,7 +113,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Structure <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('structure'); ?></font></p>
-                                                <textarea class="form-control"  name="structure"  type="text" required ></textarea>
+                                                <textarea class="form-control"  name="structure"  value=""  type="text" required ><?php echo set_value('structure'); ?></textarea>
                                             </div>
                                         </div>
 
@@ -124,7 +124,7 @@
                                             <label for="cname" class="control-label col-lg-2">Accreditation <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('accreditation'); ?></font></p>
-                                                <input class="form-control"  name="accreditation"  type="text" required />
+                                                <input class="form-control"  name="accreditation"  value="<?php echo set_value('accreditation'); ?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -132,7 +132,7 @@
                                             <label for="cname" class="control-label col-lg-2">Accreditation No <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('accreditationNo'); ?></font></p>
-                                                <input class="form-control"  name="accreditationNo"  type="text" required />
+                                                <input class="form-control"  name="accreditationNo"  value="<?php echo set_value('accreditationNo'); ?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -142,7 +142,7 @@
                                             <label for="cname" class="control-label col-lg-2">Duration <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('duration'); ?></font></p>
-                                                <input class="form-control"  name="duration"  type="text" required />
+                                                <input class="form-control"  name="duration" value="<?php echo set_value('duration'); ?>"  type="text" required />
                                             </div>
                                         </div>
 
@@ -150,7 +150,7 @@
                                             <label for="cname" class="control-label col-lg-2">Academic year<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('year'); ?></font></p>
-                                                <input class="form-control"  name="year"  type="text" required />
+                                                <input class="form-control"  name="year" value="<?php echo set_value('year'); ?>"   type="text" required />
                                             </div>
                                         </div>
 
@@ -160,7 +160,7 @@
                                             <label for="cname" class="control-label col-lg-2">Mode of Study<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('mode'); ?></font></p>
-                                                <input class="form-control"  name="mode"  type="text" required />
+                                                <input class="form-control"  name="mode" value="<?php echo set_value('mode'); ?>"  type="text" required />
                                             </div>
                                         </div>
 
@@ -168,7 +168,7 @@
                                             <label for="cname" class="control-label col-lg-2">Language of study <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('language'); ?></font></p>
-                                                <input class="form-control"  name="language"  type="text" required />
+                                                <input class="form-control"  name="language" value="<?php echo set_value('language'); ?>"   type="text" required />
                                             </div>
                                         </div>
 
@@ -178,7 +178,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Fees<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('fees'); ?></font></p>
-                                                <textarea class="form-control"  name="fees"  type="text" required ></textarea>
+                                                <textarea class="form-control"  name="fees"  value=""  type="text" required ><?php echo set_value('fees'); ?></textarea>
                                             </div>
                                         </div>
 
@@ -186,7 +186,7 @@
                                             <label for="cname" class="control-label col-lg-2">Timetables<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('timetables'); ?></font></p>
-                                                <input class="form-control"  name="timetables"  type="text" required />
+                                                <input class="form-control"  name="timetables"  value="<?php echo set_value('timetables'); ?>"  type="text" required />
                                             </div>
                                         </div>
 
@@ -210,7 +210,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Code Pearson <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('codeperson'); ?></font></p>
-                                                <input class="form-control"  name="codeperson"  type="text" required />
+                                                <input class="form-control"  name="codeperson"  value="<?php echo set_value('codeperson'); ?>"  type="text" required />
                                             </div>
                                         </div>
 

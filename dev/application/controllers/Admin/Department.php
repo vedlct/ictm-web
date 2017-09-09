@@ -23,6 +23,7 @@ class Department extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['facultyList'] = $this->Facultym->facultyList();
+            //$this->data['departmentName']=null;
             $this->load->view('Admin/newDepartment',$this->data);
         } else {
             redirect('Admin/Login');
@@ -35,8 +36,11 @@ class Department extends CI_Controller
         $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
+            $this->data['departmentName'] = $this->input->post("departmentName");
+
             if (!$this->form_validation->run('createDepartment')) {
                 $this->data['facultyList'] = $this->Facultym->facultyList();
+
                 $this->load->view('Admin/newDepartment',$this->data);
             }
             else {

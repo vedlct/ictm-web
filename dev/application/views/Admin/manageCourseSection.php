@@ -39,7 +39,7 @@
                                 <label class="control-label col-lg-1" for="inputSuccess">Course Title</label>
                                 <div class="col-lg-10">
                                     <select class="form-control m-bot15" id="coursename" name="coursetitle" onchange="showtable()">
-                                        <option>Select Page</option>
+                                        <option><?php echo SELECT_COURSE ?></option>
                                         <?php foreach ($coursetitle as $ct) { ?>
                                             <option value="<?php echo $ct->courseId?>"><?php echo $ct->courseTitle?></option>
                                             <?php

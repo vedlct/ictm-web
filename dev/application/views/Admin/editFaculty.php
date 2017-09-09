@@ -37,14 +37,16 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <?php foreach ($editFaculty as $editFaculty){?>
+                                <?php foreach ($editFaculty as $editFaculty){ ?>
                                 <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/editFacultybyId/<?php echo $editFaculty->facultyId?>" onsubmit="return submitform()">
 
                                     <div class="form-group ">
                                         <label for="faculty_first_name" class="control-label col-lg-2">Faculty First Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_first_name'); ?></font></p>
+
                                             <input class="form-control" id="faculty_first_name"  name="faculty_first_name" type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyFirstName))?>"  required />
+
                                         </div>
 
                                         <label for="faculty_last_name" class="control-label col-lg-2">Faculty Last Name <span class="required">*</span></label>
