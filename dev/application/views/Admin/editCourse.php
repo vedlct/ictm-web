@@ -49,10 +49,15 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                            <label for="cname" class="control-label col-lg-2">Course Code Pearson <span class="required">*</span></label>
+                                            <label class="control-label col-lg-2" for="inputSuccess">Department<span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <p><font color="red"> <?php echo form_error('code'); ?></font></p>
-                                                <input class="form-control"  name="code"  value="<?php echo $cad->courseCodePearson?>" type="text" required />
+                                                <p><font color="red"> <?php echo form_error('department'); ?></font></p>
+                                                <select class="form-control m-bot15" name="department"required>
+                                                    <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
+                                                    <?php foreach ($departmentName as $dn) { ?>
+                                                        <option value="<?php echo $dn->departmentId?>" <?php if (!empty($dn->departmentName) && $dn->departmentName == $dn->departmentName)  echo 'selected = "selected"'; ?>><?php echo $dn->departmentName?></option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                         </div>
 
@@ -205,17 +210,14 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                            <label class="control-label col-lg-2" for="inputSuccess">Department<span class="required">*</span></label>
+                                            <label for="cname" class="control-label col-lg-2">Course Code Pearson <span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <p><font color="red"> <?php echo form_error('department'); ?></font></p>
-                                                <select class="form-control m-bot15" name="department"required>
-                                                    <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
-                                                    <?php foreach ($departmentName as $dn) { ?>
-                                                        <option value="<?php echo $dn->departmentId?>" <?php if (!empty($dn->departmentName) && $dn->departmentName == $dn->departmentName)  echo 'selected = "selected"'; ?>><?php echo $dn->departmentName?></option>
-                                                    <?php } ?>
-                                                </select>
+                                                <p><font color="red"> <?php echo form_error('code'); ?></font></p>
+                                                <input class="form-control"  name="code"  value="<?php echo $cad->courseCodePearson?>" type="text" required />
                                             </div>
                                         </div>
+
+
 
                                     </div>
                                     <div class="form-group ">
@@ -223,8 +225,12 @@
                                         <div class="col-lg-6">
                                             <label for="curl" class="control-label col-lg-2">Image</label>
                                             <div class="col-lg-10">
+                                                <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                                 <input class="form-control " id="image" type="file" name="image"  />
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Course/showImageForEdit/<?php echo $cad->courseId?>" target="_blank"><span> <?php echo $cad->courseImage?></span></a>
+                                                <?php if ($cad->courseImage!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/Course/deleteCourseImage/<?php echo $cad->courseId ?>" onclick='return confirm("Are you sure to Delete This Course Image?")'><i class="icon_trash"></i></a>
+                                                <?php }?>
                                             </div>
                                         </div>
 

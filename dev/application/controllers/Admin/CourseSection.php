@@ -143,7 +143,7 @@ class CourseSection extends CI_Controller
         }
     }
 
-    //this will delete page section
+    //this will delete Course section
     public function deleteCourseSection($courseSectionId){
 
 
@@ -167,5 +167,28 @@ class CourseSection extends CI_Controller
             }
         }
 
+    /* --------- Course Section Title check from newCoruse Section-------------------*/
+//    public function CourseSectionCheckFormNewCourseSection()
+//    {
+//        $courseTitle = $this->input->post("coursetitle");
+//
+//        extract($_POST);
+//        for ($i = 0; $i < count($textbox); $i++) {
+//            $SectionTitle = $textbox[$i];
+//            $this->data['checkSectionTitle'] = $this->CourseSectionm->checkUniqueSection($courseTitle,$SectionTitle);
+//
+//        }
+//        if (empty($this->data['checkSectionTitle'])){
+//
+//            return true;
+//        }
+//        else{
+//            $this->form_validation->set_message('CourseSectionCheckFormNewCourseSection', 'Course Section Allready Existed');
+//            return false;
+//        }
+//
+//
+//    }
 
-    }
+
+}

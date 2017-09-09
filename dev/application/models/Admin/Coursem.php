@@ -137,6 +137,7 @@ class Coursem extends CI_Model
         $this->db->select('c.courseId,c.courseTitle,c.courseCodeIcon,c.awardingTitle,c.insertedBy,c.lastModifiedBy,c.lastModifiedDate,c.courseStatus,c.departmentId,v.departmentName');
         $this->db->from('ictmcourse c');
         $this->db->join('ictmdepartment v', 'v.departmentId = c.departmentId');
+        $this->db->order_by("c.courseId", "desc");
         $query = $this->db->get();
         return $query->result();
     }
@@ -145,7 +146,7 @@ class Coursem extends CI_Model
     public function getCourseTitle(){
 
         $this->db->select('courseId,courseTitle');
-        //$this->db->join('ictmusers', 'ictmusers.userId = ictmpage.insertedBy');
+
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
@@ -165,13 +166,38 @@ class Coursem extends CI_Model
 
     }
 
-    // show the pageImage for editPage
+    // show the CourseImage for editCourse
     public function getImage($id){
 
         $this->db->select('courseImage');
         $this->db->where('courseId',$id);
         $query = $this->db->get('ictmcourse');
         return $query->result();
+
+
+    }
+
+    // show the CourseImage for editCourse
+    public function deleteCourseImage($id){
+
+        $data = array(
+            'courseImage'=>null,
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+        );
+
+        $this->db->where('courseId', $id);
+        $error=$this->db->update('ictmcourse', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
 
 
     }
@@ -409,6 +435,19 @@ class Coursem extends CI_Model
         $this->db->where('courseTitle',$courseTitle);
         $this->db->where('departmentId',$department);
         $this->db->where('courseId !=', $id);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+
+    }
+
+    /*----------- check Course Uniqueness ---- editCourse------------*/
+    public function checkUniqueCourseTitle($courseTitle,$department)
+    {
+
+        $this->db->select('courseTitle,departmentId');
+        $this->db->where('courseTitle',$courseTitle);
+        $this->db->where('departmentId',$department);
+
         $query = $this->db->get('ictmcourse');
         return $query->result();
 

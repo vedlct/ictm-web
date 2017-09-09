@@ -145,6 +145,32 @@ class Course extends CI_Controller
         }
     }
 
+    //this function will delete the image in edit
+    public function deleteCourseImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Coursem->deleteCourseImage($id);
+            if (empty($this->data['error'])) {
+                echo "<script>
+                    alert('Course Image Deleted Successfully');
+                    window.location.href= '" . base_url() . "Admin/Course/editCourse/$id';
+                    </script>";
+            }
+            else
+            {
+                echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Course/editCourse/$id';
+                    </script>";
+            }
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     //this will delete course
     public function deleteCourse($courseId)
     {
@@ -182,6 +208,37 @@ class Course extends CI_Controller
         }
 
     }
+
+    /* --------- Course Title check from newCoruse -------------------*/
+    public function CourseCheckFormNewCourse()
+    {
+        $courseTitle = $this->input->post("name");
+        $department = $this->input->post("department");
+
+
+
+        try
+        {
+            $this->data['checkCourseTitle'] = $this->Coursem->checkUniqueCourseTitle($courseTitle,$department);
+
+            if (empty($this->data['checkCourseTitle'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('CourseCheckFormNewCourse', 'Course Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('CourseCheckFormNewCourse', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+
+    }
+
 /* --------- Course Title check from editCoruse -------------------*/
     public function CourseCheckFormEditCourse()
     {

@@ -1,17 +1,17 @@
 
-<table class="table table-striped table-advance table-bordered table-hover ">
+<table class="table  table-advance  table-bordered table-hover">
     <tbody>
-    <tr>
+    <tr align="center" bgcolor="#D3D3D3">
         <th> Course Section Title </th>
-        <th> Course Section Status </th>
+        <th> Status </th>
         <th> Inserted By </th>
-        <th> Last Modified By </th>
-        <th> Last Modified Date(d-m-Y)</th>
+        <th> Modified By </th>
+        <th> Modified Date(d-m-Y)</th>
         <th> Action</th>
     </tr>
 
         <?php foreach ($coursedata as $cd) { ?>
-    <tr>
+    <tr align="center">
             <td><?php echo $cd->courseSectionTitle ?></td>
             <td><?php echo $cd->courseSectionStatus ?></td>
             <td><?php echo $cd->insertedBy; ?></td>

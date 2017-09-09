@@ -26,7 +26,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page Section</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Page Section</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Page Section</li>
                     </ol>
                 </div>
             </div>

@@ -34,35 +34,36 @@
                         <header class="panel-heading">
                             <b>Manage Faculty</b>
                         </header>
-                        <div class="panel-body table table-responsive ">
-                            <table class="table table-striped table-advance  table-bordered table-hover">
+                        <div class="panel-body ">
+                            <table class="table  table-advance  table-bordered table-hover">
                                 <tbody>
-                                <tr>
-                                    <th> Faculty Name</th>
-                                    <th> Faculty Email</th>
-                                    <th> Faculty Position</th>
-                                    <th> Faculty Employee Type</th>
-                                    <th> Faculty Degree</th>
 
-                                    <th> Faculty Status</th>
-                                    <th> Faculty Inserted By</th>
-                                    <th> Last Modified By</th>
-                                    <th> Last Modified Date(d-m-Y)</th>
-                                    <th> Action</th>
+                                <tr align="center" bgcolor="#D3D3D3">
+                                    <th>Name</th>
+                                    <th>Email </th>
+                                    <th>Position </th>
+                                    <th>Employee Type </th>
+                                    <th>Degree </th>
+
+                                    <th>Status </th>
+                                    <th>Inserted By </th>
+                                    <th> Last Modified By </th>
+                                    <th> Last Modified Date(d-m-Y) </th>
+                                    <th> Action </th>
                                 </tr>
 
 
                                 <?php foreach ($faculty as $faculty){?>
-                                    <tr>
-                                        <td>
+                                    <tr align="center">
+                                        <td >
                                             <?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php echo $faculty->facultyEmail?>
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php
                                             echo str_replace(",","<br>",$faculty->facultyPosition);
 
@@ -70,31 +71,31 @@
 
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php echo $faculty->facultyEmpType?>
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php
                                             echo str_replace(",","<br>",$faculty->facultyDegree);
                                             ?>
 
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php echo $faculty->facultyStatus?>
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php echo $faculty->insertedBy?>
 
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
                                         </td>
 
-                                        <td>
+                                        <td >
                                             <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
                                             else
                                                 {
@@ -104,7 +105,7 @@
 
                                         </td>
 
-                                        <td>
+                                        <td >
 
                                             <div class="btn-group">
                                                 <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>

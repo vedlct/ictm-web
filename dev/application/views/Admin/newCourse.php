@@ -24,7 +24,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Course</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Course</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Course</li>
                     </ol>
                 </div>
             </div>
@@ -33,11 +33,11 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Menu
+                            New Course
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/insertCourse" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="" method="post" action="<?php echo base_url()?>Admin/Course/insertCourse" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <div class="col-lg-6">
                                         <label for="cname" class="control-label col-lg-2">Course Name <span class="required">*</span></label>
@@ -48,11 +48,16 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                        <label for="cname" class="control-label col-lg-2">Course Code Pearson <span class="required">*</span></label>
-                                        <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('codeperson'); ?></font></p>
-                                            <input class="form-control"  name="codeperson"  type="text" required />
-                                        </div>
+                                            <label class="control-label col-lg-2" for="inputSuccess">Department<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <p><font color="red"> <?php echo form_error('department'); ?></font></p>
+                                                <select class="form-control m-bot15" name="department" required>
+                                                    <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
+                                                    <?php foreach ($departmentName as $dn) { ?>
+                                                        <option value="<?php echo $dn->departmentId?>"><?php echo $dn->departmentName?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -202,23 +207,21 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                            <label class="control-label col-lg-2" for="inputSuccess">Department<span class="required">*</span></label>
+                                            <label for="cname" class="control-label col-lg-2">Course Code Pearson <span class="required">*</span></label>
                                             <div class="col-lg-10">
-                                                <p><font color="red"> <?php echo form_error('department'); ?></font></p>
-                                                <select class="form-control m-bot15" name="department" required>
-                                                    <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
-                                                   <?php foreach ($departmentName as $dn) { ?>
-                                                        <option value="<?php echo $dn->departmentId?>"><?php echo $dn->departmentName?></option>
-                                                    <?php } ?>
-                                                </select>
+                                                <p><font color="red"> <?php echo form_error('codeperson'); ?></font></p>
+                                                <input class="form-control"  name="codeperson"  type="text" required />
                                             </div>
                                         </div>
+
+
                                     </div>
 
                                     <div class="form-group ">
                                         <div class="col-lg-6">
                                             <label for="curl" class="control-label col-lg-2">Image</label>
                                             <div class="col-lg-10">
+                                                <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                                 <input class="form-control " id="image" type="file" name="image"  />
                                             </div>
                                         </div>
