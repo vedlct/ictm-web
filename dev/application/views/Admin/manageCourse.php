@@ -35,9 +35,9 @@
                             Manage Course
                         </header>
                         <div class="panel-body">
-                            <table class="table  table-advance  table-bordered table-hover">
+                            <table class="table table-striped table-advance  table-bordered table-hover ">
                             <tbody>
-                            <tr align="center" bgcolor="#D3D3D3">
+                            <tr bgcolor="#D3D3D3">
                                 <th> Course Name</th>
                                 <th> Department</th>
                                 <th> Course Code</th>

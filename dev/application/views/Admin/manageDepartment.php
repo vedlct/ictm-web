@@ -35,16 +35,16 @@
                             <b>Manage Department</b>
                         </header>
                         <div class="panel-body table  ">
-                            <table class="table  table-advance  table-bordered table-hover">
+                            <table class="table table-advance  table-bordered table-hover">
                                 <tbody>
-                                <tr align="center" bgcolor="#D3D3D3">
-                                    <th> Name</th>
-                                    <th> Head</th>
-                                    <th> Status</th>
-                                    <th> Inserted By</th>
-                                    <th> Modified By</th>
-                                    <th> Modified Date(d-m-Y)</th>
-                                    <th> Action</th>
+                                <tr style="text-align: center" bgcolor="#D3D3D3">
+                                    <th style="text-align: center"> Name</th>
+                                    <th style="text-align: center"> Head</th>
+                                    <th style="text-align: center"> Status</th>
+                                    <th style="text-align: center"> Inserted By</th>
+                                    <th style="text-align: center"> Modified By</th>
+                                    <th style="text-align: center"> Modified Date(d-m-Y)</th>
+                                    <th style="text-align: center"> Action</th>
                                 </tr>
 
 

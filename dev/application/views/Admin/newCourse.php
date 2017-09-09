@@ -43,7 +43,7 @@
                                         <label for="cname" class="control-label col-lg-2">Course Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                            <input class="form-control"  name="name"  type="text" required />
+                                            <input class="form-control"  name="name" value="<?php echo set_value('name'); ?>"  type="text" required />
                                         </div>
                                         </div>
 
@@ -67,7 +67,7 @@
                                             <label for="cname" class="control-label col-lg-2">Award <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('award'); ?></font></p>
-                                                <input class="form-control"  name="award"  type="text" required />
+                                                <input class="form-control"  name="award" value="<?php echo set_value('award'); ?>" type="text" required />
                                             </div>
                                         </div>
 
