@@ -8,9 +8,13 @@ class Page extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Admin/Pagem');
+        $this->load->library('user_agent');
+    }
+
+    public function index(){
+
 
     }
- 
 
     // this will show create page
     public function createPage()
@@ -38,11 +42,13 @@ class Page extends CI_Controller {
                 $this->data['error'] = $this->Pagem->insertPage();
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Page Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
+//                    echo "<script>
+//                    alert('Page Created Successfully');
+//                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+//                    </script>";
 
+                    $this->session->set_flashdata('message_name', 'This is test message');
+                  redirect('Admin/Page/managePage');
                 }
                 else
                 {
@@ -64,9 +70,14 @@ class Page extends CI_Controller {
     public function managePage()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
+//            if ($this->agent->referrer()) {
+//                $this->data['pageWarning'] = "Page Create Successfull" ;
+//            } else {
+//                $this->data['pageWarning'] = null;
+//            }
             $this->data['pageData'] = $this->Pagem->getPagaData();
-
-             $this->load->view('Admin/managePage', $this->data);
+            //$this->data['pageWarning'] = null;
+            $this->load->view('Admin/managePage', $this->data);
         }
         else{
             redirect('Admin/Login');

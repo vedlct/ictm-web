@@ -27,7 +27,7 @@
                 </div>
             </div>
             <!-- page start-->
-
+            <div align="center"><span style="color: red; font-weight: 20px"> <?php echo $this->session->flashdata('message_name');?></span></div>
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
