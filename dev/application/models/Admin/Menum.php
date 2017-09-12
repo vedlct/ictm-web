@@ -11,9 +11,9 @@ class Menum extends CI_Model
         $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
         $menuStatus = $this->input->post("menuStatus");
-        if ($parentId == "")
+        if ($parentId =="")
         {
-            $menuId =null;
+            $parentId =null;
         }
         if ($pageId == "")
         {
@@ -83,6 +83,7 @@ class Menum extends CI_Model
         $this->db->from('ictmmenu m');
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $this->db->order_by("m.menuId", "desc");
         $query = $this->db->get();
         return $query->result();
 

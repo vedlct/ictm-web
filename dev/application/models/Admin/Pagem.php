@@ -81,7 +81,6 @@ class Pagem extends CI_Model
 //            );
 //        }
         $this->security->xss_clean($data,true);
-
         $error=$this->db->insert('ictmpage', $data);
 
         if (empty($error))
