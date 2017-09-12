@@ -87,9 +87,8 @@ class Departmentm extends CI_Model
     public function getAllforManageDepartment()
     {
 
-        $this->db->select('d.departmentId,d.departmentName,d.departmentHead,d.departmentStatus,d.insertedBy,d.lastModifiedBy,d.lastModifiedDate,f.facultyFirstName,f.facultyLastName');
+        $this->db->select('d.departmentId,d.departmentName,d.departmentHead,d.departmentStatus,d.insertedBy,d.lastModifiedBy,d.lastModifiedDate');
         $this->db->from('ictmdepartment d');
-        $this->db->join('ictmfaculty f', 'f.facultyId = d.departmentHead','left');
         $this->db->order_by("d.departmentId", "desc");
         $query = $this->db->get();
         return $query->result();

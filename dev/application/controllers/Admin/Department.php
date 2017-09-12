@@ -22,9 +22,9 @@ class Department extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['facultyList'] = $this->Facultym->facultyList();
+//            $this->data['facultyList'] = $this->Facultym->facultyList();
 
-            $this->load->view('Admin/newDepartment',$this->data);
+            $this->load->view('Admin/newDepartment');
         } else {
             redirect('Admin/Login');
         }
@@ -39,7 +39,7 @@ class Department extends CI_Controller
 
 
             if (!$this->form_validation->run('createDepartment')) {
-                $this->data['facultyList'] = $this->Facultym->facultyList();
+                //$this->data['facultyList'] = $this->Facultym->facultyList();
 
                 $this->load->view('Admin/newDepartment',$this->data);
             }
@@ -96,7 +96,7 @@ class Department extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['editDepartment'] = $this->Departmentm->getAllDepartmentbyId($departmentId);
-            $this->data['facultyList'] = $this->Facultym->facultyList();
+//            $this->data['facultyList'] = $this->Facultym->facultyList();
 
             $this->load->view('Admin/editDepartment', $this->data);
         }

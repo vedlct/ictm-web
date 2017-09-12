@@ -253,12 +253,12 @@ class Facultym extends CI_Model
 
     /*---------for Manage Faculty ---------end--------------*/
 
-    public function facultyList()  // delete Faculty and his teaching Course from database
-    {
-        $this->db->select('facultyId,facultyFirstName,facultyLastName');
-        $this->db->from('ictmfaculty');
-        $query = $this->db->get();
-        return $query->result();
-    }
+//    public function facultyList()  // delete Faculty and his teaching Course from database
+//    {
+//        $this->db->select('facultyId,facultyFirstName,facultyLastName');
+//        $this->db->from('ictmfaculty');
+//        $query = $this->db->get();
+//        return $query->result();
+//    }
 
 }

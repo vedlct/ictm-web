@@ -177,6 +177,7 @@ class Pagem extends CI_Model
          foreach ($query->result() as $image){$pageImage=$image->pageImage;}
 
         unlink(FCPATH."images/pageImages/".$pageImage);
+
         $data = array(
             'pageImage'=>null,
             'lastModifiedBy'=>$this->session->userdata('userEmail'),
@@ -214,12 +215,13 @@ class Pagem extends CI_Model
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
+                'upload_path' => "images/pageImages/",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
+                'file_name' => $id,
 
             );
             $this->upload->initialize($config);
@@ -244,7 +246,7 @@ class Pagem extends CI_Model
                 'pageKeywords' => $keywords,
                 'pageMetaData' => $metadata,
                 'pageContent' => $content,
-                'pageImage' => $image,
+                'pageImage' => $id.".".pathinfo($image, PATHINFO_EXTENSION),
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
