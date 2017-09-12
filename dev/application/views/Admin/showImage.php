@@ -1,8 +1,8 @@
 <?php
-if (!empty($imagename)){
-foreach ($imagename as $im)
+if (!empty($pageImageName)){
+foreach ($pageImageName as $image)
 {?>
-<img src="<?php echo  base_url()?>images/<?php echo $im->pageImage ?>" width="60%">
+<img src="<?php echo  base_url()?>images/pageImages/<?php echo $image->pageImage ?>" width="60%">
 <?php }}
 elseif (!empty($facultyImage)){
     foreach ($facultyImage as $facultyImage){?>

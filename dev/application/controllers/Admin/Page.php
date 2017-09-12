@@ -65,7 +65,6 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->data['pageData'] = $this->Pagem->getPagaData();
-
              $this->load->view('Admin/managePage', $this->data);
         }
         else{
@@ -124,6 +123,32 @@ class Page extends CI_Controller {
         }
     }
 
+    //this function will delete the image in edit
+    public function deletePageImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Pagem->deletePageImage($id);
+            if (empty($this->data['error'])) {
+                echo "<script>
+                    alert('Page Image Deleted Successfully');
+                    window.location.href= '" . base_url() . "Admin/Page/editPage/$id';
+                    </script>";
+            }
+            else
+            {
+                echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Page/editPage/$id';
+                    </script>";
+            }
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
 
     //this will delete page
     public function deletePage($pageId)
@@ -170,7 +195,7 @@ class Page extends CI_Controller {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['imagename'] = $this->Pagem->getImage($id);
+            $this->data['pageImageName'] = $this->Pagem->getImage($id);
             $this->load->view('Admin/showImage', $this->data);
 
         }
@@ -214,11 +239,11 @@ class Page extends CI_Controller {
         $image = $_FILES["image"]["name"];
         if ($image != null) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/pageImages/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
-//        $config['max_size']    = '2048000';
-        $config['overwrite'] = TRUE;
+//          $config['max_size']    = '2048000';
+            $config['overwrite'] = TRUE;
         $this->upload->initialize($config);
 
             if (!$this->upload->do_upload('image')) {

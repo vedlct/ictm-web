@@ -36,8 +36,6 @@ class Coursem extends CI_Model
         $department= $this->input->post("department");
         $image=$_FILES['image']['name'];
 
-//        $image = $_FILES["image"]["name"];
-//        move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
 
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');

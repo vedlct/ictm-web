@@ -11,72 +11,129 @@ class Pagem extends CI_Model
         $metadata = $this->input->post("metadata");
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
-        $image = $_FILES["image"]["name"];
+        $image=$_FILES['image']['name'];
+
+        $data = array(
+            'pageTitle' => $title,
+            'pageKeywords' => $keywords,
+            'pageMetaData' => $metadata,
+            'pageContent' => $content,
+            'pageType' => $pagetype,
+            'pageStatus' => $status,
+            'insertedBy'=>$this->session->userdata('userEmail'),
+            'insertedDate'=>date("Y-m-d H:i:s"),
+
+        );
 
 
-        if (!empty($_FILES['image']['name'])) {
-            $this->load->library('upload');
-            $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
-                'overwrite' => TRUE,
-                //'max_size' => "2048000",
-                'remove_spaces'=>FALSE,
-                'mod_mime_fix'=>FALSE,
-
-            );
-            $this->upload->initialize($config);
-
-            if($this->upload->do_upload('image')){
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
-            }else{
-
-                $error =array('error'=>$this->upload->display_errors());
-                $che=json_encode($error);
-                echo "<script>
-                    
-                    alert($che.error);
-                    window.location.href= '" . base_url() . "Admin/Page/createPage';
-                    </script>";
-            }
-            $data = array(
-                'pageTitle' => $title,
-                'pageKeywords' => $keywords,
-                'pageMetaData' => $metadata,
-                'pageContent' => $content,
-                'pageImage' => $image,
-                'pageType' => $pagetype,
-                'pageStatus' => $status,
-                'insertedBy'=>$this->session->userdata('userEmail'),
-                'insertedDate'=>date("Y-m-d H:i:s"),
-
-            );
-        }
-        else
-        {
-            $data = array(
-                'pageTitle' => $title,
-                'pageKeywords' => $keywords,
-                'pageMetaData' => $metadata,
-                'pageContent' => $content,
-
-                'pageType' => $pagetype,
-                'pageStatus' => $status,
-                'insertedBy'=>$this->session->userdata('userEmail'),
-                'insertedDate'=>date("Y-m-d H:i:s"),
-
-            );
-        }
+//        if (!empty($_FILES['image']['name'])) {
+//            $this->load->library('upload');
+//            $config = array(
+//                'upload_path' => "images/pageImages/",
+//                'allowed_types' => "jpg|png|jpeg|gif",
+//                //'overwrite' => TRUE,
+//                //'max_size' => "2048000",
+//                'remove_spaces'=>FALSE,
+//                'mod_mime_fix'=>FALSE,
+//                'file_name'=>'pageImage',
+//
+//            );
+//            $this->upload->initialize($config);
+//
+//            if($this->upload->do_upload('image')){
+//                //$response   =array('upload_data' => $this->upload->data());
+//                //print_r($response);
+//            }else{
+//
+//                $error =array('error'=>$this->upload->display_errors());
+//                $che=json_encode($error);
+//                echo "<script>
+//
+//                    alert($che.error);
+//                    window.location.href= '" . base_url() . "Admin/Page/createPage';
+//                    </script>";
+//            }
+//            $data = array(
+//                'pageTitle' => $title,
+//                'pageKeywords' => $keywords,
+//                'pageMetaData' => $metadata,
+//                'pageContent' => $content,
+//                'pageImage' => "pageImage".pathinfo($image, PATHINFO_EXTENSION),
+//                'pageType' => $pagetype,
+//                'pageStatus' => $status,
+//                'insertedBy'=>$this->session->userdata('userEmail'),
+//                'insertedDate'=>date("Y-m-d H:i:s"),
+//
+//            );
+//        }
+//        else
+//        {
+//            $data = array(
+//                'pageTitle' => $title,
+//                'pageKeywords' => $keywords,
+//                'pageMetaData' => $metadata,
+//                'pageContent' => $content,
+//                'pageType' => $pagetype,
+//                'pageStatus' => $status,
+//                'insertedBy'=>$this->session->userdata('userEmail'),
+//                'insertedDate'=>date("Y-m-d H:i:s"),
+//
+//            );
+//        }
         $this->security->xss_clean($data,true);
 
         $error=$this->db->insert('ictmpage', $data);
+
         if (empty($error))
         {
             return $this->db->error();
         }
         else
         {
+            if (!empty($_FILES['image']['name'])) {
+                $this->db->select('pageId');
+                $this->db->order_by("pageId","desc");
+                $this->db->limit(1);
+                $query = $this->db->get('ictmpage');
+
+                foreach ($query->result() as $row) {
+                    $pageId = $row->pageId;
+                }
+
+                $this->load->library('upload');
+                $config = array(
+                    'upload_path' => "images/pageImages/",
+                    'allowed_types' => "jpg|png|jpeg|gif",
+                    'overwrite' => TRUE,
+                    //'max_size' => "2048000",
+                    'remove_spaces' => FALSE,
+                    'mod_mime_fix' => FALSE,
+                    'file_name' => $pageId,
+
+                );
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('image')) {
+                    //$response   =array('upload_data' => $this->upload->data());
+                    //print_r($response);
+                } else {
+
+                    $error = array('error' => $this->upload->display_errors());
+                    $che = json_encode($error);
+                    echo "<script>
+
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Page/createPage';
+                    </script>";
+                }
+                $data = array(
+                    'pageImage' => $pageId.".".pathinfo($image, PATHINFO_EXTENSION),
+                );
+
+                $this->db->where('pageId', $pageId);
+                $this->db->update('ictmpage', $data);
+            }
+
             return $error=null;
         }
     }
@@ -109,6 +166,36 @@ class Pagem extends CI_Model
         $this->db->where('pageId', $id);
         $query = $this->db->get('ictmpage');
         return $query->result();
+    }
+
+    // show the CourseImage for editCourse
+    public function deletePageImage($id)
+    {
+        $this->db->select('pageImage');
+        $this->db->where('pageId',$id);
+        $query = $this->db->get('ictmpage');
+         foreach ($query->result() as $image){$pageImage=$image->pageImage;}
+
+        unlink(FCPATH."images/pageImages/".$pageImage);
+        $data = array(
+            'pageImage'=>null,
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+        );
+        $this->db->where('pageId',$id);
+        $error=$this->db->update('ictmpage', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
+
     }
 
     //this will update the page data

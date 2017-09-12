@@ -74,6 +74,9 @@
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <input class="form-control"  type="file" name="image" />
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
+                                            <?php if ($epd->pageImage!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/Page/deletePageImage/<?php echo $epd->pageId ?>" onclick='return confirm("Are you sure to Delete This Page Image?")'><i class="icon_trash"></i></a>
+                                            <?php }?>
                                         </div>
                                     </div>
                                     <div class="form-group">
