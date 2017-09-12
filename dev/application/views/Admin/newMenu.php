@@ -42,7 +42,7 @@
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  value="<?php echo set_value('menuTitle'); ?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -53,7 +53,7 @@
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
                                                 <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                    <option><?php echo MENU_TYPE[$i]?></option>
+                                                    <option <?php echo set_select('menuType',  MENU_TYPE[$i], False); ?>><?php echo MENU_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -65,7 +65,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
                                             <select class="form-control m-bot15" name="parentId" id="parentId">
-                                                <option value="" selected><?php echo SELECT_PARENT_MENU?></option>
+                                                <option value=""  selected><?php echo SELECT_PARENT_MENU?></option>
 
                                             </select>
 
@@ -80,7 +80,7 @@
                                                 <option value="" selected><?php echo SELECT_PAGE ?></option>
                                                 <?php foreach ($page as $page){?>
 
-                                                    <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
+                                                    <option value="<?php echo $page->pageId?>" <?php echo set_select('pageId',  $page->pageId, False); ?>><?php echo $page->pageTitle?></option>
                                                 <?php }?>
 
                                             </select>
@@ -95,7 +95,7 @@
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                <option><?php echo STATUS[$i]?></option>
+                                                <option <?php echo set_select('menuStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

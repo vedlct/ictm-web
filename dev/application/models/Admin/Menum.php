@@ -44,7 +44,7 @@ class Menum extends CI_Model
 
     }
 
-            /*-----get Menu Name and id----------*/
+    /*-----get Menu Name and id----------*/
     public function getMenuName($menuType)
     {
         $this->db->select('menuId, menuName');
@@ -52,7 +52,8 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-            /*----------- check MenuTitle Uniqueness Per MenuType ----------------*/
+
+     /*----------- check MenuTitle Uniqueness Per MenuType ----------------*/
     public function checkMenuTitleUniquePerMenuType($menuTitle,$menuType)
     {
         $this->db->select('menuName,menuType');
@@ -76,17 +77,35 @@ class Menum extends CI_Model
 
 
     /*---- get all menu for mangeMenuView -----*/
-    public function getAllforManageMenu()
-    {
+//    public function getAllforManageMenu()
+//    {
+//
+//        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
+//        $this->db->from('ictmmenu m');
+//        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+//        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+//        $query = $this->db->get();
+//        return $query->result();
+//
+//
+//    }
+
+    public function getAllforManageMenu($limit, $start) {
 
         $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
-        return $query->result();
 
-
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
     }
 
         /*-- get all information of the selected Menu ---*/
@@ -162,6 +181,10 @@ class Menum extends CI_Model
         else{
             return $query->result();
         }
+    }
+
+    public function record_count() {
+        return $this->db->count_all("ictmmenu");
     }
 
 
