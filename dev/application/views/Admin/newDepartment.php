@@ -51,13 +51,7 @@
                                         <div class="col-lg-4">
 
                                             <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
-
-                                            <select class="form-control m-bot15" name="departmentHead" id="departmentHead" required>
-                                                <option value="" selected><?php echo SELECT_DEPARTMENT_HEAD ?></option>
-                                                <?php foreach ($facultyList as $faculty){?>
-                                                    <option value="<?php echo $faculty->facultyId?>" <?php echo set_select('department',  $faculty->facultyId, False); ?>><?php echo $faculty->facultyFirstName?><?php echo $faculty->facultyLastName?></option>
-                                                <?php } ?>
-                                            </select>
+                                            <input class="form-control" id="departmentHead" name="departmentHead" value="<?php echo set_value('departmentHead'); ?>" type="text" required />
 
                                         </div>
 

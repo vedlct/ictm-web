@@ -52,13 +52,8 @@
                                         <div class="col-lg-4">
 
                                             <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
-<!--                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="--><?php //echo $editDepartment->departmentHead?><!--" type="text" required />-->
+                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="<?php echo $editDepartment->departmentHead?>" type="text" required />
 
-                                            <select class="form-control m-bot15" name="departmentHead" id="departmentHead" required>
-                                                <option value="" selected><?php echo SELECT_DEPARTMENT_HEAD ?></option>
-                                                <?php foreach ($facultyList as $faculty){?>
-                                                    <option value="<?php echo $faculty->facultyId?>"<?php if (!empty($editDepartment->departmentHead) && $editDepartment->departmentHead == $faculty->facultyId)  echo 'selected = "selected"'; ?>><?php echo $faculty->facultyFirstName?><?php echo $faculty->facultyLastName?></option>
-                                                <?php } ?>
 
                                             </select>
 
@@ -92,11 +87,11 @@
                                     </div>
 
                                     <div class="form-group ">
-                                        <label for="curl" class="control-label col-lg-2">Image<span class="required">*</span></label>
+                                        <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
-                                            <input class="form-control " id="image" type="file" name="image" required/>
+                                            <input class="form-control " id="image" type="file" name="image"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Department/showImageForEdit/<?php echo $editDepartment->departmentId?>" target="_blank"><span> <?php echo $editDepartment->departmentImage?></span></a>
                                         </div>
                                     </div>

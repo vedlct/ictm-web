@@ -38,8 +38,8 @@
                             <table class="table table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr style="text-align: center" bgcolor="#D3D3D3">
-                                    <th style="text-align: center"> Name</th>
-                                    <th style="text-align: center"> Head</th>
+                                    <th style="text-align: center"> Department Name</th>
+                                    <th style="text-align: center"> Department Head</th>
                                     <th style="text-align: center"> Status</th>
                                     <th style="text-align: center"> Inserted By</th>
                                     <th style="text-align: center"> Modified By</th>
@@ -55,7 +55,7 @@
                                         </td>
 
                                         <td>
-                                            <?php echo $departments->facultyFirstName?><?php echo $departments->facultyLastName?>
+                                            <?php echo $departments->departmentHead?>
 
                                         </td>
 

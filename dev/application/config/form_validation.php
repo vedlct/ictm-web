@@ -601,7 +601,6 @@ $config = array (
             'rules' => 'trim|required|max_length[100]|xss_clean',
 
         ),
-
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -624,7 +623,7 @@ $config = array (
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'trim|required|max_length[100]|xss_clean',
 
         ),
 //        array(
