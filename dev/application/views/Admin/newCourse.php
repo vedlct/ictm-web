@@ -200,7 +200,7 @@
                                                 <select class="form-control m-bot15" name="status" required>
                                                     <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                     <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                        <option><?php echo STATUS[$i]?></option>
+                                                        <option ><?php echo STATUS[$i]?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>

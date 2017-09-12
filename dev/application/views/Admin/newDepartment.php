@@ -42,7 +42,7 @@
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('departmentName'); ?></font></p>
-                                            <input class="form-control" id="departmentName" name="departmentName"type="text" required />
+                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo set_value('name'); ?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -55,7 +55,7 @@
                                             <select class="form-control m-bot15" name="departmentHead" id="departmentHead" required>
                                                 <option value="" selected><?php echo SELECT_DEPARTMENT_HEAD ?></option>
                                                 <?php foreach ($facultyList as $faculty){?>
-                                                    <option value="<?php echo $faculty->facultyId?>"><?php echo $faculty->facultyFirstName?><?php echo $faculty->facultyLastName?></option>
+                                                    <option value="<?php echo $faculty->facultyId?>" <?php echo set_select('department',  $faculty->facultyId, False); ?>><?php echo $faculty->facultyFirstName?><?php echo $faculty->facultyLastName?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -77,7 +77,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="departmentSummary">Department Summary</label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" ></textarea>
+                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" ><?php echo set_value('name'); ?></textarea>
                                         </div>
                                     </div>
 
