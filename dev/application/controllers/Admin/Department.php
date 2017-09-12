@@ -6,7 +6,7 @@ class Department extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin/Departmentm');
-        $this->load->model('Admin/Facultym');
+
 
     }
 
@@ -21,8 +21,6 @@ class Department extends CI_Controller
     {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-
-//            $this->data['facultyList'] = $this->Facultym->facultyList();
 
             $this->load->view('Admin/newDepartment');
         } else {
@@ -39,7 +37,7 @@ class Department extends CI_Controller
 
 
             if (!$this->form_validation->run('createDepartment')) {
-                //$this->data['facultyList'] = $this->Facultym->facultyList();
+
 
                 $this->load->view('Admin/newDepartment',$this->data);
             }
@@ -49,19 +47,16 @@ class Department extends CI_Controller
 
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Department Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Department/manageDepartment';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Department Created Successfully');
+                    redirect('Admin/Department/manageDepartment');
+
 
                 }
                 else
                 {
-                    //print_r($this->data['error']);
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Department/manageDepartment';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Department/newDepartment');
+
                 }
 
             }
@@ -96,8 +91,6 @@ class Department extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['editDepartment'] = $this->Departmentm->getAllDepartmentbyId($departmentId);
-//            $this->data['facultyList'] = $this->Facultym->facultyList();
-
             $this->load->view('Admin/editDepartment', $this->data);
         }
         else{
@@ -120,19 +113,17 @@ class Department extends CI_Controller
                 $this->data['error'] =  $this->Departmentm->editDepartmentbyId($departmentId);
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Department Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Department/ManageDepartment';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Department Updated Successfully');
+                    redirect('Admin/Department/ManageDepartment');
+
 
                 }
                 else
                 {
 
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Department/ManageDepartment';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Department/editDepartmentbyId/'.$departmentId);
+
                 }
 
         } }
@@ -157,7 +148,9 @@ class Department extends CI_Controller
                 echo $x;
 
             }
-            else{echo $r;}
+            else{
+                $this->session->set_flashdata('successMessage','Department Deleted Successfully');
+                echo $r;}
 
 
         }
@@ -204,6 +197,30 @@ class Department extends CI_Controller
             }
         }
 
+    //this function will delete the image in edit
+    public function deleteDepartmentImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Departmentm->deleteDepartmentImage($id);
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Department Image Deleted Successfully');
+                redirect('Admin/Department/editDepartmentbyId/'.$id);
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Department/editDepartmentbyId/'.$id);
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
 
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
@@ -211,7 +228,7 @@ class Department extends CI_Controller
         $image = $_FILES["image"]["name"];
         if (!empty($image)) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
 //        $config['max_size']    = '2048000';
@@ -222,6 +239,7 @@ class Department extends CI_Controller
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
         }

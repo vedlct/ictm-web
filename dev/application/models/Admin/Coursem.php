@@ -40,7 +40,7 @@ class Coursem extends CI_Model
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
+                'upload_path' => "images/courseImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
@@ -178,6 +178,13 @@ class Coursem extends CI_Model
     // show the CourseImage for editCourse
     public function deleteCourseImage($id){
 
+        $this->db->select('courseImage');
+        $this->db->where('courseId',$id);
+        $query = $this->db->get('ictmcourse');
+        foreach ($query->result() as $image){$courseImage=$image->courseImage;}
+
+        unlink(FCPATH."images/courseImages/".$courseImage);
+
         $data = array(
             'courseImage'=>null,
             'lastModifiedBy'=>$this->session->userdata('userEmail'),
@@ -225,18 +232,17 @@ class Coursem extends CI_Model
 
         $image = $_FILES["image"]["name"];
 
-//            $image = $_FILES["image"]["name"];
-//            move_uploaded_file($_FILES["image"]["tmp_name"], "images/" . $image);
 
             if (!empty($_FILES['image']['name'])) {
                 $this->load->library('upload');
                 $config = array(
-                    'upload_path' => "images/",
-                    'allowed_types' => "jpg|png|jpeg",
+                    'upload_path' => "images/courseImages/",
+                    'allowed_types' => "jpg|png|jpeg|gif",
                     'overwrite' => TRUE,
                     //'max_size' => "2048000",
                     'remove_spaces'=>FALSE,
                     'mod_mime_fix'=>FALSE,
+                    'file_name' => $id,
 
                 );
                 $this->upload->initialize($config);
@@ -274,7 +280,7 @@ class Coursem extends CI_Model
                 'couseLocation' => $location,
                 'timeTable' => $timetables,
                 'courseStatus' => $status,
-                'courseImage' => $image,
+                'courseImage' => $id.".".pathinfo($image, PATHINFO_EXTENSION),
                 'departmentId'=>$department,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),

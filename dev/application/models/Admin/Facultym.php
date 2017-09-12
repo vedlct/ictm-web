@@ -23,7 +23,7 @@ class Facultym extends CI_Model
         if (!empty($_FILES['facultyImage']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
+                'upload_path' => "images/facultyImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
@@ -164,12 +164,13 @@ class Facultym extends CI_Model
         if (!empty($_FILES['facultyImage']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
+                'upload_path' => "images/facultyImages/",
                 'allowed_types' => "jpg|png|jpeg",
                 'overwrite' => TRUE,
 //                'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
+                'file_name' => $id,
 
             );
             $this->upload->initialize($config);
@@ -199,7 +200,7 @@ class Facultym extends CI_Model
                 'facultyTwitter'=>$facultyTwitter,
                 'facultyLinkedIn'=>$facultyLinkdin,
                 'facultyIntro'=>$facultyIntro,
-                'facultyImage'=>$facultyImage,
+                'facultyImage'=>$id.".".pathinfo($facultyImage, PATHINFO_EXTENSION),
                 'facultyStatus'=>$facultyStatus,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
@@ -251,14 +252,36 @@ class Facultym extends CI_Model
 
     }
 
-    /*---------for Manage Faculty ---------end--------------*/
 
-//    public function facultyList()  // delete Faculty and his teaching Course from database
-//    {
-//        $this->db->select('facultyId,facultyFirstName,facultyLastName');
-//        $this->db->from('ictmfaculty');
-//        $query = $this->db->get();
-//        return $query->result();
-//    }
+// show the FacultyImage for editFaculty
+    public function deleteFacultyImage($id)
+    {
+        $this->db->select('facultyImage');
+        $this->db->where('facultyId',$id);
+        $query = $this->db->get('ictmfaculty');
+        foreach ($query->result() as $image){$facultyImage=$image->facultyImage;}
+
+        unlink(FCPATH."images/facultyImages/".$facultyImage);
+
+        $data = array(
+            'facultyImage'=>null,
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+        );
+        $this->db->where('facultyId',$id);
+        $error=$this->db->update('ictmfaculty', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
+
+    }
 
 }

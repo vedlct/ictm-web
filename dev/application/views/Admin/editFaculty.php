@@ -29,6 +29,14 @@
                 </div>
             </div>
             <!-- Form validations -->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -83,6 +91,9 @@
                                             <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="facultyImage" id="facultyImage"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Faculty/showImageForEdit/<?php echo $editFaculty->facultyId?>" target="_blank"><span> <?php echo $editFaculty->facultyImage?></span></a>
+                                            <?php if ($editFaculty->facultyImage!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/Faculty/deleteFacultyImage/<?php echo $editFaculty->facultyId ?>" onclick='return confirm("Are you sure to Delete This Faculty Image?")'><i class="icon_trash"></i></a>
+                                            <?php }?>
                                         </div>
 
                                         <label for="faculty_emp_type" class="control-label col-lg-2">Faculty Employee type <span class="required">*</span></label>

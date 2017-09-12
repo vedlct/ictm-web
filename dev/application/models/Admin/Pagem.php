@@ -155,6 +155,7 @@ class Pagem extends CI_Model
 
         $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmpage');
+        $this->db->order_by("pageId", "desc");
         $query = $this->db->get();
         return $query->result();
     }

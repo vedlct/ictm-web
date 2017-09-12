@@ -45,18 +45,17 @@ class Course extends CI_Controller
             else {
             $this->data['error'] =$this->Coursem->insertCourse();
             if (empty($this->data['error'])) {
-                echo "<script>
-                    alert('Course Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
-                    </script>";
+
+                $this->session->set_flashdata('successMessage','Course Created Successfully');
+                redirect('Admin/Course/manageCourse');
+
 
             }
             else
             {
-                echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Course/createCourse';
-                    </script>";
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Course/createCourse');
+
             }
             }
         } else {
@@ -112,18 +111,17 @@ class Course extends CI_Controller
                 $this->data['error'] = $this->Coursem->updateCourseData($id);
 
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('Course Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
-                    </script>";
+
+                    $this->session->set_flashdata('successMessage','Course Updated Successfully');
+                    redirect('Admin/Course/manageCourse');
+
 
                 }
                 else
                 {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Course/editCourse/'.$id);
+
                 }
             }
         } else {
@@ -152,17 +150,16 @@ class Course extends CI_Controller
 
             $this->data['error'] = $this->Coursem->deleteCourseImage($id);
             if (empty($this->data['error'])) {
-                echo "<script>
-                    alert('Course Image Deleted Successfully');
-                    window.location.href= '" . base_url() . "Admin/Course/editCourse/$id';
-                    </script>";
+
+                $this->session->set_flashdata('successMessage','Course Image Deleted Successfully');
+                redirect('Admin/Course/editCourse/'.$id);
+
             }
             else
             {
-                echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Course/editCourse/$id';
-                    </script>";
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Course/editCourse/'.$id);
+
             }
 
         }
@@ -183,11 +180,12 @@ class Course extends CI_Controller
             $coursedata = $this->data['coursedata'];
             if (empty($coursedata)) {
                 $this->Coursem->deleteCoursebyId($courseId);
-                echo "<script>
-                    alert('Course Deleted Successfully');
-                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
-                    </script>";
-            } else {
+
+                $this->session->set_flashdata('successMessage','Course Deleted Successfully');
+                redirect('Admin/Course/manageCourse');
+
+            }
+            else {
 
 
                 for ($i = 0; $i < count($coursedata); $i++) {
@@ -226,7 +224,7 @@ class Course extends CI_Controller
                 return true;
             }
             else{
-                $this->form_validation->set_message('CourseCheckFormNewCourse', 'Course Allready Existed');
+                $this->form_validation->set_message('CourseCheckFormNewCourse', 'Course Allready Existed Under This Department');
                 return false;
             }
         }
@@ -256,7 +254,7 @@ class Course extends CI_Controller
                 return true;
             }
             else{
-                $this->form_validation->set_message('CourseCheckFormEditCourse', 'Course Allready Existed');
+                $this->form_validation->set_message('CourseCheckFormEditCourse', 'Course Allready Existed Under This Department');
                 return false;
             }
         }
@@ -274,10 +272,10 @@ class Course extends CI_Controller
         $image = $_FILES["image"]["name"];
         if ($image != null) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
-//        $config['max_size']    = '2048000';
+//          $config['max_size']    = '2048000';
             $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 
@@ -285,6 +283,7 @@ class Course extends CI_Controller
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
         }

@@ -41,16 +41,15 @@ class Faculty extends CI_Controller
 
                 $this->data['error'] = $this->Facultym->createNewFaculty();
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('Faculty Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Faculty/manageFaculty';
-                    </script>";
+
+                    $this->session->set_flashdata('successMessage','Faculty Created Successfully');
+                    redirect('Admin/Faculty/manageFaculty');
+
                 } else {
 
-                    echo "<script>
-                        alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
-                        </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Faculty/newFaculty');
+
                 }
             }
 
@@ -106,6 +105,30 @@ class Faculty extends CI_Controller
         }
     }
 
+    //this function will delete the image in edit
+    public function deleteFacultyImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Facultym->deleteFacultyImage($id);
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Faculty Image Deleted Successfully');
+                redirect('Admin/Faculty/editFacultyView/'.$id);
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Faculty/editFacultyView/'.$id);
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
     public function addCoursetoFaculty($courseId)  //add Course to selected faculty
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -147,16 +170,14 @@ class Faculty extends CI_Controller
                 $this->data['error'] = $this->Facultym->editFacultybyId($id);
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Faculty Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Faculty Updated Successfully');
+                    redirect('Admin/Faculty/ManageFaculty');
+
                 } else {
 
-                    echo "<script>
-                        alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Faculty/ManageFaculty';
-                        </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Faculty/editFacultybyId/'.$id);
+
                 }
             }
         }
@@ -170,6 +191,7 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Facultym->deleteFacultybyId($facultyId);
+            $this->session->set_flashdata('successMessage','Faculty Deleted Successfully');
         }
 
         else{
@@ -184,7 +206,7 @@ class Faculty extends CI_Controller
         $image = $_FILES['facultyImage']['name'];
         if ($image != null) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
 //        $config['max_size']    = '2048000';
@@ -195,6 +217,7 @@ class Faculty extends CI_Controller
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
         }

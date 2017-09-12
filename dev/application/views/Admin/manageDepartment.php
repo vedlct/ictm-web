@@ -26,7 +26,15 @@
                     </ol>
                 </div>
             </div>
-            <!-- page start-->
+            <!-- Department start-->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
 
             <div class="row">
                 <div class="col-lg-12">
@@ -135,7 +143,8 @@
                 cache: false,
                 success:function(data) {
 
-                    if(data=='0'){alert("Department Deleted Successfully!!");
+                    if(data=='0'){
+
                         location.reload();
                     }
                     else
@@ -147,7 +156,7 @@
             });
         }
         else {
-            window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
+            window.location="<?php echo base_url()?>Admin/Department/ManageDepartment";
         }
     }
 </script>
