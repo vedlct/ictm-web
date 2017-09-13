@@ -77,18 +77,6 @@ class Menum extends CI_Model
 
 
     /*---- get all menu for mangeMenuView -----*/
-//    public function getAllforManageMenu()
-//    {
-//
-//        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
-//        $this->db->from('ictmmenu m');
-//        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
-//        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
-//        $query = $this->db->get();
-//        return $query->result();
-//
-//
-//    }
 
     public function getAllforManageMenu($limit, $start) {
 
@@ -183,7 +171,7 @@ class Menum extends CI_Model
             return $query->result();
         }
     }
-
+//    for pagination of manage Department
     public function record_count() {
         return $this->db->count_all("ictmmenu");
     }

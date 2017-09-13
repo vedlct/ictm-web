@@ -73,7 +73,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
                                             <select class="form-control m-bot15" name="parentId" id="parentId">
-                                                <option selected><?php echo SELECT_PARENT_MENU?></option>
+                                                <option  value="<?php echo SELECT_PARENT_MENU?>" selected><?php echo SELECT_PARENT_MENU?></option>
                                             </select>
 
 
@@ -180,10 +180,10 @@
             alert("Menu Name Should not more than 100 Charecter Length");
             return false;
         }
-        if (parentId = "Select Parent Menu") {
-            alert("Please Select the Parent Menu");
-            return false;
-        }
+//        if (parentId = "Select Parent Menu") {
+//            alert("Please Select the Parent Menu");
+//            return false;
+//        }
         else
         {
             return true;

@@ -62,12 +62,12 @@ class Pagem extends CI_Model
                     window.location.href= '" . base_url() . "Admin/Page/createPage';
                     </script>";
                 }
-                $data = array(
+                $data1 = array(
                     'pageImage' => $pageId.".".pathinfo($image, PATHINFO_EXTENSION),
                 );
-
+                $data1=$this->security->xss_clean($data1,true);
                 $this->db->where('pageId', $pageId);
-                $this->db->update('ictmpage', $data);
+                $this->db->update('ictmpage', $data1);
             }
 
             return $error=null;
