@@ -44,12 +44,14 @@ class CourseSectionm extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+
     //this will return all course section data and search by coursesectionid.
     public function getCourseSecAllData($id){
         $this->db->where('courseSectionId', $id);
         $query = $this->db->get('ictmcoursesection');
         return $query->result();
     }
+
     //this will update course section data
     public function updateCourseSectionData($id){
 
@@ -84,19 +86,6 @@ class CourseSectionm extends CI_Model
         $this->db->where('courseSectionId',$courseSectionId);
         $this->db->delete('ictmcoursesection');
 
-
     }
 
-    /*----------- check Course Section Uniqueness ---- newCourse Section------------*/
-//    public function checkUniqueSection($courseTitle,$SectionTitle)
-//    {
-//
-//        $this->db->select('courseSectionTitle,courseId');
-//        $this->db->where('courseId',$courseTitle);
-//        $this->db->where('courseSectionTitle',$SectionTitle);
-//
-//        $query = $this->db->get('ictmcoursesection');
-//        return $query->result();
-//
-//    }
 }

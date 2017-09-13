@@ -165,13 +165,26 @@
 
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" id="Course">
+
+                                        <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
+                                        <div class="col-lg-3">
+
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses">
+                                                <option value="" ><?php echo SELECT_COURSE ?></option>
+                                                <?php foreach ($course as $course){?>
+                                                    <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle ?></option>
+                                                <?php } ?>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <input class="btn btn-sm btn-basic" type='button' value='Add' id='addCourse' onclick="selectid(this)">
+                                        </div>
+
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses</label>
-
-
-                                        <div class="col-lg-4" >
-
-                                            <div class="form-group " id="CourseTable">
+                                        <div class="col-lg-4">
+                                            <div class="form-group col-lg-12" id="CourseTable">
                                             <table class="table table-striped table-advance  table-bordered table-hover " >
                                                 <tbody>
                                                 <tr>
@@ -200,20 +213,7 @@
                                         </div>
 
 
-                                        <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
-                                        <div class="col-lg-3">
 
-                                            <select class="form-control" id="faculty_courses" name="faculty_courses">
-                                                <option value="" ><?php echo SELECT_COURSE ?></option>
-                                                <?php foreach ($course as $course){?>
-                                                <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle ?></option>
-                                                <?php } ?>
-                                            </select>
-
-                                        </div>
-                                        <div class="col-lg-1">
-                                            <input class="btn btn-sm btn-basic" type='button' value='Add' id='addCourse' onclick="selectid(this)">
-                                        </div>
 
                                     </div>
 
@@ -303,18 +303,21 @@
 
     function selectid1(x)
     {
-        btn = $(x).data('panel-id');
-        var facultyId= <?php echo $editFaculty->facultyId?>;
-        $.ajax({
+        if (confirm("Are you sure you want to delete this Course From This Faculty?")) {
+            btn = $(x).data('panel-id');
+            var facultyId = <?php echo $editFaculty->facultyId?>;
+            $.ajax({
                 type: 'POST',
-                url: '<?php echo base_url("Admin/Faculty/deleteCoursetoFaculty/")?>'+btn,
+                url: '<?php echo base_url("Admin/Faculty/deleteCoursetoFaculty/")?>' + btn,
                 data: {'facultyId': facultyId},
                 cache: false,
                 success: function (data) {
-                    $('#CourseTable').load(document.URL +  ' #CourseTable');
+                    $('#CourseTable').load(document.URL + ' #CourseTable');
 
                 }
-        });
+            });
+        }
+
     }
 
 </script>

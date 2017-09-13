@@ -34,90 +34,34 @@ class Coursem extends CI_Model
         $timetables = $this->input->post("timetables");
         $status= $this->input->post("status");
         $department= $this->input->post("department");
-        $image=$_FILES['image']['name'];
 
 
-        if (!empty($_FILES['image']['name'])) {
-            $this->load->library('upload');
-            $config = array(
-                'upload_path' => "images/courseImages/",
-                'allowed_types' => "jpg|png|jpeg|gif",
-                'overwrite' => TRUE,
-                //'max_size' => "2048000",
-                'remove_spaces'=>FALSE,
-                'mod_mime_fix'=>FALSE,
+        $data = array(
+            'courseCodePearson' => $codeperson,
+            'courseCodeIcon' => $code,
+            'ucasCode' => $ucascode,
+            'courseTitle' => $name,
+            'awardingTitle' => $award,
+            'awardingBody' => $awarddingbody,
+            'accreditationType' => $accreditation,
+            'accreditationNumber'=>$accreditationNo,
+            'courseDuration' => $duration,
+            'creditValue' => $credit,
+            'courseStructutre' => $stucture,
+            'studyMode' => $mode,
+            'studyLanguage' => $language,
+            'academicYear' => $year,
+            'courseFees' => $fees,
+            'couseLocation'=>$location,
+            'timeTable' => $timetables,
+            'courseStatus' => $status,
+            'departmentId'=>$department,
+            'insertedBy' => $this->session->userdata('userEmail'),
+            'insertedDate' => date("Y-m-d H:i:s"),
 
-            );
-            $this->upload->initialize($config);
+        );
 
-            if($this->upload->do_upload('image')){
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
-            }else{
-
-                $error =array('error'=>$this->upload->display_errors());
-                $che=json_encode($error);
-                echo "<script>
-                    
-                    alert($che.error);
-                    window.location.href= '" . base_url() . "Admin/Course/createCourse';
-                    </script>";
-            }
-            $data = array(
-                'courseCodePearson' => $codeperson,
-                'courseCodeIcon' => $code,
-                'ucasCode' => $ucascode,
-                'courseTitle' => $name,
-                'awardingTitle' => $award,
-                'awardingBody' => $awarddingbody,
-                'accreditationType' => $accreditation,
-                'accreditationNumber'=>$accreditationNo,
-                'courseDuration' => $duration,
-                'creditValue' => $credit,
-                'courseStructutre' => $stucture,
-                'studyMode' => $mode,
-                'studyLanguage' => $language,
-                'academicYear' => $year,
-                'courseFees' => $fees,
-                'couseLocation'=>$location,
-                'timeTable' => $timetables,
-                'courseStatus' => $status,
-                'courseImage' => $image,
-                'departmentId'=>$department,
-                'insertedBy' => $this->session->userdata('userEmail'),
-                'insertedDate' => date("Y-m-d H:i:s"),
-
-            );
-        }
-        else{
-            $data = array(
-                'courseCodePearson' => $codeperson,
-                'courseCodeIcon' => $code,
-                'ucasCode' => $ucascode,
-                'courseTitle' => $name,
-                'awardingTitle' => $award,
-                'awardingBody' => $awarddingbody,
-                'accreditationType' => $accreditation,
-                'accreditationNumber'=>$accreditationNo,
-                'courseDuration' => $duration,
-                'creditValue' => $credit,
-                'courseStructutre' => $stucture,
-                'studyMode' => $mode,
-                'studyLanguage' => $language,
-                'academicYear' => $year,
-                'courseFees' => $fees,
-                'couseLocation'=>$location,
-                'timeTable' => $timetables,
-                'courseStatus' => $status,
-                'departmentId'=>$department,
-                'insertedBy' => $this->session->userdata('userEmail'),
-                'insertedDate' => date("Y-m-d H:i:s"),
-
-            );
-
-        }
-
-        $this->security->xss_clean($data,true);
+        $this->security->xss_clean($data);
         $error=$this->db->insert('ictmcourse', $data);
         if (empty($error))
         {
@@ -125,6 +69,46 @@ class Coursem extends CI_Model
         }
         else
         {
+
+            if (!empty($_FILES['image']['name'])) {
+
+                $image=$_FILES['image']['name'];
+                $courseId=$this->db->insert_id();
+
+                $this->load->library('upload');
+                $config = array(
+                    'upload_path' => "images/courseImages/",
+                    'allowed_types' => "jpg|png|jpeg|gif",
+                    'overwrite' => TRUE,
+                    'remove_spaces' => FALSE,
+                    'mod_mime_fix' => FALSE,
+                    'file_name' => $courseId,
+
+                );
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('image')) {
+                    // if something need after image upload
+                } else {
+
+                    $error = array('error' => $this->upload->display_errors());
+                    $che = json_encode($error);
+                    echo "<script>
+                    
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Course/createCourse';
+                    </script>";
+                }
+
+                $data1 = array(
+                    'courseImage' => $courseId.".".pathinfo($image, PATHINFO_EXTENSION),
+                );
+
+                $data1=$this->security->xss_clean($data1,true);
+                $this->db->where('courseId', $courseId);
+                $this->db->update('ictmcourse', $data1);
+            }
+
             return $error=null;
         }
     }
@@ -155,7 +139,7 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
-
+    // for Course edit
     public function getCourseAllDataforEdit($id){
 
         $this->db->where('courseId', $id);
@@ -239,7 +223,7 @@ class Coursem extends CI_Model
                     'upload_path' => "images/courseImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
                     'overwrite' => TRUE,
-                    //'max_size' => "2048000",
+
                     'remove_spaces'=>FALSE,
                     'mod_mime_fix'=>FALSE,
                     'file_name' => $id,
@@ -248,8 +232,7 @@ class Coursem extends CI_Model
                 $this->upload->initialize($config);
 
                 if($this->upload->do_upload('image')){
-                    //$response   =array('upload_data' => $this->upload->data());
-                    //print_r($response);
+                    // if something need after image upload
                 }else{
 
                     $error =array('error'=>$this->upload->display_errors());
@@ -400,16 +383,6 @@ class Coursem extends CI_Model
             array_push($coursereturn, $cr->courseSectionTitle);
         }
 
-//        $this->db->select('ictmfaculty.facultyFirstName, ictmfaculty.facultyLastName');
-//        $this->db->from('ictmfacultycourse, ictmfaculty');
-//        $this->db->where('ictmfacultycourse.courseId',$courseId);
-//        $this->db->where('ictmfaculty.facultyId','ictmfacultycourse.facultyId');
-//        $query1 = $this->db->get();
-//
-//        foreach ( $query1->result() as $mn){
-//            $name= $mn->facultyFirstName.$mn->facultyLastName;
-//            array_push($coursereturn, $name);
-//        }
         return $coursereturn;
 
 
