@@ -84,11 +84,11 @@
                                     </div>
 
                                     <div class="form-group ">
-                                        <label for="curl" class="control-label col-lg-2">Image<span class="required">*</span></label>
+                                        <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
-                                            <input class="form-control " id="image" type="file" name="image" required/>
+                                            <input class="form-control " id="image" type="file" name="image"/>
                                         </div>
                                     </div>
 
