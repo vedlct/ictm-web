@@ -57,19 +57,15 @@ class Menu extends CI_Controller {
 
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Menu Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Menu/manageMenu';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Menu Created Successfully');
+                    redirect('Admin/Menu/manageMenu');
+
 
                 }
                 else
                 {
-                    //print_r($this->data['error']);
-                    echo "<script>
-                        alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Menu/newMenu';
-                        </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Menu/newMenu');
                 }
 
             }
@@ -137,18 +133,16 @@ class Menu extends CI_Controller {
 
                 $this->data['error'] = $this->Menum->editMenubyId($id);
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                        alert('Menu Updated Successfully');
-                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
-                        </script>";
+
+                    $this->session->set_flashdata('successMessage','Menu Updated Successfully');
+                    redirect('Admin/Menu/ManageMenu');
+
 
                 } else
                  {
-                    //print_r($this->data['error']);
-                        echo "<script>
-                        alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Menu/ManageMenu';
-                        </script>";
+                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                     redirect('Admin/Menu/editMenu/'.$id);
+
                 }
             }
         }
@@ -169,7 +163,9 @@ class Menu extends CI_Controller {
                 $x=implode(" , ",$name);
                 echo $x;
             }
-            else{echo $subMenuName;}
+            else{
+                $this->session->set_flashdata('successMessage','Menu Deleted Successfully');
+                echo $subMenuName;}
         }
         else{
             redirect('Admin/Login');

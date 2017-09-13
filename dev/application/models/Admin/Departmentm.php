@@ -19,12 +19,13 @@ class Departmentm extends CI_Model
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
+                'upload_path' => "images/departmentImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
                 'remove_spaces' => FALSE,
                 'mod_mime_fix' => FALSE,
+
 
             );
             $this->upload->initialize($config);
@@ -49,7 +50,6 @@ class Departmentm extends CI_Model
                 'departmentSummary' => $departmentSummary,
                 'departmentImage' => $image,
                 'departmentStatus' => $departmentStatus,
-
                 'insertedBy' => $this->session->userdata('userEmail'),
                 'insertedDate' => date("Y-m-d H:i:s"),
             );
@@ -58,9 +58,7 @@ class Departmentm extends CI_Model
                 'departmentName' => $departmentName,
                 'departmentHead' => $departmentHead,
                 'departmentSummary' => $departmentSummary,
-
                 'departmentStatus' => $departmentStatus,
-
                 'insertedBy' => $this->session->userdata('userEmail'),
                 'insertedDate' => date("Y-m-d H:i:s"),
             );
@@ -123,12 +121,13 @@ class Departmentm extends CI_Model
 
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
+                'upload_path' => "images/departmentImages/",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 //'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
+                'file_name' => $departmentId,
 
             );
             $this->upload->initialize($config);
@@ -143,7 +142,7 @@ class Departmentm extends CI_Model
                 echo "<script>
                 var x =<?php echo json_encode( $error )?>;
                     alert($che.error);
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+                    window.location.href= '" . base_url() . "Admin/Department/editDepartmentbyId/'.$departmentId;
                     </script>";
                 return false;
             }
@@ -152,7 +151,7 @@ class Departmentm extends CI_Model
                 'departmentHead' => $departmentHead,
                 'departmentSummary' => $departmentSummary,
                 'departmentStatus' =>$departmentStatus,
-                'departmentImage' => $image,
+                'departmentImage' => $departmentId.".".pathinfo($image, PATHINFO_EXTENSION),
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
             );
@@ -171,7 +170,7 @@ class Departmentm extends CI_Model
         }
         $this->security->xss_clean($data,true);
         $this->db->where('departmentId', $departmentId);
-       $error = $this->db->update('ictmdepartment',$data);
+        $error = $this->db->update('ictmdepartment',$data);
         if (empty($error))
         {
             return $this->db->error();
@@ -214,6 +213,37 @@ class Departmentm extends CI_Model
         $this->db->where('departmentId',$id);
         $query = $this->db->get('ictmdepartment');
         return $query->result();
+
+    }
+
+    // show the DepartmentImage for editDepartment
+    public function deleteDepartmentImage($id)
+    {
+        $this->db->select('departmentImage');
+        $this->db->where('departmentId',$id);
+        $query = $this->db->get('ictmdepartment');
+        foreach ($query->result() as $image){$departmentImage=$image->departmentImage;}
+
+        unlink(FCPATH."images/departmentImages/".$departmentImage);
+
+        $data = array(
+            'departmentImage'=>null,
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+        );
+        $this->db->where('departmentId',$id);
+        $error=$this->db->update('ictmdepartment', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
 
     }
 

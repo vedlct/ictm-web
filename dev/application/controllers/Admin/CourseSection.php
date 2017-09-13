@@ -46,19 +46,15 @@ class CourseSection extends CI_Controller
                 $this->data['error'] =$this->CourseSectionm->insertCourseSec();
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Course Section Inserted Successfully');
-                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Course Section Inserted Successfully');
+                    redirect('Admin/CourseSection/manageCourseSec');
 
                 }
                 else
                 {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/CourseSection/createCourseSec');
 
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/CourseSection/createCourseSec';
-                    </script>";
                 }
             }
         }
@@ -124,16 +120,15 @@ class CourseSection extends CI_Controller
                 $this->data['error'] = $this->CourseSectionm->updateCourseSectionData($id);                       // edit Course section
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Course Section Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Course Section Updated Successfully');
+                    redirect('Admin/CourseSection/manageCourseSec');
+
 
                 } else {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
-                    </script>";
+
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/CourseSection/editCourseSec/'.$id);
+
                 }
             }
 
@@ -151,44 +146,20 @@ class CourseSection extends CI_Controller
 
                 try {
                     $this->CourseSectionm->deleteCourseSectionbyId($courseSectionId);
-
+                    $this->session->set_flashdata('successMessage','Course Section Deleted Successfully');
                     redirect('Admin/CourseSection/manageCourseSec');
                 }
                 catch (Exception $e)
                 {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/CourseSection/manageCourseSec';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/CourseSection/manageCourseSec');
+
                 }
             }
             else{
                 redirect('Admin/Login');
             }
         }
-
-    /* --------- Course Section Title check from newCoruse Section-------------------*/
-//    public function CourseSectionCheckFormNewCourseSection()
-//    {
-//        $courseTitle = $this->input->post("coursetitle");
-//
-//        extract($_POST);
-//        for ($i = 0; $i < count($textbox); $i++) {
-//            $SectionTitle = $textbox[$i];
-//            $this->data['checkSectionTitle'] = $this->CourseSectionm->checkUniqueSection($courseTitle,$SectionTitle);
-//
-//        }
-//        if (empty($this->data['checkSectionTitle'])){
-//
-//            return true;
-//        }
-//        else{
-//            $this->form_validation->set_message('CourseSectionCheckFormNewCourseSection', 'Course Section Allready Existed');
-//            return false;
-//        }
-//
-//
-//    }
 
 
 }

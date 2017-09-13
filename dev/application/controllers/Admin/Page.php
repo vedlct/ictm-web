@@ -144,21 +144,17 @@ class Page extends CI_Controller {
 
                 $this->session->set_flashdata('successMessage','Page Image Deleted Successfully');
                 redirect('Admin/Page/editPage/'.$id);
-
             }
             else
             {
                 $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
                 redirect('Admin/Page/editPage/'.$id);
-
             }
-
         }
         else{
             redirect('Admin/Login');
         }
     }
-
 
     //this will delete page
     public function deletePage($pageId)
@@ -167,16 +163,17 @@ class Page extends CI_Controller {
 
             $this->data['pagedata'] =$this->Pagem->checkParentId($pageId);
 
-
-
             $name=array();
             $y=$this->data['pagedata'];
             if (empty($y)){
+
                 $this->Pagem->deletePagebyId($pageId);
-                echo "<script>
-                    alert('Page Deleted Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
+                $this->session->set_flashdata('successMessage','Page Deleted Successfully');
+                redirect('Admin/Page/managePage');
+//                echo "<script>
+//                    alert('Page Deleted Successfully');
+//                    window.location.href= '" . base_url() . "Admin/Page/managePage';
+//                    </script>";
             }else{
 
 
@@ -260,6 +257,7 @@ class Page extends CI_Controller {
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
         }

@@ -31,6 +31,10 @@
                 </div>
             </div>
             <!-- Form validations -->
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">

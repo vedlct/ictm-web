@@ -42,19 +42,15 @@ class PageSection extends CI_Controller {
                     $this->data['error'] = $this->PageSectionm->insertPageSection();
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Page Section Inserted Successfully');
-                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Page Section Inserted Successfully');
+                    redirect('Admin/PageSection/managePageSection');
 
                 }
                 else
                 {
-                    //print_r($this->data['error']);
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/PageSection/createPageSection';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/PageSection/createPageSection');
+
                 }
 
             }
@@ -109,19 +105,16 @@ class PageSection extends CI_Controller {
 
             if (empty($this->data['error'])) {
 
-                echo "<script>
-                    alert('Page Section Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
-                    </script>";
+                $this->session->set_flashdata('successMessage','Page Section Updated Successfully');
+                redirect('Admin/PageSection/managePageSection');
+
 
             }
             else
             {
-                //print_r($this->data['error']);
-                echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
-                    </script>";
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/PageSection/editPageSection'.$id);
+
             }
 
         } else{
@@ -152,15 +145,16 @@ class PageSection extends CI_Controller {
 
             try {
                 $this->PageSectionm->deletePageSectionbyId($pageSectionId);
-
+                $this->session->set_flashdata('successMessage','Page Section Deleted Successfully');
                 redirect('Admin/PageSection/managePageSection');
             }
             catch (Exception $e)
             {
-                echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/PageSection/managePageSection';
-                    </script>";
+
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/PageSection/managePageSection');
+
+
             }
         }
         else{
