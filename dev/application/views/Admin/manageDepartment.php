@@ -46,13 +46,13 @@
                             <table class="table table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr style="text-align: center" bgcolor="#D3D3D3">
-                                    <th style="text-align: center"> Department Name</th>
-                                    <th style="text-align: center"> Department Head</th>
-                                    <th style="text-align: center"> Status</th>
-                                    <th style="text-align: center"> Inserted By</th>
-                                    <th style="text-align: center"> Modified By</th>
-                                    <th style="text-align: center"> Modified Date(d-m-Y)</th>
-                                    <th style="text-align: center"> Action</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department Name</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department Head</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
+                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified By</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified Date(d-m-Y)</th>
+                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
 

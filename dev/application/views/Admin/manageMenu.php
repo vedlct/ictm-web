@@ -52,20 +52,20 @@
                             <table class="table table-striped table-advance  table-bordered table-hover ">
                                 <tbody>
                                 <tr>
-                                    <th> Menu Title</th>
-                                    <th> Menu Type</th>
-                                    <th> Parent Menu</th>
-                                    <th> Page Title</th>
-                                    <th> Menu Status</th>
-                                    <th> Menu Inserted By</th>
-                                    <th> Last Modified By</th>
-                                    <th> Last Modified Date (d-m-Y)</th>
-                                    <th> Action</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Menu Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
                                 </tr>
                                 <?php foreach ($menu as $menu){?>
 
 
-                                    <tr>
+                                    <tr align="center">
                                         <td><?php echo $menu->menuName?></td>
                                         <td><?php echo $menu->menuType?></td>
                                         <td>

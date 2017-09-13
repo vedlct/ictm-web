@@ -49,18 +49,18 @@
                         <table class="table table-striped table-advance  table-bordered table-hover">
                             <tbody>
                             <tr>
-                                <th> Page Title</th>
-                                <th> Page Type</th>
-                                <th> Insert By</th>
-                                <th> Last Modified By</th>
-                                <th> Last Modified Date (d-m-Y)</th>
-                                <th> Status</th>
-                                <th> Action</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Type</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Insert By</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%"> Last Modified By</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Last Modified Date (d-m-Y)</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Status</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
                             </tr>
 
 
                             <?php foreach ($pageData as $pd){?>
-                            <tr>
+                            <tr align="center">
                                 <td><?php echo $pd->pageTitle?></td>
                                 <td><?php echo $pd->pageType?></td>
                                 <td><?php echo $pd->insertedBy?></td>

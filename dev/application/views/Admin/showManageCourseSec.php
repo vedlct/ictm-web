@@ -1,13 +1,13 @@
 
 <table class="table  table-advance  table-bordered table-hover">
     <tbody>
-    <tr align="center" bgcolor="#D3D3D3">
-        <th> Course Section Title </th>
-        <th> Status </th>
-        <th> Inserted By </th>
-        <th> Modified By </th>
-        <th> Modified Date(d-m-Y)</th>
-        <th> Action</th>
+    <tr align="center" >
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Inserted By </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified By </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y)</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center ; width: 10%"> Action</th>
     </tr>
 
         <?php foreach ($coursedata as $cd) { ?>
