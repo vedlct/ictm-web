@@ -45,15 +45,15 @@
                             <table class="table table-striped table-advance  table-bordered table-hover ">
                             <tbody>
                             <tr bgcolor="#D3D3D3">
-                                <th> Course Name</th>
-                                <th> Department</th>
-                                <th> Course Code</th>
-                                <th> Award</th>
-                                <th> Course Status</th>
-                                <th> Insert By</th>
-                                <th> Modified By</th>
-                                <th> Modified Date(d-m-Y)</th>
-                                <th> Action</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Name</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Code</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Award</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Status</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Insert By</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified By</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified Date(d-m-Y)</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                             </tr>
                             <?php foreach ($coursedata as $cd) { ?>
                                 <tr align="center">

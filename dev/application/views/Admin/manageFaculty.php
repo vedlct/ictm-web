@@ -50,17 +50,16 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th>Name</th>
-                                    <th>Email </th>
-                                    <th>Position </th>
-                                    <th>Employee Type </th>
-                                    <th>Degree </th>
-
-                                    <th>Status </th>
-                                    <th>Inserted By </th>
-                                    <th> Last Modified By </th>
-                                    <th> Last Modified Date(d-m-Y) </th>
-                                    <th> Action </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Email </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Position </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Employee Type </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Degree </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Status </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Inserted By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center;width: 10%"> Action </th>
                                 </tr>
 
 
