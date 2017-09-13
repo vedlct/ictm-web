@@ -17,7 +17,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">Create a new Menu</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">New Menu</a></li>
                           <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
                       </ul>
                   </li>
@@ -29,7 +29,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">Create a new Page</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">New Page</a></li>
 
                           <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
 
@@ -43,7 +43,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/PageSection/createPageSection">Create a new Sections</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/PageSection/createPageSection">New Sections</a></li>
                           <li><a class="" href="<?php echo base_url()?>Admin/PageSection/managePageSection"><span>Manage Page Sections</span></a></li>
                       </ul>
                   </li>
@@ -89,7 +89,7 @@
                       </a>
 
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">new Faculty</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">New Faculty</a></li>
                           <li><a class="" href="<?php echo base_url()?>Admin/Faculty/manageFaculty">Manage Faculties</a></li>
 
                       </ul>
@@ -113,11 +113,25 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">Create a new Event</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">New Event</a></li>
                           <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
 
                       </ul>
                   </li>
+
+                  <li class="sub-menu">
+                      <a href="javascript:;" class="">
+                          <i class="icon_tag"></i>
+                          <span>News</span>
+                          <span class="menu-arrow arrow_carrot-right"></span>
+                      </a>
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()?>Admin/News/newNews">New News</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/News/manageNews">Manage News</a></li>
+
+                      </ul>
+                  </li>
+
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon_image"></i>
@@ -142,18 +156,7 @@
                       </ul>
                   </li>
 
-                  <li class="sub-menu">
-                      <a href="javascript:;" class="">
-                          <i class="icon_tag"></i>
-                          <span>News</span>
-                          <span class="menu-arrow arrow_carrot-right"></span>
-                      </a>
-                      <ul class="sub">
-                          <li><a class="" href="<?php echo base_url()?>Admin/News/newNews">Create a new News</a></li>
-                          <li><a class="" href="<?php echo base_url()?>Admin/News/manageNews">Manage News</a></li>
 
-                      </ul>
-                  </li>
 
                   <li class="sub-menu">
                       <a href="javascript:;" class="">

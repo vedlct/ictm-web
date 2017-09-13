@@ -61,7 +61,7 @@
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
                                                 <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                    <option <?php echo set_select('menuType',  MENU_TYPE[$i], False); ?>><?php echo MENU_TYPE[$i]?></option>
+                                                    <option><?php echo MENU_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -165,7 +165,7 @@
                 data:{'type': btn},
                 cache: false,
                 success:function(data) {
-                   // $('#parentId').append(data);
+
                     document.getElementById("parentId").innerHTML = data;
                     $('#csrf').load(document.URL +  ' #csrf');
 
@@ -175,7 +175,7 @@
     }
     function formvalidate() {
         var length =  document.getElementById("menuTitle").value;
-        var parentId =  document.getElementById("parentId").value;
+       // var parentId =  document.getElementById("parentId").value;
         if (length.length >100){
             alert("Menu Name Should not more than 100 Charecter Length");
             return false;

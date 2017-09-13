@@ -2,16 +2,18 @@
     <tbody>
     <tr>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Page Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 5%"> Status </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Inserted By </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Last Modified By </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Last Modified Date (d-m-Y) </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 5%"> Status </th>
+
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 5%"> Action</th>
     </tr>
 
         <?php foreach ($pagedata as $pg) { ?>
     <tr align="center">
             <td><?php echo $pg->pageSectionTitle ?></td>
+            <td><?php echo $pg->pageSectionStatus ?></td>
             <td><?php echo $pg->insertedBy?></td>
             <td>
                 <?php if ($pg->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $pg->lastModifiedBy;} ?>
@@ -24,7 +26,7 @@
                 }
                 ?>
                 </td>
-            <td><?php echo $pg->pageSectionStatus ?></td>
+
             <td>
                 <div class="btn-group">
 
