@@ -165,8 +165,8 @@
                 data:{'type': btn},
                 cache: false,
                 success:function(data) {
-                    $('#parentId').append(data);
-                    //document.getElementById("parentId").innerHTML = data;
+                   // $('#parentId').append(data);
+                    document.getElementById("parentId").innerHTML = data;
                     $('#csrf').load(document.URL +  ' #csrf');
 
                 }
