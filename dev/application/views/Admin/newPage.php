@@ -28,7 +28,12 @@
                     </ol>
                 </div>
             </div>
+
             <!-- Form validations -->
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -42,21 +47,21 @@
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                            <input class="form-control" id="title" name="title"  type="text" required />
+                                            <input class="form-control" id="title" name="title" value="<?php echo set_value('title'); ?>" type="text" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords"  type="text"  />
+                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text"  />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata"  type="text" />
+                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -65,7 +70,7 @@
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
                                              <p><font color="red"> <?php echo form_error('content'); ?></font></p>
-                                             <textarea class="form-control ckeditor" name="content" rows="6" ></textarea>
+                                             <textarea class="form-control ckeditor" name="content" rows="6" ><?php echo set_value('content'); ?></textarea>
                                          </div>
 
                                         </div>
@@ -73,6 +78,7 @@
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control " id="image" type="file" name="image" />
                                         </div>
                                     </div>
@@ -81,9 +87,9 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
                                             <select class="form-control m-bot15" name="pagetype" required>
-                                                <option value=""><?php echo SELECT_PAGE_TYPE?></option>
+                                                <option value="" ><?php echo SELECT_PAGE_TYPE?></option>
                                                 <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
-                                                    <option><?php echo PAGE_TYPE[$i]?></option>
+                                                    <option <?php echo set_select('pagetype',  PAGE_TYPE[$i], False); ?>><?php echo PAGE_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -96,7 +102,7 @@
 
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('status',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
 
                                                 </select>

@@ -70,6 +70,7 @@ class PageSectionm extends CI_Model
         $this->db->select('pageSectionId,pageId,pageSectionTitle,pageSectionStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmpagesection');
         $this->db->where('pageId', $id);
+        $this->db->order_by("pageSectionId", "desc");
         $query = $this->db->get();
         return $query->result();
 

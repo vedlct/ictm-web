@@ -8,9 +8,13 @@ class Page extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Admin/Pagem');
+        $this->load->library("pagination");
+    }
+
+    public function index(){
+
 
     }
- 
 
     // this will show create page
     public function createPage()
@@ -38,19 +42,13 @@ class Page extends CI_Controller {
                 $this->data['error'] = $this->Pagem->insertPage();
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Page Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
-
+                    $this->session->set_flashdata('successMessage','Page Created Successfully');
+                    redirect('Admin/Page/managePage');
                 }
                 else
                 {
-
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Page/createPage';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Page/createPage');
                 }
 
             }
@@ -64,9 +62,21 @@ class Page extends CI_Controller {
     public function managePage()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-            $this->data['pageData'] = $this->Pagem->getPagaData();
+
+            $config = array();
+            $config["base_url"] = base_url() . "Admin/Page/managePage";
+            $config["total_rows"] = $this->Pagem->record_count();
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 4;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = round($choice);
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+            $this->data["pageData"] = $this->Pagem->getPagaData($config["per_page"], $page);
+            $this->data["links"] = $this->pagination->create_links();
 
              $this->load->view('Admin/managePage', $this->data);
+
         }
         else{
             redirect('Admin/Login');
@@ -103,19 +113,15 @@ class Page extends CI_Controller {
 
                 if (empty($this->data['error'])) {
 
-                    echo "<script>
-                    alert('Page Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Page Updated Successfully');
+                    redirect('Admin/Page/managePage');
 
                 }
                 else
                 {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Page/editPage/'.$id);
 
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
                 }
             }
         }
@@ -124,6 +130,28 @@ class Page extends CI_Controller {
         }
     }
 
+    //this function will delete the image in edit
+    public function deletePageImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Pagem->deletePageImage($id);
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Page Image Deleted Successfully');
+                redirect('Admin/Page/editPage/'.$id);
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Page/editPage/'.$id);
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
 
     //this will delete page
     public function deletePage($pageId)
@@ -132,16 +160,15 @@ class Page extends CI_Controller {
 
             $this->data['pagedata'] =$this->Pagem->checkParentId($pageId);
 
-
-
             $name=array();
             $y=$this->data['pagedata'];
             if (empty($y)){
+
                 $this->Pagem->deletePagebyId($pageId);
-                echo "<script>
-                    alert('Page Deleted Successfully');
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
+
+                $this->session->set_flashdata('successMessage','Page Deleted Successfully');
+                redirect('Admin/Page/managePage');
+
             }else{
 
 
@@ -170,7 +197,7 @@ class Page extends CI_Controller {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['imagename'] = $this->Pagem->getImage($id);
+            $this->data['pageImageName'] = $this->Pagem->getImage($id);
             $this->load->view('Admin/showImage', $this->data);
 
         }
@@ -182,13 +209,13 @@ class Page extends CI_Controller {
     public function pageCheckFormEditPage()
     {
         $pageTitle = $this->input->post("title");
-        $pagetype = $this->input->post("pagetype");
+
         $id=$this->uri->segment(4);
 
 
         try
         {
-            $this->data['checkPage'] = $this->Pagem->checkUniquePage($pageTitle,$pagetype,$id);
+            $this->data['checkPage'] = $this->Pagem->checkUniquePage($pageTitle,$id);
 
             if (empty($this->data['checkPage'])){
 
@@ -214,17 +241,17 @@ class Page extends CI_Controller {
         $image = $_FILES["image"]["name"];
         if ($image != null) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
-//        $config['max_size']    = '2048000';
-//        $config['overwrite'] = TRUE;
-        $this->upload->initialize($config);
+            $config['overwrite'] = TRUE;
+            $this->upload->initialize($config);
 
             if (!$this->upload->do_upload('image')) {
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
         }

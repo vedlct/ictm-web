@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class Pagem extends CI_Model
 {
@@ -11,72 +11,65 @@ class Pagem extends CI_Model
         $metadata = $this->input->post("metadata");
         $pagetype = $this->input->post("pagetype");
         $status = $this->input->post("status");
-        $image = $_FILES["image"]["name"];
+        $image=$_FILES['image']['name'];
 
+        $data = array(
+            'pageTitle' => $title,
+            'pageKeywords' => $keywords,
+            'pageMetaData' => $metadata,
+            'pageContent' => $content,
+            'pageType' => $pagetype,
+            'pageStatus' => $status,
+            'insertedBy'=>$this->session->userdata('userEmail'),
+            'insertedDate'=>date("Y-m-d H:i:s"),
 
-        if (!empty($_FILES['image']['name'])) {
-            $this->load->library('upload');
-            $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
-                'overwrite' => TRUE,
-                //'max_size' => "2048000",
-                'remove_spaces'=>FALSE,
-                'mod_mime_fix'=>FALSE,
+        );
 
-            );
-            $this->upload->initialize($config);
-
-            if($this->upload->do_upload('image')){
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
-            }else{
-
-                $error =array('error'=>$this->upload->display_errors());
-//              print_r($error);
-                echo "<script>
-                    var x =<?php echo json_encode( $error )?>;
-                    alert(x);
-                    window.location.href= '" . base_url() . "Admin/Page/createPage';
-                    </script>";
-            }
-            $data = array(
-                'pageTitle' => $title,
-                'pageKeywords' => $keywords,
-                'pageMetaData' => $metadata,
-                'pageContent' => $content,
-                'pageImage' => $image,
-                'pageType' => $pagetype,
-                'pageStatus' => $status,
-                'insertedBy'=>$this->session->userdata('userEmail'),
-                'insertedDate'=>date("Y-m-d H:i:s"),
-
-            );
-        }
-        else
-        {
-            $data = array(
-                'pageTitle' => $title,
-                'pageKeywords' => $keywords,
-                'pageMetaData' => $metadata,
-                'pageContent' => $content,
-
-                'pageType' => $pagetype,
-                'pageStatus' => $status,
-                'insertedBy'=>$this->session->userdata('userEmail'),
-                'insertedDate'=>date("Y-m-d H:i:s"),
-
-            );
-        }
         $this->security->xss_clean($data,true);
-
         $error=$this->db->insert('ictmpage', $data);
+
         if (empty($error))
         {
             return $this->db->error();
         }
         else
         {
+            if (!empty($_FILES['image']['name'])) {
+
+                $pageId=$this->db->insert_id();
+                $this->load->library('upload');
+                $config = array(
+                    'upload_path' => "images/pageImages/",
+                    'allowed_types' => "jpg|png|jpeg|gif",
+                    'overwrite' => TRUE,
+
+                    'remove_spaces' => FALSE,
+                    'mod_mime_fix' => FALSE,
+                    'file_name' => $pageId,
+
+                );
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('image')) {
+                    // if something need after image upload
+                } else {
+
+                    $error = array('error' => $this->upload->display_errors());
+                    $che = json_encode($error);
+                    echo "<script>
+
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Page/createPage';
+                    </script>";
+                }
+                $data1 = array(
+                    'pageImage' => $pageId.".".pathinfo($image, PATHINFO_EXTENSION),
+                );
+                $data1=$this->security->xss_clean($data1,true);
+                $this->db->where('pageId', $pageId);
+                $this->db->update('ictmpage', $data1);
+            }
+
             return $error=null;
         }
     }
@@ -92,14 +85,25 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
-    //this will return all page data
-    public function getPagaData()
-    {
 
+     //this will return all page data for manage page
+    public function getPagaData($limit, $start) {
         $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->limit($limit, $start);
         $this->db->from('ictmpage');
+        $this->db->order_by("pageId", "desc");
         $query = $this->db->get();
-        return $query->result();
+
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+
+
     }
 
     //this will return will page data for edit view
@@ -109,6 +113,37 @@ class Pagem extends CI_Model
         $this->db->where('pageId', $id);
         $query = $this->db->get('ictmpage');
         return $query->result();
+    }
+
+    // show the CourseImage for editCourse
+    public function deletePageImage($id)
+    {
+        $this->db->select('pageImage');
+        $this->db->where('pageId',$id);
+        $query = $this->db->get('ictmpage');
+         foreach ($query->result() as $image){$pageImage=$image->pageImage;}
+
+        unlink(FCPATH."images/pageImages/".$pageImage);
+
+        $data = array(
+            'pageImage'=>null,
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+        );
+        $this->db->where('pageId',$id);
+        $error=$this->db->update('ictmpage', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
+
     }
 
     //this will update the page data
@@ -127,26 +162,26 @@ class Pagem extends CI_Model
         if (!empty($_FILES['image']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
+                'upload_path' => "images/pageImages/",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
-                //'max_size' => "2048000",
+
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
+                'file_name' => $id,
 
             );
             $this->upload->initialize($config);
 
             if($this->upload->do_upload('image')){
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
+                // if something need after image upload
             }else{
 
                 $error =array('error'=>$this->upload->display_errors());
-
+                $che=json_encode($error);
                 echo "<script>
                 var x =<?php echo json_encode( $error )?>;
-                    alert(x);
+                    alert($che.error);
                     window.location.href= '" . base_url() . "Admin/Page/managePage';
                     </script>";
                 return false;
@@ -157,7 +192,7 @@ class Pagem extends CI_Model
                 'pageKeywords' => $keywords,
                 'pageMetaData' => $metadata,
                 'pageContent' => $content,
-                'pageImage' => $image,
+                'pageImage' => $id.".".pathinfo($image, PATHINFO_EXTENSION),
                 'pageType' => $pagetype,
                 'pageStatus' => $status,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
@@ -242,19 +277,22 @@ class Pagem extends CI_Model
         $query = $this->db->get('ictmpage');
         return $query->result();
 
-
     }
     /*----------- check Page Uniqueness ---- editPage------------*/
-    public function checkUniquePage($pageTitle,$pagetype,$id)
+    public function checkUniquePage($pageTitle,$id)
     {
 
-        $this->db->select('pageTitle,pageType');
+        $this->db->select('pageTitle');
 
         $this->db->where('pageTitle',$pageTitle);
         $this->db->where('pageId !=', $id);
         $query = $this->db->get('ictmpage');
         return $query->result();
 
+    }
+
+    public function record_count() {
+        return $this->db->count_all("ictmpage");
     }
 
 }

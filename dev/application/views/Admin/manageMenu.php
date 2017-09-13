@@ -3,6 +3,13 @@
 <head>
     <?php include('head.php') ?>
 </head>
+<style>
+    .pagination2 {
+        letter-spacing: 15px;
+    }
+
+
+</style>
 
 <body>
 <!-- container section start -->
@@ -26,7 +33,14 @@
                     </ol>
                 </div>
             </div>
-            <!-- page start-->
+            <!-- Menu start-->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -38,20 +52,20 @@
                             <table class="table table-striped table-advance  table-bordered table-hover ">
                                 <tbody>
                                 <tr>
-                                    <th> Menu Title</th>
-                                    <th> Menu Type</th>
-                                    <th> Parent Menu</th>
-                                    <th> Page Title</th>
-                                    <th> Menu Status</th>
-                                    <th> Menu Inserted By</th>
-                                    <th> Last Modified By</th>
-                                    <th> Last Modified Date (d-m-Y)</th>
-                                    <th> Action</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Menu Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
                                 </tr>
                                 <?php foreach ($menu as $menu){?>
 
 
-                                    <tr>
+                                    <tr align="center">
                                         <td><?php echo $menu->menuName?></td>
                                         <td><?php echo $menu->menuType?></td>
                                         <td>
@@ -99,8 +113,12 @@
 
                                 </tbody>
                             </table>
+                            <div class="pagination2" align="center">
+                                <a href="#"><?php echo $links?></a>
+                            </div>
                         </div>
                         <div id="edit"></div>
+
                     </section>
                 </div>
             </div>
@@ -131,7 +149,8 @@
                 data:{'menuid':btn},
                 cache: false,
                 success:function(data) {
-                    if(data=='0'){alert("Menu Deleted Successfully!!");
+                    if(data=='0'){
+
                         location.reload();
                     }
                     else

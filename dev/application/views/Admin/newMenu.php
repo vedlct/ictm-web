@@ -29,6 +29,14 @@
                 </div>
             </div>
             <!-- Form validations -->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -37,12 +45,12 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu" onsubmit="return checklength()">
+                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu" onsubmit="return formvalidate()">
                                     <div class="form-group ">
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" required />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  value="<?php echo set_value('menuTitle'); ?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -65,8 +73,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
                                             <select class="form-control m-bot15" name="parentId" id="parentId">
-                                                <option value="" selected><?php echo SELECT_PARENT_MENU?></option>
-
+                                                <option  value="<?php echo SELECT_PARENT_MENU?>" selected><?php echo SELECT_PARENT_MENU?></option>
                                             </select>
 
 
@@ -79,8 +86,7 @@
                                             <select class="form-control m-bot15" name="pageId" id="pageId">
                                                 <option value="" selected><?php echo SELECT_PAGE ?></option>
                                                 <?php foreach ($page as $page){?>
-
-                                                    <option value="<?php echo $page->pageId?>"><?php echo $page->pageTitle?></option>
+                                                    <option value="<?php echo $page->pageId?>" <?php echo set_select('pageId',  $page->pageId, False); ?>><?php echo $page->pageTitle?></option>
                                                 <?php }?>
 
                                             </select>
@@ -95,14 +101,17 @@
                                             <select class="form-control m-bot15" name="menuStatus" id="menuStatus" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                <option><?php echo STATUS[$i]?></option>
+                                                <option <?php echo set_select('menuStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
-
-
                                         </div>
                                     </div>
-                                    <div class="form-group "align="center">
+
+                                    <div id="csrf">
+                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                    </div>
+
+                                        <div class="form-group "align="center">
                                         <div class="col-lg-10">
                                             <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
@@ -136,6 +145,12 @@
 </html>
 <script>
 
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x) {
         var btn =  document.getElementById("menuType").value;
 
@@ -150,22 +165,29 @@
                 data:{'type': btn},
                 cache: false,
                 success:function(data) {
+
                     document.getElementById("parentId").innerHTML = data;
+                    $('#csrf').load(document.URL +  ' #csrf');
 
                 }
             });
         }
     }
-    function checklength() {
+    function formvalidate() {
         var length =  document.getElementById("menuTitle").value;
-        if (length.length >45){
-            alert("Menu Name Should not more than 45 Charecter Length");
+       // var parentId =  document.getElementById("parentId").value;
+        if (length.length >100){
+            alert("Menu Name Should not more than 100 Charecter Length");
             return false;
         }
+//        if (parentId = "Select Parent Menu") {
+//            alert("Please Select the Parent Menu");
+//            return false;
+//        }
         else
         {
             return true;
-
         }
     }
+
 </script>

@@ -26,11 +26,15 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="Admin/home.php">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page Section</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Page Section</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Page Section</li>
                     </ol>
                 </div>
             </div>
             <!-- Form validations -->
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -47,7 +51,7 @@
                                             <select class="form-control m-bot15" name="pageId" required>
                                                 <option value=""><?php echo SELECT_PAGE ?></option>
                                                <?php foreach ($pagename as $pg) { ?>
-                                                   <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
+                                                   <option value="<?php echo $pg->pageId?>" <?php echo set_select('pageId',  $pg->pageId, False); ?>><?php echo $pg->pageTitle?></option>
                                                    <?php
                                                }
                                                 ?>
@@ -62,14 +66,14 @@
                                             <label class="control-label col-lg-2">Title #1 : <span class="required">*</span></label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>
-                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" required>
+                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" value="<?php echo set_value('textbox[]'); ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
-                                                <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
+                                                <textarea class="form-control ckeditor" id="ckeditor" name="text[]" value="<?php echo set_value('text[]'); ?>" rows="6"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -80,7 +84,7 @@
 
                                                     <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                     <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                        <option><?php echo STATUS[$i]?></option>
+                                                        <option <?php echo set_select('status[]',  STATUS[$i], False); ?> ><?php echo STATUS[$i]?></option>
                                                     <?php } ?>
 
                                                 </select>
@@ -128,7 +132,7 @@
 <!-- javascripts -->
 <?php include('js.php') ?>
 
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 
 

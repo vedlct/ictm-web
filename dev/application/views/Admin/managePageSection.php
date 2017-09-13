@@ -28,6 +28,13 @@
             </div>
             <!-- page start-->
 
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -58,16 +65,16 @@
         </section>
     </section>
     <!--main content end-->
-    <div class="text-right">
+    <div class="text-right wrapper">
         <div class="credits">
-
             <a href="#">Icon College</a> by <a href="#">A2N</a>
         </div>
     </div>
+
 </section>
 <!-- container section end -->
-<!-- javascripts -->
-<?php include('js.php') ?>
+
+<?php include ('js.php')?>
 
 <script>
     function showtable() {

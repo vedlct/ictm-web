@@ -29,6 +29,14 @@
                 </div>
             </div>
             <!-- Form validations -->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -43,21 +51,21 @@
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                            <input class="form-control" id="title" name="title"  type="text" value="<?php echo $epd->pageTitle?>" required />
+                                            <input class="form-control" id="title" name="title"  type="text" value="<?php echo htmlspecialchars(stripslashes($epd->pageTitle))?>" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo $epd->pageKeywords?>" type="text" />
+                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo htmlspecialchars(stripslashes($epd->pageKeywords))?>" type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata"  value="<?php echo $epd->pageMetaData?>" type="text"  />
+                                            <input class="form-control" id="metadata" name="metadata"  value="<?php echo htmlspecialchars(stripslashes($epd->pageMetaData))?>" type="text"  />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -74,6 +82,9 @@
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <input class="form-control"  type="file" name="image" />
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
+                                            <?php if ($epd->pageImage!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/Page/deletePageImage/<?php echo $epd->pageId ?>" onclick='return confirm("Are you sure to Delete This Page Image?")'><i class="icon_trash"></i></a>
+                                            <?php }?>
                                         </div>
                                     </div>
                                     <div class="form-group">

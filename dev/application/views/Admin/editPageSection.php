@@ -29,6 +29,15 @@
                 </div>
             </div>
             <!-- Form validations -->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -46,7 +55,7 @@
                                                 <div class="col-lg-10 form-group">
                                                     <p><font color="red"> <?php echo form_error('textbox'); ?></font></p>
                                                     <input class="form-control" type='textbox' id='textbox1'
-                                                          value="<?php echo $psd->pageSectionTitle?>" name="textbox" required>
+                                                          value="<?php echo htmlspecialchars(stripslashes($psd->pageSectionTitle))?>" name="textbox" required>
                                                 </div>
                                                 <label class="control-label col-lg-2">Content : </label>
                                                 <div class="col-lg-10 form-group">
@@ -56,6 +65,7 @@
                                                 </div>
                                                 <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
                                                 <div class="col-lg-10 form-group">
+                                                    <p><font color="red"> <?php echo form_error('status'); ?></font></p>
                                                     <select class="form-control m-bot15" name="status" required>
                                                         <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                         <?php for ($i=0;$i<count(STATUS);$i++){?>

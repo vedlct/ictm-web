@@ -89,7 +89,7 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 ////////////////////custom constant////////////////
 
 define("USER_TYPE",array ("Admin","Editor","Contributor"));
-define("STATUS",array ("Active","InActive"));
+define("STATUS",array ("Active","Inactive"));
 define("SELECT_STATUS" , "Select Status");
 define("NEVER_MODIFIED", "Never Modified");
 
@@ -109,5 +109,24 @@ define("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink"
 define("SELECT_PAGE_TYPE", "Select Page Type");
 define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
 
+////////////    faculy page      ///////////////
+define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
+define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));
+define("SELECT_COURSE", "Select Course");
+define("SELECT_DEPARTMENT", "Select Department");
+
+
+/////////////// News Page ///////////////
+
+define ("NewsType",array ("Announcement", "News", "Press Release"));
+
+
+/////////////  Event Page ////////////////////
+define ("EventType",array ("Seminar", "Training", "Festival"));
+define("SELECT_EVENT_TYPE", "Select Event Type");
+
+
+/////////////  For Department ////////////////////
+define("SELECT_DEPARTMENT_HEAD", "Select Department Head");
 
 
