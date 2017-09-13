@@ -6,6 +6,7 @@ class Menu extends CI_Controller {
         parent::__construct();
         $this->load->model('Admin/Menum');
         $this->load->model('Admin/Pagem');
+        $this->load->library("pagination");
     }
     /*---------for creating new Menu --------------------- */
     public function newMenu()    // for new menu view
@@ -30,7 +31,7 @@ class Menu extends CI_Controller {
             } else {
                 echo "<option value='' selected>".NEW_MENU."</option>";
                 foreach ($this->data['menuName'] as $menuName) {
-                    echo "<option value='$menuName->menuId'>$menuName->menuName</option>";
+                    echo "<option value='$menuName->menuId' set_select('parentId', $menuName->menuId, False)>$menuName->menuName</option>";
                 }
             }
         }
@@ -81,7 +82,20 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-                $this->data['menu'] = $this->Menum->getAllforManageMenu();
+            $config = array();
+            $config["base_url"] = base_url() . "Admin/Menu/manageMenu";
+            $config["total_rows"] = $this->Menum->record_count();
+            $config["per_page"] = 4;
+            $config["uri_segment"] = 4;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = round($choice);
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+            $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
+            $this->data["links"] = $this->pagination->create_links();
+
+
+            //$this->data['menu'] = $this->Menum->getAllforManageMenu();
                 $this->load->view('Admin/manageMenu', $this->data);
         }
         else{

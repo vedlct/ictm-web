@@ -51,7 +51,7 @@
                                             <select class="form-control m-bot15" name="pageId" required>
                                                 <option value=""><?php echo SELECT_PAGE ?></option>
                                                <?php foreach ($pagename as $pg) { ?>
-                                                   <option value="<?php echo $pg->pageId?>"><?php echo $pg->pageTitle?></option>
+                                                   <option value="<?php echo $pg->pageId?>" <?php echo set_select('pageId',  $pg->pageId, False); ?>><?php echo $pg->pageTitle?></option>
                                                    <?php
                                                }
                                                 ?>
@@ -66,14 +66,14 @@
                                             <label class="control-label col-lg-2">Title #1 : <span class="required">*</span></label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>
-                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" required>
+                                            <input class="form-control" type='textbox' id='textbox1' name="textbox[]" value="<?php echo set_value('textbox[]'); ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
-                                                <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
+                                                <textarea class="form-control ckeditor" id="ckeditor" name="text[]" value="<?php echo set_value('text[]'); ?>" rows="6"></textarea>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -84,7 +84,7 @@
 
                                                     <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                     <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                        <option><?php echo STATUS[$i]?></option>
+                                                        <option <?php echo set_select('status[]',  STATUS[$i], False); ?> ><?php echo STATUS[$i]?></option>
                                                     <?php } ?>
 
                                                 </select>

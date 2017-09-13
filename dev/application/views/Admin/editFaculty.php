@@ -168,10 +168,11 @@
                                     <div class="form-group">
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses</label>
 
+
                                         <div class="col-lg-4" >
 
-                                            <div class="form-group" id="CourseTable">
-                                            <table class="table table-striped table-advance  table-bordered table-hover ">
+                                            <div class="form-group " id="CourseTable">
+                                            <table class="table table-striped table-advance  table-bordered table-hover " >
                                                 <tbody>
                                                 <tr>
 

@@ -3,7 +3,11 @@
 <head>
     <?php include('head.php') ?>
 </head>
-
+<style>
+    .pagination2 {
+        letter-spacing: 15px;
+    }
+</style>
 <body>
 <!-- container section start -->
 <section id="container" class="">
@@ -127,6 +131,9 @@
 
                                 </tbody>
                             </table>
+                            <div class="pagination2" align="center">
+                                <a href="#"><?php echo $links?></a>
+                            </div>
                         </div>
                         <div id="edit"></div>
                     </section>

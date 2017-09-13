@@ -235,7 +235,7 @@ $config = array (
         array(
             'field' => 'facultyEmail',
             'label' => 'Email',
-            'rules' => 'required|valid_email'
+            'rules' => 'required|valid_email|is_unique[ictmfaculty.facultyEmail]'
         ),
         array(
             'field' => 'facultyPhone',
@@ -305,7 +305,7 @@ $config = array (
         array(
             'field' => 'faculty_email',
             'label' => 'Email',
-            'rules' => 'required|valid_email'
+            'rules' => 'required|valid_email|callback_emailCheckFormEditFaculty'
         ),
         array(
             'field' => 'faculty_phone',

@@ -116,16 +116,20 @@ class Facultym extends CI_Model
 
 
     /*---------for Manage Faculty -----------------------*/
-    public function getAllforManageFaculty() // for manage Faculty view
-    {
-
-
+    public function getAllforManageFaculty($limit, $start) {
         $this->db->select('facultyId,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfaculty');
         $this->db->order_by("facultyId", "desc");
+        $this->db->limit($limit, $start);
         $query = $this->db->get();
-        return $query->result();
 
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
     }
 
     public function getAllFacultybyId($facultyId) // for edit  Selected Faculty view
@@ -251,6 +255,27 @@ class Facultym extends CI_Model
         $this->db->delete('ictmfaculty');
 
     }
+
+
+    public function record_count() {
+        return $this->db->count_all("ictmfaculty");
+    }
+
+
+    public function checkUniqueEmail($email,$id)
+    {
+
+        $this->db->select('facultyEmail');
+
+        $this->db->where('facultyEmail',$email);
+        $this->db->where('facultyId !=', $id);
+        $query = $this->db->get('ictmfaculty');
+        return $query->result();
+
+    }
+
+    /*---------for Manage Faculty ---------end--------------*/
+
 
 
 // show the FacultyImage for editFaculty

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class Pagem extends CI_Model
 {
@@ -149,14 +149,33 @@ class Pagem extends CI_Model
     }
 
     //this will return all page data
-    public function getPagaData()
-    {
-
+//    public function getPagaData()
+//    {
+//
+//        $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+//        $this->db->from('ictmpage');
+//        $query = $this->db->get();
+//        return $query->result();
+//    }
+    public function getPagaData($limit, $start) {
         $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+
+        $this->db->limit($limit, $start);
+        $query = $this->db->get("ictmpage");
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+
         $this->db->from('ictmpage');
         $this->db->order_by("pageId", "desc");
         $query = $this->db->get();
         return $query->result();
+
     }
 
     //this will return will page data for edit view
@@ -343,6 +362,10 @@ class Pagem extends CI_Model
         $query = $this->db->get('ictmpage');
         return $query->result();
 
+    }
+
+    public function record_count() {
+        return $this->db->count_all("ictmpage");
     }
 
 }

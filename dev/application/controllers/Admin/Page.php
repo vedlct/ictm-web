@@ -8,7 +8,7 @@ class Page extends CI_Controller {
         parent::__construct();
 
         $this->load->model('Admin/Pagem');
-        $this->load->library('user_agent');
+        $this->load->library("pagination");
     }
 
     public function index(){
@@ -63,7 +63,20 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['pageData'] = $this->Pagem->getPagaData();
+            $config = array();
+            $config["base_url"] = base_url() . "Admin/Page/managePage";
+            $config["total_rows"] = $this->Pagem->record_count();
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 4;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = round($choice);
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+            $this->data["pageData"] = $this->Pagem->getPagaData($config["per_page"], $page);
+            $this->data["links"] = $this->pagination->create_links();
+
+
+           // $this->data['pageData'] = $this->Pagem->getPagaData();
 
              $this->load->view('Admin/managePage', $this->data);
 

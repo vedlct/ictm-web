@@ -50,13 +50,13 @@
                                         <label for="facultyFirstName" class="control-label col-lg-2">First Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyFirstName'); ?></font></p>
-                                            <input class="form-control" id="facultyFirstName"  name="facultyFirstName" type="text" required />
+                                            <input class="form-control" id="facultyFirstName"  name="facultyFirstName" value="<?php echo set_value('facultyFirstName'); ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyLastName" class="control-label col-lg-2">Last Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyLastName'); ?></font></p>
-                                            <input class="form-control" id="facultyLastName" name="facultyLastName"  type="text" required />
+                                            <input class="form-control" id="facultyLastName" name="facultyLastName" value="<?php echo set_value('facultyLastName'); ?>"  type="text" required />
                                         </div>
 
                                     </div>
@@ -65,7 +65,7 @@
                                         <label for="facultyDegree" class="control-label col-lg-2">Faculty Degree <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('facultyDegree'); ?></font></p>
-                                            <input class="form-control" id="facultyDegree" name="facultyDegree"  type="text" placeholder="Write Multiple Degree with comma" required />
+                                            <input class="form-control" id="facultyDegree" name="facultyDegree" value="<?php echo set_value('facultyDegree'); ?>" type="text" placeholder="Write Multiple Degree with comma" required />
                                         </div>
                                     </div>
 
@@ -75,7 +75,7 @@
                                         <label for="facultyPosition" class="control-label col-lg-2">Faculty Position <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('facultyPosition'); ?></font></p>
-                                            <input class="form-control" id="facultyPosition" name="facultyPosition"  type="text" placeholder="Write Multiple Position with comma"required />
+                                            <input class="form-control" id="facultyPosition" name="facultyPosition" value="<?php echo set_value('facultyPosition'); ?>"  type="text" placeholder="Write Multiple Position with comma"required />
                                         </div>
 
                                     </div>
@@ -85,7 +85,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyImage'); ?></font></p>
                                             <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
-                                            <input class="form-control" type="file" name="facultyImage" id="facultyImage" required>
+                                            <input class="form-control" type="file" name="facultyImage"   id="facultyImage" required>
                                         </div>
 
                                         <label for="facultyEmpType" class="control-label col-lg-2">Employee type <span class="required">*</span></label>
@@ -111,13 +111,13 @@
                                         <label for="facultyEmail" class="control-label col-lg-2">Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyEmail'); ?></font></p>
-                                            <input class="form-control" id="facultyEmail" name="facultyEmail"  type="email" required />
+                                            <input class="form-control" id="facultyEmail" name="facultyEmail"  value="<?php echo set_value('facultyEmail'); ?>" type="email" required />
                                         </div>
 
                                         <label for="facultyPhone" class="control-label col-lg-2">Phone <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyPhone'); ?></font></p>
-                                            <input class="form-control" id="facultyPhone" name="facultyPhone"  type="text" placeholder="phone number(only digit max 45)" required />
+                                            <input class="form-control" id="facultyPhone" name="facultyPhone"  value="<?php echo set_value('facultyPhone'); ?>" type="text" placeholder="phone number(only digit max 45)" required />
                                         </div>
 
 
@@ -128,13 +128,13 @@
                                         <label for="facultyTwitter" class="control-label col-lg-2">Twitter</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyTwitter'); ?></font></p>
-                                            <input class="form-control" id="facultyTwitter" name="facultyTwitter"  type="text" />
+                                            <input class="form-control" id="facultyTwitter" name="facultyTwitter" value="<?php echo set_value('facultyTwitter'); ?>" type="text" />
                                         </div>
 
                                         <label for="facultyLinkedin" class="control-label col-lg-2">LinkedIn</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyLinkedin'); ?></font></p>
-                                            <input class="form-control" id="facultyLinkedin" name="facultyLinkedin"  type="text" />
+                                            <input class="form-control" id="facultyLinkedin" name="facultyLinkedin" value="<?php echo set_value('facultyLinkedin'); ?>" type="text" />
                                         </div>
 
                                     </div>
@@ -149,7 +149,7 @@
 
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('facultyStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
 
                                             </select>
@@ -168,7 +168,7 @@
                                                 $coursename= array();
                                                 $courseid=array();
                                                 foreach ($course as $course){?>
-                                                    <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle?></option>
+                                                    <option value="<?php echo $course->courseId?>" <?php echo set_select('facultyCourses[]',  $course->courseId, False); ?>><?php echo $course->courseTitle?></option>
                                                     <?php
                                                     array_push($coursename,$course->courseTitle );
                                                     array_push($courseid,$course->courseId );
@@ -193,7 +193,7 @@
                                         <label for="facultyIntro" class="control-label col-lg-2">Intro <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('facultyIntro'); ?></font></p>
-                                            <textarea class="form-control ckeditor" name="facultyIntro" id="facultyIntro" required></textarea>
+                                            <textarea class="form-control ckeditor" name="facultyIntro"  id="facultyIntro" required><?php echo set_value('facultyIntro'); ?></textarea>
                                         </div>
                                     </div>
 

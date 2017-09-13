@@ -7,6 +7,7 @@ class Faculty extends CI_Controller
         parent::__construct();
         $this->load->model('Admin/Coursem');
         $this->load->model('Admin/Facultym');
+        $this->load->library("pagination");
     }
 
     public function index()
@@ -68,7 +69,19 @@ class Faculty extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
+            $config = array();
+            $config["base_url"] = base_url() . "Admin/Faculty/manageFaculty";
+            $config["total_rows"] = $this->Facultym->record_count();
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 4;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = round($choice);
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+            $this->data["faculty"] = $this->Facultym->getAllforManageFaculty($config["per_page"], $page);
+            $this->data["links"] = $this->pagination->create_links();
+
+           // $this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
             $this->load->view('Admin/manageFaculty',$this->data);
         }
         else{
@@ -197,6 +210,36 @@ class Faculty extends CI_Controller
         else{
             redirect('Admin/Login');
         }
+    }
+
+
+    public function emailCheckFormEditFaculty()
+    {
+        $email = $this->input->post("faculty_email");
+        //$pagetype = $this->input->post("pagetype");
+        $id=$this->uri->segment(4);
+
+
+        try
+        {
+            $this->data['checkEmail'] = $this->Facultym->checkUniqueEmail($email,$id);
+
+            if (empty($this->data['checkEmail'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('emailCheckFormEditFaculty', 'Email Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('emailCheckFormEditFaculty', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+
     }
     /*---------for Manage Faculty ----------end-------------*/
 
