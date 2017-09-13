@@ -39,8 +39,9 @@ class CourseSectionm extends CI_Model
     public function getCourseSecData($id){
         $this->db->select('courseSectionId,courseId, courseSectionTitle,courseSectionStatus, insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->where('courseId', $id);
-        $this->db->order_by("courseSectionId", "desc");
-        $query = $this->db->get('ictmcoursesection');
+        $this->db->from('ictmcoursesection');
+        $this->db->order_by("courseSectionId","desc");
+        $query = $this->db->get();
         return $query->result();
     }
     //this will return all course section data and search by coursesectionid.

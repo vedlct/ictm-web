@@ -75,9 +75,6 @@ class Page extends CI_Controller {
             $this->data["pageData"] = $this->Pagem->getPagaData($config["per_page"], $page);
             $this->data["links"] = $this->pagination->create_links();
 
-
-           // $this->data['pageData'] = $this->Pagem->getPagaData();
-
              $this->load->view('Admin/managePage', $this->data);
 
         }
@@ -168,12 +165,10 @@ class Page extends CI_Controller {
             if (empty($y)){
 
                 $this->Pagem->deletePagebyId($pageId);
+
                 $this->session->set_flashdata('successMessage','Page Deleted Successfully');
                 redirect('Admin/Page/managePage');
-//                echo "<script>
-//                    alert('Page Deleted Successfully');
-//                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-//                    </script>";
+
             }else{
 
 
@@ -214,13 +209,13 @@ class Page extends CI_Controller {
     public function pageCheckFormEditPage()
     {
         $pageTitle = $this->input->post("title");
-        $pagetype = $this->input->post("pagetype");
+
         $id=$this->uri->segment(4);
 
 
         try
         {
-            $this->data['checkPage'] = $this->Pagem->checkUniquePage($pageTitle,$pagetype,$id);
+            $this->data['checkPage'] = $this->Pagem->checkUniquePage($pageTitle,$id);
 
             if (empty($this->data['checkPage'])){
 
@@ -249,7 +244,6 @@ class Page extends CI_Controller {
             $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
-//          $config['max_size']    = '2048000';
             $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 

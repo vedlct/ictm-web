@@ -21,7 +21,9 @@ class Menu extends CI_Controller {
             redirect('Admin/Login');
         }
     }
-    public function getMenuLevel($menuType) // for new Menu/sub Menu dropdown
+
+    // for new Menu/sub Menu dropdown
+    public function getMenuLevel($menuType)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
@@ -31,7 +33,7 @@ class Menu extends CI_Controller {
             } else {
                 echo "<option value='' selected>".NEW_MENU."</option>";
                 foreach ($this->data['menuName'] as $menuName) {
-                    echo "<option value='$menuName->menuId' set_select('parentId', $menuName->menuId, False)>$menuName->menuName</option>";
+                    echo "<option value='$menuName->menuId'>$menuName->menuName</option>";
                 }
             }
         }
@@ -94,15 +96,15 @@ class Menu extends CI_Controller {
             $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
             $this->data["links"] = $this->pagination->create_links();
 
-
-            //$this->data['menu'] = $this->Menum->getAllforManageMenu();
                 $this->load->view('Admin/manageMenu', $this->data);
         }
         else{
             redirect('Admin/Login');
         }
     }
-    public function editMenuView($menuId)  // for edit menu view
+
+    // for edit menu view
+    public function editMenuView($menuId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
@@ -116,7 +118,9 @@ class Menu extends CI_Controller {
             redirect('Admin/Login');
         }
     }
-    public function editMenu($id)        // for edit menu in database
+
+    // for edit menu in database
+    public function editMenu($id)
     {
         $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -151,7 +155,9 @@ class Menu extends CI_Controller {
             redirect('Admin/Login');
         }
     }
-    public function deleteMenu($menuId)    // delete Menu if no SubMenu
+
+    // delete Menu if no SubMenu
+    public function deleteMenu($menuId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             $subMenuName=$this->Menum->deleteMenubyId($menuId);

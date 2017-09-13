@@ -25,61 +25,6 @@ class Pagem extends CI_Model
 
         );
 
-
-//        if (!empty($_FILES['image']['name'])) {
-//            $this->load->library('upload');
-//            $config = array(
-//                'upload_path' => "images/pageImages/",
-//                'allowed_types' => "jpg|png|jpeg|gif",
-//                //'overwrite' => TRUE,
-//                //'max_size' => "2048000",
-//                'remove_spaces'=>FALSE,
-//                'mod_mime_fix'=>FALSE,
-//                'file_name'=>'pageImage',
-//
-//            );
-//            $this->upload->initialize($config);
-//
-//            if($this->upload->do_upload('image')){
-//                //$response   =array('upload_data' => $this->upload->data());
-//                //print_r($response);
-//            }else{
-//
-//                $error =array('error'=>$this->upload->display_errors());
-//                $che=json_encode($error);
-//                echo "<script>
-//
-//                    alert($che.error);
-//                    window.location.href= '" . base_url() . "Admin/Page/createPage';
-//                    </script>";
-//            }
-//            $data = array(
-//                'pageTitle' => $title,
-//                'pageKeywords' => $keywords,
-//                'pageMetaData' => $metadata,
-//                'pageContent' => $content,
-//                'pageImage' => "pageImage".pathinfo($image, PATHINFO_EXTENSION),
-//                'pageType' => $pagetype,
-//                'pageStatus' => $status,
-//                'insertedBy'=>$this->session->userdata('userEmail'),
-//                'insertedDate'=>date("Y-m-d H:i:s"),
-//
-//            );
-//        }
-//        else
-//        {
-//            $data = array(
-//                'pageTitle' => $title,
-//                'pageKeywords' => $keywords,
-//                'pageMetaData' => $metadata,
-//                'pageContent' => $content,
-//                'pageType' => $pagetype,
-//                'pageStatus' => $status,
-//                'insertedBy'=>$this->session->userdata('userEmail'),
-//                'insertedDate'=>date("Y-m-d H:i:s"),
-//
-//            );
-//        }
         $this->security->xss_clean($data,true);
         $error=$this->db->insert('ictmpage', $data);
 
@@ -90,21 +35,14 @@ class Pagem extends CI_Model
         else
         {
             if (!empty($_FILES['image']['name'])) {
-                $this->db->select('pageId');
-                $this->db->order_by("pageId","desc");
-                $this->db->limit(1);
-                $query = $this->db->get('ictmpage');
 
-                foreach ($query->result() as $row) {
-                    $pageId = $row->pageId;
-                }
-
+                $pageId=$this->db->insert_id();
                 $this->load->library('upload');
                 $config = array(
                     'upload_path' => "images/pageImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
                     'overwrite' => TRUE,
-                    //'max_size' => "2048000",
+
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
                     'file_name' => $pageId,
@@ -113,8 +51,7 @@ class Pagem extends CI_Model
                 $this->upload->initialize($config);
 
                 if ($this->upload->do_upload('image')) {
-                    //$response   =array('upload_data' => $this->upload->data());
-                    //print_r($response);
+                    // if something need after image upload
                 } else {
 
                     $error = array('error' => $this->upload->display_errors());
@@ -125,12 +62,12 @@ class Pagem extends CI_Model
                     window.location.href= '" . base_url() . "Admin/Page/createPage';
                     </script>";
                 }
-                $data = array(
+                $data1 = array(
                     'pageImage' => $pageId.".".pathinfo($image, PATHINFO_EXTENSION),
                 );
-
+                $data1=$this->security->xss_clean($data1,true);
                 $this->db->where('pageId', $pageId);
-                $this->db->update('ictmpage', $data);
+                $this->db->update('ictmpage', $data1);
             }
 
             return $error=null;
@@ -148,20 +85,15 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
-    //this will return all page data
-//    public function getPagaData()
-//    {
-//
-//        $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
-//        $this->db->from('ictmpage');
-//        $query = $this->db->get();
-//        return $query->result();
-//    }
+
+     //this will return all page data for manage page
     public function getPagaData($limit, $start) {
         $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
-
         $this->db->limit($limit, $start);
-        $query = $this->db->get("ictmpage");
+        $this->db->from('ictmpage');
+        $this->db->order_by("pageId", "desc");
+        $query = $this->db->get();
+
 
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -171,10 +103,6 @@ class Pagem extends CI_Model
         }
         return false;
 
-        $this->db->from('ictmpage');
-        $this->db->order_by("pageId", "desc");
-        $query = $this->db->get();
-        return $query->result();
 
     }
 
@@ -237,7 +165,7 @@ class Pagem extends CI_Model
                 'upload_path' => "images/pageImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
-                //'max_size' => "2048000",
+
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
                 'file_name' => $id,
@@ -246,8 +174,7 @@ class Pagem extends CI_Model
             $this->upload->initialize($config);
 
             if($this->upload->do_upload('image')){
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
+                // if something need after image upload
             }else{
 
                 $error =array('error'=>$this->upload->display_errors());
@@ -352,10 +279,10 @@ class Pagem extends CI_Model
 
     }
     /*----------- check Page Uniqueness ---- editPage------------*/
-    public function checkUniquePage($pageTitle,$pagetype,$id)
+    public function checkUniquePage($pageTitle,$id)
     {
 
-        $this->db->select('pageTitle,pageType');
+        $this->db->select('pageTitle');
 
         $this->db->where('pageTitle',$pageTitle);
         $this->db->where('pageId !=', $id);

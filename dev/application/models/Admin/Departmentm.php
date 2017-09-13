@@ -13,57 +13,14 @@ class Departmentm extends CI_Model
         $departmentStatus = $this->input->post("departmentStatus");
         $departmentSummary = $this->input->post("departmentSummary");
 
-        $image = $_FILES["image"]["name"];
-
-
-        if (!empty($_FILES['image']['name'])) {
-            $this->load->library('upload');
-            $config = array(
-                'upload_path' => "images/departmentImages/",
-                'allowed_types' => "jpg|png|jpeg|gif",
-                'overwrite' => TRUE,
-                //'max_size' => "2048000",
-                'remove_spaces' => FALSE,
-                'mod_mime_fix' => FALSE,
-
-
-            );
-            $this->upload->initialize($config);
-
-            if ($this->upload->do_upload('image')) {
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
-            } else {
-
-                $error = array('error' => $this->upload->display_errors());
-                $che = json_encode($error);
-                echo "<script>
-                    
-                    alert($che.error);
-                    window.location.href= '" . base_url() . "Admin/Department/newDepartment';
-                    </script>";
-            }
-
-            $data = array(
-                'departmentName' => $departmentName,
-                'departmentHead' => $departmentHead,
-                'departmentSummary' => $departmentSummary,
-                'departmentImage' => $image,
-                'departmentStatus' => $departmentStatus,
-                'insertedBy' => $this->session->userdata('userEmail'),
-                'insertedDate' => date("Y-m-d H:i:s"),
-            );
-        }else{
-            $data = array(
-                'departmentName' => $departmentName,
-                'departmentHead' => $departmentHead,
-                'departmentSummary' => $departmentSummary,
-                'departmentStatus' => $departmentStatus,
-                'insertedBy' => $this->session->userdata('userEmail'),
-                'insertedDate' => date("Y-m-d H:i:s"),
-            );
-
-        }
+        $data = array(
+            'departmentName' => $departmentName,
+            'departmentHead' => $departmentHead,
+            'departmentSummary' => $departmentSummary,
+            'departmentStatus' => $departmentStatus,
+            'insertedBy' => $this->session->userdata('userEmail'),
+            'insertedDate' => date("Y-m-d H:i:s"),
+        );
 
             $this->security->xss_clean($data,true);
             $error = $this->db->insert('ictmdepartment', $data);
@@ -73,6 +30,44 @@ class Departmentm extends CI_Model
             }
             else
             {
+                if (!empty($_FILES['image']['name'])) {
+
+                    $image=$_FILES['image']['name'];
+                    $departmentId=$this->db->insert_id();
+                    $this->load->library('upload');
+
+                    $config = array(
+                        'upload_path' => "images/departmentImages/",
+                        'allowed_types' => "jpg|png|jpeg|gif",
+                        'overwrite' => TRUE,
+
+                        'remove_spaces' => FALSE,
+                        'mod_mime_fix' => FALSE,
+                        'file_name' => $departmentId,
+
+                    );
+                    $this->upload->initialize($config);
+
+                    if ($this->upload->do_upload('image')) {
+                        // if something need after image upload
+                    } else {
+
+                        $error = array('error' => $this->upload->display_errors());
+                        $che = json_encode($error);
+                        echo "<script>
+                    
+                            alert($che.error);
+                            window.location.href= '" . base_url() . "Admin/Department/newDepartment';
+                        </script>";
+                    }
+                    $data1 = array(
+                        'departmentImage' => $departmentId.".".pathinfo($image, PATHINFO_EXTENSION),
+                    );
+                    $data1=$this->security->xss_clean($data1,true);
+                    $this->db->where('departmentId', $departmentId);
+                    $this->db->update('ictmdepartment', $data1);
+                }
+
                 return $error=null;
             }
 
@@ -124,7 +119,7 @@ class Departmentm extends CI_Model
                 'upload_path' => "images/departmentImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
-                //'max_size' => "2048000",
+
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
                 'file_name' => $departmentId,
@@ -133,8 +128,7 @@ class Departmentm extends CI_Model
             $this->upload->initialize($config);
 
             if($this->upload->do_upload('image')){
-                //$response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
+                // if something need after image upload
             }else{
 
                 $error =array('error'=>$this->upload->display_errors());
@@ -182,11 +176,11 @@ class Departmentm extends CI_Model
     }
 
     /*---------delete Department if no Course-----------------*/
+
     //delete Department if no Course
     public function deleteDepartmentId($departmentId)
     {
 
-//        $query = $this->db->get_where('ictmcourse', array('departmentId' => $departmentId));
         $this->db->select('courseId,departmentId,courseTitle');
         $this->db->where('departmentId',$departmentId);
         $this->db->from('ictmcourse');
@@ -216,12 +210,13 @@ class Departmentm extends CI_Model
 
     }
 
-    // show the DepartmentImage for editDepartment
+    // delete the DepartmentImage for editDepartment
     public function deleteDepartmentImage($id)
     {
         $this->db->select('departmentImage');
         $this->db->where('departmentId',$id);
         $query = $this->db->get('ictmdepartment');
+
         foreach ($query->result() as $image){$departmentImage=$image->departmentImage;}
 
         unlink(FCPATH."images/departmentImages/".$departmentImage);
@@ -247,12 +242,11 @@ class Departmentm extends CI_Model
 
     }
 
-
+    // validation Unique check Department from edit
     public function checkUniqueDepartment($departmentName,$id)
     {
 
         $this->db->select('departmentName');
-
         $this->db->where('departmentName',$departmentName);
         $this->db->where('departmentId !=', $id);
         $query = $this->db->get('ictmdepartment');
