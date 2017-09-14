@@ -81,7 +81,7 @@ class Faculty extends CI_Controller
             $this->data["faculty"] = $this->Facultym->getAllforManageFaculty($config["per_page"], $page);
             $this->data["links"] = $this->pagination->create_links();
 
-           // $this->data['faculty'] = $this->Facultym->getAllforManageFaculty();
+
             $this->load->view('Admin/manageFaculty',$this->data);
         }
         else{
@@ -154,8 +154,8 @@ class Faculty extends CI_Controller
             redirect('Admin/Login');
         }
     }
-
-    public function deleteCoursetoFaculty($id) //delete  Course to selected faculty
+    //delete  Course from selected faculty
+    public function deleteCoursetoFaculty($id)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
@@ -216,7 +216,6 @@ class Faculty extends CI_Controller
     public function emailCheckFormEditFaculty()
     {
         $email = $this->input->post("faculty_email");
-        //$pagetype = $this->input->post("pagetype");
         $id=$this->uri->segment(4);
 
 
@@ -251,9 +250,7 @@ class Faculty extends CI_Controller
             $this->load->library('upload');
             $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
-
-//        $config['max_size']    = '2048000';
-        $config['overwrite'] = TRUE;
+            $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 
             if (!$this->upload->do_upload('facultyImage')) {

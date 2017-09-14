@@ -93,11 +93,6 @@ $config = array (
             'rules' => 'max_length[100]',
 
         ),
-//        array(
-//            'field' => 'content',
-//            'label' => 'Page Content',
-//            'rules' => 'xss_clean'
-//        ),
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -133,11 +128,7 @@ $config = array (
             'rules' => 'max_length[100]',
 
         ),
-//        array(
-//            'field' => 'content',
-//            'label' => 'Page Content',
-//            'rules' => 'encode_php_tags'
-//        ),
+
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -168,11 +159,6 @@ $config = array (
             'rules' => 'trim|required|max_length[100]'
         ),
 
-//        array(
-//            'field' => 'text[]',
-//            'label' => 'Page Section Content',
-//            'rules' => 'trim|encode_php_tags'
-//        ),
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
@@ -187,11 +173,7 @@ $config = array (
             'rules' => 'required|max_length[100]',
 
         ),
-//        array(
-//            'field' => 'text',
-//            'label' => 'Section Content',
-//            'rules' => 'encode_php_tags'
-//        ),
+
         array(
             'field' => 'status',
             'label' => 'Page Section Status',
@@ -327,11 +309,6 @@ $config = array (
             'label' => 'Status',
             'rules' => 'required|alpha'
         ),
-//        array(
-//            'field' => 'faculty_courses[]',
-//            'label' => 'Faculty Course',
-//            'rules' => 'required|is_natural_no_zero'
-//        ),
         array(
             'field' => 'faculty_intro',
             'label' => 'Faculty Intro',
@@ -555,11 +532,7 @@ $config = array (
             'rules' => 'required|max_length[255]',
 
         ),
-//        array(
-//            'field' => 'text[]',
-//            'label' => 'Course Section Content',
-//            'rules' => '',
-//        ),
+
         array(
             'field' => 'status[]',
             'label' => 'Course Section Status',
@@ -575,11 +548,7 @@ $config = array (
             'rules' => 'required|max_length[100]',
 
         ),
-//        array(
-//            'field' => 'text',
-//            'label' => 'Section Content',
-//            'rules' => 'encode_php_tags'
-//        ),
+
         array(
             'field' => 'status',
             'label' => 'Course Section Status',
@@ -626,11 +595,6 @@ $config = array (
             'rules' => 'trim|required|max_length[100]|xss_clean',
 
         ),
-//        array(
-//            'field' => 'text[]',
-//            'label' => 'Course Section Content',
-//            'rules' => '',
-//        ),
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -683,11 +647,7 @@ $config = array (
             'label' => 'Event Status',
             'rules' => 'required|max_length[50]'
         ),
-//        array(
-//            'field' => 'eventContent',
-//            'label' => 'Event Content',
-//            'rules' => 'required|max_length[255]'
-//        ),
+
     ),
 
     /*---------------- for Edit Event-------------*/
@@ -731,11 +691,7 @@ $config = array (
             'label' => 'Event Status',
             'rules' => 'required|max_length[50]'
         ),
-//        array(
-//            'field' => 'eventContent',
-//            'label' => 'Event Content',
-//            'rules' => 'required|max_length[255]'
-//        ),
+
     ),
 
     /*---------------- for Create CollegeInfo-------------*/

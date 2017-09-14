@@ -26,11 +26,19 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Event</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Event</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Event</li>
                     </ol>
                 </div>
             </div>
             <!-- Form validations -->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -49,7 +57,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="eventStartDateTime">Event Start Date Time<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="eventStartDateTime">Start Date & Time<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
@@ -60,7 +68,7 @@
                                             </div>
                                         </div>
 
-                                        <label class="control-label col-lg-2" for="eventEndDateTime">Event End Date Time<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="eventEndDateTime">End Date & Time<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker2'>
@@ -108,7 +116,7 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="eventStatus">Event Status<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="eventStatus">Status<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="eventStatus" id="eventStatus" required>

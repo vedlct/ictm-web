@@ -81,11 +81,11 @@
                                     </div>
                                     <div class="form-group">
 
-                                        <label for="facultyImage" class="control-label col-lg-2">Image <span class="required">*</span></label>
+                                        <label for="facultyImage" class="control-label col-lg-2">Image </label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyImage'); ?></font></p>
                                             <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
-                                            <input class="form-control" type="file" name="facultyImage"   id="facultyImage" required>
+                                            <input class="form-control" type="file" name="facultyImage" id="facultyImage">
                                         </div>
 
                                         <label for="facultyEmpType" class="control-label col-lg-2">Employee type <span class="required">*</span></label>

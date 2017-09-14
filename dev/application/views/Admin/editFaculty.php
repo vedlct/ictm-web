@@ -60,7 +60,7 @@
                                         <label for="faculty_last_name" class="control-label col-lg-2">Faculty Last Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_last_name'); ?></font></p>
-                                            <input class="form-control" id="faculty_last_name" name="faculty_last_name"  type="text" value="<?php echo $editFaculty->facultyLastName?>" required />
+                                            <input class="form-control" id="faculty_last_name" name="faculty_last_name"  type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyLastName))?>" required />
                                         </div>
 
                                     </div>
@@ -69,7 +69,7 @@
                                         <label for="faculty_degree" class="control-label col-lg-2">Faculty Degree <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('faculty_degree'); ?></font></p>
-                                            <input class="form-control" id="faculty_degree" name="faculty_degree"  type="text" placeholder="Write Multiple Degree with comma" required value="<?php echo $editFaculty->facultyDegree?>"/>
+                                            <input class="form-control" id="faculty_degree" name="faculty_degree"  type="text" placeholder="Write Multiple Degree with comma" required value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyDegree))?>"/>
                                         </div>
                                     </div>
 
@@ -79,7 +79,7 @@
                                         <label for="faculty_position" class="control-label col-lg-2">Faculty Position <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('faculty_position'); ?></font></p>
-                                            <input class="form-control" id="faculty_position" name="faculty_position"  type="text" placeholder="Write Multiple Position with comma"required value="<?php echo $editFaculty->facultyPosition?>"/>
+                                            <input class="form-control" id="faculty_position" name="faculty_position"  type="text" placeholder="Write Multiple Position with comma"required value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyPosition))?>"/>
                                         </div>
 
                                     </div>
@@ -136,13 +136,13 @@
                                         <label for="faculty_twitter" class="control-label col-lg-2">Faculty Twitter</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_twitter'); ?></font></p>
-                                            <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" value="<?php echo $editFaculty->facultyTwitter?>"/>
+                                            <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyTwitter))?>"/>
                                         </div>
 
                                         <label for="faculty_linkedin" class="control-label col-lg-2">Faculty LinkedIn</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_linkedin'); ?></font></p>
-                                            <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" value="<?php echo $editFaculty->facultyLinkedIn?>"/>
+                                            <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyLinkedIn))?>"/>
                                         </div>
 
                                     </div>
@@ -165,23 +165,36 @@
 
                                         </div>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group" id="Course">
+
+                                        <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
+                                        <div class="col-lg-3">
+
+                                            <select class="form-control" id="faculty_courses" name="faculty_courses">
+                                                <option value="" ><?php echo SELECT_COURSE ?></option>
+                                                <?php foreach ($course as $course){?>
+                                                    <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle ?></option>
+                                                <?php } ?>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-lg-1">
+                                            <input class="btn btn-sm btn-basic" type='button' value='Add' id='addCourse' onclick="selectid(this)">
+                                        </div>
+
                                         <label for="faculty_courses" class="control-label col-lg-2">Faculty Courses</label>
-
-
-                                        <div class="col-lg-4" >
-
-                                            <div class="form-group " id="CourseTable">
+                                        <div class="col-lg-4">
+                                            <div class="form-group col-lg-12" id="CourseTable">
                                             <table class="table table-striped table-advance  table-bordered table-hover " >
                                                 <tbody>
                                                 <tr>
 
-                                                    <th> Course Title</th>
+                                                    <th style="text-align: center"> Course Title</th>
 
-                                                    <th> Action</th>
+                                                    <th style="text-align: center"> Action</th>
                                                 </tr>
                                                 <?php foreach ($facultyCourse as $facultyCourse ){?>
-                                                <tr>
+                                                <tr align="center">
                                                     <td>
                                                         <?php echo $facultyCourse->courseTitle?>
                                                     </td>
@@ -200,20 +213,7 @@
                                         </div>
 
 
-                                        <label for="add_faculty_courses" class="control-label col-lg-2">Add Courses</label>
-                                        <div class="col-lg-3">
 
-                                            <select class="form-control" id="faculty_courses" name="faculty_courses">
-                                                <option value="" ><?php echo SELECT_COURSE ?></option>
-                                                <?php foreach ($course as $course){?>
-                                                <option value="<?php echo $course->courseId?>"><?php echo $course->courseTitle ?></option>
-                                                <?php } ?>
-                                            </select>
-
-                                        </div>
-                                        <div class="col-lg-1">
-                                            <input class="btn btn-sm btn-basic" type='button' value='Add' id='addCourse' onclick="selectid(this)">
-                                        </div>
 
                                     </div>
 
@@ -303,18 +303,21 @@
 
     function selectid1(x)
     {
-        btn = $(x).data('panel-id');
-        var facultyId= <?php echo $editFaculty->facultyId?>;
-        $.ajax({
+        if (confirm("Are you sure you want to delete this Course From This Faculty?")) {
+            btn = $(x).data('panel-id');
+            var facultyId = <?php echo $editFaculty->facultyId?>;
+            $.ajax({
                 type: 'POST',
-                url: '<?php echo base_url("Admin/Faculty/deleteCoursetoFaculty/")?>'+btn,
+                url: '<?php echo base_url("Admin/Faculty/deleteCoursetoFaculty/")?>' + btn,
                 data: {'facultyId': facultyId},
                 cache: false,
                 success: function (data) {
-                    $('#CourseTable').load(document.URL +  ' #CourseTable');
+                    $('#CourseTable').load(document.URL + ' #CourseTable');
 
                 }
-        });
+            });
+        }
+
     }
 
 </script>

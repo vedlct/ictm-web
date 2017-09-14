@@ -10,11 +10,6 @@ class CourseSection extends CI_Controller
 
     }
 
-    public function index()
-    {
-
-    }
-
     //this will show course section
     public  function createCourseSec(){
 

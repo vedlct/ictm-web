@@ -52,7 +52,7 @@
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo $menu->menuName?>" required />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($menu->menuName))?>" required />
                                         </div>
                                     </div>
 

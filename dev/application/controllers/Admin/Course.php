@@ -275,7 +275,6 @@ class Course extends CI_Controller
             $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
 
-//          $config['max_size']    = '2048000';
             $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 

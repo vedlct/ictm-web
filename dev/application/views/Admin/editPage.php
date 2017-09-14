@@ -51,21 +51,21 @@
                                         <label for="cname" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                            <input class="form-control" id="title" name="title"  type="text" value="<?php echo $epd->pageTitle?>" required />
+                                            <input class="form-control" id="title" name="title"  type="text" value="<?php echo htmlspecialchars(stripslashes($epd->pageTitle))?>" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo $epd->pageKeywords?>" type="text" />
+                                            <input class="form-control" id="keywords" name="keywords"  value="<?php echo htmlspecialchars(stripslashes($epd->pageKeywords))?>" type="text" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata"  value="<?php echo $epd->pageMetaData?>" type="text"  />
+                                            <input class="form-control" id="metadata" name="metadata"  value="<?php echo htmlspecialchars(stripslashes($epd->pageMetaData))?>" type="text"  />
                                         </div>
                                     </div>
                                     <div class="form-group ">

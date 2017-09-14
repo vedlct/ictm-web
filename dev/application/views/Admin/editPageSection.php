@@ -55,7 +55,7 @@
                                                 <div class="col-lg-10 form-group">
                                                     <p><font color="red"> <?php echo form_error('textbox'); ?></font></p>
                                                     <input class="form-control" type='textbox' id='textbox1'
-                                                          value="<?php echo $psd->pageSectionTitle?>" name="textbox" required>
+                                                          value="<?php echo htmlspecialchars(stripslashes($psd->pageSectionTitle))?>" name="textbox" required>
                                                 </div>
                                                 <label class="control-label col-lg-2">Content : </label>
                                                 <div class="col-lg-10 form-group">
