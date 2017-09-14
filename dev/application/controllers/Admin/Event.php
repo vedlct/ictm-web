@@ -35,8 +35,6 @@ class Event extends CI_Controller
             }
             else {
 
-
-
                 $this->data['error']=$this->Eventm->createNewEvent();
 
                 if (empty($this->data['error'])) {
@@ -161,16 +159,38 @@ class Event extends CI_Controller
         }
     }
 
+    //this function will delete the image in edit
+    public function deleteEventImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Eventm->deleteEventImage($id);
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Event Image Deleted Successfully');
+                redirect('Admin/Event/editEventView/'.$id);
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Event/editEventView/'.$id);
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
         $image = $_FILES['event_image']['name'];
         if ($image != null) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
-
-//        $config['max_size']    = '2048000';
             $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 
@@ -178,8 +198,25 @@ class Event extends CI_Controller
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
+        }
+    }
+
+    function check_EventDate()
+    {
+        $eventStartDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventStartDateTime")));
+        $eventEndDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventEndDateTime")));
+
+        if ($eventStartDateTime > $eventEndDateTime)
+        {
+            $this->form_validation->set_message('check_EventDate', 'Event End Date Can not be after Event Start Date!!');
+            return false;
+        }
+        else
+        {
+            return true;
         }
     }
 }

@@ -16,69 +16,60 @@ class Eventm extends CI_Model
         $eventStatus = $this->input->post("eventStatus");
         $eventContent = $this->input->post("eventContent");
 
+        $data = array(
+            'eventTitle' => $eventTitle,
+            'eventStartDate' => $eventStartDateTime,
+            'eventEndDate' => $eventEndDateTime,
+            'eventLocation' =>$eventLocation,
+            'eventType' => $EventType,
+            'eventStatus' => $eventStatus,
+            'eventContent' => $eventContent,
+            'insertedBy' => $this->session->userdata('userEmail'),
+            'insertedDate' => date("Y-m-d H:i:s"),
+        );
 
-
-
-        if (!empty($_FILES['event_image']['name'])) {
-            $this->load->library('upload');
-            $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
-                'overwrite' => TRUE,
-                //'max_size' => "2048000",
-                'remove_spaces' => FALSE,
-                'mod_mime_fix' => FALSE,
-
-            );
-            $this->upload->initialize($config);
-
-            if ($this->upload->do_upload('event_image')) {
-                $response = array('upload_data' => $this->upload->data());
-                //print_r($response);
-            } else {
-                $error =array('error'=>$this->upload->display_errors());
-                $che=json_encode($error);
-                echo "<script>
-                    alert($che.error);
-                    window.location.href= '" . base_url() . "Admin/Event/newEvent';
-                    </script>";
-                return false;
-            }
-            $data = array(
-                'eventTitle' => $eventTitle,
-                'eventStartDate' => $eventStartDateTime,
-                'eventEndDate' => $eventEndDateTime,
-                'eventLocation' =>$eventLocation,
-                'eventPhotoPath' => $event_image,
-                'eventType' => $EventType,
-                'eventStatus' => $eventStatus,
-                'eventContent' => $eventContent,
-                'insertedBy' => $this->session->userdata('userEmail'),
-                'insertedDate' => date("Y-m-d H:i:s"),
-            );
-        }
-        else
-            {
-
-                $data = array(
-                    'eventTitle' => $eventTitle,
-                    'eventStartDate' => $eventStartDateTime,
-                    'eventEndDate' => $eventEndDateTime,
-                    'eventLocation' =>$eventLocation,
-
-                    'eventType' => $EventType,
-                    'eventStatus' => $eventStatus,
-                    'eventContent' => $eventContent,
-                    'insertedBy' => $this->session->userdata('userEmail'),
-                    'insertedDate' => date("Y-m-d H:i:s"),
-                );
-        }
-        $this->security->xss_clean($data,true);
+        $this->security->xss_clean($data);
         $error=$this->db->insert('ictmevent', $data);
 
         if (empty($error)) {
             return $this->db->error();
         } else {
+
+            if (!empty($_FILES['event_image']['name'])) {
+
+                $eventId = $this->db->insert_id();
+                $this->load->library('upload');
+                $config = array(
+                    'upload_path' => "images/eventImages/",
+                    'allowed_types' => "jpg|png|jpeg|gif",
+                    'overwrite' => TRUE,
+                    'remove_spaces' => FALSE,
+                    'mod_mime_fix' => FALSE,
+                    'file_name' => $eventId,
+
+                );
+                $this->upload->initialize($config);
+
+                if ($this->upload->do_upload('event_image')) {
+                    // if something need after image upload
+                } else {
+                    $error = array('error' => $this->upload->display_errors());
+                    $che = json_encode($error);
+                    echo "<script>
+                    alert($che.error);
+                    window.location.href= '" . base_url() . "Admin/Event/newEvent';
+                    </script>";
+                    return false;
+                }
+
+                $data2 = array(
+                    'eventPhotoPath' => $eventId.".".pathinfo($event_image, PATHINFO_EXTENSION),
+                );
+                $data2=$this->security->xss_clean($data2,true);
+                $this->db->where('eventId', $eventId);
+                $this->db->update('ictmevent', $data2);
+            }
+
             return $error = null;
         }
     }
@@ -133,19 +124,18 @@ class Eventm extends CI_Model
         if (!empty($_FILES['event_image']['name'])) {
             $this->load->library('upload');
             $config = array(
-                'upload_path' => "images/",
-                'allowed_types' => "jpg|png|jpeg",
+                'upload_path' => "images/eventImages/",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
-//                'max_size' => "2048000",
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
+                'file_name' => $id,
 
             );
             $this->upload->initialize($config);
 
             if($this->upload->do_upload('event_image')){
-                $response   =array('upload_data' => $this->upload->data());
-                //print_r($response);
+                // if something need after image upload
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -160,7 +150,7 @@ class Eventm extends CI_Model
                 'eventStartDate' => $eventStartDateTime,
                 'eventEndDate' => $eventEndDateTime,
                 'eventLocation' =>$eventLocation,
-                'eventPhotoPath' => $event_image,
+                'eventPhotoPath' => $id.".".pathinfo($event_image, PATHINFO_EXTENSION),
                 'eventType' => $EventType,
                 'eventStatus' => $eventStatus,
                 'eventContent' => $eventContent,
@@ -176,7 +166,6 @@ class Eventm extends CI_Model
                 'eventStartDate' => $eventStartDateTime,
                 'eventEndDate' => $eventEndDateTime,
                 'eventLocation' =>$eventLocation,
-
                 'eventType' => $EventType,
                 'eventStatus' => $eventStatus,
                 'eventContent' => $eventContent,
@@ -194,6 +183,36 @@ class Eventm extends CI_Model
         } else {
             return $error = null;
         }
+    }
+
+    // delete the EventImage for editEvent
+    public function deleteEventImage($id)
+    {
+        $this->db->select('eventPhotoPath');
+        $this->db->where('eventId',$id);
+        $query = $this->db->get('ictmevent');
+        foreach ($query->result() as $image){$eventImage=$image->eventPhotoPath;}
+
+        unlink(FCPATH."images/eventImages/".$eventImage);
+
+        $data = array(
+            'eventPhotoPath'=>null,
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+
+        );
+        $this->db->where('eventId',$id);
+        $error=$this->db->update('ictmevent', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
     }
 
     public function deleteEventbyId($eventId)  // delete Event from database

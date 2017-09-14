@@ -95,7 +95,8 @@
                                         <label class="control-label col-lg-2" for="event_image">Event Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
-                                            <input class="form-control" type="file" name="event_image" value="<?php echo set_value('menuTitle'); ?>" id="event_image"/>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="event_image" id="event_image"/>
                                         </div>
 
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
@@ -174,19 +175,17 @@
         });
     });
 </script>
+
 <script type="text/javascript">
     function onsumit(){
-
         var length =  document.getElementById("eventTitle").value;
-
-        if (length.length >10){
-            alert("Menu Name Should not more than 100 Charecter Length");
+        if (length.length >255){
+            alert("Event Title Should not more than 255 Charecter Length");
             return false;
         }
         var length2 =  document.getElementById("eventLocation").value;
-
-        if (length2.length >10){
-            alert("Menu Name Should not more than 100 Charecter Length");
+        if (length2.length >1000){
+            alert("Event Location Should not more than 1000 Charecter Length");
             return false;
         }
         var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
@@ -194,9 +193,16 @@
             alert( 'Please enter a Event Content' );
             return false;
         }
+        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
+        var eventEndDateTime =  document.getElementById("eventEndDateTime").value;
 
+        if (eventStartDateTime>eventEndDateTime) {
+            alert ("Event End Date Can not be after Event Start Date!!");
+            return false;
+        }
     }
 </script>
+
 <script>
 $('#eventStartDateTime').keydown(function(e) {
 e.preventDefault();

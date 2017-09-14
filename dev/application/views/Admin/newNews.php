@@ -5,7 +5,7 @@
     <?php include('head.php') ?>
     <!-- view head  end----->
     <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
-    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
+
 </head>
 
 <body>
@@ -60,10 +60,11 @@
                                             </div>
                                         </div>
 
-                                        <label class="control-label col-lg-2" for="news_image">News Photo<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="news_image">News Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('news_image'); ?></font></p>
-                                            <input class="form-control" type="file" name="news_image" id="news_image" required/>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="news_image" id="news_image"/>
                                         </div>
 
                                     </div>
@@ -75,7 +76,7 @@
                                         <label class="control-label col-lg-2" for="newsType">News Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('newsType'); ?></font></p>
-<!--                                            <input class="form-control" type="text" name="newsType" id="newsType" required/>-->
+
                                             <select class="form-control m-bot15" name="newsType" id="newsType" required>
                                                 <option value="" selected><?php echo SELECT_STATUS?></option>
                                             <?php for($i=0;$i<count(NewsType);$i++){?>
@@ -161,6 +162,7 @@
 
 <script type="text/javascript">
     function onsumit(){
+
         var messageLength = CKEDITOR.instances['newsContent'].getData().replace(/<[^>]*>/gi, '').length;
         if( !messageLength ) {
             alert( 'Please enter a News Content' );
