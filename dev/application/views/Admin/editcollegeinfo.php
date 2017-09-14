@@ -45,7 +45,7 @@
                                         <label for="college_name" class="control-label col-lg-2">College Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('college_name'); ?></font></p>
-                                            <input class="form-control" id="college_name" name="college_name" value="<?php echo $infd->collegeName?>" type="text" required />
+                                            <input class="form-control" id="college_name" name="college_name" value="<?php echo htmlspecialchars(stripslashes($infd->collegeName))?>" type="text" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -60,14 +60,14 @@
                                         <label for="college_tel1" class="control-label col-lg-2">College Telephone 1: <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_tel1'); ?></font></p>
-                                            <input class="form-control" id="college_tel1" name="college_tel1"  value="<?php echo $infd->collegeTelephone1?>" type="text" required />
+                                            <input class="form-control" id="college_tel1" name="college_tel1"  placeholder="only number max 45 " value="<?php echo $infd->collegeTelephone1?>" type="text" required />
 
                                         </div>
 
                                         <label for="college_tel2" class="control-label col-lg-2">College Telephone 2:</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_tel2'); ?></font></p>
-                                            <input class="form-control" id="college_tel2" name="college_tel2"  value="<?php echo $infd->collegeTelephone2?>" type="text" />
+                                            <input class="form-control" id="college_tel2" name="college_tel2" placeholder="only number max 45 " value="<?php echo $infd->collegeTelephone2?>" type="text" />
 
                                         </div>
 
@@ -78,7 +78,7 @@
                                         <label for="college_fax" class="control-label col-lg-2">College Fax: <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_fax'); ?></font></p>
-                                            <input class="form-control" id="college_fax" name="college_fax" value="<?php echo $infd->collegeFax?>" type="text" required />
+                                            <input class="form-control" id="college_fax" name="college_fax" value="<?php echo htmlspecialchars(stripslashes($infd->collegeFax))?>" type="text" required />
                                         </div>
 
                                         <label for="college_email" class="control-label col-lg-2">College Email <span class="required">*</span></label>
@@ -94,13 +94,13 @@
                                         <label for="college_domain" class="control-label col-lg-2">College Domain <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_domain'); ?></font></p>
-                                            <input class="form-control" id="college_domain" name="college_domain" value="<?php echo $infd->collegeDomain?>" type="text" required />
+                                            <input class="form-control" id="college_domain" name="college_domain" value="<?php echo htmlspecialchars(stripslashes($infd->collegeDomain))?>" type="text" required />
                                         </div>
 
                                         <label for="college_facebook" class="control-label col-lg-2">College Facebook <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_facebook'); ?></font></p>
-                                            <input class="form-control" id="college_facebook" name="college_facebook" value="<?php echo $infd->collegeFacebook?>" type="text" required />
+                                            <input class="form-control" id="college_facebook" name="college_facebook" value="<?php echo htmlspecialchars(stripslashes($infd->collegeFacebook))?>" type="text" required />
                                         </div>
 
 
@@ -112,13 +112,13 @@
                                         <label for="college_twitter" class="control-label col-lg-2">College Twitter <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_twitter'); ?></font></p>
-                                            <input class="form-control" id="college_twitter" name="college_twitter" value="<?php echo $infd->collegeTwitter?>" type="text" required />
+                                            <input class="form-control" id="college_twitter" name="college_twitter" value="<?php echo htmlspecialchars(stripslashes($infd->collegeTwitter))?>" type="text" required />
                                         </div>
 
                                         <label for="college_linkedin" class="control-label col-lg-2">College LinkedIn <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_linkedin'); ?></font></p>
-                                            <input class="form-control" id="college_linkedin" name="college_linkedin" value="<?php echo $infd->collegeLinkedIn?>" type="text" required />
+                                            <input class="form-control" id="college_linkedin" name="college_linkedin" value="<?php echo htmlspecialchars(stripslashes($infd->collegeLinkedIn))?>" type="text" required />
                                         </div>
                                         
                                     </div>
@@ -128,13 +128,13 @@
                                         <label for="college_google" class="control-label col-lg-2">College Google <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_google'); ?></font></p>
-                                            <input class="form-control" id="college_google" name="college_google" value="<?php echo $infd->collegeGoogle?>" type="text" required />
+                                            <input class="form-control" id="college_google" name="college_google" value="<?php echo htmlspecialchars(stripslashes($infd->collegeGoogle))?>" type="text" required />
                                         </div>
 
                                         <label for="college_youtube" class="control-label col-lg-2">College Youtube <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_youtube'); ?></font></p>
-                                            <input class="form-control" id="college_youtube" name="college_youtube"  value="<?php echo $infd->collegeYoutube?>" type="text" required />
+                                            <input class="form-control" id="college_youtube" name="college_youtube"  value="<?php echo htmlspecialchars(stripslashes($infd->collegeYoutube))?>" type="text" required />
                                         </div>
 
                                     </div>

@@ -5,7 +5,7 @@
     <?php include('head.php') ?>
     <!-- view head  end----->
     <link href="<?php echo base_url()?>public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
-    <!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">-->
+
 </head>
 
 <body>
@@ -63,6 +63,7 @@
                                         <label class="control-label col-lg-2" for="news_image">News Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('news_image'); ?></font></p>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="news_image" id="news_image"/>
                                         </div>
 

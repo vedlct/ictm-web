@@ -45,7 +45,7 @@
                                         <label for="eventTitle" class="control-label col-lg-2">Event Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventTitle'); ?></font></p>
-                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" value="<?php echo $editEvent->eventTitle?>" required />
+                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($editEvent->eventTitle))?>" required />
                                         </div>
                                     </div>
 
@@ -79,7 +79,7 @@
                                         <label class="control-label col-lg-2" for="menuId">Event Location<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventLocation'); ?></font></p>
-                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" value="<?php echo $editEvent->eventLocation ?>" required />
+                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" value="<?php echo htmlspecialchars(stripslashes($editEvent->eventLocation))?>" required />
 
                                             </select>
 
@@ -91,6 +91,7 @@
                                         <label class="control-label col-lg-2" for="event_image">Event Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="event_image" id="event_image"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Event/showImageForEdit/<?php echo $editEvent->eventId?>" target="_blank"><span> <?php echo $editEvent->eventPhotoPath?></span></a>
                                             <?php if ($editEvent->eventPhotoPath!=null){?>

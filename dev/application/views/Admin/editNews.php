@@ -45,7 +45,7 @@
                                         <label for="newsTitle" class="control-label col-lg-2">News Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('newsTitle'); ?></font></p>
-                                            <input class="form-control" id="newsTitle" name="newsTitle"  type="text" value="<?php echo $editNews->newsTitle?>" required />
+                                            <input class="form-control" id="newsTitle" name="newsTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($editNews->newsTitle))?>" required />
                                         </div>
                                     </div>
 
@@ -65,6 +65,7 @@
                                         <label class="control-label col-lg-2" for="news_image">News Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('news_image'); ?></font></p>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="news_image" id="news_image" />
 
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/News/showImageForEdit/<?php echo $editNews->newsId?>" target="_blank"><span> <?php echo $editNews->newsPhoto?></span></a>

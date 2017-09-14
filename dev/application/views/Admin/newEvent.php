@@ -98,7 +98,8 @@
                                         <label class="control-label col-lg-2" for="event_image">Event Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
-                                            <input class="form-control" type="file" name="event_image" value="<?php echo set_value('menuTitle'); ?>" id="event_image"/>
+                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="event_image" id="event_image"/>
                                         </div>
 
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
