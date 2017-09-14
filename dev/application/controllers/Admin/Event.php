@@ -40,18 +40,14 @@ class Event extends CI_Controller
                 $this->data['error']=$this->Eventm->createNewEvent();
 
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('Event Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/Event/manageEvent';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','Event Created Successfully');
+                    redirect('Admin/Event/manageEvent');
                 }
                 else
                 {
 
-                    echo "<script>
-                        alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Event/newEvent';
-                        </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Event/createNewEvent');
                 }
 
             }

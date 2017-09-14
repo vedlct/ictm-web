@@ -61,7 +61,7 @@
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
                                                 <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                    <option><?php echo MENU_TYPE[$i]?></option>
+                                                    <option <?php echo set_select('menuType',  MENU_TYPE, False); ?>><?php echo MENU_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
 

@@ -52,7 +52,7 @@
                                         <label for="eventTitle" class="control-label col-lg-2">Event Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventTitle'); ?></font></p>
-                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" required />
+                                            <input class="form-control" id="eventTitle" name="eventTitle"  value="<?php echo set_value('eventTitle'); ?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -61,7 +61,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
-                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime"value="" class="form-control" required/>
+                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime" value="<?php echo set_value('eventStartDateTime'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -72,7 +72,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker2'>
-                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" value="" class="form-control" required/>
+                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" value="<?php echo set_value('eventEndDateTime'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -86,7 +86,7 @@
                                         <label class="control-label col-lg-2" for="menuId">Event Location<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventLocation'); ?></font></p>
-                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" required />
+                                            <input class="form-control" id="eventLocation" name="eventLocation" value="<?php echo set_value('eventLocation'); ?>"  type="text" required />
 
                                             </select>
 
@@ -98,7 +98,7 @@
                                         <label class="control-label col-lg-2" for="event_image">Event Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
-                                            <input class="form-control" type="file" name="event_image" id="event_image"/>
+                                            <input class="form-control" type="file" name="event_image" value="<?php echo set_value('menuTitle'); ?>" id="event_image"/>
                                         </div>
 
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
@@ -107,7 +107,7 @@
                                             <select class="form-control m-bot15" name="EventType" id="EventType" required>
                                                 <option value="" selected><?php echo SELECT_EVENT_TYPE?></option>
                                                 <?php for($i=0;$i<count(EventType);$i++){?>
-                                                    <option value="<?php echo EventType[$i]?>"><?php echo EventType[$i]?></option>
+                                                    <option value="<?php echo EventType[$i]?>" <?php echo set_select('EventType',  EventType[$i], False); ?>><?php echo EventType[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -122,7 +122,7 @@
                                             <select class="form-control m-bot15" name="eventStatus" id="eventStatus" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('eventStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -133,7 +133,7 @@
                                     <div class="form-group ">
                                         <label for="eventContent" class="control-label col-lg-2">Event Content<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="eventContent"id="eventContent"required></textarea>
+                                            <textarea class="form-control ckeditor" name="eventContent"id="eventContent"required><?php echo set_value('eventContent'); ?></textarea>
                                         </div>
                                     </div>
 
@@ -182,21 +182,25 @@
 </script>
 <script type="text/javascript">
     function onsumit(){
+
+        var length =  document.getElementById("eventTitle").value;
+
+        if (length.length >10){
+            alert("Menu Name Should not more than 100 Charecter Length");
+            return false;
+        }
+        var length2 =  document.getElementById("eventLocation").value;
+
+        if (length2.length >10){
+            alert("Menu Name Should not more than 100 Charecter Length");
+            return false;
+        }
         var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
-        var eventTitle =  document.getElementById("eventTitle").value;
-        var eventLocation =  document.getElementById("eventLocation").value;
         if( !messageLength ) {
             alert( 'Please enter a Event Content' );
             return false;
         }
-        if( eventTitle.length >255 ) {
-            alert( 'Event Title can not more than 255 charecter!! );
-            return false;
-        }
-        if( eventLocation.length >255 ) {
-            alert( 'Event Title can not more than 255 charecter!! );
-            return false;
-        }
+
     }
 </script>
 <script>
