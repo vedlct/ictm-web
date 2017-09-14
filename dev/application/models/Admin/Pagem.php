@@ -42,7 +42,6 @@ class Pagem extends CI_Model
                     'upload_path' => "images/pageImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
                     'overwrite' => TRUE,
-
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
                     'file_name' => $pageId,
@@ -165,7 +164,6 @@ class Pagem extends CI_Model
                 'upload_path' => "images/pageImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
-
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
                 'file_name' => $id,
