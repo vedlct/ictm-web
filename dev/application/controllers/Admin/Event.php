@@ -6,7 +6,7 @@ class Event extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin/Eventm');
-
+        $this->load->library("pagination");
     }
 
     public function index()
@@ -64,7 +64,19 @@ class Event extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['events'] = $this->Eventm->getAllforManageEvent();
+            $config = array();
+            $config["base_url"] = base_url() . "Admin/Event/manageEvent";
+            $config["total_rows"] = $this->Eventm->record_count();
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 4;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = round($choice);
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+            $this->data["events"] = $this->Eventm->getAllforManageEvent($config["per_page"], $page);
+            $this->data["links"] = $this->pagination->create_links();
+
+            //$this->data['events'] = $this->Eventm->getAllforManageEvent();
             $this->load->view('Admin/manageEvent',$this->data);
         }
         else{
@@ -100,16 +112,16 @@ class Event extends CI_Controller
 
                 $this->data['error'] = $this->Eventm->editEventbyId($id);
 
+
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('Event Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/Event/ManageEvent';
-                    </script>";
-                } else {
-                    echo "<script>
-                        alert('Some thing Went Wrong !! Please Try Again!!');
-                        window.location.href= '" . base_url() . "Admin/Event/ManageEvent';
-                        </script>";
+                    $this->session->set_flashdata('successMessage','Event Update Successfully');
+                    redirect('Admin/Event/manageEvent');
+                }
+                else
+                {
+
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Event/editEventbyId/'.$id);
                 }
 
 
@@ -125,6 +137,8 @@ class Event extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Eventm->deleteEventbyId($eventId);
+            $this->session->set_flashdata('successMessage','Event Deleted Successfully');
+
         }
 
         else{

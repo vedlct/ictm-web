@@ -3,6 +3,13 @@
 <head>
     <?php include('head.php') ?>
 </head>
+<style>
+    .pagination2 {
+        letter-spacing: 15px;
+    }
+
+
+</style>
 
 <body>
 <!-- container section start -->
@@ -27,6 +34,12 @@
                 </div>
             </div>
             <!-- page start-->
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -38,55 +51,55 @@
                             <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>
-                                    <th> News Title</th>
-                                    <th> News Date</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> News Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> News Date</th>
 
-                                    <th> News Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> News Type</th>
 
-                                    <th> News Status</th>
-                                    <th> News Inserted By</th>
-                                    <th> Last Modified By</th>
-                                    <th> Last Modified Date</th>
-                                    <th> Action</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
-                                <?php foreach ($news as $news){?>
+                                <?php foreach ($news as $newsdata){?>
 
-                                    <tr>
+                                    <tr align="center">
                                         <td>
-                                            <?php echo $news->newsTitle?>
+                                            <?php echo $newsdata->newsTitle?>
                                         </td>
 
                                         <td>
-                                            <?php echo date('d-m-Y',strtotime($news->newsDate))?>
+                                            <?php echo date('d-m-Y',strtotime($newsdata->newsDate))?>
 
                                         </td>
 
 
 
                                         <td>
-                                            <?php echo $news->newsType?>
-
-                                        </td>
-
-                                        <td>
-                                            <?php echo $news->newsStatus?>
-                                        </td>
-
-                                        <td>
-                                            <?php echo $news->insertedBy?>
+                                            <?php echo $newsdata->newsType?>
 
                                         </td>
 
                                         <td>
-                                            <?php if ($news->lastModifiedBy==""){echo"Never Modified";}else{echo $news->lastModifiedBy;} ?>
+                                            <?php echo $newsdata->newsStatus?>
                                         </td>
 
                                         <td>
-                                            <?php if ($news->lastModifiedDate==""){echo"Never Modified";}
+                                            <?php echo $newsdata->insertedBy?>
+
+                                        </td>
+
+                                        <td>
+                                            <?php if ($newsdata->lastModifiedBy==""){echo"Never Modified";}else{echo $newsdata->lastModifiedBy;} ?>
+                                        </td>
+
+                                        <td>
+                                            <?php if ($newsdata->lastModifiedDate==""){echo"Never Modified";}
                                             else
                                             {
-                                                $timestamp = strtotime($news->lastModifiedDate);
+                                                $timestamp = strtotime($newsdata->lastModifiedDate);
                                                 $date = date('d-F-Y', $timestamp);
                                                 echo $date ;
                                             }?>
@@ -96,8 +109,8 @@
                                         <td>
 
                                             <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/News/editNewsView/")?><?php echo $news->newsId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $news->newsId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                                <a class="btn" href="<?php echo base_url("Admin/News/editNewsView/")?><?php echo $newsdata->newsId ?>"><i class="icon_pencil-edit"></i></a>
+                                                <a class="btn" data-panel-id="<?php echo $newsdata->newsId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
                                             </div>
                                         </td>
 
@@ -108,6 +121,9 @@
 
                                 </tbody>
                             </table>
+                            <div class="pagination2" align="center">
+                                <a href="#"><?php echo $links?></a>
+                            </div>
                         </div>
                         <div id="edit"></div>
                     </section>
@@ -140,7 +156,7 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-                    alert("News Deleted Successfully!!");
+                   // alert("News Deleted Successfully!!");
                     location.reload();
 
                 }

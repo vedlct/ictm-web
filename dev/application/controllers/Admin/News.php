@@ -6,7 +6,7 @@ class News extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin/Newsm');
-
+        $this->load->library("pagination");
     }
 
     public function index()
@@ -40,18 +40,14 @@ class News extends CI_Controller
 
                 $this->data['error'] = $this->Newsm->createNewNews();
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('News Created Successfully');
-                    window.location.href= '" . base_url() . "Admin/News/newNews';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','News Create Successfully');
+                    redirect('Admin/News/manageNews');
+                }
+                else
+                {
 
-
-                } else {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/News/newNews';
-                    </script>";
-
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/News/createNewNews');
                 }
 
             }
@@ -68,8 +64,20 @@ class News extends CI_Controller
     public function manageNews()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-            $this->data['news'] = $this->Newsm->getAllforManageNews();
-            //print_r($this->data['events']);
+            $config = array();
+            $config["base_url"] = base_url() . "Admin/News/manageNews";
+            $config["total_rows"] = $this->Newsm->record_count();
+            $config["per_page"] = 10;
+            $config["uri_segment"] = 4;
+            $choice = $config["total_rows"] / $config["per_page"];
+            $config["num_links"] = round($choice);
+            $this->pagination->initialize($config);
+            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+            $this->data["news"] = $this->Newsm->getAllforManageNews($config["per_page"], $page);
+            $this->data["links"] = $this->pagination->create_links();
+
+           // $this->data['news'] = $this->Newsm->getAllforManageNews();
+
             $this->load->view('Admin/manageNews',$this->data);
         }
         else{
@@ -106,17 +114,14 @@ class News extends CI_Controller
                 $this->data['error'] = $this->Newsm->editNewsbyId($id);
 
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('News Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/News/ManageNews';
-                    </script>";
+                    $this->session->set_flashdata('successMessage','News Create Successfully');
+                    redirect('Admin/News/manageNews');
+                }
+                else
+                {
 
-                } else {
-
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/News/ManageNews';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/News/editNewsbyId/'.$id);
                 }
             }
         }
@@ -145,6 +150,8 @@ class News extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->Newsm->deleteNewsbyId($newsId);
+            $this->session->set_flashdata('successMessage','News Deleted Successfully');
+
         }
 
         else{

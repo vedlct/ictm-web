@@ -85,12 +85,30 @@ class Eventm extends CI_Model
     /*---------for creating new Event ---------end------------ */
 
     /*---------for Manage Event -----------------------*/
-    public function getAllforManageEvent() // for manage Event view
-    {
+//    public function getAllforManageEvent() // for manage Event view
+//    {
+//        $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+//        $this->db->from('ictmevent');
+//        $query1 = $this->db->get();
+//        return $query1->result();
+//
+//    }
+    public function getAllforManageEvent($limit, $start) {  // for manage Event view
         $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmevent');
-        $query1 = $this->db->get();
-        return $query1->result();
+        $this->db->limit($limit, $start);
+        $this->db->order_by("eventId", "desc");
+        $query = $this->db->get();
+
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+
 
     }
 
@@ -195,5 +213,9 @@ class Eventm extends CI_Model
         $this->db->where('eventId',$id);
         $query = $this->db->get('ictmevent');
         return $query->result();
+    }
+
+    public function record_count() {
+        return $this->db->count_all("ictmevent");
     }
 }

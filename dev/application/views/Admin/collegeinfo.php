@@ -44,14 +44,14 @@
                                         <label for="college_name" class="control-label col-lg-2">College Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('college_name'); ?></font></p>
-                                            <input class="form-control" id="college_name" name="college_name"type="text" required />
+                                            <input class="form-control" id="college_name" name="college_name" value="<?php echo set_value('college_name'); ?>"type="text" required />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="event_content" class="control-label col-lg-2">College Location <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('college_location'); ?></font></p>
-                                            <textarea class="form-control " name="college_location" id="college_location" required></textarea>
+                                            <textarea class="form-control " name="college_location" id="college_location" value="<?php echo set_value('college_location'); ?>" required></textarea>
                                         </div>
                                     </div>
 
@@ -59,14 +59,14 @@
                                         <label for="college_tel1" class="control-label col-lg-2">College Telephone 1: <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_tel1'); ?></font></p>
-                                            <input class="form-control" id="college_tel1" name="college_tel1" type="text" placeholder="Telephone no(only digit max 45)" required />
+                                            <input class="form-control" id="college_tel1" name="college_tel1" value="<?php echo set_value('college_tel1'); ?>" type="text" placeholder="Telephone no(only digit max 45)" required />
 
                                         </div>
 
                                         <label for="college_tel2" class="control-label col-lg-2">College Telephone 2: </label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_tel2'); ?></font></p>
-                                            <input class="form-control" id="college_tel2" name="college_tel2" type="text" placeholder="Telephone no(only digit max 45)" />
+                                            <input class="form-control" id="college_tel2" name="college_tel2" value="<?php echo set_value('college_tel2'); ?>" type="text" placeholder="Telephone no(only digit max 45)" />
 
                                         </div>
 
@@ -77,13 +77,13 @@
                                         <label for="college_fax" class="control-label col-lg-2">College Fax: <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_fax'); ?></font></p>
-                                            <input class="form-control" id="college_fax" name="college_fax" type="text" required />
+                                            <input class="form-control" id="college_fax" name="college_fax"  value="<?php echo set_value('college_fax'); ?>" type="text" required />
                                         </div>
 
                                         <label for="college_email" class="control-label col-lg-2">College Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_email'); ?></font></p>
-                                            <input class="form-control" id="college_email" name="college_email" type="text" required />
+                                            <input class="form-control" id="college_email" name="college_email" value="<?php echo set_value('college_email'); ?>" type="text" required />
                                         </div>
 
 
@@ -95,13 +95,13 @@
                                         <label for="college_domain" class="control-label col-lg-2">College Domain <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_domain'); ?></font></p>
-                                            <input class="form-control" id="college_domain" name="college_domain" type="text" required />
+                                            <input class="form-control" id="college_domain" name="college_domain" value="<?php echo set_value('college_domain'); ?>" type="text" required />
                                         </div>
 
                                         <label for="college_facebook" class="control-label col-lg-2">College Facebook <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_facebook'); ?></font></p>
-                                            <input class="form-control" id="college_facebook" name="college_facebook" type="text" required />
+                                            <input class="form-control" id="college_facebook" name="college_facebook" value="<?php echo set_value('college_facebook'); ?>" type="text" required />
                                         </div>
 
 
@@ -113,13 +113,13 @@
                                         <label for="college_twitter" class="control-label col-lg-2">College Twitter <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_twitter'); ?></font></p>
-                                            <input class="form-control" id="college_twitter" name="college_twitter" type="text" required />
+                                            <input class="form-control" id="college_twitter" name="college_twitter" value="<?php echo set_value('college_twitter'); ?>" type="text" required />
                                         </div>
 
                                         <label for="college_linkedin" class="control-label col-lg-2">College LinkedIn <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_linkedin'); ?></font></p>
-                                            <input class="form-control" id="college_linkedin" name="college_linkedin" type="text" required />
+                                            <input class="form-control" id="college_linkedin" name="college_linkedin" value="<?php echo set_value('college_linkedin'); ?>" type="text" required />
                                         </div>
 
 
@@ -131,13 +131,13 @@
                                         <label for="college_google" class="control-label col-lg-2">College Google <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_google'); ?></font></p>
-                                            <input class="form-control" id="college_google" name="college_google" type="text" required />
+                                            <input class="form-control" id="college_google" name="college_google" value="<?php echo set_value('college_google'); ?>" type="text" required />
                                         </div>
 
                                         <label for="college_youtube" class="control-label col-lg-2">College Youtube <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_youtube'); ?></font></p>
-                                            <input class="form-control" id="college_youtube" name="college_youtube" type="text" required />
+                                            <input class="form-control" id="college_youtube" name="college_youtube" value="<?php echo set_value('college_youtube'); ?>" type="text" required />
                                         </div>
 
                                     </div>
@@ -150,7 +150,7 @@
                                             <select class="form-control" id="college_status" name="college_status" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('college_status',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
 
                                             </select>

@@ -88,9 +88,6 @@
                                             <p><font color="red"> <?php echo form_error('eventLocation'); ?></font></p>
                                             <input class="form-control" id="eventLocation" name="eventLocation" value="<?php echo set_value('eventLocation'); ?>"  type="text" required />
 
-                                            </select>
-
-
                                         </div>
                                     </div>
 
@@ -112,9 +109,8 @@
                                             </select>
                                         </div>
 
-
-
                                     </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="eventStatus">Status<span class="required">*</span></label>
                                         <div class="col-lg-4">
@@ -125,8 +121,6 @@
                                                     <option <?php echo set_select('eventStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
-
-
                                         </div>
                                     </div>
 

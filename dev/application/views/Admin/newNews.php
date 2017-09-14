@@ -44,7 +44,7 @@
                                         <label for="newsTitle" class="control-label col-lg-2">News Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('newsTitle'); ?></font></p>
-                                            <input class="form-control" id="newsTitle" name="newsTitle"  type="text" required />
+                                            <input class="form-control" id="newsTitle" name="newsTitle" value="<?php echo set_value('newsTitle'); ?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -53,7 +53,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
-                                                <input type='text' id="newsDate" name="newsDate"class="form-control" required/>
+                                                <input type='text' id="newsDate" name="newsDate" value="<?php echo set_value('newsDate'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -79,7 +79,7 @@
                                             <select class="form-control m-bot15" name="newsType" id="newsType" required>
                                                 <option value="" selected><?php echo SELECT_STATUS?></option>
                                             <?php for($i=0;$i<count(NewsType);$i++){?>
-                                                <option value="<?php echo NewsType[$i]?>"><?php echo NewsType[$i]?></option>
+                                                <option value="<?php echo NewsType[$i]?>" <?php echo set_select('newsType',  NewsType[$i], False); ?>><?php echo NewsType[$i]?></option>
                                             <?php } ?>
                                             </select>
 
@@ -91,7 +91,7 @@
                                             <select class="form-control m-bot15" name="newsStatus" id="newsStatus" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('newsStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -106,7 +106,7 @@
                                     <div class="form-group ">
                                         <label for="eventContent" class="control-label col-lg-2">News Content<span class="required">*</span></label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="newsContent"id="newsContent"required></textarea>
+                                            <textarea class="form-control ckeditor" name="newsContent"id="newsContent"required><?php echo set_value('newsContent'); ?></textarea>
                                         </div>
                                     </div>
 

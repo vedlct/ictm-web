@@ -75,14 +75,30 @@ class Newsm extends CI_Model
 
     /*---------for Manage News -----------------------*/
     // for manage News view
-    public function getAllforManageNews()
-    {
-//        $query = $this->db->get('ictmnews');
+//    public function getAllforManageNews()
+//    {
+//        $this->db->select('newsId,newsTitle,newsDate,newsType,newsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+//        $this->db->from('ictmnews');
+//        $query = $this->db->get();
 //        return $query->result();
+//
+//    }
+    public function getAllforManageNews($limit, $start) {
         $this->db->select('newsId,newsTitle,newsDate,newsType,newsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmnews');
+        $this->db->limit($limit, $start);
+        $this->db->order_by("newsId", "desc");
         $query = $this->db->get();
-        return $query->result();
+
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+
 
     }
 
@@ -193,6 +209,9 @@ class Newsm extends CI_Model
         $this->db->where('newsId !=', $id);
         $query = $this->db->get('ictmnews');
         return $query->result();
+    }
+    public function record_count() {
+        return $this->db->count_all("ictmnews");
     }
 
     /*---------for Manage News ---------end--------------*/

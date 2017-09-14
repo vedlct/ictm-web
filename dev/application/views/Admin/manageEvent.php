@@ -3,7 +3,12 @@
 <head>
     <?php include('head.php') ?>
 </head>
+<style>
+    .pagination2 {
+        letter-spacing: 15px;
+    }
 
+</style>
 <body>
 <!-- container section start -->
 <section id="container" class="">
@@ -46,22 +51,21 @@
                             <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>
-                                    <th> Event Title</th>
-                                    <th> Event Start</th>
-                                    <th> Event End</th>
-                                    <th> Event Location</th>
-                                    <th> Event Type</th>
-
-                                    <th> Event Status</th>
-                                    <th> Event Inserted By</th>
-                                    <th> Last Modified By</th>
-                                    <th> Last Modified Date(d-m-Y)</th>
-                                    <th> Action</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Event Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Start</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event End</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Location</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date(d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
                                 <?php foreach ($events as $events){?>
 
-                                    <tr>
+                                    <tr align="center">
                                         <td>
                                             <?php echo $events->eventTitle?>
                                         </td>
@@ -130,6 +134,11 @@
 
                                 </tbody>
                             </table>
+
+                            <div class="pagination2" align="center">
+                                <a href="#"><?php echo $links?></a>
+                            </div>
+
                         </div>
                         <div id="edit"></div>
                     </section>
@@ -162,7 +171,7 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-                    alert("Event Deleted Successfully!!");
+                   // alert("Event Deleted Successfully!!");
                     location.reload();
 
                 }
