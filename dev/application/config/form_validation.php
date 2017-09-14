@@ -617,19 +617,19 @@ $config = array (
         array(
             'field' => 'eventStartDateTime',
             'label' => 'Event Start Time ',
-            'rules' => 'required',
+            'rules' => 'trim|required',
 
         ),
         array(
             'field' => 'eventEndDateTime',
             'label' => 'Event End Time ',
-            'rules' => 'required',
+            'rules' => 'trim|required|callback_check_EventDate',
 
         ),
         array(
             'field' => 'eventLocation',
             'label' => 'Event Location',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[1000]',
         ),
         array(
             'field' => 'EventType',
@@ -661,19 +661,19 @@ $config = array (
         array(
             'field' => 'eventStartDateTime',
             'label' => 'Event Start Time ',
-            'rules' => 'required',
+            'rules' => 'trim|required',
 
         ),
         array(
             'field' => 'eventEndDateTime',
             'label' => 'Event End Time ',
-            'rules' => 'required',
+            'rules' => 'trim|required|callback_check_EventDate',
 
         ),
         array(
             'field' => 'eventLocation',
             'label' => 'Event Location',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[1000]',
         ),
         array(
             'field' => 'EventType',
@@ -794,7 +794,7 @@ $config = array (
         array(
             'field' => 'newsType',
             'label' => 'News Type ',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
 
         array(
@@ -826,7 +826,7 @@ $config = array (
         array(
             'field' => 'newsType',
             'label' => 'News Type ',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
 
         array(

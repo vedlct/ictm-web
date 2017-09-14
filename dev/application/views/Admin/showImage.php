@@ -20,10 +20,10 @@ elseif(!empty($deptimagename)){
 
 elseif(!empty($newsimage)){
     foreach ($newsimage as $newsimage){?>
-        <img src="<?php echo  base_url()?>images/<?php echo $newsimage->newsPhoto ?>" width="60%">
+        <img src="<?php echo  base_url()?>images/newsImages/<?php echo $newsimage->newsPhoto ?>" width="60%">
      <?php }}
 elseif(!empty($eventImage)){
     foreach ($eventImage as $eventImage){?>
-        <img src="<?php echo  base_url()?>images/<?php echo $eventImage->eventPhotoPath ?>" width="60%">
+        <img src="<?php echo  base_url()?>images/eventImages/<?php echo $eventImage->eventPhotoPath ?>" width="60%">
     <?php }}
 ?>

@@ -68,6 +68,9 @@
                                             <input class="form-control" type="file" name="news_image" id="news_image" />
 
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/News/showImageForEdit/<?php echo $editNews->newsId?>" target="_blank"><span> <?php echo $editNews->newsPhoto?></span></a>
+                                            <?php if ($editNews->newsPhoto!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/News/deleteNewsImage/<?php echo $editNews->newsId ?>" onclick='return confirm("Are you sure to Delete This News Image?")'><i class="icon_trash"></i></a>
+                                            <?php }?>
                                         </div>
 
                                     </div>
@@ -79,7 +82,7 @@
                                         <label class="control-label col-lg-2" for="newsType">News Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('newsType'); ?></font></p>
-<!--                                            <input class="form-control" type="text" name="newsType" value="--><?php //echo $editNews->newsType?><!--" id="newsType" required/>-->
+
                                             <select class="form-control m-bot15" name="newsType" id="newsType" required>
                                                 <option value="" selected><?php echo SelectType?></option>
                                                 <?php for($i=0;$i<count(NewsType);$i++){?>

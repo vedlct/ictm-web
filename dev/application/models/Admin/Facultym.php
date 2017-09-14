@@ -83,15 +83,6 @@ class Facultym extends CI_Model
                $this->db->where('facultyId', $facultyId);
                $this->db->update('ictmfaculty', $data2);
         }
-        else
-        {
-            echo "<script>
-                    alert('No Photo Selected!!');
-                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
-                    </script>";
-            return false;
-        }
-
             if(count($facultyCourse)>0 && $facultyCourse[0]!=null) {
 
                 for ($i = 0; $i < count($facultyCourse); $i++) {

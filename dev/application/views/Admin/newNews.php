@@ -60,10 +60,10 @@
                                             </div>
                                         </div>
 
-                                        <label class="control-label col-lg-2" for="news_image">News Photo<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="news_image">News Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('news_image'); ?></font></p>
-                                            <input class="form-control" type="file" name="news_image" id="news_image" required/>
+                                            <input class="form-control" type="file" name="news_image" id="news_image"/>
                                         </div>
 
                                     </div>
@@ -75,7 +75,7 @@
                                         <label class="control-label col-lg-2" for="newsType">News Type<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('newsType'); ?></font></p>
-<!--                                            <input class="form-control" type="text" name="newsType" id="newsType" required/>-->
+
                                             <select class="form-control m-bot15" name="newsType" id="newsType" required>
                                                 <option value="" selected><?php echo SELECT_STATUS?></option>
                                             <?php for($i=0;$i<count(NewsType);$i++){?>
@@ -161,6 +161,7 @@
 
 <script type="text/javascript">
     function onsumit(){
+
         var messageLength = CKEDITOR.instances['newsContent'].getData().replace(/<[^>]*>/gi, '').length;
         if( !messageLength ) {
             alert( 'Please enter a News Content' );

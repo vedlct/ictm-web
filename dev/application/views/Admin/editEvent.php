@@ -93,6 +93,9 @@
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
                                             <input class="form-control" type="file" name="event_image" id="event_image"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Event/showImageForEdit/<?php echo $editEvent->eventId?>" target="_blank"><span> <?php echo $editEvent->eventPhotoPath?></span></a>
+                                            <?php if ($editEvent->eventPhotoPath!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/Event/deleteEventImage/<?php echo $editEvent->eventId ?>" onclick='return confirm("Are you sure to Delete This Event Image?")'><i class="icon_trash"></i></a>
+                                            <?php }?>
                                         </div>
 
                                         <label class="control-label col-lg-2" for="EventType">Event Type<span class="required">*</span></label>
@@ -187,6 +190,19 @@
 
 <script type="text/javascript">
     function onsumit(){
+
+        var length =  document.getElementById("eventTitle").value;
+        if (length.length >255){
+            alert("Event Title Should not more than 255 Charecter Length");
+            return false;
+        }
+
+        var length2 =  document.getElementById("eventLocation").value;
+        if (length2.length >1000){
+            alert("Event Location Should not more than 1000 Charecter Length");
+            return false;
+        }
+
         var messageLength = CKEDITOR.instances['eventContent'].getData().replace(/<[^>]*>/gi, '').length;
         if( !messageLength ) {
             alert( 'Please enter a Event Content' );

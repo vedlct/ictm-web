@@ -69,7 +69,7 @@ class News extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             $this->data['news'] = $this->Newsm->getAllforManageNews();
-            //print_r($this->data['events']);
+
             $this->load->view('Admin/manageNews',$this->data);
         }
         else{
@@ -154,6 +154,29 @@ class News extends CI_Controller
 
     /*---------for Manage Faculty ----------end-------------*/
 
+    //this function will delete the image in edit
+    public function deleteNewsImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Newsm->deleteNewsImage($id);
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','News Image Deleted Successfully');
+                redirect('Admin/News/editNewsView/'.$id);
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/News/editNewsView/'.$id);
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     //validation check in edit for unique
     public function NewseditUniqueCheck()
     {
@@ -188,10 +211,8 @@ class News extends CI_Controller
         $image = $_FILES["news_image"]["name"];
         if ($image != null) {
             $this->load->library('upload');
-            $config['upload_path'] = "images/";
+            $config['upload_path'] = "images/validation_Image(dump)/";
             $config['allowed_types'] = 'jpg|png|jpeg|gif';
-
-//        $config['max_size']    = '2048000';
             $config['overwrite'] = TRUE;
             $this->upload->initialize($config);
 
@@ -199,6 +220,7 @@ class News extends CI_Controller
                 $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                 return false;
             } else {
+                unlink(FCPATH."images/validation_Image(dump)/".$image);
                 return true;
             }
         }
