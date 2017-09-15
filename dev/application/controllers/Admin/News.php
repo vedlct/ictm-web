@@ -22,7 +22,7 @@ class News extends CI_Controller
 
             $this->load->view('Admin/newNews');
         } else {
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -40,7 +40,8 @@ class News extends CI_Controller
 
                 $this->data['error'] = $this->Newsm->createNewNews();
                 if (empty($this->data['error'])) {
-                    $this->session->set_flashdata('successMessage','News Create Successfully');
+
+                    $this->session->set_flashdata('successMessage','News Created Successfully');
                     redirect('Admin/News/manageNews');
                 }
                 else
@@ -54,7 +55,7 @@ class News extends CI_Controller
         }
         else
         {
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
     /*---------for creating new News  --------end---------------*/
@@ -80,7 +81,7 @@ class News extends CI_Controller
             $this->load->view('Admin/manageNews',$this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -94,7 +95,7 @@ class News extends CI_Controller
             $this->load->view('Admin/editNews', $this->data);
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -113,7 +114,7 @@ class News extends CI_Controller
                 $this->data['error'] = $this->Newsm->editNewsbyId($id);
 
                 if (empty($this->data['error'])) {
-                    $this->session->set_flashdata('successMessage','News Create Successfully');
+                    $this->session->set_flashdata('successMessage','News Updated Successfully');
                     redirect('Admin/News/manageNews');
                 }
                 else
@@ -125,7 +126,7 @@ class News extends CI_Controller
             }
         }
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 
@@ -148,13 +149,14 @@ class News extends CI_Controller
     public function deleteNews($newsId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
+
             $this->Newsm->deleteNewsbyId($newsId);
             $this->session->set_flashdata('successMessage','News Deleted Successfully');
 
         }
 
         else{
-            redirect('Login');
+            redirect('Admin/Login');
         }
     }
 

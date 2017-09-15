@@ -408,7 +408,7 @@ class Coursem extends CI_Model
     public function checkUniqueCourse($courseTitle,$department,$id)
     {
 
-        $this->db->select('courseTitle,departmentId');
+        $this->db->select('courseTitle');
         $this->db->where('courseTitle',$courseTitle);
         $this->db->where('departmentId',$department);
         $this->db->where('courseId !=', $id);

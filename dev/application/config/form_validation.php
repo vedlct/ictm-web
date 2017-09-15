@@ -25,22 +25,22 @@ $config = array (
         array(
             'field' => 'menuType',
             'label' => 'Menu Type',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'parentId',
             'label' => 'Parent Menu',
-            'rules' => 'regex_match[/^[0-9]*$/]'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]'
         ),
         array(
             'field' => 'pageId',
             'label' => 'Page',
-            'rules' => 'regex_match[/^[0-9]*$/]'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]'
         ),
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required|max_length[50]'
         ),
         ),
     /*---------------- for menu edit-------------*/
@@ -49,29 +49,28 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required|max_length[45]|callback_menuTitleCheckFormEditMenu'
-
+            'rules' => 'required|max_length[100]|callback_menuTitleCheckFormEditMenu'
         ),
         array(
             'field' => 'menuType',
             'label' => 'Menu Type',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'parentId',
             'label' => 'Parent Menu',
-            'rules' => 'regex_match[/^[0-9]*$/]',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]',
 
         ),
         array(
             'field' => 'pageId',
             'label' => 'Page',
-            'rules' => 'regex_match[/^[0-9]*$/]'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]'
         ),
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required||max_length[50]'
         ),
     ),
     /*---------------- for Page create-------------*/
@@ -79,19 +78,20 @@ $config = array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required|max_length[100]|is_unique[ictmpage.pageTitle]',
-
+            'rules' => 'required|max_length[255]|is_unique[ictmpage.pageTitle]',
+            'errors' => array(
+                'is_unique' => 'Page Title Allready Existed !!',
+            ),
         ),
         array(
             'field' => 'keywords',
             'label' => 'Page Keywords',
-            'rules' => 'max_length[100]'
+            'rules' => 'max_length[255]'
         ),
         array(
             'field' => 'metadata',
             'label' => 'Page MetaData',
-            'rules' => 'max_length[100]',
-
+            'rules' => 'max_length[255]',
         ),
         array(
             'field' => 'image',
@@ -101,12 +101,12 @@ $config = array (
         array(
             'field' => 'pagetype',
             'label' => 'Page Type',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required||max_length[50]'
         ),
     ),
     /*---------------- for Page edit-------------*/
@@ -114,21 +114,19 @@ $config = array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required|max_length[100]|callback_pageCheckFormEditPage',
+            'rules' => 'required|max_length[255]|callback_pageCheckFormEditPage',
 
         ),
         array(
             'field' => 'keywords',
             'label' => 'Page Keywords',
-            'rules' => 'max_length[100]'
+            'rules' => 'max_length[255]'
         ),
         array(
             'field' => 'metadata',
             'label' => 'Page MetaData',
-            'rules' => 'max_length[100]',
-
+            'rules' => 'max_length[255]',
         ),
-
         array(
             'field' => 'image',
             'label' => 'Image',
@@ -137,12 +135,12 @@ $config = array (
         array(
             'field' => 'pagetype',
             'label' => 'Page Type',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for pageSection create-------------*/
@@ -150,19 +148,19 @@ $config = array (
         array(
             'field' => 'pageId',
             'label' => 'Page Title',
-            'rules' => 'required',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]',
 
         ),
         array(
             'field' => 'textbox[]',
             'label' => 'Section Title',
-            'rules' => 'trim|required|max_length[100]'
+            'rules' => 'trim|required|max_length[255]'
         ),
 
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for pageSection edit-------------*/
@@ -171,13 +169,11 @@ $config = array (
             'field' => 'textbox',
             'label' => 'Section Title',
             'rules' => 'required|max_length[100]',
-
         ),
-
         array(
             'field' => 'status',
             'label' => 'Page Section Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required||max_length[50]'
         ),
     ),
     /*---------------- for faculty create-------------*/
@@ -212,12 +208,15 @@ $config = array (
         array(
             'field' => 'facultyEmpType',
             'label' => 'Employee Type',
-            'rules' => 'required'
+            'rules' => 'required||max_length[100]'
         ),
         array(
             'field' => 'facultyEmail',
             'label' => 'Email',
-            'rules' => 'required|valid_email|is_unique[ictmfaculty.facultyEmail]'
+            'rules' => 'required|valid_email|is_unique[ictmfaculty.facultyEmail]|max_length[100]',
+            'errors' => array(
+                'is_unique' => 'Email Allready Existed ! Faculty  Existed !',
+            ),
         ),
         array(
             'field' => 'facultyPhone',
@@ -237,7 +236,7 @@ $config = array (
         array(
             'field' => 'facultyStatus',
             'label' => 'Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required|max_length[50]'
         ),
         array(
             'field' => 'facultyCourses[]',
@@ -282,12 +281,12 @@ $config = array (
         array(
             'field' => 'faculty_emp_type',
             'label' => 'Employee Type',
-            'rules' => 'required'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'faculty_email',
             'label' => 'Email',
-            'rules' => 'required|valid_email|callback_emailCheckFormEditFaculty'
+            'rules' => 'required|valid_email|max_length[100]|callback_emailCheckFormEditFaculty'
         ),
         array(
             'field' => 'faculty_phone',
@@ -297,17 +296,17 @@ $config = array (
         array(
             'field' => 'faculty_twitter',
             'label' => 'Twitter',
-            'rules' => 'max_length[100]'
+            'rules' => 'max_length[255]'
         ),
         array(
             'field' => 'faculty_linkedin',
             'label' => 'LinkedIn',
-            'rules' => 'max_length[100]'
+            'rules' => 'max_length[255]'
         ),
         array(
             'field' => 'faculty_status',
             'label' => 'Status',
-            'rules' => 'required|alpha'
+            'rules' => 'required|max_length[50]'
         ),
         array(
             'field' => 'faculty_intro',
@@ -321,7 +320,11 @@ $config = array (
         array(
             'field' => 'name',
             'label' => 'Course Name',
-            'rules' => 'required|max_length[255]|callback_CourseCheckFormNewCourse',
+//            'rules' => 'required|max_length[255]|callback_CourseCheckFormNewCourse',
+            'rules' => 'required|max_length[255]|is_unique[ictmcourse.courseTitle]',
+            'errors' => array(
+                'is_unique' => 'Course Allready Existed !!',
+            ),
         ),
         array(
             'field' => 'codeperson',
@@ -362,7 +365,7 @@ $config = array (
         array(
             'field' => 'accreditation',
             'label' => 'Accreditation',
-            'rules' => 'required|max_length[45]'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'accreditationNo',
@@ -464,7 +467,7 @@ $config = array (
         array(
             'field' => 'accreditation',
             'label' => 'Accreditation',
-            'rules' => 'required|max_length[45]'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'accreditationNo',
@@ -495,13 +498,12 @@ $config = array (
         array(
             'field' => 'fees',
             'label' => 'Course Fees',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[255]'
         ),
         array(
             'field' => 'timetables',
             'label' => 'Course Time Table',
             'rules' => 'required|max_length[255]',
-
         ),
         array(
             'field' => 'status',
@@ -511,7 +513,7 @@ $config = array (
         array(
             'field' => 'department',
             'label' => 'Department',
-            'rules' => 'required|regex_match[/^[0-9]*$/]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]max_length[11]'
         ),
         array(
             'field' => 'image',
@@ -519,6 +521,7 @@ $config = array (
             'rules' => 'callback_val_img_check'
         ),
     ),
+
     /*---------------- for Create Course Section-------------*/
     'createCourseSection'=> array (
         array(
@@ -530,45 +533,43 @@ $config = array (
             'field' => 'textbox[]',
             'label' => 'Course Section Title',
             'rules' => 'required|max_length[255]',
-
         ),
-
         array(
             'field' => 'status[]',
             'label' => 'Course Section Status',
-            'rules' => 'required'
+            'rules' => 'required|max_length[50]'
         ),
     ),
 
     /*---------------- for CourseSection edit-------------*/
     'editCourseSection'=> array (
+
         array(
             'field' => 'textbox',
             'label' => 'Section Title',
-            'rules' => 'required|max_length[100]',
-
+            'rules' => 'required|max_length[255]',
         ),
-
         array(
             'field' => 'status',
             'label' => 'Course Section Status',
-            'rules' => 'required'
+            'rules' => 'required|max_length[50]'
         ),
     ),
 
     /*---------------- for Create Department-------------*/
     'createDepartment'=> array (
-
         array(
             'field' => 'departmentName',
             'label' => 'Department Name',
             'rules' => 'trim|required|max_length[255]|is_unique[ictmdepartment.departmentName]|xss_clean',
+            'errors' => array(
+                'is_unique' => 'Department Allready Existed !!',
+            ),
         ),
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
             'rules' => 'trim|required|max_length[100]|xss_clean',
-
         ),
         array(
             'field' => 'image',
@@ -578,7 +579,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for Edit Department-------------*/
@@ -593,7 +594,6 @@ $config = array (
             'field' => 'departmentHead',
             'label' => 'Department Head ',
             'rules' => 'trim|required|max_length[100]|xss_clean',
-
         ),
         array(
             'field' => 'image',
@@ -603,7 +603,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for Create Event-------------*/
@@ -634,7 +634,7 @@ $config = array (
         array(
             'field' => 'EventType',
             'label' => 'Event Type',
-            'rules' => 'required|max_length[50]',
+            'rules' => 'required|max_length[100]',
         ),
 
         array(
@@ -678,9 +678,8 @@ $config = array (
         array(
             'field' => 'EventType',
             'label' => 'Event Type',
-            'rules' => 'required|max_length[50]',
+            'rules' => 'required|max_length[100]',
         ),
-
         array(
             'field' => 'event_image',
             'label' => 'Image',
@@ -694,7 +693,7 @@ $config = array (
 
     ),
 
-    /*---------------- for Create CollegeInfo-------------*/
+    /*---------------- for CollegeInfo-------------*/
     'CollegeInfo'=> array (
 
         array(
@@ -773,11 +772,13 @@ $config = array (
     /*---------------- for Create News-------------*/
 
     'createNews'=> array (
-
         array(
             'field' => 'newsTitle',
             'label' => 'News Title ',
             'rules' => 'required|max_length[255]|is_unique[ictmnews.newsTitle]',
+            'errors' => array(
+                'is_unique' => 'News Allready Existed !!',
+            ),
         ),
         array(
             'field' => 'newsDate',
@@ -785,7 +786,6 @@ $config = array (
             'rules' => 'required',
 
         ),
-
         array(
             'field' => 'news_image',
             'label' => 'News image',
@@ -796,11 +796,10 @@ $config = array (
             'label' => 'News Type ',
             'rules' => 'required|max_length[100]'
         ),
-
         array(
             'field' => 'newsStatus',
             'label' => 'News Status',
-            'rules' => 'required'
+            'rules' => 'required|max_length[50]'
         ),
     ),
 
@@ -817,7 +816,6 @@ $config = array (
             'rules' => 'required',
 
         ),
-
         array(
             'field' => 'news_image',
             'label' => 'News image',
@@ -828,11 +826,10 @@ $config = array (
             'label' => 'News Type ',
             'rules' => 'required|max_length[100]'
         ),
-
         array(
             'field' => 'newsStatus',
             'label' => 'News Status',
-            'rules' => 'required'
+            'rules' => 'required|max_length[50]'
         ),
     ),
 

@@ -26,11 +26,19 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>College Info</li>
-                        <!--                        <li><i class="fa fa-files-o"></i>Create a new Menu</li>-->
+
                     </ol>
                 </div>
             </div>
             <!-- Form validations -->
+
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">

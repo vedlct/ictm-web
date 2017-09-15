@@ -43,18 +43,16 @@ class CollegeInfo extends CI_Controller
                 $this->data['error']=$this->CollegeInfom->insertCollegeinfo();
 
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('Course Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/CollegeInfo/createCollegeInfo';
-                    </script>";
+
+                    $this->session->set_flashdata('successMessage','College Info Created Successfully');
+                    redirect('Admin/CollegeInfo/createCollegeInfo');
 
                 }
                 else
                 {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Course/createCollegeInfo';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/CollegeInfo/createCollegeInfo');
+
                 }
 
 
@@ -68,6 +66,7 @@ class CollegeInfo extends CI_Controller
     public function editCollegeInfo($id)
     {
         $this->load->library('form_validation');
+
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             if (!$this->form_validation->run('CollegeInfo')) {
@@ -81,18 +80,15 @@ class CollegeInfo extends CI_Controller
                 $this->data['error']=$this->CollegeInfom->updateCollegeinfo($id);
 
                 if (empty($this->data['error'])) {
-                    echo "<script>
-                    alert('Course Updated Successfully');
-                    window.location.href= '" . base_url() . "Admin/CollegeInfo/createCollegeInfo';
-                    </script>";
+
+                    $this->session->set_flashdata('successMessage','College Info Updated Successfully');
+                    redirect('Admin/CollegeInfo/createCollegeInfo');
 
                 }
                 else
                 {
-                    echo "<script>
-                    alert('Some thing Went Wrong !! Please Try Again!!');
-                    window.location.href= '" . base_url() . "Admin/Course/createCollegeInfo';
-                    </script>";
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/CollegeInfo/createCollegeInfo');
                 }
 
             }
