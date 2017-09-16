@@ -33,8 +33,10 @@ class Newsm extends CI_Model
         }
         else
         {
+            $newsId = $this->db->insert_id();
+
             if (!empty($_FILES['news_image']['name'])) {
-                $newsId = $this->db->insert_id();
+
                 $this->load->library('upload');
                 $config = array(
                 'upload_path' => "images/newsImages/",

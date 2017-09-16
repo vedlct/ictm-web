@@ -34,9 +34,11 @@ class Pagem extends CI_Model
         }
         else
         {
+            $pageId=$this->db->insert_id();
+
             if (!empty($_FILES['image']['name'])) {
 
-                $pageId=$this->db->insert_id();
+
                 $this->load->library('upload');
                 $config = array(
                     'upload_path' => "images/pageImages/",

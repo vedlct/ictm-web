@@ -175,15 +175,11 @@
     }
     function formvalidate() {
         var length =  document.getElementById("menuTitle").value;
-       // var parentId =  document.getElementById("parentId").value;
+
         if (length.length >100){
             alert("Menu Name Should not more than 100 Charecter Length");
             return false;
         }
-//        if (parentId = "Select Parent Menu") {
-//            alert("Please Select the Parent Menu");
-//            return false;
-//        }
         else
         {
             return true;

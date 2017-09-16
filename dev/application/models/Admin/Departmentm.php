@@ -30,10 +30,11 @@ class Departmentm extends CI_Model
             }
             else
             {
+                $departmentId=$this->db->insert_id();
                 if (!empty($_FILES['image']['name'])) {
 
                     $image=$_FILES['image']['name'];
-                    $departmentId=$this->db->insert_id();
+
                     $this->load->library('upload');
 
                     $config = array(
