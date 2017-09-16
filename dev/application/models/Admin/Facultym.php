@@ -22,6 +22,7 @@ class Facultym extends CI_Model
         $facultyIntro = $this->input->post("facultyIntro");
 
         $data = array(
+            'facultyTitle' => $facultyTitle,
             'facultyFirstName' => $facultyFirstName,
             'facultyLastName' => $facultyLastName,
             'facultyDegree' => $facultyDegree,
@@ -47,9 +48,9 @@ class Facultym extends CI_Model
         }
         else {
 
-           if (!empty($_FILES['facultyImage']['name'])) {
-
             $facultyId=$this->db->insert_id();
+
+           if (!empty($_FILES['facultyImage']['name'])) {
 
             $this->load->library('upload');
             $config = array(
@@ -109,7 +110,7 @@ class Facultym extends CI_Model
 
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageFaculty($limit, $start) {
-        $this->db->select('facultyId,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfaculty');
         $this->db->order_by("facultyId", "desc");
         $this->db->limit($limit, $start);
@@ -144,6 +145,7 @@ class Facultym extends CI_Model
     // for edit Faculty by id from database
     public function editFacultybyId($id)
     {
+        $facultyTitle = $this->input->post("facultyTitle");
         $facultyFirstName = $this->input->post("faculty_first_name");
         $facultyLastName = $this->input->post("faculty_last_name");
         $facultyDegree = $this->input->post("faculty_degree");
@@ -186,6 +188,7 @@ class Facultym extends CI_Model
                 return false;
             }
             $data = array(
+                'facultyTitle' => $facultyTitle,
                 'facultyFirstName' => $facultyFirstName,
                 'facultyLastName' => $facultyLastName,
                 'facultyDegree' => $facultyDegree,
@@ -207,6 +210,7 @@ class Facultym extends CI_Model
         else
         {
             $data = array(
+                'facultyTitle' => $facultyTitle,
                 'facultyFirstName' => $facultyFirstName,
                 'facultyLastName' => $facultyLastName,
                 'facultyDegree' => $facultyDegree,
@@ -223,7 +227,6 @@ class Facultym extends CI_Model
 
             );
         }
-
 
         $this->db->where('facultyId', $id);
         $error=$this->db->update('ictmfaculty',$data);

@@ -69,12 +69,11 @@ class Coursem extends CI_Model
         }
         else
         {
+            $courseId=$this->db->insert_id();
 
             if (!empty($_FILES['image']['name'])) {
 
                 $image=$_FILES['image']['name'];
-                $courseId=$this->db->insert_id();
-
                 $this->load->library('upload');
                 $config = array(
                     'upload_path' => "images/courseImages/",

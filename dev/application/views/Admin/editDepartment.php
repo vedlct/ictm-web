@@ -141,3 +141,19 @@
 </body>
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+
+<script>
+    function submitform() {
+
+        var departmentName =  document.getElementById("departmentName").value;
+        if (departmentName.length >255){
+            alert("Department Name Should not more than 255 Charecter Length");
+            return false;
+        }
+        var departmentHead =  document.getElementById("departmentHead").value;
+        if (departmentHead.length >100){
+            alert("Department Head Should not more than 100 Charecter Length");
+            return false;
+        }
+    }
+</script>

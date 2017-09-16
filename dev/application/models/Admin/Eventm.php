@@ -35,9 +35,11 @@ class Eventm extends CI_Model
             return $this->db->error();
         } else {
 
+            $eventId = $this->db->insert_id();
+
             if (!empty($_FILES['event_image']['name'])) {
 
-                $eventId = $this->db->insert_id();
+
                 $this->load->library('upload');
                 $config = array(
                     'upload_path' => "images/eventImages/",

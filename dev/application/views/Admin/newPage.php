@@ -149,16 +149,16 @@
         var keywords =  document.getElementById("keywords").value;
         var metadata =  document.getElementById("title").value;
 
-        if (title.length >100){
-            alert("Page Title Should not more than 100 Charecter Length");
+        if (title.length >255){
+            alert("Page Title Should not more than 255 Charecter Length");
             return false;
         }
-        if (keywords.length >100){
-            alert("Page keywords Title Should not more than 100 Charecter Length");
+        if (keywords.length >255){
+            alert("Page keywords Title Should not more than 255 Charecter Length");
             return false;
         }
-        if (metadata.length >100){
-            alert("Page metadata Should not more than 100 Charecter Length");
+        if (metadata.length >255){
+            alert("Page metadata Should not more than 255 Charecter Length");
             return false;
         }
         else

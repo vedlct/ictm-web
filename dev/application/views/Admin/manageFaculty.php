@@ -65,8 +65,8 @@
 
                                 <?php foreach ($faculty as $faculty){?>
                                     <tr align="center">
-                                        <td >
-                                            <?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
+                                        <td>
+                                            <?php echo $faculty->facultyTitle?>&nbsp<?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
                                         </td>
 
                                         <td >

@@ -120,8 +120,8 @@
 <script>
     function formsubmited() {
         var title =  document.getElementById("textbox1").value;
-        if (title.length >100){
-            alert("Page Title Should not more than 100 Charecter Length");
+        if (title.length >255){
+            alert("Page Title Should not more than 255 Charecter Length");
             return false;
         }
         else

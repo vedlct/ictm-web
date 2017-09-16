@@ -52,14 +52,6 @@
                                         <div class="col-lg-2">
                                             <p><font color="red"> <?php echo form_error('facultyTitle'); ?></font></p>
                                               <input class="form-control" id="facultyTitle"  name="facultyTitle" value="<?php echo set_value('facultyTitle'); ?>" placeholder="Mr/Mrs/Miss" type="text" required />
-<!--                                            <select class="form-control" id="facultyTitle" name="facultyTitle" required >-->
-<!----
-<!--                                                <option value="" selected>--><?php //echo SELECT_TITLE?><!--</option>-->
-<!--                                                --><?php //for ($i=0;$i<count(TITLE);$i++){?>
-<!--                                                    <option>--><?php //echo TITLE[$i]?><!--</option>-->
-<!--                                                --><?php //} ?>
-<!---->
-<!--                                            </select>-->
                                         </div>
 
                                         <label for="facultyFirstName" class="control-label col-lg-1">First Name <span class="required">*</span></label>
@@ -108,12 +100,13 @@
 
                                         <label for="facultyEmpType" class="control-label col-lg-2">Employee type <span class="required">*</span></label>
                                         <div class="col-lg-4">
+
                                             <p><font color="red"> <?php echo form_error('facultyEmpType'); ?></font></p>
                                             <select class="form-control" id="facultyEmpType" name="facultyEmpType" required >
 
                                                 <option value="" selected><?php echo SELECT_EMPLOYEE_TYPE?></option>
                                                 <?php for ($i=0;$i<count(EMPLOYEE_TYPE);$i++){?>
-                                                    <option><?php echo EMPLOYEE_TYPE[$i]?></option>
+                                                    <option <?php echo set_select('facultyEmpType',  EMPLOYEE_TYPE[$i], False); ?>><?php echo EMPLOYEE_TYPE[$i]?></option>
                                                 <?php } ?>
 
                                             </select>

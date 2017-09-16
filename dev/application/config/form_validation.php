@@ -412,7 +412,7 @@ $config = array (
         array(
             'field' => 'department',
             'label' => 'Department',
-            'rules' => 'required|regex_match[/^[0-9]*$/]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]'
         ),
         array(
             'field' => 'image',

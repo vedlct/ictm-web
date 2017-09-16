@@ -163,6 +163,12 @@
 <script type="text/javascript">
     function onsumit(){
 
+        var newsTitle =  document.getElementById("newsTitle").value;
+        if (newsTitle.length >255){
+            alert("News Title Should not more than 255 Charecter Length");
+            return false;
+        }
+
         var messageLength = CKEDITOR.instances['newsContent'].getData().replace(/<[^>]*>/gi, '').length;
         if( !messageLength ) {
             alert( 'Please enter a News Content' );

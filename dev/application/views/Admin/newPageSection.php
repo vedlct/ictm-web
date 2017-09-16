@@ -152,8 +152,8 @@
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
-                if (title.length > 100){
-                    alert("Section Title Should not more than 100 Charecter Length");
+                if (title.length > 255){
+                    alert("Section Title Should not more than 255 Charecter Length");
                     return false;
                 }
                 if(status==""){alert("Please Select Section Status First!!");
@@ -168,8 +168,8 @@
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
-                if (title.length > 100){
-                    alert("Section Title Should not more than 100 Charecter Length");
+                if (title.length > 255){
+                    alert("Section Title Should not more than 255 Charecter Length");
                     return false;
                 }
                 if(status==""){alert("Please Select Section Status First!!");
