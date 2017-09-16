@@ -114,6 +114,8 @@ define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
 define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));
 define("SELECT_COURSE", "Select Course");
 define("SELECT_DEPARTMENT", "Select Department");
+define("SELECT_TITLE", "Select Title");
+define ("TITLE",array ("Mr", "Mrs", "Miss"));
 
 
 /////////////// News Page ///////////////

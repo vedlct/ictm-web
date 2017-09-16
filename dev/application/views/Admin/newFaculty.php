@@ -47,17 +47,35 @@
                                 <form class="form-validate form-horizontal" method="POST" enctype="multipart/form-data" action="<?php echo base_url()?>Admin/Faculty/createNewFaculty" onsubmit="return submitform()">
 
                                     <div class="form-group ">
+
+                                        <label for="facultyTitle" class="control-label col-lg-1">Title <span class="required">*</span></label>
+                                        <div class="col-lg-2">
+                                            <p><font color="red"> <?php echo form_error('facultyTitle'); ?></font></p>
+                                              <input class="form-control" id="facultyTitle"  name="facultyTitle" value="<?php echo set_value('facultyTitle'); ?>" placeholder="Mr/Mrs/Miss" type="text" required />
+<!--                                            <select class="form-control" id="facultyTitle" name="facultyTitle" required >-->
+<!----
+<!--                                                <option value="" selected>--><?php //echo SELECT_TITLE?><!--</option>-->
+<!--                                                --><?php //for ($i=0;$i<count(TITLE);$i++){?>
+<!--                                                    <option>--><?php //echo TITLE[$i]?><!--</option>-->
+<!--                                                --><?php //} ?>
+<!---->
+<!--                                            </select>-->
+                                        </div>
+
                                         <label for="facultyFirstName" class="control-label col-lg-2">First Name <span class="required">*</span></label>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-3">
                                             <p><font color="red"> <?php echo form_error('facultyFirstName'); ?></font></p>
                                             <input class="form-control" id="facultyFirstName"  name="facultyFirstName" value="<?php echo set_value('facultyFirstName'); ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyLastName" class="control-label col-lg-2">Last Name <span class="required">*</span></label>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-2">
                                             <p><font color="red"> <?php echo form_error('facultyLastName'); ?></font></p>
                                             <input class="form-control" id="facultyLastName" name="facultyLastName" value="<?php echo set_value('facultyLastName'); ?>"  type="text" required />
                                         </div>
+
+
+
 
                                     </div>
 

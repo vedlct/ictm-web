@@ -8,6 +8,7 @@ class Facultym extends CI_Model
     {
         $facultyFirstName = $this->input->post("facultyFirstName");
         $facultyLastName = $this->input->post("facultyLastName");
+        $facultyTitle = $this->input->post("facultyTitle");
         $facultyDegree = $this->input->post("facultyDegree");
         $facultyPosition = $this->input->post("facultyPosition");
         $facultyImage=$_FILES['facultyImage']['name'];

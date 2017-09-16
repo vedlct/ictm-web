@@ -70,7 +70,7 @@ $config = array (
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required||max_length[50]'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for Page create-------------*/
@@ -106,7 +106,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required||max_length[50]'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for Page edit-------------*/
@@ -173,7 +173,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Section Status',
-            'rules' => 'required||max_length[50]'
+            'rules' => 'required|max_length[50]'
         ),
     ),
     /*---------------- for faculty create-------------*/
@@ -208,7 +208,7 @@ $config = array (
         array(
             'field' => 'facultyEmpType',
             'label' => 'Employee Type',
-            'rules' => 'required||max_length[100]'
+            'rules' => 'required|max_length[100]'
         ),
         array(
             'field' => 'facultyEmail',
