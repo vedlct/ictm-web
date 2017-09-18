@@ -46,6 +46,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             <b>Manage News</b>
+                            <span align="">
+                                <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;" href="<?php echo base_url()?>Admin/News/newNews"><b>New News</b></button>
+                            </span>
                         </header>
                         <div class="panel-body table  ">
                             <table class="table table-striped table-advance  table-bordered table-hover">

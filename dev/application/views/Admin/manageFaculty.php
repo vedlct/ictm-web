@@ -44,6 +44,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             <b>Manage Faculty</b>
+                            <span align="">
+                                <button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><a style="color: whitesmoke;" href="<?php echo base_url()?>Admin/Faculty/newFaculty"><b>New Faculty</b></a></button>
+                            </span>
                         </header>
                         <div class="panel-body ">
                             <table class="table  table-advance  table-bordered table-hover">
