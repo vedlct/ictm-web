@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.10.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:3306
--- Generation Time: Sep 15, 2017 at 02:19 PM
--- Server version: 10.1.24-MariaDB-cll-lve
--- PHP Version: 5.6.20
+-- Host: 127.0.0.1
+-- Generation Time: Sep 16, 2017 at 02:30 PM
+-- Server version: 10.1.19-MariaDB
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,10 +14,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sakibrahman_ictm`
+-- Database: `ictm`
 --
 
 -- --------------------------------------------------------
@@ -26,17 +26,40 @@ SET time_zone = "+00:00";
 -- Table structure for table `ictmaffiliations`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmaffiliations` (
-  `AffiliationsId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmaffiliations` (
+  `AffiliationsId` int(11) NOT NULL,
   `AffiliationsDetails` longtext,
   `AffiliationsPhotoPath` varchar(255) DEFAULT NULL,
   `InsertedBy` varchar(255) DEFAULT NULL,
   `InsertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(255) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `affiliationsStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`AffiliationsId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `affiliationsStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ictmalbum`
+--
+
+CREATE TABLE `ictmalbum` (
+  `albumId` int(11) NOT NULL,
+  `albumTitle` varchar(255) DEFAULT NULL,
+  `albumCategoryName` varchar(255) DEFAULT NULL,
+  `insertedBy` varchar(100) DEFAULT NULL,
+  `insertedDate` datetime DEFAULT NULL,
+  `lastModifiedBy` varchar(100) DEFAULT NULL,
+  `lastModifiedDate` datetime DEFAULT NULL,
+  `albumStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ictmalbum`
+--
+
+INSERT INTO `ictmalbum` (`albumId`, `albumTitle`, `albumCategoryName`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`, `albumStatus`) VALUES
+(2, 'New Album', 'new Category', NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -44,8 +67,8 @@ CREATE TABLE IF NOT EXISTS `ictmaffiliations` (
 -- Table structure for table `ictmcollegeinfo`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmcollegeinfo` (
-  `collegeInfoId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmcollegeinfo` (
+  `collegeInfoId` int(11) NOT NULL,
   `collegeName` varchar(255) DEFAULT NULL,
   `collegeDomain` varchar(255) DEFAULT NULL,
   `collegeAddress` varchar(1000) DEFAULT NULL,
@@ -62,9 +85,8 @@ CREATE TABLE IF NOT EXISTS `ictmcollegeinfo` (
   `InsertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `collegeInfoStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`collegeInfoId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `collegeInfoStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmcollegeinfo`
@@ -79,8 +101,8 @@ INSERT INTO `ictmcollegeinfo` (`collegeInfoId`, `collegeName`, `collegeDomain`, 
 -- Table structure for table `ictmcontactus`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmcontactus` (
-  `contactUsId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmcontactus` (
+  `contactUsId` int(11) NOT NULL,
   `contactUsname` varchar(45) DEFAULT NULL,
   `contactUsEmain` varchar(100) DEFAULT NULL,
   `contactUsSubject` varchar(255) DEFAULT NULL,
@@ -89,9 +111,8 @@ CREATE TABLE IF NOT EXISTS `ictmcontactus` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `contactUsStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`contactUsId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `contactUsStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -99,8 +120,8 @@ CREATE TABLE IF NOT EXISTS `ictmcontactus` (
 -- Table structure for table `ictmcourse`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmcourse` (
-  `courseId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmcourse` (
+  `courseId` int(11) NOT NULL,
   `departmentId` int(11) DEFAULT NULL,
   `courseCodePearson` varchar(100) DEFAULT NULL,
   `courseCodeIcon` varchar(100) DEFAULT NULL,
@@ -124,17 +145,17 @@ CREATE TABLE IF NOT EXISTS `ictmcourse` (
   `insertedBy` varchar(100) DEFAULT NULL,
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
-  `lastModifiedDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`courseId`),
-  KEY `fk_ictmCourse_ictmDepartment1_idx` (`departmentId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+  `lastModifiedDate` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmcourse`
 --
 
 INSERT INTO `ictmcourse` (`courseId`, `departmentId`, `courseCodePearson`, `courseCodeIcon`, `ucasCode`, `courseTitle`, `awardingTitle`, `awardingBody`, `accreditationType`, `accreditationNumber`, `courseDuration`, `creditValue`, `courseStructutre`, `studyMode`, `studyLanguage`, `academicYear`, `courseFees`, `couseLocation`, `timeTable`, `courseStatus`, `courseImage`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`) VALUES
-(11, 6, 'TNA67', 'ICON0001', NULL, 'HND in Computing', 'Pearson BTEC Level 5 Higher National Diploma (RQF) ', ' Pearson', 'Pearson Qualification', '601/8365/2', '2 years', '240 credits, levels 4 and 5.', '14 X 15 credits units, 1 X 30-unit research project.', 'FT', 'English', '2017-18', '£6,000', 'ICTM', 'Weekend and Evening', 'Active', NULL, 'admin@gmail.com', '2017-09-09 12:21:36', NULL, NULL);
+(11, 6, 'TNA67', 'ICON0001', NULL, 'HND in Computing', 'Pearson BTEC Level 5 Higher National Diploma (RQF) ', ' Pearson', 'Pearson Qualification', '601/8365/2', '2 years', '240 credits, levels 4 and 5.', '14 X 15 credits units, 1 X 30-unit research project.', 'FT', 'English', '2017-18', '£6,000', 'ICTM', 'Weekend and Evening', 'Active', NULL, 'admin@gmail.com', '2017-09-09 12:21:36', NULL, NULL),
+(13, 18, 'qwe', 'lllllllllllllllllllllllllllllllllllllllllllllllllllllllllll', NULL, 'fsd', 'sdfsd', 'weewe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'qwe', 'wqe', 'qwe', 'qwe', 'weqw', 'qwe', 'Active', NULL, 'admin@gmail.com', '2017-09-16 08:16:47', NULL, NULL),
+(14, 19, 'werw', 'sdfefffffffffffffffffffffffffffffffffffffffffffff', NULL, 'ddf', 'sdfsd', 'wersdf', 'srwer', 'sfsdf', 'r43', 'erwe', 'fsdf', 'sdfsf', 'fgf', 'sdfsd', 'sdfer', 'erwer', 'fsdf', 'Active', NULL, 'admin@gmail.com', '2017-09-16 08:17:26', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -142,8 +163,8 @@ INSERT INTO `ictmcourse` (`courseId`, `departmentId`, `courseCodePearson`, `cour
 -- Table structure for table `ictmcoursesection`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmcoursesection` (
-  `courseSectionId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmcoursesection` (
+  `courseSectionId` int(11) NOT NULL,
   `courseId` int(11) NOT NULL,
   `courseSectionTitle` varchar(255) DEFAULT NULL,
   `courseSectionContent` longtext,
@@ -152,10 +173,8 @@ CREATE TABLE IF NOT EXISTS `ictmcoursesection` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `courseSectionStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`courseSectionId`),
-  KEY `fk_ictmCourseSection_ictmCourse1_idx` (`courseId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+  `courseSectionStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmcoursesection`
@@ -170,8 +189,8 @@ INSERT INTO `ictmcoursesection` (`courseSectionId`, `courseId`, `courseSectionTi
 -- Table structure for table `ictmcourseunits`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmcourseunits` (
-  `courseUnitd` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmcourseunits` (
+  `courseUnitd` int(11) NOT NULL,
   `courseId` int(11) NOT NULL,
   `unitNumber` int(11) DEFAULT NULL,
   `unitCode` varchar(45) DEFAULT NULL,
@@ -183,10 +202,8 @@ CREATE TABLE IF NOT EXISTS `ictmcourseunits` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifieDate` datetime DEFAULT NULL,
-  `courseUnitsStatus` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`courseUnitd`),
-  KEY `fk_ictmCurseUnits_ictmCourse1_idx` (`courseId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `courseUnitsStatus` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -194,8 +211,8 @@ CREATE TABLE IF NOT EXISTS `ictmcourseunits` (
 -- Table structure for table `ictmdepartment`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmdepartment` (
-  `departmentId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmdepartment` (
+  `departmentId` int(11) NOT NULL,
   `departmentName` varchar(255) DEFAULT NULL,
   `departmentHead` varchar(100) DEFAULT NULL,
   `departmentSummary` mediumtext,
@@ -204,16 +221,17 @@ CREATE TABLE IF NOT EXISTS `ictmdepartment` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `departmentStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`departmentId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+  `departmentStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmdepartment`
 --
 
 INSERT INTO `ictmdepartment` (`departmentId`, `departmentName`, `departmentHead`, `departmentSummary`, `departmentImage`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`, `departmentStatus`) VALUES
-(6, 'test department', 'test Department Head', '<p>test&nbsp;department &nbsp;summary</p>\r\n', '', 'admin@gmail.com', '2017-08-30 11:43:21', 'admin@gmail.com', '2017-09-15 19:15:34', 'InActive');
+(6, 'test department', 'test Department Head', '<p>test&nbsp;department &nbsp;summary</p>\r\n', '', 'admin@gmail.com', '2017-08-30 11:43:21', 'admin@gmail.com', '2017-09-15 19:15:34', 'InActive'),
+(18, 'ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss', 'dddddddddddddddddddddddddddddddddddddddddddddd', '<p>we</p>\r\n', '', 'admin@gmail.com', '2017-09-16 07:48:30', 'admin@gmail.com', '2017-09-16 07:48:39', 'Inactive'),
+(19, 'sd', 'aew', '<p>we</p>\r\n', '', 'admin@gmail.com', '2017-09-16 07:49:12', NULL, NULL, 'Active');
 
 -- --------------------------------------------------------
 
@@ -221,8 +239,8 @@ INSERT INTO `ictmdepartment` (`departmentId`, `departmentName`, `departmentHead`
 -- Table structure for table `ictmevent`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmevent` (
-  `eventId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmevent` (
+  `eventId` int(11) NOT NULL,
   `eventTitle` varchar(255) DEFAULT NULL,
   `eventStartDate` datetime DEFAULT NULL,
   `eventEndDate` datetime DEFAULT NULL,
@@ -234,9 +252,8 @@ CREATE TABLE IF NOT EXISTS `ictmevent` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `eventStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`eventId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+  `eventStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmevent`
@@ -251,8 +268,9 @@ INSERT INTO `ictmevent` (`eventId`, `eventTitle`, `eventStartDate`, `eventEndDat
 -- Table structure for table `ictmfaculty`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmfaculty` (
-  `facultyId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmfaculty` (
+  `facultyId` int(11) NOT NULL,
+  `facultyTitle` varchar(20) DEFAULT NULL,
   `facultyFirstName` varchar(50) DEFAULT NULL,
   `facultyLastName` varchar(50) DEFAULT NULL,
   `facultyDegree` varchar(255) DEFAULT NULL,
@@ -268,20 +286,23 @@ CREATE TABLE IF NOT EXISTS `ictmfaculty` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `facultyStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`facultyId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+  `facultyStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmfaculty`
 --
 
-INSERT INTO `ictmfaculty` (`facultyId`, `facultyFirstName`, `facultyLastName`, `facultyDegree`, `facultyPosition`, `facultyEmpType`, `facultyEmail`, `faultyPhone`, `facultyTwitter`, `facultyLinkedIn`, `facultyIntro`, `facultyImage`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`, `facultyStatus`) VALUES
-(16, 'Nurun', 'Nabi', 'BCom Honours, M.Com,MBA(Henley at Oxon), PhD, FInstLM(Lond), MPDSE', 'PRINCIPAL', 'Full Time', 'nurunnabi@gmail.com', '01680000000', '', '', '<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>\r\n\r\n<p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure.</p>\r\n', 'magic_ball_library_columns_castle_63093_1920x1080.jpg', 'rumi@gmail.com', '2017-08-14 06:15:53', 'admin@gmail.com', '2017-08-30 11:16:24', 'InActive'),
-(17, 'mm', 'mm', 'mm', 'mm', 'Full Time', 'mm@v.com', '11111111122', 'mm', 'mm', '<p>fdgh</p>\r\n', '16215593_1779258322398756_321412839_n (1).jpg', 'admin@gmail.com', '2017-08-29 14:28:37', 'admin@gmail.com', '2017-08-29 14:31:55', 'Active'),
-(18, 'Faculty First Name ', 'Faculty Last Name ', 'Faculty Last Name ', 'Faculty Last Name ', 'Part Time', 'jhgjgjhgjg@hjgj.com', '5466545646', 'hgfhgfg', '', '<p>Faculty Last Name&nbsp;Faculty Last Name&nbsp;Faculty Last Name&nbsp;Faculty Last Name&nbsp;Faculty Last Name&nbsp;</p>\r\n', 'Untitled00.png', 'admin@gmail.com', '2017-08-31 10:46:54', 'admin@gmail.com', '2017-09-13 08:34:44', 'Active'),
-(20, 'First Name 1', 'Last Name 1', 'Faculty Degree 1', 'Faculty Position *1', 'Part Time', 'Email@yahoo.com', '01711111111', '', '', '<p>ergdfvdf</p>\r\n', 'interview (3).jpg', 'admin@gmail.com', '2017-09-05 08:16:09', NULL, NULL, 'Active'),
-(22, 'Mujtaba Rafid', 'Rumi', 'bsc,ssc', 'lecturer', 'Part Time', 'mujtaba.rumi1@gmail.com', '01680674598', 'twitter', 'mujtaba.rumi', '<p>new faculty</p>\r\n', NULL, 'admin@gmail.com', '2017-09-14 19:08:33', NULL, NULL, 'Inactive');
+INSERT INTO `ictmfaculty` (`facultyId`, `facultyTitle`, `facultyFirstName`, `facultyLastName`, `facultyDegree`, `facultyPosition`, `facultyEmpType`, `facultyEmail`, `faultyPhone`, `facultyTwitter`, `facultyLinkedIn`, `facultyIntro`, `facultyImage`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`, `facultyStatus`) VALUES
+(16, '', 'Nurun', 'Nabi', 'BCom Honours, M.Com,MBA(Henley at Oxon), PhD, FInstLM(Lond), MPDSE', 'PRINCIPAL', 'Full Time', 'nurunnabi@gmail.com', '01680000000', '', '', '<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>\r\n\r\n<p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure.</p>\r\n', 'magic_ball_library_columns_castle_63093_1920x1080.jpg', 'rumi@gmail.com', '2017-08-14 06:15:53', 'admin@gmail.com', '2017-08-30 11:16:24', 'InActive'),
+(18, '', 'Faculty First Name ', 'Faculty Last Name ', 'Faculty Last Name ', 'Faculty Last Name ', 'Part Time', 'jhgjgjhgjg@hjgj.com', '5466545646', 'hgfhgfg', '', '<p>Faculty Last Name&nbsp;Faculty Last Name&nbsp;Faculty Last Name&nbsp;Faculty Last Name&nbsp;Faculty Last Name&nbsp;</p>\r\n', 'Untitled00.png', 'admin@gmail.com', '2017-08-31 10:46:54', 'admin@gmail.com', '2017-09-13 08:34:44', 'Active'),
+(20, '', 'First Name 1', 'Last Name 1', 'Faculty Degree 1', 'Faculty Position *1', 'Part Time', 'Email@yahoo.com', '01711111111', '', '', '<p>ergdfvdf</p>\r\n', 'interview (3).jpg', 'admin@gmail.com', '2017-09-05 08:16:09', NULL, NULL, 'Active'),
+(22, '', 'Mujtaba Rafid', 'Rumi', 'bsc,ssc', 'lecturer', 'Part Time', 'mujtaba.rumi1@gmail.com', '01680674598', 'twitter', 'mujtaba.rumi', '<p>new faculty</p>\r\n', NULL, 'admin@gmail.com', '2017-09-14 19:08:33', NULL, NULL, 'Inactive'),
+(23, 'mr', 'rumi', 'cv', 'sdfsdf', 'fsrer', 'Part Time', 'mujtaba.rumi12@gmail.com', '244', 'erer', 'dsfsdfss', '<p>ewrwerw54</p>\r\n', NULL, 'admin@gmail.com', '2017-09-16 07:28:14', NULL, NULL, 'Active'),
+(24, 'mr', 'fgd', 'dfg', 'dfg', 'dfg', 'Part Time', 'hgdkjfh@g.com', '4565', 'sasdf', 'sdf', '<p>erwer</p>\r\n', NULL, 'admin@gmail.com', '2017-09-16 07:32:14', NULL, NULL, 'Active'),
+(25, 'asda', 'adsa', 'rete', 'erte', 'erter', 'Part Time', 'erter@h.com', '5471', 'rert', 'erte', '<p>ert4534</p>\r\n', NULL, 'admin@gmail.com', '2017-09-16 07:32:51', NULL, NULL, 'Active'),
+(26, NULL, 'MR', 'rete', 'erte', 'erter', 'Part Time', 'erter@he.com', '5471', 'rert', 'erte', '<p>ert4534</p>\r\n', NULL, 'admin@gmail.com', '2017-09-16 07:34:10', 'admin@gmail.com', '2017-09-16 07:34:40', 'Active'),
+(27, 'mr', 'as', 'asd', 'asdeqwe', 'asdasd', 'Part Time', 'asdas@g.com', '5468', 'asd', 'cv', '<p>awe</p>\r\n', NULL, 'admin@gmail.com', '2017-09-16 08:34:44', 'admin@gmail.com', '2017-09-16 08:37:59', 'Active');
 
 -- --------------------------------------------------------
 
@@ -289,8 +310,8 @@ INSERT INTO `ictmfaculty` (`facultyId`, `facultyFirstName`, `facultyLastName`, `
 -- Table structure for table `ictmfacultycontact`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmfacultycontact` (
-  `facultyContactId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmfacultycontact` (
+  `facultyContactId` int(11) NOT NULL,
   `facultyId` int(11) NOT NULL,
   `visitorName` varchar(100) DEFAULT NULL,
   `visitorInterest` varchar(100) DEFAULT NULL,
@@ -300,10 +321,8 @@ CREATE TABLE IF NOT EXISTS `ictmfacultycontact` (
   `insertedDate` datetime DEFAULT NULL,
   `insertedBy` varchar(100) NOT NULL,
   `lastModifiedBy` varchar(100) NOT NULL,
-  `lastModifiedDate` varchar(100) NOT NULL,
-  PRIMARY KEY (`facultyContactId`),
-  KEY `fk_ictmFacultyContact_ictmFaculty1_idx` (`facultyId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `lastModifiedDate` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -311,14 +330,19 @@ CREATE TABLE IF NOT EXISTS `ictmfacultycontact` (
 -- Table structure for table `ictmfacultycourse`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmfacultycourse` (
-  `facultyCourseId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmfacultycourse` (
+  `facultyCourseId` int(11) NOT NULL,
   `facultyId` int(11) NOT NULL,
-  `courseId` int(11) NOT NULL,
-  PRIMARY KEY (`facultyCourseId`),
-  KEY `fk_ictmFacultyCourse_ictmFaculty1_idx` (`facultyId`),
-  KEY `fk_ictmFacultyCourse_ictmCourse1_idx` (`courseId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=40 ;
+  `courseId` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ictmfacultycourse`
+--
+
+INSERT INTO `ictmfacultycourse` (`facultyCourseId`, `facultyId`, `courseId`) VALUES
+(40, 26, 11),
+(41, 27, 13);
 
 -- --------------------------------------------------------
 
@@ -326,8 +350,8 @@ CREATE TABLE IF NOT EXISTS `ictmfacultycourse` (
 -- Table structure for table `ictmfeedback`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmfeedback` (
-  `feedbackId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmfeedback` (
+  `feedbackId` int(11) NOT NULL,
   `feedbackDetails` varchar(100) DEFAULT NULL,
   `feedbackName` varchar(45) DEFAULT NULL,
   `feedbackPhotePath` varchar(100) DEFAULT NULL,
@@ -335,9 +359,8 @@ CREATE TABLE IF NOT EXISTS `ictmfeedback` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `feedbackStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`feedbackId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `feedbackStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -345,8 +368,8 @@ CREATE TABLE IF NOT EXISTS `ictmfeedback` (
 -- Table structure for table `ictmhome`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmhome` (
-  `homeId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmhome` (
+  `homeId` int(11) NOT NULL,
   `homeTitle` varchar(100) DEFAULT NULL,
   `homeDetails` mediumtext,
   `homePhotoPath` varchar(255) DEFAULT NULL,
@@ -354,9 +377,8 @@ CREATE TABLE IF NOT EXISTS `ictmhome` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `homeStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`homeId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `homeStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -364,8 +386,8 @@ CREATE TABLE IF NOT EXISTS `ictmhome` (
 -- Table structure for table `ictmmenu`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmmenu` (
-  `menuId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmmenu` (
+  `menuId` int(11) NOT NULL,
   `parentId` int(11) DEFAULT NULL,
   `pageId` int(11) DEFAULT NULL,
   `menuName` varchar(100) DEFAULT NULL,
@@ -374,10 +396,8 @@ CREATE TABLE IF NOT EXISTS `ictmmenu` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `menuStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`menuId`),
-  KEY `fk_ictmMenu_ictmPage_idx` (`pageId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=66 ;
+  `menuStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmmenu`
@@ -396,8 +416,8 @@ INSERT INTO `ictmmenu` (`menuId`, `parentId`, `pageId`, `menuName`, `menuType`, 
 -- Table structure for table `ictmnews`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmnews` (
-  `newsId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmnews` (
+  `newsId` int(11) NOT NULL,
   `newsTitle` varchar(255) DEFAULT NULL,
   `newsContent` mediumtext,
   `newsDate` datetime DEFAULT NULL,
@@ -407,9 +427,8 @@ CREATE TABLE IF NOT EXISTS `ictmnews` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `newsStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`newsId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `newsStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmnews`
@@ -424,8 +443,8 @@ INSERT INTO `ictmnews` (`newsId`, `newsTitle`, `newsContent`, `newsDate`, `newsT
 -- Table structure for table `ictmnotices`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmnotices` (
-  `noticeId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmnotices` (
+  `noticeId` int(11) NOT NULL,
   `noticeTitle` varchar(255) DEFAULT NULL,
   `noticeContent` mediumtext,
   `noticeDate` datetime DEFAULT NULL,
@@ -434,9 +453,8 @@ CREATE TABLE IF NOT EXISTS `ictmnotices` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `noticeStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`noticeId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `noticeStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -444,8 +462,8 @@ CREATE TABLE IF NOT EXISTS `ictmnotices` (
 -- Table structure for table `ictmpage`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmpage` (
-  `pageId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmpage` (
+  `pageId` int(11) NOT NULL,
   `pageTitle` varchar(255) DEFAULT NULL,
   `pageKeywords` varchar(255) DEFAULT NULL,
   `pageMetaData` varchar(255) DEFAULT NULL,
@@ -458,16 +476,16 @@ CREATE TABLE IF NOT EXISTS `ictmpage` (
   `lastModifiedDate` datetime DEFAULT NULL,
   `pageStatus` varchar(50) DEFAULT NULL,
   `approvedBy` varchar(100) DEFAULT NULL,
-  `publishingDate` datetime DEFAULT NULL,
-  PRIMARY KEY (`pageId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+  `publishingDate` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmpage`
 --
 
 INSERT INTO `ictmpage` (`pageId`, `pageTitle`, `pageKeywords`, `pageMetaData`, `pageType`, `pageContent`, `pageImage`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`, `pageStatus`, `approvedBy`, `publishingDate`) VALUES
-(22, 'Welcome to Icon College', 'Welcome,Icon College', 'Welcome,Icon College', 'Health Type', '<p>jhjhjokpij</p>\r\n', '002.jpg', 'admin@gmail.com', '2017-08-20 07:53:23', 'admin@gmail.com', '2017-09-13 11:43:39', 'Active', NULL, NULL);
+(22, 'Welcome to Icon College', 'Welcome,Icon College', 'Welcome,Icon College', 'Health Type', '<p>jhjhjokpij</p>\r\n', '002.jpg', 'admin@gmail.com', '2017-08-20 07:53:23', 'admin@gmail.com', '2017-09-13 11:43:39', 'Active', NULL, NULL),
+(35, 'b', 'b', 'b', 'About Type', '<p>b</p>\r\n', NULL, 'admin@gmail.com', '2017-09-16 06:18:28', NULL, NULL, 'Active', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -475,8 +493,8 @@ INSERT INTO `ictmpage` (`pageId`, `pageTitle`, `pageKeywords`, `pageMetaData`, `
 -- Table structure for table `ictmpagesection`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmpagesection` (
-  `pageSectionId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmpagesection` (
+  `pageSectionId` int(11) NOT NULL,
   `pageId` int(11) NOT NULL,
   `pageSectionTitle` varchar(255) DEFAULT NULL,
   `pageSectionContent` longtext,
@@ -485,10 +503,8 @@ CREATE TABLE IF NOT EXISTS `ictmpagesection` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `pageSectionStatus` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`pageSectionId`),
-  KEY `fk_ictmPageSection_ictmPage1_idx` (`pageId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+  `pageSectionStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmpagesection`
@@ -506,18 +522,17 @@ INSERT INTO `ictmpagesection` (`pageSectionId`, `pageId`, `pageSectionTitle`, `p
 -- Table structure for table `ictmphoto`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmphoto` (
-  `photoId` int(11) NOT NULL AUTO_INCREMENT,
-  `photoPath` varchar(45) DEFAULT NULL,
-  `photoName` varchar(45) DEFAULT NULL,
+CREATE TABLE `ictmphoto` (
+  `photoId` int(11) NOT NULL,
+  `albumId` int(11) NOT NULL,
+  `photoName` varchar(255) DEFAULT NULL,
   `photoDetails` longtext,
-  `insertedBy` varchar(45) DEFAULT NULL,
+  `insertedBy` varchar(100) DEFAULT NULL,
   `insertedDate` datetime DEFAULT NULL,
-  `lastModifiedBy` varchar(45) DEFAULT NULL,
+  `lastModifiedBy` varchar(100) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `photoStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`photoId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `photoStatus` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -525,8 +540,8 @@ CREATE TABLE IF NOT EXISTS `ictmphoto` (
 -- Table structure for table `ictmregisterinterest`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmregisterinterest` (
-  `registerInterestId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmregisterinterest` (
+  `registerInterestId` int(11) NOT NULL,
   `firstName` varchar(100) DEFAULT NULL,
   `surName` varchar(100) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
@@ -540,9 +555,8 @@ CREATE TABLE IF NOT EXISTS `ictmregisterinterest` (
   `disabilityRequire` varchar(45) DEFAULT NULL,
   `appointmentDate` date DEFAULT NULL,
   `comments` varchar(255) DEFAULT NULL,
-  `inserDate` date DEFAULT NULL,
-  PRIMARY KEY (`registerInterestId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `inserDate` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -550,17 +564,16 @@ CREATE TABLE IF NOT EXISTS `ictmregisterinterest` (
 -- Table structure for table `ictmrole`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmrole` (
-  `roleId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmrole` (
+  `roleId` int(11) NOT NULL,
   `roleName` varchar(45) DEFAULT NULL,
   `roleDesc` varchar(45) DEFAULT NULL,
   `insertedBy` varchar(50) DEFAULT NULL,
   `insertedDate` datetime DEFAULT CURRENT_TIMESTAMP,
   `lastModifiedBy` varchar(50) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT CURRENT_TIMESTAMP,
-  `roleStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`roleId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  `roleStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmrole`
@@ -575,8 +588,8 @@ INSERT INTO `ictmrole` (`roleId`, `roleName`, `roleDesc`, `insertedBy`, `inserte
 -- Table structure for table `ictmunitsection`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmunitsection` (
-  `UnitSectionId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmunitsection` (
+  `UnitSectionId` int(11) NOT NULL,
   `courseUnitd` int(11) NOT NULL,
   `UnitSectionTitle` varchar(255) DEFAULT NULL,
   `UnitSectionContent` longtext,
@@ -585,10 +598,8 @@ CREATE TABLE IF NOT EXISTS `ictmunitsection` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `unitSectionStatus` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`UnitSectionId`),
-  KEY `fk_unitSection_ictmCurseUnits1_idx` (`courseUnitd`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `unitSectionStatus` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -596,8 +607,8 @@ CREATE TABLE IF NOT EXISTS `ictmunitsection` (
 -- Table structure for table `ictmusers`
 --
 
-CREATE TABLE IF NOT EXISTS `ictmusers` (
-  `userId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `ictmusers` (
+  `userId` int(11) NOT NULL,
   `roleId` int(11) DEFAULT NULL,
   `userEmail` varchar(100) DEFAULT NULL,
   `userPassword` varchar(45) DEFAULT NULL,
@@ -609,10 +620,8 @@ CREATE TABLE IF NOT EXISTS `ictmusers` (
   `insertedDate` datetime DEFAULT NULL,
   `lastModifiedBy` int(11) DEFAULT NULL,
   `lastModifiedDate` datetime DEFAULT NULL,
-  `usersStatus` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`userId`),
-  KEY `fk_ictmUsers_ictmRole1_idx` (`roleId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+  `usersStatus` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `ictmusers`
@@ -621,6 +630,289 @@ CREATE TABLE IF NOT EXISTS `ictmusers` (
 INSERT INTO `ictmusers` (`userId`, `roleId`, `userEmail`, `userPassword`, `userTitle`, `firstName`, `surName`, `jobTitle`, `insertedBy`, `insertedDate`, `lastModifiedBy`, `lastModifiedDate`, `usersStatus`) VALUES
 (2, 1, 'admin@gmail.com', 'admin@123', 'admin', 'Admin admin', 'admin', 'web developer', 1, '2017-08-07 00:00:00', 1, '2017-08-07 00:00:00', 'Active');
 
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ictmaffiliations`
+--
+ALTER TABLE `ictmaffiliations`
+  ADD PRIMARY KEY (`AffiliationsId`);
+
+--
+-- Indexes for table `ictmalbum`
+--
+ALTER TABLE `ictmalbum`
+  ADD PRIMARY KEY (`albumId`);
+
+--
+-- Indexes for table `ictmcollegeinfo`
+--
+ALTER TABLE `ictmcollegeinfo`
+  ADD PRIMARY KEY (`collegeInfoId`);
+
+--
+-- Indexes for table `ictmcontactus`
+--
+ALTER TABLE `ictmcontactus`
+  ADD PRIMARY KEY (`contactUsId`);
+
+--
+-- Indexes for table `ictmcourse`
+--
+ALTER TABLE `ictmcourse`
+  ADD PRIMARY KEY (`courseId`),
+  ADD KEY `fk_ictmCourse_ictmDepartment1_idx` (`departmentId`);
+
+--
+-- Indexes for table `ictmcoursesection`
+--
+ALTER TABLE `ictmcoursesection`
+  ADD PRIMARY KEY (`courseSectionId`),
+  ADD KEY `fk_ictmCourseSection_ictmCourse1_idx` (`courseId`);
+
+--
+-- Indexes for table `ictmcourseunits`
+--
+ALTER TABLE `ictmcourseunits`
+  ADD PRIMARY KEY (`courseUnitd`),
+  ADD KEY `fk_ictmCurseUnits_ictmCourse1_idx` (`courseId`);
+
+--
+-- Indexes for table `ictmdepartment`
+--
+ALTER TABLE `ictmdepartment`
+  ADD PRIMARY KEY (`departmentId`);
+
+--
+-- Indexes for table `ictmevent`
+--
+ALTER TABLE `ictmevent`
+  ADD PRIMARY KEY (`eventId`);
+
+--
+-- Indexes for table `ictmfaculty`
+--
+ALTER TABLE `ictmfaculty`
+  ADD PRIMARY KEY (`facultyId`);
+
+--
+-- Indexes for table `ictmfacultycontact`
+--
+ALTER TABLE `ictmfacultycontact`
+  ADD PRIMARY KEY (`facultyContactId`),
+  ADD KEY `fk_ictmFacultyContact_ictmFaculty1_idx` (`facultyId`);
+
+--
+-- Indexes for table `ictmfacultycourse`
+--
+ALTER TABLE `ictmfacultycourse`
+  ADD PRIMARY KEY (`facultyCourseId`),
+  ADD KEY `fk_ictmFacultyCourse_ictmFaculty1_idx` (`facultyId`),
+  ADD KEY `fk_ictmFacultyCourse_ictmCourse1_idx` (`courseId`);
+
+--
+-- Indexes for table `ictmfeedback`
+--
+ALTER TABLE `ictmfeedback`
+  ADD PRIMARY KEY (`feedbackId`);
+
+--
+-- Indexes for table `ictmhome`
+--
+ALTER TABLE `ictmhome`
+  ADD PRIMARY KEY (`homeId`);
+
+--
+-- Indexes for table `ictmmenu`
+--
+ALTER TABLE `ictmmenu`
+  ADD PRIMARY KEY (`menuId`),
+  ADD KEY `fk_ictmMenu_ictmPage_idx` (`pageId`);
+
+--
+-- Indexes for table `ictmnews`
+--
+ALTER TABLE `ictmnews`
+  ADD PRIMARY KEY (`newsId`);
+
+--
+-- Indexes for table `ictmnotices`
+--
+ALTER TABLE `ictmnotices`
+  ADD PRIMARY KEY (`noticeId`);
+
+--
+-- Indexes for table `ictmpage`
+--
+ALTER TABLE `ictmpage`
+  ADD PRIMARY KEY (`pageId`);
+
+--
+-- Indexes for table `ictmpagesection`
+--
+ALTER TABLE `ictmpagesection`
+  ADD PRIMARY KEY (`pageSectionId`),
+  ADD KEY `fk_ictmPageSection_ictmPage1_idx` (`pageId`);
+
+--
+-- Indexes for table `ictmphoto`
+--
+ALTER TABLE `ictmphoto`
+  ADD PRIMARY KEY (`photoId`),
+  ADD KEY `fk_ictmPhoto_ictmAlbum` (`albumId`);
+
+--
+-- Indexes for table `ictmregisterinterest`
+--
+ALTER TABLE `ictmregisterinterest`
+  ADD PRIMARY KEY (`registerInterestId`);
+
+--
+-- Indexes for table `ictmrole`
+--
+ALTER TABLE `ictmrole`
+  ADD PRIMARY KEY (`roleId`);
+
+--
+-- Indexes for table `ictmunitsection`
+--
+ALTER TABLE `ictmunitsection`
+  ADD PRIMARY KEY (`UnitSectionId`),
+  ADD KEY `fk_unitSection_ictmCurseUnits1_idx` (`courseUnitd`);
+
+--
+-- Indexes for table `ictmusers`
+--
+ALTER TABLE `ictmusers`
+  ADD PRIMARY KEY (`userId`),
+  ADD KEY `fk_ictmUsers_ictmRole1_idx` (`roleId`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ictmaffiliations`
+--
+ALTER TABLE `ictmaffiliations`
+  MODIFY `AffiliationsId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmalbum`
+--
+ALTER TABLE `ictmalbum`
+  MODIFY `albumId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `ictmcollegeinfo`
+--
+ALTER TABLE `ictmcollegeinfo`
+  MODIFY `collegeInfoId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `ictmcontactus`
+--
+ALTER TABLE `ictmcontactus`
+  MODIFY `contactUsId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmcourse`
+--
+ALTER TABLE `ictmcourse`
+  MODIFY `courseId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+--
+-- AUTO_INCREMENT for table `ictmcoursesection`
+--
+ALTER TABLE `ictmcoursesection`
+  MODIFY `courseSectionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `ictmcourseunits`
+--
+ALTER TABLE `ictmcourseunits`
+  MODIFY `courseUnitd` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmdepartment`
+--
+ALTER TABLE `ictmdepartment`
+  MODIFY `departmentId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- AUTO_INCREMENT for table `ictmevent`
+--
+ALTER TABLE `ictmevent`
+  MODIFY `eventId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `ictmfaculty`
+--
+ALTER TABLE `ictmfaculty`
+  MODIFY `facultyId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
+-- AUTO_INCREMENT for table `ictmfacultycontact`
+--
+ALTER TABLE `ictmfacultycontact`
+  MODIFY `facultyContactId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmfacultycourse`
+--
+ALTER TABLE `ictmfacultycourse`
+  MODIFY `facultyCourseId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+--
+-- AUTO_INCREMENT for table `ictmfeedback`
+--
+ALTER TABLE `ictmfeedback`
+  MODIFY `feedbackId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmhome`
+--
+ALTER TABLE `ictmhome`
+  MODIFY `homeId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmmenu`
+--
+ALTER TABLE `ictmmenu`
+  MODIFY `menuId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+--
+-- AUTO_INCREMENT for table `ictmnews`
+--
+ALTER TABLE `ictmnews`
+  MODIFY `newsId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `ictmnotices`
+--
+ALTER TABLE `ictmnotices`
+  MODIFY `noticeId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmpage`
+--
+ALTER TABLE `ictmpage`
+  MODIFY `pageId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+--
+-- AUTO_INCREMENT for table `ictmpagesection`
+--
+ALTER TABLE `ictmpagesection`
+  MODIFY `pageSectionId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+--
+-- AUTO_INCREMENT for table `ictmphoto`
+--
+ALTER TABLE `ictmphoto`
+  MODIFY `photoId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmregisterinterest`
+--
+ALTER TABLE `ictmregisterinterest`
+  MODIFY `registerInterestId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmrole`
+--
+ALTER TABLE `ictmrole`
+  MODIFY `roleId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `ictmunitsection`
+--
+ALTER TABLE `ictmunitsection`
+  MODIFY `UnitSectionId` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `ictmusers`
+--
+ALTER TABLE `ictmusers`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -667,6 +959,12 @@ ALTER TABLE `ictmmenu`
 --
 ALTER TABLE `ictmpagesection`
   ADD CONSTRAINT `fk_ictmPageSection_ictmPage1` FOREIGN KEY (`pageId`) REFERENCES `ictmpage` (`pageId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `ictmphoto`
+--
+ALTER TABLE `ictmphoto`
+  ADD CONSTRAINT `fk_ictmPhoto_ictmAlbum` FOREIGN KEY (`albumId`) REFERENCES `ictmalbum` (`albumId`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `ictmunitsection`

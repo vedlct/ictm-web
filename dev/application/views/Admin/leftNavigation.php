@@ -139,7 +139,7 @@
                           <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="newPhoto.php">New Photo</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Photo/newPhoto">New Photo</a></li>
                           <li><a class="" href="managePhoto.php">Manage Photo</a></li>
                       </ul>
                   </li>
