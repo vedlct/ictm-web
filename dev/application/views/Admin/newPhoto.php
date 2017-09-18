@@ -45,13 +45,13 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewMenu" method="POST" action="<?php echo base_url() ?>Admin/Menu/createNewMenu" onsubmit="return formvalidate()">
+                                <form class="form-validate form-horizontal" id="newPhoto" name="newPhoto" enctype="multipart/form-data" method="POST" action="<?php echo base_url() ?>Admin/Photo/createNewPhoto" onsubmit="return formvalidate()">
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="albumId">Album</label>
-                                        <div class="col-lg-4">
+                                        <label class="control-label col-sm-2" for="albumId">Album<span class="required">*</span></label>
+                                        <div class="col-sm-4">
                                             <p><font color="red"> <?php echo form_error('albumId'); ?></font></p>
-                                            <select class="form-control m-bot15" name="albumId" id="albumId">
+                                            <select class="form-control m-bot15" name="albumId" id="albumId" required>
                                                 <option value="" selected><?php echo SELECT_ALBUM ?></option>
                                                 <?php foreach ($album as $album){?>
                                                     <option value="<?php echo $album->albumId?>" <?php echo set_select('albumId',  $album->albumId, False); ?>><?php echo $album->albumTitle?></option>
@@ -59,21 +59,91 @@
                                             </select>
                                         </div>
 
-                                        <label for="facultyImage" class="control-label col-lg-2">Image <strong>(one or multiple)</strong> :</label>
-                                        <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('photoImage[]'); ?></font></p>
-                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-1">Image 1<span class="required">*</span></label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoImage1'); ?></font></p>
+                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="photoImage1" id="photoImage1" required>
+                                        </div>
+
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details <span class="required">*</span></label>
+                                        <div class="col-sm-5">
+                                            <p><font color="red"> <?php echo form_error('photoDetails'); ?></font></p>
+                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[]'); ?></textarea>
                                         </div>
 
                                     </div>
 
-                                    <div class="form-group ">
-                                        <label for="photoDetails" class="control-label col-lg-2">Photo Details <span class="required">*</span></label>
-                                        <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('photoDetails'); ?></font></p>
-                                            <textarea class="form-control ckeditor" name="photoDetails"  id="photoDetails" required><?php echo set_value('photoDetails'); ?></textarea>
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-1">Image 2</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoImage2'); ?></font></p>
+                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="photoImage2" id="photoImage2">
                                         </div>
+
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
+                                        <div class="col-sm-5">
+                                            <p><font color="red"> <?php echo form_error('photoDetails'); ?></font></p>
+                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[]'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-1">Image 3</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoImage3'); ?></font></p>
+                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="photoImage3" id="photoImage3">
+                                        </div>
+
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
+                                        <div class="col-sm-5">
+                                            <p><font color="red"> <?php echo form_error('photoDetails'); ?></font></p>
+                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[]'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-1">Image 4</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoImage4'); ?></font></p>
+                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="photoImage4" id="photoImage4">
+                                        </div>
+
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
+                                        <div class="col-sm-5">
+                                            <p><font color="red"> <?php echo form_error('photoDetails'); ?></font></p>
+                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[]'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-1">Image 5</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoImage5'); ?></font></p>
+                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <input class="form-control" type="file" name="photoImage5" id="photoImage5">
+                                        </div>
+
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
+                                        <div class="col-sm-5">
+                                            <p><font color="red"> <?php echo form_error('photoDetails'); ?></font></p>
+                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[]'); ?></textarea>
+                                        </div>
+
                                     </div>
 
 
@@ -82,7 +152,7 @@
                                     </div>
 
                                     <div class="form-group "align="center">
-                                        <div class="col-lg-10">
+                                        <div class="col-sm-10">
                                             <input class="btn btn-success" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
                                         </div>
@@ -110,3 +180,28 @@
 </html>
 
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+
+<script>
+
+
+//    function formvalidate() {
+//        var mutliPhoto = document.newPhoto.elements["photoImage[]"];
+//        var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
+//
+//        for(i=0;i<mutliPhoto.length;i++)
+//        {
+//            if (mutliPhoto[i].value != '' && mutliPhotoDetails[i].value == '') {
+//                alert('Please Write a description of Image ' + (i + 1));
+//                return false;
+//            }
+//
+//        }
+//
+//
+//
+//
+//
+//
+//    }
+
+</script>
