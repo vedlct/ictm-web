@@ -833,34 +833,6 @@ $config = array (
         ),
     ),
 
-    'createPhoto'=> array (
 
-        array(
-            'field' => 'photoImage1',
-            'label' => 'Image',
-            'rules' => 'callback_val_img_check['.$_FILES['photoImage1']['name'].']'
-        ),
-//        array(
-//            'field' => 'photoImage2',
-//            'label' => 'Image',
-//            'rules' => 'callback_val_img_check['.$_FILES['photoImage2']['name'].']'
-//        ),
-//        array(
-//            'field' => 'photoImage3',
-//            'label' => 'Image',
-//            'rules' => 'callback_val_img_check'
-//        ),
-//        array(
-//            'field' => 'photoImage4',
-//            'label' => 'Image',
-//            'rules' => 'callback_val_img_check'
-//        ),
-//        array(
-//            'field' => 'photoImage5',
-//            'label' => 'Image',
-//            'rules' => 'callback_val_img_check'
-//        ),
-
-    ),
 
 );

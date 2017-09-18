@@ -24,7 +24,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Page</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Page</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Page</li>
@@ -43,6 +43,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             Manage Page
+                            <span align="">
+                                 <a href="<?php echo base_url()?>Admin/Page/createPage"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Page</button> </a>
+                            </span>
                         </header>
                         <div class="panel-body">
 

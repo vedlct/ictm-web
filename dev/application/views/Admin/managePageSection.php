@@ -40,6 +40,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             Manage Page Section
+                            <span >
+                                 <a href="<?php echo base_url()?>Admin/PageSection/createPageSection"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Page Section</button> </a>
+                            </span>
                         </header>
                         <div class="panel-body">
                             <div class="form-group">
