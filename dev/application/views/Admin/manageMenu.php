@@ -25,7 +25,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Menu</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i>  Menu</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Menu</li>
@@ -45,8 +45,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
-                        <header class="panel-heading">
+                        <header class="panel-heading" >
                             <b>Manage Menu</b>
+                            <span align="">
+                                 <a href="<?php echo base_url()?>Admin/Menu/newMenu"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Menu</button> </a>
+                            </span>
                         </header>
                         <div class="panel-body ">
                             <table class="table table-striped table-advance  table-bordered table-hover ">

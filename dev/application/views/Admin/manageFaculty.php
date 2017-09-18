@@ -22,7 +22,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Faculty</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Faculty</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Home</a></li>
                         <li><i class="fa fa-table"></i>Faculty</li>
@@ -45,7 +45,7 @@
                         <header class="panel-heading">
                             <b>Manage Faculty</b>
                             <span align="">
-                                <button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><a style="color: whitesmoke;" href="<?php echo base_url()?>Admin/Faculty/newFaculty"><b>New Faculty</b></a></button>
+                                <a href="<?php echo base_url()?>Admin/Faculty/newFaculty"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Faculty</b></button></a>
                             </span>
                         </header>
                         <div class="panel-body ">

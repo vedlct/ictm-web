@@ -25,7 +25,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp News</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> News</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Home</a></li>
                         <li><i class="fa fa-table"></i>News</li>
@@ -47,7 +47,7 @@
                         <header class="panel-heading">
                             <b>Manage News</b>
                             <span align="">
-                                <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;" href="<?php echo base_url()?>Admin/News/newNews"><b>New News</b></button>
+                                <a href="<?php echo base_url()?>Admin/News/newNews"><button class="btn btn-sm" style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New News</b></button></a>
                             </span>
                         </header>
                         <div class="panel-body table  ">
