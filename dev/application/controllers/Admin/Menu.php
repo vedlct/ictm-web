@@ -96,7 +96,7 @@ class Menu extends CI_Controller {
             $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
             $this->data["links"] = $this->pagination->create_links();
             //print_r($this->data["menu"]);
-            if (empty($this->data["menu"])){$this->data["menu"]=null;$this->data["links"]=null; }
+            //if (empty($this->data["menu"])){$this->data["menu"]=null;$this->data["links"]=null; }
                 $this->load->view('Admin/manageMenu',$this->data);
         }
         else{
