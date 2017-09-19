@@ -130,4 +130,7 @@ define("SELECT_EVENT_TYPE", "Select Event Type");
 /////////////  For Department ////////////////////
 define("SELECT_DEPARTMENT_HEAD", "Select Department Head");
 
+////////////// For Photo /////////////////////
+define("SELECT_ALBUM", "Select Album");
+
 

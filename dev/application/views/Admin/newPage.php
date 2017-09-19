@@ -24,7 +24,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>Page</li>
-                        <li><i class="fa fa-files-o"></i>Create a new Page</li>
+                        <li><i class="fa fa-files-o"></i>Create a New Page</li>
                     </ol>
                 </div>
             </div>

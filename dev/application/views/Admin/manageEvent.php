@@ -23,7 +23,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage &nbsp Event</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Event</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Event</li>
@@ -46,6 +46,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             <b>Manage Event</b>
+                            <span align="">
+                                <a href="<?php echo base_url()?>Admin/Event/newEvent"><button class="btn btn-sm" style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Event</b></button></a>
+                            </span>
                         </header>
                         <div class="panel-body table  ">
                             <table class="table table-striped table-advance  table-bordered table-hover">
