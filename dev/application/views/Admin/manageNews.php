@@ -78,8 +78,6 @@
 
                                         </td>
 
-
-
                                         <td>
                                             <?php echo $newsdata->newsType?>
 

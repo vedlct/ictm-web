@@ -1,4 +1,3 @@
-
 <aside>
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
@@ -188,25 +187,13 @@
 
 
 <script>
-
-jQuery(document).ready(function() {
-
-//    jQuery(".sidebar-menu li").click(function(){
-//        jQuery(".sidebar-menu li").removeClass('active');
-//        jQuery(this).addClass('active');
-//    })
-
-    var loc = window.location.href;
-    jQuery(".sidebar-menu li").removeClass('active');
-    jQuery(".sidebar-menu li a").each(function() {
-
-        if (loc.indexOf(jQuery(this).attr("href")) != -1) {
-            jQuery(this).parents('li').addClass("active");
-
-        }
+    jQuery(document).ready(function() {
+        var loc = window.location.href;
+        jQuery(".sidebar-menu li").removeClass('active');
+        jQuery(".sidebar-menu li a").each(function() {
+            if (loc.indexOf(jQuery(this).attr("href")) != -1) {
+                jQuery(this).parents('li').addClass("active");
+            }
+        });
     });
-});
-
-
-
 </script>
