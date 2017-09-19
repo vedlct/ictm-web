@@ -3,7 +3,7 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
-                  <li>
+                  <li class="sub-menu">
                       <a class="" href="<?php echo base_url()?>Admin/Home">
                           <i class="icon_house_alt"></i>
                           <span>Home</span>
@@ -11,12 +11,15 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="<?php echo base_url()?>Admin/Menu/manageMenu" class="">
+                      <a href="javascript:;" class="">
                           <i class="icon_menu"></i>
                           <span>Menu</span>
-
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">Create a new Menu</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
+                      </ul>
                   </li>
 
                   <li class="sub-menu">
@@ -27,9 +30,7 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">Create a new Page</a></li>
-
                           <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
-
                       </ul>
                   </li>
 
@@ -146,24 +147,22 @@
 </aside>
 <script>
 
-    $(function() {
+jQuery(document).ready(function() {
 
-        var pgurl = window.location.href;
-        var pgurl1 = '<?php echo $this->uri->segment(2);?>'
-        $(".sidebar-menu li").each(function(){
+    jQuery(".sidebar-menu li").click(function(){
+        jQuery(".sidebar-menu li").removeClass('active');
+        jQuery(this).addClass('active');
+    })
 
-            if(pgurl==''){
-                $(".sidebar-menu li:eq(1)").addClass("active");
-            }else {
-
-                if ($('a', this).attr("href") == pgurl || $('a', this).attr("href") == '') {
-                    $(this).addClass("active");
-                    $(pgurl1).addClass("active");
-
-                }
-
-            }
-        })
+    var loc = window.location.href;
+    jQuery(".sidebar-menu li").removeClass('active');
+    jQuery(".sidebar-menu li a").each(function() {
+        if (loc.indexOf(jQuery(this).attr("href")) != -1) {
+            jQuery(this).parents('li').addClass("active");
+        }
     });
+});
+
+
 
 </script>

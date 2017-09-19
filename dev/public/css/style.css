@@ -624,6 +624,7 @@ ul.sidebar-menu li ul.sub li a {
 
 ul.sidebar-menu li ul.sub li a:hover, ul.sidebar-menu li ul.sub li.active a {
 
+    background-color :#00A8FF; /*this is added by rumi for active menu testing */
     color: #fff;
 
     -webkit-transition: all 0.3s ease;
