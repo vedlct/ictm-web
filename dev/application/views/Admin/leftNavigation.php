@@ -3,23 +3,23 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
-                  <li class="active">
-                      <a class="" href="<?php echo base_url()?>Admin/Home">
+                  <li class="">
+                      <a class="active" href="<?php echo base_url()?>Admin/Home">
                           <i class="icon_house_alt"></i>
                           <span>Home</span>
                       </a>
                   </li>
 
                   <li class="sub-menu">
-                      <a href="<?php echo base_url()?>Admin/Menu/manageMenu" class="">
+                      <a href="javascript:;" class="">
                           <i class="icon_menu"></i>
                           <span>Menu</span>
-<!--                          <span class="menu-arrow arrow_carrot-right"></span>-->
+                          <span class="menu-arrow arrow_carrot-right"></span>
                       </a>
-<!--                      <ul class="sub">-->
-<!--                          <li><a class="" href="--><?php //echo base_url()?><!--Admin/Menu/newMenu">New Menu</a></li>-->
-<!--                          <li><a class="" href="--><?php //echo base_url()?><!--Admin/Menu/manageMenu">Manage Menu</a></li>-->
-<!--                      </ul>-->
+                      <ul class="sub">
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">New Menu</a></li>
+                          <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
+                      </ul>
                   </li>
 
                   <li class="sub-menu">
@@ -185,3 +185,23 @@
               <!-- sidebar menu end-->
           </div>
 </aside>
+<script>
+    $(function() {
+
+        var pgurl = window.location.href;
+        var pgurl2 = window.location.href.substr(window.location.href.lastIndexOf("/")+1);
+        //alert(pgurl2);
+
+        $(".sidebar-menu li").each(function(){
+           // alert($('a',this).attr("href"))
+            if(pgurl==''){
+                $(".sidebar-menu li:eq(1)").addClass("active");
+
+            }else if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '') {
+
+                $(this).addClass("active");
+            }
+
+        })
+    });
+</script>

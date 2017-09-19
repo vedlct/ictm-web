@@ -39,3 +39,5 @@
 <script src="<?php echo base_url()?>public/js/respond.min.js"></script>
 <!--<script src="--><?php //echo base_url()?><!--public/js/lte-ie7.js"></script>-->
 <!--[endif]-->
+
+<script src="<?php echo base_url()?>public/js/jquery-1.12.4.js"></script>
