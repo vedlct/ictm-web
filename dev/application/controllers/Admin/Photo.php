@@ -6,6 +6,7 @@ class Photo extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin/Albumm');
+        $this->load->model('Admin/Photom');
 
     }
 
@@ -35,9 +36,6 @@ class Photo extends CI_Controller
         $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-//            $images = $_FILES['photoImage1']['name'];
-//            print_r($images);
-
             if (!$this->form_validation->run('createPhoto')) {
 
                 $this->data['album'] = $this->Albumm->getAlbum();
@@ -46,20 +44,20 @@ class Photo extends CI_Controller
             else
             {
 
-//                $this->data['error'] =$this->Menum->createNewMenu();
-//
-//                if (empty($this->data['error'])) {
-//
-//                    $this->session->set_flashdata('successMessage','Menu Created Successfully');
-//                    redirect('Admin/Menu/manageMenu');
-//
-//
-//                }
-//                else
-//                {
-//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-//                    redirect('Admin/Menu/newMenu');
-//                }
+                $this->data['error'] =$this->Photom->createNewPhoto();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Photo added Successfully');
+                    redirect('Admin/Menu/manageMenu');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Menu/newMenu');
+                }
 
             }
         }
@@ -70,29 +68,26 @@ class Photo extends CI_Controller
     /*---------for creating new Photo ------end--------------- */
 
     /* -------------------------------Image validation-------------------------*/
-    public function val_img_check($images)
+    public function val_img_check()
     {
-        //$images = $_FILES['photoImage1']['name'];
+        $images = $_FILES['photoImage']['name'];
         $supported_image = array('gif','jpg','jpeg','png');
 
-            $ext = strtolower(pathinfo($images, PATHINFO_EXTENSION));
-            if (in_array($ext, $supported_image))
+            for ($i = 0; $i < count($images); $i++) {
 
-            {
+                if ($images[$i]!=null) {
+                    $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
+                    if (in_array($ext, $supported_image)) {
 
+                    } else {
+
+
+                        $this->form_validation->set_message('val_img_check', 'Image ' . ($i + 1) . ' Was not in Correct Formate!!');
+                        return false;
+
+                    }
+                }
             }
-
-            else
-
-            {
-
-                $this->form_validation->set_message('val_img_check',$images);
-                return false;
-
-            }
-
-
-
 
     }
 

@@ -833,6 +833,14 @@ $config = array (
         ),
     ),
 
+    'createPhoto'=> array (
 
+        array(
+            'field' => 'photoImage[]',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+
+    ),
 
 );
