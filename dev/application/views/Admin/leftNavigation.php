@@ -140,7 +140,7 @@
                 </a>
                 <ul class="sub">
                     <li><a class="" href="<?php echo base_url()?>Admin/Photo/newPhoto">New Photo</a></li>
-                    <li><a class="" href="managePhoto.php">Manage Photo</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Photo/managePhoto">Manage Photo</a></li>
                 </ul>
             </li>
 
@@ -192,7 +192,6 @@
 jQuery(document).ready(function() {
 
 //    jQuery(".sidebar-menu li").click(function(){
-//
 //        jQuery(".sidebar-menu li").removeClass('active');
 //        jQuery(this).addClass('active');
 //    })

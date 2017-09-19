@@ -13,6 +13,7 @@ class Photom extends CI_Model
                 $data = array(
                     'albumId' => $albumId,
                     'photoDetails' => $photoDetails[$i],
+                    'photoStatus' => $photoStatus[$i],
                     'insertedBy' => $this->session->userdata('userEmail'),
                     'insertedDate' => date("Y-m-d H:i:s"),
 
@@ -64,6 +65,44 @@ class Photom extends CI_Model
         {
             return $error=null;
         }
+
+    }
+
+    //    for pagination of manage Photo
+    public function record_count() {
+        return $this->db->count_all("ictmphoto");
+    }
+
+    /*---------for Manage Photo -----------------------*/
+    // for manage Photo view
+
+    public function getAllforManagePhoto($limit, $start) {
+
+        $this->db->select('p.photoId,p.albumId,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
+        $this->db->from('ictmphoto p');
+        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
+        $this->db->limit($limit, $start);
+        $this->db->order_by("p.photoId", "desc");
+        $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+
+
+    }
+
+    /*---------delete Photo -----------------*/
+    public function deletePhotobyId($photoId) //delete Photo
+    {
+
+            $this->db->where('photoId',$photoId);
+            $this->db->delete('ictmphoto');
+
 
     }
 
