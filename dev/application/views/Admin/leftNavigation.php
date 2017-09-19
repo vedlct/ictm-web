@@ -196,6 +196,6 @@
                 jQuery(this).parents('li').addClass("active");
             }
         });
-        
+
     });
 </script>
