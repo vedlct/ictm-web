@@ -61,7 +61,7 @@
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
                                                 <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                    <option <?php echo set_select('menuType',  MENU_TYPE, False); ?>><?php echo MENU_TYPE[$i]?></option>
+                                                    <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -73,7 +73,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
                                             <select class="form-control m-bot15" name="parentId" id="parentId">
-                                                <option  value="<?php echo SELECT_PARENT_MENU?>" selected><?php echo SELECT_PARENT_MENU?></option>
+                                                <option  value="" selected><?php echo SELECT_PARENT_MENU?></option>
                                             </select>
 
 
