@@ -154,7 +154,7 @@
                                     <li>
                                         <a href="#">Courses</a>
                                         <ul class="submenu">
-                                            <li><a href="course-list.php">Our Courses</a></li>
+                                            <li><a href="<?php echo base_url()?>Course">Our Courses</a></li>
                                             <li><a href="#">Business & Management</a></li>
                                             <li><a href="#">Information Technology & Engineering</a></li>
                                             <li><a href="#">Health & Social Care</a></li>
@@ -197,18 +197,17 @@
                 </div><!-- /.container-->
             </div><!-- /.header-wrap-->
         </header><!-- /.header -->
-        
+
 <script>
-        
 		$(function() {
  
-var pgurl = window.location.href.
-substr(window.location.href.lastIndexOf("/")+1);
+var pgurl = window.location.href;
+
  
 $(".mainnav li").each(function(){
  
 if(pgurl==''){
-$(".nav li:eq(1)").addClass("active");
+$(".mainnav li:eq(1)").addClass("active");
 }else
 if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')
 $(this).addClass("active");
