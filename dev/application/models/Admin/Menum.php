@@ -158,10 +158,11 @@ class Menum extends CI_Model
     /*---------delete menu if no Submenu-----------------*/
     public function deleteMenubyId($menuId) //delete menu if no Submenu
     {
-        $this->db->select('menuName,');
+        $this->db->select('menuName');
         $this->db->where('parentId',$menuId);
         $this->db->from('ictmmenu');
         $query = $this->db->get();
+
         if (empty($query->result())){
             $this->db->where('menuId',$menuId);
             $this->db->delete('ictmmenu');
@@ -171,6 +172,7 @@ class Menum extends CI_Model
             return $query->result();
         }
     }
+
 //    for pagination of manage Department
     public function record_count() {
         return $this->db->count_all("ictmmenu");

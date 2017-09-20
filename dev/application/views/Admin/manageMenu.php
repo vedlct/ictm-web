@@ -65,7 +65,9 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
                                 </tr>
-                                <?php foreach ($menu as $menu){?>
+
+                                <?php if (!empty($menu)){
+                                foreach ($menu as $menu){?>
 
 
                                     <tr align="center">
@@ -105,14 +107,14 @@
 
                                             <div class="btn-group">
                                                 <a class="btn" href="<?php echo base_url("Admin/Menu/editMenuView/")?><?php echo $menu->menuId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $menu->menuId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
+                                                <a class="btn" data-panel-id="<?php echo $menu->menuId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
                                             </div>
                                         </td>
 
                                     </tr>
 
 
-                                <?php }?>
+                                <?php }}?>
 
                                 </tbody>
                             </table>
@@ -152,8 +154,7 @@
                 data:{'menuid':btn},
                 cache: false,
                 success:function(data) {
-                    if(data=='0'){
-
+                    if(data='0'){
                         location.reload();
                     }
                     else

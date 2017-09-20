@@ -65,87 +65,158 @@
 
                                     </div>
 
+
                                     <div class="form-group col-sm-12">
 
-                                        <label for="facultyImage" class="control-label col-sm-1">Image 1<span class="required">*</span></label>
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
 
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]" required>
+
                                         </div>
 
-                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details <span class="required">*</span></label>
-                                        <div class="col-sm-5">
+                                        <label class="control-label col-sm-2" for="photoStatus">Status 1<span class="required">*</span></label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoStatus[]'); ?></font></p>
+                                            <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]" required>
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-12">
 
-                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details 1<span class="required">*</span></label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
                                         </div>
 
                                     </div>
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="facultyImage" class="control-label col-sm-1">Image 2</label>
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 2</label>
                                         <div class="col-sm-4">
 
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
                                         </div>
 
-                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
-                                        <div class="col-sm-5">
-
-                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[1]'); ?></textarea>
+                                        <label class="control-label col-sm-2" for="photoStatus">Status 2</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoStatus[]'); ?></font></p>
+                                            <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
 
                                     </div>
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="facultyImage" class="control-label col-sm-1">Image 3</label>
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details 2</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 3</label>
                                         <div class="col-sm-4">
 
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
                                         </div>
 
-                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
-                                        <div class="col-sm-5">
-
-                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[2]'); ?></textarea>
+                                        <label class="control-label col-sm-2" for="photoStatus">Status 3</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoStatus[]'); ?></font></p>
+                                            <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
 
                                     </div>
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="facultyImage" class="control-label col-sm-1">Image 4</label>
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details 3</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 4</label>
                                         <div class="col-sm-4">
 
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]" >
                                         </div>
 
-                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
-                                        <div class="col-sm-5">
-
-                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[3]'); ?></textarea>
+                                        <label class="control-label col-sm-2" for="photoStatus">Status 4</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoStatus[]'); ?></font></p>
+                                            <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+                                            </select>
                                         </div>
 
                                     </div>
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="facultyImage" class="control-label col-sm-1">Image 5</label>
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details 4</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 5</label>
                                         <div class="col-sm-4">
 
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
                                         </div>
 
-                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details</label>
-                                        <div class="col-sm-5">
+                                        <label class="control-label col-sm-2" for="photoStatus">Status 5</label>
+                                        <div class="col-sm-4">
+                                            <p><font color="red"> <?php echo form_error('photoStatus[]'); ?></font></p>
+                                            <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
+                                                <option value="" selected><?php echo SELECT_STATUS ?></option>
+                                                <?php for ($i=0;$i<count(STATUS);$i++){?>
+                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
 
-                                            <textarea class="form-control" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[4]'); ?></textarea>
+                                    </div>
+
+                                    <div class="form-group col-sm-12">
+
+                                        <label for="photoDetails" class="control-label col-sm-2">Photo Details 5</label>
+                                        <div class="col-sm-10">
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -192,6 +263,7 @@
 
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
         var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
+        var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
 
         if (mutliPhoto[2].value != '' && mutliPhoto[1].value == '' ) {
             alert('Please Select a Image in Image field' + 2);
@@ -212,10 +284,14 @@
                 alert('Please Write a description of Image ' + (i + 1));
                 return false;
             }
+            else if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
+            {
+                alert('Please Select The Image Status' + (i + 1));
+                return false;
+            }
 
         }
 
     }
-
 
 </script>

@@ -96,7 +96,7 @@ class Menu extends CI_Controller {
             $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
             $this->data["links"] = $this->pagination->create_links();
 
-                $this->load->view('Admin/manageMenu', $this->data);
+            $this->load->view('Admin/manageMenu',$this->data);
         }
         else{
             redirect('Admin/Login');
@@ -160,7 +160,9 @@ class Menu extends CI_Controller {
     public function deleteMenu($menuId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
+
             $subMenuName=$this->Menum->deleteMenubyId($menuId);
+
             if ($subMenuName!='0'){
                 $name=array();
                 foreach ($subMenuName as $subMenuName){
@@ -171,7 +173,9 @@ class Menu extends CI_Controller {
             }
             else{
                 $this->session->set_flashdata('successMessage','Menu Deleted Successfully');
-                echo $subMenuName;}
+                echo $subMenuName;
+            }
+
         }
         else{
             redirect('Admin/Login');

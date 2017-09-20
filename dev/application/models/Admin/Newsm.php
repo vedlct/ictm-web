@@ -66,7 +66,7 @@ class Newsm extends CI_Model
                     'newsPhoto' => $newsId.".".pathinfo($news_image, PATHINFO_EXTENSION),
                 );
                 $data2=$this->security->xss_clean($data2,true);
-                $this->db->where('newstId', $newsId);
+                $this->db->where('newsId', $newsId);
                 $this->db->update('ictmnews', $data2);
 
         }

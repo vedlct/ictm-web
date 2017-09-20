@@ -513,7 +513,7 @@ $config = array (
         array(
             'field' => 'department',
             'label' => 'Department',
-            'rules' => 'required|regex_match[/^[0-9]*$/]max_length[11]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]'
         ),
         array(
             'field' => 'image',
@@ -835,6 +835,11 @@ $config = array (
 
     'createPhoto'=> array (
 
+        array(
+            'field' => 'albumId',
+            'label' => 'Album',
+            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]',
+        ),
         array(
             'field' => 'photoImage[]',
             'label' => 'Image',
