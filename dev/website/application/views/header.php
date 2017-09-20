@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
 
     <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/colors/color1.css" id="colors">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/color1.css" >
 
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
@@ -126,7 +126,7 @@
                 <div class="container">
                     <div class="header-wrap clearfix">
                         <div id="logo" class="logo">
-                            <a href="home.php" rel="home">
+                            <a href="<?php echo base_url()?>Home" rel="home">
                                 <img src="<?php echo base_url()?>public/images/icon_college_logo.png" alt="image">
                             </a>
                         </div><!-- /.logo -->
@@ -137,12 +137,12 @@
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu"> 
                                     <li class="home">
-                                        <a href="home.php">Home</a>
+                                        <a href="<?php echo base_url()?>Home">Home</a>
                                     </li>
                                     <li>
                                         <a href="#">About</a>
                                         <ul class="submenu">
-                                            <li><a href="about.php">About ICON College</a></li>
+                                            <li><a href="<?php echo base_url()?>Welcome">About ICON College</a></li>
                                             <li><a href="#">Board of Directors</a></li>
                                             <li><a href="#">College Governance</a></li>
                                             <li><a href="#">Organisational Structure</a></li>
@@ -198,7 +198,7 @@
             </div><!-- /.header-wrap-->
         </header><!-- /.header -->
         
-        <script>
+<script>
         
 		$(function() {
  
@@ -214,5 +214,4 @@ if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')
 $(this).addClass("active");
 })
 });
-        
-        </script>
+</script>

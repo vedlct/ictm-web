@@ -1,7 +1,7 @@
 <html>
-<head>
+
 <?php include("header.php"); ?>
-</head>
+
 <body>
         <div class="tp-banner-container">
             <div class="tp-banner" >
@@ -570,6 +570,7 @@
                   <img src="<?php echo base_url()?>public/images/bottom-logos/slc.jpg" alt="image">
                 </div>
               </div>
+
           <script>
             $(document).ready(function() {
               var owl = $('.owl-carousel');
