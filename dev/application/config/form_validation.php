@@ -836,6 +836,11 @@ $config = array (
     'createPhoto'=> array (
 
         array(
+            'field' => 'albumId',
+            'label' => 'Album',
+            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]',
+        ),
+        array(
             'field' => 'photoImage[]',
             'label' => 'Image',
             'rules' => 'callback_val_img_check'
