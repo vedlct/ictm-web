@@ -148,22 +148,24 @@
 
     $(function() {
 
-        var pgurl = window.location.href;
-        var pgurl1 = '<?php echo $this->uri->segment(2);?>'
-        $(".sidebar-menu li").each(function(){
+//        var pgurl = window.location.href;
+//        var pgurl1 = '<?php //echo $this->uri->segment(2);?>//'
+//        $(".sidebar-menu li").each(function(){
+//
+//            if(pgurl==''){
+//                $(".sidebar-menu li:eq(1)").addClass("active");
+//            }else {
+//
+//                if ($('a', this).attr("href") == pgurl || $('a', this).attr("href") == '') {
+//                    $(this).addClass("active");
+//                    $(pgurl1).addClass("active");
+//
+//                }
+//
+//            }
+//        })
 
-            if(pgurl==''){
-                $(".sidebar-menu li:eq(1)").addClass("active");
-            }else {
-
-                if ($('a', this).attr("href") == pgurl || $('a', this).attr("href") == '') {
-                    $(this).addClass("active");
-                    $(pgurl1).addClass("active");
-
-                }
-
-            }
-        })
+        $this.parents("ul").find("a").removeClass('active');
     });
 
 </script>
