@@ -156,7 +156,7 @@
                         
                             <div class="sidebar">
                             	<div>
-                                	<img src="images/sidebar-banner.png">
+                                	<img src="<?php echo base_url()?>public/images/sidebar-banner.png">
                                 </div><br>
                                 
                                 <div class="widget widget-nav-menu">

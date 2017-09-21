@@ -66,57 +66,59 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
-                                <?php foreach ($news as $newsdata){?>
+                                <?php if (!empty($news)){
+                                    foreach ($news as $newsdata){?>
 
-                                    <tr align="center">
-                                        <td>
-                                            <?php echo $newsdata->newsTitle?>
-                                        </td>
+                                        <tr align="center">
+                                            <td>
+                                                <?php echo $newsdata->newsTitle?>
+                                            </td>
 
-                                        <td>
-                                            <?php echo date('d-m-Y',strtotime($newsdata->newsDate))?>
+                                            <td>
+                                                <?php echo date('d-m-Y',strtotime($newsdata->newsDate))?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $newsdata->newsType?>
+                                            <td>
+                                                <?php echo $newsdata->newsType?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $newsdata->newsStatus?>
-                                        </td>
+                                            <td>
+                                                <?php echo $newsdata->newsStatus?>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $newsdata->insertedBy?>
+                                            <td>
+                                                <?php echo $newsdata->insertedBy?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php if ($newsdata->lastModifiedBy==""){echo"Never Modified";}else{echo $newsdata->lastModifiedBy;} ?>
-                                        </td>
+                                            <td>
+                                                <?php if ($newsdata->lastModifiedBy==""){echo"Never Modified";}else{echo $newsdata->lastModifiedBy;} ?>
+                                            </td>
 
-                                        <td>
-                                            <?php if ($newsdata->lastModifiedDate==""){echo"Never Modified";}
-                                            else
-                                            {
-                                                $timestamp = strtotime($newsdata->lastModifiedDate);
-                                                $date = date('d-F-Y', $timestamp);
-                                                echo $date ;
-                                            }?>
+                                            <td>
+                                                <?php if ($newsdata->lastModifiedDate==""){echo"Never Modified";}
+                                                else
+                                                {
+                                                    $timestamp = strtotime($newsdata->lastModifiedDate);
+                                                    $date = date('d-F-Y', $timestamp);
+                                                    echo $date ;
+                                                }?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
+                                            <td>
 
-                                            <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/News/editNewsView/")?><?php echo $newsdata->newsId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $newsdata->newsId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
+                                                <div class="btn-group">
+                                                    <a class="btn" href="<?php echo base_url("Admin/News/editNewsView/")?><?php echo $newsdata->newsId ?>"><i class="icon_pencil-edit"></i></a>
+                                                    <a class="btn" data-panel-id="<?php echo $newsdata->newsId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                </div>
+                                            </td>
 
-                                    </tr>
-                                <?php } ?>
+                                        </tr>
+                                    <?php }
+                                } ?>
 
 
 
@@ -157,7 +159,7 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-                   // alert("News Deleted Successfully!!");
+
                     location.reload();
 
                 }

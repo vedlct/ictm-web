@@ -66,72 +66,74 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
-                                <?php foreach ($events as $events){?>
+                                <?php if (!empty($events)){
+                                    foreach ($events as $events){?>
 
-                                    <tr align="center">
-                                        <td>
-                                            <?php echo $events->eventTitle?>
-                                        </td>
+                                        <tr align="center">
+                                            <td>
+                                                <?php echo $events->eventTitle?>
+                                            </td>
 
-                                        <td>
-                                            <?php
+                                            <td>
+                                                <?php
 
-                                            echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->eventStartDate)),1);
-                                            ?>
+                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->eventStartDate)),1);
+                                                ?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php
-                                            echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->eventEndDate)),1);
-                                            ?>
+                                            <td>
+                                                <?php
+                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->eventEndDate)),1);
+                                                ?>
 
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $events->eventLocation?>
-                                        </td>
+                                            <td>
+                                                <?php echo $events->eventLocation?>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $events->eventType?>
+                                            <td>
+                                                <?php echo $events->eventType?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $events->eventStatus?>
-                                        </td>
+                                            <td>
+                                                <?php echo $events->eventStatus?>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $events->insertedBy?>
+                                            <td>
+                                                <?php echo $events->insertedBy?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php if ($events->lastModifiedBy==""){echo"Never Modified";}else{echo $events->lastModifiedBy;} ?>
-                                        </td>
+                                            <td>
+                                                <?php if ($events->lastModifiedBy==""){echo"Never Modified";}else{echo $events->lastModifiedBy;} ?>
+                                            </td>
 
-                                        <td>
-                                            <?php if ($events->lastModifiedDate==""){echo NEVER_MODIFIED;}
-                                            else
-                                            {
-                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->lastModifiedDate)),1);
+                                            <td>
+                                                <?php if ($events->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                                else
+                                                {
+                                                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($events->lastModifiedDate)),1);
 
-                                            }
-                                            ?>
+                                                }
+                                                ?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
+                                            <td>
 
-                                            <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/Event/editEventView/")?><?php echo $events->eventId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $events->eventId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
+                                                <div class="btn-group">
+                                                    <a class="btn" href="<?php echo base_url("Admin/Event/editEventView/")?><?php echo $events->eventId ?>"><i class="icon_pencil-edit"></i></a>
+                                                    <a class="btn" data-panel-id="<?php echo $events->eventId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                </div>
+                                            </td>
 
-                                    </tr>
-                                <?php } ?>
+                                        </tr>
+                                    <?php }
+                                } ?>
 
 
 
@@ -174,7 +176,7 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-                   // alert("Event Deleted Successfully!!");
+
                     location.reload();
 
                 }

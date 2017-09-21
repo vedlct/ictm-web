@@ -66,68 +66,70 @@
                                 </tr>
 
 
-                                <?php foreach ($faculty as $faculty){?>
-                                    <tr align="center">
-                                        <td>
-                                            <?php echo $faculty->facultyTitle?>&nbsp<?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
-                                        </td>
+                                <?php if (!empty($faculty)){
+                                    foreach ($faculty as $faculty){?>
+                                        <tr align="center">
+                                            <td>
+                                                <?php echo $faculty->facultyTitle?>&nbsp<?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
+                                            </td>
 
-                                        <td >
-                                            <?php echo $faculty->facultyEmail?>
-                                        </td>
+                                            <td >
+                                                <?php echo $faculty->facultyEmail?>
+                                            </td>
 
-                                        <td >
-                                            <?php
-                                            echo str_replace(",","<br>",$faculty->facultyPosition);
+                                            <td >
+                                                <?php
+                                                echo str_replace(",","<br>",$faculty->facultyPosition);
 
-                                            ?>
+                                                ?>
 
-                                        </td>
+                                            </td>
 
-                                        <td >
-                                            <?php echo $faculty->facultyEmpType?>
-                                        </td>
+                                            <td >
+                                                <?php echo $faculty->facultyEmpType?>
+                                            </td>
 
-                                        <td >
-                                            <?php
-                                            echo str_replace(",","<br>",$faculty->facultyDegree);
-                                            ?>
+                                            <td >
+                                                <?php
+                                                echo str_replace(",","<br>",$faculty->facultyDegree);
+                                                ?>
 
-                                        </td>
+                                            </td>
 
-                                        <td >
-                                            <?php echo $faculty->facultyStatus?>
-                                        </td>
+                                            <td >
+                                                <?php echo $faculty->facultyStatus?>
+                                            </td>
 
-                                        <td >
-                                            <?php echo $faculty->insertedBy?>
+                                            <td >
+                                                <?php echo $faculty->insertedBy?>
 
-                                        </td>
+                                            </td>
 
-                                        <td >
-                                            <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
-                                        </td>
+                                            <td >
+                                                <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
+                                            </td>
 
-                                        <td >
-                                            <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
-                                            else
+                                            <td >
+                                                <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
+                                                else
                                                 {
 
-                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($faculty->lastModifiedDate)),1);
+                                                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($faculty->lastModifiedDate)),1);
                                                 }?>
 
-                                        </td>
+                                            </td>
 
-                                        <td >
+                                            <td >
 
-                                            <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
+                                                <div class="btn-group">
+                                                    <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
+                                                    <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                </div>
+                                            </td>
 
-                                    </tr>
-                                <?php } ?>
+                                        </tr>
+                                    <?php }
+                                } ?>
 
 
 
@@ -168,7 +170,7 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-                    //alert("Faculty Deleted Successfully!!");
+
                     location.reload();
 
                 }

@@ -53,60 +53,62 @@
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department Head</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified By</th>
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified Date(d-m-Y)</th>
+                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: center">Last Modified By</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date(d-m-Y)</th>
                                     <th   style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
 
-                                <?php foreach ($departments as $departments){?>
-                                    <tr align="center">
-                                        <td>
-                                            <?php echo $departments->departmentName?>
-                                        </td>
+                                <?php if (!empty($departments)){
+                                    foreach ($departments as $departments){?>
+                                        <tr align="center">
+                                            <td>
+                                                <?php echo $departments->departmentName?>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $departments->departmentHead?>
+                                            <td>
+                                                <?php echo $departments->departmentHead?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $departments->departmentStatus?>
+                                            <td>
+                                                <?php echo $departments->departmentStatus?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
-                                            <?php echo $departments->insertedBy?>
-                                        </td>
+                                            <td>
+                                                <?php echo $departments->insertedBy?>
+                                            </td>
 
-                                        <td>
-                                            <?php if ($departments->lastModifiedBy==""){echo"Never Modified";}else{echo $departments->lastModifiedBy;} ?>
+                                            <td>
+                                                <?php if ($departments->lastModifiedBy==""){echo"Never Modified";}else{echo $departments->lastModifiedBy;} ?>
 
-                                        </td>
+                                            </td>
 
-                                        <td>
+                                            <td>
 
-                                            <?php if ($departments->lastModifiedDate==""){echo NEVER_MODIFIED;}
-                                            else
-                                            {
-                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($departments->lastModifiedDate)),1);
+                                                <?php if ($departments->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                                else
+                                                {
+                                                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($departments->lastModifiedDate)),1);
 
-                                            }
-                                            ?>
+                                                }
+                                                ?>
 
-                                        </td>
+                                            </td>
 
 
-                                        <td>
+                                            <td>
 
-                                            <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/Department/editDepartmentView/")?><?php echo $departments->departmentId?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $departments->departmentId?>"  onclick="selectid(this)" href="#"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
+                                                <div class="btn-group">
+                                                    <a class="btn" href="<?php echo base_url("Admin/Department/editDepartmentView/")?><?php echo $departments->departmentId?>"><i class="icon_pencil-edit"></i></a>
+                                                    <a class="btn" data-panel-id="<?php echo $departments->departmentId?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                </div>
+                                            </td>
 
-                                    </tr>
-                                <?php }?>
+                                        </tr>
+                                    <?php }
+                                }?>
 
 
 
@@ -146,7 +148,7 @@
                 cache: false,
                 success:function(data) {
 
-                    if(data=='0'){
+                    if(data='0'){
 
                         location.reload();
                     }

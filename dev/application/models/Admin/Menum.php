@@ -163,7 +163,7 @@ class Menum extends CI_Model
         $this->db->from('ictmmenu');
         $query = $this->db->get();
 
-        if ($query->result()== null){
+        if (empty($query->result())){
             $this->db->where('menuId',$menuId);
             $this->db->delete('ictmmenu');
             return 0;

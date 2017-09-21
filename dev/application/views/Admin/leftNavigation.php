@@ -200,6 +200,7 @@
 
 <script>
     jQuery(document).ready(function() {
+
         var loc = window.location.href;
         jQuery(".sidebar-menu li").removeClass('active');
         jQuery(".sidebar-menu li a").each(function() {

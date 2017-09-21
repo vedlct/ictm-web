@@ -58,37 +58,39 @@
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified Date(d-m-Y)</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                             </tr>
-                            <?php foreach ($coursedata as $cd) { ?>
-                                <tr align="center">
-                                    <td><?php echo $cd->courseTitle ?></td>
-                                    <td><?php echo $cd->departmentName ?></td>
-                                    <td><?php echo $cd->courseCodeIcon ?></td>
-                                    <td><?php echo $cd->awardingTitle ?></td>
-                                    <td><?php echo $cd->courseStatus ?></td>
-                                    <td><?php echo $cd->insertedBy ?></td>
-                                    <td>
-                                        <?php if ($cd->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $cd->lastModifiedBy;} ?>
-                                    </td>
-                                    <td>
-                                        <?php if ($cd->lastModifiedDate==""){echo NEVER_MODIFIED;}
-                                        else
-                                        {
-                                            echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($cd->lastModifiedDate)),1);
+                            <?php if (!empty($coursedata)){
+                                foreach ($coursedata as $cd) { ?>
+                                    <tr align="center">
+                                        <td><?php echo $cd->courseTitle ?></td>
+                                        <td><?php echo $cd->departmentName ?></td>
+                                        <td><?php echo $cd->courseCodeIcon ?></td>
+                                        <td><?php echo $cd->awardingTitle ?></td>
+                                        <td><?php echo $cd->courseStatus ?></td>
+                                        <td><?php echo $cd->insertedBy ?></td>
+                                        <td>
+                                            <?php if ($cd->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $cd->lastModifiedBy;} ?>
+                                        </td>
+                                        <td>
+                                            <?php if ($cd->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                            else
+                                            {
+                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($cd->lastModifiedDate)),1);
 
-                                        }
-                                        ?>
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <a class="btn"
-                                               href="<?php echo base_url() ?>Admin/Course/showEditCourse/<?php echo $cd->courseId?>"><i
-                                                        class="icon_pencil-edit"></i></a>
-                                            <a class="btn " href="<?php echo base_url() ?>Admin/Course/deleteCourse/<?php echo $cd->courseId ?>" onclick='return confirm("Are you sure to Delete This Course?")'><i class="icon_trash"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a class="btn"
+                                                   href="<?php echo base_url() ?>Admin/Course/showEditCourse/<?php echo $cd->courseId?>"><i
+                                                            class="icon_pencil-edit"></i></a>
+                                                <a class="btn " href="<?php echo base_url() ?>Admin/Course/deleteCourse/<?php echo $cd->courseId ?>" onclick='return confirm("Are you sure to Delete This Course?")'><i class="icon_trash"></i></a>
+                                            </div>
+                                        </td>
+                                    </tr>
 
-                                <?php
+                                    <?php
+                                }
                             }
                             ?>
 
