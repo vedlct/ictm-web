@@ -83,3 +83,54 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+
+
+////////////////////custom constant////////////////
+
+define("USER_TYPE",array ("Admin","Editor","Contributor"));
+define("STATUS",array ("Active","Inactive"));
+define("SELECT_STATUS" , "Select Status");
+define("NEVER_MODIFIED", "Never Modified");
+
+
+//////////// For Menu    /////////////////
+define("NEW_MENU", "New Menu");
+define("SELECT_PARENT_MENU", "Select Parent Menu");
+define("MENU", "Menu");
+define("NONE", "None");
+define("SELECT_PAGE", "Select Page");
+define("SELECT_MENU_TYPE", "Select Menu Type");
+define("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink","Bottom"));
+
+
+////////// For Page ///////////////////////
+
+define("SELECT_PAGE_TYPE", "Select Page Type");
+define("PAGE_TYPE", array ("About Type","Health Type","Terms Type"));
+
+////////////    faculy page      ///////////////
+define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
+define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));
+define("SELECT_COURSE", "Select Course");
+define("SELECT_DEPARTMENT", "Select Department");
+
+
+
+/////////////// News Page ///////////////
+
+define ("NewsType",array ("Announcement", "News", "Press Release"));
+
+
+/////////////  Event Page ////////////////////
+define ("EventType",array ("Seminar", "Training", "Festival"));
+define("SELECT_EVENT_TYPE", "Select Event Type");
+
+
+/////////////  For Department ////////////////////
+define("SELECT_DEPARTMENT_HEAD", "Select Department Head");
+
+////////////// For Photo /////////////////////
+define("SELECT_ALBUM", "Select Album");
+
+
