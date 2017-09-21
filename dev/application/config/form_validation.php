@@ -848,4 +848,48 @@ $config = array (
 
     ),
 
+
+    'createAlbum'=> array (
+
+        array(
+            'field' => 'albumCategory',
+            'label' => 'Album Category',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'albumTitle',
+            'label' => 'Album Title',
+            'rules' => 'required|max_length[255]|is_unique[ictmalbum.albumTitle]',
+            'errors' => array(
+                'is_unique' => 'Already have an album of this Name!! Please Write a Different Album Title',
+            ),
+        ),
+        array(
+            'field' => 'albumStatus',
+            'label' => 'Album Status',
+            'rules' => 'required|max_length[50]'
+        ),
+
+    ),
+
+    'editAlbum'=> array (
+
+        array(
+            'field' => 'albumCategory',
+            'label' => 'Album Category',
+            'rules' => 'required|max_length[255]',
+        ),
+        array(
+            'field' => 'albumTitle',
+            'label' => 'Album Title',
+            'rules' => 'required|max_length[255]|callback_AlbumeditUniqueCheck',
+        ),
+        array(
+            'field' => 'albumStatus',
+            'label' => 'Album Status',
+            'rules' => 'required|max_length[50]'
+        ),
+
+    ),
+
 );
