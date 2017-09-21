@@ -76,24 +76,57 @@ class Photom extends CI_Model
     /*---------for Manage Photo -----------------------*/
     // for manage Photo view
 
-    public function getAllforManagePhoto($limit, $start) {
+//    public function getAllforManagePhoto($limit, $start ,$id) {
+//
+//        $this->db->select('p.photoId,p.albumId,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
+//        $this->db->from('ictmphoto p');
+//        $this->db->where('p.albumId',$id);
+//        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
+//        $this->db->limit($limit, $start);
+//        $this->db->order_by("p.photoId", "desc");
+//        $query = $this->db->get();
+//
+//        if ($query->num_rows() > 0) {
+//            foreach ($query->result() as $row) {
+//                $data[] = $row;
+//            }
+//            return $data;
+//        }
+//        return false;
+//
+//    }
+
+    public function getAllforManagePhoto($id) {
 
         $this->db->select('p.photoId,p.albumId,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
         $this->db->from('ictmphoto p');
+        $this->db->where('p.albumId',$id);
         $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
-        $this->db->limit($limit, $start);
+
         $this->db->order_by("p.photoId", "desc");
         $query = $this->db->get();
 
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-        }
-        return false;
+        return $query->result();
 
+    }
+    // show All Photo info for Edit Photo
+    public function getPhotoInfobyId($PhotoId) {
 
+        $this->db->select('p.photoId,p.albumId,p.photoDetails,p.photoName,p.photoStatus');
+        $this->db->from('ictmphoto p');
+        $this->db->where('p.photoId',$PhotoId);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
+    public function getImage($id)
+    {
+
+        $this->db->select('photoName');
+        $this->db->where('photoId',$id);
+        $query = $this->db->get('ictmphoto');
+        return $query->result();
     }
 
     /*---------delete Photo -----------------*/

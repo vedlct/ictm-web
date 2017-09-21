@@ -122,7 +122,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 2</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[1]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -154,7 +154,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 3</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[2]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -185,7 +185,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 4</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[3]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -216,7 +216,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 5</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[4]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -280,14 +280,17 @@
 
         for(i=0;i<mutliPhoto.length;i++)
         {
+
             if (mutliPhoto[i].value != '' && mutliPhotoDetails[i].value == '') {
                 alert('Please Write a description of Image ' + (i + 1));
                 return false;
+
             }
-            else if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
+            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
             {
                 alert('Please Select The Image Status' + (i + 1));
                 return false;
+
             }
 
         }

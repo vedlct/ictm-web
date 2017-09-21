@@ -845,7 +845,11 @@ $config = array (
             'label' => 'Image',
             'rules' => 'callback_val_img_check'
         ),
-
+        array(
+            'field' => 'photoStatus[]',
+            'label' => 'Image',
+            'rules' => 'max_length[50]'
+        ),
     ),
 
 );
