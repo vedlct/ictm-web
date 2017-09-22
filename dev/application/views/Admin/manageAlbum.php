@@ -81,7 +81,6 @@
 
                                             <td>
                                                 <?php if ($Album->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $Album->lastModifiedBy;} ?>
-
                                             </td>
 
                                             <td><?php if ($Album->lastModifiedDate==""){echo NEVER_MODIFIED;}

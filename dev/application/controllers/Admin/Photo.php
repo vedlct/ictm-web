@@ -170,7 +170,7 @@ class Photo extends CI_Controller
                         $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                         return false;
                     } else {
-                        //unlink(FCPATH . "images/validation_Image(dump)/" . $images[$i]);
+                        unlink(FCPATH . "images/validation_Image(dump)/" . $images[$i]);
                         return true;
                     }
                 }

@@ -141,6 +141,7 @@ class Albumm extends CI_Model
             rename($path.$oldalbumTitle,$path.$albumTitle);
         }
 
+
         $data = array(
             'albumCategoryName' => $albumCategory,
             'albumTitle' => $albumTitle,

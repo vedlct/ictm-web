@@ -120,7 +120,6 @@ class Album extends CI_Controller
                     $this->session->set_flashdata('successMessage','Album Updated Successfully');
                     redirect('Admin/Album/manageAlbum');
 
-
                 } else
                 {
                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
