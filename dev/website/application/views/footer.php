@@ -188,5 +188,5 @@
         
         <!-- for Application form -->
         <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-        <script src="<?php echo base_url()?>public/javascript/retina-1.1.0.min.js"></script>
+        <script src="<?php echo base_url()?>public/javascript/retina.min.js"></script>
         <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>

@@ -23,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
 
     <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/colors/color1.css" id="colors">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/color1.css" >
 
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
@@ -72,11 +72,51 @@
                         <div class="col-md-12">
                             <nav class="navbar menu-top">
                                 <ul class="menu">
-                                    <li class="home"><a target="_blank" href="http://icon.moodle.webanywhere.co.uk/login/index.php">VLE Login</a></li>
-                                    <li><a href="#">Student Portal</a></li>
-                                    <li><a href="#">Staff Login</a></li>
-                                    <li><a href="#">Alumni</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
+                                    <?php foreach ($topmenu as $tm) {
+                                        //echo $tm->pageType;
+
+
+                                        if ($tm->pageType == 'Static Type') {
+
+                                            switch ($tm->pageContent) {
+                                                case "course-list.php":
+                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                    break;
+                                                case "department.php":
+                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                    break;
+                                                case "":
+                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                    break;
+
+                                                default:
+
+                                            }
+
+                                        }
+                                        else if ($tm->pageType == 'Link Type'){
+
+
+                                            ?><li><a href="<?php echo $tm->pageContent?>"><?php echo $tm->menuName?></a></li><?php
+
+                                        } else {
+
+                                            if (empty($tm->pageId)){
+                                                ?> <li><a href="#"><?php echo $tm->menuName?></a></li> <?php
+                                            }else {
+                                                ?><li><a href="<?php echo base_url() ?>Page/<?php echo $tm->pageId ?>"><?php echo $tm->menuName ?></a> </li> <?php
+                                            }
+                                        }
+
+                                    }
+                                    ?>
+
+
+<!--                                    <li class="home"><a target="_blank" href="http://icon.moodle.webanywhere.co.uk/login/index.php">VLE Login</a></li>-->
+<!--                                    <li><a href="#">Student Portal</a></li>-->
+<!--                                    <li><a href="#">Staff Login</a></li>-->
+<!--                                    <li><a href="#">Alumni</a></li>-->
+<!--                                    <li><a href="contact.php">Contact Us</a></li>-->
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->
 
@@ -126,7 +166,7 @@
                 <div class="container">
                     <div class="header-wrap clearfix">
                         <div id="logo" class="logo">
-                            <a href="home.php" rel="home">
+                            <a href="<?php echo base_url()?>Home" rel="home">
                                 <img src="<?php echo base_url()?>public/images/icon_college_logo.png" alt="image">
                             </a>
                         </div><!-- /.logo -->
@@ -137,12 +177,12 @@
                             <nav id="mainnav" class="mainnav">
                                 <ul class="menu"> 
                                     <li class="home">
-                                        <a href="home.php">Home</a>
+                                        <a href="<?php echo base_url()?>Home">Home</a>
                                     </li>
                                     <li>
                                         <a href="#">About</a>
                                         <ul class="submenu">
-                                            <li><a href="about.php">About ICON College</a></li>
+                                            <li><a href="<?php echo base_url()?>Welcome">About ICON College</a></li>
                                             <li><a href="#">Board of Directors</a></li>
                                             <li><a href="#">College Governance</a></li>
                                             <li><a href="#">Organisational Structure</a></li>
@@ -154,7 +194,7 @@
                                     <li>
                                         <a href="#">Courses</a>
                                         <ul class="submenu">
-                                            <li><a href="course-list.php">Our Courses</a></li>
+                                            <li><a href="<?php echo base_url()?>Course">Our Courses</a></li>
                                             <li><a href="#">Business & Management</a></li>
                                             <li><a href="#">Information Technology & Engineering</a></li>
                                             <li><a href="#">Health & Social Care</a></li>
@@ -197,22 +237,20 @@
                 </div><!-- /.container-->
             </div><!-- /.header-wrap-->
         </header><!-- /.header -->
-        
-        <script>
-        
+
+<script>
 		$(function() {
  
-var pgurl = window.location.href.
-substr(window.location.href.lastIndexOf("/")+1);
+var pgurl = window.location.href;
+
  
 $(".mainnav li").each(function(){
  
 if(pgurl==''){
-$(".nav li:eq(1)").addClass("active");
+$(".mainnav li:eq(1)").addClass("active");
 }else
 if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')
 $(this).addClass("active");
 })
 });
-        
-        </script>
+</script>

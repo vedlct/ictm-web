@@ -64,9 +64,19 @@
                                             <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" />
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
+                                            <select class="form-control m-bot15" name="pagetype" required>
+                                                <option value="" ><?php echo SELECT_PAGE_TYPE?></option>
+                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
+                                                    <option <?php echo set_select('pagetype',  PAGE_TYPE[$i], False); ?>><?php echo PAGE_TYPE[$i]?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
                                     <div class="form-group ">
-
-
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
                                              <p><font color="red"> <?php echo form_error('content'); ?></font></p>
@@ -82,18 +92,7 @@
                                             <input class="form-control " id="image" type="file" name="image" />
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2" for="inputSuccess">Page Type<span class="required">*</span></label>
-                                        <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
-                                            <select class="form-control m-bot15" name="pagetype" required>
-                                                <option value="" ><?php echo SELECT_PAGE_TYPE?></option>
-                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
-                                                    <option <?php echo set_select('pagetype',  PAGE_TYPE[$i], False); ?>><?php echo PAGE_TYPE[$i]?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
