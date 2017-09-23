@@ -31,4 +31,9 @@ elseif(!empty($PhotoImage)){
         <img src="<?php echo  base_url()?>images/eventImages/<?php echo $PhotoImage->photoName ?>" width="60%">
     <?php }}
 
+elseif(!empty($feedbackImage)){
+    foreach ($feedbackImage as $feedbackImage){?>
+        <img src="<?php echo  base_url()?>images/feedbackImages/<?php echo $feedbackImage->feedbackByPhoto ?>" width="60%">
+    <?php }}
+
 ?>

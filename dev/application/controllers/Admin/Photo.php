@@ -37,19 +37,6 @@ class Photo extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-//            $images = $_FILES['photoImage']['name'];
-//            print_r($images);
-//            print_r('<br>');
-//            for ($i = 0; $i < count($images); $i++) {
-//                if ($images[$i]!=null) {
-//
-//                    print_r($i);
-//                    print_r(count($images));
-//                    print_r($images[$i]);
-//                    print_r('<br>');
-//                }
-//            }
-
             if (!$this->form_validation->run('createPhoto')) {
 
                 $this->data['album'] = $this->Albumm->getAlbum();
@@ -155,26 +142,26 @@ class Photo extends CI_Controller
     public function val_img_check()
     {
         $images = $_FILES['photoImage']['name'];
-        //$supported_image = array('gif','jpg','jpeg','png');
+        $supported_image = array('gif','jpg','jpeg','png');
 
-        $this->load->library('upload');
-            for ($i = 1; $i <= count($images); $i++) {
-                if ($images[$i]!=null) {
+        for ($i = 0; $i <= count($images); $i++) {
+            if ($images[$i] != null) {
+                $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
+                //echo $ext;
+                // Using strtolower to overcome case sensitive
+                if (in_array($ext, $supported_image)) {
+                    //echo "it's image";
+                    return true;
+                } else {
+                    $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                    return false;
+                    //echo 'not image';
 
-                    $config['upload_path'] = "images/validation_Image(dump)/";
-                    $config['allowed_types'] = 'jpg|png|jpeg|gif';
-                    $config['overwrite'] = TRUE;
-                    $this->upload->initialize($config);
-
-                    if (!$this->upload->do_upload()) {
-                        $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-                        return false;
-                    } else {
-                        unlink(FCPATH . "images/validation_Image(dump)/" . $images[$i]);
-                        return true;
-                    }
                 }
+
+
             }
+        }
 
     }
 

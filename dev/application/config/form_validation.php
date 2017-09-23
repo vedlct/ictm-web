@@ -895,4 +895,62 @@ $config = array (
         ),
 
     ),
+
+    'createFeedback'=> array (
+
+        array(
+            'field' => 'feedbackByName',
+            'label' => 'feedback By Name',
+            'rules' => 'required|max_length[100]',
+        ),
+        array(
+            'field' => 'feedbackByImage',
+            'label' => 'feedback By Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'feedbackByProfession',
+            'label' => 'feedback By Profession',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'feedbackStatus',
+            'label' => 'feedback Status',
+            'rules' => 'required|max_length[50]'
+        ),
+    ),
+
+    'editFeedback'=> array (
+
+        array(
+            'field' => 'feedbackByName',
+            'label' => 'feedback By Name',
+            'rules' => 'required|max_length[100]',
+        ),
+        array(
+            'field' => 'feedbackByImage',
+            'label' => 'feedback By Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'feedbackByProfession',
+            'label' => 'feedback By Profession',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'feedbackStatus',
+            'label' => 'feedback Status',
+            'rules' => 'required|max_length[50]'
+        ),
+        array(
+            'field' => 'feedbackSource',
+            'label' => 'feedback Source',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'feedbackApprove',
+            'label' => 'feedback Approve',
+            'rules' => 'required|max_length[20]'
+        ),
+    ),
 );

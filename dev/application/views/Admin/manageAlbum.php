@@ -150,7 +150,7 @@
             });
         }
         else {
-            window.location="<?php echo base_url()?>Admin/Album/ManageAlbum";
+            window.location="<?php echo base_url()?>Admin/Album/manageAlbum";
         }
     }
 </script>
