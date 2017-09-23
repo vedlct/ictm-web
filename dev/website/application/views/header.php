@@ -83,7 +83,7 @@
                                                     ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
                                                 case "department.php":
-                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
                                                 case "":
                                                     ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
@@ -111,12 +111,6 @@
                                     }
                                     ?>
 
-
-<!--                                    <li class="home"><a target="_blank" href="http://icon.moodle.webanywhere.co.uk/login/index.php">VLE Login</a></li>-->
-<!--                                    <li><a href="#">Student Portal</a></li>-->
-<!--                                    <li><a href="#">Staff Login</a></li>-->
-<!--                                    <li><a href="#">Alumni</a></li>-->
-<!--                                    <li><a href="contact.php">Contact Us</a></li>-->
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->
 

@@ -122,7 +122,7 @@ class Menum extends CI_Model
 
         if ($parentId == "")
         {
-            $menuId =null;
+            $parentId =null;
         }
         if ($pageId == "")
         {
