@@ -37,19 +37,6 @@ class Photo extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-//            $images = $_FILES['photoImage']['name'];
-//            print_r($images);
-//            print_r('<br>');
-//            for ($i = 0; $i < count($images); $i++) {
-//                if ($images[$i]!=null) {
-//
-//                    print_r($i);
-//                    print_r(count($images));
-//                    print_r($images[$i]);
-//                    print_r('<br>');
-//                }
-//            }
-
             if (!$this->form_validation->run('createPhoto')) {
 
                 $this->data['album'] = $this->Albumm->getAlbum();
@@ -152,57 +139,30 @@ class Photo extends CI_Controller
     }
 
     /* -------------------------------Image validation-------------------------*/
-//    public function val_img_check()
-//    {
-//        $images = $_FILES['photoImage']['name'];
-//        //$supported_image = array('gif','jpg','jpeg','png');
-//
-//        $this->load->library('upload');
-//            for ($i = 0; $i <= count($images); $i++) {
-//
-//                if ($_FILES['photoImage']['name'][$i]!=null) {
-//
-//                    $config['upload_path'] = "images/validation_Image(dump)/";
-//                    $config['allowed_types'] = 'jpg|png|jpeg|gif';
-//                    $config['overwrite'] = TRUE;
-//                    $this->upload->initialize($config);
-//
-//                    if (!$this->upload->do_upload($_FILES['photoImage']['name'][$i])) {
-//
-//                        $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-//                        return false;
-//                    } else {
-//
-//                        //unlink(FCPATH . "images/validation_Image(dump)/" . $images[$i]);
-//                        return true;
-//                    }
-//                }
-//            }
-//
-//    }
-
     public function val_img_check()
     {
-        $image = $_FILES["photoImage"]["name"];
+        $images = $_FILES['photoImage']['name'];
+        $supported_image = array('gif','jpg','jpeg','png');
 
-        for ($i = 0; $i < count($image); $i++) {
-            if ($image != null) {
-
-                $this->load->library('upload');
-                $config['upload_path'] = "images/validation_Image(dump)/";
-                $config['allowed_types'] = 'jpg|png|jpeg|gif';
-
-                $config['overwrite'] = TRUE;
-                $this->upload->initialize($config);
-
-                if (!$this->upload->do_upload($image[$i])) {
-                    $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-                    //return false;
+        for ($i = 0; $i <= count($images); $i++) {
+            if ($images[$i] != null) {
+                $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
+                //echo $ext;
+                // Using strtolower to overcome case sensitive
+                if (in_array($ext, $supported_image)) {
+                    //echo "it's image";
+                    return true;
                 } else {
-                   // unlink(FCPATH . "images/validation_Image(dump)/" . $image);
-                    //return true;
+                    $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                    return false;
+                    //echo 'not image';
+
                 }
+
+
             }
         }
+
     }
+
 }
