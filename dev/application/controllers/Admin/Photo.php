@@ -8,6 +8,7 @@ class Photo extends CI_Controller
         $this->load->model('Admin/Albumm');
         $this->load->model('Admin/Photom');
         $this->load->library("pagination");
+        $this->load->library('form_validation');
     }
 
     public function index()
@@ -33,8 +34,21 @@ class Photo extends CI_Controller
 
     public function createNewPhoto() // for insert new menu into database
     {
-        $this->load->library('form_validation');
+
         if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+//            $images = $_FILES['photoImage']['name'];
+//            print_r($images);
+//            print_r('<br>');
+//            for ($i = 0; $i < count($images); $i++) {
+//                if ($images[$i]!=null) {
+//
+//                    print_r($i);
+//                    print_r(count($images));
+//                    print_r($images[$i]);
+//                    print_r('<br>');
+//                }
+//            }
 
             if (!$this->form_validation->run('createPhoto')) {
 
@@ -50,7 +64,6 @@ class Photo extends CI_Controller
 
                     $this->session->set_flashdata('successMessage','Photo added Successfully');
                     redirect('Admin/Photo/managePhoto');
-
 
                 }
                 else
@@ -73,23 +86,26 @@ class Photo extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Photo/managePhoto";
-            $config["total_rows"] = $this->Photom->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["photo"] = $this->Photom->getAllforManagePhoto($config["per_page"],$page);
-            $this->data["links"] = $this->pagination->create_links();
-
+            $this->data['album'] = $this->Albumm->getAlbum();
             $this->load->view('Admin/managePhoto', $this->data);
         }
         else{
             redirect('Admin/Login');
         }
+    }
+
+    //this is the ajax controller . this will show the Photo manage table
+    public function showPhotoManageTable($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data["photo"] = $this->Photom->getAllforManagePhoto($id);
+            $this->load->view('Admin/showManagePhoto', $this->data);                        //view manage Photo
+
+        } else{
+            redirect('Admin/Login');
+        }
+
     }
 
     // delete Photo
@@ -106,23 +122,56 @@ class Photo extends CI_Controller
         }
     }
 
+    // for edit menu view
+    public function editPhotoView($PhotoId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['album'] = $this->Albumm->getAlbum();
+            $this->data['Photo'] = $this->Photom->getPhotoInfobyId($PhotoId);
+
+            $this->load->view('Admin/editPhoto', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function showImageForEdit($id) // show Photo image in new tab
+    {
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['PhotoImage'] = $this->Photom->getImage($id);
+            $this->load->view('Admin/showImage', $this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
         $images = $_FILES['photoImage']['name'];
-        $supported_image = array('gif','jpg','jpeg','png');
+        //$supported_image = array('gif','jpg','jpeg','png');
 
-            for ($i = 0; $i < count($images); $i++) {
-
+        $this->load->library('upload');
+            for ($i = 1; $i <= count($images); $i++) {
                 if ($images[$i]!=null) {
-                    $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
-                    if (in_array($ext, $supported_image)) {
 
-                    } else {
+                    $config['upload_path'] = "images/validation_Image(dump)/";
+                    $config['allowed_types'] = 'jpg|png|jpeg|gif';
+                    $config['overwrite'] = TRUE;
+                    $this->upload->initialize($config);
 
-                        $this->form_validation->set_message('val_img_check', 'Image ' . ($i + 1) . ' Was not in Correct Formate!!');
+                    if (!$this->upload->do_upload()) {
+                        $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
                         return false;
-
+                    } else {
+                        unlink(FCPATH . "images/validation_Image(dump)/" . $images[$i]);
+                        return true;
                     }
                 }
             }

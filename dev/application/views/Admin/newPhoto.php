@@ -49,7 +49,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="newPhoto" name="newPhoto" enctype="multipart/form-data" method="POST" action="<?php echo base_url() ?>Admin/Photo/createNewPhoto" onsubmit="return formvalidate()">
+                                <form class="form-validate form-horizontal" id="newPhoto" name="newPhoto" method="POST"  action="<?php echo base_url() ?>Admin/Photo/createNewPhoto" enctype="multipart/form-data" onsubmit="return formvalidate()">
 
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="albumId">Album<span class="required">*</span></label>
@@ -72,7 +72,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]" required>
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]"required>
 
                                         </div>
 
@@ -82,7 +82,7 @@
                                             <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('photoStatus[0]',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -111,7 +111,7 @@
                                             <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('photoStatus[1]',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -122,7 +122,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 2</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[1]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -143,7 +143,7 @@
                                             <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('photoStatus[2]',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -154,7 +154,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 3</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[2]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -174,7 +174,7 @@
                                             <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('photoStatus[3]',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -185,7 +185,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 4</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[3]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -205,7 +205,7 @@
                                             <select class="form-control m-bot15" name="photoStatus[]" id="photoStatus[]">
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option <?php echo set_select('photoStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('photoStatus[4]',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
@@ -216,7 +216,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 5</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[4]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -262,8 +262,10 @@
     function formvalidate() {
 
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
-        var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
+
         var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
+
+
 
         if (mutliPhoto[2].value != '' && mutliPhoto[1].value == '' ) {
             alert('Please Select a Image in Image field' + 2);
@@ -280,14 +282,17 @@
 
         for(i=0;i<mutliPhoto.length;i++)
         {
-            if (mutliPhoto[i].value != '' && mutliPhotoDetails[i].value == '') {
+            var mutliPhotoDetails = CKEDITOR.instances.photoDetails[i].getData();
+
+            if (mutliPhoto[i].value != '' && mutliPhotoDetails == '') {
                 alert('Please Write a description of Image ' + (i + 1));
                 return false;
             }
-            else if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
+            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
             {
                 alert('Please Select The Image Status' + (i + 1));
                 return false;
+
             }
 
         }
