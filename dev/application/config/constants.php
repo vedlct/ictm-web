@@ -92,6 +92,7 @@ define("USER_TYPE",array ("Admin","Editor","Contributor"));
 define("STATUS",array ("Active","Inactive"));
 define("SELECT_STATUS" , "Select Status");
 define("NEVER_MODIFIED", "Never Modified");
+define("SELECT_APPROVE",array ("Yes", "No"));
 
 
 //////////// For Menu    /////////////////
@@ -132,5 +133,11 @@ define("SELECT_DEPARTMENT_HEAD", "Select Department Head");
 
 ////////////// For Photo /////////////////////
 define("SELECT_ALBUM", "Select Album");
+
+////////// For Feedback //////////////////////
+define("SELECT_FEEDBACK_APPROVE", "Select Feedback Approve");
+
+define("FEEDBACK_SOURCE",array ("Admin","User"));
+
 
 

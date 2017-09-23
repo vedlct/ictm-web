@@ -177,8 +177,8 @@
                 </a>
                 <ul class="sub">
 
-                    <li><a class="" href="newFeedback.php">New Feedbacks</a></li>
-                    <li><a class="" href="manageFeedbacks.php">Manage Feedbacks</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Feedback/newFeedback">New Feedbacks</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Feedback/manageFeedback">Manage Feedbacks</a></li>
 
                 </ul>
             </li>
