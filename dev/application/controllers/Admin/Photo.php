@@ -138,6 +138,67 @@ class Photo extends CI_Controller
         }
     }
 
+    // for edit menu in database
+    public function editPhoto($photoId)
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('editPhoto')) {
+
+                $this->data['album'] = $this->Albumm->getAlbum();
+                $this->data['Photo'] = $this->Photom->getPhotoInfobyId($photoId);
+
+                $this->load->view('Admin/editPhoto', $this->data);
+            }
+            else
+            {
+
+                $this->data['error'] = $this->Photom->editPhotobyId($photoId);
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Photo Updated Successfully');
+                    redirect('Admin/Photo/managePhoto');
+
+
+                } else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Photo/editPhoto/'.$photoId);
+
+                }
+            }
+        }
+
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    //this function will delete the image in edit
+    public function deletePhotoImage($id){
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['error'] = $this->Photom->deletePhotoImage($id);
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Image Deleted Successfully');
+                redirect('Admin/Photo/editPhotoView/'.$id);
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/Photo/editPhotoView/'.$id);
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
@@ -151,18 +212,45 @@ class Photo extends CI_Controller
                 // Using strtolower to overcome case sensitive
                 if (in_array($ext, $supported_image)) {
                     //echo "it's image";
+                    //return true;
+                } else {
+
+                    $error[$i]='Image ' . ($i + 1) . ' Was not in Correct Formate!!';
+                    //echo 'not image';
+
+                }
+            }
+             if(!empty($error))
+             {
+
+                 $json_out = json_encode(array_values($error));
+                $this->form_validation->set_message('val_img_check',$json_out);
+                return false;
+             }
+
+        }
+
+    }
+
+
+    public function val_img_check_fromEdit()
+    {
+        $image = $_FILES['photoImage']['name'];
+        $supported_image = array('gif','jpg','jpeg','png');
+
+            if ($image!= null) {
+                $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+
+                if (in_array($ext, $supported_image)) {
+                    //echo "it's image";
                     return true;
                 } else {
-                    $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                    $this->form_validation->set_message('val_img_check_fromEdit', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                     return false;
                     //echo 'not image';
 
                 }
-
-
             }
-        }
-
     }
 
 }

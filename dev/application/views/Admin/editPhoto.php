@@ -46,7 +46,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($Photo as $Photo){?>
-                                <form class="form-validate form-horizontal" id="editMenu" method="POST" action="<?php echo base_url() ?>Admin/Photo/editPhoto/<?php echo $Photo->photoId?>" onsubmit="return checklength()">
+                                <form class="form-validate form-horizontal" id="editPhoto" method="POST" action="<?php echo base_url() ?>Admin/Photo/editPhoto/<?php echo $Photo->photoId?>" onsubmit="return checklength()" enctype="multipart/form-data">
 
                                     <div class="form-group">
                                         <label class="control-label col-sm-2" for="albumId">Album<span class="required">*</span></label>
@@ -70,7 +70,9 @@
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage" id="photoImage">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Photo/showImageForEdit/<?php echo $Photo->photoId?>" target="_blank"><span> <?php echo $Photo->photoName?></span></a>
-
+                                            <?php if ($Photo->photoName!=null){?>
+                                                <a href="<?php echo base_url() ?>Admin/Photo/deletePhotoImage/<?php echo $Photo->photoId ?>" onclick='return confirm("Are you sure to Delete This Image?")'><i class="icon_trash"></i></a>
+                                            <?php }?>
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status<span class="required">*</span></label>
@@ -128,5 +130,17 @@
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 <script>
 
+    function checklength() {
+        var photoDetails = CKEDITOR.instances['photoDetails'].getData().replace(/<[^>]*>/gi, '').length;
+        if( !photoDetails ) {
+            alert( 'Please enter a photo Details' );
+            return false;
+        }
+        else
+        {
+            return true;
+
+        }
+    }
 
 </script>

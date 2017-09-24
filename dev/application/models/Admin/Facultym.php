@@ -165,7 +165,7 @@ class Facultym extends CI_Model
             $this->load->library('upload');
             $config = array(
                 'upload_path' => "images/facultyImages/",
-                'allowed_types' => "jpg|png|jpeg",
+                'allowed_types' => "jpg|png|jpeg|gif",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
@@ -182,7 +182,7 @@ class Facultym extends CI_Model
                 echo "<script>
                     var x =<?php echo json_encode( $error )?>;
                     alert($che.error);
-                    window.location.href= '" . base_url() . "Admin/Faculty/newFaculty';
+                    window.location.href= '" . base_url() . "Admin/Faculty/editFacultybyId/'.$id;
                     </script>";
 
                 return false;
