@@ -262,7 +262,7 @@
     function formvalidate() {
 
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
-
+        //var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
         var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
 
 
@@ -280,22 +280,21 @@
             return false;
         }
 
-        for(i=0;i<mutliPhoto.length;i++)
-        {
-            var mutliPhotoDetails = CKEDITOR.instances.photoDetails[i].getData();
-
-            if (mutliPhoto[i].value != '' && mutliPhotoDetails == '') {
-                alert('Please Write a description of Image ' + (i + 1));
-                return false;
-            }
-            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
-            {
-                alert('Please Select The Image Status' + (i + 1));
-                return false;
-
-            }
-
-        }
+//        for(i=0;i<mutliPhoto.length;i++)
+//        {
+//            //var mutliPhotoDetails = CKEDITOR.instances.photoDetails[i].getData();
+//            if (mutliPhoto[i].value != '' && mutliPhotoDetails[i] =='') {
+//                alert('Please Write a description of Image ' + (i + 1));
+//                return false;
+//            }
+//            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
+//            {
+//                alert('Please Select The Image Status' + (i + 1));
+//                return false;
+//
+//            }
+//
+//        }
 
     }
 
