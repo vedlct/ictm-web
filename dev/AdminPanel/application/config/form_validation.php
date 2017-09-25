@@ -972,4 +972,42 @@ $config = array (
             'rules' => 'required|max_length[20]'
         ),
     ),
+
+    'createAffiliation'=> array (
+
+        array(
+            'field' => 'affiliationTitle',
+            'label' => 'Affiliation Title',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'affiliationImage',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'affiliationStatus',
+            'label' => 'Affiliation Status',
+            'rules' => 'required|max_length[50]'
+        ),
+    ),
+
+    'editAffiliation'=> array (
+
+        array(
+            'field' => 'affiliationTitle',
+            'label' => 'Affiliation Title',
+            'rules' => 'required|max_length[100]'
+        ),
+        array(
+            'field' => 'affiliationImage',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'affiliationStatus',
+            'label' => 'Affiliation Status',
+            'rules' => 'required|max_length[50]'
+        ),
+    ),
 );
