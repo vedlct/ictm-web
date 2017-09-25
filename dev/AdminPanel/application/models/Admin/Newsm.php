@@ -211,6 +211,8 @@ class Newsm extends CI_Model
         $query = $this->db->get('ictmnews');
         return $query->result();
     }
+
+
     public function record_count() {
         return $this->db->count_all("ictmnews");
     }
