@@ -205,7 +205,7 @@ class Photo extends CI_Controller
         $images = $_FILES['photoImage']['name'];
         $supported_image = array('gif','jpg','jpeg','png');
 
-        for ($i = 0; $i <= count($images); $i++) {
+        for ($i = 0; $i < count($images); $i++) {
             if ($images[$i] != null) {
                 $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
                 //echo $ext;
