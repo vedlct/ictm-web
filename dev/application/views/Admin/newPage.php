@@ -68,15 +68,15 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Type<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pagetype'); ?></font></p>
-                                            <select class="form-control m-bot15" name="pagetype" required>
+                                            <select class="form-control m-bot15" name="pagetype" id="pagetype" onchange="checkPageType()" required>
                                                 <option value="" ><?php echo SELECT_PAGE_TYPE?></option>
                                                 <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
-                                                    <option <?php echo set_select('pagetype',  PAGE_TYPE[$i], False); ?>><?php echo PAGE_TYPE[$i]?></option>
+                                                    <option <?php echo set_select('pagetype',  PAGE_TYPE[$i], False); ?> ><?php echo PAGE_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="form-group ">
+                                    <div class="form-group " id="ckeditorContent">
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
                                              <p><font color="red"> <?php echo form_error('content'); ?></font></p>
@@ -84,6 +84,14 @@
                                          </div>
 
                                         </div>
+                                    <div class="form-group " id="normalContent" style="display: none">
+                                        <label class="control-label col-sm-2">Content</label>
+                                        <div class="col-sm-10">
+                                            <p><font color="red"> <?php echo form_error('content'); ?></font></p>
+                                            <textarea class="form-control" name="content" rows="6" ><?php echo set_value('content'); ?></textarea>
+                                        </div>
+
+                                    </div>
                                     <div class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
@@ -143,6 +151,17 @@
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 <script>
+    function checkPageType() {
+        var pagetype = document.getElementById("pagetype").value;
+
+        if (pagetype == "Static Type" || pagetype == "Link Type"){
+            document.getElementById("ckeditorContent").style.display = "none";
+            document.getElementById("normalContent").style.display = "block";
+        }else {
+            document.getElementById("ckeditorContent").style.display = "block";
+            document.getElementById("normalContent").style.display = "none";
+        }
+    }
     function formsubmit() {
         var title =  document.getElementById("title").value;
         var keywords =  document.getElementById("keywords").value;

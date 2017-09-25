@@ -97,14 +97,14 @@
                                         else if ($tm->pageType == 'Link Type'){
 
 
-                                            ?><li><a href="<?php echo $tm->pageContent?>"><?php echo $tm->menuName?></a></li><?php
+                                            ?><li><a href="<?php echo $tm->pageContent?>" target="_blank"><?php echo $tm->menuName?></a></li><?php
 
                                         } else {
 
                                             if (empty($tm->pageId)){
                                                 ?> <li><a href="#"><?php echo $tm->menuName?></a></li> <?php
                                             }else {
-                                                ?><li><a href="<?php echo base_url() ?>Page/<?php echo $tm->pageId ?>"><?php echo $tm->menuName ?></a> </li> <?php
+                                                ?><li><a href="<?php echo base_url() ?>Page/<?php echo $tm->pageId ?>" ><?php echo $tm->menuName ?></a> </li> <?php
                                             }
                                         }
 
@@ -173,57 +173,94 @@
                                     <li class="home">
                                         <a href="<?php echo base_url()?>Home">Home</a>
                                     </li>
-                                    <li>
-                                        <a href="#">About</a>
-                                        <ul class="submenu">
-                                            <li><a href="<?php echo base_url()?>Welcome">About ICON College</a></li>
-                                            <li><a href="#">Board of Directors</a></li>
-                                            <li><a href="#">College Governance</a></li>
-                                            <li><a href="#">Organisational Structure</a></li>
-                                            <li><a href="#">Affiliation & Accreditations</a></li>
-                                            <li><a href="#">Policies & Procedures</a></li>
-                                            <li><a href="#">Location and Maps</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li> 
-                                    <li>
-                                        <a href="#">Courses</a>
-                                        <ul class="submenu">
-                                            <li><a href="<?php echo base_url()?>Course">Our Courses</a></li>
-                                            <li><a href="#">Business & Management</a></li>
-                                            <li><a href="#">Information Technology & Engineering</a></li>
-                                            <li><a href="#">Health & Social Care</a></li>
-                                            <li><a href="#">Travel, Tourism & Hospitality Management</a></li>
-                                            <li><a href="faculty-members.php">Teaching Faculty</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li>                                
-                                    <li>
-                                        <a href="#">Admission</a>
-                                        <ul class="submenu">
-                                            <li><a href="#">How to Apply</a></li>
-                                            <li><a href="#">Admission Procedure</a></li>
-                                            <li><a href="#">Admission Policy</a></li>
-                                            <li><a href="#">Loans & Maintenance</a></li>
-                                            <li><a href="login.php">Apply Now</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li>
-                                    <li>
-                                        <a href="#">College Life</a>
-                                        <ul class="submenu">
-                                            <li><a href="#">Student Services</a></li>
-                                            <li><a href="#">Facilities</a></li>
-                                            <li><a href="#">Student Supports</a></li>
-                                            <li><a href="#">Term Dates</a></li>
-                                            <li><a href="photo-gallery.php">Photo Gallery</a></li>
-                                            <li><a href="#">Register Interest</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li>  
-                                    <li>
-                                        <a href="#">News & Events</a>
-                                        <ul class="submenu">
-                                            <li><a href="news.php">News</a></li>
-                                            <li><a href="event-list.php">Events</a></li>
-                                        </ul><!-- /.submenu -->
-                                    </li>                                       
+                                    <?php
+                                    foreach ($mainmenu as $mn) {
+                                        //echo $id = $mn->menuId;
+                                        //echo $mn->menuName; ?>
+                                        <li class="home">
+                                            <a href="<?php echo base_url()?>Home"><?php echo $mn->menuName; ?></a>
+
+                                    <ul class="submenu">
+                                            <?php
+                                            $id = $mn->menuId;
+                                            $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ');
+                                            $this->db->where('menuType', MENU_TYPE[1]);
+                                            $this->db->where('menuStatus', STATUS[0]);
+                                            $this->db->where('parentId =', $id);
+                                            $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
+                                            $query = $this->db->get('ictmmenu');
+                                            foreach ($query->result() as $q) {
+                                                
+
+                                                 ?><li><a href="<?php echo base_url()?>Home"><?php echo $q->menuName; ?></a></li>
+                                                <?php
+                                            }
+                                            ?>
+                                        </ul>
+                                        </li>
+                                    <?php
+//                                            $this->db->select('menuId, menuName, parentId ');
+//                                            $this->db->where('menuType', MENU_TYPE[1]);
+//                                            $this->db->where('menuStatus', STATUS[0]);
+//                                            $this->db->where('parentId =', $id);
+//                                            $query = $this->db->get('ictmmenu');
+//                                            foreach ($query->result() as $q) {
+//                                                echo $q->menuName;
+//                                            }
+
+                                    }
+                                    ?>
+<!--                                    <li>-->
+<!--                                        <a href="#">About</a>-->
+<!--                                        <ul class="submenu">-->
+<!--                                            <li><a href="--><?php //echo base_url()?><!--Welcome">About ICON College</a></li>-->
+<!--                                            <li><a href="#">Board of Directors</a></li>-->
+<!--                                            <li><a href="#">College Governance</a></li>-->
+<!--                                            <li><a href="#">Organisational Structure</a></li>-->
+<!--                                            <li><a href="#">Affiliation & Accreditations</a></li>-->
+<!--                                            <li><a href="#">Policies & Procedures</a></li>-->
+<!--                                            <li><a href="#">Location and Maps</a></li>-->
+<!--                                        </ul><!-- /.submenu -->
+<!--                                    </li> -->
+<!--                                    <li>-->
+<!--                                        <a href="#">Courses</a>-->
+<!--                                        <ul class="submenu">-->
+<!--                                            <li><a href="--><?php //echo base_url()?><!--Course">Our Courses</a></li>-->
+<!--                                            <li><a href="#">Business & Management</a></li>-->
+<!--                                            <li><a href="#">Information Technology & Engineering</a></li>-->
+<!--                                            <li><a href="#">Health & Social Care</a></li>-->
+<!--                                            <li><a href="#">Travel, Tourism & Hospitality Management</a></li>-->
+<!--                                            <li><a href="faculty-members.php">Teaching Faculty</a></li>-->
+<!--                                        </ul><!-- /.submenu -->
+<!--                                    </li>                                -->
+<!--                                    <li>-->
+<!--                                        <a href="#">Admission</a>-->
+<!--                                        <ul class="submenu">-->
+<!--                                            <li><a href="#">How to Apply</a></li>-->
+<!--                                            <li><a href="#">Admission Procedure</a></li>-->
+<!--                                            <li><a href="#">Admission Policy</a></li>-->
+<!--                                            <li><a href="#">Loans & Maintenance</a></li>-->
+<!--                                            <li><a href="login.php">Apply Now</a></li>-->
+<!--                                        </ul><!-- /.submenu -->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">College Life</a>-->
+<!--                                        <ul class="submenu">-->
+<!--                                            <li><a href="#">Student Services</a></li>-->
+<!--                                            <li><a href="#">Facilities</a></li>-->
+<!--                                            <li><a href="#">Student Supports</a></li>-->
+<!--                                            <li><a href="#">Term Dates</a></li>-->
+<!--                                            <li><a href="photo-gallery.php">Photo Gallery</a></li>-->
+<!--                                            <li><a href="#">Register Interest</a></li>-->
+<!--                                        </ul><!-- /.submenu -->
+<!--                                    </li>  -->
+<!--                                    <li>-->
+<!--                                        <a href="#">News & Events</a>-->
+<!--                                        <ul class="submenu">-->
+<!--                                            <li><a href="news.php">News</a></li>-->
+<!--                                            <li><a href="event-list.php">Events</a></li>-->
+<!--                                        </ul><!-- /.submenu -->
+<!--                                    </li>                                       -->
                                 </ul><!-- /.menu -->
                             </nav><!-- /.mainnav -->
                         </div><!-- /.nav-wrap -->

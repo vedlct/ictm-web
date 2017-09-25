@@ -43,14 +43,14 @@
                                                 else if ($ki->pageType == 'Link Type'){
 
 
-                                                    ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $ki->pageContent?>"><?php echo $ki->menuName?></a></li><?php
+                                                    ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $ki->pageContent?>" target="_blank"><?php echo $ki->menuName?></a></li><?php
 
                                                 } else {
 
                                                     if (empty($ki->pageId)){
                                                         ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="#"><?php echo $ki->menuName?></a></li> <?php
                                                     }else {
-                                                        ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $ki->pageId ?>"><?php echo $ki->menuName ?></a> </li> <?php
+                                                        ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $ki->pageId ?>" ><?php echo $ki->menuName ?></a> </li> <?php
                                                     }
                                                 }
 
@@ -97,14 +97,14 @@
                                                 else if ($il->pageType == 'Link Type'){
 
 
-                                                    ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $il->pageContent?>"><?php echo $il->menuName?></a></li><?php
+                                                    ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $il->pageContent?>" target="_blank"><?php echo $il->menuName?></a></li><?php
 
                                                 } else {
 
                                                     if (empty($il->pageId)){
                                                         ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="#"><?php echo $il->menuName?></a></li> <?php
                                                     }else {
-                                                        ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $il->pageId ?>"><?php echo $il->menuName ?></a> </li> <?php
+                                                        ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $il->pageId ?>" target="_blank"><?php echo $il->menuName ?></a> </li> <?php
                                                     }
                                                 }
 
@@ -233,7 +233,7 @@
                                 else if ($bm->pageType == 'Link Type'){
 
 
-                                    ?><a href="<?php echo $bm->pageContent?>"><?php echo $bm->menuName?></a> | <?php
+                                    ?><a href="<?php echo $bm->pageContent?>" target="_blank"><?php echo $bm->menuName?></a> | <?php
 
                                 } else {
 
