@@ -190,9 +190,40 @@
                                             $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
                                             $query = $this->db->get('ictmmenu');
                                             foreach ($query->result() as $q) {
-                                                
 
-                                                 ?><li><a href="<?php echo base_url()?>Home"><?php echo $q->menuName; ?></a></li>
+                                                if ($q->pageType == 'Static Type') {
+
+                                                    switch ($q->pageContent) {
+                                                        case "course-list.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Course"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
+                                                        case "department.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Department"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
+                                                        case "":
+                                                            ?> <li><a href="<?php echo base_url()?>Course"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
+
+                                                        default:
+
+                                                    }
+
+                                                }
+                                                else if ($q->pageType == 'Link Type'){
+
+
+                                                    ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $q->menuName?></a></li><?php
+
+                                                } else {
+
+                                                    if (empty($q->pageId)){
+                                                        ?> <li><a href="#"><?php echo $q->menuName?></a></li> <?php
+                                                    }else {
+                                                        ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><?php echo $q->menuName ?></a> </li> <?php
+                                                    }
+                                                }
+
+//                                                 ?><!--<li><a href="--><?php //echo base_url()?><!--Home">--><?php //echo $q->menuName; ?><!--</a></li>-->
                                                 <?php
                                             }
                                             ?>
@@ -269,19 +300,33 @@
             </div><!-- /.header-wrap-->
         </header><!-- /.header -->
 
-<script>
-		$(function() {
- 
-var pgurl = window.location.href;
+<!--        <script>-->
+<!--            jQuery(document).ready(function() {-->
+<!--                var loc = window.location.href;-->
+<!--                jQuery(".mainnav li").removeClass('active');-->
+<!--                jQuery(".menu li a").each(function() {-->
+<!--                    if (loc.indexOf(jQuery(this).attr("href")) != -1) {-->
+<!--                        jQuery(this).parent('li').addClass("active");-->
+<!--                    }-->
+<!--                });-->
+<!--            });-->
+<!--        </script>-->
 
- 
-$(".mainnav li").each(function(){
- 
-if(pgurl==''){
-$(".mainnav li:eq(1)").addClass("active");
-}else
-if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')
-$(this).addClass("active");
-})
-});
-</script>
+
+<!--<script>-->
+<!--		$(function() {-->
+<!---->
+<!--var pgurl = window.location.href;-->
+<!---->
+<!---->
+<!--$(".mainnav li").each(function(){-->
+<!---->
+<!--if(pgurl==''){-->
+<!--$(".mainnav li:eq(1)").addClass("active");-->
+<!--}else-->
+<!--if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')-->
+<!--$(this).addClass("active");-->
+<!--})-->
+<!--});-->
+<!--</script>-->
+
