@@ -45,19 +45,19 @@ class Photo extends CI_Controller
             else
             {
 
-                $this->data['error'] =$this->Photom->createNewPhoto();
-
-                if (empty($this->data['error'])) {
-
-                    $this->session->set_flashdata('successMessage','Photo added Successfully');
-                    redirect('Admin/Photo/managePhoto');
-
-                }
-                else
-                {
-                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                    redirect('Admin/Photo/newPhoto');
-                }
+//                $this->data['error'] =$this->Photom->createNewPhoto();
+//
+//                if (empty($this->data['error'])) {
+//
+//                    $this->session->set_flashdata('successMessage','Photo added Successfully');
+//                    redirect('Admin/Photo/managePhoto');
+//
+//                }
+//                else
+//                {
+//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+//                    redirect('Admin/Photo/newPhoto');
+//                }
 
             }
         }

@@ -352,5 +352,6 @@
             alert("You have entered an invalid email address!");
             return false;
         }
+
     }
 </script>
