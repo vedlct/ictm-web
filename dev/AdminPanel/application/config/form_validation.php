@@ -775,7 +775,7 @@ $config = array (
         array(
             'field' => 'newsTitle',
             'label' => 'News Title ',
-            'rules' => 'required|max_length[255]|is_unique[ictmnews.newsTitle]',
+            'rules' => 'required|max_length[255]|is_unique[ictmnews.newsTitle]|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'News Allready Existed !!',
             ),
@@ -978,7 +978,7 @@ $config = array (
         array(
             'field' => 'affiliationTitle',
             'label' => 'Affiliation Title',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|htmlspecialchars'
         ),
         array(
             'field' => 'affiliationImage',
