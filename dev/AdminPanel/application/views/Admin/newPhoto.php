@@ -262,41 +262,44 @@
     function formvalidate() {
 
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
+        var mutliPhotos = document.newPhoto.elements["photoDetails[]"];
+        alert(mutliPhotos[0].value);
+        return false;
         //var mutliPhotoDetails = CKEDITOR.instances['photoDetails[]'].getData().replace(/<[^>]*>/gi, '').length;
 
-        var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
-
-        if (mutliPhoto[2].value != '' && mutliPhoto[2].value == '' ) {
-            alert('Please Select a Image in Image field' + 2);
-            return false;
-        }
-        if (mutliPhoto[3].value != '' && mutliPhoto[2].value == '' ) {
-            alert('Please Select a Image in Image field' + 3);
-            return false;
-        }
-        if (mutliPhoto[4].value != '' && mutliPhoto[3].value == '' ) {
-            alert('Please Select a Image in Image field' + 4);
-            return false;
-        }
-
-        for(i=0;i<mutliPhoto.length;i++)
-        {
-            var mutliPhotoDetails =CKEDITOR.instances.photoDetails[i].getData();
-
-            if (mutliPhoto[i].value != '' && mutliPhotoDetails === '') {
-                alert('Please Write a description of Image ' + (i + 1));
-                return false;
-            }
-
-            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
-            {
-                alert('Please Select The Image Status' + (i + 1));
-
-                return false;
-
-            }
-
-        }
+//        var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
+//
+//        if (mutliPhoto[2].value != '' && mutliPhoto[2].value == '' ) {
+//            alert('Please Select a Image in Image field' + 2);
+//            return false;
+//        }
+//        if (mutliPhoto[3].value != '' && mutliPhoto[2].value == '' ) {
+//            alert('Please Select a Image in Image field' + 3);
+//            return false;
+//        }
+//        if (mutliPhoto[4].value != '' && mutliPhoto[3].value == '' ) {
+//            alert('Please Select a Image in Image field' + 4);
+//            return false;
+//        }
+//
+//        for(i=0;i<mutliPhoto.length;i++)
+//        {
+//            var mutliPhotoDetails =CKEDITOR.instances.photoDetails[i].getData();
+//
+//            if (mutliPhoto[i].value != '' && mutliPhotoDetails === '') {
+//                alert('Please Write a description of Image ' + (i + 1));
+//                return false;
+//            }
+//
+//            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
+//            {
+//                alert('Please Select The Image Status' + (i + 1));
+//
+//                return false;
+//
+//            }
+//
+//        }
 
     }
 
