@@ -5,7 +5,6 @@
     <?php include('head.php') ?>
     <!-- view head  end----->
 </head>
-
 <body>
 <!-- container section start -->
 <section id="container" class="">
@@ -37,7 +36,7 @@
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
             <?php }
             if (!empty(validation_errors())){?>
-            <div class="alert alert-danger" align="center"><strong><?php echo validation_errors();?></strong></div>
+                <div class="alert alert-danger" align="center"><strong><?php echo validation_errors();?></strong></div>
 
             <?php } ?>
 
@@ -91,7 +90,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 1<span class="required">*</span></label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+                                            <textarea class="form-control " name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[0]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -122,7 +121,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 2</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[1]'); ?></textarea>
+                                            <textarea class="form-control " name="photoDetails[]" id="photoDetails[]" ><?php echo set_value('photoDetails[1]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -154,7 +153,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 3</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[2]'); ?></textarea>
+                                            <textarea class="form-control " name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[2]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -185,7 +184,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 4</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[3]'); ?></textarea>
+                                            <textarea class="form-control " name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[3]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -216,7 +215,7 @@
 
                                         <label for="photoDetails" class="control-label col-sm-2">Photo Details 5</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control ckeditor" name="photoDetails[]" id="photoDetails[]" required><?php echo set_value('photoDetails[4]'); ?></textarea>
+                                            <textarea class="form-control " name="photoDetails[]" id="photoDetails[]"><?php echo set_value('photoDetails[4]'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -238,69 +237,50 @@
                     </section>
                 </div>
             </div>
-        <!-- page end-->
+            <!-- page end-->
         </section>
     </section>
-<!--main content end-->
-<div class="text-right wrapper">
-    <div class="credits">
-        <a href="#">Icon College</a> by <a href="#">A2N</a>
+    <!--main content end-->
+    <div class="text-right wrapper">
+        <div class="credits">
+            <a href="#">Icon College</a> by <a href="#">A2N</a>
+        </div>
     </div>
-</div>
 
 </section>
 <!-- container section end -->
 <?php include ('js.php')?>
 </body>
 </html>
-
-<script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
-
+<!--<script type="text/javascript" src="--><?php //echo base_url()?><!--public/ckeditor/ckeditor.js"></script>-->
 <script>
-
-
     function formvalidate() {
-
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
-        var mutliPhotos = document.newPhoto.elements["photoDetails[]"];
-        alert(mutliPhotos[0].value);
-        return false;
-        //var mutliPhotoDetails = CKEDITOR.instances['photoDetails[]'].getData().replace(/<[^>]*>/gi, '').length;
-
-//        var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
-//
-//        if (mutliPhoto[2].value != '' && mutliPhoto[2].value == '' ) {
-//            alert('Please Select a Image in Image field' + 2);
-//            return false;
-//        }
-//        if (mutliPhoto[3].value != '' && mutliPhoto[2].value == '' ) {
-//            alert('Please Select a Image in Image field' + 3);
-//            return false;
-//        }
-//        if (mutliPhoto[4].value != '' && mutliPhoto[3].value == '' ) {
-//            alert('Please Select a Image in Image field' + 4);
-//            return false;
-//        }
-//
-//        for(i=0;i<mutliPhoto.length;i++)
-//        {
-//            var mutliPhotoDetails =CKEDITOR.instances.photoDetails[i].getData();
-//
-//            if (mutliPhoto[i].value != '' && mutliPhotoDetails === '') {
-//                alert('Please Write a description of Image ' + (i + 1));
-//                return false;
-//            }
-//
-//            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
-//            {
-//                alert('Please Select The Image Status' + (i + 1));
-//
-//                return false;
-//
-//            }
-//
-//        }
-
+        var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
+        var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
+        if (mutliPhoto[2].value != '' && mutliPhoto[2].value == '' ) {
+            alert('Please Select a Image in Image field' + 2);
+            return false;
+        }
+        if (mutliPhoto[3].value != '' && mutliPhoto[2].value == '' ) {
+            alert('Please Select a Image in Image field' + 3);
+            return false;
+        }
+        if (mutliPhoto[4].value != '' && mutliPhoto[3].value == '' ) {
+            alert('Please Select a Image in Image field' + 4);
+            return false;
+        }
+        for(i=0;i<mutliPhoto.length;i++)
+        {
+            if (mutliPhoto[i].value != '' && mutliPhotoDetails[i].value=='') {
+                alert('Please Write a description of Image ' + (i + 1));
+                return false;
+            }
+            if (mutliPhoto[i].value != '' && mutliphotoStatus[i].value == '')
+            {
+                alert('Please Select The Image Status' + (i + 1));
+                return false;
+            }
+        }
     }
-
 </script>
