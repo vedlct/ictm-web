@@ -6,9 +6,10 @@ class PageSectionm extends CI_Model
 
     public function getPageData($id){
 
-        $this->db->select( 'pageSectionId,pageId,pageSectionTitle,pageSectionContent,pageSectionImage,pageSectionStatus' );
+        $this->db->select( 'pageSectionId,ictmpagesection.pageId,pageSectionTitle,pageSectionContent,pageSectionImage,pageSectionStatus, pageTitle, pageType, pageContent, pageImage' );
+        $this->db->join('ictmpage', 'ictmpagesection.pageId = ictmpage.pageId','left');
         $this->db->where('pageSectionStatus', STATUS[0]);
-        $this->db->where('pageId=', $id);
+        $this->db->where('ictmpagesection.pageId=', $id);
         $query = $this->db->get('ictmpagesection');
         return $query->result();
 

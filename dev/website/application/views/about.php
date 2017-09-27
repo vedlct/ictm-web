@@ -29,7 +29,12 @@
                                     <div class="col-md-12">
                                         <div class="content-pad single-course-detail">
                                                 <div class="content-content">
-                                                   
+
+                                                    <?php foreach ($aboutdata as $ad){
+                                                     echo  $ad->pageContent;
+                                                     break;
+                                                    }
+                                                    ?>
 
                                                                 <ul style="margin-left:0px" class="nav nav-tabs">
                                                                  <?php foreach ($aboutdata as $ad) { ?>
