@@ -188,7 +188,6 @@ class Feedbackm extends CI_Model
                 'feedbackByProfession' => $feedbackByProfession,
                 'feedbackDetails' => $feedbackDetails,
                 'feedbackSource' =>$feedbackSource,
-
                 'feedbackApprove' => $feedbackApprove,
                 'feedbackStatus' => $feedbackStatus,
                 'feedbackApprovedBy' => $feedbackApproveBy,

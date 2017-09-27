@@ -167,6 +167,13 @@
 </body>
 </html>
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Event?")) {
             btn = $(x).data('panel-id');

@@ -209,7 +209,7 @@
 
                                                         <div class="btn-group">
 
-                                                            <a class="btn" data-panel-id="<?php echo $facultyCourse->facultyCourseId ?>"  onclick="selectid1(this)" href="#"><i class="icon_trash"></i></a>
+                                                            <a class="btn" data-panel-id="<?php echo $facultyCourse->facultyCourseId ?>"  onclick="selectid1(this)" href=""><i class="icon_trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -232,6 +232,10 @@
                                             <p><font color="red"> <?php echo form_error('faculty_intro'); ?></font></p>
                                             <textarea class="form-control ckeditor" name="faculty_intro" id="faculty_intro" required><?php echo $editFaculty->facultyIntro?></textarea>
                                         </div>
+                                    </div>
+
+                                    <div id="csrf">
+                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                                     </div>
 
                                     <div class="form-group " align="center">
@@ -274,6 +278,12 @@
 
 <script type="text/javascript">
 
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x)
     {
             var courseId= document.getElementById('faculty_courses').value;
@@ -290,16 +300,20 @@
                     cache: false,
                     success: function (data) {
 
+                        $('#csrf').load(document.URL +  ' #csrf');
+
                         if (data == '0') {
                             alert("Course Added Successfully");
 
                             document.getElementById("faculty_courses").selectedIndex = 0;
                             $('#CourseTable').load(document.URL +  ' #CourseTable');
+
                         }
                         else if (data == '1') {
                             alert('This Course is Already Inserted !!!');
 
                         }
+
 
 
                     }
@@ -320,6 +334,7 @@
                 cache: false,
                 success: function (data) {
                     $('#CourseTable').load(document.URL + ' #CourseTable');
+                    $('#csrf').load(document.URL +  ' #csrf');
 
                 }
             });

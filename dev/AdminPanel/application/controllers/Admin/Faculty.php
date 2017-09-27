@@ -160,6 +160,7 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Coursem->deleteCoursetoFaculty($id);
+            $this->session->set_flashdata('successMessage','Faculty Course Delated Successfully');
 
         }
         else{

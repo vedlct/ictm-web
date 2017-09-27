@@ -6,7 +6,6 @@ class CollegeInfo extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
         $this->load->model('Admin/CollegeInfom');
     }
 
@@ -21,7 +20,7 @@ class CollegeInfo extends CI_Controller
             } else {
 
                 $this->data['infodata'] = $this->CollegeInfom->getinfodata();
-                $this->load->view('Admin/editcollegeinfo', $this->data);
+                $this->load->view('Admin/editCollegeinfo', $this->data);
             }
         }
         else{
@@ -72,7 +71,7 @@ class CollegeInfo extends CI_Controller
             if (!$this->form_validation->run('CollegeInfo')) {
 
                 $this->data['infodata'] = $this->CollegeInfom->getinfodata();
-                $this->load->view('Admin/editcollegeinfo', $this->data);
+                $this->load->view('Admin/editCollegeinfo', $this->data);
 
             }
             else {

@@ -33,7 +33,7 @@ class Album extends CI_Controller
 
             if (!$this->form_validation->run('createAlbum')) {
 
-                $this->load->view('Admin/newMenu', $this->data);
+                $this->load->view('Admin/newAlbum');
             }
             else
             {
