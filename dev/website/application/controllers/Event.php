@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Event extends CI_Controller {
 
     public function __construct()
     {
@@ -12,8 +12,12 @@ class Home extends CI_Controller {
 
     public function index()
     {
-        $this->menu();
-        $this->load->view('home', $this->data);
+        //$this->menu();
+        //$this->load->view('home', $this->data);
+    }
+
+    public function getEventForTerms(){
+
     }
 
     public function menu(){
