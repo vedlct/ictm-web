@@ -45,7 +45,8 @@
                                  <a href="<?php echo base_url()?>Admin/Department/newDepartment"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Department</button> </a>
                             </span>
                         </header>
-                        <div class="panel-body table  ">
+                        <div class="panel-body">
+                            <div class="table-responsive">
                             <table class="table table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr style="text-align: center" bgcolor="#D3D3D3">
@@ -114,6 +115,7 @@
 
                                 </tbody>
                             </table>
+                            </div>
                         </div>
                         <div id="edit"></div>
                     </section>

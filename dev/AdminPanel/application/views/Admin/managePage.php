@@ -48,6 +48,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
+                            <div class="table-responsive">
 
                         <table class="table table-striped table-advance  table-bordered table-hover">
                             <tbody>
@@ -93,6 +94,7 @@
                             }?>
                             </tbody>
                         </table>
+                            </div>
 
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>

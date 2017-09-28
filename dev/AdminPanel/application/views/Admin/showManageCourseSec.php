@@ -1,4 +1,4 @@
-
+<div class="table-responsive">
 <table class="table  table-advance  table-bordered table-hover">
     <tbody>
     <tr align="center" >
@@ -44,3 +44,4 @@
 
     </tbody>
 </table>
+</div>

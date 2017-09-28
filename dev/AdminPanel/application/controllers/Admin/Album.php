@@ -156,7 +156,8 @@ class Album extends CI_Controller
             redirect('Admin/Login');
         }
     }
-    /*---------for Manage Menu ----------end-------------*/
+    /*---------for Manage Album ----------end-------------*/
+
 /*--------------- callback albumTitle_check-------------*/
     public function AlbumeditUniqueCheck()
     {

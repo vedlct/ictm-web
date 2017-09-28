@@ -50,7 +50,8 @@
                                 <a href="<?php echo base_url()?>Admin/News/newNews"><button class="btn btn-sm" style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New News</b></button></a>
                             </span>
                         </header>
-                        <div class="panel-body table  ">
+                        <div class="panel-body">
+                            <div class="table-responsive">
                             <table class="table table-striped table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr>
@@ -124,6 +125,7 @@
 
                                 </tbody>
                             </table>
+                            </div>
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
                             </div>
