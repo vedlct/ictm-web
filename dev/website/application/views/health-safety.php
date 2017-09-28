@@ -64,6 +64,11 @@
                                                     <?php
                                                     foreach ($healthdata as $hd){
                                                         echo $hd->pageContent;
+                                                        if($hd->pageImage != null) {
+                                                            ?>
+                                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $hd->pageImage ?>">
+                                                            <?php
+                                                        }else
                                                         break;
                                                     }
                                                     ?>

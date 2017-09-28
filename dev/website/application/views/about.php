@@ -32,6 +32,9 @@
 
                                                     <?php foreach ($aboutdata as $ad){
                                                      echo  $ad->pageContent;
+                                                     if($ad->pageImage != null){?>
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $ad->pageImage?>" >
+                                                        <?php } else
                                                      break;
                                                     }
                                                     ?>
