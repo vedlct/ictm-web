@@ -1,81 +1,37 @@
 	
                                     <ul class="recent-posts clearfix">
+                                        <?php foreach ($coursedata as $cd){ ?>
                                         <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
+                                            <?php
+                                            if ($cd->courseImage == null) {
+                                                ?>
+                                                <div class="thumb item-thumbnail">
+                                                    <a href="#">
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/NoImage.jpg" alt="image" style="width: 80px; height: 80px">
+                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                        <div class="thumbnail-hoverlay-cross"></div>
+                                                    </a>
+                                                </div>
+                                                <?php
+                                            } else {
+                                                ?>
+
+                                                <div class="thumb item-thumbnail">
+                                                    <a href="#">
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage?>" alt="image" style="width: 80px; height: 80px">
+                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                        <div class="thumbnail-hoverlay-cross"></div>
+                                                    </a>
+                                                </div>
+
+                                                <?php
+                                            }
+                                            ?>
                                             <div class="text">
-                                                <a href="#">BTEC Level 5 HND in Business</a>
-                                                <p>SEPTEMBER 25, 2017</p>
+                                                <a href="<?php echo base_url()?>Course/<?php echo $cd->courseId ?>"><?php echo $cd->courseTitle ?></a>
+                                                <p><?php echo $cd->academicYear ?></p>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC HND in Health and Social Care</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC HND in Computing and Systems Development</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC HND in Electrical and Electronic Engineering</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC Level 5 HND in Travel and Tourism Management</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">BTEC Level 5 HND in Hospitality Management</a>
-                                                <p>SEPTEMBER 25, 2017</p>
-                                            </div>
-                                        </li>
+                                        <?php  } ?>
+
                                     </ul><!-- /popular-news clearfix -->

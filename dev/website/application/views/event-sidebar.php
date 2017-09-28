@@ -1,81 +1,33 @@
 									
                                     <ul class="recent-posts clearfix">
+                                        <?php foreach ($eventdata as $ed) {?>
                                         <li>
                                             <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
+                                               <?php if ($ed->eventPhotoPath == null) { ?>
+                                                   <a href="">
+                                                       <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/eventImages/NoImage.jpg"
+                                                            alt="image" style="width: 80px; height: 80px">
+                                                       <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                       <div class="thumbnail-hoverlay-cross"></div>
+                                                   </a>
+                                                   <?php
+                                               } else {
+                                                   ?>
+                                                   <a href="">
+                                                       <img src="<?php echo base_url() ?>../AdminPanel/images/eventImages/<?php echo $ed->eventPhotoPath?>"
+                                                            alt="image" style="width: 80px; height: 80px">
+                                                       <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                       <div class="thumbnail-hoverlay-cross"></div>
+                                                   </a>
+                                                   <?php
+                                               }
+                                                ?>
                                             </div>
                                             <div class="text">
-                                                <a href="#">Chicago Architecture Foundation River Cruise</a>
-                                                <p>JULY 22, 2017</p>
+                                                <a href="<?php echo base_url()?>Event/<?php echo $ed->eventId?>"><?php echo $ed->eventTitle ?></a>
+                                                <p><?php echo date('F d, Y',strtotime($ed->eventStartDate))?></p>
                                             </div>
                                         </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Good Morning America</a>
-                                                <p>JULY 30, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Vegie Garden Wednesday Workshops</a>
-                                                <p>AUGUST 06, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">The Ecosystem Within Us</a>
-                                                <p>AUGUST 19, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">Science In The New Era</a>
-                                                <p>SEPTEMBER 03, 2017</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb item-thumbnail">
-                                                <a href="#">
-                                                    <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                    <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                    <div class="thumbnail-hoverlay-cross"></div>
-                                                </a>
-                                            </div>
-                                            <div class="text">
-                                                <a href="#">How To Sell Anything</a>
-                                                <p>NOVEMBER 12, 2017</p>
-                                            </div>
-                                        </li>
+                                        <?php } ?>
+
                                     </ul><!-- /popular-news clearfix -->

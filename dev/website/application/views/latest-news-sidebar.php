@@ -1,42 +1,37 @@
 										
                                         <ul class="recent-posts clearfix">
+                                            <?php foreach ($newsdata as $nd) {?>
                                             <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
+                                                <?php
+                                                if ($nd->newsPhoto == null ) {
+                                                    ?>
+                                                    <div class="thumb item-thumbnail">
+                                                        <a href="#">
+                                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"
+                                                                 alt="image" style="width: 80px; height: 80px">
+                                                            <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                            <div class="thumbnail-hoverlay-cross"></div>
+                                                        </a>
+                                                    </div>
+                                                    <?php
+                                                }else {
+                                                    ?>
+                                                    <div class="thumb item-thumbnail">
+                                                        <a href="#">
+                                                            <img src="<?php echo base_url() ?>../AdminPanel/images/newsImages/<?php echo $nd->newsPhoto?>"
+                                                                 alt="image" style="width: 80px; height: 80px">
+                                                            <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                            <div class="thumbnail-hoverlay-cross"></div>
+                                                        </a>
+                                                    </div>
+                                                    <?php
+                                                }
+                                                ?>
                                                 <div class="text">
-                                                    <a href="#">Your Career Starts Here</a>
-                                                    <p>JUNE 3, 2014</p>
+                                                    <a href="<?php echo base_url()?>News/<?php echo $nd->newsId?>"><?php echo $nd->newsTitle?></a>
+                                                    <p><?php echo date('F d, Y',strtotime($nd->newsDate))?></p>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">Spark Of Genius</a>
-                                                    <p>JUNE 3, 2014</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/dummy-widget-image.png" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">University Ranking</a>
-                                                    <p>MAY 29, 2014</p>
-                                                </div>
-                                            </li>
+                                            <?php } ?>
+
                                         </ul><!-- /popular-news clearfix -->

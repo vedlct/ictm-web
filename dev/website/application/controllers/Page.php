@@ -11,7 +11,7 @@ class Page extends CI_Controller {
         $this->load->model('PageSectionm');
         $this->load->model('Newsm');
         $this->load->model('Eventm');
-
+        $this->load->model('Coursem');
 
     }
     function _remap($id) {
@@ -41,6 +41,7 @@ class Page extends CI_Controller {
                 $this->data['termsdata']= $this->PageSectionm->getPageData($id);
                 $this->data['newsdata']= $this->Newsm->getNewsForTerms();
                 $this->data['eventdata']= $this->Eventm->getEventForTerms();
+                $this->data['coursedata']=$this->Coursem->getCourseForTerms();
 
                 $this->load->view('terms-conditions', $this->data);
 

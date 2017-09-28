@@ -30,13 +30,17 @@
                                         <div class="content-pad single-course-detail">
                                             <div class="course-detail">
                                                 <div class="content-content">
-                                                    <?php $count = 1; foreach ($termsdata as $td) {?>
-                                                	<h3 id="<?php echo $td->pageSectionId?>"><?php echo $count.". ".$td->pageSectionTitle?></h3>
+                                                    <?php $count = 1; foreach ($termsdata as $td) {
+                                                        echo $td->pageContent;
+                                                        if($td->pageImage != null){?>
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $td->pageContent?>"  >
+                                                        <?php }else ?>
+                                                        <h3 id="<?php echo $td->pageSectionId?>"><?php echo $count.". ".$td->pageSectionTitle?></h3>
                                                     <div class="course-detail-section">
                                                        <?php echo $td->pageSectionContent?>
                                                     </div>
 
-                                                    <?php $count++;} ?>
+                                                    <?php $count++; } ?>
                                             </div><!--/course-detail-->
                                         </div><!--/single-content-detail-->         
                                     </div>
