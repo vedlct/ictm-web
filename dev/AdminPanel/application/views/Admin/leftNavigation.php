@@ -162,7 +162,7 @@
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/newAffiliation">new Affiliations</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/newAffiliation">New Affiliations</a></li>
                     <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/manageAffiliation">Manage Affiliations</a></li>
                 </ul>
             </li>

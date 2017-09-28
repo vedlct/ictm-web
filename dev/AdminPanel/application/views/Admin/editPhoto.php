@@ -70,9 +70,7 @@
                                             <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
                                             <input class="form-control" type="file" name="photoImage" id="photoImage">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Photo/showImageForEdit/<?php echo $Photo->photoId?>" target="_blank"><span> <?php echo $Photo->photoName?></span></a>
-                                            <?php if ($Photo->photoName!=null){?>
-                                                <a href="<?php echo base_url() ?>Admin/Photo/deletePhotoImage/<?php echo $Photo->photoId ?>" onclick='return confirm("Are you sure to Delete This Image?")'><i class="icon_trash"></i></a>
-                                            <?php }?>
+
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status<span class="required">*</span></label>

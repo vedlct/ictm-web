@@ -138,7 +138,7 @@ class Photo extends CI_Controller
         }
     }
 
-    // for edit menu in database
+    // for edit Photo in database
     public function editPhoto($photoId)
     {
         $this->load->library('form_validation');
@@ -177,27 +177,27 @@ class Photo extends CI_Controller
     }
 
     //this function will delete the image in edit
-    public function deletePhotoImage($id){
-
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
-
-            $this->data['error'] = $this->Photom->deletePhotoImage($id);
-
-            if (empty($this->data['error'])) {
-
-                $this->session->set_flashdata('successMessage','Image Deleted Successfully');
-                redirect('Admin/Photo/editPhotoView/'.$id);
-            }
-            else
-            {
-                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect('Admin/Photo/editPhotoView/'.$id);
-            }
-        }
-        else{
-            redirect('Admin/Login');
-        }
-    }
+//    public function deletePhotoImage($id){
+//
+//        if ($this->session->userdata('type') == USER_TYPE[0]) {
+//
+//            $this->data['error'] = $this->Photom->deletePhotoImage($id);
+//
+//            if (empty($this->data['error'])) {
+//
+//                $this->session->set_flashdata('successMessage','Image Deleted Successfully');
+//                redirect('Admin/Photo/editPhotoView/'.$id);
+//            }
+//            else
+//            {
+//                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+//                redirect('Admin/Photo/editPhotoView/'.$id);
+//            }
+//        }
+//        else{
+//            redirect('Admin/Login');
+//        }
+//    }
 
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
