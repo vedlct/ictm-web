@@ -119,6 +119,7 @@
 
 
     function formvalidate() {
+
         var albumCategory =  document.getElementById("albumCategory").value;
         var albumTitle =  document.getElementById("albumTitle").value;
 

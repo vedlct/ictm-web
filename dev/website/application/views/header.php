@@ -159,14 +159,14 @@
 
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
-                                <li class="home">
+                                <li >
                                     <a href="<?php echo base_url()?>Home">Home</a>
                                 </li>
                                 <?php
                                 foreach ($mainmenu as $mn) {
                                     //echo $id = $mn->menuId;
                                     //echo $mn->menuName; ?>
-                                    <li class="home">
+                                    <li >
                                         <a href="<?php echo base_url()?>Home"><?php echo $mn->menuName; ?></a>
 
                                         <ul class="submenu">
@@ -281,10 +281,10 @@
     <!--        <script>-->
     <!--            jQuery(document).ready(function() {-->
     <!--                var loc = window.location.href;-->
-    <!--                jQuery(".mainnav li").removeClass('active');-->
+    <!--                jQuery(".menu li").removeClass('active');-->
     <!--                jQuery(".menu li a").each(function() {-->
     <!--                    if (loc.indexOf(jQuery(this).attr("href")) != -1) {-->
-    <!--                        jQuery(this).parent('li').addClass("active");-->
+    <!--                        jQuery(this).closest('li').addClass("active");-->
     <!--                    }-->
     <!--                });-->
     <!--            });-->
@@ -292,18 +292,19 @@
 
 
     <!--<script>-->
-    <!--		$(function() {-->
+    <!--    $(function() {-->
     <!---->
-    <!--var pgurl = window.location.href;-->
+    <!--        var pgurl = window.location.href.-->
+    <!--        substr(window.location.href.lastIndexOf("/")+1);-->
     <!---->
     <!---->
-    <!--$(".mainnav li").each(function(){-->
+    <!--        $(".menu li").each(function(){-->
     <!---->
-    <!--if(pgurl==''){-->
-    <!--$(".mainnav li:eq(1)").addClass("active");-->
-    <!--}else-->
-    <!--if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')-->
-    <!--$(this).addClass("active");-->
-    <!--})-->
-    <!--});-->
+    <!--            if(pgurl==''){-->
+    <!--                $(".menu li:eq(1)").addClass("active");-->
+    <!--            }else-->
+    <!--            if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')-->
+    <!--                $(this).addClass("active");-->
+    <!--        })-->
+    <!--    });-->
     <!--</script>-->

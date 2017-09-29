@@ -208,15 +208,13 @@ class Photo extends CI_Controller
         for ($i = 0; $i < count($images); $i++) {
             if ($images[$i] != null) {
                 $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
-                //echo $ext;
-                // Using strtolower to overcome case sensitive
+
                 if (in_array($ext, $supported_image)) {
-                    //echo "it's image";
-                    //return true;
+
                 } else {
 
                     $error[$i]='Image ' . ($i + 1) . ' Was not in Correct Formate!!';
-                    //echo 'not image';
+
 
                 }
             }
