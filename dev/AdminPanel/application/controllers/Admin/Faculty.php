@@ -160,6 +160,7 @@ class Faculty extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Coursem->deleteCoursetoFaculty($id);
+            $this->session->set_flashdata('successMessage','Faculty Course Delated Successfully');
 
         }
         else{
@@ -246,19 +247,19 @@ class Faculty extends CI_Controller
     public function val_img_check()
     {
         $image = $_FILES['facultyImage']['name'];
-        if ($image != null) {
-            $this->load->library('upload');
-            $config['upload_path'] = "images/validation_Image(dump)/";
-            $config['allowed_types'] = 'jpg|png|jpeg|gif';
-            $config['overwrite'] = TRUE;
-            $this->upload->initialize($config);
+        $supported_image = array('gif','jpg','jpeg','png');
 
-            if (!$this->upload->do_upload('facultyImage')) {
-                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-                return false;
-            } else {
-                unlink(FCPATH."images/validation_Image(dump)/".$image);
+        if ($image != null) {
+            $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+
+            if (in_array($ext, $supported_image)) {
+                //echo "it's image";
                 return true;
+            } else {
+                $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                return false;
+                //echo 'not image';
+
             }
         }
     }

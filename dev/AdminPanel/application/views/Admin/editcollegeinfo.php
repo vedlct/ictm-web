@@ -25,7 +25,7 @@
                     <h3 class="page-header"><i class="fa fa-files-o"></i>College Info Edit</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
-                        <li><i class="icon_document_alt"></i>College Info</li>
+                        <li><i class="icon_document_alt"></i><a href="<?php echo base_url()?>Admin/CollegeInfo/createCollegeInfo">College Info</a></li>
 
                     </ol>
                 </div>
@@ -164,7 +164,9 @@
                                         </div>
                                     </div>
 
-
+                                    <div id="csrf">
+                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                    </div>
 
 
                                     <div class="form-group " align="center">

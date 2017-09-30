@@ -29,7 +29,15 @@
                                     <div class="col-md-12">
                                         <div class="content-pad single-course-detail">
                                                 <div class="content-content">
-                                                   
+
+                                                    <?php foreach ($aboutdata as $ad){
+                                                     echo  $ad->pageContent;
+                                                     if($ad->pageImage != null){?>
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $ad->pageImage?>" >
+                                                        <?php } else
+                                                     break;
+                                                    }
+                                                    ?>
 
                                                                 <ul style="margin-left:0px" class="nav nav-tabs">
                                                                  <?php foreach ($aboutdata as $ad) { ?>

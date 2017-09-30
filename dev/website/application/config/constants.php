@@ -133,4 +133,5 @@ define("SELECT_DEPARTMENT_HEAD", "Select Department Head");
 ////////////// For Photo /////////////////////
 define("SELECT_ALBUM", "Select Album");
 
+define("FOLDER_NAME", "AdminPanel");
 

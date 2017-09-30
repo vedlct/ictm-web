@@ -39,7 +39,7 @@ class Department extends CI_Controller
             if (!$this->form_validation->run('createDepartment')) {
 
 
-                $this->load->view('Admin/newDepartment',$this->data);
+                $this->load->view('Admin/newDepartment');
             }
             else {
 
@@ -225,22 +225,20 @@ class Department extends CI_Controller
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
-        $image = $_FILES["image"]["name"];
-        if (!empty($image)) {
-            $this->load->library('upload');
-            $config['upload_path'] = "images/validation_Image(dump)/";
-            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        $image = $_FILES['image']['name'];
+        $supported_image = array('gif','jpg','jpeg','png');
 
-//        $config['max_size']    = '2048000';
-            $config['overwrite'] = TRUE;
-            $this->upload->initialize($config);
+        if ($image != null) {
+            $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
-            if (!$this->upload->do_upload('image')) {
-                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-                return false;
-            } else {
-                unlink(FCPATH."images/validation_Image(dump)/".$image);
+            if (in_array($ext, $supported_image)) {
+                //echo "it's image";
                 return true;
+            } else {
+                $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                return false;
+                //echo 'not image';
+
             }
         }
     }

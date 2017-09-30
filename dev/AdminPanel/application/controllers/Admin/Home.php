@@ -9,7 +9,12 @@ class Home extends CI_Controller
 
     public function index()
     {
-        $this->load->view('Admin/home');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+            $this->load->view('Admin/home');
+        }
+        else{
+            redirect('Admin/Login');
+        }
     }
 
 }

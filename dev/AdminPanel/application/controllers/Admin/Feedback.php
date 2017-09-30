@@ -201,8 +201,7 @@ class Feedback extends CI_Controller
         $supported_image = array('gif','jpg','jpeg','png');
         if ($image != null) {
             $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
-            //echo $ext;
-            // Using strtolower to overcome case sensitive
+
             if (in_array($ext, $supported_image))
 
             {

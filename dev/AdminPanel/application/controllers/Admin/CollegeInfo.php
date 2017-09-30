@@ -6,10 +6,9 @@ class CollegeInfo extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-
         $this->load->model('Admin/CollegeInfom');
     }
-
+    //collegeInfo view
     public function createCollegeInfo(){
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -21,13 +20,14 @@ class CollegeInfo extends CI_Controller
             } else {
 
                 $this->data['infodata'] = $this->CollegeInfom->getinfodata();
-                $this->load->view('Admin/editcollegeinfo', $this->data);
+                $this->load->view('Admin/editCollegeinfo', $this->data);
             }
         }
         else{
             redirect('Admin/Login');
         }
     }
+    //create collegeInfo
     public function insertCollegeInfo()
     {
         $this->load->library('form_validation');
@@ -63,6 +63,7 @@ class CollegeInfo extends CI_Controller
             redirect('Admin/Login');
         }
     }
+    //edit collegeInfo
     public function editCollegeInfo($id)
     {
         $this->load->library('form_validation');
@@ -72,7 +73,7 @@ class CollegeInfo extends CI_Controller
             if (!$this->form_validation->run('CollegeInfo')) {
 
                 $this->data['infodata'] = $this->CollegeInfom->getinfodata();
-                $this->load->view('Admin/editcollegeinfo', $this->data);
+                $this->load->view('Admin/editCollegeinfo', $this->data);
 
             }
             else {

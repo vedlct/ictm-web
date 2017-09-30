@@ -297,40 +297,40 @@ class Photom extends CI_Model
 
 
     // show the PhotoImage for editPhoto
-    public function deletePhotoImage($id)
-    {
-        $this->db->select('p.albumId,a.albumTitle,p.photoName');
-        $this->db->where('photoId',$id);
-        $this->db->from('ictmphoto p');
-        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
-        $query = $this->db->get();
-        foreach ($query->result() as $image)
-        {
-            $photoImage=$image->photoName;
-            $photoAlbumTitle=$image->albumTitle;
-        }
-
-        unlink(FCPATH."images/photoAlbum/".$photoAlbumTitle."/".$photoImage);
-
-        $data = array(
-            'photoName'=>null,
-            'lastModifiedBy'=>$this->session->userdata('userEmail'),
-            'lastModifiedDate'=>date("Y-m-d H:i:s"),
-
-        );
-        $this->db->where('photoId',$id);
-        $error=$this->db->update('ictmphoto', $data);
-
-        if (empty($error))
-        {
-            return $this->db->error();
-        }
-        else
-        {
-            return $error=null;
-        }
-
-
-    }
+//    public function deletePhotoImage($id)
+//    {
+//        $this->db->select('p.albumId,a.albumTitle,p.photoName');
+//        $this->db->where('photoId',$id);
+//        $this->db->from('ictmphoto p');
+//        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
+//        $query = $this->db->get();
+//        foreach ($query->result() as $image)
+//        {
+//            $photoImage=$image->photoName;
+//            $photoAlbumTitle=$image->albumTitle;
+//        }
+//
+//        unlink(FCPATH."images/photoAlbum/".$photoAlbumTitle."/".$photoImage);
+//
+//        $data = array(
+//            'photoName'=>null,
+//            'lastModifiedBy'=>$this->session->userdata('userEmail'),
+//            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+//
+//        );
+//        $this->db->where('photoId',$id);
+//        $error=$this->db->update('ictmphoto', $data);
+//
+//        if (empty($error))
+//        {
+//            return $this->db->error();
+//        }
+//        else
+//        {
+//            return $error=null;
+//        }
+//
+//
+//    }
 
 }

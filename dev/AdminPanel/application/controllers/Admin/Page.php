@@ -238,21 +238,20 @@ class Page extends CI_Controller {
 /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
-        $image = $_FILES["image"]["name"];
+        $image = $_FILES['image']['name'];
+        $supported_image = array('gif','jpg','jpeg','png');
+
         if ($image != null) {
-            $this->load->library('upload');
-            $config['upload_path'] = "images/validation_Image(dump)/";
-            $config['allowed_types'] = 'jpg|png|jpeg|gif';
+            $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
-            $config['overwrite'] = TRUE;
-            $this->upload->initialize($config);
-
-            if (!$this->upload->do_upload('image')) {
-                $this->form_validation->set_message('val_img_check', $this->upload->display_errors());
-                return false;
-            } else {
-                unlink(FCPATH."images/validation_Image(dump)/".$image);
+            if (in_array($ext, $supported_image)) {
+                //echo "it's image";
                 return true;
+            } else {
+                $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                return false;
+                //echo 'not image';
+
             }
         }
     }

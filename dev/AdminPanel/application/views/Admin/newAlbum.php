@@ -64,7 +64,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="albumStatus">Menu Status<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2" for="albumStatus">Album Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('albumStatus'); ?></font></p>
                                             <select class="form-control m-bot15" name="albumStatus" id="albumStatus" required>

@@ -33,7 +33,7 @@ class Album extends CI_Controller
 
             if (!$this->form_validation->run('createAlbum')) {
 
-                $this->load->view('Admin/newMenu', $this->data);
+                $this->load->view('Admin/newAlbum');
             }
             else
             {
@@ -156,7 +156,8 @@ class Album extends CI_Controller
             redirect('Admin/Login');
         }
     }
-    /*---------for Manage Menu ----------end-------------*/
+    /*---------for Manage Album ----------end-------------*/
+
 /*--------------- callback albumTitle_check-------------*/
     public function AlbumeditUniqueCheck()
     {

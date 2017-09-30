@@ -1,3 +1,4 @@
+<div class="table-responsive">
 <table class="table table-striped table-advance table-bordered table-hover ">
     <tbody>
     <tr>
@@ -45,3 +46,4 @@
 
     </tbody>
 </table>
+</div>

@@ -158,8 +158,9 @@
                                         </div>
                                     </div>
 
-
-
+                                    <div id="csrf">
+                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                    </div>
 
                                     <div class="form-group " align="center">
                                         <div class="col-lg-10">

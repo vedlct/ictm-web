@@ -51,8 +51,9 @@
                                  <a href="<?php echo base_url()?>Admin/Album/newAlbum"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Album</button> </a>
                             </span>
                         </header>
-                        <div class="panel-body ">
-                            <table class="table table-striped table-advance  table-bordered table-hover ">
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped table-advance">
                                 <tbody>
                                 <tr>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Album Title</th>
@@ -108,6 +109,7 @@
 
                                 </tbody>
                             </table>
+                            </div>
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
                             </div>
@@ -135,6 +137,13 @@
 </body>
 </html>
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Album?")) {
             btn = $(x).data('panel-id');

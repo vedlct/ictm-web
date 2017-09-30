@@ -45,6 +45,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
+                            <div class="table-responsive">
                             <table class="table table-striped table-advance  table-bordered table-hover ">
                             <tbody>
                             <tr bgcolor="#D3D3D3">
@@ -96,6 +97,7 @@
 
                             </tbody>
                         </table>
+                            </div>
                         </div>
                     </section>
                 </div>

@@ -49,6 +49,7 @@
                             </span>
                         </header>
                         <div class="panel-body ">
+                            <div class="table table-responsive">
                             <table class="table  table-advance  table-bordered table-hover">
                                 <tbody>
 
@@ -107,6 +108,7 @@
 
                                 </tbody>
                             </table>
+                            </div>
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
                             </div>
@@ -133,6 +135,13 @@
 </body>
 </html>
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Affiliation?")) {
             btn = $(x).data('panel-id');

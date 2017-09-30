@@ -80,6 +80,13 @@
 <?php include ('js.php')?>
 
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function showtable() {
         var x = document.getElementById('albumId').value;
         $.ajax({

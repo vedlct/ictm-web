@@ -24,9 +24,9 @@
                 <div class="col-lg-12">
                     <h3 class="page-header"><i class="fa fa-table"></i> Feedback</h3>
                     <ol class="breadcrumb">
-                        <li><i class="fa fa-home"></i><a href="#">Home</a></li>
+                        <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Feedback</li>
-                        <li><i class="fa fa-th-list"></i>Manage Feedback</li>
+                        <li><i class="fa fa-th-list"></i><a href="<?php echo base_url()?>Admin/Feedback/manageFeedback">Manage Feedback</a></li>
                     </ol>
                 </div>
             </div>
@@ -49,6 +49,7 @@
                             </span>
                         </header>
                         <div class="panel-body ">
+                            <div class="table table-responsive">
                             <table class="table  table-advance  table-bordered table-hover">
                                 <tbody>
 
@@ -97,7 +98,10 @@
                                             </td>
 
                                             <td >
-                                                <?php echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($feedback->feedbackApprovedDate)),1)?>
+                                                <?php if($feedback->feedbackApprovedDate==""){echo"Pending !!";}
+                                                else{
+                                                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($feedback->feedbackApprovedDate)),1);
+                                                }?>
 
                                             </td>
 
@@ -136,6 +140,7 @@
 
                                 </tbody>
                             </table>
+                            </div>
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
                             </div>
@@ -162,6 +167,13 @@
 </body>
 </html>
 <script>
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Feedback?")) {
             btn = $(x).data('panel-id');
