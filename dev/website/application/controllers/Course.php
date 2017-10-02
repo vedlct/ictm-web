@@ -6,6 +6,12 @@ class Course extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Menum');
+        $this->load->model('Pagem');
+        $this->load->model('PageSectionm');
+        $this->load->model('Newsm');
+        $this->load->model('Eventm');
+        $this->load->model('Coursem');
 
 
     }
