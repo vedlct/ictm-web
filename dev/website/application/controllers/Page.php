@@ -41,7 +41,7 @@ class Page extends CI_Controller {
                 $this->data['termsdata']= $this->PageSectionm->getPageData($id);
                 $this->data['newsdata']= $this->Newsm->getNewsForTerms();
                 $this->data['eventdata']= $this->Eventm->getEventForTerms();
-                $this->data['coursedata']=$this->Coursem->getCourseForTerms();
+                $this->data['coursedata']=$this->Coursem->getCourseTitle();
 
                 $this->load->view('terms-conditions', $this->data);
 

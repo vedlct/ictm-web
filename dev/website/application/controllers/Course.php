@@ -7,16 +7,32 @@ class Course extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Menum');
-        $this->load->model('Pagem');
-        $this->load->model('PageSectionm');
         $this->load->model('Newsm');
         $this->load->model('Eventm');
         $this->load->model('Coursem');
+        $this->load->model('Departmentm');
 
 
     }
     public function index()
     {
-        $this->load->view('course-list');
+
+       // $this->load->view('course-list', $this->data);
+    }
+
+    public function courseList(){
+        $this->menu();
+        $this->data['coourselist']=$this->Coursem->getCourseTitle();
+        $this->data['departmentname']=$this->Departmentm->getDepartmentName();
+        $this->load->view('course-list', $this->data);
+    }
+    public function menu(){
+        $this->data['topmenu'] = $this->Menum->getTopMenu();
+        $this->data['mainmenu'] = $this->Menum->getMainMenu();
+        $this->data['keyinfo'] = $this->Menum->getkeyInfoMenu();
+        $this->data['quicklink'] = $this->Menum->getQuickLinksMenu();
+        $this->data['implink'] = $this->Menum->getImportantLinkMenu();
+        $this->data['bottom'] = $this->Menum->getBottomMenu();
+
     }
 }
