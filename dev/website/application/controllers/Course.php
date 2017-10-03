@@ -10,14 +10,16 @@ class Course extends CI_Controller {
         $this->load->model('Newsm');
         $this->load->model('Eventm');
         $this->load->model('Coursem');
+        $this->load->model('CourseSectionm');
         $this->load->model('Departmentm');
 
 
     }
+
     public function index()
     {
 
-       // $this->load->view('course-list', $this->data);
+
     }
 
     public function courseList(){
@@ -26,6 +28,16 @@ class Course extends CI_Controller {
         $this->data['departmentname']=$this->Departmentm->getDepartmentName();
         $this->load->view('course-list', $this->data);
     }
+
+    public function courseDetails($id){
+
+        $this->menu();
+        $this->data['coursedetail']= $this->Coursem->getCourseDetails($id);
+        $this->data['courseSectiondetail']= $this->CourseSectionm->getCourseSectionDetails($id);
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->load->view('course-detail', $this->data);
+    }
+
     public function menu(){
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['mainmenu'] = $this->Menum->getMainMenu();

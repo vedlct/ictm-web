@@ -31,8 +31,7 @@
                                         <div class="content-pad">
                                             <div class="item-thumbnail">
                                                 <a href="#">
-                                                    <img src="<?php echo base_url() ?>public/images/course/business.jpg"
-                                                         alt="image">
+                                                    <img src="<?php echo base_url() ?>public/images/course/business.jpg" alt="image">
                                                     <span class="thumbnail-overlay">September 3, 2017</span>
                                                 </a>
                                             </div>
@@ -48,7 +47,7 @@
                                                 <?php
                                                 foreach ($coourselist as $cl){
                                                 if ( $cl->departmentId == $dp->departmentId ){ ?>
-                                                <div class="shortcode-blog-excerpt"><strong><a href="course-detail.php">
+                                                <div class="shortcode-blog-excerpt"><strong><a href="<?php echo base_url()?>course-detail/<?php echo $cl->courseId?>">
                                                             <?php echo $cl->courseTitle ?></a></strong></div>
                                                 <?php } } ?>
 

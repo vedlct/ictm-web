@@ -12,10 +12,9 @@ class Coursem extends CI_Model
 
     }
 
-    public function getCourseList(){
-        $this->db->select('courseId,courseTitle,courseImage,academicYear,departmentId,departmentName');
-        $this->db->where('courseStatus', STATUS[0]);
-        $this->db->join('ictmdepartment', 'ictmdepartment.departmentId = ictmcourse.departmentId','left');
+    public function getCourseDetails($id){
+        $this->db->where('courseId =', $id);
+        $this->db->where('courseStatus =', STATUS[0]);
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
