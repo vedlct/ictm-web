@@ -52,7 +52,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <div class="table table-responsive">
                             <table class="table table-bordered table-hover table-striped table-advance">
                                 <tbody>
                                 <tr>

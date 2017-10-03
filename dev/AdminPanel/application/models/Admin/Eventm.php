@@ -44,6 +44,7 @@ class Eventm extends CI_Model
                 $config = array(
                     'upload_path' => "images/eventImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -128,6 +129,7 @@ class Eventm extends CI_Model
             $config = array(
                 'upload_path' => "images/eventImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
+                'max_size' => "1024*4",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,

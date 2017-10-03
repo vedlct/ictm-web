@@ -50,7 +50,7 @@
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('departmentName'); ?></font></p>
-                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo set_value('name'); ?>" type="text" required />
+                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo set_value('departmentName'); ?>" type="text" required />
                                         </div>
                                     </div>
 

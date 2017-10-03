@@ -192,10 +192,37 @@ class Affiliation extends CI_Controller
         }
     }
 
+    /*------------ for callback AffiliationTitleUniqueCheck ------------*/
+    public function AffiliationTitleUniqueCheck()
+    {
+        $affiliationTitle = $this->input->post("affiliationTitle");
+        $id=$this->uri->segment(4);
 
+        try
+        {
+            $this->data['checkAffiliationTitle'] = $this->Affiliationm->checkAffiliationTitleUnique($affiliationTitle,$id);
+
+            if (empty($this->data['checkAffiliationTitle'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('AffiliationTitleUniqueCheck', 'Affiliation Title Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('AffiliationTitleUniqueCheck', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+    }
+
+/* image validation---------------*/
     public function val_img_check()
     {
         $image = $_FILES['affiliationImage']['name'];
+        $imageSize = ($_FILES['affiliationImage']['size']/1024);
         $supported_image = array('gif','jpg','jpeg','png');
 
         if ($image != null) {
@@ -203,7 +230,14 @@ class Affiliation extends CI_Controller
 
             if (in_array($ext, $supported_image)) {
                 //echo "it's image";
-                return true;
+
+                if ($imageSize <4096){
+                    return true;
+                }
+                else{
+                    $this->form_validation->set_message('val_img_check', "Maximum Image Size 4MB is allowed!!");
+                    return false;
+                }
             } else {
                 $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;

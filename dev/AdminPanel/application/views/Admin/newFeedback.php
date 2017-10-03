@@ -48,13 +48,13 @@
                                 <form class="form-validate form-horizontal" id="CreateNewFeedback" method="POST" action="<?php echo base_url() ?>Admin/Feedback/createNewFeedback" onsubmit="return formvalidate()" enctype="multipart/form-data">
 
                                     <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Feedback By Name <span class="required">*</span></label>
+                                        <label for="feedbackByName" class="control-label col-lg-2">Person Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByName'); ?></font></p>
                                             <input class="form-control" id="feedbackByName" name="feedbackByName"  value="<?php echo set_value('feedbackByName'); ?>" type="text" required />
                                         </div>
 
-                                        <label for="feedbackByProfession" class="control-label col-lg-2">Feedback By Profession <span class="required">*</span></label>
+                                        <label for="feedbackByProfession" class="control-label col-lg-2">Person Designation <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByProfession'); ?></font></p>
                                             <input class="form-control" id="feedbackByProfession" name="feedbackByProfession"  value="<?php echo set_value('feedbackByProfession'); ?>" type="text" required />
@@ -64,7 +64,7 @@
 
 
                                     <div class="form-group ">
-                                        <label for="feedbackByImage" class="control-label col-lg-2">Feedback By Image </label>
+                                        <label for="feedbackByImage" class="control-label col-lg-2">Person Image </label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByImage'); ?></font></p>
                                             <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
@@ -81,6 +81,20 @@
                                                 <?php } ?>
                                             </select>
                                         </div>
+
+                                    </div>
+                                    <div class="form-group ">
+
+                                    <label class="control-label col-lg-2" for="feedbackSource">Feedback Source<span class="required">*</span></label>
+                                    <div class="col-lg-4">
+                                        <p><font color="red"> <?php echo form_error('feedbackSource'); ?></font></p>
+                                        <select class="form-control m-bot15" name="feedbackSource" id="feedbackSource" required>
+                                            <option value="" selected><?php echo SELECT_FEEDBACK_SOURCE ?></option>
+                                            <?php for ($i=0;$i<count(FEEDBACK_SOURCE);$i++){?>
+                                                <option <?php echo set_select('feedbackSource',  FEEDBACK_SOURCE[$i], False); ?>><?php echo FEEDBACK_SOURCE[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
 
                                     </div>
 
