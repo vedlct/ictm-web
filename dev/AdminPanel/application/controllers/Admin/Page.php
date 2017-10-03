@@ -239,7 +239,7 @@ class Page extends CI_Controller {
     public function val_img_check()
     {
         $image = $_FILES['image']['name'];
-        $imageSize = $_FILES['image']['size'];
+        $imageSize = ($_FILES['image']['size']/1024);
         $supported_image = array('gif','jpg','jpeg','png');
 
         if ($image != null) {

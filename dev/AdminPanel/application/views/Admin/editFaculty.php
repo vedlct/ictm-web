@@ -95,7 +95,7 @@
                                         <label for="faculty_image" class="control-label col-lg-2">Faculty Image</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('facultyImage'); ?></font></p>
-                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="facultyImage" id="facultyImage"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Faculty/showImageForEdit/<?php echo $editFaculty->facultyId?>" target="_blank"><span> <?php echo $editFaculty->facultyImage?></span></a>
                                             <?php if ($editFaculty->facultyImage!=null){?>

@@ -217,7 +217,7 @@ class News extends CI_Controller
     public function val_img_check()
     {
         $image = $_FILES['news_image']['name'];
-        $imageSize = $_FILES['news_image']['size'];
+        $imageSize = ($_FILES['news_image']['size']/1024);
         $supported_image = array('gif','jpg','jpeg','png');
 
         if ($image != null) {
