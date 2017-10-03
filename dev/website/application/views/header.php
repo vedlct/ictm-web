@@ -175,8 +175,8 @@
                                     </li>
                                     <?php
                                     foreach ($mainmenu as $mn) {
-                                        //echo $id = $mn->menuId;
-                                        //echo $mn->menuName; ?>
+                                        ?>
+
                                         <li >
                                             <a href="<?php echo base_url()?>Home"><?php echo $mn->menuName; ?></a>
 
