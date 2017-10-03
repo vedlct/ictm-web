@@ -78,6 +78,7 @@ class Coursem extends CI_Model
                 $config = array(
                     'upload_path' => "images/courseImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -222,7 +223,7 @@ class Coursem extends CI_Model
                     'upload_path' => "images/courseImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
                     'overwrite' => TRUE,
-
+                    'max_size' => "1024*4",
                     'remove_spaces'=>FALSE,
                     'mod_mime_fix'=>FALSE,
                     'file_name' => $id,

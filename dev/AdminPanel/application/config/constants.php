@@ -136,8 +136,9 @@ define("SELECT_ALBUM", "Select Album");
 
 ////////// For Feedback //////////////////////
 define("SELECT_FEEDBACK_APPROVE", "Select Feedback Approve");
+define("SELECT_FEEDBACK_SOURCE", "Select Feedback SOURCE");
 
-define("FEEDBACK_SOURCE",array ("Admin","User"));
+define("FEEDBACK_SOURCE",array ("Website","Facebook","Twitter","Youtube","LinkedIn","Google+","Application Form","Feedback Form","Other source"));
 
 
 

@@ -50,13 +50,19 @@
 
                                     <div class="form-group">
 
-                                        <label class="control-label col-lg-2" for="feedbackSource">Feedback Source <span class="required">*</span></label>
-                                        <div class="col-lg-4">
+                                            <label class="control-label col-lg-2" for="feedbackSource">Feedback Source<span class="required">*</span></label>
+                                            <div class="col-lg-4">
+                                                <p><font color="red"> <?php echo form_error('feedbackSource'); ?></font></p>
+                                                <select class="form-control m-bot15" name="feedbackSource" id="feedbackSource" required>
+                                                    <option value="" selected><?php echo SELECT_FEEDBACK_SOURCE ?></option>
+                                                    <?php for ($i=0;$i<count(FEEDBACK_SOURCE);$i++){?>
+                                                        <option value="<?php echo FEEDBACK_SOURCE[$i]?>" <?php if (!empty($editFeedback->feedbackSource) && $editFeedback->feedbackSource==FEEDBACK_SOURCE[$i])echo 'selected = "selected"'; ?>><?php echo FEEDBACK_SOURCE[$i]?></option>
+                                                    <?php } ?>
+                                                </select>
 
-                                            <p><font color="red"> <?php echo form_error('feedbackSource'); ?></font></p>
-                                            <input class="form-control" id="feedbackSource" name="feedbackSource"  value="<?php echo htmlspecialchars(stripslashes($editFeedback->feedbackSource))?>" type="text" required  readonly/>
+                                            </div>
 
-                                        </div>
+
 
                                         <label class="control-label col-lg-2" for="feedbackApprove">Feedback Approve<span class="required">*</span></label>
                                         <div class="col-lg-4">
@@ -91,7 +97,7 @@
                                         <label for="feedbackByImage" class="control-label col-lg-2">Feedback By Image </label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByImage'); ?></font></p>
-                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="feedbackByImage" id="feedbackByImage">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Feedback/showImageForEdit/<?php echo $editFeedback->feedbackId?>" target="_blank"><span> <?php echo $editFeedback->feedbackByPhoto?></span></a>
                                             <?php if ($editFeedback->feedbackByPhoto!=null){?>

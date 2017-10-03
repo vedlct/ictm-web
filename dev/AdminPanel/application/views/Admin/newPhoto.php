@@ -70,7 +70,7 @@
                                         <label for="facultyImage" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
 
-                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]"required>
 
                                         </div>
@@ -100,7 +100,7 @@
                                         <label for="facultyImage" class="control-label col-sm-2">Image 2</label>
                                         <div class="col-sm-4">
 
-                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
                                         </div>
 
@@ -132,7 +132,7 @@
                                         <label for="facultyImage" class="control-label col-sm-2">Image 3</label>
                                         <div class="col-sm-4">
 
-                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
                                         </div>
 
@@ -163,7 +163,7 @@
                                         <label for="facultyImage" class="control-label col-sm-2">Image 4</label>
                                         <div class="col-sm-4">
 
-                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]" >
                                         </div>
 
@@ -194,7 +194,7 @@
                                         <label for="facultyImage" class="control-label col-sm-2">Image 5</label>
                                         <div class="col-sm-4">
 
-                                            <span>Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
                                         </div>
 

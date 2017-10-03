@@ -24,56 +24,62 @@ class Photom extends CI_Model
                 $albumTitle = $album->albumTitle;
             }
         }
-
-        for ($i = 0; $i < count($images); $i++) {
-
-            if ($images[$i] != null) {
-
-                $data = array(
-                    'albumId' => $albumId,
-                    'photoDetails' => $photoDetails[$i],
-                    'photoStatus' => $photoStatus[$i],
-                    'insertedBy' => $this->session->userdata('userEmail'),
-                    'insertedDate' => date("Y-m-d H:i:s"),
-
-                );
-                $this->security->xss_clean($data);
-                $error =$this->db->insert('ictmphoto', $data);
-
-                $photoId = $this->db->insert_id();
-
-                $data1 = array(
-                    'photoName' => $photoId . "." . pathinfo($images[$i], PATHINFO_EXTENSION),
-                );
-
-                $data1 = $this->security->xss_clean($data1, true);
-                $this->db->where('photoId', $photoId);
-                $this->db->update('ictmphoto', $data1);
-
-                $_FILES['photoImage']['name'] = $files['photoImage']['name'][$i];
-                $_FILES['photoImage']['type'] = $files['photoImage']['type'][$i];
-                $_FILES['photoImage']['tmp_name'] = $files['photoImage']['tmp_name'][$i];
-                $_FILES['photoImage']['error'] = $files['photoImage']['error'][$i];
-                $_FILES['photoImage']['size'] = $files['photoImage']['size'][$i];
-
-                $this->load->library('upload');
-                $this->upload->initialize($this->set_upload_options($photoId,$albumTitle));
-
-                if (!$this->upload->do_upload('photoImage')){
-
-                    $error[$i]=$this->upload->display_errors();
-                    $data[$error[$i]];
-                }
-
-
-            }
+        $path   = 'images/photoAlbum/'.$albumTitle;
+        if (!is_dir($path)) {
+            return $error="Path not Found";
         }
-        if(!empty($data)){
-            echo "<script>
+        else {
+
+            for ($i = 0; $i < count($images); $i++) {
+
+                if ($images[$i] != null) {
+
+                    $data = array(
+                        'albumId' => $albumId,
+                        'photoDetails' => $photoDetails[$i],
+                        'photoStatus' => $photoStatus[$i],
+                        'insertedBy' => $this->session->userdata('userEmail'),
+                        'insertedDate' => date("Y-m-d H:i:s"),
+
+                    );
+                    $this->security->xss_clean($data);
+                    $error = $this->db->insert('ictmphoto', $data);
+
+                    $photoId = $this->db->insert_id();
+
+                    $data1 = array(
+                        'photoName' => $photoId . "." . pathinfo($images[$i], PATHINFO_EXTENSION),
+                    );
+
+                    $data1 = $this->security->xss_clean($data1, true);
+                    $this->db->where('photoId', $photoId);
+                    $this->db->update('ictmphoto', $data1);
+
+                    $_FILES['photoImage']['name'] = $files['photoImage']['name'][$i];
+                    $_FILES['photoImage']['type'] = $files['photoImage']['type'][$i];
+                    $_FILES['photoImage']['tmp_name'] = $files['photoImage']['tmp_name'][$i];
+                    $_FILES['photoImage']['error'] = $files['photoImage']['error'][$i];
+                    $_FILES['photoImage']['size'] = $files['photoImage']['size'][$i];
+
+                    $this->load->library('upload');
+                    $this->upload->initialize($this->set_upload_options($photoId, $albumTitle));
+
+                    if (!$this->upload->do_upload('photoImage')) {
+
+                        $error[$i] = $this->upload->display_errors();
+                        $data[$error[$i]];
+                    }
+
+
+                }
+            }
+            if (!empty($data)) {
+                echo "<script>
                     alert('Some thing Went Wrong !! Please Try Again!!');
                     window.location.href= '" . base_url() . "Admin/Photo/newPhoto';
                     </script>";
-            return false;
+                return false;
+            }
         }
     }
 
@@ -142,6 +148,7 @@ class Photom extends CI_Model
                 $config = array(
                     'upload_path' => "images/photoAlbum/" . $oldAlbumTitle . "/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -203,6 +210,7 @@ class Photom extends CI_Model
                 $config = array(
                     'upload_path' => "images/photoAlbum/" . $newalbumTitle . "/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,

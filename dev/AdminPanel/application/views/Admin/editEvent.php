@@ -98,7 +98,7 @@
                                         <label class="control-label col-lg-2" for="event_image">Event Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('event_image'); ?></font></p>
-                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="event_image" id="event_image"/>
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Event/showImageForEdit/<?php echo $editEvent->eventId?>" target="_blank"><span> <?php echo $editEvent->eventPhotoPath?></span></a>
                                             <?php if ($editEvent->eventPhotoPath!=null){?>

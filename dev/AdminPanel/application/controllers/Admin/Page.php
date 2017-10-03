@@ -239,6 +239,7 @@ class Page extends CI_Controller {
     public function val_img_check()
     {
         $image = $_FILES['image']['name'];
+        $imageSize = ($_FILES['image']['size']/1024);
         $supported_image = array('gif','jpg','jpeg','png');
 
         if ($image != null) {
@@ -246,7 +247,14 @@ class Page extends CI_Controller {
 
             if (in_array($ext, $supported_image)) {
                 //echo "it's image";
-                return true;
+                //return true;
+                if ($imageSize <4096){
+                    return true;
+                }
+                else{
+                    $this->form_validation->set_message('val_img_check', "Maximum Image Size 4MB is allowed!!");
+                    return false;
+                }
             } else {
                 $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;

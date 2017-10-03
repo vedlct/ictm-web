@@ -211,10 +211,19 @@ class Photo extends CI_Controller
 
                 if (in_array($ext, $supported_image)) {
 
+                    $imageSize = ($_FILES['photoImage']['size'][$i]/1024);
+
+                    if ($imageSize <2048){
+
+                    }
+                    else{
+                        $error[$i]='Image ' . ($i + 1) . ' Maximum Size 4MB is allowed!!';
+
+                    }
+
                 } else {
 
                     $error[$i]='Image ' . ($i + 1) . ' Was not in Correct Formate!!';
-
 
                 }
             }
@@ -234,6 +243,7 @@ class Photo extends CI_Controller
     public function val_img_check_fromEdit()
     {
         $image = $_FILES['photoImage']['name'];
+        $imageSize = ($_FILES['photoImage']['size']/1024);
         $supported_image = array('gif','jpg','jpeg','png');
 
             if ($image!= null) {
@@ -241,7 +251,14 @@ class Photo extends CI_Controller
 
                 if (in_array($ext, $supported_image)) {
                     //echo "it's image";
-                    return true;
+                    //return true;
+                    if ($imageSize <4096){
+                        return true;
+                    }
+                    else{
+                        $this->form_validation->set_message('val_img_check_fromEdit', "Maximum Image Size 4MB is allowed!!");
+                        return false;
+                    }
                 } else {
                     $this->form_validation->set_message('val_img_check_fromEdit', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                     return false;

@@ -80,6 +80,7 @@
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control"  type="file" name="image" />
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
                                             <?php if ($epd->pageImage!=null){?>
