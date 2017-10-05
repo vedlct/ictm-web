@@ -100,9 +100,13 @@ class Photo extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Photom->deletePhotobyId($photoId);
-            $this->session->set_flashdata('successMessage','Photo Deleted Successfully');
-
+            $error=$this->Photom->deletePhotobyId($photoId);
+            if ($error =='0'){
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+            }
+            else{
+                $this->session->set_flashdata('successMessage','Photo Deleted Successfully');
+            }
         }
         else{
             redirect('Admin/Login');
@@ -176,28 +180,7 @@ class Photo extends CI_Controller
         }
     }
 
-    //this function will delete the image in edit
-//    public function deletePhotoImage($id){
-//
-//        if ($this->session->userdata('type') == USER_TYPE[0]) {
-//
-//            $this->data['error'] = $this->Photom->deletePhotoImage($id);
-//
-//            if (empty($this->data['error'])) {
-//
-//                $this->session->set_flashdata('successMessage','Image Deleted Successfully');
-//                redirect('Admin/Photo/editPhotoView/'.$id);
-//            }
-//            else
-//            {
-//                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-//                redirect('Admin/Photo/editPhotoView/'.$id);
-//            }
-//        }
-//        else{
-//            redirect('Admin/Login');
-//        }
-//    }
+
 
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()

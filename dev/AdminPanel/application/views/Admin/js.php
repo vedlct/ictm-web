@@ -1,6 +1,4 @@
 <!-- javascripts -->
-<!--<script src="--><?php //echo base_url()?><!--public/js/jquery-1.8.3.min.js"></script>-->
-<!--<script src="--><?php //echo base_url()?><!--public/js/bootstrap.min.js"></script>-->
 <script src="<?php echo base_url()?>public/js/jquery-1.12.4.js"></script>
 <script src="<?php echo base_url()?>public/js/bootstrapV3.3.7.min.js"></script>
 <!-- nice scroll -->

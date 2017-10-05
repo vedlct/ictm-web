@@ -17,7 +17,7 @@
 
 <link href="<?php echo base_url()?>public/css/font-awesome.min.css" rel="stylesheet" />
 <link href="<?php echo base_url()?>public/css/elegant-icons-style.css" rel="stylesheet" />
-<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">-->
+
 
 
 <!-- Custom styles -->
@@ -37,7 +37,7 @@
 <!--[if lt IE 9]-->
 <script src="<?php echo base_url()?>public/js/html5shiv.js"></script>
 <script src="<?php echo base_url()?>public/js/respond.min.js"></script>
-<!--<script src="--><?php //echo base_url()?><!--public/js/lte-ie7.js"></script>-->
+
 <!--[endif]-->
 
 <script src="<?php echo base_url()?>public/js/jquery-1.12.4.js"></script>

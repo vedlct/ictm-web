@@ -69,9 +69,8 @@ class Affiliationm extends CI_Model
     /*---------for creating new Affiliation ---------end------------ */
 
     /*---------for Manage Affiliation -----------------------*/
+
     // for manage News Affiliation
-
-
     public function getAllforManageAffiliation($limit, $start) {
         $this->db->select('affiliationsId,affiliationsTitle,affiliationsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmaffiliations');
