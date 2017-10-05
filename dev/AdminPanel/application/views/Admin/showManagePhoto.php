@@ -58,9 +58,6 @@
     </tbody>
 </table>
 </div>
-<!--<div class="pagination2" align="center">-->
-<!--    <a href="#">--><?php //echo $links?><!--</a>-->
-<!--</div>-->
 
 <script>
     function selectid(x) {

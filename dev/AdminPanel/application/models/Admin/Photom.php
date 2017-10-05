@@ -102,8 +102,8 @@ class Photom extends CI_Model
     }
 
     /*---------for Manage Photo -----------------------*/
+    
     // for manage Photo view
-
     public function getAllforManagePhoto($id) {
 
         $this->db->select('p.photoId,p.albumId,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
@@ -299,46 +299,27 @@ class Photom extends CI_Model
     /*---------delete Photo -----------------*/
     public function deletePhotobyId($photoId) //delete Photo
     {
+        $this->db->select('p.albumId,a.albumTitle,p.photoName');
+        $this->db->where('photoId',$photoId);
+        $this->db->from('ictmphoto p');
+        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
+        $query = $this->db->get();
+        foreach ($query->result() as $photo){
+            $albumTitle=$photo->albumTitle;
+            $photoName=$photo->photoName;
+        }
+        $path   = 'images/photoAlbum/'.$albumTitle."/".$photoName;
+        if (!file_exists($path)){
+            return 0;
+        }
+        else{
+            unlink(FCPATH.$path);
             $this->db->where('photoId',$photoId);
             $this->db->delete('ictmphoto');
+
+        }
+
+
     }
-
-
-    // show the PhotoImage for editPhoto
-//    public function deletePhotoImage($id)
-//    {
-//        $this->db->select('p.albumId,a.albumTitle,p.photoName');
-//        $this->db->where('photoId',$id);
-//        $this->db->from('ictmphoto p');
-//        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
-//        $query = $this->db->get();
-//        foreach ($query->result() as $image)
-//        {
-//            $photoImage=$image->photoName;
-//            $photoAlbumTitle=$image->albumTitle;
-//        }
-//
-//        unlink(FCPATH."images/photoAlbum/".$photoAlbumTitle."/".$photoImage);
-//
-//        $data = array(
-//            'photoName'=>null,
-//            'lastModifiedBy'=>$this->session->userdata('userEmail'),
-//            'lastModifiedDate'=>date("Y-m-d H:i:s"),
-//
-//        );
-//        $this->db->where('photoId',$id);
-//        $error=$this->db->update('ictmphoto', $data);
-//
-//        if (empty($error))
-//        {
-//            return $this->db->error();
-//        }
-//        else
-//        {
-//            return $error=null;
-//        }
-//
-//
-//    }
 
 }

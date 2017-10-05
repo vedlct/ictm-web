@@ -104,7 +104,7 @@ class Albumm extends CI_Model
             $items_count = count($files_in_directory);
             if ($items_count <= 2)
             {
-                //$empty = true; // empty
+
                 $this->db->where('albumId',$albumId);
                 $this->db->delete('ictmalbum');
 
@@ -113,7 +113,7 @@ class Albumm extends CI_Model
                 return 0;
             }
             else {
-                //$empty = false; // not empty
+
                 return 1;
             }
 

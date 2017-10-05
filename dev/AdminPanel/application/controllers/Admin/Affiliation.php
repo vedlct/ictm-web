@@ -229,7 +229,7 @@ class Affiliation extends CI_Controller
             $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
             if (in_array($ext, $supported_image)) {
-                //echo "it's image";
+
 
                 if ($imageSize <4096){
                     return true;
@@ -241,7 +241,7 @@ class Affiliation extends CI_Controller
             } else {
                 $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;
-                //echo 'not image';
+
 
             }
         }
