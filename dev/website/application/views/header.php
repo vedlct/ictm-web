@@ -80,12 +80,15 @@
 
                                             switch ($tm->pageContent) {
                                                 case "course-list.php":
-                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                    echo 1;
+                                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
                                                 case "department.php":
+                                                    echo 2;
                                                     ?> <li><a href="<?php echo base_url()?>Department"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
-                                                case "":
+                                                case "dfg":
+                                                    echo 3;
                                                     ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
 
@@ -175,8 +178,8 @@
                                     </li>
                                     <?php
                                     foreach ($mainmenu as $mn) {
-                                        //echo $id = $mn->menuId;
-                                        //echo $mn->menuName; ?>
+                                        ?>
+
                                         <li >
                                             <a href="<?php echo base_url()?>Home"><?php echo $mn->menuName; ?></a>
 
@@ -195,7 +198,7 @@
 
                                                     switch ($q->pageContent) {
                                                         case "course-list.php":
-                                                            ?> <li><a href="<?php echo base_url()?>Course"><?php echo $q->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $q->menuName?></a></li> <?php
                                                             break;
                                                         case "department.php":
                                                             ?> <li><a href="<?php echo base_url()?>Department"><?php echo $q->menuName?></a></li> <?php
