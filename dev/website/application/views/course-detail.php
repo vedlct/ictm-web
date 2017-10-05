@@ -55,7 +55,7 @@
                         </div>
                         <?php  break ; } ?>
 
-                        <?php foreach ($courseSectiondetail as $csd) {?>
+                        <?php foreach ($courseSectiondetail as $csd) { ?>
                             <div class="tab-pane fade in " id="<?php echo $csd->courseSectionId ?>">
                                 <div class="course-detail-section">
                                     <h3><?php echo  $csd->courseSectionTitle?></h3>
@@ -67,8 +67,6 @@
                             <?php   } ?>
 
                     </div>
-               
-
 
                                                 </div><!--/content-content-->
                                             </div><!--/course-detail-->

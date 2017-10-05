@@ -28,7 +28,7 @@
                                             }
                                             ?>
                                             <div class="text">
-                                                <a href="<?php echo base_url()?>Course/<?php echo $cd->courseId ?>"><?php echo $cd->courseTitle ?></a>
+                                                <a href="<?php echo base_url()?>course-details/<?php echo $cd->courseId ?>"><?php echo $cd->courseTitle ?></a>
                                                 <p><?php echo $cd->academicYear ?></p>
                                             </div>
                                         </li>
