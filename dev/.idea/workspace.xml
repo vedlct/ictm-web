@@ -44,11 +44,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Page.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/application/controllers/Page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
+            <state relative-caret-position="236">
               <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="terms-conditions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/application/views/terms-conditions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-577">
+              <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="latest-news-sidebar.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/website/application/views/latest-news-sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="111" lean-forward="true" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="health-safety.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/website/application/views/health-safety.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="73" column="166" lean-forward="false" selection-start-line="73" selection-start-column="157" selection-end-line="73" selection-end-column="166" />
               <folding />
             </state>
           </provider>
@@ -57,8 +87,8 @@
       <file leaf-file-name="about.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/website/application/views/about.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+            <state relative-caret-position="357">
+              <caret line="45" column="90" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="45" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -127,8 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/Admin/editCourse.php" />
-        <option value="$PROJECT_DIR$/application/views/Admin/newCourseSection.php" />
         <option value="$PROJECT_DIR$/application/views/Admin/editEvent.php" />
         <option value="$PROJECT_DIR$/application/views/Admin/editNews.php" />
         <option value="$PROJECT_DIR$/application/views/Admin/newNews.php" />
@@ -178,6 +206,8 @@
         <option value="$PROJECT_DIR$/website/application/views/about.php" />
         <option value="$PROJECT_DIR$/website/application/models/PageSectionm.php" />
         <option value="$PROJECT_DIR$/website/application/controllers/Page.php" />
+        <option value="$PROJECT_DIR$/website/application/views/health-safety.php" />
+        <option value="$PROJECT_DIR$/website/application/views/terms-conditions.php" />
       </list>
     </option>
   </component>
@@ -392,12 +422,12 @@
       <workItem from="1506417144339" duration="1825000" />
       <workItem from="1506928649717" duration="941000" />
       <workItem from="1506932602596" duration="23000" />
-      <workItem from="1507218852666" duration="8248000" />
+      <workItem from="1507218852666" duration="10647000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398307000" />
+    <option name="totallyTimeSpent" value="400706000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
@@ -452,9 +482,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Admin/Facultym.php" />
-    <entry file="file://$PROJECT_DIR$/application/views/Admin/editDepartment.php" />
-    <entry file="file://$PROJECT_DIR$/application/views/Admin/newFeedback.php" />
     <entry file="file://$PROJECT_DIR$/application/config/constants.php" />
     <entry file="file://$PROJECT_DIR$/application/controllers/Admin/Event.php" />
     <entry file="file://$PROJECT_DIR$/application/views/Admin/editFeedback.php" />
@@ -590,6 +617,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/website/application/controllers/Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/application/views/about.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="45" column="90" lean-forward="false" selection-start-line="44" selection-start-column="58" selection-end-line="45" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/website/application/models/PageSectionm.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -598,18 +641,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/application/views/about.php">
+    <entry file="file://$PROJECT_DIR$/website/application/views/health-safety.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="72" column="71" lean-forward="false" selection-start-line="72" selection-start-column="71" selection-end-line="72" selection-end-column="71" />
+        <state relative-caret-position="425">
+          <caret line="73" column="166" lean-forward="false" selection-start-line="73" selection-start-column="157" selection-end-line="73" selection-end-column="166" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/website/application/controllers/Page.php">
+    <entry file="file://$PROJECT_DIR$/website/application/views/terms-conditions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="30" column="18" lean-forward="false" selection-start-line="30" selection-start-column="18" selection-end-line="30" selection-end-column="18" />
+        <state relative-caret-position="-577">
+          <caret line="41" column="52" lean-forward="false" selection-start-line="41" selection-start-column="52" selection-end-line="41" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/website/application/views/latest-news-sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="111" lean-forward="true" selection-start-line="10" selection-start-column="111" selection-end-line="10" selection-end-column="111" />
           <folding />
         </state>
       </provider>

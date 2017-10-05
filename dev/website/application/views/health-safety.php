@@ -31,9 +31,12 @@
                                                     <div class="menu-main-navigation-container">
                                                         <ul id="menu-main-navigation-1" class="menu">
 
-                                                            <?php foreach ($healthdata as $hd){
+                                                            <?php
+                                                            foreach ($healthdata as $ad) {}
+                                                            if ($ad->pageSectionId != null){
+                                                            foreach ($healthdata as $hd){
                                                                 ?><li class="menu-item"><a href="<?php echo "#".$hd->pageSectionId?>"><i class="fa fa-arrow-right" aria-hidden="true"></i> <?php echo $hd->pageSectionTitle?></a></li><?php
-                                                            }?>
+                                                            }}?>
 <!--                                                            <li class="menu-item"><a href="#s1"><i class="fa fa-arrow-right" aria-hidden="true"></i> Aims</a></li>   -->
 <!--                                                            <li class="menu-item"><a href="#s2"><i class="fa fa-arrow-right" aria-hidden="true"></i> Responsibilities of the College</a></li>         -->
 <!--                                                            <li class="menu-item"><a href="#s3"><i class="fa fa-arrow-right" aria-hidden="true"></i> Responsibilities of managers and supervisors</a></li>-->
@@ -63,23 +66,28 @@
                                                 <div class="content-content course-detail-section">
                                                     <?php
                                                     foreach ($healthdata as $hd){
-                                                        echo $hd->pageContent;
-                                                        if($hd->pageImage != null) {
-                                                            ?>
-                                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $hd->pageImage ?>">
+
+                                                        if ($hd->pageContent !=null){
+                                                            echo $hd->pageContent;
+                                                        }
+                                                        if($hd->pageImage != null) {?>
+                                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $hd->pageImage ?>">
                                                             <?php
-                                                        }else
+                                                        }
                                                         break;
                                                     }
                                                     ?>
+                                                    <br><br>
                                                     <?php
+                                                    foreach ($healthdata as $ad) {}
+                                                    if ($ad->pageSectionId != null){
                                                     foreach ($healthdata as $hd) {
                                                         ?>
                                                         <h3 id="<?php echo $hd->pageSectionId?>"><?php echo $hd->pageSectionTitle?></h3>
 
                                                         <?php
                                                         echo $hd->pageSectionContent;
-                                                    }
+                                                    }}
                                                     ?>
 <!--                                                    <h3 id="s2">-->
 <!--                      Responsibilities of the College</h3>-->

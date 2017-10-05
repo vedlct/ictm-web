@@ -30,17 +30,25 @@
                                         <div class="content-pad single-course-detail">
                                             <div class="course-detail">
                                                 <div class="content-content">
-                                                    <?php $count = 1; foreach ($termsdata as $td) {
-                                                        echo $td->pageContent;
+                                                    <?php
+                                                    $count = 1; foreach ($termsdata as $td) {
+
+                                                        if ($td->pageContent != null){
+                                                            echo $td->pageContent;
+                                                        }
                                                         if($td->pageImage != null){?>
-                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $td->pageContent?>"  >
-                                                        <?php }else ?>
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $td->pageImage?>"  >
+                                                        <?php }break;}?>
+                                                    <br><br>
+                                                    <?php
+                                                        foreach ($termsdata as $terms){}if ($terms->pageSectionId !=null){
+                                                            foreach ($termsdata as $td){?>
                                                         <h3 id="<?php echo $td->pageSectionId?>"><?php echo $count.". ".$td->pageSectionTitle?></h3>
                                                     <div class="course-detail-section">
                                                        <?php echo $td->pageSectionContent?>
                                                     </div>
 
-                                                    <?php $count++; } ?>
+                                                    <?php $count++; }} ?>
                                             </div><!--/course-detail-->
                                         </div><!--/single-content-detail-->         
                                     </div>
@@ -55,9 +63,12 @@
                                                     <a href="about.php"><h2 class="widget-title maincolor2" style="background:#841a29; text-align:center; color:#fff">Terms & Conditions</h2></a>
                                                     <div class="menu-main-navigation-container">
                                                         <ul id="menu-main-navigation-1" class="menu">
-                                                            <?php foreach ($termsdata as $td){?>
+                                                            <?php
+                                                            foreach ($termsdata as $ad) {}
+                                                            if ($ad->pageSectionId != null){
+                                                            foreach ($termsdata as $td){?>
                                                                 <li class="menu-item"><a href="<?php echo "#".$td->pageSectionId?>"><i class="fa fa-arrow-right" aria-hidden="true"></i><?php echo $td->pageSectionTitle?></a></li>
-                                                            <?php } ?>
+                                                            <?php }} ?>
 <!--                                                            <li class="menu-item"><a href="#s1"><i class="fa fa-arrow-right" aria-hidden="true"></i> Introduction</a></li>   -->
 <!--                                                            <li class="menu-item"><a href="#s2"><i class="fa fa-arrow-right" aria-hidden="true"></i> Applications</a></li>         -->
 <!--                                                            <li class="menu-item"><a href="#s3"><i class="fa fa-arrow-right" aria-hidden="true"></i> Immigration</a></li>-->
