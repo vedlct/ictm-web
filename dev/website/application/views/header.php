@@ -80,12 +80,15 @@
 
                                             switch ($tm->pageContent) {
                                                 case "course-list.php":
-                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                    echo 1;
+                                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
                                                 case "department.php":
+                                                    echo 2;
                                                     ?> <li><a href="<?php echo base_url()?>Department"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
-                                                case "":
+                                                case "dfg":
+                                                    echo 3;
                                                     ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
 
@@ -175,10 +178,10 @@
                                     </li>
                                     <?php
                                     foreach ($mainmenu as $mn) {
-                                        //echo $id = $mn->menuId;
-                                        //echo $mn->menuName; ?>
+                                        ?>
+
                                         <li >
-                                            <a href="<?php echo base_url()?>Home"><?php echo $mn->menuName; ?></a>
+                                            <a ><?php echo $mn->menuName; ?></a>
 
                                     <ul class="submenu">
                                             <?php
@@ -195,7 +198,7 @@
 
                                                     switch ($q->pageContent) {
                                                         case "course-list.php":
-                                                            ?> <li><a href="<?php echo base_url()?>Course"><?php echo $q->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $q->menuName?></a></li> <?php
                                                             break;
                                                         case "department.php":
                                                             ?> <li><a href="<?php echo base_url()?>Department"><?php echo $q->menuName?></a></li> <?php
@@ -300,34 +303,16 @@
             </div><!-- /.header-wrap-->
         </header><!-- /.header -->
 
-<!--        <script>-->
-<!--            jQuery(document).ready(function() {-->
-<!--                var loc = window.location.href;-->
-<!--                jQuery(".menu li").removeClass('active');-->
-<!--                jQuery(".menu li a").each(function() {-->
-<!--                    if (loc.indexOf(jQuery(this).attr("href")) != -1) {-->
-<!--                        jQuery(this).closest('li').addClass("active");-->
-<!--                    }-->
-<!--                });-->
-<!--            });-->
-<!--        </script>-->
+        <script>
+            jQuery(document).ready(function() {
+                var loc = window.location.href;
+                jQuery(".menu li").removeClass('active');
+                jQuery(".menu li a").each(function() {
+                    if (loc.indexOf(jQuery(this).attr("href")) != -1) {
+                        jQuery(this).parents('li').addClass("active");
+                    }
+                });
+            });
+        </script>
 
-
-<!--<script>-->
-<!--    $(function() {-->
-<!---->
-<!--        var pgurl = window.location.href.-->
-<!--        substr(window.location.href.lastIndexOf("/")+1);-->
-<!---->
-<!---->
-<!--        $(".menu li").each(function(){-->
-<!---->
-<!--            if(pgurl==''){-->
-<!--                $(".menu li:eq(1)").addClass("active");-->
-<!--            }else-->
-<!--            if($('a',this).attr("href") == pgurl || $('a', this).attr("href") == '')-->
-<!--                $(this).addClass("active");-->
-<!--        })-->
-<!--    });-->
-<!--</script>-->
 

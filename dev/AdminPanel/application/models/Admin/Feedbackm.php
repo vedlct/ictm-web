@@ -10,6 +10,7 @@ class Feedbackm extends CI_Model
         $feedbackByName = $this->input->post("feedbackByName");
         $feedbackByProfession = $this->input->post("feedbackByProfession");
         $feedbackStatus = $this->input->post("feedbackStatus");
+        $feedbackSource = $this->input->post("feedbackSource");
         $feedbackDetails = $this->input->post("feedbackDetails");
 
 
@@ -21,7 +22,7 @@ class Feedbackm extends CI_Model
             'feedbackApprovedBy'=>$this->session->userdata('userEmail'),
             'feedbackApprovedDate'=>date("Y-m-d H:i:s"),
             'feedbackApprove'=>SELECT_APPROVE[0],
-            'feedbackSource'=>FEEDBACK_SOURCE[0],
+            'feedbackSource'=>$feedbackSource,
             'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
         );
@@ -43,6 +44,7 @@ class Feedbackm extends CI_Model
                 $config = array(
                     'upload_path' => "images/feedbackImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces'=>FALSE,
                     'mod_mime_fix'=>FALSE,
@@ -147,6 +149,7 @@ class Feedbackm extends CI_Model
             $config = array(
                 'upload_path' => "images/feedbackImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
+                'max_size' => "1024*4",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,

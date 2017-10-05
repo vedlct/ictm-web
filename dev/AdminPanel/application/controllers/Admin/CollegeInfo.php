@@ -8,6 +8,7 @@ class CollegeInfo extends CI_Controller
         parent::__construct();
         $this->load->model('Admin/CollegeInfom');
     }
+
     //collegeInfo view
     public function createCollegeInfo(){
 

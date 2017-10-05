@@ -31,14 +31,19 @@
                                                 <div class="content-content">
 
                                                     <?php foreach ($aboutdata as $ad){
-                                                     echo  $ad->pageContent;
+                                                     //echo  $ad->pageContent;
+                                                     if ($ad->pageContent !=null){
+                                                         echo $ad->pageContent;
+                                                     }
                                                      if($ad->pageImage != null){?>
-                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $ad->pageImage?>" >
-                                                        <?php } else
+                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $ad->pageImage?>" >
+                                                        <?php };
                                                      break;
                                                     }
                                                     ?>
-
+                                                    <br><br>
+                                                    <?php foreach ($aboutdata as $ad) {}
+                                                        if ($ad->pageSectionId != null){?>
                                                                 <ul style="margin-left:0px" class="nav nav-tabs">
                                                                  <?php foreach ($aboutdata as $ad) { ?>
                                                                     <li class=""><a href="<?php echo "#".$ad->pageSectionId?>" data-toggle="tab"><?php echo $ad->pageSectionTitle?></a></li>
@@ -68,6 +73,7 @@
                                                                 <?php } ?>
 
                                                             </div>
+                                                    <?php }?>
                                                         
                                                                                    
                                                 </div><!--/content-content-->

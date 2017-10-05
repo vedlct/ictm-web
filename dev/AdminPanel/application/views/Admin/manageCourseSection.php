@@ -61,6 +61,8 @@
                             <div id="tableid" style="display: none">
 
                             </div>
+
+                        </div>
                     </section>
                 </div>
             </div>

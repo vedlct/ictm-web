@@ -25,9 +25,10 @@ class Page extends CI_Controller {
         foreach ($this->data['pagetype'] as $pt)
 
             if ($pt->pageType == 'About Type') {
-                //$this->data['aboutdata']= $this->Pagem->getPageData($id);
+
                 $this->data['aboutdata']= $this->PageSectionm->getPageData($id);
                 $this->load->view('about', $this->data);
+                //print_r($this->data['aboutdata']);
             }
             else if ($pt->pageType == 'Health Type') {
 

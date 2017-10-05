@@ -63,7 +63,7 @@
                                         <label class="control-label col-lg-2" for="news_image">News Photo</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('news_image'); ?></font></p>
-                                            <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                             <input class="form-control" type="file" name="news_image" id="news_image"/>
                                         </div>
 

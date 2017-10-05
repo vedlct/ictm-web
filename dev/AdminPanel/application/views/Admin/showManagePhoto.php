@@ -2,8 +2,8 @@
 <table class="table table-striped table-advance  table-bordered table-hover ">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Photo Title</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" >Album Title</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Photo</th>
+
         <th style="background-color: #394A59; color: whitesmoke; text-align: center" >Photo Status</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Photo Inserted By</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
@@ -15,8 +15,9 @@
 
 
             <tr align="center">
-                <td><?php echo $photo->photoName?></td>
-                <td><?php echo $photo->albumTitle?></td>
+                <td><img height="100px" width="100px" src = <?php echo base_url()?>images/photoAlbum/<?php echo $photo->albumTitle ?>/<?php echo $photo->photoName?>>
+                </td>
+
 
                 <td>
                     <?php echo $photo->photoStatus?>
@@ -57,9 +58,6 @@
     </tbody>
 </table>
 </div>
-<!--<div class="pagination2" align="center">-->
-<!--    <a href="#">--><?php //echo $links?><!--</a>-->
-<!--</div>-->
 
 <script>
     function selectid(x) {

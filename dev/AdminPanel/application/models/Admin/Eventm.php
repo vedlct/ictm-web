@@ -44,6 +44,7 @@ class Eventm extends CI_Model
                 $config = array(
                     'upload_path' => "images/eventImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -78,14 +79,7 @@ class Eventm extends CI_Model
     /*---------for creating new Event ---------end------------ */
 
     /*---------for Manage Event -----------------------*/
-//    public function getAllforManageEvent() // for manage Event view
-//    {
-//        $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,insertedBy,lastModifiedBy,lastModifiedDate');
-//        $this->db->from('ictmevent');
-//        $query1 = $this->db->get();
-//        return $query1->result();
-//
-//    }
+
     public function getAllforManageEvent($limit, $start) {  // for manage Event view
         $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmevent');
@@ -128,6 +122,7 @@ class Eventm extends CI_Model
             $config = array(
                 'upload_path' => "images/eventImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
+                'max_size' => "1024*4",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,

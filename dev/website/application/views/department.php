@@ -6,12 +6,16 @@
                 <div class="row">
                     <div class="col-md-12">                    
                         <div class="page-title-heading">
-                            <h2 class="title">Department of Business and Management Studies</h2>
+                            <?php foreach ($dDeteails as $dd) {?>
+                            <h2 class="title"><?php echo $dd->departmentName?></h2>
+                        <?php } ?>
                         </div>
                         <div class="breadcrumbs">
                             <ul>
+                                <?php foreach ($dDeteails as $dd) {?>
                                 <li class="home"><a href="#">Home </a></li>
-                                <li>\ Department of Business and Management Studies</li>
+                                <li>\ <?php echo $dd->departmentName?></li>
+                                <?php } ?>
                             </ul>                   
                         </div>                  
                     </div><!-- /.col-md-12 -->  
@@ -25,29 +29,29 @@
                     <div class="col-md-9">
 	
                         	<div class="course-detail-section content-dropcap">
-                             	<p>The Department of Business and Management focuses on offering quality undergraduate diploma in Business and Management studies.</p>
-                                <p>Students gain an in-depth knowledge of business organisation and operation. The HND programme has specialist units for Business Studies. Students may take the relevant units to gain specialisation in the respective areas.</p>
-                                <p>After successful completion of this HND programme at ICON College, students will be qualified to apply for a top-up degree at many UK universities (subject to acceptance).</p>
+                             	<?php foreach ($dDeteails as $dd) {?>
+                                    <?php echo $dd->departmentSummary?>
+                                <?php } ?>
                             </div>
                             
-                            <div class="table-responsive course-detail-section">
-                            	<table class="table table-bordered">
-                                	<thead>
-                                    	<tr>
-                                        	<th>Course Title</th>
-                                            <th>Awarding Body</th>
-                                            <th>Duration</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                    	<tr>
-                                        	<td><a href="course-detail.php">BTEC Level 5 HND in Business</a></td>
-                                            <td>Pearson</td>
-                                            <td>2 Years</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+<!--                            <div class="table-responsive course-detail-section">-->
+<!--                            	<table class="table table-bordered">-->
+<!--                                	<thead>-->
+<!--                                    	<tr>-->
+<!--                                        	<th>Course Title</th>-->
+<!--                                            <th>Awarding Body</th>-->
+<!--                                            <th>Duration</th>-->
+<!--                                        </tr>-->
+<!--                                    </thead>-->
+<!--                                    <tbody>-->
+<!--                                    	<tr>-->
+<!--                                        	<td><a href="course-detail.php">BTEC Level 5 HND in Business</a></td>-->
+<!--                                            <td>Pearson</td>-->
+<!--                                            <td>2 Years</td>-->
+<!--                                        </tr>-->
+<!--                                    </tbody>-->
+<!--                                </table>-->
+<!--                            </div>-->
 
                     </div><!-- /col-md-9 -->
 

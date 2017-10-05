@@ -5,7 +5,7 @@
     <div class="tp-banner" >
         <ul>
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url()?>public/images/slides/1.jpg" alt="slider-image">
+                <img src="<?php echo base_url()?>public/images/slides/1.JPG" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div class="title main-color-1 font-2">Do you have A levels but missed your Offer from University?</div>
@@ -16,7 +16,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url()?>public/images/slides/2.jpg" alt="slider-image">
+                <img src="<?php echo base_url()?>public/images/slides/2.JPG" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div class="title main-color-1 font-2" style="margin-top:-15px">Are you a mature student and have GCSEs and work experience?</div>
@@ -24,7 +24,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url()?>public/images/slides/3.jpg" alt="slider-image">
+                <img src="<?php echo base_url()?>public/images/slides/3.JPG" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div class="title main-color-1 font-2">Then, Achieve your Degree via HND at ICON College</div>

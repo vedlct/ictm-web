@@ -233,7 +233,7 @@
                                         <div class="col-lg-6">
                                             <label for="curl" class="control-label col-lg-2">Image</label>
                                             <div class="col-lg-10">
-                                                <span>Image Allowed Types:&nbsp;&nbsp;<strong>jpg/png/jpeg/gif </strong></span>
+                                                <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control " id="image" type="file" name="image"  />
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Course/showImageForEdit/<?php echo $cad->courseId?>" target="_blank"><span> <?php echo $cad->courseImage?></span></a>
                                                 <?php if ($cad->courseImage!=null){?>

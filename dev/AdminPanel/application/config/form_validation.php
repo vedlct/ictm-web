@@ -978,7 +978,10 @@ $config = array (
         array(
             'field' => 'affiliationTitle',
             'label' => 'Affiliation Title',
-            'rules' => 'required|max_length[100]|htmlspecialchars'
+            'rules' => 'required|max_length[100]|htmlspecialchars|is_unique[ictmaffiliations.affiliationsTitle]',
+            'errors'=> array(
+                'is_unique' => 'affiliationsTitle Allready Existed !! Please Write a Different Affiliation Title',
+            ),
         ),
         array(
             'field' => 'affiliationImage',
@@ -997,7 +1000,7 @@ $config = array (
         array(
             'field' => 'affiliationTitle',
             'label' => 'Affiliation Title',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|callback_AffiliationTitleUniqueCheck'
         ),
         array(
             'field' => 'affiliationImage',

@@ -33,6 +33,7 @@ class Affiliationm extends CI_Model
                 $config = array(
                     'upload_path' => "images/affiliationImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
+                    'max_size' => "1024*4",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -68,9 +69,8 @@ class Affiliationm extends CI_Model
     /*---------for creating new Affiliation ---------end------------ */
 
     /*---------for Manage Affiliation -----------------------*/
+
     // for manage News Affiliation
-
-
     public function getAllforManageAffiliation($limit, $start) {
         $this->db->select('affiliationsId,affiliationsTitle,affiliationsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmaffiliations');
@@ -116,6 +116,7 @@ class Affiliationm extends CI_Model
             $config = array(
                 'upload_path' => "images/affiliationImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
+                'max_size' => "1024*4",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
@@ -211,6 +212,18 @@ class Affiliationm extends CI_Model
         {
             return $error=null;
         }
+
+    }
+
+    /*----------- check AffiliationTitle Uniqueness ---- editAffiliation------------*/
+    public function checkAffiliationTitleUnique($affiliationTitle,$id)
+    {
+
+        $this->db->select('affiliationsTitle');
+        $this->db->where('affiliationsTitle',$affiliationTitle);
+        $this->db->where('affiliationsId !=', $id);
+        $query = $this->db->get('ictmaffiliations');
+        return $query->result();
 
     }
 

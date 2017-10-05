@@ -46,7 +46,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
-                            <div class="table-responsive">
+                            <div class="table table-responsive">
                             <table class="table table-advance  table-bordered table-hover">
                                 <tbody>
                                 <tr style="text-align: center" bgcolor="#D3D3D3">

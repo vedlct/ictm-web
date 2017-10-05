@@ -100,9 +100,13 @@ class Photo extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->Photom->deletePhotobyId($photoId);
-            $this->session->set_flashdata('successMessage','Photo Deleted Successfully');
-
+            $error=$this->Photom->deletePhotobyId($photoId);
+            if ($error =='0'){
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+            }
+            else{
+                $this->session->set_flashdata('successMessage','Photo Deleted Successfully');
+            }
         }
         else{
             redirect('Admin/Login');
@@ -176,28 +180,7 @@ class Photo extends CI_Controller
         }
     }
 
-    //this function will delete the image in edit
-//    public function deletePhotoImage($id){
-//
-//        if ($this->session->userdata('type') == USER_TYPE[0]) {
-//
-//            $this->data['error'] = $this->Photom->deletePhotoImage($id);
-//
-//            if (empty($this->data['error'])) {
-//
-//                $this->session->set_flashdata('successMessage','Image Deleted Successfully');
-//                redirect('Admin/Photo/editPhotoView/'.$id);
-//            }
-//            else
-//            {
-//                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-//                redirect('Admin/Photo/editPhotoView/'.$id);
-//            }
-//        }
-//        else{
-//            redirect('Admin/Login');
-//        }
-//    }
+
 
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
@@ -211,10 +194,19 @@ class Photo extends CI_Controller
 
                 if (in_array($ext, $supported_image)) {
 
+                    $imageSize = ($_FILES['photoImage']['size'][$i]/1024);
+
+                    if ($imageSize <2048){
+
+                    }
+                    else{
+                        $error[$i]='Image ' . ($i + 1) . ' Maximum Size 4MB is allowed!!';
+
+                    }
+
                 } else {
 
                     $error[$i]='Image ' . ($i + 1) . ' Was not in Correct Formate!!';
-
 
                 }
             }
@@ -234,28 +226,29 @@ class Photo extends CI_Controller
     public function val_img_check_fromEdit()
     {
         $image = $_FILES['photoImage']['name'];
-        $imageSize = ($_FILES['photoImage']['size'] / 1024);
+        $imageSize = ($_FILES['photoImage']['size']/1024);
         $supported_image = array('gif','jpg','jpeg','png');
 
-            if ($image!= null) {
-                $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
-                if (in_array($ext, $supported_image)) {
-                    //echo "it's image";
-                    //return true;
-                    if ($imageSize < 4096){
-                        return true;
-                    }
-                    else{
-                        $this->form_validation->set_message('val_img_check_fromEdit', "Maximum Image Size is 4MB !!");
-                        return false;
-                    }
-                } else {
-                    $this->form_validation->set_message('val_img_check_fromEdit', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
-                    return false;
-                    //echo 'not image';
+        if ($image!= null) {
+            $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
+            if (in_array($ext, $supported_image)) {
+                //echo "it's image";
+                //return true;
+                if ($imageSize <4096){
+                    return true;
                 }
+                else{
+                    $this->form_validation->set_message('val_img_check_fromEdit', "Maximum Image Size 4MB is allowed!!");
+                    return false;
+                }
+            } else {
+                $this->form_validation->set_message('val_img_check_fromEdit', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                return false;
+                //echo 'not image';
+
             }
+        }
     }
 
 }
