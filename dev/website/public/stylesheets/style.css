@@ -1324,7 +1324,8 @@ input[type="color"],
 
 .item-thumbnail img {
     width: 100%;
-    height: auto;
+    
+	height: 190px;
     transition: all .4s;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;

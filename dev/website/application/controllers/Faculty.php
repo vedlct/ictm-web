@@ -6,6 +6,8 @@ class Faculty extends CI_Controller {
         parent::__construct();
         $this->load->model('Menum');
         $this->load->model('Facultym');
+        $this->load->model('Coursem');
+        $this->load->model('Eventm');
 
     }
     public function index()
@@ -14,6 +16,8 @@ class Faculty extends CI_Controller {
     public function facultyList(){
         $this->menu();
         $this->data['facultylist']=$this->Facultym->getAllFacultyList();
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->data['eventdata']= $this->Eventm->getEventForTerms();
         $this->load->view('faculty-members', $this->data);
     }
     public function menu(){

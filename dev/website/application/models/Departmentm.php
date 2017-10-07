@@ -6,8 +6,6 @@ class Departmentm extends CI_Model
 
     public function getDepartmentName(){
 
-
-        $this->db->select('departmentId,departmentName');
         $this->db->select('departmentId,departmentName,departmentImage');
         $query = $this->db->get('ictmdepartment');
         return $query->result();
