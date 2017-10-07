@@ -180,19 +180,15 @@
                                     foreach ($mainmenu as $mn) {
                                         ?>
 
-                                        <li >
-                                            <a ><?php echo $mn->menuName; ?></a>
+                                        <li>
+                                            <a><?php echo $mn->menuName; ?></a>
+
 
                                     <ul class="submenu">
                                             <?php
-                                            $id = $mn->menuId;
-                                            $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ');
-                                            $this->db->where('menuType', MENU_TYPE[1]);
-                                            $this->db->where('menuStatus', STATUS[0]);
-                                            $this->db->where('parentId =', $id);
-                                            $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
-                                            $query = $this->db->get('ictmmenu');
-                                            foreach ($query->result() as $q) {
+
+                                            foreach ($parentmenu as $q) {
+                                                if ($q->parentId ==  $mn->menuId){
 
                                                 if ($q->pageType == 'Static Type') {
 
@@ -228,10 +224,7 @@
                                                         ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><?php echo $q->menuName ?></a> </li> <?php
                                                     }
                                                 }
-
-//                                                 ?><!--<li><a href="--><?php //echo base_url()?><!--Home">--><?php //echo $q->menuName; ?><!--</a></li>-->
-                                                <?php
-                                            }
+                                            } }
                                             ?>
                                         </ul>
                                         </li>
