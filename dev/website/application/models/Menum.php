@@ -56,11 +56,21 @@ class Menum extends CI_Model
         return $query->result();
     }
 
-    public function getParentMenu($id){
+//    public function getParentMenu($id){
+//        $this->db->select('menuId, menuName, parentId ');
+//        $this->db->where('menuType', MENU_TYPE[1]);
+//        $this->db->where('menuStatus', STATUS[0]);
+//        $this->db->where('parentId =', $id);
+//        $query = $this->db->get('ictmmenu');
+//        return $query->result();
+//
+//    }
+
+    public function getParentMenu(){
         $this->db->select('menuId, menuName, parentId ');
         $this->db->where('menuType', MENU_TYPE[1]);
         $this->db->where('menuStatus', STATUS[0]);
-        $this->db->where('parentId =', $id);
+        $this->db->where('parentId =', null);
         $query = $this->db->get('ictmmenu');
         return $query->result();
 
