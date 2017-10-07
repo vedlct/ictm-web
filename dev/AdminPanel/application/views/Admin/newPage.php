@@ -151,6 +151,7 @@
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 <script>
+
     function checkPageType() {
         var pagetype = document.getElementById("pagetype").value;
 
