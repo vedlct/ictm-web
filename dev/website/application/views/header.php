@@ -206,6 +206,9 @@
                                                         case "":
                                                             ?> <li><a href="<?php echo base_url()?>Course"><?php echo $q->menuName?></a></li> <?php
                                                             break;
+                                                        case "faculty-members.php":
+                                                            ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
 
                                                         default:
 

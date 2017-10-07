@@ -24,20 +24,21 @@
                 <div class="row">
                     <div class="col-md-9">
                     	<div class="row">
+                            <?php foreach ($facultylist as $listOfFaculty){?>
                         	<div class="col-md-3">
                             	<div class="project-listing">
                                     <div class="project-portfolio v1">
                                         <div class="item">
                                             <div class="thumb-item">
                                                 <div class="item-thumbnail">
-                                                    <a href="faculty-member-detail.php"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
+                                                    <a href="faculty-member-detail.php"><img height="360px" width="360px" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
                                                 </div><!-- /item-thumbnail -->
         
                                                 <div class="item-content">
                                                     <h3 class="item-title">
-                                                        <a href="faculty-member-detail.php">Professor Nurun Nabi</a>
+                                                        <a href="faculty-member-detail.php"><?php echo $listOfFaculty->facultyTitle." ".$listOfFaculty->facultyFirstName." ".$listOfFaculty->facultyLastName;?></a>
                                                     </h3>
-                                                    <h4 class="small-text">Principal</h4>
+                                                    <h4 class="small-text"><?php echo str_replace(","," AND<br>",$listOfFaculty->facultyPosition);?></h4>
                                                     <ul class="list-inline social-light">
                                                         <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
                                                         <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -49,84 +50,8 @@
                                      </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                            	<div class="project-listing">
-                                    <div class="project-portfolio v1">
-                                        <div class="item">
-                                            <div class="thumb-item">
-                                                <div class="item-thumbnail">
-                                                    <a href="faculty-member-detail.php"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
-                                                </div><!-- /item-thumbnail -->
-        
-                                                <div class="item-content">
-                                                    <h3 class="item-title">
-                                                        <a href="faculty-member-detail.php">Professor Reza Joadat</a>
-                                                    </h3>
-                                                    <h4 class="small-text">Vice Principal, Head of Quality and Enhancement</h4>
-                                                    <ul class="list-inline social-light">
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div><!-- /item-content -->
-                                            </div><!-- /thumb-item -->
-                                        </div><!-- /item -->
-                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                            	<div class="project-listing">
-                                    <div class="project-portfolio v1">
-                                        <div class="item">
-                                            <div class="thumb-item">
-                                                <div class="item-thumbnail">
-                                                    <a href="faculty-member-detail.php"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
-                                                </div><!-- /item-thumbnail -->
-        
-                                                <div class="item-content">
-                                                    <h3 class="item-title">
-                                                        <a href="faculty-member-detail.php">Mr. Azizur Rahman</a>
-                                                    </h3>
-                                                    <h4 class="small-text">Director of Admissions and Senior Lecturer in IT</h4>
-                                                    <ul class="list-inline social-light">
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div><!-- /item-content -->
-                                            </div><!-- /thumb-item -->
-                                        </div><!-- /item -->
-                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                            	<div class="project-listing">
-                                    <div class="project-portfolio v1">
-                                        <div class="item">
-                                            <div class="thumb-item">
-                                                <div class="item-thumbnail">
-                                                    <a href="faculty-member-detail.php"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
-                                                </div><!-- /item-thumbnail -->
-        
-                                                <div class="item-content">
-                                                    <h3 class="item-title">
-                                                        <a href="faculty-member-detail.php">Mr Nazim Saleem</a>
-                                                    </h3>
-                                                    <h4 class="small-text">Head of Hospitality and Tourism</h4>
-                                                    <ul class="list-inline social-light">
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div><!-- /item-content -->
-                                            </div><!-- /thumb-item -->
-                                        </div><!-- /item -->
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="row">
+                            <?php } ?>
+
                         	<div class="col-md-3">
                             	<div class="project-listing">
                                     <div class="project-portfolio v1">
@@ -152,56 +77,7 @@
                                      </div>
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                            	<div class="project-listing">
-                                    <div class="project-portfolio v1">
-                                        <div class="item">
-                                            <div class="thumb-item">
-                                                <div class="item-thumbnail">
-                                                    <a href="faculty-member-detail.php"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
-                                                </div><!-- /item-thumbnail -->
-        
-                                                <div class="item-content">
-                                                    <h3 class="item-title">
-                                                        <a href="faculty-member-detail.php">Dr. Gilbert Zvobgo</a>
-                                                    </h3>
-                                                    <h4 class="small-text">Programme Manager of Business and Management</h4>
-                                                    <ul class="list-inline social-light">
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div><!-- /item-content -->
-                                            </div><!-- /thumb-item -->
-                                        </div><!-- /item -->
-                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                            	<div class="project-listing">
-                                    <div class="project-portfolio v1">
-                                        <div class="item">
-                                            <div class="thumb-item">
-                                                <div class="item-thumbnail">
-                                                    <a href="faculty-member-detail.php"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
-                                                </div><!-- /item-thumbnail -->
-        
-                                                <div class="item-content">
-                                                    <h3 class="item-title">
-                                                        <a href="faculty-member-detail.php">Dr. Oluwatosin Alo</a>
-                                                    </h3>
-                                                    <h4 class="small-text">Senior Lecturer in Health and Social Care</h4>
-                                                    <ul class="list-inline social-light">
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                        <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-envelope"></i></a></li>
-                                                    </ul>
-                                                </div><!-- /item-content -->
-                                            </div><!-- /thumb-item -->
-                                        </div><!-- /item -->
-                                     </div>
-                                </div>
-                            </div>
+
                             <div class="col-md-3">
                             	<div class="project-listing">
                                     <div class="project-portfolio v1">
