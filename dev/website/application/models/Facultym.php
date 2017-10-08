@@ -8,10 +8,10 @@ class Facultym extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
-    public function getCourseDetails($id){
-        $this->db->where('courseId =', $id);
-        $this->db->where('courseStatus =', STATUS[0]);
-        $query = $this->db->get('ictmcourse');
+    public function getfacultyDetails($id){
+        $this->db->where('facultyId', $id);
+        //$this->db->where('facultyStatus', STATUS[0]);
+        $query = $this->db->get('ictmfaculty');
         return $query->result();
     }
 }

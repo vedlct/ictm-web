@@ -20,6 +20,12 @@ class Faculty extends CI_Controller {
         $this->data['eventdata']= $this->Eventm->getEventForTerms();
         $this->load->view('faculty-members', $this->data);
     }
+    public function facultyDetails($id){
+        $this->menu();
+        $this->data['facultydetails']= $this->Facultym->getfacultyDetails($id);
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->load->view('faculty-member-detail',$this->data);
+    }
     public function menu(){
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();

@@ -6,7 +6,9 @@
                 <div class="row">
                     <div class="col-md-12">                    
                         <div class="page-title-heading">
-                            <h2 class="title">Professor Nurun Nabi</h2>
+                            <?php foreach ($facultydetails as $facultyinfo) { ?>
+                            <h2 class="title"><?php echo $facultyinfo->facultyTitle." ".$facultyinfo->facultyFirstName." ".$facultyinfo->facultyLastName;?></h2>
+                            <?php }?>
                         </div>
                         <div class="breadcrumbs">
                             <ul>
@@ -24,37 +26,43 @@
             <div class="container">
                 <div class="row">
                     <div class="member-single">
+
                         <div class="col-md-9">
+                            <?php foreach ($facultydetails as $facultyinfo) {?>
                             <div class="member-single-post">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="item-thumbnail">
-                                            <a href="#"><img src="images/faculty-members/dummy_profile.png" alt="image"></a>
+                                            <?php if ($facultyinfo->facultyImage !=null){?>
+                                                <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
+                                            <?php }else{?>
+                                                    <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
+                                                <?php } ?>
                                         </div>
                                     </div>
 
                                     <div class="col-md-8">
                                         <div class="content-pad">
                                             <div class="item-content">
-                                                <h3 class="item-title">Professor Nurun Nabi</h3>
-                                                <h4 class="small-text">Principal</h4>
-                                                <p>BCom Honours, M.Com; MBA(Henley at Oxon); PhD, FInstLM(Lond), MPDSE</p>
+                                                <h3 class="item-title"><?php echo $facultyinfo->facultyTitle." ".$facultyinfo->facultyFirstName." ".$facultyinfo->facultyLastName;?></h3>
+                                                <h4 class="small-text"><?php echo str_replace(","," , ",$facultyinfo->facultyPosition);?></h4>
+                                                <p><?php echo str_replace(","," , ",$facultyinfo->facultyDegree);?></p>
                                                 <div class="member-tax ">
-                                                	<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure.</p>
-                                                    <p>To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure.</p>
+                                                    <?php echo $facultyinfo->facultyIntro;?>
                                                 </div>
                                                 
                                                 
                                                 <ul class="list-inline social-light">
-                                                    <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-twitter"></i></a></li>
-                                                    <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-linkedin"></i></a></li>
-                                                    <li><a class="btn btn-default social-icon" href="#"><i class="fa fa-envelope"></i></a></li>
+                                                    <li><a class="btn btn-default social-icon" target="_blank" href="<?php echo $facultyinfo->facultyTwitter;?>"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a class="btn btn-default social-icon" target="_blank" href="<?php echo $facultyinfo->facultyLinkedIn;?>"><i class="fa fa-linkedin"></i></a></li>
+                                                    <li><a class="btn btn-default social-icon" target="_blank" href="<?php echo $facultyinfo->facultyEmail;?>"><i class="fa fa-envelope"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div><!--/content-pad-->
                                     </div><!--/col-md-8-->
                                 </div><!--/row-->
                             </div><!--/member-single-post-->
+                            <?php }?>
 
                             <div class="course-list-table">
                                 <div class="flat-all-course v1 v2">
