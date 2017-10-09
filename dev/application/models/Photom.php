@@ -20,9 +20,18 @@ class Photom extends CI_Model
 //        $this->db->from('ictmalbum');
 //        $this->db->where('homeStatus',SELECT_APPROVE[0]);
 //        $query = $this->db->get();
-//        foreach ($query->result() as $album){
 //
+//        foreach ($query->result() as $album){
+//            $albumId=$album->albumId;
+//            $albumTitle=$album->albumTitle;
+//
+//            $this->db->select('photoName,albumId');
+//            $this->db->from('ictmphoto');
+//            $this->db->where('albumId',$albumId);
+//            $this->db->limit(3);
+//            $query1 = $this->db->get();
 //        }
+//        return array('photo' => $query1->result(),'albumTitle' => $albumTitle);
 
     }
 
