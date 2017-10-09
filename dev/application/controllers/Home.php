@@ -7,12 +7,16 @@ class Home extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Menum');
+        $this->load->model('CollegeInfom');
+        $this->load->model('Photom');
 
     }
 
     public function index()
     {
         $this->menu();
+
+        //print_r($this->data['photoGalleryForFooter']);
         $this->load->view('home', $this->data);
     }
 
@@ -24,6 +28,8 @@ class Home extends CI_Controller {
         $this->data['quicklink'] = $this->Menum->getQuickLinksMenu();
         $this->data['implink'] = $this->Menum->getImportantLinkMenu();
         $this->data['bottom'] = $this->Menum->getBottomMenu();
+        $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
+        $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
 
     }
 }

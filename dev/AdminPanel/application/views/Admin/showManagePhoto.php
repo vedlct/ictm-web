@@ -15,7 +15,7 @@
 
 
             <tr align="center">
-                <td><img height="100px" width="100px" src = <?php echo base_url()?>images/photoAlbum/<?php echo $photo->albumTitle ?>/<?php echo $photo->photoName?>>
+                <td><img height="100px" width="100px" src = "<?php echo base_url()?>images/photoAlbum/<?php echo $photo->albumTitle?>/<?php echo $photo->photoName?>">
                 </td>
 
 

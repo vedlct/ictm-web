@@ -80,16 +80,18 @@
                                                     <th>Start Date</th>
                                                 </tr>
                                             </thead>
+
                                             <tbody>
                                             <?php foreach ($facultyCourseData as $facultyAllCourse){?>
                                                 <tr>
-                                                    <td><a href="#"><?php echo $facultyAllCourse->courseCodePearson?> </a></td>
-                                                    <td><a href="#"><?php echo $facultyAllCourse->courseTitle?></a></td>
-                                                    <td><?php echo $facultyAllCourse->courseDuration?></td>
+                                                    <td><a href="#"><?php echo $facultyAllCourse->courseCodePearson;?></a></td>
+                                                    <td><a href="<?php echo base_url()?>course-details/<?php echo $facultyAllCourse->courseId ?>"><?php echo $facultyAllCourse->courseTitle;?></a></td>
+                                                    <td><?php echo $facultyAllCourse->courseDuration;?></td>
                                                     <td></td>
                                                 </tr>
                                             <?php } ?>
                                             </tbody>
+
                                         </table>
                                     </div>
                                 </div><!-- /flat-list-table -->

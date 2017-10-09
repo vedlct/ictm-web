@@ -10,6 +10,7 @@ class Course extends CI_Controller {
         $this->load->model('Coursem');
         $this->load->model('CourseSectionm');
         $this->load->model('Departmentm');
+        $this->load->model('CollegeInfom');
     }
     public function index()
     {
@@ -35,5 +36,6 @@ class Course extends CI_Controller {
         $this->data['quicklink'] = $this->Menum->getQuickLinksMenu();
         $this->data['implink'] = $this->Menum->getImportantLinkMenu();
         $this->data['bottom'] = $this->Menum->getBottomMenu();
+        $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
     }
 }

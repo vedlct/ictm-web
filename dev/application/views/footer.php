@@ -131,70 +131,36 @@
                                 <div class=" widget-inner">
                                     <h2 class="widget-title maincolor1">CONTACT</h2>
                                     <div class="textwidget">
-                                        <p>ICON College of Technology and Management<br>
-                                        Unit 21-22, 1-13 Adler Street,<br> 
-                                        London E1 1EG<br> 
-                                        United Kingdom<br> 
-                                        Tel: +44 20 7377 2800<br>
-                                        Fax: +44 20 7377 0822<br> 
-                                        E-mail: <a href="mailto:info@iconcollege.com?Subject=Hello" target="_top">info@iconcollege.com</a></p>
+                                        <?php foreach ($contact as $contactInfo){?>
+                                        <p><?php echo $contactInfo->collegeName;?> <br>
+                                        <?php echo $contactInfo->collegeAddress;?> <br>
+                                        Tel: <?php echo $contactInfo->collegeTelephone1;?><br>
+                                        Fax: <?php echo $contactInfo->collegeFax;?><br>
+                                        E-mail: <a href="mailto:<?php echo $contactInfo->collegeEmail;?>" target="_top"><?php echo $contactInfo->collegeEmail;?></a></p>
+                                        <?php } ?>
                                     </div>
+
                                 </div>
                             </div>
 
                             <div class=" col-md-3  widget widget-flickr">
                                 <div class=" widget-inner">
                                     <h2 class="widget-title maincolor1">Photo Gallery</h2>
+
                                     <ul class="clearfix">
+                                        <?php foreach ($photoGalleryForFooter as $photoGallery){?>
                                         <li class="last">
                                             <div class="thumb images-hover">
                                                 <div class="overlay"></div>
                                                 <a href="#">
-                                                    <span><img src="<?php echo base_url()?>public/images/flickr/1.jpg" alt="image"></span>
+                                                    <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery->albumTitle?>/<?php echo $photoGallery->photoName?>"></span>
                                                 </a>
                                             </div>
                                         </li>
-                                        <li class="last">
-                                            <div class="thumb images-hover">
-                                                <div class="overlay"></div>
-                                                <a href="#">
-                                                    <span><img src="<?php echo base_url()?>public/images/flickr/2.jpg" alt="image"></span>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li class="last">
-                                            <div class="thumb images-hover">
-                                                <div class="overlay"></div>
-                                                <a href="#">
-                                                    <span><img src="<?php echo base_url()?>public/images/flickr/3.jpg" alt="image"></span>
-                                                </a>
-                                            </div>
-                                        </li>                            
-                                        <li>
-                                            <div class="thumb images-hover images-hover">
-                                                <div class="overlay"></div>
-                                                <a href="#">
-                                                    <span><img src="<?php echo base_url()?>public/images/flickr/4.jpg" alt="image"></span>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="thumb images-hover">
-                                                <div class="overlay"></div>
-                                                <a href="#">
-                                                    <span><img src="<?php echo base_url()?>public/images/flickr/5.jpg" alt="image"></span>
-                                                </a>
-                                            </div>
-                                        </li>
-                                        <li class="last">
-                                            <div class="thumb images-hover">
-                                                <div class="overlay"></div>
-                                                <a href="#">
-                                                    <span><img src="<?php echo base_url()?>public/images/flickr/6.jpg" alt="image"></span>
-                                                </a>
-                                            </div>
-                                        </li>
+                                        <?php } ?>
+
                                     </ul>
+
                                 </div>
                             </div>
                         </div>
@@ -259,33 +225,35 @@
                             <span style="font-size:11px">© 2017 <a href="#">Icon College</a> - All rights reserved. | Website Designed & Developed by: <a target="_blank" href="http://a2ninfotech.co.uk/">A2N Info Tech Ltd</a>.</span>
                         </div>
                         <nav class="col-md-6 footer-social">
+                            <?php foreach ($contact as $contactInfo){?>
                             <ul class="social-list">
                                 <li>
-                                    <a href="#" class="btn btn-default social-icon">
+                                    <a target="_blank" href="<?php echo $contactInfo->collegeFacebook;?>" class="btn btn-default social-icon">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default social-icon">
+                                    <a target="_blank" href="<?php echo $contactInfo->collegeYoutube;?>" class="btn btn-default social-icon">
                                         <i class="fa fa-youtube"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default social-icon">
+                                    <a target="_blank" href="<?php echo $contactInfo->collegeTwitter;?>" class="btn btn-default social-icon">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default social-icon">
+                                    <a target="_blank" href="<?php echo $contactInfo->collegeGoogle;?>" class="btn btn-default social-icon">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="btn btn-default social-icon">
+                                    <a target="_blank" href="<?php echo $contactInfo->collegeLinkedIn;?>" class="btn btn-default social-icon">
                                         <i class="fa fa-linkedin" aria-hidden="true"></i>
                                     </a>
                                 </li>
                             </ul>
+                            <?php } ?>
                         </nav>
                     </div><!--/row-->
                 </div><!--/container-->

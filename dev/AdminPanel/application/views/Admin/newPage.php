@@ -80,7 +80,7 @@
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
                                              <p><font color="red"> <?php echo form_error('content'); ?></font></p>
-                                             <textarea class="form-control ckeditor" name="content" rows="6" ><?php echo set_value('content'); ?></textarea>
+                                             <textarea class="form-control ckeditor" name="ckcontent" rows="6" ><?php echo set_value('content'); ?></textarea>
                                          </div>
 
                                         </div>

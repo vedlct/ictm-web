@@ -216,8 +216,8 @@
             alert( 'Please enter a valid Phone number!!' );
             return false;
         }
-        if(phone1.length >45) {
-            alert( 'Phone number must be less than 45 charecter!!' );
+        if(phone1.length >20) {
+            alert( 'Phone number must be less than 20 charecter!!' );
             return false;
         }
 
@@ -225,8 +225,8 @@
             alert( 'Please enter a valid Phone number!!' );
             return false;
         }
-        if(phone2!=null && phone2.length >45) {
-            alert( 'Phone number must be less than 45 charecter!!' );
+        if(phone2!=null && phone2.length >20) {
+            alert( 'Phone number must be less than 20 charecter!!' );
             return false;
         }
 

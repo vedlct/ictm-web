@@ -85,28 +85,21 @@
                                     </div>
 
 
-<!--                                    <div class="form-group ">-->
-<!---->
-<!--                                            <label class="control-label col-sm-2">Content</label>-->
-<!--                                            <div class="col-sm-10">-->
-<!--                                                <p><font color="red"> --><?php //echo form_error('content'); ?><!--</font></p>-->
-<!--                                                <textarea class="form-control ckeditor" name="content" rows="6">--><?php //echo $epd->	pageContent?><!--</textarea>-->
-<!--                                            </div>-->
-<!--                                    </div>-->
 
                                     <div class="form-group " id="ckeditorContent">
                                         <label class="control-label col-sm-2">Content</label>
                                         <div class="col-sm-10">
                                             <p><font color="red"> <?php echo form_error('content'); ?></font></p>
-                                            <textarea class="form-control ckeditor" name="content" rows="6" ><?php echo $epd->	pageContent; ?></textarea>
+                                            <textarea class="form-control ckeditor" name="ckContent" rows="6" ><?php echo $epd->pageContent; ?></textarea>
                                         </div>
 
                                     </div>
+
                                     <div class="form-group " id="normalContent" style="display: none">
                                         <label class="control-label col-sm-2">Content</label>
                                         <div class="col-sm-10">
                                             <p><font color="red"> <?php echo form_error('content'); ?></font></p>
-                                            <textarea class="form-control" name="content" rows="6" ><?php echo $epd->	pageContent; ?></textarea>
+                                            <textarea class="form-control" name="content" rows="6" ><?php echo $epd->pageContent; ?></textarea>
                                         </div>
 
                                     </div>
