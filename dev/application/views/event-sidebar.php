@@ -14,7 +14,7 @@
                                                } else {
                                                    ?>
                                                    <a href="">
-                                                       <img src="<?php echo base_url() ?>AdminPanel/images/eventImages/<?php echo $ed->eventPhotoPath?>"
+                                                       <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/eventImages/<?php echo $ed->eventPhotoPath?>"
                                                             alt="image" style="width: 80px; height: 80px">
                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                        <div class="thumbnail-hoverlay-cross"></div>
