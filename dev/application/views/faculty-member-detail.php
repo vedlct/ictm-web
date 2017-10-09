@@ -34,9 +34,9 @@
                                     <div class="col-md-4">
                                         <div class="item-thumbnail">
                                             <?php if ($facultyinfo->facultyImage !=null){?>
-                                                <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
+                                                <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
                                             <?php }else{?>
-                                                    <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
+                                                    <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
                                                 <?php } ?>
                                         </div>
                                     </div>

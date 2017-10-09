@@ -71,7 +71,7 @@
                                                             echo $hd->pageContent;
                                                         }
                                                         if($hd->pageImage != null) {?>
-                                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $hd->pageImage ?>">
+                                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $hd->pageImage ?>">
                                                             <?php
                                                         }
                                                         break;

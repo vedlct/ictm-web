@@ -37,7 +37,7 @@
                                                             echo $td->pageContent;
                                                         }
                                                         if($td->pageImage != null){?>
-                                                        <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $td->pageImage?>"  >
+                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $td->pageImage?>"  >
                                                         <?php }break;}?>
                                                     <br><br>
                                                     <?php

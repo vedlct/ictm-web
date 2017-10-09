@@ -33,12 +33,12 @@
                                     if ($dp->departmentImage == null){ ?>
 
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>">
-                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/departmentImages/NoImage.jpg" alt="image">
+                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/NoImage.jpg" alt="image">
                                             <span class="thumbnail-overlay">September 3, 2017</span>
                                         </a>
                                     <?php } else { ?>
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>">
-                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/departmentImages/<?php echo $dp->departmentImage; ?>" alt="image">
+                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/<?php echo $dp->departmentImage; ?>" alt="image">
                                             <span class="thumbnail-overlay">September 3, 2017</span>
                                         </a>
                                     <?php } ?>

@@ -7,7 +7,7 @@
                                                     ?>
                                                     <div class="thumb item-thumbnail">
                                                         <a href="#">
-                                                            <img src="<?php echo base_url() ?>../<?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"
+                                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"
                                                                  alt="image" style="width: 80px; height: 80px">
                                                             <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                             <div class="thumbnail-hoverlay-cross"></div>
@@ -18,7 +18,7 @@
                                                     ?>
                                                     <div class="thumb item-thumbnail">
                                                         <a href="#">
-                                                            <img src="<?php echo base_url() ?>../AdminPanel/images/newsImages/<?php echo $nd->newsPhoto?>"
+                                                            <img src="<?php echo base_url() ?>AdminPanel/images/newsImages/<?php echo $nd->newsPhoto?>"
                                                                  alt="image" style="width: 80px; height: 80px">
                                                             <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                             <div class="thumbnail-hoverlay-cross"></div>
