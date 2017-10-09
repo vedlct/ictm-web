@@ -346,62 +346,33 @@
                 <div class="col-md-8 col-sm-8">
                     <div class="flat-accordion">
                         <div class="name-toggle">
-                            <h2 class="title">Event/News</h2>
+                            <h2 class="title">News</h2>
                         </div>
+                        <?php foreach ($news as $n) {?>
                         <div class="flat-toggle">
-                            <div class="toggle-title active">Open Days for September 2017 Semester<br><span style="font-size:13px">[ 29 July, 2017 ]</span></div>
+                            <div class="toggle-title "><?php echo $n->newsTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($n->newsDate)) ?></span></div>
                             <div class="toggle-content">
-                                <p>Join us for our latest open day and explore ICON campus. It’s the ideal way to experience a taste of student life in the heart of the city. Register for the Open Day.</p>
+                                <?php echo  substr($n->newsContent, 0, 350);?>
                                 <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
                             </div>
                         </div><!-- /toggle -->
+                        <?php } ?>
+                        <br>
+                        <div class="name-toggle">
+                            <h2 class="title">Event</h2>
+                        </div>
+                        <?php foreach ($events as $e) {?>
                         <div class="flat-toggle">
-                            <div class="toggle-title">Hospitality Management Trip to Hilton Worldwide<br><span style="font-size:13px">[ 15 May, 2017 ]</span></div>
+                            <div class="toggle-title"><?php echo $e->eventTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($e->eventStartDate)) ?></span></div>
                             <div class="toggle-content">
                                 <div class="info">
-                                    <p class="desc-info">Our Hospitality Management students were treated to another insightful day trip by Chris Davies; this time to Hilton Worldwide’s head branch in Greater London.</p>
+                                    <p class="desc-info"> <?php echo  substr($e->eventContent, 0, 350);?></p>
                                     <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
                                 </div>
                             </div>
-                        </div><!-- /.toggle -->
-                        <div class="flat-toggle">
-                            <div class="toggle-title">ICON Student Experience team leads the way for the National Student Survey (NSS)<br><span style="font-size:13px">[ 28 March, 2017 ]</span></div>
-                            <div class="toggle-content">
-                                <div class="info">
-                                    <p class="desc-info">The implementation of the NSS campaign at St Patrick’s is a team effort – involving students alongside academic and administrative staff – whose activities are coordinated by the Student Experience Department. Amol Gurung is the College’s Director of Student Experience:</p>
-                                    <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
-                                </div>
-                            </div>
-                        </div><!-- /.toggle -->
-                        <div class="flat-toggle">
-                            <div class="toggle-title">ICON Students attend International Space Olympics<br><span style="font-size:13px">[ 14 February, 2017 ]</span></div>
-                            <div class="toggle-content">
-                                <div class="info">
-                                    <p class="desc-info">Held in Korolyov, Russia during October, ICON College two students, Bridgette Jones and Vladislavs Kurtenoks, were part of a 20-strong team of Leicester pupils to travel to Russia to take part in the XXI International Space Olympics. There were more than 150 participants from as far afield as the USA, Israel and Greece, and the students had to present technical, social or economic projects based on space exploration to a prestigious panel, sit exams in specialist subjects and embark on trips and social events.</p>
-                                    <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
-                                </div>
-                            </div>
-                        </div><!-- /.toggle -->
-
-                        <div class="flat-toggle">
-                            <div class="toggle-title">The London Job Show<br><span style="font-size:13px">[ 29 September, 2017 ]</span></div>
-                            <div class="toggle-content">
-                                <div class="info">
-                                    <p class="desc-info">The London Job Show showcases thousands of employment & training opportunities. Entrance to the event is FREE for visitors and provides the ideal opportunity for employers and employees to meet.</p>
-                                    <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
-                                </div>
-                            </div>
-                        </div><!-- /.toggle -->
-
-                        <div class="flat-toggle">
-                            <div class="toggle-title">Skills London 2017<br><span style="font-size:13px">[ 24 November, 2017 ]</span></div>
-                            <div class="toggle-content">
-                                <div class="info">
-                                    <p class="desc-info">Skills London is London’s biggest jobs and careers event for young people. Skills London 2017 will take place on 24-25 November at ExCeL, London.</p>
-                                    <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
-                                </div>
-                            </div>
-                        </div><!-- /.toggle -->
+                        </div>
+                        <!-- /.toggle -->
+                        <?php } ?>
                     </div><!-- /.accordion -->
                 </div><!--/col-md-6 col-sm-6 -->
 
@@ -552,21 +523,11 @@
 <div class="container">
     <div class="row">
         <div class=" bottom-logo-slider owl-carousel owl-theme">
+            <?php foreach ($affiliation as $af) {?>
             <div class="item">
-                <img src="<?php echo base_url()?>public/images/bottom-logos/BTEC_logo.jpg" alt="image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/affiliationImages/<?php echo $af->AffiliationsPhotoPath?>" alt="image">
             </div>
-            <div class="item">
-                <img src="<?php echo base_url()?>public/images/bottom-logos/HEFCE.jpg" alt="image">
-            </div>
-            <div class="item">
-                <img src="<?php echo base_url()?>public/images/bottom-logos/QAA-Logo-237x99.png" alt="image">
-            </div>
-            <div class="item">
-                <img src="<?php echo base_url()?>public/images/bottom-logos/sfe_logo-126x99.png" alt="image">
-            </div>
-            <div class="item">
-                <img src="<?php echo base_url()?>public/images/bottom-logos/slc.jpg" alt="image">
-            </div>
+            <?php } ?>
         </div>
         <script>
             $(document).ready(function() {

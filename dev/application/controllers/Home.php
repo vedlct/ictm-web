@@ -6,6 +6,7 @@ class Home extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('Homem');
         $this->load->model('Menum');
 
     }
@@ -13,6 +14,9 @@ class Home extends CI_Controller {
     public function index()
     {
         $this->menu();
+        $this->data['news'] = $this->Homem->getNews();
+        $this->data['events'] = $this->Homem->getEvents();
+        $this->data['affiliation'] = $this->Homem->getAffiliations();
         $this->load->view('home', $this->data);
     }
 

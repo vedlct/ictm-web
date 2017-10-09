@@ -94,6 +94,8 @@
 <!--                                            </div>-->
 <!--                                    </div>-->
 
+
+
                                     <div class="form-group " id="ckeditorContent">
                                         <label class="control-label col-sm-2">Content</label>
                                         <div class="col-sm-10">
@@ -102,6 +104,7 @@
                                         </div>
 
                                     </div>
+
                                     <div class="form-group " id="normalContent" style="display: none">
                                         <label class="control-label col-sm-2">Content</label>
                                         <div class="col-sm-10">
