@@ -40,7 +40,7 @@ $config = array (
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
         ),
     /*---------------- for menu edit-------------*/
@@ -70,7 +70,7 @@ $config = array (
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for Page create-------------*/
@@ -106,7 +106,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for Page edit-------------*/
@@ -140,7 +140,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for pageSection create-------------*/
@@ -160,7 +160,7 @@ $config = array (
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for pageSection edit-------------*/
@@ -173,7 +173,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Page Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for faculty create-------------*/
@@ -226,17 +226,17 @@ $config = array (
         array(
             'field' => 'facultyTwitter',
             'label' => 'Twitter',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]'
         ),
         array(
             'field' => 'facultyLinkedin',
             'label' => 'LinkedIn',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]'
         ),
         array(
             'field' => 'facultyStatus',
             'label' => 'Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
         array(
             'field' => 'facultyCourses[]',
@@ -296,17 +296,17 @@ $config = array (
         array(
             'field' => 'faculty_twitter',
             'label' => 'Twitter',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]'
         ),
         array(
             'field' => 'faculty_linkedin',
             'label' => 'LinkedIn',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]'
         ),
         array(
             'field' => 'faculty_status',
             'label' => 'Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
         array(
             'field' => 'faculty_intro',
@@ -407,7 +407,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Course Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
         array(
             'field' => 'department',
@@ -508,7 +508,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Course Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
         array(
             'field' => 'department',
@@ -537,7 +537,7 @@ $config = array (
         array(
             'field' => 'status[]',
             'label' => 'Course Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -552,7 +552,7 @@ $config = array (
         array(
             'field' => 'status',
             'label' => 'Course Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -579,7 +579,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for Edit Department-------------*/
@@ -603,7 +603,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for Create Event-------------*/
@@ -645,7 +645,7 @@ $config = array (
         array(
             'field' => 'eventStatus',
             'label' => 'Event Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
 
     ),
@@ -688,7 +688,7 @@ $config = array (
         array(
             'field' => 'eventStatus',
             'label' => 'Event Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
 
     ),
@@ -710,13 +710,13 @@ $config = array (
         array(
             'field' => 'college_tel1',
             'label' => 'College Telephone 1',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[20]',
 
         ),
         array(
             'field' => 'college_tel2',
             'label' => 'College Telephone 2',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[45]',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[20]',
 
         ),
         array(
@@ -764,7 +764,7 @@ $config = array (
         array(
             'field' => 'college_status',
             'label' => 'College Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
 
     ),
@@ -799,7 +799,7 @@ $config = array (
         array(
             'field' => 'newsStatus',
             'label' => 'News Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -829,7 +829,7 @@ $config = array (
         array(
             'field' => 'newsStatus',
             'label' => 'News Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -848,7 +848,7 @@ $config = array (
         array(
             'field' => 'photoStatus[]',
             'label' => 'Image',
-            'rules' => 'max_length[50]'
+            'rules' => 'max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -867,7 +867,7 @@ $config = array (
         array(
             'field' => 'photoStatus',
             'label' => 'Image',
-            'rules' => 'max_length[50]'
+            'rules' => 'max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -890,7 +890,7 @@ $config = array (
         array(
             'field' => 'albumStatus',
             'label' => 'Album Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
 
     ),
@@ -910,7 +910,7 @@ $config = array (
         array(
             'field' => 'albumStatus',
             'label' => 'Album Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
 
     ),
@@ -935,7 +935,7 @@ $config = array (
         array(
             'field' => 'feedbackStatus',
             'label' => 'feedback Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -959,7 +959,7 @@ $config = array (
         array(
             'field' => 'feedbackStatus',
             'label' => 'feedback Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
         array(
             'field' => 'feedbackSource',
@@ -969,7 +969,7 @@ $config = array (
         array(
             'field' => 'feedbackApprove',
             'label' => 'feedback Approve',
-            'rules' => 'required|max_length[20]'
+            'rules' => 'required|max_length[20]|in_list['.SELECT_APPROVE[0].','.SELECT_APPROVE[1].']'
         ),
     ),
 
@@ -991,7 +991,7 @@ $config = array (
         array(
             'field' => 'affiliationStatus',
             'label' => 'Affiliation Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 
@@ -1010,7 +1010,7 @@ $config = array (
         array(
             'field' => 'affiliationStatus',
             'label' => 'Affiliation Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
 );

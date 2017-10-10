@@ -6,10 +6,18 @@ class Pagem extends CI_Model
     public function insertPage() // creates a new page in database
     {
         $title = $this->input->post("title");
-        $content = $this->input->post("content");
+        $pagetype = $this->input->post("pagetype");
+
+        if ($pagetype == PAGE_TYPE[4] || $pagetype== PAGE_TYPE[3]){
+            $content = $this->input->post("content");
+        }
+        else{
+            $content = $this->input->post("ckcontent");
+        }
+
         $keywords = $this->input->post("keywords");
         $metadata = $this->input->post("metadata");
-        $pagetype = $this->input->post("pagetype");
+
         $status = $this->input->post("status");
         $image=$_FILES['image']['name'];
 
@@ -155,8 +163,15 @@ class Pagem extends CI_Model
         $title = $this->input->post("title");
         $keywords = $this->input->post("keywords");
         $metadata = $this->input->post("metadata");
-        $content = $this->input->post("content");
+
         $pagetype = $this->input->post("pagetype");
+
+        if ($pagetype == PAGE_TYPE[4] || $pagetype== PAGE_TYPE[3]){
+            $content = $this->input->post("content");
+        }
+        else{
+            $content = $this->input->post("ckContent");
+        }
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
 

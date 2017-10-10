@@ -52,6 +52,7 @@ class Page extends CI_Controller {
                 }
 
             }
+
         }
         else{
             redirect('Admin/Login');
@@ -124,6 +125,7 @@ class Page extends CI_Controller {
 
                 }
             }
+
         }
         else{
             redirect('Admin/Login');
