@@ -19,6 +19,8 @@ class Home extends CI_Controller {
         $this->data['news'] = $this->Homem->getNews();
         $this->data['events'] = $this->Homem->getEvents();
         $this->data['affiliation'] = $this->Homem->getAffiliations();
+        $this->data['feedback'] = $this->Homem->getFeedback();
+        $this->data['home'] = $this->Homem->getHomeAlldata();
         $this->load->view('home', $this->data);
     }
 

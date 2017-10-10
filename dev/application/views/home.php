@@ -4,11 +4,13 @@
 <div class="tp-banner-container">
     <div class="tp-banner" >
         <ul>
+
+            <?php foreach ($home as $hm) {?>
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url()?>public/images/slides/1.JPG" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage1?>" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
-                    <div class="title main-color-1 font-2">Do you have A levels but missed your Offer from University?</div>
+                    <div class="title main-color-1 font-2"><?php echo $hm->slideText1;?></div>
                 </div>
 
                 <!-- arrow code in "revolution-slider.css:2438". its hidden now -->
@@ -16,20 +18,21 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url()?>public/images/slides/2.JPG" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage2?>" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
-                    <div class="title main-color-1 font-2" style="margin-top:-15px">Are you a mature student and have GCSEs and work experience?</div>
+                    <div class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText2;?></div>
                 </div>
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url()?>public/images/slides/3.JPG" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage3?>" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
-                    <div class="title main-color-1 font-2">Then, Achieve your Degree via HND at ICON College</div>
+                    <div class="title main-color-1 font-2"><?php echo $hm->slideText3;?></div>
                 </div>
             </li>
+            <?php } ?>
         </ul>
     </div>
 </div> <!-- /.tp-banner-container -->
@@ -406,96 +409,24 @@
                     <div class="flat-causes">
                         <div class="featured-causes" data-item="3" data-nav="false"
                              data-dots="false" data-auto="false">
+
+                            <?php foreach ($feedback as $fb) { ?>
                             <div class="item">
                                 <div class="text">
-                                    <p style="color:#fff">I have really enjoyed the course, and my tutor has provided really useful feedback through all the lessons.</p>
-                                </div>
-
-                                <div class="title-testimonial">
-                                    <div class="thumb-title">
-                                        <img src="<?php echo base_url()?>public/images/member/doe.PNG" alt="image">
-                                    </div>
-                                    <div class="post-title">
-                                        <h6 class="title-post">John Doe</h6>
-                                        <span>Student</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="text">
-                                    <p style="color:#fff">I've certainly learnt a lot from the course and I'm looking forward to taking that learning forward into the future.</p>
+                                    <p style="color:#fff"><?php echo $fb->feedbackDetails ?></p>
                                 </div>
                                 <div class="title-testimonial">
                                     <div class="thumb-title">
-                                        <img src="<?php echo base_url()?>public/images/member/john.PNG" alt="image">
+                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/feedbackImages/<?php echo $fb->feedbackByPhoto?>" alt="image">
                                     </div>
                                     <div class="post-title">
-                                        <h6 class="title-post">Mr. John</h6>
-                                        <span>Student</span>
+                                        <h6 class="title-post"><?php echo $fb->feedbackByName?></h6>
+                                        <span><?php echo $fb->feedbackByProfession?></span>
                                     </div>
                                 </div>
                             </div>
+                            <?php } ?>
 
-                            <div class="item">
-                                <div class="text">
-                                    <p style="color:#fff">I would like to thank you for having taken me through the course with much patience and understanding, and for having taught me in such a way that I always felt encouraged to outdo myself the next time.</p>
-                                </div>
-                                <div class="title-testimonial">
-                                    <div class="thumb-title">
-                                        <img src="<?php echo base_url()?>public/images/member/bikash.PNG" alt="image">
-                                    </div>
-                                    <div class="post-title">
-                                        <h6 class="title-post">Bikash Pal</h6>
-                                        <span>Student</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="text">
-                                    <p style="color:#fff">I'd just like to say how much I've enjoyed the course, and how much I've appreciated your constructive feedback.</p>
-                                </div>
-                                <div class="title-testimonial">
-                                    <div class="thumb-title">
-                                        <img src="<?php echo base_url()?>public/images/member/cherry.PNG" alt="image">
-                                    </div>
-                                    <div class="post-title">
-                                        <h6 class="title-post">Cherry Gems</h6>
-                                        <span>Student</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="text">
-                                    <p style="color:#fff">I have very much enjoyed the course and have found the feedback from my tutor to be very supportive, motivating and challenging.</p>
-                                </div>
-                                <div class="title-testimonial">
-                                    <div class="thumb-title">
-                                        <img src="<?php echo base_url()?>public/images/member/amina.PNG" alt="image">
-                                    </div>
-                                    <div class="post-title">
-                                        <h6 class="title-post">Amina Islam</h6>
-                                        <span>Student</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="text">
-                                    <p style="color:#fff">I want to continue my work with my tutor! I have nothing but praise for her! She truly understands every difficulty I have faced so far.</p>
-                                </div>
-                                <div class="title-testimonial">
-                                    <div class="thumb-title">
-                                        <img src="<?php echo base_url()?>public/images/member/abiaaodun.PNG" alt="image">
-                                    </div>
-                                    <div class="post-title">
-                                        <h6 class="title-post">Abiaaodun Oladipo</h6>
-                                        <span>Student</span>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
