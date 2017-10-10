@@ -364,7 +364,7 @@
                             <div class="toggle-title "><?php echo $n->newsTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($n->newsDate)) ?></span></div>
                             <div class="toggle-content">
                                 <?php echo  substr($n->newsContent, 0, 350);?>
-                                <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
+                                <br><p><a href="<?php echo base_url()?>News-Details/<?php echo $n->newsId?>"><button class="btn btn-default">Read More...</button></a></p>
                             </div>
                         </div><!-- /toggle -->
                         <?php } ?>

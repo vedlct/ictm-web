@@ -6,7 +6,7 @@
                                                 if ($nd->newsPhoto == null ) {
                                                     ?>
                                                     <div class="thumb item-thumbnail">
-                                                        <a href="#">
+                                                        <a href="<?php echo base_url()?>News-Details/<?php echo $nd->newsId?>">
                                                             <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"
                                                                  alt="image" style="width: 80px; height: 80px">
                                                             <div class="thumbnail-hoverlay main-color-1-bg"></div>
@@ -17,7 +17,7 @@
                                                 }else {
                                                     ?>
                                                     <div class="thumb item-thumbnail">
-                                                        <a href="#">
+                                                        <a href="<?php echo base_url()?>News-Details/<?php echo $nd->newsId?>">
                                                             <img src="<?php echo base_url() ?>AdminPanel/images/newsImages/<?php echo $nd->newsPhoto?>"
                                                                  alt="image" style="width: 80px; height: 80px">
                                                             <div class="thumbnail-hoverlay main-color-1-bg"></div>
@@ -28,7 +28,7 @@
                                                 }
                                                 ?>
                                                 <div class="text">
-                                                    <a href="<?php echo base_url()?>News/<?php echo $nd->newsId?>"><?php echo $nd->newsTitle?></a>
+                                                    <a href="<?php echo base_url()?>News-Details/<?php echo $nd->newsId?>"><?php echo $nd->newsTitle?></a>
                                                     <p><?php echo date('F d, Y',strtotime($nd->newsDate))?></p>
                                                 </div>
                                             </li>

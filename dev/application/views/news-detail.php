@@ -6,7 +6,9 @@
                 <div class="row">
                     <div class="col-md-12">                    
                         <div class="page-title-heading">
-                            <h2 class="title">Spark Of Genius</h2>
+                            <?php foreach ($newsDetails as $details){?>
+                            <h2 class="title"><?php echo $details->newsTitle;?></h2>
+                            <?php }?>
                         </div>
                         <div class="breadcrumbs">
                             <ul>
@@ -28,29 +30,33 @@
                         <div class="col-md-9">
                             <article class="post">
                                 <div class="entry-wrapper">
+
+                                <?php foreach ($newsDetails as $details){
+                                    if ($details->newsPhoto != null){?>
                                     <div class="entry-box">
-                                        <a href="blog-single.html">
-                                            <img src="images/blog/sg1.jpg" alt="images">
+                                        <a href="<?php echo base_url()?>News-Details/<?php echo $details->newsId?>">
+                                            <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $details->newsPhoto?>" alt="images">
                                         </a>
                                     </div>
+                                    <?php }?>
 
                                     <div class="post-content">
-                                        <h2 class="title">Spark Of Genius</h2>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-                                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</p>
+                                        <h2 class="title"><?php echo $details->newsTitle;?></h2>
+                                        <p><?php echo $details->newsContent;?></p>
 
-                                        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure.</p>
                                     </div>
+
 
                                     <div class="content-pad">
                                         <div class="item-content">
                                             <div class="item-meta blog-item-meta">
                                                 <span>Date Published <span class="sep">|</span> </span>
-                                                <span>JUNE 3, 2014 <span class="sep">|</span> </span>
+                                                <span><?php echo date('F d, Y',strtotime($details->newsDate))?> <span class="sep">|</span> </span>
                                             </div>
                                         </div>
                                     </div>
+                                <?php }?>
 
                                     <div class="list-inline item-content">
                                         <ul class="social-list">
@@ -152,47 +158,7 @@
                                 <div class="widget widget-posts">
                                     <div class="blog-box">
                                         <h2 class="widget-title">LATEST NEWS</h2>
-                                        <ul class="recent-posts clearfix">
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/1.jpg" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">Your Career Starts Here</a>
-                                                    <p>JUNE 3, 2014</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/2.jpg" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">Spark Of Genius</a>
-                                                    <p>JUNE 3, 2014</p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="thumb item-thumbnail">
-                                                    <a href="#">
-                                                        <img src="images/blog/widget/3.jpg" alt="image">
-                                                        <div class="thumbnail-hoverlay main-color-1-bg"></div>
-                                                        <div class="thumbnail-hoverlay-cross"></div>
-                                                    </a>
-                                                </div>
-                                                <div class="text">
-                                                    <a href="#">University Ranking</a>
-                                                    <p>MAY 29, 2014</p>
-                                                </div>
-                                            </li>
-                                        </ul><!-- /popular-news clearfix -->
+                                        <?php include("latest-news-sidebar.php"); ?>
                                     </div><br>
                                     
                                     <div class="archive-box">

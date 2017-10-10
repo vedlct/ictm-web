@@ -42,7 +42,7 @@ class Page extends CI_Controller {
 
                 //$this->data['termsdata']= $this->Pagem->getPageData($id);
                 $this->data['termsdata']= $this->PageSectionm->getPageData($id);
-                $this->data['newsdata']= $this->Newsm->getNewsForTerms();
+                $this->data['newsdata']= $this->Newsm->getLatestNews();
                 $this->data['eventdata']= $this->Eventm->getEventForTerms();
                 $this->data['coursedata']=$this->Coursem->getCourseTitle();
 
