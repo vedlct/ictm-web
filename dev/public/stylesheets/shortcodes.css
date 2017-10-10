@@ -2682,7 +2682,7 @@ body.mobile .event-item:hover .event-thumbnail img {
     padding: 12px 20px 15px;
     transition: all .2s;
     border-top: none;
-    border-bottom: 1px dashed #eaeaea;
+    /*border-bottom: 1px dashed #eaeaea;*/
 	background:#f2f2f2;
 }
 

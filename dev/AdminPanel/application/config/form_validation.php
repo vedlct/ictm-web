@@ -710,13 +710,13 @@ $config = array (
         array(
             'field' => 'college_tel1',
             'label' => 'College Telephone 1',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[20]',
 
         ),
         array(
             'field' => 'college_tel2',
             'label' => 'College Telephone 2',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[45]',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[20]',
 
         ),
         array(

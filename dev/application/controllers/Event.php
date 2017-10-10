@@ -7,6 +7,7 @@ class Event extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Menum');
+        $this->load->model('CollegeInfom');
 
     }
 
@@ -28,6 +29,7 @@ class Event extends CI_Controller {
         $this->data['quicklink'] = $this->Menum->getQuickLinksMenu();
         $this->data['implink'] = $this->Menum->getImportantLinkMenu();
         $this->data['bottom'] = $this->Menum->getBottomMenu();
+        $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
 
     }
 }
