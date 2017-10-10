@@ -9,6 +9,7 @@ class News extends CI_Controller {
         $this->load->model('Menum');
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
+        $this->load->model('Newsm');
 
     }
 
@@ -16,6 +17,14 @@ class News extends CI_Controller {
     {
         $this->menu();
         $this->load->view('home', $this->data);
+    }
+    public function newsDetails($id)
+    {
+        $this->menu();
+        $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
+        $this->data['newsdata']= $this->Newsm->getLatestNews();
+
+        $this->load->view('news-detail', $this->data);
     }
 
     public function menu(){
