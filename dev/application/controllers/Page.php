@@ -13,6 +13,7 @@ class Page extends CI_Controller {
         $this->load->model('Eventm');
         $this->load->model('Coursem');
         $this->load->model('CollegeInfom');
+        $this->load->model('Photom');
 
     }
     function _remap($id) {
@@ -61,6 +62,7 @@ class Page extends CI_Controller {
         $this->data['implink'] = $this->Menum->getImportantLinkMenu();
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
+        $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
 
     }
 }

@@ -4,10 +4,12 @@
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">                    
+                    <div class="col-md-12">
+                        <?php foreach ($albumphoto as $ap) {?>
                         <div class="page-title-heading">
-                            <h2 class="title">Album Title</h2>
+                            <h2 class="title"><?php echo $ap->albumTitle?></h2>
                         </div>
+                        <?php break;} ?>
                         <div class="breadcrumbs">
                             <ul>
                                 <li class="home"><a href="#">Home </a></li>
@@ -22,26 +24,16 @@
         <section class="flat-row padding-v1">
             <div class="container">
                 <div class="row">
+                        <?php
+                        $count1 =1;
+                        foreach ($albumphoto as $ap) {
+                            ?>
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" class="">
-                                <img src="images/gallery/img_nature.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="hover-shadow cursor">
                             </a>
                         </div>
-                        <div class="col-xs-6 col-sm-3">
-                            <a href="#" class="" > 
-                                <img src="images/gallery/img_fjords.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-3">
-                            <a href="#" class="" > 
-                                <img src="images/gallery/img_mountains.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-3">
-                            <a href="#" class=""> 
-                                <img src="images/gallery/img_lights.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
-                            </a>
-                        </div>
+                    <?php  $count1++;} ?>
                 </div>
             </div>
 
@@ -51,26 +43,15 @@
             <div id="myModal" class="modal">
               <span class="close cursor" onclick="closeModal()">&times;</span>
               <div class="modal-content">
-            
+                  <?php
+                  $count2 =1;
+                  foreach ($albumphoto as $ap) { ?>
                 <div class="mySlides">
-                  <div class="numbertext">1 / 4</div>
-                  <img src="images/gallery/img_nature_wide.jpg" style="width:100%">
+                  <div class="numbertext"><?php echo $count2; ?>/ <?php echo count($albumphoto)?></div>
+                  <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%">
                 </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">2 / 4</div>
-                  <img src="images/gallery/img_fjords_wide.jpg" style="width:100%">
-                </div>
-            
-                <div class="mySlides">
-                  <div class="numbertext">3 / 4</div>
-                  <img src="images/gallery/img_mountains_wide.jpg" style="width:100%">
-                </div>
-                
-                <div class="mySlides">
-                  <div class="numbertext">4 / 4</div>
-                  <img src="images/gallery/img_lights_wide.jpg" style="width:100%">
-                </div>
+                  <?php $count2++;} ?>
+
                 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -78,20 +59,14 @@
                 <div class="caption-container">
                   <p id="caption"></p>
                 </div>
-            
-            
+
+                  <?php
+                  $count=1;
+                  foreach ($albumphoto as $ap) { ?>
                 <div class="gallery-column">
-                  <img class="demo cursor" src="images/gallery/img_nature_wide.jpg" style="width:100%" onclick="currentSlide(1)" alt="Nature and sunrise">
+                  <img class="demo cursor" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="currentSlide(<?php echo $count ?>)" alt="<?php echo $ap->photoDetails?>">
                 </div>
-                <div class="gallery-column">
-                  <img class="demo cursor" src="images/gallery/img_fjords_wide.jpg" style="width:100%" onclick="currentSlide(2)" alt="Trolltunga, Norway">
-                </div>
-                <div class="gallery-column">
-                  <img class="demo cursor" src="images/gallery/img_mountains_wide.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                <div class="gallery-column">
-                  <img class="demo cursor" src="images/gallery/img_lights_wide.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
+                  <?php $count++;} ?>
               </div>
             </div>
 

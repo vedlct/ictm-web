@@ -153,7 +153,7 @@
                                             <div class="thumb images-hover">
                                                 <div class="overlay"></div>
                                                 <a href="#">
-                                                    <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery->albumTitle?>/<?php echo $photoGallery->photoName?>"></span>
+                                                    <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery['albumTitle']?>/<?php echo $photoGallery['photoName']?>"></span>
                                                 </a>
                                             </div>
                                         </li>

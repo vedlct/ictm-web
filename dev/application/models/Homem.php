@@ -28,4 +28,18 @@ class Homem extends CI_Model
         return $query->result();
     }
 
+    public function getFeedback(){
+
+        $this->db->select('feedbackByName,feedbackByProfession,feedbackDetails,feedbackByPhoto');
+        $this->db->where('feedbackStatus =', STATUS[0]);
+        $this->db->where('feedbackApprove =', SELECT_APPROVE[0]);
+        $query = $this->db->get('ictmfeedback');
+        return $query->result();
+    }
+    public function getHomeAlldata() {
+
+        $query = $this->db->get('ictmhome');
+        return $query->result();
+    }
+
 }
