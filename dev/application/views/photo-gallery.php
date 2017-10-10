@@ -26,25 +26,31 @@
                     <div class="content-content">
                     	<h3><?php echo $allAlbum->albumCategoryName?></h3>
 
-                        <?php $this->db->select('albumId,albumTitle');
+                        <?php
+                        $photo=array();
+                        $this->db->select('albumId,albumTitle');
                         $this->db->from('ictmalbum');
                         $this->db->where('albumCategoryName',$allAlbum->albumCategoryName);
                         $query1 = $this->db->get();
+
                         foreach ($query1->result() as $albumPerCategory){
+
+                            $this->db->select('photoPath');
+                            $this->db->from('ictmphoto');
+                            $this->db->where('albumId',$albumPerCategory->albumId);
+                            $this->db->limit(1);
+                            $query3 = $this->db->get();
                         ?>
 
                         <div class="col-xs-6 col-sm-4">
-
-
+                            <?php foreach ($query3->result() as $s) { ?>
                             <a href="album-pictures.php" class="thumbnail">
-
-<!--                                <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/photoAlbum/--><?php //echo $albumPerCategory->albumTitle?><!--/--><?php //echo $albumPhoto->photoName?><!--" alt="...">-->
+                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $albumPerCategory->albumTitle?>/<?php echo $s->photoPath?>" alt="...">
                                 <p style=""><?php echo $albumPerCategory->albumTitle?></p>
-
                             </a>
-
+                            <?php } ?>
                         </div>
-                        <?php }?>
+                        <?php  } ?>
 
                     </div>
                 </div>
@@ -53,16 +59,16 @@
             </div>
             
             
-            <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>
-                    <div class="modal-content">
-                        <div class="modal-body">                     
-                            <img src="" alt="" />                         
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!--            <div id="lightbox" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">-->
+<!--                <div class="modal-dialog">-->
+<!--                    <button type="button" class="close hidden" data-dismiss="modal" aria-hidden="true">×</button>-->
+<!--                    <div class="modal-content">-->
+<!--                        <div class="modal-body">-->
+<!--                            <img src="" alt="" />-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </section>
 
 		<?php include("footer.php"); ?>

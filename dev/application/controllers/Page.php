@@ -13,7 +13,7 @@ class Page extends CI_Controller {
         $this->load->model('Eventm');
         $this->load->model('Coursem');
         $this->load->model('CollegeInfom');
-        $this->load->model('CollegeInfom');
+        $this->load->model('Photom');
 
     }
     function _remap($id) {
