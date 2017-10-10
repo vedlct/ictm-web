@@ -45,7 +45,9 @@
                     <div class="section-inner-no-padding">
                         <div class="post-scroller-wrap">
                             <div class="post-scroller-carousel" data-next=".post-scroller-down" data-prev=".post-scroller-up">
+
                                 <div class="post-scroller-carousel-inner">
+                                    <?php foreach ($home as $hm) {?>
                                     <div class="item post-scroller-item active">
                                         <div class="scroller-item-inner">
                                             <div class="scroller-item-content post-item-mini">
@@ -53,15 +55,15 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img src="<?php echo base_url()?>public/images/about/index1/1.jpg" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage1?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?>public/pdf-files/ICON-College-Prospectus.pdf" target="_blank" title="Prospectus">Prospectus</a></h4>
-                                                        <div class="post-excerpt-mini">The BTEC Higher National Diploma (HND) is a specialist programme with a strong work-related emphasis. Click here for our latest prospectus.</div>
+                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink1?>" target="_blank" title="Prospectus"><?php echo $hm->verticalBarTitle1?></a></h4>
+                                                        <div class="post-excerpt-mini"><?php echo $hm->verticalBarText1?></div>
                                                     </div>
                                                 </div>
                                             </div><!--/post-item-mini-->
@@ -75,15 +77,15 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img src="<?php echo base_url()?>public/images/about/index1/2.jpg" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage2?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?>public/pdf-files/Application_Form.pdf" target="_blank" title="Apply Online">Application Form</a></h4>
-                                                        <div class="post-excerpt-mini">The qualifications aim to widen access to higher education and enhance the career prospects of those who undertake them. Click here for downloading the application form.</div>
+                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink2?>" target="_blank" title="Apply Online"><?php echo $hm->verticalBarTitle2?></a></h4>
+                                                        <div class="post-excerpt-mini"><?php echo $hm->verticalBarText2?></div>
                                                     </div>
                                                 </div>
                                             </div><!--/post-item-mini-->
@@ -97,15 +99,15 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img src="<?php echo base_url()?>public/images/about/index1/3.jpg" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage3?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="register-inetrest.php" title="Register Interest">Register Interest</a></h4>
-                                                        <div class="post-excerpt-mini">The Level 5 Higher National Diploma is recognised by Higher Education providers as meeting admission requirements to many relevant business-related courses.</div>
+                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink3?>" title="Register Interest"><?php echo $hm->verticalBarTitle3?></a></h4>
+                                                        <div class="post-excerpt-mini"><?php echo $hm->verticalBarText3?></div>
                                                     </div>
                                                 </div>
                                             </div><!--/post-item-mini-->
@@ -119,21 +121,23 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img src="<?php echo base_url()?>public/images/about/index1/4.jpg" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage4?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="contact.php" title="Contact Us">Contact Us</a></h4>
-                                                        <div class="post-excerpt-mini">UK and EU students may be entitled to a student loan from the Student Loans Company to cover the cost of their tuition fees.</div>
+                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink4?>" title="Contact Us"><?php echo $hm->verticalBarTitle4?></a></h4>
+                                                        <div class="post-excerpt-mini"><?php echo $hm->verticalBarText4?></div>
                                                     </div>
                                                 </div>
                                             </div><!--/post-item-mini-->
                                         </div>
                                     </div><!--/post-scroller-item-->
+                                    <?php }?>
                                 </div>
+
                             </div>
                             <div class="post-scroller-control">
                                         <span class="post-scroller-button-wrap">
@@ -153,30 +157,34 @@
     <div class="flat-fluid">
         <div class="container">
             <div class="row">
+                <?php foreach ($home as $hm) {?>
                 <div class="col-md-4">
                     <div class="post">
-                        <h1 class="title">About ICON College</h1>
-                        <p>ICON College is a modern, friendly and dynamic independent College for higher education in the heart of London, offering high quality education and training with very competitive tuition fees. It was established in 2003. Our students come from many countries including UK, Portugal, Romania, Lithuania, Hungary, Bulgaria, Latvia, France, Italy, Germany, Nigeria, Ireland, Spain, Austria & Poland.</p>
-                        <a class="flat-button button-button_30 btn-default " href="about.php" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
+                        <h1 class="title"><?php echo $hm->middleBannerTitle1?></h1>
+                        <p><?php echo $hm->middleBannerText1?></p>
+                        <a class="flat-button button-button_30 btn-default " href="<?php echo $hm->middleBannerLink1?>" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="post">
-                        <h1 class="title">Quality Education</h1>
-                        <p>All our lecturers are highly qualified and experienced. High quality lecture notes are provided for all courses. By looking at our accreditations you can be confident that you arejoining a quality college, with courses leading to recognised UK qualifications. The range of courses offered at ICON College is growing. Please check our website or ask us for the latest list of courses, if you don't see the course you are looking for.</p>
-                        <a class="flat-button button-button_30 btn-default " href="course.php" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
+                        <h1 class="title"><?php echo $hm->middleBannerTitle2?></h1>
+                        <p><?php echo $hm->middleBannerText2?></p>
+                        <a class="flat-button button-button_30 btn-default " href="<?php echo $hm->middleBannerLink2?>" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
 
                 <div class="col-md-4">
                     <div class="post">
-                        <h1 class="title">Competitive Fees</h1>
-                        <p>Our goal is to provide you with a quality education at an affordable price, which we achieve by keeping our adminis­tration costs and overheads low. Studying at ICON College can save you UK university fees, whilst you can still achieve a UK University awarded degree or UK recognised qualification.</p>
-                        <a class="flat-button button-button_30 btn-default " href="loans.php" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
+                        <h1 class="title"><?php echo $hm->middleBannerTitle3?></h1>
+                        <p><?php echo $hm->middleBannerText3?></p>
+                        <a class="flat-button button-button_30 btn-default " href="<?php echo $hm->middleBannerLink3?>" data-delay="0">VIEW MORE <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
+                <?php }?>
+
             </div><!--/row-->
+
         </div><!--/flat-fluid-->
     </div><!--/container-->
 </section><!--/flat-row -->

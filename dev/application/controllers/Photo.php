@@ -17,7 +17,6 @@ class Photo extends CI_Controller
     public function albumList(){
         $this->menu();
         //$this->data['albumlist']=$this->Albumm->getAlbumListWithCategory();
-
         $this->data['albumCategoryList']=$this->Albumm->getAlbumCategoryList();
         $this->load->view('photo-gallery', $this->data);
     }
