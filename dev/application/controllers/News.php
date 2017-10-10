@@ -8,6 +8,7 @@ class News extends CI_Controller {
         parent::__construct();
         $this->load->model('Menum');
         $this->load->model('CollegeInfom');
+        $this->load->model('Photom');
 
     }
 
@@ -26,6 +27,7 @@ class News extends CI_Controller {
         $this->data['implink'] = $this->Menum->getImportantLinkMenu();
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
+        $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
 
     }
 }

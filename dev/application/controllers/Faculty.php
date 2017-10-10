@@ -9,6 +9,7 @@ class Faculty extends CI_Controller {
         $this->load->model('Coursem');
         $this->load->model('Eventm');
         $this->load->model('CollegeInfom');
+        $this->load->model('Photom');
 
     }
     public function index()
@@ -37,6 +38,7 @@ class Faculty extends CI_Controller {
         $this->data['implink'] = $this->Menum->getImportantLinkMenu();
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
+        $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
     }
 
 

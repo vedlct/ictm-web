@@ -21,46 +21,35 @@
 
         <section class="flat-row padding-v1">
             <div class="container">
+                <?php foreach ($albumCategoryList as $allAlbum){?>
                 <div class="row single-course-detail" style="border:2px solid #eaeaea">
                     <div class="content-content">
-                    	<h3>Category Name</h3>
+                    	<h3><?php echo $allAlbum->albumCategoryName?></h3>
+
+                        <?php $this->db->select('albumId,albumTitle');
+                        $this->db->from('ictmalbum');
+                        $this->db->where('albumCategoryName',$allAlbum->albumCategoryName);
+                        $query1 = $this->db->get();
+                        foreach ($query1->result() as $albumPerCategory){
+                        ?>
+
                         <div class="col-xs-6 col-sm-4">
+
+
                             <a href="album-pictures.php" class="thumbnail">
-                                <img src="images/gallery/dummy-image.png" alt="...">
-                                <p style="">Album Title</p>
+
+<!--                                <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/photoAlbum/--><?php //echo $albumPerCategory->albumTitle?><!--/--><?php //echo $albumPhoto->photoName?><!--" alt="...">-->
+                                <p style=""><?php echo $albumPerCategory->albumTitle?></p>
+
                             </a>
+
                         </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <a href="#" class="thumbnail" data-toggle="modal" > 
-                                <img src="images/gallery/dummy-image.png" alt="...">
-                                <p style="">Album Title</p>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <a href="#" class="thumbnail" data-toggle="modal" > 
-                                <img src="images/gallery/dummy-image.png" alt="...">
-                                <p style="">Album Title</p>
-                            </a>
-                        </div>
-                    </div>
-                </div><br>
-                <div class="row single-course-detail" style="border:2px solid #eaeaea">
-                    <div class="content-content">
-                    	<h3>Category Name</h3>
-                        <div class="col-xs-6 col-sm-4">
-                            <a href="#" class="thumbnail" data-toggle="modal" >
-                                <img src="images/gallery/dummy-image.png" alt="...">
-                                <p style="">Album Title</p>
-                            </a>
-                        </div>
-                        <div class="col-xs-6 col-sm-4">
-                            <a href="#" class="thumbnail" data-toggle="modal" > 
-                                <img src="images/gallery/dummy-image.png" alt="...">
-                                <p style="">Album Title</p>
-                            </a>
-                        </div>
+                        <?php }?>
+
                     </div>
                 </div>
+                <?php }?>
+                <br>
             </div>
             
             
