@@ -55,5 +55,6 @@ $route['course-details/(:any)'] = 'Course/courseDetails/$1';
 $route['department/(:any)'] = 'Department/showDetails/$1';
 $route['Faculty-list'] = 'Faculty/facultyList';
 $route['Faculty-details/(:any)'] = 'Faculty/facultyDetails/$1';
+$route['Photo-Gallery'] = 'Photo/albumList';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

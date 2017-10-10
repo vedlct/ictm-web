@@ -205,6 +205,9 @@
                                                         case "faculty-members.php":
                                                             ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $q->menuName?></a></li> <?php
                                                             break;
+                                                        case "photo-gallery.php":
+                                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
 
                                                         default:
 

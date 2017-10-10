@@ -15,6 +15,7 @@ class Home extends CI_Controller {
 
     public function index()
     {
+
         $this->menu();
         $this->data['news'] = $this->Homem->getNews();
         $this->data['events'] = $this->Homem->getEvents();
@@ -22,6 +23,7 @@ class Home extends CI_Controller {
         $this->data['feedback'] = $this->Homem->getFeedback();
         $this->data['home'] = $this->Homem->getHomeAlldata();
         $this->load->view('home', $this->data);
+
     }
 
     public function menu(){
