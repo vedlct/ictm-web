@@ -80,16 +80,16 @@
 
                                             switch ($tm->pageContent) {
                                                 case "course-list.php":
-                                                    echo 1;
+
                                                     ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
                                                 case "department.php":
-                                                    echo 2;
+
                                                     ?> <li><a href="<?php echo base_url()?>Department"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
-                                                case "dfg":
-                                                    echo 3;
-                                                    ?> <li><a href="<?php echo base_url()?>Course"><?php echo $tm->menuName?></a></li> <?php
+                                                case "news.php":
+
+                                                    ?> <li><a href="<?php echo base_url()?>News"><?php echo $tm->menuName?></a></li> <?php
                                                     break;
 
                                                 default:
@@ -207,6 +207,15 @@
                                                             break;
                                                         case "photo-gallery.php":
                                                             ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
+                                                        case "news.php":
+                                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
+                                                        case "event-list.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $q->menuName?></a></li> <?php
+                                                            break;
+                                                        case "contact.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $q->menuName?></a></li> <?php
                                                             break;
 
                                                         default:

@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class News extends CI_Controller {
+class Contact extends CI_Controller
+{
 
     public function __construct()
     {
@@ -9,25 +10,25 @@ class News extends CI_Controller {
         $this->load->model('Menum');
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
+        $this->load->model('Eventm');
         $this->load->model('Newsm');
+        $this->load->model('Coursem');
 
     }
 
     public function index()
     {
-        $this->menu();
-        $this->data['newsdata']= $this->Newsm->getLatestNews();
-        $this->load->view('news', $this->data);
+
     }
-    public function newsDetails($id)
+    public function contactUs()
     {
         $this->menu();
-        $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
+        $this->data['eventdata']= $this->Eventm->getLatestEvents();
         $this->data['newsdata']= $this->Newsm->getLatestNews();
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->load->view('contact', $this->data);
 
-        $this->load->view('news-detail', $this->data);
     }
-
     public function menu(){
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
@@ -40,4 +41,5 @@ class News extends CI_Controller {
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
 
     }
+
 }

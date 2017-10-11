@@ -9,16 +9,31 @@ class Event extends CI_Controller {
         $this->load->model('Menum');
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
+        $this->load->model('Eventm');
 
     }
 
     public function index()
     {
-        //$this->menu();
-        //$this->load->view('home', $this->data);
+
     }
 
     public function getEventForTerms(){
+
+    }
+
+    public function EventList(){
+        $this->menu();
+        $this->data['allEvents'] = $this->Eventm->getAllEvents();
+        $this->load->view('event-list', $this->data);
+
+    }
+
+    public function eventDetails($id){
+        $this->menu();
+        $this->data['Eventdetails'] = $this->Eventm->getEventDetails($id);
+        $this->data['eventdata']= $this->Eventm->getLatestEvents();
+        $this->load->view('event-detail', $this->data);
 
     }
 
