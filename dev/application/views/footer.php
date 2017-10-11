@@ -277,13 +277,13 @@
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/slider.js"></script>
         
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/switcher.js"></script>
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/switcher.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.cookie.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/main.js"></script>
         
         <!-- for Application form -->
-        <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-        <script src="<?php echo base_url()?>public/javascript/retina.min.js"></script>
-        <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<!--        <script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--        <script src="--><?php //echo base_url()?><!--public/javascript/retina.min.js"></script>-->
+<!--        <script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 

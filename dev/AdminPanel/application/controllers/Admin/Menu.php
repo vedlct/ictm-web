@@ -27,7 +27,7 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['menuName'] = $this->Menum->getMenuName($menuType);
+            $this->data['menuName'] = $this->Menum->getMenuNameHasNoParent($menuType);
             if ($this->data['menuName'] == null) {
                 echo "<option value='' selected>".NEW_MENU."</option>";
             } else {

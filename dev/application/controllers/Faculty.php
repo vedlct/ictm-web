@@ -19,7 +19,7 @@ class Faculty extends CI_Controller {
         $this->menu();
         $this->data['facultylist']=$this->Facultym->getAllFacultyList();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        $this->data['eventdata']= $this->Eventm->getEventForTerms();
+        $this->data['eventdata']= $this->Eventm->getLatestEvents();
         $this->load->view('faculty-members', $this->data);
     }
     public function facultyDetails($id){

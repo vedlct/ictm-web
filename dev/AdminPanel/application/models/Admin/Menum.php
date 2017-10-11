@@ -52,6 +52,15 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
+    /*-----get Menu Name and id---that has no parent menu-------*/
+    public function getMenuNameHasNoParent($menuType)
+    {
+        $this->db->select('menuId, menuName');
+        $this->db->where('parentId =', null);
+        $this->db->where('menuType', $menuType);
+        $query = $this->db->get('ictmmenu');
+        return $query->result();
+    }
 
      /*----------- check MenuTitle Uniqueness Per MenuType ----------------*/
     public function checkMenuTitleUniquePerMenuType($menuTitle,$menuType)
