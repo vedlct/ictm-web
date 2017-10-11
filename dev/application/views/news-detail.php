@@ -160,26 +160,24 @@
                                         <h2 class="widget-title">LATEST NEWS</h2>
                                         <?php include("latest-news-sidebar.php"); ?>
                                     </div><br>
-                                    
+
+
                                     <div class="archive-box">
                                         <h2 class="widget-title">Archive</h2>
                                         <ul style="margin-left:20px" class="recent-posts clearfix">
-                                            <li>
-                                                <p style="font-size:16px; font-weight:bold">2017</p>
-                                                <ul style="margin-left:20px">
-                                                	<a href="#"><li>July (9)</li></a>
-                                                    <a href="#"><li>June (12)</li></a>
-                                                    <a href="#"><li>May (2)</li></a>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <p style="font-size:16px; font-weight:bold">2016</p>
-                                                <ul style="margin-left:20px">
-                                                	<a href="#"><li>July (9)</li></a>
-                                                    <a href="#"><li>June (12)</li></a>
-                                                    <a href="#"><li>May (2)</li></a>
-                                                </ul>
-                                            </li>
+                                            <?php foreach ($year as $y) { ?>
+                                                <li>
+                                                    <p style="font-size:16px; font-weight:bold"><?php echo $y->year ?></p>
+                                                    <?php  foreach ($month as $m) {
+                                                        if ($y->year == $m->year) {
+                                                            ?>
+                                                            <ul style="margin-left:20px">
+                                                                <a href="<?php echo base_url()?>News/ArchiveShow/<?php echo $m->year?>/<?php echo $m->month?>"><li><?php echo date('F', mktime(0, 0, 0, $m->month, 10))."(".$m->monthcount.")" ?></li></a>
+                                                            </ul>
+                                                        <?php } } ?>
+                                                </li>
+                                            <?php }?>
+
                                         </ul><!-- /popular-news clearfix -->
                                     </div>
                                 </div><!-- /widget-posts -->

@@ -16,6 +16,10 @@ class News extends CI_Controller {
     public function index()
     {
         $this->menu();
+        $this->data['newsdata']= $this->Newsm->getLatestNews();
+        $this->data['news'] = $this->Newsm->getNewsData();
+        $this->data['year'] = $this->Newsm->getYear();
+        $this->data['month'] = $this->Newsm->getMonth();
         $this->load->view('news', $this->data);
     }
     public function newsDetails($id)
@@ -23,8 +27,19 @@ class News extends CI_Controller {
         $this->menu();
         $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
         $this->data['newsdata']= $this->Newsm->getLatestNews();
-
+        $this->data['year'] = $this->Newsm->getYear();
+        $this->data['month'] = $this->Newsm->getMonth();
         $this->load->view('news-detail', $this->data);
+    }
+
+    public function ArchiveShow($year, $month) {
+
+        $this->menu();
+        $this->data['newsArchive'] = $this->Newsm->ArchiveShow($year, $month);
+        $this->data['newsdata']= $this->Newsm->getLatestNews();
+        $this->data['year'] = $this->Newsm->getYear();
+        $this->data['month'] = $this->Newsm->getMonth();
+        $this->load->view('news-archive', $this->data);
     }
 
     public function menu(){

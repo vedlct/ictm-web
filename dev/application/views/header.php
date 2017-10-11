@@ -209,7 +209,7 @@
                                                             ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $q->menuName?></a></li> <?php
                                                             break;
                                                         case "news.php":
-                                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $tm->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $q->menuName?></a></li> <?php
                                                             break;
 
                                                         default:
