@@ -16,7 +16,7 @@ class News extends CI_Controller {
     public function index()
     {
         $this->menu();
-        $this->load->view('home', $this->data);
+        $this->load->view('news', $this->data);
     }
     public function newsDetails($id)
     {

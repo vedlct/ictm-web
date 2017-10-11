@@ -464,7 +464,7 @@
         <div class=" bottom-logo-slider owl-carousel owl-theme">
             <?php foreach ($affiliation as $af) { ?>
                 <div class="item">
-                    <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/affiliationImages/<?php echo $af->affiliationsPhotoPath ?>" alt="image">
+                    <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/affiliationImages/<?php echo $af->AffiliationsPhotoPath ?>" alt="image">
                 </div>
             <?php } ?>
         </div>
