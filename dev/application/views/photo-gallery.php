@@ -33,12 +33,11 @@
                         $this->db->where('albumId',$an->albumId);
                         $this->db->limit(1);
                         $query3 = $this->db->get();
-
                     ?>
                         <div class="col-xs-6 col-sm-4">
                             <?php foreach ($query3->result() as $s) { ?>
                                 <a href="<?php echo  base_url()?>album-pictures/<?php echo $an->albumId ?>" class="thumbnail">
-                                    <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $an->albumTitle?>/<?php echo $s->photoName?>" >
+                                    <img style="width: 349px;height: 238px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $an->albumTitle?>/<?php echo $s->photoName?>" >
                                     <p style=""><?php echo $an->albumTitle?></p>
                                 </a>
                             <?php } ?>
@@ -53,36 +52,6 @@
 
 <?php include("footer.php"); ?>
 
-<script>
-    $(document).ready(function() {
-        var $lightbox = $('#lightbox');
-
-        $('[data-target="#lightbox"]').on('click', function(event) {
-            var $img = $(this).find('img'),
-                src = $img.attr('src'),
-                alt = $img.attr('alt'),
-
-
-                css = {
-                    'maxWidth': $(window).width() - 100,
-                    'maxHeight': $(window).height() - 100
-                };
-
-            $lightbox.find('.close').addClass('hidden');
-            $lightbox.find('img').attr('src', src);
-            $lightbox.find('img').attr('alt', alt);
-
-            $lightbox.find('img').css(css);
-        });
-
-        $lightbox.on('shown.bs.modal', function (e) {
-            var $img = $lightbox.find('img');
-
-            $lightbox.find('.modal-dialog').css({'width': $img.width()});
-            $lightbox.find('.close').removeClass('hidden');
-        });
-    });
-</script>
 
 </div>
 </body>

@@ -7,7 +7,7 @@
 
             <?php foreach ($home as $hm) {?>
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage1?>" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage1?>" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div class="title main-color-1 font-2"><?php echo $hm->slideText1;?></div>
@@ -18,7 +18,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage2?>" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage2?>" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText2;?></div>
@@ -26,7 +26,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage3?>" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage3?>" alt="slider-image">
 
                 <div class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div class="title main-color-1 font-2"><?php echo $hm->slideText3;?></div>
@@ -55,7 +55,7 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage1?>" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage1?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -77,7 +77,7 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage2?>" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage2?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -99,7 +99,7 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage3?>" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage3?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -121,7 +121,7 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="#">
-                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage4?>" alt="image">
+                                                                <img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage4?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -194,12 +194,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="flat-events">
+                    <?php foreach ($home as $hm) {?>
                     <div class="grid-item color-full">
                         <div class="event-item">
-                            <div class="grid-item-content">
-                                <h1 class="title">You Are Welcome</h1>
-                                <p>Cras site amet nibh libero, in gravida nulla dignissimos</p>
-                                <a class="flat-button" href="#">VISIT CAMPUS <i class="fa fa-angle-right"></i></a>
+                            <div style="height: 276px" class="grid-item-content">
+                                <h1 class="title"><?php echo $hm->squareBoxTitle1;?></h1>
+                                <p style="height: 20px"></p>
+                                <a class="flat-button" href="<?php echo $hm->squareBoxLink1;?>">VISIT CAMPUS <i class="fa fa-angle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -208,15 +209,19 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/1.jpg" alt="image">
-                                    </a>
+                                    <?php if ($hm->squareBoxImage2 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink2;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage2?>" alt="image">
+                                    <?php }else{?>
+                                     <a href="<?php echo $hm->squareBoxLink2;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                     <?php }?>
+
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>Why ICON College</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink2;?>">
+                                                <h4><?php echo $hm->squareBoxTitle2;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -229,14 +234,18 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/2.jpg" alt="image">
+                                    <?php if ($hm->squareBoxImage3 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink3;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage3?>" alt="image">
+                                        <?php }else{?>
+                                        <a href="<?php echo $hm->squareBoxLink3;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                        <?php }?>
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>Students Loans & Maintenance</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink3;?>">
+                                                <h4><?php echo $hm->squareBoxTitle3;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -249,14 +258,18 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/3.jpg" alt="image">
+                                    <?php if ($hm->squareBoxImage4 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink4;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage4?>" alt="image">
+                                        <?php }else{?>
+                                        <a href="<?php echo $hm->squareBoxLink4;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                        <?php }?>
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>Enrol Now</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink4;?>">
+                                                <h4><?php echo $hm->squareBoxTitle4;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -269,14 +282,18 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/4.jpg" alt="image">
+                                    <?php if ($hm->squareBoxImage5 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink5;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage5?>" alt="image">
+                                        <?php }else{?>
+                                        <a href="<?php echo $hm->squareBoxLink5;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                            <?php }?>
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>Fees</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink5;?>">
+                                                <h4><?php echo $hm->squareBoxTitle5;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -289,14 +306,18 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/5.jpg" alt="image">
+                                    <?php if ($hm->squareBoxImage6 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink6;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage6?>" alt="image">
+                                        <?php }else{?>
+                                        <a href="<?php echo $hm->squareBoxLink6;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                            <?php }?>
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>Clearing Students</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink6;?>">
+                                                <h4><?php echo $hm->squareBoxTitle6;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -309,14 +330,18 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/6.jpg" alt="image">
+                                    <?php if ($hm->squareBoxImage7 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink7;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage7?>" alt="image">
+                                        <?php }else{?>
+                                        <a href="<?php echo $hm->squareBoxLink7;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                            <?php }?>
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>How to Find us</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink7;?>">
+                                                <h4><?php echo $hm->squareBoxTitle7;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -329,14 +354,18 @@
                         <div class="grid-item-inner">
                             <div class="event-item">
                                 <div class="event-thumbnail">
-                                    <a href="#"><img src="<?php echo base_url()?>public/images/you-are-welcome-images/7.jpg" alt="image">
+                                    <?php if ($hm->squareBoxImage8 != null){?>
+                                    <a href="<?php echo $hm->squareBoxLink8;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage8?>" alt="image">
+                                        <?php }else{?>
+                                        <a href="<?php echo $hm->squareBoxLink8;?>"><img style="width: 285px;height: 347px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
+                                            <?php }?>
                                 </div><!-- /event-thumbnail -->
 
                                 <div class="event-overlay">
                                     <div class="cs-post-header">
                                         <div class="cs-category-links">
-                                            <a class="overlay-top" href="#">
-                                                <h4>Admissions</h4>
+                                            <a class="overlay-top" href="<?php echo $hm->squareBoxLink8;?>">
+                                                <h4><?php echo $hm->squareBoxTitle8;?></h4>
                                             </a>
                                         </div>
                                     </div>
@@ -344,6 +373,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -377,8 +407,8 @@
                             <div class="toggle-title"><?php echo $e->eventTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($e->eventStartDate)) ?></span></div>
                             <div class="toggle-content">
                                 <div class="info">
-                                    <p class="desc-info"> <?php echo  substr($e->eventContent, 0, 350);?></p>
-                                    <br><p><a href="#"><button class="btn btn-default">Read More...</button></a></p>
+                                     <p><?php echo  substr($e->eventContent, 0, 350);?></p>
+                                    <br><p><a href="<?php echo base_url()?>Event-Details/<?php echo $e->eventId?>"><button class="btn btn-default">Read More...</button></a></p>
                                 </div>
                             </div>
                         </div>

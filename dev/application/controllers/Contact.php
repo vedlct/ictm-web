@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Event extends CI_Controller {
+class Contact extends CI_Controller
+{
 
     public function __construct()
     {
@@ -10,6 +11,8 @@ class Event extends CI_Controller {
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
         $this->load->model('Eventm');
+        $this->load->model('Newsm');
+        $this->load->model('Coursem');
 
     }
 
@@ -17,26 +20,15 @@ class Event extends CI_Controller {
     {
 
     }
-
-    public function getEventForTerms(){
-
-    }
-
-    public function EventList(){
+    public function contactUs()
+    {
         $this->menu();
-        $this->data['allEvents'] = $this->Eventm->getAllEvents();
-        $this->load->view('event-list', $this->data);
-
-    }
-
-    public function eventDetails($id){
-        $this->menu();
-        $this->data['Eventdetails'] = $this->Eventm->getEventDetails($id);
         $this->data['eventdata']= $this->Eventm->getLatestEvents();
-        $this->load->view('event-detail', $this->data);
+        $this->data['newsdata']= $this->Newsm->getLatestNews();
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->load->view('contact', $this->data);
 
     }
-
     public function menu(){
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
@@ -49,4 +41,5 @@ class Event extends CI_Controller {
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
 
     }
+
 }
