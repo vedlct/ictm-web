@@ -95,59 +95,35 @@
 
                                     <div class="simple-navigation">
                                         <div class="row">
+                                            <?php foreach ($next as $pv) {
+                                                if ($pv->newsTitle != null){
+                                                ?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
                                                 <a class="maincolor2hover">
                                                     <i class="fa fa-angle-left pull-left"></i>
                                                     <div class="simple-navigation-item-content">
                                                         <span>Previous</span>
-                                                        <h4>University Ranking</h4>
+                                                        <h4><?php echo $pv->newsTitle?></h4>
                                                     </div>
                                                 </a>
                                             </div>
-                                            
+                                            <?php } }?>
+                                            <?php foreach ($previous as $nx) {
+                                                if ($nx->newsTitle != null) {
+                                                ?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
                                                 <a class="maincolor2hover pull-right">
                                                     <i class="fa fa-angle-right pull-right"></i>
                                                     <div class="simple-navigation-item-content">
                                                         <span>Next</span>
-                                                        <h4>Your Career Starts Here</h4>
+                                                        <h4><?php echo $nx->newsTitle?></h4>
                                                     </div>
                                                 </a>
                                             </div>
+                                            <?php } }?>
                                         </div>
                                     </div>
-
-                                    <!--<div class="comments-area">
-                                        <div class="comment-form-tm">
-                                            <div class="comment-respond">
-                                                <div class="author-current">
-                                                    <img src="images/member/2.png" alt="image">
-                                                </div>
-
-                                                <form action="#" method="post" id="commentform" class="comment-form" novalidate>
-                                                    <fieldset class="style message">
-                                                        <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                                    </fieldset>
-                                                                                
-                                                    <fieldset class="style name-container">
-                                                        <input type="text" id="author" placeholder="Your Name *" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
-                                                    </fieldset>
-
-                                                    <fieldset class="style email-container">
-                                                        <input type="text" id="email" placeholder="Your Email *" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
-                                                    </fieldset> 
-
-                                                    <fieldset class="style website-container">
-                                                        <input type="text" id="website" placeholder="Your Website" class="tb-my-input" name="website" tabindex="2" value="" size="32" aria-required="true">
-                                                    </fieldset>
-
-                                                    <div class="submit-wrap">
-                                                        <button class="flat-button button-style">SUBMIT</button>
-                                                    </div>            
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>-->
+                                    
                                 </div>
                             </article>
                         </div><!-- /col-md-9 -->

@@ -26,6 +26,9 @@ class News extends CI_Controller {
     {
         $this->menu();
         $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
+        foreach ($this->data['newsDetails'] as $nd){$date = $nd->newsDate;}
+        $this->data['next'] = $this->Newsm->getNext($date);
+        $this->data['previous'] = $this->Newsm->getPrevious($date);
         $this->data['newsdata']= $this->Newsm->getLatestNews();
         $this->data['year'] = $this->Newsm->getYear();
         $this->data['month'] = $this->Newsm->getMonth();

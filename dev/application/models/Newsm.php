@@ -17,6 +17,7 @@ class Newsm extends CI_Model
 
         $this->db->select( 'newsId,newsTitle,newsDate,newsPhoto,newsContent' );
         $this->db->order_by("newsDate", "desc");
+        $this->db->where('newsStatus', STATUS[0]);
         $query = $this->db->get('ictmnews');
         return $query->result();
     }
@@ -27,6 +28,26 @@ class Newsm extends CI_Model
         $query = $this->db->get('ictmnews');
         return $query->result();
 
+    }
+
+    public function getNext($date){
+
+        $this->db->select( 'newsId,newsTitle' );
+        $this->db->where('newsDate >', $date);
+        $this->db->order_by("newsDate", "asc");
+        $this->db->limit(1);
+        $query = $this->db->get('ictmnews');
+        return $query->result();
+
+    }
+    public function getPrevious($date){
+
+        $this->db->select( 'newsId,newsTitle' );
+        $this->db->where('newsDate <', $date);
+        $this->db->order_by("newsDate", "desc");
+        $this->db->limit(1);
+        $query = $this->db->get('ictmnews');
+        return $query->result();
     }
     public function ArchiveShow($year, $month){
 
@@ -49,6 +70,8 @@ class Newsm extends CI_Model
         $query = $this->db->get('ictmnews');
         return $query->result();
     }
+
+
 
 
 
