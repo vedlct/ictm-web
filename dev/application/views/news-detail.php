@@ -123,7 +123,7 @@
                                             <?php } }?>
                                         </div>
                                     </div>
-                                    
+
                                 </div>
                             </article>
                         </div><!-- /col-md-9 -->

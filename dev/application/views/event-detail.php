@@ -27,6 +27,7 @@
                     <div class="row">
                         <div class="col-md-9">
                             <article class="post-course">
+                                <div class="entry-wrapper">
                                 <div class="row">
 
                                     <?php foreach ($Eventdetails as $eventDetails){?>
@@ -96,29 +97,7 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="simple-navigation">
-                                                        <div class="row">
-                                                            <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                                <a class="maincolor2hover">
-                                                                    <i class="fa fa-angle-left pull-left"></i>
-                                                                    <div class="simple-navigation-item-content">
-                                                                        <span>Previous</span>
-                                                                        <h4>University Ranking</h4>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
 
-                                                            <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                                <a class="maincolor2hover pull-right">
-                                                                    <i class="fa fa-angle-right pull-right"></i>
-                                                                    <div class="simple-navigation-item-content">
-                                                                        <span>Next</span>
-                                                                        <h4>Your Career Starts Here</h4>
-                                                                    </div>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
 
                                                 </div><!--/content-content-->
@@ -126,6 +105,33 @@
                                         </div><!--/single-content-detail-->         
                                     </div>
                                     <?php } ?>
+
+                                </div>
+
+                                    <div class="simple-navigation">
+                                        <div class="row">
+                                            <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
+                                                <a class="maincolor2hover">
+                                                    <i class="fa fa-angle-left pull-left"></i>
+                                                    <div class="simple-navigation-item-content">
+                                                        <span>Previous</span>
+                                                        <h4>University Ranking</h4>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
+                                                <a class="maincolor2hover pull-right">
+                                                    <i class="fa fa-angle-right pull-right"></i>
+                                                    <div class="simple-navigation-item-content">
+                                                        <span>Next</span>
+                                                        <h4>Your Career Starts Here</h4>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </article>
                         </div>
