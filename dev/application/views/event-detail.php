@@ -70,10 +70,7 @@
                                                         <p><?php echo $eventDetails->eventContent?></p>
                                                     </div>
 
-                                                    <div class="content-pad calendar-import">
-                                                        <a class="flat-button" href="#">+ GOOGLE CALENDAR</a>
-                                                        <a href="#" class="flat-button">+ ICAL IMPORT</a>
-                                                    </div>
+
 
                                                     <div class="content-pad v1">
                                                         <ul class="list-inline social-light">
@@ -99,19 +96,31 @@
                                                         </ul>
                                                     </div>
 
-                                                    <div class="event-more-detail">
-                                                        <h4>MORE DETAIL</h4>
+                                                    <div class="simple-navigation">
                                                         <div class="row">
-                                                        	<div class="col-md-6">
-                                                            	<h6 class="text">Phone</h6>
-                                                        		<p><a href="#">098-765-4321</a></p>
+                                                            <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
+                                                                <a class="maincolor2hover">
+                                                                    <i class="fa fa-angle-left pull-left"></i>
+                                                                    <div class="simple-navigation-item-content">
+                                                                        <span>Previous</span>
+                                                                        <h4>University Ranking</h4>
+                                                                    </div>
+                                                                </a>
                                                             </div>
-                                                            <div class="col-md-6">
-                                                            	<h6 class="text">Email</h6>
-                                                        		<p><a href="#">example@email.com</a></p>
+
+                                                            <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
+                                                                <a class="maincolor2hover pull-right">
+                                                                    <i class="fa fa-angle-right pull-right"></i>
+                                                                    <div class="simple-navigation-item-content">
+                                                                        <span>Next</span>
+                                                                        <h4>Your Career Starts Here</h4>
+                                                                    </div>
+                                                                </a>
                                                             </div>
-                                                        </div>  
-                                                    </div>                             
+                                                        </div>
+                                                    </div>
+
+
                                                 </div><!--/content-content-->
                                             </div><!--/course-detail-->
                                         </div><!--/single-content-detail-->         
