@@ -148,6 +148,7 @@
 
                                 </div>
                             </article>
+
                         </div>
 
                         <div class="col-md-3">

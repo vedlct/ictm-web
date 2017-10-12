@@ -49,6 +49,30 @@ class Newsm extends CI_Model
         $query = $this->db->get('ictmnews');
         return $query->result();
     }
+
+    public function getNextArchive($date, $year, $month){
+
+        $this->db->select( 'newsId,newsTitle' );
+        $this->db->where('newsDate >', $date);
+        $this->db->where('Year(`newsDate`)', $year);
+        $this->db->where('Month(`newsDate`)', $month);
+        $this->db->order_by("newsDate", "asc");
+        $this->db->limit(1);
+        $query = $this->db->get('ictmnews');
+        return $query->result();
+
+    }
+    public function getPreviousArchive($date ,$year, $month){
+
+        $this->db->select( 'newsId,newsTitle' );
+        $this->db->where('newsDate <', $date);
+        $this->db->where('Year(`newsDate`)', $year);
+        $this->db->where('Month(`newsDate`)', $month);
+        $this->db->order_by("newsDate", "desc");
+        $this->db->limit(1);
+        $query = $this->db->get('ictmnews');
+        return $query->result();
+    }
     public function ArchiveShow($year, $month){
 
         $this->db->select( 'newsId,newsTitle,newsContent,newsDate,newsPhoto' );
@@ -71,7 +95,12 @@ class Newsm extends CI_Model
         return $query->result();
     }
 
-
+    public function getYearMonth($id){
+        $this->db->select( 'Year(`newsDate`) as year , Month(`newsDate`) as month' );
+        $this->db->where('newsId', $id);
+        $query = $this->db->get('ictmnews');
+        return $query->result();
+    }
 
 
 

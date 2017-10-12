@@ -90,7 +90,7 @@
                                                 if ($pv->newsTitle != null){
                                                 ?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                <a class="maincolor2hover">
+                                                <a class="maincolor2hover" href="<?php echo base_url()?>News-Details/<?php echo $pv->newsId?>">
                                                     <i class="fa fa-angle-left pull-left"></i>
                                                     <div class="simple-navigation-item-content">
                                                         <span>Previous</span>
@@ -103,7 +103,7 @@
                                                 if ($nx->newsTitle != null) {
                                                 ?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                <a class="maincolor2hover pull-right">
+                                                <a class="maincolor2hover pull-right" href="<?php echo base_url()?>News-Details/<?php echo $nx->newsId?>">
                                                     <i class="fa fa-angle-right pull-right"></i>
                                                     <div class="simple-navigation-item-content">
                                                         <span>Next</span>
@@ -139,7 +139,7 @@
                                                         if ($y->year == $m->year) {
                                                             ?>
                                                             <ul style="margin-left:20px">
-                                                                <a href="<?php echo base_url()?>News/ArchiveShow/<?php echo $m->year?>/<?php echo $m->month?>"><li><?php echo date('F', mktime(0, 0, 0, $m->month, 10))."(".$m->monthcount.")" ?></li></a>
+                                                                <a href="<?php echo base_url()?>News-Archive/<?php echo $m->year?>/<?php echo $m->month?>"><li><?php echo date('F', mktime(0, 0, 0, $m->month, 10))."(".$m->monthcount.")" ?></li></a>
                                                             </ul>
                                                         <?php } } ?>
                                                 </li>

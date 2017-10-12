@@ -34,6 +34,20 @@ class News extends CI_Controller {
         $this->data['month'] = $this->Newsm->getMonth();
         $this->load->view('news-detail', $this->data);
     }
+    public function newsDetailsArchive($id)
+    {
+        $this->menu();
+        $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
+        $this->data['yearmonth'] = $this->Newsm->getYearMonth($id);
+        foreach ($this->data['newsDetails'] as $nd){$date = $nd->newsDate;}
+        foreach ($this->data['yearmonth'] as $ym){$year = $ym->year; $month=$ym->month;}
+        $this->data['next'] = $this->Newsm->getNextArchive($date, $year, $month);
+        $this->data['previous'] = $this->Newsm->getPreviousArchive($date, $year, $month);
+        $this->data['newsdata']= $this->Newsm->getLatestNews();
+        $this->data['year'] = $this->Newsm->getYear();
+        $this->data['month'] = $this->Newsm->getMonth();
+        $this->load->view('news-archive-details', $this->data);
+    }
 
     public function ArchiveShow($year, $month) {
 

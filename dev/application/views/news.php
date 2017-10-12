@@ -143,7 +143,7 @@
                                                if ($y->year == $m->year) {
                                                    ?>
                                                 <ul style="margin-left:20px">
-                                                	<a href="<?php echo base_url()?>News/ArchiveShow/<?php echo $m->year?>/<?php echo $m->month?>"><li><?php echo date('F', mktime(0, 0, 0, $m->month, 10))."(".$m->monthcount.")" ?></li></a>
+                                                	<a href="<?php echo base_url()?>News-Archive/<?php echo $m->year?>/<?php echo $m->month?>"><li><?php echo date('F', mktime(0, 0, 0, $m->month, 10))."(".$m->monthcount.")" ?></li></a>
                                                 </ul>
                                                 <?php } } ?>
                                             </li>
