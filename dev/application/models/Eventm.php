@@ -30,5 +30,29 @@ class Eventm extends CI_Model
 
     }
 
+    public function getNext($date,$id){
+
+        $this->db->select( 'eventId,eventTitle' );
+        $this->db->where('eventStartDate >', $date);
+        $this->db->where('eventId !=', $id);
+        $this->db->where('eventStatus', STATUS[0]);
+        $this->db->order_by("eventStartDate", "ASC");
+        $this->db->limit(1);
+        $query = $this->db->get('ictmevent');
+        return $query->result();
+
+    }
+    public function getPrevious($date,$id){
+
+        $this->db->select( 'eventId,eventTitle' );
+        $this->db->where('eventStartDate <=', $date);
+        $this->db->where('eventId !=', $id);
+        $this->db->where('eventStatus', STATUS[0]);
+        $this->db->order_by("eventStartDate", "desc");
+        $this->db->limit(1);
+        $query = $this->db->get('ictmevent');
+        return $query->result();
+    }
+
 
 }

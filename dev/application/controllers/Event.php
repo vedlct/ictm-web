@@ -32,6 +32,9 @@ class Event extends CI_Controller {
     public function eventDetails($id){
         $this->menu();
         $this->data['Eventdetails'] = $this->Eventm->getEventDetails($id);
+        foreach ($this->data['Eventdetails'] as $eventdetails){$date=$eventdetails->eventStartDate;}
+        $this->data['next'] = $this->Eventm->getNext($date,$id);
+        $this->data['previous'] = $this->Eventm->getPrevious($date,$id);
         $this->data['eventdata']= $this->Eventm->getLatestEvents();
         $this->load->view('event-detail', $this->data);
 

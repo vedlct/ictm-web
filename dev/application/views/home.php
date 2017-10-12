@@ -455,7 +455,9 @@
                                 </div>
                                 <div class="title-testimonial">
                                     <div class="thumb-title">
+                                        <?php if ($fb->feedbackByPhoto !=null){?>
                                         <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/feedbackImages/<?php echo $fb->feedbackByPhoto?>" alt="image">
+                                    <?php }?>
                                     </div>
                                     <div class="post-title">
                                         <h6 class="title-post"><?php echo $fb->feedbackByName?></h6>
@@ -500,21 +502,23 @@
         </div>
         <script>
             $(document).ready(function() {
-                var owl = $('.owl-carousel');
-                owl.owlCarousel({
-                    items: 5,
-                    loop: true,
-                    margin: 10,
-                    autoplay: true,
-                    autoplayTimeout: 2000,
-                    autoplayHoverPause: false
-                });
-                $('.play').on('click', function() {
-                    owl.trigger('play.owl.autoplay', [1000])
-                })
-                $('.stop').on('click', function() {
-                    owl.trigger('stop.owl.autoplay')
-                })
+
+                    var owl = $('.owl-carousel');
+                    owl.owlCarousel({
+                        items: 5,
+                        loop: true,
+                        margin: 10,
+                        autoplay: true,
+                        autoplayTimeout: 2000,
+                        autoplayHoverPause: false
+                    });
+                    $('.play').on('click', function () {
+                        owl.trigger('play.owl.autoplay', [1000])
+                    })
+                    $('.stop').on('click', function () {
+                        owl.trigger('stop.owl.autoplay')
+                    })
+
             })
         </script>
     </div>

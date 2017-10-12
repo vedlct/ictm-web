@@ -61,37 +61,28 @@
                                     <div class="list-inline item-content">
                                         <ul class="social-list">
                                             <li>
-                                                <a href="#" class="btn btn-default social-icon">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
+                                                <a class="btn btn-default btn-lighter social-icon" href="http://www.facebook.com/sharer.php?u=https://simplesharebuttons.com" target="_blank"><i class="fa fa-facebook"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" class="btn btn-default social-icon">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
+                                                <a class="btn btn-default btn-lighter social-icon" href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank"><i class="fa fa-twitter"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" class="btn btn-default social-icon">
-                                                    <i class="fa fa-google-plus"></i>
-                                                </a>
+                                                <a class="btn btn-default btn-lighter social-icon" href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank"><i class="fa fa-google-plus"></i></a>
                                             </li>
                                             <li>
-                                                <a href="#" class="btn btn-default social-icon">
-                                                    <i class="fa fa-pinterest"></i>
+                                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank" class="btn btn-default btn-lighter social-icon">
+                                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
                                                 </a>
                                             </li>
+
                                             <li>
-                                                <a href="#" class="btn btn-default social-icon">
-                                                    <i class="fa fa-vk"></i>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="btn btn-default social-icon">
-                                                    <i class="fa fa-envelope"></i>
+                                                <a href="mailto:?Subject=Simple Share Buttons&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://simplesharebuttons.com" class="btn btn-default btn-lighter social-icon">
+                                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                                 </a>
                                             </li>
                                         </ul>
-                                    </div><br>
+                                    </div>
+                                    <br>
 
                                     <div class="simple-navigation">
                                         <div class="row">
