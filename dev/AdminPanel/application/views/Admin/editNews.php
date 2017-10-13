@@ -52,7 +52,7 @@
                                         <label for="newsTitle" class="control-label col-lg-2">News Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('newsTitle'); ?></font></p>
-                                            <input class="form-control" id="newsTitle" name="newsTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($editNews->newsTitle))?>" required />
+                                            <input class="form-control" id="newsTitle" name="newsTitle"  type="text" value="<?php echo $editNews->newsTitle?>" required />
                                         </div>
                                     </div>
 

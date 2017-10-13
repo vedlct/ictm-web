@@ -51,7 +51,7 @@
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('departmentName'); ?></font></p>
-                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo htmlspecialchars(stripslashes($editDepartment->departmentName))?>" type="text" required />
+                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo $editDepartment->departmentName?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -60,7 +60,7 @@
                                         <div class="col-lg-4">
 
                                             <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
-                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="<?php echo htmlspecialchars(stripslashes($editDepartment->departmentHead))?>" type="text" required />
+                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="<?php echo $editDepartment->departmentHead?>" type="text" required />
 
 
                                             </select>

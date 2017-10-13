@@ -52,7 +52,7 @@
                                             <label for="affiliationTitle" class="control-label col-lg-2">Affiliation Title<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('affiliationTitle'); ?></font></p>
-                                                <input class="form-control" id="affiliationTitle" name="affiliationTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($editAffiliation->affiliationsTitle))?>" required />
+                                                <input class="form-control" id="affiliationTitle" name="affiliationTitle"  type="text" value="<?php echo $editAffiliation->affiliationsTitle?>" required />
                                             </div>
                                         </div>
 

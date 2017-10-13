@@ -82,13 +82,13 @@
                                         <label for="feedbackByName" class="control-label col-lg-2">Feedback By Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByName'); ?></font></p>
-                                            <input class="form-control" id="feedbackByName" name="feedbackByName" value="<?php echo htmlspecialchars(stripslashes($editFeedback->feedbackByName))?>" type="text" required />
+                                            <input class="form-control" id="feedbackByName" name="feedbackByName" value="<?php echo $editFeedback->feedbackByName?>" type="text" required />
                                         </div>
 
                                         <label for="feedbackByProfession" class="control-label col-lg-2">Feedback By Profession <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByProfession'); ?></font></p>
-                                            <input class="form-control" id="feedbackByProfession" name="feedbackByProfession"  value="<?php echo htmlspecialchars(stripslashes($editFeedback->feedbackByProfession))?>" type="text" required />
+                                            <input class="form-control" id="feedbackByProfession" name="feedbackByProfession"  value="<?php echo $editFeedback->feedbackByProfession?>" type="text" required />
                                         </div>
 
                                     </div>

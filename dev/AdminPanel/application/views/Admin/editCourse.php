@@ -52,7 +52,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Name <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                                <input class="form-control"  name="name"  id="name" value="<?php echo htmlspecialchars(stripslashes($cad->courseTitle))?>" type="text" required />
+                                                <input class="form-control"  name="name"  id="name" value="<?php echo $cad->courseTitle?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -76,7 +76,7 @@
                                             <label for="cname" class="control-label col-lg-2">Awarding Title <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('award'); ?></font></p>
-                                                <input class="form-control"  name="award"  id="award" value="<?php echo htmlspecialchars(stripslashes($cad->awardingTitle))?>" type="text" required />
+                                                <input class="form-control"  name="award"  id="award" value="<?php echo $cad->awardingTitle?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -84,7 +84,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Code  <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('codeperson'); ?></font></p>
-                                                <input class="form-control"  id="codeperson" name="codeperson" value="<?php echo htmlspecialchars(stripslashes($cad->courseCodeIcon))?>"  type="text" required />
+                                                <input class="form-control"  id="codeperson" name="codeperson" value="<?php echo $cad->courseCodeIcon;?>"  type="text" required />
                                             </div>
                                         </div>
 
@@ -95,7 +95,7 @@
                                             <label for="cname" class="control-label col-lg-2">Location <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('location'); ?></font></p>
-                                                <input class="form-control" id="location" name="location"  value="<?php echo htmlspecialchars(stripslashes($cad->couseLocation))?>" type="text" required />
+                                                <input class="form-control" id="location" name="location"  value="<?php echo $cad->couseLocation?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -103,7 +103,7 @@
                                             <label for="cname" class="control-label col-lg-2">Awarding body <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
-                                                <input class="form-control" id="awardingBody" name="awardingBody"  value="<?php echo htmlspecialchars(stripslashes($cad->awardingBody))?>" type="text" required />
+                                                <input class="form-control" id="awardingBody" name="awardingBody"  value="<?php echo $cad->awardingBody?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -114,7 +114,7 @@
                                             <label for="cname" class="control-label col-lg-2">Credit Value <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('credit'); ?></font></p>
-                                                <input class="form-control" id="credit" name="credit" value="<?php echo htmlspecialchars(stripslashes($cad->creditValue))?>"  type="text" required />
+                                                <input class="form-control" id="credit" name="credit" value="<?php echo $cad->creditValue?>"  type="text" required />
                                             </div>
                                         </div>
 
@@ -133,7 +133,7 @@
                                             <label for="cname" class="control-label col-lg-2">Accreditation <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('accreditation'); ?></font></p>
-                                                <input class="form-control" id="accreditation" name="accreditation"  value="<?php echo htmlspecialchars(stripslashes($cad->accreditationType))?>" type="text" required />
+                                                <input class="form-control" id="accreditation" name="accreditation"  value="<?php echo $cad->accreditationType?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -141,7 +141,7 @@
                                             <label for="cname" class="control-label col-lg-2">Accreditation No <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('accreditationNo'); ?></font></p>
-                                                <input class="form-control" id="accreditationNo" name="accreditationNo" value="<?php echo htmlspecialchars(stripslashes($cad->accreditationNumber))?>" type="text" required />
+                                                <input class="form-control" id="accreditationNo" name="accreditationNo" value="<?php echo $cad->accreditationNumber?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -151,7 +151,7 @@
                                             <label for="cname" class="control-label col-lg-2">Duration <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('duration'); ?></font></p>
-                                                <input class="form-control" id="duration" name="duration"  value="<?php echo htmlspecialchars(stripslashes($cad->courseDuration))?>" type="text" required />
+                                                <input class="form-control" id="duration" name="duration"  value="<?php echo $cad->courseDuration?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -159,7 +159,7 @@
                                             <label for="cname" class="control-label col-lg-2">Academic year<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('year'); ?></font></p>
-                                                <input class="form-control" id="year" name="year" value="<?php echo htmlspecialchars(stripslashes($cad->academicYear))?>" type="text" required />
+                                                <input class="form-control" id="year" name="year" value="<?php echo $cad->academicYear?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -169,7 +169,7 @@
                                             <label for="cname" class="control-label col-lg-2">Mode of Study<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('mode'); ?></font></p>
-                                                <input class="form-control" id="mode" name="mode" value="<?php echo htmlspecialchars(stripslashes($cad->studyMode))?>" type="text" required />
+                                                <input class="form-control" id="mode" name="mode" value="<?php echo $cad->studyMode?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -177,7 +177,7 @@
                                             <label for="cname" class="control-label col-lg-2">Language of study <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('language'); ?></font></p>
-                                                <input class="form-control" id="language" name="language" value="<?php echo htmlspecialchars(stripslashes($cad->studyLanguage))?>" type="text" required />
+                                                <input class="form-control" id="language" name="language" value="<?php echo $cad->studyLanguage?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -195,7 +195,7 @@
                                             <label for="cname" class="control-label col-lg-2">Timetables<span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('timetables'); ?></font></p>
-                                                <input class="form-control" id="timetables" name="timetables" value="<?php echo htmlspecialchars(stripslashes($cad->timeTable))?>" type="text" required />
+                                                <input class="form-control" id="timetables" name="timetables" value="<?php echo $cad->timeTable?>" type="text" required />
                                             </div>
                                         </div>
 
@@ -221,7 +221,7 @@
                                             <label for="cname" class="control-label col-lg-2">Course Code Pearson <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('code'); ?></font></p>
-                                                <input class="form-control" id="code" name="code"  value="<?php echo htmlspecialchars(stripslashes($cad->courseCodePearson))?>" type="text" required />
+                                                <input class="form-control" id="code" name="code"  value="<?php echo $cad->courseCodePearson?>" type="text" required />
                                             </div>
                                         </div>
 

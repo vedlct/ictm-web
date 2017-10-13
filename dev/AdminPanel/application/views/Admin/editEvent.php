@@ -52,7 +52,7 @@
                                         <label for="eventTitle" class="control-label col-lg-2">Event Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventTitle'); ?></font></p>
-                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($editEvent->eventTitle))?>" required />
+                                            <input class="form-control" id="eventTitle" name="eventTitle"  type="text" value="<?php echo $editEvent->eventTitle?>" required />
                                         </div>
                                     </div>
 
@@ -86,7 +86,7 @@
                                         <label class="control-label col-lg-2" for="menuId">Event Location<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('eventLocation'); ?></font></p>
-                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" value="<?php echo htmlspecialchars(stripslashes($editEvent->eventLocation))?>" required />
+                                            <input class="form-control" id="eventLocation" name="eventLocation"  type="text" value="<?php echo $editEvent->eventLocation?>" required />
 
                                             </select>
 
