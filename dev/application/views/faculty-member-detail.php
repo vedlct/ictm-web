@@ -34,9 +34,9 @@
                                     <div class="col-md-4">
                                         <div class="item-thumbnail">
                                             <?php if ($facultyinfo->facultyImage !=null){?>
-                                                <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
+                                                <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
                                             <?php }else{?>
-                                                    <a href="#"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
+                                                    <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
                                                 <?php } ?>
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
                                             <tbody>
                                             <?php foreach ($facultyCourseData as $facultyAllCourse){?>
                                                 <tr>
-                                                    <td><a href="#"><?php echo $facultyAllCourse->courseCodePearson;?></a></td>
+                                                    <td><?php echo $facultyAllCourse->courseCodePearson;?></td>
                                                     <td><a href="<?php echo base_url()?>course-details/<?php echo $facultyAllCourse->courseId ?>"><?php echo $facultyAllCourse->courseTitle;?></a></td>
                                                     <td><?php echo $facultyAllCourse->courseDuration;?></td>
                                                     <td></td>

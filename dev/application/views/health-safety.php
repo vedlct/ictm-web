@@ -27,7 +27,7 @@
                             <div class="sidebar">
                             	<div class="widget widget-nav-menu">
                                                 <div class=" widget-inner">
-                                                    <a href="about.php"><h2 class="widget-title maincolor2" style="background:#841a29; text-align:center; color:#fff">Health & Safety</h2></a>
+                                                    <a href="helth-safety.php"><h2 class="widget-title maincolor2" style="background:#841a29; text-align:center; color:#fff">Health & Safety</h2></a>
                                                     <div class="menu-main-navigation-container">
                                                         <ul id="menu-main-navigation-1" class="menu">
 
