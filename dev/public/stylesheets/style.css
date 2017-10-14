@@ -1450,6 +1450,7 @@ input[type="color"],
 .item-content {
     border-top: solid 1px #eaeaea;
     padding-top: 17px;
+	padding-left: 60px;
 }
 
 .post-item .content-pad .title {

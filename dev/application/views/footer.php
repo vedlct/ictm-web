@@ -181,16 +181,28 @@
                                 if ($bm->pageType == 'Static Type') {
 
                                     switch ($bm->pageContent) {
+
                                         case "course-list.php":
-                                            ?> <a href="<?php echo base_url()?>Course"><?php echo $bm->menuName?></a> | <?php
+                                            ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $bm->menuName?></a></li> <?php
                                             break;
                                         case "department.php":
-                                            ?> <a href="<?php echo base_url()?>Department"><?php echo $bm->menuName?></a> | <?php
+                                            ?> <li><a href="<?php echo base_url()?>Department"><?php echo $bm->menuName?></a></li> <?php
                                             break;
-                                        case "":
-                                            ?> <a href="<?php echo base_url()?>Course"><?php echo $bm->menuName?></a> | <?php
+                                        case "faculty-members.php":
+                                            ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $bm->menuName?></a></li> <?php
                                             break;
-
+                                        case "photo-gallery.php":
+                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $bm->menuName?></a></li> <?php
+                                            break;
+                                        case "news.php":
+                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $bm->menuName?></a></li> <?php
+                                            break;
+                                        case "event-list.php":
+                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $bm->menuName?></a></li> <?php
+                                            break;
+                                        case "contact.php":
+                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $bm->menuName?></a></li> <?php
+                                            break;
                                         default:
 
                                     }
@@ -280,10 +292,7 @@
 <!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/switcher.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.cookie.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/main.js"></script>
-        
-        <!-- for Application form -->
-<!--        <script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+
 <!--        <script src="--><?php //echo base_url()?><!--public/javascript/retina.min.js"></script>-->
-<!--        <script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 

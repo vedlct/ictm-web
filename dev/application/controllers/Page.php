@@ -49,6 +49,7 @@ class Page extends CI_Controller {
                 $this->load->view('terms-conditions', $this->data);
 
             }
+
     }
 
 

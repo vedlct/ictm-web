@@ -63,6 +63,7 @@ $route['News-Archive/(:any)/(:any)'] = 'News/ArchiveShow/$1/$2';
 $route['Events'] = 'Event/EventList';
 $route['Event-Details/(:any)'] = 'Event/eventDetails/$1';
 $route['Contact'] = 'Contact/contactUs';
+$route['applyToCourse/(:any)'] = 'Course/applyToCourse/$1';
 $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';
 $route['translate_uri_dashes'] = FALSE;

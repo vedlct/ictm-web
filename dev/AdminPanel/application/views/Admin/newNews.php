@@ -78,7 +78,7 @@
                                             <p><font color="red"> <?php echo form_error('newsType'); ?></font></p>
 
                                             <select class="form-control m-bot15" name="newsType" id="newsType" required>
-                                                <option value="" selected><?php echo SELECT_STATUS?></option>
+                                                <option value="" selected><?php echo SELECT_NEWS_TYPE?></option>
                                             <?php for($i=0;$i<count(NewsType);$i++){?>
                                                 <option value="<?php echo NewsType[$i]?>" <?php echo set_select('newsType',  NewsType[$i], False); ?>><?php echo NewsType[$i]?></option>
                                             <?php } ?>

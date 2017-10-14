@@ -39,7 +39,9 @@
                             <?php foreach ($courseSectiondetail as $csd){ ?>
                             <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                             <?php } ?>
-                            <li><a href="application-form.php">APPLY NOW</a></li>
+                            <?php foreach ($coursedetail as $cd) { ?>
+                            <li><a href="<?php echo base_url()?>applyToCourse/<?php echo $cd->courseId?>">APPLY NOW</a></li>
+                            <?php }?>
                         </ul>
                 
                 
