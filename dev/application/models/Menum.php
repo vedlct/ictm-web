@@ -20,6 +20,7 @@ class Menum extends CI_Model
         $this->db->where('menuType', MENU_TYPE[1]);
         $this->db->where('menuStatus', STATUS[0]);
         $this->db->where('parentId =', null);
+        $this->db->where('ictmmenu.pageId =', null);
         $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
         $query = $this->db->get('ictmmenu');
         return $query->result();
@@ -85,6 +86,7 @@ class Menum extends CI_Model
         $this->db->where('menuType', MENU_TYPE[1]);
         $this->db->where('menuStatus', STATUS[0]);
         $this->db->where('parentId =', null);
+        $this->db->where('ictmmenu.pageId !=', null);
         $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
         $query = $this->db->get('ictmmenu');
         return $query->result();

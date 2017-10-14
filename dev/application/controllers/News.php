@@ -62,6 +62,7 @@ class News extends CI_Controller {
     public function menu(){
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
+        $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();
         $this->data['mainmenu'] = $this->Menum->getMainMenu();
         $this->data['keyinfo'] = $this->Menum->getkeyInfoMenu();
         $this->data['quicklink'] = $this->Menum->getQuickLinksMenu();

@@ -64,4 +64,5 @@ $route['Events'] = 'Event/EventList';
 $route['Event-Details/(:any)'] = 'Event/eventDetails/$1';
 $route['Contact'] = 'Contact/contactUs';
 $route['404_override'] = '';
+$route['page-not-found'] = 'ErrorPage';
 $route['translate_uri_dashes'] = FALSE;

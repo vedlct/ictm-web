@@ -82,8 +82,20 @@
                                             case "department.php":
                                                 ?> <li><a href="<?php echo base_url()?>Department"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
+                                            case "faculty-members.php":
+                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
+                                            case "photo-gallery.php":
+                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
                                             case "news.php":
                                                 ?> <li><a href="<?php echo base_url()?>News"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
+                                            case "event-list.php":
+                                                ?> <li><a href="<?php echo base_url()?>Events"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
+                                            case "contact.php":
+                                                ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
                                             default:
                                         }
@@ -121,19 +133,19 @@
                         <div class="navbar-right topnav-sidebar">
                             <ul class="textwidget">
                                 <li>
-                                    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://www.facebook.com/Icon-College-of-Technology-and-Management-516262518410321/" target="_blank"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-youtube"></i></a>
+                                    <a href="https://www.youtube.com/channel/UCTsAITi5jTcfMr__PPKkK0A/"><i class="fa fa-youtube"></i></a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="https://plus.google.com/u/0/115728592171512772970"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    <a href="https://www.linkedin.com/company/13447528/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -162,6 +174,7 @@
                                 <li >
                                     <a href="<?php echo base_url()?>Home">Home</a>
                                 </li>
+
                                 <?php
                                 foreach ($mainmenu as $mn) {
                                     ?>
@@ -181,9 +194,6 @@
                                                                 break;
                                                             case "department.php":
                                                                 ?> <li><a href="<?php echo base_url()?>Department"><?php echo $q->menuName?></a></li> <?php
-                                                                break;
-                                                            case "":
-                                                                ?> <li><a href="<?php echo base_url()?>Course"><?php echo $q->menuName?></a></li> <?php
                                                                 break;
                                                             case "faculty-members.php":
                                                                 ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $q->menuName?></a></li> <?php
@@ -207,7 +217,7 @@
                                                         ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $q->menuName?></a></li><?php
                                                     } else {
                                                         if (empty($q->pageId)){
-                                                            ?> <li><a href="#"><?php echo $q->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $q->menuName?></a></li> <?php
                                                         }else {
                                                             ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><?php echo $q->menuName ?></a> </li> <?php
                                                         }
@@ -216,68 +226,12 @@
                                             ?>
                                         </ul>
                                     </li>
-                                    <?php
-//                                            $this->db->select('menuId, menuName, parentId ');
-//                                            $this->db->where('menuType', MENU_TYPE[1]);
-//                                            $this->db->where('menuStatus', STATUS[0]);
-//                                            $this->db->where('parentId =', $id);
-//                                            $query = $this->db->get('ictmmenu');
-//                                            foreach ($query->result() as $q) {
-//                                                echo $q->menuName;
-//                                            }
-                                }
+                                    <?php } ?>
+
+                                <?php foreach ($checkparentmenu as $cm){ ?>
+                                    <li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><?php echo $cm->menuName ?></a> </li>
+                                <?php }
                                 ?>
-                                <!--                                    <li>-->
-                                <!--                                        <a href="#">About</a>-->
-                                <!--                                        <ul class="submenu">-->
-                                <!--                                            <li><a href="--><?php //echo base_url()?><!--Welcome">About ICON College</a></li>-->
-                                <!--                                            <li><a href="#">Board of Directors</a></li>-->
-                                <!--                                            <li><a href="#">College Governance</a></li>-->
-                                <!--                                            <li><a href="#">Organisational Structure</a></li>-->
-                                <!--                                            <li><a href="#">Affiliation & Accreditations</a></li>-->
-                                <!--                                            <li><a href="#">Policies & Procedures</a></li>-->
-                                <!--                                            <li><a href="#">Location and Maps</a></li>-->
-                                <!--                                        </ul><!-- /.submenu -->
-                                <!--                                    </li> -->
-                                <!--                                    <li>-->
-                                <!--                                        <a href="#">Courses</a>-->
-                                <!--                                        <ul class="submenu">-->
-                                <!--                                            <li><a href="--><?php //echo base_url()?><!--Course">Our Courses</a></li>-->
-                                <!--                                            <li><a href="#">Business & Management</a></li>-->
-                                <!--                                            <li><a href="#">Information Technology & Engineering</a></li>-->
-                                <!--                                            <li><a href="#">Health & Social Care</a></li>-->
-                                <!--                                            <li><a href="#">Travel, Tourism & Hospitality Management</a></li>-->
-                                <!--                                            <li><a href="faculty-members.php">Teaching Faculty</a></li>-->
-                                <!--                                        </ul><!-- /.submenu -->
-                                <!--                                    </li>                                -->
-                                <!--                                    <li>-->
-                                <!--                                        <a href="#">Admission</a>-->
-                                <!--                                        <ul class="submenu">-->
-                                <!--                                            <li><a href="#">How to Apply</a></li>-->
-                                <!--                                            <li><a href="#">Admission Procedure</a></li>-->
-                                <!--                                            <li><a href="#">Admission Policy</a></li>-->
-                                <!--                                            <li><a href="#">Loans & Maintenance</a></li>-->
-                                <!--                                            <li><a href="login.php">Apply Now</a></li>-->
-                                <!--                                        </ul><!-- /.submenu -->
-                                <!--                                    </li>-->
-                                <!--                                    <li>-->
-                                <!--                                        <a href="#">College Life</a>-->
-                                <!--                                        <ul class="submenu">-->
-                                <!--                                            <li><a href="#">Student Services</a></li>-->
-                                <!--                                            <li><a href="#">Facilities</a></li>-->
-                                <!--                                            <li><a href="#">Student Supports</a></li>-->
-                                <!--                                            <li><a href="#">Term Dates</a></li>-->
-                                <!--                                            <li><a href="photo-gallery.php">Photo Gallery</a></li>-->
-                                <!--                                            <li><a href="#">Register Interest</a></li>-->
-                                <!--                                        </ul><!-- /.submenu -->
-                                <!--                                    </li>  -->
-                                <!--                                    <li>-->
-                                <!--                                        <a href="#">News & Events</a>-->
-                                <!--                                        <ul class="submenu">-->
-                                <!--                                            <li><a href="news.php">News</a></li>-->
-                                <!--                                            <li><a href="event-list.php">Events</a></li>-->
-                                <!--                                        </ul><!-- /.submenu -->
-                                <!--                                    </li>                                       -->
                             </ul><!-- /.menu -->
                         </nav><!-- /.mainnav -->
                     </div><!-- /.nav-wrap -->
