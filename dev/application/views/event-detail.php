@@ -53,7 +53,7 @@
 
                                                 <div class="course-info row content-pad">
                                                     <div class="col-md-6 col-sm-6 v1">
-                                                        <h4 class="text small-text">START</h4>
+                                                        <h4 style="color: blue" class="text big-text">START</h4>
                                                         <p><?php echo preg_replace("/  /"," - ",date('F d, Y  h:i a',strtotime($eventDetails->eventStartDate)),1);?></p>
                                                         <h4 class="text small-text">Address</h4>
                                                         <?php echo $eventDetails->eventLocation;?>
@@ -61,7 +61,7 @@
                                                     </div>
 
                                                     <div class="col-md-6 col-sm-6">
-                                                    	<h4 class="text small-text">END</h4>
+                                                    	<h4 style="color: blue"class="text big-text">END</h4>
                                                         <p><?php echo preg_replace("/  /"," - ",date('F d, Y  h:i a',strtotime($eventDetails->eventEndDate)),1);?></p>
                                                     </div>
                                                 </div><!--/course-info-->

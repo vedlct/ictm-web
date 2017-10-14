@@ -482,13 +482,15 @@
     <div class="container-fluid">
         <div class="new-bottom">
             <div class="row">
+                <?php foreach ($home as $hm) {?>
                 <div class="news-letter">
-                    <h1 class="title">WE BELIEVE THAT EDUCATION IS FOR EVERYONE</h1>
-                    <h4>There are many features available to help you complete your project</h4>
+                    <h1 class="title"><?php echo $hm->bottomBannerTitle;?></h1>
+                    <h4><?php echo $hm->bottomBannerSubTitle;?></h4>
                 </div>
                 <div class="img-news">
-                    <img src="<?php echo base_url()?>public/images/about/index1/11.jpg" alt="image">
+                    <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/bottomBannerImages/<?php echo $hm->bottomBannerImage ?>" alt="image">
                 </div>
+                <?php } ?>
             </div>
         </div>
     </div>

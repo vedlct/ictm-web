@@ -121,6 +121,7 @@ define("SELECT_DEPARTMENT", "Select Department");
 /////////////// News Page ///////////////
 
 define ("NewsType",array ("Announcement", "News", "Press Release"));
+define("SELECT_NEWS_TYPE", "Select News Type");
 
 
 /////////////  Event Page ////////////////////

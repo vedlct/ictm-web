@@ -78,9 +78,13 @@
                                                     <div class="blog-thumbnail" style="width: 409px; height: 258px;">
                                                         <div class="item-thumbnail-gallery">
                                                             <div class="item-thumbnail" >
-                                                                 <a href="#">
-                                                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $n->newsPhoto?>"  style="width: 409px; height: 258px;" alt="image">
-                                                                <div class="thumbnail-hoverlay main-color-1-bg"></div>
+                                                                 <a href="<?php echo base_url()?>News-Details/<?php echo $n->newsId?>">
+                                                                     <?php if ($n->newsPhoto !=null) {?>
+                                                                    <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $n->newsPhoto?>"  style = "width: 409px; height: 258px;" alt = "image" >
+                                                                <?php } else {?>
+                                                                     <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"  style = "width: 409px; height: 258px;" alt = "image" >
+                                                                     <?php }?>
+                                                                     <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                                 </a>
                                                             </div>

@@ -93,7 +93,7 @@
                                 
                                 <div class="widget widget-nav-menu">
                                                 <div class=" widget-inner">
-                                                    <a href="about.php"><h2 class="widget-title maincolor2" style="background:#841a29; text-align:center; color:#fff">Quick Links</h2></a>
+                                                    <a ><h2 class="widget-title maincolor2" style="background:#841a29; text-align:center; color:#fff">Quick Links</h2></a>
                                                     <div class="menu-main-navigation-container">
                                                         <ul id="menu-main-navigation-1" class="menu">
                                                             <?php foreach ($quicklink as $ql) {
@@ -102,17 +102,29 @@
 
                                                                 if ($ql->pageType == 'Static Type') {
 
-                                                                    switch ($tm->pageContent) {
+                                                                    switch ($ql->pageContent) {
+
                                                                         case "course-list.php":
-                                                                            ?> <li class="menu-item"><a href="<?php echo base_url()?>Course"><i class="fa fa-arrow-right" aria-hidden="true"></i><?php echo $tm->menuName?></a></li> <?php
+                                                                            ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $ql->menuName?></a></li> <?php
                                                                             break;
                                                                         case "department.php":
-                                                                            ?> <li class="menu-item"><a href="<?php echo base_url()?>Department"><i class="fa fa-arrow-right" aria-hidden="true"></i><?php echo $tm->menuName?></a></li> <?php
+                                                                            ?> <li><a href="<?php echo base_url()?>Department"><?php echo $ql->menuName?></a></li> <?php
                                                                             break;
-                                                                        case "":
-                                                                            ?> <li class="menu-item"><a href="<?php echo base_url()?>Course"><i class="fa fa-arrow-right" aria-hidden="true"></i><?php echo $tm->menuName?></a></li> <?php
+                                                                        case "faculty-members.php":
+                                                                            ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $ql->menuName?></a></li> <?php
                                                                             break;
-
+                                                                        case "photo-gallery.php":
+                                                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $ql->menuName?></a></li> <?php
+                                                                            break;
+                                                                        case "news.php":
+                                                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $ql->menuName?></a></li> <?php
+                                                                            break;
+                                                                        case "event-list.php":
+                                                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $ql->menuName?></a></li> <?php
+                                                                            break;
+                                                                        case "contact.php":
+                                                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $ql->menuName?></a></li> <?php
+                                                                            break;
                                                                         default:
 
                                                                     }

@@ -86,7 +86,7 @@
 
                                     <div class="simple-navigation">
                                         <div class="row">
-                                            <?php foreach ($next as $pv) {
+                                            <?php if (!empty($next)){foreach ($next as $pv) {
                                                 if ($pv->newsTitle != null){
                                                 ?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
@@ -98,7 +98,17 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                            <?php } }?>
+                                            <?php }}}else{?>
+                                                    <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
+                                                        <a class="maincolor2hover" href="">
+                                                            <i class="fa fa-angle-left pull-left"></i>
+                                                            <div style="padding-bottom: 40px;"class="simple-navigation-item-content">
+                                                                <span></span>
+                                                                <h4></h4>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                            <?php }?>
                                             <?php foreach ($previous as $nx) {
                                                 if ($nx->newsTitle != null) {
                                                 ?>
