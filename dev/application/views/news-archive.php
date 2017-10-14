@@ -36,8 +36,12 @@
                                                 <div class="blog-thumbnail" style="width: 409px; height: 258px;">
                                                     <div class="item-thumbnail-gallery">
                                                         <div class="item-thumbnail" >
-                                                            <a href="#">
-                                                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $n->newsPhoto?>"  style="width: 409px; height: 258px;" alt="image">
+                                                            <a href="<?php echo base_url()?>News-Details/<?php echo $n->newsId?>">
+                                                                <?php if ($n->newsPhoto !=null) {?>
+                                                                    <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $n->newsPhoto?>"  style = "width: 409px; height: 258px;" alt = "image" >
+                                                                <?php } else {?>
+                                                                    <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.JPG"  style = "width: 409px; height: 258px;" alt = "image" >
+                                                                <?php }?>
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -50,7 +54,7 @@
                                                         <div class="day"><?php echo date('j',strtotime($n->newsDate))?></div>
                                                     </div>
                                                     <div class="comment-block main-color-1-bg dark-div">
-                                                        <a href="#"><?php echo date('Y',strtotime($n->newsDate))?></a>
+                                                        <a ><?php echo date('Y',strtotime($n->newsDate))?></a>
                                                     </div>
                                                 </div><!--/thumbnail-overflow-->
                                             </div>

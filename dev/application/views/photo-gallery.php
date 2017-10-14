@@ -27,7 +27,6 @@
                 <h3><?php echo $acl->albumCategoryName; ?></h3>
                 <?php foreach ($albumname as $an){
                     if ($an->albumCategoryName == $acl->albumCategoryName){
-
                         $this->db->select('photoName');
                         $this->db->from('ictmphoto');
                         $this->db->where('albumId',$an->albumId);
@@ -35,12 +34,22 @@
                         $query3 = $this->db->get();
                     ?>
                         <div class="col-xs-6 col-sm-4">
-                            <?php foreach ($query3->result() as $s) { ?>
+                            <?php if (!empty($query3->result())){foreach ($query3->result() as $s) {
+                                $path   = 'images/photoAlbum/'.$an->albumTitle;
+                                if (is_dir($path)){?>
                                 <a href="<?php echo  base_url()?>album-pictures/<?php echo $an->albumId ?>" class="thumbnail">
-                                    <img style="width: 349px;height: 238px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $an->albumTitle?>/<?php echo $s->photoName?>" >
-                                    <p style=""><?php echo $an->albumTitle?></p>
+                                    <?php if ($s->photoName !=null){?>
+                                    <img style="width: 320px;height: 238px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $an->albumTitle?>/<?php echo $s->photoName?>" >
+                                    <?php }else{?>
+                                    <img style="width: 320px;height: 238px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/NoImage.JPG" >
+                                    <?php }?>
+                                <p style=""><?php echo $an->albumTitle?></p>
                                 </a>
-                            <?php } ?>
+                            <?php }else{?>
+                                    <a style="width: 320px;height: 238px" href="<?php echo base_url()?>page-not-found" class="thumbnail">
+                                        <p style="color: red;text-align: center">Something Went Wrong!!</p>
+                                    </a>
+                            <?php }}}?>
                         </div>
                 <?php } } ?>
             </div>

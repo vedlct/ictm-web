@@ -26,48 +26,6 @@
                     <div class="post-wrap">
                         <div class="col-md-9">
                             <div class="blog-listing">
-<!--                                <div class="blog-item">-->
-<!--                                    <div class="post-item blog-post-item">-->
-<!--                                        <div class="row">-->
-<!--                                            <div class="col-md-6 col-sm-12">-->
-<!--                                                <div class="content-pad">-->
-<!--                                                    <div class="blog-thumbnail">-->
-<!--                                                        <div class="item-thumbnail-video">-->
-<!--                                                            <div class="item-thumbnail-video-inner">-->
-<!--                                                                <iframe src="https://player.vimeo.com/video/81087045" width="900" height="506" frameborder="0" title="Aventura Africa Sudafrica Super Slowmotion" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>-->
-<!--                                                            </div>-->
-<!--                                                        </div>-->
-<!--                                                        <div class="thumbnail-overflow">-->
-<!--                                                            <!--<div class="comment-block main-color-1-bg dark-div">       -->
-<!--                                                                <a href="#">-->
-<!--                                                                    <i class="fa fa-comment"></i>0-->
-<!--                                                                </a>-->
-<!--                                                            </div>-->
-<!--                                                            <div class="date-block main-color-2-bg dark-div">-->
-<!--                                                                <div class="month">Jun</div>-->
-<!--                                                                <div class="day">03</div>-->
-<!--                                                            </div>-->
-<!--                                                            <div class="comment-block main-color-1-bg dark-div">-->
-<!--                                                        	<a href="#">2017</a>-->
-<!--                                                        </div>-->
-<!--                                                        </div>-->
-<!--                                                    </div><!--/blog-thumbnail-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!---->
-<!--                                            <div class="col-md-6 col-sm-12">-->
-<!--                                                <div class="content-pad">-->
-<!--                                                    <div class="item-content">-->
-<!--                                                        <h3 class="title"><a href="news-detail.php" class="main-color-1-hover">Your Career Starts Here</a></h3>-->
-<!--                                                        <div class="item-excerpt blog-item-excerpt"><p>On the other hand we denounce with righteous indignation and dislike men who are so beguiled and demoralized.</p>-->
-<!--                                                        </div>-->
-<!--                                                        <a class="button" href="#">DETAIL<i class="fa fa-angle-right"></i></a>-->
-<!--                                                    </div>-->
-<!--                                                </div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div><!-- /blog-item -->
 
                                 <?php foreach ($news as $n) { ?>
                                 <div class="blog-item">
@@ -82,7 +40,7 @@
                                                                      <?php if ($n->newsPhoto !=null) {?>
                                                                     <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $n->newsPhoto?>"  style = "width: 409px; height: 258px;" alt = "image" >
                                                                 <?php } else {?>
-                                                                     <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"  style = "width: 409px; height: 258px;" alt = "image" >
+                                                                     <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.JPG"  style = "width: 409px; height: 258px;" alt = "image" >
                                                                      <?php }?>
                                                                      <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>

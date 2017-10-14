@@ -61,33 +61,23 @@
                             <div class="list-inline item-content">
                                 <ul class="social-list">
                                     <li>
-                                        <a href="#" class="btn btn-default social-icon">
-                                            <i class="fa fa-facebook"></i>
-                                        </a>
+                                        <a class="btn btn-default btn-lighter social-icon" href="http://www.facebook.com/sharer.php?u=<?php echo current_url();?>" target="_blank"><i class="fa fa-facebook"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="btn btn-default social-icon">
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
+                                        <a class="btn btn-default btn-lighter social-icon" href="https://twitter.com/share?url=<?php echo current_url();?>&amp;text=News&amp;hashtags=News" target="_blank"><i class="fa fa-twitter"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="btn btn-default social-icon">
-                                            <i class="fa fa-google-plus"></i>
-                                        </a>
+                                        <a class="btn btn-default btn-lighter social-icon" href="https://plus.google.com/share?url=<?php echo current_url();?>" target="_blank"><i class="fa fa-google-plus"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="btn btn-default social-icon">
-                                            <i class="fa fa-pinterest"></i>
+                                        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo current_url();?>" target="_blank" class="btn btn-default btn-lighter social-icon">
+                                            <i class="fa fa-linkedin" aria-hidden="true"></i>
                                         </a>
                                     </li>
+
                                     <li>
-                                        <a href="#" class="btn btn-default social-icon">
-                                            <i class="fa fa-vk"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="btn btn-default social-icon">
-                                            <i class="fa fa-envelope"></i>
+                                        <a href="mailto:?Subject=News&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 <?php echo current_url();?>" class="btn btn-default btn-lighter social-icon">
+                                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                         </a>
                                     </li>
                                 </ul>
@@ -95,7 +85,7 @@
 
                             <div class="simple-navigation">
                                 <div class="row">
-                                    <?php foreach ($next as $pv) {
+                                    <?php if (!empty($next)){foreach ($next as $pv) {
                                         if ($pv->newsTitle != null){
                                             ?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
@@ -107,7 +97,17 @@
                                                     </div>
                                                 </a>
                                             </div>
-                                        <?php } }?>
+                                        <?php }}}else{?>
+                                        <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
+                                            <a class="maincolor2hover" href="">
+                                                <i class="fa fa-angle-left pull-left"></i>
+                                                <div style="padding-bottom: 40px;"class="simple-navigation-item-content">
+                                                    <span></span>
+                                                    <h4></h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    <?php }?>
                                     <?php foreach ($previous as $nx) {
                                         if ($nx->newsTitle != null) {
                                             ?>

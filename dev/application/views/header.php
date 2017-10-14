@@ -76,6 +76,7 @@
                                     //echo $tm->pageType;
                                     if ($tm->pageType == 'Static Type') {
                                         switch ($tm->pageContent) {
+
                                             case "course-list.php":
                                                 ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
@@ -104,7 +105,7 @@
                                         ?><li><a href="<?php echo $tm->pageContent?>" target="_blank"><?php echo $tm->menuName?></a></li><?php
                                     } else {
                                         if (empty($tm->pageId)){
-                                            ?> <li><a href="#"><?php echo $tm->menuName?></a></li> <?php
+                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $tm->menuName?></a></li> <?php
                                         }else {
                                             ?><li><a href="<?php echo base_url() ?>Page/<?php echo $tm->pageId ?>" ><?php echo $tm->menuName ?></a> </li> <?php
                                         }
@@ -131,23 +132,25 @@
                         </div>
 
                         <div class="navbar-right topnav-sidebar">
+                            <?php foreach ($contact as $contactInfo){?>
                             <ul class="textwidget">
                                 <li>
-                                    <a href="https://www.facebook.com/Icon-College-of-Technology-and-Management-516262518410321/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeFacebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.youtube.com/channel/UCTsAITi5jTcfMr__PPKkK0A/"><i class="fa fa-youtube"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeYoutube;?>"><i class="fa fa-youtube"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeTwitter;?>"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://plus.google.com/u/0/115728592171512772970"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeGoogle;?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.linkedin.com/company/13447528/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeLinkedIn;?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
+                            <?php } ?>
                         </div>
                     </div><!-- col-md-12 -->
                 </div><!-- row -->
@@ -189,6 +192,7 @@
                                                 if ($q->parentId ==  $mn->menuId){
                                                     if ($q->pageType == 'Static Type') {
                                                         switch ($q->pageContent) {
+
                                                             case "course-list.php":
                                                                 ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $q->menuName?></a></li> <?php
                                                                 break;
@@ -229,7 +233,7 @@
                                     <?php } ?>
 
                                 <?php foreach ($checkparentmenu as $cm){ ?>
-                                    <li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><?php echo $cm->menuName ?></a> </li>
+                                    <li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>"><?php echo $cm->menuName ?></a> </li>
                                 <?php }
                                 ?>
                             </ul><!-- /.menu -->

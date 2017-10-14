@@ -55,8 +55,8 @@
                                                     <div class="col-md-6 col-sm-6 v1">
                                                         <h4 style="color: blue" class="text big-text">START</h4>
                                                         <p><?php echo preg_replace("/  /"," - ",date('F d, Y  h:i a',strtotime($eventDetails->eventStartDate)),1);?></p>
-                                                        <h4 class="text small-text">Address</h4>
-                                                        <?php echo $eventDetails->eventLocation;?>
+                                                        <h4 style="color: blue"class="text big-text">Address</h4>
+                                                        <?php echo $eventDetails->eventLocation;?>&nbsp;&nbsp;&nbsp;
                                                         <a target="_blank" href="http://maps.google.com/maps?q=<?php echo $eventDetails->eventLocation;?>" class="map-link text">View map <i class="fa fa-angle-right"></i></a>
                                                     </div>
 

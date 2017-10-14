@@ -138,7 +138,7 @@
                                                                 } else {
 
                                                                     if (empty($ql->pageId)){
-                                                                        ?> <li class="menu-item"><a href="#"><?php echo $ql->menuName?></a></li> <?php
+                                                                        ?> <li class="menu-item"><a href="<?php echo base_url()?>page-not-found"><?php echo $ql->menuName?></a></li> <?php
                                                                     }else {
                                                                         ?><li class="menu-item"><a href="<?php echo base_url() ?>Page/<?php echo $ql->pageId ?>" ><i class="fa fa-arrow-right" aria-hidden="true"></i><?php echo $ql->menuName ?></a> </li> <?php
                                                                     }

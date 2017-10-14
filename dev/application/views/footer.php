@@ -25,16 +25,28 @@
                                                 if ($ki->pageType == 'Static Type') {
 
                                                     switch ($ki->pageContent) {
+
                                                         case "course-list.php":
-                                                            ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>Course"><?php echo $ki->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $ki->menuName?></a></li> <?php
                                                             break;
                                                         case "department.php":
-                                                            ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>Department"><?php echo $ki->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>Department"><?php echo $ki->menuName?></a></li> <?php
                                                             break;
-                                                        case "":
-                                                            ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>Course"><?php echo $ki->menuName?></a></li> <?php
+                                                        case "faculty-members.php":
+                                                            ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $ki->menuName?></a></li> <?php
                                                             break;
-
+                                                        case "photo-gallery.php":
+                                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $ki->menuName?></a></li> <?php
+                                                            break;
+                                                        case "news.php":
+                                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $ki->menuName?></a></li> <?php
+                                                            break;
+                                                        case "event-list.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $ki->menuName?></a></li> <?php
+                                                            break;
+                                                        case "contact.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $ki->menuName?></a></li> <?php
+                                                            break;
                                                         default:
 
                                                     }
@@ -48,7 +60,7 @@
                                                 } else {
 
                                                     if (empty($ki->pageId)){
-                                                        ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="#"><?php echo $ki->menuName?></a></li> <?php
+                                                        ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $ki->menuName?></a></li> <?php
                                                     }else {
                                                         ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $ki->pageId ?>" ><?php echo $ki->menuName ?></a> </li> <?php
                                                     }
@@ -57,13 +69,6 @@
                                             }
                                             ?>
 
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="health-safety.php">Health and Safety</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1307"><a href="#">Prevent Duty</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1308"><a href="#">Equal Opportunity</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1309"><a href="#">Admissions</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="#">Student Handbook</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="#">Office of the Independent Adjudicator (OIA)</a></li>-->
-<!--                                        	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="#">Competitions and Markets Authority (CMA)</a></li>-->
                                         </ul>
                                     </div>                                 
                                 </div>
@@ -79,16 +84,28 @@
                                                 if ($il->pageType == 'Static Type') {
 
                                                     switch ($il->pageContent) {
+
                                                         case "course-list.php":
-                                                            ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>Course"><?php echo $il->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $il->menuName?></a></li> <?php
                                                             break;
                                                         case "department.php":
-                                                            ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>Department"><?php echo $il->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>Department"><?php echo $il->menuName?></a></li> <?php
                                                             break;
-                                                        case "":
-                                                            ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>Course"><?php echo $il->menuName?></a></li> <?php
+                                                        case "faculty-members.php":
+                                                            ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $il->menuName?></a></li> <?php
                                                             break;
-
+                                                        case "photo-gallery.php":
+                                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $il->menuName?></a></li> <?php
+                                                            break;
+                                                        case "news.php":
+                                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $il->menuName?></a></li> <?php
+                                                            break;
+                                                        case "event-list.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $il->menuName?></a></li> <?php
+                                                            break;
+                                                        case "contact.php":
+                                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $il->menuName?></a></li> <?php
+                                                            break;
                                                         default:
 
                                                     }
@@ -102,7 +119,7 @@
                                                 } else {
 
                                                     if (empty($il->pageId)){
-                                                        ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="#"><?php echo $il->menuName?></a></li> <?php
+                                                        ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $il->menuName?></a></li> <?php
                                                     }else {
                                                         ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $il->pageId ?>" target="_blank"><?php echo $il->menuName ?></a> </li> <?php
                                                     }
@@ -111,17 +128,6 @@
                                             }
                                             ?>
 
-
-
-
-
-<!---->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="#">Students Support</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1307"><a href="#">Students Union</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1308"><a href="#">Accommodation</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1309"><a href="#">Academic Calendar</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="#">HESA Data Return</a></li>-->
-<!--                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1310"><a href="http://www.qaa.ac.uk/reviews-and-reports/provider?UKPRN=10003239" target="_blank">QAA Report</a></li>-->
                                         </ul>
                                     </div>
                                 </div>
@@ -216,7 +222,7 @@
                                 } else {
 
                                     if (empty($bm->pageId)){
-                                        ?> <a href="#"><?php echo $bm->menuName?></a> | <?php
+                                        ?> <a href="<?php echo base_url()?>page-not-found"><?php echo $bm->menuName?></a> | <?php
                                     }else {
                                         ?><a href="<?php echo base_url() ?>Page/<?php echo $bm->pageId ?>"><?php echo $bm->menuName ?></a> | <?php
                                     }
@@ -225,13 +231,6 @@
                             }
                             ?><br>
 
-<!---->
-<!--                            <a href="terms-conditions.php">Terms & Conditions</a>-->
-<!--                            | <a href="#">Privacy Policy</a>-->
-<!--                            | <a href="#">Data Protection</a>-->
-<!--                            | <a href="#">Accessibility</a>-->
-<!--                            | <a href="#">Site Map</a>-->
-<!--                            | <a href="#">Cookies</a><br>-->
 
 
                             <span style="font-size:11px">© 2017 <a href="#">Icon College</a> - All rights reserved. | Website Designed & Developed by: <a target="_blank" href="http://a2ninfotech.co.uk/">A2N Info Tech Ltd</a>.</span>
