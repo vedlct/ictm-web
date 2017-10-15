@@ -68,3 +68,8 @@ FileETag None
 <ifModule mod_headers.c>
   Header unset Last-Modified
 </ifModule>
+
+<filesMatch "\.(js|css)$">
+    Header set Expires "Thu, 21 May 2013 20:00:00 GMT"
+    Header set Last-Modified "Thu, 21 May 2012 20:00:00 GMT"
+</filesMatch>

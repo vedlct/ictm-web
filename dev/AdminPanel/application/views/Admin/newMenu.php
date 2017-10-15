@@ -68,7 +68,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div id="parentMenuDiv" class="form-group">
                                         <label class="control-label col-lg-2" for="parentId">Parent Menu</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
@@ -159,6 +159,12 @@
         }
         else
         {
+            if (btn != '<?php echo MENU_TYPE[1]?>'){
+                document.getElementById("parentMenuDiv").style.display = "none";
+            }
+            else{
+                document.getElementById("parentMenuDiv").style.display = "block";
+            }
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url("Admin/Menu/getMenuLevel/")?>'+btn,

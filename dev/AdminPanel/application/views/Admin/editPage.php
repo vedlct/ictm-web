@@ -176,6 +176,7 @@
 <script>
 
     $(document).ready(function(){
+
         var pagetype = document.getElementById("pagetype").value;
 
         if (pagetype == "Static Type" || pagetype == "Link Type"){
