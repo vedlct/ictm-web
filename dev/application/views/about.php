@@ -1,19 +1,35 @@
 		
 		<?php include("header.php"); ?>
+        <div id="pageMetaAndKeyword">
+            <head>
+                <?php foreach ($aboutdata as $ad){?>
+                    <meta charset="UTF-8">
+                    <meta name="description" content="<?php echo $ad->pageMetaData;?>">
+                    <meta name="keywords" content="<?php echo $ad->pageKeywords;?>">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <?php break;}?>
+            </head>
+        </div>
 
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">                    
                         <div class="page-title-heading">
-                            <h2 class="title">Welcome to Icon College</h2>
+                            <?php foreach ($pagetype as $pt){?>
+                                <a href="<?php echo base_url()?>Page/<?php echo $pt->pageId?>"><h2 class="title"><?php echo $pt->pageTitle;?></h2></a>
+                            <?php }?>
                         </div>
+
                         <div class="breadcrumbs">
                             <ul>
-                                <li class="home"><a href="#">Home </a></li>
-                                <li class="home"><a href="#">\ ABOUT </a></li>
+                                <li class="home"><a href="<?php echo base_url()?>Home">Home</a></li>
+                                <?php foreach ($pagetype as $pt){?>
+                                <li><a href="<?php echo base_url()?>Page/<?php echo $pt->pageId?>">\ <?php echo $pt->pageTitle;?> </a></li>
+                                <?php } ?>
                             </ul>                   
-                        </div>                  
+                        </div>
+
                     </div><!-- /.col-md-12 -->  
                 </div><!-- /.row -->  
             </div><!-- /.container -->                      
@@ -31,7 +47,7 @@
                                                 <div class="content-content">
 
                                                     <?php foreach ($aboutdata as $ad){
-                                                     //echo  $ad->pageContent;
+
                                                      if ($ad->pageContent !=null){
                                                          echo $ad->pageContent;
                                                      }
@@ -97,7 +113,7 @@
                                                     <div class="menu-main-navigation-container">
                                                         <ul id="menu-main-navigation-1" class="menu">
                                                             <?php foreach ($quicklink as $ql) {
-                                                                //echo $tm->pageType;
+
 
 
                                                                 if ($ql->pageType == 'Static Type') {
@@ -146,13 +162,6 @@
 
                                                             }
                                                             ?>
-<!--                                                            <li class="menu-item"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i> Open Days</a></li>   -->
-<!--                                                            <li class="menu-item"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i> Loans & Maintenances</a></li>         -->
-<!--                                                            <li class="menu-item"><a href="course-list.php"><i class="fa fa-arrow-right" aria-hidden="true"></i> Our Courses</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i> Students Services</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i> Clearing Students</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i> Enrol Now</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#"><i class="fa fa-arrow-right" aria-hidden="true"></i> How to Find Us</a></li>                                   -->
                                                          </ul>
                                                     </div>
                                                 </div>
@@ -170,5 +179,4 @@
     </div>
 </body>
 
-<!-- Mirrored from corpthemes.com/html/university/course-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jun 2017 06:02:47 GMT -->
 </html>

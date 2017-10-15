@@ -54,14 +54,14 @@
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text"  />
+                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text" placeholder="Write Page Meta Keywords(multiple separate by comma)" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" />
+                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" placeholder="Write Page Meta Description" />
                                         </div>
                                     </div>
                                     <div class="form-group">

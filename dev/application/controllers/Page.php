@@ -30,17 +30,17 @@ class Page extends CI_Controller {
 
                 $this->data['aboutdata']= $this->PageSectionm->getPageData($id);
                 $this->load->view('about', $this->data);
-                //print_r($this->data['aboutdata']);
+
             }
             else if ($pt->pageType == 'Health Type') {
 
-                //$this->data['healthdata']= $this->Pagem->getPageData($id);
+
                 $this->data['healthdata']= $this->PageSectionm->getPageData($id);
                 $this->load->view('health-safety', $this->data);
 
             } else if ($pt->pageType == 'Terms Type'){
 
-                //$this->data['termsdata']= $this->Pagem->getPageData($id);
+
                 $this->data['termsdata']= $this->PageSectionm->getPageData($id);
                 $this->data['newsdata']= $this->Newsm->getLatestNews();
                 $this->data['eventdata']= $this->Eventm->getLatestEvents();
