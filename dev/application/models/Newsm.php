@@ -103,5 +103,4 @@ class Newsm extends CI_Model
     }
 
 
-
 }

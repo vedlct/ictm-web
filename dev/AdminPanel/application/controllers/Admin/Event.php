@@ -143,6 +143,21 @@ class Event extends CI_Controller
             redirect('Admin/Login');
         }
     }
+
+    // appear in the Home page
+    public function appearInHomePage($eventId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $approve=$this->Eventm->appearInHomePage($eventId);
+            echo $approve;
+
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
     /*---------for Manage Faculty ----------end-------------*/
 
     // show Event image in new tab

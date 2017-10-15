@@ -81,7 +81,7 @@ class Eventm extends CI_Model
     /*---------for Manage Event -----------------------*/
 
     public function getAllforManageEvent($limit, $start) {  // for manage Event view
-        $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmevent');
         $this->db->limit($limit, $start);
         $this->db->order_by("eventId", "desc");
@@ -115,6 +115,10 @@ class Eventm extends CI_Model
         $EventType = $this->input->post("EventType");
         $eventStatus = $this->input->post("eventStatus");
         $eventContent = $this->input->post("eventContent");
+
+        if ($eventStatus==STATUS[1]){
+            $homeStatus=null;
+        }
 
 
         if (!empty($_FILES['event_image']['name'])) {
@@ -150,6 +154,7 @@ class Eventm extends CI_Model
                 'eventPhotoPath' => $id.".".pathinfo($event_image, PATHINFO_EXTENSION),
                 'eventType' => $EventType,
                 'eventStatus' => $eventStatus,
+                'homeStatus' => $homeStatus,
                 'eventContent' => $eventContent,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
@@ -165,6 +170,7 @@ class Eventm extends CI_Model
                 'eventLocation' =>$eventLocation,
                 'eventType' => $EventType,
                 'eventStatus' => $eventStatus,
+                'homeStatus' => $homeStatus,
                 'eventContent' => $eventContent,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
@@ -233,5 +239,32 @@ class Eventm extends CI_Model
 
     public function record_count() {
         return $this->db->count_all("ictmevent");
+    }
+
+    // appear in the Home page
+    public function appearInHomePage($eventId)
+    {
+        $this->db->select('homeStatus');
+        $this->db->where('eventId',$eventId);
+        $query = $this->db->get('ictmevent');
+        foreach ($query->result() as $status){$eventStatus=$status->homeStatus;}
+        if ($eventStatus==null){
+
+            $data = array(
+                'homeStatus' => SELECT_APPROVE[0],
+            );
+            $approve=1;
+        }
+        else{
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve=0;
+        }
+
+        $this->db->where('eventId',$eventId);
+        $this->db->update('ictmevent', $data);
+        return $approve;
+
     }
 }
