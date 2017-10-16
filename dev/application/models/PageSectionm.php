@@ -4,7 +4,8 @@
 class PageSectionm extends CI_Model
 {
 
-    public function getPageData($id){
+    public function getPageData($id) //get the page and page section data of the selected page
+    {
 
         $this->db->select( 'pageSectionId,ictmpagesection.pageId,pageSectionTitle,pageSectionContent,pageSectionImage,pageSectionStatus, pageTitle, pageType, pageContent, pageImage,pageMetaData,pageKeywords' );
         $this->db->join('ictmpagesection ', '(ictmpagesection.pageId = ictmpage.pageId) AND (ictmpagesection.pageSectionStatus = "Active")','left');
@@ -13,7 +14,8 @@ class PageSectionm extends CI_Model
         return $query->result();
 
     }
-    public function getPageType($id){
+    public function getPageType($id) // get the page type of the selected page
+    {
 
         $this->db->select( 'pageId,pageTitle,pageType' );
         $this->db->where('pageStatus', STATUS[0]);

@@ -223,7 +223,7 @@ class Photo extends CI_Controller
     }
 
 
-    public function val_img_check_fromEdit()
+    public function val_img_check_fromEdit() //validation check for image
     {
         $image = $_FILES['photoImage']['name'];
         $imageSize = ($_FILES['photoImage']['size']/1024);
@@ -233,8 +233,7 @@ class Photo extends CI_Controller
             $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
             if (in_array($ext, $supported_image)) {
-                //echo "it's image";
-                //return true;
+
                 if ($imageSize <4096){
                     return true;
                 }
@@ -245,7 +244,7 @@ class Photo extends CI_Controller
             } else {
                 $this->form_validation->set_message('val_img_check_fromEdit', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;
-                //echo 'not image';
+
 
             }
         }

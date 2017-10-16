@@ -33,25 +33,6 @@
                                     <?php echo $dd->departmentSummary?>
                                 <?php } ?>
                             </div>
-                            
-<!--                            <div class="table-responsive course-detail-section">-->
-<!--                            	<table class="table table-bordered">-->
-<!--                                	<thead>-->
-<!--                                    	<tr>-->
-<!--                                        	<th>Course Title</th>-->
-<!--                                            <th>Awarding Body</th>-->
-<!--                                            <th>Duration</th>-->
-<!--                                        </tr>-->
-<!--                                    </thead>-->
-<!--                                    <tbody>-->
-<!--                                    	<tr>-->
-<!--                                        	<td><a href="course-detail.php">BTEC Level 5 HND in Business</a></td>-->
-<!--                                            <td>Pearson</td>-->
-<!--                                            <td>2 Years</td>-->
-<!--                                        </tr>-->
-<!--                                    </tbody>-->
-<!--                                </table>-->
-<!--                            </div>-->
 
                     </div><!-- /col-md-9 -->
 

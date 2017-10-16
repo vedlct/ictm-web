@@ -18,18 +18,21 @@ class Event extends CI_Controller {
 
     }
 
-    public function getEventForTerms(){
+    public function getEventForTerms()
+    {
 
     }
 
-    public function EventList(){
+    public function EventList() //get all the events for Events page
+    {
         $this->menu();
         $this->data['allEvents'] = $this->Eventm->getAllEvents();
         $this->load->view('event-list', $this->data);
 
     }
 
-    public function eventDetails($id){
+    public function eventDetails($id) //get the event details for selected event page + simple nev
+    {
         $this->menu();
         $this->data['Eventdetails'] = $this->Eventm->getEventDetails($id);
         foreach ($this->data['Eventdetails'] as $eventdetails){$date=$eventdetails->eventStartDate;}
@@ -40,7 +43,8 @@ class Event extends CI_Controller {
 
     }
 
-    public function menu(){
+    public function menu() // get all the menu + footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

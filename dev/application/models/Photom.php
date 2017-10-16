@@ -3,7 +3,7 @@
 
 class Photom extends CI_Model
 {
-    public function getFooterPhotoGallery()
+    public function getFooterPhotoGallery() //get the all the photo for footer photo galley
     {
         $this->db->select('homeStatus,albumId,albumTitle');
         $this->db->from('ictmalbum');
@@ -37,7 +37,8 @@ class Photom extends CI_Model
 
     }
 
-    public function albumPhoto($id){
+    public function albumPhoto($id) //get the photos from the selected album
+    {
 
         $this->db->select('photoName,photoId,photoDetails, albumTitle');
         $this->db->from('ictmphoto');

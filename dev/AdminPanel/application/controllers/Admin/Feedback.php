@@ -206,8 +206,7 @@ class Feedback extends CI_Controller
             if (in_array($ext, $supported_image))
 
             {
-                //echo "it's image";
-                //return true;
+
                 if ($imageSize <4096){
                     return true;
                 }
@@ -222,7 +221,7 @@ class Feedback extends CI_Controller
             {
                 $this->form_validation->set_message('val_img_check',"Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;
-                //echo 'not image';
+
 
             }
 

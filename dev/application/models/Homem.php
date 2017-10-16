@@ -2,7 +2,8 @@
 class Homem extends CI_Model
 {
 
-    public function getNews(){
+    public function getNews() // get the news for the home page
+    {
 
         $this->db->where('newsStatus =', STATUS[0]);
         $this->db->where('homeStatus =', SELECT_APPROVE[0]);
@@ -11,7 +12,8 @@ class Homem extends CI_Model
         $query = $this->db->get('ictmnews');
         return $query->result();
     }
-    public function getEvents(){
+    public function getEvents() // get the events for the home page
+    {
 
         $this->db->where('eventStatus =', STATUS[0]);
         $this->db->where('homeStatus =', SELECT_APPROVE[0]);
@@ -20,7 +22,8 @@ class Homem extends CI_Model
         $query = $this->db->get('ictmevent');
         return $query->result();
     }
-    public function getAffiliations(){
+    public function getAffiliations() // get the affiliations for the home page
+    {
 
         $this->db->where('affiliationsStatus =', STATUS[0]);
         $this->db->where('homeStatus =', SELECT_APPROVE[0]);
@@ -28,7 +31,8 @@ class Homem extends CI_Model
         return $query->result();
     }
 
-    public function getFeedback(){
+    public function getFeedback() // get the feedback for the home page
+    {
 
         $this->db->select('feedbackByName,feedbackByProfession,feedbackDetails,feedbackByPhoto');
         $this->db->where('feedbackStatus', STATUS[0]);
@@ -36,7 +40,8 @@ class Homem extends CI_Model
         $query = $this->db->get('ictmfeedback');
         return $query->result();
     }
-    public function getHomeAlldata() {
+    public function getHomeAlldata() // get all the data of home page
+    {
 
         $query = $this->db->get('ictmhome');
         return $query->result();

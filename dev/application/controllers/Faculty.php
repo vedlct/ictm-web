@@ -15,21 +15,24 @@ class Faculty extends CI_Controller {
     public function index()
     {
     }
-    public function facultyList(){
+    public function facultyList() //get the faculty list for faculty members page
+    {
         $this->menu();
         $this->data['facultylist']=$this->Facultym->getAllFacultyList();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->data['eventdata']= $this->Eventm->getLatestEvents();
         $this->load->view('faculty-members', $this->data);
     }
-    public function facultyDetails($id){
+    public function facultyDetails($id) //get all the details of selected faculty
+    {
         $this->menu();
         $this->data['facultydetails']= $this->Facultym->getfacultyDetails($id);
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->data['facultyCourseData']=$this->Coursem->facultyAllCourseData($id);
         $this->load->view('faculty-member-detail',$this->data);
     }
-    public function menu(){
+    public function menu() //  get all the menu+ footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

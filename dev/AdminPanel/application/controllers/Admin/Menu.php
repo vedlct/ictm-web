@@ -211,7 +211,7 @@ class Menu extends CI_Controller {
         }
     }
 
-    public function menuTitleCheckFormEditMenu()
+    public function menuTitleCheckFormEditMenu() // validation check for menu title from edit menu
     {
         $menuTitle = $this->input->post("menuTitle");
         $menuType = $this->input->post("menuType");

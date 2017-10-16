@@ -26,7 +26,7 @@ class Event extends CI_Controller
 
     public function createNewEvent() // creates new Event in database
     {
-        //format: 'YYYY-MM-DDTHH:mm:ss' (for calender view)
+
         $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
@@ -209,8 +209,7 @@ class Event extends CI_Controller
             $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
             if (in_array($ext, $supported_image)) {
-                //echo "it's image";
-                //return true;
+
                 if ($imageSize <4096){
                     return true;
                 }
@@ -221,13 +220,13 @@ class Event extends CI_Controller
             } else {
                 $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;
-                //echo 'not image';
+
 
             }
         }
     }
 
-    function check_EventDate()
+    function check_EventDate() // validation check for event Start date and end date
     {
         $eventStartDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventStartDateTime")));
         $eventEndDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventEndDateTime")));

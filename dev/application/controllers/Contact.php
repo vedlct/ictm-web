@@ -20,16 +20,20 @@ class Contact extends CI_Controller
     {
 
     }
-    public function contactUs()
+    public function contactUs() //go to the contact us page
     {
         $this->menu();
-        $this->data['eventdata']= $this->Eventm->getLatestEvents();
-        $this->data['newsdata']= $this->Newsm->getLatestNews();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('contact', $this->data);
 
     }
-    public function menu(){
+    public function registerInterest() //go to the register Interest page
+    {
+        $this->menu();
+        $this->load->view('register-ineterest', $this->data);
+
+    }
+    public function menu() // get all the menu + footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

@@ -21,7 +21,8 @@ class Department extends CI_Controller {
        // $this->load->view('department');
     }
 
-    public function showDetails ($id) {
+    public function showDetails ($id) //get the details of selected department
+    {
 
         $this->menu();
         $this->data['dDeteails'] = $this->Departmentm->getDepartmentDetails($id);
@@ -29,7 +30,8 @@ class Department extends CI_Controller {
         $this->load->view('department', $this->data);
 
     }
-    public function menu(){
+    public function menu() //  get all the menu+ footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

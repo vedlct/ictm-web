@@ -86,7 +86,7 @@
 
 
 
-<!-- Mirrored from corpthemes.com/html/university/event-grid.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 July 2017 06:01:27 GMT -->
+
 </html>
 
         <!-- for Event Calendar -->

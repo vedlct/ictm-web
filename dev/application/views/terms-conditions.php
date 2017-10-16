@@ -85,23 +85,7 @@
                                                             foreach ($termsdata as $td){?>
                                                                 <li class="menu-item"><a href="<?php echo "#".$td->pageSectionId?>"><i class="fa fa-arrow-right" aria-hidden="true"></i><?php echo $td->pageSectionTitle?></a></li>
                                                             <?php }} ?>
-<!--                                                            <li class="menu-item"><a href="#s1"><i class="fa fa-arrow-right" aria-hidden="true"></i> Introduction</a></li>   -->
-<!--                                                            <li class="menu-item"><a href="#s2"><i class="fa fa-arrow-right" aria-hidden="true"></i> Applications</a></li>         -->
-<!--                                                            <li class="menu-item"><a href="#s3"><i class="fa fa-arrow-right" aria-hidden="true"></i> Immigration</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s4"><i class="fa fa-arrow-right" aria-hidden="true"></i> Conditions of admission and registration</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s5"><i class="fa fa-arrow-right" aria-hidden="true"></i> Deposits</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s6"><i class="fa fa-arrow-right" aria-hidden="true"></i> Tuition fees and other charges</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s7"><i class="fa fa-arrow-right" aria-hidden="true"></i> Your Cancellation rights</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s8"><i class="fa fa-arrow-right" aria-hidden="true"></i> Changes to your taught programme of study</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s9"><i class="fa fa-arrow-right" aria-hidden="true"></i> Changes to your supervision and/or support for your research study</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Educational provision</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#11"><i class="fa fa-arrow-right" aria-hidden="true"></i> Complaints procedure</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s12"><i class="fa fa-arrow-right" aria-hidden="true"></i> Liability</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s13"><i class="fa fa-arrow-right" aria-hidden="true"></i> Termination</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s14"><i class="fa fa-arrow-right" aria-hidden="true"></i> Data protection</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s15"><i class="fa fa-arrow-right" aria-hidden="true"></i> Intellectual Property and research integrity</a></li>-->
-<!--                                                            <li class="menu-item"><a href="#s16"><i class="fa fa-arrow-right" aria-hidden="true"></i> General</a></li>-->
-                                                         </ul>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                   </div>
@@ -135,5 +119,5 @@
     </div>
 </body>
 
-<!-- Mirrored from corpthemes.com/html/university/course-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jun 2017 06:02:47 GMT -->
+
 </html>

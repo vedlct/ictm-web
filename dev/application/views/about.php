@@ -141,6 +141,9 @@
                                                                         case "contact.php":
                                                                             ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $ql->menuName?></a></li> <?php
                                                                             break;
+                                                                        case "registerInterest.php":
+                                                                            ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $ql->menuName?></a></li> <?php
+                                                                            break;
                                                                         default:
 
                                                                     }

@@ -10,7 +10,7 @@ class Menu extends CI_Controller {
 
     }
 
-    public function index()
+    public function index() // get the menu data
     {
         $this->data['mainmenu'] = $this->Menum->getMainMenu();
        foreach ($this->data['mainmenu'] as $mm){

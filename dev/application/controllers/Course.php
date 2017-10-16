@@ -16,25 +16,29 @@ class Course extends CI_Controller {
     public function index()
     {
     }
-    public function courseList(){
+    public function courseList() //get the course list and department name for Course List page
+    {
         $this->menu();
         $this->data['coourselist']=$this->Coursem->getCourseTitle();
         $this->data['departmentname']=$this->Departmentm->getDepartmentName();
         $this->load->view('course-list', $this->data);
     }
-    public function courseDetails($id){
+    public function courseDetails($id) //get the details of selected course
+    {
         $this->menu();
         $this->data['coursedetail']= $this->Coursem->getCourseDetails($id);
         $this->data['courseSectiondetail']= $this->CourseSectionm->getCourseSectionDetails($id);
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('course-detail', $this->data);
     }
-    public function applyToCourse($id){
+    public function applyToCourse($id) // go to the apply page of selected course
+    {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('application-form', $this->data);
     }
-    public function menu(){
+    public function menu() // get all the menu + footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

@@ -4,7 +4,8 @@
 class Pagem extends CI_Model
 {
 
-    public function getPageData($id){
+    public function getPageData($id) //get selected page data
+    {
 
         $this->db->select( 'pageId,pageTitle,pageType,pageContent,pageKeywords,pageMetaData,pageImage' );
         $this->db->where('pageStatus', STATUS[0]);
@@ -13,7 +14,8 @@ class Pagem extends CI_Model
         return $query->result();
 
     }
-    public function getPageType($id){
+    public function getPageType($id) //get the page type of the selected page
+    {
 
         $this->db->select( 'pageId,pageTitle,pageType' );
         $this->db->where('pageStatus', STATUS[0]);

@@ -10,7 +10,7 @@
                         </div>
                         <div class="breadcrumbs">
                             <ul>
-                                <li class="home"><a href="#">Home </a></li>
+                                <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
                                 <li>\ Register Interest</li>
                             </ul>                   
                         </div>                  
@@ -127,6 +127,8 @@
         </section>
 
 		<?php include("footer.php"); ?>
+        <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
+        <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
                  
     </div>
 </body>

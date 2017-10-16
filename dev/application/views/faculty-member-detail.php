@@ -172,5 +172,5 @@
     </div>
 </body>
 
-<!-- Mirrored from corpthemes.com/html/university/member-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jun 2017 06:03:01 GMT -->
+
 </html>

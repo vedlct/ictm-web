@@ -13,7 +13,7 @@ class Home extends CI_Controller {
 
     }
 
-    public function index()
+    public function index() //get all the information for menu
     {
 
         $this->menu();
@@ -26,7 +26,8 @@ class Home extends CI_Controller {
 
     }
 
-    public function menu(){
+    public function menu() //  get all the menu+ footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

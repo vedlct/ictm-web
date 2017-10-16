@@ -98,6 +98,9 @@
                                             case "contact.php":
                                                 ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
+                                            case "registerInterest.php":
+                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
                                             default:
                                         }
                                     }
@@ -213,6 +216,9 @@
                                                                 break;
                                                             case "contact.php":
                                                                 ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $q->menuName?></a></li> <?php
+                                                                break;
+                                                            case "registerInterest.php":
+                                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $q->menuName?></a></li> <?php
                                                                 break;
                                                             default:
                                                         }

@@ -4,7 +4,8 @@
 class Eventm extends CI_Model
 {
 
-    public function getLatestEvents(){
+    public function getLatestEvents() // get the latest event info
+    {
 
         $this->db->select( 'eventId,eventPhotoPath,eventTitle,eventStartDate' );
         $this->db->order_by("eventStartDate", "desc");
@@ -13,7 +14,8 @@ class Eventm extends CI_Model
         return $query->result();
 
     }
-    public function getAllEvents(){
+    public function getAllEvents() // get all the events
+    {
 
         $this->db->select( 'eventId,eventTitle,eventStartDate,eventEndDate' );
         $this->db->order_by("eventStartDate", "desc");
@@ -21,7 +23,8 @@ class Eventm extends CI_Model
         return $query->result();
 
     }
-    public function getEventDetails($id){
+    public function getEventDetails($id) // get the details of selected events
+    {
 
         $this->db->select( 'eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventContent,eventPhotoPath,eventType,' );
         $this->db->where('eventId', $id);
@@ -30,7 +33,8 @@ class Eventm extends CI_Model
 
     }
 
-    public function getNext($date,$id){
+    public function getNext($date,$id) //get the next event of seletced events
+    {
 
         $this->db->select( 'eventId,eventTitle' );
         $this->db->where('eventStartDate >', $date);
@@ -42,7 +46,8 @@ class Eventm extends CI_Model
         return $query->result();
 
     }
-    public function getPrevious($date,$id){
+    public function getPrevious($date,$id) //get the previous event of seletced events
+    {
 
         $this->db->select( 'eventId,eventTitle' );
         $this->db->where('eventStartDate <=', $date);

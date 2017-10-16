@@ -562,7 +562,7 @@ $config = array (
         array(
             'field' => 'departmentName',
             'label' => 'Department Name',
-            'rules' => 'trim|required|max_length[255]|is_unique[ictmdepartment.departmentName]|htmlspecialchars|xss_clean',
+            'rules' => 'trim|required|max_length[255]|is_unique[ictmdepartment.departmentName]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Department Allready Existed !!',
             ),
@@ -570,7 +570,7 @@ $config = array (
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
-            'rules' => 'trim|required|max_length[100]|htmlspecialchars|xss_clean',
+            'rules' => 'trim|required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'image',
@@ -589,12 +589,12 @@ $config = array (
         array(
             'field' => 'departmentName',
             'label' => 'Department Name',
-            'rules' => 'required|max_length[255]|callback_DepartmenteditUniqueCheck|htmlspecialchars|xss_clean',
+            'rules' => 'required|max_length[255]|callback_DepartmenteditUniqueCheck|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
-            'rules' => 'trim|required|max_length[100]|htmlspecialchars|xss_clean ',
+            'rules' => 'trim|required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'image',
@@ -604,7 +604,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for Create Event-------------*/
@@ -867,7 +867,7 @@ $config = array (
         ),
         array(
             'field' => 'photoStatus',
-            'label' => 'Image',
+            'label' => 'Status',
             'rules' => 'max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),

@@ -4,7 +4,8 @@
 class Menum extends CI_Model
 {
 
-    public function getTopMenu(){
+    public function getTopMenu() //get the top menu info
+    {
 
         $this->db->select('menuId, menuName, pageTitle, ictmpage.pageId,pageType,pageContent' );
         $this->db->where('menuType', MENU_TYPE[0]);
@@ -14,7 +15,8 @@ class Menum extends CI_Model
         return $query->result();
 
     }
-    public function getMainMenu(){
+    public function getMainMenu() //get the main menu info
+    {
 
         $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ');
         $this->db->where('menuType', MENU_TYPE[1]);
@@ -25,16 +27,9 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
 
-//        $this->db->select('menuId, menuName, parentId ');
-//        $this->db->where('menuType', MENU_TYPE[1]);
-//        $this->db->where('menuStatus', STATUS[0]);
-//        $this->db->where('parentId =', NULL);
-//        $query = $this->db->get('ictmmenu');
-//        return $query->result();
-
     }
-    public function getkeyInfoMenu(){
-
+    public function getkeyInfoMenu() //get the keyInfo menu info
+    {
         $this->db->select('menuId, menuName, pageTitle, ictmpage.pageId,pageType,pageContent' );
         $this->db->where('menuType', MENU_TYPE[2]);
         $this->db->where('menuStatus', STATUS[0]);
@@ -42,8 +37,8 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-    public function getQuickLinksMenu(){
-
+    public function getQuickLinksMenu() //get the Quicklink menu info
+    {
         $this->db->select('menuId, menuName, pageTitle, ictmpage.pageId,pageType,pageContent' );
         $this->db->where('menuType', MENU_TYPE[3]);
         $this->db->where('menuStatus', STATUS[0]);
@@ -51,7 +46,8 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-    public function getImportantLinkMenu(){
+    public function getImportantLinkMenu() //get the importantlink menu info
+    {
 
         $this->db->select('menuId, menuName, pageTitle, ictmpage.pageId,pageType,pageContent' );
         $this->db->where('menuType', MENU_TYPE[4]);
@@ -60,7 +56,8 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-    public function getBottomMenu(){
+    public function getBottomMenu() //get the bottom menu info
+    {
 
         $this->db->select('menuId, menuName, pageTitle, ictmpage.pageId,pageType,pageContent' );
         $this->db->where('menuType', MENU_TYPE[5]);
@@ -70,18 +67,9 @@ class Menum extends CI_Model
         return $query->result();
     }
 
-//    public function getParentMenu($id){
-//        $this->db->select('menuId, menuName, parentId ');
-//        $this->db->where('menuType', MENU_TYPE[1]);
-//        $this->db->where('menuStatus', STATUS[0]);
-//        $this->db->where('parentId =', $id);
-//        $query = $this->db->get('ictmmenu');
-//        return $query->result();
-//
-//    }
 
-    public function checkParentMenu(){
-
+    public function checkParentMenu() //check the parent menu info of main menu
+    {
         $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ');
         $this->db->where('menuType', MENU_TYPE[1]);
         $this->db->where('menuStatus', STATUS[0]);
@@ -91,7 +79,8 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
-    public function getParentMenu(){
+    public function getParentMenu() //get the submenu info of main menu
+    {
 
         $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ');
         $this->db->where('menuType', MENU_TYPE[1]);

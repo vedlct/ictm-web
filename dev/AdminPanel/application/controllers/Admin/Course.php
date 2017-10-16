@@ -277,8 +277,7 @@ class Course extends CI_Controller
             $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
 
             if (in_array($ext, $supported_image)) {
-                //echo "it's image";
-                //return true;
+
                 if ($imageSize <4096){
                     return true;
                 }

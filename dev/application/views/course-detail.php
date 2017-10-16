@@ -138,15 +138,7 @@
                                     </table>
                                 </div><br>
                                 
-                                <!--<div class="content-course">
-                                	<div class="course-description">
-                                    	<div class="course-action">
-                                        	<div class="element-pad">
-                                            	<a href="application-form.php" class="flat-button">APPLY NOW</a>
-                                            </div>
-                                        </div>
-                                    </div>                              
-                                </div><br>-->
+
                                 
                                 <div class="widget widget-courses">
                                     <h2 class="widget-title">COURSES LIST</h2>
@@ -165,5 +157,5 @@
     </div>
 </body>
 
-<!-- Mirrored from corpthemes.com/html/university/course-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jun 2017 06:02:47 GMT -->
+
 </html>

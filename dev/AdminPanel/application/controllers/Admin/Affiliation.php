@@ -14,8 +14,9 @@ class Affiliation extends CI_Controller
     {
 
     }
-    /* this will show  create Affiliation page*/
-    public function newAffiliation()
+    /*---------for creating new Affiliation --------------------- */
+
+    public function newAffiliation() /* this will show  create Affiliation page*/
     {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -67,6 +68,7 @@ class Affiliation extends CI_Controller
     /*---------for creating new Affiliation ------end--------------- */
 
     /*---------for Manage Affiliation -----------------------*/
+
     public function manageAffiliation() // for manage Affiliation view
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
@@ -155,8 +157,8 @@ class Affiliation extends CI_Controller
         }
     }
 
-    // show Affiliation image in new tab
-    public function showImageForEdit($AffiliationId)
+
+    public function showImageForEdit($AffiliationId) // show Affiliation image in new tab
     {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -169,8 +171,9 @@ class Affiliation extends CI_Controller
         }
     }
 
-    //this function will delete the image in edit
-    public function deleteAffiliationImage($AffiliationId){
+
+    public function deleteAffiliationImage($AffiliationId) //this function will delete the image in edit
+    {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 

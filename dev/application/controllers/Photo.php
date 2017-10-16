@@ -14,21 +14,24 @@ class Photo extends CI_Controller
 
     }
 
-    public function albumList(){
+    public function albumList() // show album list and its photo in photo gallery
+    {
         $this->menu();
-        //$this->data['albumlist']=$this->Albumm->getAlbumListWithCategory();
+
         $this->data['albumCategoryList']=$this->Albumm->getAlbumCategoryList();
         $this->data['albumname']=$this->Albumm->getAllAlbumName();
         $this->load->view('photo-gallery', $this->data);
     }
 
-    public function albumPhoto($id) {
+    public function albumPhoto($id) // show to all photo of the album
+    {
 
         $this->menu();
         $this->data['albumphoto']=$this->Photom->albumPhoto($id);
         $this->load->view('album-pictures', $this->data);
     }
-    public function menu(){
+    public function menu() //  get all the menu+ footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

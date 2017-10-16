@@ -13,7 +13,7 @@ class News extends CI_Controller {
 
     }
 
-    public function index()
+    public function index() // get news by date and news date for archive
     {
         $this->menu();
         $this->data['newsdata']= $this->Newsm->getLatestNews();
@@ -22,7 +22,7 @@ class News extends CI_Controller {
         $this->data['month'] = $this->Newsm->getMonth();
         $this->load->view('news', $this->data);
     }
-    public function newsDetails($id)
+    public function newsDetails($id) //get the details of the particular news and  date for archive
     {
         $this->menu();
         $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
@@ -34,7 +34,7 @@ class News extends CI_Controller {
         $this->data['month'] = $this->Newsm->getMonth();
         $this->load->view('news-detail', $this->data);
     }
-    public function newsDetailsArchive($id)
+    public function newsDetailsArchive($id) //get the news details form selected news from archive
     {
         $this->menu();
         $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
@@ -49,7 +49,8 @@ class News extends CI_Controller {
         $this->load->view('news-archive-details', $this->data);
     }
 
-    public function ArchiveShow($year, $month) {
+    public function ArchiveShow($year, $month) //get the year ,month for news archive
+    {
 
         $this->menu();
         $this->data['newsArchive'] = $this->Newsm->ArchiveShow($year, $month);
@@ -59,7 +60,8 @@ class News extends CI_Controller {
         $this->load->view('news-archive', $this->data);
     }
 
-    public function menu(){
+    public function menu() //  get all the menu+ footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

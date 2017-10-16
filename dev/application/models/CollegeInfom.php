@@ -3,7 +3,8 @@
 
 class CollegeInfom extends CI_Model
 {
-    public function getCollegeContact(){
+    public function getCollegeContact() // get the college information
+    {
 
         $this->db->select('collegeName,collegeAddress,collegeTelephone1,collegeFax,collegeEmail,collegeFacebook,collegeYoutube,collegeTwitter,collegeGoogle,collegeLinkedIn');
         $query = $this->db->get('ictmcollegeinfo');

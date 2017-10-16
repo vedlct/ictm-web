@@ -19,7 +19,7 @@ class Page extends CI_Controller {
     function _remap($id) {
         $this->index($id);
     }
-    public function index($id)
+    public function index($id) // get the page+ page Section data
     {
         $this->menu();
         $this->data['pagetype']=$this->Pagem->getPageType($id);
@@ -54,7 +54,8 @@ class Page extends CI_Controller {
 
 
 
-    public function menu(){
+    public function menu() //  get all the menu+ footer
+    {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();

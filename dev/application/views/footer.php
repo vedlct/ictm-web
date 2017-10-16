@@ -19,7 +19,7 @@
                                         <ul id="menu-others" class="menu">
 
                                             <?php foreach ($keyinfo as $ki) {
-                                                //echo $tm->pageType;
+
 
 
                                                 if ($ki->pageType == 'Static Type') {
@@ -46,6 +46,9 @@
                                                             break;
                                                         case "contact.php":
                                                             ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $ki->menuName?></a></li> <?php
+                                                            break;
+                                                        case "registerInterest.php":
+                                                            ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $ki->menuName?></a></li> <?php
                                                             break;
                                                         default:
 
@@ -105,6 +108,9 @@
                                                             break;
                                                         case "contact.php":
                                                             ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $il->menuName?></a></li> <?php
+                                                            break;
+                                                        case "registerInterest.php":
+                                                            ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $il->menuName?></a></li> <?php
                                                             break;
                                                         default:
 
@@ -208,6 +214,9 @@
                                             break;
                                         case "contact.php":
                                             ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $bm->menuName?></a></li> <?php
+                                            break;
+                                        case "registerInterest.php":
+                                            ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $bm->menuName?></a></li> <?php
                                             break;
                                         default:
 

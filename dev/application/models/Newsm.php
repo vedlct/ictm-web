@@ -4,7 +4,8 @@
 class Newsm extends CI_Model
 {
 
-    public function getLatestNews(){
+    public function getLatestNews() //get the latest news
+    {
 
         $this->db->select( 'newsId,newsTitle,newsDate,newsPhoto' );
         $this->db->order_by("newsDate", "desc");
