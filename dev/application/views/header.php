@@ -233,8 +233,45 @@
                                     <?php } ?>
 
                                 <?php foreach ($checkparentmenu as $cm){ ?>
-                                    <li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>"><?php echo $cm->menuName ?></a> </li>
-                                <?php }
+                                    <?php
+                                    if ($cm->pageType == 'Static Type') {
+                                    switch ($cm->pageContent) {
+
+                                    case "course-list.php":
+                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $cm->menuName?></a></li> <?php
+                                    break;
+                                case "department.php":
+                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $cm->menuName?></a></li> <?php
+                                    break;
+                                case "faculty-members.php":
+                                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $cm->menuName?></a></li> <?php
+                                                                break;
+                                                            case "photo-gallery.php":
+                                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $cm->menuName?></a></li> <?php
+                                                                break;
+                                                            case "news.php":
+                                                                ?> <li><a href="<?php echo base_url()?>News"><?php echo $cm->menuName?></a></li> <?php
+                                                                break;
+                                                            case "event-list.php":
+                                                                ?> <li><a href="<?php echo base_url()?>Events"><?php echo $cm->menuName?></a></li> <?php
+                                                                break;
+                                                            case "contact.php":
+                                                                ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $cm->menuName?></a></li> <?php
+                                                                break;
+                                                            default:
+                                                        }
+                                }
+                                else if ($cm->pageType == 'Link Type'){
+                                    ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
+                                } else {
+                                    if (empty($cm->pageId)){
+                                        ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $cm->menuName?></a></li> <?php
+                                    }else {
+                                        ?><li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><?php echo $cm->menuName ?></a> </li> <?php
+                                    }
+                                }
+                                }
+
                                 ?>
                             </ul><!-- /.menu -->
                         </nav><!-- /.mainnav -->

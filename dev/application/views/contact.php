@@ -70,12 +70,28 @@
         <?php include("footer.php"); ?>
         
 
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/gmap3.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/gmap3.min.js"></script>-->
+<!--        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-waypoints.js"></script>
+
+        <script>
+            function initMap() {
+                var uluru = {lat: 51.515698, lng: -0.067622};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 18,
+                    center: uluru
+                });
+                var marker = new google.maps.Marker({
+                    position: uluru,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZnEw-KEMJGyeJirDzOXa11L9kibGgQXM&callback=initMap">
+        </script>
 
     </div>
 </body>
 
-<!-- Mirrored from corpthemes.com/html/university/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jun 2017 06:03:02 GMT -->
+
 </html>
