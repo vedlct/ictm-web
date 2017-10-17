@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
 
     <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/colors/color1.css" >
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/color1.css" >
 
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
