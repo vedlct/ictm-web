@@ -87,7 +87,7 @@ class Feedbackm extends CI_Model
 
     /*---------for Manage Feedback -----------------------*/
     public function getAllforManageFeedback($limit, $start) {
-        $this->db->select('feedbackId,feedbackByName,feedbackByProfession,feedbackSource,feedbackApprove,feedbackApprovedBy,feedbackApprovedDate,feedbackStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('feedbackId,feedbackByName,feedbackByProfession,feedbackSource,feedbackApprove,feedbackApprovedBy,feedbackApprovedDate,feedbackStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfeedback');
         $this->db->order_by("feedbackId", "desc");
         $this->db->limit($limit, $start);
@@ -140,7 +140,9 @@ class Feedbackm extends CI_Model
         {
             $feedbackApproveBy=null;
             $feedbackApprovedDate=null;
+            $homeStatus=null;
         }
+
 
 
 
@@ -179,6 +181,7 @@ class Feedbackm extends CI_Model
                 'feedbackStatus' => $feedbackStatus,
                 'feedbackApprovedBy' =>$feedbackApproveBy,
                 'feedbackApprovedDate' =>$feedbackApprovedDate,
+                'homeStatus' => $homeStatus,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
             );
@@ -195,6 +198,7 @@ class Feedbackm extends CI_Model
                 'feedbackStatus' => $feedbackStatus,
                 'feedbackApprovedBy' => $feedbackApproveBy,
                 'feedbackApprovedDate' => $feedbackApprovedDate,
+                'homeStatus' => $homeStatus,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
             );
@@ -247,6 +251,33 @@ class Feedbackm extends CI_Model
         {
             return $error=null;
         }
+
+    }
+
+    // appear in the Home page
+    public function appearInHomePage($feedbackId)
+    {
+        $this->db->select('homeStatus');
+        $this->db->where('feedbackId',$feedbackId);
+        $query = $this->db->get('ictmfeedback');
+        foreach ($query->result() as $status){$feedbackStatus=$status->homeStatus;}
+        if ($feedbackStatus==null){
+
+            $data = array(
+                'homeStatus' => SELECT_APPROVE[0],
+            );
+            $approve=1;
+        }
+        else{
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve=0;
+        }
+
+        $this->db->where('feedbackId',$feedbackId);
+        $this->db->update('ictmfeedback', $data);
+        return $approve;
 
     }
 

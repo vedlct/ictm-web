@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Contact extends CI_Controller
+class OnlineForms extends CI_Controller
 {
 
     public function __construct()
@@ -31,6 +31,12 @@ class Contact extends CI_Controller
         $this->menu();
         $this->load->view('register-ineterest', $this->data);
 
+    }
+    public function applyNow() // go to the apply page of selected course
+    {
+        $this->menu();
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->load->view('application-form', $this->data);
     }
     public function menu() // get all the menu + footer
     {

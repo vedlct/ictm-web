@@ -8,6 +8,8 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>ICON College</title>
 
+
+
     <meta name="author" content="themesflat.com">
 
     <!-- Mobile Specific Metas -->
@@ -135,25 +137,27 @@
                         </div>
 
                         <div class="navbar-right topnav-sidebar">
-                            <?php foreach ($contact as $contactInfo){?>
+
                             <ul class="textwidget">
+                                <?php foreach ($contact as $contactInfo){?>
                                 <li>
                                     <a href="<?php echo $contactInfo->collegeFacebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $contactInfo->collegeYoutube;?>"><i class="fa fa-youtube"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeYoutube;?>"target="_blank"><i class="fa fa-youtube"></i></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $contactInfo->collegeTwitter;?>"><i class="fa fa-twitter"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeTwitter;?>"target="_blank"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $contactInfo->collegeGoogle;?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeGoogle;?>"target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo $contactInfo->collegeLinkedIn;?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    <a href="<?php echo $contactInfo->collegeLinkedIn;?>"target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                 </li>
+                                <?php } ?>
                             </ul>
-                            <?php } ?>
+
                         </div>
                     </div><!-- col-md-12 -->
                 </div><!-- row -->
@@ -176,18 +180,13 @@
                     <div class="nav-wrap">
 
                         <nav id="mainnav" class="mainnav">
+
                             <ul class="menu">
-                                <li >
-                                    <a href="<?php echo base_url()?>Home">Home</a>
-                                </li>
+                                <li ><a href="<?php echo base_url()?>Home">Home</a></li>
 
-                                <?php
-                                foreach ($mainmenu as $mn) {
-                                    ?>
+                                <?php foreach ($mainmenu as $mn) {?>
 
-                                    <li>
-                                        <a><?php echo $mn->menuName; ?></a>
-
+                                    <li><a><?php echo $mn->menuName; ?></a>
 
                                         <ul class="submenu">
                                             <?php
@@ -271,7 +270,7 @@
                                                         }
                                 }
                                 else if ($cm->pageType == 'Link Type'){
-                                    ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
+                                    ?><li><a href="<?php echo $cm->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
                                 } else {
                                     if (empty($cm->pageId)){
                                         ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $cm->menuName?></a></li> <?php

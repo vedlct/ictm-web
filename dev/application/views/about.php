@@ -52,12 +52,12 @@
                                                          echo $ad->pageContent;
                                                      }
                                                      if($ad->pageImage != null){?>
-                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $ad->pageImage?>" >
+                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $ad->pageImage?>"><br><br>
                                                         <?php };
                                                      break;
                                                     }
                                                     ?>
-                                                    <br><br>
+
                                                     <?php foreach ($aboutdata as $ad) {}
                                                         if ($ad->pageSectionId != null){?>
                                                                 <ul style="margin-left:0px" class="nav nav-tabs">
