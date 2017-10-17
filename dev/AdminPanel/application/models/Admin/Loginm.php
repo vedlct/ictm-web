@@ -7,7 +7,7 @@ class Loginm extends CI_Model {
     {
 
         $useremail = $this->input->post('useremail');
-        $password = $this->input->post('password');
+        $password  = $this->input->post('password');
         $this->db->where('userEmail', $useremail);
         $this->db->where('UserPassword', $password);
 

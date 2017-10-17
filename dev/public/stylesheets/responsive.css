@@ -1,30 +1,21 @@
 	/* Media Queries
 	-------------------------------------------------------------- */
 	@media only screen and (max-width: 1900px) {
-        .tp-caption.color-full {
-            background-color: rgba(255, 255, 255, 0.8);
-            bottom: 110px;
-            padding: 29px 40px 33px;
-            position: absolute;
-            right: 0;
-            white-space: normal;
-            width: 360px;
-            z-index: 9999;
-        }
+		.tp-caption.color-full {
+			background-color: rgba(255, 255, 255, 0.8);
+			bottom: 110px;
+			padding: 29px 40px 33px;
+			position: absolute;
+			right: 0;
+			white-space: normal;
+			width: 360px;
+			z-index: 9999;
+		}
 	}
 
 	@media only screen and (max-width: 1366px) {
 		
-        .tp-caption.color-full {
-            background-color: rgba(255, 255, 255, 0.8);
-            bottom: 110px;
-            padding: 29px 40px 33px;
-            position: absolute;
-            right: 0;
-            white-space: normal;
-            width: 300px;
-            z-index: 9999;
-        }
+
 	}
 
 	/* Smaller than standard 1200 */
@@ -39,7 +30,7 @@
 		}
 
 		.flat-events .grid-item.color-full {
-		    height: 286px;
+		    height: 285px;
 		}
 
 		.flat-events .grid-item .grid-item-content .title {
@@ -49,21 +40,6 @@
 		.post-scroller-carousel {
 		    max-height: 545px;
 		}
-        #logo img {
-            width: 110px;
-            height: 40px;
-        }
-        
-        .tp-caption.color-full {
-            background-color: rgba(255, 255, 255, 0.8);
-            bottom: 110px;
-            padding: 29px 40px 33px;
-            position: absolute;
-            right: 0;
-            white-space: normal;
-            width: 360px;
-            z-index: 9999;
-        }
 	}
 
 	/* Smaller than standard 992 */
@@ -136,11 +112,6 @@
 			margin-bottom: 50px;
 		}
 
-        #logo img {
-            width: 110px;
-            height: 40px;
-        }
-        
 		.box-university .item-post {
 			margin-bottom: 40px;
 		}
@@ -495,11 +466,6 @@
 		.thumbnail-overflow {
 		    left: 0px;
 		}
-        
-        #logo img {
-            width: 110px;
-            height: 40px;
-        }
 	}
 
 	/* All Mobile Sizes */
