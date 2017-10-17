@@ -135,8 +135,9 @@
                         </div>
 
                         <div class="navbar-right topnav-sidebar">
-                            <?php foreach ($contact as $contactInfo){?>
+
                             <ul class="textwidget">
+                                <?php foreach ($contact as $contactInfo){?>
                                 <li>
                                     <a href="<?php echo $contactInfo->collegeFacebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
                                 </li>
@@ -152,8 +153,9 @@
                                 <li>
                                     <a href="<?php echo $contactInfo->collegeLinkedIn;?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                                 </li>
+                                <?php } ?>
                             </ul>
-                            <?php } ?>
+
                         </div>
                     </div><!-- col-md-12 -->
                 </div><!-- row -->
@@ -163,10 +165,10 @@
 
     <!-- Header -->
     <header id="header" class="header">
-        <div class="header-wrap">
+        <div class="header-wrap ">
             <div class="container">
                 <div class="header-wrap clearfix">
-                    <div id="logo" class="logo">
+                    <div id="logo" class="logo responsive">
                         <a href="<?php echo base_url()?>Home" rel="home">
                             <img src="<?php echo base_url()?>public/images/icon_college_logo.png" alt="image">
                         </a>
@@ -174,20 +176,15 @@
 
 
                     <div class="nav-wrap">
-
                         <nav id="mainnav" class="mainnav">
                             <ul class="menu">
-                                <li >
+                                <li  class="home">
                                     <a href="<?php echo base_url()?>Home">Home</a>
                                 </li>
-
                                 <?php
-                                foreach ($mainmenu as $mn) {
-                                    ?>
-
-                                    <li>
+                                foreach ($mainmenu as $mn) {?>
+                                <li class="submenu">
                                         <a><?php echo $mn->menuName; ?></a>
-
 
                                         <ul class="submenu">
                                             <?php
@@ -232,11 +229,13 @@
                                                             ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><?php echo $q->menuName ?></a> </li> <?php
                                                         }
                                                     }
-                                                } }
+                                                }
+                                            }
                                             ?>
                                         </ul>
-                                    </li>
+                                </li>
                                     <?php } ?>
+
 
                                 <?php foreach ($checkparentmenu as $cm){ ?>
                                     <?php
@@ -246,29 +245,29 @@
                                     case "course-list.php":
                                     ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $cm->menuName?></a></li> <?php
                                     break;
-                                case "department.php":
+                                    case "department.php":
                                     ?> <li><a href="<?php echo base_url()?>Department"><?php echo $cm->menuName?></a></li> <?php
                                     break;
-                                case "faculty-members.php":
-                                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $cm->menuName?></a></li> <?php
-                                                                break;
-                                                            case "photo-gallery.php":
-                                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $cm->menuName?></a></li> <?php
-                                                                break;
-                                                            case "news.php":
-                                                                ?> <li><a href="<?php echo base_url()?>News"><?php echo $cm->menuName?></a></li> <?php
-                                                                break;
-                                                            case "event-list.php":
-                                                                ?> <li><a href="<?php echo base_url()?>Events"><?php echo $cm->menuName?></a></li> <?php
-                                                                break;
-                                                            case "contact.php":
-                                                                ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $cm->menuName?></a></li> <?php
-                                                                break;
+                                    case "faculty-members.php":
+                                        ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $cm->menuName?></a></li> <?php
+                                        break;
+                                        case "photo-gallery.php":
+                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $cm->menuName?></a></li> <?php
+                                            break;
+                                        case "news.php":
+                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $cm->menuName?></a></li> <?php
+                                            break;
+                                        case "event-list.php":
+                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $cm->menuName?></a></li> <?php
+                                            break;
+                                        case "contact.php":
+                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $cm->menuName?></a></li> <?php
+                                            break;
                                         case "registerInterest.php":
                                             ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $cm->menuName?></a></li> <?php
                                             break;
-                                                            default:
-                                                        }
+                                            default:
+                                    }
                                 }
                                 else if ($cm->pageType == 'Link Type'){
                                     ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
@@ -280,7 +279,6 @@
                                     }
                                 }
                                 }
-
                                 ?>
                             </ul><!-- /.menu -->
                         </nav><!-- /.mainnav -->
