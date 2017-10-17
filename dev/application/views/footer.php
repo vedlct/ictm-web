@@ -164,7 +164,7 @@
                                         <li class="last">
                                             <div class="thumb images-hover">
                                                 <div class="overlay"></div>
-                                                <a href="#">
+                                                <a href="<?php echo base_url()?>album-pictures/<?php echo $photoGallery['albumId']?>">
                                                     <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery['albumTitle']?>/<?php echo $photoGallery['photoName']?>"></span>
                                                 </a>
                                             </div>

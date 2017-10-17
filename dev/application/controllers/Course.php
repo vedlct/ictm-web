@@ -32,12 +32,7 @@ class Course extends CI_Controller {
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('course-detail', $this->data);
     }
-    public function applyToCourse($id) // go to the apply page of selected course
-    {
-        $this->menu();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        $this->load->view('application-form', $this->data);
-    }
+
     public function menu() // get all the menu + footer
     {
         $this->data['topmenu'] = $this->Menum->getTopMenu();

@@ -195,6 +195,21 @@ class Affiliation extends CI_Controller
         }
     }
 
+    // appear in the Home page
+    public function appearInHomePage($affiliationId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $approve=$this->Affiliationm->appearInHomePage($affiliationId);
+            echo $approve;
+
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     /*------------ for callback AffiliationTitleUniqueCheck ------------*/
     public function AffiliationTitleUniqueCheck()
     {

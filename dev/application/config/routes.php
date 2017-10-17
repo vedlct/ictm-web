@@ -62,9 +62,12 @@ $route['News-Details-Archive/(:any)'] = 'News/newsDetailsArchive/$1';
 $route['News-Archive/(:any)/(:any)'] = 'News/ArchiveShow/$1/$2';
 $route['Events'] = 'Event/EventList';
 $route['Event-Details/(:any)'] = 'Event/eventDetails/$1';
-$route['Contact'] = 'Contact/contactUs';
-$route['applyToCourse/(:any)'] = 'Course/applyToCourse/$1';
-$route['RegisterInterest'] = 'Contact/registerInterest';
+
+$route['Contact'] = 'OnlineForms/contactUs';
+$route['Apply'] = 'OnlineForms/applyNow';
+$route['RegisterInterest'] = 'OnlineForms/registerInterest';
+
 $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';
+
 $route['translate_uri_dashes'] = FALSE;

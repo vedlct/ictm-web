@@ -77,13 +77,13 @@
                                                             echo $hd->pageContent;
                                                         }
                                                         if($hd->pageImage != null) {?>
-                                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $hd->pageImage ?>">
+                                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $hd->pageImage ?>"><br><br>
                                                             <?php
                                                         }
                                                         break;
                                                     }
                                                     ?>
-                                                    <br><br>
+
                                                     <?php
                                                     foreach ($healthdata as $ad) {}
                                                     if ($ad->pageSectionId != null){

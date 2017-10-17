@@ -37,6 +37,7 @@ class Homem extends CI_Model
         $this->db->select('feedbackByName,feedbackByProfession,feedbackDetails,feedbackByPhoto');
         $this->db->where('feedbackStatus', STATUS[0]);
         $this->db->where('feedbackApprove', SELECT_APPROVE[0]);
+        $this->db->where('homeStatus', SELECT_APPROVE[0]);
         $query = $this->db->get('ictmfeedback');
         return $query->result();
     }

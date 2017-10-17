@@ -51,9 +51,9 @@
                                                             echo $td->pageContent;
                                                         }
                                                         if($td->pageImage != null){?>
-                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $td->pageImage?>"  >
+                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $td->pageImage?>" ><br><br>
                                                         <?php }break;}?>
-                                                    <br><br>
+
                                                     <?php
                                                         foreach ($termsdata as $terms){}if ($terms->pageSectionId !=null){
                                                             foreach ($termsdata as $td){?>

@@ -8,6 +8,8 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>ICON College</title>
 
+
+
     <meta name="author" content="themesflat.com">
 
     <!-- Mobile Specific Metas -->
@@ -73,10 +75,8 @@
                         <nav class="navbar menu-top">
                             <ul class="menu">
                                 <?php foreach ($topmenu as $tm) {
-
                                     if ($tm->pageType == 'Static Type') {
                                         switch ($tm->pageContent) {
-
                                             case "course-list.php":
                                                 ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
@@ -138,21 +138,21 @@
 
                             <ul class="textwidget">
                                 <?php foreach ($contact as $contactInfo){?>
-                                <li>
-                                    <a href="<?php echo $contactInfo->collegeFacebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo $contactInfo->collegeYoutube;?>"><i class="fa fa-youtube"></i></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo $contactInfo->collegeTwitter;?>"><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo $contactInfo->collegeGoogle;?>"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="<?php echo $contactInfo->collegeLinkedIn;?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                </li>
+                                    <li>
+                                        <a href="<?php echo $contactInfo->collegeFacebook;?>" target="_blank"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $contactInfo->collegeYoutube;?>"target="_blank"><i class="fa fa-youtube"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $contactInfo->collegeTwitter;?>"target="_blank"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $contactInfo->collegeGoogle;?>"target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo $contactInfo->collegeLinkedIn;?>"target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                    </li>
                                 <?php } ?>
                             </ul>
 
@@ -165,10 +165,10 @@
 
     <!-- Header -->
     <header id="header" class="header">
-        <div class="header-wrap ">
+        <div class="header-wrap">
             <div class="container">
                 <div class="header-wrap clearfix">
-                    <div id="logo" class="logo responsive">
+                    <div id="logo" class="logo">
                         <a href="<?php echo base_url()?>Home" rel="home">
                             <img src="<?php echo base_url()?>public/images/icon_college_logo.png" alt="image">
                         </a>
@@ -176,15 +176,15 @@
 
 
                     <div class="nav-wrap">
+
                         <nav id="mainnav" class="mainnav">
+
                             <ul class="menu">
-                                <li  class="home">
-                                    <a href="<?php echo base_url()?>Home">Home</a>
-                                </li>
-                                <?php
-                                foreach ($mainmenu as $mn) {?>
-                                <li class="submenu">
-                                        <a><?php echo $mn->menuName; ?></a>
+                                <li ><a href="<?php echo base_url()?>Home">Home</a></li>
+
+                                <?php foreach ($mainmenu as $mn) {?>
+
+                                    <li><a><?php echo $mn->menuName; ?></a>
 
                                         <ul class="submenu">
                                             <?php
@@ -192,7 +192,6 @@
                                                 if ($q->parentId ==  $mn->menuId){
                                                     if ($q->pageType == 'Static Type') {
                                                         switch ($q->pageContent) {
-
                                                             case "course-list.php":
                                                                 ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $q->menuName?></a></li> <?php
                                                                 break;
@@ -229,55 +228,52 @@
                                                             ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><?php echo $q->menuName ?></a> </li> <?php
                                                         }
                                                     }
-                                                }
-                                            }
+                                                } }
                                             ?>
                                         </ul>
-                                </li>
-                                    <?php } ?>
-
+                                    </li>
+                                <?php } ?>
 
                                 <?php foreach ($checkparentmenu as $cm){ ?>
                                     <?php
                                     if ($cm->pageType == 'Static Type') {
-                                    switch ($cm->pageContent) {
-
-                                    case "course-list.php":
-                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $cm->menuName?></a></li> <?php
-                                    break;
-                                    case "department.php":
-                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $cm->menuName?></a></li> <?php
-                                    break;
-                                    case "faculty-members.php":
-                                        ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $cm->menuName?></a></li> <?php
-                                        break;
-                                        case "photo-gallery.php":
-                                            ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $cm->menuName?></a></li> <?php
-                                            break;
-                                        case "news.php":
-                                            ?> <li><a href="<?php echo base_url()?>News"><?php echo $cm->menuName?></a></li> <?php
-                                            break;
-                                        case "event-list.php":
-                                            ?> <li><a href="<?php echo base_url()?>Events"><?php echo $cm->menuName?></a></li> <?php
-                                            break;
-                                        case "contact.php":
-                                            ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $cm->menuName?></a></li> <?php
-                                            break;
-                                        case "registerInterest.php":
-                                            ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $cm->menuName?></a></li> <?php
-                                            break;
+                                        switch ($cm->pageContent) {
+                                            case "course-list.php":
+                                                ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "department.php":
+                                                ?> <li><a href="<?php echo base_url()?>Department"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "faculty-members.php":
+                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "photo-gallery.php":
+                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "news.php":
+                                                ?> <li><a href="<?php echo base_url()?>News"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "event-list.php":
+                                                ?> <li><a href="<?php echo base_url()?>Events"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "contact.php":
+                                                ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "registerInterest.php":
+                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
                                             default:
+                                        }
                                     }
-                                }
-                                else if ($cm->pageType == 'Link Type'){
-                                    ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
-                                } else {
-                                    if (empty($cm->pageId)){
-                                        ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $cm->menuName?></a></li> <?php
-                                    }else {
-                                        ?><li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><?php echo $cm->menuName ?></a> </li> <?php
+                                    else if ($cm->pageType == 'Link Type'){
+                                        ?><li><a href="<?php echo $cm->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
+                                    } else {
+                                        if (empty($cm->pageId)){
+                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $cm->menuName?></a></li> <?php
+                                        }else {
+                                            ?><li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><?php echo $cm->menuName ?></a> </li> <?php
+                                        }
                                     }
-                                }
                                 }
                                 ?>
                             </ul><!-- /.menu -->

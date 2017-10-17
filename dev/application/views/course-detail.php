@@ -40,7 +40,7 @@
                             <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                             <?php } ?>
                             <?php foreach ($coursedetail as $cd) { ?>
-                            <li><a href="<?php echo base_url()?>applyToCourse/<?php echo $cd->courseId?>">APPLY NOW</a></li>
+                            <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
                             <?php }?>
                         </ul>
                 

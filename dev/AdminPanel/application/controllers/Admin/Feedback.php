@@ -194,6 +194,21 @@ class Feedback extends CI_Controller
         }
     }
 
+    // appear in the Home page
+    public function appearInHomePage($feedbackId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $approve=$this->Feedbackm->appearInHomePage($feedbackId);
+            echo $approve;
+
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {

@@ -72,7 +72,7 @@ class Affiliationm extends CI_Model
 
     // for manage News Affiliation
     public function getAllforManageAffiliation($limit, $start) {
-        $this->db->select('affiliationsId,affiliationsTitle,affiliationsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('affiliationsId,affiliationsTitle,affiliationsStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmaffiliations');
         $this->db->limit($limit, $start);
         $this->db->order_by("affiliationsId", "desc");
@@ -111,6 +111,10 @@ class Affiliationm extends CI_Model
         $affiliationTitle = $this->input->post("affiliationTitle");
         $affiliationImage = $_FILES['affiliationImage']['name'];
 
+        if ($affiliationStatus==STATUS[1]){
+            $homeStatus=null;
+        }
+
         if (!empty($_FILES['affiliationImage']['name'])) {
             $this->load->library('upload');
             $config = array(
@@ -140,6 +144,7 @@ class Affiliationm extends CI_Model
                 'affiliationsTitle'=>$affiliationTitle,
                 'affiliationsDetails' => $affiliationDetails,
                 'affiliationsStatus' => $affiliationStatus,
+                'homeStatus' => $homeStatus,
                 'affiliationsPhotoPath' => $affiliationId.".".pathinfo($affiliationImage, PATHINFO_EXTENSION),
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
@@ -152,6 +157,7 @@ class Affiliationm extends CI_Model
                 'affiliationsTitle'=>$affiliationTitle,
                 'affiliationsDetails' => $affiliationDetails,
                 'affiliationsStatus' => $affiliationStatus,
+                'homeStatus' => $homeStatus,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
             );
@@ -224,6 +230,33 @@ class Affiliationm extends CI_Model
         $this->db->where('affiliationsId !=', $id);
         $query = $this->db->get('ictmaffiliations');
         return $query->result();
+
+    }
+
+    // appear in the Home page
+    public function appearInHomePage($affiliationId)
+    {
+        $this->db->select('homeStatus');
+        $this->db->where('affiliationsId',$affiliationId);
+        $query = $this->db->get('ictmaffiliations');
+        foreach ($query->result() as $status){$affiliationStatus=$status->homeStatus;}
+        if ($affiliationStatus==null){
+
+            $data = array(
+                'homeStatus' => SELECT_APPROVE[0],
+            );
+            $approve=1;
+        }
+        else{
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve=0;
+        }
+
+        $this->db->where('affiliationsId',$affiliationId);
+        $this->db->update('ictmaffiliations', $data);
+        return $approve;
 
     }
 
