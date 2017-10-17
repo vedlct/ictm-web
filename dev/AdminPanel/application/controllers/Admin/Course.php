@@ -84,6 +84,7 @@ class Course extends CI_Controller
             $this->load->model('Admin/Departmentm');
             $this->data['departmentName'] = $this->Departmentm->gellDepartmentName();
             $this->data['coursealldata'] = $this->Coursem->getCourseAllDataforEdit($id);
+            //print_r($this->data['coursealldata']);
             $this->load->view('Admin/editCourse', $this->data);
 
         } else {

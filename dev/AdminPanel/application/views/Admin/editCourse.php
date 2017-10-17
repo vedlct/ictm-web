@@ -45,7 +45,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <?php foreach ($coursealldata as $cad)?>
+                                <?php foreach ($coursealldata as $cad){?>
                                 <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/Course/editCourse/<?php echo $cad->courseId?>" enctype="multipart/form-data" onsubmit="return formvalidate()">
                                     <div class="form-group ">
                                         <div class="col-lg-6">
@@ -63,7 +63,7 @@
                                                 <select class="form-control m-bot15" id="department" name="department"required>
                                                     <option value="" selected><?php echo SELECT_DEPARTMENT ?></option>
                                                     <?php foreach ($departmentName as $dn) { ?>
-                                                        <option value="<?php echo $dn->departmentId?>" <?php if (!empty($dn->departmentName) && $dn->departmentName == $dn->departmentName)  echo 'selected = "selected"'; ?>><?php echo $dn->departmentName?></option>
+                                                        <option value="<?php echo $dn->departmentId?>" <?php if (!empty($cad->departmentName) && $cad->departmentName == $dn->departmentName)  echo 'selected = "selected"'; ?>><?php echo $dn->departmentName?></option>
                                                     <?php } ?>
                                                 </select>
                                             </div>
@@ -253,6 +253,7 @@
 
                             </div>
                             </form>
+                            <?php }?>
                         </div>
 
                 </div>

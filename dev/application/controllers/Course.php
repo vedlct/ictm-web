@@ -21,6 +21,7 @@ class Course extends CI_Controller {
         $this->menu();
         $this->data['coourselist']=$this->Coursem->getCourseTitle();
         $this->data['departmentname']=$this->Departmentm->getDepartmentName();
+
         $this->load->view('course-list', $this->data);
     }
     public function courseDetails($id) //get the details of selected course

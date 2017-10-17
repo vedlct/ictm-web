@@ -156,6 +156,22 @@ class Album extends CI_Controller
             redirect('Admin/Login');
         }
     }
+
+    // appear in the Home page
+    public function appearInHomePage($albumId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $approve=$this->Albumm->appearInHomePage($albumId);
+            echo $approve;
+
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     /*---------for Manage Album ----------end-------------*/
 
 /*--------------- callback albumTitle_check-------------*/

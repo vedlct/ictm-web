@@ -86,7 +86,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="departmentSummary">DepartmentHead Summary</label>
+                                        <label class="control-label col-lg-2" for="departmentSummary">Department Summary</label>
                                         <div class="col-lg-10">
                                             <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary"><?php echo $editDepartment->departmentSummary ?></textarea>
 

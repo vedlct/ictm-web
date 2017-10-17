@@ -8,6 +8,7 @@ class Departmentm extends CI_Model
     {
 
         $this->db->select('departmentId,departmentName,departmentImage');
+        $this->db->where('departmentStatus =', STATUS[0]);
         $query = $this->db->get('ictmdepartment');
         return $query->result();
 
