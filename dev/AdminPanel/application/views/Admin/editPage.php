@@ -194,9 +194,15 @@
 
         if (pagetype == "Static Type" || pagetype == "Link Type"){
             document.getElementById("ckeditorContent").style.display = "none";
+            document.getElementById("keywords").style.display = "none";
+            document.getElementById("metadata").style.display = "none";
+            document.getElementById("image").style.display = "none";
             document.getElementById("normalContent").style.display = "block";
         }else {
             document.getElementById("ckeditorContent").style.display = "block";
+            document.getElementById("keywords").style.display = "block";
+            document.getElementById("metadata").style.display = "block";
+            document.getElementById("image").style.display = "block";
             document.getElementById("normalContent").style.display = "none";
         }
     }

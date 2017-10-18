@@ -164,6 +164,9 @@
             document.getElementById("normalContent").style.display = "block";
         }else {
             document.getElementById("ckeditorContent").style.display = "block";
+            document.getElementById("keywords").style.display = "block";
+            document.getElementById("metadata").style.display = "block";
+            document.getElementById("image").style.display = "block";
             document.getElementById("normalContent").style.display = "none";
         }
     }
