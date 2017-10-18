@@ -50,20 +50,6 @@
                                             <input class="form-control" id="title" name="title" value="<?php echo set_value('title'); ?>" type="text" required />
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-2">Page Keywords</label>
-                                        <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text" placeholder="Write Page Meta Keywords(multiple separate by comma)" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="cname" class="control-label col-lg-2">Page MetaData</label>
-                                        <div class="col-lg-10">
-                                            <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" placeholder="Write Page Meta Description" />
-                                        </div>
-                                    </div>
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page Type<span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -76,6 +62,21 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div id="keywords" class="form-group ">
+                                        <label for="cname" class="control-label col-lg-2">Page Keywords</label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
+                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text" placeholder="Write Page Meta Keywords(multiple separate by comma)" />
+                                        </div>
+                                    </div>
+                                    <div id="metadata" class="form-group ">
+                                        <label for="cname" class="control-label col-lg-2">Page MetaData</label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
+                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" placeholder="Write Page Meta Description" />
+                                        </div>
+                                    </div>
+
                                     <div class="form-group " id="ckeditorContent">
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
@@ -157,6 +158,8 @@
 
         if (pagetype == "Static Type" || pagetype == "Link Type"){
             document.getElementById("ckeditorContent").style.display = "none";
+            document.getElementById("keywords").style.display = "none";
+            document.getElementById("metadata").style.display = "none";
             document.getElementById("normalContent").style.display = "block";
         }else {
             document.getElementById("ckeditorContent").style.display = "block";
