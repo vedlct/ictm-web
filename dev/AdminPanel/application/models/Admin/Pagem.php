@@ -28,6 +28,10 @@ class Pagem extends CI_Model
         $status = $this->input->post("status");
         $image=$_FILES['image']['name'];
 
+        if ($image == ""){
+            $image = null;
+        }
+
         $data = array(
             'pageTitle' => $title,
             'pageKeywords' => $keywords,
@@ -189,6 +193,10 @@ class Pagem extends CI_Model
         }
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
+
+        if ($image == ""){
+            $image = null;
+        }
 
 
         if (!empty($_FILES['image']['name'])) {

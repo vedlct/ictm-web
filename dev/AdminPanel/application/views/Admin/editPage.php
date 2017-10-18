@@ -103,7 +103,7 @@
 
                                     </div>
 
-                                    <div class="form-group ">
+                                    <div id="image" class="form-group ">
                                         <label for="curl" class="control-label col-lg-2">Image</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
@@ -180,6 +180,7 @@
             document.getElementById("ckeditorContent").style.display = "none";
             document.getElementById("keywords").style.display = "none";
             document.getElementById("metadata").style.display = "none";
+            document.getElementById("image").style.display = "none";
             document.getElementById("normalContent").style.display = "block";
         }else {
             document.getElementById("ckeditorContent").style.display = "block";
