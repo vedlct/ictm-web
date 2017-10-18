@@ -9,7 +9,7 @@
                 </div>
                 <div class="breadcrumbs">
                     <ul>
-                        <li class="home"><a href="#">Home </a></li>
+                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
                         <li>\ Course List</li>
                     </ul>
                 </div>
