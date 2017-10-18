@@ -62,6 +62,7 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
                                 </tr>
                                 <?php if (!empty($Albums)){
@@ -91,6 +92,13 @@
 
                                                 }
                                                 ?>
+
+                                            </td>
+                                            <td>
+                                                <?php if ($Album->albumStatus == STATUS[0]){?>
+                                                    <input type="checkbox" data-panel-id="<?php echo $Album->albumId ?>" onclick="selectHome(this)" <?php if ($Album->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>
+                                                           id="appearInHome" name="appearInHome">Yes
+                                                <?php }else{ echo "Status Should be Active First !!";}?>
 
                                             </td>
                                             <td>
@@ -160,6 +168,29 @@
         }
         else {
             window.location="<?php echo base_url()?>Admin/Album/manageAlbum";
+        }
+    }
+    function selectHome(x) {
+        if (confirm("Are you sure ?")) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin/Album/appearInHomePage/")?>'+btn,
+                data:{},
+                cache: false,
+                success:function(data) {
+                    if (data=='1'){
+                        alert('Album Added Successfully To Home Page');
+                    }
+                    else if(data=='0'){
+                        alert('Album Removed Successfully From Home Page');
+                    }
+
+                }
+            });
+        }
+        else {
+            location.reload();
         }
     }
 </script>

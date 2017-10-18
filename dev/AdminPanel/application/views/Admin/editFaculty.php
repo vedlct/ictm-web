@@ -53,21 +53,21 @@
                                         <label for="facultyTitle" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-2">
                                             <p><font color="red"> <?php echo form_error('facultyTitle'); ?></font></p>
-                                            <input class="form-control" id="facultyTitle"  name="facultyTitle" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyTitle))?>" placeholder="Mr/Mrs/Miss" type="text" required />
+                                            <input class="form-control" id="facultyTitle"  name="facultyTitle" value="<?php echo $editFaculty->facultyTitle?>" placeholder="Mr/Mrs/Miss" type="text" required />
                                         </div>
 
                                         <label for="faculty_first_name" class="control-label col-lg-1">Faculty First Name <span class="required">*</span></label>
                                         <div class="col-lg-3">
                                             <p><font color="red"> <?php echo form_error('faculty_first_name'); ?></font></p>
 
-                                            <input class="form-control" id="faculty_first_name"  name="faculty_first_name" type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyFirstName))?>"  required />
+                                            <input class="form-control" id="faculty_first_name"  name="faculty_first_name" type="text" value="<?php echo $editFaculty->facultyFirstName?>"  required />
 
                                         </div>
 
                                         <label for="faculty_last_name" class="control-label col-lg-1">Faculty Last Name <span class="required">*</span></label>
                                         <div class="col-lg-3">
                                             <p><font color="red"> <?php echo form_error('faculty_last_name'); ?></font></p>
-                                            <input class="form-control" id="faculty_last_name" name="faculty_last_name"  type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyLastName))?>" required />
+                                            <input class="form-control" id="faculty_last_name" name="faculty_last_name"  type="text" value="<?php echo $editFaculty->facultyLastName?>" required />
                                         </div>
 
                                     </div>
@@ -76,7 +76,7 @@
                                         <label for="faculty_degree" class="control-label col-lg-2">Faculty Degree <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('faculty_degree'); ?></font></p>
-                                            <input class="form-control" id="faculty_degree" name="faculty_degree"  type="text" placeholder="Write Multiple Degree with comma" required value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyDegree))?>"/>
+                                            <input class="form-control" id="faculty_degree" name="faculty_degree"  type="text" placeholder="Write Multiple Degree with comma" required value="<?php echo $editFaculty->facultyDegree?>"/>
                                         </div>
                                     </div>
 
@@ -86,7 +86,7 @@
                                         <label for="faculty_position" class="control-label col-lg-2">Faculty Position <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('faculty_position'); ?></font></p>
-                                            <input class="form-control" id="faculty_position" name="faculty_position"  type="text" placeholder="Write Multiple Position with comma"required value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyPosition))?>"/>
+                                            <input class="form-control" id="faculty_position" name="faculty_position"  type="text" placeholder="Write Multiple Position with comma"required value="<?php echo $editFaculty->facultyPosition?>"/>
                                         </div>
 
                                     </div>
@@ -143,13 +143,13 @@
                                         <label for="faculty_twitter" class="control-label col-lg-2">Faculty Twitter</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_twitter'); ?></font></p>
-                                            <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyTwitter))?>"/>
+                                            <input class="form-control" id="faculty_twitter" name="faculty_twitter"  type="text" value="<?php echo $editFaculty->facultyTwitter?>"/>
                                         </div>
 
                                         <label for="faculty_linkedin" class="control-label col-lg-2">Faculty LinkedIn</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('faculty_linkedin'); ?></font></p>
-                                            <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" value="<?php echo htmlspecialchars(stripslashes($editFaculty->facultyLinkedIn))?>"/>
+                                            <input class="form-control" id="faculty_linkedin" name="faculty_linkedin"  type="text" value="<?php echo $editFaculty->facultyLinkedIn?>"/>
                                         </div>
 
                                     </div>

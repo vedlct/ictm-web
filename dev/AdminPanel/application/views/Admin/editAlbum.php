@@ -52,7 +52,7 @@
                                         <label for="albumCategory" class="control-label col-lg-2">Album Category Name<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('albumCategory'); ?></font></p>
-                                            <input class="form-control" id="albumCategory" name="albumCategory"  type="text" value="<?php echo htmlspecialchars(stripslashes($edit_Album->albumCategoryName))?>" required />
+                                            <input class="form-control" id="albumCategory" name="albumCategory"  type="text" value="<?php echo $edit_Album->albumCategoryName?>" required />
                                         </div>
                                     </div>
 
@@ -60,7 +60,7 @@
                                         <label class="control-label col-lg-2" for="albumTitle">Album Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('albumTitle'); ?></font></p>
-                                            <input class="form-control" id="albumTitle" name="albumTitle"  value="<?php echo htmlspecialchars(stripslashes($edit_Album->albumTitle))?>" type="text" required />
+                                            <input class="form-control" id="albumTitle" name="albumTitle"  value="<?php echo$edit_Album->albumTitle?>" type="text" required />
 
                                         </div>
                                     </div>

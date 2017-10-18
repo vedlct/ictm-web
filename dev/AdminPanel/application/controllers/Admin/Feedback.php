@@ -194,6 +194,21 @@ class Feedback extends CI_Controller
         }
     }
 
+    // appear in the Home page
+    public function appearInHomePage($feedbackId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $approve=$this->Feedbackm->appearInHomePage($feedbackId);
+            echo $approve;
+
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {
@@ -206,8 +221,7 @@ class Feedback extends CI_Controller
             if (in_array($ext, $supported_image))
 
             {
-                //echo "it's image";
-                //return true;
+
                 if ($imageSize <4096){
                     return true;
                 }
@@ -222,7 +236,7 @@ class Feedback extends CI_Controller
             {
                 $this->form_validation->set_message('val_img_check',"Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;
-                //echo 'not image';
+
 
             }
 

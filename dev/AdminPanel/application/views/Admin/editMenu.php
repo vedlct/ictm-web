@@ -52,7 +52,7 @@
                                         <label for="menuTitle" class="control-label col-lg-2">Menu Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('menuTitle'); ?></font></p>
-                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo htmlspecialchars(stripslashes($menu->menuName))?>" required />
+                                            <input class="form-control" id="menuTitle" name="menuTitle"  type="text" value="<?php echo $menu->menuName;?>" required />
                                         </div>
                                     </div>
 
@@ -71,7 +71,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div id="parentMenuDiv" class="form-group">
                                         <label class="control-label col-lg-2" for="parentId">Parent Menu </label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('parentId'); ?></font></p>
@@ -175,6 +175,19 @@
 </html>
 <script>
 
+    $(document).ready(function(){
+
+        var menuType = document.getElementById("menuType").value;
+
+        if (menuType == '<?php echo MENU_TYPE[1]?>'){
+            document.getElementById("parentMenuDiv").style.display = "block";
+        }else {
+
+            document.getElementById("parentMenuDiv").style.display = "none";
+        }
+
+    });
+
 
     function selectid(x) {
 
@@ -186,6 +199,12 @@
         }
         else
         {
+            if (btn != '<?php echo MENU_TYPE[1]?>'){
+                document.getElementById("parentMenuDiv").style.display = "none";
+            }
+            else{
+                document.getElementById("parentMenuDiv").style.display = "block";
+            }
 
             $.ajax({
                 type:'POST',

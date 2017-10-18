@@ -2,7 +2,7 @@
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-            <li class="active">
+            <li class="sub-menu">
                 <a class="" href="<?php echo base_url()?>Admin/Home">
                     <i class="icon_house_alt"></i>
                     <span>Home</span>
@@ -10,7 +10,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:;" class="">
+                <a href="javascript:">
                     <i class="icon_menu"></i>
                     <span>Menu</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
@@ -22,21 +22,19 @@
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:;" class="">
+                <a href="javascript:">
                     <i class="icon_documents_alt"></i>
                     <span>Pages</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
                 <ul class="sub">
                     <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">New Page</a></li>
-
                     <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
-
                 </ul>
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:" class="">
+                <a href="javascript:" >
                     <i class="icon_documents_alt"></i>
                     <span>Pages Sections</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
@@ -156,7 +154,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="javascript:;" class="">
+                <a href="javascript:" class="">
                     <i class="icon_genius"></i>
                     <span>Affiliations</span>
                     <span class="menu-arrow arrow_carrot-right"></span>
@@ -166,9 +164,6 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/manageAffiliation">Manage Affiliations</a></li>
                 </ul>
             </li>
-
-
-
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_comment"></i>

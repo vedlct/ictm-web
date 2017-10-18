@@ -64,6 +64,7 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
                                 </tr>
 
@@ -106,6 +107,13 @@
                                                     $date = date('d-F-Y', $timestamp);
                                                     echo $date ;
                                                 }?>
+
+                                            </td>
+                                            <td>
+                                                <?php if ($newsdata->newsStatus == STATUS[0]){?>
+                                                <input type="checkbox" data-panel-id="<?php echo $newsdata->newsId ?>" onclick="selectHome(this)" <?php if ($newsdata->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>
+                                                       id="appearInHome" name="appearInHome">Yes
+                                            <?php }else{ echo "Status Should be Active First !!";}?>
 
                                             </td>
 
@@ -170,6 +178,29 @@
                 success:function(data) {
 
                     location.reload();
+
+                }
+            });
+        }
+        else {
+            location.reload();
+        }
+    }
+    function selectHome(x) {
+        if (confirm("Are you sure ?")) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin/News/appearInHomePage/")?>'+btn,
+                data:{},
+                cache: false,
+                success:function(data) {
+                    if (data=='1'){
+                        alert('News Added Successfully To Home Page');
+                    }
+                    else if(data=='0'){
+                        alert('News Removed Successfully From Home Page');
+                    }
 
                 }
             });

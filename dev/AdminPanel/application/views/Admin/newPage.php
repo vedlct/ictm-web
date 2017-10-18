@@ -54,14 +54,14 @@
                                         <label for="cname" class="control-label col-lg-2">Page Keywords</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('keywords'); ?></font></p>
-                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text"  />
+                                            <input class="form-control" id="keywords" name="keywords" value="<?php echo set_value('keywords'); ?>" type="text" placeholder="Write Page Meta Keywords(multiple separate by comma)" />
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">Page MetaData</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('metadata'); ?></font></p>
-                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" />
+                                            <input class="form-control" id="metadata" name="metadata" value="<?php echo set_value('metadata'); ?>"  type="text" placeholder="Write Page Meta Description" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -80,7 +80,7 @@
                                          <label class="control-label col-sm-2">Content</label>
                                          <div class="col-sm-10">
                                              <p><font color="red"> <?php echo form_error('content'); ?></font></p>
-                                             <textarea class="form-control ckeditor" name="content" rows="6" ><?php echo set_value('content'); ?></textarea>
+                                             <textarea class="form-control ckeditor" name="ckcontent" rows="6" ><?php echo set_value('content'); ?></textarea>
                                          </div>
 
                                         </div>
@@ -151,6 +151,7 @@
 </html>
 <script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
 <script>
+
     function checkPageType() {
         var pagetype = document.getElementById("pagetype").value;
 

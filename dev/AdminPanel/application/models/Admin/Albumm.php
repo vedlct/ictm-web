@@ -59,7 +59,7 @@ class Albumm extends CI_Model
 
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageAlbum($limit, $start) {
-        $this->db->select('albumId,albumTitle,albumCategoryName,albumStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('albumId,albumTitle,albumCategoryName,albumStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmalbum');
         $this->db->order_by("albumId", "desc");
         $this->db->limit($limit, $start);
@@ -128,6 +128,10 @@ class Albumm extends CI_Model
         $albumTitle = $this->input->post("albumTitle");
         $albumStatus = $this->input->post("albumStatus");
 
+        if ($albumStatus==STATUS[1]){
+            $homeStatus=null;
+        }
+
         $this->db->select('albumTitle');
         $this->db->where('albumId',$albumId);
         $this->db->from('ictmalbum');
@@ -146,6 +150,7 @@ class Albumm extends CI_Model
             'albumCategoryName' => $albumCategory,
             'albumTitle' => $albumTitle,
             'albumStatus'=>$albumStatus,
+            'homeStatus' => $homeStatus,
             'lastModifiedDate'=>date("Y-m-d H:i:s"),
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 
@@ -175,6 +180,33 @@ class Albumm extends CI_Model
         $this->db->where('albumId !=', $id);
         $query = $this->db->get('ictmalbum');
         return $query->result();
+
+    }
+
+    // appear in the Home page
+    public function appearInHomePage($albumId)
+    {
+        $this->db->select('homeStatus');
+        $this->db->where('albumId',$albumId);
+        $query = $this->db->get('ictmalbum');
+        foreach ($query->result() as $status){$albumStatus=$status->homeStatus;}
+        if ($albumStatus==null){
+
+            $data = array(
+                'homeStatus' => SELECT_APPROVE[0],
+            );
+            $approve=1;
+        }
+        else{
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve=0;
+        }
+
+        $this->db->where('albumId',$albumId);
+        $this->db->update('ictmalbum', $data);
+        return $approve;
 
     }
 

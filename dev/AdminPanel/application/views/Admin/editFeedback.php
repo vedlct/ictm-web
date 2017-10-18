@@ -82,13 +82,13 @@
                                         <label for="feedbackByName" class="control-label col-lg-2">Feedback By Name <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByName'); ?></font></p>
-                                            <input class="form-control" id="feedbackByName" name="feedbackByName" value="<?php echo htmlspecialchars(stripslashes($editFeedback->feedbackByName))?>" type="text" required />
+                                            <input class="form-control" id="feedbackByName" name="feedbackByName" value="<?php echo $editFeedback->feedbackByName?>" type="text" required />
                                         </div>
 
                                         <label for="feedbackByProfession" class="control-label col-lg-2">Feedback By Profession <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByProfession'); ?></font></p>
-                                            <input class="form-control" id="feedbackByProfession" name="feedbackByProfession"  value="<?php echo htmlspecialchars(stripslashes($editFeedback->feedbackByProfession))?>" type="text" required />
+                                            <input class="form-control" id="feedbackByProfession" name="feedbackByProfession"  value="<?php echo $editFeedback->feedbackByProfession?>" type="text" required />
                                         </div>
 
                                     </div>
@@ -122,7 +122,7 @@
                                         <label for="feedbackDetails" class="control-label col-lg-2">Feedback Details <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('feedbackDetails'); ?></font></p>
-                                            <textarea class="form-control ckeditor" name="feedbackDetails"  id="feedbackDetails" required><?php echo $editFeedback->feedbackDetails?></textarea>
+                                            <textarea class="form-control" name="feedbackDetails"  id="feedbackDetails" required><?php echo $editFeedback->feedbackDetails?></textarea>
                                         </div>
                                     </div>
 
@@ -159,14 +159,13 @@
 <?php include ('js.php')?>
 </body>
 </html>
-<script type="text/javascript" src="<?php echo base_url()?>public/ckeditor/ckeditor.js"></script>
+
 
 <script>
     function submitform() {
 
         var feedbackByName =  document.getElementById("feedbackByName").value;
         var feedbackByProfession =  document.getElementById("feedbackByProfession").value;
-        var feedbackDetails = CKEDITOR.instances['feedbackDetails'].getData().replace(/<[^>]*>/gi, '').length;
 
         if (feedbackByName.length >100){
             alert("Feedback By Name Should not more than 100 Charecter Length");
@@ -174,10 +173,6 @@
         }
         if (feedbackByProfession.length >100){
             alert("Feedback By Profession Should not more than 100 Charecter Length");
-            return false;
-        }
-        if( !feedbackDetails ) {
-            alert( 'Please enter a Feedback Details' );
             return false;
         }
         else

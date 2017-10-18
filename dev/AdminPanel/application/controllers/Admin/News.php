@@ -145,13 +145,28 @@ class News extends CI_Controller
 
     }
 
-    // delete Faculty and his teaching Course from database
+    // delete News from database
     public function deleteNews($newsId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->Newsm->deleteNewsbyId($newsId);
             $this->session->set_flashdata('successMessage','News Deleted Successfully');
+
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    // appear in the Home page
+    public function appearInHomePage($newsId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $approve=$this->Newsm->appearInHomePage($newsId);
+            echo $approve;
 
         }
 

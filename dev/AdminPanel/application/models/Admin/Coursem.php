@@ -142,8 +142,11 @@ class Coursem extends CI_Model
     // for Course edit
     public function getCourseAllDataforEdit($id){
 
+        $this->db->select('c.*,d.departmentName as departmentName');
+        $this->db->from('ictmcourse c');
         $this->db->where('courseId', $id);
-        $query = $this->db->get('ictmcourse');
+        $this->db->join('ictmdepartment d', 'd.departmentId = c.departmentId');
+        $query = $this->db->get();
         return $query->result();
 
     }

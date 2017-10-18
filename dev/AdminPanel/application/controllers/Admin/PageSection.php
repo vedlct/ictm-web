@@ -17,7 +17,7 @@ class PageSection extends CI_Controller {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['pagename'] = $this->Pagem->getPageIdName();
-            $this->load->view('Admin/newPageSection', $this->data);                    //view create page section
+            $this->load->view('Admin/newPageSection', $this->data);
 
         }
         else{

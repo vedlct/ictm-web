@@ -20,27 +20,28 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required|max_length[100]|callback_menuTitleCheck'
+            'rules' => 'required|max_length[100]|callback_menuTitleCheck|xss_clean|htmlspecialchars',
+
         ),
         array(
             'field' => 'menuType',
             'label' => 'Menu Type',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'parentId',
             'label' => 'Parent Menu',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'pageId',
             'label' => 'Page',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
         ),
     /*---------------- for menu edit-------------*/
@@ -49,28 +50,28 @@ $config = array (
         array(
             'field' => 'menuTitle',
             'label' => 'Menu Name',
-            'rules' => 'required|max_length[100]|callback_menuTitleCheckFormEditMenu'
+            'rules' => 'required|max_length[100]|callback_menuTitleCheckFormEditMenu|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'menuType',
             'label' => 'Menu Type',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'parentId',
             'label' => 'Parent Menu',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'pageId',
             'label' => 'Page',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for Page create-------------*/
@@ -78,7 +79,7 @@ $config = array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required|max_length[255]|is_unique[ictmpage.pageTitle]',
+            'rules' => 'required|max_length[255]|is_unique[ictmpage.pageTitle]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Page Title Allready Existed !!',
             ),
@@ -86,12 +87,12 @@ $config = array (
         array(
             'field' => 'keywords',
             'label' => 'Page Keywords',
-            'rules' => 'max_length[255]'
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'metadata',
             'label' => 'Page MetaData',
-            'rules' => 'max_length[255]',
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'image',
@@ -101,12 +102,12 @@ $config = array (
         array(
             'field' => 'pagetype',
             'label' => 'Page Type',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for Page edit-------------*/
@@ -114,18 +115,18 @@ $config = array (
         array(
             'field' => 'title',
             'label' => 'Page Title',
-            'rules' => 'required|max_length[255]|callback_pageCheckFormEditPage',
+            'rules' => 'required|max_length[255]|callback_pageCheckFormEditPage|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'keywords',
             'label' => 'Page Keywords',
-            'rules' => 'max_length[255]'
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'metadata',
             'label' => 'Page MetaData',
-            'rules' => 'max_length[255]',
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'image',
@@ -135,12 +136,12 @@ $config = array (
         array(
             'field' => 'pagetype',
             'label' => 'Page Type',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'status',
             'label' => 'Page Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for pageSection create-------------*/
@@ -148,19 +149,19 @@ $config = array (
         array(
             'field' => 'pageId',
             'label' => 'Page Title',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'textbox[]',
             'label' => 'Section Title',
-            'rules' => 'trim|required|max_length[255]'
+            'rules' => 'trim|required|max_length[255]|xss_clean|htmlspecialchars'
         ),
 
         array(
             'field' => 'status[]',
             'label' => 'Page Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for pageSection edit-------------*/
@@ -168,12 +169,12 @@ $config = array (
         array(
             'field' => 'textbox',
             'label' => 'Section Title',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'status',
             'label' => 'Page Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for faculty create-------------*/
@@ -181,24 +182,24 @@ $config = array (
         array(
             'field' => 'facultyFirstName',
             'label' => 'First Name',
-            'rules' => 'required|max_length[50]',
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'facultyLastName',
             'label' => 'Last Name',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyDegree',
             'label' => 'Faculty Degree',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'facultyPosition',
             'label' => 'faculty Position',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyImage',
@@ -208,12 +209,12 @@ $config = array (
         array(
             'field' => 'facultyEmpType',
             'label' => 'Employee Type',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyEmail',
             'label' => 'Email',
-            'rules' => 'required|valid_email|is_unique[ictmfaculty.facultyEmail]|max_length[100]',
+            'rules' => 'required|valid_email|is_unique[ictmfaculty.facultyEmail]|max_length[100]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Email Allready Existed ! Faculty  Existed !',
             ),
@@ -221,32 +222,32 @@ $config = array (
         array(
             'field' => 'facultyPhone',
             'label' => 'Phone',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyTwitter',
             'label' => 'Twitter',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyLinkedin',
             'label' => 'LinkedIn',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyStatus',
             'label' => 'Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyCourses[]',
             'label' => 'Faculty Course',
-            'rules' => 'is_natural_no_zero'
+            'rules' => 'is_natural_no_zero|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyIntro',
             'label' => 'Faculty Intro',
-            'rules' => 'required'
+            'rules' => 'required|htmlspecialchars'
         ),
     ),
     /*---------------- for faculty Edit-------------*/
@@ -254,24 +255,24 @@ $config = array (
         array(
             'field' => 'faculty_first_name',
             'label' => 'First Name',
-            'rules' => 'required|max_length[50]',
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'faculty_last_name',
             'label' => 'Last Name',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_degree',
             'label' => 'Faculty Degree',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'faculty_position',
             'label' => 'faculty Position',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'facultyImage',
@@ -281,37 +282,37 @@ $config = array (
         array(
             'field' => 'faculty_emp_type',
             'label' => 'Employee Type',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_email',
             'label' => 'Email',
-            'rules' => 'required|valid_email|max_length[100]|callback_emailCheckFormEditFaculty'
+            'rules' => 'required|valid_email|max_length[100]|callback_emailCheckFormEditFaculty|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_phone',
             'label' => 'Phone',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_twitter',
             'label' => 'Twitter',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_linkedin',
             'label' => 'LinkedIn',
-            'rules' => 'max_length[255]'
+            'rules' => 'trim|prep_url|valid_url|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_status',
             'label' => 'Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_intro',
             'label' => 'Faculty Intro',
-            'rules' => 'required'
+            'rules' => 'required|htmlspecialchars'
         ),
     ),
 
@@ -321,7 +322,7 @@ $config = array (
             'field' => 'name',
             'label' => 'Course Name',
 //            'rules' => 'required|max_length[255]|callback_CourseCheckFormNewCourse',
-            'rules' => 'required|max_length[255]|is_unique[ictmcourse.courseTitle]',
+            'rules' => 'required|max_length[255]|is_unique[ictmcourse.courseTitle]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Course Allready Existed !!',
             ),
@@ -329,90 +330,90 @@ $config = array (
         array(
             'field' => 'codeperson',
             'label' => 'Course Code Pearson',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'award',
             'label' => 'Awarding Titlle',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'Code',
             'label' => 'Course Code',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'location',
             'label' => 'Course Location',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'awardingBody',
             'label' => 'Awarding Body',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'credit',
             'label' => 'Credit value',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'structure',
             'label' => 'Course Structure',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'accreditation',
             'label' => 'Accreditation',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'accreditationNo',
             'label' => 'Accreditation No',
-            'rules' => 'required|max_length[45]'
+            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'duration',
             'label' => 'Course Duration',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'year',
             'label' => 'Academic Year',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'mode',
             'label' => 'Study Mode',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'language',
             'label' => 'Study Language',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'fees',
             'label' => 'Course Fees',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'timetables',
             'label' => 'Course Time Table',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'status',
             'label' => 'Course Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'department',
             'label' => 'Department',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'image',
@@ -426,94 +427,94 @@ $config = array (
         array(
             'field' => 'name',
             'label' => 'Course Name',
-            'rules' => 'required|max_length[255]|callback_CourseCheckFormEditCourse',
+            'rules' => 'required|max_length[255]|callback_CourseCheckFormEditCourse|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'codeperson',
             'label' => 'Course Code Pearson',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'award',
             'label' => 'Awarding Titlle',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'code',
             'label' => 'Course Code',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'location',
             'label' => 'Course Location',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'awardingBody',
             'label' => 'Awarding Body',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'credit',
             'label' => 'Credit value',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'structure',
             'label' => 'Course Structure',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'accreditation',
             'label' => 'Accreditation',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'accreditationNo',
             'label' => 'Accreditation No',
-            'rules' => 'required|max_length[45]'
+            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'duration',
             'label' => 'Course Duration',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'year',
             'label' => 'Academic Year',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'mode',
             'label' => 'Study Mode',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'language',
             'label' => 'Study Language',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'fees',
             'label' => 'Course Fees',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'timetables',
             'label' => 'Course Time Table',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'status',
             'label' => 'Course Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'department',
             'label' => 'Department',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'image',
@@ -527,17 +528,17 @@ $config = array (
         array(
             'field' => 'coursetitle',
             'label' => 'Course Name',
-            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]',
+            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'textbox[]',
             'label' => 'Course Section Title',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'status[]',
             'label' => 'Course Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -547,12 +548,12 @@ $config = array (
         array(
             'field' => 'textbox',
             'label' => 'Section Title',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'status',
             'label' => 'Course Section Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -561,7 +562,7 @@ $config = array (
         array(
             'field' => 'departmentName',
             'label' => 'Department Name',
-            'rules' => 'trim|required|max_length[255]|is_unique[ictmdepartment.departmentName]|xss_clean',
+            'rules' => 'trim|required|max_length[255]|is_unique[ictmdepartment.departmentName]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Department Allready Existed !!',
             ),
@@ -569,7 +570,7 @@ $config = array (
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
-            'rules' => 'trim|required|max_length[100]|xss_clean',
+            'rules' => 'trim|required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'image',
@@ -579,7 +580,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']'
         ),
     ),
     /*---------------- for Edit Department-------------*/
@@ -588,12 +589,12 @@ $config = array (
         array(
             'field' => 'departmentName',
             'label' => 'Department Name',
-            'rules' => 'required|max_length[255]|callback_DepartmenteditUniqueCheck',
+            'rules' => 'required|max_length[255]|callback_DepartmenteditUniqueCheck|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'departmentHead',
             'label' => 'Department Head ',
-            'rules' => 'trim|required|max_length[100]|xss_clean',
+            'rules' => 'trim|required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'image',
@@ -603,7 +604,7 @@ $config = array (
         array(
             'field' => 'departmentStatus',
             'label' => 'Department Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
     /*---------------- for Create Event-------------*/
@@ -612,29 +613,29 @@ $config = array (
         array(
             'field' => 'eventTitle',
             'label' => 'Event Ttle',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'eventStartDateTime',
             'label' => 'Event Start Time ',
-            'rules' => 'trim|required',
+            'rules' => 'trim|required|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'eventEndDateTime',
             'label' => 'Event End Time ',
-            'rules' => 'trim|required|callback_check_EventDate',
+            'rules' => 'trim|required|callback_check_EventDate|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'eventLocation',
             'label' => 'Event Location',
-            'rules' => 'required|max_length[1000]',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'EventType',
             'label' => 'Event Type',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
         ),
 
         array(
@@ -645,7 +646,7 @@ $config = array (
         array(
             'field' => 'eventStatus',
             'label' => 'Event Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
 
     ),
@@ -656,29 +657,29 @@ $config = array (
         array(
             'field' => 'eventTitle',
             'label' => 'Event Ttle',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'eventStartDateTime',
             'label' => 'Event Start Time ',
-            'rules' => 'trim|required',
+            'rules' => 'trim|required|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'eventEndDateTime',
             'label' => 'Event End Time ',
-            'rules' => 'trim|required|callback_check_EventDate',
+            'rules' => 'trim|required|callback_check_EventDate|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'eventLocation',
             'label' => 'Event Location',
-            'rules' => 'required|max_length[1000]',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'EventType',
             'label' => 'Event Type',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'event_image',
@@ -688,7 +689,7 @@ $config = array (
         array(
             'field' => 'eventStatus',
             'label' => 'Event Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
 
     ),
@@ -699,72 +700,72 @@ $config = array (
         array(
             'field' => 'college_name',
             'label' => 'College Name',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'college_location',
             'label' => 'College Address ',
-            'rules' => 'required|max_length[1000]',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'college_tel1',
             'label' => 'College Telephone 1',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'college_tel2',
             'label' => 'College Telephone 2',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[45]',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'college_fax',
             'label' => 'College Fax',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'college_email',
             'label' => 'College Email',
-            'rules' => 'required|valid_email|max_length[100]',
+            'rules' => 'required|valid_email|max_length[100]|xss_clean|htmlspecialchars',
         ),
 
         array(
             'field' => 'college_domain',
             'label' => 'College Domain',
-            'rules' => 'required|max_length[255]'
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'college_facebook',
             'label' => 'College Facebook',
-            'rules' => 'required|max_length[1000]'
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'college_twitter',
             'label' => 'College Twitter',
-            'rules' => 'required|max_length[1000]'
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'college_linkedin',
             'label' => 'College LinkedIn',
-            'rules' => 'required|max_length[1000]',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'college_google',
             'label' => 'College Google',
-            'rules' => 'required|max_length[1000]',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
         ),
 
         array(
             'field' => 'college_youtube',
             'label' => 'College Youtube',
-            'rules' => 'required|max_length[1000]'
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'college_status',
             'label' => 'College Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
 
     ),
@@ -775,7 +776,7 @@ $config = array (
         array(
             'field' => 'newsTitle',
             'label' => 'News Title ',
-            'rules' => 'required|max_length[255]|is_unique[ictmnews.newsTitle]|htmlspecialchars',
+            'rules' => 'required|max_length[255]|is_unique[ictmnews.newsTitle]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'News Allready Existed !!',
             ),
@@ -783,7 +784,7 @@ $config = array (
         array(
             'field' => 'newsDate',
             'label' => 'News Date',
-            'rules' => 'required',
+            'rules' => 'trim|required|xss_clean|htmlspecialchars',
 
         ),
         array(
@@ -794,12 +795,12 @@ $config = array (
         array(
             'field' => 'newsType',
             'label' => 'News Type ',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'newsStatus',
             'label' => 'News Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -808,12 +809,12 @@ $config = array (
         array(
             'field' => 'newsTitle',
             'label' => 'News Title ',
-            'rules' => 'required|max_length[255]|callback_NewseditUniqueCheck',
+            'rules' => 'required|max_length[255]|callback_NewseditUniqueCheck|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'newsDate',
             'label' => 'News Date',
-            'rules' => 'required',
+            'rules' => 'trim|required|xss_clean|htmlspecialchars',
 
         ),
         array(
@@ -824,12 +825,12 @@ $config = array (
         array(
             'field' => 'newsType',
             'label' => 'News Type ',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'newsStatus',
             'label' => 'News Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -838,7 +839,7 @@ $config = array (
         array(
             'field' => 'albumId',
             'label' => 'Album',
-            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]',
+            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'photoImage[]',
@@ -848,7 +849,7 @@ $config = array (
         array(
             'field' => 'photoStatus[]',
             'label' => 'Image',
-            'rules' => 'max_length[50]'
+            'rules' => 'max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -857,7 +858,7 @@ $config = array (
         array(
             'field' => 'albumId',
             'label' => 'Album',
-            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]',
+            'rules' => 'required|max_length[11]|regex_match[/^[0-9]*$/]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'photoImage',
@@ -866,8 +867,8 @@ $config = array (
         ),
         array(
             'field' => 'photoStatus',
-            'label' => 'Image',
-            'rules' => 'max_length[50]'
+            'label' => 'Status',
+            'rules' => 'max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -877,12 +878,12 @@ $config = array (
         array(
             'field' => 'albumCategory',
             'label' => 'Album Category',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'albumTitle',
             'label' => 'Album Title',
-            'rules' => 'required|max_length[255]|is_unique[ictmalbum.albumTitle]',
+            'rules' => 'required|max_length[255]|is_unique[ictmalbum.albumTitle]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Already have an album of this Name!! Please Write a Different Album Title',
             ),
@@ -890,7 +891,7 @@ $config = array (
         array(
             'field' => 'albumStatus',
             'label' => 'Album Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
 
     ),
@@ -900,17 +901,17 @@ $config = array (
         array(
             'field' => 'albumCategory',
             'label' => 'Album Category',
-            'rules' => 'required|max_length[255]',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'albumTitle',
             'label' => 'Album Title',
-            'rules' => 'required|max_length[255]|callback_AlbumeditUniqueCheck',
+            'rules' => 'required|max_length[255]|callback_AlbumeditUniqueCheck|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'albumStatus',
             'label' => 'Album Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
 
     ),
@@ -920,7 +921,7 @@ $config = array (
         array(
             'field' => 'feedbackByName',
             'label' => 'feedback By Name',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'feedbackByImage',
@@ -930,12 +931,12 @@ $config = array (
         array(
             'field' => 'feedbackByProfession',
             'label' => 'feedback By Profession',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'feedbackStatus',
             'label' => 'feedback Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -944,7 +945,7 @@ $config = array (
         array(
             'field' => 'feedbackByName',
             'label' => 'feedback By Name',
-            'rules' => 'required|max_length[100]',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'feedbackByImage',
@@ -954,22 +955,22 @@ $config = array (
         array(
             'field' => 'feedbackByProfession',
             'label' => 'feedback By Profession',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'feedbackStatus',
             'label' => 'feedback Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'feedbackSource',
             'label' => 'feedback Source',
-            'rules' => 'required|max_length[100]'
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'feedbackApprove',
             'label' => 'feedback Approve',
-            'rules' => 'required|max_length[20]'
+            'rules' => 'required|max_length[20]|in_list['.SELECT_APPROVE[0].','.SELECT_APPROVE[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -978,7 +979,7 @@ $config = array (
         array(
             'field' => 'affiliationTitle',
             'label' => 'Affiliation Title',
-            'rules' => 'required|max_length[100]|htmlspecialchars|is_unique[ictmaffiliations.affiliationsTitle]',
+            'rules' => 'required|max_length[100]|is_unique[ictmaffiliations.affiliationsTitle]|xss_clean|htmlspecialchars',
             'errors'=> array(
                 'is_unique' => 'affiliationsTitle Allready Existed !! Please Write a Different Affiliation Title',
             ),
@@ -991,7 +992,7 @@ $config = array (
         array(
             'field' => 'affiliationStatus',
             'label' => 'Affiliation Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 
@@ -1000,7 +1001,7 @@ $config = array (
         array(
             'field' => 'affiliationTitle',
             'label' => 'Affiliation Title',
-            'rules' => 'required|max_length[100]|callback_AffiliationTitleUniqueCheck'
+            'rules' => 'required|max_length[100]|callback_AffiliationTitleUniqueCheck|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'affiliationImage',
@@ -1010,7 +1011,7 @@ $config = array (
         array(
             'field' => 'affiliationStatus',
             'label' => 'Affiliation Status',
-            'rules' => 'required|max_length[50]'
+            'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
 );

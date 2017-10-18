@@ -82,7 +82,7 @@ class Newsm extends CI_Model
 
 
     public function getAllforManageNews($limit, $start) {
-        $this->db->select('newsId,newsTitle,newsDate,newsType,newsStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('newsId,newsTitle,newsDate,newsType,newsStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmnews');
         $this->db->limit($limit, $start);
         $this->db->order_by("newsId", "desc");
@@ -116,6 +116,11 @@ class Newsm extends CI_Model
         $newsType = $this->input->post("newsType");
         $newsStatus = $this->input->post("newsStatus");
         $newsContent = $this->input->post("newsContent");
+
+        if ($newsStatus==STATUS[1]){
+            $homeStatus=null;
+        }
+
 
 
         if (!empty($_FILES['news_image']['name'])) {
@@ -152,6 +157,7 @@ class Newsm extends CI_Model
                 'newsType' => $newsType,
                 'newsStatus' => $newsStatus,
                 'newsContent' => $newsContent,
+                'homeStatus' => $homeStatus,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
             );
@@ -164,6 +170,7 @@ class Newsm extends CI_Model
                 'newsDate' => $NewsDate,
                 'newsType' => $newsType,
                 'newsStatus' => $newsStatus,
+                'homeStatus' => $homeStatus,
                 'newsContent' => $newsContent,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
@@ -248,6 +255,33 @@ class Newsm extends CI_Model
         {
             return $error=null;
         }
+
+    }
+
+    // appear in the Home page
+    public function appearInHomePage($newsId)
+    {
+        $this->db->select('homeStatus');
+        $this->db->where('newsId',$newsId);
+        $query = $this->db->get('ictmnews');
+        foreach ($query->result() as $status){$newsStatus=$status->homeStatus;}
+        if ($newsStatus==null){
+
+            $data = array(
+                'homeStatus' => SELECT_APPROVE[0],
+            );
+            $approve=1;
+        }
+        else{
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve=0;
+        }
+
+        $this->db->where('newsId',$newsId);
+        $this->db->update('ictmnews', $data);
+        return $approve;
 
     }
 }

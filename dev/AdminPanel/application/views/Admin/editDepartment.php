@@ -51,7 +51,7 @@
                                         <label for="departmentName" class="control-label col-lg-2">Department Name <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('departmentName'); ?></font></p>
-                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo htmlspecialchars(stripslashes($editDepartment->departmentName))?>" type="text" required />
+                                            <input class="form-control" id="departmentName" name="departmentName" value="<?php echo $editDepartment->departmentName?>" type="text" required />
                                         </div>
                                     </div>
 
@@ -59,8 +59,8 @@
                                         <label class="control-label col-lg-2" for="departmentHead">Department Head <span class="required">*</span></label>
                                         <div class="col-lg-4">
 
-                                            <p><font color="red"> <?php echo form_error('departmentHead'); ?></font></p>
-                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="<?php echo htmlspecialchars(stripslashes($editDepartment->departmentHead))?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('departmentHead');?></font></p>
+                                            <input class="form-control" id="departmentHead" name="departmentHead"  value="<?php echo $editDepartment->departmentHead?>" type="text" required />
 
 
                                             </select>
@@ -86,7 +86,7 @@
 
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2" for="departmentSummary">DepartmentHead Summary</label>
+                                        <label class="control-label col-lg-2" for="departmentSummary">Department Summary</label>
                                         <div class="col-lg-10">
                                             <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary"><?php echo $editDepartment->departmentSummary ?></textarea>
 
