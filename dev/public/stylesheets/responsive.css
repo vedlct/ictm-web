@@ -8,12 +8,12 @@
             position: absolute;
             right: 0;
             white-space: normal;
-            width: 360px;
+            width: 380px;
             z-index: 9999;
         }
 	}
 
-	@media only screen and (max-width: 1366px) {
+	@media only screen and (max-width: 1370px) {
 		
         .tp-caption.color-full {
             background-color: rgba(255, 255, 255, 0.8);
@@ -39,7 +39,7 @@
 		}
 
 		.flat-events .grid-item.color-full {
-		    height: 286px;
+		    height: 285px;
 		}
 
 		.flat-events .grid-item .grid-item-content .title {
@@ -487,6 +487,8 @@
 
 	/* Tablet Landscape */
 	 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+
 
 	}
 
