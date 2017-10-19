@@ -37,7 +37,7 @@
                                                 <?php if ($eventDetails->eventPhotoPath !=null){?>
                                                 <img style="height: 265px;width: 265px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/eventImages/<?php echo $eventDetails->eventPhotoPath?>" alt="image">
                                                 <?php }else{?>
-                                                <img style="height: 265px;width: 265px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/eventImages/noImage.jpg" alt="image">
+                                                <img style="height: 265px;width: 265px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/eventImages/NoImage.jpg" alt="image">
                                                 <?php }?>
                                             </div><!--/item-thumbnail-->
                                             <div style="text-align: center" class="event-description">
