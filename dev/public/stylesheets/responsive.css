@@ -18,6 +18,14 @@
 	#verticaldata {
 		display: none;
 	}
+    
+    .news {
+        margin-left: 58px;
+    }
+
+    .content-pad {
+        margin-left: 65px;
+    }
 
 	.post-scroller-wrap {
 		padding: 30px;
@@ -33,6 +41,14 @@
 	#verticaldata {
 		display: none;
 	}
+    
+    .news {
+        margin-left: 58px;
+    }
+
+    .content-pad {
+        margin-left: 65px;
+    }
 
 	.tp-caption.color-full {
 		background-color: rgba(255, 255, 255, 0.8);
