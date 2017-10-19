@@ -107,6 +107,15 @@ class Pagem extends CI_Model
         $query = $this->db->get('ictmpage');
         return $query->result();
     }
+    //this will return pageID and pageTitle for menu
+    public function getPageIdNameforMenu()
+    {
+
+        $this->db->select('pageId, pageTitle');
+        $this->db->group_by('pageTitle');
+        $query = $this->db->get('ictmpage');
+        return $query->result();
+    }
 
 
      //this will return all page data for manage page
