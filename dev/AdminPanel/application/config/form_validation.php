@@ -247,7 +247,7 @@ $config = array (
         array(
             'field' => 'facultyIntro',
             'label' => 'Faculty Intro',
-            'rules' => 'required|htmlspecialchars'
+            'rules' => 'required'
         ),
     ),
     /*---------------- for faculty Edit-------------*/
@@ -312,7 +312,7 @@ $config = array (
         array(
             'field' => 'faculty_intro',
             'label' => 'Faculty Intro',
-            'rules' => 'required|htmlspecialchars'
+            'rules' => 'required'
         ),
     ),
 
@@ -321,7 +321,6 @@ $config = array (
         array(
             'field' => 'name',
             'label' => 'Course Name',
-//            'rules' => 'required|max_length[255]|callback_CourseCheckFormNewCourse',
             'rules' => 'required|max_length[255]|is_unique[ictmcourse.courseTitle]|xss_clean|htmlspecialchars',
             'errors' => array(
                 'is_unique' => 'Course Allready Existed !!',
