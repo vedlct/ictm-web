@@ -62,7 +62,7 @@
 
                                         <div class="col-md-6 col-sm-12">
                                             <div class="content-pad">
-                                                <div class="item-content">
+                                                <div class="item-content news">
                                                     <h3 class="title"><a href="<?php echo base_url()?>News-Details-Archive/<?php echo $n->newsId?>" class="main-color-1-hover"><?php echo $n->newsTitle; ?></a></h3>
                                                     <div class="item-excerpt blog-item-excerpt">
                                                         <p><?php echo  substr($n->newsContent, 0, 150);?></p>
