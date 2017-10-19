@@ -247,7 +247,7 @@ $config = array (
         array(
             'field' => 'facultyIntro',
             'label' => 'Faculty Intro',
-            'rules' => 'required|htmlspecialchars'
+            'rules' => 'required'
         ),
     ),
     /*---------------- for faculty Edit-------------*/
@@ -312,7 +312,7 @@ $config = array (
         array(
             'field' => 'faculty_intro',
             'label' => 'Faculty Intro',
-            'rules' => 'required|htmlspecialchars'
+            'rules' => 'required'
         ),
     ),
 
