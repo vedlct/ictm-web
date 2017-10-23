@@ -2,11 +2,20 @@
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
+            
             <li class="sub-menu">
-                <a class="" href="<?php echo base_url()?>Admin/Home">
+                <a href="javascript:">
                     <i class="icon_house_alt"></i>
                     <span>Home</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
                 </a>
+                <ul class="sub">
+                    <li><a class="" href="<?php echo base_url()?>Admin/Home/slider">Slider</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Home/verticalBar">Vertical Bar</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Home/middleBanner">Middle Banner</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Home/squreBox">Square Box</a></li>
+                    <li><a class="" href="<?php echo base_url()?>Admin/Home/bottomBanner">Bottom Banner</a></li>
+                </ul>
             </li>
 
             <li class="sub-menu">
