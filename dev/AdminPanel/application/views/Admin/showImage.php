@@ -41,4 +41,8 @@ elseif(!empty($affiliationIdImage)){
         <img src="<?php echo  base_url()?>images/affiliationImages/<?php echo $affiliationIdImage->affiliationsPhotoPath ?>" width="60%">
     <?php }}
 
+elseif(!empty($homeImage)){?>
+        <img src="<?php echo  base_url()?>images/homeImage/<?php echo $homeImage ?>" width="60%">
+    <?php }
+
 ?>

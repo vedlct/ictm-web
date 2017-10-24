@@ -1013,4 +1013,23 @@ $config = array (
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
         ),
     ),
+
+    'BottomBanner'=> array (
+
+        array(
+            'field' => 'title',
+            'label' => 'Banner Title',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'subTitle',
+            'label' => 'Banner Sub Title',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
 );
