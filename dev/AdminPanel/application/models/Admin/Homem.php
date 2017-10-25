@@ -70,6 +70,14 @@ class Homem extends CI_Model
 
     }
 
+    public function getHomeSqureBoxdata() //get home Squre Box Data
+    {
+        $this->db->select('homeId,squareBoxTitle1,squareBoxLink1,squareBoxImage2,squareBoxTitle2,squareBoxLink2,squareBoxImage3,squareBoxTitle3,squareBoxLink3,squareBoxImage4,squareBoxTitle4,squareBoxLink4,squareBoxImage5,squareBoxTitle5,squareBoxLink5,squareBoxTitle6,squareBoxLink6,squareBoxImage6,squareBoxImage7,squareBoxTitle7,squareBoxLink7,squareBoxImage8,squareBoxTitle8,squareBoxLink8');
+        $query = $this->db->get('ictmhome');
+        return $query->result();
+
+    }
+
     public function updateBottomBanner($id) //Update home Bottom Banner Data
     {
 

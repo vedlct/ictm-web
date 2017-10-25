@@ -54,13 +54,63 @@ class Home extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->load->view('Admin/homeSqureBox');
+            $this->data['bottomBannerdata'] = $this->Homem->getHomeId();
+            if (empty($this->data['bottomBannerdata'])) {
+                $this->load->view('Admin/homeSqureBox');
+
+            }
+            else {
+
+                $this->data['squreBoxdata'] = $this->Homem->getHomeSqureBoxdata();
+                $this->load->view('Admin/edithomeSqureBox', $this->data);
+            }
+
+
 
         }
         else{
             redirect('Admin/Login');
         }
     }
+
+    public function insertSqureBox() //insert Squre Box
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('SqureBox')) {
+
+                $this->load->view('Admin/homeSqureBox');
+
+            }
+            else {
+
+
+//                $this->data['error']=$this->Homem->insertBottomBanner();
+//
+//                if (empty($this->data['error'])) {
+//
+//                    $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
+//                    redirect('Admin/Home/bottomBanner');
+//
+//
+//                }
+//                else
+//                {
+//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+//                    redirect('Admin/Home/bottomBanner');
+//
+//                }
+
+
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
 
     public function bottomBanner() //Show Bottom Banner
     {
@@ -193,6 +243,34 @@ class Home extends CI_Controller
                 }
             } else {
                 $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                return false;
+
+
+            }
+        }
+    }
+
+    public function val_img_checks($imageName,$imageSizes)
+    {
+
+
+        $imageSize = (is_numeric($imageSizes)/1024);
+        $supported_image = array('gif','jpg','jpeg','png');
+
+        if ($imageName != null) {
+            $ext = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
+
+            if (in_array($ext, $supported_image)) {
+
+                if ($imageSize <4096){
+                    return true;
+                }
+                else{
+                    $this->form_validation->set_message('val_img_checks', "Maximum Image Size 4MB is allowed!!");
+                    return false;
+                }
+            } else {
+                $this->form_validation->set_message('val_img_checks', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;
 
 
