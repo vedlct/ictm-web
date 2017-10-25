@@ -15,11 +15,22 @@ class Pagem extends CI_Model
             $content = $this->input->post("ckcontent");
         }
 
+
         $keywords = $this->input->post("keywords");
         $metadata = $this->input->post("metadata");
+        if ($keywords == ""){
+            $keywords = null;
+        }
+        if ($metadata == ""){
+            $metadata = null;
+        }
 
         $status = $this->input->post("status");
         $image=$_FILES['image']['name'];
+
+        if ($image == ""){
+            $image = null;
+        }
 
         $data = array(
             'pageTitle' => $title,
@@ -87,6 +98,17 @@ class Pagem extends CI_Model
 
     //this will return pageID and pageTitle
     public function getPageIdName()
+    {
+
+        $this->db->select('pageId, pageTitle');
+        $this->db->where('pageType !=',PAGE_TYPE[3]);
+        $this->db->where('pageType !=',PAGE_TYPE[4]);
+        $this->db->group_by('pageTitle');
+        $query = $this->db->get('ictmpage');
+        return $query->result();
+    }
+    //this will return pageID and pageTitle for menu
+    public function getPageIdNameforMenu()
     {
 
         $this->db->select('pageId, pageTitle');
@@ -172,8 +194,18 @@ class Pagem extends CI_Model
         else{
             $content = $this->input->post("ckContent");
         }
+        if ($keywords == ""){
+            $keywords = null;
+        }
+        if ($metadata == ""){
+            $metadata = null;
+        }
         $status = $this->input->post("status");
         $image = $_FILES["image"]["name"];
+
+        if ($image == ""){
+            $image = null;
+        }
 
 
         if (!empty($_FILES['image']['name'])) {

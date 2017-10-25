@@ -38,10 +38,10 @@
 
 
 .flat-row {
-	clear: both;
+    clear: both;
     display: block;
     position: relative;
-    padding: 35px 0;    
+    padding: 35px 0;
 }
 
 .flat-row.no-padding {
@@ -190,9 +190,9 @@
     opacity: 1;
     z-index: 9999;
     -webkit-transition: all 0.2s ease-out;
-       -moz-transition: all 0.2s ease-out;
-         -o-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .top-search {
@@ -201,12 +201,12 @@
     right: 0;
     top: 100%;
     opacity: 0;
-        background: rgba(0,0,0,.9);
+    background: rgba(0,0,0,.9);
     z-index: -99;
     -webkit-transition: all 0.2s ease-out;
-       -moz-transition: all 0.2s ease-out;
-         -o-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .top-search form {
@@ -260,17 +260,17 @@
     font-size: 10px;
     outline: none;
     -webkit-transition: all 0.2s ease-out;
-       -moz-transition: all 0.2s ease-out;
-         -o-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 .top-search .input-group-btn i:hover {
     color: #fff;
     -webkit-transition: all 0.2s ease-out;
-       -moz-transition: all 0.2s ease-out;
-         -o-transition: all 0.2s ease-out;
-            transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 
@@ -316,6 +316,7 @@
     padding: 30px;
     background :#ffffff;
     background: rgba(255,255,255,.7);
+    height: 790px;
 }
 
 .post-scroller-carousel {
@@ -414,7 +415,7 @@
     cursor: pointer;
     color: #555;
     background: transparent;
-    padding: 15px 45px 14px 20px;  
+    padding: 15px 45px 14px 20px;
     border: 1px solid #d3d3d3;
     position: relative;
     font-size: 17px;
@@ -422,7 +423,7 @@
 }
 
 .flat-accordion .toggle-title:hover {
-    background: #841a29; 
+    background: #841a29;
     border: 1px solid #841a29;
     color: #fff;
 }
@@ -447,10 +448,10 @@
     right: 25px;
     top: 14px;
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .flat-accordion .toggle-title.active:after {
@@ -460,21 +461,21 @@
     -o-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-.flat-accordion .toggle-title.active:after {   
-    color: #fff; 
+.flat-accordion .toggle-title.active:after {
+    color: #fff;
     right: 25px;
     top: 14px;
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .flat-accordion .toggle-title:after {
@@ -539,8 +540,8 @@
     font-weight: bold;
     margin-bottom: 20px;
     font-size: 21px;
-	background:#EAE8EB;
-	padding: 15px;
+    background:#EAE8EB;
+    padding: 15px;
 }
 
 .shortcode-blog-excerpt {
@@ -650,7 +651,7 @@
 }
 
 .text p {
-	color:#666;
+    color:#666;
 }
 
 /* Flat-news
@@ -744,7 +745,7 @@
 -------------------------------------------------------------- */
 .flat-row .flat-fluid {
     padding: 40px 0 10px 0;
-    background-color: #841a29; 
+    background-color: #841a29;
 }
 
 .flat-row .flat-fluid.padding-95 {
@@ -848,7 +849,7 @@
     border-top: #841a29;
     border-left: #841a29;
     border-right: #841a29;
-    border-bottom: rgba(0,0,0,.25); 
+    border-bottom: rgba(0,0,0,.25);
     box-shadow: inset 0 -3px 0 rgba(0,0,0,.25);
 }
 
@@ -1009,19 +1010,19 @@ body.mobile .event-item:hover .event-thumbnail img {
     z-index: 10;
     background: rgba(0,0,0,.5);
     -webkit-transition: all 0.2s ease-in-out;
-       -moz-transition: all 0.2s ease-in-out;
-        -ms-transition: all 0.2s ease-in-out;
-         -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .event-item:hover .event-overlay {
     background: rgba(0,0,0,.5);
     -webkit-transition: all 0.2s ease-in-out;
-       -moz-transition: all 0.2s ease-in-out;
-        -ms-transition: all 0.2s ease-in-out;
-         -o-transition: all 0.2s ease-in-out;
-            transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .event-item .event-overlay
@@ -1029,24 +1030,24 @@ body.mobile .event-item:hover .event-thumbnail img {
     margin-bottom: -70px;
     opacity: 0;
     -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform: scaleY(1);
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .event-item:hover .overlay-footer {
     margin-bottom: 0;
     opacity: 1;
     -webkit-transform: scaleY(1);
-            transform: scaleY(1);
+    transform: scaleY(1);
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;            
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .overlay-top {
@@ -1815,7 +1816,7 @@ body.mobile .event-item:hover .event-thumbnail img {
 .project-item .project-item-title,
 .project-item .project-item-excerpt {
     transition: all .3s;
-}   
+}
 
 .project-item .small-text {
     transition: all .3s;
@@ -1933,7 +1934,7 @@ body.mobile .event-item:hover .event-thumbnail img {
 }
 
 .flat-project-post .project-content-text p {
-    margin-bottom: 14px;    
+    margin-bottom: 14px;
 }
 
 .flat-project-post .project-content-text {
@@ -2045,7 +2046,7 @@ body.mobile .event-item:hover .event-thumbnail img {
     margin-bottom: 35px;
     color: #343434;
 }
- 
+
 .flat-future .post-future .flat-button.color-v2 {
     display: inline-block;
     padding: 18px 40px;
@@ -2263,7 +2264,7 @@ body.mobile .event-item:hover .event-thumbnail img {
 .single-course-detail .content-content .content-dropcap p {
     line-height: 2;
     margin-bottom: 9px;
-	text-align:justify;
+    text-align:justify;
 }
 
 .single-course-detail .content-content .single-cours-social {
@@ -2329,9 +2330,9 @@ body.mobile .event-item:hover .event-thumbnail img {
 }
 
 .single-course-detail .content-content ul {
-	list-style-type: disc;
+    list-style-type: disc;
     margin-left:25px;
-	margin-bottom:10px;
+    margin-bottom:10px;
 }
 
 .related-course .cr-content {
@@ -2344,10 +2345,10 @@ body.mobile .event-item:hover .event-thumbnail img {
     margin-right: 20px;
     position: relative;
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .related-course .cr-content .thumb:hover .overlay {
@@ -2358,13 +2359,13 @@ body.mobile .event-item:hover .event-thumbnail img {
     width: 100%;
     height: 100%;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-       opacity: 0.5;
-        filter: alpha(opacity=50); 
+    opacity: 0.5;
+    filter: alpha(opacity=50);
     -webkit-transition: all 0.3s ease-in-out;
-       -moz-transition: all 0.3s ease-in-out;
-        -ms-transition: all 0.3s ease-in-out;
-         -o-transition: all 0.3s ease-in-out;
-            transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .related-course .cr-content .cr-title a {
@@ -2571,7 +2572,7 @@ body.mobile .event-item:hover .event-thumbnail img {
 .single-course-detail .content-content .event-more-detail h4 {
     font-size: 18px;
     color: #343434;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
 }
 
 .single-course-detail .content-content .event-more-detail .text {
@@ -2683,7 +2684,7 @@ body.mobile .event-item:hover .event-thumbnail img {
     transition: all .2s;
     border-top: none;
     border-bottom: 1px dashed #eaeaea;
-	background:#f2f2f2;
+    background:#f2f2f2;
 }
 
 .course-list-table .courses-list table > thead > tr > th {
@@ -2692,7 +2693,7 @@ body.mobile .event-item:hover .event-thumbnail img {
     font-size: 18px;
     font-weight: 200;
     vertical-align: middle;
-} 
+}
 
 .course-list-table.table > tbody > tr:hover > td {
     background-color: #841a29;
@@ -2786,8 +2787,8 @@ body.mobile .event-item:hover .event-thumbnail img {
     font-weight: 400;
     color: #343434;
     margin-bottom: 15px;
-	border-bottom:1px solid #841a29; 
-	padding-bottom:15px;
+    border-bottom:1px solid #841a29;
+    padding-bottom:15px;
     line-height: 1.25;
 }
 
@@ -2876,7 +2877,7 @@ body.mobile .event-item:hover .event-thumbnail img {
     top: 0;
     left: 0;
     background: #fefefe;
-    z-index: 100000;  
+    z-index: 100000;
 }
 
 .block-loader {
@@ -2946,57 +2947,57 @@ body.mobile .event-item:hover .event-thumbnail img {
 
 @-moz-keyframes bounceG{
     0% {
-    -moz-transform:scale(1.2);
-    opacity:1
+        -moz-transform:scale(1.2);
+        opacity:1
     }
 
     100%{
-    -moz-transform:scale(0.7);
-    opacity:0.1
+        -moz-transform:scale(0.7);
+        opacity:0.1
     }
-    }
+}
 
-    @-webkit-keyframes bounceG{
+@-webkit-keyframes bounceG{
     0% {
-    -webkit-transform:scale(1.2);
-    opacity:1
+        -webkit-transform:scale(1.2);
+        opacity:1
     }
 
     100% {
-    -webkit-transform:scale(0.7);
-    opacity:0.1
+        -webkit-transform:scale(0.7);
+        opacity:0.1
     }
-    }
+}
 
-    @-ms-keyframes bounceG{
-        0% {
+@-ms-keyframes bounceG{
+    0% {
         -ms-transform:scale(1.2);
         opacity:1
     }
 
     100% {
-    -ms-transform:scale(0.7);
-    opacity:0.1
+        -ms-transform:scale(0.7);
+        opacity:0.1
     }
-    }
+}
 
-    @-o-keyframes bounceG{
-        0% {
-            -o-transform:scale(1.2);
-            opacity:1
-        }
-
-        100%{
-            -o-transform:scale(0.7);
-            opacity:0.1
-        }
+@-o-keyframes bounceG{
+    0% {
+        -o-transform:scale(1.2);
+        opacity:1
     }
 
-    @keyframes bounceG{
+    100%{
+        -o-transform:scale(0.7);
+        opacity:0.1
+    }
+}
+
+@keyframes bounceG{
     0% {
         transform:scale(1.2);
         opacity:1
-        }
+    }
 
     100% {
         transform:scale(0.7);

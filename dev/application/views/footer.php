@@ -20,8 +20,6 @@
 
                                             <?php foreach ($keyinfo as $ki) {
 
-
-
                                                 if ($ki->pageType == 'Static Type') {
 
                                                     switch ($ki->pageContent) {
@@ -163,9 +161,9 @@
                                         <?php foreach ($photoGalleryForFooter as $photoGallery){?>
                                         <li class="last">
                                             <div class="thumb images-hover">
-                                                <div class="overlay"></div>
+
                                                 <a href="<?php echo base_url()?>album-pictures/<?php echo $photoGallery['albumId']?>">
-                                                    <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery['albumTitle']?>/<?php echo $photoGallery['photoName']?>"></span>
+                                                    <div class="overlay"></div> <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery['albumTitle']?>/<?php echo $photoGallery['photoName']?>"/></span>
                                                 </a>
                                             </div>
                                         </li>
@@ -175,6 +173,8 @@
 
                                 </div>
                             </div>
+
+
                         </div>
                     </div>
                 </div>

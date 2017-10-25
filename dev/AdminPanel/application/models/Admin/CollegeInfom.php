@@ -13,7 +13,6 @@ class CollegeInfom extends CI_Model
     public function getinfodata() {
         $query = $this->db->get('ictmcollegeinfo');
         return $query->result();
-
     }
     public function insertCollegeinfo(){
         $name = $this->input->post("college_name");
