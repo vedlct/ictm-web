@@ -141,4 +141,13 @@ class Homem extends CI_Model
         }
 
     }
+
+    public function getHomeMiddleBannerdata() //get home Middle Banner Data
+    {
+        $this->db->select('homeId,middleBannerTitle1,middleBannerText1,middleBannerLink1,middleBannerTitle2,middleBannerText2,middleBannerLink2,middleBannerTitle3,middleBannerText3,middleBannerLink3');
+        $query = $this->db->get('ictmhome');
+        return $query->result();
+
+    }
+
 }

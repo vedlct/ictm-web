@@ -196,7 +196,7 @@ class Photo extends CI_Controller
 
                     $imageSize = ($_FILES['photoImage']['size'][$i]/1024);
 
-                    if ($imageSize <2048){
+                    if ($imageSize <4096){
 
                     }
                     else{

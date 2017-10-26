@@ -1118,40 +1118,9 @@ $config = array (
             'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'image2',
-            'label' => 'Image 2',
-            'rules' => 'callback_val_img_checks['.$_FILES['image2']['name'].','.$_FILES['image2']['size'].']'
+            'field' => 'image[]',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_checkSqureBox'
         ),
-        array(
-            'field' => 'image3',
-            'label' => 'Image 3',
-            'rules' => 'callback_val_img_checks['.$_FILES['image3']['name'].','.$_FILES['image3']['size'].']'
-        ),
-        array(
-            'field' => 'image4',
-            'label' => 'Image 4',
-            'rules' => 'callback_val_img_checks['.$_FILES['image4']['name'].','.$_FILES['image4']['size'].']'
-        ),
-        array(
-            'field' => 'image5',
-            'label' => 'Image 5',
-            'rules' => 'callback_val_img_checks['.$_FILES['image5']['name'].','.$_FILES['image5']['size'].']'
-        ),
-        array(
-            'field' => 'image6',
-            'label' => 'Image 6',
-            'rules' => 'callback_val_img_checks['.$_FILES['image6']['name'].','.$_FILES['image6']['size'].']'
-        ),
-        array(
-            'field' => 'image7',
-            'label' => 'Image 7',
-            'rules' => 'callback_val_img_checks['.$_FILES['image7']['name'].','.$_FILES['image7']['size'].']'
-        ),
-        array(
-            'field' => 'image8',
-            'label' => 'Image 8',
-            'rules' => 'callback_val_img_checks['.$_FILES['image8']['name'].','.$_FILES['image8']['size'].']'
-        ),
-
     ),
 );
