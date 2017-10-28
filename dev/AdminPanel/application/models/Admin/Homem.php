@@ -150,4 +150,88 @@ class Homem extends CI_Model
 
     }
 
+    public function insertMiddleBanner() //insert Middle Banner
+    {
+
+        $title1 = $this->input->post("title1");
+        $title2 = $this->input->post("title2");
+        $title3 = $this->input->post("title3");
+        $link1 = $this->input->post("link1");
+        $link2 = $this->input->post("link2");
+        $link3 = $this->input->post("link3");
+        $text1 = $this->input->post("text1");
+        $text2 = $this->input->post("text2");
+        $text3 = $this->input->post("text3");
+
+        $data = array(
+            'middleBannerTitle1' => $title1,
+            'middleBannerText1' => $link1,
+            'middleBannerLink1' => $text1,
+            'middleBannerTitle2' => $title2,
+            'middleBannerLink2' =>$link2,
+            'middleBannerText2' =>$text2,
+            'middleBannerTitle3' =>$title3,
+            'middleBannerLink3' =>$link3,
+            'middleBannerText3' =>$text3,
+
+        );
+
+        $data = $this->security->xss_clean($data,true);
+        $error=$this->db->insert('ictmhome', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error = null;
+        }
+    }
+
+    public function updateMiddleBannerdata($id) //Update Middle Banner
+    {
+
+        $title1 = $this->input->post("title1");
+        $title2 = $this->input->post("title2");
+        $title3 = $this->input->post("title3");
+        $link1 = $this->input->post("link1");
+        $link2 = $this->input->post("link2");
+        $link3 = $this->input->post("link3");
+        $text1 = $this->input->post("text1");
+        $text2 = $this->input->post("text2");
+        $text3 = $this->input->post("text3");
+
+        $data = array(
+            'middleBannerTitle1' => $title1,
+            'middleBannerText1' => $text1,
+            'middleBannerLink1' => $link1,
+            'middleBannerTitle2' => $title2,
+            'middleBannerLink2' =>$link2,
+            'middleBannerText2' =>$text2,
+            'middleBannerTitle3' =>$title3,
+            'middleBannerLink3' =>$link3,
+            'middleBannerText3' =>$text3,
+
+        );
+        $data = $this->security->xss_clean($data);
+        $this->db->where('homeId', $id);
+        $error=$this->db->update('ictmhome', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error = null;
+        }
+    }
+
+    public function getHomeVerticalBardata() //get home Vertical Bar Data
+    {
+        $this->db->select('homeId,verticalBarTitle1,verticalBarText1,verticalBarImage1,verticalBarLink1,verticalBarText2,verticalBarImage2,verticalBarTitle2,verticalBarLink2,verticalBarTitle3,verticalBarText3,verticalBarImage3,verticalBarLink3,verticalBarTitle4,verticalBarText4,verticalBarImage4,verticalBarLink4');
+        $query = $this->db->get('ictmhome');
+        return $query->result();
+
+    }
+
 }

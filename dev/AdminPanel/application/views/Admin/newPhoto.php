@@ -255,9 +255,11 @@
 <!--<script type="text/javascript" src="--><?php //echo base_url()?><!--public/ckeditor/ckeditor.js"></script>-->
 <script>
     function formvalidate() {
+
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
         var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
         var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
+
         if (mutliPhoto[2].value != '' && mutliPhoto[2].value == '' ) {
             alert('Please Select a Image in Image field' + 2);
             return false;

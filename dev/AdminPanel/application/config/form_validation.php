@@ -1123,4 +1123,77 @@ $config = array (
             'rules' => 'callback_val_img_checkSqureBox'
         ),
     ),
+
+    'MiddleBanner'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'Middle Banner Title 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'Middle Banner Link 1',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text1',
+            'label' => 'Middle Banner Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'Middle Banner Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'Middle Banner Link 2',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'Middle Banner Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'Middle Banner Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'Middle Banner Link 3',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'Middle Banner Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
+
+    'VerticalBar'=> array (
+
+        array(
+            'field' => 'title[]',
+            'label' => 'Vertical Bar Title',
+            'rules' => 'required|max_length[2]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link[]',
+            'label' => 'VerTical Bar Link',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text[]',
+            'label' => 'VerTical Bar Text',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'VerTical Bar Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
+    ),
 );
