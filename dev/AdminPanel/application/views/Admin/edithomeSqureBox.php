@@ -34,7 +34,11 @@
             <?php }
             elseif($this->session->flashdata('successMessage')!=null){?>
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
-            <?php }?>
+            <?php }
+            if (!empty(validation_errors())){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo form_error('image[]'); ?></strong></div>
+
+            <?php } ?>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -60,7 +64,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image1" id="image1"required>
+                                            <input class="form-control" type="file" name="image[]" id="image1"required>
 
                                         </div>
                                     </div>
@@ -87,7 +91,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image2" id="image2"required>
+                                            <input class="form-control" type="file" name="image[]" id="image2"required>
 
                                         </div>
                                     </div>
@@ -114,7 +118,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image3" id="image3"required>
+                                            <input class="form-control" type="file" name="image[]" id="image3"required>
 
                                         </div>
                                     </div>
@@ -141,7 +145,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image4" id="image4"required>
+                                            <input class="form-control" type="file" name="image[]" id="image4"required>
 
                                         </div>
                                     </div>
@@ -168,7 +172,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image5" id="image5"required>
+                                            <input class="form-control" type="file" name="image[]" id="image5"required>
 
                                         </div>
                                     </div>
@@ -195,7 +199,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image6" id="image6"required>
+                                            <input class="form-control" type="file" name="image[]" id="image6"required>
 
                                         </div>
                                     </div>
@@ -222,7 +226,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image7" id="image7"required>
+                                            <input class="form-control" type="file" name="image[]" id="image7"required>
 
                                         </div>
                                     </div>
@@ -249,7 +253,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image8" id="image8"required>
+                                            <input class="form-control" type="file" name="image[]" id="image8"required>
 
                                         </div>
                                     </div>
@@ -316,7 +320,7 @@
                 }
             }
             else {
-                if (Title.length > 2) {
+                if (Title.length > 255) {
                     alert('Title' + i + ' must be less than 255 charecter!!');
                     return false;
                 }
