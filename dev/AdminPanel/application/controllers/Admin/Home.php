@@ -32,24 +32,155 @@ class Home extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->load->view('Admin/homeVerticalBar');
+            $this->data['verticalBardata'] = $this->Homem->getHomeId();
+            if (empty($this->data['verticalBardata'])) {
+                $this->load->view('Admin/homeVerticalBar');
+
+            }
+            else{
+
+                $this->data['verticalBardata'] = $this->Homem->getHomeVerticalBardata();
+                $this->load->view('Admin/edithomeVerticalBar', $this->data);
+
+            }
 
         }
         else{
             redirect('Admin/Login');
         }
     }
+
+    public function insertVerticalBar() //insert Vertcal Bar
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('VerticalBar')) {
+
+                $this->load->view('Admin/homeVerticalBar');
+
+            }
+            else {
+
+//                $this->data['error']=$this->Homem->insertMiddleBanner();
+//
+//                if (empty($this->data['error'])) {
+//
+//                    $this->session->set_flashdata('successMessage','Middle Banner Created Successfully');
+//                    redirect('Admin/Home/middleBanner');
+//
+//
+//                }
+//                else
+//                {
+//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+//                    redirect('Admin/Home/middleBanner');
+//
+//                }
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     public function middleBanner() //Show Middle Banner
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->load->view('Admin/homeMiddleBanner');
+            $this->data['middleBannerdata'] = $this->Homem->getHomeId();
+            if (empty($this->data['middleBannerdata'])) {
+                $this->load->view('Admin/homeMiddleBanner');
+
+            }
+            else {
+
+                $this->data['middleBannerdata'] = $this->Homem->getHomeMiddleBannerdata();
+                $this->load->view('Admin/edithomeMiddleBanner', $this->data);
+            }
+
+
 
         }
         else{
             redirect('Admin/Login');
         }
     }
+    public function insertMiddleBanner() //insert Middle Banner
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('MiddleBanner')) {
+
+                $this->load->view('Admin/homeMiddleBanner');
+
+            }
+            else {
+
+               $this->data['error']=$this->Homem->insertMiddleBanner();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Middle Banner Created Successfully');
+                    redirect('Admin/Home/middleBanner');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/middleBanner');
+
+                }
+
+
+
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function editMiddleBanner($id) //edit Bottom Banner
+    {
+        $this->load->library('form_validation');
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+
+            if (!$this->form_validation->run('MiddleBanner')) {
+
+                $this->data['middleBannerdata'] = $this->Homem->getHomeMiddleBannerdata();
+                $this->load->view('Admin/edithomeMiddleBanner', $this->data);
+
+            }
+            else {
+
+                $this->data['error']=$this->Homem->updateMiddleBannerdata($id);
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Middle Banner Updated Successfully');
+                    redirect('Admin/Home/middleBanner');
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/middleBanner');
+                }
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     public function squreBox() //Show Squre Box
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -85,8 +216,7 @@ class Home extends CI_Controller
             }
             else {
 
-
-//                $this->data['error']=$this->Homem->insertBottomBanner();
+//               $this->data['error']=$this->Homem->insertSqureBox();
 //
 //                if (empty($this->data['error'])) {
 //
@@ -101,6 +231,7 @@ class Home extends CI_Controller
 //                    redirect('Admin/Home/bottomBanner');
 //
 //                }
+                print_r("done");
 
 
 
@@ -250,32 +381,41 @@ class Home extends CI_Controller
         }
     }
 
-    public function val_img_checks($imageName,$imageSizes)
+    public function val_img_checkSqureBox()
     {
-
-
-        $imageSize = (is_numeric($imageSizes)/1024);
+        $images = $_FILES['image']['name'];
         $supported_image = array('gif','jpg','jpeg','png');
 
-        if ($imageName != null) {
-            $ext = strtolower(pathinfo($imageName, PATHINFO_EXTENSION));
+        for ($i = 0; $i < count($images); $i++) {
+            if ($images[$i] != null) {
+                $ext = strtolower(pathinfo($images[$i], PATHINFO_EXTENSION));
 
-            if (in_array($ext, $supported_image)) {
+                if (in_array($ext, $supported_image)) {
 
-                if ($imageSize <4096){
-                    return true;
+                    $imageSize = ($_FILES['image']['size'][$i] / 1024);
+
+                    if ($imageSize < 4096) {
+
+                    } else {
+                        $error[$i] = 'Image ' . ($i + 1) . ' Maximum Size 4MB is allowed!!';
+
+                    }
+
+                } else {
+
+                    $error[$i] = 'Image ' . ($i + 1) . ' Was not in Correct Formate!!';
+
                 }
-                else{
-                    $this->form_validation->set_message('val_img_checks', "Maximum Image Size 4MB is allowed!!");
-                    return false;
-                }
-            } else {
-                $this->form_validation->set_message('val_img_checks', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+            }
+
+            if (!empty($error)) {
+
+                $json_out = json_encode(array_values($error));
+                $this->form_validation->set_message('val_img_checkSqureBox', $json_out);
                 return false;
-
-
             }
         }
     }
+
 
 }

@@ -1118,40 +1118,82 @@ $config = array (
             'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'image2',
-            'label' => 'Image 2',
-            'rules' => 'callback_val_img_checks['.$_FILES['image2']['name'].','.$_FILES['image2']['size'].']'
+            'field' => 'image[]',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_checkSqureBox'
         ),
-        array(
-            'field' => 'image3',
-            'label' => 'Image 3',
-            'rules' => 'callback_val_img_checks['.$_FILES['image3']['name'].','.$_FILES['image3']['size'].']'
-        ),
-        array(
-            'field' => 'image4',
-            'label' => 'Image 4',
-            'rules' => 'callback_val_img_checks['.$_FILES['image4']['name'].','.$_FILES['image4']['size'].']'
-        ),
-        array(
-            'field' => 'image5',
-            'label' => 'Image 5',
-            'rules' => 'callback_val_img_checks['.$_FILES['image5']['name'].','.$_FILES['image5']['size'].']'
-        ),
-        array(
-            'field' => 'image6',
-            'label' => 'Image 6',
-            'rules' => 'callback_val_img_checks['.$_FILES['image6']['name'].','.$_FILES['image6']['size'].']'
-        ),
-        array(
-            'field' => 'image7',
-            'label' => 'Image 7',
-            'rules' => 'callback_val_img_checks['.$_FILES['image7']['name'].','.$_FILES['image7']['size'].']'
-        ),
-        array(
-            'field' => 'image8',
-            'label' => 'Image 8',
-            'rules' => 'callback_val_img_checks['.$_FILES['image8']['name'].','.$_FILES['image8']['size'].']'
-        ),
+    ),
 
+    'MiddleBanner'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'Middle Banner Title 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'Middle Banner Link 1',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text1',
+            'label' => 'Middle Banner Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'Middle Banner Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'Middle Banner Link 2',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'Middle Banner Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'Middle Banner Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'Middle Banner Link 3',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'Middle Banner Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
+
+    'VerticalBar'=> array (
+
+        array(
+            'field' => 'title[]',
+            'label' => 'Vertical Bar Title',
+            'rules' => 'required|max_length[2]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link[]',
+            'label' => 'VerTical Bar Link',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text[]',
+            'label' => 'VerTical Bar Text',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'VerTical Bar Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
     ),
 );
