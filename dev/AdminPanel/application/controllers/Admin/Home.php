@@ -48,26 +48,28 @@ class Home extends CI_Controller
 
             if (!$this->form_validation->run('Slider')) {
 
-                $this->load->view('Admin/homeVerticalBar');
+                $this->load->view('Admin/homeSlider');
 
             }
             else {
 
-                $this->data['error']=$this->Homem->insertVerticalBar();
+                $this->data['error']=$this->Homem->insertSlider();
 
                 if (empty($this->data['error'])) {
 
-                    $this->session->set_flashdata('successMessage','Vertcal Bar Created Successfully');
-                    redirect('Admin/Home/verticalBar');
+                    $this->session->set_flashdata('successMessage','Slider Created Successfully');
+                    redirect('Admin/Home/slider');
 
 
                 }
                 else
                 {
                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                    redirect('Admin/Home/verticalBar');
+                    redirect('Admin/Home/slider');
 
                 }
+
+
 
             }
         }

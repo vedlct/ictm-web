@@ -35,7 +35,7 @@
             elseif($this->session->flashdata('successMessage')!=null){?>
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
             <?php }
-            if (!empty(form_error('image[]'))){?>
+            if (!empty(validation_errors())){?>
                 <div class="alert alert-danger" align="center"><strong><?php echo form_error('image[]');?></strong></div>
             <?php } ?>
 
@@ -58,11 +58,11 @@
                                             <input class="form-control" id="title1" name="title1"  value="<?php echo set_value('title1'); ?>" type="text" required/>
                                         </div>
 
-                                        <label for="facultyImage" class="control-label col-sm-2">Image 1</label>
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp;<strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[0]">
+                                            <input class="form-control" type="file" name="image[]" id="image[0]"required>
 
                                         </div>
                                     </div>
@@ -89,12 +89,12 @@
                                             <input class="form-control" id="title2" name="title2"  value="<?php echo set_value('title2'); ?>" type="text" required />
                                         </div>
 
-                                        <label for="facultyImage" class="control-label col-sm-2">Image 2</label>
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 2<span class="required">*</span></label>
 
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <input class="form-control" type="file" name="image[]" id="image[]"required>
 
                                         </div>
                                     </div>
@@ -121,12 +121,12 @@
                                             <input class="form-control" id="title3" name="title3"  value="<?php echo set_value('title3'); ?>" type="text" required />
                                         </div>
 
-                                        <label for="facultyImage" class="control-label col-sm-2">Image 3</label>
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 3<span class="required">*</span></label>
 
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <input class="form-control" type="file" name="image[]" id="image[]"required>
 
                                         </div>
                                     </div>
@@ -153,12 +153,12 @@
                                             <input class="form-control" id="title4" name="title4"  value="<?php echo set_value('title4'); ?>" type="text" required />
                                         </div>
 
-                                        <label for="facultyImage" class="control-label col-sm-2">Image 4</label>
+                                        <label for="facultyImage" class="control-label col-sm-2">Image 4<span class="required">*</span></label>
 
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <input class="form-control" type="file" name="image[]" id="image[]"required>
 
                                         </div>
                                     </div>
