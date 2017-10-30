@@ -57,6 +57,14 @@
                                             <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
                                             <input class="form-control" id="title1" name="title1"  value="<?php echo set_value('title1'); ?>" type="text" required />
                                         </div>
+                                        <label for="image2" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
+
+                                        <div class="col-sm-4">
+
+                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
+                                            <input class="form-control" type="file" name="image[]" id="image1"required>
+
+                                        </div>
 
                                     </div>
                                     <div class="form-group col-sm-12">
@@ -82,7 +90,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]"id="image2"required>
+                                            <input class="form-control" type="file" name="image[]" id="image2"required>
 
                                         </div>
                                     </div>
@@ -300,23 +308,23 @@
 <script type="text/javascript">
 
     function submitform(){
-        for (var i=1;i<=8;i++){
-
-            var Title=document.getElementById("title"+i).value;
-            if (i==1){
-                if(Title.length >15) {
-                    alert( 'Title'+i+' must be less than 15 charecter!!' );
-                    return false;
-                }
-            }
-            else {
-                if (Title.length > 255) {
-                    alert('Title' + i + ' must be less than 255 charecter!!');
-                    return false;
-                }
-            }
-
-        }
+//        for (var i=1;i<=8;i++){
+//
+//            var Title=document.getElementById("title"+i).value;
+//            if (i==1){
+//                if(Title.length >115) {
+//                    alert( 'Title'+i+' must be less than 15 charecter!!' );
+//                    return false;
+//                }
+//            }
+//            else {
+//                if (Title.length > 255) {
+//                    alert('Title' + i + ' must be less than 255 charecter!!');
+//                    return false;
+//                }
+//            }
+//
+//        }
 
 
     }

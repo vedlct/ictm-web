@@ -47,6 +47,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
+
                                 <form class="form-validate form-horizontal" id="homeSlider" name="homeSlider" method="POST"  action="<?php echo base_url()?>Admin/Home/insertHomeSlider" enctype="multipart/form-data" onsubmit="return submitform()">
 
                                     <div class="form-group col-sm-12">
@@ -65,7 +66,10 @@
 
                                         <label for="text1" class="control-label col-sm-2">Slider Text 1<span class="required">*</span></label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control " name="text1" id="text1" required><?php echo set_value('text1'); ?></textarea>
+
+                                            <textarea class="form-control " name="photoDetails[]" id="sliderText1" required><?php echo set_value('photoDetails[0]'); ?></textarea>
+
+
                                         </div>
 
                                     </div>
@@ -86,7 +90,10 @@
 
                                         <label for="text2" class="control-label col-sm-2">Slider Text 2</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control " name="text2" id="text2" ><?php echo set_value('text2'); ?></textarea>
+
+                                            <textarea class="form-control " name="photoDetails[]" id="sliderText2" ><?php echo set_value('photoDetails[1]'); ?></textarea>
+
+
                                         </div>
 
                                     </div>
@@ -107,7 +114,10 @@
 
                                         <label for="text3" class="control-label col-sm-2">Slider Text 3</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control " name="text3" id="text3"><?php echo set_value('text3'); ?></textarea>
+
+                                            <textarea class="form-control " name="photoDetails[]" id="sliderText3"><?php echo set_value('photoDetails[2]'); ?></textarea>
+
+
                                         </div>
 
                                     </div>
@@ -150,6 +160,44 @@
 
 </body>
 </html>
+<script>
+    function submitform(){
+        //alert("erre");
+       // var Title=document.getElementById("sliderText1").value;
+        //var subTitle=document.getElementById("subTitle").value;
+        //var image=document.getElementById("image");
+       // var Title2=document.getElementById("sliderText2").value;
+
+        //var x = "";
+        for (var i=1;i<3;i++) {
+
+            var x = "sliderText" + i;
+            //alert(x);
+             var Title = document.getElementById(x).value;
+
+
+            if (Title.length > 3) {
+                alert('Title must be less than 255 charecter!!');
+                return false;
+            }
+//            if (Title2.length > 25) {
+//                alert('Title must be less than 255 charecter!!');
+//                return false;
+//            }
+        }
+
+//        if(subTitle.length >255) {
+//            alert( 'Sub Title must be less than 255 charecter!!' );
+//            return false;
+//        }
+
+//        if (typeof (Image.files) != "undefined") {
+//            var size = parseFloat(Image.files[0].size / 1024).toFixed(2);
+//            alert(size + " KB.");
+//        }
+
+    }
+</script>
 
 <script type="text/javascript">
 
