@@ -47,7 +47,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($squreBoxdata as $squreBoxdata) { ?>
-                                    <form class="form-validate form-horizontal" id="squreBoxes" name="squreBoxes" method="POST"  action="" enctype="multipart/form-data" onsubmit="return submitform()">
+                                    <form class="form-validate form-horizontal" id="squreBoxes" name="squreBoxes" method="POST"  action="<?php echo base_url()?>Admin/Home/editSqureBox/<?php echo $squreBoxdata->homeId?>" enctype="multipart/form-data" onsubmit="return submitform()">
 
                                         <div class="form-group col-sm-12">
 
@@ -62,7 +62,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image1" id="image1"required>
+                                                <input class="form-control" type="file" name="image[]" id="image1">
 
                                             </div>
                                         </div>
@@ -89,7 +89,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image2" id="image2"required>
+                                                <input class="form-control" type="file" name="image[]" id="image2">
 
                                             </div>
                                         </div>
@@ -116,7 +116,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image3" id="image3"required>
+                                                <input class="form-control" type="file" name="image[]" id="image3">
 
                                             </div>
                                         </div>
@@ -143,7 +143,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image4" id="image4"required>
+                                                <input class="form-control" type="file" name="image[]" id="image4">
 
                                             </div>
                                         </div>
@@ -170,7 +170,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image5" id="image5"required>
+                                                <input class="form-control" type="file" name="image[]" id="image5">
 
                                             </div>
                                         </div>
@@ -197,7 +197,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image6" id="image6"required>
+                                                <input class="form-control" type="file" name="image[]" id="image6">
 
                                             </div>
                                         </div>
@@ -224,7 +224,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image7" id="image7"required>
+                                                <input class="form-control" type="file" name="image[]" id="image7">
 
                                             </div>
                                         </div>
@@ -251,7 +251,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image8" id="image8"required>
+                                                <input class="form-control" type="file" name="image[]" id="image8">
 
                                             </div>
                                         </div>

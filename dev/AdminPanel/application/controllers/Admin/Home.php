@@ -305,17 +305,56 @@ class Home extends CI_Controller
                 if (empty($this->data['error'])) {
 
                     $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
-                    redirect('Admin/Home/bottomBanner');
+                    redirect('Admin/Home/squreBox');
 
 
                 }
                 else
                 {
                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                    redirect('Admin/Home/bottomBanner');
+                    redirect('Admin/Home/squreBox');
 
                 }
               //  print_r("done");
+
+
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function editSqureBox($id) //edit Bottom Banner
+    {
+
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('SqureBox')) {
+
+                $this->data['squreBoxdata'] = $this->Homem->getHomeSqureBoxdata();
+                $this->load->view('Admin/edithomeSqureBox', $this->data);
+
+            }
+            else {
+
+                $this->data['error']=$this->Homem->updateSqureBox($id);
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
+                    redirect('Admin/Home/squreBox');
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/squreBox');
+
+                }
+                //  print_r("done");
 
 
 
