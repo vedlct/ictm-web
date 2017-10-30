@@ -34,7 +34,10 @@
             <?php }
             elseif($this->session->flashdata('successMessage')!=null){?>
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
-            <?php }?>
+            <?php }
+            if (!empty(form_error('image[]'))){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo form_error('image[]');?></strong></div>
+            <?php } ?>
 
             <div class="row">
                 <div class="col-lg-12">
@@ -316,7 +319,7 @@
                 }
             }
             else {
-                if (Title.length > 2) {
+                if (Title.length > 255) {
                     alert('Title' + i + ' must be less than 255 charecter!!');
                     return false;
                 }

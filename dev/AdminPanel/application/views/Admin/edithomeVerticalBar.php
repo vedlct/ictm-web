@@ -48,14 +48,15 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="verticleBar" name="verticleBar" method="POST"  action="<?php echo base_url()?>Admin/Home/insertVerticalBar" enctype="multipart/form-data" onsubmit="return submitform()">
+                                <?php foreach ($verticalBardata as $verticalBardata) { ?>
+                                <form class="form-validate form-horizontal" id="verticleBar" name="verticleBar" method="POST"  action="<?php echo base_url()?>Admin/Home/editVerticalBar/<?php echo $verticalBardata->homeId?>" enctype="multipart/form-data" onsubmit="return submitform()">
 
                                     <div class="form-group col-sm-12">
 
                                         <label for="title1" class="control-label col-lg-2">Ttile 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
-                                            <input class="form-control" id="title1" name="title1"  value="<?php echo set_value('title1'); ?>" type="text" required/>
+                                            <input class="form-control" id="title1" name="title1"  value="<?php echo $verticalBardata->verticalBarTitle1; ?>" type="text" required/>
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
@@ -71,12 +72,12 @@
                                         <label for="link1" class="control-label col-lg-2">Link 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link1'); ?></font></p>
-                                            <input class="form-control" id="link1" name="link1"  value="<?php echo set_value('link1'); ?>" type="text" required />
+                                            <input class="form-control" id="link1" name="link1"  value="<?php echo $verticalBardata->verticalBarLink1; ?>" type="text" required />
                                         </div>
 
                                         <label for="photoDetails" class="control-label col-sm-2">text 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text1" id="text1" required><?php echo set_value('text1'); ?></textarea>
+                                            <textarea class="form-control " name="text1" id="text1" required><?php echo $verticalBardata->verticalBarText1; ?></textarea>
                                         </div>
 
                                     </div>
@@ -86,7 +87,7 @@
                                         <label for="title2" class="control-label col-lg-2">Ttile 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title2'); ?></font></p>
-                                            <input class="form-control" id="title2" name="title2"  value="<?php echo set_value('title2'); ?>" type="text" required />
+                                            <input class="form-control" id="title2" name="title2"  value="<?php echo $verticalBardata->verticalBarTitle2; ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 2<span class="required">*</span></label>
@@ -103,12 +104,12 @@
                                         <label for="link2" class="control-label col-lg-2">Link 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link2'); ?></font></p>
-                                            <input class="form-control" id="link2" name="link2"  value="<?php echo set_value('link2'); ?>" type="text" required />
+                                            <input class="form-control" id="link2" name="link2"  value="<?php echo $verticalBardata->verticalBarLink2; ?>" type="text" required />
                                         </div>
 
                                         <label for="text2" class="control-label col-sm-2">text 2<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text2" id="text2" required><?php echo set_value('text2'); ?></textarea>
+                                            <textarea class="form-control " name="text2" id="text2" required><?php echo $verticalBardata->verticalBarText2; ?></textarea>
                                         </div>
 
                                     </div>
@@ -118,7 +119,7 @@
                                         <label for="title3" class="control-label col-lg-2">Ttile 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title3'); ?></font></p>
-                                            <input class="form-control" id="title3" name="title3"  value="<?php echo set_value('title3'); ?>" type="text" required />
+                                            <input class="form-control" id="title3" name="title3"  value="<?php echo $verticalBardata->verticalBarTitle3; ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 3<span class="required">*</span></label>
@@ -135,12 +136,12 @@
                                         <label for="link3" class="control-label col-lg-2">Link 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link3'); ?></font></p>
-                                            <input class="form-control" id="link3" name="link3"  value="<?php echo set_value('link3'); ?>" type="text" required />
+                                            <input class="form-control" id="link3" name="link3"  value="<?php echo $verticalBardata->verticalBarLink3; ?>" type="text" required />
                                         </div>
 
                                         <label for="text3" class="control-label col-sm-2">text 3<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control" name="text3" id="text3" required><?php echo set_value('text3'); ?></textarea>
+                                            <textarea class="form-control" name="text3" id="text3" required><?php echo $verticalBardata->verticalBarText3; ?></textarea>
                                         </div>
 
                                     </div>
@@ -150,7 +151,7 @@
                                         <label for="title4" class="control-label col-lg-2">Ttile 4<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title4'); ?></font></p>
-                                            <input class="form-control" id="title4" name="title4"  value="<?php echo set_value('title4'); ?>" type="text" required />
+                                            <input class="form-control" id="title4" name="title4"  value="<?php echo $verticalBardata->verticalBarTitle4; ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 4<span class="required">*</span></label>
@@ -167,12 +168,12 @@
                                         <label for="link4" class="control-label col-lg-2">Link 4<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link4'); ?></font></p>
-                                            <input class="form-control" id="link4" name="link4"  value="<?php echo set_value('link4'); ?>" type="text" required />
+                                            <input class="form-control" id="link4" name="link4"  value="<?php echo $verticalBardata->verticalBarLink4; ?>" type="text" required />
                                         </div>
 
                                         <label for="text4" class="control-label col-sm-2">text 4<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text4" id="text4" required><?php echo set_value('text4'); ?></textarea>
+                                            <textarea class="form-control " name="text4" id="text4" required><?php echo $verticalBardata->verticalBarText4; ?></textarea>
                                         </div>
 
                                     </div>
@@ -190,6 +191,7 @@
                                     </div>
 
                                 </form>
+                                <?php } ?>
                             </div>
                         </div>
                     </section>

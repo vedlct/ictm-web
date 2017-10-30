@@ -21,13 +21,61 @@ class Home extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->load->view('Admin/homeSlider');
+            $this->data['sliderdata'] = $this->Homem->getHomeId();
+
+            if (empty($this->data['sliderdata'])) {
+
+                $this->load->view('Admin/homeSlider');
+            }
+            else{
+
+                $this->data['sliderdata'] = $this->Homem->getHomeSliderdata();
+                $this->load->view('Admin/edithomeSlider', $this->data);
+
+            }
+
+
 
         }
         else{
             redirect('Admin/Login');
         }
     }
+    public function insertHomeSlider() //insert Slider
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('Slider')) {
+
+                $this->load->view('Admin/homeVerticalBar');
+
+            }
+            else {
+
+                $this->data['error']=$this->Homem->insertVerticalBar();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Vertcal Bar Created Successfully');
+                    redirect('Admin/Home/verticalBar');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/verticalBar');
+
+                }
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     public function verticalBar() //Show Verticle Bar
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -62,21 +110,57 @@ class Home extends CI_Controller
             }
             else {
 
-//                $this->data['error']=$this->Homem->insertMiddleBanner();
-//
-//                if (empty($this->data['error'])) {
-//
-//                    $this->session->set_flashdata('successMessage','Middle Banner Created Successfully');
-//                    redirect('Admin/Home/middleBanner');
-//
-//
-//                }
-//                else
-//                {
-//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-//                    redirect('Admin/Home/middleBanner');
-//
-//                }
+                $this->data['error']=$this->Homem->insertVerticalBar();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Vertcal Bar Created Successfully');
+                    redirect('Admin/Home/verticalBar');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/verticalBar');
+
+                }
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function editVerticalBar($id) //edit Vertical Bar
+    {
+        $this->load->library('form_validation');
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+
+            if (!$this->form_validation->run('VerticalBar')) {
+
+                $this->data['verticalBardata'] = $this->Homem->getHomeVerticalBardata();
+                $this->load->view('Admin/edithomeVerticalBar', $this->data);
+
+            }
+            else {
+
+                $this->data['error']=$this->Homem->updateVerticalBardata($id);
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Vertical Bar Updated Successfully');
+                    redirect('Admin/Home/verticalBar');
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/verticalBar');
+                }
 
             }
         }
@@ -145,7 +229,7 @@ class Home extends CI_Controller
         }
     }
 
-    public function editMiddleBanner($id) //edit Bottom Banner
+    public function editMiddleBanner($id) //edit Middle Banner
     {
         $this->load->library('form_validation');
 
