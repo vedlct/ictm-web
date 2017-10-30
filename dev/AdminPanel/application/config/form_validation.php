@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
 $config = array (
 
 	'signin' => array (
@@ -1030,6 +1032,168 @@ $config = array (
             'field' => 'subTitle',
             'label' => 'Banner Sub Title',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
+
+    'SqureBox'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'SqureBox Title',
+            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'SqureBox Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'SqureBox Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title4',
+            'label' => 'SqureBox Title 4',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title5',
+            'label' => 'SqureBox Title 5',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title6',
+            'label' => 'SqureBox Title 6',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title7',
+            'label' => 'SqureBox Title 7',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title8',
+            'label' => 'SqureBox Title 8',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'Link 1',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'Link 2',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'Link 3',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link4',
+            'label' => 'Link 4',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link5',
+            'label' => 'Link 5',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link6',
+            'label' => 'Link 6',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link7',
+            'label' => 'Link 7',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link8',
+            'label' => 'Link 8',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
+    ),
+
+    'MiddleBanner'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'Middle Banner Title 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'Middle Banner Link 1',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text1',
+            'label' => 'Middle Banner Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'Middle Banner Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'Middle Banner Link 2',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'Middle Banner Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'Middle Banner Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'Middle Banner Link 3',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'Middle Banner Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
+
+    'VerticalBar'=> array (
+
+        array(
+            'field' => 'title[]',
+            'label' => 'Vertical Bar Title',
+            'rules' => 'required|max_length[2]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link[]',
+            'label' => 'VerTical Bar Link',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text[]',
+            'label' => 'VerTical Bar Text',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'VerTical Bar Image',
+            'rules' => 'callback_val_img_checkSqureBox'
         ),
     ),
 );

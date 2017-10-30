@@ -54,7 +54,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
-                                                            <a href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink1?>">
+                                                            <a href="<?php echo $hm->verticalBarLink1?>">
                                                                 <img  style="width: 80px;height: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage1?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
@@ -62,7 +62,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink1?>" target="_blank" title="Prospectus"><?php echo $hm->verticalBarTitle1?></a></h4>
+                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink1?>" target="_blank" title="Prospectus"><?php echo $hm->verticalBarTitle1?></a></h4>
                                                         <div class="post-excerpt-mini"><?php echo $hm->verticalBarText1?></div>
                                                     </div>
                                                 </div>
@@ -76,7 +76,7 @@
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
-                                                            <a href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink2?>">
+                                                            <a href="<?php echo $hm->verticalBarLink2?>">
                                                                 <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage2?>" alt="image">
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
@@ -84,7 +84,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink2?>" target="_blank" title="Apply Online"><?php echo $hm->verticalBarTitle2?></a></h4>
+                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink2?>" target="_blank" title="Apply Online"><?php echo $hm->verticalBarTitle2?></a></h4>
                                                         <div class="post-excerpt-mini"><?php echo $hm->verticalBarText2?></div>
                                                     </div>
                                                 </div>
