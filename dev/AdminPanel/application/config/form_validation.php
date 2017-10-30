@@ -1176,23 +1176,92 @@ $config = array (
     'VerticalBar'=> array (
 
         array(
-            'field' => 'title[]',
-            'label' => 'Vertical Bar Title',
-            'rules' => 'required|max_length[2]|xss_clean|htmlspecialchars'
+            'field' => 'title1',
+            'label' => 'VerTical Bar Title 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'link[]',
-            'label' => 'VerTical Bar Link',
+            'field' => 'link1',
+            'label' => 'VerTical Bar Link 1',
             'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'text[]',
-            'label' => 'VerTical Bar Text',
+            'field' => 'text1',
+            'label' => 'VerTical Bar Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'VerTical Bar Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'VerTical Bar Link 2',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'VerTical Bar Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'VerTical Bar Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'VerTical Bar Link 3',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'VerTical Bar Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title4',
+            'label' => 'VerTical Bar Title 4',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link4',
+            'label' => 'VerTical Bar Link 4',
+            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text4',
+            'label' => 'VerTical Bar Text 4',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'image[]',
             'label' => 'VerTical Bar Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
+    ),
+
+    'Slider'=> array (
+
+        array(
+            'field' => 'text1',
+            'label' => 'Slider Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'Slider Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'Slider Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
             'rules' => 'callback_val_img_checkSqureBox'
         ),
     ),

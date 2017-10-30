@@ -228,13 +228,292 @@ class Homem extends CI_Model
 
     public function insertSqureBox(){
 
+        $title1 = $this->input->post("title1");
+        $title2 = $this->input->post("title2");
+        $title3 = $this->input->post("title3");
+        $title4 = $this->input->post("title4");
+        $title5 = $this->input->post("title5");
+        $title6 = $this->input->post("title6");
+        $title7 = $this->input->post("title7");
+        $title8 = $this->input->post("title8");
+        $link1 = $this->input->post("link1");
+        $link2 = $this->input->post("link2");
+        $link3 = $this->input->post("link3");
+        $link4 = $this->input->post("link4");
+        $link5 = $this->input->post("link5");
+        $link6 = $this->input->post("link6");
+        $link7 = $this->input->post("link7");
+        $link8 = $this->input->post("link8");
+
+        $squareBoxImage = $_FILES['image']['name'];
+
+        $files = $_FILES;
+        $data = array();
+
+        for ($i = 0; $i < count($squareBoxImage); $i++) {
+
+            if ($squareBoxImage[$i] != null) {
+
+                $_FILES['image']['name'] = $files['image']['name'][$i];
+                $_FILES['image']['type'] = $files['image']['type'][$i];
+                $_FILES['image']['tmp_name'] = $files['image']['tmp_name'][$i];
+                $_FILES['image']['error'] = $files['image']['error'][$i];
+                $_FILES['image']['size'] = $files['image']['size'][$i];
+
+                $this->load->library('upload');
+                $this->upload->initialize($this->set_upload_options_square()$i));
+
+                if (!$this->upload->do_upload('image')) {
+
+                    $error[$i] = $this->upload->display_errors();
+                    $data[$error[$i]];
+                }
+
+            }
+        }
+        if (!empty($data)) {
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Home/verticalBar';
+                    </script>";
+            return false;
+        } else {
+
+
+            $data = array(
+                'verticalBarTitle1' => $title1,
+                'verticalBarLink1' => $link1,
+                'verticalBarText1' => $text1,
+                'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                'verticalBarTitle2' => $title2,
+                'verticalBarLink2' => $link2,
+                'verticalBarText2' => $text2,
+                'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                'verticalBarTitle3' => $title3,
+                'verticalBarLink3' => $link3,
+                'verticalBarText3' => $text3,
+                'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                'verticalBarTitle4' => $title4,
+                'verticalBarLink4' => $link4,
+                'verticalBarText4' => $text4,
+                'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION)
+
+            );
+
+            $data = $this->security->xss_clean($data, true);
+            $error = $this->db->insert('ictmhome', $data);
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+        }
 
 
     }
+    public function updateSqureBox(){
 
+
+
+    }
     public function getHomeVerticalBardata() //get home Vertical Bar Data
     {
         $this->db->select('homeId,verticalBarTitle1,verticalBarText1,verticalBarImage1,verticalBarLink1,verticalBarText2,verticalBarImage2,verticalBarTitle2,verticalBarLink2,verticalBarTitle3,verticalBarText3,verticalBarImage3,verticalBarLink3,verticalBarTitle4,verticalBarText4,verticalBarImage4,verticalBarLink4');
+        $query = $this->db->get('ictmhome');
+        return $query->result();
+
+    }
+
+    public function insertVerticalBar() //insert Vertical Bar
+    {
+
+        $title1 = $this->input->post("title1");
+        $title2 = $this->input->post("title2");
+        $title3 = $this->input->post("title3");
+        $title4 = $this->input->post("title4");
+        $link1 = $this->input->post("link1");
+        $link2 = $this->input->post("link2");
+        $link3 = $this->input->post("link3");
+        $link4 = $this->input->post("link4");
+        $text1 = $this->input->post("text1");
+        $text2 = $this->input->post("text2");
+        $text3 = $this->input->post("text3");
+        $text4 = $this->input->post("text4");
+
+        $verticalBarImage = $_FILES['image']['name'];
+
+        $files = $_FILES;
+        $data = array();
+
+        for ($i = 0; $i < count($verticalBarImage); $i++) {
+
+            if ($verticalBarImage[$i] != null) {
+
+                $_FILES['image']['name'] = $files['image']['name'][$i];
+                $_FILES['image']['type'] = $files['image']['type'][$i];
+                $_FILES['image']['tmp_name'] = $files['image']['tmp_name'][$i];
+                $_FILES['image']['error'] = $files['image']['error'][$i];
+                $_FILES['image']['size'] = $files['image']['size'][$i];
+
+                $this->load->library('upload');
+                $this->upload->initialize($this->set_upload_options_vertical($i));
+
+                if (!$this->upload->do_upload('image')) {
+
+                    $error[$i] = $this->upload->display_errors();
+                    $data[$error[$i]];
+                }
+
+            }
+        }
+        if (!empty($data)) {
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Home/verticalBar';
+                    </script>";
+            return false;
+        } else {
+
+
+            $data = array(
+                'verticalBarTitle1' => $title1,
+                'verticalBarLink1' => $link1,
+                'verticalBarText1' => $text1,
+                'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                'verticalBarTitle2' => $title2,
+                'verticalBarLink2' => $link2,
+                'verticalBarText2' => $text2,
+                'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                'verticalBarTitle3' => $title3,
+                'verticalBarLink3' => $link3,
+                'verticalBarText3' => $text3,
+                'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                'verticalBarTitle4' => $title4,
+                'verticalBarLink4' => $link4,
+                'verticalBarText4' => $text4,
+                'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION)
+
+            );
+
+            $data = $this->security->xss_clean($data, true);
+            $error = $this->db->insert('ictmhome', $data);
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+        }
+    }
+
+    //upload an image options
+    private function set_upload_options_vertical($i)
+    {
+
+        $config = array();
+        $config['upload_path'] = 'images/homeImage/';
+        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        $config['overwrite'] = True;
+        $config['file_name'] = 'verticalmBar'.($i+1);
+
+        return $config;
+    }
+
+    private function set_upload_options_square($i)
+    {
+
+        $config = array();
+        $config['upload_path'] = 'images/homeImage/';
+        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        $config['overwrite'] = True;
+        $config['file_name'] = 'verticalmBar'.($i+1);
+
+        return $config;
+    }
+
+    public function updateVerticalBardata($id) //Update Vertical Bar
+    {
+
+        $title1 = $this->input->post("title1");
+        $title2 = $this->input->post("title2");
+        $title3 = $this->input->post("title3");
+        $title4 = $this->input->post("title4");
+        $link1 = $this->input->post("link1");
+        $link2 = $this->input->post("link2");
+        $link3 = $this->input->post("link3");
+        $link4 = $this->input->post("link4");
+        $text1 = $this->input->post("text1");
+        $text2 = $this->input->post("text2");
+        $text3 = $this->input->post("text3");
+        $text4 = $this->input->post("text4");
+
+        $verticalBarImage = $_FILES['image']['name'];
+
+        $files = $_FILES;
+        $data = array();
+
+        for ($i = 0; $i < count($verticalBarImage); $i++) {
+
+            if ($verticalBarImage[$i] != null) {
+
+                $_FILES['image']['name'] = $files['image']['name'][$i];
+                $_FILES['image']['type'] = $files['image']['type'][$i];
+                $_FILES['image']['tmp_name'] = $files['image']['tmp_name'][$i];
+                $_FILES['image']['error'] = $files['image']['error'][$i];
+                $_FILES['image']['size'] = $files['image']['size'][$i];
+
+                $this->load->library('upload');
+                $this->upload->initialize($this->set_upload_options($i));
+
+                if (!$this->upload->do_upload('image')) {
+
+                    $error[$i] = $this->upload->display_errors();
+                    $data[$error[$i]];
+                }
+
+            }
+        }
+        if (!empty($data)) {
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Home/verticalBar';
+                    </script>";
+            return false;
+        }
+        else {
+
+            $data = array(
+                'verticalBarTitle1' => $title1,
+                'verticalBarLink1' => $link1,
+                'verticalBarText1' => $text1,
+                'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                'verticalBarTitle2' => $title2,
+                'verticalBarLink2' => $link2,
+                'verticalBarText2' => $text2,
+                'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                'verticalBarTitle3' => $title3,
+                'verticalBarLink3' => $link3,
+                'verticalBarText3' => $text3,
+                'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                'verticalBarTitle4' => $title4,
+                'verticalBarLink4' => $link4,
+                'verticalBarText4' => $text4,
+                'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION)
+
+            );
+
+            $data = $this->security->xss_clean($data, true);
+            $this->db->where('homeId', $id);
+            $error=$this->db->update('ictmhome', $data);
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+        }
+    }
+    public function getHomeSliderdata() //get home Slider Data
+    {
+        $this->db->select('homeId,slideImage1,slideText1,slideImage2,slideText2,slideImage3,slideText3');
         $query = $this->db->get('ictmhome');
         return $query->result();
 

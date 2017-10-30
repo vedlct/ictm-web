@@ -169,6 +169,7 @@
 <script type="text/javascript">
 
     function submitform(){
+
         var Title1=document.getElementById("title1").value;
         var Title2=document.getElementById("title2").value;
         var Title3=document.getElementById("title3").value;
