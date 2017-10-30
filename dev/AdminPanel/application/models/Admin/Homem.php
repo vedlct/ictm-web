@@ -374,26 +374,62 @@ class Homem extends CI_Model
             return false;
         } else {
 
-
             $data = array(
                 'verticalBarTitle1' => $title1,
                 'verticalBarLink1' => $link1,
                 'verticalBarText1' => $text1,
-                'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+
                 'verticalBarTitle2' => $title2,
                 'verticalBarLink2' => $link2,
                 'verticalBarText2' => $text2,
-                'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+
                 'verticalBarTitle3' => $title3,
                 'verticalBarLink3' => $link3,
                 'verticalBarText3' => $text3,
-                'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+
                 'verticalBarTitle4' => $title4,
                 'verticalBarLink4' => $link4,
                 'verticalBarText4' => $text4,
-                'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION)
+
 
             );
+            if ($verticalBarImage[0]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+            if ($verticalBarImage[1]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+            if ($verticalBarImage[2]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+            if ($verticalBarImage[3]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+
 
             $data = $this->security->xss_clean($data, true);
             $error = $this->db->insert('ictmhome', $data);
@@ -485,21 +521,57 @@ class Homem extends CI_Model
                 'verticalBarTitle1' => $title1,
                 'verticalBarLink1' => $link1,
                 'verticalBarText1' => $text1,
-                'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+
                 'verticalBarTitle2' => $title2,
                 'verticalBarLink2' => $link2,
                 'verticalBarText2' => $text2,
-                'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+
                 'verticalBarTitle3' => $title3,
                 'verticalBarLink3' => $link3,
                 'verticalBarText3' => $text3,
-                'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+
                 'verticalBarTitle4' => $title4,
                 'verticalBarLink4' => $link4,
                 'verticalBarText4' => $text4,
-                'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION)
+
 
             );
+            if ($verticalBarImage[0]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+            if ($verticalBarImage[1]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+            if ($verticalBarImage[2]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
+            if ($verticalBarImage[3]!="")
+            {
+
+                $data =array(
+                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
+                );
+                array_push($data);
+
+            }
 
             $data = $this->security->xss_clean($data, true);
             $this->db->where('homeId', $id);
