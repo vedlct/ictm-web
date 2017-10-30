@@ -226,6 +226,12 @@ class Homem extends CI_Model
         }
     }
 
+    public function insertSqureBox(){
+
+
+
+    }
+
     public function getHomeVerticalBardata() //get home Vertical Bar Data
     {
         $this->db->select('homeId,verticalBarTitle1,verticalBarText1,verticalBarImage1,verticalBarLink1,verticalBarText2,verticalBarImage2,verticalBarTitle2,verticalBarLink2,verticalBarTitle3,verticalBarText3,verticalBarImage3,verticalBarLink3,verticalBarTitle4,verticalBarText4,verticalBarImage4,verticalBarLink4');

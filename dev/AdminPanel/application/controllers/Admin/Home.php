@@ -216,22 +216,22 @@ class Home extends CI_Controller
             }
             else {
 
-//               $this->data['error']=$this->Homem->insertSqureBox();
-//
-//                if (empty($this->data['error'])) {
-//
-//                    $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
-//                    redirect('Admin/Home/bottomBanner');
-//
-//
-//                }
-//                else
-//                {
-//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-//                    redirect('Admin/Home/bottomBanner');
-//
-//                }
-                print_r("done");
+               $this->data['error']=$this->Homem->insertSqureBox();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
+                    redirect('Admin/Home/bottomBanner');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/bottomBanner');
+
+                }
+              //  print_r("done");
 
 
 
