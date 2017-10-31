@@ -1260,7 +1260,7 @@ $config = array (
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'image',
+            'field' => 'image[]',
             'label' => 'Image',
             'rules' => 'callback_val_img_checkSqureBox'
         ),
