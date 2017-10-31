@@ -134,7 +134,7 @@
 
                                     <div class="form-group "align="center">
                                         <div class="col-sm-10">
-                                            <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                            <input class="btn btn-success" value="Submit" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
                                         </div>
                                     </div>

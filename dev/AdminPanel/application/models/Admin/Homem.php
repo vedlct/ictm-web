@@ -279,7 +279,6 @@ class Homem extends CI_Model
             return false;
         } else {
 
-
             $data = array(
                 'squareBoxTitle1' => $title1,
                 'squareBoxLink1' => $link1,
@@ -293,19 +292,18 @@ class Homem extends CI_Model
                 'squareBoxTitle4' => $title4,
                 'squareBoxLink4' => $link4,
                 'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
-                'squareBoxTitle5' => $title1,
-                'squareBoxLink5' => $link1,
+                'squareBoxTitle5' => $title5,
+                'squareBoxLink5' => $link1=5,
                 'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
-                'squareBoxTitle6' => $title2,
-                'squareBoxLink6' => $link2,
+                'squareBoxTitle6' => $title6,
+                'squareBoxLink6' => $link6,
                 'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION),
-                'squareBoxTitle7' => $title3,
-                'squareBoxLink7' => $link3,
+                'squareBoxTitle7' => $title7,
+                'squareBoxLink7' => $link7,
                 'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION),
-                'squareBoxTitle8' => $title4,
-                'squareBoxLink8' => $link4,
+                'squareBoxTitle8' => $title8,
+                'squareBoxLink8' => $link8,
                 'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
-
 
             );
 
@@ -377,32 +375,21 @@ class Homem extends CI_Model
             $data = array(
                 'squareBoxTitle1' => $title1,
                 'squareBoxLink1' => $link1,
-
                 'squareBoxTitle2' => $title2,
                 'squareBoxLink2' => $link2,
-
                 'squareBoxTitle3' => $title3,
                 'squareBoxLink3' => $link3,
-
                 'squareBoxTitle4' => $title4,
                 'squareBoxLink4' => $link4,
-
-                'squareBoxTitle5' => $title1,
-                'squareBoxLink5' => $link1,
-
-                'squareBoxTitle6' => $title2,
-                'squareBoxLink6' => $link2,
-
-                'squareBoxTitle7' => $title3,
-                'squareBoxLink7' => $link3,
-
-                'squareBoxTitle8' => $title4,
-                'squareBoxLink8' => $link4,
-
-
-
+                'squareBoxTitle5' => $title5,
+                'squareBoxLink5' => $link5,
+                'squareBoxTitle6' => $title6,
+                'squareBoxLink6' => $link6,
+                'squareBoxTitle7' => $title7,
+                'squareBoxLink7' => $link7,
+                'squareBoxTitle8' => $title8,
+                'squareBoxLink8' => $link8,
             );
-
 
 
                 if ($squareBoxImage[0] != "") {
@@ -410,78 +397,93 @@ class Homem extends CI_Model
                     $data2 = array(
                         'squareBoxImage1' => "squareBoxImage1" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
                     );
-                    $datam = array_merge($data, $data2) ;
+                    $newdata1 = array_merge($data, $data2) ;
 
                 }
                 else{
-                    $datam=$data;
+                    $newdata1=$data;
                 }
                 if ($squareBoxImage[1] != "") {
 
                     $data3 = array(
                         'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
                     );
-                    $datan = array_merge($datam, $data3);
+                    $newdata2 = array_merge($newdata1, $data3);
 
                 }
                 else{
-                    $datan=$datam;
+                    $newdata2=$newdata1;
                 }
                 if ($squareBoxImage[2] != "") {
 
                     $data4 = array(
                         'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
                     );
-                    $dataz = array_merge($datan, $data4);
+                    $newdata3 = array_merge($newdata2, $data4);
 
                 }
                 else{
-                    $dataz=$data;
+                    $newdata3=$newdata2;
                 }
-//                if ($squareBoxImage[3] != "") {
-//
-//                    $data5 = array(
-//                        'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
-//                    );
-//                    $data1 = array_merge($data, $data5);
-//
-//                }
-//                if ($squareBoxImage[4] != "") {
-//
-//                    $data6 = array(
-//                        'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
-//                    );
-//                    $data1 = array_merge($data, $data6);
-//
-//                }
-//                if ($squareBoxImage[5] != "") {
-//
-//                    $data7 = array(
-//                        'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
-//                    );
-//                    $data1 = array_merge($data, $data7);
-//
-//                }
-//                if ($squareBoxImage[6] != "") {
-//
-//                    $data8 = array(
-//                        'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
-//                    );
-//                    $data1 = array_merge($data, $data8);
-//
-//                }
-//                if ($squareBoxImage[7] != "") {
-//
-//                    $data9 = array(
-//                        'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
-//                    );
-//                    $data1 = array_merge($data, $data9);
-//
-//                }
-//
-//
+                if ($squareBoxImage[3] != "") {
 
-            $dataz = $this->security->xss_clean($dataz, true);
+                    $data5 = array(
+                        'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
+                    );
+                    $newdata4 = array_merge($newdata3, $data5);
+
+                }
+                else{
+                    $newdata4=$newdata3;
+                }
+                if ($squareBoxImage[4] != "") {
+
+                    $data6 = array(
+                        'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
+                    );
+                    $newdata5 = array_merge($newdata4, $data6);
+
+                }
+                else{
+                    $newdata5=$newdata4;
+                }
+                if ($squareBoxImage[5] != "") {
+
+                    $data7 = array(
+                        'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
+                    );
+                    $newdata6 = array_merge($newdata5, $data7);
+
+                }
+                else{
+                    $newdata6=$newdata5;
+                }
+                if ($squareBoxImage[6] != "") {
+
+                    $data8 = array(
+                        'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
+                    );
+                    $newdata7 = array_merge($newdata6, $data8);
+
+                }
+                else{
+                    $newdata7=$newdata6;
+                }
+                if ($squareBoxImage[7] != "") {
+
+                    $data9 = array(
+                        'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
+                    );
+                    $newdata8 = array_merge($newdata7, $data9);
+
+                }
+                else{
+                    $newdata8=$newdata7;
+                }
+
+
+
+            $dataz = $this->security->xss_clean($newdata8, true);
             $this->db->where('homeId', $id);
             $error=$this->db->update('ictmhome', $dataz);
 
@@ -555,27 +557,22 @@ class Homem extends CI_Model
                 'verticalBarTitle1' => $title1,
                 'verticalBarLink1' => $link1,
                 'verticalBarText1' => $text1,
-
                 'verticalBarTitle2' => $title2,
                 'verticalBarLink2' => $link2,
                 'verticalBarText2' => $text2,
-
                 'verticalBarTitle3' => $title3,
                 'verticalBarLink3' => $link3,
                 'verticalBarText3' => $text3,
-
                 'verticalBarTitle4' => $title4,
                 'verticalBarLink4' => $link4,
                 'verticalBarText4' => $text4,
-
-
             );
 
             if ($verticalBarImage[0]!="")
             {
 
                 $data2 =array(
-                    'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                    'verticalBarImage1' => "verticalBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
                 );
                 $newdata=array_merge($data1,$data2);
 
@@ -587,37 +584,37 @@ class Homem extends CI_Model
             {
 
                 $data2 =array(
-                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                    'verticalBarImage2' => "verticalBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
                 );
                 $newdata2=array_merge($newdata,$data2);
 
             }
             else{
-                $newdata2=$data1;
+                $newdata2=$newdata;
             }
             if ($verticalBarImage[2]!="")
             {
 
                 $data2 =array(
-                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                    'verticalBarImage3' => "verticalBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
                 );
                 $newdata3=array_merge($newdata2,$data2);
 
             }
             else{
-                $newdata3=$data1;
+                $newdata3=$newdata2;
             }
             if ($verticalBarImage[3]!="")
             {
 
                 $data2 =array(
-                    'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
+                    'verticalBarImage4' => "verticalBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
                 );
                 $newdata4=array_merge($newdata3,$data2);
 
             }
             else{
-                $newdata4=$data1;
+                $newdata4=$newdata3;
             }
 
 
@@ -639,7 +636,7 @@ class Homem extends CI_Model
         $config['upload_path'] = 'images/homeImage/';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
         $config['overwrite'] = True;
-        $config['file_name'] = 'verticalmBar'.($i+1);
+        $config['file_name'] = 'verticalBar'.($i+1);
 
         return $config;
     }
@@ -651,7 +648,7 @@ class Homem extends CI_Model
         $config['upload_path'] = 'images/homeImage/';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
         $config['overwrite'] = True;
-        $config['file_name'] = 'verticalmBar'.($i+1);
+        $config['file_name'] = 'squareBoxImage'.($i+1);
 
         return $config;
     }
@@ -712,27 +709,22 @@ class Homem extends CI_Model
                 'verticalBarTitle1' => $title1,
                 'verticalBarLink1' => $link1,
                 'verticalBarText1' => $text1,
-
                 'verticalBarTitle2' => $title2,
                 'verticalBarLink2' => $link2,
                 'verticalBarText2' => $text2,
-
                 'verticalBarTitle3' => $title3,
                 'verticalBarLink3' => $link3,
                 'verticalBarText3' => $text3,
-
                 'verticalBarTitle4' => $title4,
                 'verticalBarLink4' => $link4,
                 'verticalBarText4' => $text4,
-
-
             );
 
             if ($verticalBarImage[0]!="")
             {
 
                 $data2 =array(
-                    'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
+                    'verticalBarImage1' => "verticalBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
                 );
                 $newdata=array_merge($data1,$data2);
 
@@ -744,37 +736,37 @@ class Homem extends CI_Model
             {
 
                 $data2 =array(
-                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
+                    'verticalBarImage2' => "verticalBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
                 );
                 $newdata2=array_merge($newdata,$data2);
 
             }
             else{
-                $newdata2=$data1;
+                $newdata2=$newdata;
             }
             if ($verticalBarImage[2]!="")
             {
 
                 $data2 =array(
-                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                    'verticalBarImage3' => "verticalBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
                 );
                 $newdata3=array_merge($newdata2,$data2);
 
             }
             else{
-                $newdata3=$data1;
+                $newdata3=$newdata2;
             }
             if ($verticalBarImage[3]!="")
             {
 
                 $data2 =array(
-                    'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
+                    'verticalBarImage4' => "verticalBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
                 );
                 $newdata4=array_merge($newdata3,$data2);
 
             }
             else{
-                $newdata4=$data1;
+                $newdata4=$newdata3;
             }
 
             $data = $this->security->xss_clean($newdata4, true);

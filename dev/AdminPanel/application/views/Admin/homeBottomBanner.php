@@ -73,9 +73,9 @@
                                         <label for="Image" class="control-label col-sm-2">Image<span class="required">*</span></label>
 
                                         <div class="col-sm-4">
-
+                                         <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                         <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                        <input class="form-control" type="file" name="image" id="image">
+                                        <input class="form-control" type="file" name="image" id="image" required>
 
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@
 
                                     <div class="form-group "align="center">
                                         <div class="col-sm-10">
-                                            <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                            <input class="btn btn-success" type="submit" value="Submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
                                         </div>
                                     </div>

@@ -57,13 +57,13 @@
                                                 <input class="form-control" id="title1" name="title1"  value="<?php echo $squreBoxdata->squareBoxTitle1?>" type="text" required />
                                             </div>
 
-                                            <label for="image1" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
+                                            <label for="image1" class="control-label col-sm-2">Image 1</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image1">
-
+                                                
                                             </div>
                                         </div>
                                         <div class="form-group col-sm-12">
@@ -84,12 +84,13 @@
                                                 <input class="form-control titlechk" id="title2" name="title2"  value="<?php echo $squreBoxdata->squareBoxTitle2?>" type="text" required />
                                             </div>
 
-                                            <label for="image2" class="control-label col-sm-2">Image 2<span class="required">*</span></label>
+                                            <label for="image2" class="control-label col-sm-2">Image 2</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image2">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage2;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage2;?> </span></a>
 
                                             </div>
                                         </div>
@@ -111,12 +112,13 @@
                                                 <input class="form-control titlechk" id="title3" name="title3"  value="<?php echo $squreBoxdata->squareBoxTitle3?>" type="text" required />
                                             </div>
 
-                                            <label for="image3" class="control-label col-sm-2">Image 3<span class="required">*</span></label>
+                                            <label for="image3" class="control-label col-sm-2">Image 3</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image3">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage3;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage3;?> </span></a>
 
                                             </div>
                                         </div>
@@ -138,12 +140,13 @@
                                                 <input class="form-control titlechk" id="title4" name="title4"  value="<?php echo $squreBoxdata->squareBoxTitle4?>" type="text" required />
                                             </div>
 
-                                            <label for="image4" class="control-label col-sm-2">Image 4<span class="required">*</span></label>
+                                            <label for="image4" class="control-label col-sm-2">Image 4</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image4">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage4;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage4;?> </span></a>
 
                                             </div>
                                         </div>
@@ -165,12 +168,13 @@
                                                 <input class="form-control titlechk" id="title5" name="title5"  value="<?php echo $squreBoxdata->squareBoxTitle5?>" type="text" required/>
                                             </div>
 
-                                            <label for="image5" class="control-label col-sm-2">Image 5<span class="required">*</span></label>
+                                            <label for="image5" class="control-label col-sm-2">Image 5</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image5">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage5;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage5;?> </span></a>
 
                                             </div>
                                         </div>
@@ -192,12 +196,13 @@
                                                 <input class="form-control titlechk" id="title6" name="title6"  value="<?php echo $squreBoxdata->squareBoxTitle6?>" type="text" required />
                                             </div>
 
-                                            <label for="image6" class="control-label col-sm-2">Image 6<span class="required">*</span></label>
+                                            <label for="image6" class="control-label col-sm-2">Image 6</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image6">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage6;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage6;?> </span></a>
 
                                             </div>
                                         </div>
@@ -219,12 +224,13 @@
                                                 <input class="form-control titlechk" id="title7" name="title7"  value="<?php echo $squreBoxdata->squareBoxTitle7?>" type="text" required />
                                             </div>
 
-                                            <label for="image7" class="control-label col-sm-2">Image 7<span class="required">*</span></label>
+                                            <label for="image7" class="control-label col-sm-2">Image 7</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image7">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage7;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage7;?> </span></a>
 
                                             </div>
                                         </div>
@@ -246,12 +252,13 @@
                                                 <input class="form-control titlechk" id="title8" name="title8"  value="<?php echo $squreBoxdata->squareBoxTitle8?>" type="text" required />
                                             </div>
 
-                                            <label for="image8" class="control-label col-sm-2">Image 8<span class="required">*</span></label>
+                                            <label for="image8" class="control-label col-sm-2">Image 8</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image8">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage8;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage8;?> </span></a>
 
                                             </div>
                                         </div>
@@ -272,7 +279,7 @@
 
                                         <div class="form-group "align="center">
                                             <div class="col-sm-10">
-                                                <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                                <input class="btn btn-success" type="submit" value="Submit" style="margin-left: 180px">
                                                 <input class="btn btn-close" type="reset" >
                                             </div>
                                         </div>
@@ -306,21 +313,21 @@
 </html>
 
 <script type="text/javascript">
-    function submitform(){
-        for (var i=1;i<=8;i++){
-            var Title=document.getElementById("title"+i).value;
-            if (i==1){
-                if(Title.length >15) {
-                    alert( 'Title'+i+' must be less than 15 charecter!!' );
-                    return false;
-                }
-            }
-            else {
-                if (Title.length > 255) {
-                    alert('Title' + i + ' must be less than 255 charecter!!');
-                    return false;
-                }
-            }
-        }
-    }
+//    function submitform(){
+//        for (var i=1;i<=8;i++){
+//            var Title=document.getElementById("title"+i).value;
+//            if (i==1){
+//                if(Title.length >15) {
+//                    alert( 'Title'+i+' must be less than 15 charecter!!' );
+//                    return false;
+//                }
+//            }
+//            else {
+//                if (Title.length > 255) {
+//                    alert('Title' + i + ' must be less than 255 charecter!!');
+//                    return false;
+//                }
+//            }
+//        }
+//    }
 </script>

@@ -311,21 +311,20 @@
 //        for (var i=1;i<=8;i++){
 //
 //            var Title=document.getElementById("title"+i).value;
-//            if (i==1){
-//                if(Title.length >115) {
+//            if (i=1){
+//                if(Title.length >2) {
 //                    alert( 'Title'+i+' must be less than 15 charecter!!' );
 //                    return false;
 //                }
 //            }
 //            else {
-//                if (Title.length > 255) {
+//                if (Title.length > 2) {
 //                    alert('Title' + i + ' must be less than 255 charecter!!');
 //                    return false;
 //                }
 //            }
 //
 //        }
-
 
     }
 </script>

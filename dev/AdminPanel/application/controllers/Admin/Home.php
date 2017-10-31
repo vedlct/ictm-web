@@ -336,7 +336,7 @@ class Home extends CI_Controller
 
                 if (empty($this->data['error'])) {
 
-                    $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
+                    $this->session->set_flashdata('successMessage','Squre Box Created Successfully');
                     redirect('Admin/Home/squreBox');
 
 

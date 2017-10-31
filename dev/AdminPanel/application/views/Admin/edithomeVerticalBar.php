@@ -63,7 +63,8 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp;<strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[0]">
+                                            <input class="form-control" type="file" name="image[]">
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage1;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage1;?> </span></a>
 
                                         </div>
                                     </div>
@@ -95,7 +96,8 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <input class="form-control" type="file" name="image[]" >
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage2;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage2;?> </span></a>
 
                                         </div>
                                     </div>
@@ -127,8 +129,8 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
-
+                                            <input class="form-control" type="file" name="image[]">
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage3;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage3;?> </span></a>
                                         </div>
                                     </div>
                                     <div class="form-group col-sm-12">
@@ -159,7 +161,8 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <input class="form-control" type="file" name="image[]">
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage4;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage4;?> </span></a>
 
                                         </div>
                                     </div>
