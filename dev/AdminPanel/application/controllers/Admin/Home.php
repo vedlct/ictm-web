@@ -317,7 +317,7 @@ class Home extends CI_Controller
                     redirect('Admin/Home/squreBox');
 
                 }
-              //  print_r("done");
+
 
 
 
@@ -356,9 +356,6 @@ class Home extends CI_Controller
                     redirect('Admin/Home/squreBox');
 
                 }
-                //  print_r("done");
-
-
 
             }
         }

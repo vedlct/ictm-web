@@ -547,7 +547,7 @@ class Homem extends CI_Model
             return false;
         } else {
 
-            $data = array(
+            $data1 = array(
                 'verticalBarTitle1' => $title1,
                 'verticalBarLink1' => $link1,
                 'verticalBarText1' => $text1,
@@ -566,45 +566,58 @@ class Homem extends CI_Model
 
 
             );
+
             if ($verticalBarImage[0]!="")
             {
 
-                $data =array(
+                $data2 =array(
                     'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata=array_merge($data1,$data2);
 
+            }
+            else{
+                $newdata=$data1;
             }
             if ($verticalBarImage[1]!="")
             {
 
-                $data =array(
+                $data2 =array(
                     'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata2=array_merge($newdata,$data2);
 
+            }
+            else{
+                $newdata2=$data1;
             }
             if ($verticalBarImage[2]!="")
             {
 
-                $data =array(
-                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                $data2 =array(
+                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata3=array_merge($newdata2,$data2);
 
+            }
+            else{
+                $newdata3=$data1;
             }
             if ($verticalBarImage[3]!="")
             {
 
-                $data =array(
-                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
+                $data2 =array(
+                    'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata4=array_merge($newdata3,$data2);
 
+            }
+            else{
+                $newdata4=$data1;
             }
 
 
-            $data = $this->security->xss_clean($data, true);
+            $data = $this->security->xss_clean($newdata4, true);
             $error = $this->db->insert('ictmhome', $data);
             if (empty($error)) {
                 return $this->db->error();
@@ -671,7 +684,7 @@ class Homem extends CI_Model
                 $_FILES['image']['size'] = $files['image']['size'][$i];
 
                 $this->load->library('upload');
-                $this->upload->initialize($this->set_upload_options($i));
+                $this->upload->initialize($this->set_upload_options_vertical($i));
 
                 if (!$this->upload->do_upload('image')) {
 
@@ -714,43 +727,55 @@ class Homem extends CI_Model
             if ($verticalBarImage[0]!="")
             {
 
-                $data1 =array(
+                $data2 =array(
                     'verticalBarImage1' => "verticalmBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
                 );
-                array_push($data1);
+                $newdata=array_merge($data1,$data2);
 
+            }
+            else{
+                $newdata=$data1;
             }
             if ($verticalBarImage[1]!="")
             {
 
-                $data1 =array(
+                $data2 =array(
                     'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
                 );
-                array_push($data1);
+                $newdata2=array_merge($newdata,$data2);
 
+            }
+            else{
+                $newdata2=$data1;
             }
             if ($verticalBarImage[2]!="")
             {
 
-                $data1 =array(
-                    'verticalBarImage2' => "verticalmBar2" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
+                $data2 =array(
+                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
                 );
-                array_push($data1);
+                $newdata3=array_merge($newdata2,$data2);
 
+            }
+            else{
+                $newdata3=$data1;
             }
             if ($verticalBarImage[3]!="")
             {
 
-                $data1 =array(
-                    'verticalBarImage3' => "verticalmBar3" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
+                $data2 =array(
+                    'verticalBarImage4' => "verticalmBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
                 );
-                array_push($data1);
+                $newdata4=array_merge($newdata3,$data2);
 
             }
+            else{
+                $newdata4=$data1;
+            }
 
-            $data = $this->security->xss_clean($data1, true);
+            $data = $this->security->xss_clean($newdata4, true);
             $this->db->where('homeId', $id);
-            $error=$this->db->update('ictmhome', $data1);
+            $error=$this->db->update('ictmhome', $data);
             if (empty($error)) {
                 return $this->db->error();
             } else {
@@ -807,7 +832,7 @@ class Homem extends CI_Model
         }
         else {
 
-            $data = array(
+            $data1 = array(
                 'slideText1' => $text1,
                 'slideText2' => $text2,
                 'slideText3' => $text3,
@@ -817,33 +842,42 @@ class Homem extends CI_Model
             if ($sliderImage[0]!="")
             {
 
-                $data =array(
+                $data2 =array(
                     'slideImage1' => "slideImage1" . "." . pathinfo($sliderImage[0], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata=array_merge($data1,$data2);
 
+            }
+            else{
+                $newdata=$data1;
             }
             if ($sliderImage[1]!="")
             {
 
-                $data =array(
+                $data2 =array(
                     'slideImage2' => "slideImage2" . "." . pathinfo($sliderImage[1], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata2=array_merge($newdata,$data2);
 
+            }
+            else{
+                $newdata2=$data1;
             }
             if ($sliderImage[2]!="")
             {
 
-                $data =array(
+                $data2 =array(
                     'slideImage3' => "slideImage3" . "." . pathinfo($sliderImage[2], PATHINFO_EXTENSION),
                 );
-                array_push($data);
+                $newdata3=array_merge($newdata2,$data2);
 
+            }
+            else{
+                $newdata3=$data1;
             }
 
 
-            $data = $this->security->xss_clean($data, true);
+            $data = $this->security->xss_clean($newdata3, true);
             $error = $this->db->insert('ictmhome', $data);
             if (empty($error)) {
                 return $this->db->error();
