@@ -32,12 +32,20 @@ class OnlineForms extends CI_Controller
         $this->load->view('register-ineterest', $this->data);
 
     }
+
+    public function insertRegisterInterest(){
+
+
+
+    }
     public function applyNow() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('application-form', $this->data);
     }
+
+
     public function menu() // get all the menu + footer
     {
         $this->data['topmenu'] = $this->Menum->getTopMenu();

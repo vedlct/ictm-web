@@ -402,84 +402,88 @@ class Homem extends CI_Model
 
 
             );
-            if ($squareBoxImage[0]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage1' => "squareBoxImage1" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
-                );
-                array_push($data, $data2) ;
-
-            }
-            if ($squareBoxImage[1]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
-                );
-                array_push($data, $data2);
-
-            }
-            if ($squareBoxImage[2]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
-                );
-                array_push($data, $data2);
-
-            }
-            if ($squareBoxImage[0]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
-                );
-                array_push($data, $data2);
-
-            }
-            if ($squareBoxImage[0]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
-                );
-                array_push($data, $data2);
-
-            }
-            if ($squareBoxImage[0]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
-                );
-                array_push($data, $data2);
-
-            }
-            if ($squareBoxImage[0]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
-                );
-                array_push($data, $data2);
-
-            }
-            if ($squareBoxImage[0]!="")
-            {
-
-                $data2 =array(
-                    'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
-                );
-                array_push($data, $data2);
-
-            }
 
 
 
-            $data = $this->security->xss_clean($data, true);
+                if ($squareBoxImage[0] != "") {
+
+                    $data2 = array(
+                        'squareBoxImage1' => "squareBoxImage1" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
+                    );
+                    $datam = array_merge($data, $data2) ;
+
+                }
+                else{
+                    $datam=$data;
+                }
+                if ($squareBoxImage[1] != "") {
+
+                    $data3 = array(
+                        'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
+                    );
+                    $datan = array_merge($datam, $data3);
+
+                }
+                else{
+                    $datan=$datam;
+                }
+                if ($squareBoxImage[2] != "") {
+
+                    $data4 = array(
+                        'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
+                    );
+                    $dataz = array_merge($datan, $data4);
+
+                }
+                else{
+                    $dataz=$data;
+                }
+//                if ($squareBoxImage[3] != "") {
+//
+//                    $data5 = array(
+//                        'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
+//                    );
+//                    $data1 = array_merge($data, $data5);
+//
+//                }
+//                if ($squareBoxImage[4] != "") {
+//
+//                    $data6 = array(
+//                        'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
+//                    );
+//                    $data1 = array_merge($data, $data6);
+//
+//                }
+//                if ($squareBoxImage[5] != "") {
+//
+//                    $data7 = array(
+//                        'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
+//                    );
+//                    $data1 = array_merge($data, $data7);
+//
+//                }
+//                if ($squareBoxImage[6] != "") {
+//
+//                    $data8 = array(
+//                        'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
+//                    );
+//                    $data1 = array_merge($data, $data8);
+//
+//                }
+//                if ($squareBoxImage[7] != "") {
+//
+//                    $data9 = array(
+//                        'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
+//                    );
+//                    $data1 = array_merge($data, $data9);
+//
+//                }
+//
+//
+
+            $dataz = $this->security->xss_clean($dataz, true);
             $this->db->where('homeId', $id);
-            $error=$this->db->update('ictmhome', $data);
+            $error=$this->db->update('ictmhome', $dataz);
 
             if (empty($error)) {
                 return $this->db->error();
