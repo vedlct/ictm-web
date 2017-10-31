@@ -67,7 +67,7 @@ $route['Contact'] = 'OnlineForms/contactUs';
 $route['Apply'] = 'OnlineForms/applyNow';
 $route['RegisterInterest'] = 'OnlineForms/registerInterest';
 
-$route['FeedBack'] = 'OnlineForms/feedback';
+$route['Feedback'] = 'OnlineForms/feedback';
 $route['SubmitFeedback'] = 'OnlineForms/submitFeedback';
 
 $route['404_override'] = '';

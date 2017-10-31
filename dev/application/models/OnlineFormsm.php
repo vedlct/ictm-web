@@ -42,7 +42,7 @@ class OnlineFormsm extends CI_Model
 
                 $this->load->library('upload');
                 $config = array(
-                    'upload_path' => base_url().FOLDER_NAME."/images/feedbackImages/",
+                    'upload_path' => FOLDER_NAME."/images/feedbackImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
                     'max_size' => "1024*4",
                     'overwrite' => TRUE,

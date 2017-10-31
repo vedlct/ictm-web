@@ -65,7 +65,7 @@ class OnlineForms extends CI_Controller
 
             if (empty($this->data['error'])) {
 
-                $this->session->set_flashdata('successMessage','Course Image Deleted Successfully');
+                $this->session->set_flashdata('successMessage','Feedback given Successfully.Thak You For Your Feedback');
                 redirect('FeedBack');
 
             }

@@ -47,16 +47,17 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-
-                                <form class="form-validate form-horizontal" id="homeSlider" name="homeSlider" method="POST"  action="<?php echo base_url()?>Admin/Home/insertHomeSlider" enctype="multipart/form-data" onsubmit="return submitform()">
+                            <?php foreach ($sliderdata as $sliderdata){?>
+                                <form class="form-validate form-horizontal" id="homeSlider" name="homeSlider" method="POST"  action="<?php echo base_url()?>Admin/Home/editHomeSlider/<?php echo $sliderdata->homeId ?>" enctype="multipart/form-data" onsubmit="return submitform()">
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="sliderImage" class="control-label col-sm-2">Slider Image 1<span class="required">*</span></label>
+                                        <label for="sliderImage" class="control-label col-sm-2">Slider Image 1</label>
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]"required>
+                                            <input class="form-control" type="file" name="image[]">
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $sliderdata->slideImage1 ;?>" target="_blank"><span> <?php echo $sliderdata->slideImage1 ;?> </span></a>
 
                                         </div>
 
@@ -67,7 +68,7 @@
                                         <label for="text1" class="control-label col-sm-2">Slider Text 1<span class="required">*</span></label>
                                         <div class="col-sm-10">
 
-                                            <textarea class="form-control " name="text1" id="text1" placeholder="maximum 255 charecter" maxlength="255" required><?php echo set_value('text1'); ?></textarea>
+                                            <textarea class="form-control " name="text1" id="text1" placeholder="maximum 255 charecter" maxlength="255" required><?php echo $sliderdata->slideText1; ?></textarea>
 
 
                                         </div>
@@ -76,11 +77,12 @@
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="sliderImage" class="control-label col-sm-2">Slider Image 2<span class="required">*</span></label>
+                                        <label for="sliderImage" class="control-label col-sm-2">Slider Image 2</label>
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" required>
+                                            <input class="form-control" type="file" name="image[]">
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $sliderdata->slideImage2 ;?>" target="_blank"><span> <?php echo $sliderdata->slideImage2 ;?> </span></a>
                                         </div>
 
 
@@ -91,7 +93,7 @@
                                         <label for="text2" class="control-label col-sm-2">Slider Text 2<span class="required">*</span></label>
                                         <div class="col-sm-10">
 
-                                            <textarea class="form-control " name="text2" placeholder="maximum 255 charecter" maxlength="255" id="text2" required><?php echo set_value('text2'); ?></textarea>
+                                            <textarea class="form-control " name="text2" placeholder="maximum 255 charecter" maxlength="255" id="text2" required><?php echo $sliderdata->slideText2; ?></textarea>
 
 
                                         </div>
@@ -101,11 +103,12 @@
 
                                     <div class="form-group col-sm-12">
 
-                                        <label for="sliderImage" class="control-label col-sm-2">Slider Image 3<span class="required">*</span></label>
+                                        <label for="sliderImage" class="control-label col-sm-2">Slider Image 3</label>
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]" required>
+                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $sliderdata->slideImage3;?>" target="_blank"><span> <?php echo $sliderdata->slideImage3;?> </span></a>
                                         </div>
 
                                     </div>
@@ -115,7 +118,7 @@
                                         <label for="text3" class="control-label col-sm-2">Slider Text 3<span class="required">*</span></label>
                                         <div class="col-sm-10">
 
-                                            <textarea class="form-control " name="text3" placeholder="maximum 255 charecter" required maxlength="255" id="text3"><?php echo set_value('text3'); ?></textarea>
+                                            <textarea class="form-control " name="text3" placeholder="maximum 255 charecter" required maxlength="255" id="text3"><?php echo $sliderdata->slideText3; ?></textarea>
 
 
                                         </div>
@@ -135,6 +138,7 @@
                                     </div>
 
                                 </form>
+                             <?php }?>
                             </div>
                         </div>
                     </section>
@@ -166,9 +170,6 @@
 
     function submitform(){
 
-
-        var Image = document.homeSlider.elements["image[]"];
-
         var Text1=document.getElementById("text1").value;
         var Text2=document.getElementById("text2").value;
         var Text3=document.getElementById("text3").value;
@@ -185,17 +186,6 @@
             alert( 'Text3 must be less than 255 charecter!!' );
             return false;
         }
-
-        for (var i=0;i<Image.length;i++)
-        {
-            if (Image[i].value == '')
-            {
-                alert( 'Please Select a Image in Image field Image'+(i+1));
-                return false;
-            }
-        }
-
-
 
     }
 </script>

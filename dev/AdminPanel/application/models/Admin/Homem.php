@@ -840,17 +840,13 @@ class Homem extends CI_Model
                 'slideText1' => $text1,
                 'slideText2' => $text2,
                 'slideText3' => $text3,
-
-
             );
             if ($sliderImage[0]!="")
             {
-
                 $data2 =array(
-                    'slideImage1' => "slideImage1" . "." . pathinfo($sliderImage[0], PATHINFO_EXTENSION),
+                    'slideImage1' => "sliderImage1" . "." . pathinfo($sliderImage[0], PATHINFO_EXTENSION),
                 );
                 $newdata=array_merge($data1,$data2);
-
             }
             else{
                 $newdata=$data1;
@@ -859,25 +855,25 @@ class Homem extends CI_Model
             {
 
                 $data2 =array(
-                    'slideImage2' => "slideImage2" . "." . pathinfo($sliderImage[1], PATHINFO_EXTENSION),
+                    'slideImage2' => "sliderImage2" . "." . pathinfo($sliderImage[1], PATHINFO_EXTENSION),
                 );
                 $newdata2=array_merge($newdata,$data2);
 
             }
             else{
-                $newdata2=$data1;
+                $newdata2=$newdata;
             }
             if ($sliderImage[2]!="")
             {
 
                 $data2 =array(
-                    'slideImage3' => "slideImage3" . "." . pathinfo($sliderImage[2], PATHINFO_EXTENSION),
+                    'slideImage3' => "sliderImage3" . "." . pathinfo($sliderImage[2], PATHINFO_EXTENSION),
                 );
                 $newdata3=array_merge($newdata2,$data2);
 
             }
             else{
-                $newdata3=$data1;
+                $newdata3=$newdata2;
             }
 
 
@@ -899,9 +895,99 @@ class Homem extends CI_Model
         $config['upload_path'] = 'images/homeImage/';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
         $config['overwrite'] = True;
-        $config['file_name'] = 'slider'.($i+1);
+        $config['file_name'] = 'sliderImage'.($i+1);
 
         return $config;
+    }
+
+    public function updateHomeSliderdata($id) //Update Slider
+    {
+
+        $text1 = $this->input->post("text1");
+        $text2 = $this->input->post("text2");
+        $text3 = $this->input->post("text3");
+
+        $sliderImage = $_FILES['image']['name'];
+
+        $files = $_FILES;
+        $data = array();
+
+        for ($i = 0; $i < count($sliderImage); $i++) {
+
+            if ($sliderImage[$i] != null) {
+
+                $_FILES['image']['name'] = $files['image']['name'][$i];
+                $_FILES['image']['type'] = $files['image']['type'][$i];
+                $_FILES['image']['tmp_name'] = $files['image']['tmp_name'][$i];
+                $_FILES['image']['error'] = $files['image']['error'][$i];
+                $_FILES['image']['size'] = $files['image']['size'][$i];
+
+                $this->load->library('upload');
+                $this->upload->initialize($this->set_upload_options_Slider($i));
+
+                if (!$this->upload->do_upload('image')) {
+
+                    $error[$i] = $this->upload->display_errors();
+                    $data[$error[$i]];
+                }
+
+            }
+        }
+        if (!empty($data)) {
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Admin/Home/slider';
+                    </script>";
+            return false;
+        }
+        else {
+            $data1 = array(
+                'slideText1' => $text1,
+                'slideText2' => $text2,
+                'slideText3' => $text3,
+            );
+            if ($sliderImage[0]!="")
+            {
+                $data2 =array(
+                    'slideImage1' => "sliderImage1" . "." . pathinfo($sliderImage[0], PATHINFO_EXTENSION),
+                );
+                $newdata=array_merge($data1,$data2);
+
+            }
+            else{
+                $newdata=$data1;
+            }
+            if ($sliderImage[1]!="")
+            {
+                $data2 =array(
+                    'slideImage2' => "sliderImage2" . "." . pathinfo($sliderImage[1], PATHINFO_EXTENSION),
+                );
+                $newdata2=array_merge($newdata,$data2);
+
+            }
+            else{
+                $newdata2=$newdata;
+            }
+            if ($sliderImage[2]!="")
+            {
+                $data2 =array(
+                    'slideImage3' => "sliderImage3" . "." . pathinfo($sliderImage[2], PATHINFO_EXTENSION),
+                );
+                $newdata3=array_merge($newdata2,$data2);
+            }
+            else{
+                $newdata3=$newdata2;
+            }
+
+            $sliderdata = $this->security->xss_clean($newdata3, true);
+            $this->db->where('homeId', $id);
+            $error=$this->db->update('ictmhome', $sliderdata);
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+        }
     }
 
 }

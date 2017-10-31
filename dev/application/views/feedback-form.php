@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-title-heading">
-                    <h2 class="title">FeedBack</h2>
+                    <h2 class="title">Feedback</h2>
                 </div>
                 <div class="breadcrumbs">
                     <ul>
@@ -18,6 +18,13 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div><!-- /page-title -->
+
+<?php if ($this->session->flashdata('errorMessage')!=null){?>
+    <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+<?php }
+elseif($this->session->flashdata('successMessage')!=null){?>
+    <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+<?php }?>
 
 <section class="flat-row padding-small-v1">
     <div class="container">
