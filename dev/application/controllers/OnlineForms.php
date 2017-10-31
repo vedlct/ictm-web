@@ -32,12 +32,23 @@ class OnlineForms extends CI_Controller
         $this->load->view('register-ineterest', $this->data);
 
     }
+<<<<<<< HEAD
     public function applyNow() // go to the apply pageNow
+=======
+
+    public function insertRegisterInterest(){
+
+
+
+    }
+    public function applyNow() // go to the apply page of selected course
+>>>>>>> c78cda7b6da93a506f26c71b617055689f237939
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('application-form', $this->data);
     }
+<<<<<<< HEAD
     public function feedback() // go to the feedback page
     {
         $this->menu();
@@ -47,6 +58,10 @@ class OnlineForms extends CI_Controller
     {
         //$this->load->model('Departmentm');
     }
+=======
+
+
+>>>>>>> c78cda7b6da93a506f26c71b617055689f237939
     public function menu() // get all the menu + footer
     {
         $this->data['topmenu'] = $this->Menum->getTopMenu();

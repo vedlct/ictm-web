@@ -343,6 +343,7 @@ class Home extends CI_Controller
             else {
 
                 $this->data['error']=$this->Homem->updateSqureBox($id);
+               // print_r($this->data['error']);
 
                 if (empty($this->data['error'])) {
 
