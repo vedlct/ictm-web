@@ -282,28 +282,27 @@ class Homem extends CI_Model
             $data = array(
                 'squareBoxTitle1' => $title1,
                 'squareBoxLink1' => $link1,
-                'squareBoxImage1' => "squareBoxImage1" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
                 'squareBoxTitle2' => $title2,
                 'squareBoxLink2' => $link2,
-                'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
+                'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
                 'squareBoxTitle3' => $title3,
                 'squareBoxLink3' => $link3,
-                'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
+                'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
                 'squareBoxTitle4' => $title4,
                 'squareBoxLink4' => $link4,
-                'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
+                'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
                 'squareBoxTitle5' => $title5,
-                'squareBoxLink5' => $link1=5,
-                'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
+                'squareBoxLink5' => $link5,
+                'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
                 'squareBoxTitle6' => $title6,
                 'squareBoxLink6' => $link6,
-                'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION),
+                'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
                 'squareBoxTitle7' => $title7,
                 'squareBoxLink7' => $link7,
-                'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION),
+                'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION),
                 'squareBoxTitle8' => $title8,
                 'squareBoxLink8' => $link8,
-                'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
+                'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
 
             );
 
@@ -395,7 +394,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[0] != "") {
 
                     $data2 = array(
-                        'squareBoxImage1' => "squareBoxImage1" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
+                        'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
                     );
                     $newdata1 = array_merge($data, $data2) ;
 
@@ -406,7 +405,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[1] != "") {
 
                     $data3 = array(
-                        'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
+                        'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
                     );
                     $newdata2 = array_merge($newdata1, $data3);
 
@@ -417,7 +416,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[2] != "") {
 
                     $data4 = array(
-                        'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
+                        'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
                     );
                     $newdata3 = array_merge($newdata2, $data4);
 
@@ -428,7 +427,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[3] != "") {
 
                     $data5 = array(
-                        'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
+                        'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
                     );
                     $newdata4 = array_merge($newdata3, $data5);
 
@@ -439,7 +438,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[4] != "") {
 
                     $data6 = array(
-                        'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
+                        'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
                     );
                     $newdata5 = array_merge($newdata4, $data6);
 
@@ -450,7 +449,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[5] != "") {
 
                     $data7 = array(
-                        'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
+                        'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
                     );
                     $newdata6 = array_merge($newdata5, $data7);
 
@@ -461,7 +460,7 @@ class Homem extends CI_Model
                 if ($squareBoxImage[6] != "") {
 
                     $data8 = array(
-                        'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
+                        'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
                     );
                     $newdata7 = array_merge($newdata6, $data8);
 
@@ -469,21 +468,8 @@ class Homem extends CI_Model
                 else{
                     $newdata7=$newdata6;
                 }
-                if ($squareBoxImage[7] != "") {
 
-                    $data9 = array(
-                        'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[7], PATHINFO_EXTENSION)
-                    );
-                    $newdata8 = array_merge($newdata7, $data9);
-
-                }
-                else{
-                    $newdata8=$newdata7;
-                }
-
-
-
-            $dataz = $this->security->xss_clean($newdata8, true);
+            $dataz = $this->security->xss_clean($newdata7, true);
             $this->db->where('homeId', $id);
             $error=$this->db->update('ictmhome', $dataz);
 
@@ -648,7 +634,7 @@ class Homem extends CI_Model
         $config['upload_path'] = 'images/homeImage/';
         $config['allowed_types'] = 'jpg|png|jpeg|gif';
         $config['overwrite'] = True;
-        $config['file_name'] = 'squareBoxImage'.($i+1);
+        $config['file_name'] = 'squareBoxImage'.($i+2);
 
         return $config;
     }
