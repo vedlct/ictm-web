@@ -136,3 +136,6 @@ define("SELECT_ALBUM", "Select Album");
 
 define("FOLDER_NAME", "AdminPanel");
 
+///////////// For FeedBack ////////////////
+define("FEEDBACK_SOURCE",array ("Website","Facebook","Twitter","Youtube","LinkedIn","Google+","Application Form","Feedback Form","Other source"));
+

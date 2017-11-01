@@ -57,14 +57,6 @@
                                             <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
                                             <input class="form-control" id="title1" name="title1"  value="<?php echo set_value('title1'); ?>" type="text" required />
                                         </div>
-                                        <label for="image2" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
-
-                                        <div class="col-sm-4">
-
-                                            <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image1"required>
-
-                                        </div>
 
                                     </div>
                                     <div class="form-group col-sm-12">
@@ -308,24 +300,62 @@
 <script type="text/javascript">
 
     function submitform(){
-//        for (var i=1;i<=8;i++){
-//
-//            var Title=document.getElementById("title"+i).value;
-//            if (i==1){
-//                if(Title.length >115) {
-//                    alert( 'Title'+i+' must be less than 15 charecter!!' );
-//                    return false;
-//                }
-//            }
-//            else {
-//                if (Title.length > 255) {
-//                    alert('Title' + i + ' must be less than 255 charecter!!');
-//                    return false;
-//                }
-//            }
-//
-//        }
 
+        for (var i=1;i<=8;i++){
+
+            var Title=document.getElementById("title"+i).value;
+
+                if(i==1 && Title.length >15) {
+                    alert( 'Title'+i+' must be less than 15 charecter!!' );
+                    return false;
+                }
+                if (i!=1 && Title.length > 255) {
+                    alert('Title' + i + ' must be less than 255 charecter!!');
+                    return false;
+                }
+        }
+
+        var Link1=document.getElementById("link1").value;
+        var Link2=document.getElementById("link2").value;
+        var Link3=document.getElementById("link3").value;
+        var Link4=document.getElementById("link4").value;
+        var Link5=document.getElementById("link5").value;
+        var Link6=document.getElementById("link6").value;
+        var Link7=document.getElementById("link7").value;
+        var Link8=document.getElementById("link8").value;
+
+        if (Link1.length > 500){
+            alert( 'Link1 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link2.length > 500){
+            alert( 'Link2 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link3.length > 500){
+            alert( 'Link3 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link4.length > 500){
+            alert( 'Link4 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link5.length > 500){
+            alert( 'Link5 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link6.length > 500){
+            alert( 'Link6 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link7.length > 500){
+            alert( 'Link7 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link8.length > 500){
+            alert( 'Link8 must be less than 500 charecter!!' );
+            return false;
+        }
 
     }
 </script>

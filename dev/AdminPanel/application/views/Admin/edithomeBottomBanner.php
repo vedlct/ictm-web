@@ -73,17 +73,15 @@
 
                                         <div class="form-group col-sm-12">
 
-                                            <label for="Image" class="control-label col-sm-2">Image<span class="required">*</span></label>
+                                            <label for="Image" class="control-label col-sm-2">Image</label>
 
                                             <div class="col-sm-4">
-
+                                                <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image" id="image">
 
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $bannerData->bottomBannerImage?>" target="_blank"><span> <?php echo $bannerData->bottomBannerImage?></span></a>
-                                                <?php if ($bannerData->bottomBannerImage!=null){?>
-                                                    <a href="<?php echo base_url() ?>Admin/Affiliation/deleteAffiliationImage/<?php echo $bannerData->homeId ?>" onclick='return confirm("Are you sure to Delete This Bottom Banner Image?")'><i class="icon_trash"></i></a>
-                                                <?php }?>
+
 
                                             </div>
                                         </div>
@@ -97,7 +95,7 @@
 
                                         <div class="form-group " align="center">
                                             <div class="col-lg-10">
-                                                <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                                <input class="btn btn-success" type="submit" value="Submit" style="margin-left: 180px">
                                                 <input class="btn btn-close" type="reset" >
                                             </div>
                                         </div>

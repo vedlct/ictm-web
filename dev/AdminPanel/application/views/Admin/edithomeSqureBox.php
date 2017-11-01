@@ -54,24 +54,16 @@
                                             <label for="title1" class="control-label col-lg-2">Ttile 1<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
-                                                <input class="form-control" id="title1" name="title1"  value="<?php echo $squreBoxdata->squareBoxTitle1?>" type="text" required />
+                                                <input class="form-control" id="title1" name="title1" maxlength="255" value="<?php echo $squreBoxdata->squareBoxTitle1?>" type="text" required />
                                             </div>
 
-                                            <label for="image1" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
-
-                                            <div class="col-sm-4">
-
-                                                <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image1">
-
-                                            </div>
                                         </div>
                                         <div class="form-group col-sm-12">
 
                                             <label for="link1" class="control-label col-sm-2">link 1<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link1'); ?></font></p>
-                                                <input class="form-control" id="link1" name="link1"  value="<?php echo $squreBoxdata->squareBoxLink1?>" type="text" required />
+                                                <input class="form-control" id="link1" name="link1" maxlength="500" value="<?php echo $squreBoxdata->squareBoxLink1?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -81,15 +73,16 @@
                                             <label for="title2" class="control-label col-lg-2">Ttile 2<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title2'); ?></font></p>
-                                                <input class="form-control titlechk" id="title2" name="title2"  value="<?php echo $squreBoxdata->squareBoxTitle2?>" type="text" required />
+                                                <input class="form-control titlechk" id="title2" maxlength="255" name="title2"  value="<?php echo $squreBoxdata->squareBoxTitle2?>" type="text" required />
                                             </div>
 
-                                            <label for="image2" class="control-label col-sm-2">Image 2<span class="required">*</span></label>
+                                            <label for="image2" class="control-label col-sm-2">Image 2</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image2">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage2;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage2;?> </span></a>
 
                                             </div>
                                         </div>
@@ -98,7 +91,7 @@
                                             <label for="link2" class="control-label col-sm-2">link 2<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link2'); ?></font></p>
-                                                <input class="form-control" id="link2" name="link2"  value="<?php echo $squreBoxdata->squareBoxLink2?>" type="text" required />
+                                                <input class="form-control" id="link2" name="link2" maxlength="500" value="<?php echo $squreBoxdata->squareBoxLink2?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -108,15 +101,16 @@
                                             <label for="title3" class="control-label col-lg-2">Ttile 3<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title3'); ?></font></p>
-                                                <input class="form-control titlechk" id="title3" name="title3"  value="<?php echo $squreBoxdata->squareBoxTitle3?>" type="text" required />
+                                                <input class="form-control titlechk" id="title3" maxlength="255" name="title3"  value="<?php echo $squreBoxdata->squareBoxTitle3?>" type="text" required />
                                             </div>
 
-                                            <label for="image3" class="control-label col-sm-2">Image 3<span class="required">*</span></label>
+                                            <label for="image3" class="control-label col-sm-2">Image 3</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image3">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage3;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage3;?> </span></a>
 
                                             </div>
                                         </div>
@@ -125,7 +119,7 @@
                                             <label for="link3" class="control-label col-sm-2">link 3<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link3'); ?></font></p>
-                                                <input class="form-control" id="link3" name="link3"  value="<?php echo $squreBoxdata->squareBoxLink3?>v" type="text" required />
+                                                <input class="form-control" id="link3" name="link3" maxlength="500" value="<?php echo $squreBoxdata->squareBoxLink3?>v" type="text" required />
                                             </div>
 
                                         </div>
@@ -135,15 +129,16 @@
                                             <label for="title4" class="control-label col-lg-2">Ttile 4<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title4'); ?></font></p>
-                                                <input class="form-control titlechk" id="title4" name="title4"  value="<?php echo $squreBoxdata->squareBoxTitle4?>" type="text" required />
+                                                <input class="form-control titlechk" id="title4" maxlength="255" name="title4"  value="<?php echo $squreBoxdata->squareBoxTitle4?>" type="text" required />
                                             </div>
 
-                                            <label for="image4" class="control-label col-sm-2">Image 4<span class="required">*</span></label>
+                                            <label for="image4" class="control-label col-sm-2">Image 4</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image4">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage4;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage4;?> </span></a>
 
                                             </div>
                                         </div>
@@ -152,7 +147,7 @@
                                             <label for="link4" class="control-label col-sm-2">link 4<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link4'); ?></font></p>
-                                                <input class="form-control" id="link4" name="link4"  value="<?php echo $squreBoxdata->squareBoxLink4?>" type="text" required />
+                                                <input class="form-control" id="link4" name="link4" maxlength="500"  value="<?php echo $squreBoxdata->squareBoxLink4?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -162,15 +157,16 @@
                                             <label for="title5" class="control-label col-lg-2">Ttile 5<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title5'); ?></font></p>
-                                                <input class="form-control titlechk" id="title5" name="title5"  value="<?php echo $squreBoxdata->squareBoxTitle5?>" type="text" required/>
+                                                <input class="form-control titlechk" id="title5" maxlength="255" name="title5"  value="<?php echo $squreBoxdata->squareBoxTitle5?>" type="text" required/>
                                             </div>
 
-                                            <label for="image5" class="control-label col-sm-2">Image 5<span class="required">*</span></label>
+                                            <label for="image5" class="control-label col-sm-2">Image 5</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image5">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage5;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage5;?> </span></a>
 
                                             </div>
                                         </div>
@@ -179,7 +175,7 @@
                                             <label for="link5" class="control-label col-sm-2">link 5<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link5'); ?></font></p>
-                                                <input class="form-control" id="link5" name="link5"  value="<?php echo $squreBoxdata->squareBoxLink5?>" type="text" required />
+                                                <input class="form-control" id="link5" name="link5" maxlength="500"  value="<?php echo $squreBoxdata->squareBoxLink5?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -189,15 +185,16 @@
                                             <label for="title6" class="control-label col-lg-2">Ttile 6<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title6'); ?></font></p>
-                                                <input class="form-control titlechk" id="title6" name="title6"  value="<?php echo $squreBoxdata->squareBoxTitle6?>" type="text" required />
+                                                <input class="form-control titlechk" id="title6" maxlength="255" name="title6"  value="<?php echo $squreBoxdata->squareBoxTitle6?>" type="text" required />
                                             </div>
 
-                                            <label for="image6" class="control-label col-sm-2">Image 6<span class="required">*</span></label>
+                                            <label for="image6" class="control-label col-sm-2">Image 6</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image6">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage6;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage6;?> </span></a>
 
                                             </div>
                                         </div>
@@ -206,7 +203,7 @@
                                             <label for="link6" class="control-label col-sm-2">link 6<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link6'); ?></font></p>
-                                                <input class="form-control" id="link6" name="link6"  value="<?php echo $squreBoxdata->squareBoxLink6?>" type="text" required />
+                                                <input class="form-control" id="link6" name="link6" maxlength="500" value="<?php echo $squreBoxdata->squareBoxLink6?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -216,15 +213,16 @@
                                             <label for="title7" class="control-label col-lg-2">Ttile 7<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title7'); ?></font></p>
-                                                <input class="form-control titlechk" id="title7" name="title7"  value="<?php echo $squreBoxdata->squareBoxTitle7?>" type="text" required />
+                                                <input class="form-control titlechk" id="title7" maxlength="255" name="title7"  value="<?php echo $squreBoxdata->squareBoxTitle7?>" type="text" required />
                                             </div>
 
-                                            <label for="image7" class="control-label col-sm-2">Image 7<span class="required">*</span></label>
+                                            <label for="image7" class="control-label col-sm-2">Image 7</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image7">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage7;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage7;?> </span></a>
 
                                             </div>
                                         </div>
@@ -233,7 +231,7 @@
                                             <label for="link7" class="control-label col-sm-2">link 7<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link7'); ?></font></p>
-                                                <input class="form-control" id="link7" name="link7"  value="<?php echo $squreBoxdata->squareBoxLink7?>" type="text" required />
+                                                <input class="form-control" id="link7" name="link7" maxlength="500"  value="<?php echo $squreBoxdata->squareBoxLink7?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -243,15 +241,16 @@
                                             <label for="title8" class="control-label col-lg-2">Ttile 8<span class="required">*</span></label>
                                             <div class="col-lg-4">
                                                 <p><font color="red"> <?php echo form_error('title8'); ?></font></p>
-                                                <input class="form-control titlechk" id="title8" name="title8"  value="<?php echo $squreBoxdata->squareBoxTitle8?>" type="text" required />
+                                                <input class="form-control titlechk" id="title8" name="title8" maxlength="255"  value="<?php echo $squreBoxdata->squareBoxTitle8?>" type="text" required />
                                             </div>
 
-                                            <label for="image8" class="control-label col-sm-2">Image 8<span class="required">*</span></label>
+                                            <label for="image8" class="control-label col-sm-2">Image 8</label>
 
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
                                                 <input class="form-control" type="file" name="image[]" id="image8">
+                                                <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage8;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage8;?> </span></a>
 
                                             </div>
                                         </div>
@@ -260,7 +259,7 @@
                                             <label for="link8" class="control-label col-sm-2">link 8<span class="required">*</span></label>
                                             <div class="col-sm-10">
                                                 <p><font color="red"> <?php echo form_error('link8'); ?></font></p>
-                                                <input class="form-control" id="link8" name="link8"  value="<?php echo $squreBoxdata->squareBoxLink8?>" type="text" required />
+                                                <input class="form-control" id="link8" name="link8" maxlength="500"  value="<?php echo $squreBoxdata->squareBoxLink8?>" type="text" required />
                                             </div>
 
                                         </div>
@@ -272,7 +271,7 @@
 
                                         <div class="form-group "align="center">
                                             <div class="col-sm-10">
-                                                <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                                <input class="btn btn-success" type="submit" value="Submit" style="margin-left: 180px">
                                                 <input class="btn btn-close" type="reset" >
                                             </div>
                                         </div>
@@ -306,21 +305,63 @@
 </html>
 
 <script type="text/javascript">
+
     function submitform(){
+
         for (var i=1;i<=8;i++){
+
             var Title=document.getElementById("title"+i).value;
-            if (i==1){
-                if(Title.length >15) {
-                    alert( 'Title'+i+' must be less than 15 charecter!!' );
-                    return false;
-                }
+
+            if(i==1 && Title.length >15) {
+                alert( 'Title'+i+' must be less than 15 charecter!!' );
+                return false;
             }
-            else {
-                if (Title.length > 255) {
-                    alert('Title' + i + ' must be less than 255 charecter!!');
-                    return false;
-                }
+            if (i!=1 && Title.length > 255) {
+                alert('Title' + i + ' must be less than 255 charecter!!');
+                return false;
             }
         }
+        var Link1=document.getElementById("link1").value;
+        var Link2=document.getElementById("link2").value;
+        var Link3=document.getElementById("link3").value;
+        var Link4=document.getElementById("link4").value;
+        var Link5=document.getElementById("link5").value;
+        var Link6=document.getElementById("link6").value;
+        var Link7=document.getElementById("link7").value;
+        var Link8=document.getElementById("link8").value;
+
+        if (Link1.length > 500){
+            alert( 'Link1 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link2.length > 500){
+            alert( 'Link2 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link3.length > 500){
+            alert( 'Link3 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link4.length > 500){
+            alert( 'Link4 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link5.length > 500){
+            alert( 'Link5 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link6.length > 500){
+            alert( 'Link6 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link7.length > 500){
+            alert( 'Link7 must be less than 500 charecter!!' );
+            return false;
+        }
+        if (Link8.length > 500){
+            alert( 'Link8 must be less than 500 charecter!!' );
+            return false;
+        }
+
     }
 </script>

@@ -39,6 +39,7 @@ class OnlineForms extends CI_Controller
 
         if (!$this->form_validation->run('RegisterInterest')) {
 
+
          $this->registerInterest();
 
         }
@@ -58,7 +59,7 @@ class OnlineForms extends CI_Controller
 
             }
         }
-
+        
     }
     public function applyNow() // go to the apply page of selected course
     {
@@ -67,6 +68,42 @@ class OnlineForms extends CI_Controller
         $this->load->view('application-form', $this->data);
     }
 
+    public function feedback() // go to the feedback page
+    {
+        $this->menu();
+        $this->load->view('feedback-form', $this->data);
+    }
+    public function SubmitFeedback() // Submit the feedback
+    {
+
+        $this->load->model('OnlineFormsm');
+        $this->load->library('form_validation');
+        if (!$this->form_validation->run('feedbacks')) {
+
+            $this->menu();
+            $this->load->view('feedback-form', $this->data);
+
+        }
+        else{
+            $this->data['error'] = $this->OnlineFormsm->sendFeedback();
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Feedback given Successfully.Thak You For Your Feedback');
+                redirect('FeedBack');
+
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('FeedBack');
+
+            }
+
+        }
+
+
+    }
 
     public function menu() // get all the menu + footer
     {
@@ -81,6 +118,34 @@ class OnlineForms extends CI_Controller
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
 
+    }
+
+    /* -------------------------------Image validation-------------------------*/
+    public function val_img_check()
+    {
+        $image = $_FILES['image']['name'];
+        $imageSize = ($_FILES['image']['size']/1024);
+        $supported_image = array('gif','jpg','jpeg','png');
+
+        if ($image != null) {
+            $ext = strtolower(pathinfo($image, PATHINFO_EXTENSION));
+
+            if (in_array($ext, $supported_image)) {
+
+                if ($imageSize <4096){
+                    return true;
+                }
+                else{
+                    $this->form_validation->set_message('val_img_check', "Maximum Image Size 4MB is allowed!!");
+                    return false;
+                }
+            } else {
+                $this->form_validation->set_message('val_img_check', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
+                return false;
+
+
+            }
+        }
     }
 
 }

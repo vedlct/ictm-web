@@ -1080,42 +1080,42 @@ $config = array (
         array(
             'field' => 'link1',
             'label' => 'Link 1',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link2',
             'label' => 'Link 2',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link3',
             'label' => 'Link 3',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link4',
             'label' => 'Link 4',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link5',
             'label' => 'Link 5',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link6',
             'label' => 'Link 6',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link7',
             'label' => 'Link 7',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'link8',
             'label' => 'Link 8',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'image[]',
@@ -1134,7 +1134,7 @@ $config = array (
         array(
             'field' => 'link1',
             'label' => 'Middle Banner Link 1',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text1',
@@ -1149,7 +1149,7 @@ $config = array (
         array(
             'field' => 'link2',
             'label' => 'Middle Banner Link 2',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text2',
@@ -1164,7 +1164,7 @@ $config = array (
         array(
             'field' => 'link3',
             'label' => 'Middle Banner Link 3',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text3',
@@ -1183,7 +1183,7 @@ $config = array (
         array(
             'field' => 'link1',
             'label' => 'VerTical Bar Link 1',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text1',
@@ -1198,7 +1198,7 @@ $config = array (
         array(
             'field' => 'link2',
             'label' => 'VerTical Bar Link 2',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text2',
@@ -1213,7 +1213,7 @@ $config = array (
         array(
             'field' => 'link3',
             'label' => 'VerTical Bar Link 3',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text3',
@@ -1228,7 +1228,7 @@ $config = array (
         array(
             'field' => 'link4',
             'label' => 'VerTical Bar Link 4',
-            'rules' => 'required|max_length[255]|valid_url|xss_clean|htmlspecialchars'
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'text4',

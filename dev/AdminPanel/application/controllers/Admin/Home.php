@@ -33,9 +33,6 @@ class Home extends CI_Controller
                 $this->load->view('Admin/edithomeSlider', $this->data);
 
             }
-
-
-
         }
         else{
             redirect('Admin/Login');
@@ -68,7 +65,40 @@ class Home extends CI_Controller
                     redirect('Admin/Home/slider');
 
                 }
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+    public function editHomeSlider($id) //edit Slider
+    {
+        $this->load->library('form_validation');
 
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+
+            if (!$this->form_validation->run('Slider')) {
+
+                $this->data['sliderdata'] = $this->Homem->getHomeSliderdata();
+                $this->load->view('Admin/edithomeSlider', $this->data);
+
+            }
+            else {
+
+                $this->data['error']=$this->Homem->updateHomeSliderdata($id);
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Slider Updated Successfully');
+                    redirect('Admin/Home/slider');
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Home/slider');
+                }
 
 
             }
@@ -306,7 +336,7 @@ class Home extends CI_Controller
 
                 if (empty($this->data['error'])) {
 
-                    $this->session->set_flashdata('successMessage','Bottom Banner Created Successfully');
+                    $this->session->set_flashdata('successMessage','Squre Box Created Successfully');
                     redirect('Admin/Home/squreBox');
 
 
@@ -317,7 +347,7 @@ class Home extends CI_Controller
                     redirect('Admin/Home/squreBox');
 
                 }
-              //  print_r("done");
+
 
 
 
@@ -357,9 +387,6 @@ class Home extends CI_Controller
                     redirect('Admin/Home/squreBox');
 
                 }
-                //  print_r("done");
-
-
 
             }
         }
@@ -433,7 +460,7 @@ class Home extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['homeImage'] = $image;
-            $this->load->view('Admin/showImage', $this->data);
+            $this->load->view('Admin/showImage',$this->data);
 
         }
         else{
