@@ -13,6 +13,7 @@ class OnlineForms extends CI_Controller
         $this->load->model('Eventm');
         $this->load->model('Newsm');
         $this->load->model('Coursem');
+        $this->load->model('OnlineFormsm');
 
     }
 
@@ -29,13 +30,34 @@ class OnlineForms extends CI_Controller
     public function registerInterest() //go to the register Interest page
     {
         $this->menu();
+        $this->data['course']=$this->Coursem->getCourseTitle();
         $this->load->view('register-ineterest', $this->data);
 
     }
 
     public function insertRegisterInterest(){
 
+        if (!$this->form_validation->run('RegisterInterest')) {
 
+         $this->registerInterest();
+
+        }
+        else {
+            $this->data['error'] =$this->OnlineFormsm->insertRegisterInterest();
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage','Your Form Submit Successfully');
+                redirect('OnlineForms/registerInterest');
+
+
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('OnlineForms/registerInterest');
+
+            }
+        }
 
     }
     public function applyNow() // go to the apply page of selected course
