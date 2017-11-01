@@ -52,7 +52,7 @@
                                         <label for="title1" class="control-label col-lg-2">Ttile 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
-                                            <input class="form-control" id="title1" name="title1"  value="<?php echo set_value('title1'); ?>" type="text" required />
+                                            <input class="form-control" id="title1" name="title1" maxlength="255" value="<?php echo set_value('title1'); ?>" type="text" required />
                                         </div>
 
                                         <label for="link1" class="control-label col-sm-2">Link 1<span class="required">*</span></label>
@@ -60,7 +60,7 @@
                                         <div class="col-sm-4">
 
                                             <p><font color="red"> <?php echo form_error('link1'); ?></font></p>
-                                            <input class="form-control" id="link1" name="link1"  value="<?php echo set_value('link1'); ?>" type="text" required />
+                                            <input class="form-control" id="link1" name="link1" maxlength="500" value="<?php echo set_value('link1'); ?>" type="text" required />
 
                                         </div>
                                     </div>
@@ -68,7 +68,7 @@
 
                                         <label for="text1" class="control-label col-sm-2">text 1<span class="required">*</span></label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control " name="text1" id="text1" required><?php echo set_value('text1'); ?></textarea>
+                                            <textarea class="form-control " name="text1" id="text1" maxlength="255" required><?php echo set_value('text1'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -78,7 +78,7 @@
                                         <label for="title2" class="control-label col-lg-2">Ttile 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title2'); ?></font></p>
-                                            <input class="form-control" id="title2" name="title2"  value="<?php echo set_value('title2'); ?>" type="text" required />
+                                            <input class="form-control" id="title2" name="title2"maxlength="255"  value="<?php echo set_value('title2'); ?>" type="text" required />
                                         </div>
 
                                         <label for="link2" class="control-label col-sm-2">Link 2<span class="required">*</span></label>
@@ -86,7 +86,7 @@
                                         <div class="col-sm-4">
 
                                             <p><font color="red"> <?php echo form_error('link2'); ?></font></p>
-                                            <input class="form-control" id="link2" name="link2"  value="<?php echo set_value('link2'); ?>" type="text" required />
+                                            <input class="form-control" id="link2" name="link2" maxlength="500" value="<?php echo set_value('link2'); ?>" type="text" required />
 
                                         </div>
                                     </div>
@@ -94,7 +94,7 @@
 
                                         <label for="text2" class="control-label col-sm-2">text 2<span class="required">*</span></label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control " name="text2" id="text2" required><?php echo set_value('text2'); ?></textarea>
+                                            <textarea class="form-control " name="text2" id="text2" maxlength="255" required><?php echo set_value('text2'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -104,7 +104,7 @@
                                         <label for="title3" class="control-label col-lg-2">Ttile 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title3'); ?></font></p>
-                                            <input class="form-control" id="title3" name="title3"  value="<?php echo set_value('title3'); ?>" type="text" required />
+                                            <input class="form-control" id="title3" name="title3" maxlength="255" value="<?php echo set_value('title3'); ?>" type="text" required />
                                         </div>
 
                                         <label for="link3" class="control-label col-sm-2">Link 3<span class="required">*</span></label>
@@ -112,7 +112,7 @@
                                         <div class="col-sm-4">
 
                                             <p><font color="red"> <?php echo form_error('link3'); ?></font></p>
-                                            <input class="form-control" id="link3" name="link3"  value="<?php echo set_value('link3'); ?>" type="text" required />
+                                            <input class="form-control" id="link3" name="link3" maxlength="500" value="<?php echo set_value('link3'); ?>" type="text" required />
 
                                         </div>
                                     </div>
@@ -120,7 +120,7 @@
 
                                         <label for="text3" class="control-label col-sm-2">text 3<span class="required">*</span></label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control " name="text3" id="text3" required><?php echo set_value('text3'); ?></textarea>
+                                            <textarea class="form-control " name="text3" id="text3" maxlength="255" required><?php echo set_value('text3'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -192,16 +192,16 @@
             alert( 'Title3 must be less than 255 charecter!!' );
             return false;
         }
-        if(Link1.length >255) {
-            alert( 'Link1 must be less than 255 charecter!!' );
+        if(Link1.length >500) {
+            alert( 'Link1 must be less than 500 charecter!!' );
             return false;
         }
-        if(Link2.length >255) {
-            alert( 'Link2 must be less than 255 charecter!!' );
+        if(Link2.length >500) {
+            alert( 'Link2 must be less than 500 charecter!!' );
             return false;
         }
-        if(Link3.length >255) {
-            alert( 'Link3 must be less than 255 charecter!!' );
+        if(Link3.length >500) {
+            alert( 'Link3 must be less than 500 charecter!!' );
             return false;
         }
         if(Text1.length >255) {

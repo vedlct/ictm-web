@@ -40,6 +40,8 @@ class Homem extends CI_Model
                 'bottomBannerTitle' => $title,
                 'bottomBannerSubTitle' => $subTitle,
                 'bottomBannerImage' => "bottomBanner".".".pathinfo($bannerImage, PATHINFO_EXTENSION),
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
 
             );
 
@@ -114,6 +116,8 @@ class Homem extends CI_Model
                 'bottomBannerTitle' => $title,
                 'bottomBannerSubTitle' => $subTitle,
                 'bottomBannerImage' => "bottomBanner".".".pathinfo($bannerImage, PATHINFO_EXTENSION),
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
 
             );
 
@@ -123,6 +127,8 @@ class Homem extends CI_Model
             $data = array(
                 'bottomBannerTitle' => $title,
                 'bottomBannerSubTitle' => $subTitle,
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
 
             );
         }
@@ -173,6 +179,8 @@ class Homem extends CI_Model
             'middleBannerTitle3' =>$title3,
             'middleBannerLink3' =>$link3,
             'middleBannerText3' =>$text3,
+            'insertedBy'=>$this->session->userdata('userEmail'),
+            'insertedDate'=>date("Y-m-d H:i:s"),
 
         );
 
@@ -211,6 +219,8 @@ class Homem extends CI_Model
             'middleBannerTitle3' =>$title3,
             'middleBannerLink3' =>$link3,
             'middleBannerText3' =>$text3,
+            'lastModifiedDate'=>date("Y-m-d H:i:s"),
+            'lastModifiedBy'=>$this->session->userdata('userEmail'),
 
         );
         $data = $this->security->xss_clean($data);
@@ -302,7 +312,9 @@ class Homem extends CI_Model
                 'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION),
                 'squareBoxTitle8' => $title8,
                 'squareBoxLink8' => $link8,
-                'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
+                'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION),
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
 
             );
 
@@ -388,6 +400,8 @@ class Homem extends CI_Model
                 'squareBoxLink7' => $link7,
                 'squareBoxTitle8' => $title8,
                 'squareBoxLink8' => $link8,
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
             );
 
 
@@ -552,6 +566,8 @@ class Homem extends CI_Model
                 'verticalBarTitle4' => $title4,
                 'verticalBarLink4' => $link4,
                 'verticalBarText4' => $text4,
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
             );
 
             if ($verticalBarImage[0]!="")
@@ -704,6 +720,8 @@ class Homem extends CI_Model
                 'verticalBarTitle4' => $title4,
                 'verticalBarLink4' => $link4,
                 'verticalBarText4' => $text4,
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
             );
 
             if ($verticalBarImage[0]!="")
@@ -818,6 +836,8 @@ class Homem extends CI_Model
                 'slideText1' => $text1,
                 'slideText2' => $text2,
                 'slideText3' => $text3,
+                'insertedBy'=>$this->session->userdata('userEmail'),
+                'insertedDate'=>date("Y-m-d H:i:s"),
             );
             if ($sliderImage[0]!="")
             {
@@ -923,6 +943,8 @@ class Homem extends CI_Model
                 'slideText1' => $text1,
                 'slideText2' => $text2,
                 'slideText3' => $text3,
+                'lastModifiedDate'=>date("Y-m-d H:i:s"),
+                'lastModifiedBy'=>$this->session->userdata('userEmail'),
             );
             if ($sliderImage[0]!="")
             {

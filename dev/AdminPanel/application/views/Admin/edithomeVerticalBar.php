@@ -56,7 +56,7 @@
                                         <label for="title1" class="control-label col-lg-2">Ttile 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
-                                            <input class="form-control" id="title1" name="title1"  value="<?php echo $verticalBardata->verticalBarTitle1; ?>" type="text" required/>
+                                            <input class="form-control" id="title1" name="title1" maxlength="255" value="<?php echo $verticalBardata->verticalBarTitle1; ?>" type="text" required/>
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 1</label>
@@ -73,12 +73,12 @@
                                         <label for="link1" class="control-label col-lg-2">Link 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link1'); ?></font></p>
-                                            <input class="form-control" id="link1" name="link1"  value="<?php echo $verticalBardata->verticalBarLink1; ?>" type="text" required />
+                                            <input class="form-control" id="link1" name="link1" maxlength="500" value="<?php echo $verticalBardata->verticalBarLink1; ?>" type="text" required />
                                         </div>
 
                                         <label for="photoDetails" class="control-label col-sm-2">text 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text1" id="text1" required><?php echo $verticalBardata->verticalBarText1; ?></textarea>
+                                            <textarea class="form-control " name="text1" maxlength="255" id="text1" required><?php echo $verticalBardata->verticalBarText1; ?></textarea>
                                         </div>
 
                                     </div>
@@ -88,7 +88,7 @@
                                         <label for="title2" class="control-label col-lg-2">Ttile 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title2'); ?></font></p>
-                                            <input class="form-control" id="title2" name="title2"  value="<?php echo $verticalBardata->verticalBarTitle2; ?>" type="text" required />
+                                            <input class="form-control" id="title2" name="title2" maxlength="255" value="<?php echo $verticalBardata->verticalBarTitle2; ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 2</label>
@@ -106,12 +106,12 @@
                                         <label for="link2" class="control-label col-lg-2">Link 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link2'); ?></font></p>
-                                            <input class="form-control" id="link2" name="link2"  value="<?php echo $verticalBardata->verticalBarLink2; ?>" type="text" required />
+                                            <input class="form-control" id="link2" name="link2" maxlength="500" value="<?php echo $verticalBardata->verticalBarLink2; ?>" type="text" required />
                                         </div>
 
                                         <label for="text2" class="control-label col-sm-2">text 2<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text2" id="text2" required><?php echo $verticalBardata->verticalBarText2; ?></textarea>
+                                            <textarea class="form-control" maxlength="255" name="text2" id="text2" required><?php echo $verticalBardata->verticalBarText2; ?></textarea>
                                         </div>
 
                                     </div>
@@ -121,7 +121,7 @@
                                         <label for="title3" class="control-label col-lg-2">Ttile 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title3'); ?></font></p>
-                                            <input class="form-control" id="title3" name="title3"  value="<?php echo $verticalBardata->verticalBarTitle3; ?>" type="text" required />
+                                            <input class="form-control" id="title3" maxlength="255" name="title3"  value="<?php echo $verticalBardata->verticalBarTitle3; ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 3</label>
@@ -138,12 +138,12 @@
                                         <label for="link3" class="control-label col-lg-2">Link 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link3'); ?></font></p>
-                                            <input class="form-control" id="link3" name="link3"  value="<?php echo $verticalBardata->verticalBarLink3; ?>" type="text" required />
+                                            <input class="form-control" id="link3" maxlength="500" name="link3"  value="<?php echo $verticalBardata->verticalBarLink3; ?>" type="text" required />
                                         </div>
 
                                         <label for="text3" class="control-label col-sm-2">text 3<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control" name="text3" id="text3" required><?php echo $verticalBardata->verticalBarText3; ?></textarea>
+                                            <textarea class="form-control" name="text3" maxlength="255" id="text3" required><?php echo $verticalBardata->verticalBarText3; ?></textarea>
                                         </div>
 
                                     </div>
@@ -153,7 +153,7 @@
                                         <label for="title4" class="control-label col-lg-2">Ttile 4<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('title4'); ?></font></p>
-                                            <input class="form-control" id="title4" name="title4"  value="<?php echo $verticalBardata->verticalBarTitle4; ?>" type="text" required />
+                                            <input class="form-control" id="title4" maxlength="255" name="title4"  value="<?php echo $verticalBardata->verticalBarTitle4; ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 4</label>
@@ -171,12 +171,12 @@
                                         <label for="link4" class="control-label col-lg-2">Link 4<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('link4'); ?></font></p>
-                                            <input class="form-control" id="link4" name="link4"  value="<?php echo $verticalBardata->verticalBarLink4; ?>" type="text" required />
+                                            <input class="form-control" id="link4" maxlength="500" name="link4"  value="<?php echo $verticalBardata->verticalBarLink4; ?>" type="text" required />
                                         </div>
 
                                         <label for="text4" class="control-label col-sm-2">text 4<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text4" id="text4" required><?php echo $verticalBardata->verticalBarText4; ?></textarea>
+                                            <textarea class="form-control " name="text4" maxlength="255" id="text4" required><?php echo $verticalBardata->verticalBarText4; ?></textarea>
                                         </div>
 
                                     </div>
@@ -257,20 +257,20 @@
             alert( 'Title4 must be less than 255 charecter!!' );
             return false;
         }
-        if(Link1.length >255) {
-            alert( 'Link1 must be less than 255 charecter!!' );
+        if(Link1.length >500) {
+            alert( 'Link1 must be less than 500 charecter!!' );
             return false;
         }
-        if(Link2.length >255) {
-            alert( 'Link2 must be less than 255 charecter!!' );
+        if(Link2.length >500) {
+            alert( 'Link2 must be less than 500 charecter!!' );
             return false;
         }
-        if(Link3.length >255) {
-            alert( 'Link3 must be less than 255 charecter!!' );
+        if(Link3.length >500) {
+            alert( 'Link3 must be less than 500 charecter!!' );
             return false;
         }
-        if(Link4.length >255) {
-            alert( 'Link4 must be less than 255 charecter!!' );
+        if(Link4.length >500) {
+            alert( 'Link4 must be less than 500 charecter!!' );
             return false;
         }
         if(Text1.length >255) {
