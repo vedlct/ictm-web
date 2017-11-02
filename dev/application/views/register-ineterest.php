@@ -1,6 +1,7 @@
 
         <?php include("header.php");
-
+        //require_once "recaptchalib.php";
+       // include ('recaptchalib.php');
         $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
             "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia",
             "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium",
@@ -67,7 +68,7 @@
 
                         	<form role="form" action="<?php echo  base_url()?>OnlineForms/insertRegisterInterest" method="post" class="registration-form form-horizontal">
                         		
-                        		<fieldset>
+
 		                        
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
@@ -116,12 +117,13 @@
                                             <label class="control-label col-md-2">Country</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                                <select style="width: 100%" name="country" form="carform">
+                                                <select style="width: 100%" name="country" >
                                                     <option value="#" selected disabled>Select...</option>
                                                     <?php foreach ($countries as $country){?>
                                                     <option value="<?php echo $country?>" <?php echo set_select('country',  $country, False); ?>><?php echo $country?></option>
                                                     <?php } ?>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -142,7 +144,7 @@
 				                    		<label class="control-label col-md-2">Course</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('course'); ?></font></p>
-                                                <select style="width: 100%" name="course" form="carform">
+                                                <select style="width: 100%" name="course" >
                                                     <option value="#" selected disabled>Select...</option>
                                                     <?php foreach ($course as $course) {?>
                                                     <option value="<?php echo $course->courseTitle?>" <?php echo set_select('course',  $course->courseTitle, False); ?>><?php echo $course->courseTitle?></option>
@@ -154,7 +156,7 @@
 				                    		<label class="control-label col-md-2">How did you hear about us*</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('hear'); ?></font></p>
-                                                <select style="width: 100%" name="hear" form="carform">
+                                                <select style="width: 100%" name="hear" >
                                                 	<option value="#" selected disabled>Select...</option>
                                                     <option value="Hotcourses">Hotcourses</option>
                                                     <option value="Whatuni">Whatuni</option>
@@ -187,9 +189,11 @@
 				                        </div>
                                         <div class="form-group">
 				                    		<label class="control-label col-md-2">Book appointment/open day</label>
+
 <!--                                            <div class="col-md-10">-->
 <!--				                        		<input type="text" name="appoinment" placeholder="" class="form-control" id="" value="--><?php //echo set_value('appoinment'); ?><!--">-->
 <!--                                            </div>-->
+
                                             <p><font color="red"> <?php echo form_error('appoinment'); ?></font></p>
                                             <div class='input-group date datetimepicker col-md-10' id='datetimepicker1'>
                                                 <input type='text' id="newsDate" name="appoinment" value="<?php echo set_value('appoinment'); ?>" class="form-control" required/>
@@ -197,7 +201,7 @@
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
                                             </div>
-                                            
+
 				                        </div>
                                         <div class="form-group">
 				                    		<label class="control-label col-md-2">Comments</label>
@@ -210,12 +214,12 @@
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
                                               <p><font color="red"> <?php echo form_error('newsStatus'); ?></font></p>
-                                            <button type="button" class="btn btn-next">Submit</button>
+                                            <button type="submit" class="btn btn-next">Submit</button>
                                           </div>
                                         </div>
 				                        
 				                    </div>
-			                    </fieldset>
+
 		                    </form>
 
                     </div><!-- /col-md-9 -->

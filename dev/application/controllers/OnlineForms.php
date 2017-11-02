@@ -37,6 +37,9 @@ class OnlineForms extends CI_Controller
 
     public function insertRegisterInterest(){
 
+       // echo  1;
+        $this->load->library('form_validation');
+        //require_once(APPPATH.'controllers/Email.php');
         if (!$this->form_validation->run('RegisterInterest')) {
 
 
@@ -44,7 +47,14 @@ class OnlineForms extends CI_Controller
 
         }
         else {
+            //echo 1;
             $this->data['error'] =$this->OnlineFormsm->insertRegisterInterest();
+       //  $this->Email->RegisterInsertEmail();
+            include APPPATH . 'controllers/Email.php';
+            $Email = new Email();
+            $Email->RegisterInsertEmail();
+           // $this->email->RegisterInsertEmail();
+           // Email::RegisterInsertEmail();
             if (empty($this->data['error'])) {
 
                 $this->session->set_flashdata('successMessage','Your Form Submit Successfully');
