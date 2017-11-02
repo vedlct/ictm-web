@@ -20,7 +20,7 @@ class OnlineFormsm extends CI_Model
         $hear= $this->input->post('hear');
         $other= $this->input->post('other');
         $disability= $this->input->post('disability');
-        $appoinment= $this->input->post('appoinment');
+        $appoinment= date('Y-m-d H:i:s', strtotime($this->input->post('appoinment')));
         $comments= $this->input->post('comments');
 
 

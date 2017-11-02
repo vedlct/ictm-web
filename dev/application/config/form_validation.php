@@ -42,7 +42,7 @@ $config = array (
         array(
             'field' => 'country',
             'label' => 'Country',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'phone',
@@ -57,12 +57,12 @@ $config = array (
         array(
             'field' => 'course',
             'label' => 'Course',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'hear',
             'label' => 'How did you hear about us*',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
 
         ),
         array(

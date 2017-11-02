@@ -1,8 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Email extends CI_Controller {
+class Email  {
 
-    public function index(){}
+
+   // public function index(){}
 
     public function contactEmail(){
 
@@ -16,6 +17,11 @@ class Email extends CI_Controller {
         $message .= "$this->input->post('comment') \r\n\n";
 
         mail($admin_email, $subject, $message , $email);
+    }
+    public function RegisterInsertEmail(){
+
+        echo 1;
+
     }
 
 }
