@@ -34,8 +34,8 @@
 
         ?>
 
-        <script src="<?php echo base_url()?>../<?php echo FOLDER_NAME?>/public/js/jquery-1.12.4.js"></script>
-        <link href="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+        <script src="<?php echo base_url()?><?php echo FOLDER_NAME?>/public/js/jquery-1.12.4.js"></script>
+        <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
@@ -228,8 +228,8 @@
         <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
 
 
-        <script type="text/javascript" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/public/js/moment.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>../<?php echo FOLDER_NAME ?>/public/js/datepicker.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/js/moment.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/js/datepicker.min.js"></script>
 
         <script type="text/javascript">
 
@@ -241,8 +241,10 @@
 
             });
         </script>
-                 
-    </div>
-</body>
+        <script>
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
 
-</html>
+        </script>
