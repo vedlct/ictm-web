@@ -35,10 +35,12 @@ class OnlineForms extends CI_Controller
 
     }
 
-    public function insertRegisterInterest(){
+    public function insertRegisterInterest()
+    {
 
+
+        $this->load->library('form_validation');
         if (!$this->form_validation->run('RegisterInterest')) {
-
 
          $this->registerInterest();
 
@@ -90,13 +92,13 @@ class OnlineForms extends CI_Controller
             if (empty($this->data['error'])) {
 
                 $this->session->set_flashdata('successMessage','Feedback given Successfully.Thak You For Your Feedback');
-                redirect('FeedBack');
+                redirect('Feedback');
 
             }
             else
             {
                 $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect('FeedBack');
+                redirect('Feedback');
 
             }
 
