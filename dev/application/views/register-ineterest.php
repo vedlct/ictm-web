@@ -241,8 +241,10 @@
 
             });
         </script>
-                 
-    </div>
-</body>
+        <script>
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
 
-</html>
+        </script>

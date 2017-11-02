@@ -17,6 +17,7 @@
 
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/bootstrap.css" >
+    <link rel="stylesheet" href="<?php echo base_url()?><?php FOLDER_NAME ?>/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/style.css">
@@ -36,6 +37,8 @@
 
     <!-- for Application Form -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/application-form-style.css">
+
+    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/elegant-icons-style.css" rel="stylesheet" />
 
 
 
