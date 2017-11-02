@@ -197,6 +197,7 @@
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
                                             </div>
+                                            
 				                        </div>
                                         <div class="form-group">
 				                    		<label class="control-label col-md-2">Comments</label>
