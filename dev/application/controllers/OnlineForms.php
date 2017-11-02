@@ -59,7 +59,7 @@ class OnlineForms extends CI_Controller
 
             }
         }
-        
+
     }
     public function applyNow() // go to the apply page of selected course
     {
