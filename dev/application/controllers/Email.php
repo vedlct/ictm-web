@@ -18,9 +18,13 @@ class Email  {
 
         mail($admin_email, $subject, $message , $email);
     }
-    public function RegisterInsertEmail(){
+    public function RegisterInsertEmail($subject, $email, $message){
 
-        echo 1;
+        $admin_email = "md.sakibrahman@gmail.com";
+
+        mail($admin_email, $subject, $message , $email);
+
+        return true;
 
     }
 

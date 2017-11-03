@@ -42,19 +42,56 @@ class OnlineForms extends CI_Controller
         //require_once(APPPATH.'controllers/Email.php');
         if (!$this->form_validation->run('RegisterInterest')) {
 
-
+         $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
          $this->registerInterest();
 
         }
         else {
-            //echo 1;
-            $this->data['error'] =$this->OnlineFormsm->insertRegisterInterest();
-       //  $this->Email->RegisterInsertEmail();
+
+            $title= $this->input->post('title');
+            $fname= $this->input->post('fname');
+            $sname= $this->input->post('sname');
+            $house= $this->input->post('house');
+            $street= $this->input->post('street');
+            $postcode= $this->input->post('postcode');
+            $city= $this->input->post('city');
+            $country= $this->input->post('country');
+            $phone= $this->input->post('phone');
+            $email= $this->input->post('email');
+            $course= $this->input->post('course');
+            $hear= $this->input->post('hear');
+            $other= $this->input->post('other');
+            $disability= $this->input->post('disability');
+            $appoinment= date('Y-m-d H:i:s', strtotime($this->input->post('appoinment')));
+            $comments= $this->input->post('comments');
+
+            $this->data['error'] =$this->OnlineFormsm->insertRegisterInterest($title, $fname,$sname,$house,$street,$postcode,$city,$country,$phone,$email,$course,$hear,$other,$disability,$appoinment,$comments);
+
+            $subject = "Register Interest";
+            $email = $this->input->post('email');
+
+            $message = "Title: $title \r\n\n";
+            $message .= "First Name: $fname \r\n\n";
+            $message .= "Name: $sname \r\n\n";
+            $message .= "Name: $house \r\n\n";
+            $message .= "Name: $street \r\n\n";
+            $message .= "Name: $postcode \r\n\n";
+            $message .= "Name: $city \r\n\n";
+            $message .= "Name: $country \r\n\n";
+            $message .= "Name: $phone \r\n\n";
+            $message .= "Name: $email \r\n\n";
+            $message .= "Name: $course \r\n\n";
+            $message .= "Name: $hear \r\n\n";
+            $message .= "Name: $other \r\n\n";
+            $message .= "Name: $disability \r\n\n";
+            $message .= "Name: $appoinment \r\n\n";
+            $message .= "Name: $comments \r\n\n";
+
             include APPPATH . 'controllers/Email.php';
             $Email = new Email();
-            $Email->RegisterInsertEmail();
-           // $this->email->RegisterInsertEmail();
-           // Email::RegisterInsertEmail();
+            $Email->RegisterInsertEmail($subject, $email, $message);
+            $this->email->RegisterInsertEmail();
+
             if (empty($this->data['error'])) {
 
                 $this->session->set_flashdata('successMessage','Your Form Submit Successfully');

@@ -4,27 +4,10 @@
 class OnlineFormsm extends CI_Model
 {
 
-    public function insertRegisterInterest(){
-
-
-        $fname= $this->input->post('fname');
-        $sname= $this->input->post('sname');
-        $house= $this->input->post('house');
-        $street= $this->input->post('street');
-        $postcode= $this->input->post('postcode');
-        $city= $this->input->post('city');
-        $country= $this->input->post('country');
-        $phone= $this->input->post('phone');
-        $email= $this->input->post('email');
-        $course= $this->input->post('course');
-        $hear= $this->input->post('hear');
-        $other= $this->input->post('other');
-        $disability= $this->input->post('disability');
-        $appoinment= date('Y-m-d H:i:s', strtotime($this->input->post('appoinment')));
-        $comments= $this->input->post('comments');
-
+    public function insertRegisterInterest($title, $fname,$sname,$house,$street,$postcode,$city,$country,$phone,$email,$course,$hear,$other,$disability,$appoinment,$comments){
 
         $data = array(
+            'title' => $title,
             'firstName' => $fname,
             'surName' => $sname,
             'House' => $house,
