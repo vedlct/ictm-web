@@ -34,9 +34,10 @@
             "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
 
         ?>
-
         <script src="<?php echo base_url()?><?php echo FOLDER_NAME?>/public/js/jquery-1.12.4.js"></script>
-        <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+        <link href="<?php echo base_url()?><?php echo FOLDER_NAME?>/public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+
+
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
@@ -59,6 +60,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+
                         <?php if ($this->session->flashdata('errorMessage')!=null){?>
                             <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
                         <?php }
@@ -135,8 +137,11 @@
                                                 <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                                 <select style="width: 100%" name="country" >
                                                     <option value="#" selected disabled>Select...</option>
+<!--                                                    --><?php //foreach ($countries as $country){?>
+<!--                                                    <option value="--><?php //echo $country?><!--" --><?php //echo set_select('country', $country, False); ?><!-->--><?php //echo $country?><!--</option>-->
+<!--                                                    --><?php //} ?>
                                                     <?php foreach ($countries as $country){?>
-                                                    <option value="<?php echo $country?>" <?php echo set_select('country',  $country, False); ?>><?php echo $country?></option>
+                                                        <option value="<?php echo $country?>" <?php echo set_select('country', $country, False); ?>><?php echo $country?></option>
                                                     <?php } ?>
                                                 </select>
 
@@ -160,19 +165,23 @@
 				                    		<label class="control-label col-md-2">Course</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('course'); ?></font></p>
+
                                                 <select style="width: 100%" name="course" >
                                                     <option value="#" selected disabled>Select...</option>
                                                     <?php foreach ($course as $course) {?>
                                                     <option value="<?php echo $course->courseTitle?>" <?php echo set_select('course',  $course->courseTitle, False); ?>><?php echo $course->courseTitle?></option>
                                                     <?php } ?>
                                                 </select>
+
                                             </div>
 				                        </div>
                                         <div class="form-group">
 				                    		<label class="control-label col-md-2">How did you hear about us*</label>
                                             <div class="col-md-10">
-                                                <p><font color="red"> <?php echo form_error('hear'); ?></font></p>
-                                                <select style="width: 100%" name="hear" >
+
+                                                <p><font color="red"> <?php echo form_error('hear');?></font></p>
+                                                <select style="width: 100%" name="hear">
+
                                                 	<option value="#" selected disabled>Select...</option>
                                                     <option value="Hotcourses">Hotcourses</option>
                                                     <option value="Whatuni">Whatuni</option>
@@ -229,7 +238,7 @@
                                         
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
-                                              <p><font color="red"> <?php echo form_error('newsStatus'); ?></font></p>
+
                                             <button type="submit" class="btn btn-next">Submit</button>
                                           </div>
                                         </div>
@@ -245,12 +254,12 @@
         </section>
 
 		<?php include("footer.php"); ?>
-        <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-        <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
-
 
         <script type="text/javascript" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/js/moment.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/js/datepicker.min.js"></script>
+
+<!--        <script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--        <script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
         <script type="text/javascript">
 
@@ -269,3 +278,4 @@
             });
 
         </script>
+
