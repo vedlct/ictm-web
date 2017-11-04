@@ -34,8 +34,8 @@
             "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
 
         ?>
-        <script src="<?php echo base_url()?><?php echo FOLDER_NAME?>/public/js/jquery-1.12.4.js"></script>
-        <link href="<?php echo base_url()?><?php echo FOLDER_NAME?>/public/css/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+<!--        <script src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME?><!--/public/js/jquery-1.12.4.js"></script>-->
+        <link href="<?php echo base_url()?>public/stylesheets/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
 
 
         <div class="page-title full-color">
@@ -70,7 +70,7 @@
 
                         	<form role="form" action="<?php echo  base_url()?>OnlineForms/insertRegisterInterest" method="post" class="registration-form form-horizontal">
 
-<!--		                            <div class="form-bottom">-->
+		                            <div class="form-bottom">
                                         <div class="form-group">
                                             <label class="control-label col-md-2">Title</label>
                                             <div class="col-md-10">
@@ -240,7 +240,7 @@
                                           </div>
                                         </div>
 				                        
-<!--				                    </div>-->
+				                    </div>
 
 		                    </form>
 
