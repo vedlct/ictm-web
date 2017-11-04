@@ -6,7 +6,7 @@ class RegisterInterest extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin/RegisterInterestm');
-       // $this->load->model('Admin/Photom');
+
         $this->load->library("pagination");
         $this->load->library('form_validation');
     }
@@ -29,6 +29,21 @@ class RegisterInterest extends CI_Controller
             $this->data["links"] = $this->pagination->create_links();
 
             $this->load->view('Admin/manageRegisterInterest', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function viewSelectedRI($riId){
+
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->data['allDataForRI'] =$this->RegisterInterestm->viewAllForSelectedRI($riId);
+            $this->load->view('Admin/ViewRegisterInterest',$this->data);
+
 
         }
         else{

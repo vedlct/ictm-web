@@ -27,8 +27,8 @@
                     <h3 class="page-header"><i class="fa fa-table"></i> Page</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
-                        <li><i class="fa fa-table"></i>Page</li>
-                        <li><i class="fa fa-th-list"></i>Manage Page</li>
+                        <li><i class="fa fa-table"></i>Manage RegisterInterest</li>
+
                     </ol>
                 </div>
             </div>
@@ -42,7 +42,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage Page
+                            Manage RegisterInterest
                             <span align="">
                                  <a href="<?php echo base_url()?>Admin/Page/createPage"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Page</button> </a>
                             </span>
@@ -77,7 +77,7 @@
                                                 <td>
                                                     <div class="btn-group">
 
-                                                        <a class="btn" href="<?php echo base_url()?>Admin/Page/editPageShow/<?php echo $pd->registerInterestId?>"><i class="icon_pencil-edit"></i></a>
+                                                        <a class="btn" href="<?php echo base_url()?>Admin/RegisterInterest/viewSelectedRI/<?php echo $pd->registerInterestId?>"><i class="icon_pencil-edit"></i></a>
                                                         <a class="btn " data-panel-id="<?php echo $pd->registerInterestId ?>"  onclick='return confirm("Are you sure to Delete This Page?")' href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->registerInterestId?>"><i class="icon_trash"></i></a>
 
                                                     </div>

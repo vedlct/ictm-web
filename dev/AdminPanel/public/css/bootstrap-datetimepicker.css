@@ -372,3 +372,24 @@
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
+/* added by rumi  for date picker in registerInterent form */
+
+.prev,
+.next {
+  cursor: none;
+  position: absolute;
+  top: 0%;
+  width: 1px;
+  height: 1px;
+  padding: 0px;
+  margin-top: 0px;
+  margin-left: -1px;
+  color: #337ab7;
+  font-weight: bold;
+  font-size: 20px;
+  transition: none;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
