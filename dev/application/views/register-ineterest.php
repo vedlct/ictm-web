@@ -70,10 +70,7 @@
 
                         	<form role="form" action="<?php echo  base_url()?>OnlineForms/insertRegisterInterest" method="post" class="registration-form form-horizontal">
 
-
-
-		                        
-		                            <div class="form-bottom">
+<!--		                            <div class="form-bottom">-->
                                         <div class="form-group">
                                             <label class="control-label col-md-2">Title</label>
                                             <div class="col-md-10">
@@ -243,7 +240,7 @@
                                           </div>
                                         </div>
 				                        
-				                    </div>
+<!--				                    </div>-->
 
 		                    </form>
 
