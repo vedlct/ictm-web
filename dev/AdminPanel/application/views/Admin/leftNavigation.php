@@ -188,6 +188,14 @@
             </li>
 
             <li class="sub-menu">
+                <a href="<?php echo base_url()?>Admin/RegisterInterest/viewRI" class="">
+                    <i class="icon_info"></i>
+                    <span>Register Interest</span>
+
+                </a>
+
+            </li>
+            <li class="sub-menu">
                 <a href="<?php echo base_url()?>Admin/CollegeInfo/createCollegeInfo" class="">
                     <i class="icon_info"></i>
                     <span>College Info</span>
