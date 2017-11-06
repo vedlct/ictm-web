@@ -1,22 +1,49 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class Email  {
 
+    public function __construct()
+    {
+        parent::__construct();
+
+        $this->load->libraries('recaptchalip');
+    }
 
    // public function index(){}
 
-    public function contactEmail(){
+    public function contactEmail()
+    {
+        $secret = "6LdVdC8UAAAAAJBVvMe6oQ_Kq7Gd4MdwH3mDSCzX";
 
-        //extract($_POST);
-        $admin_email = "md.sakibrahman@gmail.com";
-        $subject = $this->input->post('subject');
-       // $message = "name: ".$this->input->post('name')."<br>".$this->input->post('comment');
-        $email = $this->input->post('email');
+        // empty response
+        $response = null;
 
-        $message = "Name: $this->input->post('name') \r\n\n";
-        $message .= "$this->input->post('comment') \r\n\n";
+        // check secret key
+        $reCaptcha = new ReCaptcha($secret);
 
-        mail($admin_email, $subject, $message , $email);
+        if ($_POST["g-recaptcha-response"]) {
+            $response = $reCaptcha->verifyResponse(
+                $_SERVER["REMOTE_ADDR"],
+                $_POST["g-recaptcha-response"]
+            );
+        }
+
+        if ($response != null && $response->success) {
+            //extract($_POST);
+            $admin_email = "md.sakibrahman@gmail.com";
+            $subject = $this->input->post('subject');
+            // $message = "name: ".$this->input->post('name')."<br>".$this->input->post('comment');
+            $email = $this->input->post('email');
+
+            $message = "Name: $this->input->post('name') \r\n\n";
+            $message .= "$this->input->post('comment') \r\n\n";
+
+            mail($admin_email, $subject, $message, $email);
+        } else {
+
+            echo("<script>alert('Please fill the Captcha Box');</script>");
+        }
     }
     public function RegisterInsertEmail($subject, $email, $message){
 
@@ -27,6 +54,8 @@ class Email  {
         return true;
 
     }
+
+
 
 }
 ?>

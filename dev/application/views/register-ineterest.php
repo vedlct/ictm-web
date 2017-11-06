@@ -216,11 +216,11 @@
 <!--				                        		<input type="text" name="appoinment" placeholder="" class="form-control" id="" value="--><?php //echo set_value('appoinment'); ?><!--">-->
 <!--                                            </div>-->
 
-                                            <p><font color="red"> <?php echo form_error('appoinment'); ?></font></p>
-                                            <div class='input-group date datetimepicker col-md-10' id='datetimepicker1'>
-                                                <input type='text' id="newsDate" name="appoinment" value="<?php echo set_value('appoinment'); ?>" class="form-control" required/>
+<!--                                            <p><font color="red"> --><?php //echo form_error('appoinment'); ?><!--</font></p>-->
+                                            <div  class='input-group date datetimepicker col-md-6' id='datetimepicker1'>
+                                                <input style="margin-left: 14px" type='text' id="newsDate" name="appoinment" value="<?php echo set_value('appoinment'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
-                                                <span class="glyphicon glyphicon-calendar"></span>
+                                                <span style="margin-left: 14px" class="glyphicon glyphicon-calendar"></span>
                                                 </span>
                                             </div>
 
