@@ -1,7 +1,7 @@
 
         <?php include("header.php");
-        //require_once "recaptchalib.php";
-       // include ('recaptchalib.php');
+        //require_once "Recaptchalib.php";
+       // include ('Recaptchalib.php');
         $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
             "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia",
             "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium",

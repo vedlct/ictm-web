@@ -1,19 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Email  {
+class Email extends CI_Controller {
 
-    public function __construct()
-    {
-        parent::__construct();
-
-        $this->load->libraries('recaptchalip');
-    }
 
    // public function index(){}
 
     public function contactEmail()
     {
+        include APPPATH . 'controllers/Recaptchalib.php';
+        $reCaptchalip = new $reCaptchalib();
         $secret = "6LdVdC8UAAAAAJBVvMe6oQ_Kq7Gd4MdwH3mDSCzX";
 
         // empty response
