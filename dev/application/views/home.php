@@ -7,7 +7,7 @@
 
             <?php foreach ($home as $hm) {?>
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage1?>" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage1?>" alt="slider-image">
 
                 <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div  class="title main-color-1 font-2"style="margin-top:-15px"><?php echo $hm->slideText1;?></div>
@@ -18,7 +18,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage2?>" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage2?>" alt="slider-image">
 
                 <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div  class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText2;?></div>
@@ -26,7 +26,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage3?>" alt="slider-image">
+                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage3?>" alt="slider-image">
 
                 <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div  class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText3;?></div>
