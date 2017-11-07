@@ -10,17 +10,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <?php break;}?>
 
-        <script>
-            upDownleyout = function() {
-                if($(window).width() < 768) {
-                    $( "#termsinner" ).prependTo( $( "#maincontainerright" ) );
-                }else{
-                    $( "#termsinner" ).appendTo( $( "#maincontainerright" ) );
-                }
-            }
-            $(document).ready(upDownleyout);
-            $(window).resize(upDownleyout);
-        </script>
         
     </head>
 </div>

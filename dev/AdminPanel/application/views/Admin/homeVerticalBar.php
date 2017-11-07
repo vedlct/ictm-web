@@ -36,7 +36,7 @@
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
             <?php }
             if (!empty(validation_errors())){?>
-                <div class="alert alert-danger" align="center"><strong><?php echo validation_errors();?></strong></div>
+                <div class="alert alert-danger" align="center"><strong><?php echo form_error('image[]');?></strong></div>
             <?php } ?>
 
             <!-- page start-->
@@ -54,15 +54,15 @@
 
                                         <label for="title1" class="control-label col-lg-2">Ttile 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('title[]'); ?></font></p>
-                                            <input class="form-control" id="title[]" name="title[]"  value="<?php echo set_value('title[0]'); ?>" type="text" required/>
+                                            <p><font color="red"> <?php echo form_error('title1'); ?></font></p>
+                                            <input class="form-control" id="title1" name="title1" maxlength="255" value="<?php echo set_value('title1'); ?>" type="text" required/>
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp;<strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[0]" id="image[0]"required>
+                                            <input class="form-control" type="file" name="image[]" id="image[0]"required>
 
                                         </div>
                                     </div>
@@ -70,13 +70,13 @@
 
                                         <label for="link1" class="control-label col-lg-2">Link 1<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('link[0]'); ?></font></p>
-                                            <input class="form-control" id="title[0]" name="link[]"  value="<?php echo set_value('link[0]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('link1'); ?></font></p>
+                                            <input class="form-control" id="link1" name="link1"  maxlength="500" value="<?php echo set_value('link1'); ?>" type="text" required />
                                         </div>
 
                                         <label for="photoDetails" class="control-label col-sm-2">text 1<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text[]" id="text[0]" required><?php echo set_value('text[0]'); ?></textarea>
+                                            <textarea class="form-control " name="text1" id="text1" maxlength="255" required><?php echo set_value('text1'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -85,8 +85,8 @@
 
                                         <label for="title2" class="control-label col-lg-2">Ttile 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('title[]'); ?></font></p>
-                                            <input class="form-control" id="title[1]" name="title[]"  value="<?php echo set_value('title[1]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('title2'); ?></font></p>
+                                            <input class="form-control" id="title2" name="title2" maxlength="255" value="<?php echo set_value('title2'); ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 2<span class="required">*</span></label>
@@ -102,13 +102,13 @@
 
                                         <label for="link2" class="control-label col-lg-2">Link 2<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('link[1]'); ?></font></p>
-                                            <input class="form-control" id="link[1]" name="link[]"  value="<?php echo set_value('link[1]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('link2'); ?></font></p>
+                                            <input class="form-control" id="link2" name="link2" maxlength="500" value="<?php echo set_value('link2'); ?>" type="text" required />
                                         </div>
 
-                                        <label for="photoDetails" class="control-label col-sm-2">text 2<span class="required">*</span></label>
+                                        <label for="text2" class="control-label col-sm-2">text 2<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text[]" id="text[1]" required><?php echo set_value('text[1]'); ?></textarea>
+                                            <textarea class="form-control " name="text2" id="text2" maxlength="255" required><?php echo set_value('text2'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -117,8 +117,8 @@
 
                                         <label for="title3" class="control-label col-lg-2">Ttile 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('title[2]'); ?></font></p>
-                                            <input class="form-control" id="title[2]" name="title[]"  value="<?php echo set_value('title[2]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('title3'); ?></font></p>
+                                            <input class="form-control" id="title3" name="title3" maxlength="255" value="<?php echo set_value('title3'); ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 3<span class="required">*</span></label>
@@ -134,13 +134,13 @@
 
                                         <label for="link3" class="control-label col-lg-2">Link 3<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('link[2]'); ?></font></p>
-                                            <input class="form-control" id="link[2]" name="link[]"  value="<?php echo set_value('link[2]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('link3'); ?></font></p>
+                                            <input class="form-control" id="link3" name="link3" maxlength="500" value="<?php echo set_value('link3'); ?>" type="text" required />
                                         </div>
 
                                         <label for="text3" class="control-label col-sm-2">text 3<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control" name="text[]" id="text[2]" required><?php echo set_value('text[2]'); ?></textarea>
+                                            <textarea class="form-control" name="text3" id="text3" maxlength="255" required><?php echo set_value('text3'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -149,8 +149,8 @@
 
                                         <label for="title4" class="control-label col-lg-2">Ttile 4<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('title[3]'); ?></font></p>
-                                            <input class="form-control" id="title[3]" name="title[]"  value="<?php echo set_value('title[3]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('title4'); ?></font></p>
+                                            <input class="form-control" id="title4" name="title4" maxlength="255" value="<?php echo set_value('title4'); ?>" type="text" required />
                                         </div>
 
                                         <label for="facultyImage" class="control-label col-sm-2">Image 4<span class="required">*</span></label>
@@ -166,13 +166,13 @@
 
                                         <label for="link4" class="control-label col-lg-2">Link 4<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('link[3]'); ?></font></p>
-                                            <input class="form-control" id="link[3]" name="link[]"  value="<?php echo set_value('link[3]'); ?>" type="text" required />
+                                            <p><font color="red"> <?php echo form_error('link4'); ?></font></p>
+                                            <input class="form-control" id="link4" name="link4"maxlength="500"  value="<?php echo set_value('link4'); ?>" type="text" required />
                                         </div>
 
                                         <label for="text4" class="control-label col-sm-2">text 4<span class="required">*</span></label>
                                         <div class="col-sm-4">
-                                            <textarea class="form-control " name="text[]" id="text[3]" required><?php echo set_value('text[3]'); ?></textarea>
+                                            <textarea class="form-control " name="text4" id="text4" maxlength="255" required><?php echo set_value('text4'); ?></textarea>
                                         </div>
 
                                     </div>
@@ -220,28 +220,73 @@
 
     function submitform(){
 
-        var Title = document.verticleBar.elements["title[]"];
+
         var Image = document.verticleBar.elements["image[]"];
-        var link = document.verticleBar.elements["link[]"];
-        var Text = document.verticleBar.elements["text[]"];
+
+        var Title1=document.getElementById("title1").value;
+        var Title2=document.getElementById("title2").value;
+        var Title3=document.getElementById("title3").value;
+        var Title4=document.getElementById("title4").value;
+        var Link1=document.getElementById("link1").value;
+        var Link2=document.getElementById("link2").value;
+        var Link3=document.getElementById("link3").value;
+        var Link4=document.getElementById("link4").value;
+        var Text1=document.getElementById("text1").value;
+        var Text2=document.getElementById("text2").value;
+        var Text3=document.getElementById("text3").value;
+        var Text4=document.getElementById("text4").value;
+
+        if(Title1.length >255) {
+            alert( 'Title1 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Title2.length >255) {
+            alert( 'Title2 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Title3.length >255) {
+            alert( 'Title3 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Title4.length >255) {
+            alert( 'Title4 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Link1.length >500) {
+            alert( 'Link1 must be less than 500 charecter!!' );
+            return false;
+        }
+        if(Link2.length >500) {
+            alert( 'Link2 must be less than 500 charecter!!' );
+            return false;
+        }
+        if(Link3.length >500) {
+            alert( 'Link3 must be less than 500 charecter!!' );
+            return false;
+        }
+        if(Link4.length >500) {
+            alert( 'Link4 must be less than 500 charecter!!' );
+            return false;
+        }
+        if(Text1.length >255) {
+            alert( 'Text1 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Text2.length >255) {
+            alert( 'Text2 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Text3.length >255) {
+            alert( 'Text3 must be less than 255 charecter!!' );
+            return false;
+        }
+        if(Text4.length >255) {
+            alert( 'Text4 must be less than 255 charecter!!' );
+            return false;
+        }
 
         for (var i=0;i<Title.length;i++)
         {
-            if (Title[i].value == '')
-            {
-                alert( 'Title'+(i+1)+'must be less than 255 charecter!!' );
-                return false;
-            }
-            if (link[i].value == '')
-            {
-                alert( 'Link'+(i+1)+'must be less than 255 charecter!!' );
-                return false;
-            }
-            if (Text[i].value == '')
-            {
-                alert( 'Text'+(i+1)+'must be less than 255 charecter!!' );
-                return false;
-            }
             if (Image[i].value == '')
             {
                 alert( 'Please Select a Image in Image field Image'+(i+1));

@@ -28,7 +28,7 @@
                                 <div class="col-md-6">
                                     <div class="contact-form">
 
-                                        <form action="#" method="post" id="contactform" class="comment-form" novalidate>                            
+                                        <form action="<?php echo base_url()?>Email/contactEmail" method="post" id="contactform" class="comment-form" novalidate>
                                             <fieldset class="style-1 full-name">
                                                 <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>

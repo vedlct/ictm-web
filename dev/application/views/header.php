@@ -16,16 +16,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Bootstrap  -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/bootstrap.css" >
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
+    <link rel="stylesheet" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>
+
+
+
+    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+
+    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/font-awesome.min.css" rel="stylesheet" />
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/style.css">
 
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
-
-    <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/color1.css" >
+    
 
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
@@ -36,6 +43,8 @@
 
     <!-- for Application Form -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/application-form-style.css">
+
+    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/elegant-icons-style.css" rel="stylesheet" />
 
 
 
@@ -50,6 +59,8 @@
     <script src="<?php echo base_url()?>public/javascript/html5shiv.js"></script>
     <script src="<?php echo base_url()?>public/javascript/respond.min.js"></script>
     <![endif]-->
+
+
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
