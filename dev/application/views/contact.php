@@ -45,7 +45,7 @@
                                                 <textarea id="comment-message" placeholder="Your Message" name="comment" rows="8" tabindex="4"></textarea>
                                             </fieldset>
 
-                                            <div class="g-recaptcha" data-sitekey="6LdVdC8UAAAAAJBVvMe6oQ_Kq7Gd4MdwH3mDSCzX"></div><br>
+                                            <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style style-v1">Send <i class="fa fa-angle-right"></i></button>
                                             </div>             

@@ -1,31 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Email extends CI_Controller {
+class Email  {
+    public function __construct()
+    {
+        parent::__construct();
 
+        $this->load->library('recaptcha');
+    }
 
    // public function index(){}
 
     public function contactEmail()
     {
-        include APPPATH . 'controllers/Recaptchalib.php';
-        $reCaptchalip = new $reCaptchalib();
-        $secret = "6LdVdC8UAAAAAJBVvMe6oQ_Kq7Gd4MdwH3mDSCzX";
-
-        // empty response
-        $response = null;
-
-        // check secret key
-        $reCaptcha = new ReCaptcha($secret);
-
-        if ($_POST["g-recaptcha-response"]) {
-            $response = $reCaptcha->verifyResponse(
-                $_SERVER["REMOTE_ADDR"],
-                $_POST["g-recaptcha-response"]
-            );
-        }
-
-        if ($response != null && $response->success) {
+        $recaptcha = $this->input->post('g-recaptcha-response');
+        $response = $this->recaptcha->verifyResponse($recaptcha);
+        if (isset($response['success']) and $response['success'] === true) {
             //extract($_POST);
             $admin_email = "md.sakibrahman@gmail.com";
             $subject = $this->input->post('subject');
@@ -36,9 +26,9 @@ class Email extends CI_Controller {
             $message .= "$this->input->post('comment') \r\n\n";
 
             mail($admin_email, $subject, $message, $email);
-        } else {
 
-            echo("<script>alert('Please fill the Captcha Box');</script>");
+    }else{
+        echo "<script>alert('Please select the recaptcha')</script>";
         }
     }
     public function RegisterInsertEmail($subject, $email, $message){
