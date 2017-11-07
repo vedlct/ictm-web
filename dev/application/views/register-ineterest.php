@@ -1,5 +1,6 @@
 
         <?php include("header.php");
+
         //require_once "Recaptchalib.php";
        // include ('Recaptchalib.php');
         $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola",
@@ -36,6 +37,7 @@
         ?>
 <!--        <script src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME?><!--/public/js/jquery-1.12.4.js"></script>-->
         <link href="<?php echo base_url()?>public/stylesheets/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
+        <script src='https://www.google.com/recaptcha/api.js'></script>
 
 
         <div class="page-title full-color">
@@ -232,7 +234,7 @@
 				                        		<textarea name="comments" class="form-control" id=""><?php echo set_value('comments'); ?></textarea>
                                             </div>
 				                        </div>
-                                        
+                                        <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
 

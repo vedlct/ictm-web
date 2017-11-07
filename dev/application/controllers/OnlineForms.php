@@ -40,69 +40,75 @@ class OnlineForms extends CI_Controller
 
         } else {
 
-            $title = $this->input->post('title');
-            $fname = $this->input->post('fname');
-            $sname = $this->input->post('sname');
-            $house = $this->input->post('house');
-            $street = $this->input->post('street');
-            $postcode = $this->input->post('postcode');
-            $city = $this->input->post('city');
-            $country = $this->input->post('country');
-            $phone = $this->input->post('phone');
-            $email = $this->input->post('email');
-            $course = $this->input->post('course');
-            $hear = $this->input->post('hear');
-            $other = $this->input->post('other');
-            $disability = $this->input->post('disability');
-            $appoinment = date('Y-m-d H:i:s', strtotime($this->input->post('appoinment')));
-            $comments = $this->input->post('comments');
+            $this->load->library('recaptcha');
+            $recaptcha = $this->input->post('g-recaptcha-response');
+            $response = $this->recaptcha->verifyResponse($recaptcha);
+            if (isset($response['success']) and $response['success'] === true) {
 
-            $this->data['error'] = $this->OnlineFormsm->insertRegisterInterest($title, $fname, $sname, $house, $street, $postcode, $city, $country, $phone, $email, $course, $hear, $other, $disability, $appoinment, $comments);
+                $title = $this->input->post('title');
+                $fname = $this->input->post('fname');
+                $sname = $this->input->post('sname');
+                $house = $this->input->post('house');
+                $street = $this->input->post('street');
+                $postcode = $this->input->post('postcode');
+                $city = $this->input->post('city');
+                $country = $this->input->post('country');
+                $phone = $this->input->post('phone');
+                $email = $this->input->post('email');
+                $course = $this->input->post('course');
+                $hear = $this->input->post('hear');
+                $other = $this->input->post('other');
+                $disability = $this->input->post('disability');
+                $appoinment = date('Y-m-d H:i:s', strtotime($this->input->post('appoinment')));
+                $comments = $this->input->post('comments');
 
-            $subject = "Register Interest";
-            $email = $this->input->post('email');
+                $this->data['error'] = $this->OnlineFormsm->insertRegisterInterest($title, $fname, $sname, $house, $street, $postcode, $city, $country, $phone, $email, $course, $hear, $other, $disability, $appoinment, $comments);
 
-            $message = "Title: $title \r\n\n";
-            $message .= "First Name: $fname \r\n\n";
-            $message .= "Name: $sname \r\n\n";
-            $message .= "Name: $house \r\n\n";
-            $message .= "Name: $street \r\n\n";
-            $message .= "Name: $postcode \r\n\n";
-            $message .= "Name: $city \r\n\n";
-            $message .= "Name: $country \r\n\n";
-            $message .= "Name: $phone \r\n\n";
-            $message .= "Name: $email \r\n\n";
-            $message .= "Name: $course \r\n\n";
-            $message .= "Name: $hear \r\n\n";
-            $message .= "Name: $other \r\n\n";
-            $message .= "Name: $disability \r\n\n";
-            $message .= "Name: $appoinment \r\n\n";
-            $message .= "Name: $comments \r\n\n";
+                $subject = "Register Interest";
+                $email = $this->input->post('email');
 
-            include APPPATH . 'controllers/Email.php';
-            $Email = new Email();
-            $Email->RegisterInsertEmail($subject, $email, $message);
-            $this->email->RegisterInsertEmail();
+                $message = "Title: $title \r\n\n";
+                $message .= "First Name: $fname \r\n\n";
+                $message .= "Name: $sname \r\n\n";
+                $message .= "Name: $house \r\n\n";
+                $message .= "Name: $street \r\n\n";
+                $message .= "Name: $postcode \r\n\n";
+                $message .= "Name: $city \r\n\n";
+                $message .= "Name: $country \r\n\n";
+                $message .= "Name: $phone \r\n\n";
+                $message .= "Name: $email \r\n\n";
+                $message .= "Name: $course \r\n\n";
+                $message .= "Name: $hear \r\n\n";
+                $message .= "Name: $other \r\n\n";
+                $message .= "Name: $disability \r\n\n";
+                $message .= "Name: $appoinment \r\n\n";
+                $message .= "Name: $comments \r\n\n";
 
-
-            $this->registerInterest();
-
-           
-            $this->data['error'] =$this->OnlineFormsm->insertRegisterInterest();
-
-            include APPPATH . 'controllers/Email.php';
-            $Email = new Email();
-            $Email->RegisterInsertEmail();
+//            include APPPATH . 'controllers/Email.php';
+//            $Email = new Email();
+//            $Email->RegisterInsertEmail($subject, $email, $message);
+//            $this->email->RegisterInsertEmail();
 
 
-            if (empty($this->data['error'])) {
-                $this->session->set_flashdata('successMessage','Your Form Submit Successfully');
-                redirect('OnlineForms/registerInterest');
-            }
-            else
-            {
-                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect('OnlineForms/registerInterest');
+                $this->registerInterest();
+
+
+                $this->data['error'] = $this->OnlineFormsm->insertRegisterInterest();
+
+                $admin_email = "md.sakibrahman@gmail.com";
+
+                mail(ADMIN_EMAIL, $subject, $message, $email);
+
+
+                if (empty($this->data['error'])) {
+                    $this->session->set_flashdata('successMessage', 'Your Form Submit Successfully');
+                    redirect('OnlineForms/registerInterest');
+                } else {
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('OnlineForms/registerInterest');
+                }
+            }else {
+                echo "<script>alert('Please select the recaptcha')</script>";
             }
         }
     }
@@ -173,4 +179,5 @@ class OnlineForms extends CI_Controller
             }
         }
     }
+
 }
