@@ -28,7 +28,7 @@
                     <div class="post-item row">
                         <div class="col-md-6 col-sm-12">
                             <div class="content-pad">
-                                <div class="item-thumbnail">
+                                <div id="itmthumb" class="item-thumbnail">
                                     <?php
                                     if ($dp->departmentImage == null){ ?>
 
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <div class="content-pad">
+                            <div id="itmtitle" class="content-pad">
                                 <div class="item-content">
                                     <h3 class="item-title">
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>" title="Your Career Starts Here"

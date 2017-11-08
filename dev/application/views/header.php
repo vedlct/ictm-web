@@ -63,7 +63,7 @@
 
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
+<!--    <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
 
 
 </head>

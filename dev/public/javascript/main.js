@@ -376,15 +376,7 @@
     };
     
 
-        $upDownleyout = function() {
-        if($(window).width() < 1064) {
-            $( "#termsinner" ).prependTo( $( ".content-course" ) );
-        }else{
-            $( "#termsinner" ).appendTo( $( ".content-course" ) );
-        }
-    }
-    $(document).ready(upDownleyout);
-    $(window).resize(upDownleyout);
+
 
 
     var detectViewport = function() {
