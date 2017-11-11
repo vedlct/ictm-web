@@ -35,12 +35,12 @@
                                             <div class="content-pad">
                                                 <div class="blog-thumbnail" style="width: 409px; height: 258px;">
                                                     <div class="item-thumbnail-gallery">
-                                                        <div class="item-thumbnail" >
+                                                        <div class="item-thumbnail newwss" >
                                                             <a href="<?php echo base_url()?>News-Details/<?php echo $n->newsId?>">
                                                                 <?php if ($n->newsPhoto !=null) {?>
                                                                     <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/<?php echo $n->newsPhoto?>"  style = "width: 409px; height: 258px;" alt = "image" >
                                                                 <?php } else {?>
-                                                                    <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.JPG"  style = "width: 409px; height: 258px;" alt = "image" >
+                                                                    <img src = "<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/newsImages/noImage.jpg"  style = "width: 409px; height: 258px;" alt = "image" >
                                                                 <?php }?>
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
