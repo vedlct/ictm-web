@@ -90,11 +90,6 @@ class OnlineForms extends CI_Controller
 //            $this->email->RegisterInsertEmail();
 
 
-                $this->registerInterest();
-
-
-                $this->data['error'] = $this->OnlineFormsm->insertRegisterInterest();
-
                 $admin_email = "md.sakibrahman@gmail.com";
 
                 mail(ADMIN_EMAIL, $subject, $message, $email);
@@ -135,12 +130,12 @@ class OnlineForms extends CI_Controller
             $this->data['error'] = $this->OnlineFormsm->sendFeedback();
             if (empty($this->data['error'])) {
                 $this->session->set_flashdata('successMessage','Feedback given Successfully.Thak You For Your Feedback');
-                redirect('FeedBack');
+                redirect('Feedback');
             }
             else
             {
                 $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect('FeedBack');
+                redirect('Feedback');
             }
         }
     }

@@ -22,6 +22,9 @@
     .news {
         margin-left: 58px;
     }
+	.newwss {
+		margin-left: -40px;
+	}
 
     .content-pad {
         margin-left: 65px;
@@ -45,6 +48,9 @@
     .news {
         margin-left: 58px;
     }
+	.newwss {
+		margin-left: -68px;
+	}
 
     .content-pad {
         margin-left: 65px;
@@ -78,6 +84,9 @@
 		margin-left: -570px !important;
 	}
 
+	.newwss {
+		margin-left: -68px;
+	}
     .content-content {
         margin-left: -65px;
     }
@@ -140,13 +149,18 @@
         display: none;
     }
     
-    .item-thumbnail {
+    #itmthumb {
         margin-left: -40px;
     }
-
+	#itmtitle {
+		margin-left: 25px;
+	}
     .news {
         margin-left: -40px;
     }
+	.newwss {
+		margin-left: -40px;
+	}
 
 	#logo img {
 		height: 80px;
@@ -575,7 +589,7 @@
 }
 
 /* Tablet Landscape */
-@media only screen (max-device-width : 1024px) and (orientation : landscape) {
+@media only screen and (max-device-width : 1024px) and (orientation : landscape) {
 
     .post-scroller-wrap {
         background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
