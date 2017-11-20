@@ -53,6 +53,17 @@
                         </header>
                         <div class="panel-body ">
                             <div class="table table-responsive">
+
+                                <form method="post" action="<?php echo base_url()?>Admin/Menu/searchByTitleMenu">
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Search By Title</label>
+                                        <input type="text" class="form-control col-md-6" id="title" name="title">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <button style="margin-top: 23px" type="submit" class="btn btn-default">Submit</button>
+                                    </div>
+
+                                </form>
                             <table class="table table-striped table-advance  table-bordered table-hover ">
                                 <tbody>
                                 <tr>
@@ -120,8 +131,9 @@
                                 </tbody>
                             </table>
                             </div>
+
                             <div class="pagination2" align="center">
-                                <a href="#"><?php echo $links?></a>
+                                <a href="#"><?php  echo $links?></a>
                             </div>
                         </div>
                         <div id="edit"></div>
