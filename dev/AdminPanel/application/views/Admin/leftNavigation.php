@@ -101,17 +101,17 @@
                 </ul>
             </li>
 
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_group"></i>
-                    <span>Users</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="#">New User Roles</a></li>
-                    <li><a class="" href="#">Manage User Roles</a></li>
-                </ul>
-            </li>
+<!--            <li class="sub-menu">-->
+<!--                <a href="javascript:;" class="">-->
+<!--                    <i class="icon_group"></i>-->
+<!--                    <span>Users</span>-->
+<!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
+<!--                </a>-->
+<!--                <ul class="sub">-->
+<!--                    <li><a class="" href="#">New User Roles</a></li>-->
+<!--                    <li><a class="" href="#">Manage User Roles</a></li>-->
+<!--                </ul>-->
+<!--            </li>-->
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_clock"></i>

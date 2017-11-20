@@ -179,6 +179,7 @@ class Course extends CI_Controller
 
             $name = array();
             $coursedata = $this->data['coursedata'];
+
             if (empty($coursedata)) {
                 $this->Coursem->deleteCoursebyId($courseId);
 
@@ -195,7 +196,9 @@ class Course extends CI_Controller
                 ?>
                 <script type='text/javascript'>
                     var x =<?php echo json_encode($name) ?>;
-                    alert('Please Delete ( ' + x + ' ) First');
+                      alert('Please Delete Course Section( ' + x +' ) First');
+
+
                 </script>
 
                 <?php
