@@ -104,6 +104,21 @@ class Menu extends CI_Controller {
         }
     }
 
+    public function searchByTitleMenu(){
+        if ($this->session->userdata('type') == USER_TYPE[0])
+        {
+        $title = $this->input->post('title');
+        $this->data["links"] = null;
+        $this->data["menu"] = $this->Menum->getAllforManageMenuSearchByTitle($title);
+
+        $this->load->view('Admin/manageMenu',$this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
     // for edit menu view
     public function editMenuView($menuId)
     {

@@ -36,7 +36,7 @@
                                                     <?php if ($listOfFaculty->facultyImage !=null){?>
                                                     <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $listOfFaculty->facultyImage?>" alt="image"></a>
                                                     <?php }else{?>
-                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
+                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.png" alt="image"></a>
                                                     <?php } ?>
                                                 </div><!-- /item-thumbnail -->
         

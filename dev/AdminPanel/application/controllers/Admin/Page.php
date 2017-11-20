@@ -83,6 +83,23 @@ class Page extends CI_Controller {
             redirect('Admin/Login');
         }
     }
+    public function searchByTitlPage()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $title = $this->input->post('title');
+            $this->data["links"] = null;
+            $this->data["pageData"] = $this->Pagem->getPagaDataSearchBytitle($title);
+
+            $this->load->view('Admin/managePage', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
 
     //this will show edit page with data
     public function editPageShow($id)

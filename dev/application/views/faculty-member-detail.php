@@ -36,7 +36,7 @@
                                             <?php if ($facultyinfo->facultyImage !=null){?>
                                                 <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
                                             <?php }else{?>
-                                                    <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
+                                                    <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.png" alt="image"></a>
                                                 <?php } ?>
                                         </div>
                                     </div>
