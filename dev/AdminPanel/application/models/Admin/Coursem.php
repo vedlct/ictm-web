@@ -382,12 +382,12 @@ class Coursem extends CI_Model
         $this->db->where('courseId',$courseId);
         $query = $this->db->get('ictmcoursesection');
 
-        foreach ( $query->result() as $cr){
-            array_push($coursereturn, $cr->courseSectionTitle);
+        if (!empty($query->result())){
+            return 1;
         }
-
-        return $coursereturn;
-
+        else{
+            return 0;
+        }
 
 
     }

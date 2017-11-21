@@ -174,39 +174,23 @@ class Course extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data['coursedata'] = $this->Coursem->checkParentId($courseId);
+            $coursedata = $this->Coursem->checkParentId($courseId);
 
+            if ($coursedata==1){
+                echo "<script>alert('This course cannot be deleted as t there are course section(s) attached to it. please delete  all the related course section(s) first');
+                            window.location.href= '" . base_url() . "Admin/Course/manageCourse';
+                        </script>";
+            }
+            else{
 
-            $name = array();
-            $coursedata = $this->data['coursedata'];
-
-            if (empty($coursedata)) {
                 $this->Coursem->deleteCoursebyId($courseId);
-
                 $this->session->set_flashdata('successMessage','Course Deleted Successfully');
                 redirect('Admin/Course/manageCourse');
 
             }
-            else {
 
 
-                for ($i = 0; $i < count($coursedata); $i++) {
-                    array_push($name, $coursedata[$i]);
-                }
-                ?>
-                <script type='text/javascript'>
-                    var x =<?php echo json_encode($name) ?>;
-                      alert('Please Delete Course Section( ' + x +' ) First');
 
-
-                </script>
-
-                <?php
-                echo "<script>
-                    
-                    window.location.href= '" . base_url() . "Admin/Course/manageCourse';
-                    </script>";
-            }
         }
 
     }

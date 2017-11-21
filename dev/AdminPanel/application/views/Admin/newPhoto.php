@@ -415,7 +415,7 @@
         var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
         var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
 
-        if (mutliPhoto[2].value != '' && mutliPhoto[2].value == '' ) {
+        if (mutliPhoto[2].value != '' && mutliPhoto[1].value == '' ) {
             alert('Please Select a Image in Image field' + 2);
             return false;
         }
@@ -427,6 +427,27 @@
             alert('Please Select a Image in Image field' + 4);
             return false;
         }
+        if (mutliPhoto[5].value != '' && mutliPhoto[4].value == '' ) {
+            alert('Please Select a Image in Image field' + 5);
+            return false;
+        }
+        if (mutliPhoto[6].value != '' && mutliPhoto[5].value == '' ) {
+            alert('Please Select a Image in Image field' + 6);
+            return false;
+        }
+        if (mutliPhoto[7].value != '' && mutliPhoto[6].value == '' ) {
+            alert('Please Select a Image in Image field' + 7);
+            return false;
+        }
+        if (mutliPhoto[8].value != '' && mutliPhoto[7].value == '' ) {
+            alert('Please Select a Image in Image field' + 8);
+            return false;
+        }
+        if (mutliPhoto[9].value != '' && mutliPhoto[8].value == '' ) {
+            alert('Please Select a Image in Image field' + 9);
+            return false;
+        }
+
         for(i=0;i<mutliPhoto.length;i++)
         {
             if (mutliPhoto[i].value != '' && mutliPhotoDetails[i].value=='') {
