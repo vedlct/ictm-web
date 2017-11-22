@@ -882,6 +882,11 @@ $config = array (
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
+            'field' => 'albumDetails',
+            'label' => 'Album Details',
+            'rules' => 'required|xss_clean|htmlspecialchars',
+        ),
+        array(
             'field' => 'albumTitle',
             'label' => 'Album Title',
             'rules' => 'required|max_length[255]|is_unique[ictmalbum.albumTitle]|xss_clean|htmlspecialchars',
@@ -908,6 +913,11 @@ $config = array (
             'field' => 'albumTitle',
             'label' => 'Album Title',
             'rules' => 'required|max_length[255]|callback_AlbumeditUniqueCheck|xss_clean|htmlspecialchars',
+        ),
+        array(
+            'field' => 'albumDetails',
+            'label' => 'Album Details',
+            'rules' => 'required|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'albumStatus',

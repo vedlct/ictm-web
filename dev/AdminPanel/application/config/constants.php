@@ -93,6 +93,8 @@ define("STATUS",array ("Active","Inactive"));
 define("SELECT_STATUS" , "Select Status");
 define("NEVER_MODIFIED", "Never Modified");
 define("SELECT_APPROVE",array ("Yes","No"));
+define("SELECT_TITLE","Select Title");
+define("Title",array ("Mr","Mrs","Miss"));
 
 
 //////////// For Menu    /////////////////
