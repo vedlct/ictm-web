@@ -50,14 +50,14 @@
                         <div class="panel-body">
                             <div class="table table-responsive">
 
-                                <table class="table table-striped table-advance  table-bordered table-hover">
+                                <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <tbody>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> First Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> First Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Last Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Phone</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%"> Apply Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%" onclick="sortTable(2)"> Apply Date</th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
                                     </tr>

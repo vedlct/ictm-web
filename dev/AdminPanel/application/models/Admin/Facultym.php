@@ -126,6 +126,15 @@ class Facultym extends CI_Model
         return false;
     }
 
+    public function getAllforManageFacultySearchByTitle($title) {
+        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmfaculty');
+        $this->db->order_by("facultyId", "desc");
+        $this->db->like('facultyFirstName', $title);
+        $query = $this->db->get();
+        return $query->result() ;
+    }
+
     // for edit  Selected Faculty view
     public function getAllFacultybyId($facultyId)
     {

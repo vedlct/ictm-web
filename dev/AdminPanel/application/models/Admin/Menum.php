@@ -112,7 +112,7 @@ class Menum extends CI_Model
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
         $this->db->order_by("m.menuId", "desc");
-        $this->db->where('m.menuName=', $title);
+        $this->db->like('m.menuName', $title);
         $query = $this->db->get();
         return $query->result();
     }

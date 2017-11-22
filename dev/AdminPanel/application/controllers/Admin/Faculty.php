@@ -89,6 +89,23 @@ class Faculty extends CI_Controller
         }
     }
 
+    public function manageFacultySearchByTitle() // for manage Faculty view
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+
+            $title= $this->input->post('title');
+            $this->data["faculty"] = $this->Facultym->getAllforManageFacultySearchByTitle($title);
+            $this->data["links"] = null;
+
+
+            $this->load->view('Admin/manageFaculty',$this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
     public function editFacultyView($facultyId) // for edit  Selected Faculty view
     {
         if ($this->session->userdata('type') == USER_TYPE[0])

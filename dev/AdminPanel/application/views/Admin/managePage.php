@@ -60,11 +60,11 @@
 
                                 </form>
 
-                        <table class="table table-striped table-advance  table-bordered table-hover">
+                        <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                             <tbody>
                             <tr>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Type</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Page Title</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Page Type</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Status</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Insert By</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%"> Last Modified By</th>
