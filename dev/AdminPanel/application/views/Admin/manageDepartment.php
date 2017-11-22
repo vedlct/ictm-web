@@ -150,7 +150,7 @@
                 cache: false,
                 success:function(data) {
 
-                    if(data='0'){
+                    if(data==0){
 
                         location.reload();
                     }
