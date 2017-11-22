@@ -182,7 +182,7 @@ class Departmentm extends CI_Model
     public function deleteDepartmentId($departmentId)
     {
 
-        $this->db->select('courseId,departmentId,courseTitle');
+        $this->db->select('courseId');
         $this->db->where('departmentId',$departmentId);
         $this->db->from('ictmcourse');
         $query = $this->db->get();
@@ -194,7 +194,7 @@ class Departmentm extends CI_Model
             return 0;
         }
         else{
-            return $query->result();
+            return 1;
         }
 
 

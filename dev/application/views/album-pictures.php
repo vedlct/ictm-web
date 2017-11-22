@@ -9,6 +9,7 @@
                         <div class="page-title-heading">
                             <h2 class="title"><?php echo $ap->albumTitle?></h2>
                         </div>
+                            <?php echo $ap->albumDescription?>
                         <?php break;} ?>
                         <div class="breadcrumbs">
                             <ul>

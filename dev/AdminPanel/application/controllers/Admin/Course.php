@@ -177,7 +177,7 @@ class Course extends CI_Controller
             $coursedata = $this->Coursem->checkParentId($courseId);
 
             if ($coursedata==1){
-                echo "<script>alert('This course cannot be deleted as t there are course section(s) attached to it. please delete  all the related course section(s) first');
+                echo "<script>alert('This course cannot be deleted as there are course section(s) attached to it. please delete  all the related course section(s) first');
                             window.location.href= '" . base_url() . "Admin/Course/manageCourse';
                         </script>";
             }

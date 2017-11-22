@@ -156,14 +156,11 @@
                     }
                     else
                     {
-                        alert('Please Delete Course- ( '+data+' )First !!');
+                        alert('This Department cannot be deleted as there are course(s) attached to it. please delete  all the related course first');
 
                     }
                 }
             });
-        }
-        else {
-            window.location="<?php echo base_url()?>Admin/Department/ManageDepartment";
         }
     }
 </script>

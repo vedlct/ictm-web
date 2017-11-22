@@ -198,8 +198,8 @@ class Coursem extends CI_Model
     public function updateCourseData($id){
 
         $name = $this->input->post("name");
-        $codeperson = $this->input->post("codeperson");
-        $code = $this->input->post("code");
+        $codeIcon = $this->input->post("codeperson");
+        $codeCodePearson = $this->input->post("code");
         $award = $this->input->post("award");
         $ucascode = $this->input->post("ucasCode");
         $location = $this->input->post("location");
@@ -248,8 +248,8 @@ class Coursem extends CI_Model
                 }
 
             $data = array(
-                'courseCodePearson' => $codeperson,
-                'courseCodeIcon' => $code,
+                'courseCodePearson' => $codeCodePearson,
+                'courseCodeIcon' => $codeIcon,
                 'ucasCode' => $ucascode,
                 'courseTitle' => $name,
                 'awardingTitle' => $award,
@@ -274,8 +274,8 @@ class Coursem extends CI_Model
             );
         }else {
             $data = array(
-                'courseCodePearson' => $codeperson,
-                'courseCodeIcon' => $code,
+                'courseCodePearson' => $codeCodePearson,
+                'courseCodeIcon' => $codeIcon,
                 'ucasCode' => $ucascode,
                 'courseTitle' => $name,
                 'awardingTitle' => $award,

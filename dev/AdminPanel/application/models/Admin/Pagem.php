@@ -293,24 +293,18 @@ class Pagem extends CI_Model
     //after check the data it will push in a array then finally return the whole array to controller
     public  function checkParentId($pageId){
 
-        $pagereturn = array();
 
-        $this->db->select('	pageSectionTitle');
+
+        $this->db->select('pageSectionId');
         $this->db->where('pageId',$pageId);
         $query = $this->db->get('ictmpagesection');
 
-        foreach ( $query->result() as $pg){
-            array_push($pagereturn, $pg->pageSectionTitle);
+        if (!empty($query->result())){
+            return 1;
         }
-
-        $this->db->select('menuName');
-        $this->db->where('pageId',$pageId);
-        $query1 = $this->db->get('ictmmenu');
-
-        foreach ( $query1->result() as $mn){
-            array_push($pagereturn, $mn->menuName);
+        else{
+            return 0;
         }
-        return $pagereturn;
 
 
 
