@@ -160,6 +160,22 @@ class Event extends CI_Controller
     }
     /*---------for Manage Faculty ----------end-------------*/
 
+    // search by Event title in manage Event page
+    public function searchByEventTitle()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $name=$this->input->post('name');
+
+            $this->data['events'] =$this->Eventm->viewAllEventByName($name);
+            $this->load->view('Admin/manageEventAfterSearch', $this->data);
+
+
+        } else {
+            redirect('Admin/Login');
+        }
+    }
+
     // show Event image in new tab
     public function showImageForEdit($id)
     {

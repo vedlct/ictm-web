@@ -51,6 +51,15 @@
                             </span>
                         </header>
                         <div class="panel-body">
+
+                            <div class="form-group col-md-6">
+                                <label for="title">Search By News Title</label>
+                                <input type="text" class="form-control col-md-6" id="title" name="title">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <button style="margin-top: 23px" type="submit" onclick="searchByNewsTitle()" class="btn btn-default">Submit</button>
+                            </div>
+
                             <div class="table table-responsive">
                             <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
@@ -134,7 +143,7 @@
                                 </tbody>
                             </table>
                             </div>
-                            <div class="pagination2" align="center">
+                            <div id="pagi" class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
                             </div>
                         </div>
@@ -209,4 +218,26 @@
             location.reload();
         }
     }
+
+    function searchByNewsTitle() {
+
+        btn = document.getElementById('title').value;
+        //alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin/News/searchByNewsTitle")?>',
+            data:{'name':btn},
+            cache: false,
+            success:function(data) {
+
+                $('#myTable').html(data);
+                document.getElementById("pagi").style.display="none";
+                //alert(data);
+            }
+        });
+
+    }
+
+
 </script>

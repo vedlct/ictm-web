@@ -1,0 +1,38 @@
+<table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
+    <tbody>
+    <tr>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> First Name</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Last Name</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Phone</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Email</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%" onclick="sortTable(2)"> Apply Date</th>
+
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
+    </tr>
+
+
+    <?php if (!empty($RiData)){
+        foreach ($RiData as $pd){?>
+            <tr align="center">
+                <td><?php echo $pd->firstName?></td>
+                <td><?php echo $pd->surName?></td>
+                <td><?php echo $pd->mobile?></td>
+
+                <td><?php echo $pd->email?></td>
+                <td><?php echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($pd->inserDate)),1); ?>
+                </td>
+
+                <td>
+                    <div class="btn-group">
+
+                        <a class="btn" href="<?php echo base_url()?>Admin/RegisterInterest/viewSelectedRI/<?php echo $pd->registerInterestId?>"><i class="icon_pencil-edit"></i></a>
+                        <a class="btn " data-panel-id="<?php echo $pd->registerInterestId ?>"  onclick='return confirm("Are you sure to Delete This Page?")' href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->registerInterestId?>"><i class="icon_trash"></i></a>
+
+                    </div>
+                </td>
+            </tr>
+
+        <?php }
+    }?>
+    </tbody>
+</table>

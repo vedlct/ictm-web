@@ -35,6 +35,21 @@ class RegisterInterest extends CI_Controller
             redirect('Admin/Login');
         }
     }
+// search by Firs Name in manage Register Interest
+    public function searchByName(){
+
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $name=$this->input->post('name');
+            $this->data['RiData'] =$this->RegisterInterestm->viewAllRIByName($name);
+            $this->load->view('Admin/manageRegisterInterestAfterSearch', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
 
     public function viewSelectedRI($riId){
 
