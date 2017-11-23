@@ -3338,6 +3338,14 @@ img.hover-shadow {
 #termsinner{overflow: hidden; float: right}
 
 
+
+
+.itmthmb.item-thumbnail {
+    height: 188px;
+    width: 188px;
+}
+
+
 /* .page-title .overlay {
     position: absolute;
     left: 0;
