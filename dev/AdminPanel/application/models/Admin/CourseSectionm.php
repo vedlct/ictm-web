@@ -18,6 +18,7 @@ class CourseSectionm extends CI_Model
                 'courseId' => $coursetitle,
                 'courseSectionTitle' => $textbox[$i],
                 'courseSectionContent' => $text[$i],
+                'orderNumber' => $ordernumber[$i],
                 'courseSectionStatus'=>$status[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
                 'insertedDate'=>date("Y-m-d H:i:s"),
@@ -37,7 +38,7 @@ class CourseSectionm extends CI_Model
     }
     //this will return some course section data and search by courseid.
     public function getCourseSecData($id){
-        $this->db->select('courseSectionId,courseId, courseSectionTitle,courseSectionStatus, insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('courseSectionId,courseId,orderNumber, courseSectionTitle,courseSectionStatus, insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->where('courseId', $id);
         $this->db->from('ictmcoursesection');
         $this->db->order_by("courseSectionId","desc");
@@ -58,11 +59,13 @@ class CourseSectionm extends CI_Model
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
         $status = $this->input->post("status");
+        $ordernumber = $this->input->post("ordernumber");
 
 
         $data = array(
             'courseSectionTitle' => $title,
             'courseSectionContent' => $content,
+            'orderNumber' => $ordernumber,
             'courseSectionStatus'=>$status,
             'lastModifiedBy'=>$this->session->userdata('userEmail'),
             'lastModifiedDate'=>date("Y-m-d H:i:s")

@@ -52,12 +52,12 @@
                         </header>
                         <div class="panel-body">
                             <div class="table table-responsive">
-                            <table class="table table-striped table-advance  table-bordered table-hover">
+                            <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Event Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Start</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event End</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%" onclick="sortTable(0)"> Event Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Event Start</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)"> Event End</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Location</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Type</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>

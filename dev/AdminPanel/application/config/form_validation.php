@@ -537,6 +537,11 @@ $config = array (
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
         ),
         array(
+            'field' => 'ordernumber[]',
+            'label' => 'Order Number ',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+        ),
+        array(
             'field' => 'status[]',
             'label' => 'Course Section Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
@@ -555,6 +560,11 @@ $config = array (
             'field' => 'status',
             'label' => 'Course Section Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'ordernumber',
+            'label' => 'Order Number ',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
         ),
     ),
 

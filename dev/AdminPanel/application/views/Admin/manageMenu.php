@@ -64,11 +64,11 @@
                                     </div>
 
                                 </form>
-                            <table class="table table-striped table-advance  table-bordered table-hover ">
+                            <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Menu Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Menu Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)" > Menu Type</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>
@@ -184,3 +184,5 @@
         }
     }
 </script>
+
+

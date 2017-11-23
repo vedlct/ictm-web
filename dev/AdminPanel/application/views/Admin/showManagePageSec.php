@@ -1,8 +1,9 @@
 <div class="table table-responsive">
-<table class="table table-striped table-advance table-bordered table-hover ">
+
+<table class="table table-striped table-advance table-bordered table-hover " id="myTable">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Page Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%" onclick="sortTable(0)"> Page Section Title </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 5%"> Status </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Inserted By </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Last Modified By </th>
