@@ -9,7 +9,7 @@
                         <div class="page-title-heading">
                             <h2 class="title"><?php echo $ap->albumTitle?></h2>
                         </div>
-                            <?php echo $ap->albumDescription?>
+
                         <?php break;} ?>
                         <div class="breadcrumbs">
                             <ul>
@@ -23,8 +23,15 @@
         </div><!-- /page-title -->
 
         <section class="flat-row padding-v1">
+
             <div class="container">
+
+                    <?php foreach ($albumphoto as $ap) {?>
+                    <h1 class="title-section"><?php echo $ap->albumDescription?></h1><br>
+                    <?php break;} ?>
+
                 <div class="row">
+
                         <?php
                         $count1 =1;
                         foreach ($albumphoto as $ap) {
