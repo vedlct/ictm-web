@@ -127,13 +127,18 @@ class Facultym extends CI_Model
     }
 
     public function getAllforManageFacultySearchByTitle($title) {
+
         $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfaculty');
+
+        $this->db->like('facultyFirstName',$title);
+        
+
         $this->db->order_by("facultyId", "desc");
-        $this->db->like('facultyFirstName', $title, 'both');
-        $this->db->or_like('facultyLastName', $title , 'both');
+
         $query = $this->db->get();
         return $query->result() ;
+
     }
 
     // for edit  Selected Faculty view

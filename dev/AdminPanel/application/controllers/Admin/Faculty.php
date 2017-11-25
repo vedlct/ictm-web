@@ -98,7 +98,6 @@ class Faculty extends CI_Controller
             $this->data["faculty"] = $this->Facultym->getAllforManageFacultySearchByTitle($title);
             $this->data["links"] = null;
 
-
             $this->load->view('Admin/manageFaculty',$this->data);
         }
         else{
