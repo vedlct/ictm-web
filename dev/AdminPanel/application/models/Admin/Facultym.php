@@ -132,7 +132,7 @@ class Facultym extends CI_Model
         $this->db->from('ictmfaculty');
 
         $this->db->like('facultyFirstName',$title);
-        
+
 
         $this->db->order_by("facultyId", "desc");
 
