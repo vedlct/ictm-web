@@ -53,11 +53,11 @@
                         </header>
                         <div class="panel-body">
                             <div class="table table-responsive">
-                            <table class="table table-bordered table-hover table-striped table-advance">
+                            <table class="table table-bordered table-hover table-striped table-advance" id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Album Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Category Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Album Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Category Name</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Album Status</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>

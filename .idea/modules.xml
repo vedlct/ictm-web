@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ictm-web.iml" filepath="$PROJECT_DIR$/.idea/ictm-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tanuki/.idea/tanuki.iml" filepath="$PROJECT_DIR$/../tanuki/.idea/tanuki.iml" />
     </modules>
   </component>
 </project>

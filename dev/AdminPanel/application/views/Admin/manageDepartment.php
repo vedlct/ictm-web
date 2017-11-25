@@ -47,11 +47,11 @@
                         </header>
                         <div class="panel-body">
                             <div class="table table-responsive">
-                            <table class="table table-advance  table-bordered table-hover">
+                            <table class="table table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
                                 <tr style="text-align: center" bgcolor="#D3D3D3">
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department Name</th>
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department Head</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Department Name</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Department Head</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
                                     <th   style="background-color: #394A59; color: whitesmoke; text-align: center">Last Modified By</th>
@@ -150,20 +150,17 @@
                 cache: false,
                 success:function(data) {
 
-                    if(data='0'){
+                    if(data==0){
 
                         location.reload();
                     }
                     else
                     {
-                        alert('Please Delete Course- ( '+data+' )First !!');
+                        alert('This Department cannot be deleted as there are course(s) attached to it. please delete  all the related course first');
 
                     }
                 }
             });
-        }
-        else {
-            window.location="<?php echo base_url()?>Admin/Department/ManageDepartment";
         }
     }
 </script>

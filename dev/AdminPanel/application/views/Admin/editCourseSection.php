@@ -64,7 +64,13 @@
                                                     <textarea class="form-control ckeditor" id="ckeditor" name="text"
                                                               rows="6"><?php echo $cd->courseSectionContent?></textarea>
                                                 </div>
-
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-2">Order Number  : <span class="required">*</span></label>
+                                        <div class="col-lg-10 ">
+                                            <p><font color="red"> <?php echo form_error('ordernumber'); ?></font></p>
+                                            <input class="form-control" type='number' id='textbox1' name="ordernumber" value="<?php echo $cd->orderNumber?>" required>
+                                        </div>
+                                    </div>
                                     <label class="control-label col-lg-2" for="inputSuccess">Course Section Status<span class="required">*</span></label>
                                     <div class="col-lg-10 form-group">
                                         <p><font color="red"> <?php echo form_error('status'); ?></font></p>

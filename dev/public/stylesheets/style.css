@@ -3345,6 +3345,11 @@ img.hover-shadow {
     width: 188px;
 }
 
+.picglry.hover-shadow.cursor {
+    height: 185px;
+    margin-top: 10px;
+}
+
 
 /* .page-title .overlay {
     position: absolute;

@@ -137,6 +137,16 @@ class Pagem extends CI_Model
 
 
     }
+    public function getPagaDataSearchBytitle($title){
+
+        $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmpage');
+        $this->db->like('pageTitle',$title);
+        //$this->db->where();
+        $this->db->order_by("pageId", "desc");
+        $query = $this->db->get();
+        return $query->result();
+    }
 
     //this will return will page data for edit view
     public function geteditPagaData($id)
@@ -283,24 +293,18 @@ class Pagem extends CI_Model
     //after check the data it will push in a array then finally return the whole array to controller
     public  function checkParentId($pageId){
 
-        $pagereturn = array();
 
-        $this->db->select('	pageSectionTitle');
+
+        $this->db->select('pageSectionId');
         $this->db->where('pageId',$pageId);
         $query = $this->db->get('ictmpagesection');
 
-        foreach ( $query->result() as $pg){
-            array_push($pagereturn, $pg->pageSectionTitle);
+        if (!empty($query->result())){
+            return 1;
         }
-
-        $this->db->select('menuName');
-        $this->db->where('pageId',$pageId);
-        $query1 = $this->db->get('ictmmenu');
-
-        foreach ( $query1->result() as $mn){
-            array_push($pagereturn, $mn->menuName);
+        else{
+            return 0;
         }
-        return $pagereturn;
 
 
 

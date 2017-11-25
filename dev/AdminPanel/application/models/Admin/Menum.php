@@ -105,6 +105,17 @@ class Menum extends CI_Model
         }
         return false;
     }
+    public function getAllforManageMenuSearchByTitle($title) {
+
+        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $this->db->order_by("m.menuId", "desc");
+        $this->db->like('m.menuName', $title);
+        $query = $this->db->get();
+        return $query->result();
+    }
 
         /*-- get all information of the selected Menu ---*/
     public function getAllMenubyId($menuId)

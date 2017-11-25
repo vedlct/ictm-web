@@ -50,11 +50,11 @@
                         </header>
                         <div class="panel-body ">
                             <div class="table table-responsive">
-                            <table class="table  table-advance  table-bordered table-hover">
+                            <table class="table  table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Title</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By </th>

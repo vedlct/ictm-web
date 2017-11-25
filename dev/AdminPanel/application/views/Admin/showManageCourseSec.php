@@ -1,9 +1,10 @@
 <div class="table table-responsive">
-<table class="table  table-advance  table-bordered table-hover">
+<table class="table  table-advance  table-bordered table-hover" id="myTable">
     <tbody>
     <tr align="center" >
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Section Title </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Course Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Order Number </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Status </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Inserted By </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified By </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y)</th>
@@ -14,6 +15,7 @@
             foreach ($coursedata as $cd) { ?>
                 <tr align="center">
                     <td><?php echo $cd->courseSectionTitle ?></td>
+                    <td><?php echo $cd->orderNumber ?></td>
                     <td><?php echo $cd->courseSectionStatus ?></td>
                     <td><?php echo $cd->insertedBy; ?></td>
                     <td>

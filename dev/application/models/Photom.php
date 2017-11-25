@@ -40,7 +40,7 @@ class Photom extends CI_Model
     public function albumPhoto($id) //get the photos from the selected album
     {
 
-        $this->db->select('photoName,photoId,photoDetails, albumTitle');
+        $this->db->select('photoName,photoId,photoDetails,albumTitle,ictmalbum.albumDescription');
         $this->db->from('ictmphoto');
         $this->db->where('ictmphoto.albumId',$id);
         $this->db->where('photoStatus',STATUS[0]);

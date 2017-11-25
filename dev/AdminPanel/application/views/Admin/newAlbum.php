@@ -64,6 +64,15 @@
                                     </div>
 
                                     <div class="form-group">
+
+                                        <label for="albumDetails" class="control-label col-lg-2">Album Description<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <textarea class="form-control" name="albumDetails" id="albumDetails" required><?php echo set_value('albumDetails'); ?></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
                                         <label class="control-label col-lg-2" for="albumStatus">Album Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('albumStatus'); ?></font></p>
@@ -117,6 +126,7 @@
     function formvalidate() {
         var albumCategory =  document.getElementById("albumCategory").value;
         var albumTitle =  document.getElementById("albumTitle").value;
+        var albumDetails =  document.getElementById("albumDetails").value;
 
         if (albumCategory.length >255){
             alert("Album Category Name Should not more than 255 Charecter Length");
@@ -124,6 +134,10 @@
         }
         if (albumTitle.length >255){
             alert("Album Title Should not more than 255 Charecter Length");
+            return false;
+        }
+        if (albumDetails.length<=0){
+            alert("Album Description is nedded");
             return false;
         }
         else

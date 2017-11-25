@@ -50,13 +50,13 @@
                         </header>
                         <div class="panel-body ">
                             <div class="table table-responsive">
-                            <table class="table  table-advance  table-bordered table-hover">
+                            <table class="table  table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Profession </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Source </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)">Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)">Profession </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)">Source </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">Status </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">Approve </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">ApprovedBy </th>

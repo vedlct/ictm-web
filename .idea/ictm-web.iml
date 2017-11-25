@@ -14,5 +14,8 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="tanuki" />
+    <orderEntry type="module" module-name="tanuki" />
+    <orderEntry type="module" module-name="tanuki" />
   </component>
 </module>
