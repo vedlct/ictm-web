@@ -26,8 +26,7 @@
                     <div class="btn-group">
 
                         <a class="btn" href="<?php echo base_url()?>Admin/RegisterInterest/viewSelectedRI/<?php echo $pd->registerInterestId?>"><i class="icon_pencil-edit"></i></a>
-                        <a class="btn " data-panel-id="<?php echo $pd->registerInterestId ?>"  onclick='return confirm("Are you sure to Delete This Page?")' href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->registerInterestId?>"><i class="icon_trash"></i></a>
-
+                        <a class="btn " data-panel-id="<?php echo $pd->registerInterestId ?>"  onclick='return confirm("Are you sure to Delete This RegisterInterest?")' href="<?php echo base_url()?>Admin/RegisterInterest/deleteRegisterInterest/<?php echo $pd->registerInterestId?>"><i class="icon_trash"></i></a>
                     </div>
                 </td>
             </tr>

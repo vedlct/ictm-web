@@ -39,7 +39,7 @@
                                             <?php if ($s->photoName !=null){?>
                                                 <img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $an->albumTitle?>/<?php echo $s->photoName?>" >
                                             <?php }else{?>
-                                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/NoImage.JPG" >
+                                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/noImage.jpg" >
                                             <?php }?>
                                             <p style=""><?php echo $an->albumTitle?></p>
                                         </a>

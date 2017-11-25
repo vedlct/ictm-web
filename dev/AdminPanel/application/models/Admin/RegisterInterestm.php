@@ -46,4 +46,12 @@ class RegisterInterestm extends CI_Model
 
     }
 
+    //this will delete RegisterInterest
+    public function deleteRI($RiId)
+    {
+        $this->db->where('registerInterestId',$RiId);
+        $this->db->delete('ictmregisterinterest');
+
+    }
+
 }

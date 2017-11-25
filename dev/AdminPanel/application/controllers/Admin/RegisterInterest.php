@@ -65,4 +65,20 @@ class RegisterInterest extends CI_Controller
             redirect('Admin/Login');
         }
     }
+
+    //this will delete RegisterInterest
+    public function deleteRegisterInterest($RiId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->RegisterInterestm->deleteRI($RiId);
+            $this->session->set_flashdata('successMessage','Register Interest Deleted Successfully');
+            redirect('Admin/RegisterInterest/viewRI');
+
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
 }
