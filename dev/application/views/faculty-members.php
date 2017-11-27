@@ -42,7 +42,7 @@
                                                     <?php } ?>
                                                 </div><!-- /item-thumbnail -->
         
-                                                <div class="item-content">
+                                                <div class="itmcntnt item-content">
                                                     <h3 class="item-title">
                                                         <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><?php echo $listOfFaculty->facultyTitle." ".$listOfFaculty->facultyFirstName." ".$listOfFaculty->facultyLastName?></a>
                                                     </h3>

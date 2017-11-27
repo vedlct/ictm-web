@@ -3350,6 +3350,14 @@ img.hover-shadow {
     margin-top: 10px;
 }
 
+.itmcntnt{
+    height: 170px;
+}
+
+.itmthmb.item-thumbnail img {
+    height: 189px;
+}
+
 
 /* .page-title .overlay {
     position: absolute;
