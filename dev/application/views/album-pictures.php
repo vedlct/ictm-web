@@ -38,7 +38,7 @@
                             ?>
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" class="">
-                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="hover-shadow cursor">
+                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="picglry hover-shadow cursor">
                             </a>
                         </div>
                     <?php  $count1++;} ?>

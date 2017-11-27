@@ -3338,6 +3338,27 @@ img.hover-shadow {
 #termsinner{overflow: hidden; float: right}
 
 
+
+
+.itmthmb.item-thumbnail {
+    height: 188px;
+    width: 188px;
+}
+
+.picglry.hover-shadow.cursor {
+    height: 185px;
+    margin-top: 10px;
+}
+
+.itmcntnt{
+    height: 170px;
+}
+
+.itmthmb.item-thumbnail img {
+    height: 189px;
+}
+
+
 /* .page-title .overlay {
     position: absolute;
     left: 0;
