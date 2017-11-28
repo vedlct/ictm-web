@@ -62,7 +62,7 @@ class Pagem extends CI_Model
                 $config = array(
                     'upload_path' => "images/pageImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
-                    'max_size' => "1024*4",
+                    'max_size' => "4096",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -223,7 +223,7 @@ class Pagem extends CI_Model
             $config = array(
                 'upload_path' => "images/pageImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
