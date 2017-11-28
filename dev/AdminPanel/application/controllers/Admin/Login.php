@@ -77,6 +77,25 @@ class Login extends CI_Controller {
 
                 $this->load->view('Admin/passwordChange');
             }
+            else{
+
+                $this->data['error'] =$this->Loginm->resetPass();
+
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Password Changed Successfully');
+                    redirect('Admin/Login/changePass');
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Album/changePass');
+
+                }
+
+            }
         } else {
 
             redirect('Admin/Login');
