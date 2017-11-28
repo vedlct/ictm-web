@@ -1285,4 +1285,24 @@ $config = array (
             'rules' => 'callback_val_img_checkSqureBox'
         ),
     ),
+
+    'resetPassword'=> array (
+
+        array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'required|valid_email'
+        ),
+        array(
+            'field' => 'pass',
+            'label' => 'Password',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'conPass',
+            'label' => 'ConFirm Password',
+            'rules' => 'trim|required|matches[pass]'
+        ),
+
+    ),
 );
