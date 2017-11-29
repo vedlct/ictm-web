@@ -6,12 +6,6 @@ class Loginm extends CI_Model {
     public function validate_user($data)
     {
 
-//        $useremail = $this->input->post('useremail');
-//        $password  = $this->input->post('password');
-//        $this->db->where('userEmail', $useremail);
-//        $this->db->where('UserPassword', $password);
-//
-//        return $this->db->get('ictmusers')->row();
 
         $useremail = $this->input->post('useremail');
         $password  = $this->input->post('password');
@@ -22,7 +16,12 @@ class Loginm extends CI_Model {
         if (!empty($res)) {
 
             $success=password_verify($password, $res->userPassword);
-            return $res;
+            if ($success) {
+                return $res;
+            }
+            else{
+                return null;
+            }
 
         }
         else{

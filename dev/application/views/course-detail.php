@@ -138,9 +138,30 @@
                                         <?php } ?>
                                     </table>
                                 </div><br>
-                                
+                                <?php foreach ($coursedetail as $cd) {?>
+<!--                                <div class="kis-widget"-->
+<!---->
+<!--                                     --><?php //$ctitle= $cd->courseTitle ?>
+<!--                                    --><?php //$ct= $cd->courseCodeIcon ?>
+<!--                                     data-institution="<IconCollege>"-->
+<!--                                     data-course="<>"-->
+<!--                                     data-kismode="<>"-->
+<!--                                     data-orientation="<ORIENTATION>"-->
+<!--                                     data-language="<LANGUAGE>">-->
+<!--                                </div>-->
+                                    <div class="kis-widget"
+                                         data-institution="<UKPRN>"
+                                         data-course="<KISCOURSEID>"
+                                         data-kismode="<KISMODE>"
+                                         data-orientation="<ORIENTATION>"
+                                         data-language="<LANGUAGE>"></div>
 
-                                
+
+                                <?php }?>
+
+                                <iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/<UKPRN>/<KISCOURSEID>/vertical/sma ll/<LANGUAGE>/<KISMODE>" scrolling="no"  style="overflow: hidden; border: 0px none transparent; width: 190px; height: 500px;">
+
+
                                 <div class="widget widget-courses">
                                     <h2 class="widget-title">COURSES LIST</h2>
                                     <?php include("course-sidebar.php"); ?>
@@ -160,3 +181,14 @@
 
 
 </html>
+        <script>
+            (function (d) {
+                "use strict";
+                var widgetScript = d.createElement('script');
+                widgetScript.id = 'unistats-widget-script';
+                widgetScript.src = 'http://widget.unistats.ac.uk/js/unistats.widget.js';
+                var scriptTags = d.getElementsByTagName('script')[0];
+                if (d.getElementById('unistats-widget-script')) { return; }
+                scriptTags.parentNode.insertBefore(widgetScript, scriptTags);   }
+                (document));
+        </script>

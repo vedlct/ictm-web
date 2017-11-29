@@ -28,9 +28,7 @@
                 </a>
                 <ul class="dropdown-menu extended logout">
                     <div class="log-arrow-up"></div>
-                    <li class="eborder-top">
-                        <a href="#"><i class="icon_profile"></i> My Profile</a>
-                    </li>
+
                     <li>
                         <a href="<?php echo base_url()?>Admin/Login/changePass"><i class="icon_chat_alt"></i> Change Password</a>
                     </li>
