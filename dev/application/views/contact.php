@@ -1,9 +1,5 @@
 ﻿		<?php include("header.php"); ?>
-<<<<<<< HEAD
-
-=======
         <script src='https://www.google.com/recaptcha/api.js'></script>
->>>>>>> Work
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
@@ -32,22 +28,14 @@
                                 <div class="col-md-6">
                                     <div class="contact-form">
 
-<<<<<<< HEAD
-                                        <form action="#" method="post" id="contactform" class="comment-form" novalidate>                            
-=======
                                         <form action="<?php echo base_url()?>Email/contactEmail" method="post" id="contactform" class="comment-form" >
->>>>>>> Work
                                             <fieldset class="style-1 full-name">
                                                 <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 email-address">
                                                 <input type="email" id="email" placeholder="Your email" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
-<<<<<<< HEAD
-                                            </fieldset> 
-=======
                                             </fieldset>
->>>>>>> Work
 
                                             <fieldset class="style-1 subject">
                                                 <input type="text" id="subject" placeholder="Subject" class="tb-my-input" name="subject" tabindex="2" value="" size="32" aria-required="true">
@@ -57,10 +45,7 @@
                                                 <textarea id="comment-message" placeholder="Your Message" name="comment" rows="8" tabindex="4"></textarea>
                                             </fieldset>
 
-<<<<<<< HEAD
-=======
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
->>>>>>> Work
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style style-v1">Send <i class="fa fa-angle-right"></i></button>
                                             </div>             
@@ -103,10 +88,7 @@
                 });
             }
         </script>
-<<<<<<< HEAD
-=======
 
->>>>>>> Work
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZnEw-KEMJGyeJirDzOXa11L9kibGgQXM&callback=initMap">
         </script>
 

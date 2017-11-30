@@ -16,9 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- Bootstrap  -->
-<<<<<<< HEAD
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/bootstrap.css" >
-=======
 <!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
 <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>
@@ -29,20 +26,13 @@
     <!--external css-->
     <!-- font icon -->
 <!--    <link href="--><?php //echo base_url()?><!--public/stylesheets/font-awesome.css" rel="stylesheet" />-->
->>>>>>> Work
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/style.css">
 
     <!-- Responsive -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
-<<<<<<< HEAD
-
-    <!-- Colors -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/color1.css" >
-=======
     
->>>>>>> Work
 
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
@@ -54,11 +44,8 @@
     <!-- for Application Form -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/application-form-style.css">
 
-<<<<<<< HEAD
-=======
     <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/elegant-icons-style.css" rel="stylesheet" />
 
->>>>>>> Work
 
 
     <!-- Favicon and touch icons  -->
@@ -73,15 +60,10 @@
     <script src="<?php echo base_url()?>public/javascript/respond.min.js"></script>
     <![endif]-->
 
-<<<<<<< HEAD
-    <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
-=======
 
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
 <!--    <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
->>>>>>> Work
 
 
 </head>

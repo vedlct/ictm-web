@@ -7,11 +7,7 @@
                                                 ?>
                                                 <div class="thumb item-thumbnail">
                                                     <a href="#">
-<<<<<<< HEAD:dev/application/views/course-sidebar.php
-                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/NoImage.jpg" alt="image" style="width: 80px; height: 80px">
-=======
                                                         <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/noImage.jpg" alt="image" style="width: 80px; height: 80px">
->>>>>>> Work:dev/application/views/course-sidebar.php
                                                         <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                         <div class="thumbnail-hoverlay-cross"></div>
                                                     </a>

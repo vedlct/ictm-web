@@ -535,14 +535,11 @@ $config = array (
             'field' => 'textbox[]',
             'label' => 'Course Section Title',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
-<<<<<<< HEAD
-=======
         ),
         array(
             'field' => 'ordernumber[]',
             'label' => 'Order Number ',
             'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
->>>>>>> Work
         ),
         array(
             'field' => 'status[]',
@@ -563,14 +560,11 @@ $config = array (
             'field' => 'status',
             'label' => 'Course Section Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
-<<<<<<< HEAD
-=======
         ),
         array(
             'field' => 'ordernumber',
             'label' => 'Order Number ',
             'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
->>>>>>> Work
         ),
     ),
 
@@ -896,14 +890,11 @@ $config = array (
             'field' => 'albumCategory',
             'label' => 'Album Category',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
-<<<<<<< HEAD
-=======
         ),
         array(
             'field' => 'albumDetails',
             'label' => 'Album Details',
             'rules' => 'required|xss_clean|htmlspecialchars',
->>>>>>> Work
         ),
         array(
             'field' => 'albumTitle',
@@ -932,14 +923,11 @@ $config = array (
             'field' => 'albumTitle',
             'label' => 'Album Title',
             'rules' => 'required|max_length[255]|callback_AlbumeditUniqueCheck|xss_clean|htmlspecialchars',
-<<<<<<< HEAD
-=======
         ),
         array(
             'field' => 'albumDetails',
             'label' => 'Album Details',
             'rules' => 'required|xss_clean|htmlspecialchars',
->>>>>>> Work
         ),
         array(
             'field' => 'albumStatus',
@@ -1045,8 +1033,6 @@ $config = array (
             'field' => 'affiliationStatus',
             'label' => 'Affiliation Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
-<<<<<<< HEAD
-=======
         ),
     ),
 
@@ -1164,7 +1150,6 @@ $config = array (
             'field' => 'title1',
             'label' => 'Middle Banner Title 1',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
->>>>>>> Work
         ),
         array(
             'field' => 'link1',

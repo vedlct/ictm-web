@@ -236,19 +236,11 @@ class Photo extends CI_Controller
 
                 if ($imageSize <4096){
                     return true;
-<<<<<<< HEAD
                 }
                 else{
                     $this->form_validation->set_message('val_img_check_fromEdit', "Maximum Image Size 4MB is allowed!!");
                     return false;
                 }
-=======
-                }
-                else{
-                    $this->form_validation->set_message('val_img_check_fromEdit', "Maximum Image Size 4MB is allowed!!");
-                    return false;
-                }
->>>>>>> Work
             } else {
                 $this->form_validation->set_message('val_img_check_fromEdit', "Only JPEG/JPG/PNG/GIF Image is allowed!!");
                 return false;

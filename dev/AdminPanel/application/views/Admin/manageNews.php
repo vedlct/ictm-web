@@ -218,8 +218,6 @@
             location.reload();
         }
     }
-<<<<<<< HEAD
-=======
 
     function searchByNewsTitle() {
 
@@ -242,5 +240,4 @@
     }
 
 
->>>>>>> Work
 </script>

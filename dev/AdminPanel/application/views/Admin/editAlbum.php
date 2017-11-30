@@ -60,11 +60,7 @@
                                         <label class="control-label col-lg-2" for="albumTitle">Album Title <span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('albumTitle'); ?></font></p>
-<<<<<<< HEAD
-                                            <input class="form-control" id="albumTitle" name="albumTitle"  value="<?php echo$edit_Album->albumTitle?>" type="text" required />
-=======
                                             <input class="form-control" id="albumTitle" name="albumTitle"  value="<?php echo $edit_Album->albumTitle?>" type="text" required />
->>>>>>> Work
 
                                         </div>
                                     </div>

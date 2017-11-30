@@ -9,10 +9,7 @@
                         <div class="page-title-heading">
                             <h2 class="title"><?php echo $ap->albumTitle?></h2>
                         </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> Work
                         <?php break;} ?>
                         <div class="breadcrumbs">
                             <ul>
@@ -26,10 +23,6 @@
         </div><!-- /page-title -->
 
         <section class="flat-row padding-v1">
-<<<<<<< HEAD
-            <div class="container">
-                <div class="row">
-=======
 
             <div class="container">
 
@@ -39,18 +32,13 @@
 
                 <div class="row">
 
->>>>>>> Work
                         <?php
                         $count1 =1;
                         foreach ($albumphoto as $ap) {
                             ?>
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" class="">
-<<<<<<< HEAD
-                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="hover-shadow cursor">
-=======
                                 <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="picglry hover-shadow cursor">
->>>>>>> Work
                             </a>
                         </div>
                     <?php  $count1++;} ?>

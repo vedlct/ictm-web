@@ -32,17 +32,6 @@
                                     <div class="project-portfolio v1">
                                         <div class="item">
                                             <div class="thumb-item">
-<<<<<<< HEAD
-                                                <div   class="item-thumbnail">
-                                                    <?php if ($listOfFaculty->facultyImage !=null){?>
-                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $listOfFaculty->facultyImage?>" alt="image"></a>
-                                                    <?php }else{?>
-                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
-                                                    <?php } ?>
-                                                </div><!-- /item-thumbnail -->
-        
-                                                <div class="item-content">
-=======
 
                                                 <div  class="itmthmb item-thumbnail">
 
@@ -54,7 +43,6 @@
                                                 </div><!-- /item-thumbnail -->
         
                                                 <div class="itmcntnt item-content">
->>>>>>> Work
                                                     <h3 class="item-title">
                                                         <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><?php echo $listOfFaculty->facultyTitle." ".$listOfFaculty->facultyFirstName." ".$listOfFaculty->facultyLastName?></a>
                                                     </h3>

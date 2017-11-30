@@ -22,12 +22,9 @@
     .news {
         margin-left: 58px;
     }
-<<<<<<< HEAD
-=======
 	.newwss {
 		margin-left: -40px;
 	}
->>>>>>> Work
 
     .content-pad {
         margin-left: 65px;
@@ -51,12 +48,9 @@
     .news {
         margin-left: 58px;
     }
-<<<<<<< HEAD
-=======
 	.newwss {
 		margin-left: -68px;
 	}
->>>>>>> Work
 
     .content-pad {
         margin-left: 65px;
@@ -79,11 +73,7 @@
 		padding: 30px;
 		background :#ffffff;
 		background: rgba(255,255,255,.7);
-<<<<<<< HEAD
-		height: 690px;
-=======
 		height: 790px;
->>>>>>> Work
 	}
 }
 
@@ -94,16 +84,12 @@
 		margin-left: -570px !important;
 	}
 
-<<<<<<< HEAD
-
-=======
 	.newwss {
 		margin-left: -68px;
 	}
     .content-content {
         margin-left: -65px;
     }
->>>>>>> Work
 
 	.header-overlay-content.header-overlay-scroller .un-post-scroller {
 		z-index: 9999;
@@ -139,13 +125,10 @@
 		width: 360px;
 		z-index: 9999;
 	}
-<<<<<<< HEAD
-=======
     
     .phtoglry{margin-left: 30px;
         border: none !important;
     }
->>>>>>> Work
 }
 
 /* Smaller than standard 992 */
@@ -158,8 +141,6 @@
 	.main-menu {
 		display: none;
 	}
-<<<<<<< HEAD
-=======
     
     .testleft {float: left}
     .testright {float: right}
@@ -184,7 +165,6 @@
 	.newwss {
 		margin-left: -40px;
 	}
->>>>>>> Work
 
 	#logo img {
 		height: 80px;
@@ -594,23 +574,14 @@
 	.top-search.show {
 		top: 40px;
 	}
-<<<<<<< HEAD
-=======
     
     .thumbnail-overflow {
         margin-left: -40px;
     }
->>>>>>> Work
 
 }
 
 /* Tablet Landscape */
-<<<<<<< HEAD
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
-
-}
-
-=======
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
     .post-scroller-wrap {
@@ -644,7 +615,6 @@
     
 }
 
->>>>>>> Work
 /* Tablet Portrait Size */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.thumbnail-overflow {
@@ -658,8 +628,6 @@
 	.thumbnail-overflow {
 		left: 0px;
 	}
-<<<<<<< HEAD
-=======
     
     
     .newwss > a {
@@ -680,7 +648,6 @@
     .thumbnail-overflow {
         margin-left: -40px;
     }
->>>>>>> Work
 
 	.flat-events .grid-item {
 		width: 100%;

@@ -7,11 +7,7 @@
                                                     ?>
                                                     <div class="thumb item-thumbnail">
                                                         <a href="<?php echo base_url()?>News-Details/<?php echo $nd->newsId?>">
-<<<<<<< HEAD:dev/application/views/latest-news-sidebar.php
-                                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/newsImages/NoImage.jpg"
-=======
                                                             <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/newsImages/noImage.jpg"
->>>>>>> Work:dev/application/views/latest-news-sidebar.php
                                                                  alt="image" style="width: 80px; height: 80px">
                                                             <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                             <div class="thumbnail-hoverlay-cross"></div>

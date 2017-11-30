@@ -1,14 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-<<<<<<< HEAD
-
 class OnlineForms extends CI_Controller
 {
-
-=======
-class OnlineForms extends CI_Controller
-{
->>>>>>> Work
     public function __construct()
     {
         parent::__construct();
@@ -18,36 +11,19 @@ class OnlineForms extends CI_Controller
         $this->load->model('Eventm');
         $this->load->model('Newsm');
         $this->load->model('Coursem');
-<<<<<<< HEAD
-
-    }
-
-    public function index()
-    {
-
-=======
         $this->load->model('OnlineFormsm');
     }
     public function index()
     {
->>>>>>> Work
     }
     public function contactUs() //go to the contact us page
     {
         $this->menu();
         $this->load->view('contact', $this->data);
-<<<<<<< HEAD
-
-=======
->>>>>>> Work
     }
     public function registerInterest() //go to the register Interest page
     {
         $this->menu();
-<<<<<<< HEAD
-        $this->load->view('register-ineterest', $this->data);
-
-=======
         $this->data['course']=$this->Coursem->getCourseTitle();
         $this->load->view('register-ineterest', $this->data);
     }
@@ -133,7 +109,6 @@ class OnlineForms extends CI_Controller
 
             }
         }
->>>>>>> Work
     }
     public function applyNow() // go to the apply page of selected course
     {
@@ -141,8 +116,6 @@ class OnlineForms extends CI_Controller
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->load->view('application-form', $this->data);
     }
-<<<<<<< HEAD
-=======
     public function feedback() // go to the feedback page
     {
         $this->menu();
@@ -169,7 +142,6 @@ class OnlineForms extends CI_Controller
             }
         }
     }
->>>>>>> Work
     public function menu() // get all the menu + footer
     {
         $this->data['topmenu'] = $this->Menum->getTopMenu();
@@ -182,9 +154,6 @@ class OnlineForms extends CI_Controller
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
-<<<<<<< HEAD
-
-=======
     }
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
@@ -207,7 +176,6 @@ class OnlineForms extends CI_Controller
                 return false;
             }
         }
->>>>>>> Work
     }
 
 }

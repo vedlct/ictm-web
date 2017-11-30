@@ -9,10 +9,6 @@ class Loginm extends CI_Model {
 
         $useremail = $this->input->post('useremail');
         $password  = $this->input->post('password');
-<<<<<<< HEAD
-        $this->db->where('userEmail', $useremail);
-        $this->db->where('UserPassword', $password);
-=======
 
         $this->db->where('userEmail',$useremail);
         $res=$this->db->get('ictmusers')->row();
@@ -26,7 +22,6 @@ class Loginm extends CI_Model {
             else{
                 return null;
             }
->>>>>>> Work
 
         }
         else{

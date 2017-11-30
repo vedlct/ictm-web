@@ -7,11 +7,7 @@
 
             <?php foreach ($home as $hm) {?>
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-<<<<<<< HEAD:dev/application/views/home.php
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage1?>" alt="slider-image">
-=======
                 <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage1?>" alt="slider-image">
->>>>>>> Work:dev/application/views/home.php
 
                 <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div  class="title main-color-1 font-2"style="margin-top:-15px"><?php echo $hm->slideText1;?></div>
@@ -22,11 +18,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-<<<<<<< HEAD:dev/application/views/home.php
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage2?>" alt="slider-image">
-=======
                 <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage2?>" alt="slider-image">
->>>>>>> Work:dev/application/views/home.php
 
                 <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div  class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText2;?></div>
@@ -34,11 +26,7 @@
             </li>
 
             <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
-<<<<<<< HEAD:dev/application/views/home.php
-                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/sliderImages/<?php echo $hm->slideImage3?>" alt="slider-image">
-=======
                 <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage3?>" alt="slider-image">
->>>>>>> Work:dev/application/views/home.php
 
                 <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                     <div  class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText3;?></div>
@@ -66,24 +54,15 @@
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
-<<<<<<< HEAD:dev/application/views/home.php
-                                                            <a href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink1?>">
-                                                                <img  style="width: 80px;height: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage1?>" alt="image">
-=======
                                                             <a href="<?php echo $hm->verticalBarLink1?>">
                                                                 <img  style="width: 80px;height: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage1?>" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-<<<<<<< HEAD:dev/application/views/home.php
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink1?>" target="_blank" title="Prospectus"><?php echo $hm->verticalBarTitle1?></a></h4>
-=======
                                                         <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink1?>" target="_blank" title="Prospectus"><?php echo $hm->verticalBarTitle1?></a></h4>
->>>>>>> Work:dev/application/views/home.php
                                                         <div class="post-excerpt-mini"><?php echo $hm->verticalBarText1?></div>
                                                     </div>
                                                 </div>
@@ -97,24 +76,15 @@
                                                 <div class="row">
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
-<<<<<<< HEAD:dev/application/views/home.php
-                                                            <a href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink2?>">
-                                                                <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage2?>" alt="image">
-=======
                                                             <a href="<?php echo $hm->verticalBarLink2?>">
                                                                 <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage2?>" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-<<<<<<< HEAD:dev/application/views/home.php
-                                                        <h4><a class="post-title-mini main-color-1-hover" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/pdf-files/<?php echo $hm->verticalBarLink2?>" target="_blank" title="Apply Online"><?php echo $hm->verticalBarTitle2?></a></h4>
-=======
                                                         <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink2?>" target="_blank" title="Apply Online"><?php echo $hm->verticalBarTitle2?></a></h4>
->>>>>>> Work:dev/application/views/home.php
                                                         <div class="post-excerpt-mini"><?php echo $hm->verticalBarText2?></div>
                                                     </div>
                                                 </div>
@@ -129,11 +99,7 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="<?php echo $hm->verticalBarLink3?>">
-<<<<<<< HEAD:dev/application/views/home.php
-                                                                <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage3?>" alt="image">
-=======
                                                                 <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage3?>" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -155,11 +121,7 @@
                                                     <div class="col-md-4 col-sm-4 col-xs-4 post-thumbnail-mini">
                                                         <div class="item-thumbnail">
                                                             <a href="<?php echo $hm->verticalBarLink4?>">
-<<<<<<< HEAD:dev/application/views/home.php
-                                                                <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/verticalBarImages/<?php echo $hm->verticalBarImage4?>" alt="image">
-=======
                                                                 <img  style="width: 80px;height: 80px"src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->verticalBarImage4?>" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                                                 <div class="thumbnail-hoverlay main-color-1-bg"></div>
                                                                 <div class="thumbnail-hoverlay-cross"></div>
                                                             </a>
@@ -245,15 +207,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage2 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink2;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage2?>" alt="image">
-                                    <?php }else{?>
-                                     <a href="<?php echo $hm->squareBoxLink2;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink2;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage2?>" alt="image">
                                     <?php }else{?>
                                      <a href="<?php echo $hm->squareBoxLink2;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                      <?php }?>
 
                                 </div><!-- /event-thumbnail -->
@@ -276,15 +232,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage3 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink3;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage3?>" alt="image">
-                                        <?php }else{?>
-                                        <a href="<?php echo $hm->squareBoxLink3;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink3;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage3?>" alt="image">
                                         <?php }else{?>
                                         <a href="<?php echo $hm->squareBoxLink3;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                         <?php }?>
                                 </div><!-- /event-thumbnail -->
 
@@ -306,15 +256,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage4 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink4;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage4?>" alt="image">
-                                        <?php }else{?>
-                                        <a href="<?php echo $hm->squareBoxLink4;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink4;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage4?>" alt="image">
                                         <?php }else{?>
                                         <a href="<?php echo $hm->squareBoxLink4;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                         <?php }?>
                                 </div><!-- /event-thumbnail -->
 
@@ -336,15 +280,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage5 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink5;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage5?>" alt="image">
-                                        <?php }else{?>
-                                        <a href="<?php echo $hm->squareBoxLink5;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink5;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage5?>" alt="image">
                                         <?php }else{?>
                                         <a href="<?php echo $hm->squareBoxLink5;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                             <?php }?>
                                 </div><!-- /event-thumbnail -->
 
@@ -366,15 +304,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage6 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink6;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage6?>" alt="image">
-                                        <?php }else{?>
-                                        <a href="<?php echo $hm->squareBoxLink6;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink6;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage6?>" alt="image">
                                         <?php }else{?>
                                         <a href="<?php echo $hm->squareBoxLink6;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                             <?php }?>
                                 </div><!-- /event-thumbnail -->
 
@@ -396,15 +328,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage7 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink7;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage7?>" alt="image">
-                                        <?php }else{?>
-                                        <a href="<?php echo $hm->squareBoxLink7;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink7;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage7?>" alt="image">
                                         <?php }else{?>
                                         <a href="<?php echo $hm->squareBoxLink7;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                             <?php }?>
                                 </div><!-- /event-thumbnail -->
 
@@ -426,15 +352,9 @@
                             <div class="event-item">
                                 <div class="event-thumbnail">
                                     <?php if ($hm->squareBoxImage8 != null){?>
-<<<<<<< HEAD:dev/application/views/home.php
-                                    <a href="<?php echo $hm->squareBoxLink8;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/<?php echo $hm->squareBoxImage8?>" alt="image">
-                                        <?php }else{?>
-                                        <a href="<?php echo $hm->squareBoxLink8;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/squareBoxImages/noImage.jpg" alt="image">
-=======
                                     <a href="<?php echo $hm->squareBoxLink8;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage8?>" alt="image">
                                         <?php }else{?>
                                         <a href="<?php echo $hm->squareBoxLink8;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
->>>>>>> Work:dev/application/views/home.php
                                             <?php }?>
                                 </div><!-- /event-thumbnail -->
 
@@ -562,11 +482,7 @@
                     <h4><?php echo $hm->bottomBannerSubTitle;?></h4>
                 </div>
                 <div class="img-news">
-<<<<<<< HEAD:dev/application/views/home.php
-                    <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/bottomBannerImages/<?php echo $hm->bottomBannerImage ?>" alt="image">
-=======
                     <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->bottomBannerImage ?>" alt="image">
->>>>>>> Work:dev/application/views/home.php
                 </div>
                 <?php } ?>
             </div>

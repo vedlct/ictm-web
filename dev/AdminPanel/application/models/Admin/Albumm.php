@@ -130,11 +130,8 @@ class Albumm extends CI_Model
         $albumTitle = $this->input->post("albumTitle");
         $albumStatus = $this->input->post("albumStatus");
 
-<<<<<<< HEAD
-=======
         $albumDescription = $this->input->post("albumDetails");
 
->>>>>>> Work
         if ($albumStatus==STATUS[1]){
             $homeStatus=null;
         }
@@ -158,10 +155,7 @@ class Albumm extends CI_Model
             'albumTitle' => $albumTitle,
             'albumStatus'=>$albumStatus,
             'homeStatus' => $homeStatus,
-<<<<<<< HEAD
-=======
             'albumDescription'=>$albumDescription,
->>>>>>> Work
             'lastModifiedDate'=>date("Y-m-d H:i:s"),
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 

@@ -28,20 +28,12 @@
                     <div class="post-item row">
                         <div class="col-md-6 col-sm-12">
                             <div class="content-pad">
-<<<<<<< HEAD
-                                <div class="item-thumbnail">
-=======
                                 <div id="itmthumb" class="item-thumbnail">
->>>>>>> Work
                                     <?php
                                     if ($dp->departmentImage == null){ ?>
 
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>">
-<<<<<<< HEAD
-                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/NoImage.jpg" alt="image">
-=======
                                             <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/noImage.jpg" alt="image">
->>>>>>> Work
                                             <span class="thumbnail-overlay">September 3, 2017</span>
                                         </a>
                                     <?php } else { ?>
@@ -54,11 +46,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-<<<<<<< HEAD
-                            <div class="content-pad">
-=======
                             <div id="itmtitle" class="content-pad">
->>>>>>> Work
                                 <div class="item-content">
                                     <h3 class="item-title">
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>" title="Your Career Starts Here"

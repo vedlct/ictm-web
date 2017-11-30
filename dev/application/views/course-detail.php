@@ -40,12 +40,8 @@
                             <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                             <?php } ?>
                             <?php foreach ($coursedetail as $cd) { ?>
-<<<<<<< HEAD:dev/application/views/course-detail.php
-                            <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
-=======
 <!--                            <li><a href="--><?php //echo base_url()?><!--Apply">APPLY NOW</a></li>-->
                             <li><a href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">Download Application Form</a></li>
->>>>>>> Work:dev/application/views/course-detail.php
                             <?php }?>
                         </ul>
                 
@@ -142,15 +138,6 @@
                                         <?php } ?>
                                     </table>
                                 </div><br>
-<<<<<<< HEAD:dev/application/views/course-detail.php
-                                
-
-                                
-                                <div class="widget widget-courses">
-                                    <h2 class="widget-title">COURSES LIST</h2>
-                                    <?php include("course-sidebar.php"); ?>
-                                </div><!-- /widget-posts -->
-=======
 
 
                                 <?php foreach ($coursedetail as $cd) {?>
@@ -168,7 +155,6 @@
 
 
                                 <!-- /widget-posts -->
->>>>>>> Work:dev/application/views/course-detail.php
                                 
                             </div><!-- sidebar -->
                         </div><!-- /col-md-3 -->
@@ -183,9 +169,6 @@
 </body>
 
 
-<<<<<<< HEAD:dev/application/views/course-detail.php
-</html>
-=======
 </html>
         <script>
             (function (d) {
@@ -198,4 +181,3 @@
                 scriptTags.parentNode.insertBefore(widgetScript, scriptTags);   }
                 (document));
         </script>
->>>>>>> Work:dev/application/views/course-detail.php

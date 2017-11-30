@@ -22,10 +22,7 @@ class Albumm extends CI_Model
         $this->db->select('albumId,albumTitle,albumCategoryName');
         $this->db->from('ictmalbum');
         $this->db->where('albumStatus',STATUS[0]);
-<<<<<<< HEAD
-=======
 
->>>>>>> Work
         $this->db->order_by("albumId", "desc");
         $query = $this->db->get();
         return $query->result();

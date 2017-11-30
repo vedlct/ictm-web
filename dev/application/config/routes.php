@@ -67,12 +67,9 @@ $route['Contact'] = 'OnlineForms/contactUs';
 $route['Apply'] = 'OnlineForms/applyNow';
 $route['RegisterInterest'] = 'OnlineForms/registerInterest';
 
-<<<<<<< HEAD:dev/application/config/routes.php
-=======
 $route['Feedback'] = 'OnlineForms/feedback';
 $route['SubmitFeedback'] = 'OnlineForms/SubmitFeedback';
 
->>>>>>> Work:dev/application/config/routes.php
 $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';
 

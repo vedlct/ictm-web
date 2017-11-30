@@ -2,14 +2,9 @@
     <div id="sidebar"  class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
-<<<<<<< HEAD
-            <li class="sub-menu">
-                <a class="" href="<?php echo base_url()?>Admin/Home">
-=======
 
             <li class="sub-menu">
                 <a href="javascript:">
->>>>>>> Work
                     <i class="icon_house_alt"></i>
                     <span>Home</span>
                     <span class="menu-arrow arrow_carrot-right"></span>

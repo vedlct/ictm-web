@@ -235,8 +235,6 @@
             location.reload();
         }
     }
-<<<<<<< HEAD
-=======
 
     function searchByEventTitle() {
 
@@ -258,5 +256,4 @@
 
     }
 
->>>>>>> Work
 </script>
