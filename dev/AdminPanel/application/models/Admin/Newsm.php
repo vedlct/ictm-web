@@ -41,7 +41,7 @@ class Newsm extends CI_Model
                 $config = array(
                 'upload_path' => "images/newsImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces' => FALSE,
                 'mod_mime_fix' => FALSE,
@@ -100,6 +100,21 @@ class Newsm extends CI_Model
 
     }
 
+    public function viewAllNewsByName($name)
+    {
+        $this->db->select('newsId,newsTitle,newsDate,newsType,newsStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmnews');
+
+        $this->db->like('newsTitle',$name);
+        $this->db->order_by("newsId", "desc");
+        $query = $this->db->get();
+        return $query->result();
+
+
+
+
+    }
+
     // for edit  Selected News view
     public function getAllNewsbyId($newsId)
     {
@@ -128,7 +143,7 @@ class Newsm extends CI_Model
             $config = array(
                 'upload_path' => "images/newsImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,

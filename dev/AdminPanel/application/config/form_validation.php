@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+
 $config = array (
 
 	'signin' => array (
@@ -533,6 +535,14 @@ $config = array (
             'field' => 'textbox[]',
             'label' => 'Course Section Title',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+<<<<<<< HEAD
+=======
+        ),
+        array(
+            'field' => 'ordernumber[]',
+            'label' => 'Order Number ',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+>>>>>>> Work
         ),
         array(
             'field' => 'status[]',
@@ -553,6 +563,14 @@ $config = array (
             'field' => 'status',
             'label' => 'Course Section Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
+<<<<<<< HEAD
+=======
+        ),
+        array(
+            'field' => 'ordernumber',
+            'label' => 'Order Number ',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+>>>>>>> Work
         ),
     ),
 
@@ -878,6 +896,14 @@ $config = array (
             'field' => 'albumCategory',
             'label' => 'Album Category',
             'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+<<<<<<< HEAD
+=======
+        ),
+        array(
+            'field' => 'albumDetails',
+            'label' => 'Album Details',
+            'rules' => 'required|xss_clean|htmlspecialchars',
+>>>>>>> Work
         ),
         array(
             'field' => 'albumTitle',
@@ -906,6 +932,14 @@ $config = array (
             'field' => 'albumTitle',
             'label' => 'Album Title',
             'rules' => 'required|max_length[255]|callback_AlbumeditUniqueCheck|xss_clean|htmlspecialchars',
+<<<<<<< HEAD
+=======
+        ),
+        array(
+            'field' => 'albumDetails',
+            'label' => 'Album Details',
+            'rules' => 'required|xss_clean|htmlspecialchars',
+>>>>>>> Work
         ),
         array(
             'field' => 'albumStatus',
@@ -1011,6 +1045,279 @@ $config = array (
             'field' => 'affiliationStatus',
             'label' => 'Affiliation Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
+<<<<<<< HEAD
+=======
         ),
+    ),
+
+    'BottomBanner'=> array (
+
+        array(
+            'field' => 'title',
+            'label' => 'Banner Title',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_check'
+        ),
+        array(
+            'field' => 'subTitle',
+            'label' => 'Banner Sub Title',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
+
+    'SqureBox'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'SqureBox Title',
+            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'SqureBox Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'SqureBox Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title4',
+            'label' => 'SqureBox Title 4',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title5',
+            'label' => 'SqureBox Title 5',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title6',
+            'label' => 'SqureBox Title 6',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title7',
+            'label' => 'SqureBox Title 7',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title8',
+            'label' => 'SqureBox Title 8',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'Link 1',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'Link 2',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'Link 3',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link4',
+            'label' => 'Link 4',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link5',
+            'label' => 'Link 5',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link6',
+            'label' => 'Link 6',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link7',
+            'label' => 'Link 7',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link8',
+            'label' => 'Link 8',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
+    ),
+
+    'MiddleBanner'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'Middle Banner Title 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+>>>>>>> Work
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'Middle Banner Link 1',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text1',
+            'label' => 'Middle Banner Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'Middle Banner Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'Middle Banner Link 2',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'Middle Banner Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'Middle Banner Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'Middle Banner Link 3',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'Middle Banner Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+    ),
+
+    'VerticalBar'=> array (
+
+        array(
+            'field' => 'title1',
+            'label' => 'VerTical Bar Title 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link1',
+            'label' => 'VerTical Bar Link 1',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text1',
+            'label' => 'VerTical Bar Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title2',
+            'label' => 'VerTical Bar Title 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link2',
+            'label' => 'VerTical Bar Link 2',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'VerTical Bar Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title3',
+            'label' => 'VerTical Bar Title 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link3',
+            'label' => 'VerTical Bar Link 3',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'VerTical Bar Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'title4',
+            'label' => 'VerTical Bar Title 4',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'link4',
+            'label' => 'VerTical Bar Link 4',
+            'rules' => 'required|max_length[500]|valid_url|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text4',
+            'label' => 'VerTical Bar Text 4',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'VerTical Bar Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
+    ),
+
+    'Slider'=> array (
+
+        array(
+            'field' => 'text1',
+            'label' => 'Slider Text 1',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text2',
+            'label' => 'Slider Text 2',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'text3',
+            'label' => 'Slider Text 3',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'image[]',
+            'label' => 'Image',
+            'rules' => 'callback_val_img_checkSqureBox'
+        ),
+    ),
+
+    'resetPassword'=> array (
+
+        array(
+            'field' => 'email',
+            'label' => 'Email',
+            'rules' => 'required|valid_email'
+        ),
+        array(
+            'field' => 'pass',
+            'label' => 'Password',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'conPass',
+            'label' => 'ConFirm Password',
+            'rules' => 'trim|required|matches[pass]'
+        ),
+
     ),
 );

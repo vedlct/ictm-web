@@ -136,3 +136,9 @@ define("SELECT_ALBUM", "Select Album");
 
 define("FOLDER_NAME", "AdminPanel");
 
+///////////// For FeedBack ////////////////
+define("FEEDBACK_SOURCE",array ("Website","Facebook","Twitter","Youtube","LinkedIn","Google+","Application Form","Feedback Form","Other source"));
+
+/////////////reCapcha////////
+define("ADMIN_EMAIL", "md.sakibrahman@gmail.com");
+define("SITE_KEY_CONTACT", "6LdVdC8UAAAAAJBVvMe6oQ_Kq7Gd4MdwH3mDSCzX");

@@ -177,6 +177,22 @@ class News extends CI_Controller
 
     /*---------for Manage Faculty ----------end-------------*/
 
+
+    // search by news title in manage news
+    public function searchByNewsTitle()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $name=$this->input->post('name');
+            $this->data['news'] =$this->Newsm->viewAllNewsByName($name);
+            $this->load->view('Admin/manageNewsAfterSearch', $this->data);
+
+
+        } else {
+            redirect('Admin/Login');
+        }
+    }
+
     //this function will delete the image in edit
     public function deleteNewsImage($id){
 

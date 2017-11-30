@@ -50,14 +50,24 @@
                         </header>
                         <div class="panel-body ">
                             <div class="table table-responsive">
-                            <table class="table  table-advance  table-bordered table-hover">
+                                <form method="post" action="<?php echo base_url()?>Admin/Faculty/manageFacultySearchByTitle">
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Search By Title</label>
+                                        <input type="text" class="form-control col-md-6" id="title" name="title">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <button style="margin-top: 23px" type="submit" class="btn btn-default">Submit</button>
+                                    </div>
+
+                                </form>
+                            <table class="table  table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Email </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)">Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)">Email </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">Position </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Employee Type </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)">Employee Type </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">Degree </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">Status </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">Inserted By </th>

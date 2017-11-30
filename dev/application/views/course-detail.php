@@ -40,7 +40,12 @@
                             <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                             <?php } ?>
                             <?php foreach ($coursedetail as $cd) { ?>
+<<<<<<< HEAD:dev/application/views/course-detail.php
                             <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
+=======
+<!--                            <li><a href="--><?php //echo base_url()?><!--Apply">APPLY NOW</a></li>-->
+                            <li><a href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">Download Application Form</a></li>
+>>>>>>> Work:dev/application/views/course-detail.php
                             <?php }?>
                         </ul>
                 
@@ -94,7 +99,7 @@
                                         		<td><strong>Award:</strong>  <?php echo $cd->awardingTitle ?> </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>UCAS Code:</strong> <?php echo $cd->courseCodeIcon ?></td>
+                                                <td><strong>Course Id:</strong> <?php echo $cd->courseCodeIcon ?></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>Location:</strong> <?php echo $cd->couseLocation ?></td>
@@ -137,6 +142,7 @@
                                         <?php } ?>
                                     </table>
                                 </div><br>
+<<<<<<< HEAD:dev/application/views/course-detail.php
                                 
 
                                 
@@ -144,6 +150,25 @@
                                     <h2 class="widget-title">COURSES LIST</h2>
                                     <?php include("course-sidebar.php"); ?>
                                 </div><!-- /widget-posts -->
+=======
+
+
+                                <?php foreach ($coursedetail as $cd) {?>
+
+                                    <?php $x = "10003239" ?>
+                                    <?php $y = $cd->courseCodeIcon ?>
+                                    <?php $studyMode = $cd->studyMode ?>
+
+                                <?php }?>
+
+                                <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
+
+                                    <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
+
+
+
+                                <!-- /widget-posts -->
+>>>>>>> Work:dev/application/views/course-detail.php
                                 
                             </div><!-- sidebar -->
                         </div><!-- /col-md-3 -->
@@ -158,4 +183,19 @@
 </body>
 
 
+<<<<<<< HEAD:dev/application/views/course-detail.php
 </html>
+=======
+</html>
+        <script>
+            (function (d) {
+                "use strict";
+                var widgetScript = d.createElement('script');
+                widgetScript.id = 'unistats-widget-script';
+                widgetScript.src = 'http://widget.unistats.ac.uk/js/unistats.widget.js';
+                var scriptTags = d.getElementsByTagName('script')[0];
+                if (d.getElementById('unistats-widget-script')) { return; }
+                scriptTags.parentNode.insertBefore(widgetScript, scriptTags);   }
+                (document));
+        </script>
+>>>>>>> Work:dev/application/views/course-detail.php

@@ -49,12 +49,22 @@
                         </header>
                         <div class="panel-body">
                             <div class="table table-responsive">
+                                <form method="post" action="<?php echo base_url()?>Admin/Page/searchByTitlPage">
+                                    <div class="form-group col-md-6">
+                                        <label for="email">Search By Title</label>
+                                        <input type="text" class="form-control col-md-6" id="title" name="title">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <button style="margin-top: 23px" type="submit" class="btn btn-default">Submit</button>
+                                    </div>
 
-                        <table class="table table-striped table-advance  table-bordered table-hover">
+                                </form>
+
+                        <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                             <tbody>
                             <tr>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Type</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Page Title</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Page Type</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Status</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Insert By</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%"> Last Modified By</th>

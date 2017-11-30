@@ -13,6 +13,7 @@ class Albumm extends CI_Model
     public function createNewAlbum() {
 
         $albumCategory = $this->input->post("albumCategory");
+        $albumDescription = $this->input->post("albumDetails");
         $albumTitle = $this->input->post("albumTitle");
         $albumStatus = $this->input->post("albumStatus");
 
@@ -27,6 +28,7 @@ class Albumm extends CI_Model
                 'albumCategoryName' => $albumCategory,
                 'albumTitle' => $albumTitle,
                 'albumStatus'=>$albumStatus,
+                'albumDescription'=>$albumDescription,
                 'insertedBy'=>$this->session->userdata('userEmail'),
                 'insertedDate'=>date("Y-m-d H:i:s"),
             );
@@ -78,7 +80,7 @@ class Albumm extends CI_Model
     public function getAllAlbumInfobyId($albumId)
     {
 
-        $this->db->select('albumId,albumTitle,albumCategoryName,albumStatus');
+        $this->db->select('albumId,albumTitle,albumCategoryName,albumStatus,albumDescription');
         $this->db->where('albumId', $albumId);
         $this->db->from('ictmalbum');
 
@@ -128,6 +130,11 @@ class Albumm extends CI_Model
         $albumTitle = $this->input->post("albumTitle");
         $albumStatus = $this->input->post("albumStatus");
 
+<<<<<<< HEAD
+=======
+        $albumDescription = $this->input->post("albumDetails");
+
+>>>>>>> Work
         if ($albumStatus==STATUS[1]){
             $homeStatus=null;
         }
@@ -151,6 +158,10 @@ class Albumm extends CI_Model
             'albumTitle' => $albumTitle,
             'albumStatus'=>$albumStatus,
             'homeStatus' => $homeStatus,
+<<<<<<< HEAD
+=======
+            'albumDescription'=>$albumDescription,
+>>>>>>> Work
             'lastModifiedDate'=>date("Y-m-d H:i:s"),
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 

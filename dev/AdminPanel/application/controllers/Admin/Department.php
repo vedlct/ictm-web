@@ -133,25 +133,16 @@ class Department extends CI_Controller
     }
 
     //this will delete department
-    public function deleteDepartment($departmentId)    // delete Department if no Submenu
+    public function deleteDepartment($departmentId)    // delete Department if no course
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
             $r=$this->Departmentm->deleteDepartmentId($departmentId);
-            if ($r!='0'){
-                $name=array();
 
-                foreach ($r as $r){
-                    array_push($name,$r->courseTitle);
-                }
-
-                $x=implode(" , ",$name);
-                echo $x;
+            if ($r==0){
+                $this->session->set_flashdata('successMessage','Department Deleted Successfully');
 
             }
-            else{
-                $this->session->set_flashdata('successMessage','Department Deleted Successfully');
-                echo $r;}
-
+            echo $r;
 
         }
         else{

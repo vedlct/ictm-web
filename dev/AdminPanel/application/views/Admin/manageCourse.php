@@ -46,13 +46,13 @@
                         </header>
                         <div class="panel-body">
                             <div class="table table-responsive">
-                            <table class="table table-striped table-advance  table-bordered table-hover ">
+                            <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
                             <tbody>
                             <tr bgcolor="#D3D3D3">
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Name</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Department</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Code</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Award</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Course Name</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Department</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)"> Course Id</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(3)"> Award</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Status</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Insert By</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Modified By</th>

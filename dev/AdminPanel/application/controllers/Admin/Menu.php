@@ -13,7 +13,7 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-                $this->data['page'] = $this->Pagem->getPageIdName();
+                $this->data['page'] = $this->Pagem->getPageIdNameforMenu();
                 $this->load->view('Admin/newMenu', $this->data);
 
         }
@@ -49,7 +49,7 @@ class Menu extends CI_Controller {
 
             if (!$this->form_validation->run('createMenu')) {
 
-                $this->data['page'] = $this->Pagem->getPageIdName();
+                $this->data['page'] = $this->Pagem->getPageIdNameforMenu();
                 $this->load->view('Admin/newMenu', $this->data);
             }
             else
@@ -104,13 +104,28 @@ class Menu extends CI_Controller {
         }
     }
 
+    public function searchByTitleMenu(){
+        if ($this->session->userdata('type') == USER_TYPE[0])
+        {
+        $title = $this->input->post('title');
+        $this->data["links"] = null;
+        $this->data["menu"] = $this->Menum->getAllforManageMenuSearchByTitle($title);
+
+        $this->load->view('Admin/manageMenu',$this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
     // for edit menu view
     public function editMenuView($menuId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data['edit_menu'] = $this->Menum->getAllMenubyId($menuId);
-            $this->data['page'] = $this->Pagem->getPageIdName();
+            $this->data['page'] = $this->Pagem->getPageIdNameforMenu();
 
             $this->load->view('Admin/editMenu', $this->data);
 
@@ -129,7 +144,7 @@ class Menu extends CI_Controller {
             if (!$this->form_validation->run('editMenu')) {
 
                 $this->data['edit_menu'] = $this->Menum->getAllMenubyId($id);
-                $this->data['page'] = $this->Pagem->getPageIdName();
+                $this->data['page'] = $this->Pagem->getPageIdNameforMenu();
 
                 $this->load->view('Admin/editMenu', $this->data);
             }

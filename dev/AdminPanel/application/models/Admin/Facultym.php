@@ -56,7 +56,7 @@ class Facultym extends CI_Model
             $config = array(
                 'upload_path' => "images/facultyImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
@@ -126,6 +126,21 @@ class Facultym extends CI_Model
         return false;
     }
 
+    public function getAllforManageFacultySearchByTitle($title) {
+
+        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmfaculty');
+
+        $this->db->like('facultyFirstName',$title);
+
+
+        $this->db->order_by("facultyId", "desc");
+
+        $query = $this->db->get();
+        return $query->result() ;
+
+    }
+
     // for edit  Selected Faculty view
     public function getAllFacultybyId($facultyId)
     {
@@ -167,7 +182,7 @@ class Facultym extends CI_Model
             $config = array(
                 'upload_path' => "images/facultyImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,

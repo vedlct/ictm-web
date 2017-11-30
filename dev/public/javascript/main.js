@@ -374,6 +374,10 @@
             }
         });
     };
+    
+
+
+
 
     var detectViewport = function() {
         $('[data-waypoint-active="yes"]').waypoint(function() {

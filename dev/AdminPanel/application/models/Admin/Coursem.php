@@ -78,7 +78,7 @@ class Coursem extends CI_Model
                 $config = array(
                     'upload_path' => "images/courseImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
-                    'max_size' => "1024*4",
+                    'max_size' => "4096",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -198,8 +198,8 @@ class Coursem extends CI_Model
     public function updateCourseData($id){
 
         $name = $this->input->post("name");
-        $codeperson = $this->input->post("codeperson");
-        $code = $this->input->post("code");
+        $codeIcon = $this->input->post("codeperson");
+        $codeCodePearson = $this->input->post("code");
         $award = $this->input->post("award");
         $ucascode = $this->input->post("ucasCode");
         $location = $this->input->post("location");
@@ -226,7 +226,7 @@ class Coursem extends CI_Model
                     'upload_path' => "images/courseImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
                     'overwrite' => TRUE,
-                    'max_size' => "1024*4",
+                    'max_size' => "4096",
                     'remove_spaces'=>FALSE,
                     'mod_mime_fix'=>FALSE,
                     'file_name' => $id,
@@ -248,8 +248,8 @@ class Coursem extends CI_Model
                 }
 
             $data = array(
-                'courseCodePearson' => $codeperson,
-                'courseCodeIcon' => $code,
+                'courseCodePearson' => $codeCodePearson,
+                'courseCodeIcon' => $codeIcon,
                 'ucasCode' => $ucascode,
                 'courseTitle' => $name,
                 'awardingTitle' => $award,
@@ -274,8 +274,8 @@ class Coursem extends CI_Model
             );
         }else {
             $data = array(
-                'courseCodePearson' => $codeperson,
-                'courseCodeIcon' => $code,
+                'courseCodePearson' => $codeCodePearson,
+                'courseCodeIcon' => $codeIcon,
                 'ucasCode' => $ucascode,
                 'courseTitle' => $name,
                 'awardingTitle' => $award,
@@ -382,12 +382,12 @@ class Coursem extends CI_Model
         $this->db->where('courseId',$courseId);
         $query = $this->db->get('ictmcoursesection');
 
-        foreach ( $query->result() as $cr){
-            array_push($coursereturn, $cr->courseSectionTitle);
+        if (!empty($query->result())){
+            return 1;
         }
-
-        return $coursereturn;
-
+        else{
+            return 0;
+        }
 
 
     }

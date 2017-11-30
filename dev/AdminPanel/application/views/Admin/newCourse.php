@@ -80,7 +80,7 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                            <label for="cname" class="control-label col-lg-2">Course Code  <span class="required">*</span></label>
+                                            <label for="cname" class="control-label col-lg-2">Course Id  <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('Code'); ?></font></p>
                                                 <input class="form-control"  id="Code" name="Code"  value="<?php echo set_value('Code'); ?>" type="text" required />

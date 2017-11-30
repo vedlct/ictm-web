@@ -22,6 +22,12 @@
     .news {
         margin-left: 58px;
     }
+<<<<<<< HEAD
+=======
+	.newwss {
+		margin-left: -40px;
+	}
+>>>>>>> Work
 
     .content-pad {
         margin-left: 65px;
@@ -45,6 +51,12 @@
     .news {
         margin-left: 58px;
     }
+<<<<<<< HEAD
+=======
+	.newwss {
+		margin-left: -68px;
+	}
+>>>>>>> Work
 
     .content-pad {
         margin-left: 65px;
@@ -67,7 +79,11 @@
 		padding: 30px;
 		background :#ffffff;
 		background: rgba(255,255,255,.7);
+<<<<<<< HEAD
 		height: 690px;
+=======
+		height: 790px;
+>>>>>>> Work
 	}
 }
 
@@ -78,7 +94,16 @@
 		margin-left: -570px !important;
 	}
 
+<<<<<<< HEAD
 
+=======
+	.newwss {
+		margin-left: -68px;
+	}
+    .content-content {
+        margin-left: -65px;
+    }
+>>>>>>> Work
 
 	.header-overlay-content.header-overlay-scroller .un-post-scroller {
 		z-index: 9999;
@@ -114,6 +139,13 @@
 		width: 360px;
 		z-index: 9999;
 	}
+<<<<<<< HEAD
+=======
+    
+    .phtoglry{margin-left: 30px;
+        border: none !important;
+    }
+>>>>>>> Work
 }
 
 /* Smaller than standard 992 */
@@ -126,6 +158,33 @@
 	.main-menu {
 		display: none;
 	}
+<<<<<<< HEAD
+=======
+    
+    .testleft {float: left}
+    .testright {float: right}
+    
+    .featured-causes:before {
+        display: none;
+    }
+    
+    .featured-causes:after {
+        display: none;
+    }
+    
+    #itmthumb {
+        margin-left: -40px;
+    }
+	#itmtitle {
+		margin-left: 25px;
+	}
+    .news {
+        margin-left: -40px;
+    }
+	.newwss {
+		margin-left: -40px;
+	}
+>>>>>>> Work
 
 	#logo img {
 		height: 80px;
@@ -535,14 +594,57 @@
 	.top-search.show {
 		top: 40px;
 	}
+<<<<<<< HEAD
+=======
+    
+    .thumbnail-overflow {
+        margin-left: -40px;
+    }
+>>>>>>> Work
 
 }
 
 /* Tablet Landscape */
+<<<<<<< HEAD
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
 
 }
 
+=======
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+
+    .post-scroller-wrap {
+        background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
+        height: 690px;
+        padding: 30px;
+    }
+
+}
+
+/* Tablet Landscape */
+@media only screen and (max-device-width : 1024px) and (orientation : landscape) {
+
+    .post-scroller-wrap {
+        background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
+        height: 690px;
+        padding: 30px;
+    }
+
+}
+
+
+/* Tablet Landscape */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1366px) and (orientation : landscape) {
+
+    .post-scroller-wrap {
+        background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;
+        height: 790px;
+        padding: 30px;
+    }
+    
+}
+
+>>>>>>> Work
 /* Tablet Portrait Size */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.thumbnail-overflow {
@@ -556,6 +658,29 @@
 	.thumbnail-overflow {
 		left: 0px;
 	}
+<<<<<<< HEAD
+=======
+    
+    
+    .newwss > a {
+        height: 250px;
+        width: 300px;
+    }
+    
+    .thumbnail-hoverlay {
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: -15px;
+        top: 0;
+        transition: all 0.4s ease 0s;
+    }
+    
+    .thumbnail-overflow {
+        margin-left: -40px;
+    }
+>>>>>>> Work
 
 	.flat-events .grid-item {
 		width: 100%;

@@ -1,6 +1,6 @@
 
 		<?php include("header.php"); ?>
-        
+        <script src='https://www.google.com/recaptcha/api.js'></script>
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
@@ -36,7 +36,11 @@
                                             <?php if ($facultyinfo->facultyImage !=null){?>
                                                 <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $facultyinfo->facultyImage?>" alt="image"></a>
                                             <?php }else{?>
+<<<<<<< HEAD:dev/application/views/faculty-member-detail.php
                                                     <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.PNG" alt="image"></a>
+=======
+                                                    <a ><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.png" alt="image"></a>
+>>>>>>> Work:dev/application/views/faculty-member-detail.php
                                                 <?php } ?>
                                         </div>
                                     </div>
@@ -105,23 +109,15 @@
 								
                                     <div class="contact-form">
                                         <div class="line-box"></div>
-                                        <form action="http://corpthemes.com/html/university/contact/contact-process.php" method="post" id="contactform" class="comment-form" novalidate>
+                                        <form action="<?php echo base_url()?>Email/FacultyEmail" method="post"  id="contactform" class="comment-form" novalidate>
                                         	<div class="row">
-                                            	<div class="col-md-6">
+                                            	<div class="col-md-12">
                                                 	<label><strong>Your Name *</strong></label>
                                                 	<fieldset class="style-1 full-name">
-                                                        <input type="text" id="name" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
+                                                        <input type="text" id="name" class="tb-my-input" name="name" tabindex="1" value="" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
-                                                <div class="col-md-6">
-                                                	<label><strong>I am a: *</strong></label><br>
-                                                	<select style="width: 100%" name="carlist" form="carform">
-                                                      <option value="">Option 1</option>
-                                                      <option value="">Option 2</option>
-                                                      <option value="">Option 3</option>
-                                                      <option value="">Option 4</option>
-                                                    </select> 
-                                                </div>
+
                                             </div> 
                                             <div class="row">
                                             	<div class="col-md-6">
@@ -141,7 +137,8 @@
                                             <fieldset class="message-form">
                                                 <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
                                             </fieldset>
-
+                                            <input name="facultyEmail" type="hidden" value="<?php echo $facultyinfo->facultyEmail?>">
+                                            <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
                                                 <button class="flat-button button-style style-v1">Send &nbsp;<i class="fa fa-angle-right"></i></button>
                                             </div>             

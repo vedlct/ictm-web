@@ -44,7 +44,7 @@ class Eventm extends CI_Model
                 $config = array(
                     'upload_path' => "images/eventImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
-                    'max_size' => "1024*4",
+                    'max_size' => "4096",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -99,6 +99,27 @@ class Eventm extends CI_Model
 
     }
 
+
+    public function viewAllEventByName($name)  // search by Event title in manage Event page
+    {
+        $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventType,eventStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmevent');
+
+        $this->db->like('eventTitle',$name);
+        $this->db->order_by("eventId", "desc");
+
+        $query = $this->db->get();
+        return $query->result();
+
+
+
+
+
+
+
+
+    }
+
     public function getAllEventbyId($eventId) // for edit  Selected Event view
     {
         $query = $this->db->get_where('ictmevent', array('eventId' => $eventId));
@@ -126,7 +147,7 @@ class Eventm extends CI_Model
             $config = array(
                 'upload_path' => "images/eventImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,

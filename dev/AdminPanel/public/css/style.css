@@ -1255,7 +1255,7 @@ ul.top-menu > li > a:hover, ul.top-menu > li > a:focus {
 
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.176) !important;
 
-    };
+    }
 
 }
 
@@ -2397,7 +2397,6 @@ div[data-role="editor-toolbar"] {
 
 }
 
-}
 
 .panel.panel-default.panel-heading {
 
@@ -3011,7 +3010,7 @@ div[data-role="editor-toolbar"] {
 
 }
 
-* /Widget-Content */
+/* Widget-Content */
 
 
 
@@ -3367,7 +3366,7 @@ div[data-role="editor-toolbar"] {
 
 /*-----	map-----*/
 
-* Google maps */
+/* Google maps */
 
 
 
@@ -3677,7 +3676,7 @@ div[data-role="editor-toolbar"] {
 
     font-weight: 300;
 
-    font-weight: 30px;
+    /*font-weight: 30px;*/
 
 }
 
@@ -4159,8 +4158,7 @@ div[data-role="editor-toolbar"] {
 
         margin-bottom: -4px;
 
-    };
-
+    }
     }
 
 
@@ -4869,7 +4867,7 @@ ul.ft-link li a i {
 
 .profile-widget-img{
 
-    background: url('../img/backgrounds/bg-11-small.jpg') no-repeat !important;    
+    /*background: url('../img/backgrounds/bg-11-small.jpg') no-repeat !important;    */
 
 }
 
@@ -5543,7 +5541,7 @@ ul.ft-link li a i {
 
 .weather-bg-img {
 
-    background: url(../img/backgrounds/bg-14-small.jpg) no-repeat center center;    
+    /*background: url(../img/backgrounds/bg-14-small.jpg) no-repeat center center;    */
 
     color: #fff;
 
@@ -8319,9 +8317,9 @@ table.sliders tr td {
 
     width: 80px;
 
-    -webkit-mask: url('../img/mask.png') 0 0 no-repeat;
+    /*-webkit-mask: url('../img/mask.png') 0 0 no-repeat;*/
 
-    mask: url('../img/mask.png') 0 0 no-repeat;
+    /*mask: url('../img/mask.png') 0 0 no-repeat;*/
 
     -webkit-user-select: none;
 
@@ -8533,9 +8531,9 @@ table.sliders tr td {
 
     -webkit-border-radius: 6px;
 
-    -webkit-mask: url('../img/mask.png') 0 0 no-repeat;
+    /*-webkit-mask: url('../img/mask.png') 0 0 no-repeat;*/
 
-    mask: url('../img/mask.png') 0 0 no-repeat;
+    /*mask: url('../img/mask.png') 0 0 no-repeat;*/
 
 }
 
@@ -8857,35 +8855,35 @@ table.sliders tr td {
 
 
 
-.has-js .label_radio {
+/*.has-js .label_radio {*/
 
-    background: url(../img/checkbox/radio-off.png) no-repeat;
+    /*background: url(../img/checkbox/radio-off.png) no-repeat;*/
 
-}
-
-
-
-.has-js .label_check {
-
-    background: url(../img/checkbox/check-off.png) no-repeat;
-
-}
+/*}*/
 
 
 
-.has-js label.c_on {
+/*.has-js .label_check {*/
 
-    background: url(../img/checkbox/check-on.png) no-repeat;
+    /*background: url(../img/checkbox/check-off.png) no-repeat;*/
 
-}
+/*}*/
 
 
 
-.has-js label.r_on {
+/*.has-js label.c_on {*/
 
-    background: url(../img/checkbox/radio-on.png) no-repeat;
+    /*background: url(../img/checkbox/check-on.png) no-repeat;*/
 
-}
+/*}*/
+
+
+
+/*.has-js label.r_on {*/
+
+    /*background: url(../img/checkbox/radio-on.png) no-repeat;*/
+
+/*}*/
 
 
 
@@ -9011,43 +9009,43 @@ table.sliders tr td {
 
 
 
-.cke_top, .cke_bottom {
+/*.cke_top, .cke_bottom {*/
 
-    background: #F5F5F5 !important;
+    /*background: #F5F5F5 !important;*/
 
-    background: -moz-linear-gradient(center top , #F5F5F5, #F5F5F5) repeat scroll 0 0 #F5F5F5 !important;
+    /*background: -moz-linear-gradient(center top , #F5F5F5, #F5F5F5) repeat scroll 0 0 #F5F5F5 !important;*/
 
-    background: -webkit-linear-gradient(center top , #F5F5F5, #F5F5F5) repeat scroll 0 0 #F5F5F5 !important;
+    /*background: -webkit-linear-gradient(center top , #F5F5F5, #F5F5F5) repeat scroll 0 0 #F5F5F5 !important;*/
 
-    background: -o-linear-gradient(center top , #F5F5F5, #F5F5F5) repeat scroll 0 0 #F5F5F5 !important;
+    /*background: -o-linear-gradient(center top , #F5F5F5, #F5F5F5) repeat scroll 0 0 #F5F5F5 !important;*/
 
-    box-shadow: none;
+    /*box-shadow: none;*/
 
-    padding: 6px 8px 2px;
+    /*padding: 6px 8px 2px;*/
 
-}
-
-
-
-.cke_top {
-
-    border-bottom: 1px solid #cccccc !important;
-
-}
+/*}*/
 
 
 
-.cke_chrome {
+/*.cke_top {*/
 
-    border: 1px solid #cccccc !important;
+    /*border-bottom: 1px solid #cccccc !important;*/
 
-    box-shadow: none !important;
+/*}*/
 
-    display: block;
 
-    padding: 0;
 
-}
+/*.cke_chrome {*/
+
+    /*border: 1px solid #cccccc !important;*/
+
+    /*box-shadow: none !important;*/
+
+    /*display: block;*/
+
+    /*padding: 0;*/
+
+/*}*/
 
 
 
