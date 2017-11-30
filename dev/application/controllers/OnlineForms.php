@@ -103,7 +103,10 @@ class OnlineForms extends CI_Controller
                     redirect('OnlineForms/registerInterest');
                 }
             }else {
-                echo "<script>alert('Please select the recaptcha')</script>";
+                echo "<script>alert('Please select the recaptcha');
+                    window.location = 'RegisterInterest';
+                    </script>";
+
             }
         }
     }
