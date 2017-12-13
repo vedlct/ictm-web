@@ -513,7 +513,7 @@
                                         
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
-                                            <button type="button" class="btn btn-next">Next</button>
+                                            <a href="<?php echo base_url()?>OnlineForms/applyNow2"> <button type="button" class="btn ">Next</button></a>
                                             <button type="button" class="btn btn-next">Save Application</button>
                                           </div>
                                         </div>
