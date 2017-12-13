@@ -29,6 +29,7 @@ class Page extends CI_Controller {
             if ($pt->pageType == 'About Type') {
 
                 $this->data['aboutdata']= $this->PageSectionm->getPageData($id);
+                $this->data['coursedata']=$this->Coursem->getCourseTitle();
                 $this->load->view('about', $this->data);
 
             }

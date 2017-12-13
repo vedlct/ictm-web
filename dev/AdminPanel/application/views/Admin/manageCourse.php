@@ -51,7 +51,7 @@
                             <tr bgcolor="#D3D3D3">
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Course Name</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Department</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)"> Course Code</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)"> Course Id</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(3)"> Award</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Course Status</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Insert By</th>
