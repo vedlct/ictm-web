@@ -53,7 +53,7 @@
 				                        	<label>Password*</label>
 				                        	<input type="password" name="" class="form-last-name form-control" id="form-last-name">
 				                        </div>
-				                        <a href="application-form.php"><button type="button" class="btn btn-next">Login</button></a>
+				                        <a href="form/application-form.php"><button type="button" class="btn btn-next">Login</button></a>
 				                    </div>
 			                    </fieldset>		                    
 		                    </form>

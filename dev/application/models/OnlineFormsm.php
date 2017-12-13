@@ -110,5 +110,11 @@ class OnlineFormsm extends CI_Model
 
 
     }
+    public function getCandidateinfo(){
+
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
+
+    }
 }
 ?>

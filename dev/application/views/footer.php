@@ -296,7 +296,7 @@
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.tools.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/slider.js"></script>
-        
+
 <!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/switcher.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.cookie.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/main.js"></script>
