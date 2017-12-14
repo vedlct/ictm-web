@@ -115,6 +115,62 @@ $config = array (
 		),
 
 
+    'studentRegistation'=>
+    array(
+
+        array(
+            'field' => 'type',
+            'label' => 'Type',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'title',
+            'label' => 'Title',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'firstname',
+            'label' => 'First Name',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'surname',
+            'label' => 'User name',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'email',
+            'label' => 'Email Address',
+            'rules' => 'required|max_length[100]|is_unique[studentregistration.email]|valid_email|xss_clean|htmlspecialchars',
+            'errors' => array(
+                'is_unique' => 'Email Allready Existed ! ',
+            ),
+        ),
+        array(
+            'field' => 'password',
+            'label' => 'Password',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+
+        array(
+            'field' => 'confirmpassword',
+            'label' => 'Confirm password',
+            'rules' => 'required|matches[password]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'gender',
+            'label' => 'Gender',
+            'rules' => 'required|max_length[50]|in_list[male,female,other]|xss_clean|htmlspecialchars'
+        ),
+
+
+  ),
 
 
 );
