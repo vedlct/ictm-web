@@ -110,6 +110,32 @@ class OnlineFormsm extends CI_Model
 
 
     }
+
+    public function applyNow2(){
+        $qualification = $this->input->post('qualification[]');
+        $institution = $this->input->post('institution[]');
+        $startdate = $this->input->post('startdate[]');
+        $enddate = $this->input->post('enddate[]');
+        $grade = $this->input->post('grade[]');
+
+        $data = array(
+            'title' => $qualification,
+            'firstName' => $institution,
+            'surName' => $startdate,
+            'House' => $enddate,
+            'street' => $grade,
+            'inserDate'=>date("Y-m-d H:i:s"),
+
+        );
+        $this->security->xss_clean($data);
+        $error=$this->db->insert('ictmregisterinterest', $data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
     public function getCandidateinfo(){
 
         $query = $this->db->get('candidateinfo');
