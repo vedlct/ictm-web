@@ -40,8 +40,12 @@
                             <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                             <?php } ?>
                             <?php foreach ($coursedetail as $cd) { ?>
+
                             <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
 <!--                            <li><a href="--><?php //echo base_url('public/pdf-files/Application_Form.pdf')?><!--">APPLY NOW</a></li>-->
+
+
+
                             <?php }?>
                         </ul>
                 
@@ -95,7 +99,7 @@
                                         		<td><strong>Award:</strong>  <?php echo $cd->awardingTitle ?> </td>
                                             </tr>
                                             <tr>
-                                                <td><strong>UCAS Code:</strong> <?php echo $cd->courseCodeIcon ?></td>
+                                                <td><strong>Course Id:</strong> <?php echo $cd->courseCodeIcon ?></td>
                                             </tr>
                                             <tr>
                                                 <td><strong>Location:</strong> <?php echo $cd->couseLocation ?></td>
@@ -138,34 +142,23 @@
                                         <?php } ?>
                                     </table>
                                 </div><br>
-                                <?php foreach ($coursedetail as $cd) {?>
-<!--                                <div class="kis-widget"-->
-<!---->
-<!--                                     --><?php //$ctitle= $cd->courseTitle ?>
-<!--                                    --><?php //$ct= $cd->courseCodeIcon ?>
-<!--                                     data-institution="<IconCollege>"-->
-<!--                                     data-course="<>"-->
-<!--                                     data-kismode="<>"-->
-<!--                                     data-orientation="<ORIENTATION>"-->
-<!--                                     data-language="<LANGUAGE>">-->
-<!--                                </div>-->
-                                    <div class="kis-widget"
-                                         data-institution="<UKPRN>"
-                                         data-course="<KISCOURSEID>"
-                                         data-kismode="<KISMODE>"
-                                         data-orientation="<ORIENTATION>"
-                                         data-language="<LANGUAGE>"></div>
 
+
+                                <?php foreach ($coursedetail as $cd) {?>
+
+                                    <?php $x = "10003239" ?>
+                                    <?php $y = $cd->courseCodeIcon ?>
+                                    <?php $studyMode = $cd->studyMode ?>
 
                                 <?php }?>
 
-                                <iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/<UKPRN>/<KISCOURSEID>/vertical/sma ll/<LANGUAGE>/<KISMODE>" scrolling="no"  style="overflow: hidden; border: 0px none transparent; width: 190px; height: 500px;">
+                                <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
+
+                                    <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
 
 
-                                <div class="widget widget-courses">
-                                    <h2 class="widget-title">COURSES LIST</h2>
-                                    <?php include("course-sidebar.php"); ?>
-                                </div><!-- /widget-posts -->
+
+                                <!-- /widget-posts -->
                                 
                             </div><!-- sidebar -->
                         </div><!-- /col-md-3 -->

@@ -81,7 +81,7 @@
                                         </div>
 
                                         <div class="col-lg-6">
-                                            <label for="cname" class="control-label col-lg-2">Course Code  <span class="required">*</span></label>
+                                            <label for="cname" class="control-label col-lg-2">Course Id  <span class="required">*</span></label>
                                             <div class="col-lg-10">
                                                 <p><font color="red"> <?php echo form_error('codeperson'); ?></font></p>
                                                 <input class="form-control"  id="codeperson" name="codeperson" value="<?php echo $cad->courseCodeIcon;?>"  type="text" required />

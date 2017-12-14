@@ -103,10 +103,7 @@
                         <div class="col-md-3">
                         
                             <div class="sidebar">
-                            	<div>
-                                	<img src="<?php echo base_url()?>public/images/sidebar-banner.png">
-                                </div><br>
-                                
+
                                 <div class="widget widget-nav-menu">
                                                 <div class=" widget-inner">
                                                     <a ><h2 class="widget-title maincolor2" style="background:#841a29; text-align:center; color:#fff">Quick Links</h2></a>
@@ -169,6 +166,12 @@
                                                     </div>
                                                 </div>
                                   </div>
+
+                                <div class="widget widget-courses">
+                                    <h2 class="widget-title">COURSES LIST</h2>
+                                    <?php include("course-sidebar.php"); ?>
+                                </div>
+
                             </div><!-- sidebar -->
                             
                         </div><!-- /col-md-3 -->

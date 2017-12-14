@@ -29,7 +29,7 @@ class Course extends CI_Controller {
         $this->menu();
         $this->data['coursedetail']= $this->Coursem->getCourseDetails($id);
         $this->data['courseSectiondetail']= $this->CourseSectionm->getCourseSectionDetails($id);
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+
         $this->load->view('course-detail', $this->data);
     }
 
