@@ -115,8 +115,21 @@ class OnlineForms extends CI_Controller
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->data['courseInfo']=$this->Coursem->getCourseInfo();
        // $this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
         $this->load->view('application-form', $this->data);
+    }
+    public function getCourseAwardBody() // get Award body of selected course
+    {
+
+        $courseId=$this->input->post('courseId');
+        $this->data['courseAwardBody']=$this->Coursem->getCourseAwardBody($courseId);
+        foreach ($this->data['courseAwardBody'] as $awardBody){
+
+            $body=$awardBody->awardingBody;
+        }
+
+        echo $body;
     }
     public function applyNow2() // go to the apply page of selected course
     {
@@ -222,6 +235,28 @@ class OnlineForms extends CI_Controller
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
+    }
+
+    public function insertApplicationForm1()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('checkApplicationForm1')) {
+
+                $this->menu();
+                $this->data['coursedata']=$this->Coursem->getCourseTitle();
+                $this->data['courseInfo']=$this->Coursem->getCourseInfo();
+
+                $this->load->view('application-form', $this->data);
+            }
+            else{
+                print_r('rumi');
+            }
+
+        } else {
+            redirect('Admin/Login');
+        }
     }
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()

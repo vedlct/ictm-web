@@ -8,6 +8,22 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcourse');
         return $query->result();
     }
+
+    public function getCourseInfo() //get the course information for online
+    {
+        $this->db->select('courseId,courseTitle');
+        $this->db->where('courseStatus =', STATUS[0]);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+    }
+    public function getCourseAwardBody($courseId) //get the course AwardBody for online
+    {
+        $this->db->select('awardingBody');
+        $this->db->where('courseStatus =', STATUS[0]);
+        $this->db->where('courseId =', $courseId);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+    }
     public function getCourseDetails($id) // get the details of selected course
     {
         $this->db->where('courseId =', $id);
