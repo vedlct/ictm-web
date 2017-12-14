@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow2" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow2insert" method="post" class="registration-form form-horizontal">
 
                         <div class="form-top">
                             <div class="form-top-left">
@@ -87,33 +87,33 @@
 
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Work Experience</h2>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Organisation:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Position Held:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">From:</label>
-                                <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">To:</label>
-                                <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Organisation:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="text" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Position Held:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="text" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">From:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="date" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">To:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="date" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">

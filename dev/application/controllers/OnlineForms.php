@@ -122,8 +122,18 @@ class OnlineForms extends CI_Controller
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        //$this->OnlineFormsm->applyNow2();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
         $this->load->view('application-form2', $this->data);
+    }
+    public function applyNow2insert() // go to the apply page of selected course
+    {
+       // $this->menu();
+       // $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->OnlineFormsm->applyNow2();
+        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+        //$this->load->view('application-form2', $this->data);
+        redirect('OnlineForms/applyNow2');
     }
     public function applyNow3() // go to the apply page of selected course
     {
