@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-9">
 	
-                        	<form role="form" action="" method="post" class="registration-form form-horizontal">
+                        	<form role="form" action="<?php echo base_url()?>OnlineForms/insertApplicationForm1" method="post" class="registration-form form-horizontal">
                         		
                         		<fieldset>
 		                        	<div class="form-top">
@@ -38,9 +38,9 @@
 		                            </div>
 		                            <div class="form-bottom">
                                     	<div class="form-group">
-                                        	<label class="control-label col-md-2">Title:</label>
+                                        	<label class="control-label col-md-2">Title:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<select style="width: 100%" name="title" id="title">
+                                            	<select style="width: 100%" name="title" required id="title">
 
                                                     <option value="" selected><?php echo SELECT_TITLE?></option>
                                                     <?php for ($i=0;$i<count(Title);$i++){?>
@@ -52,16 +52,16 @@
 				                        </div>
                                         
 				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">First Name:</label>
+                                        	<label class="control-label col-md-2">First Name:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="firstName" name="firstName">
+                                            	<input type="text" class="form-control" required id="firstName" name="firstName">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Surname:</label>
+                                        	<label class="control-label col-md-2">Surname:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="surName" name="surName">
+                                            	<input type="text" class="form-control" required id="surName" name="surName">
                                           	</div>
 				                        </div>
                                         
@@ -73,32 +73,32 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Date of Birth:</label>
+                                        	<label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="dob" name="dob">
+                                            	<input type="date" class="form-control" required id="dob" name="dob">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Gender:</label>
+                                        	<label class="control-label col-md-2">Gender:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="radio" id="gender" name="gender" value="male"> Male&nbsp;&nbsp;
-                                                <input type="radio" id="gender" name="gender" value="female"> Female&nbsp;&nbsp;
-                                                <input type="radio" id="gender" name="gender" value="other"> Other
+                                            	<input type="radio" required id="gender" name="gender" value="male"> Male&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="female"> Female&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="other"> Other
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Place of Birth:</label>
+                                        	<label class="control-label col-md-2">Place of Birth:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="placeOfBirth" name="placeOfBirth">
+                                            	<input type="text" class="form-control" required id="placeOfBirth" name="placeOfBirth">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Nationality:</label>
+                                        	<label class="control-label col-md-2">Nationality:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<select style="width: 100%" id="nationality" name="nationality">
+                                            	<select style="width: 100%" id="nationality" required name="nationality">
                                                 		<option value="" disabled selected>Select country...</option>
                                                       	<option value="Afghanistan">Afghanistan</option>
                                                         <option value="Albania">Albania</option>
@@ -344,67 +344,67 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Passport No.:</label>
+                                        	<label class="control-label col-md-2">Passport No.:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="passportNo" name="passportNo">
+                                            	<input type="text" class="form-control" required id="passportNo" name="passportNo">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">PP Expiry Date:</label>
+                                        	<label class="control-label col-md-2">PP Expiry Date:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="passportExpiryDate" name="passportExpiryDate">
+                                            	<input type="date" class="form-control" required id="passportExpiryDate" name="passportExpiryDate">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">UK Entry Date:</label>
+                                        	<label class="control-label col-md-2">UK Entry Date:<span class="required">*</span> </label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="UkEntryDate" name="UkEntryDate">
+                                            	<input type="date" class="form-control" required id="UkEntryDate" name="UkEntryDate">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Visa Expiry Date:</label>
+                                        	<label class="control-label col-md-2">Visa Expiry Date:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="visaExpiryDate" name="visaExpiryDate">
+                                            	<input type="date" class="form-control" required id="visaExpiryDate" name="visaExpiryDate">
                                           	</div>
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Current Address:</label>
+                                        	<label class="control-label col-md-2">Current Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<textarea id="comment-message" id="currentAddress" name="currentAddress" rows="8" tabindex="4"></textarea>
+                                            	<textarea id="comment-message" required id="currentAddress" name="currentAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Overseas (Home) Address:</label>
+                                        	<label class="control-label col-md-2">Overseas (Home) Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<textarea id="comment-message" id="overseasHomeAddress" name="overseasHomeAddress" rows="8" tabindex="4"></textarea>
+                                            	<textarea id="comment-message" required id="overseasHomeAddress" name="overseasHomeAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Telephone:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="telephone" name="telephone">
+                                            	<input type="text" class="form-control" required id="telephone" name="telephone">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mobile:</label>
+                                        	<label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="mobile" name="mobile">
+                                            	<input type="text" class="form-control" required id="mobile" name="mobile">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">E-mail:</label>
+                                        	<label class="control-label col-md-2">E-mail:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="email" class="form-control" id="email" name="email">
+                                            	<input type="email" class="form-control" required id="email" name="email">
                                           	</div>
 				                        </div>
                                         
@@ -418,9 +418,9 @@
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Title:</label>
+                                        	<label class="control-label col-md-2">Title:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<select style="width: 100%" id="EmergencyContactDetails" name="EmergencyContactDetails">
+                                            	<select style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
 
                                                     <option value="" selected><?php echo SELECT_TITLE?></option>
                                                     <?php for ($i=0;$i<count(Title);$i++){?>
@@ -432,53 +432,59 @@
 				                        </div>
                                         
 				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">Name:</label>
+                                        	<label class="control-label col-md-2">Name:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="EmergencyContactName" name="EmergencyContactName">
+                                            	<input type="text" class="form-control" required id="EmergencyContactName" name="EmergencyContactName">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Relation:</label>
+                                        	<label class="control-label col-md-2">Relation:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="EmergencyContactRelation" name="EmergencyContactRelation">
+                                            	<input type="text" class="form-control" required id="EmergencyContactRelation" name="EmergencyContactRelation">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Address:</label>
+                                        	<label class="control-label col-md-2">Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<textarea id="comment-message" id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"></textarea>
+                                            	<textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mobile:</label>
+                                        	<label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="EmergencyContactMobile" name="EmergencyContactMobile">
+                                            	<input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">E-mail:</label>
+                                        	<label class="control-label col-md-2">E-mail:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="email" class="form-control" id="EmergencyContactEmail" name="EmergencyContactEmail">
+                                            	<input type="email" class="form-control" required id="EmergencyContactEmail" name="EmergencyContactEmail">
                                           	</div>
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Course Details</h2>
+
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Course Name:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="courseName" name="courseName">
+                                                <select style="width: 100%" onchange="courseAwardBody()" id="courseName" required name="courseName">
+                                                <option value=""><?php echo SELECT_COURSE?></option>
+                                                <?php foreach ($courseInfo as $course){?>
+                                                <option value="<?php echo $course->courseId?>" <?php echo set_select('courseName',$course->courseId, False); ?>><?php echo $course->courseTitle?></option>
+                                                    <?php } ?>
+                                                </select>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Awarding Body:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="awardingBody" name="awardingBody">
+                                            	<input type="text" disabled class="form-control" id="awardingBody" name="awardingBody">
                                           	</div>
 				                        </div>
                                         
@@ -506,17 +512,17 @@
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Method of study:</label>
                                           	<div class="col-md-10">
-                                            	<input type="radio" name="methodeOfStudy" value=""> Full Time&nbsp;&nbsp;
-                                                <input type="radio" name="methodeOfStudy" value=""> Part Time&nbsp;&nbsp;
-                                                <input type="radio" name="methodeOfStudy" value=""> Day&nbsp;&nbsp;
-                                                <input type="radio" name="methodeOfStudy" value=""> Evenings & Weekend
+                                            	<input type="radio" name="methodeOfStudy" value="Full Time"> Full Time&nbsp;&nbsp;
+                                                <input type="radio" name="methodeOfStudy" value="Part Time"> Part Time&nbsp;&nbsp;
+                                                <input type="radio" name="methodeOfStudy" value="Day"> Day&nbsp;&nbsp;
+                                                <input type="radio" name="methodeOfStudy" value="Evenings & Weekend"> Evenings & Weekend
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
-                                            <a href="<?php echo base_url()?>OnlineForms/applyNow2"> <button type="button" class="btn ">Next</button></a>
-                                            <button type="button" class="btn btn-next">Save Application</button>
+                                            <a href="<?php echo base_url()?>OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>
+                                            <button type="submit" class="btn btn-next">Save Application</button>
                                           </div>
                                         </div>
 				                    </div>
@@ -562,3 +568,63 @@
 </body>
 
 </html>
+
+        <script>
+
+//            function submitedForm() {
+//
+//
+//                var phone=document.getElementById("title").value;
+//                var email=document.getElementById("facultyEmail").value;
+//
+//                var chk=/^[0-9]*$/;
+//                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//                if(!phone.match(chk)) {
+//                    alert( 'Please enter a valid Phone number!!' );
+//                    return false;
+//                }
+//                if(phone.length >45) {
+//                    alert( 'Phone number must be less than 45 charecter!!' );
+//                    return false;
+//                }
+//                if( !facultyIntroLength ) {
+//                    alert( 'Please enter a Faculty Intro' );
+//                    return false;
+//                }
+//                if(email.match(mailformat))
+//                {
+//                    return true;
+//                }
+//                else
+//                {
+//                    alert("You have entered an invalid email address!");
+//                    return false;
+//                }
+//
+//            }
+
+            function courseAwardBody() {
+
+                var courseId=document.getElementById("courseName").value;
+                if (courseId ==""){
+                    alert('please select a course First');
+                    document.getElementById('awardingBody').value = "";
+                    return false;
+                }else {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo base_url("OnlineForms/getCourseAwardBody")?>',
+                        data: {courseId: courseId},
+                        cache: false,
+                        success: function (data) {
+
+                            document.getElementById('awardingBody').value = data;
+
+                        }
+                    });
+                }
+
+            }
+
+        </script>
