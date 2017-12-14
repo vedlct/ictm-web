@@ -24,7 +24,7 @@
                 <div class="row">
                     <div class="col-md-6">	
                         	<form role="form" action="" method="post" class="registration-form">                        		
-                        		<fieldset>
+<!--                        		<fieldset>-->
                                 	<div class="form-bottom">
 		                            <h2 style="background:#EDE5E5;padding:20px; font-weight:bold; font-size:17px">Do You want to apply for a course at ICON College?</h2><br>
                                     <p>To apply and track your application you'll need to take a minute to create a new account for yourself on this web site. Here are the steps:<br>
@@ -35,27 +35,31 @@
                                         4. Your account will be confirmed and you will be logged in.<br>
                                         5. Now, Apply for a course at ICON College.</p>
                                         
-                                        <a href="student-registration.php"><button type="button" class="btn btn-next">Create Account</button></a>
+                                        <a href="<?php echo base_url()?>/Registration""><button type="button" class="btn btn-next">Create Account</button></a>
                                         </div>
-			                    </fieldset>		                    
+<!--			                    </fieldset>		                    -->
 		                    </form>
                     </div><!-- /col-md-6 -->
                     
                     <div class="col-md-6">
-                    	<form role="form" action="" method="post" class="registration-form">                        		
-                        		<fieldset>
+                    	<form role="form" action="<?php echo base_url()?>Login/check_user" method="post"  class="registration-form">
+<!--                        		<fieldset>-->
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
 				                    		<label>E-Mail*</label>
-				                        	<input type="email" name="" placeholder="" class="form-first-name form-control" id="form-first-name">
+				                        	<input type="email" name="useremail" placeholder="" class="form-first-name form-control" id="form-first-name">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label>Password*</label>
-				                        	<input type="password" name="" class="form-last-name form-control" id="form-last-name">
+				                        	<input type="password" name="password" class="form-last-name form-control" id="form-last-name">
 				                        </div>
-				                        <a href="application-form.php"><button type="button" class="btn btn-next">Login</button></a>
+<!--				                        <a href="">-->
+
+                                            <button type="submit" class="btn btn-next">Login</button>
+
+<!--                                        </a>-->
 				                    </div>
-			                    </fieldset>		                    
+<!--			                    </fieldset>		                    -->
 		                    </form>
                     	                 
                     </div><!-- /col-md-6 -->

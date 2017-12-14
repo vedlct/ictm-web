@@ -97,7 +97,13 @@ define("SELECT_APPROVE",array ("Yes","No"));
 
 
 define("SELECT_TITLE","Select Title");
+
 define("Title",array ("Mr","Mrs","Miss","Ms","Other"));
+
+
+define("SELECT_TYPE","Select Type");
+define("Type",array("Student","Agent"));
+
 
 //////////// For Menu    /////////////////
 define("NEW_MENU", "New Menu");
