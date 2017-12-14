@@ -116,63 +116,63 @@ class OnlineForms extends CI_Controller
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
        // $this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form', $this->data);
+        $this->load->view('application-form', $this->data);
     }
     public function applyNow2() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form2', $this->data);
+        $this->load->view('application-form2', $this->data);
     }
     public function applyNow3() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form3', $this->data);
+        $this->load->view('application-form3', $this->data);
     }
     public function applyNow4() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form4', $this->data);
+        $this->load->view('application-form4', $this->data);
     }
     public function applyNow5() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form5', $this->data);
+        $this->load->view('application-form5', $this->data);
     }
     public function applyNow6() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form6', $this->data);
+        $this->load->view('application-form6', $this->data);
     }
     public function applyNow7() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form7', $this->data);
+        $this->load->view('application-form7', $this->data);
     }
     public function applyNow8() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form8', $this->data);
+        $this->load->view('application-form8', $this->data);
     }
     public function applyNow9() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('form/application-form9', $this->data);
+        $this->load->view('application-form9', $this->data);
     }
     public function feedback() // go to the feedback page
     {
