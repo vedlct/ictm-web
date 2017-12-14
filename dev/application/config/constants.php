@@ -95,6 +95,12 @@ define("SELECT_STATUS" , "Select Status");
 define("NEVER_MODIFIED", "Never Modified");
 define("SELECT_APPROVE",array ("Yes","No"));
 
+
+define("SELECT_TITLE","Select Title");
+define("Title",array ("Mr","Mrs","Miss"));
+define("SELECT_TYPE","Select Type");
+define("Type",array("Student","Agent"));
+
 //////////// For Menu    /////////////////
 define("NEW_MENU", "New Menu");
 define("SELECT_PARENT_MENU", "Select Parent Menu");
