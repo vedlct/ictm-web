@@ -125,15 +125,16 @@ class OnlineFormsm extends CI_Model
                     'fkCandidateId' => '1',
                     'qualification' => $qualification[$i],
                     'institution' => $institution[$i],
-                    'surName' => $startdate[$i],
+                    'startDate' => $startdate[$i],
                     'endDate' => $enddate[$i],
                     'obtainResult' => $grade[$i],
 
                 );
 
-                $this->security->xss_clean($data);
+                //$this->security->xss_clean($data);
                 $error = $this->db->insert('personqualifications', $data);
             }
+          //  return $data;
             if (empty($error)) {
                 return $this->db->error();
             } else {
@@ -145,6 +146,9 @@ class OnlineFormsm extends CI_Model
 
         $query = $this->db->get('candidateinfo');
         return $query->result();
+
+    }
+    public function getQualifications(){
 
     }
 }

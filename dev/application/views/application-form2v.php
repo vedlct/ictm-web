@@ -110,6 +110,24 @@
                                 </div>
                             </div>
 
+                            <table class="table  table-bordered">
+                                <tr>
+                                    <th>Qualification</th>
+                                    <th>Institution</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Grade</th>
+                                    <th>Action</th>
+
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>
