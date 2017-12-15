@@ -26,7 +26,7 @@
 	
                         	<form role="form" action="<?php echo base_url()?>OnlineForms/insertApplicationForm1" method="post" class="registration-form form-horizontal">
                         		
-                        		<fieldset>
+<!--                        		<fieldset>-->
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
                                             <h3>Personal Details</h3>
@@ -526,7 +526,7 @@
                                           </div>
                                         </div>
 				                    </div>
-			                    </fieldset>
+<!--			                    </fieldset>-->
 			                    
 
 		                    

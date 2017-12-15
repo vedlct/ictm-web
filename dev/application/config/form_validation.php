@@ -358,30 +358,10 @@ $config = array (
         ),
 
         array(
-            'field' => 'hear',
-            'label' => 'How did you hear about us*',
-            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+            'field' => 'methodeOfStudy',
+            'label' => 'Method Of Study',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
-        ),
-        array(
-            'field' => 'other',
-            'label' => 'Other',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
-        ),
-        array(
-            'field' => 'disability',
-            'label' => 'Disability requirement',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
-        ),
-        array(
-            'field' => 'appoinment',
-            'label' => 'Book appointment/open day',
-            'rules' => 'trim|required|xss_clean|htmlspecialchars',
-        ),
-        array(
-            'field' => 'comments',
-            'label' => 'Comments',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
 
     ),
