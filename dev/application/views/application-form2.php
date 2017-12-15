@@ -24,11 +24,8 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow2" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow2insert" method="post" class="registration-form form-horizontal">
 
-
-
-                    <fieldset>
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Qualifications</h3>
@@ -39,76 +36,84 @@
                             </div>
                         </div>
                         <div class="form-bottom">
+                            <div id='TextBoxesGroup'>
+                                <div id="TextBoxDiv1" >
                             <div class="form-group">
                                 <label class="control-label col-md-2">Qualification:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="qualification">
+                                    <input type="text" class="form-control" id="" name="qualification[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Institution:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="institution">
+                                    <input type="text" class="form-control" id="" name="institution[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Start Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="startdate">
+                                    <input type="date" class="form-control" id="" name="startdate[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">End Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="enddate">
+                                    <input type="date" class="form-control" id="" name="enddate[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Grade:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="grade">
+                                    <input type="text" class="form-control" id="" name="grade[]">
+                                </div>
+                            </div>
+
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Add New Qualification</button>
+                                    <button id='addButton' type="button" class="btn">Add New Qualification</button>
+                                    <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
+
+                        </form>
 
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Work Experience</h2>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Organisation:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Position Held:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">From:</label>
-                                <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">To:</label>
-                                <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Organisation:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="text" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Position Held:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="text" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">From:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="date" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!---->
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">To:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <input type="date" class="form-control" id="" name="">-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
@@ -123,15 +128,6 @@
 
 
                         </div>
-                    </fieldset>
-
-                </form>
-
-
-
-
-
-
 
 
 
@@ -161,5 +157,67 @@
 
 </div>
 </body>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+    $(document).ready(function(){
+        var counter = 2;
+        $("#addButton").click(function () {
+            if(counter>100){
+                alert("Only 100 textboxes allow");
+                return false;
+            }
+
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv' + counter);
+            newTextBoxDiv.after().html( '<div class="form-group">'+
+                '<label class="control-label col-md-2">Qualification'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="" name="qualification">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Institution'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="" name="institution">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="date" class="form-control" id="" name="startdate">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">End Date'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="date" class="form-control" id="" name="enddate">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Grade'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="" name="grade">'+
+                '</div>'+
+                '</div>'
+            );
+
+            newTextBoxDiv.appendTo("#TextBoxesGroup");
+            counter++;
+        });
+        $("#removeButton").click(function () {
+            if(counter==2){
+                alert(" textbox to remove");
+                document.getElementById('Item_price').style.display = "block";
+//                    document.getElementById('Item_Status').style.display = "block";
+                document.getElementById('add_remove_button').style.display = "none";
+                document.getElementById('showattr').style.display = "none";
+                return false;
+            }
+            counter--;
+            $("#TextBoxDiv" + counter).remove();
+        });
+    });
+</script>
 
 </html>

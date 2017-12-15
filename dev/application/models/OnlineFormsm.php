@@ -110,6 +110,37 @@ class OnlineFormsm extends CI_Model
 
 
     }
+
+    public function applyNow2()
+    {
+        $qualification = $this->input->post('qualification[]');
+        $institution = $this->input->post('institution[]');
+        $startdate = $this->input->post('startdate[]');
+        $enddate = $this->input->post('enddate[]');
+        $grade = $this->input->post('grade[]');
+        //$data = array();
+
+            for ($i = 0; $i < count($qualification); $i++) {
+                $data = array(
+                    'fkCandidateId' => '1',
+                    'qualification' => $qualification[$i],
+                    'institution' => $institution[$i],
+                    'surName' => $startdate[$i],
+                    'endDate' => $enddate[$i],
+                    'obtainResult' => $grade[$i],
+
+                );
+
+                $this->security->xss_clean($data);
+                $error = $this->db->insert('personqualifications', $data);
+            }
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+        }
+
     public function getCandidateinfo(){
 
         $query = $this->db->get('candidateinfo');
