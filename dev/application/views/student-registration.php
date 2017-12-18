@@ -21,8 +21,6 @@
 
         <section class="flat-row padding-small-v1">
             <div class="container">
-
-
                 <?php if ($this->session->flashdata('errorMessage')!=null){?>
                     <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
                 <?php }
@@ -33,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-12">
 	
-                        	<form role="form" action="<?php echo base_url()?>Registration/newRegistaion" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
+                        	<form role="form" action="<?php echo base_url()?>Registation/newRegistaion" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
 
 		                        
 		                            <div class="form-bottom">
@@ -93,9 +91,9 @@
                                         	<label class="control-label col-md-2">Gender:</label>
                                           	<div class="col-md-10" >
                                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
-                                            	<input type="radio" required name="gender" value="male" <?php echo set_radio('gender','male');?>> Male&nbsp;&nbsp;
-                                                <input type="radio" required name="gender" value="female"<?php echo set_radio('gender','female');?>> Female&nbsp;&nbsp;
-                                                <input type="radio" required name="gender" value="other"<?php echo set_radio('gender','other');?>> Other
+                                            	<input type="radio" required name="gender" value="male"> Male&nbsp;&nbsp;
+                                                <input type="radio" required name="gender" value="female"> Female&nbsp;&nbsp;
+                                                <input type="radio" required name="gender" value="other"> Other
                                           	</div>
 				                        </div><br>
                                         
@@ -161,7 +159,7 @@
                     return false;
                 }
 
-                if (surname==null)
+                if (surname==null  )
                 {
                     alert("User Name Can not Empty");
                     return false;

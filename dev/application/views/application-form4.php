@@ -21,14 +21,18 @@
 
 <section class="flat-row padding-small-v1">
     <div class="container">
+        <?php if ($this->session->flashdata('errorMessage')!=null){?>
+            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+        <?php }
+        elseif($this->session->flashdata('successMessage')!=null){?>
+            <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+        <?php }?>
         <div class="row">
             <div class="col-md-9">
-
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow4" method="post" class="registration-form form-horizontal">
-
+                <form role="form" action="<?php echo base_url()?>OnlineForms/insertapplyNow4" method="post" class="registration-form form-horizontal">
 
 
-                    <fieldset>
+<!--                    <fieldset>-->
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Finance</h3>
@@ -40,16 +44,19 @@
                         </div>
                         <div class="form-bottom">
                             <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
+<!--                         --><?php //   $userId=$this->session->userdata('id'); ?>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="">
-                                        <option value="">Mr.</option>
-                                        <option value="">Mrs.</option>
-                                        <option value="">Ms.</option>
-                                        <option value="">Miss.</option>
-                                        <option value="">Other...</option>
+                                    <p><font color="red"> <?php echo form_error('title'); ?></font></p>
+                                    <select style="width: 100%"  id="title" required name="title">
+
+                                        <option value="" selected><?php echo SELECT_TITLE?></option>
+                                        <?php for ($i=0;$i<count(Title);$i++){?>
+                                            <option <?php echo set_select('title',  Title[$i], False); ?>><?php echo Title[$i]?></option>
+                                        <?php } ?>
+
                                     </select>
                                 </div>
                             </div>
@@ -57,70 +64,67 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Name:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="name" name="name">
+
+
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Relation:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="name" name="relation">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address:</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                    <textarea id="comment-message" name="address" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Mobile:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="mobile">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Telephone:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="telephone">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">E-mail:</label>
                                 <div class="col-md-10">
-                                    <input type="email" class="form-control" id="" name="">
+                                    <input type="email" class="form-control" id="" name="email">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Fax:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="fax">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
+                                    <button type="submit" href="#" class="btn ">Next</button>
+
+                                    <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>
                             </div>
 
                         </div>
-                    </fieldset>
+<!--                    </fieldset>-->
 
                 </form>
-
-
-
-
-
-
 
 
 
