@@ -43,11 +43,26 @@ class OnlineFormsm extends CI_Model
 
     public function getAllapplynow4()
     {
-        $this->db->select('id','fkCandidateId','name','title','relation','address','mobile','telephone','email','fax');
+        $this->db->where('fkCandidateId', 1);
         $query=$this->db->get('financer');
         return $query->result();
 
+    }
 
+
+    public function updatApplynow4($id, $data)
+    {
+
+        $error=$this->db->where('id',$id)->update('financer',$data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
     }
 
 
@@ -139,10 +154,45 @@ class OnlineFormsm extends CI_Model
 
 
     }
+
+    public function applyNow2()
+    {
+        $qualification = $this->input->post('qualification[]');
+        $institution = $this->input->post('institution[]');
+        $startdate = $this->input->post('startdate[]');
+        $enddate = $this->input->post('enddate[]');
+        $grade = $this->input->post('grade[]');
+        //$data = array();
+
+            for ($i = 0; $i < count($qualification); $i++) {
+                $data = array(
+                    'fkCandidateId' => '1',
+                    'qualification' => $qualification[$i],
+                    'institution' => $institution[$i],
+                    'startDate' => $startdate[$i],
+                    'endDate' => $enddate[$i],
+                    'obtainResult' => $grade[$i],
+
+                );
+
+                //$this->security->xss_clean($data);
+                $error = $this->db->insert('personqualifications', $data);
+            }
+          //  return $data;
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+        }
+
     public function getCandidateinfo(){
 
         $query = $this->db->get('candidateinfo');
         return $query->result();
+
+    }
+    public function getQualifications(){
 
     }
 }

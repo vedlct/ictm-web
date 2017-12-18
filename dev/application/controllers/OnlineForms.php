@@ -115,15 +115,39 @@ class OnlineForms extends CI_Controller
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        $this->data['courseInfo']=$this->Coursem->getCourseInfo();
        // $this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
         $this->load->view('application-form', $this->data);
+    }
+    public function getCourseAwardBody() // get Award body of selected course
+    {
+
+        $courseId=$this->input->post('courseId');
+        $this->data['courseAwardBody']=$this->Coursem->getCourseAwardBody($courseId);
+        foreach ($this->data['courseAwardBody'] as $awardBody){
+
+            $body=$awardBody->awardingBody;
+        }
+
+        echo $body;
     }
     public function applyNow2() // go to the apply page of selected course
     {
         $this->menu();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('application-form2', $this->data);
+        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+        //$this->OnlineFormsm->applyNow2();
+        $this->data['qualification'] = $this->OnlineFormsm->getQualifications();
+        if (empty($this->data['qualification'])) {
+            $this->load->view('application-form2', $this->data);
+        } else {
+            $this->load->view('application-form2v', $this->data);
+        }
+    }
+    public function applyNow2insert() // go to the apply page of selected course
+    {
+
+        $this->OnlineFormsm->applyNow2();
+        redirect('OnlineForms/applyNow2');
     }
     public function applyNow3() // go to the apply page of selected course
     {
@@ -138,96 +162,149 @@ class OnlineForms extends CI_Controller
     {
         if ($this->session->userdata('loggedin') == "true") {
 
+            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+            $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4();
 
-            $getAllapplynow4['apllyfrom4']=$this->OnlineFormsm->getAllapplynow4();
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
-            if (($getAllapplynow4['apllyfrom4']=NULL)) {
 
-                $this->menu();
-                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-                //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-                $this->load->view('application-form4', $this->data);
 
-            }
+
+            if (empty($this->data['apllyfrom4'])) {
+
+                 $this->load->view('application-form4', $this->data);
+                }
+
             else {
 
-                    $this->menu();
-                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-                    redirect("OnlineForms/getUpdateapplyNow4");
-
-                }
+                $this->load->view('application-form4v', $this->data);
             }
 
-            else
-            {
 
-
-
-            }
+        }
 
     }
+
+
     public function insertapplyNow4()
 
     {
 
         if ($this->session->userdata('loggedin') == "true") {
             //$userId = $this->session->userdata('fkCandidateId');
-            $title = $this->input->post('title');
-            $name = $this->input->post('name');
-            $relation = $this->input->post('relation');
-            $address = $this->input->post('address');
-            $mobilee = $this->input->post('mobile');
-            $telephone = $this->input->post('telephone');
-            $email = $this->input->post('email');
-            $fax = $this->input->post('title');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom4')) {
+                $this->menu();
+                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $this->load->view('application-form4', $this->data);
 
-            $data = array(
-                'fkCandidateId' => 1,
-                'title' => $title,
-                'name' => $name,
-                'relation' => $relation,
-                'address' => $address,
-                'mobile' => $mobilee,
-                'telephone' => $telephone,
-                'email' => $email,
-                'fax' => $fax
+            } else {
 
-            );
+                $title = $this->input->post('title');
+                $name = $this->input->post('name');
+                $relation = $this->input->post('relation');
+                $address = $this->input->post('address');
+                $mobilee = $this->input->post('mobile');
+                $telephone = $this->input->post('telephone');
+                $email = $this->input->post('email');
+                $fax = $this->input->post('fax');
+
+                $data = array(
+                    'fkCandidateId' => 1,
+                    'title' => $title,
+                    'name' => $name,
+                    'relation' => $relation,
+                    'address' => $address,
+                    'mobile' => $mobilee,
+                    'telephone' => $telephone,
+                    'email' => $email,
+                    'fax' => $fax
+
+                );
 
 
-            $this->data['error']= $this->OnlineFormsm->insertnewfrom4($data);;
+                $this->data['error'] = $this->OnlineFormsm->insertnewfrom4($data);;
 
-            if (empty($this->data['error'])) {
+                if (empty($this->data['error'])) {
 
-                $this->session->set_flashdata('successMessage','Information was  Successfully save');
-                redirect("OnlineForms/getUpdateapplyNow4");
 
+                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                    redirect("OnlineForms/applyNow4"  );
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect("OnlineForms/applyNow4");
+
+                }
 
             }
-            else
-            {
-                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect("applyNow4");            }
-
         }
 
-
     }
 
 
-    public function getUpdateapplyNow4()
+    public function updateInfoApply4($id)
     {
 
-        $this->menu();
-        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->data['updateInfoApply4']=$this->OnlineFormsm->getAllapplynow4();
-        $this->load->view('application-form4v', $this->data);
+        if ($this->session->userdata('loggedin') == "true") {
 
+
+            //$userId = $this->session->userdata('fkCandidateId');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom4')) {
+                $this->menu();
+                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4($id);
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $this->load->view('application-form4v', $this->data);
+
+            }
+
+            else {
+
+                $title = $this->input->post('title');
+                $name = $this->input->post('name');
+                $relation = $this->input->post('relation');
+                $address = $this->input->post('address');
+                $mobilee = $this->input->post('mobile');
+                $telephone = $this->input->post('telephone');
+                $email = $this->input->post('email');
+                $fax = $this->input->post('fax');
+
+                $data = array(
+                    'fkCandidateId' => 1,
+                    'title' => $title,
+                    'name' => $name,
+                    'relation' => $relation,
+                    'address' => $address,
+                    'mobile' => $mobilee,
+                    'telephone' => $telephone,
+                    'email' => $email,
+                    'fax' => $fax
+
+                );
+
+                $this->data['error'] = $this->OnlineFormsm->updatApplynow4($id, $data);
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                    redirect("OnlineForms/applyNow4");
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect("OnlineForms/applyNow4");
+
+                }
+
+            }
+        }
     }
-
-
-
 
 
 
@@ -304,6 +381,59 @@ class OnlineForms extends CI_Controller
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
+    }
+
+    public function insertApplicationForm1()
+    {
+//        if ($this->session->userdata('loggedin') == "true") {
+
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('checkApplicationForm1')) {
+//
+//                $this->menu();
+//                $this->data['coursedata']=$this->Coursem->getCourseTitle();
+//                $this->data['courseInfo']=$this->Coursem->getCourseInfo();
+//
+//                $this->load->view('application-form', $this->data);
+//            }
+//            else{
+                $candidateTitle = $this->input->post("title");
+                $candidateFirstName = $this->input->post("firstName");
+                $candidateSurName = $this->input->post("surName");
+                $candidateOtherNamee = $this->input->post("otherName");
+                $candidateDob = $this->input->post("dob");
+                $candidateGender = $this->input->post("gender");
+                $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
+                $candidateNationality = $this->input->post("nationality");
+                $candidatePassportNo = $this->input->post("passportNo");
+                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
+                $candidateUkEntryDate = $this->input->post("UkEntryDate");
+                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+                $candidateCurrentAddress = $this->input->post("currentAddress");
+                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
+                $candidateTelephone = $this->input->post("telephone");
+                $candidateMobile = $this->input->post("mobile");
+                $candidateEmail = $this->input->post("email");
+                $candidateFax = $this->input->post("fax");
+                $EmergencyContactTitle = $this->input->post("EmergencyContactTitle");
+                $EmergencyContactName = $this->input->post("EmergencyContactName");
+                $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
+                $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
+                $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
+                $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
+                $courseName = $this->input->post("courseName");
+                $awardingBody = $this->input->post("awardingBody");
+                $courseLevel = $this->input->post("courseLevel");
+                $courseStartDate = $this->input->post("courseStartDate");
+                $courseEndDate = $this->input->post("courseEndDate");
+                $methodeOfStudy = $this->input->post("methodeOfStudy");
+
+
+//            }
+
+//        } else {
+//            redirect('Admin/Login');
+//        }
     }
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()

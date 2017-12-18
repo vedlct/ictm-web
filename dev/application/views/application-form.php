@@ -24,9 +24,9 @@
                 <div class="row">
                     <div class="col-md-9">
 	
-                        	<form role="form" action="" method="post" class="registration-form form-horizontal">
+                        	<form role="form" action="<?php echo base_url()?>OnlineForms/insertApplicationForm1" method="post" class="registration-form form-horizontal">
                         		
-                        		<fieldset>
+<!--                        		<fieldset>-->
 		                        	<div class="form-top">
 		                        		<div class="form-top-left">
                                             <h3>Personal Details</h3>
@@ -38,66 +38,67 @@
 		                            </div>
 		                            <div class="form-bottom">
                                     	<div class="form-group">
-                                        	<label class="control-label col-md-2">Title:</label>
+                                        	<label class="control-label col-md-2">Title:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<select style="width: 100%" name="">
-                                                      <option value="">Mr.</option>
-                                                      <option value="">Mrs.</option>
-                                                      <option value="">Ms.</option>
-                                                      <option value="">Miss.</option>
-                                                      <option value="">Other...</option>
+                                            	<select style="width: 100%" name="title" required id="title">
+
+                                                    <option value="" selected><?php echo SELECT_TITLE?></option>
+                                                    <?php for ($i=0;$i<count(Title);$i++){?>
+                                                        <option <?php echo set_select('title',  Title[$i], False); ?>><?php echo Title[$i]?></option>
+                                                    <?php } ?>
+
                                                     </select> 
                                           	</div>
 				                        </div>
                                         
 				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">First Name:</label>
+                                        	<label class="control-label col-md-2">First Name:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="firstName" name="firstName">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Surname:</label>
+                                        	<label class="control-label col-md-2">Surname:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="surName" name="surName">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Other Names:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" id="otherName" name="otherName">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Date of Birth:</label>
+                                        	<label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
+                                            	<input type="date" class="form-control" required id="dob" name="dob">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Gender:</label>
+                                        	<label class="control-label col-md-2">Gender:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="radio" name="" value="male"> Male&nbsp;&nbsp;
-                                                <input type="radio" name="" value="female"> Female&nbsp;&nbsp;
-                                                <input type="radio" name="" value="other"> Other
+                                            	<input type="radio" required id="gender" name="gender" value="male"> Male&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="female"> Female&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="other"> Other
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Place of Birth:</label>
+                                        	<label class="control-label col-md-2">Place of Birth:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="placeOfBirth" name="placeOfBirth">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Nationality:</label>
+                                        	<label class="control-label col-md-2">Nationality:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<select style="width: 100%" name="">
+                                            	<select style="width: 100%" id="nationality" required name="nationality">
                                                 		<option value="" disabled selected>Select country...</option>
                                                       	<option value="Afghanistan">Afghanistan</option>
                                                         <option value="Albania">Albania</option>
@@ -343,820 +344,191 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Passport No.:</label>
+                                        	<label class="control-label col-md-2">Passport No.:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="passportNo" name="passportNo">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">PP Expiry Date:</label>
+                                        	<label class="control-label col-md-2">PP Expiry Date:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
+                                            	<input type="date" class="form-control" required id="passportExpiryDate" name="passportExpiryDate">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">UK Entry Date:</label>
+                                        	<label class="control-label col-md-2">UK Entry Date:<span class="required">*</span> </label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
+                                            	<input type="date" class="form-control" required id="UkEntryDate" name="UkEntryDate">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Visa Expiry Date:</label>
+                                        	<label class="control-label col-md-2">Visa Expiry Date:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
+                                            	<input type="date" class="form-control" required id="visaExpiryDate" name="visaExpiryDate">
                                           	</div>
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Current Address:</label>
+                                        	<label class="control-label col-md-2">Current Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                            	<textarea id="comment-message" required id="currentAddress" name="currentAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Overseas (Home) Address:</label>
+                                        	<label class="control-label col-md-2">Overseas (Home) Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                            	<textarea id="comment-message" required id="overseasHomeAddress" name="overseasHomeAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Telephone:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="telephone" name="telephone">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mobile:</label>
+                                        	<label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="mobile" name="mobile">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">E-mail:</label>
+                                        	<label class="control-label col-md-2">E-mail:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="email" class="form-control" id="" name="">
+                                            	<input type="email" class="form-control" required id="email" name="email">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Fax:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" id="fax" name="fax">
                                           	</div>
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Title:</label>
+                                        	<label class="control-label col-md-2">Title:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<select style="width: 100%" name="">
-                                                      <option value="">Mr.</option>
-                                                      <option value="">Mrs.</option>
-                                                      <option value="">Ms.</option>
-                                                      <option value="">Miss.</option>
-                                                      <option value="">Other...</option>
+                                            	<select style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
+
+                                                    <option value="" selected><?php echo SELECT_TITLE?></option>
+                                                    <?php for ($i=0;$i<count(Title);$i++){?>
+                                                        <option <?php echo set_select('EmergencyContactDetails',  Title[$i], False); ?>><?php echo Title[$i]?></option>
+                                                    <?php } ?>
+
                                                     </select> 
                                           	</div>
 				                        </div>
                                         
 				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">Name:</label>
+                                        	<label class="control-label col-md-2">Name:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="EmergencyContactName" name="EmergencyContactName">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Relation:</label>
+                                        	<label class="control-label col-md-2">Relation:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="EmergencyContactRelation" name="EmergencyContactRelation">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Address:</label>
+                                        	<label class="control-label col-md-2">Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                            	<textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mobile:</label>
+                                        	<label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">E-mail:</label>
+                                        	<label class="control-label col-md-2">E-mail:<span class="required">*</span></label>
                                           	<div class="col-md-10">
-                                            	<input type="email" class="form-control" id="" name="">
+                                            	<input type="email" class="form-control" required id="EmergencyContactEmail" name="EmergencyContactEmail">
                                           	</div>
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Course Details</h2>
+
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Course Name:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                                <select style="width: 100%" onchange="courseAwardBody()" id="courseName" required name="courseName">
+                                                <option value=""><?php echo SELECT_COURSE?></option>
+                                                <?php foreach ($courseInfo as $course){?>
+                                                <option value="<?php echo $course->courseId?>" <?php echo set_select('courseName',$course->courseId, False); ?>><?php echo $course->courseTitle?></option>
+                                                    <?php } ?>
+                                                </select>
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Awarding Body:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" disabled class="form-control" id="awardingBody" name="awardingBody">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Course Level:</label>
                                           	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
+                                            	<input type="text" class="form-control" id="courseLevel" name="courseLevel">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Course Start Date:</label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
+                                            	<input type="date" class="form-control" id="courseStartDate" name="courseStartDate">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Course End Date:</label>
                                           	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
+                                            	<input type="date" class="form-control" id="courseEndDate" name="courseEndDate">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Method of study:</label>
                                           	<div class="col-md-10">
-                                            	<input type="radio" name="" value=""> Full Time&nbsp;&nbsp;
-                                                <input type="radio" name="" value=""> Part Time&nbsp;&nbsp;
-                                                <input type="radio" name="" value=""> Day&nbsp;&nbsp;
-                                                <input type="radio" name="" value=""> Evenings & Weekend     
+                                            	<input type="radio" name="methodeOfStudy" value="Full Time"> Full Time&nbsp;&nbsp;
+                                                <input type="radio" name="methodeOfStudy" value="Part Time"> Part Time&nbsp;&nbsp;
+                                                <input type="radio" name="methodeOfStudy" value="Day"> Day&nbsp;&nbsp;
+                                                <input type="radio" name="methodeOfStudy" value="Evenings & Weekend"> Evenings & Weekend
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
-                                            <a href="<?php echo base_url()?>OnlineForms/applyNow2"> <button type="button" class="btn ">Next</button></a>
-                                            <button type="button" class="btn btn-next">Save Application</button>
+                                            <a href="<?php echo base_url()?>OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>
+                                            <button type="submit" class="btn btn-next">Save Application</button>
                                           </div>
                                         </div>
 				                    </div>
-			                    </fieldset>
+<!--			                    </fieldset>-->
 			                    
-			                    <fieldset>
-		                        	<div class="form-top">
-		                        		<div class="form-top-left">
-                                            <h3>Qualifications</h3>
-		                        		</div>
-                                        
-                                        <div class="form-top-right">
-		                        			<p>Step 2 / 9</p>
-		                        		</div>
-		                            </div>
-		                            <div class="form-bottom">
-				                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Qualification:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Institution:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Start Date:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">End Date:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Grade:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">        
-                                          <div class="col-sm-offset-2 col-md-10">
-                                            <button type="button" class="btn btn-previous">Add New Qualification</button>
-                                          </div>
-                                        </div>
-                                      
-                                        <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Work Experience</h2>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Organisation:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Position Held:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">From:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">To:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">        
-                                          <div class="col-sm-offset-2 col-md-10">
-                                            <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>
-                                        
-                                            <button type="button" class="btn btn-previous">Previous</button>
-                                            <button type="button" class="btn btn-next">Next</button>
-                                            
-                                            <button type="button" class="btn btn-next">Save Application</button>
-                                          </div>
-                                        </div>
-										
-                                        
-				                    </div>
-			                    </fieldset>
-			                    
-			                    <fieldset>
-		                        	<div class="form-top">
-		                        		<div class="form-top-left">
-                                            <h3>English Language Proficiency</h3>
-		                        		</div>
-                                        
-                                        <div class="form-top-right">
-		                        			<p>Step 3 / 9</p>
-		                        		</div>
-		                            </div>
-		                            <div class="form-bottom">
-				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">Is English your first language?:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="radio" name="" value=""> Yes&nbsp;&nbsp;
-                                                <input type="radio" name="" value=""> No&nbsp;&nbsp;
-                                          	</div>
-				                        </div>
-                                        
-                                        <p>If English is not your first language, please state your qualifications.</p>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Tests:</label>
-                                          	<div class="col-md-10">
-                                            	<select style="width: 100%" name="">
-                                                	  <option value="" disabled selected>Select test...</option>	
-                                                      <option value="">IELTS</option>
-                                                      <option value="">TOEFL</option>
-                                                      <option value="">PTE</option>
-                                                    </select> 
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Listening:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Reading:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Writing:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Speaking:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Overall:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="text" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Expiry Date:</label>
-                                          	<div class="col-md-10">
-                                            	<input type="date" class="form-control" id="" name="">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">        
-                                          <div class="col-sm-offset-2 col-md-10">
-                                            <button type="button" class="btn btn-previous">Add New</button>
-                                          </div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Other (Please Specify):</label>
-                                          	<div class="col-md-10">
-                                            	<textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">        
-                                          <div class="col-sm-offset-2 col-md-10">
-                                            <button type="button" class="btn btn-previous">Previous</button>
-				                        	<button type="button" class="btn btn-next">Next</button>
-                                            <button type="button" class="btn btn-next">Save Application</button>
-                                          </div>
-                                        </div>                                       				                        
-				                    </div>
-			                    </fieldset>
-                                
-                                <fieldset>
-                                            <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Finance</h3>
-                                                </div>
-                                                
-                                                <div class="form-top-right">
-                                                    <p>Step 4 / 9</p>
-                                                </div>
-                                            </div>
-                                            <div class="form-bottom">
-                                                <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Title:</label>
-                                                    <div class="col-md-10">
-                                                        <select style="width: 100%" name="">
-                                                              <option value="">Mr.</option>
-                                                              <option value="">Mrs.</option>
-                                                              <option value="">Ms.</option>
-                                                              <option value="">Miss.</option>
-                                                              <option value="">Other...</option>
-                                                            </select> 
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Name:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Relation:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Address:</label>
-                                                    <div class="col-md-10">
-                                                        <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Mobile:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Telephone:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">E-mail:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="email" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Fax:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Previous</button>
-                                                    <button type="button" class="btn btn-next">Next</button>
-                                                    <button type="button" class="btn btn-next">Save Application</button>
-                                                  </div>
-                                                </div> 
-                                                
-                                            </div>
-                                        </fieldset>
-                                        
-                                        <fieldset>
-                                            <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Personal Statement</h3>
-                                                </div>
-                                                
-                                                <div class="form-top-right">
-                                                    <p>Step 5 / 8</p>
-                                                </div>
-                                            </div>
-                                            <div class="form-bottom">
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Why do you wish to do this course?:</label>
-                                                    <div class="col-md-10">
-                                                        <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
-                                                    <div class="col-md-10">
-                                                        <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Previous</button>
-                                                    <button type="button" class="btn btn-next">Next</button>
-                                                    <button type="button" class="btn btn-next">Save Application</button>
-                                                  </div>
-                                                </div> 
-                                            </div>
-                                        </fieldset>
-                                        
-                                        <fieldset>
-                                            <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Equal Opportunity</h3>
-                                                </div>
-                                                
-                                                <div class="form-top-right">
-                                                    <p>Step 6 / 9</p>
-                                                </div>
-                                            </div>
-                                            <div class="form-bottom">
-                                            	<p>Equal opportunities monitoring: (please select from the dropdown lists)</p>
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Ethnicity:</label> 
-                                                    <div class="col-md-10 table-responsive">
-                                                    	<table class="table ">
-                                                        	<tr>
-                                                            	<td><input type="radio" name="" value=""> White</td>
-                                                                <td><input type="radio" name="" value=""> White - Scottish</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Other White background</td>
-                                                                <td><input type="radio" name="" value=""> Gypsy or Traveller</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Black or Black British - Caribbean</td>
-                                                                <td><input type="radio" name="" value=""> Black or Black British - African</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Other Black background</td>
-                                                                <td><input type="radio" name="" value=""> Asian or Asian British - Indian</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Asian or Asian British - Pakistani</td>
-                                                                <td><input type="radio" name="" value=""> Asian or Asian British - Bangladeshi</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Chinese</td>
-                                                                <td><input type="radio" name="" value=""> Other Asian background</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Mixed - White and Black Caribbean</td>
-                                                                <td><input type="radio" name="" value=""> Mixed - White and Black African</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Mixed - White and Asian</td>
-                                                                <td><input type="radio" name="" value=""> Other mixed background</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Arab</td>
-                                                                <td><input type="radio" name="" value=""> Not known</td>
-                                                            </tr>
-                                                            <tr>
-                                                            	<td><input type="radio" name="" value=""> Prefer not to say</td>
-                                                                <td><input type="radio" name="" value=""> Other</td>
-                                                            </tr>
-                                                        </table>                                                               
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Disability:</label>
-                                                    <div class="col-md-10 table-responsive">
-                                                    		<table class="table">
-                                                            	<tr>
-                                                                	<td><input type="radio" name="" value=""> No known disability</td>
-                                                                    <td><input type="radio" name="" value=""> Personal care support</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Special Learning Difficulty</td>
-                                                                    <td><input type="radio" name="" value=""> Mental health difficulties</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Autistic Spectrum Disorder</td>
-                                                                    <td><input type="radio" name="" value=""> Unseen disability e.g. diabetes</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Blind/partially sighted</td>
-                                                                    <td><input type="radio" name="" value=""> Multiple disabilities</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Deaf/hearing impairment</td>
-                                                                    <td><input type="radio" name="" value=""> Other</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Dyslexia</td>
-                                                                    <td><input type="radio" name="" value=""> Prefer not to say</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Wheelchair user/mobility difficulties</td>
-                                                                    <td></td>
-                                                                </tr>
-                                                            </table>                                                              
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Religion Belief:</label>
-                                                    <div class="col-md-10 table-responsive">
-                                                    		<table class="table">
-                                                            	<tr>
-                                                                	<td><input type="radio" name="" value=""> No religion</td>
-                                                                    <td><input type="radio" name="" value=""> Jewish</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Buddhist</td>
-                                                                    <td><input type="radio" name="" value=""> Muslim</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Christian</td>
-                                                                    <td><input type="radio" name="" value=""> Sikh</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Christian - Church of Scotland</td>
-                                                                    <td><input type="radio" name="" value=""> Spiritual</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Christian - Roman Catholic</td>
-                                                                    <td><input type="radio" name="" value=""> Other</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Christian - Other denomination</td>
-                                                                    <td><input type="radio" name="" value=""> Prefer not to say</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Hindu</td>
-                                                                    <td></td>
-                                                                </tr>
-                                                            </table>                                                              
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Sexual Orientation:</label>
-                                                    <div class="col-md-10 table-responsive">
-                                                    		<table class="table">
-                                                            	<tr>
-                                                                	<td><input type="radio" name="" value=""> Bisexual</td>
-                                                                    <td><input type="radio" name="" value=""> Heterosexual</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Gay</td>
-                                                                    <td><input type="radio" name="" value=""> Other</td>
-                                                                </tr>
-                                                                <tr>
-                                                                	<td><input type="radio" name="" value=""> Lesbian</td>
-                                                                    <td><input type="radio" name="" value=""> Prefer not to say</td>
-                                                                </tr>
-                                                            </table>                                                              
-                                                    </div>
-                                                </div>
-                                                      
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Previous</button>
-                                                    <button type="button" class="btn btn-next">Next</button>
-                                                    <button type="button" class="btn btn-next">Save Application</button>
-                                                  </div>
-                                                </div> 
-                                            </div>
-                                        </fieldset>
-                                        
-                                        <fieldset>
-                                            <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Upload Documents</h3>
-                                                </div>
-                                                
-                                                <div class="form-top-right">
-                                                    <p>Step 7 / 9</p>
-                                                </div>
-                                            </div>
-                                            <div class="form-bottom">
-                                            	
-                                            	<p style="font-weight:bold; text-decoration:underline">Entry Requirement Documents:</p>
-                                                <p>Submit a completed Application Form along with the following:</p>
-                                                <div class="form-group">
-                                                	<div class="col-md-2"></div>
-                                                    <div class="col-md-10">
-                                                    	<ul style="list-style-type:disc">
-                                                        <li>Passport size photo – 2</li>
-                                                        <li>Academic certificates and transcripts (a qualification that is equivalent to UK NVQ Level 3)</li>
-                                                        <li>Work reference letter in a letter headed paper (if your qualifications are lower than NVQ Level 3 e.g. GCSE / NVQ Level 2 or Equivalent qualifications) - Within last 3 months’ time</li>
-                                                        <li>Passport + Visa (if applicable)</li>
-                                                        <li>Proof of address (bank statement, council tax bill, utility bill, payslip, Full Driving licence) - Within last 3 months’ time</li>
-                                                        <li>Need to proof 5 Years Residency (If applicable) or if an EU Migrant worker (6 months’ UK payslips)</li>
-                                                        <li><b>Please note that all students whose first language is not English will be required to prove their proficiency in English Language to a minimum standard of CEFR Level B2 or equivalent.</b></li>
-                                                        <li><b>Completed application form along with copies of supporting documents will be retained by Icon College in the event of successful / unsuccessful admission.</b></li>
-                                                	</ul>
-                                                    </div>
-                                                </div>
-                                                
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Upload file:</label>
-                                                    <div class="col-md-10">
-                                                    	<input type="file" class="form-control" id="" name="">       
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Add Another File</button>
-                                                  </div>
-                                                </div>
-                                                
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Previous</button>
-                                                    <button type="button" class="btn btn-next">Next</button>
-                                                    <button type="button" class="btn btn-next">Save Application</button>
-                                                  </div>
-                                                </div> 
-                                            </div>
-                                        </fieldset>
-                                        
-                                        <fieldset>
-                                            <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Referees</h3>
-                                                </div>
-                                                
-                                                <div class="form-top-right">
-                                                    <p>Step 8 / 9</p>
-                                                </div>
-                                            </div>
- 
-                                            <div class="form-bottom">                                                                                            
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Title:</label>
-                                                    <div class="col-md-10">
-                                                        <select style="width: 100%" name="">
-                                                              <option value="">Mr.</option>
-                                                              <option value="">Mrs.</option>
-                                                              <option value="">Ms.</option>
-                                                              <option value="">Miss.</option>
-                                                              <option value="">Other...</option>
-                                                            </select> 
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Name:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Institution/Company:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Position / Job Title:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Address:</label>
-                                                    <div class="col-md-10">
-                                                        <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">Telephone:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="text" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <label class="control-label col-md-2">E-mail:</label>
-                                                    <div class="col-md-10">
-                                                        <input type="email" class="form-control" id="" name="">
-                                                    </div>
-                                                </div>
-												
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Add Another Referee</button>
-                                                  </div>
-                                                </div>
 
-                                                <div class="form-group">        
-                                                  <div class="col-sm-offset-2 col-md-10">
-                                                    <button type="button" class="btn btn-previous">Previous</button>
-                                                    <button type="button" class="btn btn-next">Next</button>
-                                                    <button type="button" class="btn btn-next">Save Application</button>
-                                                  </div>
-                                                </div> 
-                                                
-                                            </div>
-                                        </fieldset>
-                                        
-                                        <fieldset>
-                                            <div class="form-top">
-                                                <div class="form-top-left">
-                                                    <h3>Completed</h3>
-                                                </div>
-                                                
-                                                <div class="form-top-right">
-                                                    <p>Step 9 / 9</p>
-                                                </div>
-                                            </div>
-                                            <div class="form-bottom">
-                                                
-                                               	<p><input type="checkbox" name="" value=""> &nbsp;&nbsp;I confirm that to the best of my knowledge, the information given in this form is correct and complete.  I have read the terms and conditions and other policies of the college and agree to abide by them during my entire course of study. I agree to ICON College of Technology and Management processing personal data submitted in this application form, or any other data that the College may obtain from me to the processing for any purposes connected with my studies or my health and safety, or for any other legitimate reason (in accordance with the Data Protection Act 1998). I authorise ICON College to issue my course result to my sponsor if my sponsor so requests. The Application form and copies of all supporting documents will be retained by ICON College in case of an unsuccessful application for admission.</p>
-                                                <p><strong>Note:</strong> All decisions by the College are taken in good faith on the basis of the statements made on your application form.  If the College discovers that you have made a false statement or have omitted significant information on your application form, for example in examination results, it may withdraw or amend its offer, or terminate your registration, according to the circumstances. The information given on this application form will be electronically stored and used for administrative purposes by the College in accordance with the provisions of the Data Protection Acts 1984 and 1998.</p>
-                                                
-                                                <button type="button" class="btn btn-previous">Previous</button>
-                                                <button type="submit" class="btn btn-next">Submit!</button>
-                                                <button type="button" class="btn btn-next">Save Application</button>
-                                                <button type="button" class="btn btn-next">Download PDF</button>
-                                            </div>
-                                        </fieldset>
 		                    
 		                    </form>
 
@@ -1196,3 +568,63 @@
 </body>
 
 </html>
+
+        <script>
+
+//            function submitedForm() {
+//
+//
+//                var phone=document.getElementById("title").value;
+//                var email=document.getElementById("facultyEmail").value;
+//
+//                var chk=/^[0-9]*$/;
+//                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//                if(!phone.match(chk)) {
+//                    alert( 'Please enter a valid Phone number!!' );
+//                    return false;
+//                }
+//                if(phone.length >45) {
+//                    alert( 'Phone number must be less than 45 charecter!!' );
+//                    return false;
+//                }
+//                if( !facultyIntroLength ) {
+//                    alert( 'Please enter a Faculty Intro' );
+//                    return false;
+//                }
+//                if(email.match(mailformat))
+//                {
+//                    return true;
+//                }
+//                else
+//                {
+//                    alert("You have entered an invalid email address!");
+//                    return false;
+//                }
+//
+//            }
+
+            function courseAwardBody() {
+
+                var courseId=document.getElementById("courseName").value;
+                if (courseId ==""){
+                    alert('please select a course First');
+                    document.getElementById('awardingBody').value = "";
+                    return false;
+                }else {
+
+                    $.ajax({
+                        type: 'POST',
+                        url: '<?php echo base_url("OnlineForms/getCourseAwardBody")?>',
+                        data: {courseId: courseId},
+                        cache: false,
+                        success: function (data) {
+
+                            document.getElementById('awardingBody').value = data;
+
+                        }
+                    });
+                }
+
+            }
+
+        </script>
