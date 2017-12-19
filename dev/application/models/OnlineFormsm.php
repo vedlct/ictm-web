@@ -38,6 +38,50 @@ class OnlineFormsm extends CI_Model
 
     }
 
+
+
+
+    public function getAllapplynow4()
+    {
+        $this->db->where('fkCandidateId', 1);
+        $query=$this->db->get('financer');
+        return $query->result();
+
+    }
+
+
+    public function updatApplynow4($id, $data)
+    {
+
+        $error=$this->db->where('id',$id)->update('financer',$data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+
+
+    public function insertnewfrom4($data)
+    {
+        $this->security->xss_clean($data);
+        $error=$this->db->insert('financer', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+
+
     public function sendFeedback(){
 
         $feedbackName = $this->input->post("name");

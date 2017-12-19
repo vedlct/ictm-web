@@ -172,6 +172,69 @@ $config = array (
 
   ),
 
+
+    'applyfrom4'=>
+        array(
+
+
+            array(
+                'field' => 'title',
+                'label' => 'Title',
+                'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'name',
+                'label' => 'Name',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'relation',
+                'label' => 'Relation ',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'address',
+                'label' => 'Address',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'mobile',
+                'label' => 'Moble number',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'email',
+                'label' => 'Email Address',
+                'rules' => 'required|max_length[100]|is_unique[studentregistration.email]|valid_email|xss_clean|htmlspecialchars',
+                'errors' => array(
+                    'is_unique' => 'Email Allready Existed ! ',
+                ),
+            ),
+
+
+            array(
+                'field' => 'telephone',
+                'label' => 'Telephone',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+            ),
+            array(
+                'field' => 'fax',
+                'label' => 'Fax',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+            ),
+
+
+        ),
+
     'checkApplicationForm1' => array (
         array(
             'field' => 'title',
@@ -365,6 +428,7 @@ $config = array (
         ),
 
     ),
+
 
 
 );

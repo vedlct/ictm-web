@@ -21,14 +21,21 @@
 
 <section class="flat-row padding-small-v1">
     <div class="container">
+
+        <?php if ($this->session->flashdata('errorMessage')!=null){?>
+            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+        <?php }
+        elseif($this->session->flashdata('successMessage')!=null){?>
+            <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+        <?php }?>
+
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow4" method="post" class="registration-form form-horizontal">
+          <?php foreach ($apllyfrom4 as $f4) { ?>
+                <form role="form" action="<?php echo base_url()?>OnlineForms/updateInfoApply4/<?php echo $f4->id ?>" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
 
-
-
-                    <fieldset>
+<!--                    <fieldset>-->
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Finance</h3>
@@ -44,12 +51,13 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="">
-                                        <option value="">Mr.</option>
-                                        <option value="">Mrs.</option>
-                                        <option value="">Ms.</option>
-                                        <option value="">Miss.</option>
-                                        <option value="">Other...</option>
+                                    <p><font color="red"> <?php echo form_error('title'); ?></font></p>
+                                    <select style="width: 100%"  id="title" required  name="title">
+
+                                        <option value="" selected><?php echo SELECT_TITLE?></option>
+                                        <?php for ($i=0;$i<count(Title);$i++){?>
+                                            <option value="<?php echo Title[$i];?>" <?php if(!empty($f4->title) &&  $f4->title == Title[$i] ) echo 'selected = "selected"'; ?> > <?php echo Title[$i] ?></option>
+                                        <?php } ?>
                                     </select>
                                 </div>
                             </div>
@@ -57,72 +65,73 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Name:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <p><font color="red"> <?php echo form_error('name'); ?></font></p>
+                                    <input type="text" class="form-control" id=""  name="name" value="<?php echo $f4->name ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Relation:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
+                                    <input type="text" class="form-control" id="" name="relation" value="<?php echo $f4->relation?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address:</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
+                                    <textarea id="comment-message" name="address" rows="8" tabindex="4"><?php echo $f4->address ?></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Mobile:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
+
+                                    <input type="text" class="form-control" id="" name="mobile"value="<?php echo $f4->mobile ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Telephone:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
+
+                                    <input type="text" class="form-control" id="" name="telephone"value="<?php echo $f4->telephone ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">E-mail:</label>
                                 <div class="col-md-10">
-                                    <input type="email" class="form-control" id="" name="">
+                                    <p><font color="red"> <?php echo form_error('email'); ?></font></p>
+
+                                    <input type="email" class="form-control" id="" name="email"value="<?php echo $f4->email ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Fax:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <p><font color="red"> <?php echo form_error('fax'); ?></font></p>
+                                    <input type="text" class="form-control" id="" name="fax"  value="<?php echo $f4->fax ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
+                                    <button type="button" class="btn" href="#">Next</button>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>
                             </div>
 
                         </div>
-                    </fieldset>
-
                 </form>
-
-
-
-
-
-
-
-
+<?php } ?>
 
 
             </div><!-- /col-md-9 -->
@@ -152,3 +161,70 @@
 </body>
 
 </html>
+
+
+
+<script>
+    function formvalidate() {
+        var email =  document.getElementById("email").value;
+        var name =  document.getElementById("name").value;
+        var relation =  document.getElementById("relation").value;
+        var address =  document.getElementById("address").value;
+        var phone =  document.getElementById("telephone").value;
+        var fax =  document.getElementById("fax").value;
+        var telephone =  document.getElementById("telephone").value;
+        var chk=/^[0-9]*$/;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(!email.match(mailformat))
+        {
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+
+
+        if ( empty(name)){
+            alert("Name  Can not Empty");
+            return false;
+        }
+
+
+        if(!phone.match(chk)) {
+            alert( 'Please enter a valid Phone number!!' );
+            return false;
+        }
+        if(phone.length >45) {
+            alert( 'Phone number must be less than 45 charecter!!' );
+            return false;
+        }
+
+
+        if (empty(relation) )
+        {
+            alert(" Relation  Can not Empty");
+            return false;
+        }
+
+        if(empty(fax))
+        {
+            alert(" fax can not empty");
+            return false;
+        }
+        if(empty(address))
+        {
+            alert(" it can not also empty");
+            return false;
+        }
+        if(empty('telephone'))
+        {
+            alert("Give the telephone number ");
+            return false;
+        }
+
+
+        else
+        {
+            return true;
+        }
+    }
+</script>
