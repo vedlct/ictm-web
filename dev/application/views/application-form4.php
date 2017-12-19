@@ -46,7 +46,7 @@
 <!--                         --><?php //   $userId=$this->session->userdata('id'); ?>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:</label>
+                                <label class="control-label col-md-2">Title*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                     <select style="width: 100%"  id="title" required name="title">
@@ -61,28 +61,28 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name:</label>
+                                <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name" name="name" required value="<?php echo set_value('name'); ?>" >
+                                    <input type="text" class="form-control" id="name" name="name"  value="<?php echo set_value('name'); ?>" >
 
 
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Relation:</label>
+                                <label class="control-label col-md-2">Relation*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input type="text" class="form-control" id="name" name="relation" required value="<?php echo set_value('name'); ?>" >
+                                    <input type="text" class="form-control" id="relation" name="relation"  value="<?php echo set_value('name'); ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address:</label>
+                                <label class="control-label col-md-2">Address*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea id="comment-message" name="address" rows="8" tabindex="4" ><?php echo set_value('name'); ?></textarea>
+                                    <textarea  name="address"  id="address" rows="8" tabindex="4" ><?php echo set_value('address'); ?></textarea>
                                 </div>
                             </div>
 
@@ -90,31 +90,31 @@
                                 <label class="control-label col-md-2">Mobile:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input type="text" class="form-control" id="" name="mobile" required value="<?php echo set_value('mobile'); ?>" >
+                                    <input type="text" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone:</label>
+                                <label class="control-label col-md-2">Telephone*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input type="text" class="form-control" id="" name="telephone" required  value="<?php echo set_value('telephone'); ?>" >
+                                    <input type="text" class="form-control" id="telephone" name="telephone"  value="<?php echo set_value('telephone'); ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:</label>
+                                <label class="control-label col-md-2">E-mail*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                    <input type="email" class="form-control" id="" name="email" required value="<?php echo set_value('email'); ?>" >
+                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email'); ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Fax:</label>
+                                <label class="control-label col-md-2">Fax*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('fax'); ?></font></p>
-                                    <input type="text" class="form-control" id="" name="fax" required value="<?php echo set_value('fax'); ?>" >
+                                    <input type="text" class="form-control" id="fax" name="fax"  value="<?php echo set_value('fax'); ?>" >
                                 </div>
                             </div>
 
@@ -168,16 +168,20 @@
 </html>
 
 <script>
+
     function formvalidate() {
+
+
         var email =  document.getElementById("email").value;
-        var name =  document.getElementById("name").value;
+         var name =  document.getElementById("name").value;
         var relation =  document.getElementById("relation").value;
         var address =  document.getElementById("address").value;
-        var phone =  document.getElementById("telephone").value;
+        var phone =  document.getElementById("mobile").value;
         var fax =  document.getElementById("fax").value;
         var telephone =  document.getElementById("telephone").value;
-        var chk=/^[0-9]*$/;
+       var chk=/^[0-9]*$/;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
 
         if(!email.match(mailformat))
         {
@@ -186,7 +190,7 @@
         }
 
 
-        if ( empty(name)){
+        if ( name==""){
             alert("Name  Can not Empty");
             return false;
         }
@@ -202,23 +206,23 @@
         }
 
 
-        if (empty(relation) )
+        if (relation=="" )
         {
             alert(" Relation  Can not Empty");
             return false;
         }
 
-        if(empty(fax))
+        if(fax=="")
         {
             alert(" fax can not empty");
             return false;
         }
-        if(empty(address))
+        if(address=="")
         {
-            alert(" it can not also empty");
+            alert("Address  can not  empty");
             return false;
         }
-        if(empty('telephone'))
+        if(telephone=="")
         {
             alert("Give the telephone number ");
             return false;

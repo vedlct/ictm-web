@@ -66,7 +66,7 @@
                                 <label class="control-label col-md-2">Name:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id=""  name="name" value="<?php echo $f4->name ?>" >
+                                    <input type="text" class="form-control" id=""   name="name" value="<?php echo $f4->name ?>" >
                                 </div>
                             </div>
 
