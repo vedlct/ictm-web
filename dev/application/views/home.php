@@ -403,8 +403,9 @@
                         <div class="name-toggle">
                             <h2 class="title">Event</h2>
                         </div>
-                        <span>
+
                         <?php foreach ($events as $e) {?>
+                            <span>
                         <div class="flat-toggle">
                             <div class="toggle-title"><?php echo $e->eventTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($e->eventStartDate)) ?></span></div>
                             <div class="toggle-content">
@@ -412,15 +413,17 @@
                                 <div class="info">
                                     <pre>
                                      <p><?php echo  substr($e->eventContent, 0, 350);?></p>
+                                        </pre>
                                     <br><p><a href="<?php echo base_url()?>Event-Details/<?php echo $e->eventId?>"><button class="btn btn-default">Read More...</button></a></p>
-                                    </pre>
                                 </div>
+
 
                             </div>
                         </div>
                         <!-- /.toggle -->
-                        <?php } ?>
                          </span>
+                        <?php } ?>
+
                     </div><!-- /.accordion -->
                 </div><!--/col-md-6 col-sm-6 -->
 
