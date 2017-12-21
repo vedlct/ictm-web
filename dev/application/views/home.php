@@ -404,7 +404,7 @@
                             <div class="toggle-title"><?php echo $e->eventTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($e->eventStartDate)) ?></span></div>
                             <div class="toggle-content">
                                 <div class="info">
-                                     <p><?php echo  substr($e->eventContent, 0, 350);?></p>
+                                    <div> <p><?php echo  substr($e->eventContent, 0, 350);?></p></div>
                                     <br><p><a href="<?php echo base_url()?>Event-Details/<?php echo $e->eventId?>"><button class="btn btn-default">Read More...</button></a></p>
                                 </div>
                             </div>
