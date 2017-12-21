@@ -156,13 +156,158 @@ class OnlineForms extends CI_Controller
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
         $this->load->view('application-form3', $this->data);
     }
+
+
     public function applyNow4() // go to the apply page of selected course
     {
-        $this->menu();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('application-form4', $this->data);
+        if ($this->session->userdata('loggedin') == "true") {
+
+            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+            $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4();
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+
+
+
+            if (empty($this->data['apllyfrom4'])) {
+
+                 $this->load->view('application-form4', $this->data);
+                }
+
+            else {
+
+                $this->load->view('application-form4v', $this->data);
+            }
+
+
+        }
+
     }
+
+
+    public function insertapplyNow4()
+
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+            //$userId = $this->session->userdata('fkCandidateId');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom4')) {
+                $this->menu();
+                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $this->load->view('application-form4', $this->data);
+
+            } else {
+
+                $title = $this->input->post('title');
+                $name = $this->input->post('name');
+                $relation = $this->input->post('relation');
+                $address = $this->input->post('address');
+                $mobilee = $this->input->post('mobile');
+                $telephone = $this->input->post('telephone');
+                $email = $this->input->post('email');
+                $fax = $this->input->post('fax');
+
+                $data = array(
+                    'fkCandidateId' => 1,
+                    'title' => $title,
+                    'name' => $name,
+                    'relation' => $relation,
+                    'address' => $address,
+                    'mobile' => $mobilee,
+                    'telephone' => $telephone,
+                    'email' => $email,
+                    'fax' => $fax
+
+                );
+
+
+                $this->data['error'] = $this->OnlineFormsm->insertnewfrom4($data);;
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                    redirect("OnlineForms/applyNow4"  );
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect("OnlineForms/applyNow4");
+
+                }
+
+            }
+        }
+
+    }
+
+
+    public function updateInfoApply4($id)
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            //$userId = $this->session->userdata('fkCandidateId');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom4')) {
+                $this->menu();
+                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4($id);
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $this->load->view('application-form4v', $this->data);
+
+            }
+
+            else {
+
+                $title = $this->input->post('title');
+                $name = $this->input->post('name');
+                $relation = $this->input->post('relation');
+                $address = $this->input->post('address');
+                $mobilee = $this->input->post('mobile');
+                $telephone = $this->input->post('telephone');
+                $email = $this->input->post('email');
+                $fax = $this->input->post('fax');
+
+                $data = array(
+                    'fkCandidateId' => 1,
+                    'title' => $title,
+                    'name' => $name,
+                    'relation' => $relation,
+                    'address' => $address,
+                    'mobile' => $mobilee,
+                    'telephone' => $telephone,
+                    'email' => $email,
+                    'fax' => $fax
+
+                );
+
+                $this->data['error'] = $this->OnlineFormsm->updatApplynow4($id, $data);
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                    redirect("OnlineForms/applyNow4");
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect("OnlineForms/applyNow4");
+
+                }
+
+            }
+        }
+    }
+
+
+
     public function applyNow5() // go to the apply page of selected course
     {
         $this->menu();
@@ -282,6 +427,49 @@ class OnlineForms extends CI_Controller
                 $courseStartDate = $this->input->post("courseStartDate");
                 $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
+
+                $data=array(
+                    'title'=>$candidateTitle,
+                    'firstName'=>$candidateFirstName,
+                    'surName'=>$candidateSurName,
+                    'otherNames'=>$candidateOtherNamee,
+                    'dateOfBirth'=>$candidateDob,
+                    'gender'=>$candidateGender,
+                    'placeOfBirth'=>$candidatePlaceOfBirth,
+                    'nationality'=>$candidateNationality,
+                    'passportNo'=>$candidatePassportNo,
+                    'passportExpiryDate'=>$candidatePassportExpiryDate,
+                    'ukEntryDate'=>$candidateUkEntryDate,
+                    'visaExpiryDate'=>$candidateVisaExpiryDate,
+
+                    'currentAddress'=>$candidateCurrentAddress,
+                    'overseasAddress'=>$candidateOverseasHomeAddress,
+                    'telephoneNo'=>$candidateTelephone,
+                    'mobileNo'=>$candidateMobile,
+                    'email'=>$candidateEmail,
+                    'fax'=>$candidateFax,
+                    'emergencyContactName'=>$EmergencyContactName,
+                    'emergencyContactTitle'=>$EmergencyContactTitle,
+                    'emergencyContactRelation'=>$EmergencyContactRelation,
+                    'emergencyContactAddress'=>$EmergencyContactAddress,
+                    'emergencyContactMobile'=>$EmergencyContactMobile,
+                    'emergencyContactEmail'=>$EmergencyContactEmail,
+//                    'selfFinance'=>,
+                    'applydate'=>date('Y-m-d h:i:s A'),
+                );
+
+                $data1=array(
+                    'courseName'=>$courseName,
+                    'awardingBody'=>$awardingBody,
+                    'courseLevel'=>$courseLevel,
+                    'courseStartDate'=>$courseStartDate,
+                    'courseEndDate'=>$courseEndDate,
+                    'methodOfStudy'=>$methodeOfStudy,
+                );
+
+                $this->data['insertForm'] = $this->OnlineFormsm->insertApplyForm1($data,$data1);
+
+
 
 
 //            }

@@ -386,31 +386,39 @@
                         <div class="name-toggle">
                             <h2 class="title">News</h2>
                         </div>
+                        <span>
                         <?php foreach ($news as $n) {?>
                         <div class="flat-toggle">
                             <div class="toggle-title "><?php echo $n->newsTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($n->newsDate)) ?></span></div>
                             <div class="toggle-content">
+                                <pre>
                                 <?php echo  substr($n->newsContent, 0, 350);?>
                                 <br><p><a href="<?php echo base_url()?>News-Details/<?php echo $n->newsId?>"><button class="btn btn-default">Read More...</button></a></p>
+                                </pre>
                             </div>
                         </div><!-- /toggle -->
                         <?php } ?>
+                        </span>
                         <br>
                         <div class="name-toggle">
                             <h2 class="title">Event</h2>
                         </div>
+
                         <?php foreach ($events as $e) {?>
                         <div class="flat-toggle">
                             <div class="toggle-title"><?php echo $e->eventTitle?><br><span style="font-size:13px"><?php echo date('F d, Y',strtotime($e->eventStartDate)) ?></span></div>
                             <div class="toggle-content">
                                 <div class="info">
-                                    <div> <p><?php echo  substr($e->eventContent, 0, 350);?></p></div>
+                                    <?php $asfsf= strip_tags($e->eventContent)?>
+                                     <p><?php echo  substr($asfsf, 0, 350);?></p>
                                     <br><p><a href="<?php echo base_url()?>Event-Details/<?php echo $e->eventId?>"><button class="btn btn-default">Read More...</button></a></p>
+
                                 </div>
                             </div>
                         </div>
                         <!-- /.toggle -->
                         <?php } ?>
+
                     </div><!-- /.accordion -->
                 </div><!--/col-md-6 col-sm-6 -->
 

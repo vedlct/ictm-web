@@ -38,6 +38,50 @@ class OnlineFormsm extends CI_Model
 
     }
 
+
+
+
+    public function getAllapplynow4()
+    {
+        $this->db->where('fkCandidateId', 1);
+        $query=$this->db->get('financer');
+        return $query->result();
+
+    }
+
+
+    public function updatApplynow4($id, $data)
+    {
+
+        $error=$this->db->where('id',$id)->update('financer',$data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+
+
+    public function insertnewfrom4($data)
+    {
+        $this->security->xss_clean($data);
+        $error=$this->db->insert('financer', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+
+
     public function sendFeedback(){
 
         $feedbackName = $this->input->post("name");
@@ -140,7 +184,38 @@ class OnlineFormsm extends CI_Model
             } else {
                 return $error = null;
             }
+    }
+
+    public function insertApplyForm1($data,$data1)
+    {
+        $data=$this->security->xss_clean($data);
+        $error=$this->db->insert('candidateinfo', $data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+
+
+            $candidId = $this->db->insert_id();
+
+
+            $data2 = array(
+                'fkCandidateId' => $candidId,
+            );
+            $newdata1 = array_merge($data1, $data2);
+            $newdata1 = $this->security->xss_clean($newdata1);
+            $error=$this->db->insert('coursedetails', $newdata1);
+
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+
         }
+
+
+    }
 
     public function getCandidateinfo(){
 

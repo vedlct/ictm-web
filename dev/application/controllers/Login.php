@@ -29,6 +29,7 @@ class Login extends CI_Controller {
                     'email' => $result->email,
                     'id'=>$result->id,
                     'type'=>$result->type,
+                    'title'=>$result->title,
                     'loggedin'=>"true",
                 ];
                 $this->session->set_userdata($data);

@@ -162,6 +162,7 @@ class Album extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
+
             $approve=$this->Albumm->appearInHomePage($albumId);
             echo $approve;
 

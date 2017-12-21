@@ -521,7 +521,7 @@
                                         
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
-                                            <a href="<?php echo base_url()?>OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>
+<!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
                                             <button type="submit" class="btn btn-next">Save Application</button>
                                           </div>
                                         </div>

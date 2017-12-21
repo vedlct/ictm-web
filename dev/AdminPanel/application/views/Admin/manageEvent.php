@@ -227,6 +227,10 @@
                     else if(data=='0'){
                         alert('Event Removed Successfully From Home Page');
                     }
+                    else if(data=='3'){
+                        alert('Allready 3 Event in  Home Page');
+                    }
+                    location.reload();
 
                 }
             });
