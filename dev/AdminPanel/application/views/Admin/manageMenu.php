@@ -67,22 +67,22 @@
                             <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Menu Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)" > Menu Type</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Inserted By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
+                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" <span id="asce" style="display: none"><i class="fa fa-sort-asc"></i> </span> <span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span>  Menu Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)" > Menu Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Parent Menu</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Page Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
                                 </tr>
 
                                 <?php if (!empty($menu)){
                                 foreach ($menu as $menu){?>
 
 
-                                    <tr align="center">
+                                    <tr align="left">
                                         <td><?php echo $menu->menuName?></td>
                                         <td><?php echo $menu->menuType?></td>
                                         <td>

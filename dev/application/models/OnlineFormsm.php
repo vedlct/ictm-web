@@ -69,9 +69,7 @@ class OnlineFormsm extends CI_Model
 
     public function updatApplynow5($id, $data)
     {
-
         $error=$this->db->where('id',$id)->update('candidateinfo',$data);
-
         if (empty($error))
         {
             return $this->db->error();
@@ -91,11 +89,8 @@ class OnlineFormsm extends CI_Model
         $insert_id = $this->db->insert_id();
         return  $insert_id;
 
-
     }
-
     public function insertapplyNow6personal($data1)
-
 {
 
     $error=$this->db->insert('personequalopportunity', $data1);

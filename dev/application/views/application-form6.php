@@ -104,7 +104,7 @@
                                     <table class="table" >
                                         <tr >
                                             <td ><input type = "radio" name = "check_list1" value = "No known disability" > No known disability </td >
-                                            <td ><input type = "radio" name = "check_list1" value = " Personal care support" > Personal care support </td >
+                                            <td ><input type = "radio" name = "check_list1" value = "Personal care support" > Personal care support </td >
                                         </tr >
                                         <tr >
                                             <td ><input type = "radio" name = "check_list1" value = "Special Learning Difficulty" > Special Learning Difficulty </td >

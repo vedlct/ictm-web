@@ -2,19 +2,19 @@
 <table class="table table-striped table-advance  table-bordered table-hover ">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Photo</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Photo</th>
 
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" >Photo Status</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Photo Inserted By</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" >Photo Status</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Photo Inserted By</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
     </tr>
     <?php if (!empty($photo)){
         foreach ($photo as $photo){?>
 
 
-            <tr align="center">
+            <tr align="left">
                 <td><img height="100px" width="100px" src = "<?php echo base_url()?>images/photoAlbum/<?php echo $photo->albumTitle?>/<?php echo $photo->photoName?>">
                 </td>
 

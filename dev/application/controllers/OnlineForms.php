@@ -437,7 +437,6 @@ class OnlineForms extends CI_Controller
     {
 
 
-
         $check_list = $this->input->post('check_list');
         $check_list1 = $this->input->post('check_list1');
         $check_list2 = $this->input->post('check_list2');
@@ -479,14 +478,18 @@ class OnlineForms extends CI_Controller
 
 
             $id = $this->OnlineFormsm->insertapplyNow6($data);
+
+
             $data1 = array(
                 'fkEqualOpportunitySubGroupId' => $id,
                 'fkCandidateId' => 1,
 
             );
+            $this->data['error'] = $this->OnlineFormsm->insertapplyNow6personal($data1);
+
+            //print_r( $this->data['error']);
         }
 
-            $this->data['error'] = $this->OnlineFormsm->insertapplyNow6personal($data1);
             if (empty($this->data['error'])) {
 
 
@@ -494,10 +497,12 @@ class OnlineForms extends CI_Controller
                 redirect("OnlineForms/applyNow6/" . $id);
 
 
-            } else {
+            }
+
+            else {
 
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                redirect("OnlineForms/applyNow5" . $id);
+                redirect("OnlineForms/applyNow6/" . $id);
 
             }
 
@@ -505,8 +510,13 @@ class OnlineForms extends CI_Controller
 
 
 
-        }
 
+
+
+
+
+
+    }
 
 
      public function updatefrom6($id)

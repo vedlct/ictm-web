@@ -56,20 +56,20 @@
                             <table class="table table-bordered table-hover table-striped table-advance" id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Album Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Category Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)"> Album Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Category Name</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Album Status</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
                                 </tr>
                                 <?php if (!empty($Albums)){
                                     foreach ($Albums as $Album){?>
 
 
-                                        <tr align="center">
+                                        <tr align="left">
                                             <td><?php echo $Album->albumTitle?></td>
                                             <td><?php echo $Album->albumCategoryName?></td>
 
