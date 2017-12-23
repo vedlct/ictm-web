@@ -210,6 +210,10 @@
                     else if(data=='0'){
                         alert('News Removed Successfully From Home Page');
                     }
+                    else if(data=='3'){
+                        alert('Allready 3 News in the Home Page');
+                    }
+                    location.reload();
 
                 }
             });

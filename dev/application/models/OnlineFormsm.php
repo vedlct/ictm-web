@@ -304,7 +304,7 @@ public function getAllapplynow6($id)
             if (empty($error)) {
                 return $this->db->error();
             } else {
-                return $error = null;
+                return $candidId;
             }
 
         }

@@ -285,6 +285,26 @@ class Eventm extends CI_Model
 
         $this->db->where('eventId',$eventId);
         $this->db->update('ictmevent', $data);
+        //return $approve;
+
+        $this->db->select('COUNT(eventId) as total');
+        $this->db->from('ictmevent');
+        $this->db->where('eventStatus',STATUS[0]);
+        $this->db->where('homeStatus',SELECT_APPROVE[0]);
+        $query10 = $this->db->get();
+        foreach ($query10->result() as $totalCount){
+            $Total=$totalCount->total;
+        }
+        if ($Total > "3"){
+
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve =3;
+            $this->db->where('eventId',$eventId);
+            $this->db->update('ictmevent', $data);
+
+        }
         return $approve;
 
     }

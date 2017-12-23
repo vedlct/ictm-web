@@ -172,7 +172,9 @@
     }
     function selectHome(x) {
         if (confirm("Are you sure ?")) {
+
             btn = $(x).data('panel-id');
+
             $.ajax({
                 type:'POST',
                 url:'<?php echo base_url("Admin/Album/appearInHomePage/")?>'+btn,
@@ -185,6 +187,12 @@
                     else if(data=='0'){
                         alert('Album Removed Successfully From Home Page');
                     }
+
+                    else if(data=='3'){
+                        alert('Allready 2 Album in the Home Page');
+                    }
+                    location.reload();
+
 
                 }
             });

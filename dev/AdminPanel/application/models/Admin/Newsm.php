@@ -296,6 +296,27 @@ class Newsm extends CI_Model
 
         $this->db->where('newsId',$newsId);
         $this->db->update('ictmnews', $data);
+        //return $approve;
+
+        $this->db->select('COUNT(newsId) as total');
+        $this->db->from('ictmnews');
+        $this->db->where('newsStatus',STATUS[0]);
+        $this->db->where('homeStatus',SELECT_APPROVE[0]);
+        $query10 = $this->db->get();
+        foreach ($query10->result() as $totalCount){
+            $Total=$totalCount->total;
+        }
+        if ($Total > "3"){
+
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve =3;
+            $this->db->where('newsId',$newsId);
+            $this->db->update('ictmnews', $data);
+
+
+        }
         return $approve;
 
     }
