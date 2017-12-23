@@ -209,7 +209,7 @@ class OnlineFormsm extends CI_Model
             if (empty($error)) {
                 return $this->db->error();
             } else {
-                return $error = null;
+                return $candidId;
             }
 
         }
