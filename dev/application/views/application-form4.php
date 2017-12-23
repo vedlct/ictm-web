@@ -54,7 +54,7 @@
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
                                             <option <?php echo set_select('title',  Title[$i], False); ?>><?php echo Title[$i]?></option>
-                                        <?php } ?>
+                                        <?php  } ?>
 
                                     </select>
                                 </div>
@@ -64,7 +64,7 @@
                                 <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name" name="name"  value="<?php echo set_value('name'); ?>" >
+                                    <input type="text" class="form-control" id="name" name="name"  required value="<?php echo set_value('name'); ?>" >
 
 
                                 </div>
@@ -74,7 +74,7 @@
                                 <label class="control-label col-md-2">Relation*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input type="text" class="form-control" id="relation" name="relation"  value="<?php echo set_value('name'); ?>" >
+                                    <input type="text" class="form-control" id="relation" name="relation"  value="<?php echo set_value('relation'); ?>" >
                                 </div>
                             </div>
 
@@ -121,7 +121,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" href="#" class="btn ">Next</button>
+                                    <button type="button" href="<?php echo base_url()?>OnlineForms/applyNow5" class="btn ">Next</button>
 
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>

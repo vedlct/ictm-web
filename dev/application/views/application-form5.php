@@ -24,44 +24,42 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow5" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>OnlineForms/insertapplyNow5" method="post" class="registration-form form-horizontal">
 
 
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Personal Statement</h3>
+                        </div>
 
-                    <fieldset>
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h3>Personal Statement</h3>
-                            </div>
-
-                            <div class="form-top-right">
-                                <p>Step 5 / 9</p>
+                        <div class="form-top-right">
+                            <p>Step 5 / 9</p>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Why do you wish to do this course?:</label>
+                            <div class="col-md-10">
+                                <textarea id="courseChoiceStatement" name="courseChoiceStatement" rows="8" tabindex="4"  > </textarea>
                             </div>
                         </div>
-                        <div class="form-bottom">
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Why do you wish to do this course?:</label>
-                                <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
-                                <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
-                                </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
+                            <div class="col-md-10">
+                                <textarea id="collegeChoiceStatement" name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
                             </div>
                         </div>
-                    </fieldset>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-md-10">
+                                <button type="button" class="btn btn-previous">Previous</button>
+                                <button type="submit" class="btn ">Next</button>
+                                <button type="submit" class="btn btn-next">Save Application</button>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </form>
 
@@ -101,3 +99,35 @@
 </body>
 
 </html>
+
+<script>
+
+    function formvalidate() {
+
+
+        var courseChoiceStatement =  document.getElementById("courseChoiceStatement").value;
+        var collegeChoiceStatement  document.getElementById("collegeChoiceStatement").value;
+
+
+
+        if ( courseChoiceStatement==""){
+            alert("Course Choice Statement  Can not Empty");
+            return false;
+        }
+
+
+
+        if (collegeChoiceStatement=="" )
+        {
+            alert(" College Choice Statement  Can not Empty");
+            return false;
+        }
+
+
+
+        else
+        {
+            return true;
+        }
+    }
+</script>

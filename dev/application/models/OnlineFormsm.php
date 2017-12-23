@@ -39,8 +39,6 @@ class OnlineFormsm extends CI_Model
     }
 
 
-
-
     public function getAllapplynow4()
     {
         $this->db->where('fkCandidateId', 1);
@@ -48,6 +46,89 @@ class OnlineFormsm extends CI_Model
         return $query->result();
 
     }
+
+    public function getAllapplynow5($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->select('id,courseChoiceStatement,collegeChoiceStatement');
+        $this->db->from('candidateinfo');
+        $query=$this->db->get();
+        return $query->result();
+
+    }
+
+
+    public  function checkopportunityTitle()
+    {
+        $this->db->select('id,opportunityTitle');
+        $this->db->from('equalopportunitygroup');
+        //$this->db->where('id',1);
+        $query=$this->db->get();
+        return $query->result();
+    }
+
+    public function updatApplynow5($id, $data)
+    {
+
+        $error=$this->db->where('id',$id)->update('candidateinfo',$data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+
+
+
+    public function insertapplyNow6($data)
+    {
+        $this->security->xss_clean($data);
+        $this->db->insert('equalopportunitysubgroup', $data);
+        $insert_id = $this->db->insert_id();
+        return  $insert_id;
+
+
+    }
+
+    public function insertapplyNow6personal($data1)
+
+{
+
+    $error=$this->db->insert('personequalopportunity', $data1);
+    if (empty($error)) {
+        return $this->db->error();
+    } else {
+        return $error = null;
+    }
+
+}
+
+public function getAllapplynow6($id)
+
+{
+
+//    $this->db->select('equalopportunitysubgroup.id as id,fkGroupId,subGroupTitle,opportunityTitle');
+//    $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id = equalopportunitysubgroup.fkGroupId', 'left');
+//    $this->db->from('equalopportunitysubgroup');
+//    $query=$this->db->get();
+//    return $query->result();
+
+    $this->db->select('equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle');
+    $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+    $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+    $this->db->where('personequalopportunity.fkCandidateId=',$id=1);
+    $this->db->from('personequalopportunity');
+    $query=$this->db->get();
+    return $query->result();
+
+
+}
+
+
 
 
     public function updatApplynow4($id, $data)
@@ -70,6 +151,20 @@ class OnlineFormsm extends CI_Model
     {
         $this->security->xss_clean($data);
         $error=$this->db->insert('financer', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+    public function insertnewfrom5($data)
+    {
+        $this->security->xss_clean($data);
+        $error=$this->db->insert('candidateinfo', $data);
 
         if (empty($error))
         {
