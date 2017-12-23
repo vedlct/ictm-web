@@ -29,7 +29,8 @@
                             $this->db->select('photoName');
                             $this->db->from('ictmphoto');
                             $this->db->where('albumId',$an->albumId);
-                            $this->db->limit(1);
+                            $this->db->where('albumCover',SELECT_APPROVE[0]);
+
                             $query3 = $this->db->get();
                             ?>
                             <?php if (!empty($query3->result())){foreach ($query3->result() as $s) {?>

@@ -106,7 +106,22 @@ class Photo extends CI_Controller
             }
             else{
                 $this->session->set_flashdata('successMessage','Photo Deleted Successfully');
+
             }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function albumCover($photoId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $albumId=$this->input->post('album');
+            $approve=$this->Photom->makePhotoAlbumCoverbyId($albumId,$photoId);
+            $this->session->set_flashdata('alCover',$albumId);
+            echo $approve;
         }
         else{
             redirect('Admin/Login');
