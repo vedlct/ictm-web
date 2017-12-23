@@ -230,7 +230,7 @@ class Albumm extends CI_Model
         foreach ($query10->result() as $totalCount){
             $Total=$totalCount->total;
         }
-        if ($Total > "2"){
+        if ($Total > "6"){
 
             $data = array(
                 'homeStatus' => null,

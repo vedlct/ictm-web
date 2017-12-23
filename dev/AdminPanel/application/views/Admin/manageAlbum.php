@@ -189,7 +189,7 @@
                     }
 
                     else if(data=='3'){
-                        alert('Allready 2 Album in the Home Page');
+                        alert('Allready 6 Album in the Home Page');
                     }
                     location.reload();
 

@@ -106,7 +106,7 @@ class Photom extends CI_Model
     // for manage Photo view
     public function getAllforManagePhoto($id) {
 
-        $this->db->select('p.photoId,p.albumId,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
+        $this->db->select('p.photoId,p.albumId,p.albumCover,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
         $this->db->from('ictmphoto p');
         $this->db->where('p.albumId',$id);
         $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
@@ -309,15 +309,76 @@ class Photom extends CI_Model
             $photoName=$photo->photoName;
         }
         $path   = 'images/photoAlbum/'.$albumTitle."/".$photoName;
+
+        $info = pathinfo($photoName);
+        $name = $info['filename'];
+        $format = $info['extension'];
+
+        $pathanother   = 'images/photoAlbum/'.$albumTitle."/".$name."_300_400".".".$format;
+
         if (!file_exists($path)){
             return 0;
         }
         else{
             unlink(FCPATH.$path);
+            unlink(FCPATH.$pathanother);
             $this->db->where('photoId',$photoId);
             $this->db->delete('ictmphoto');
 
+
         }
+
+
+    }
+
+    public function makePhotoAlbumCoverbyId($albumId,$photoId)
+    {
+
+
+        $this->db->select('albumCover');
+        $this->db->where('photoId',$photoId);
+        $query = $this->db->get('ictmphoto');
+
+        foreach ($query->result() as $albumCover){
+            $cover=$albumCover->albumCover;
+        }
+        if ($cover == null){
+
+            $data=array(
+                'albumCover'=>SELECT_APPROVE[0],
+            );
+            $approve=1;
+        }
+        else{
+            $data = array(
+                'albumCover' => null,
+            );
+            $approve=0;
+        }
+
+        $this->db->where('photoId',$photoId);
+        $this->db->update('ictmphoto', $data);
+
+        $this->db->select('COUNT(albumCover) as Total');
+        $this->db->where('albumId',$albumId);
+
+        $query10 = $this->db->get('ictmphoto');
+
+        foreach ($query10->result() as $totalCount){
+            $Total=$totalCount->Total;
+        }
+        if ($Total > "1"){
+
+            $data = array(
+                'albumCover' => null,
+            );
+            $approve =3;
+            $this->db->where('photoId',$photoId);
+            $this->db->update('ictmphoto', $data);
+
+
+        }
+        return $approve;
 
 
     }

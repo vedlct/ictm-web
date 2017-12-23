@@ -35,6 +35,8 @@
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
             <?php }?>
 
+            <?php $alCov = $this->session->flashdata('alCover');?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -81,6 +83,19 @@
 
 <script>
 
+    $(document).ready(function(){
+
+        var alcover= '<?php echo $alCov?>';
+
+        if (alcover != ''){
+            showtable2(alcover);
+        }else {
+
+        }
+
+
+    });
+
     $.ajaxSetup({
         data: {
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
@@ -92,6 +107,23 @@
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin/Photo/showPhotoManageTable/")?>'+x,
+            data:{},
+            cache: false,
+            success:function(data)
+            {
+                $('#tableid').html(data);
+
+            }
+        });
+        document.getElementById("tableid").style.display ="block";
+    }
+
+    function showtable2(alcover)
+    {
+        //var x = document.getElementById('albumId').value;
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin/Photo/showPhotoManageTable/")?>'+alcover,
             data:{},
             cache: false,
             success:function(data)
