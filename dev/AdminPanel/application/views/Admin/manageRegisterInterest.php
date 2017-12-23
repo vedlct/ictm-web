@@ -61,11 +61,11 @@
                                 <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <tbody>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> First Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Last Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Phone</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%" onclick="sortTable(2)"> Apply Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)"> First Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Last Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Email</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" ; width="15%" onclick="sortTable(2)"> Apply Date</th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
                                     </tr>
@@ -73,7 +73,7 @@
 
                                     <?php if (!empty($RiData)){
                                         foreach ($RiData as $pd){?>
-                                            <tr align="center">
+                                            <tr align="left">
                                                 <td><?php echo $pd->firstName?></td>
                                                 <td><?php echo $pd->surName?></td>
                                                 <td><?php echo $pd->mobile?></td>

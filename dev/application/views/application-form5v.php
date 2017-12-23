@@ -21,14 +21,23 @@
 
 <section class="flat-row padding-small-v1">
     <div class="container">
+        <?php if ($this->session->flashdata('errorMessage')!=null){?>
+            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+        <?php }
+        elseif($this->session->flashdata('successMessage')!=null){?>
+            <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+        <?php }?>
+
         <div class="row">
             <div class="col-md-9">
-
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow5" method="post" class="registration-form form-horizontal">
-
+                <?php foreach ($apllyfrom5 as $f5) { ?>
 
 
-                    <fieldset>
+
+                    <form role="form" action="<?php echo base_url()?>OnlineForms/updateInfoApply5/<?php echo $f5->id ?>" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
+
+
+
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Personal Statement</h3>
@@ -42,14 +51,14 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Why do you wish to do this course?:</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                    <textarea id="courseChoiceStatement"  name="courseChoiceStatement" rows="8" tabindex="4"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                    <textarea id="collegeChoiceStatement" name="collegeChoiceStatement" rows="8" tabindex="4"><?php echo $f5->collegeChoiceStatement ?></textarea>
                                 </div>
                             </div>
 
@@ -57,15 +66,14 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
                                     <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
 
-                </form>
+                    </form>
 
-
+                    <?php    } ?>
 
 
 
@@ -101,3 +109,34 @@
 </body>
 
 </html>
+<script>
+
+    function formvalidate() {
+
+
+        var courseChoiceStatement =  document.getElementById("courseChoiceStatement").value;
+        var collegeChoiceStatement  document.getElementById("collegeChoiceStatement").value;
+
+
+
+        if ( courseChoiceStatement==""){
+            alert("Course Choice Statement  Can not Empty");
+            return false;
+        }
+
+
+
+        if (collegeChoiceStatement=="" )
+        {
+            alert(" College Choice Statement  Can not Empty");
+            return false;
+        }
+
+
+
+        else
+        {
+            return true;
+        }
+    }
+</script>

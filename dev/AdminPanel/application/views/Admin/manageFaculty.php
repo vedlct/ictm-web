@@ -64,22 +64,22 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)">Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)">Email </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Position </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)">Employee Type </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Degree </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Status </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Inserted By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y) </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center;width: 10%"> Action </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" >Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)">Email </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Position </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Employee Type </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Degree </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                 </tr>
 
 
                                 <?php if (!empty($faculty)){
                                     foreach ($faculty as $faculty){?>
-                                        <tr align="center">
+                                        <tr align="left">
                                             <td>
                                                 <?php echo $faculty->facultyTitle?>&nbsp<?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
                                             </td>

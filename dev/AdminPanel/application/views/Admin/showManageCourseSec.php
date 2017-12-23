@@ -1,19 +1,19 @@
 <div class="table table-responsive">
 <table class="table  table-advance  table-bordered table-hover" id="myTable">
     <tbody>
-    <tr align="center" >
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Course Section Title </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Order Number </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" > Status </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Inserted By </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified By </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y)</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center ; width: 10%"> Action</th>
+    <tr align="left" >
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(0)"> Course Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Order Number </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Status </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Inserted By </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified By </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y)</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left ; width: 10%"> Action</th>
     </tr>
 
         <?php if (!empty($coursedata)){
             foreach ($coursedata as $cd) { ?>
-                <tr align="center">
+                <tr align="left">
                     <td><?php echo $cd->courseSectionTitle ?></td>
                     <td><?php echo $cd->orderNumber ?></td>
                     <td><?php echo $cd->courseSectionStatus ?></td>
