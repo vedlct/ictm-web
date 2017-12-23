@@ -197,13 +197,20 @@
             alert( 'Please enter a Event Content' );
             return false;
         }
-        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
-        var eventEndDateTime =  document.getElementById("eventEndDateTime").value;
+        var eventStartDateTime =   new Date(document.getElementById("eventStartDateTime").value);
+        var eventEndDateTime =   new Date(document.getElementById("eventEndDateTime").value);
 
-        if (eventStartDateTime>eventEndDateTime) {
-            alert ("Event End Date Can not be after Event Start Date!!");
-            return false;
-        }
+        var diff =(eventEndDateTime.getTime()-eventStartDateTime.getTime());
+
+        alert(eventStartDateTime);
+        alert(eventEndDateTime);
+        alert(diff);
+        return false;
+
+//        if (eventStartDateTime > eventEndDateTime) {
+//            alert ("Event End Date Can not be before Event Start Date!!");
+//            return false;
+//        }
     }
 </script>
 
