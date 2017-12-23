@@ -184,10 +184,15 @@ class OnlineForms extends CI_Controller
 
         }
 
+        else
+        {
+            redirect("Home");
+        }
+
     }
 
 
-    public function insertapplyNow4()
+    public function insertapplyNow4($id)
 
     {
 
@@ -231,13 +236,13 @@ class OnlineForms extends CI_Controller
 
 
                     $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                    redirect("OnlineForms/applyNow4"  );
+                    redirect("OnlineForms/applyNow5/".$id  );
 
                 } else {
 
 
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect("OnlineForms/applyNow4");
+                    redirect("OnlineForms/applyNow4/".$id);
 
                 }
 
@@ -292,7 +297,7 @@ class OnlineForms extends CI_Controller
 
 
                     $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                    redirect("OnlineForms/applyNow4");
+                    redirect("OnlineForms/applyNow5".$id);
 
 
                 } else {
@@ -308,20 +313,292 @@ class OnlineForms extends CI_Controller
 
 
 
-    public function applyNow5() // go to the apply page of selected course
+    public function applyNow5($id) // go to the apply page of selected course
     {
-        $this->menu();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('application-form5', $this->data);
+        if ($this->session->userdata('loggedin') == "true") {
+            $id=1;
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+            $this->data['apllyfrom5'] = $this->OnlineFormsm->getAllapplynow5($id);
+
+                $this->load->view('application-form5v', $this->data);
+
+
+        }
+
     }
-    public function applyNow6() // go to the apply page of selected course
+
+//    public function insertapplyNow5()
+//    {        if ($this->session->userdata('loggedin') == "true") {
+//           $courseChoiceStatement = $this->input->post('courseChoiceStatement');
+//            $collegeChoiceStatement=$this->input->post('collegeChoiceStatement');
+//
+//             $data=array(
+//              'courseChoiceStatement'=>$courseChoiceStatement,
+//              'collegeChoiceStatement'=>$collegeChoiceStatement
+//
+//               );
+//
+//          $this->data['error'] = $this->OnlineFormsm->insertnewfrom5($data);;
+//
+//            if (empty($this->data['error'])) {
+//
+//
+//               $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+//               redirect("OnlineForms/applyNow5"  );
+//
+//             }      else {
+//
+//
+//               $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                redirect("OnlineForms/applyNow5");
+//
+//              }
+//
+//
+//
+//            }
+//
+//
+//    }
+
+    public function updateInfoApply5($id)
     {
-        $this->menu();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('application-form6', $this->data);
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            //$userId = $this->session->userdata('fkCandidateId');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom5')) {
+                $this->menu();
+                $this->data['apllyfrom5'] = $this->OnlineFormsm->getAllapplynow4($id);
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $this->load->view('application-form5v', $this->data);
+
+            } else {
+
+                $courseChoiceStatement = $this->input->post('courseChoiceStatement');
+                $collegeChoiceStatement = $this->input->post('collegeChoiceStatement');
+
+                $data = array(
+                    'courseChoiceStatement' => $courseChoiceStatement,
+                    'collegeChoiceStatement' => $collegeChoiceStatement
+
+                );
+
+                $this->data['error'] = $this->OnlineFormsm->updatApplynow5($id, $data);
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                    redirect("OnlineForms/applyNow6/" . $id);
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect("OnlineForms/applyNow5" .$id);
+
+                }
+
+            }
+
+        }
     }
+
+
+
+    public function applyNow6($id) // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+            $this->data['apllyfrom6'] = $this->OnlineFormsm->getAllapplynow6($id);
+
+            if (empty($this->data['apllyfrom6'])) {
+
+                $this->load->view('application-form6', $this->data);
+            } else {
+
+                $this->load->view('application-form6v', $this->data);
+            }
+
+
+
+        }
+
+    }
+
+    public function insertapplyNow6()
+    {
+
+
+        $check_list = $this->input->post('check_list');
+        $check_list1 = $this->input->post('check_list1');
+        $check_list2 = $this->input->post('check_list2');
+        $check_list3 = $this->input->post('check_list3');
+
+        $checkcheckopportunityTitle['id'] = $this->OnlineFormsm->checkopportunityTitle();
+        foreach ($checkcheckopportunityTitle['id'] as $title) {
+
+            if ($title->opportunityTitle == 'Ethnicity')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list
+                );
+
+            if ($title->opportunityTitle == 'Disability')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list1
+                );
+
+            if ($title->opportunityTitle == 'Religion Belief')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list2
+                );
+            if ($title->opportunityTitle == 'Sexual Orientation')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list3
+                );
+
+
+            $id = $this->OnlineFormsm->insertapplyNow6($data);
+
+
+            $data1 = array(
+                'fkEqualOpportunitySubGroupId' => $id,
+                'fkCandidateId' => 1,
+
+            );
+            $this->data['error'] = $this->OnlineFormsm->insertapplyNow6personal($data1);
+
+            //print_r( $this->data['error']);
+        }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect("OnlineForms/applyNow6/" . $id);
+
+
+            }
+
+            else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect("OnlineForms/applyNow6/" . $id);
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+
+     public function updatefrom6($id)
+     {
+
+         if ($this->session->userdata('loggedin') == "true") {
+
+             $this->data['apllyfrom6'] = $this->OnlineFormsm->getAllapplynow6();
+
+
+             print_r($this->data['apllyfrom6']);
+//             $check_list = $this->input->post('check_list');
+//             $check_list1 = $this->input->post('check_list1');
+//             $check_list2 = $this->input->post('check_list2');
+//             $check_list3 = $this->input->post('check_list3');
+//
+//             $checkcheckopportunityTitle['id'] = $this->OnlineFormsm->checkopportunityTitle();
+//             foreach ($checkcheckopportunityTitle['id'] as $title) {
+//
+//                 if ($title->opportunityTitle == 'Ethnicity')
+//
+//                     $data = array
+//                     (
+//                         "fkGroupId" => $title->id,
+//                         'subGroupTitle' => $check_list
+//                     );
+//
+//                 if ($title->opportunityTitle == 'Disability')
+//
+//                     $data = array
+//                     (
+//                         "fkGroupId" => $title->id,
+//                         'subGroupTitle' => $check_list1
+//                     );
+//
+//                 if ($title->opportunityTitle == 'Religion Belief')
+//
+//                     $data = array
+//                     (
+//                         "fkGroupId" => $title->id,
+//                         'subGroupTitle' => $check_list2
+//                     );
+//                 if ($title->opportunityTitle == 'Sexual Orientation')
+//
+//                     $data = array
+//                     (
+//                         "fkGroupId" => $title->id,
+//                         'subGroupTitle' => $check_list3
+//                     );
+//
+//                 $id = $this->OnlineFormsm->insertapplyNow6($data);
+//                 $data1 = array(
+//                     'fkEqualOpportunitySubGroupId' => $id,
+//                     'fkCandidateId' => 1,
+//
+//                 );
+//
+//
+//                 $this->data['error'] = $this->OnlineFormsm->insertapplyNow6personal($data1);
+//                 if (empty($this->data['error'])) {
+//
+//
+//                     $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+//                     redirect("OnlineForms/applyNow6/" . $id);
+//
+//
+//                 } else {
+//
+//                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                     redirect("OnlineForms/applyNow5" . $id);
+//
+//                 }
+//
+//
+//             }
+//
+//         }
+
+         }
+     }
+
+
     public function applyNow7() // go to the apply page of selected course
     {
         $this->menu();

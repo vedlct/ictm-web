@@ -229,7 +229,7 @@
         table = document.getElementById("myTable");
         switching = true;
         //Set the sorting direction to ascending:
-        dir = "asc";
+        dir = "asce";
         /*Make a loop that will continue until
          no switching has been done:*/
         while (switching) {
@@ -247,19 +247,24 @@
                 y = rows[i + 1].getElementsByTagName("TD")[n];
                 /*check if the two rows should switch place,
                  based on the direction, asc or desc:*/
-                if (dir == "asc") {
+                if (dir == "desc") {
                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
+                        document.getElementById("desc").style.display = "block";
+                        document.getElementById("asce").style.display = "block";
                         break;
                     }
-                } else if (dir == "desc") {
+                } else if (dir == "asce") {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
+                        document.getElementById("asce").style.display = "block"
+                        document.getElementById("desc").style.display = "block";
                         break;
                     }
                 }
+
             }
             if (shouldSwitch) {
                 /*If a switch has been marked, make the switch
@@ -271,11 +276,12 @@
             } else {
                 /*If no switching has been done AND the direction is "asc",
                  set the direction to "desc" and run the while loop again.*/
-                if (switchcount == 0 && dir == "asc") {
+                if (switchcount == 0 && dir == "asce") {
                     dir = "desc";
                     switching = true;
                 }
             }
         }
+
     }
 </script>

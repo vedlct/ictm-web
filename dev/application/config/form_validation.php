@@ -235,6 +235,10 @@ $config = array (
 
         ),
 
+
+
+
+
     'checkApplicationForm1' => array (
         array(
             'field' => 'title',
@@ -427,7 +431,36 @@ $config = array (
 
         ),
 
-    ),
+
+
+     ),
+
+
+    'applyfrom5'=>
+        array(
+
+
+            array(
+                'field' => 'courseChoiceStatement',
+                'label' => 'Course Choice Statement',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'collegeChoiceStatement',
+                'label' => 'College Choice Statement',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+
+
+
+
+
+
+
+        ),
+
 
 
 

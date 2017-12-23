@@ -41,6 +41,11 @@ $config = array (
             'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
+            'field' => 'orderNumber',
+            'label' => 'Order Number',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|is_unique[ictmmenu.orderNumber]|htmlspecialchars'
+        ),
+        array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'

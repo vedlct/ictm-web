@@ -1,23 +1,23 @@
 <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%" onclick="sortTable(0)"> Event Title</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Event Start</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)"> Event End</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Location</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Event Type</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date(d-m-Y)</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%" onclick="sortTable(0)"> Event Title</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Event Start</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)"> Event End</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Event Location</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Event Type</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Status</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date(d-m-Y)</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Action</th>
     </tr>
 
     <?php if (!empty($events)){
         foreach ($events as $events){?>
 
-            <tr align="center">
+            <tr align="left">
                 <td>
                     <?php echo $events->eventTitle?>
                 </td>
