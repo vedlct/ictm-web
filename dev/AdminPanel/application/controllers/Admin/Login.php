@@ -55,4 +55,50 @@ class Login extends CI_Controller {
         $this->session->sess_destroy();
         redirect('Admin/Login');
     }
+
+    public function changePass()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->load->view('Admin/passwordChange');
+        } else {
+
+            redirect('Admin/Login');
+        }
+    }
+
+
+    public function resetPassword()
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('resetPassword')) {
+
+                $this->load->view('Admin/passwordChange');
+            }
+            else{
+
+                $this->data['error'] =$this->Loginm->resetPass();
+
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Password Changed Successfully');
+                    redirect('Admin/Login/changePass');
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Album/changePass');
+
+                }
+
+            }
+        } else {
+
+            redirect('Admin/Login');
+        }
+    }
 }

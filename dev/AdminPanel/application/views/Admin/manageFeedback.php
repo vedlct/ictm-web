@@ -54,24 +54,24 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)">Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)">Profession </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)">Source </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Status </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Approve </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">ApprovedBy </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">ApprovedDate(d-m-Y)</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Inserted By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y) </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center;width: 10%"> Action </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)">Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)">Profession </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Source </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Approve </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedBy </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedDate(d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                 </tr>
 
 
                                 <?php if (!empty($feedback)){
                                     foreach ($feedback as $feedback){?>
-                                        <tr align="center">
+                                        <tr align="left">
                                             <td>
                                                 <?php echo $feedback->feedbackByName?>
                                             </td>

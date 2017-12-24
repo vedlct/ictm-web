@@ -49,20 +49,20 @@
                             <div class="table table-responsive">
                             <table class="table table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
-                                <tr style="text-align: center" bgcolor="#D3D3D3">
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Department Name</th>
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Department Head</th>
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: center">Last Modified By</th>
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date(d-m-Y)</th>
-                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
+                                <tr style="text-align: left" bgcolor="#D3D3D3">
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > Department Name</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Department Head</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Status</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
+                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: left">Last Modified By</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date(d-m-Y)</th>
+                                    <th   style="background-color: #394A59; color: whitesmoke; text-align: left"> Action</th>
                                 </tr>
 
 
                                 <?php if (!empty($departments)){
                                     foreach ($departments as $departments){?>
-                                        <tr align="center">
+                                        <tr align="left">
                                             <td>
                                                 <?php echo $departments->departmentName?>
                                             </td>

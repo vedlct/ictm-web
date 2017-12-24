@@ -107,21 +107,13 @@
                                         <div class="line-box"></div>
                                         <form action="<?php echo base_url()?>Email/FacultyEmail" method="post"  id="contactform" class="comment-form" novalidate>
                                         	<div class="row">
-                                            	<div class="col-md-6">
+                                            	<div class="col-md-12">
                                                 	<label><strong>Your Name *</strong></label>
                                                 	<fieldset class="style-1 full-name">
                                                         <input type="text" id="name" class="tb-my-input" name="name" tabindex="1" value="" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
-                                                <div class="col-md-6">
-                                                	<label><strong>I am a: *</strong></label><br>
-                                                	<select style="width: 100%" name="iam" form="carform">
-                                                      <option value="">Option 1</option>
-                                                      <option value="">Option 2</option>
-                                                      <option value="">Option 3</option>
-                                                      <option value="">Option 4</option>
-                                                    </select> 
-                                                </div>
+
                                             </div> 
                                             <div class="row">
                                             	<div class="col-md-6">

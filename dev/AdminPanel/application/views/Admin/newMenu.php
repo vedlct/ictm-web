@@ -94,6 +94,14 @@
 
                                         </div>
                                     </div>
+                                    <div class="form-group ">
+                                        <label for="menuTitle" class="control-label col-lg-2">Order Number<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('orderNumber'); ?></font></p>
+                                            <input class="form-control" id="orderNumber" name="orderNumber"  value="<?php echo set_value('orderNumber'); ?>" type="text" required />
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuStatus">Menu Status<span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -106,6 +114,8 @@
                                             </select>
                                         </div>
                                     </div>
+
+
 
                                     <div id="csrf">
                                         <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
@@ -152,10 +162,12 @@
     });
 
     function selectid(x) {
+
         var btn =  document.getElementById("menuType").value;
 
         if (btn == ""){
             alert("Select a valid Menu Type");
+
         }
         else
         {

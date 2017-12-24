@@ -125,6 +125,10 @@
 		width: 360px;
 		z-index: 9999;
 	}
+    
+    .phtoglry{margin-left: 30px;
+        border: none !important;
+    }
 }
 
 /* Smaller than standard 992 */

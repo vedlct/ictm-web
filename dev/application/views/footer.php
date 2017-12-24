@@ -163,8 +163,10 @@
                                             <div class="thumb images-hover">
 
                                                 <a href="<?php echo base_url()?>album-pictures/<?php echo $photoGallery['albumId']?>">
-                                                    <div class="overlay"></div> <span><img style="height: 80px;width: 80px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $photoGallery['albumTitle']?>/<?php echo $photoGallery['photoName']?>"/></span>
-                                                </a>
+                                                    <div class="overlay"></div>
+
+                                                    <span><img src="<?php echo base_url(FOLDER_NAME.'/images/photoAlbum/'.$photoGallery['albumTitle'].'/'.thumb(FOLDER_NAME.'/images/photoAlbum/'.$photoGallery['albumTitle'].'/'.$photoGallery['photoName'],'400','300')); ?>"></span>
+                                                  </a>
                                             </div>
                                         </li>
                                         <?php } ?>
@@ -296,7 +298,7 @@
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.tools.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.revolution.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/slider.js"></script>
-        
+
 <!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/switcher.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.cookie.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/main.js"></script>

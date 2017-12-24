@@ -44,7 +44,7 @@ class Eventm extends CI_Model
                 $config = array(
                     'upload_path' => "images/eventImages/",
                     'allowed_types' => "jpg|png|jpeg|gif",
-                    'max_size' => "1024*4",
+                    'max_size' => "4096",
                     'overwrite' => TRUE,
                     'remove_spaces' => FALSE,
                     'mod_mime_fix' => FALSE,
@@ -147,7 +147,7 @@ class Eventm extends CI_Model
             $config = array(
                 'upload_path' => "images/eventImages/",
                 'allowed_types' => "jpg|png|jpeg|gif",
-                'max_size' => "1024*4",
+                'max_size' => "4096",
                 'overwrite' => TRUE,
                 'remove_spaces'=>FALSE,
                 'mod_mime_fix'=>FALSE,
@@ -285,6 +285,26 @@ class Eventm extends CI_Model
 
         $this->db->where('eventId',$eventId);
         $this->db->update('ictmevent', $data);
+        //return $approve;
+
+        $this->db->select('COUNT(eventId) as total');
+        $this->db->from('ictmevent');
+        $this->db->where('eventStatus',STATUS[0]);
+        $this->db->where('homeStatus',SELECT_APPROVE[0]);
+        $query10 = $this->db->get();
+        foreach ($query10->result() as $totalCount){
+            $Total=$totalCount->total;
+        }
+        if ($Total > "3"){
+
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve =3;
+            $this->db->where('eventId',$eventId);
+            $this->db->update('ictmevent', $data);
+
+        }
         return $approve;
 
     }

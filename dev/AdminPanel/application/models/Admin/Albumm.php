@@ -59,6 +59,15 @@ class Albumm extends CI_Model
         return $this->db->count_all("ictmalbum");
     }
 
+//    public function checkAlbumAppearInHomePage() {
+//        $this->db->select('COUNT(albumId) as total');
+//        $this->db->from('ictmalbum');
+//        $this->db->where('albumStatus',STATUS[0]);
+//        $this->db->where('homeStatus',SELECT_APPROVE[0]);
+//        $query = $this->db->get();
+//        return $query->result();
+//    }
+
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageAlbum($limit, $start) {
         $this->db->select('albumId,albumTitle,albumCategoryName,albumStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate');
@@ -211,6 +220,27 @@ class Albumm extends CI_Model
 
         $this->db->where('albumId',$albumId);
         $this->db->update('ictmalbum', $data);
+        //return $approve;
+
+        $this->db->select('COUNT(albumId) as total');
+        $this->db->from('ictmalbum');
+        $this->db->where('albumStatus',STATUS[0]);
+        $this->db->where('homeStatus',SELECT_APPROVE[0]);
+        $query10 = $this->db->get();
+        foreach ($query10->result() as $totalCount){
+            $Total=$totalCount->total;
+        }
+        if ($Total > "6"){
+
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve =3;
+            $this->db->where('albumId',$albumId);
+            $this->db->update('ictmalbum', $data);
+
+
+        }
         return $approve;
 
     }

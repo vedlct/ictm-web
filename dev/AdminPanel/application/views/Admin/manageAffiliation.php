@@ -54,19 +54,19 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y) </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center;width: 10%"> Action </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" <span id="asc" style="display: none"><i class="fa fa-sort-asc"></i> </span><span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span> Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                 </tr>
 
 
                                 <?php if (!empty($affiliations)){
                                     foreach ($affiliations as $affiliation){?>
-                                        <tr align="center">
+                                        <tr align="left">
                                             <td>
                                                 <?php echo $affiliation->affiliationsTitle?>
                                             </td>

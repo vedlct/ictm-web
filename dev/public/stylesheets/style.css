@@ -1,9 +1,4 @@
-/**
-* Name: University - Education
-* Version: 1.0
-* Author: Themesflat
-* Author URI: http://www.themesflat.com
-*/
+
 
 @import url("font-awesome.css");
 @import url("owl.carousel.css");
@@ -672,7 +667,7 @@ input[type="color"],
 	font-size: 14px;
 	color: #3e3e3e;
 	text-decoration: none;
-	padding: 35px 25px 0 15px;
+	padding: 35px 20px 0 15px;
 	outline: none;
 	font-weight: bold;
 }
@@ -3348,6 +3343,14 @@ img.hover-shadow {
 .picglry.hover-shadow.cursor {
     height: 185px;
     margin-top: 10px;
+}
+
+.itmcntnt{
+    height: 170px;
+}
+
+.itmthmb.item-thumbnail img {
+    height: 189px;
 }
 
 

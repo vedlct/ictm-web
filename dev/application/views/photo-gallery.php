@@ -21,7 +21,7 @@
 <section class="flat-row padding-v1">
     <div class="container">
         <?php foreach ($albumCategoryList as $acl){?>
-            <div class="row single-course-detail" style="border:2px solid #eaeaea">
+            <div class="phtoglry row single-course-detail" style="border:2px solid #eaeaea">
                 <div class="content-content">
                     <h3><?php echo $acl->albumCategoryName; ?></h3>
                     <?php foreach ($albumname as $an){
@@ -29,7 +29,8 @@
                             $this->db->select('photoName');
                             $this->db->from('ictmphoto');
                             $this->db->where('albumId',$an->albumId);
-                            $this->db->limit(1);
+                            $this->db->where('albumCover',SELECT_APPROVE[0]);
+
                             $query3 = $this->db->get();
                             ?>
                             <?php if (!empty($query3->result())){foreach ($query3->result() as $s) {?>

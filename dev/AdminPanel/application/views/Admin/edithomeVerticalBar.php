@@ -298,8 +298,5 @@
                 return false;
             }
         }
-
-
-
     }
 </script>
