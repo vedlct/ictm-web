@@ -32,19 +32,21 @@
                             $this->db->limit(1);
                             $query3 = $this->db->get();
                             ?>
+                            <?php if (!empty($query3->result())){foreach ($query3->result() as $s) {?>
                             <div class="col-xs-6 col-sm-4">
-                                <?php if (!empty($query3->result())){foreach ($query3->result() as $s) {?>
+
                                         <a href="<?php echo  base_url()?>album-pictures/<?php echo $an->albumId ?>" class="thumbnail">
                                             <?php if ($s->photoName !=null){?>
                                                 <img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $an->albumTitle?>/<?php echo $s->photoName?>" >
                                             <?php }else{?>
-                                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/NoImage.JPG" >
+                                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/noImage.jpg" >
                                             <?php }?>
                                             <p style=""><?php echo $an->albumTitle?></p>
                                         </a>
 
-                                    <?php }}?>
+
                             </div>
+                            <?php }}?>
                         <?php } } ?>
                 </div>
             </div><br>

@@ -77,14 +77,15 @@
                                             <label class="control-label col-md-2">Title</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                                <select style="width: 100%" name="title" >
-                                                    <option value="#" selected disabled>Select...</option>
-                                                    <option value="Hotcourses">Mr</option>
-                                                    <option value="Whatuni">Mrs</option>
-                                                    <option value="Metro Newspaper">Miss</option>
-                                                    <option value="Evening Standard">MS</option>
-                                                    <option value="Eastend Life Newspaper">Doc</option>
-                                                    <option value="Bill Board">Engr</option>
+                                                    <select style="width: 100%" name="title" >
+                                                        <option value="#" selected disabled>Select...</option>
+                                                        <option value="Mr">Mr</option>
+                                                        <option value="Mrs">Mrs</option>
+                                                        <option value="Miss">Miss</option>
+                                                        <option value="MS">MS</option>
+                                                        <option value="Doc">Doc</option>
+                                                        <option value="Engr">Engr</option>
+                                                    </select>
                                                 </select>
                                             </div>
                                         </div>

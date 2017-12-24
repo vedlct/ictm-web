@@ -113,7 +113,7 @@
 
                                             <?php if (!empty($previous)){foreach ($previous as $pd){?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                <a href="<?php echo base_url()?>/Event-Details/<?php echo $pd->eventId;?>" class="maincolor2hover">
+                                                <a href="<?php echo base_url()?>Event-Details/<?php echo $pd->eventId;?>" class="maincolor2hover">
                                                     <i class="fa fa-angle-left pull-left"></i>
                                                     <div class="simple-navigation-item-content">
                                                         <span>Previous</span>
@@ -134,7 +134,7 @@
                                             <?php } ?>
                                             <?php if (!empty($next)){foreach ($next as $nd){?>
                                             <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                <a href="<?php echo base_url()?>/Event-Details/<?php echo $nd->eventId?>" class="maincolor2hover pull-right">
+                                                <a href="<?php echo base_url()?>Event-Details/<?php echo $nd->eventId?>" class="maincolor2hover pull-right">
                                                     <i class="fa fa-angle-right pull-right"></i>
                                                     <div class="simple-navigation-item-content">
                                                         <span>Next</span>

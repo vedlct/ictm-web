@@ -9,6 +9,7 @@
                         <div class="page-title-heading">
                             <h2 class="title"><?php echo $ap->albumTitle?></h2>
                         </div>
+
                         <?php break;} ?>
                         <div class="breadcrumbs">
                             <ul>
@@ -22,15 +23,22 @@
         </div><!-- /page-title -->
 
         <section class="flat-row padding-v1">
+
             <div class="container">
+
+                    <?php foreach ($albumphoto as $ap) {?>
+                    <h1 class="title-section"><?php echo $ap->albumDescription?></h1><br>
+                    <?php break;} ?>
+
                 <div class="row">
+
                         <?php
                         $count1 =1;
                         foreach ($albumphoto as $ap) {
                             ?>
                         <div class="col-xs-6 col-sm-3">
                             <a href="#" class="">
-                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="hover-shadow cursor">
+                                <img src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/photoAlbum/<?php echo $ap->albumTitle?>/<?php echo $ap->photoName?>" style="width:100%" onclick="openModal();currentSlide(<?php echo $count1?>)" class="picglry hover-shadow cursor">
                             </a>
                         </div>
                     <?php  $count1++;} ?>

@@ -51,7 +51,15 @@
                                         <label for="facultyTitle" class="control-label col-lg-2">Title <span class="required">*</span></label>
                                         <div class="col-lg-2">
                                             <p><font color="red"> <?php echo form_error('facultyTitle'); ?></font></p>
-                                              <input class="form-control" id="facultyTitle"  name="facultyTitle" value="<?php echo set_value('facultyTitle'); ?>" placeholder="Mr/Mrs/Miss" type="text" required />
+<!--                                              <input class="form-control" id="facultyTitle"  name="facultyTitle" value="--><?php //echo set_value('facultyTitle'); ?><!--" placeholder="Mr/Mrs/Miss" type="text" required />-->
+                                            <select class="form-control" id="facultyTitle" name="facultyTitle" required >
+
+                                                <option value="" selected><?php echo SELECT_TITLE?></option>
+                                                <?php for ($i=0;$i<count(Title);$i++){?>
+                                                    <option <?php echo set_select('facultyTitle',  Title[$i], False); ?>><?php echo Title[$i]?></option>
+                                                <?php } ?>
+
+                                            </select>
                                         </div>
 
                                         <label for="facultyFirstName" class="control-label col-lg-1">First Name <span class="required">*</span></label>

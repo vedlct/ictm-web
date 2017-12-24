@@ -17,15 +17,15 @@
 
     <!-- Bootstrap  -->
 <!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
-    <link rel="stylesheet" href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
+    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>
 
 
 
     <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-
-    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/font-awesome.min.css" rel="stylesheet" />
+<!--    <link href="--><?php //echo base_url()?><!--public/stylesheets/font-awesome.css" rel="stylesheet" />-->
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/style.css">
@@ -63,7 +63,7 @@
 
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
+<!--    <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
 
 
 </head>

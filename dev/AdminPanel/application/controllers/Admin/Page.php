@@ -83,6 +83,23 @@ class Page extends CI_Controller {
             redirect('Admin/Login');
         }
     }
+    public function searchByTitlPage()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $title = $this->input->post('title');
+            $this->data["links"] = null;
+            $this->data["pageData"] = $this->Pagem->getPagaDataSearchBytitle($title);
+
+            $this->load->view('Admin/managePage', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+
 
     //this will show edit page with data
     public function editPageShow($id)
@@ -162,33 +179,20 @@ class Page extends CI_Controller {
 
             $this->data['pagedata'] =$this->Pagem->checkParentId($pageId);
 
-            $name=array();
-            $y=$this->data['pagedata'];
-            if (empty($y)){
-
+            if ($this->data['pagedata']==1){
+                echo "<script>
+                            alert('This Page cannot be deleted as there are Page section(s) attached to it. please delete  all the related Page section(s) first');
+                            window.location.href= '" . base_url() . "Admin/Page/managePage';
+                        </script>";
+            }
+            else{
                 $this->Pagem->deletePagebyId($pageId);
 
                 $this->session->set_flashdata('successMessage','Page Deleted Successfully');
                 redirect('Admin/Page/managePage');
-
-            }else{
-
-
-                for ($i=0;$i<count($y);$i++){
-                    array_push($name, $y[$i]);
-                }
-                ?>
-                <script type='text/javascript'>
-                    var x =<?php echo json_encode( $name ) ?>;
-                    alert('Please Delete ( '+x+' ) First');
-                </script>
-
-                <?php
-                echo "<script>
-                    
-                    window.location.href= '" . base_url() . "Admin/Page/managePage';
-                    </script>";
             }
+
+
         }
         else{
             redirect('Admin/Login');

@@ -1,5 +1,17 @@
 <?php include("header.php"); ?>
 
+<script>
+    upDownleyout = function() {
+        if($(window).width() < 768) {
+            $( "#sidebar" ).prependTo( $( "#tcontent" ) );
+        }else{
+            $( "#sidebar" ).appendTo( $( "#tcontent" ) );
+        }
+    }
+    $(document).ready(upDownleyout);
+    $(window).resize(upDownleyout);
+</script>
+
 <div id="pageMetaAndKeyword">
 
     <head>
@@ -48,13 +60,13 @@
     <div class="container">
         <div id="maincontainerright" class="content-course">
             <div class="row">
-                <div class="col-md-9 testright">
+                <div id="tcontent" class="col-md-9 testright">
                     <article class="post-course">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="content-pad single-course-detail">
                                     <div class="course-detail">
-                                        <div class="content-content">
+                                        <div  class="content-content">
                                             <?php
                                                     $count = 1; foreach ($termsdata as $td) {
 
@@ -148,3 +160,8 @@
 
 
 </html>
+
+<!--<div id="maincontainer">-->
+<!--    <div id="tcontent">content</div>-->
+<!--    <div id="termsinner">sidebar</div>-->
+<!--</div>-->

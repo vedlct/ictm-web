@@ -56,11 +56,12 @@ class Email extends CI_Controller {
             $admin_email = "md.sakibrahman@gmail.com";
             $subject = $this->input->post('subject');
             // $message = "name: ".$this->input->post('name')."<br>".$this->input->post('comment');
-//            $email = $this->input->post('email');
+            $email = $this->input->post('email');
 //            $name= $this->input->post('name');
 //            $comment= $this->input->post('comment');
 
             $message = "Name: $name \r\n\n";
+            $message .= "Email: $email \r\n\n";
             $message .= "$comment \r\n\n";
 
             mail($facultyEmail, $subject, $message, $email);

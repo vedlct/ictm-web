@@ -33,5 +33,25 @@ class RegisterInterestm extends CI_Model
         return $query->result();
 
     }
+// search by Firs Name in manage Register Interest
+    public function viewAllRIByName($name)
+    {
+        $this->db->select('registerInterestId,title,firstName,surName,House,street,city,postalCode,country,course,hearAboutUs,other,disabilityRequire,appointmentDate,comments,mobile,email,inserDate');
+        $this->db->from('ictmregisterinterest');
+
+        $this->db->like('firstName',$name);
+        $this->db->order_by("registerInterestId", "desc");
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+
+    //this will delete RegisterInterest
+    public function deleteRI($RiId)
+    {
+        $this->db->where('registerInterestId',$RiId);
+        $this->db->delete('ictmregisterinterest');
+
+    }
 
 }

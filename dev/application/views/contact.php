@@ -28,14 +28,14 @@
                                 <div class="col-md-6">
                                     <div class="contact-form">
 
-                                        <form action="<?php echo base_url()?>Email/contactEmail" method="post" id="contactform" class="comment-form" novalidate>
+                                        <form action="<?php echo base_url()?>Email/contactEmail" method="post" id="contactform" class="comment-form" >
                                             <fieldset class="style-1 full-name">
                                                 <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 email-address">
                                                 <input type="email" id="email" placeholder="Your email" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
-                                            </fieldset> 
+                                            </fieldset>
 
                                             <fieldset class="style-1 subject">
                                                 <input type="text" id="subject" placeholder="Subject" class="tb-my-input" name="subject" tabindex="2" value="" size="32" aria-required="true">

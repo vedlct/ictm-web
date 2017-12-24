@@ -4,5 +4,11 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="module" module-name="tanuki" />
+    <orderEntry type="module" module-name="tanuki" />
+    <orderEntry type="module" module-name="tanuki" />
+>>>>>>> 1064395b84ec74a7770edfe0faec973509bbc397
   </component>
 </module>

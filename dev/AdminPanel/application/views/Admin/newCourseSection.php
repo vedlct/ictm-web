@@ -71,11 +71,19 @@
                                                 <input class="form-control" type='textbox' id='textbox1' name="textbox[]" required>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
                                                 <textarea class="form-control ckeditor" id="ckeditor" name="text[]" rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Order Number #1 : <span class="required">*</span></label>
+                                            <div class="col-lg-10 ">
+                                                <p><font color="red"> <?php echo form_error('ordernumber[]'); ?></font></p>
+                                                <input class="form-control" type='number' id='textbox1' name="ordernumber[]" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -181,10 +189,17 @@
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Title #'+ counter + ' :<span class="required">*</span> </label>' +
                 '<div class="col-lg-10 ">'+'<p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>'+'<input class="form-control" type="text" name="textbox[]' + counter +
-                '" id="textbox' + counter + '" value="" required >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
+                '"id="textbox' + counter + '" value="" required >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
                 '<div class="col-lg-10">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
-                + counter + '" value="" ></textarea>'+'</div>'
-                +'<label class="control-label col-lg-2" for="inputSuccess">Course Section Status #'+counter+'<span class="required">*</span></label>'+
+                + counter + '" value="" ></textarea>'+'</div>'+
+
+                '<label class="control-label col-lg-2">Order Number #'+ counter +' : <span class="required">*</span></label>'+
+                '<div class="col-lg-10">'+
+                '<p><font color="red"> <?php echo form_error("ordernumber[]"); ?></font></p>'+
+                '<input class="form-control" type="number" id="textbox1" name="ordernumber[]" required>'+
+
+                '</div>'+
+                '<label class="control-label col-lg-2" for="inputSuccess">Course Section Status #'+ counter +'<span class="required">*</span></label>'+
                 '<div class="col-lg-10">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" id="status'+counter+'"name="status[]" required>' +
                 '<option value="" selected><?php echo SELECT_STATUS ?></option>'+'<?php for ($i=0;$i<count(STATUS);$i++){?>'+
                 '<option><?php echo STATUS[$i]?></option>'+

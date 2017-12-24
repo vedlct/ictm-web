@@ -35,6 +35,21 @@ class RegisterInterest extends CI_Controller
             redirect('Admin/Login');
         }
     }
+// search by Firs Name in manage Register Interest
+    public function searchByName(){
+
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $name=$this->input->post('name');
+            $this->data['RiData'] =$this->RegisterInterestm->viewAllRIByName($name);
+            $this->load->view('Admin/manageRegisterInterestAfterSearch', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
 
     public function viewSelectedRI($riId){
 
@@ -43,6 +58,22 @@ class RegisterInterest extends CI_Controller
 
             $this->data['allDataForRI'] =$this->RegisterInterestm->viewAllForSelectedRI($riId);
             $this->load->view('Admin/ViewRegisterInterest',$this->data);
+
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    //this will delete RegisterInterest
+    public function deleteRegisterInterest($RiId)
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->RegisterInterestm->deleteRI($RiId);
+            $this->session->set_flashdata('successMessage','Register Interest Deleted Successfully');
+            redirect('Admin/RegisterInterest/viewRI');
 
 
         }

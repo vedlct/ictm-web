@@ -24,7 +24,7 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Page</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Register&nbsp;&nbsp;Interest</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="fa fa-table"></i>Manage RegisterInterest</li>
@@ -43,21 +43,29 @@
                     <section class="panel">
                         <header class="panel-heading">
                             Manage RegisterInterest
-                            <span align="">
-                                 <a href="<?php echo base_url()?>Admin/Page/createPage"> <button class="btn btn-sm" style="float: right; height: 26px; margin-top: 4px; background-color: #00A8FF;color: whitesmoke; ">New Page</button> </a>
-                            </span>
+
                         </header>
-                        <div class="panel-body">
+                        <div id="panel" class="panel-body">
+
+                                <div class="form-group col-md-6">
+                                    <label for="title">Search By First Name</label>
+                                    <input type="text" class="form-control col-md-6" id="title" name="title">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <button style="margin-top: 23px" type="submit" onclick="searchByFirstName()" class="btn btn-default">Submit</button>
+                                </div>
+
+
                             <div class="table table-responsive">
 
-                                <table class="table table-striped table-advance  table-bordered table-hover">
+                                <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <tbody>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> First Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> First Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Last Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Phone</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="15%"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%"> Apply Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center" ; width="15%" onclick="sortTable(2)"> Apply Date</th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
                                     </tr>
@@ -78,7 +86,7 @@
                                                     <div class="btn-group">
 
                                                         <a class="btn" href="<?php echo base_url()?>Admin/RegisterInterest/viewSelectedRI/<?php echo $pd->registerInterestId?>"><i class="icon_pencil-edit"></i></a>
-                                                        <a class="btn " data-panel-id="<?php echo $pd->registerInterestId ?>"  onclick='return confirm("Are you sure to Delete This Page?")' href="<?php echo base_url()?>Admin/Page/deletePage/<?php echo $pd->registerInterestId?>"><i class="icon_trash"></i></a>
+                                                        <a class="btn " data-panel-id="<?php echo $pd->registerInterestId ?>"  onclick='return confirm("Are you sure to Delete This RegisterInterest?")' href="<?php echo base_url()?>Admin/RegisterInterest/deleteRegisterInterest/<?php echo $pd->registerInterestId?>"><i class="icon_trash"></i></a>
 
                                                     </div>
                                                 </td>
@@ -90,7 +98,7 @@
                                 </table>
                             </div>
 
-                            <div class="pagination2" align="center">
+                            <div id="pagi" class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
                             </div>
                         </div>
@@ -118,4 +126,28 @@
 
 </body>
 </html>
+<script>
+
+    function searchByFirstName() {
+
+            btn = document.getElementById('title').value;
+            //alert(btn);
+
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin/RegisterInterest/searchByName")?>',
+                data:{'name':btn},
+                cache: false,
+                success:function(data) {
+
+                    $('#myTable').html(data);
+                    document.getElementById("pagi").style.display="none";
+                    //alert(data);
+                }
+            });
+
+    }
+
+
+</script>
 
