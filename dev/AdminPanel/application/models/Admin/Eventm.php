@@ -7,6 +7,7 @@ class Eventm extends CI_Model
 
     public function createNewEvent() // creates new Event in database
     {
+        date_default_timezone_set("Europe/London");
         $eventTitle = $this->input->post("eventTitle");
         $eventStartDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventStartDateTime")));
         $eventEndDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventEndDateTime")));
@@ -128,6 +129,7 @@ class Eventm extends CI_Model
 
     public function editEventbyId($id)        // for edit Event by id from database
     {
+        date_default_timezone_set("Europe/London");
         $eventTitle = $this->input->post("eventTitle");
         $eventStartDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventStartDateTime")));
         $eventEndDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventEndDateTime")));

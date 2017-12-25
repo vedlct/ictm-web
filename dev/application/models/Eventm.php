@@ -17,8 +17,9 @@ class Eventm extends CI_Model
     public function getAllEvents() // get all the events
     {
 
-        $this->db->select( 'eventId,eventTitle,eventStartDate,eventEndDate' );
-        $this->db->order_by("eventStartDate", "desc");
+        $this->db->select('eventId,eventTitle,eventStartDate,eventEndDate');
+        $this->db->where('eventStatus', STATUS[0]);
+        //$this->db->order_by("eventStartDate", "desc");
         $query = $this->db->get('ictmevent');
         return $query->result();
 
@@ -26,7 +27,7 @@ class Eventm extends CI_Model
     public function getEventDetails($id) // get the details of selected events
     {
 
-        $this->db->select( 'eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventContent,eventPhotoPath,eventType,' );
+        $this->db->select( 'eventId,eventTitle,eventStartDate,eventEndDate,eventLocation,eventContent,eventPhotoPath,eventType');
         $this->db->where('eventId', $id);
         $query = $this->db->get('ictmevent');
         return $query->result();
