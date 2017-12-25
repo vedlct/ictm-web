@@ -251,16 +251,12 @@
                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
-                        document.getElementById("desc").style.display = "block";
-                        document.getElementById("asce").style.display = "block";
                         break;
                     }
                 } else if (dir == "asce") {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
-                        document.getElementById("asce").style.display = "block"
-                        document.getElementById("desc").style.display = "block";
                         break;
                     }
                 }
@@ -282,6 +278,14 @@
                 }
             }
         }
-
+        if (flag == true) {
+            document.getElementById("up").style.display = "block";
+            document.getElementById("down").style.display = "none";
+            flag = false;
+        }else {
+            document.getElementById("up").style.display = "none";
+            document.getElementById("down").style.display = "block";
+            flag = true;
+        }
     }
 </script>

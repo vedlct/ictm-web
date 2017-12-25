@@ -79,8 +79,8 @@
 
 
 
-                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" <span id="asce" style="display: none"><i class="fa fa-sort-asc"></i> </span> <span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span>  Menu Title</th>
-                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)" <span id="asce" style="display: none"><i class="fa fa-sort-asc"></i> </span> <span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span>  O N</th>
+                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span>   Menu Title</th>
+                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)"  >  O N</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" > Menu Type</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Parent Menu</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Page Title</th>
@@ -220,7 +220,7 @@
 
         });
     }
-
+var flag = true;
 </script>
 
 
