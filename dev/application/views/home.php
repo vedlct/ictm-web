@@ -1,4 +1,3 @@
-
 <?php include("header.php"); ?>
 
 <div class="tp-banner-container">
@@ -207,7 +206,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage2 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink2;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage2?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink2;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage2?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage2,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink2;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>
@@ -232,7 +233,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage3 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink3;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage3?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink3;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage3?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage3,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink3;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>
@@ -256,7 +259,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage4 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink4;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage4?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink4;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage4?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage4,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink4;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>
@@ -280,7 +285,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage5 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink5;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage5?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink5;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage5?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage5,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink5;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>
@@ -304,7 +311,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage6 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink6;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage6?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink6;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage6?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage6,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink6;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>
@@ -328,7 +337,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage7 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink7;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage7?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink7;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage7?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage7,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink7;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>
@@ -352,7 +363,9 @@
                                 <div class="event-item">
                                     <div class="event-thumbnail">
                                         <?php if ($hm->squareBoxImage8 != null){?>
-                                        <a href="<?php echo $hm->squareBoxLink8;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->squareBoxImage8?>" alt="image">
+                                        <a href="<?php echo $hm->squareBoxLink8;?>">
+<!--                                            <img  src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->squareBoxImage8?><!--" alt="image">-->
+                                            <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->squareBoxImage8,'235','286')); ?>">
                                             <?php }else{?>
                                             <a href="<?php echo $hm->squareBoxLink8;?>"><img  src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/homeImage/noImageSqureBox.jpg" alt="image">
                                                 <?php }?>

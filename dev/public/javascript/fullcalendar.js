@@ -15562,7 +15562,7 @@ fcViews.listDay = {
 
 fcViews.listWeek = {
 	type: 'list',
-	duration: { weeks: 1 },
+	duration: { weeks:1},
 	defaults: {
 		listDayFormat: 'dddd', // day-of-week is more important
 		listDayAltFormat: 'LL'

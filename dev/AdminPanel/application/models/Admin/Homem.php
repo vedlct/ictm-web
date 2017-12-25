@@ -270,6 +270,7 @@ class Homem extends CI_Model
                 $_FILES['image']['error'] = $files['image']['error'][$i];
                 $_FILES['image']['size'] = $files['image']['size'][$i];
 
+
                 $this->load->library('upload');
                 $this->upload->initialize($this->set_upload_options_square($i));
 
@@ -278,6 +279,7 @@ class Homem extends CI_Model
                     $error[$i] = $this->upload->display_errors();
                     $data[$error[$i]];
                 }
+
 
             }
         }
@@ -317,6 +319,15 @@ class Homem extends CI_Model
                 'insertedDate'=>date("Y-m-d H:i:s"),
 
             );
+            thumb('images/homeImage/squareBoxImage2'.'.'.pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),'235','286');
+            thumb('images/homeImage/squareBoxImage3'.'.'.pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),'235','286');
+            thumb('images/homeImage/squareBoxImage4'.'.'.pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),'235','286');
+            thumb('images/homeImage/squareBoxImage5'.'.'.pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),'235','286');
+            thumb('images/homeImage/squareBoxImage6'.'.'.pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),'235','286');
+            thumb('images/homeImage/squareBoxImage7'.'.'.pathinfo($squareBoxImage[5], PATHINFO_EXTENSION),'235','286');
+            thumb('images/homeImage/squareBoxImage8'.'.'.pathinfo($squareBoxImage[6], PATHINFO_EXTENSION),'235','286');
+
+
 
             $data = $this->security->xss_clean($data, true);
             $error = $this->db->insert('ictmhome', $data);
@@ -410,6 +421,7 @@ class Homem extends CI_Model
                     $data2 = array(
                         'squareBoxImage2' => "squareBoxImage2" . "." . pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),
                     );
+                    thumb('images/homeImage/squareBoxImage2'.'.'.pathinfo($squareBoxImage[0], PATHINFO_EXTENSION),'235','286');
                     $newdata1 = array_merge($data, $data2) ;
 
                 }
@@ -421,6 +433,7 @@ class Homem extends CI_Model
                     $data3 = array(
                         'squareBoxImage3' => "squareBoxImage3" . "." . pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),
                     );
+                    thumb('images/homeImage/squareBoxImage3'.'.'.pathinfo($squareBoxImage[1], PATHINFO_EXTENSION),'235','286');
                     $newdata2 = array_merge($newdata1, $data3);
 
                 }
@@ -432,6 +445,7 @@ class Homem extends CI_Model
                     $data4 = array(
                         'squareBoxImage4' => "squareBoxImage4" . "." . pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),
                     );
+                    thumb('images/homeImage/squareBoxImage4'.'.'.pathinfo($squareBoxImage[2], PATHINFO_EXTENSION),'235','286');
                     $newdata3 = array_merge($newdata2, $data4);
 
                 }
@@ -443,6 +457,7 @@ class Homem extends CI_Model
                     $data5 = array(
                         'squareBoxImage5' => "squareBoxImage5" . "." . pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),
                     );
+                    thumb('images/homeImage/squareBoxImage5'.'.'.pathinfo($squareBoxImage[3], PATHINFO_EXTENSION),'235','286');
                     $newdata4 = array_merge($newdata3, $data5);
 
                 }
@@ -454,6 +469,7 @@ class Homem extends CI_Model
                     $data6 = array(
                         'squareBoxImage6' => "squareBoxImage6" . "." . pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),
                     );
+                    thumb('images/homeImage/squareBoxImage6'.'.'.pathinfo($squareBoxImage[4], PATHINFO_EXTENSION),'235','286');
                     $newdata5 = array_merge($newdata4, $data6);
 
                 }
@@ -465,6 +481,7 @@ class Homem extends CI_Model
                     $data7 = array(
                         'squareBoxImage7' => "squareBoxImage7" . "." . pathinfo($squareBoxImage[5], PATHINFO_EXTENSION)
                     );
+                    thumb('images/homeImage/squareBoxImage7'.'.'.pathinfo($squareBoxImage[5], PATHINFO_EXTENSION),'235','286');
                     $newdata6 = array_merge($newdata5, $data7);
 
                 }
@@ -476,6 +493,7 @@ class Homem extends CI_Model
                     $data8 = array(
                         'squareBoxImage8' => "squareBoxImage8" . "." . pathinfo($squareBoxImage[6], PATHINFO_EXTENSION)
                     );
+                    thumb('images/homeImage/squareBoxImage8'.'.'.pathinfo($squareBoxImage[6], PATHINFO_EXTENSION),'235','286');
                     $newdata7 = array_merge($newdata6, $data8);
 
                 }
@@ -652,8 +670,38 @@ class Homem extends CI_Model
         $config['overwrite'] = True;
         $config['file_name'] = 'squareBoxImage'.($i+2);
 
+//        $this->set_upload_options_square_thumb($i);
+
         return $config;
     }
+
+//    private function set_upload_options_square_thumb($i)
+//    {
+//        $config = array();
+//        $this->load->library('image_lib');
+//        //$this->image_lib->clear();
+//        //$config['image_library'] = 'gd2';
+//        $config['source_image'] = 'images/homeImage/squareBoxImage'.($i+2);
+//        $config['new_image'] = 'images/homeImage/squareBoxImageresized'.($i+2);
+//        //$config['quality'] = '100%';
+//        //$config['create_thumb'] = TRUE;
+//        $config['maintain_ratio'] = FALSE;
+//        //$config['thumb_marker'] = '';
+//        $config['width'] = 235;
+//        $config['height'] = 286;
+//        $this->image_lib->initialize($config);
+//        $this->image_lib->resize();
+//
+//        //$config = array();
+////        $config['upload_path'] = 'images/homeImage/';
+////        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+////        $config['overwrite'] = True;
+////        $config['file_name'] = 'squareBoxImage'.($i+2);
+//
+//       // return true;
+//    }
+
+
 
     public function updateVerticalBardata($id) //Update Vertical Bar
     {
