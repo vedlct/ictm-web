@@ -27,6 +27,7 @@ class Event extends CI_Controller {
     {
         $this->menu();
         $this->data['allEvents'] = $this->Eventm->getAllEvents();
+
         $this->load->view('event-list', $this->data);
 
     }
