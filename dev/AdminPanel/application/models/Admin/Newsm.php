@@ -8,6 +8,7 @@ class Newsm extends CI_Model
     // creates new News in database
     public function createNewNews()
     {
+        date_default_timezone_set("Europe/London");
         $newsTitle = $this->input->post("newsTitle");
         $NewsDate = date('Y-m-d H:i:s', strtotime($this->input->post("newsDate")));
         $news_image = $_FILES['news_image']['name'];
@@ -125,6 +126,7 @@ class Newsm extends CI_Model
     // for edit News by id from database
     public function editNewsbyId($id)
     {
+        date_default_timezone_set("Europe/London");
         $newsTitle = $this->input->post("newsTitle");
         $NewsDate = date('Y-m-d H:i:s', strtotime($this->input->post("newsDate")));
         $news_image = $_FILES['news_image']['name'];

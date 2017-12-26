@@ -175,9 +175,11 @@
 <script type="text/javascript">
     $(function () {
         $('.datetimepicker').datetimepicker({
-            format: 'DD-MM-YYYY h:m A'
+            format: 'DD-MM-YYYY H:m'
         });
+
     });
+
 </script>
 
 <script type="text/javascript">
@@ -197,13 +199,16 @@
             alert( 'Please enter a Event Content' );
             return false;
         }
-        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
-        var eventEndDateTime =  document.getElementById("eventEndDateTime").value;
+//        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
+//        var eventEndDateTime =   document.getElementById("eventEndDateTime").value;
+//        alert(eventStartDateTime);
+//        alert(eventStartDateTime);
+//
+//        if (eventStartDateTime > eventEndDateTime) {
+//            alert ("Event End Date Can not be before Event Start Date!!");
+//            return false;
+//        }
 
-        if (eventStartDateTime>eventEndDateTime) {
-            alert ("Event End Date Can not be after Event Start Date!!");
-            return false;
-        }
     }
 </script>
 

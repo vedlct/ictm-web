@@ -52,7 +52,7 @@
                             <div class="table table-responsive">
                                 <form method="post" action="<?php echo base_url()?>Admin/Faculty/manageFacultySearchByTitle">
                                     <div class="form-group col-md-6">
-                                        <label for="email">Search By Title</label>
+                                        <label for="email">Search By First Name</label>
                                         <input type="text" class="form-control col-md-6" id="title" name="title">
                                     </div>
                                     <div class="form-group col-md-6">
@@ -68,7 +68,7 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)">Email </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">Position </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Employee Type </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Degree </th>
+
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
@@ -100,12 +100,7 @@
                                                 <?php echo $faculty->facultyEmpType?>
                                             </td>
 
-                                            <td >
-                                                <?php
-                                                echo str_replace(",","<br>",$faculty->facultyDegree);
-                                                ?>
 
-                                            </td>
 
                                             <td >
                                                 <?php echo $faculty->facultyStatus?>

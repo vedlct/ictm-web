@@ -37,30 +37,33 @@ function thumb($src, $width, $height, $image_thumb = '') {
 		$config['new_image'] = $image_thumb;
 		$config['width'] = $width;
 		$config['height'] = $height;
+        $config['maintain_ratio'] = FALSE;
 
 		$CI->image_lib->initialize($config);
 		$CI->image_lib->resize();
 		$CI->image_lib->clear();
-
-		// get our image attributes
-		list($original_width, $original_height, $file_type, $attr) = getimagesize($image_thumb);
-
-		// set our cropping limits.
-		$crop_x = ($original_width / 2) - ($width / 2);
-		$crop_y = ($original_height / 2) - ($height / 2);
-		
-		// initialize our configuration for cropping
-		$config['source_image'] = $image_thumb;
-		$config['new_image'] = $image_thumb;
-		$config['x_axis'] = $crop_x;
-		$config['y_axis'] = $crop_y;
-		$config['maintain_ratio'] = FALSE;
-
-		$CI->image_lib->initialize($config);
-		$CI->image_lib->crop();
-		$CI->image_lib->clear();
-		
+//
+//		// get our image attributes
+//		list($original_width, $original_height, $file_type, $attr) = getimagesize($image_thumb);
+//
+//		// set our cropping limits.
+//		$crop_x = ($original_width / 2) - ($width / 2);
+//		$crop_y = ($original_height / 2) - ($height / 2);
+//
+//
+//		// initialize our configuration for cropping
+//		$config['source_image'] = $image_thumb;
+//		$config['new_image'] = $image_thumb;
+//		$config['x_axis'] = $crop_x;
+//		$config['y_axis'] = $crop_y;
+//		$config['maintain_ratio'] = FALSE;
+//
+//		$CI->image_lib->initialize($config);
+//		$CI->image_lib->crop();
+//		$CI->image_lib->clear();
+//
 	}
+
 
 	return basename($image_thumb);
 }

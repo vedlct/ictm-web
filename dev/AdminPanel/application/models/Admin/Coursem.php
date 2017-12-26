@@ -89,6 +89,7 @@ class Coursem extends CI_Model
 
                 if ($this->upload->do_upload('image')) {
                     // if something need after image upload
+                    thumb('images/courseImages/'.$courseId.'.'.pathinfo($image, PATHINFO_EXTENSION),'80','80');
                 } else {
 
                     $error = array('error' => $this->upload->display_errors());
@@ -170,6 +171,15 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcourse');
         foreach ($query->result() as $image){$courseImage=$image->courseImage;}
 
+        $info = pathinfo($courseImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+
+        $pathanother   = 'images/courseImages/'.$name."_80_80".".".$format;
+
+
+        unlink(FCPATH."images/courseImages/".$pathanother);
+
         unlink(FCPATH."images/courseImages/".$courseImage);
 
         $data = array(
@@ -236,6 +246,7 @@ class Coursem extends CI_Model
 
                 if($this->upload->do_upload('image')){
                     // if something need after image upload
+                    thumb('images/courseImages/'.$id.'.'.pathinfo($image, PATHINFO_EXTENSION),'80','80');
                 }else{
 
                     $error =array('error'=>$this->upload->display_errors());

@@ -84,9 +84,6 @@
     </div>
 </body>
 
-
-
-
 </html>
 
         <!-- for Event Calendar -->

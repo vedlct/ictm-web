@@ -13,7 +13,7 @@ class CourseSection extends CI_Controller
     //this will show course section
     public  function createCourseSec(){
 
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == "Admin") {
 
             $this->load->model('Admin/Coursem');
             $this->data['coursetitle']= $this->Coursem->getCourseTitle();
@@ -29,7 +29,7 @@ class CourseSection extends CI_Controller
     public  function insertCourseSec(){
         $this->load->library('form_validation');
 
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == "Admin") {
 
             if (!$this->form_validation->run('createCourseSection')) {
 
@@ -59,7 +59,7 @@ class CourseSection extends CI_Controller
     }
     //this will show manage course section
     public  function manageCourseSec(){
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == "Admin" ) {
 
             $this->load->model('Admin/Coursem');
             $this->data['coursetitle'] = $this->Coursem->getCourseTitle();
@@ -74,7 +74,7 @@ class CourseSection extends CI_Controller
     //this is the ajax controller . this will show the course section manage table
     public function showCourseSecManageTable(){
 
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == "Admin") {
 
             $id = $this->input->post("id");
             $this->data['coursedata'] = $this->CourseSectionm->getCourseSecData($id);
@@ -88,7 +88,7 @@ class CourseSection extends CI_Controller
     //this will show Edit course section
     public  function showEditCourseSec($id){
 
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == "Admin") {
 
 
             $this->data['coursedataall'] = $this->CourseSectionm->getCourseSecAllData($id);
@@ -103,7 +103,7 @@ class CourseSection extends CI_Controller
 
         $this->load->library('form_validation');
 
-        if ($this->session->userdata('type') == USER_TYPE[0]) {
+        if ($this->session->userdata('type') == "Admin" ) {
 
             if (!$this->form_validation->run('editCourseSection')) {
 
@@ -137,7 +137,7 @@ class CourseSection extends CI_Controller
     public function deleteCourseSection($courseSectionId){
 
 
-            if ($this->session->userdata('type') == USER_TYPE[0]) {
+            if ($this->session->userdata('type') == "Admin" ) {
 
                 try {
                     $this->CourseSectionm->deleteCourseSectionbyId($courseSectionId);

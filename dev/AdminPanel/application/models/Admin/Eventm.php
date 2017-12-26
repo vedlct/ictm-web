@@ -7,9 +7,10 @@ class Eventm extends CI_Model
 
     public function createNewEvent() // creates new Event in database
     {
+//        date_default_timezone_set("Europe/London");
         $eventTitle = $this->input->post("eventTitle");
-        $eventStartDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventStartDateTime")));
-        $eventEndDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventEndDateTime")));
+        $eventStartDateTime = date('Y-m-d H:i',strtotime($this->input->post("eventStartDateTime")));
+        $eventEndDateTime = date('Y-m-d H:i',strtotime($this->input->post("eventEndDateTime")));
         $eventLocation = $this->input->post("eventLocation");
         $event_image = $_FILES['event_image']['name'];
         $EventType = $this->input->post("EventType");
@@ -128,9 +129,14 @@ class Eventm extends CI_Model
 
     public function editEventbyId($id)        // for edit Event by id from database
     {
+
+        date_default_timezone_set("Europe/London");
+        $sdate= date('Y-m-d H:i',strtotime($this->input->post("eventStartDateTime")));
+        $edate = date('Y-m-d H:i',strtotime($this->input->post("eventEndDateTime")));
+
         $eventTitle = $this->input->post("eventTitle");
-        $eventStartDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventStartDateTime")));
-        $eventEndDateTime = date('Y-m-d H:i:s',strtotime($this->input->post("eventEndDateTime")));
+        $eventStartDateTime = $sdate ;
+        $eventEndDateTime = $edate ;
         $eventLocation = $this->input->post("eventLocation");
         $event_image = $_FILES['event_image']['name'];
         $EventType = $this->input->post("EventType");

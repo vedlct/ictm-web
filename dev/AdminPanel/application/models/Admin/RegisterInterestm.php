@@ -5,7 +5,7 @@ class RegisterInterestm extends CI_Model
 {
 
     public function showAllRegisterInterest($limit,$start){
-        $this->db->select('registerInterestId,title,firstName,surName,mobile,email,inserDate');
+        $this->db->select('registerInterestId,title,firstName,surName,appointmentDate,course,mobile,email,inserDate');
         $this->db->limit($limit, $start);
         $this->db->from('ictmregisterinterest');
         $this->db->order_by("registerInterestId", "desc");
