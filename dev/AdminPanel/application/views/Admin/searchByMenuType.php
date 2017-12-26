@@ -3,7 +3,7 @@
     <tr>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(0)"> Menu Title</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; cursor: pointer" onclick="sortTableAjax(1)">O N</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(2)" > Menu Type</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(2)"<span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>

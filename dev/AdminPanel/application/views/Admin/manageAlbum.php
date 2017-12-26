@@ -53,7 +53,7 @@
                                 <table class="table table-bordered table-hover table-striped table-advance" id="myTable">
                                     <tbody>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)"> Album Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Album Title</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Category Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Album Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
@@ -189,4 +189,7 @@
             location.reload();
         }
     }
+
+    var flag=true;
+
 </script>

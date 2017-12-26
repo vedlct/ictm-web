@@ -3,7 +3,7 @@
 <table class="table table-striped table-advance table-bordered table-hover " id="myTable">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)"> Page Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Page Section Title </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> Status </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> Inserted By </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> Last Modified By </th>
@@ -48,3 +48,6 @@
     </tbody>
 </table>
 </div>
+   <script>
+       var flag=true;
+    </script>
