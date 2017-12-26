@@ -158,7 +158,7 @@
     $(function () {
 
         $('.datetimepicker').datetimepicker({
-            format: 'DD-MM-YYYY h:m A'
+            format: 'DD-MM-YYYY H:m'
         });
 
     });

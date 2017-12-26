@@ -111,7 +111,7 @@ class Facultym extends CI_Model
 
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageFaculty($limit, $start) {
-        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfaculty');
         $this->db->order_by("facultyId", "desc");
         $this->db->limit($limit, $start);

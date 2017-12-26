@@ -164,6 +164,11 @@ $config = array (
             'label' => 'Section Title',
             'rules' => 'trim|required|max_length[255]|xss_clean|htmlspecialchars'
         ),
+        array(
+            'field' => 'ordernumber[]',
+            'label' => 'Order Number',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|is_unique[ictmpagesection.orderNumber]|htmlspecialchars'
+        ),
 
         array(
             'field' => 'status[]',
@@ -175,8 +180,13 @@ $config = array (
     'editPageSection'=> array (
         array(
             'field' => 'textbox',
-            'label' => 'Section Title',
+            'label' => 'Title',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+        ),
+        array(
+            'field' => 'ordernumber',
+            'label' => 'Order Number',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_PageSectionOrderNumber|htmlspecialchars'
         ),
         array(
             'field' => 'status',

@@ -55,6 +55,7 @@ class Feedbackm extends CI_Model
 
                 if($this->upload->do_upload('feedbackByImage')){
                     // if something need after image upload
+                    thumb('images/feedbackImages/'.$feedbackId.'.'.pathinfo($feedbackByImage, PATHINFO_EXTENSION),'50','65');
                 }
                 else{
 
@@ -162,6 +163,7 @@ class Feedbackm extends CI_Model
 
             if($this->upload->do_upload('feedbackByImage')){
                 // if something need after image upload
+                thumb('images/feedbackImages/'.$feedbackId.'.'.pathinfo($feedbackByImage, PATHINFO_EXTENSION),'50','65');
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -232,6 +234,15 @@ class Feedbackm extends CI_Model
         $query = $this->db->get('ictmfeedback');
         foreach ($query->result() as $image){$feedbackImage=$image->feedbackByPhoto;}
 
+
+
+        $info = pathinfo($feedbackImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+
+        $pathanother   = 'images/feedbackImages/'.$name."_65_50".".".$format;
+
+        unlink(FCPATH."images/feedbackImages/".$pathanother);
         unlink(FCPATH."images/feedbackImages/".$feedbackImage);
 
         $data = array(

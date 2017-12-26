@@ -175,7 +175,7 @@
 <script type="text/javascript">
     $(function () {
         $('.datetimepicker').datetimepicker({
-            format: 'DD-MM-YYYY h:m A'
+            format: 'DD-MM-YYYY H:m'
         });
 
     });
@@ -199,8 +199,8 @@
             alert( 'Please enter a Event Content' );
             return false;
         }
-        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
-        var eventEndDateTime =   document.getElementById("eventEndDateTime").value;
+//        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
+//        var eventEndDateTime =   document.getElementById("eventEndDateTime").value;
 //        alert(eventStartDateTime);
 //        alert(eventStartDateTime);
 //

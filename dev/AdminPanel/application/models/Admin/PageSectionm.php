@@ -76,11 +76,20 @@ class PageSectionm extends CI_Model
         $this->db->where('pageSectionId',$pageSectionId);
         $this->db->delete('ictmpagesection');
     }
-    public function checkPageSectionOrderNumberUnique($ordernumber, $id){
-        $this->db->select('orderNumber');
-        $this->db->where('orderNumber=',$ordernumber);
-        $this->db->where('pageSectionId !=', $id);
+    public function checkPageSectionOrderNumberUnique($ordernumber,$id1)
+    {
+        $this->db->select('pageId');
+        $this->db->where('pageSectionId', $id1);
         $query = $this->db->get('ictmpagesection');
-        return $query->result();
+        //return $query->result();
+        foreach ($query->result() as $pageSec) {
+            $pageId = $pageSec->pageId;
+        }
+        $this->db->select('pageSectionId');
+        $this->db->where('pageSectionId !=', $id1);
+        $this->db->where('pageId', $pageId);
+        $this->db->where('orderNumber', $ordernumber);
+        $query1 = $this->db->get('ictmpagesection');
+        return $query1->result();
     }
 }
