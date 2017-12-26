@@ -137,7 +137,30 @@ class PageSection extends CI_Controller {
         }
 
     }
+    public function PageSectionOrderNumber()
+    {
+        $ordernumber= $this->input->post("ordernumber");
+        $id=$this->uri->segment(4);
 
+        try
+        {
+            $this->data['pgordernumber'] = $this->PageSectionm->checkPageSectionOrderNumberUnique($ordernumber,$id);
+
+            if (empty($this->data['pgordernumber'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('PageSectionOrderNumber', 'Order Number Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('PageSectionOrderNumber', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+    }
     //this will delete page section
     public function deletePageSection($pageSectionId)
     {
