@@ -24,6 +24,20 @@
         <section class="main-content course-single">
             <div class="container">
                 <div class="content-course">
+
+                    <?php foreach ($coursedetail as $cd) {?>
+
+                        <?php $x = "10003239" ?>
+                        <?php $y = $cd->courseCodeIcon ?>
+                        <?php $studyMode = $cd->studyMode ?>
+
+                    <?php }?>
+
+                    <div style="margin-bottom: 20px" align="center" data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/horizontal/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
+
+                        <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/horizontal/small/en-GB/<?php echo $studyMode?>" height="200" width="800" align="middle"></iframe>
+                    </div>
+
                     <div class="row">
                         <div class="col-md-9">
                             <article class="post-course">
@@ -144,17 +158,7 @@
                                 </div><br>
 
 
-                                <?php foreach ($coursedetail as $cd) {?>
 
-                                    <?php $x = "10003239" ?>
-                                    <?php $y = $cd->courseCodeIcon ?>
-                                    <?php $studyMode = $cd->studyMode ?>
-
-                                <?php }?>
-
-                                <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
-
-                                    <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
 
 
 
