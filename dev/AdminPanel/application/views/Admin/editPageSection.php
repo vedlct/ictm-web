@@ -49,8 +49,6 @@
                                 <?php foreach ($pagesecdata as $psd) { ?>
                                 <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/editPageSection/<?php echo $psd->pageSectionId?>" onsubmit="return formsubmited()">
 
-
-
                                                 <label class="control-label col-lg-2">Title : <span class="required">*</span></label>
                                                 <div class="col-lg-10 form-group">
                                                     <p><font color="red"> <?php echo form_error('textbox'); ?></font></p>
@@ -62,6 +60,11 @@
                                                     <p><font color="red"> <?php echo form_error('text'); ?></font></p>
                                                     <textarea class="form-control ckeditor" id="ckeditor" name="text"
                                                               rows="6"><?php echo $psd->pageSectionContent?></textarea>
+                                                </div>
+                                                <label class="control-label col-lg-2">Order Number: <span class="required">*</span></label>
+                                                <div class="col-lg-10 form-group">
+                                                    <p><font color="red"> <?php echo form_error('ordernumber'); ?></font></p>
+                                                    <input class="form-control" type='number' id='textbox1' name="ordernumber" value="<?php echo $psd->orderNumber ?>" required>
                                                 </div>
                                                 <label class="control-label col-lg-2" for="inputSuccess">Page Section Status<span class="required">*</span></label>
                                                 <div class="col-lg-10 form-group">

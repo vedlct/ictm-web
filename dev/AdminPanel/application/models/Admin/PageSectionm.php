@@ -17,6 +17,7 @@ class PageSectionm extends CI_Model
                 'pageSectionTitle' => $textbox[$i],
                 'pageSectionContent' => $text[$i],
                 'pageSectionStatus' => $status[$i],
+                'orderNumber' => $ordernumber[$i],
                 'insertedBy'=>$this->session->userdata('userEmail'),
                 'insertedDate'=>date("Y-m-d H:i:s"),
 
@@ -41,12 +42,14 @@ class PageSectionm extends CI_Model
         $title = $this->input->post("textbox");
         $content = $this->input->post("text");
         $status = $this->input->post("status");
+        $ordernumber = $this->input->post('ordernumber');
 
 
         $data = array(
             'pageSectionTitle' => $title,
             'pageSectionContent' => $content,
             'pageSectionStatus' => $status,
+            'orderNumber' => $ordernumber,
             'lastModifiedBy'=>$this->session->userdata('userEmail'),
             'lastModifiedDate'=>date("Y-m-d H:i:s")
         );
@@ -93,6 +96,24 @@ class PageSectionm extends CI_Model
 
 
     }
+   public function checkPageSectionOrderNumberUnique($ordernumber,$id1){
+       $this->db->select('pageId');
+       $this->db->where('pageSectionId', $id1);
+       $query = $this->db->get('ictmpagesection');
+
+       //return $query->result();
+        foreach ($query->result() as $pageSec){$pageId=$pageSec->pageId;}
+
+       $this->db->select('pageSectionId');
+       $this->db->where('pageSectionId !=',$id1);
+       $this->db->where('pageId',$pageId);
+       $this->db->where('orderNumber',$ordernumber);
+       $query1 = $this->db->get('ictmpagesection');
+
+       return $query1->result();
+
+
+   }
 
 }
 
