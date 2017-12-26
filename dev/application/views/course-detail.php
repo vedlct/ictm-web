@@ -42,11 +42,10 @@
 
                                                     <?php }?>
 
-                                                    <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
 
-                                                        <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
-
-
+                                                        <iframe id="unistats-widget-frame" title="Unistats KIS Widget" src="https://widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/horizontal/small/en-GB/<?php echo $studyMode?>"
+                                                                scrolling="no"
+                                                                style="overflow: hidden; border: 0px none transparent; width: 615px; height:150px;">
 
                                                         <ul style="margin-left:0px" class="nav nav-tabs">
                             <?php foreach ($courseSectiondetail as $csd){ ?>
@@ -156,6 +155,9 @@
                                     </table>
                                 </div><br>
 
+                                <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/horizontal/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
+
+                                    <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/horizontal/small/en-GB/<?php echo $studyMode?>" height="615" width="150"></iframe>
 
 
                                 <!-- /widget-posts -->

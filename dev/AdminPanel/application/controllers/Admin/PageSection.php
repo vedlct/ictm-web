@@ -94,27 +94,28 @@ class PageSection extends CI_Controller {
         $this->load->library('form_validation');
         if ($this->session->userdata('type') == USER_TYPE[0] ) {
 
+
             if (!$this->form_validation->run('editPageSection')) {
 
                 $this->data['pagesecdata'] = $this->PageSectionm->get_pageSecdataBySecId($id);
                 $this->load->view('Admin/editPageSection', $this->data);
             }
+            else {
 
 
                 $this->data['error'] = $this->PageSectionm->updatePagaSectionData($id);
 
-            if (empty($this->data['error'])) {
+                if (empty($this->data['error'])) {
 
-                $this->session->set_flashdata('successMessage','Page Section Updated Successfully');
-                redirect('Admin/PageSection/managePageSection');
+                    $this->session->set_flashdata('successMessage', 'Page Section Updated Successfully');
+                    redirect('Admin/PageSection/managePageSection');
 
 
-            }
-            else
-            {
-                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect('Admin/PageSection/editPageSection'.$id);
+                } else {
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/PageSection/editPageSection' . $id);
 
+                }
             }
 
         } else{
