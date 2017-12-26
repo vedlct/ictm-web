@@ -252,7 +252,7 @@
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
                         document.getElementById("desc").style.display = "block";
-                        document.getElementById("asce").style.display = "block";
+                        document.getElementById("asce").style.display = "none";
                         break;
                     }
                 } else if (dir == "asce") {
@@ -260,7 +260,7 @@
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
                         document.getElementById("asce").style.display = "block"
-                        document.getElementById("desc").style.display = "block";
+                        document.getElementById("desc").style.display = "none";
                         break;
                     }
                 }
