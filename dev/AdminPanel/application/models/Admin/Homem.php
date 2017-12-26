@@ -26,6 +26,7 @@ class Homem extends CI_Model
 
             if ($this->upload->do_upload('image')) {
                 // if something need after image upload
+                thumb('images/homeImage/bottomBanner'.'.'.pathinfo($bannerImage, PATHINFO_EXTENSION),'2000','331');
             } else {
                 $error = array('error' => $this->upload->display_errors());
                 $che = json_encode($error);
@@ -103,6 +104,7 @@ class Homem extends CI_Model
 
             if($this->upload->do_upload('image')){
                 // if something need after image upload
+                thumb('images/homeImage/bottomBanner'.'.'.pathinfo($bannerImage, PATHINFO_EXTENSION),'2000','331');
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -594,6 +596,8 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage1' => "verticalBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar1'.'.'.pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),'80','80');
+
                 $newdata=array_merge($data1,$data2);
 
             }
@@ -606,6 +610,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage2' => "verticalBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar2'.'.'.pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),'80','80');
                 $newdata2=array_merge($newdata,$data2);
 
             }
@@ -618,6 +623,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage3' => "verticalBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar3'.'.'.pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),'80','80');
                 $newdata3=array_merge($newdata2,$data2);
 
             }
@@ -630,6 +636,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage4' => "verticalBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar4'.'.'.pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),'80','80');
                 $newdata4=array_merge($newdata3,$data2);
 
             }
@@ -778,6 +785,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage1' => "verticalBar1" . "." . pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar1'.'.'.pathinfo($verticalBarImage[0], PATHINFO_EXTENSION),'80','80');
                 $newdata=array_merge($data1,$data2);
 
             }
@@ -790,6 +798,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage2' => "verticalBar2" . "." . pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar2'.'.'.pathinfo($verticalBarImage[1], PATHINFO_EXTENSION),'80','80');
                 $newdata2=array_merge($newdata,$data2);
 
             }
@@ -802,6 +811,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage3' => "verticalBar3" . "." . pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar3'.'.'.pathinfo($verticalBarImage[2], PATHINFO_EXTENSION),'80','80');
                 $newdata3=array_merge($newdata2,$data2);
 
             }
@@ -814,6 +824,7 @@ class Homem extends CI_Model
                 $data2 =array(
                     'verticalBarImage4' => "verticalBar4" . "." . pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),
                 );
+                thumb('images/homeImage/verticalBar4'.'.'.pathinfo($verticalBarImage[3], PATHINFO_EXTENSION),'80','80');
                 $newdata4=array_merge($newdata3,$data2);
 
             }
