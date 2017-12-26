@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="252162f2-541f-4f23-980d-62d3ce88fe84" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ictm-web.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/PageSection.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/PageSection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPageSection.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPageSection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPageSection.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPageSection.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionlauschh7a5722ple3fe4c1n0g8g3tltu" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionlauschh7a5722ple3fe4c1n0g8g3tltu" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session9m8guamlj9l5u2vnbosph28cadjpu7sf" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session9m8guamlj9l5u2vnbosph28cadjpu7sf" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PageSection.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PageSection.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/PageSection.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
@@ -50,18 +43,8 @@
       <file leaf-file-name="PageSectionm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="98" column="52" lean-forward="false" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-918">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="639">
+              <caret line="100" column="37" lean-forward="false" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -70,7 +53,7 @@
       <file leaf-file-name="form_validation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="647">
+            <state relative-caret-position="377">
               <caret line="188" column="113" lean-forward="false" selection-start-line="188" selection-start-column="113" selection-end-line="188" selection-end-column="113" />
               <folding />
             </state>
@@ -80,8 +63,8 @@
       <file leaf-file-name="Affiliation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Affiliation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="213" column="3" lean-forward="false" selection-start-line="213" selection-start-column="3" selection-end-line="236" selection-end-column="5" />
+            <state relative-caret-position="441">
+              <caret line="235" column="9" lean-forward="true" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -90,12 +73,22 @@
       <file leaf-file-name="Affiliationm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Affiliationm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="243" column="32" lean-forward="false" selection-start-line="239" selection-start-column="8" selection-end-line="243" selection-end-column="32" />
+            <state relative-caret-position="675">
+              <caret line="262" column="26" lean-forward="true" selection-start-line="262" selection-start-column="26" selection-end-line="262" selection-end-column="26" />
               <folding>
                 <marker date="1514271823830" expanded="true" signature="2016:2187" ph="..." />
                 <marker date="1514271823830" expanded="true" signature="5333:5515" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Albumm.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Albumm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3024">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -148,9 +141,9 @@
       <list>
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPageSection.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPageSection.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/PageSection.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php" />
       </list>
     </option>
   </component>
@@ -462,12 +455,12 @@
       <option name="presentableId" value="Default" />
       <updated>1514270945239</updated>
       <workItem from="1514270949482" duration="929000" />
-      <workItem from="1514272219663" duration="8470000" />
+      <workItem from="1514272219663" duration="9678000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9399000" />
+    <option name="totallyTimeSpent" value="10607000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -535,14 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPageSection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="877">
@@ -551,45 +536,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Affiliation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="213" column="3" lean-forward="false" selection-start-line="213" selection-start-column="3" selection-end-line="236" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Affiliationm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="243" column="32" lean-forward="false" selection-start-line="239" selection-start-column="8" selection-end-line="243" selection-end-column="32" />
-          <folding>
-            <marker date="1514271823830" expanded="true" signature="2016:2187" ph="..." />
-            <marker date="1514271823830" expanded="true" signature="5333:5515" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="188" column="113" lean-forward="false" selection-start-line="188" selection-start-column="113" selection-end-line="188" selection-end-column="113" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPageSection.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="63" column="98" lean-forward="false" selection-start-line="63" selection-start-column="86" selection-end-line="63" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="98" column="52" lean-forward="false" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -608,6 +558,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="139" column="42" lean-forward="false" selection-start-line="139" selection-start-column="20" selection-end-line="139" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="188" column="113" lean-forward="false" selection-start-line="188" selection-start-column="113" selection-end-line="188" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-918">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="100" column="37" lean-forward="false" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Affiliation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="235" column="9" lean-forward="true" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Affiliationm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="262" column="26" lean-forward="true" selection-start-line="262" selection-start-column="26" selection-end-line="262" selection-end-column="26" />
+          <folding>
+            <marker date="1514271823830" expanded="true" signature="2016:2187" ph="..." />
+            <marker date="1514271823830" expanded="true" signature="5333:5515" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Albumm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3024">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

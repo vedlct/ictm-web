@@ -98,7 +98,7 @@ class PageSectionm extends CI_Model
     }
    public function checkPageSectionOrderNumberUnique($ordernumber, $id){
        $this->db->select('orderNumber');
-       $this->db->where('orderNumber',$ordernumber);
+       $this->db->where('orderNumber=',$ordernumber);
        $this->db->where('pageSectionId !=', $id);
        $query = $this->db->get('ictmpagesection');
        return $query->result();
