@@ -55,20 +55,33 @@
                             <div class="table table-responsive">
 
                                 <form method="post" action="<?php echo base_url()?>Admin/Menu/searchByTitleMenu">
-                                    <div class="form-group col-md-6">
-                                        <label for="email">Search By Title</label>
+                                    <div class="form-group col-md-4">
+                                        <label for="title">Search By Title</label>
                                         <input type="text" class="form-control col-md-6" id="title" name="title">
                                     </div>
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-1">
                                         <button style="margin-top: 23px" type="submit" class="btn btn-default">Submit</button>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label  for="menuType">Menu Type </label>
+                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="searchbymenutype(this)" required>
+                                                <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
+                                                <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                                    <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
+                                                <?php } ?>
+                                            </select>
                                     </div>
 
                                 </form>
                             <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" <span id="asce" style="display: none"><i class="fa fa-sort-asc"></i> </span> <span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span>  Menu Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)" > Menu Type</th>
+
+
+
+                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span>   Menu Title</th>
+                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)"  >  O N</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" > Menu Type</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Parent Menu</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Page Title</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Status</th>
@@ -76,14 +89,21 @@
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
+
                                 </tr>
 
                                 <?php if (!empty($menu)){
                                 foreach ($menu as $menu){?>
 
 
+
+
+
+
+
                                     <tr align="left">
                                         <td><?php echo $menu->menuName?></td>
+                                        <td><?php echo $menu->orderNumber?></td>
                                         <td><?php echo $menu->menuType?></td>
                                         <td>
                                             <?php if ($menu->submenu == "")
@@ -130,9 +150,10 @@
 
                                 </tbody>
                             </table>
+                                <div id="txtHint"></div>
                             </div>
 
-                            <div class="pagination2" align="center">
+                            <div class="pagination2" id="pagi" align="center">
                                 <a href="#"><?php  echo $links?></a>
                             </div>
                         </div>
@@ -183,6 +204,23 @@
             window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
         }
     }
+    function searchbymenutype() {
+        var x = document.getElementById("menuType").value;
+        $.ajax({
+            type: 'POST',
+            url: '<?php echo base_url("Admin/Menu/searchByMenuType/")?>' + x,
+            data: {'menutype': x},
+            cache: false,
+            success: function (data) {
+
+                $('#txtHint').html(data);
+                document.getElementById("myTable").style.display = "none";
+                document.getElementById("pagi").style.display = "none";
+            }
+
+        });
+    }
+var flag = true;
 </script>
 
 

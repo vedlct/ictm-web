@@ -10,6 +10,7 @@ class Menum extends CI_Model
         $menuType = $this->input->post("menuType");
         $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
+        $orderNumber = $this->input->post("orderNumber");
         $menuStatus = $this->input->post("menuStatus");
         if ($parentId =="")
         {
@@ -25,6 +26,7 @@ class Menum extends CI_Model
             'menuType' => $menuType,
             'parentId' => $parentId,
             'pageId' => $pageId,
+            'orderNumber' => $orderNumber,
             'menuStatus' => $menuStatus,
             'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
@@ -89,7 +91,7 @@ class Menum extends CI_Model
 
     public function getAllforManageMenu($limit, $start) {
 
-        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
+        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.orderNumber,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
@@ -105,9 +107,20 @@ class Menum extends CI_Model
         }
         return false;
     }
+    public function getAllforManageMenuSearchByMenuType($menutype){
+        $this->db->select('m.menuId,m.menuName,m.menuType,m.orderNumber,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
+        $this->db->from('ictmmenu m');
+        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $this->db->order_by("m.menuId", "desc");
+        $this->db->like('m.menuType', $menutype);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
     public function getAllforManageMenuSearchByTitle($title) {
 
-        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
+        $this->db->select('m.menuId,m.menuName,m.menuType,m.menuStatus,m.orderNumber,m.insertedBy,m.lastModifiedBy,m.lastModifiedDate,menu.menuName as submenu,p.pageTitle');
         $this->db->from('ictmmenu m');
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
