@@ -32,10 +32,23 @@
                                         <div class="content-pad single-course-detail">
                                             <div class="course-detail">
                                                 <div class="content-content">
-                                                	
-            
-                
-                        <ul style="margin-left:0px" class="nav nav-tabs">
+
+
+                                                    <?php foreach ($coursedetail as $cd) {?>
+
+                                                        <?php $x = "10003239" ?>
+                                                        <?php $y = $cd->courseCodeIcon ?>
+                                                        <?php $studyMode = $cd->studyMode ?>
+
+                                                    <?php }?>
+
+                                                    <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
+
+                                                        <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
+
+
+
+                                                        <ul style="margin-left:0px" class="nav nav-tabs">
                             <?php foreach ($courseSectiondetail as $csd){ ?>
                             <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                             <?php } ?>
@@ -142,19 +155,6 @@
                                         <?php } ?>
                                     </table>
                                 </div><br>
-
-
-                                <?php foreach ($coursedetail as $cd) {?>
-
-                                    <?php $x = "10003239" ?>
-                                    <?php $y = $cd->courseCodeIcon ?>
-                                    <?php $studyMode = $cd->studyMode ?>
-
-                                <?php }?>
-
-                                <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
-
-                                    <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
 
 
 
