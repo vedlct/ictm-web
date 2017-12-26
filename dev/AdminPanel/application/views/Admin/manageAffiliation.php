@@ -54,7 +54,7 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" <span id="asc" style="display: none"><i class="fa fa-sort-asc"></i> </span><span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span> Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Title</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Status</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
@@ -112,7 +112,6 @@
                                         </tr>
                                     <?php }
                                 } ?>
-
 
 
                                 </tbody>
@@ -193,4 +192,6 @@
             location.reload();
         }
     }
+
+    var flag=true;
 </script>

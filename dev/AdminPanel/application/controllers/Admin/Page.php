@@ -83,15 +83,42 @@ class Page extends CI_Controller {
             redirect('Admin/Login');
         }
     }
+
+//    public function searchByPage(){
+//        if ($this->session->userdata('type') == USER_TYPE[0])
+//        {
+//            $type = $this->input->post('pageType');
+//            //$this->data["links"] = null;
+//            $this->data["menu"] = $this->Page->getPagaDataSearchBytype($type);
+//
+//            $this->load->view('Admin/searchByPageType',$this->data);
+//        }
+//        else{
+//            redirect('Admin/Login');
+//        }
+//    }
+
     public function searchByTitlPage()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-
             $title = $this->input->post('title');
             $this->data["links"] = null;
             $this->data["pageData"] = $this->Pagem->getPagaDataSearchBytitle($title);
-
             $this->load->view('Admin/managePage', $this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function searchBypagetype()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $pageType = $this->input->post('pageType');
+            $this->data["links"] = null;
+            $this->data["pageData"] = $this->Pagem->getPagaDataSearchBytype($pageType);
+            $this->load->view('Admin/searchByPageType', $this->data);
 
         }
         else{

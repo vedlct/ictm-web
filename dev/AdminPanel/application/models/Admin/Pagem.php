@@ -148,6 +148,17 @@ class Pagem extends CI_Model
         return $query->result();
     }
 
+    public function getPagaDataSearchBytype($type){
+
+        $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmpage');
+        $this->db->like('pageType',$type);
+        //$this->db->where();
+        $this->db->order_by("pageId", "desc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
     //this will return will page data for edit view
     public function geteditPagaData($id)
     {

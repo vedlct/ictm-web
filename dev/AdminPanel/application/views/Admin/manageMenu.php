@@ -7,8 +7,6 @@
     .pagination2 {
         letter-spacing: 15px;
     }
-
-
 </style>
 
 <body>
@@ -17,7 +15,6 @@
     <!--header start-->
     <?php include ('topNavigation.php')?>
     <!--header end-->
-
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--main content start-->
@@ -64,92 +61,86 @@
                                     </div>
                                     <div class="form-group col-md-5">
                                         <label  for="menuType">Menu Type </label>
-                                            <select class="form-control m-bot15" name="menuType" id="menuType" onchange="searchbymenutype(this)" required>
-                                                <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
-                                                <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                    <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
-                                                <?php } ?>
-                                            </select>
+                                        <select class="form-control m-bot15" name="menuType" id="menuType" onchange="searchbymenutype(this)" required>
+                                            <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
+                                            <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                                <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
+                                            <?php } ?>
+                                        </select>
                                     </div>
 
                                 </form>
-                            <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
-                                <tbody>
-                                <tr>
+                                <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
+                                    <tbody>
+                                    <tr>
 
 
-
-                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span>   Menu Title</th>
-                                    <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)"  >  O N</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" > Menu Type</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Parent Menu</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Page Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Status</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Inserted By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
-
-                                </tr>
-
-                                <?php if (!empty($menu)){
-                                foreach ($menu as $menu){?>
-
-
-
-
-
-
-
-                                    <tr align="left">
-                                        <td><?php echo $menu->menuName?></td>
-                                        <td><?php echo $menu->orderNumber?></td>
-                                        <td><?php echo $menu->menuType?></td>
-                                        <td>
-                                            <?php if ($menu->submenu == "")
-                                            {echo NONE;}
-                                            else{echo $menu->submenu;}?>
-                                        </td>
-                                        <td>
-                                            <?php if ($menu->pageTitle==""){echo NONE;}else{echo $menu->pageTitle;}?>
-                                        </td>
-                                        <td>
-                                            <?php echo $menu->menuStatus?>
-                                        </td>
-
-                                        <td>
-                                            <?php echo $menu->insertedBy?>
-                                        </td>
-
-                                        <td>
-                                            <?php if ($menu->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $menu->lastModifiedBy;} ?>
-
-                                        </td>
-
-                                        <td><?php if ($menu->lastModifiedDate==""){echo NEVER_MODIFIED;}
-                                            else
-                                            {
-                                                echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($menu->lastModifiedDate)),1);
-
-                                            }
-                                            ?>
-
-                                        </td>
-                                        <td>
-
-                                            <div class="btn-group">
-                                                <a class="btn" href="<?php echo base_url("Admin/Menu/editMenuView/")?><?php echo $menu->menuId ?>"><i class="icon_pencil-edit"></i></a>
-                                                <a class="btn" data-panel-id="<?php echo $menu->menuId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
-                                            </div>
-                                        </td>
+                                        <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span>   Menu Title</th>
+                                        <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)"  >  O N</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" ><span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Parent Menu</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Page Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Inserted By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
 
                                     </tr>
 
+                                    <?php if (!empty($menu)){
+                                        foreach ($menu as $menu){?>
 
-                                <?php }}?>
 
-                                </tbody>
-                            </table>
+
+                                            <tr align="left">
+                                                <td><?php echo $menu->menuName?></td>
+                                                <td><?php echo $menu->orderNumber?></td>
+                                                <td><?php echo $menu->menuType?></td>
+                                                <td>
+                                                    <?php if ($menu->submenu == "")
+                                                    {echo NONE;}
+                                                    else{echo $menu->submenu;}?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($menu->pageTitle==""){echo NONE;}else{echo $menu->pageTitle;}?>
+                                                </td>
+                                                <td>
+                                                    <?php echo $menu->menuStatus?>
+                                                </td>
+
+                                                <td>
+                                                    <?php echo $menu->insertedBy?>
+                                                </td>
+
+                                                <td>
+                                                    <?php if ($menu->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $menu->lastModifiedBy;} ?>
+
+                                                </td>
+
+                                                <td><?php if ($menu->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                                    else
+                                                    {
+                                                        echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($menu->lastModifiedDate)),1);
+                                                    }
+                                                    ?>
+
+                                                </td>
+                                                <td>
+
+                                                    <div class="btn-group">
+                                                        <a class="btn" href="<?php echo base_url("Admin/Menu/editMenuView/")?><?php echo $menu->menuId ?>"><i class="icon_pencil-edit"></i></a>
+                                                        <a class="btn" data-panel-id="<?php echo $menu->menuId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+
+
+                                        <?php }}?>
+
+                                    </tbody>
+                                </table>
                                 <div id="txtHint"></div>
                             </div>
 
@@ -212,15 +203,12 @@
             data: {'menutype': x},
             cache: false,
             success: function (data) {
-
                 $('#txtHint').html(data);
                 document.getElementById("myTable").style.display = "none";
                 document.getElementById("pagi").style.display = "none";
             }
-
         });
     }
-var flag = true;
+    var flag = true;
 </script>
-
 

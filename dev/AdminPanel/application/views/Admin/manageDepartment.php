@@ -50,7 +50,7 @@
                             <table class="table table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
                                 <tr style="text-align: left" bgcolor="#D3D3D3">
-                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > Department Name</th>
+                                    <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Department Name</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Department Head</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Status</th>
                                     <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
@@ -163,4 +163,6 @@
             });
         }
     }
+
+    var flag=true;
 </script>

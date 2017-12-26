@@ -50,20 +50,30 @@
                         <div class="panel-body">
                             <div class="table table-responsive">
                                 <form method="post" action="<?php echo base_url()?>Admin/Page/searchByTitlPage">
-                                    <div class="form-group col-md-6">
+                                    <div class="form-group col-md-4">
                                         <label for="email">Search By Title</label>
                                         <input type="text" class="form-control col-md-6" id="title" name="title">
                                     </div>
-                                    <div class="form-group col-md-6">
-                                        <button style="margin-top: 23px" type="submit" class="btn btn-default">Submit</button>
+                                    <div class="form-group col-md-1">
+                                        <button style="margin-top: 23px" type="submit" class="btn btn-default" >Submit</button>
                                     </div>
+                                <div class="form-group col-md-5">
+                                    <label  for="pageType">Page Type </label>
+                                    <select class="form-control m-bot15" name="pageType" id="pageType" onchange="searchbypageType(this)" required>
+                                        <option value="" selected><?php echo SELECT_PAGE_TYPE?></option>
+                                        <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
+                                            <option value="<?php echo PAGE_TYPE[$i]?>"><?php echo PAGE_TYPE[$i]?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+
 
                                 </form>
 
                         <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                             <tbody>
                             <tr>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)"<span id="asc" style="display: none"><i class="fa fa-sort-asc"></i> </span><span id="desc" style="display: block"><i class="fa fa-sort-desc"></i> </span> Page Title</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Page Title</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Page Type</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Status</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Insert By</th>
@@ -104,6 +114,7 @@
                             }?>
                             </tbody>
                         </table>
+                                <div id="txtHint"></div>
                             </div>
 
                             <div class="pagination2" align="center">
@@ -131,6 +142,45 @@
 <!-- javascripts -->
 
 <?php include('js.php') ?>
+<script>
+//
+//    function searchbytitle() {
+//        var x = document.getElementById("title").value;
+//        $.ajax({
+//            type: 'POST',
+//            url: '<?php //echo base_url("Admin/Page/searchByTitlPage/")?>//' + x,
+//            data: {'title': x},
+//            cache: false,
+//            success: function (data) {
+//                $('#myTable').html(data);
+//            }
+//
+//        });
+//    }
+
+
+
+
+function searchbypageType() {
+    var x = document.getElementById("pageType").value;
+    $.ajax({
+        type: 'POST',
+        url: '<?php echo base_url("Admin/Page/searchBypagetype/")?>' + x,
+        data: {'pageType': x},
+        cache: false,
+        success: function (data) {
+            $('#txtHint').html(data);
+            document.getElementById("myTable").style.display = "none";
+            document.getElementById("pagi").style.display = "none";
+
+
+        }
+
+    });
+}
+   var flag=true
+    </script>
+
 
 </body>
 </html>
