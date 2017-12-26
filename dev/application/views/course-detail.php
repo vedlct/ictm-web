@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="page-title-heading">
                     <?php foreach ($coursedetail as $cd) { ?>
-                        <h2 class="title">Course Title: <?php echo $cd->courseTitle ?><br><span style="font-size:16px">Course Code: <?php echo $cd->courseCodePearson ?></span></h2>
+                    <h2 class="title">Course Title: <?php echo $cd->courseTitle ?><br><span style="font-size:16px">Course Code: <?php echo $cd->courseCodePearson ?></span></h2>
                     <?php } ?>
                 </div>
                 <div class="breadcrumbs">
@@ -27,9 +27,9 @@
 
             <?php foreach ($coursedetail as $cd) {?>
 
-                <?php $x = "10003239" ?>
-                <?php $y = $cd->courseCodeIcon ?>
-                <?php $studyMode = $cd->studyMode ?>
+            <?php $x = "10003239" ?>
+            <?php $y = $cd->courseCodeIcon ?>
+            <?php $studyMode = $cd->studyMode ?>
 
             <?php }?>
 
@@ -53,12 +53,12 @@
 
                                             <ul style="margin-left:0px" class="nav nav-tabs">
                                                 <?php foreach ($courseSectiondetail as $csd){ ?>
-                                                    <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
+                                                <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                                                 <?php } ?>
                                                 <?php foreach ($coursedetail as $cd) { ?>
 
-                                                    <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
-                                                    <!--                            <li><a href="--><?php //echo base_url('public/pdf-files/Application_Form.pdf')?><!--">APPLY NOW</a></li>-->
+                                                <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
+                                                <!--                            <li><a href="--><?php //echo base_url('public/pdf-files/Application_Form.pdf')?><!--">APPLY NOW</a></li>-->
 
 
 
@@ -68,25 +68,25 @@
 
                                             <div class="tab-content">
                                                 <?php foreach ($courseSectiondetail as $csd) {?>
-                                                    <div class="tab-pane fade in active" id="<?php echo $csd->courseSectionId ?>">
-                                                        <div class="course-detail-section">
-                                                            <h3><?php echo  $csd->courseSectionTitle?></h3>
-                                                            <div class="content-dropcap">
-                                                                <?php echo $csd->courseSectionContent ?>
-                                                            </div>
+                                                <div class="tab-pane fade in active" id="<?php echo $csd->courseSectionId ?>">
+                                                    <div class="course-detail-section">
+                                                        <h3><?php echo  $csd->courseSectionTitle?></h3>
+                                                        <div class="content-dropcap">
+                                                            <?php echo $csd->courseSectionContent ?>
                                                         </div>
                                                     </div>
-                                                    <?php  break ; } ?>
+                                                </div>
+                                                <?php  break ; } ?>
 
                                                 <?php foreach ($courseSectiondetail as $csd) { ?>
-                                                    <div class="tab-pane fade in " id="<?php echo $csd->courseSectionId ?>">
-                                                        <div class="course-detail-section">
-                                                            <h3><?php echo  $csd->courseSectionTitle?></h3>
-                                                            <div class="content-dropcap">
-                                                                <?php echo $csd->courseSectionContent ?>
-                                                            </div>
+                                                <div class="tab-pane fade in " id="<?php echo $csd->courseSectionId ?>">
+                                                    <div class="course-detail-section">
+                                                        <h3><?php echo  $csd->courseSectionTitle?></h3>
+                                                        <div class="content-dropcap">
+                                                            <?php echo $csd->courseSectionContent ?>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 <?php   } ?>
 
                                             </div>
@@ -105,12 +105,12 @@
                         <div class="table-responsive">
                             <table class="table table-bordered">
                                 <thead style="background-color:#841a29">
-                                <tr>
-                                    <th style="text-align:center; font-size:16px; color:#fff"><strong>KEY INFORMATION</th>
-                                </tr>
+                                    <tr>
+                                        <th style="text-align:center; font-size:16px; color:#fff"><strong>KEY INFORMATION</th>
+                                    </tr>
                                 </thead>
                                 <?php foreach ($coursedetail as $cd) {?>
-                                    <tbody>
+                                <tbody>
                                     <tr>
                                         <td><strong>Award:</strong>  <?php echo $cd->awardingTitle ?> </td>
                                     </tr>
@@ -154,7 +154,7 @@
                                     <tr>
                                         <td><strong>Timetables:</strong> <?php echo $cd->timeTable?></td>
                                     </tr>
-                                    </tbody>
+                                </tbody>
                                 <?php } ?>
                             </table>
                         </div><br>
@@ -189,5 +189,5 @@
         var scriptTags = d.getElementsByTagName('script')[0];
         if (d.getElementById('unistats-widget-script')) { return; }
         scriptTags.parentNode.insertBefore(widgetScript, scriptTags);   }
-    (document));
+     (document));
 </script>
