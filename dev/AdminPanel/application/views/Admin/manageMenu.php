@@ -75,9 +75,9 @@
                                     <tr>
 
 
-                                        <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span>   Menu Title</th>
-                                        <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)"  >  O N</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" ><span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
+                                        <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span>   Menu Title</th>
+                                        <th style="background-color: #394A59; color:  whitesmoke; text-align:left" onclick="sortTable(1)"  > <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span>  O N</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" ><span id="2down"><i class="fa fa-sort-desc"></i> </span><span id="2up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Parent Menu</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Page Title</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Menu Status</th>

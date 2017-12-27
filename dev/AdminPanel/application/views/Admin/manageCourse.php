@@ -49,10 +49,10 @@
                             <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
                             <tbody>
                             <tr bgcolor="#D3D3D3">
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Course Name</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Department</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)"<span id="downs"><i class="fa fa-sort-desc"></i> </span><span id="ups" style="display: none"><i class="fa fa-sort-asc"></i> </span> Course Id</th>
-                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(3)"> Award</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Course Name</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Department</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)" ><span id="2down"><i class="fa fa-sort-desc"></i> </span><span id="2up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Course Id</th>
+                                <th  style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(3)"> <span id="3down"><i class="fa fa-sort-desc"></i> </span><span id="3up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Award</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Course Status</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Insert By</th>
                                 <th  style="background-color: #394A59; color: whitesmoke; text-align: left"> Modified By</th>

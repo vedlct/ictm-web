@@ -278,13 +278,15 @@
                 }
             }
         }
+        var up = n+"up";
+        var down = n+"down";
         if (flag == true) {
-            document.getElementById("up").style.display = "block";
-            document.getElementById("down").style.display = "none";
+            document.getElementById(up).style.display = "block";
+            document.getElementById(down).style.display = "none";
             flag = false;
         }else {
-            document.getElementById("up").style.display = "none";
-            document.getElementById("down").style.display = "block";
+            document.getElementById(up).style.display = "none";
+            document.getElementById(down).style.display = "block";
             flag = true;
         }
     }

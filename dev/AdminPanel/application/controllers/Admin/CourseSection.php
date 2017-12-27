@@ -156,5 +156,30 @@ class CourseSection extends CI_Controller
             }
         }
 
+        public function CourseSectionOrderNumber(){
+
+            $ordernumber= $this->input->post("ordernumber");
+            $id=$this->uri->segment(4);
+
+            try
+            {
+                $this->data['courseordernumber'] = $this->CourseSectionm->checkCourseSectionOrderNumberUnique($ordernumber,$id);
+
+                if (empty($this->data['courseordernumber'])){
+
+                    return true;
+                }
+                else{
+                    $this->form_validation->set_message('CourseSectionOrderNumber', 'Order Number Allready Existed');
+                    return false;
+                }
+            }
+            catch (Exception $e){
+
+                $this->form_validation->set_message('CourseSectionOrderNumber', 'Some thing Went Wrong !! Please Try Again!!');
+                return false;
+            }
+        }
+
 
 }

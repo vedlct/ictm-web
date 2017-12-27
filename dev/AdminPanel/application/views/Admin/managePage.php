@@ -73,8 +73,8 @@
                         <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                             <tbody>
                             <tr>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Page Title</th>
-                                <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Page Type</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Page Title</th>
+                                <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Page Type</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Status</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Insert By</th>
                                 <th style="background-color: #394A59; color: whitesmoke; text-align: left" ; width="15%"> Last Modified By</th>
@@ -171,7 +171,7 @@ function searchbypageType() {
         success: function (data) {
             $('#txtHint').html(data);
             document.getElementById("myTable").style.display = "none";
-            document.getElementById("pagi").style.display = "none";
+            //document.getElementById("pagi").style.display = "none";
 
 
         }

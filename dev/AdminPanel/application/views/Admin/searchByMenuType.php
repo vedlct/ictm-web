@@ -1,9 +1,9 @@
 <table class="table table-striped table-advance  table-bordered table-hover " id="myTable2">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(0)"> Menu Title</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; cursor: pointer" onclick="sortTableAjax(1)">O N</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(2)"<span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(0)"> <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Title</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; cursor: pointer" onclick="sortTableAjax(1)"> <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> O N</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(2)" ><span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>
@@ -68,6 +68,7 @@
 </table>
 
 <script>
+    var flag = true ;
     function sortTableAjax(n) {
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("myTable2");
@@ -122,13 +123,15 @@
                 }
             }
         }
+        var up = n+"up";
+        var down = n+"down";
         if (flag == true) {
-            document.getElementById("up").style.display = "block";
-            document.getElementById("down").style.display = "none";
+            document.getElementById(up).style.display = "block";
+            document.getElementById(down).style.display = "none";
             flag = false;
         }else {
-            document.getElementById("up").style.display = "none";
-            document.getElementById("down").style.display = "block";
+            document.getElementById(up).style.display = "none";
+            document.getElementById(down).style.display = "block";
             flag = true;
         }
     }

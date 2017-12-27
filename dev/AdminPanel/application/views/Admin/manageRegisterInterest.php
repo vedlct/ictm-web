@@ -63,9 +63,9 @@
                                     <tr>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"width="5%" > Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> First Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> First Name</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Last Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Last Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Course</th>

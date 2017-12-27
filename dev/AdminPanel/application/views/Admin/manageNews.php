@@ -64,10 +64,10 @@
                             <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> News Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(1)"> News Date</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> News Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> News Date</th>
 
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)" <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> News Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)" > News Type</th>
 
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
