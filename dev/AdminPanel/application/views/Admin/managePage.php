@@ -178,7 +178,7 @@ function searchbypageType() {
 
     });
 }
-   var flag=true
+   var flag=true;
     </script>
 
 

@@ -1,9 +1,9 @@
 <table class="table table-striped table-advance  table-bordered table-hover " id="myTable2">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(0)"> <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Title</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; cursor: pointer" onclick="sortTableAjax(1)"> <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> O N</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(2)" ><span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Type</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTableAjax(0)"> <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Menu Title</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center; cursor: pointer" onclick="sortTableAjax(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> O N</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"  > Menu Type</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Parent Menu</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Page Title</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Menu Status</th>
@@ -69,7 +69,8 @@
 
 <script>
     var flag = true ;
-    function sortTableAjax(n) {
+    function sortTableAjax(ng) {
+
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("myTable2");
         switching = true;
@@ -88,8 +89,8 @@
                 shouldSwitch = false;
                 /*Get the two elements you want to compare,
                  one from current row and one from the next:*/
-                x = rows[i].getElementsByTagName("TD")[n];
-                y = rows[i + 1].getElementsByTagName("TD")[n];
+                x = rows[i].getElementsByTagName("TD")[ng];
+                y = rows[i + 1].getElementsByTagName("TD")[ng];
                 /*check if the two rows should switch place,
                  based on the direction, asc or desc:*/
                 if (dir == "desc") {
@@ -123,8 +124,9 @@
                 }
             }
         }
-        var up = n+"up";
-        var down = n+"down";
+
+        var up = ng+"up";
+        var down = ng+"down";
         if (flag == true) {
             document.getElementById(up).style.display = "block";
             document.getElementById(down).style.display = "none";
@@ -134,5 +136,6 @@
             document.getElementById(down).style.display = "block";
             flag = true;
         }
+
     }
 </script>
