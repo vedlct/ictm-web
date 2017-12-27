@@ -53,6 +53,8 @@ class Newsm extends CI_Model
 
             if ($this->upload->do_upload('news_image')) {
                 // if something need after image upload
+                thumb('images/newsImages/'.$newsId.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'409','258');
+                thumb('images/newsImages/'.$newsId.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'80','80');
             } else {
                 $error = array('error' => $this->upload->display_errors());
                 $che = json_encode($error);
@@ -156,6 +158,8 @@ class Newsm extends CI_Model
 
             if($this->upload->do_upload('news_image')){
                 // if something need after image upload
+                thumb('images/newsImages/'.$id.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'409','258');
+                thumb('images/newsImages/'.$id.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'80','80');
             }else{
 
                 $error = array('error' => $this->upload->display_errors());
@@ -252,6 +256,17 @@ class Newsm extends CI_Model
         $this->db->where('newsId',$id);
         $query = $this->db->get('ictmnews');
         foreach ($query->result() as $image){$newsImage=$image->newsPhoto;}
+
+        $info = pathinfo($newsImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+        $pathanother   = $name."_258_409".".".$format;
+        $pathanother1   = $name."_80_80".".".$format;
+
+
+        unlink(FCPATH."images/newsImages/".$pathanother);
+
+        unlink(FCPATH."images/newsImages/".$pathanother1);
 
         unlink(FCPATH."images/newsImages/".$newsImage);
 

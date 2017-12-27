@@ -302,7 +302,7 @@ class Facultym extends CI_Model
         $info = pathinfo($facultyImage);
         $name = $info['filename'];
         $format = $info['extension'];
-        $pathanother   = 'images/facultyImages/'.$name."_360_360".".".$format;
+        $pathanother   = $name."_360_360".".".$format;
 
         unlink(FCPATH."images/facultyImages/".$pathanother);
 
