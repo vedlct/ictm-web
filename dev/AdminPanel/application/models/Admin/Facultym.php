@@ -67,6 +67,7 @@ class Facultym extends CI_Model
 
             if($this->upload->do_upload('facultyImage')){
                 // if something need after image upload
+                thumb('images/facultyImages/'.$facultyId.'.'.pathinfo($facultyImage, PATHINFO_EXTENSION),'360','360');
             }
             else{
 
@@ -193,6 +194,7 @@ class Facultym extends CI_Model
 
             if($this->upload->do_upload('facultyImage')){
                 // if something need after image upload
+                thumb('images/facultyImages/'.$id.'.'.pathinfo($facultyImage, PATHINFO_EXTENSION),'360','360');
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -296,6 +298,13 @@ class Facultym extends CI_Model
         $this->db->where('facultyId',$id);
         $query = $this->db->get('ictmfaculty');
         foreach ($query->result() as $image){$facultyImage=$image->facultyImage;}
+
+        $info = pathinfo($facultyImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+        $pathanother   = 'images/facultyImages/'.$name."_360_360".".".$format;
+
+        unlink(FCPATH."images/facultyImages/".$pathanother);
 
         unlink(FCPATH."images/facultyImages/".$facultyImage);
 

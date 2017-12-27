@@ -56,6 +56,7 @@ class Eventm extends CI_Model
 
                 if ($this->upload->do_upload('event_image')) {
                     // if something need after image upload
+                    thumb('images/eventImages/'.$eventId.'.'.pathinfo($event_image, PATHINFO_EXTENSION),'80','80');
                 } else {
                     $error = array('error' => $this->upload->display_errors());
                     $che = json_encode($error);
@@ -164,6 +165,7 @@ class Eventm extends CI_Model
 
             if($this->upload->do_upload('event_image')){
                 // if something need after image upload
+                thumb('images/eventImages/'.$id.'.'.pathinfo($event_image, PATHINFO_EXTENSION),'80','80');
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -222,6 +224,13 @@ class Eventm extends CI_Model
         $this->db->where('eventId',$id);
         $query = $this->db->get('ictmevent');
         foreach ($query->result() as $image){$eventImage=$image->eventPhotoPath;}
+
+        $info = pathinfo($eventImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+        $pathanother   = 'images/eventImages/'.$name."_80_80".".".$format;
+
+        unlink(FCPATH."images/eventImages/".$pathanother);
 
         unlink(FCPATH."images/eventImages/".$eventImage);
 
