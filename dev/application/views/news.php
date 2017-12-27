@@ -74,6 +74,7 @@
                                                 </div>
                                             </div>
                                         </div><!--/post-item-->
+                                        <br>
                                     </div>
                                 </div><!-- /blog-item -->
 
