@@ -36,7 +36,10 @@
                                                 <div  class="itmthmb item-thumbnail">
 
                                                     <?php if ($listOfFaculty->facultyImage !=null){?>
-                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $listOfFaculty->facultyImage?>" alt="image"></a>
+                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>">
+<!--                                                        <img height="360px" width="360px" src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/facultyImages/--><?php //echo $listOfFaculty->facultyImage?><!--" alt="image">-->
+                                                        <img src="<?php echo base_url(FOLDER_NAME.'/images/facultyImages/'.thumb(FOLDER_NAME.'/images/facultyImages/'.$listOfFaculty->facultyImage,'360','360')); ?>" alt="image">
+                                                    </a>
                                                     <?php }else{?>
                                                     <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="" width="" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.png" alt="image"></a>
                                                     <?php } ?>
