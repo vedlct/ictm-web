@@ -240,7 +240,7 @@ class Feedbackm extends CI_Model
         $name = $info['filename'];
         $format = $info['extension'];
 
-        $pathanother   = 'images/feedbackImages/'.$name."_65_50".".".$format;
+        $pathanother   = $name."_65_50".".".$format;
 
         unlink(FCPATH."images/feedbackImages/".$pathanother);
         unlink(FCPATH."images/feedbackImages/".$feedbackImage);

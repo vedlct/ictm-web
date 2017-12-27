@@ -228,7 +228,7 @@ class Eventm extends CI_Model
         $info = pathinfo($eventImage);
         $name = $info['filename'];
         $format = $info['extension'];
-        $pathanother   = 'images/eventImages/'.$name."_80_80".".".$format;
+        $pathanother   = $name."_80_80".".".$format;
 
         unlink(FCPATH."images/eventImages/".$pathanother);
 

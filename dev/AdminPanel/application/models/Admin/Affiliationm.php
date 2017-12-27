@@ -206,7 +206,7 @@ class Affiliationm extends CI_Model
         $name = $info['filename'];
         $format = $info['extension'];
 
-        $pathanother   = 'images/affiliationImages/'.$name."_103_248".".".$format;
+        $pathanother   = $name."_103_248".".".$format;
 
 
         unlink(FCPATH."images/affiliationImages/".$pathanother);

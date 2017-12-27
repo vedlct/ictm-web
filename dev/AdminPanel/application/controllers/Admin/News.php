@@ -200,6 +200,7 @@ class News extends CI_Controller
 
             $this->data['error'] = $this->Newsm->deleteNewsImage($id);
 
+
             if (empty($this->data['error'])) {
 
                 $this->session->set_flashdata('successMessage','News Image Deleted Successfully');
