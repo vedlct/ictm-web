@@ -54,9 +54,9 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)">Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Name</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)">Profession </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Source </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)"><span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Source </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">Approve </th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedBy </th>
@@ -224,4 +224,6 @@
             location.reload();
         }
     }
+
+    var flag=true;
 </script>

@@ -14,7 +14,6 @@
     <!--header start-->
     <?php include ('topNavigation.php')?>
     <!--header end-->
-
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--main content start-->
@@ -60,87 +59,85 @@
                                     </div>
 
                                 </form>
-                            <table class="table  table-advance  table-bordered table-hover" id="myTable">
-                                <tbody>
+                                <table class="table  table-advance  table-bordered table-hover" id="myTable">
+                                    <tbody>
 
-                                <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" >Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)">Email </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Position </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Employee Type </th>
+                                    <tr align="center" bgcolor="#D3D3D3">
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" >Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)">Email </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Position </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Employee Type </th>
 
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
-                                </tr>
-
-
-                                <?php if (!empty($faculty)){
-                                    foreach ($faculty as $faculty){?>
-                                        <tr align="left">
-                                            <td>
-                                                <?php echo $faculty->facultyTitle?>&nbsp<?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
-                                            </td>
-
-                                            <td >
-                                                <?php echo $faculty->facultyEmail?>
-                                            </td>
-
-                                            <td >
-                                                <?php
-                                                echo str_replace(",","<br>",$faculty->facultyPosition);
-
-                                                ?>
-
-                                            </td>
-
-                                            <td >
-                                                <?php echo $faculty->facultyEmpType?>
-                                            </td>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
+                                    </tr>
 
 
+                                    <?php if (!empty($faculty)){
+                                        foreach ($faculty as $faculty){?>
+                                            <tr align="left">
+                                                <td>
+                                                    <?php echo $faculty->facultyTitle?>&nbsp<?php echo $faculty->facultyFirstName?>&nbsp<?php echo $faculty->facultyLastName?>
+                                                </td>
 
-                                            <td >
-                                                <?php echo $faculty->facultyStatus?>
-                                            </td>
+                                                <td >
+                                                    <?php echo $faculty->facultyEmail?>
+                                                </td>
 
-                                            <td >
-                                                <?php echo $faculty->insertedBy?>
+                                                <td >
+                                                    <?php
+                                                    echo str_replace(",","<br>",$faculty->facultyPosition);
+                                                    ?>
 
-                                            </td>
+                                                </td>
 
-                                            <td >
-                                                <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
-                                            </td>
-
-                                            <td >
-                                                <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
-                                                else
-                                                {
-
-                                                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($faculty->lastModifiedDate)),1);
-                                                }?>
-
-                                            </td>
-
-                                            <td >
-
-                                                <div class="btn-group">
-                                                    <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
-                                                    <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
-                                                </div>
-                                            </td>
-
-                                        </tr>
-                                    <?php }
-                                } ?>
+                                                <td >
+                                                    <?php echo $faculty->facultyEmpType?>
+                                                </td>
 
 
 
-                                </tbody>
-                            </table>
+                                                <td >
+                                                    <?php echo $faculty->facultyStatus?>
+                                                </td>
+
+                                                <td >
+                                                    <?php echo $faculty->insertedBy?>
+
+                                                </td>
+
+                                                <td >
+                                                    <?php if ($faculty->lastModifiedBy==""){echo"Never Modified";}else{echo $faculty->lastModifiedBy;} ?>
+                                                </td>
+
+                                                <td >
+                                                    <?php if ($faculty->lastModifiedDate==""){echo"Never Modified";}
+                                                    else
+                                                    {
+                                                        echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($faculty->lastModifiedDate)),1);
+                                                    }?>
+
+                                                </td>
+
+                                                <td >
+
+                                                    <div class="btn-group">
+                                                        <a class="btn" href="<?php echo base_url("Admin/Faculty/editFacultyView/")?><?php echo $faculty->facultyId ?>"><i class="icon_pencil-edit"></i></a>
+                                                        <a class="btn" data-panel-id="<?php echo $faculty->facultyId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                    </div>
+                                                </td>
+
+                                            </tr>
+                                        <?php }
+                                    } ?>
+
+
+
+                                    </tbody>
+                                </table>
                             </div>
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
@@ -177,9 +174,7 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-
                     location.reload();
-
                 }
             });
         }

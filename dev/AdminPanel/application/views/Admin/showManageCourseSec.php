@@ -2,7 +2,7 @@
 <table class="table  table-advance  table-bordered table-hover" id="myTable">
     <tbody>
     <tr align="left" >
-        <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(0)"> Course Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Course Section Title </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Order Number </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Status </th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Inserted By </th>
@@ -47,3 +47,7 @@
     </tbody>
 </table>
 </div>
+   <script>
+       var flag=true;
+
+    </script>

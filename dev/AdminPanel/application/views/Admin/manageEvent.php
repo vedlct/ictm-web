@@ -64,9 +64,9 @@
                             <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > Event Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Event Title</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(1)"> Event Start</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)"> Event End</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)"<span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Event End</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Location</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Type</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
@@ -259,5 +259,5 @@
         });
 
     }
-
+var flag=true;
 </script>
