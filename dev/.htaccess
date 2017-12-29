@@ -34,9 +34,9 @@ RewriteRule ^(.*)$ index.php?$1
 
 # accept vary encodeing heading
 
-<IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|xml|gz)$">
-    Header append Vary: Accept-Encoding
-  </FilesMatch>
-</IfModule>
-
+#<IfModule mod_headers.c>
+#  <FilesMatch "\.(js|css|xml|gz)$">
+#    Header append Vary: Accept-Encoding
+#  </FilesMatch>
+#</IfModule>
+#

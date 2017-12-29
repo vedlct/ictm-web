@@ -165,7 +165,7 @@
                                                 <a href="<?php echo base_url()?>album-pictures/<?php echo $photoGallery['albumId']?>">
                                                     <div class="overlay"></div>
 
-                                                    <span><img src="<?php echo base_url(FOLDER_NAME.'/images/photoAlbum/'.$photoGallery['albumTitle'].'/'.thumb(FOLDER_NAME.'/images/photoAlbum/'.$photoGallery['albumTitle'].'/'.$photoGallery['photoName'],'400','300')); ?>"></span>
+                                                    <span><img src="<?php echo base_url(FOLDER_NAME.'/images/photoAlbum/'.$photoGallery['albumTitle'].'/'.thumb(FOLDER_NAME.'/images/photoAlbum/'.$photoGallery['albumTitle'].'/'.$photoGallery['photoName'],'80','60')); ?>"></span>
                                                   </a>
                                             </div>
                                         </li>
@@ -287,19 +287,19 @@
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.easing.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/smoothscroll.js"></script>
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/parallax.js"></script>-->
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery-waypoints.js"></script>-->
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.tweet.min.js"></script>-->
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/parallax.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-waypoints.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.tweet.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.matchHeight-min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-validate.js"></script>
 
         <!-- Revolution Slider -->
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.themepunch.tools.min.js"></script>-->
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.themepunch.revolution.min.js"></script>-->
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/slider.js"></script>-->
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/slider.js"></script>
 
-<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/switcher.js"></script>-->
+        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/switcher.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.cookie.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/main.js"></script>
 

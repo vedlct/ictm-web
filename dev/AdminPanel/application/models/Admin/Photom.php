@@ -314,7 +314,7 @@ class Photom extends CI_Model
         $name = $info['filename'];
         $format = $info['extension'];
 
-        $pathanother   = 'images/photoAlbum/'.$albumTitle."/".$name."_300_400".".".$format;
+        $pathanother   = 'images/photoAlbum/'.$albumTitle."/".$name."_60_80".".".$format;
 
         if (!file_exists($path)){
             return 0;

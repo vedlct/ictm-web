@@ -280,6 +280,7 @@
         }
         var up = n+"up";
         var down = n+"down";
+        alert(up);
         if (flag == true) {
             document.getElementById(up).style.display = "block";
             document.getElementById(down).style.display = "none";
