@@ -283,21 +283,21 @@
         </footer>
 
         <!-- Javascript -->
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
+
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/bootstrap.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.easing.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/smoothscroll.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/parallax.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-waypoints.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.tweet.min.js"></script>
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/parallax.js"></script>-->
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery-waypoints.js"></script>-->
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.tweet.min.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.matchHeight-min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-validate.js"></script>
 
         <!-- Revolution Slider -->
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.tools.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.revolution.min.js"></script>
-        <script type="text/javascript" src="<?php echo base_url()?>public/javascript/slider.js"></script>
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.themepunch.tools.min.js"></script>-->
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.themepunch.revolution.min.js"></script>-->
+<!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/slider.js"></script>-->
 
 <!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/switcher.js"></script>-->
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.cookie.js"></script>

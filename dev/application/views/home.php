@@ -1,4 +1,10 @@
 <?php include("header.php"); ?>
+<head>
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.carousel.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.theme.default.min.css">
+
+</head>
 
 <div class="tp-banner-container">
     <div class="tp-banner" >
@@ -555,3 +561,16 @@
 </body>
 
 </html>
+
+
+<!-- Revolution Slider -->
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/slider.js"></script>
+
+<!-- home js -->
+
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/parallax.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-waypoints.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.tweet.min.js"></script>

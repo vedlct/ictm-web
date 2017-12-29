@@ -38,8 +38,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
 
     <!-- Owl Carousel -->
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.theme.default.min.css">
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.carousel.min.css">-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.theme.default.min.css">-->
 
     <!-- for Application Form -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/application-form-style.css">
@@ -63,7 +63,7 @@
 
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
-<!--    <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
+
 
 
 </head>
