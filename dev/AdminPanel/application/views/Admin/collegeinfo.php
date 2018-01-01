@@ -201,13 +201,13 @@
         var phone1=document.getElementById("college_tel1").value;
         var phone2=document.getElementById("college_tel2").value;
         var email=document.getElementById("college_email").value;
-        var chk=/^[0-9]*$/;
+        //var chk=/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-        if(!phone1.match(chk)) {
-            alert( 'Please enter a valid Phone number!!' );
-            return false;
-        }
+//        if(!phone1.match(chk)) {
+//            alert( 'Please enter a valid Phone number!!' );
+//            return false;
+//        }
         if(phone1.length >20) {
             alert( 'Phone number must be less than 20 charecter!!' );
             return false;

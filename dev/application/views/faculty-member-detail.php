@@ -105,12 +105,12 @@
 								
                                     <div class="contact-form">
                                         <div class="line-box"></div>
-                                        <form action="<?php echo base_url()?>Email/FacultyEmail" method="post"  id="contactform" class="comment-form" novalidate>
+                                        <form action="<?php echo base_url()?>Email/FacultyEmail/<?php echo $facultyinfo->facultyId?>" method="post" id="contactform" class="comment-form">
                                         	<div class="row">
                                             	<div class="col-md-12">
                                                 	<label><strong>Your Name *</strong></label>
                                                 	<fieldset class="style-1 full-name">
-                                                        <input type="text" id="name" class="tb-my-input" name="name" tabindex="1" value="" size="32" aria-required="true">
+                                                        <input type="text" id="name" required class="tb-my-input" name="name" tabindex="1" value="" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
 
@@ -119,27 +119,28 @@
                                             	<div class="col-md-6">
                                                 	<label><strong>Your E-Mail *</strong></label>
                                                 	<fieldset class="style-1 email-address">
-                                                        <input type="email" id="email" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
-                                                    </fieldset> 
+                                                        <input type="email" id="email" required class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
+                                                    </fieldset>
                                                 </div>
                                                 <div class="col-md-6">
                                                 	<label><strong>Your Contact Number</strong></label>
                                                 	<fieldset class="style-1 contact">
-                                                        <input type="text" id="contact" class="tb-my-input" name="contact" tabindex="2" value="" size="32" aria-required="true">
-                                                    </fieldset> 
+                                                        <input type="text" id="contact" required class="tb-my-input" name="contact" tabindex="2" value="" size="32" aria-required="true">
+                                                    </fieldset>
                                                 </div>
                                             </div>                           
 											<label><strong>Your Enquiry *</strong></label>
                                             <fieldset class="message-form">
-                                                <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                                <textarea required id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
                                             </fieldset>
                                             <input name="facultyEmail" type="hidden" value="<?php echo $facultyinfo->facultyEmail?>">
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
-                                                <button class="flat-button button-style style-v1">Send &nbsp;<i class="fa fa-angle-right"></i></button>
+                                                <button type="submit" class="flat-button button-style style-v1">Send</button>
                                             </div>             
                                         </form>
-                                    </div><!-- contact-form -->
+                                    </div>
+                                    <!-- contact-form -->
                                 </div><!-- col-md-12 -->
                             </div><!-- /row-->
                             </div>

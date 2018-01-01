@@ -14,7 +14,7 @@
                 <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                     <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage1?>" alt="slider-image">
 
-                    <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
+                    <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                         <div  class="title main-color-1 font-2"style="margin-top:-15px"><?php echo $hm->slideText1;?></div>
                     </div>
 
@@ -25,7 +25,7 @@
                 <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                     <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage2?>" alt="slider-image">
 
-                    <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
+                    <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                         <div  class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText2;?></div>
                     </div>
                 </li>
@@ -33,7 +33,7 @@
                 <li data-transition="slideleft" data-slotamount="7" data-masterspeed="1000" data-saveperformance="on">
                     <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/homeImage/<?php echo $hm->slideImage3?>" alt="slider-image">
 
-                    <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="950" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
+                    <div id="verticaldata" class="tp-caption sft desc-slide center color-white color-full" data-x="1000" data-y="479" data-speed="1000" data-start="1000" data-easing="Power3.easeInOut">
                         <div  class="title main-color-1 font-2" style="margin-top:-15px"><?php echo $hm->slideText3;?></div>
                     </div>
                 </li>
@@ -68,7 +68,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink1?>" target="_blank" title="Prospectus"><?php echo $hm->verticalBarTitle1?></a></h4>
+                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink1?>" target="_blank" title="<?php echo $hm->verticalBarTitle1?>"><?php echo $hm->verticalBarTitle1?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText1?></div>
                                                         </div>
                                                     </div>
@@ -91,7 +91,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink2?>" target="_blank" title="Apply Online"><?php echo $hm->verticalBarTitle2?></a></h4>
+                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink2?>" target="_blank" title="<?php echo $hm->verticalBarTitle2?>"><?php echo $hm->verticalBarTitle2?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText2?></div>
                                                         </div>
                                                     </div>
@@ -114,7 +114,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink3?>" title="Register Interest"><?php echo $hm->verticalBarTitle3?></a></h4>
+                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink3?>" title="<?php echo $hm->verticalBarTitle3?>"><?php echo $hm->verticalBarTitle3?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText3?></div>
                                                         </div>
                                                     </div>
@@ -137,7 +137,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink4?>" title="Contact Us"><?php echo $hm->verticalBarTitle4?></a></h4>
+                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink4?>" title="<?php echo $hm->verticalBarTitle4?>"><?php echo $hm->verticalBarTitle4?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText4?></div>
                                                         </div>
                                                     </div>
@@ -452,8 +452,8 @@
                                 <div class="col-md-12 shortcode-blog-item">
                                     <div class="content-pad">
                                         <div class="post-item row">
-                                            <div class="col-md-12 col-sm-12">
-                                                <a class="twitter-timeline" data-height="750" href="https://twitter.com/educationgovuk">Tweets by DfE</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                            <div   class="col-md-12 col-sm-12">
+                                                <a  class="twitter-timeline"  data-height="750"  href="https://twitter.com/educationgovuk">Tweets by DfE</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                                             </div>
                                         </div><!--/post-item-->
                                     </div>
