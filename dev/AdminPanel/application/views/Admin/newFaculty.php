@@ -187,7 +187,7 @@
                                                 $coursename= array();
                                                 $courseid=array();
                                                 foreach ($course as $course){?>
-                                                    <option value="<?php echo $course->courseId?>" <?php echo set_select('facultyCourses[]',  $course->courseId, False); ?>><?php echo $course->courseTitle?></option>
+                                                    <option value="<?php echo $course->courseId?>" <?php echo set_select('facultyCourses[]', $course->courseId, FALSE);?>><?php echo $course->courseTitle?></option>
                                                     <?php
                                                     array_push($coursename,$course->courseTitle );
                                                     array_push($courseid,$course->courseId );
@@ -299,7 +299,7 @@
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
                 '<div class="form-group col-lg-4">'+'<select class="form-control"  name="facultyCourses[] '+ counter +
                 '" id="facultyCourses' + counter +'" data-panel-id="'+ counter+'"onchange="selectid(this)"'+'" value="" required>'+'<option selected value="" >'+'<?php echo SELECT_COURSE ?>'+'</option>'+
-                '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
+                '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>"><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
             newTextBoxDiv.appendTo("#CourseFiled");

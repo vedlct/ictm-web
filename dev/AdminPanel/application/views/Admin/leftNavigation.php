@@ -225,6 +225,9 @@
 
 <script>
     function sortTable(n) {
+
+
+
         var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
         table = document.getElementById("myTable");
         switching = true;
@@ -252,12 +255,15 @@
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
                         break;
+
+
                     }
                 } else if (dir == "asce") {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
                         break;
+
                     }
                 }
 
@@ -269,18 +275,21 @@
                 switching = true;
                 //Each time a switch is done, increase this count by 1:
                 switchcount ++;
+
             } else {
                 /*If no switching has been done AND the direction is "asc",
                  set the direction to "desc" and run the while loop again.*/
                 if (switchcount == 0 && dir == "asce") {
                     dir = "desc";
                     switching = true;
+
                 }
             }
         }
         var up = n+"up";
         var down = n+"down";
-        if (flag == true) {
+
+        if (flag == true){
             document.getElementById(up).style.display = "block";
             document.getElementById(down).style.display = "none";
             flag = false;

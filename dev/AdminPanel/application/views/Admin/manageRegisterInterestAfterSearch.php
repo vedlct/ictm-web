@@ -3,16 +3,16 @@
     <tr>
 
         <th style="background-color: #394A59; color: whitesmoke; text-align: left"width="5%" > Title</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="down"><i class="fa fa-sort-desc"></i> </span><span id="up" style="display: none"><i class="fa fa-sort-asc"></i> </span> First Name</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Last Name</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)" > <span id="1down" style="display: none"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> First Name</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)"> <span id="2down" style="display: none"><i class="fa fa-sort-desc"></i> </span><span id="2up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Last Name</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Course</th>
         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Email</th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: left" ; width="15%" onclick="sortTable(2)"> Apply Date</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: left" ; width="15%" onclick="sortTable(8)"><span id="8down" style="display: none"><i class="fa fa-sort-desc"></i> </span><span id="8up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Apply Date</th>
 
 
-        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Action</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
     </tr>
 
 

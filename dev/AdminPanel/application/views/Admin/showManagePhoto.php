@@ -10,12 +10,15 @@
             <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Album Cover</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
         </tr>
+
+
         <?php if (!empty($photo)){
             foreach ($photo as $photo){?>
 
 
                 <tr align="left">
-                    <td><img height="100px" width="100px" src = "<?php echo base_url()?>images/photoAlbum/<?php echo $photo->albumTitle?>/<?php echo $photo->photoName?>">
+                    <td>
+                        <img height="100px" width="100px" src = "<?php echo base_url()?>images/photoAlbum/<?php echo $photo->albumTitle?>/<?php echo $photo->photoName?>">
                     </td>
 
 
