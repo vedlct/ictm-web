@@ -2,7 +2,7 @@
     <table class="table table-striped table-advance  table-bordered table-hover ">
         <tbody>
         <tr>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Photo</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Photo</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left" >Photo Status</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Photo Inserted By</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
