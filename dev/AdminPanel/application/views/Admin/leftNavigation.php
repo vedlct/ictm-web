@@ -188,7 +188,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="<?php echo base_url()?>Admin/RegisterInterest/viewRI" class="">
+                <a href="<?php echo base_url()?>Admin/RegisterInterest1/viewRI" class="">
                     <i class="icon_info"></i>
                     <span>Register Interest</span>
 
