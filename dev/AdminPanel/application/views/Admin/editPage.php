@@ -108,7 +108,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control"  type="file" name="image" />
+                                            <input class="form-control"  id="images" type="file" name="image" />
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Page/showImageForEdit/<?php echo $epd->pageId?>" target="_blank"><span> <?php echo $epd->pageImage?></span></a>
                                             <?php if ($epd->pageImage!=null){?>
                                                 <a href="<?php echo base_url() ?>Admin/Page/deletePageImage/<?php echo $epd->pageId ?>" onclick='return confirm("Are you sure to Delete This Page Image?")'><i class="icon_trash"></i></a>
@@ -208,6 +208,35 @@
     }
 
     function formsubmit() {
+
+        var image =document.getElementById("images").value;
+
+        if(image!='')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("images");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
         var title =  document.getElementById("title").value;
         var keywords =  document.getElementById("keywords").value;
         var metadata =  document.getElementById("title").value;

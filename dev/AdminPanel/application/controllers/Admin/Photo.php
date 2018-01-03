@@ -87,8 +87,8 @@ class Photo extends CI_Controller
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
             $this->data["photo"] = $this->Photom->getAllforManagePhoto($id);
-            //$this->load->view('Admin/showManagePhoto', $this->data);                        //view manage Photo
-            print_r($this->data["photo"]);
+            $this->load->view('Admin/showManagePhoto', $this->data);                        //view manage Photo
+            //print_r($this->data["photo"]);
 
         } else{
             redirect('Admin/Login');

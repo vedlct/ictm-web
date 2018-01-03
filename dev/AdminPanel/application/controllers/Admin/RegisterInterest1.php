@@ -32,8 +32,8 @@ class RegisterInterest1 extends CI_Controller
             $row = array();
             $row[] = $no;
             $row[] = $customers->title;
-            $row[] = $customers->firstName;
-            $row[] = $customers->surName;
+            $row[] = $customers->firstName.' '.$customers->surName;
+//            $row[] = $customers->surName;
             $row[] = $customers->mobile;
             $row[] = $customers->appointmentDate;
             $row[] = $customers->course;

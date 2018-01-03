@@ -98,7 +98,7 @@
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control " id="image" type="file" name="image" />
+                                            <input class="form-control " id="images" type="file" name="image" />
                                         </div>
                                     </div>
 
@@ -171,6 +171,38 @@
         }
     }
     function formsubmit() {
+
+
+        var image =document.getElementById("images").value;
+        //alert(image);
+
+        if(image != '')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("images");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
+
         var title =  document.getElementById("title").value;
         var keywords =  document.getElementById("keywords").value;
         var metadata =  document.getElementById("title").value;
@@ -187,11 +219,9 @@
             alert("Page metadata Should not more than 255 Charecter Length");
             return false;
         }
-        else
-        {
-            return true;
 
-        }
+
+
     }
 </script>
 
