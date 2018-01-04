@@ -167,10 +167,5 @@
             return false;
         }
 
-//        if (typeof (Image.files) != "undefined") {
-//            var size = parseFloat(Image.files[0].size / 1024).toFixed(2);
-//            alert(size + " KB.");
-//        }
-
     }
 </script>
