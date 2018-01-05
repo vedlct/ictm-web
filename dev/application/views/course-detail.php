@@ -49,6 +49,15 @@
                                                 <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/responsive/small/en-GB/<?php echo $studyMode?>"  width="100%" ></iframe>
                                             </div>
 
+                                            <?php foreach ($coursedetail as $cd) {
+
+                                                if($cd->courseImage != null ){?>
+                                                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"><br><br>
+
+                                            <?php }}?>
+
+
+
 
                                             <ul style="margin-left:0px" class="nav nav-tabs">
                                                 <?php foreach ($courseSectiondetail as $csd){ ?>
