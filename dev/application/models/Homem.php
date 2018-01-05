@@ -4,7 +4,7 @@ class Homem extends CI_Model
 
     public function getNews() // get the news for the home page
     {
-
+        $this->db->select('newsId,newsTitle,newsContent,newsDate');
         $this->db->where('newsStatus =', STATUS[0]);
         $this->db->where('homeStatus =', SELECT_APPROVE[0]);
         $this->db->order_by("newsDate", "desc");
@@ -14,7 +14,7 @@ class Homem extends CI_Model
     }
     public function getEvents() // get the events for the home page
     {
-
+        $this->db->select('eventId,eventTitle,eventContent, eventStartDate, eventEndDate');
         $this->db->where('eventStatus =', STATUS[0]);
         $this->db->where('homeStatus =', SELECT_APPROVE[0]);
         $this->db->order_by("eventStartDate", "desc");
@@ -24,7 +24,7 @@ class Homem extends CI_Model
     }
     public function getAffiliations() // get the affiliations for the home page
     {
-
+        $this->db->select('AffiliationsId,affiliationsTitle,AffiliationsDetails,AffiliationsPhotoPath');
         $this->db->where('affiliationsStatus =', STATUS[0]);
         $this->db->where('homeStatus =', SELECT_APPROVE[0]);
         $query = $this->db->get('ictmaffiliations');
