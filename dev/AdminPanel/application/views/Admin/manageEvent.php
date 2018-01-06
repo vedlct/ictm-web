@@ -136,7 +136,7 @@
 
                                             <td>
                                                 <?php if ($events->eventStatus == STATUS[0]){?>
-                                                    <input type="checkbox" data-panel-id="<?php echo $events->eventId ?>" onclick="selectHome(this)" <?php if ($events->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>name="appearInHome">Yes
+                                                    <input type="checkbox"  data-panel-id="<?php echo $events->eventId ?>" onclick="selectHome(this)" <?php if ($events->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>name="appearInHome">Yes
                                                 <?php }else{ echo "Status Should be Active First !!";}?>
 
                                             </td>
