@@ -337,6 +337,35 @@
 </script>
 <script>
     function submitform() {
+
+        var image =document.getElementById("facultyImage").value;
+
+        if(image!='')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("facultyImage");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
         var facultyIntroLength = CKEDITOR.instances['facultyIntro'].getData().replace(/<[^>]*>/gi, '').length;
         var phone=document.getElementById("facultyPhone").value;
         var email=document.getElementById("facultyEmail").value;

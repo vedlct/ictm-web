@@ -53,8 +53,8 @@
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="3%" > No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="5%" > Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> First Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Name</th>
+
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Course</th>
@@ -120,7 +120,7 @@
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [ 0,1,4,6,9 ], //first column / numbering column
+                    "targets": [ 0,1,3,5,8 ], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
