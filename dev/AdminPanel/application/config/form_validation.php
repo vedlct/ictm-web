@@ -43,7 +43,7 @@ $config = array (
         array(
             'field' => 'orderNumber',
             'label' => 'Order Number',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|is_unique[ictmmenu.orderNumber]|htmlspecialchars'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_menuOrderCheckFormNewMenu|htmlspecialchars'
         ),
         array(
             'field' => 'menuStatus',

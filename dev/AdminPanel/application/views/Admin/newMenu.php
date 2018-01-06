@@ -61,7 +61,7 @@
                                             <select class="form-control m-bot15" name="menuType" id="menuType" onchange="selectid(this)" required>
                                                 <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
                                                 <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                    <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
+                                                    <option <?php echo set_select('menuType',  MENU_TYPE[$i], False); ?> value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -159,6 +159,19 @@
         data: {
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
         }
+    });
+
+    $(document).ready(function(){
+
+        var btn =  document.getElementById("menuType").value;
+
+        if (btn != ''){
+            selectid(btn);
+        }else {
+
+        }
+
+
     });
 
     function selectid(x) {

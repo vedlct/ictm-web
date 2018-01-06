@@ -100,7 +100,7 @@
                                             </div>
                                             <?php }}}else{?>
                                                     <div class="simple-navigation-item col-md-6 col-sm-6 col-xs-6 main-color-1-bg-hover ">
-                                                        <a class="maincolor2hover" href="">
+                                                        <a class="maincolor2hover">
                                                             <i class="fa fa-angle-left pull-left"></i>
                                                             <div style="padding-bottom: 40px;"class="simple-navigation-item-content">
                                                                 <span></span>
