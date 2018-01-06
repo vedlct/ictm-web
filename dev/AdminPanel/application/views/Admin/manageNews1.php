@@ -145,5 +145,32 @@
 
     });
 
+    function selectHome(x) {
+        if (confirm("Are you sure ?")) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin/News/appearInHomePage/")?>'+btn,
+                data:{},
+                cache: false,
+                success:function(data) {
+                    if (data=='1'){
+                        alert('News Added Successfully To Home Page');
+                    }
+                    else if(data=='0'){
+                        alert('News Removed Successfully From Home Page');
+                    }
+                    else if(data=='3'){
+                        alert('Allready 3 News in the Home Page');
+                    }
+                    location.reload();
+
+                }
+            });
+        }
+        else {
+            location.reload();
+        }
+    }
 </script>
 

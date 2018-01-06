@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="252162f2-541f-4f23-980d-62d3ce88fe84" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session9kk7sk0m1smadp46ek6885av0auv9ddl" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session9kk7sk0m1smadp46ek6885av0auv9ddl" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -35,30 +36,40 @@
       <file leaf-file-name="manageNews1.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1593">
-              <caret line="137" column="48" lean-forward="false" selection-start-line="137" selection-start-column="48" selection-end-line="137" selection-end-column="48" />
+            <state relative-caret-position="729">
+              <caret line="173" column="5" lean-forward="false" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1515228648367" expanded="false" signature="2055:2117" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="2199:2261" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="2346:2408" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="2487:2549" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="2634:2696" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="2790:2852" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="2938:3000" ph="..." />
-                <marker date="1515228648367" expanded="false" signature="3085:3147" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2055:2117" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2199:2261" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2346:2408" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2487:2549" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2634:2696" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2790:2852" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="2938:3000" ph="..." />
+                <marker date="1515231984196" expanded="false" signature="3085:3147" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="News.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="News.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+            <state relative-caret-position="540">
+              <caret line="36" column="93" lean-forward="false" selection-start-line="36" selection-start-column="93" selection-end-line="36" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="managePage.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1746">
+              <caret line="180" column="17" lean-forward="false" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -67,21 +78,21 @@
       <file leaf-file-name="Newsm.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+            <state relative-caret-position="666">
+              <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
               <folding>
-                <marker date="1515228544326" expanded="true" signature="4714:4865" ph="..." />
-                <marker date="1515228544326" expanded="true" signature="8145:8299" ph="..." />
+                <marker date="1515231132588" expanded="true" signature="4779:4930" ph="..." />
+                <marker date="1515231132588" expanded="true" signature="8210:8364" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manageNews.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="manageNews.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="123" column="96" lean-forward="true" selection-start-line="122" selection-start-column="48" selection-end-line="123" selection-end-column="96" />
+            <state relative-caret-position="1021">
+              <caret line="247" column="0" lean-forward="true" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,16 +123,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegisterInterest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/RegisterInterest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-729">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -166,7 +167,6 @@
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFeedback.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageCourse.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/searchByPageType.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage.php" />
@@ -178,8 +178,9 @@
         <option value="$PROJECT_DIR$/dev/application/views/footer.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" />
       </list>
     </option>
   </component>
@@ -542,12 +543,12 @@
       <workItem from="1514440720148" duration="2644000" />
       <workItem from="1514616249428" duration="3540000" />
       <workItem from="1514966826562" duration="3755000" />
-      <workItem from="1515222256073" duration="5412000" />
+      <workItem from="1515222256073" duration="9361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48594000" />
+    <option name="totallyTimeSpent" value="52543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -767,14 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="68" column="134" lean-forward="false" selection-start-line="68" selection-start-column="134" selection-end-line="68" selection-end-column="134" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1188">
@@ -803,14 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
           <caret line="105" column="9" lean-forward="false" selection-start-line="105" selection-start-column="9" selection-end-line="115" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="180" column="17" lean-forward="false" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -919,16 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="29" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/RegisterInterest1.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -939,47 +914,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="666">
+          <caret line="64" column="8" lean-forward="false" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="8" />
           <folding>
-            <marker date="1515228544326" expanded="true" signature="4714:4865" ph="..." />
-            <marker date="1515228544326" expanded="true" signature="8145:8299" ph="..." />
+            <marker date="1515231132588" expanded="true" signature="4779:4930" ph="..." />
+            <marker date="1515231132588" expanded="true" signature="8210:8364" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php">
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1593">
-          <caret line="137" column="48" lean-forward="false" selection-start-line="137" selection-start-column="48" selection-end-line="137" selection-end-column="48" />
+        <state relative-caret-position="198">
+          <caret line="29" column="18" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="134" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1515228648367" expanded="false" signature="2055:2117" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="2199:2261" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="2346:2408" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="2487:2549" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="2634:2696" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="2790:2852" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="2938:3000" ph="..." />
-            <marker date="1515228648367" expanded="false" signature="3085:3147" ph="..." />
+            <element signature="n#style#0;n#th#8;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php">
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="123" column="96" lean-forward="true" selection-start-line="122" selection-start-column="48" selection-end-line="123" selection-end-column="96" />
+        <state relative-caret-position="684">
+          <caret line="138" column="75" lean-forward="false" selection-start-line="138" selection-start-column="75" selection-end-line="138" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1746">
+          <caret line="180" column="17" lean-forward="false" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+        <state relative-caret-position="540">
+          <caret line="36" column="93" lean-forward="false" selection-start-line="36" selection-start-column="93" selection-end-line="36" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="173" column="5" lean-forward="false" selection-start-line="173" selection-start-column="5" selection-end-line="173" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#th#9;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1515231984196" expanded="false" signature="2055:2117" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="2199:2261" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="2346:2408" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="2487:2549" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="2634:2696" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="2790:2852" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="2938:3000" ph="..." />
+            <marker date="1515231984196" expanded="false" signature="3085:3147" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1021">
+          <caret line="247" column="0" lean-forward="true" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
           <folding />
         </state>
       </provider>
