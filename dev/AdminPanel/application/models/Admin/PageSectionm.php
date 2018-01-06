@@ -56,7 +56,7 @@ class PageSectionm extends CI_Model
     }
     //this will  return page section data search by pageID
     public function get_pageSecdata($id){
-        $this->db->select('pageSectionId,pageId,pageSectionTitle,pageSectionStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('pageSectionId,pageId,orderNumber,pageSectionTitle,pageSectionStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmpagesection');
         $this->db->where('pageId', $id);
         $this->db->order_by("pageSectionId", "desc");

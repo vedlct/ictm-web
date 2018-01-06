@@ -11,9 +11,46 @@ class News extends CI_Controller
 
     public function index()
     {
+
     }
 
     /*---------for creating new News --------------------- */
+
+    public function ajax_list()
+    {
+        $list = $this->Newsm->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $news) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $news->newsTitle;
+            $row[] = $news->newsDate;
+//            $row[] = $customers->surName;
+            $row[] = $news->newsType;
+            $row[] = $news->newsStatus;
+            $row[] = $news->insertedBy;
+            $row[] = $news->lastModifiedBy;
+            $row[] = $news->lastModifiedDate;
+            $row[] = '<input type="checkbox">Yes';
+            $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$news->newsId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$news->newsId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $news->newsId.'"><i class="icon_trash"></i></a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Newsm->count_all(),
+            "recordsFiltered" => $this->Newsm->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+
+    }
+
 
     // for new News view
     public function newNews()
@@ -66,19 +103,19 @@ class News extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/News/manageNews";
-            $config["total_rows"] = $this->Newsm->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["news"] = $this->Newsm->getAllforManageNews($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/News/manageNews";
+//            $config["total_rows"] = $this->Newsm->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["news"] = $this->Newsm->getAllforManageNews($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
-            $this->load->view('Admin/manageNews',$this->data);
+            $this->load->view('Admin/manageNews1');
         }
         else{
             redirect('Admin/Login');
