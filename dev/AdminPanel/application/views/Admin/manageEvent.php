@@ -66,7 +66,7 @@
                                 <tr>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Event Title</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Event Start</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)" ><span id="2down"><i class="fa fa-sort-desc"></i> </span><span id="2up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Event End</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)"><span id="2down" ><i class="fa fa-sort-desc"></i> </span><span id="2up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Event End</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Location</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Type</th>
                                     <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>

@@ -18,3 +18,11 @@ RewriteRule ^(.*)$ index.php?$1
   ExpiresByType application/x-shockwave-flash "access 1 month"
   ExpiresDefault "access 1 month"
 </IfModule>
+
+# accept vary encodeing heading
+
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|xml|gz)$">
+    Header append Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>

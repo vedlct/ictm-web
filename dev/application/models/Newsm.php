@@ -9,6 +9,7 @@ class Newsm extends CI_Model
 
         $this->db->select( 'newsId,newsTitle,newsDate,newsPhoto' );
         $this->db->order_by("newsDate", "desc");
+        $this->db->where('newsStatus', STATUS[0]);
         $this->db->limit(3);
         $query = $this->db->get('ictmnews');
         return $query->result();
