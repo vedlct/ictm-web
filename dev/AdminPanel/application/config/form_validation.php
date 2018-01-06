@@ -71,6 +71,11 @@ $config = array (
 
         ),
         array(
+            'field' => 'orderNumber',
+            'label' => 'Order Number',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_menuOrderCheckFormeditMenu|htmlspecialchars'
+        ),
+        array(
             'field' => 'pageId',
             'label' => 'Page',
             'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'

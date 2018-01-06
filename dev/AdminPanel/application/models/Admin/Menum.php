@@ -97,6 +97,18 @@ class Menum extends CI_Model
         return $query->result();
 
     }
+    public function menuOrderCheckFormeditMenu($id,$menuType,$orderNumber)
+    {
+
+        $this->db->select('menuId');
+        $this->db->where('menuType',$menuType);
+        $this->db->where('orderNumber',$orderNumber);
+        $this->db->where('menuId !=',$id);
+
+        $query = $this->db->get('ictmmenu');
+        return $query->result();
+
+    }
 
 
     /*---- get all menu for mangeMenuView -----*/

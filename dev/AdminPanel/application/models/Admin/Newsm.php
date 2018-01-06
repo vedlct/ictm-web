@@ -6,7 +6,7 @@ class Newsm extends CI_Model
     /////////datatable//////////
     var $table = 'ictmnews';
 //    var $column_order = array(null,'registerInterestId','title','firstName','surName','mobile','appointmentDate','course','email','inserDate'); //set column field database for datatable orderable
-    var $column_order = array(null,'newsTitle','newsDate',null,null,null,null,null); //set column field database for datatable orderable
+    var $column_order = array('newsId','newsTitle','newsDate','newsType','newsStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
     var $column_search = array('newsTitle','newsDate'); //set column field database for datatable searchable
     var $order = array('newsId' => 'desc'); // default order
 

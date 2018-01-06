@@ -267,6 +267,35 @@ class Menu extends CI_Controller {
 
     }
 
+    public function menuOrderCheckFormeditMenu() // validation check for menu title from edit menu
+    {
+        $orderNumber = $this->input->post("orderNumber");
+        $menuType = $this->input->post("menuType");
+        $id=$this->uri->segment(4);
+
+
+
+        try
+        {
+            $this->data['MenuOrder'] = $this->Menum->menuOrderCheckFormeditMenu($id,$menuType,$orderNumber);
+
+            if (empty($this->data['MenuOrder'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('menuOrderCheckFormeditMenu', 'Menu Order Number Allready Existed For this Menu Type');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('menuOrderCheckFormeditMenu', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+    }
+
     public function menuTitleCheckFormEditMenu() // validation check for menu title from edit menu
     {
         $menuTitle = $this->input->post("menuTitle");

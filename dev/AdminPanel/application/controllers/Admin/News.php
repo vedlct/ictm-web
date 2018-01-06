@@ -27,13 +27,13 @@ class News extends CI_Controller
             $row[] = $no;
             $row[] = $news->newsTitle;
             $row[] = $news->newsDate;
-//            $row[] = $customers->surName;
             $row[] = $news->newsType;
             $row[] = $news->newsStatus;
             $row[] = $news->insertedBy;
             $row[] = $news->lastModifiedBy;
             $row[] = $news->lastModifiedDate;
-            $row[] = '<input type="checkbox">Yes';
+            $row[] = '<input type="checkbox" data-panel-id="'. $news->newsId .'" onclick="'.selectHome(this).'" if '.($news->homeStatus == SELECT_APPROVE[0]).'echo \'checked="checked"\';
+                                                       id="appearInHome" name="appearInHome">Yes';
             $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$news->newsId.'"><i class="icon_pencil-edit"></i></a>
             <a class="btn " data-panel-id="'.$news->newsId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $news->newsId.'"><i class="icon_trash"></i></a>';
 
