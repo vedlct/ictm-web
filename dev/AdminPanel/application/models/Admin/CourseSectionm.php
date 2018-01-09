@@ -108,5 +108,28 @@ class CourseSectionm extends CI_Model
         return $query1->result();
     }
 
+    public function checkCourseSectionOrderNumberUniqueFromCreateCourseSection($courseId,$ordernumber)
+    {
+
+        $this->db->select('courseId');
+        $this->db->where('courseId',$courseId);
+
+        $this->db->where('orderNumber', $ordernumber);
+
+        $query1 = $this->db->get('ictmcoursesection');
+        return $query1->result();
+    }
+
+    public function chkOrderNumber($courseId,$number)
+    {
+
+        $this->db->select('courseId');
+        $this->db->where('courseId',$courseId);
+
+        $this->db->where('orderNumber', $number);
+        $query1 = $this->db->get('ictmcoursesection');
+        return $query1->result();
+    }
+
 
 }

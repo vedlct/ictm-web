@@ -85,6 +85,25 @@ class CourseSection extends CI_Controller
         }
 
     }
+
+    //this is the ajax controller . this will show the order Check for create course
+    public function chkorderForCreateCourseSection($courseId, $number){
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->data['chkOrder'] = $this->CourseSectionm->chkOrderNumber($courseId,$number);
+            if (empty($this->data['chkOrder'])){
+                echo "1";
+            }else{
+                echo "2";
+            }
+
+        } else{
+            redirect('Admin/Login');
+        }
+
+    }
+
     //this will show Edit course section
     public  function showEditCourseSec($id){
 
@@ -180,6 +199,42 @@ class CourseSection extends CI_Controller
                 return false;
             }
         }
+
+    public function orderNumberFromCreateCourseSection(){
+
+        $ordernumber= $this->input->post("ordernumber");
+        $texbox= $this->input->post("textbox");
+        $courseId= $this->input->post("coursetitle");
+
+        for ($i = 0; $i < count($ordernumber); $i++) {
+
+            try {
+                $this->data['courseordernumber'] = $this->CourseSectionm->checkCourseSectionOrderNumberUniqueFromCreateCourseSection($courseId, $ordernumber[$i]);
+
+                if (empty($this->data['courseordernumber'])) {
+
+                    //return true;
+                } else {
+                    //$this->form_validation->set_message('orderNumberFromCreateCourseSection', 'Order Number Allready Existed for this Course ');
+                    //return false;
+                    $error[$i]= 'course Section Title '.($i + 1) . ' orderNumber Already given in the Course !!';
+                }
+            } catch (Exception $e) {
+
+//                $this->form_validation->set_message('orderNumberFromCreateCourseSection', 'Some thing Went Wrong !! Please Try Again!!');
+//                return false;
+                $error[$i]='Some thing Went Wrong !! Please Try Again!!';
+            }
+
+            if(!empty($error))
+            {
+
+                $json_out = json_encode(array_values($error));
+                $this->form_validation->set_message('orderNumberFromCreateCourseSection',$json_out);
+                return false;
+            }
+        }
+    }
 
 
 }
