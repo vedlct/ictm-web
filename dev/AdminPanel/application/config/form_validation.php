@@ -559,7 +559,7 @@ $config = array (
         array(
             'field' => 'ordernumber[]',
             'label' => 'Order Number ',
-            'rules' => 'required|max_length[11]|xss_clean|is_unique[ictmcoursesection.orderNumber]|htmlspecialchars',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'status[]',
