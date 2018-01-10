@@ -50,19 +50,6 @@
 
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
-<!--                                    <tr>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="3%" > No</th>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="5%" > Title</th>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Name</th>-->
-<!---->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date</th>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Course</th>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Email</th>-->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Apply Date</th>-->
-<!---->
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>-->
-<!--                                    </tr>-->
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> No</th>
 
