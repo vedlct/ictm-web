@@ -90,6 +90,7 @@ class Coursem extends CI_Model
                 if ($this->upload->do_upload('image')) {
                     // if something need after image upload
                     thumb('images/courseImages/'.$courseId.'.'.pathinfo($image, PATHINFO_EXTENSION),'80','80');
+
                 } else {
 
                     $error = array('error' => $this->upload->display_errors());
