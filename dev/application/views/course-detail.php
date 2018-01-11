@@ -45,24 +45,19 @@
                                         <div class="content-content">
 
 
+
                                             <?php foreach ($coursedetail as $cd) {
-
                                                 if($cd->courseImage != null ){?>
-                                                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"><br><br>
-
-                                            <?php }}?>
-
-
-
-
+                                                    <img style="height: 200px;width: 800px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"><br><br>
+                                                <?php }}?>
                                             <ul style="margin-left:0px" class="nav nav-tabs">
                                                 <?php foreach ($courseSectiondetail as $csd){ ?>
                                                     <li class=""><a href="<?php echo "#".$csd->courseSectionId ?>" data-toggle="tab"><?php echo $csd->courseSectionTitle ?></a></li>
                                                 <?php } ?>
                                                 <?php foreach ($coursedetail as $cd) { ?>
 
-                                                    <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>
-                                                    <!--                            <li><a href="--><?php //echo base_url('public/pdf-files/Application_Form.pdf')?><!--">APPLY NOW</a></li>-->
+                                                    <!--  <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>-->
+                                                    <li><a href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">APPLY NOW</a></li>
 
 
 
@@ -164,13 +159,14 @@
                         </div><br>
 
 
+
+
                         <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
 
                             <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
                         </div>
 
-
-                            <!-- /widget-posts -->
+                        <!-- /widget-posts -->
 
                     </div><!-- sidebar -->
                 </div><!-- /col-md-3 -->
@@ -191,7 +187,7 @@
         "use strict";
         var widgetScript = d.createElement('script');
         widgetScript.id = 'unistats-widget-script';
-        widgetScript.src = 'http://widget.unistats.ac.uk/js/unistats.widget.js';
+        widgetScript.src = 'https://widget.unistats.ac.uk/js/unistats.widget.js';
         var scriptTags = d.getElementsByTagName('script')[0];
         if (d.getElementById('unistats-widget-script')) { return; }
         scriptTags.parentNode.insertBefore(widgetScript, scriptTags);   }

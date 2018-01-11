@@ -8,6 +8,39 @@ class Menu extends CI_Controller {
         $this->load->model('Admin/Pagem');
         $this->load->library("pagination");
     }
+
+    /*---------datatable code --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Menum->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $menu) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $menu->menuName;
+            $row[] = $menu->orderNumber;
+            $row[] = $menu->menuType;
+            $row[] = $menu->submenu;
+            $row[] = $menu->pageTitle;
+            $row[] = $menu->menuStatus;
+            $row[] = $menu->insertedBy;
+            $row[] = $menu->lastModifiedBy;
+            $row[] = $menu->lastModifiedDate;
+            $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$menu->menuId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$menu->menuId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $menu->menuId.'"><i class="icon_trash"></i></a>';
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Menum->count_all(),
+            "recordsFiltered" => $this->Menum->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
     /*---------for creating new Menu --------------------- */
     public function newMenu()    // for new menu view
     {
@@ -84,19 +117,19 @@ class Menu extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Menu/manageMenu";
-            $config["total_rows"] = $this->Menum->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Menu/manageMenu";
+//            $config["total_rows"] = $this->Menum->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
-                $this->load->view('Admin/manageMenu',$this->data);
+                $this->load->view('Admin/manageMenu1');
 
         }
         else{
@@ -237,6 +270,63 @@ class Menu extends CI_Controller {
             $this->form_validation->set_message('menuTitleCheck', 'Some thing Went Wrong !! Please Try Again!!');
             return false;
         }
+    }
+
+    public function menuOrderCheckFormNewMenu() // validation check for menu title from edit menu
+    {
+        $orderNumber = $this->input->post("orderNumber");
+        $menuType = $this->input->post("menuType");
+
+
+
+        try
+        {
+            $this->data['MenuOrder'] = $this->Menum->menuOrderCheckFormNewMenu($menuType,$orderNumber);
+
+            if (empty($this->data['MenuOrder'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('menuOrderCheckFormNewMenu', 'Menu Order Number Allready Existed For this Menu Type');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('menuOrderCheckFormNewMenu', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
+    }
+
+    public function menuOrderCheckFormeditMenu() // validation check for menu title from edit menu
+    {
+        $orderNumber = $this->input->post("orderNumber");
+        $menuType = $this->input->post("menuType");
+        $id=$this->uri->segment(4);
+
+
+
+        try
+        {
+            $this->data['MenuOrder'] = $this->Menum->menuOrderCheckFormeditMenu($id,$menuType,$orderNumber);
+
+            if (empty($this->data['MenuOrder'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('menuOrderCheckFormeditMenu', 'Menu Order Number Allready Existed For this Menu Type');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('menuOrderCheckFormeditMenu', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+
     }
 
     public function menuTitleCheckFormEditMenu() // validation check for menu title from edit menu
