@@ -7,13 +7,55 @@ class Course extends CI_Controller
         parent::__construct();
 
         $this->load->model('Admin/Coursem');
+        $this->load->model('Admin/Departmentm');
     }
 
     public function index()
     {
 
     }
+    /*---------datatable code --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Coursem->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $course) {
 
+          //  $dptname= getDepartmentname($course->departmentId);
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $course->courseTitle;
+            $row[] = $course->departmentName;
+            $row[] = $course->courseCodeIcon;
+            $row[] = $course->awardingTitle;
+            $row[] = $course->courseStatus;
+            $row[] = $course->insertedBy;
+            $row[] = $course->lastModifiedBy;
+            $row[] = $course->lastModifiedDate;
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Course/showEditCourse/'.$course->courseId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$course->courseId.'"onclick=\'return confirm("Are you sure to Delete This Course?")\' href="'.base_url().'Admin/Course/deleteCourse/'. $course->courseId.'"><i class="icon_trash"></i></a>';
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Coursem->count_all(),
+            "recordsFiltered" => $this->Coursem->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
+    /* end datatable*/
+
+    public function getDepartmentname($x){
+        $this->data['departmentName'] = $this->Departmentm->gellDepartmentNameByid($x);
+        foreach ($this->data['departmentName'] as $dpt){
+            return $dpt->departmentName;
+        }
+    }
     /* this will show create course page*/
     public function createCourse()
     {
@@ -68,8 +110,8 @@ class Course extends CI_Controller
     {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-            $this->data['coursedata'] = $this->Coursem->getCourseData();
-            $this->load->view('Admin/manageCourse', $this->data);
+//            $this->data['coursedata'] = $this->Coursem->getCourseData();
+            $this->load->view('Admin/manageCourse1');
         } else {
             redirect('Admin/Login');
         }

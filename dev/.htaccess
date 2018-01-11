@@ -1,3 +1,4 @@
+
 RewriteEngine on
 
 RewriteCond $1 !^(index\.php|public|\.txt)
@@ -7,10 +8,20 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 RewriteRule ^(.*)$ index.php?$1
+
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{REQUEST_URI} ^system.*
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+
 # Leverage Browser Caching
 <IfModule mod_expires.c>
   ExpiresActive On
-
   ExpiresByType text/css "access 1 month"
   ExpiresByType text/html "access 1 month"
   ExpiresByType application/pdf "access 1 month"
@@ -19,10 +30,13 @@ RewriteRule ^(.*)$ index.php?$1
   ExpiresDefault "access 1 month"
 </IfModule>
 
+
+
 # accept vary encodeing heading
 
-<IfModule mod_headers.c>
-  <FilesMatch "\.(js|css|xml|gz)$">
-    Header append Vary: Accept-Encoding
-  </FilesMatch>
-</IfModule>
+#<IfModule mod_headers.c>
+#  <FilesMatch "\.(js|css|xml|gz)$">
+#    Header append Vary: Accept-Encoding
+#  </FilesMatch>
+#</IfModule>
+#

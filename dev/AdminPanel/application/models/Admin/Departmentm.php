@@ -103,6 +103,15 @@ class Departmentm extends CI_Model
         return $query->result();
 
     }
+    public function gellDepartmentNameByid($x){
+
+        $this->db->select('departmentId,departmentName');
+        $this->db->from('ictmdepartment');
+        $this->db->where('departmentId', $x);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
 
     // for edit Department by id from database
     public function editDepartmentbyId($departmentId)

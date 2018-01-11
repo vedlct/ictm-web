@@ -66,7 +66,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" ><span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Email </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Position </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)">Employee Type </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Employee Type </th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
