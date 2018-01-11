@@ -33,10 +33,21 @@ class Faculty extends CI_Controller
             $row[] = $faculty->facultyPosition;
             $row[] = $faculty->facultyStatus;
             $row[] = $faculty->insertedBy;
-            $row[] = $faculty->lastModifiedBy;
-            $row[] = $faculty->lastModifiedDate;
-            $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$faculty->facultyId.'"><i class="icon_pencil-edit"></i></a>
-            <a class="btn " data-panel-id="'.$faculty->facultyId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $faculty->facultyId.'"><i class="icon_trash"></i></a>';
+            if ($faculty->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $faculty->lastModifiedBy;
+            }
+            if ($faculty->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $faculty->lastModifiedDate;
+            }
+
+
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Faculty/editFacultyView/'.$faculty->facultyId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn" data-panel-id="'.$faculty->facultyId .'"onclick=\'selectid(this)\'><i class="icon_trash"></i></a>';
+
             $data[] = $row;
         }
         $output = array(

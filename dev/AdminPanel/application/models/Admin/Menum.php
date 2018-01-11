@@ -175,6 +175,7 @@ class Menum extends CI_Model
         $menuType = $this->input->post("menuType");
         $parentId = $this->input->post("parentId");
         $pageId = $this->input->post("pageId");
+        $orderNumber = $this->input->post("orderNumber");
         $menuStatus = $this->input->post("menuStatus");
 
         if ($parentId == "")
@@ -193,6 +194,7 @@ class Menum extends CI_Model
             'parentId' => $parentId,
             'pageId' => $pageId,
             'menuStatus' => $menuStatus,
+            'orderNumber' => $orderNumber,
             'lastModifiedDate'=>date("Y-m-d H:i:s"),
             'lastModifiedBy'=>$this->session->userdata('userEmail')
 
