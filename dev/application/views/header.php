@@ -15,36 +15,40 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+
+
     <!-- Bootstrap  -->
-<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
-<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
+    <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
+
+    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/all.css" rel="stylesheet"/>
 
 
 
-    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrap-theme.css" rel="stylesheet">
+<!--    <link href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrap-theme.css" rel="stylesheet">-->
     <!--external css-->
     <!-- font icon -->
-<!--    <link href="--><?php //echo base_url()?><!--public/stylesheets/font-awesome.css" rel="stylesheet" />-->
+    <!--    <link href="--><?php //echo base_url()?><!--public/stylesheets/font-awesome.css" rel="stylesheet" />-->
 
     <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/style.css">
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/style.css">-->
 
     <!-- Responsive -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
-    
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/responsive.css">-->
+
 
     <!-- Animation Style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/animate.css">-->
 
     <!-- Owl Carousel -->
-<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.carousel.min.css">-->
-<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.theme.default.min.css">-->
+    <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.carousel.min.css">-->
+    <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.theme.default.min.css">-->
 
     <!-- for Application Form -->
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/application-form-style.css">
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/application-form-style.css">-->
 
-    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/elegant-icons-style.css" rel="stylesheet" />
+<!--    <link href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/elegant-icons-style.css" rel="stylesheet" />-->
 
 
 

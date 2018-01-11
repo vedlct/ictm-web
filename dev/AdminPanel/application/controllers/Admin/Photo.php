@@ -86,13 +86,71 @@ class Photo extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->data["photo"] = $this->Photom->getAllforManagePhoto($id);
-            $this->load->view('Admin/showManagePhoto', $this->data);                        //view manage Photo
-            //print_r($this->data["photo"]);
+//            $this->data["photo"] = $this->Photom->getAllforManagePhoto($id);
+            $this->data["id"] = $id;
+
+            $this->load->view('Admin/showManagePhoto1',$this->data);                        //view manage Photo
+
 
         } else{
             redirect('Admin/Login');
         }
+
+    }
+
+    public function ajax_list($id)
+    {
+        $list = $this->Photom->get_datatables($id);
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $photo) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+
+            $row[] = '<img style="height: 80px;width: 80px" src = "'. base_url().'images/photoAlbum/'.$photo->albumTitle.'/'. $photo->photoName.'">';
+            $row[] = $photo->photoStatus;
+
+            $row[] = $photo->insertedBy;
+            if ($photo->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $photo->lastModifiedBy;
+            }
+            if ($photo->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $photo->lastModifiedDate;
+            }
+
+            if ($photo->photoStatus == STATUS[0])
+            {
+                if ($photo->albumCover == SELECT_APPROVE[0]){
+                    $row[] = '<input type="checkbox" data-panel-id="'. $photo->photoId .'" onclick="albumCover(this)" checked="checked"
+                                   id="albumCovers" value="'. $photo->albumId.'" name="appearInHome">Yes';
+                }else{
+                    $row[] = '<input type="checkbox" data-panel-id="'. $photo->photoId .'" onclick="albumCover(this)"
+                                   id="albumCovers" value="'. $photo->albumId.'" name="appearInHome">Yes';
+                }
+
+            }else{
+                $row[] = ' Status Should be Active First !! ';
+            }
+
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Photo/editPhotoView/'. $photo->photoId.'"><i class="icon_pencil-edit"></i></a>
+                            <a class="btn" data-panel-id="'. $photo->photoId.'"  onclick="selectid(this)"><i class="icon_trash"></i></a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Photom->count_all($id),
+            "recordsFiltered" => $this->Photom->count_filtered($id),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
 
     }
 
