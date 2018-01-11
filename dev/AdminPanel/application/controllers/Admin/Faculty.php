@@ -14,6 +14,40 @@ class Faculty extends CI_Controller
     {
 
     }
+
+    /*---------datatable code --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Facultym->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $faculty) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $faculty->facultyTitle;
+            $row[] = $faculty->facultyFirstName;
+            $row[] = $faculty->facultyLastName;
+            $row[] = $faculty->facultyEmail;
+            $row[] = $faculty->facultyEmpType;
+            $row[] = $faculty->facultyPosition;
+            $row[] = $faculty->facultyStatus;
+            $row[] = $faculty->insertedBy;
+            $row[] = $faculty->lastModifiedBy;
+            $row[] = $faculty->lastModifiedDate;
+            $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$faculty->facultyId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$faculty->facultyId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $faculty->facultyId.'"><i class="icon_trash"></i></a>';
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Facultym->count_all(),
+            "recordsFiltered" => $this->Facultym->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
     /*---------for creating new Faculty --------------------- */
 
     public function newFaculty() // for new Faculty view
@@ -70,20 +104,20 @@ class Faculty extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Faculty/manageFaculty";
-            $config["total_rows"] = $this->Facultym->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["faculty"] = $this->Facultym->getAllforManageFaculty($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Faculty/manageFaculty";
+//            $config["total_rows"] = $this->Facultym->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["faculty"] = $this->Facultym->getAllforManageFaculty($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
 
-            $this->load->view('Admin/manageFaculty',$this->data);
+            $this->load->view('Admin/manageFaculty1');
         }
         else{
             redirect('Admin/Login');
