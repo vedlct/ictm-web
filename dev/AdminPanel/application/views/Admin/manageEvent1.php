@@ -20,10 +20,10 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage News</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Manage Event</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
-                        <li><i class="fa fa-table"></i>Manage News</li>
+                        <li><i class="fa fa-table"></i>Manage Event</li>
 
                     </ol>
                 </div>
@@ -51,17 +51,16 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> No</th>
-
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> News Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> News Date</th>
-
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left" > News Type</th>
-
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> Event Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Start</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event End</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Location</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted Bye</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date(d-m-Y)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Appear In Home</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
                                     </tr>
@@ -115,17 +114,22 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo base_url('Admin/News/ajax_list')?>",
+                "url": "<?php echo base_url('Admin/Event/ajax_list')?>",
                 "type": "POST"
             },
 
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [ 0,3,4,5,6,7,8,9], //first column / numbering column
+                    "targets": [ 0,4,5,6,7,8,9,10,11], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
+
+            //for change search name
+            "oLanguage": {
+                "sSearch": "<span>Search By Event Title:</span> " //search
+            }
 
 
         });
@@ -137,18 +141,18 @@
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin/News/appearInHomePage/")?>'+btn,
+                url:'<?php echo base_url("Admin/Event/appearInHomePage/")?>'+btn,
                 data:{},
                 cache: false,
                 success:function(data) {
                     if (data=='1'){
-                        alert('News Added Successfully To Home Page');
+                        alert('Event Added Successfully To Home Page');
                     }
                     else if(data=='0'){
-                        alert('News Removed Successfully From Home Page');
+                        alert('Event Removed Successfully From Home Page');
                     }
                     else if(data=='3'){
-                        alert('Allready 3 News in the Home Page');
+                        alert('Allready 3 Event in  Home Page');
                     }
                     location.reload();
 

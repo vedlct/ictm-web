@@ -51,18 +51,19 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 05%"> No</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> News Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> News Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 05%"> Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> First Name</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left" > News Type</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Name</th>
 
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Email</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Position</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Employee Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Appear In Home</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date(d-m-Y)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
                                     </tr>
                                     </thead>
@@ -115,7 +116,7 @@
 
             // Load data for the table's content from an Ajax source
             "ajax": {
-                "url": "<?php echo base_url('Admin/News/ajax_list')?>",
+                "url": "<?php echo base_url('Admin/Faculty/ajax_list')?>",
                 "type": "POST"
             },
 
