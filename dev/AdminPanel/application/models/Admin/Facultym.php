@@ -6,8 +6,8 @@ class Facultym extends CI_Model
     /////////datatable//////////
     var $table = 'ictmfaculty';
     var $column_order = array('facultyId','facultyTitle','facultyEmail','facultyFirstName','facultyLastName','facultyPosition','facultyEmpType','facultyStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
-    var $column_search = array('facultyTitle','facultyFirstName','facultyLastName' ); //set column field database for datatable searchable
-    var $order = array('facultyId' => 'desc'); // default order
+    var $column_search = array('facultyFirstName','facultyLastName'); //set column field database for datatable searchable
+    var $order = array('facultyId' =>'desc'); // default order
 
     private function _get_datatables_query()
     {
