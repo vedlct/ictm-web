@@ -6,3 +6,8 @@
 <script src="<?php echo base_url()?>public/js/jquery.nicescroll.js" type="text/javascript"></script><!--custome script for all page-->
 <script src="<?php echo base_url()?>public/js/scripts.js"></script>
 
+<!-- data table -->
+
+<script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
+<script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
+

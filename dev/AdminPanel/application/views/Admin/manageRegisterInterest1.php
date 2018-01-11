@@ -3,7 +3,7 @@
 <head>
     <?php include('head.php') ?>
 <!--    <link href="--><?php //echo base_url('public/css/bootstrap/css/bootstrap.min.css')?><!--" rel="stylesheet">-->
-    <link href="<?php echo base_url('public/css/datatables/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">
+
 </head>
 
 <body>
@@ -95,8 +95,7 @@
 </body>
 </html>
 
-<script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
-<script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
+
 
 <script type="text/javascript">
 

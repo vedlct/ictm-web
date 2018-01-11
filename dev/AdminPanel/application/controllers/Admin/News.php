@@ -23,7 +23,6 @@ class News extends CI_Controller
             $row[] = $no;
             $row[] = $news->newsTitle;
             $row[] = $news->newsDate;
-//            $row[] = $customers->surName;
             $row[] = $news->newsType;
             $row[] = $news->newsStatus;
             $row[] = $news->insertedBy;
