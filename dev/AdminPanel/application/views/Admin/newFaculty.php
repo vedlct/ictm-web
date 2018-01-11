@@ -187,7 +187,7 @@
                                                 $coursename= array();
                                                 $courseid=array();
                                                 foreach ($course as $course){?>
-                                                    <option value="<?php echo $course->courseId?>" <?php echo set_select('facultyCourses[]',  $course->courseId, False); ?>><?php echo $course->courseTitle?></option>
+                                                    <option value="<?php echo $course->courseId?>" <?php echo set_select('facultyCourses[]', $course->courseId, FALSE);?>><?php echo $course->courseTitle?></option>
                                                     <?php
                                                     array_push($coursename,$course->courseTitle );
                                                     array_push($courseid,$course->courseId );
@@ -299,7 +299,7 @@
             newTextBoxDiv.after().html('<label class="control-label col-lg-2">Faculty Course #'+ counter + ' : </label>' +
                 '<div class="form-group col-lg-4">'+'<select class="form-control"  name="facultyCourses[] '+ counter +
                 '" id="facultyCourses' + counter +'" data-panel-id="'+ counter+'"onchange="selectid(this)"'+'" value="" required>'+'<option selected value="" >'+'<?php echo SELECT_COURSE ?>'+'</option>'+
-                '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>" ><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
+                '<?php for($i=0;$i<count($coursename);$i++){ ?>'+'<option value="<?php echo $courseid[$i] ?>"><?php echo $coursename[$i] ?>'+'</option>'+'<?php }?>'+
                 '</select>'+'</div>' +'<br>'
             );
             newTextBoxDiv.appendTo("#CourseFiled");
@@ -337,6 +337,35 @@
 </script>
 <script>
     function submitform() {
+
+        var image =document.getElementById("facultyImage").value;
+
+        if(image!='')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("facultyImage");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
         var facultyIntroLength = CKEDITOR.instances['facultyIntro'].getData().replace(/<[^>]*>/gi, '').length;
         var phone=document.getElementById("facultyPhone").value;
         var email=document.getElementById("facultyEmail").value;

@@ -40,7 +40,9 @@ class Email extends CI_Controller {
 //        return true;
 //
 //    }
-    public function FacultyEmail(){
+    public function FacultyEmail($facultyid){
+
+
         $name= $this->input->post('name');
         $iam= $this->input->post('iam');
         $email= $this->input->post('email');
@@ -48,11 +50,13 @@ class Email extends CI_Controller {
         $comment= $this->input->post('comment');
         $facultyEmail= $this->input->post('facultyEmail');
 
+
+
         $this->load->library('recaptcha');
         $recaptcha = $this->input->post('g-recaptcha-response');
         $response = $this->recaptcha->verifyResponse($recaptcha);
         if (isset($response['success']) and $response['success'] === true) {
-            //extract($_POST);
+
             $admin_email = "md.sakibrahman@gmail.com";
             $subject = $this->input->post('subject');
             // $message = "name: ".$this->input->post('name')."<br>".$this->input->post('comment');
@@ -65,12 +69,16 @@ class Email extends CI_Controller {
             $message .= "$comment \r\n\n";
 
             mail($facultyEmail, $subject, $message, $email);
+            redirect('Faculty-details/'.$facultyid);
 
-        }else{
-            echo "<script>alert('Please select the recaptcha')</script>";
         }
+        else{
+            echo "<script>alert('Please select the recaptcha');
+//                    window.location('Faculty-details/'.$facultyid);
+                </script>";
 
-        Redirect('Home');
+
+        }
 
     }
 

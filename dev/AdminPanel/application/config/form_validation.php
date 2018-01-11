@@ -737,13 +737,13 @@ $config = array (
         array(
             'field' => 'college_tel1',
             'label' => 'College Telephone 1',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars',
+            'rules' => 'required|regex_match[/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/]|max_length[20]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'college_tel2',
             'label' => 'College Telephone 2',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars',
+            'rules' => 'regex_match[/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/]|max_length[20]|xss_clean|htmlspecialchars',
 
         ),
         array(

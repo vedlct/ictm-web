@@ -44,10 +44,15 @@
                                     <div class="course-detail">
                                         <div class="content-content">
 
-                                            <div style="margin-bottom: 20px"  data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/responsive/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
 
-                                                <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/responsive/small/en-GB/<?php echo $studyMode?>"  width="100%" ></iframe>
-                                            </div>
+                                            <?php foreach ($coursedetail as $cd) {
+
+                                                if($cd->courseImage != null ){?>
+                                                <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"><br><br>
+
+                                            <?php }}?>
+
+
 
 
                                             <ul style="margin-left:0px" class="nav nav-tabs">
@@ -159,11 +164,13 @@
                         </div><br>
 
 
+                        <div data-url="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" data-frame-attribs="scrolling='no' border='0' frameborder='0'">
+
+                            <iframe src="//widget.unistats.ac.uk/Widget/<?php echo $x; ?>/<?php echo $y; ?>/Vertical/small/en-GB/<?php echo $studyMode?>" height="500" width="200"></iframe>
+                        </div>
 
 
-
-
-                        <!-- /widget-posts -->
+                            <!-- /widget-posts -->
 
                     </div><!-- sidebar -->
                 </div><!-- /col-md-3 -->

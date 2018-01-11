@@ -101,17 +101,17 @@
                 </ul>
             </li>
 
-<!--            <li class="sub-menu">-->
-<!--                <a href="javascript:;" class="">-->
-<!--                    <i class="icon_group"></i>-->
-<!--                    <span>Users</span>-->
-<!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
-<!--                </a>-->
-<!--                <ul class="sub">-->
-<!--                    <li><a class="" href="#">New User Roles</a></li>-->
-<!--                    <li><a class="" href="#">Manage User Roles</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
+            <!--            <li class="sub-menu">-->
+            <!--                <a href="javascript:;" class="">-->
+            <!--                    <i class="icon_group"></i>-->
+            <!--                    <span>Users</span>-->
+            <!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
+            <!--                </a>-->
+            <!--                <ul class="sub">-->
+            <!--                    <li><a class="" href="#">New User Roles</a></li>-->
+            <!--                    <li><a class="" href="#">Manage User Roles</a></li>-->
+            <!--                </ul>-->
+            <!--            </li>-->
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_clock"></i>
@@ -188,7 +188,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="<?php echo base_url()?>Admin/RegisterInterest/viewRI" class="">
+                <a href="<?php echo base_url()?>Admin/RegisterInterest1/viewRI" class="">
                     <i class="icon_info"></i>
                     <span>Register Interest</span>
 
@@ -212,7 +212,6 @@
 
 <script>
     jQuery(document).ready(function() {
-
         var loc = window.location.href;
         jQuery(".sidebar-menu li").removeClass('active');
         jQuery(".sidebar-menu li a").each(function() {
@@ -260,7 +259,6 @@
                         break;
                     }
                 }
-
             }
             if (shouldSwitch) {
                 /*If a switch has been marked, make the switch
@@ -280,8 +278,7 @@
         }
         var up = n+"up";
         var down = n+"down";
-        alert(up);
-        if (flag == true) {
+        if (flag == true){
             document.getElementById(up).style.display = "block";
             document.getElementById(down).style.display = "none";
             flag = false;

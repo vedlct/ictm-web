@@ -63,7 +63,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp;<strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]">
+                                            <input class="form-control" type="file" id="image[0]" name="image[]">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage1;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage1;?> </span></a>
 
                                         </div>
@@ -96,7 +96,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" >
+                                            <input class="form-control" type="file" id="image[1]"name="image[]" >
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage2;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage2;?> </span></a>
 
                                         </div>
@@ -129,7 +129,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]">
+                                            <input class="form-control" type="file" id="image[2]" name="image[]">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage3;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage3;?> </span></a>
                                         </div>
                                     </div>
@@ -161,7 +161,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]">
+                                            <input class="form-control" type="file" id="image[3]"name="image[]">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $verticalBardata->verticalBarImage4;?>" target="_blank"><span> <?php echo $verticalBardata->verticalBarImage4;?> </span></a>
 
                                         </div>
@@ -290,12 +290,38 @@
             return false;
         }
 
-        for (var i=0;i<Title.length;i++)
+        for (var i=0;i<Image.length;i++)
         {
-            if (Image[i].value == '')
+//            if (Image[i].value == '')
+//            {
+//                alert( 'Please Select a Image in Image field Image'+(i+1));
+//                return false;
+//            }
+            var imagess =document.getElementById("image["+i+"]").value;
+            if(imagess!='')
             {
-                alert( 'Please Select a Image in Image field Image'+(i+1));
-                return false;
+
+                var ext = imagess.substring(imagess.lastIndexOf('.') + 1);
+                //alert(ext);
+                if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+                {
+
+                }
+                else {
+                    alert("Upload images of correct format!! in image field"+(i+1));
+                    return false;
+                }
+
+                var img = document.getElementById("image["+i+"]");
+                //alert((img.files[0].size/1024));
+                if((img.files[0].size/1024) >  4096)  // validation according to file size
+                {
+                    //document.getElementById("imageerror").innerHTML="Image size too big";
+                    alert('Image size too big in image'+(i+1));
+                    return false;
+                }
+
+                //return true;
             }
         }
     }

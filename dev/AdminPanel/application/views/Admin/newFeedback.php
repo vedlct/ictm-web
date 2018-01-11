@@ -151,6 +151,34 @@
 
     function formvalidate() {
 
+        var image =document.getElementById("feedbackByImage").value;
+
+        if(image!='')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("feedbackByImage");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
         var feedbackByName =  document.getElementById("feedbackByName").value;
         var feedbackByProfession =  document.getElementById("feedbackByProfession").value;
 

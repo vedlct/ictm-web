@@ -71,7 +71,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]"required>
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[0]"required>
 
                                         </div>
 
@@ -101,7 +101,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[1]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 2</label>
@@ -133,7 +133,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[2]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 3</label>
@@ -164,7 +164,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]" >
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[3]" >
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 4</label>
@@ -195,7 +195,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[4]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 5</label>
@@ -226,7 +226,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[5]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 6</label>
@@ -257,7 +257,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[6]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 7</label>
@@ -288,7 +288,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[7]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 8</label>
@@ -319,7 +319,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[8]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 9</label>
@@ -350,7 +350,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[]">
+                                            <input class="form-control" type="file" name="photoImage[]" id="photoImage[9]">
                                         </div>
 
                                         <label class="control-label col-sm-2" for="photoStatus">Status 10</label>
@@ -411,6 +411,7 @@
 <script>
     function formvalidate() {
 
+
         var mutliPhoto = document.newPhoto.elements["photoImage[]"];
         var mutliPhotoDetails = document.newPhoto.elements["photoDetails[]"];
         var mutliphotoStatus = document.newPhoto.elements["photoStatus[]"];
@@ -419,6 +420,7 @@
             alert('Please Select a Image in Image field' + 2);
             return false;
         }
+
         if (mutliPhoto[3].value != '' && mutliPhoto[2].value == '' ) {
             alert('Please Select a Image in Image field' + 3);
             return false;
@@ -460,5 +462,37 @@
                 return false;
             }
         }
+        for (i=0;i<mutliPhoto.length;i++)
+        {
+
+            var image =document.getElementById("photoImage["+i+"]").value;
+
+            if(image!='')
+            {
+
+                var ext = image.substring(image.lastIndexOf('.') + 1);
+                //alert(ext);
+                if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+                {
+
+                }
+                else {
+                    alert("Upload images of correct format!! in image field"+(i+1));
+                    return false;
+                }
+
+                var img = document.getElementById("photoImage["+i+"]");
+                //alert((img.files[0].size/1024));
+                if((img.files[0].size/1024) >  4096)  // validation according to file size
+                {
+                    //document.getElementById("imageerror").innerHTML="Image size too big";
+                    alert('Image size too big in image'+(i+1));
+                    return false;
+                }
+
+                //return true;
+            }
+        }
+
     }
 </script>

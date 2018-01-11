@@ -88,6 +88,7 @@ class Photo extends CI_Controller
 
             $this->data["photo"] = $this->Photom->getAllforManagePhoto($id);
             $this->load->view('Admin/showManagePhoto', $this->data);                        //view manage Photo
+            //print_r($this->data["photo"]);
 
         } else{
             redirect('Admin/Login');
