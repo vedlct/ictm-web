@@ -153,6 +153,7 @@ class Menu extends CI_Controller {
 
                 $this->load->view('Admin/manageMenu1');
 
+
         }
         else{
             redirect('Admin/Login');

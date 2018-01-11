@@ -13,6 +13,10 @@ class Menum extends CI_Model
 
     private function _get_datatables_query()
     {
+        if($this->input->post('menuType'))
+        {
+            $this->db->where('m.menuType', $this->input->post('menuType'));
+        }
 
 
         $this->db->select($this->select);
@@ -79,6 +83,8 @@ class Menum extends CI_Model
         $this->db->from($this->table);
         return $this->db->count_all_results();
     }
+
+
     ///////////////////end of datatable/////////////////////////////
 
     /*----------- this creates a new Menu in database------------*/

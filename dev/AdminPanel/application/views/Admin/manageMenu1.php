@@ -43,11 +43,33 @@
                         <div id="panel" class="panel-body">
 
 
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" >Custom Filter : </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <form id="form-filter" class="form-horizontal">
+                                        <div class="form-group">
+                                            <label for="country" class="col-sm-2 control-label">Menu Type</label>
+                                            <div class="col-sm-4">
+                                                <select class="form-control m-bot15" name="menuType" id="menuType" required>
+                                                    <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
+                                                    <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                                        <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
+                                
+                                <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
 
-                                <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
@@ -112,7 +134,11 @@
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/Menu/ajax_list')?>",
-                "type": "POST"
+                "type": "POST",
+                "data": function ( data ) {
+                    data.menuType = $('#menuType').val();
+
+                }
             },
 
             //Set column definition initialisation properties.
@@ -131,6 +157,10 @@
             }
 
 
+
+        });
+        $('#menuType').change(function(){ //button filter event click
+            table.ajax.reload();  //just reload table
         });
 
     });
