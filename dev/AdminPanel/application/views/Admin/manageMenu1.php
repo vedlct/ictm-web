@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <?php include('head.php') ?>
+
 </head>
 
 <body>
@@ -124,13 +125,16 @@
 
             //for change search name
             "oLanguage": {
+
                 "sSearch": "<span>Search By Menu Title:</span> " //search
+
             }
 
 
         });
 
     });
+
 
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Menu?")) {
@@ -156,6 +160,7 @@
             window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
         }
     }
+
 
 
 </script>

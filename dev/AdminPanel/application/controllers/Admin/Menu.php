@@ -22,6 +22,7 @@ class Menu extends CI_Controller {
             $row[] = $menu->menuName;
             $row[] = $menu->orderNumber;
             $row[] = $menu->menuType;
+
             if ($menu->submenu == ""){
                 $row[] = NONE;
             }else{
@@ -50,6 +51,7 @@ class Menu extends CI_Controller {
 
             $row[] = '<a class="btn" href="'. base_url().'Admin/Menu/editMenuView/'. $menu->menuId.'"><i class="icon_pencil-edit"></i></a>
                                                         <a class="btn" data-panel-id="'. $menu->menuId .'"onclick="selectid(this)"><i class="icon_trash"></i></a>';
+
             $data[] = $row;
         }
         $output = array(

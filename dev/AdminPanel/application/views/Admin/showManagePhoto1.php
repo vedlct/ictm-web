@@ -74,7 +74,7 @@
         if (confirm("Are you sure ?")) {
             btn = $(x).data('panel-id');
             //var albumId=$(x).data(btn);
-            alert(btn);
+           // alert(btn);
             var albumId = document.getElementById("albumCovers").value;
             //alert(albumId);
             $.ajax({

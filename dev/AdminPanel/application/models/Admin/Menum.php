@@ -5,6 +5,7 @@ class Menum extends CI_Model
 {
     /////////datatable//////////
     var $table = 'ictmmenu m';
+
     var $select =array('m.menuId','m.menuName','m.menuType','m.menuStatus','m.orderNumber','m.insertedBy','m.lastModifiedBy','m.lastModifiedDate','menu.menuName as submenu','p.pageTitle');
     var $column_order = array(null,'m.menuName','m.orderNumber'); //set column field database for datatable orderable
     var $column_search = array('m.menuName' ); //set column field database for datatable searchable
@@ -13,10 +14,13 @@ class Menum extends CI_Model
     private function _get_datatables_query()
     {
 
+
         $this->db->select($this->select);
         $this->db->from($this->table);
         $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
         $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+
+
 
         $i = 0;
 
@@ -59,7 +63,6 @@ class Menum extends CI_Model
 
         if($_POST['length'] != -1)
             $this->db->limit($_POST['length'], $_POST['start']);
-
         $query = $this->db->get();
         return $query->result();
     }
