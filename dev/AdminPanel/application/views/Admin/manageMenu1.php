@@ -42,31 +42,41 @@
                         </header>
                         <div id="panel" class="panel-body">
 
+<!---->
+<!--                            <div class="panel panel-default">-->
+<!--                                <div class="panel-heading">-->
+<!--                                    <h3 class="panel-title" >Custom Filter : </h3>-->
+<!--                                </div>-->
+<!--                                <div class="panel-body">-->
+<!--                                    <form id="form-filter" class="form-horizontal">-->
+<!--                                        <div class="form-group">-->
+<!--                                            <label for="country" class="col-sm-2 control-label">Menu Type</label>-->
+<!--                                            <div class="col-sm-4">-->
+<!--                                                <select class="form-control m-bot15" name="menuType" id="menuType" required>-->
+<!--                                                    <option value="" selected>--><?php //echo SELECT_MENU_TYPE?><!--</option>-->
+<!--                                                    --><?php //for ($i=0;$i<count(MENU_TYPE);$i++){?>
+<!--                                                        <option value="--><?php //echo MENU_TYPE[$i]?><!--">--><?php //echo MENU_TYPE[$i]?><!--</option>-->
+<!--                                                    --><?php //} ?>
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!---->
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h3 class="panel-title" >Custom Filter : </h3>
-                                </div>
-                                <div class="panel-body">
-                                    <form id="form-filter" class="form-horizontal">
-                                        <div class="form-group">
-                                            <label for="country" class="col-sm-2 control-label">Menu Type</label>
-                                            <div class="col-sm-4">
-                                                <select class="form-control m-bot15" name="menuType" id="menuType" required>
-                                                    <option value="" selected><?php echo SELECT_MENU_TYPE?></option>
-                                                    <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                                        <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
-                                                    <?php } ?>
-                                                </select>
-                                            </div>
-                                        </div>
-
-                                    </form>
-                                </div>
-                            </div>
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
+                                <div class="form-group">
+                                    <label class="col-lg-2"> Select A Menu Type: </label>
+                                    <select class="form-control m-bot15 col-lg-6" name="menuType" id="menuType" required>
+                                        <option value="" selected><?php echo "All Menu"?></option>
+                                        <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                            <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
                                 
                                 <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
 
