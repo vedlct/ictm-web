@@ -3,7 +3,7 @@
 <head>
     <?php include('head.php') ?>
 <!--    <link href="--><?php //echo base_url('public/css/bootstrap/css/bootstrap.min.css')?><!--" rel="stylesheet">-->
-    <link href="<?php echo base_url('public/css/datatables/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">
+
 </head>
 
 <body>
@@ -43,12 +43,10 @@
                         </header>
                         <div id="panel" class="panel-body">
 
-
-
                             <div class="table table-responsive" style="overflow-x: inherit">
 
 
-                                    <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
+                                    <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="3%" > No</th>
@@ -95,8 +93,7 @@
 </body>
 </html>
 
-<script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
-<script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
+
 
 <script type="text/javascript">
 

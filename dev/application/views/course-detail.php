@@ -47,7 +47,6 @@
 
 
                                             <?php foreach ($coursedetail as $cd) {
-
                                                 if($cd->courseImage != null ){?>
                                                     <img style="height: 200px;width: 800px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"><br><br>
                                                 <?php }}?>
@@ -58,7 +57,7 @@
                                                 <?php foreach ($coursedetail as $cd) { ?>
 
                                                     <!--  <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>-->
-                                                    <li><a href="<?php //echo base_url('public/pdf-files/Application_Form.pdf')?>">APPLY NOW</a></li>
+                                                    <li><a href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">APPLY NOW</a></li>
 
 
 

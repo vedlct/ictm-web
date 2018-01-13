@@ -41,3 +41,7 @@
 <!--[endif]-->
 
 <script src="<?php echo base_url()?>public/js/jquery-1.12.4.js"></script>
+
+<!-- data table -->
+
+<link href="<?php echo base_url('public/css/datatables/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">

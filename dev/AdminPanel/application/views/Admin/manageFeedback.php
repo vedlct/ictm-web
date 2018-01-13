@@ -126,8 +126,7 @@
                                             </td>
                                             <td>
                                                 <?php if ($feedback->feedbackApprove == SELECT_APPROVE[0]){?>
-                                                    <input type="checkbox" data-panel-id="<?php echo $feedback->feedbackId ?>" onclick="selectHome(this)" <?php if ($feedback->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>
-                                                           id="appearInHome" name="appearInHome">Yes
+                                                    <input type="checkbox" id="appearInHome" name="appearInHome" data-panel-id="<?php echo $feedback->feedbackId ?>" onclick="selectHome(this)" <?php if ($feedback->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?> >Yes
                                                 <?php }else{ echo "Need Approval First !!";}?>
 
                                             </td>

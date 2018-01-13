@@ -25,31 +25,40 @@
                     <div class="post-contact">
                         <div class="col-md-12">
                             <div class="row">
+
+                                <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                                    <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+                                <?php }
+                                elseif($this->session->flashdata('successMessage')!=null){?>
+                                    <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+                                <?php }?>
+
                                 <div class="col-md-6">
                                     <div class="contact-form">
 
-                                        <form action="<?php echo base_url()?>Email/contactEmail" method="post" id="contactform" class="comment-form" >
+                                        <form action="<?php echo base_url()?>Email/contactEmail" onsubmit="return chkContactEmail()" method="post" id="contactform" class="comment-form" >
                                             <fieldset class="style-1 full-name">
-                                                <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="author" tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="name"  required tabindex="1" value="" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 email-address">
-                                                <input type="email" id="email" placeholder="Your email" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="email" id="email" placeholder="Your email" class="tb-my-input" required name="email" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 subject">
-                                                <input type="text" id="subject" placeholder="Subject" class="tb-my-input" name="subject" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="text" id="subject" placeholder="Subject" class="tb-my-input" required name="subject" tabindex="2" value="" size="32" aria-required="true">
                                             </fieldset> 
 
                                             <fieldset class="message-form">
-                                                <textarea id="comment-message" placeholder="Your Message" name="comment" rows="8" tabindex="4"></textarea>
+                                                <textarea id="comment" placeholder="Your Message" required name="comment" rows="8" tabindex="4"></textarea>
                                             </fieldset>
 
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
-                                                <button class="flat-button button-style style-v1">Send <i class="fa fa-angle-right"></i></button>
+                                                <button type="submit" class="flat-button button-style style-v1">Send <i class="fa fa-angle-right"></i></button>
                                             </div>             
                                         </form>
+
                                     </div><!-- contact-form -->
                                 </div><!-- col-md-6 -->
 
@@ -73,6 +82,13 @@
 
 <!--        <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/gmap3.min.js"></script>-->
 <!--        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
+
+
+    </div>
+</body>
+
+
+</html>
         <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-waypoints.js"></script>
 
         <script>
@@ -92,8 +108,39 @@
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZnEw-KEMJGyeJirDzOXa11L9kibGgQXM&callback=initMap">
         </script>
 
-    </div>
-</body>
+        <script>
+
+            function chkContactEmail() {
+
+                var name =  document.getElementById("name").value;
+                var email =  document.getElementById("email").value;
+                var subject =  document.getElementById("subject").value;
+                var comment =  document.getElementById("comment").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if (name ==""){
+                    alert("name field can not be empty !! ");
+                    return false;
+                }
+                if (subject ==""){
+                    alert("Subject field can not be empty !! ");
+                    return false;
+                }
+                if (comment == ""){
+                    alert("Comment field can not be empty !! ");
+                    return false;
+                }
+                if(email.match(mailformat))
+                {
+                    return true;
+                }
+                else
+                {
+                    alert("You have entered an invalid email address!");
+                    return false;
+                }
 
 
-</html>
+            }
+
+        </script>

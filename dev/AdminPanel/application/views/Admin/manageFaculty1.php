@@ -51,17 +51,15 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 05%"> No</th>
-
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 05%"> Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; "> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; "> Title</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> First Name</th>
-
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Name</th>
-
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Position</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Employee Type</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Position</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date(d-m-Y)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
@@ -98,8 +96,6 @@
 </body>
 </html>
 
-<script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
-<script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
 
 <script type="text/javascript">
 
@@ -123,36 +119,31 @@
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [ 0,3,4,5,6,7,8,9], //first column / numbering column
+                    "targets": [0,1,4,5,6,7,8,9,10,11], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
+            //for change search name
+            "oLanguage": {
+                "sSearch": "<span>Search By FirstName or LastName:</span> " //search
+            }
 
 
         });
 
     });
 
-    function selectHome(x) {
-        if (confirm("Are you sure ?")) {
+    function selectid(x) {
+        if (confirm("Are you sure you want to delete this Faculty? All of his Course will be deleted too")) {
             btn = $(x).data('panel-id');
+            //alert(btn);
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("Admin/News/appearInHomePage/")?>'+btn,
+                url:'<?php echo base_url("Admin/Faculty/deleteFaculty/")?>'+btn,
                 data:{},
                 cache: false,
                 success:function(data) {
-                    if (data=='1'){
-                        alert('News Added Successfully To Home Page');
-                    }
-                    else if(data=='0'){
-                        alert('News Removed Successfully From Home Page');
-                    }
-                    else if(data=='3'){
-                        alert('Allready 3 News in the Home Page');
-                    }
                     location.reload();
-
                 }
             });
         }
