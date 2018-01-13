@@ -121,6 +121,10 @@
                     "orderable": false , //set not orderable
                 },
             ],
+            "oLanguage": {
+                "sSearch": "<span>Search By Name:</span> " //search
+            }
+
 
 
         });

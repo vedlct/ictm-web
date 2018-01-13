@@ -124,7 +124,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Event Title:</span> " //search
+                "sSearch": "<span>Search By Course Name:</span> " //search
             }
 
 

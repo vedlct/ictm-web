@@ -126,6 +126,10 @@
                     "orderable": false, //set not orderable
                 },
             ],
+            "oLanguage": {
+                "sSearch": "<span>Search By News Title:</span> " //search
+            }
+
 
 
         });

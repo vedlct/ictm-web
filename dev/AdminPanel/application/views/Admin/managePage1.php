@@ -43,8 +43,9 @@
                         </header>
                         <div id="panel" class="panel-body">
 
-                            <div class="form-group col-md-5">
-                                <label  for="pageType">Page Type </label>
+                            <div class="form-group">
+                                <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select A Page Type: </label>
+                                <div class="m-bot15 col-md-4 col-sm-4">
                                 <select class="form-control m-bot15" name="pageType" id="pageType"  required>
                                     <option value="" selected><?php echo SELECT_PAGE_TYPE?></option>
                                     <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
@@ -138,7 +139,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Event Title:</span> " //search
+                "sSearch": "<span>Search By Page Title:</span> " //search
             }
 
 
