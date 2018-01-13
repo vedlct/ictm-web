@@ -68,15 +68,19 @@
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
+                                <form>
                                 <div class="form-group">
-                                    <label class="col-lg-2"> Select A Menu Type: </label>
-                                    <select class="form-control m-bot15 col-lg-6" name="menuType" id="menuType" required>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select A Menu Type: </label>
+                                    <div class="m-bot15 col-md-4 col-sm-4">
+                                    <select class="form-control" name="menuType" id="menuType" required>
                                         <option value="" selected><?php echo "All Menu"?></option>
                                         <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
                                             <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
                                         <?php } ?>
                                     </select>
+                                    </div>
                                 </div>
+                                </form>
                                 
                                 <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
 
