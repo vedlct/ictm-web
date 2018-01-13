@@ -410,51 +410,81 @@ class Photom extends CI_Model
     {
 
 
-        $this->db->select('albumCover');
-        $this->db->where('photoId',$photoId);
+//        $this->db->select('albumCover');
+//        $this->db->where('photoId',$photoId);
+//        $query = $this->db->get('ictmphoto');
+//
+//        foreach ($query->result() as $albumCover){
+//            $cover=$albumCover->albumCover;
+//        }
+//        if ($cover == null){
+//
+//            $data=array(
+//                'albumCover'=>SELECT_APPROVE[0],
+//            );
+//            $approve=1;
+//        }
+//        else{
+//            $data = array(
+//                'albumCover' => null,
+//            );
+//            $approve=0;
+//        }
+//
+//        $this->db->where('photoId',$photoId);
+//        $this->db->update('ictmphoto', $data);
+//
+//        $this->db->select('COUNT(albumCover) as Total');
+//        $this->db->where('albumId',$albumId);
+//
+//        $query10 = $this->db->get('ictmphoto');
+//
+//        foreach ($query10->result() as $totalCount){
+//            $Total=$totalCount->Total;
+//        }
+//        if ($Total > "1"){
+//
+//            $data = array(
+//                'albumCover' => null,
+//            );
+//            $approve =3;
+//            $this->db->where('photoId',$photoId);
+//            $this->db->update('ictmphoto', $data);
+//
+//
+//        }
+//        return $approve;
+
+
+          $data=array(
+              'albumCover'=>SELECT_APPROVE[0],
+          );
+
+
+
+        $data1=array(
+            'albumCover'=>null,
+        );
+
+        $this->db->select('photoId');
+        $this->db->where('albumCover',SELECT_APPROVE[0]);
+        $this->db->where('albumId',$albumId);
         $query = $this->db->get('ictmphoto');
 
         foreach ($query->result() as $albumCover){
-            $cover=$albumCover->albumCover;
+            $cover=$albumCover->photoId;
         }
-        if ($cover == null){
 
-            $data=array(
-                'albumCover'=>SELECT_APPROVE[0],
-            );
-            $approve=1;
-        }
-        else{
-            $data = array(
-                'albumCover' => null,
-            );
-            $approve=0;
-        }
+        $this->db->where('photoId',$cover);
+        $this->db->where('albumId',$albumId);
+        $this->db->update('ictmphoto', $data1);
 
         $this->db->where('photoId',$photoId);
+        $this->db->where('albumId',$albumId);
         $this->db->update('ictmphoto', $data);
 
-        $this->db->select('COUNT(albumCover) as Total');
-        $this->db->where('albumId',$albumId);
-
-        $query10 = $this->db->get('ictmphoto');
-
-        foreach ($query10->result() as $totalCount){
-            $Total=$totalCount->Total;
-        }
-        if ($Total > "1"){
-
-            $data = array(
-                'albumCover' => null,
-            );
-            $approve =3;
-            $this->db->where('photoId',$photoId);
-            $this->db->update('ictmphoto', $data);
-
-
-        }
+        $approve=1;
         return $approve;
-
 
     }
 

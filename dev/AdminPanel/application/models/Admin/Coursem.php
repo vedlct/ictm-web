@@ -8,7 +8,7 @@ class Coursem extends CI_Model
     var $table = 'ictmcourse';
     var $table2 = 'ictmdepartment';
 
-    var $column_order = array('courseId','departmentId','departmentName','courseCodePearson','courseTitle','awardingTitle','awardingBody','courseStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_order = array('courseId','ictmcourse.departmentId','departmentName','courseCodePearson','courseTitle','awardingTitle','awardingBody','courseStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
     var $column_search = array('courseTitle' ); //set column field database for datatable searchable
     var $order = array('courseId' => 'desc'); // default order
 

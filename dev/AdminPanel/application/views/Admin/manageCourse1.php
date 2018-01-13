@@ -48,7 +48,7 @@
                             <div class="table table-responsive" style="overflow-x: inherit">
 
 
-                                <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
+                                <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
@@ -94,8 +94,6 @@
 </body>
 </html>
 
-<script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
-<script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
 
 <script type="text/javascript">
 
@@ -133,33 +131,5 @@
         });
 
     });
-
-    function selectHome(x) {
-        if (confirm("Are you sure ?")) {
-            btn = $(x).data('panel-id');
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url("Admin/Event/appearInHomePage/")?>'+btn,
-                data:{},
-                cache: false,
-                success:function(data) {
-                    if (data=='1'){
-                        alert('Event Added Successfully To Home Page');
-                    }
-                    else if(data=='0'){
-                        alert('Event Removed Successfully From Home Page');
-                    }
-                    else if(data=='3'){
-                        alert('Allready 3 Event in  Home Page');
-                    }
-                    location.reload();
-
-                }
-            });
-        }
-        else {
-            location.reload();
-        }
-    }
 </script>
 
