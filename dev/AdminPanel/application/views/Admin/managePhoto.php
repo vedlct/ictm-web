@@ -50,11 +50,15 @@
                             <div class="form-group">
                                 <label class="control-label col-lg-2" for="albumId">Album Title</label>
                                 <div class="col-lg-10">
+
                                     <select class="form-control m-bot15" id="albumId" name="albumId" onchange="showtable()">
                                         <option><?php echo SELECT_ALBUM ?></option>
                                         <?php foreach ($album as $album){?>
+                                        <?php if ($alCov != ""){?>
+                                        <option <?php if (!empty($alCov) && $alCov == $album->albumId)  echo 'selected = "selected"'; ?> value="<?php echo $album->albumId?>"><?php echo $album->albumTitle?></option>
+                                        <?php }else{?>
                                             <option value="<?php echo $album->albumId?>"><?php echo $album->albumTitle?></option>
-                                        <?php }?>
+                                        <?php }}?>
                                     </select>
                                 </div>
                             </div>

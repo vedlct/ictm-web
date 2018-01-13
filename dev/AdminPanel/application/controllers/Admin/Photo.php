@@ -126,10 +126,10 @@ class Photo extends CI_Controller
             if ($photo->photoStatus == STATUS[0])
             {
                 if ($photo->albumCover == SELECT_APPROVE[0]){
-                    $row[] = '<input type="checkbox" data-panel-id="'. $photo->photoId .'" onclick="albumCover(this)" checked="checked"
+                    $row[] = '<input type="radio" data-panel-id="'. $photo->photoId .'" onclick="albumCover(this)" checked="checked"
                                    id="albumCovers" value="'. $photo->albumId.'" name="appearInHome">Yes';
                 }else{
-                    $row[] = '<input type="checkbox" data-panel-id="'. $photo->photoId .'" onclick="albumCover(this)"
+                    $row[] = '<input type="radio" data-panel-id="'. $photo->photoId .'" onclick="albumCover(this)"
                                    id="albumCovers" value="'. $photo->albumId.'" name="appearInHome">Yes';
                 }
 

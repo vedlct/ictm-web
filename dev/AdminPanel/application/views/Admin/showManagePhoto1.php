@@ -1,4 +1,4 @@
-<div class="table table-responsive">
+<div class="table table-responsive" style="overflow-x: inherit">
     <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
         <thead>
         <tr>
@@ -86,13 +86,14 @@
                     if (data=='1'){
                         alert('Photo Added as a Album Cover Successfully');
                     }
-                    else if(data=='0'){
-                        alert('Photo as a Album Cover Removed Successfully');
-                    }
-                    else if(data=='3'){
-                        alert('Allready 1 Photo in the Album Cover');
-                    }
+//                    else if(data=='0'){
+//                        alert('Photo as a Album Cover Removed Successfully');
+//                    }
+//                    else if(data=='3'){
+//                        alert('Allready 1 Photo in the Album Cover');
+//                    }
                     location.reload();
+
                 }
             });
         }

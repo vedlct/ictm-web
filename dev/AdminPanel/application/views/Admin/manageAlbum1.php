@@ -45,7 +45,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
-                            <div class="table table-responsive">
+                            <div class="table table-responsive" style="overflow-x: inherit">
                                 <table class="table table-bordered table-hover table-striped table-advance" id="myTable">
                                     <thead>
                                     <tr>
