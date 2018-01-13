@@ -34,7 +34,7 @@ class News extends CI_Controller
                 $row[] = '<input type="checkbox" data-panel-id="'. $news->newsId .'" id="appearInHome" onclick=\'selectHome(this)\' name="appearInHome">Yes';
             }
             $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$news->newsId.'"><i class="icon_pencil-edit"></i></a>
-            <a class="btn " data-panel-id="'.$news->newsId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $news->newsId.'"><i class="icon_trash"></i></a>';
+            <a class="btn " data-panel-id="'.$news->newsId.'"onclick=\'return confirm("Are you sure to Delete This News?")\' href="'.base_url().'Admin/News/deleteNews/'. $news->newsId.'"><i class="icon_trash"></i></a>';
             $data[] = $row;
         }
         $output = array(

@@ -38,8 +38,8 @@ class Event extends CI_Controller
             }else{
                 $row[] = '<input type="checkbox" data-panel-id="'. $event->eventId .'" id="appearInHome" onclick=\'selectHome(this)\' name="appearInHome">Yes';
             }
-            $row[] = '<a class="btn" href="'.base_url().'Admin/News/editNewsView/'.$event->eventId.'"><i class="icon_pencil-edit"></i></a>
-            <a class="btn " data-panel-id="'.$event->eventId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $event->eventId.'"><i class="icon_trash"></i></a>';
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Event/editEventView/'.$event->eventId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$event->eventId.'"onclick=\'return confirm("Are you sure to Delete This Event?")\' href="'.base_url().'Admin/Event/deleteEvent/'. $event->eventId.'"><i class="icon_trash"></i></a>';
             $data[] = $row;
         }
         $output = array(

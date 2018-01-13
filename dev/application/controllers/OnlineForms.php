@@ -70,20 +70,20 @@ class OnlineForms extends CI_Controller
 
                 $message = "Title: $title \r\n\n";
                 $message .= "First Name: $fname \r\n\n";
-                $message .= "Name: $sname \r\n\n";
-                $message .= "Name: $house \r\n\n";
-                $message .= "Name: $street \r\n\n";
-                $message .= "Name: $postcode \r\n\n";
-                $message .= "Name: $city \r\n\n";
-                $message .= "Name: $country \r\n\n";
-                $message .= "Name: $phone \r\n\n";
-                $message .= "Name: $email \r\n\n";
-                $message .= "Name: $course \r\n\n";
-                $message .= "Name: $hear \r\n\n";
-                $message .= "Name: $other \r\n\n";
-                $message .= "Name: $disability \r\n\n";
-                $message .= "Name: $appoinment \r\n\n";
-                $message .= "Name: $comments \r\n\n";
+                $message .= "Last Name: $sname \r\n\n";
+                $message .= "House: $house \r\n\n";
+                $message .= "Street: $street \r\n\n";
+                $message .= "Zip: $postcode \r\n\n";
+                $message .= "City: $city \r\n\n";
+                $message .= "Country: $country \r\n\n";
+                $message .= "Phone: $phone \r\n\n";
+                $message .= "Email: $email \r\n\n";
+                $message .= "Course: $course \r\n\n";
+                $message .= "Hear: $hear \r\n\n";
+                $message .= "Other: $other \r\n\n";
+                $message .= "Disability: $disability \r\n\n";
+                $message .= "Appoinment Date: $appoinment \r\n\n";
+                $message .= "Comments: $comments \r\n\n";
 
 //            include APPPATH . 'controllers/Email.php';
 //            $Email = new Email();
