@@ -25,6 +25,51 @@ class CourseSection extends CI_Controller
 
 
     }
+
+    public function ajax_list($id)
+    {
+        $list = $this->CourseSectionm->get_datatables($id);
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $courseSections) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+
+            $row[] = $courseSections->courseSectionTitle;
+            $row[] = $courseSections->orderNumber;
+            $row[] = $courseSections->courseSectionStatus;
+            $row[] = $courseSections->insertedBy;
+
+            if ($courseSections->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $courseSections->lastModifiedBy;
+            }
+            if ($courseSections->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $courseSections->lastModifiedDate;
+            }
+
+            $row[] = '<a class="btn" href="'. base_url().'Admin/CourseSection/showEditCourseSec/'. $courseSections->courseSectionId.'"><i class="icon_pencil-edit"></i></a>
+                            <a class="btn" href="'. base_url().'Admin/CourseSection/deleteCourseSection/'.$courseSections->courseSectionId.' "onclick=\'return confirm("Are you sure to Delete This Course Section?")\'"><i class="icon_trash"></i></a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->CourseSectionm->count_all($id),
+            "recordsFiltered" => $this->CourseSectionm->count_filtered($id),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+
+    }
+
+
     //this will insert  course section data
     public  function insertCourseSec(){
         $this->load->library('form_validation');
@@ -61,8 +106,10 @@ class CourseSection extends CI_Controller
     public  function manageCourseSec(){
         if ($this->session->userdata('type') == "Admin" ) {
 
+
             $this->load->model('Admin/Coursem');
             $this->data['coursetitle'] = $this->Coursem->getCourseTitle();
+
             $this->load->view('Admin/manageCourseSection', $this->data);
         }
         else{
@@ -72,13 +119,15 @@ class CourseSection extends CI_Controller
 
     }
     //this is the ajax controller . this will show the course section manage table
-    public function showCourseSecManageTable(){
+    public function showCourseSecManageTable($id){
 
         if ($this->session->userdata('type') == "Admin") {
 
-            $id = $this->input->post("id");
-            $this->data['coursedata'] = $this->CourseSectionm->getCourseSecData($id);
-            $this->load->view('Admin/showManageCourseSec', $this->data);                        //view manage page section
+            //$id = $this->input->post("id");
+//            $this->data['coursedata'] = $this->CourseSectionm->getCourseSecData($id);
+//            $this->load->view('Admin/showManageCourseSec', $this->data);                        //view manage page section
+            $this->data['id']=$id;
+            $this->load->view('Admin/showManageCourseSec1',$this->data);                        //view manage page section
 
         } else{
             redirect('Admin/Login');

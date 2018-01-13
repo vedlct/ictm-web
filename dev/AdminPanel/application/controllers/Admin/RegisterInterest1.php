@@ -27,20 +27,20 @@ class RegisterInterest1 extends CI_Controller
         $list = $this->RegisterInterestm1->get_datatables();
         $data = array();
         $no = $_POST['start'];
-        foreach ($list as $customers) {
+        foreach ($list as $registerInterest) {
             $no++;
             $row = array();
             $row[] = $no;
-            $row[] = $customers->title;
-            $row[] = $customers->firstName.' '.$customers->surName;
-//            $row[] = $customers->surName;
-            $row[] = $customers->mobile;
-            $row[] = $customers->appointmentDate;
-            $row[] = $customers->course;
-            $row[] = $customers->email;
-            $row[] = $customers->inserDate;
-            $row[] = '<a class="btn" href="'.base_url().'Admin/RegisterInterest/viewSelectedRI/'.$customers->registerInterestId.'"><i class="icon_pencil-edit"></i></a>
-            <a class="btn " data-panel-id="'.$customers->registerInterestId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $customers->registerInterestId.'"><i class="icon_trash"></i></a>';
+            $row[] = $registerInterest->title;
+            $row[] = $registerInterest->firstName;
+            $row[] = $registerInterest->surName;
+            $row[] = $registerInterest->mobile;
+            $row[] = $registerInterest->appointmentDate;
+            $row[] = $registerInterest->course;
+            $row[] = $registerInterest->email;
+            $row[] = $registerInterest->inserDate;
+            $row[] = '<a class="btn" href="'.base_url().'Admin/RegisterInterest/viewSelectedRI/'.$registerInterest->registerInterestId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$registerInterest->registerInterestId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $registerInterest->registerInterestId.'"><i class="icon_trash"></i></a>';
 
             $data[] = $row;
         }

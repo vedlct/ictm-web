@@ -11,6 +11,51 @@ class PageSection extends CI_Controller {
         $this->load->model('Admin/Pagem');
 
     }
+
+    public function ajax_list($id)
+    {
+        $list = $this->PageSectionm->get_datatables($id);
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $pageSections) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+
+            $row[] = $pageSections->pageSectionTitle;
+            $row[] = $pageSections->orderNumber;
+            $row[] = $pageSections->pageSectionStatus;
+            $row[] = $pageSections->insertedBy;
+
+            if ($pageSections->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $pageSections->lastModifiedBy;
+            }
+            if ($pageSections->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $pageSections->lastModifiedDate;
+            }
+
+            $row[] = '<a class="btn" href="'.base_url().'Admin/PageSection/editPageSectionShow/'.$pageSections->pageSectionId.'"><i class="icon_pencil-edit"></i></a>
+                            <a class="btn" href="'. base_url().'Admin/PageSection/deletePageSection/'.$pageSections->pageSectionId.'" onclick=\'return confirm("Are you sure to Delete This Page Section?")\'><i class="icon_trash"></i></a>';
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->PageSectionm->count_all($id),
+            "recordsFiltered" => $this->PageSectionm->count_filtered($id),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+
+    }
+
+
     //this will show create page section
     public function createPageSection()
     {
@@ -125,13 +170,14 @@ class PageSection extends CI_Controller {
 
     //this is a AJAX controller
     //this will show manage page table after select the page
-    public function showPageSecManageTable(){
+    public function showPageSecManageTable($id){
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $id = $this->input->post("id");
-            $this->data['pagedata'] = $this->PageSectionm->get_pageSecdata($id);
-            $this->load->view('Admin/showManagePageSec', $this->data);
+//            $id = $this->input->post("id");
+//            $this->data['pagedata'] = $this->PageSectionm->get_pageSecdata($id);
+            $this->data["id"]=$id;
+            $this->load->view('Admin/showManagePageSec1', $this->data);
 
         } else{
             redirect('Admin/Login');

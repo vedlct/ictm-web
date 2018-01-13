@@ -73,24 +73,84 @@ class Affiliation extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Affiliation/manageAffiliation";
-            $config["total_rows"] = $this->Affiliationm->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["affiliations"] = $this->Affiliationm->getAllforManageAffiliation($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Affiliation/manageAffiliation";
+//            $config["total_rows"] = $this->Affiliationm->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["affiliations"] = $this->Affiliationm->getAllforManageAffiliation($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
-            $this->load->view('Admin/manageAffiliation',$this->data);
+//            $this->load->view('Admin/manageAffiliation',$this->data);
+            $this->load->view('Admin/manageAffiliation1');
 
         }
         else{
             redirect('Admin/Login');
         }
+    }
+
+    /*---------datatable code --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Affiliationm->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $Affiliations) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $Affiliations->affiliationsTitle;
+            $row[] = $Affiliations->affiliationsStatus;
+
+            $row[] = $Affiliations->insertedBy;
+
+            if ($Affiliations->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $Affiliations->lastModifiedBy;
+            }
+            if ($Affiliations->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $Affiliations->lastModifiedDate;
+            }
+
+            if ($Affiliations->affiliationsStatus == STATUS[0]){
+                if ($Affiliations->homeStatus == SELECT_APPROVE[0]){
+
+                    $row[] = '<input type="checkbox" data-panel-id="'.$Affiliations->affiliationsId .'" onclick="selectHome(this)" checked="checked"
+                                                           id="appearInHome" name="appearInHome">Yes';
+
+                }else{
+                    $row[] = '<input type="checkbox" data-panel-id="'.$Affiliations->affiliationsId .'" onclick="selectHome(this)"
+                                                           id="appearInHome" name="appearInHome">Yes';
+                }
+
+            }else{
+                $row[] ='Status Should be Active First !!';
+            }
+
+            
+            $html = '<a class="btn" href="'. base_url().'Admin/Affiliation/editAffiliationView/'.$Affiliations->affiliationsId.'"><i class="icon_pencil-edit"></i></a>
+                                                    <a class="btn" data-panel-id="'.$Affiliations->affiliationsId .'"  onclick="selectid(this)"><i class="icon_trash"></i></a>';
+
+            $row[] = $html;
+
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Affiliationm->count_all(),
+            "recordsFiltered" => $this->Affiliationm->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
     }
 
     public function editAffiliationView($affiliationId) // for edit  Selected Affiliation view

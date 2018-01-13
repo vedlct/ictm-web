@@ -46,8 +46,8 @@
                         </header>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="control-label col-lg-1" for="inputSuccess">Page Title<span class="required">*</span></label>
-                                <div class="col-lg-10">
+                                <label style="text-align: right" class="control-label col-lg-4 col-md-4" for="pagename">Page Title<span class="required">*</span></label>
+                                <div  class="col-lg-4 col-md-4">
                                     <select class="form-control m-bot15" id="pagename" name="pagetitle" required onchange="showtable()">
                                         <option value=""><?php echo SELECT_PAGE?></option>
                                        <?php foreach ($pagename as $pn) { ?>
@@ -83,11 +83,10 @@
     function showtable() {
       var x = document.getElementById('pagename').value;
 
-
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin/PageSection/showPageSecManageTable")?>',
-            data:{id:x},
+            url:'<?php echo base_url("Admin/PageSection/showPageSecManageTable/")?>'+x,
+            data:{},
             cache: false,
             success:function(data)
             {
