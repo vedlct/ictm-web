@@ -60,7 +60,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted Bye</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date(d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date (Y-m-d T)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Appear In Home</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
                                     </tr>

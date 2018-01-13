@@ -46,8 +46,8 @@
                         </header>
                         <div class="panel-body">
                             <div class="form-group">
-                                <label class="control-label col-lg-1" for="inputSuccess">Course Title</label>
-                                <div class="col-lg-10">
+                                <label style="text-align: right" class="control-label col-md-4 col-lg-4" for="coursename">Course Title</label>
+                                <div class="col-md-4 col-lg-4">
                                     <select class="form-control m-bot15" id="coursename" name="coursetitle" onchange="showtable()">
                                         <option><?php echo SELECT_COURSE ?></option>
                                         <?php foreach ($coursetitle as $ct) { ?>
@@ -88,8 +88,8 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("Admin/CourseSection/showCourseSecManageTable")?>',
-            data:{id:x},
+            url:'<?php echo base_url("Admin/CourseSection/showCourseSecManageTable/")?>'+x,
+            data:{},
             cache: false,
             success:function(data)
             {

@@ -6,7 +6,7 @@ class RegisterInterestm1 extends CI_Model
     var $table = 'ictmregisterinterest';
 //    var $column_order = array(null,'registerInterestId','title','firstName','surName','mobile','appointmentDate','course','email','inserDate'); //set column field database for datatable orderable
     var $column_order = array(null,null,'firstName',null,'appointmentDate','course','email','inserDate',null); //set column field database for datatable orderable
-    var $column_search = array('firstName','surName','mobile','email'); //set column field database for datatable searchable
+    var $column_search = array('firstName','surName'); //set column field database for datatable searchable
     var $order = array('registerInterestId' => 'desc'); // default order
 
     private function _get_datatables_query()

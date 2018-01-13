@@ -56,10 +56,10 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Approve </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedBy </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedDate(d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedDate(Y-m-d T)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;"> Last Modified Date(Y-m-d T) </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                     </tr>

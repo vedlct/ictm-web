@@ -51,13 +51,14 @@
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="3%" > No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="5%" > Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> FirstName</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> LastName</th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date (Y-m-d T)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Course</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Apply Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Apply Date (Y-m-d)</th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
                                     </tr>
@@ -117,10 +118,13 @@
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [ 0,1,3,5,8 ], //first column / numbering column
+                    "targets": [ 0,1,4,6,7,9 ], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
+            "oLanguage": {
+                "sSearch": "<span>Search By FirstName or LastName:</span> " //search
+            }
 
 
         });
