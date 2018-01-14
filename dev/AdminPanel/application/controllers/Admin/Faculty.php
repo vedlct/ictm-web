@@ -86,18 +86,18 @@ class Faculty extends CI_Controller
             else {
 
 
-//                $this->data['error'] = $this->Facultym->createNewFaculty();
-//                if (empty($this->data['error'])) {
-//
-//                    $this->session->set_flashdata('successMessage','Faculty Created Successfully');
-//                    redirect('Admin/Faculty/manageFaculty');
-//
-//                } else {
-//
-//                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-//                    redirect('Admin/Faculty/newFaculty');
-//
-//                }
+                $this->data['error'] = $this->Facultym->createNewFaculty();
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Faculty Created Successfully');
+                    redirect('Admin/Faculty/manageFaculty');
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/Faculty/newFaculty');
+
+                }
             }
 
 

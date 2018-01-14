@@ -44,8 +44,6 @@
                         <div id="panel" class="panel-body">
 
                             <div class="table table-responsive" style="overflow-x: inherit">
-
-
                                     <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr>
