@@ -2,14 +2,14 @@
     <table class="table table-striped table-advance  table-bordered table-hover " id="myTable">
         <thead>
         <tr>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left">  No</th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Photo</th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left" >Photo Status</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">  No</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left;">  Photo</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%" >Photo Status</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Photo Inserted By</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (Y-m-d T)</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Album Cover</th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">  Action</th>
         </tr>
         </thead>
         <tbody>

@@ -49,7 +49,7 @@ class CourseSection extends CI_Controller
             if ($courseSections->lastModifiedDate==""){
                 $row[]='Never Modified';
             }else{
-                $row[] = $courseSections->lastModifiedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($courseSections->lastModifiedDate)),1);
             }
 
             $row[] = '<a class="btn" href="'. base_url().'Admin/CourseSection/showEditCourseSec/'. $courseSections->courseSectionId.'"><i class="icon_pencil-edit"></i></a>

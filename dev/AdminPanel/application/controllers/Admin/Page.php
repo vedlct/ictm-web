@@ -29,8 +29,19 @@ class Page extends CI_Controller {
             $row[] = $page->pageType;
             $row[] = $page->pageStatus;
             $row[] = $page->insertedBy;
-            $row[] = $page->lastModifiedBy;
-            $row[] = $page->lastModifiedDate;
+
+            if ($page->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $page->lastModifiedBy;
+            }
+            if ($page->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($page->lastModifiedDate)),1);
+
+            }
             $row[] = '<a class="btn" href="'.base_url().'Admin/Page/editPageShow/'.$page->pageId.'"><i class="icon_pencil-edit"></i></a>
             <a class="btn " data-panel-id="'.$page->pageId.'"onclick=\'return confirm("Are you sure to Delete This Page?")\' href="'.base_url().'Admin/Page/deletePage/'. $page->pageId.'"><i class="icon_trash"></i></a>';
             $data[] = $row;

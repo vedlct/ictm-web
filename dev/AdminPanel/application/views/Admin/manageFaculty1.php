@@ -49,18 +49,18 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; "> No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; "> Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 3%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 4% "> Title</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> First Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Employee Type</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Employee Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Position</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 7%"> Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date (Y-m-d T)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>

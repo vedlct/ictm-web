@@ -49,19 +49,19 @@
                                 <table class="table  table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr align="center" bgcolor="#D3D3D3">
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> No.</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 3%"> No.</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Profession </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Source </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">Approve </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">Status </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">Approve </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedBy </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedDate(Y-m-d T)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%">Approved Date(d-m-Y)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;"> Last Modified Date(Y-m-d T) </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Last Modified Date(d-m-Y) </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Appear In Home</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Action </th>
                                     </tr>
                                     </thead>
 

@@ -117,7 +117,7 @@ class Affiliation extends CI_Controller
             if ($Affiliations->lastModifiedDate==""){
                 $row[]='Never Modified';
             }else{
-                $row[] = $Affiliations->lastModifiedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($Affiliations->lastModifiedDate)),1);
             }
 
             if ($Affiliations->affiliationsStatus == STATUS[0]){

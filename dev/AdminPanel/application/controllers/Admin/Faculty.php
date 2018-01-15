@@ -41,7 +41,7 @@ class Faculty extends CI_Controller
             if ($faculty->lastModifiedDate==""){
                 $row[]='Never Modified';
             }else{
-                $row[] = $faculty->lastModifiedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($faculty->lastModifiedDate)),1);
             }
 
 

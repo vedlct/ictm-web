@@ -11,3 +11,7 @@
 <script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
 <script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
 
+<script>
+    var ckBaseUrl = "<?php echo base_url(); ?>";
+</script>
+

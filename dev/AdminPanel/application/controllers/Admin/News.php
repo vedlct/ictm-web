@@ -22,12 +22,23 @@ class News extends CI_Controller
             $row = array();
             $row[] = $no;
             $row[] = $news->newsTitle;
-            $row[] = $news->newsDate;
+            $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($news->newsDate)),1);
             $row[] = $news->newsType;
             $row[] = $news->newsStatus;
             $row[] = $news->insertedBy;
-            $row[] = $news->lastModifiedBy;
-            $row[] = $news->lastModifiedDate;
+
+            if ($news->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $news->lastModifiedBy;
+            }
+            if ($news->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($news->lastModifiedDate)),1);
+
+            }
             if ($news->homeStatus == SELECT_APPROVE[0]){
                 $row[] = '<input type="checkbox" checked data-panel-id="'. $news->newsId .'" onclick=\'selectHome(this)\' id="appearInHome" name="appearInHome">Yes';
             }else{

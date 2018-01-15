@@ -51,16 +51,16 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> Course Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 3%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; "> Course Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Department</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Course Id</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Award</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Course Status</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Insert By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 8%"> Course Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Modified Date(d-m-Y)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Modified Date(d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>

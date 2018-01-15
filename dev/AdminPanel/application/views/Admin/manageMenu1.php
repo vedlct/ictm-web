@@ -86,17 +86,17 @@
 
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> Menu Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> O N</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 3%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Menu Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 4%"> O N</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Menu Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Parent Menu</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Page Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Menu Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Menu Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date(Y-m-d T)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Last Modified By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>

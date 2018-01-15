@@ -35,7 +35,7 @@ class PageSection extends CI_Controller {
             if ($pageSections->lastModifiedDate==""){
                 $row[]='Never Modified';
             }else{
-                $row[] = $pageSections->lastModifiedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($pageSections->lastModifiedDate)),1);
             }
 
             $row[] = '<a class="btn" href="'.base_url().'Admin/PageSection/editPageSectionShow/'.$pageSections->pageSectionId.'"><i class="icon_pencil-edit"></i></a>

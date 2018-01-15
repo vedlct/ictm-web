@@ -48,17 +48,17 @@
                                     <thead>
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="3%" > No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="5%" > Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="4%" > Title</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> FirstName</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> LastName</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Phone</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Appoinmet Date (Y-m-d T)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Course</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Email</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="15%"> Apply Date (Y-m-d)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left";> Phone</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Appoinmet Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left";> Course</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; > Email</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"; width="10%"> Apply Date (d-m-Y)</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="10%"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: center"; width="8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>

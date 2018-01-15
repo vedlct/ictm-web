@@ -38,7 +38,7 @@ class RegisterInterest1 extends CI_Controller
             $row[] = $registerInterest->appointmentDate;
             $row[] = $registerInterest->course;
             $row[] = $registerInterest->email;
-            $row[] = $registerInterest->inserDate;
+            $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($registerInterest->inserDate)),1);
             $row[] = '<a class="btn" href="'.base_url().'Admin/RegisterInterest/viewSelectedRI/'.$registerInterest->registerInterestId.'"><i class="icon_pencil-edit"></i></a>
             <a class="btn " data-panel-id="'.$registerInterest->registerInterestId.'"onclick=\'return confirm("Are you sure to Delete This RegisterInterest?")\' href="'.base_url().'Admin/RegisterInterest/deleteRegisterInterest/'. $registerInterest->registerInterestId.'"><i class="icon_trash"></i></a>';
 

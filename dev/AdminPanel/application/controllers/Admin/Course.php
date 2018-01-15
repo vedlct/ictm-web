@@ -32,8 +32,18 @@ class Course extends CI_Controller
             $row[] = $course->awardingTitle;
             $row[] = $course->courseStatus;
             $row[] = $course->insertedBy;
-            $row[] = $course->lastModifiedBy;
-            $row[] = $course->lastModifiedDate;
+            if ($course->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $course->lastModifiedBy;
+            }
+            if ($course->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($course->lastModifiedDate)),1);
+
+            }
             $row[] = '<a class="btn" href="'.base_url().'Admin/Course/showEditCourse/'.$course->courseId.'"><i class="icon_pencil-edit"></i></a>
             <a class="btn " data-panel-id="'.$course->courseId.'"onclick=\'return confirm("Are you sure to Delete This Course?")\' href="'.base_url().'Admin/Course/deleteCourse/'. $course->courseId.'"><i class="icon_trash"></i></a>';
             $data[] = $row;
