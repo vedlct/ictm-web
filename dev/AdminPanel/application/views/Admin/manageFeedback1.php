@@ -46,7 +46,7 @@
                         <div class="panel-body ">
                             <div class="table table-responsive">
 
-                                <table class="table  table-advance  table-bordered table-hover" id="myTable">
+                                <table class="table table-advance table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr align="center" bgcolor="#D3D3D3">
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 3%"> No.</th>
@@ -108,6 +108,7 @@
             "serverSide": true, //Feature control DataTables' server-side processing mode.
             "order": [], //Initial no order.
 
+
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/Feedback/ajax_list')?>",
@@ -123,7 +124,8 @@
             ],
             "oLanguage": {
                 "sSearch": "<span>Search By Name:</span> " //search
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
 

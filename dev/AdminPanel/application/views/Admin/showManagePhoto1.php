@@ -46,6 +46,7 @@
                     "orderable": false, //set not orderable
                 },
             ],
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
 

@@ -45,6 +45,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
+                            <form class="row">
                             <div class="form-group">
                                 <label style="text-align: right" class="control-label col-md-4 col-lg-4" for="coursename">Course Title</label>
                                 <div class="col-md-4 col-lg-4">
@@ -58,6 +59,7 @@
                                     </select>
                                 </div>
                             </div>
+                            </form>
                             <div id="tableid" style="display: none">
 
                             </div>

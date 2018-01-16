@@ -128,7 +128,8 @@
             ],
             "oLanguage": {
                 "sSearch": "<span>Search By News Title:</span> " //search
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
 

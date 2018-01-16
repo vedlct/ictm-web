@@ -111,6 +111,7 @@ define("MENU_TYPE",array ("Top","MainMenu","KeyInfo","QuickLink","ImportantLink"
 ////////// For Page ///////////////////////
 
 define("SELECT_PAGE_TYPE", "Select Page Type");
+define("ALL_PAGE_TYPE", "ALL Page Type");
 define("PAGE_TYPE", array ("About Type","Health Type","Terms Type", "Static Type", "Link Type"));
 
 ////////////    faculy page      ///////////////

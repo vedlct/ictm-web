@@ -53,9 +53,8 @@
 
                 "sSearch": "<span>Search By Page Section Title:</span> " //search
 
-            }
-
-
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
         });
 

@@ -129,7 +129,8 @@
             //for change search name
             "oLanguage": {
                 "sSearch": "<span>Search By Event Title:</span> " //search
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
         });

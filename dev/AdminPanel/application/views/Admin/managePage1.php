@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <?php include('head.php') ?>
-    <!--    <link href="--><?php //echo base_url('public/css/bootstrap/css/bootstrap.min.css')?><!--" rel="stylesheet">-->
-    <link href="<?php echo base_url('public/css/datatables/css/dataTables.bootstrap.min.css')?>" rel="stylesheet">
 </head>
 
 <body>
@@ -38,24 +36,26 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage News
+                            Manage Page
 
                         </header>
                         <div id="panel" class="panel-body">
 
-                            <div class="form-group">
-                                <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select A Page Type: </label>
-                                <div class="m-bot15 col-md-4 col-sm-4">
-                                <select class="form-control m-bot15" name="pageType" id="pageType"  required>
-                                    <option value="" selected><?php echo SELECT_PAGE_TYPE?></option>
-                                    <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
-                                        <option value="<?php echo PAGE_TYPE[$i]?>"><?php echo PAGE_TYPE[$i]?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-
 
                             <div class="table table-responsive" style="overflow-x: inherit">
+
+                                <form class="row">
+                                    <div class="form-group">
+                                        <label style="text-align: right" for="pageType" class="control-label col-md-4 col-sm-4"> Search by Page Type: </label>
+                                        <div class="m-bot15 col-md-4 col-sm-4">
+                                            <select class="form-control m-bot15" name="pageType" id="pageType"  required>
+                                                <option value="" selected><?php echo ALL_PAGE_TYPE?></option>
+                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
+                                                    <option value="<?php echo PAGE_TYPE[$i]?>"><?php echo PAGE_TYPE[$i]?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                </form>
 
 
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
@@ -103,9 +103,6 @@
 </body>
 </html>
 
-<script src="<?php echo base_url('public/js/datatables/js/jquery.dataTables.min.js')?>"></script>
-<script src="<?php echo base_url('public/js/datatables/js/dataTables.bootstrap.min.js')?>"></script>
-
 <script type="text/javascript">
 
     var table;
@@ -140,12 +137,14 @@
             //for change search name
             "oLanguage": {
                 "sSearch": "<span>Search By Page Title:</span> " //search
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
         });
         $('#pageType').change(function(){ //button filter event click
             table.ajax.reload();  //just reload table
+            table.search("").draw(); //just redraw myTableFilter
         });
 
     });

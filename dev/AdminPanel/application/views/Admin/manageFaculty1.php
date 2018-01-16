@@ -124,7 +124,8 @@
             //for change search name
             "oLanguage": {
                 "sSearch": "<span>Search By FirstName or LastName:</span> " //search
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
         });
