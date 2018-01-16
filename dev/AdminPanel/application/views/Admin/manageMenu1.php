@@ -68,19 +68,19 @@
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
-                                <form class="row">
-                                <div class="form-group">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Menu Name: </label>
-                                    <div class="m-bot15 col-md-4 col-sm-4">
-                                    <select class="form-control" name="menuType" id="menuType" required>
-                                        <option value="" selected><?php echo "All Menu Type"?></option>
-                                        <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                                            <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
-                                        <?php } ?>
-                                    </select>
-                                    </div>
-                                </div>
-                                </form>
+<!--                                <form class="row">-->
+<!--                                <div class="form-group">-->
+<!--                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Menu Name: </label>-->
+<!--                                    <div class="m-bot15 col-md-4 col-sm-4">-->
+<!--                                    <select class="form-control" name="menuType" id="menuType" required>-->
+<!--                                        <option value="" selected>--><?php //echo "All Menu Type"?><!--</option>-->
+<!--                                        --><?php //for ($i=0;$i<count(MENU_TYPE);$i++){?>
+<!--                                            <option value="--><?php //echo MENU_TYPE[$i]?><!--">--><?php //echo MENU_TYPE[$i]?><!--</option>-->
+<!--                                        --><?php //} ?>
+<!--                                    </select>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                </form>-->
                                 
                                 <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
 
@@ -170,8 +170,7 @@
                 "sSearch": "<span>Search By Menu Title:</span> " //search
 
             },
-            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
-
+            "dom": '<"top"i<"typebar">fl>rt<"bottom"ip><"clear">'
         });
         $('#menuType').change(function(){ //button filter event click
             table.search("").draw(); //just redraw myTableFilter
@@ -181,6 +180,17 @@
 
 
         });
+        var html ='<div style="text-align:center"class="form-group">'+
+            '<label  for="menuType" class="control-label"> Search by Menu Name: </label>'+
+            '<select class="form-control input-sm" name="menuType" id="menuType" required>'+
+        '<option value="" selected><?php echo "All Menu Type"?></option>'+
+        '<?php for ($i=0;$i<count(MENU_TYPE);$i++){?>'+
+        '<option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>'+
+            '<?php } ?>'+
+            '</select>'+
+            '</div>';
+
+        $("div.typebar").html(html);
 
     });
 
