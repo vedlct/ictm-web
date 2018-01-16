@@ -19,10 +19,10 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage Page</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Manage Event</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
-                        <li><i class="fa fa-table"></i>Manage Page</li>
+                        <li><i class="fa fa-table"></i>Manage Event</li>
 
                     </ol>
                 </div>
@@ -72,10 +72,10 @@
                                     <div class="form-group">
                                         <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Menu Name: </label>
                                         <div class="m-bot15 col-md-4 col-sm-4">
-                                            <select class="form-control m-bot15" name="pageType" id="pageType"  required>
-                                                <option value="" selected><?php echo ALL_PAGE_TYPE?></option>
-                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
-                                                    <option value="<?php echo PAGE_TYPE[$i]?>"><?php echo PAGE_TYPE[$i]?></option>
+                                            <select class="form-control" name="menuType" id="menuType" required>
+                                                <option value="" selected><?php echo "All Menu Type"?></option>
+                                                <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
+                                                    <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>

@@ -120,7 +120,7 @@ class Photo extends CI_Controller
             if ($photo->lastModifiedDate==""){
                 $row[]='Never Modified';
             }else{
-                $row[] = $photo->lastModifiedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:m:i A',strtotime($photo->lastModifiedDate)),1);
             }
 
             if ($photo->photoStatus == STATUS[0])

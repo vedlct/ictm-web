@@ -51,18 +51,18 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> Event Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Start</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event End</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 3%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Event Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%">Event Start</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%">Event End</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Location</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Event Type</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 6%"> Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted Bye</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date (Y-m-d T)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Appear In Home</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 10%"> Appear In Home</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -129,7 +129,8 @@
             //for change search name
             "oLanguage": {
                 "sSearch": "<span>Search By Event Title:</span> " //search
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
         });

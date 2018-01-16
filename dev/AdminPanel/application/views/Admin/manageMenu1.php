@@ -19,10 +19,10 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-table"></i> Manage Event</h3>
+                    <h3 class="page-header"><i class="fa fa-table"></i> Manage Menu</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
-                        <li><i class="fa fa-table"></i>Manage Event</li>
+                        <li><i class="fa fa-table"></i>Manage Menu</li>
 
                     </ol>
                 </div>
@@ -68,12 +68,12 @@
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
-                                <form>
+                                <form class="row">
                                 <div class="form-group">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select A Menu Type: </label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Menu Name: </label>
                                     <div class="m-bot15 col-md-4 col-sm-4">
                                     <select class="form-control" name="menuType" id="menuType" required>
-                                        <option value="" selected><?php echo "All Menu"?></option>
+                                        <option value="" selected><?php echo "All Menu Type"?></option>
                                         <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>
                                             <option value="<?php echo MENU_TYPE[$i]?>"><?php echo MENU_TYPE[$i]?></option>
                                         <?php } ?>
@@ -86,17 +86,17 @@
 
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> Menu Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> O N</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 3%"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Menu Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 4%"> O N</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Menu Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Parent Menu</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Page Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Menu Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Menu Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date(Y-m-d T)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Last Modified By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -145,6 +145,7 @@
             "serverSide": true, //Feature control DataTables' server-side processing mode.
             "order": [], //Initial no order.
 
+
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/Menu/ajax_list')?>",
@@ -168,13 +169,17 @@
 
                 "sSearch": "<span>Search By Menu Title:</span> " //search
 
-            }
-
-
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
         });
         $('#menuType').change(function(){ //button filter event click
+            table.search("").draw(); //just redraw myTableFilter
             table.ajax.reload();  //just reload table
+
+
+
+
         });
 
     });

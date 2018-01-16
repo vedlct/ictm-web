@@ -57,7 +57,7 @@
                                                 <?php foreach ($coursedetail as $cd) { ?>
 
                                                     <!--  <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>-->
-                                                    <li><a href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">APPLY NOW</a></li>
+                                                    <li><a target="_blank" href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">Download Application Form</a></li>
 
 
 

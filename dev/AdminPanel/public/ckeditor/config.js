@@ -7,7 +7,9 @@
 CKEDITOR.editorConfig = function( config ) {
 
 
-     var base_url ="http://localhost/ictm-web/dev/AdminPanel/public/";
+     // var base_url ="http://localhost/ictm-web/dev/AdminPanel/public/";
+      var base_url =ckBaseUrl+"public/";
+
 
     config.filebrowserBrowseUrl = base_url+'ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
     config.filebrowserImageBrowseUrl = base_url+'ckeditor/kcfinder/browse.php?opener=ckeditor&type=images';

@@ -24,15 +24,26 @@ class Event extends CI_Controller
             $row = array();
             $row[] = $no;
             $row[] = $event->eventTitle;
-            $row[] = $event->eventStartDate;
-//            $row[] = $customers->surName;
-            $row[] = $event->eventEndDate;
+            $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($event->eventStartDate)),1);
+            $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($event->eventEndDate)),1);
             $row[] = $event->eventLocation;
             $row[] = $event->eventType;
             $row[] = $event->eventStatus;
             $row[] = $event->insertedBy;
-            $row[] = $event->lastModifiedBy;
-            $row[] = $event->lastModifiedDate;
+
+            if ($event->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $event->lastModifiedBy;
+            }
+            if ($event->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($event->lastModifiedDate)),1);
+
+            }
+
             if ($event->homeStatus == SELECT_APPROVE[0]){
                 $row[] = '<input type="checkbox" checked data-panel-id="'. $event->eventId .'" onclick=\'selectHome(this)\' id="appearInHome" name="appearInHome">Yes';
             }else{

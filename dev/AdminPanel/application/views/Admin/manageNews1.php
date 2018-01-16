@@ -51,19 +51,19 @@
                                 <table class="table  table-striped table-advance  table-bordered table-hover"   id="myTable">
                                     <thead>
                                     <tr>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 3%"> No</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%"> News Title</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> News Date</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> News Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> News Date</th>
 
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left" > News Type</th>
 
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 7%"> Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date (Y-m-d T)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Appear In Home</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 10%"> Appear In Home</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -126,6 +126,11 @@
                     "orderable": false, //set not orderable
                 },
             ],
+            "oLanguage": {
+                "sSearch": "<span>Search By News Title:</span> " //search
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
+
 
 
         });

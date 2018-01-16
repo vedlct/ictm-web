@@ -2,14 +2,14 @@
     <table class="table  table-advance  table-bordered table-hover" id="myTable">
         <thead>
         <tr align="left" >
-            <th style="background-color: #394A59; color: whitesmoke; text-align:left"  > No </th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 3%"  > No </th>
             <th style="background-color: #394A59; color: whitesmoke; text-align:left"  > Course Section Title </th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Order Number </th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Status </th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 4%"> O N </th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%" > Status </th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left; "> Inserted By </th>
             <th style="background-color: #394A59; color: whitesmoke; text-align: left;"> Last Modified By </th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left; ">Last Modified Date (Y-m-d T)</th>
-            <th style="background-color: #394A59; color: whitesmoke; text-align: left ; width: 10%"> Action</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 8%">Last Modified Date (d-m-Y)</th>
+            <th style="background-color: #394A59; color: whitesmoke; text-align: left ; width: 8%"> Action</th>
         </tr>
         </thead>
         <tbody>
@@ -48,10 +48,9 @@
             ],
             //for change search name
             "oLanguage": {
-
                 "sSearch": "<span>Search By Course Section Title:</span> " //search
-
-            }
+            },
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
 

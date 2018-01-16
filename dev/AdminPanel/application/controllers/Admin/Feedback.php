@@ -111,7 +111,7 @@ class Feedback extends CI_Controller
             if ($customers->feedbackApprovedDate == ""){
                 $row[] = 'Pending!!';
             }else{
-                $row[] = $customers->feedbackApprovedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($customers->feedbackApprovedDate)),1);
             }
             $row[] = $customers->insertedBy;
 
@@ -125,7 +125,7 @@ class Feedback extends CI_Controller
                 $row[] = "Never Modified";
 
             }else{
-                $row[] = $customers->lastModifiedDate;
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($customers->lastModifiedDate)),1);
             }
             if ($customers->feedbackApprove == SELECT_APPROVE[0]){
 

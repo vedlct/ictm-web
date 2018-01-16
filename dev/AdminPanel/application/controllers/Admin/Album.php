@@ -25,8 +25,18 @@ class Album extends CI_Controller
             $row[] = $Album->albumCategoryName;
             $row[] = $Album->albumStatus;
             $row[] = $Album->insertedBy;
-            $row[] = $Album->lastModifiedBy;
-            $row[] = $Album->lastModifiedDate;
+
+            if ($Album->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $Album->lastModifiedBy;
+            }
+            if ($Album->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($Album->lastModifiedDate)),1);
+            }
+
             if ($Album->albumStatus == STATUS[0])
             {
                 if ($Album->homeStatus == SELECT_APPROVE[0]){

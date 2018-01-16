@@ -45,7 +45,9 @@ class Menu extends CI_Controller {
             if ($menu->lastModifiedDate==""){
                 $row[]='Never Modified';
             }else{
-                $row[] = $menu->lastModifiedDate;
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($menu->lastModifiedDate)),1);
+
             }
 
 

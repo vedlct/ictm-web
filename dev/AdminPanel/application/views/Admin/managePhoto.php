@@ -47,6 +47,7 @@
                             </span>
                         </header>
                         <div class="panel-body">
+                            <form class="row">
                             <div class="form-group">
                                 <label class="control-label col-lg-2" for="albumId">Album Title</label>
                                 <div class="col-lg-10">
@@ -62,6 +63,7 @@
                                     </select>
                                 </div>
                             </div>
+                            </form>
 
                             <div id="tableid" style="display: none">
 
