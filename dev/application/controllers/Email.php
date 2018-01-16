@@ -62,6 +62,9 @@ class Email extends CI_Controller {
         $this->load->library('recaptcha');
         $recaptcha = $this->input->post('g-recaptcha-response');
         $response = $this->recaptcha->verifyResponse($recaptcha);
+      //  print_r($response);
+
+
         if (isset($response['success']) and $response['success'] === true) {
 
             $admin_email = "md.sakibrahman@gmail.com";

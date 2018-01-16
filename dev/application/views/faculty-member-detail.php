@@ -1,6 +1,7 @@
 
 		<?php include("header.php"); ?>
         <script src='https://www.google.com/recaptcha/api.js'></script>
+
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
