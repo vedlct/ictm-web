@@ -69,7 +69,7 @@
                             <div class="table table-responsive" style="overflow-x: inherit">
 
                                 <form class="row">
-                                    <div class="form-group">
+                                    <div class="form-group" id="spagetype">
                                         <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Menu Name: </label>
                                         <div class="m-bot15 col-md-4 col-sm-4">
                                             <select class="form-control m-bot15" name="pageType" id="pageType"  required>
@@ -167,7 +167,8 @@
             "oLanguage": {
                 "sSearch": "<span>Search By Page Title:</span> " //search
             },
-            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">',
+
 
 
         });
