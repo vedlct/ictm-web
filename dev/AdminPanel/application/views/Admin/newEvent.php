@@ -61,7 +61,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
-                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime" value="<?php echo set_value('eventStartDateTime'); ?>" class="form-control" required/>
+                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime" placeholder="dd-mm-yyy H:m" value="<?php echo set_value('eventStartDateTime'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -72,7 +72,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker2'>
-                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" value="<?php echo set_value('eventEndDateTime'); ?>" class="form-control" required/>
+                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" placeholder="dd-mm-yyy H:m" value="<?php echo set_value('eventEndDateTime'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -242,13 +242,13 @@
 </script>
 
 <script>
-$('#eventStartDateTime').keydown(function(e) {
-e.preventDefault();
-return false;
-});
+//$('#eventStartDateTime').keydown(function(e) {
+//e.preventDefault();
+//return false;
+//});
 
-$('#eventEndDateTime').keydown(function(e) {
-    e.preventDefault();
-    return false;
-});
+//$('#eventEndDateTime').keydown(function(e) {
+//    e.preventDefault();
+//    return false;
+//});
 </script>
