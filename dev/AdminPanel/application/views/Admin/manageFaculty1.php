@@ -117,10 +117,15 @@
             ],
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By FirstName or LastName:</span> " //search
+                "sSearch": "<span>Search By Faculty Name:</span> " //search
+
             },
-            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">',
+
+
         });
+        $(".dataTables_filter input").attr("placeholder", "Faculty Name");
+
     });
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Faculty? All of his Course will be deleted too")) {
