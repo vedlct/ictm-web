@@ -12,6 +12,10 @@ class Feedbackm extends CI_Model
 
     private function _get_datatables_query()
     {
+        if($this->input->post('feedbackSource'))
+        {
+            $this->db->where('feedbackSource', $this->input->post('feedbackSource'));
+        }
 
         $this->db->from($this->table);
 

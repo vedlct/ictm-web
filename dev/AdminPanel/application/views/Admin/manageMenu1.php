@@ -37,7 +37,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage News
+                            Manage Menu
 
                         </header>
                         <div id="panel" class="panel-body">
@@ -87,7 +87,7 @@
                                     <thead>
                                     <tr>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 3%"> No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Menu Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Menu Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 4%"> O N</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Menu Type</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Parent Menu</th>
@@ -171,7 +171,7 @@
             //for change search name
             "oLanguage": {
 
-                "sSearch": "<span>Search By Menu Title:</span> " //search
+                "sSearch": "<span>Search By Menu Name:</span> " //search
 
             },
             "dom": '<"top"i<"#typebar">fl>rt<"bottom"ip><"clear">'
@@ -181,6 +181,7 @@
             table.ajax.reload();  //just reload table
 
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Menu Name");
 
 
 

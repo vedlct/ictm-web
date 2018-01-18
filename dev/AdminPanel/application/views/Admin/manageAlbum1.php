@@ -124,6 +124,7 @@
 
 
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Album Title");
 
     });
 

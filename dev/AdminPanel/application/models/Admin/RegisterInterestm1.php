@@ -4,14 +4,19 @@
 class RegisterInterestm1 extends CI_Model
 {
     var $table = 'ictmregisterinterest';
-//    var $column_order = array(null,'registerInterestId','title','firstName','surName','mobile','appointmentDate','course','email','inserDate'); //set column field database for datatable orderable
-    var $column_order = array(null,null,'firstName',null,'appointmentDate','course','email','inserDate',null); //set column field database for datatable orderable
+    var $select = array('registerInterestId','title','firstName','surName','appointmentDate','course','mobile','email','inserDate'); //set column field database for datatable orderable
+    var $column_order = array('registerInterestId','title','firstName','surName','mobile','appointmentDate','course','email','inserDate'); //set column field database for datatable orderable
     var $column_search = array('firstName','surName'); //set column field database for datatable searchable
     var $order = array('registerInterestId' => 'desc'); // default order
 
     private function _get_datatables_query()
     {
+        if($this->input->post('interestedCourse'))
+        {
+            $this->db->where('course', $this->input->post('interestedCourse'));
+        }
 
+        $this->db->select($this->select);
         $this->db->from($this->table);
 
         $i = 0;
@@ -21,18 +26,28 @@ class RegisterInterestm1 extends CI_Model
             if($_POST['search']['value']) // if datatable send POST for search
             {
 
-                if($i===0) // first loop
+//                if($i===0) // first loop
+//                {
+//                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+//                    $this->db->like($item, $_POST['search']['value']);
+//                }
+//                else
+//                {
+//                    $this->db->or_like($item, $_POST['search']['value']);
+//                }
+//
+//                if(count($this->column_search) - 1 == $i) //last loop
+//                    $this->db->group_end(); //close bracket
+
+                $searchbox = explode(' ', $_POST['search']['value']);
+                $where = array();
+                foreach($searchbox as $word)
                 {
-                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
-                    $this->db->like($item, $_POST['search']['value']);
-                }
-                else
-                {
-                    $this->db->or_like($item, $_POST['search']['value']);
+                    $where[] = "(firstName LIKE '%".$word."%' OR surName LIKE '%".$word."%')";
                 }
 
-                if(count($this->column_search) - 1 == $i) //last loop
-                    $this->db->group_end(); //close bracket
+                $this->db->where(implode(' AND ', $where));
+
             }
             $i++;
         }
@@ -91,6 +106,15 @@ class RegisterInterestm1 extends CI_Model
     }
     public function record_count() {
         return $this->db->count_all("ictmregisterinterest");
+    }
+
+    /* this function return course name and id for  manage register Interest */
+    public function getCourseIdNameforManageRI(){
+
+        $this->db->select('courseId, courseTitle');
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+
     }
 
     public function viewAllForSelectedRI($riId)

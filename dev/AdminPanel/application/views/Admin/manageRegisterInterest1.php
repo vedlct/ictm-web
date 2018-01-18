@@ -43,6 +43,21 @@
                         </header>
                         <div id="panel" class="panel-body">
 
+                            <form class="row">
+                                <div class="form-group">
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Filter by Course: </label>
+                                    <div class="m-bot15 col-md-4 col-sm-4">
+                                        <select class="form-control" name="interestedCourse" id="interestedCourse" required>
+                                            <option value="" selected><?php echo "All Course"?></option>
+                                            <?php foreach ($courses as $course){?>
+                                                <option value="<?php echo $course->courseTitle ?>"><?php echo $course->courseTitle ?></option>
+                                            <?php }?>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+
                             <div class="table table-responsive" style="overflow-x: inherit">
                                     <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
@@ -110,7 +125,11 @@
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/RegisterInterest1/ajax_list')?>",
-                "type": "POST"
+                "type": "POST",
+                "data": function ( data ) {
+                    data.interestedCourse = $('#interestedCourse').val();
+
+                }
             },
 
             //Set column definition initialisation properties.
@@ -121,12 +140,18 @@
                 },
             ],
             "oLanguage": {
-                "sSearch": "<span>Search By FirstName or LastName:</span> " //search
+                "sSearch": "<span>Search By Name:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">',
 
 
         });
+        $('#interestedCourse').change(function(){ //button filter event click
+            table.search("").draw(); //just redraw myTableFilter
+            table.ajax.reload();  //just reload table
+
+        });
+        $(".dataTables_filter input").attr("placeholder", "Search By Name");
 
     });
 

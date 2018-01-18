@@ -77,7 +77,7 @@ class Coursem extends CI_Model
     }
     ///////////////////end of datatable/////////////////////////////
 
-    /* this function return course name and id for faculty use*/
+    /* this function return course name and id for faculty use and manage register Interest */
     public function getCourseIdNameforFaculty(){
 
         $this->db->select('courseId, courseTitle');
