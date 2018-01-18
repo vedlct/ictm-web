@@ -38,7 +38,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage News
+                            Manage Event
 
                         </header>
                         <div id="panel" class="panel-body">
@@ -134,6 +134,7 @@
 
 
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Event Title");
 
     });
 

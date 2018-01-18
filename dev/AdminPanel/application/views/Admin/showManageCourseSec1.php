@@ -55,6 +55,7 @@
 
 
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Course Section Name");
 
     });
 </script>

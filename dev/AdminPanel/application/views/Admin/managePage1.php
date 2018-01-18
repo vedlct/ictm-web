@@ -37,7 +37,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Manage News
+                            Manage Page
 
                         </header>
                         <div id="panel" class="panel-body">
@@ -172,6 +172,7 @@
 
 
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Page Title");
         $('#pageType').change(function(){ //button filter event click
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter

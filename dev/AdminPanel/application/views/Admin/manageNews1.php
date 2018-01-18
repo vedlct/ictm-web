@@ -134,6 +134,7 @@
 
 
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By News Title");
 
     });
 

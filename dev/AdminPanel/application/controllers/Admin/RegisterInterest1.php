@@ -13,8 +13,10 @@ class RegisterInterest1 extends CI_Controller
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $this->load->helper('url');
-            $this->load->view('Admin/manageRegisterInterest1');
+//            $this->load->helper('url');
+
+            $this->data['courses'] = $this->RegisterInterestm1->getCourseIdNameforManageRI();
+            $this->load->view('Admin/manageRegisterInterest1',$this->data);
 
         }
         else{

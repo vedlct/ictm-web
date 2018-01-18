@@ -46,6 +46,20 @@
                         <div class="panel-body ">
                             <div class="table table-responsive">
 
+                                <form class="row">
+                                    <div class="form-group">
+                                        <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Filter by Source: </label>
+                                        <div class="m-bot15 col-md-4 col-sm-4">
+                                            <select class="form-control" name="feedbackSource" id="feedbackSource" required>
+                                                <option value="" selected><?php echo "All Feedback Source"?></option>
+                                                <?php for ($i=0;$i<count(FEEDBACK_SOURCE);$i++){?>
+                                                    <option value="<?php echo FEEDBACK_SOURCE[$i]?>"><?php echo FEEDBACK_SOURCE[$i]?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+
                                 <table class="table table-advance table-bordered table-hover" id="myTable">
                                     <thead>
                                     <tr align="center" bgcolor="#D3D3D3">
@@ -112,7 +126,11 @@
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/Feedback/ajax_list')?>",
-                "type": "POST"
+                "type": "POST",
+                "data": function ( data ) {
+                    data.feedbackSource = $('#feedbackSource').val();
+
+                }
             },
 
             //Set column definition initialisation properties.
@@ -130,6 +148,13 @@
 
 
         });
+
+        $('#feedbackSource').change(function(){ //button filter event click
+            table.search("").draw(); //just redraw myTableFilter
+            table.ajax.reload();  //just reload table
+
+        });
+        $(".dataTables_filter input").attr("placeholder", "Search By Name");
 
     });
 
