@@ -116,6 +116,9 @@
                                             case "registerInterest.php":
                                                 ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
+                                            case "feedback-form.php":
+                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
                                             default:
                                         }
                                     }
@@ -231,6 +234,9 @@
                                                             case "registerInterest.php":
                                                                 ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $q->menuName?></a></li> <?php
                                                                 break;
+                                                            case "feedback-form.php":
+                                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $q->menuName?></a></li> <?php
+                                                                break;
                                                             default:
                                                         }
                                                     }
@@ -276,6 +282,9 @@
                                                 break;
                                             case "registerInterest.php":
                                                 ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $cm->menuName?></a></li> <?php
+                                                break;
+                                            case "feedback-form.php":
+                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $cm->menuName ?></a></li> <?php
                                                 break;
                                             default:
                                         }

@@ -274,4 +274,3 @@
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/main.js"></script>
 
 <!--        <script src="--><?php //echo base_url()?><!--public/javascript/retina.min.js"></script>-->
-

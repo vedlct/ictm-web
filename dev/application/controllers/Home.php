@@ -27,6 +27,7 @@ class Home extends CI_Controller {
         $this->data['home'] = $this->Homem->getHomeAlldata();
         $this->load->view('home', $this->data);
 
+
     }
 
     public function menu() //  get all the menu+ footer

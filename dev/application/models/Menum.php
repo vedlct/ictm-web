@@ -7,11 +7,11 @@ class Menum extends CI_Model
     public function getTopMenu() //get the top menu info
     {
 
-        $this->db->select('menuId, menuName, pageTitle, ictmpage.pageId,pageType,pageContent' );
-        $this->db->where('menuType', MENU_TYPE[0]);
-        $this->db->where('menuStatus', STATUS[0]);
+        $this->db->select('menuId, menuName,pageTitle,ictmpage.pageId,pageType,pageContent');
+        $this->db->where('menuType',MENU_TYPE[0]);
+        $this->db->where('menuStatus',STATUS[0]);
         $this->db->order_by("ictmmenu.orderNumber", "asc");
-        $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
+        $this->db->join('ictmpage','ictmmenu.pageId = ictmpage.pageId','left');
         $query = $this->db->get('ictmmenu');
         return $query->result();
 
