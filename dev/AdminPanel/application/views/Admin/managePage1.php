@@ -70,7 +70,7 @@
 
                                 <form class="row">
                                     <div class="form-group" id="spagetype">
-                                        <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Menu Name: </label>
+                                        <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Page Title: </label>
                                         <div class="m-bot15 col-md-4 col-sm-4">
                                             <select class="form-control m-bot15" name="pageType" id="pageType"  required>
                                                 <option value="" selected><?php echo ALL_PAGE_TYPE?></option>

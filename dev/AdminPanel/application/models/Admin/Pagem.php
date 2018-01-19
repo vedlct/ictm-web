@@ -184,7 +184,7 @@ class Pagem extends CI_Model
     public function getPageIdName()
     {
 
-        $this->db->select('pageId, pageTitle');
+        $this->db->select('pageId,pageTitle');
         $this->db->where('pageType !=',PAGE_TYPE[3]);
         $this->db->where('pageType !=',PAGE_TYPE[4]);
         $this->db->group_by('pageTitle');
