@@ -45,6 +45,9 @@
                                                 case "registerInterest.php":
                                                     ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $ki->menuName?></a></li> <?php
                                                     break;
+                                                case "feedback-form.php":
+                                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $ki->menuName ?></a></li> <?php
+                                                    break;
                                                 default:
                                             }
                                         }
@@ -95,7 +98,10 @@
                                                     ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $il->menuName?></a></li> <?php
                                                     break;
                                                 case "registerInterest.php":
-                                                    ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $il->menuName?></a></li> <?php
+                                                    ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $il->menuName?></a></li><?php
+                                                    break;
+                                                case "feedback-form.php":
+                                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $il->menuName ?></a></li> <?php
                                                     break;
                                                 default:
                                             }
@@ -196,6 +202,9 @@
                                     break;
                                 case "registerInterest.php":
                                     ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $bm->menuName?></a></li> <?php
+                                    break;
+                                case "feedback-form.php":
+                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $bm->menuName ?></a></li> <?php
                                     break;
                                 default:
                             }
