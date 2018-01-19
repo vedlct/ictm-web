@@ -45,7 +45,7 @@
 
                                 <div align="center"  class="col-md-12 col-sm-12">
                                     <div style="position: absolute;left: 0%;top: 38px;width: 94%;" class="divcnter">
-                                        <label style="text-align: right" for="menuType" class="control-label col-md-5 col-sm-5"> Search by Menu Name: </label>
+                                        <label style="text-align: right" for="menuType" class="control-label col-md-5 col-sm-5"> Select Menu type: </label>
                                         <div class="m-bot15 col-md-3 col-sm-3">
                                             <select class="form-control" name="menuType" id="menuType" required>
                                                 <option value="" selected><?php echo "All Menu Type"?></option>
