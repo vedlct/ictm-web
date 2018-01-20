@@ -3236,12 +3236,13 @@ body.mac .dropcap {
 
 /* The Close Button */
 .close {
-	color: white;
-	position: absolute;
-	top: 10px;
-	right: 25px;
-	font-size: 35px;
-	font-weight: bold;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    right: 287px;
+    top: 50px;
+    z-index: 9999;
 }
 
 .close:hover,
@@ -3260,21 +3261,20 @@ body.mac .dropcap {
 }
 
 /* Next & previous buttons */
-.prev,
-.next {
-	cursor: pointer;
-	position: absolute;
-	top: 50%;
-	width: auto;
-	padding: 16px;
-	margin-top: -50px;
-	color: white;
-	font-weight: bold;
-	font-size: 20px;
-	transition: 0.6s ease;
-	border-radius: 0 3px 3px 0;
-	user-select: none;
-	-webkit-user-select: none;
+.prev, .next {
+    -moz-user-select: none;
+    background: black none repeat scroll 0 0;
+    border-radius: 13px 3px 3px 0;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -50px;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    transition: all 0.6s ease 0s;
+    width: auto;
 }
 
 /* Position the "next button" to the right */

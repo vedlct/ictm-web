@@ -47,7 +47,7 @@
 </section>
 
 
-<div style="z-index: 9999" id="myModal" class="modal">
+<div  style="z-index:9999;"id="myModal" class="modal">
     <span class="close cursor" onclick="closeModal()">&times;</span>
     <div class="modal-content">
         <?php
