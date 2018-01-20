@@ -99,4 +99,12 @@ class Menum extends CI_Model
         return $query->result();
 
     }
+    public function getAffiliations() // get the affiliations for the All page
+    {
+        $this->db->select('AffiliationsId,affiliationsTitle,AffiliationsDetails,AffiliationsPhotoPath');
+        $this->db->where('affiliationsStatus =', STATUS[0]);
+        $this->db->where('homeStatus =', SELECT_APPROVE[0]);
+        $query = $this->db->get('ictmaffiliations');
+        return $query->result();
+    }
 }

@@ -1,3 +1,44 @@
+<!-- affiliation for all page -->
+<div class="container">
+    <div class="row">
+        <div class=" bottom-logo-slider owl-carousel owl-theme">
+            <?php foreach ($affiliation as $af) { ?>
+                <div class="item">
+                    <?php if ($af->AffiliationsPhotoPath !=null){?>
+                    <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'248','103')); ?>" alt="image">
+                <?php }else{ ?>
+                        <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'."noImage.jpg",'248','103')); ?>" alt="image">
+
+                    <?php } ?>
+                </div>
+            <?php } ?>
+        </div>
+        <script>
+            $(document).ready(function() {
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
+                    items: 5,
+                    loop: true,
+                    margin: 10,
+                    autoplay: true,
+                    autoplayTimeout: 2000,
+                    autoplayHoverPause: false
+                });
+                $('.play').on('click', function () {
+                    owl.trigger('play.owl.autoplay', [1000])
+                });
+                $('.stop').on('click', function () {
+                    owl.trigger('stop.owl.autoplay')
+                });
+            });
+        </script>
+    </div>
+</div>
+
+<!-- affiliation for all page end -->
+
+
+
 <footer class="footer full-color">
     <section id="bottom">
         <div class="section-inner">

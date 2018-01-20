@@ -1,8 +1,6 @@
 <?php include("header.php"); ?>
 <head>
-    <!-- Owl Carousel -->
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.theme.default.min.css">
+
 
 </head>
 
@@ -523,37 +521,37 @@
     </div>
 </section>
 
-<div class="container">
-    <div class="row">
-        <div class=" bottom-logo-slider owl-carousel owl-theme">
-            <?php foreach ($affiliation as $af) { ?>
-                <div class="item">
-                    <!--                    <img src="--><?php //echo base_url() ?><!----><?php //echo FOLDER_NAME ?><!--/images/affiliationImages/--><?php //echo $af->AffiliationsPhotoPath ?><!--" alt="image">-->
-                    <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'248','103')); ?>" alt="image">
-                </div>
-            <?php } ?>
-        </div>
-        <script>
-            $(document).ready(function() {
-                var owl = $('.owl-carousel');
-                owl.owlCarousel({
-                    items: 5,
-                    loop: true,
-                    margin: 10,
-                    autoplay: true,
-                    autoplayTimeout: 2000,
-                    autoplayHoverPause: false
-                });
-                $('.play').on('click', function () {
-                    owl.trigger('play.owl.autoplay', [1000])
-                })
-                $('.stop').on('click', function () {
-                    owl.trigger('stop.owl.autoplay')
-                })
-            })
-        </script>
-    </div>
-</div>
+<!--<div class="container">-->
+<!--    <div class="row">-->
+<!--        <div class=" bottom-logo-slider owl-carousel owl-theme">-->
+<!--            --><?php //foreach ($affiliation as $af) { ?>
+<!--                <div class="item">-->
+
+<!--                    <img src="--><?php //echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'248','103')); ?><!--" alt="image">-->
+<!--                </div>-->
+<!--            --><?php //} ?>
+<!--        </div>-->
+<!--        <script>-->
+<!--            $(document).ready(function() {-->
+<!--                var owl = $('.owl-carousel');-->
+<!--                owl.owlCarousel({-->
+<!--                    items: 5,-->
+<!--                    loop: true,-->
+<!--                    margin: 10,-->
+<!--                    autoplay: true,-->
+<!--                    autoplayTimeout: 2000,-->
+<!--                    autoplayHoverPause: false-->
+<!--                });-->
+<!--                $('.play').on('click', function () {-->
+<!--                    owl.trigger('play.owl.autoplay', [1000])-->
+<!--                })-->
+<!--                $('.stop').on('click', function () {-->
+<!--                    owl.trigger('stop.owl.autoplay')-->
+<!--                })-->
+<!--            })-->
+<!--        </script>-->
+<!--    </div>-->
+<!--</div>-->
 
 <?php include("footer.php"); ?>
 

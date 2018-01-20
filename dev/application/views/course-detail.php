@@ -23,7 +23,6 @@
 <section class="main-content course-single">
     <div class="container">
         <div class="content-course">
-
             <?php foreach ($coursedetail as $cd) {?>
 
                 <?php $x = "10003239" ?>
@@ -31,10 +30,6 @@
                 <?php $studyMode = $cd->studyMode ?>
 
             <?php }?>
-
-
-
-
             <div class="row">
                 <div class="col-md-9">
                     <article class="post-course">
@@ -42,13 +37,11 @@
                             <div class="col-md-12">
                                 <div class="content-pad single-course-detail">
                                     <div class="course-detail">
-                                        <div class="content-content">
-
-
+                                        <div style="margin-top: -25px;" class="content-content">
 
                                             <?php foreach ($coursedetail as $cd) {
                                                 if($cd->courseImage != null ){?>
-                                                    <img style="height: 200px;width: 800px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"><br><br>
+                                                    <img style="height: 200px;width: 800px" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/courseImages/<?php echo $cd->courseImage ?>"> <br><br>
                                                 <?php }}?>
                                             <ul style="margin-left:0px" class="nav nav-tabs">
                                                 <?php foreach ($courseSectiondetail as $csd){ ?>

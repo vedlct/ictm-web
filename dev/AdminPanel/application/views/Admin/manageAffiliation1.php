@@ -56,7 +56,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 8%"> Last Modified Date(d-m-Y) </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Appear In Home</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Appear In Pages</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                     </tr>
                                     </thead>

@@ -22,7 +22,7 @@ class Home extends CI_Controller {
         $this->menu();
         $this->data['news'] = $this->Homem->getNews();
         $this->data['events'] = $this->Homem->getEvents();
-        $this->data['affiliation'] = $this->Homem->getAffiliations();
+//        $this->data['affiliation'] = $this->Homem->getAffiliations();
         $this->data['feedback'] = $this->Homem->getFeedback();
         $this->data['home'] = $this->Homem->getHomeAlldata();
         $this->load->view('home', $this->data);
@@ -33,7 +33,7 @@ class Home extends CI_Controller {
     public function menu() //  get all the menu+ footer
     {
 
-
+        $this->data['affiliation'] = $this->Menum->getAffiliations();
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();
