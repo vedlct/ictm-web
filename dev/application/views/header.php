@@ -22,6 +22,9 @@
     <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
 <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
 
+
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/all.css" rel="stylesheet"/>
 
     <!-- Owl Carousel -->
@@ -63,14 +66,20 @@
 
 
 
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]-->
     <script src="<?php echo base_url()?>public/javascript/html5shiv.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+
     <script src="<?php echo base_url()?>public/javascript/respond.min.js"></script>
-    <![endif]-->
+
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>-->
+    <!--[endif]-->
 
 
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
+
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 
 
 

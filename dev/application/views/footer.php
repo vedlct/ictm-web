@@ -305,12 +305,20 @@
 <!-- Javascript -->
 
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/bootstrap.min.js"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.easing.js"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>-->
+
+
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/smoothscroll.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/owl.carousel.js"></script>
+
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/parallax.js"></script>
+<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>-->
+
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-waypoints.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.tweet.min.js"></script>
+<!--<script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/jquery.tweet.min.js"></script>-->
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.matchHeight-min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery-validate.js"></script>
 
