@@ -3353,6 +3353,12 @@ img.hover-shadow {
 }
 
 
+
+.flat-row.padding-small {
+    background-color: #EAE8EB;
+}
+
+
 /* .page-title .overlay {
     position: absolute;
     left: 0;

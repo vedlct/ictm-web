@@ -30,6 +30,7 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.theme.default.min.css">
+    
 
 
 
