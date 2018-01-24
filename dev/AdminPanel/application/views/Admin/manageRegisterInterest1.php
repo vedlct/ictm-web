@@ -43,10 +43,10 @@
                         </header>
                         <div id="panel" class="panel-body">
 
-                            <form class="row">
-                                <div class="form-group">
+                            <div align="center"  class="col-md-8 col-sm-8">
+                                <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                     <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Filter by Course: </label>
-                                    <div class="m-bot15 col-md-4 col-sm-4">
+                                    <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control" name="interestedCourse" id="interestedCourse" required>
                                             <option value="" selected><?php echo "All Course"?></option>
                                             <?php foreach ($courses as $course){?>
@@ -56,7 +56,8 @@
                                         </select>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+
 
                             <div class="table table-responsive" style="overflow-x: inherit">
                                     <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">

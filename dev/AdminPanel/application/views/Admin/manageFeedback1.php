@@ -46,10 +46,10 @@
                         <div class="panel-body ">
                             <div class="table table-responsive">
 
-                                <form class="row">
-                                    <div class="form-group">
+                                <div align="center"  class="col-md-8 col-sm-8">
+                                    <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                         <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Filter by Source: </label>
-                                        <div class="m-bot15 col-md-4 col-sm-4">
+                                        <div class="m-bot15 col-md-5 col-sm-5">
                                             <select class="form-control" name="feedbackSource" id="feedbackSource" required>
                                                 <option value="" selected><?php echo "All Feedback Source"?></option>
                                                 <?php for ($i=0;$i<count(FEEDBACK_SOURCE);$i++){?>
@@ -58,7 +58,8 @@
                                             </select>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
+
 
                                 <table class="table table-advance table-bordered table-hover" id="myTable">
                                     <thead>

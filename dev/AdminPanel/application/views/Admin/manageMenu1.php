@@ -43,10 +43,10 @@
                         <div id="panel" class="panel-body">
 
 
-                                <div align="center"  class="col-md-12 col-sm-12">
-                                    <div style="position: absolute;left: 0%;top: 38px;width: 94%;" class="divcnter">
-                                        <label style="text-align: right" for="menuType" class="control-label col-md-5 col-sm-5"> Select Menu type: </label>
-                                        <div class="m-bot15 col-md-3 col-sm-3">
+                                <div align="center"  class="col-md-8 col-sm-8">
+                                    <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+                                        <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select Menu type:</label>
+                                        <div class="m-bot15 col-md-5 col-sm-5">
                                             <select class="form-control" name="menuType" id="menuType" required>
                                                 <option value="" selected><?php echo "All Menu Type"?></option>
                                                 <?php for ($i=0;$i<count(MENU_TYPE);$i++){?>

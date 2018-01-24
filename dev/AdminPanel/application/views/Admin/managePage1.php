@@ -42,45 +42,24 @@
                         </header>
                         <div id="panel" class="panel-body">
 
-                            <!---->
-                            <!--                            <div class="panel panel-default">-->
-                            <!--                                <div class="panel-heading">-->
-                            <!--                                    <h3 class="panel-title" >Custom Filter : </h3>-->
-                            <!--                                </div>-->
-                            <!--                                <div class="panel-body">-->
-                            <!--                                    <form id="form-filter" class="form-horizontal">-->
-                            <!--                                        <div class="form-group">-->
-                            <!--                                            <label for="country" class="col-sm-2 control-label">Menu Type</label>-->
-                            <!--                                            <div class="col-sm-4">-->
-                            <!--                                                <select class="form-control m-bot15" name="menuType" id="menuType" required>-->
-                            <!--                                                    <option value="" selected>--><?php //echo SELECT_MENU_TYPE?><!--</option>-->
-                            <!--                                                    --><?php //for ($i=0;$i<count(MENU_TYPE);$i++){?>
-                            <!--                                                        <option value="--><?php //echo MENU_TYPE[$i]?><!--">--><?php //echo MENU_TYPE[$i]?><!--</option>-->
-                            <!--                                                    --><?php //} ?>
-                            <!--                                                </select>-->
-                            <!--                                            </div>-->
-                            <!--                                        </div>-->
-                            <!---->
-                            <!--                                    </form>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
+
+                            <div align="center" class="col-md-8 col-sm-8">
+                                <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Page Title:</label>
+                                    <div class="m-bot15 col-md-5 col-sm-5">
+                                        <select class="form-control m-bot15" name="pageType" id="pageType"  required>
+                                            <option value="" selected><?php echo ALL_PAGE_TYPE?></option>
+                                            <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
+                                                <option value="<?php echo PAGE_TYPE[$i]?>"><?php echo PAGE_TYPE[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
 
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
-                                <form class="row">
-                                    <div class="form-group" id="spagetype">
-                                        <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search by Page Title: </label>
-                                        <div class="m-bot15 col-md-4 col-sm-4">
-                                            <select class="form-control m-bot15" name="pageType" id="pageType"  required>
-                                                <option value="" selected><?php echo ALL_PAGE_TYPE?></option>
-                                                <?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
-                                                    <option value="<?php echo PAGE_TYPE[$i]?>"><?php echo PAGE_TYPE[$i]?></option>
-                                                <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </form>
 
                                 <table class="table  table-striped table-advance  table-bordered table-hover" id="myTable">
 
