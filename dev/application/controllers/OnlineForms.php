@@ -633,17 +633,16 @@ class OnlineForms extends CI_Controller
             $this->menu();
             $this->load->view('feedback-form', $this->data);
         }
-        else{
-            $this->data['error'] = $this->OnlineFormsm->sendFeedback();
-            if (empty($this->data['error'])) {
-                $this->session->set_flashdata('successMessage','Feedback given Successfully.Thak You For Your Feedback');
-                redirect('Feedback');
-            }
-            else
-            {
-                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                redirect('Feedback');
-            }
+        else {
+                $this->data['error'] = $this->OnlineFormsm->sendFeedback();
+                if (empty($this->data['error'])) {
+                    $this->session->set_flashdata('successMessage', 'Feedback given Successfully.Thak You For Your Feedback');
+                    redirect('Feedback');
+                } else {
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Feedback');
+                }
+
         }
     }
     public function menu() // get all the menu + footer

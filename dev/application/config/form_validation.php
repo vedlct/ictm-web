@@ -105,7 +105,7 @@ $config = array (
             array(
                 'field' => 'details',
                 'label' => 'Details',
-                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+                'rules' => 'required|xss_clean|htmlspecialchars'
             ),
             array(
                 'field' => 'image',

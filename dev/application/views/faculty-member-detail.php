@@ -104,15 +104,18 @@
                                 	
                                         <h2 style="font-size:24px" class="title">Get in touch</h2>
 
-                                    <?php if ($this->session->flashdata('errorMessage')!=null){?>
-                                        <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
-                                    <?php }
-                                    elseif($this->session->flashdata('successMessage')!=null){?>
-                                        <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
-                                    <?php }?>
+
 								
                                     <div class="contact-form">
                                         <div class="line-box"></div>
+
+                                        <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                                            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+                                        <?php }
+                                        elseif($this->session->flashdata('successMessage')!=null){?>
+                                            <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+                                        <?php }?>
+
                                         <form action="<?php echo base_url()?>Email/FacultyEmail/<?php echo $facultyinfo->facultyId?>" onsubmit="return chkFacultymail()" method="post" id="contactform" class="comment-form">
                                         	<div class="row">
                                             	<div class="col-md-12">
