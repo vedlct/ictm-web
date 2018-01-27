@@ -618,6 +618,10 @@
         padding: 30px;
     }
     
+    #itemresized {
+        width: 245px;
+    }
+    
 }
 
 /* Tablet Portrait Size */
@@ -629,12 +633,14 @@
 }
 
 /* All Mobile Sizes */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 	.thumbnail-overflow {
 		left: 0px;
 	}
     
-    
+    #itemresized {
+        width: 245px;
+    }
     .newwss > a {
         height: 250px;
         width: 300px;

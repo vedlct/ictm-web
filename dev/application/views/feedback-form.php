@@ -31,15 +31,15 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-12">
 
-                <form role="form" action="<?php echo base_url()?>SubmitFeedback" method="post" enctype="multipart/form-data" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>SubmitFeedback" method="post" enctype="multipart/form-data" class="registration-form form-horizontal" onsubmit="return submitFeedback()">
 
-                    <fieldset>
+
                         <div class="form-bottom">
                             <div class="form-group">
                                 <label class="control-label col-md-2">Name *</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" name="name" placeholder="Your Name (maximum 100 charecter)" value="<?php echo set_value('name'); ?>" class="form-control" id="name" maxlength="100" required>
+                                    <input type="text" name="name" placeholder="Your Name (maximum 100 charecter)" value="<?php echo set_value('name');?>" class="form-control" id="name" maxlength="100" required>
                                 </div>
                             </div>
 
@@ -55,12 +55,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <label class="control-label col-md-2">Details *</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('details'); ?></font></p>
-                                    <textarea name="details" placeholder="Write Feedback (maximum 255 charecter)" class="form-control" id="details" maxlength="255"><?php echo set_value('details'); ?></textarea>
+                                    <textarea name="details" placeholder="Write Feedback" class="form-control" id="details" required ><?php echo set_value('details'); ?></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Upload Image *:</label>
+                                <label class="control-label col-md-2">Upload Image *</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('image'); ?></font></p>
                                     <input type="file" class="form-control" id="image" name="image" required>
@@ -77,7 +77,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+
 
                 </form>
 
@@ -89,5 +89,39 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </section>
 
 <?php include("footer.php"); ?>
+<script>
+    function submitFeedback() {
+
+        var name =  document.getElementById("name").value;
+        var profession =  document.getElementById("profession").value;
+        var details =  document.getElementById("details").value;
+
+
+
+        if (name ==""){
+            alert("Name field can not be empty !! ");
+            return false;
+        }
+        if (name.length > 100){
+            alert("Name field can not be greater than 100 charecter !! ");
+            return false;
+        }
+        if (profession ==""){
+            alert("Profession field can not be empty !! ");
+            return false;
+        }
+        if (profession.length > 100){
+            alert("Profession field can not be greater than 100 charecter !! ");
+            return false;
+        }
+        if (details == ""){
+            alert("Details field can not be empty !! ");
+            return false;
+        }
+
+
+    }
+</script>
 <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
 <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+
