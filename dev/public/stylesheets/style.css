@@ -3359,6 +3359,28 @@ img.hover-shadow {
 }
 
 
+.main-content.course-single {
+    background-color: #ddd;
+}
+
+.content-course {
+    background-color: #fff;
+}
+
+.course-detail-section {
+    margin-bottom: 29px;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+.content-pad.single-course-detail {
+    padding: 15px;
+}
+
+.widget.widget-nav-menu {
+    margin-top: 15px;
+}
+
 /* .page-title .overlay {
     position: absolute;
     left: 0;
