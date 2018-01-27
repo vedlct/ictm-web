@@ -35,7 +35,7 @@
 			]
 
 		});
-        $('#calendar').fullCalendar('changeView', 'listWeek');
+//        $('#calendar').fullCalendar('changeView', 'listWeek');
 
 	});
 

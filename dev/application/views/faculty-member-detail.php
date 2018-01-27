@@ -118,7 +118,7 @@
                                             	<div class="col-md-12">
                                                 	<label><strong>Your Name *</strong></label>
                                                 	<fieldset class="style-1 full-name">
-                                                        <input type="text" id="name" required class="tb-my-input" name="name" tabindex="1" value="" size="32" aria-required="true">
+                                                        <input type="text" id="name" required class="tb-my-input" name="name" tabindex="2" value="" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
 
@@ -133,13 +133,13 @@
                                                 <div class="col-md-6">
                                                 	<label><strong>Your Contact Number</strong></label>
                                                 	<fieldset class="style-1 contact">
-                                                        <input type="text" id="contact" required class="tb-my-input" name="contact" tabindex="2" value="" size="32" aria-required="true">
+                                                        <input type="text" id="contact"  class="tb-my-input" name="contact" required tabindex="2" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
                                             </div>                           
 											<label><strong>Your Enquiry *</strong></label>
                                             <fieldset class="message-form">
-                                                <textarea required id="comment" name="comment" rows="8" tabindex="4"></textarea>
+                                                <textarea required id="comment" name="comment" rows="8" tabindex="2"></textarea>
                                             </fieldset>
                                             <input name="facultyEmail" type="hidden" value="<?php echo $facultyinfo->facultyEmail?>">
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>

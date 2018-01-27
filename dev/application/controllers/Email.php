@@ -91,8 +91,8 @@ class Email extends CI_Controller {
 
         }
         else{
+            $this->session->set_flashdata('errorMessage', 'Email Not Sent, Please select the recaptcha !! And Try Again!!');
             echo "<script>alert('Please select the recaptcha');
-//                    window.location('Faculty-details/'.$facultyid);
                     window.location.href='".site_url('Faculty-details/'.$facultyid)."';
                 </script>";
 
