@@ -3352,7 +3352,12 @@ img.hover-shadow {
     height: 189px;
 }
 
-
+.itmcntnt {
+    float: left;
+    height: 170px;
+    margin-bottom: 10px;
+    width: 188px;
+}
 
 .flat-row.padding-small {
     background-color: #EAE8EB;

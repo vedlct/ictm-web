@@ -30,7 +30,7 @@
                         	<div class="col-md-3">
                             	<div class="project-listing">
                                     <div class="project-portfolio v1">
-                                        <div class="item">
+                                        <div id="itemresized" class="item">
                                             <div class="thumb-item">
 
                                                 <?php if ($listOfFaculty->facultyImage !=null){?>
