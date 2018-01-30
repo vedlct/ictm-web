@@ -187,11 +187,11 @@ class PageSection extends CI_Controller {
     public function PageSectionOrderNumber()
     {
         $ordernumber= $this->input->post("ordernumber");
-        $id=$this->uri->segment(4);
+        $id1=$this->uri->segment(4);
 
         try
         {
-            $this->data['pgordernumber'] = $this->PageSectionm->checkPageSectionOrderNumberUnique($ordernumber,$id);
+            $this->data['pgordernumber'] = $this->PageSectionm->checkPageSectionOrderNumberUnique($ordernumber,$id1);
 
             if (empty($this->data['pgordernumber'])){
 

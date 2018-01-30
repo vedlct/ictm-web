@@ -167,7 +167,6 @@
 
         if (btn == ""){
             alert("Select a valid Menu Type");
-
         }
         else
         {
