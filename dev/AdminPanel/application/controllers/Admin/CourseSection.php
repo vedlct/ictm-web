@@ -37,7 +37,7 @@ class CourseSection extends CI_Controller
             $row[] = $no;
 
             $row[] = $courseSections->courseSectionTitle;
-            $row[] = $courseSections->orderNumber;
+            $row[] = (int)$courseSections->orderNumber;
             $row[] = $courseSections->courseSectionStatus;
             $row[] = $courseSections->insertedBy;
 

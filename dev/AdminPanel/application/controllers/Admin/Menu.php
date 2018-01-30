@@ -20,7 +20,7 @@ class Menu extends CI_Controller {
             $row = array();
             $row[] = $no;
             $row[] = $menu->menuName;
-            $row[] = $menu->orderNumber;
+            $row[] = (int)$menu->orderNumber;
             $row[] = $menu->menuType;
 
             if ($menu->submenu == ""){

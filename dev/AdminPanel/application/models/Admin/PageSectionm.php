@@ -167,4 +167,15 @@ class PageSectionm extends CI_Model
         $query1 = $this->db->get('ictmpagesection');
         return $query1->result();
     }
+
+    public function checkPageSectionOrderNumberUniqueFromInsert($ordernumber,$pageId)
+    {
+
+        $this->db->select('pageSectionId');
+
+        $this->db->where('pageId', $pageId);
+        $this->db->where('orderNumber', $ordernumber);
+        $query1 = $this->db->get('ictmpagesection');
+        return $query1->result();
+    }
 }

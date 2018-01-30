@@ -172,7 +172,7 @@ $config = array (
         array(
             'field' => 'ordernumber[]',
             'label' => 'Order Number',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|is_unique[ictmpagesection.orderNumber]|htmlspecialchars'
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_PageSectionOrderNumberFromInsert|htmlspecialchars'
         ),
 
         array(

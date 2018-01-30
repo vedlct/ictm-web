@@ -23,7 +23,7 @@ class PageSection extends CI_Controller {
             $row[] = $no;
 
             $row[] = $pageSections->pageSectionTitle;
-            $row[] = $pageSections->orderNumber;
+            $row[] = (int)$pageSections->orderNumber;
             $row[] = $pageSections->pageSectionStatus;
             $row[] = $pageSections->insertedBy;
 
@@ -208,6 +208,40 @@ class PageSection extends CI_Controller {
             return false;
         }
     }
+
+    public function PageSectionOrderNumberFromInsert()
+    {
+        $ordernumber= $this->input->post("ordernumber");
+
+        for ($i=0;$i<count($ordernumber);$i++) {
+
+            $orderNo = $ordernumber[0];
+                }
+
+
+        $pageId = $this->input->post("pageId");
+
+
+        try
+        {
+            $this->data['pgordernumber'] = $this->PageSectionm->checkPageSectionOrderNumberUniqueFromInsert($orderNo,$pageId);
+
+            if (empty($this->data['pgordernumber'])){
+
+                return true;
+            }
+            else{
+                $this->form_validation->set_message('PageSectionOrderNumberFromInsert', 'Order Number Allready Existed');
+                return false;
+            }
+        }
+        catch (Exception $e){
+
+            $this->form_validation->set_message('PageSectionOrderNumberFromInsert', 'Some thing Went Wrong !! Please Try Again!!');
+            return false;
+        }
+    }
+
     //this will delete page section
     public function deletePageSection($pageSectionId)
     {
