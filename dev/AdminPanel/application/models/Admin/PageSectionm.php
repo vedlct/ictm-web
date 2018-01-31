@@ -178,4 +178,15 @@ class PageSectionm extends CI_Model
         $query1 = $this->db->get('ictmpagesection');
         return $query1->result();
     }
+
+    public function chkOrderNumber($pageId,$number)
+    {
+
+        $this->db->select('pageId');
+        $this->db->where('pageId',$pageId);
+
+        $this->db->where('orderNumber', $number);
+        $query1 = $this->db->get('ictmpagesection');
+        return $query1->result();
+    }
 }

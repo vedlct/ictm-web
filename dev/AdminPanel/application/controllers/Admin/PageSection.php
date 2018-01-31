@@ -133,6 +133,24 @@ class PageSection extends CI_Controller {
         }
     }
 
+    //this is the ajax controller . this will show the order Check for create course
+    public function chkorderForCreatePageSection($pageId, $number){
+
+        if ($this->session->userdata('type') == "Admin") {
+
+            $this->data['chkOrder'] = $this->PageSectionm->chkOrderNumber($pageId,$number);
+            if (empty($this->data['chkOrder'])){
+                echo "1";
+            }else{
+                echo "2";
+            }
+
+        } else{
+            redirect('Admin/Login');
+        }
+
+    }
+
     //this will edit the page section
     public function editPageSection($id){
 

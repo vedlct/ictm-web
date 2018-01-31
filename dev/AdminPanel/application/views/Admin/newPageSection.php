@@ -48,7 +48,7 @@
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
-                                            <select class="form-control m-bot15" name="pageId" required>
+                                            <select class="form-control m-bot15" id="pageId" name="pageId" required>
                                                 <option value=""><?php echo SELECT_PAGE ?></option>
                                                <?php foreach ($pagename as $pg) { ?>
                                                    <option value="<?php echo $pg->pageId?>" <?php echo set_select('pageId',  $pg->pageId, False); ?>><?php echo $pg->pageTitle?></option>
@@ -80,7 +80,7 @@
                                             <label class="control-label col-lg-2">Order Number #1 : <span class="required">*</span></label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('ordernumber[]'); ?></font></p>
-                                                <input class="form-control" type='number' id='textbox1' name="ordernumber[]" required>
+                                                <input class="form-control" type='number' id='ordernumber[0]' name="ordernumber[]" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -155,7 +155,12 @@
             if(counter == '2')
             {
                 var title=document.getElementById("textbox1").value;
+                var pageId=document.getElementById("pageId").value;
                 var status=document.getElementById("status1").value;
+                var isOk = false;
+                if(pageId==""){alert("Please Select a Page First!!");
+                    return false;
+                }
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
@@ -164,6 +169,33 @@
                     return false;
                 }
                 if(status==""){alert("Please Select Section Status First!!");
+                    return false;
+                }
+                var ordernumber = document.getElementById("ordernumber[" +(counter - 2)+ "]").value;
+
+                if(ordernumber==""){alert("Please Type Order Number First!!");
+                    return false;
+                }
+
+
+                $.ajax({
+                    type: 'GET',
+                    url: '<?php echo base_url("Admin/PageSection/chkorderForCreatePageSection/")?>'+pageId+"/"+ordernumber,
+                    data: {},
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data == "2"){
+
+                            isOk = true;
+
+
+                        }
+                    }
+
+                });
+                if (isOk){
+                    alert("order Number "+ ordernumber + " Allready given for this Page!!");
                     return false;
                 }
             }
@@ -172,6 +204,10 @@
 
                 var title=document.getElementById("textbox"+(counter-1)).value;
                 var status=document.getElementById("status"+(counter-1)).value;
+                var pageId=document.getElementById("pageId").value;
+                if(pageId==""){alert("Please Select a Page First!!");
+                    return false;
+                }
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
@@ -180,6 +216,34 @@
                     return false;
                 }
                 if(status==""){alert("Please Select Section Status First!!");
+                    return false;
+                }
+
+                var ordernumber = document.getElementById("ordernumber[" +(counter - 1)+ "]").value;
+
+                if(ordernumber==""){alert("Please Type Order Number First!!");
+                    return false;
+                }
+
+
+                $.ajax({
+                    type: 'GET',
+                    url: '<?php echo base_url("Admin/PageSection/chkorderForCreatePageSection/")?>'+pageId+"/"+ordernumber,
+                    data: {},
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data == "2"){
+
+                            isOk = true;
+
+
+                        }
+                    }
+
+                });
+                if (isOk){
+                    alert("order Number "+ ordernumber + " Allready given for this Page!!");
                     return false;
                 }
             }
@@ -194,7 +258,7 @@
                 '<label class="control-label col-lg-2">Order Number #'+counter+' : <span class="required">*</span></label>'+
                 '<div class="col-lg-10 ">'+
                 '<p><font color="red"> <?php echo form_error('ordernumber[]'); ?></font></p>'+
-                '<input class="form-control" type="number" id="textbox1" name="ordernumber[]" required>'+
+                '<input class="form-control" type="number" id="ordernumber['+counter+']" name="ordernumber[]" required>'+
                 '</div>'+
                 '<label class="control-label col-lg-2" for="inputSuccess">Page Section Status #'+counter+'<span class="required">*</span></label>'+
                 '<div class="col-lg-10">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" id="status'+counter+'"name="status[]" required>' +

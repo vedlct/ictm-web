@@ -47,7 +47,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" name="feedback_form" method="post" action="<?php echo base_url()?>Admin/CourseSection/insertCourseSec" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" name="feedback_form" method="post" action="<?php echo base_url()?>Admin/CourseSection/insertCourseSec" enctype="multipart/form-data" onsubmit="return validate()">
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Course Title<span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -83,6 +83,7 @@
                                             <label class="control-label col-lg-2">Order Number #1 : <span class="required">*</span></label>
                                             <div class="col-lg-10 ">
                                                 <p><font color="red"> <?php echo form_error('ordernumber[]'); ?></font></p>
+                                                <p id="duplicateOrder[0]" style="display: none;color: red">Order Number Already Existed for this course!!</p>
                                                 <input class="form-control" type='number' id='ordernumber[0]'  name="ordernumber[]" required>
                                             </div>
                                         </div>
@@ -112,7 +113,7 @@
 
                                     <div class="form-group " align="center">
                                         <div class="col-lg-10">
-                                            <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                            <input class="btn btn-success" id="submit" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
                                         </div>
                                     </div>
@@ -146,8 +147,13 @@
 
 
 <script type="text/javascript">
+
+
     $(document).ready(function(){
+
         var counter = 2;
+
+
         $("#addButton").click(function () {
             if(counter>10){
                 alert("Only 10 Course Section allow per Time!!");
@@ -162,6 +168,9 @@
 
 
 
+                if(courseId==""){alert("Please Select a Course First!!");
+                    return false;
+                }
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
@@ -172,7 +181,11 @@
                 if(status==""){alert("Please Select Section Status First!!");
                     return false;
                 }
-                var ordernumber = document.getElementById("ordernumber[" + (counter-2) + "]").value;
+
+                 var ordernumber = document.getElementById("ordernumber[" + (counter - 2) + "]").value;
+                if(ordernumber==""){alert("Please Type Order Number First!!");
+                    return false;
+                }
 
                     $.ajax({
                         type: 'GET',
@@ -182,8 +195,9 @@
                         async: false,
                         success: function (data) {
                             if (data == "2"){
-                               // alert("order Number "+ ordernumber + " Allready given for this course!!");
+
                                 isOk = true;
+
 
                             }
                         }
@@ -194,6 +208,9 @@
                     return false;
                 }
 
+
+
+
             }
             else
             {
@@ -202,6 +219,9 @@
                 var status=document.getElementById("status"+(counter-1)).value;
                 var courseId=document.getElementById("coursetitle").value;
                 var isOk = false;
+                if(courseId==""){alert("Please Select a Course First!!");
+                    return false;
+                }
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
@@ -213,6 +233,9 @@
                     return false;
                 }
                 var ordernumber = document.getElementById("ordernumber[" + (counter-1) + "]").value;
+                if(ordernumber==""){alert("Please Type Order Number First!!");
+                    return false;
+                }
 
                 $.ajax({
                     type: 'GET',
