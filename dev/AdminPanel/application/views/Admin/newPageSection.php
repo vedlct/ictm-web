@@ -149,8 +149,7 @@
 
         var mutliPhoto = document.feedback_form.elements["ordernumber[]"];
         var pageId=document.getElementById("pageId").value;
-        var isOk = ["jh"];
-
+        var isOk = [];
 
         for(i=0;i<mutliPhoto.length;i++)
         {
@@ -175,12 +174,13 @@
 
                 }
             });
-
-        }
-              if (isOk.length>0){
+            if (isOk.length>0){
                 alert("order Number "+ ordernumber + " Allready given for this Page!!");
                 return false;
             }
+
+        }
+
 
 
 
