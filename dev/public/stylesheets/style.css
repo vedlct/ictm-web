@@ -8,14 +8,14 @@
 /**
   * Reset
   * Repeatable Patterns
-  * Top
+  * Top 
   * Header
   * Mobile navigation
   * Page title
   * Breadcrumbs
   * Blog
   * Sidebar
-  * Blog-single
+  * Blog-single 
   * Footer
   * Bottom
   * Switcher
@@ -2266,7 +2266,7 @@ body.mac .dropcap {
 	margin-bottom: 0;
 }
 
-/* Blog-single
+/* Blog-single 
 -------------------------------------------------------------- */
 .blog-single .post .entry-box {
 	margin-bottom: 20px;
@@ -2468,10 +2468,10 @@ body.mac .dropcap {
 }
 
 .border.widget .widget-inner {
-	border-radius: 2px;
-	padding: 0px 0px;
-	width: 100%;
-}
+    border-radius: 2px;
+    padding: 0px 0px;
+    width: 100%;
+} 
 
 .dark-div .border.widget .widget-inner {
 	border: solid 2px rgba(255,255,255,.15);
@@ -3235,13 +3235,13 @@ body.mac .dropcap {
 
 /* The Close Button */
 .close {
-	color: white;
-	font-size: 35px;
-	font-weight: bold;
-	position: absolute;
-	right: 287px;
-	top: 50px;
-	z-index: 9999;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    right: 287px;
+    top: 50px;
+    z-index: 9999;
 }
 
 .close:hover,
@@ -3261,19 +3261,19 @@ body.mac .dropcap {
 
 /* Next & previous buttons */
 .prev, .next {
-	-moz-user-select: none;
-	background: black none repeat scroll 0 0;
-	border-radius: 13px 3px 3px 0;
-	color: white;
-	cursor: pointer;
-	font-size: 20px;
-	font-weight: bold;
-	margin-top: -50px;
-	padding: 16px;
-	position: absolute;
-	top: 50%;
-	transition: all 0.6s ease 0s;
-	width: auto;
+    -moz-user-select: none;
+    background: black none repeat scroll 0 0;
+    border-radius: 13px 3px 3px 0;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: -50px;
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    transition: all 0.6s ease 0s;
+    width: auto;
 }
 
 /* Position the "next button" to the right */
@@ -3286,9 +3286,9 @@ body.mac .dropcap {
 .prev:hover,
 .next:hover {
 
-	background-color: rgba(0, 0, 0, 0.8);
+	 background-color: rgba(0, 0, 0, 0.8);
 
-}
+ }
 
 
 /* Number text (1/3 etc) */
@@ -3334,55 +3334,55 @@ img.hover-shadow {
 
 
 .itmthmb.item-thumbnail {
-	height: 188px;
-	width: 188px;
+    height: 188px;
+    width: 188px;
 }
 
 .picglry.hover-shadow.cursor {
-	height: 185px;
-	margin-top: 10px;
+    height: 185px;
+    margin-top: 10px;
 }
 
 .itmcntnt{
-	height: 170px;
+    height: 170px;
 }
 
 .itmthmb.item-thumbnail img {
-	height: 189px;
+    height: 189px;
 }
 
 .itmcntnt {
-	float: left;
-	height: 170px;
-	margin-bottom: 10px;
-	width: 188px;
+    float: left;
+    height: 170px;
+    margin-bottom: 10px;
+    width: 188px;
 }
 
 .flat-row.padding-small {
-	background-color: #FFF;
+    background-color: #FFF;
 }
 
 
 .main-content.course-single {
-	background-color: #ddd;
+    background-color: #ddd;
 }
 
 .content-course {
-	background-color: #fff;
+    background-color: #fff;
 }
 
 .course-detail-section {
-	margin-bottom: 29px;
-	padding: 0 20px;
-	text-align: justify;
+    margin-bottom: 29px;
+    padding: 0 20px;
+    text-align: justify;
 }
 
 .content-pad.single-course-detail {
-	padding: 15px;
+    padding: 15px;
 }
 
 .widget.widget-nav-menu {
-	margin-top: 15px;
+    margin-top: 15px;
 }
 
 /* .page-title .overlay {
@@ -3397,3 +3397,9 @@ img.hover-shadow {
     filter: alpha(opacity=70);
 } */
 
+.searchdiv {
+	left: 19.3%;
+	position: absolute;
+	width: 61.4%;
+	z-index: 9999;
+}

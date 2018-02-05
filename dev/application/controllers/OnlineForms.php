@@ -13,6 +13,7 @@ class OnlineForms extends CI_Controller
         $this->load->model('Coursem');
         $this->load->model('OnlineFormsm');
         $this->load->helper('cookie');
+        $this->load->model('Searchm');
     }
     public function index()
     {
@@ -658,6 +659,10 @@ class OnlineForms extends CI_Controller
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
+
+        $this->data['searchpage'] = $this->Searchm->getpage();
+        $this->data['searchnews'] = $this->Searchm->getNews();
+        $this->data['searchevents'] = $this->Searchm->getEvents();
     }
 
     public function insertApplicationForm1()
