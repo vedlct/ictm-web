@@ -508,15 +508,6 @@ class OnlineForms extends CI_Controller
             }
 
 
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -628,13 +619,16 @@ class OnlineForms extends CI_Controller
     }
     public function SubmitFeedback() // Submit the feedback
     {
-        $this->load->model('OnlineFormsm');
-        $this->load->library('form_validation');
-        if (!$this->form_validation->run('feedbacks')) {
-            $this->menu();
-            $this->load->view('feedback-form', $this->data);
-        }
-        else {
+        $this->load->library('recaptcha');
+        $recaptcha = $this->input->post('g-recaptcha-response');
+        $response = $this->recaptcha->verifyResponse($recaptcha);
+        if (isset($response['success']) and $response['success'] === true) {
+            $this->load->model('OnlineFormsm');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('feedbacks')) {
+                $this->menu();
+                $this->load->view('feedback-form', $this->data);
+            } else {
                 $this->data['error'] = $this->OnlineFormsm->sendFeedback();
                 if (empty($this->data['error'])) {
                     $this->session->set_flashdata('successMessage', 'Feedback given Successfully.Thak You For Your Feedback');
@@ -643,6 +637,13 @@ class OnlineForms extends CI_Controller
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                     redirect('Feedback');
                 }
+
+            }
+        }else{
+            echo "<script>alert('Please select the recaptcha');
+                    window.location.href='".site_url('Contact')."';
+                   
+                    </script>";
 
         }
     }
