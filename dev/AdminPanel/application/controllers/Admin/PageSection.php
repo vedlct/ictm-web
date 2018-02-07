@@ -23,7 +23,7 @@ class PageSection extends CI_Controller {
             $row[] = $no;
 
             $row[] = $pageSections->pageSectionTitle;
-            $row[] = (int)$pageSections->orderNumber;
+            $row[] = intval($pageSections->orderNumber);
             $row[] = $pageSections->pageSectionStatus;
             $row[] = $pageSections->insertedBy;
 

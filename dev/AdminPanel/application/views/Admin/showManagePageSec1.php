@@ -41,11 +41,17 @@
                 "type": "POST"
             },
 
+
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
                     "targets": [ 0,3,4,5,6,7], //first column / numbering column
                     "orderable": false, //set not orderable
+                },
+                {
+                    "targets": [2],
+                    "type": "numeric",
+
                 },
             ],
             //for change search name
@@ -54,7 +60,7 @@
                 "sSearch": "<span>Search By Page Section Title:</span> " //search
 
             },
-            "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
+            "dom": '<"top"ifl>rt<"bottom"ip><"clear">',
 
         });
 
