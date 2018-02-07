@@ -5,7 +5,8 @@ class PageSectionm extends CI_Model
     /////////datatable//////////
     var $table = 'ictmpagesection';
     var $select = array('pageSectionId','pageId','orderNumber','pageSectionTitle','pageSectionStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //specify the columns you want to fetch from table
-    var $column_order = array(null,'pageSectionTitle','orderNumber'); //set column field database for datatable orderable
+//    var $column_order = array(null,'pageSectionTitle','orderNumber'); //set column field database for datatable orderable
+    var $column_order = array(null,'pageSectionTitle','orderNumber','pageSectionStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
     var $column_search = array('pageSectionTitle'); //set column field database for datatable searchable
     var $order = array('pageSectionId' => 'desc'); // default order
 
