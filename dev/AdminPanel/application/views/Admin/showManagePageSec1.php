@@ -48,11 +48,8 @@
                     "targets": [ 0,3,4,5,6,7], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
-                {
-                    "targets": [2],
-                    "type": "numeric",
+                { "type": "numeric", "targets": [2] }
 
-                },
             ],
             //for change search name
             "oLanguage": {

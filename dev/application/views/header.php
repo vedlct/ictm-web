@@ -204,7 +204,10 @@
                         </div>
 
 
-                        <div class="navbar-right topnav-sidebar">
+
+                      
+            <div class="navbar-right topnav-sidebar" style="margin-right: 0px">
+
 
                             <ul class="textwidget">
                                 <?php foreach ($contact as $contactInfo){?>

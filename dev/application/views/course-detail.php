@@ -37,7 +37,7 @@
                             <div class="col-md-12">
                                 <div class="content-pad single-course-detail">
                                     <div class="course-detail">
-                                        <div style="margin-top: -25px;" class="content-content">
+                                        <div  class="content-content">
 
                                             <?php foreach ($coursedetail as $cd) {
                                                 if($cd->courseImage != null ){?>
@@ -91,7 +91,7 @@
                     </article>
                 </div>
 
-                <div class="col-md-3">
+                <div style="margin-top: 10px;" class="col-md-3">
                     <div class="sidebar">
 
                         <div class="table-responsive">

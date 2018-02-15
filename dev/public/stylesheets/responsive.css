@@ -16,9 +16,25 @@
         margin-left: 140px !important;
     }
 }
+@media screen and (max-width: 1700px) {
+		.tp-caption.color-full {
+			background-color: rgba(255, 255, 255, 0.8);
+			bottom: 110px;
+			padding: 29px 40px 33px;
+			position: absolute;
+			right: 0;
+			white-space: normal;
+			width: 360px;
+			z-index: 9999;
+		}
 
+		.tp-caption.sft.desc-slide.center.color-white.color-full.start {
+			margin-left: -100px !important;
+		}
+	}
 
 @media only screen and (max-width: 1466px) {
+
 
 	#verticaldata {
 		display: none;
