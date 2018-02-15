@@ -8,9 +8,10 @@ class CourseSectionm extends CI_Model
     {
         $this->db->where('courseId =', $id);
         $this->db->where('courseSectionStatus =', STATUS[0]);
-
+        $this->db->order_by("ictmcoursesection.orderNumber", "asc");
         $query = $this->db->get('ictmcoursesection');
         return $query->result();
     }
+
 
 }

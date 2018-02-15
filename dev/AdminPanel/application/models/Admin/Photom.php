@@ -3,6 +3,81 @@
 
 class Photom extends CI_Model
 {
+
+    /////////datatable//////////
+    var $table = 'ictmphoto p';
+    var $select = array('p.photoId','p.albumId','p.albumCover','p.photoName','p.photoStatus','p.insertedBy','p.lastModifiedBy','p.lastModifiedDate','a.albumTitle'); //specify the columns you want to fetch from table
+    //var $column_order = array('newsId','newsTitle','newsDate','newsType','newsStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_search = array('photoName','photoStatus'); //set column field database for datatable searchable
+    var $order = array('photoId' => 'desc'); // default order
+
+    private function _get_datatables_query()
+    {
+
+        $this->db->from($this->table);
+
+        $i = 0;
+
+        foreach ($this->column_search as $item) // loop column
+        {
+            if($_POST['search']['value']) // if datatable send POST for search
+            {
+
+                if($i===0) // first loop
+                {
+                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                    $this->db->like($item, $_POST['search']['value']);
+                }
+                else
+                {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+
+                if(count($this->column_search) - 1 == $i) //last loop
+                    $this->db->group_end(); //close bracket
+            }
+            $i++;
+        }
+
+        if(isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        }
+        else if(isset($this->order))
+        {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables($id)
+    {
+        $this->_get_datatables_query();
+        if($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+
+        $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
+        $this->db->where('p.albumId',$id);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function count_filtered($id)
+    {
+        $this->_get_datatables_query();
+        $this->db->where('albumId',$id);
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all($id)
+    {
+        $this->db->from($this->table);
+        $this->db->where('albumId',$id);
+        return $this->db->count_all_results();
+    }
+    ///////////////////end of datatable/////////////////////////////
+
     public function createNewPhoto()
     {
 
@@ -106,7 +181,7 @@ class Photom extends CI_Model
     // for manage Photo view
     public function getAllforManagePhoto($id) {
 
-        $this->db->select('p.photoId,p.albumId,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
+        $this->db->select('p.photoId,p.albumId,p.albumCover,p.photoName,p.photoStatus,p.insertedBy,p.lastModifiedBy,p.lastModifiedDate,a.albumTitle');
         $this->db->from('ictmphoto p');
         $this->db->where('p.albumId',$id);
         $this->db->join('ictmalbum a', 'a.albumId = p.albumId','left');
@@ -309,16 +384,107 @@ class Photom extends CI_Model
             $photoName=$photo->photoName;
         }
         $path   = 'images/photoAlbum/'.$albumTitle."/".$photoName;
+
+        $info = pathinfo($photoName);
+        $name = $info['filename'];
+        $format = $info['extension'];
+
+        $pathanother   = 'images/photoAlbum/'.$albumTitle."/".$name."_60_80".".".$format;
+
         if (!file_exists($path)){
             return 0;
         }
         else{
             unlink(FCPATH.$path);
+            unlink(FCPATH.$pathanother);
             $this->db->where('photoId',$photoId);
             $this->db->delete('ictmphoto');
 
+
         }
 
+
+    }
+
+    public function makePhotoAlbumCoverbyId($albumId,$photoId)
+    {
+
+
+//        $this->db->select('albumCover');
+//        $this->db->where('photoId',$photoId);
+//        $query = $this->db->get('ictmphoto');
+//
+//        foreach ($query->result() as $albumCover){
+//            $cover=$albumCover->albumCover;
+//        }
+//        if ($cover == null){
+//
+//            $data=array(
+//                'albumCover'=>SELECT_APPROVE[0],
+//            );
+//            $approve=1;
+//        }
+//        else{
+//            $data = array(
+//                'albumCover' => null,
+//            );
+//            $approve=0;
+//        }
+//
+//        $this->db->where('photoId',$photoId);
+//        $this->db->update('ictmphoto', $data);
+//
+//        $this->db->select('COUNT(albumCover) as Total');
+//        $this->db->where('albumId',$albumId);
+//
+//        $query10 = $this->db->get('ictmphoto');
+//
+//        foreach ($query10->result() as $totalCount){
+//            $Total=$totalCount->Total;
+//        }
+//        if ($Total > "1"){
+//
+//            $data = array(
+//                'albumCover' => null,
+//            );
+//            $approve =3;
+//            $this->db->where('photoId',$photoId);
+//            $this->db->update('ictmphoto', $data);
+//
+//
+//        }
+//        return $approve;
+
+
+          $data=array(
+              'albumCover'=>SELECT_APPROVE[0],
+          );
+
+
+
+        $data1=array(
+            'albumCover'=>null,
+        );
+
+        $this->db->select('photoId');
+        $this->db->where('albumCover',SELECT_APPROVE[0]);
+        $this->db->where('albumId',$albumId);
+        $query = $this->db->get('ictmphoto');
+
+        foreach ($query->result() as $albumCover){
+            $cover=$albumCover->photoId;
+        }
+
+        $this->db->where('photoId',$cover);
+        $this->db->where('albumId',$albumId);
+        $this->db->update('ictmphoto', $data1);
+
+        $this->db->where('photoId',$photoId);
+        $this->db->where('albumId',$albumId);
+        $this->db->update('ictmphoto', $data);
+
+        $approve=1;
+        return $approve;
 
     }
 

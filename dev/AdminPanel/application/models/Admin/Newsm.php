@@ -3,11 +3,81 @@
 
 class Newsm extends CI_Model
 {
+    /////////datatable//////////
+    var $table = 'ictmnews';
+    var $column_order = array('newsId','newsTitle','newsDate','newsType','newsStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_search = array('newsTitle','newsDate'); //set column field database for datatable searchable
+    var $order = array('newsId' => 'desc'); // default order
+
+    private function _get_datatables_query()
+    {
+
+        $this->db->from($this->table);
+
+        $i = 0;
+
+        foreach ($this->column_search as $item) // loop column
+        {
+            if($_POST['search']['value']) // if datatable send POST for search
+            {
+
+                if($i===0) // first loop
+                {
+                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                    $this->db->like($item, $_POST['search']['value']);
+                }
+                else
+                {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+
+                if(count($this->column_search) - 1 == $i) //last loop
+                    $this->db->group_end(); //close bracket
+            }
+            $i++;
+        }
+
+        if(isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        }
+        else if(isset($this->order))
+        {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables()
+    {
+        $this->_get_datatables_query();
+        if($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+    ///////////////////end of datatable/////////////////////////////
+
+
     /*---------for creating new News --------------------- */
 
     // creates new News in database
     public function createNewNews()
     {
+        date_default_timezone_set("Europe/London");
         $newsTitle = $this->input->post("newsTitle");
         $NewsDate = date('Y-m-d H:i:s', strtotime($this->input->post("newsDate")));
         $news_image = $_FILES['news_image']['name'];
@@ -52,6 +122,8 @@ class Newsm extends CI_Model
 
             if ($this->upload->do_upload('news_image')) {
                 // if something need after image upload
+                thumb('images/newsImages/'.$newsId.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'409','258');
+                thumb('images/newsImages/'.$newsId.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'80','80');
             } else {
                 $error = array('error' => $this->upload->display_errors());
                 $che = json_encode($error);
@@ -125,6 +197,7 @@ class Newsm extends CI_Model
     // for edit News by id from database
     public function editNewsbyId($id)
     {
+        date_default_timezone_set("Europe/London");
         $newsTitle = $this->input->post("newsTitle");
         $NewsDate = date('Y-m-d H:i:s', strtotime($this->input->post("newsDate")));
         $news_image = $_FILES['news_image']['name'];
@@ -154,6 +227,8 @@ class Newsm extends CI_Model
 
             if($this->upload->do_upload('news_image')){
                 // if something need after image upload
+                thumb('images/newsImages/'.$id.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'409','258');
+                thumb('images/newsImages/'.$id.'.'.pathinfo($news_image, PATHINFO_EXTENSION),'80','80');
             }else{
 
                 $error = array('error' => $this->upload->display_errors());
@@ -251,6 +326,17 @@ class Newsm extends CI_Model
         $query = $this->db->get('ictmnews');
         foreach ($query->result() as $image){$newsImage=$image->newsPhoto;}
 
+        $info = pathinfo($newsImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+        $pathanother   = $name."_258_409".".".$format;
+        $pathanother1   = $name."_80_80".".".$format;
+
+
+        unlink(FCPATH."images/newsImages/".$pathanother);
+
+        unlink(FCPATH."images/newsImages/".$pathanother1);
+
         unlink(FCPATH."images/newsImages/".$newsImage);
 
         $data = array(
@@ -296,6 +382,27 @@ class Newsm extends CI_Model
 
         $this->db->where('newsId',$newsId);
         $this->db->update('ictmnews', $data);
+        //return $approve;
+
+        $this->db->select('COUNT(newsId) as total');
+        $this->db->from('ictmnews');
+        $this->db->where('newsStatus',STATUS[0]);
+        $this->db->where('homeStatus',SELECT_APPROVE[0]);
+        $query10 = $this->db->get();
+        foreach ($query10->result() as $totalCount){
+            $Total=$totalCount->total;
+        }
+        if ($Total > "3"){
+
+            $data = array(
+                'homeStatus' => null,
+            );
+            $approve =3;
+            $this->db->where('newsId',$newsId);
+            $this->db->update('ictmnews', $data);
+
+
+        }
         return $approve;
 
     }

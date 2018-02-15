@@ -3,7 +3,81 @@
 
 class Coursem extends CI_Model
 {
-    /* this function return course name and id for faculty use*/
+
+    /////////datatable//////////
+    var $table = 'ictmcourse';
+    var $table2 = 'ictmdepartment';
+
+    var $column_order = array('courseId','ictmcourse.departmentId','departmentName','courseCodePearson','courseTitle','awardingTitle','awardingBody','courseStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_search = array('courseTitle' ); //set column field database for datatable searchable
+    var $order = array('courseId' => 'desc'); // default order
+
+    private function _get_datatables_query()
+    {
+
+        $this->db->from($this->table);
+        $this->db->join('ictmdepartment', 'ictmdepartment.departmentId = ictmcourse.departmentId');
+//        $this->db->join($this->table2 , '$this->table.courseId == $this->table2.departmentId' );
+       // $this->db->join('ictmdepartment');
+
+        $i = 0;
+
+        foreach ($this->column_search as $item) // loop column
+        {
+            if($_POST['search']['value']) // if datatable send POST for search
+            {
+
+                if($i===0) // first loop
+                {
+                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                    $this->db->like($item, $_POST['search']['value']);
+                }
+                else
+                {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+
+                if(count($this->column_search) - 1 == $i) //last loop
+                    $this->db->group_end(); //close bracket
+            }
+            $i++;
+        }
+
+        if(isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        }
+        else if(isset($this->order))
+        {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables()
+    {
+        $this->_get_datatables_query();
+        if($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+    ///////////////////end of datatable/////////////////////////////
+
+    /* this function return course name and id for faculty use and manage register Interest */
     public function getCourseIdNameforFaculty(){
 
         $this->db->select('courseId, courseTitle');
@@ -89,6 +163,8 @@ class Coursem extends CI_Model
 
                 if ($this->upload->do_upload('image')) {
                     // if something need after image upload
+                    thumb('images/courseImages/'.$courseId.'.'.pathinfo($image, PATHINFO_EXTENSION),'80','80');
+
                 } else {
 
                     $error = array('error' => $this->upload->display_errors());
@@ -170,6 +246,15 @@ class Coursem extends CI_Model
         $query = $this->db->get('ictmcourse');
         foreach ($query->result() as $image){$courseImage=$image->courseImage;}
 
+        $info = pathinfo($courseImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+
+        $pathanother   = 'images/courseImages/'.$name."_80_80".".".$format;
+
+
+        unlink(FCPATH."images/courseImages/".$pathanother);
+
         unlink(FCPATH."images/courseImages/".$courseImage);
 
         $data = array(
@@ -236,6 +321,7 @@ class Coursem extends CI_Model
 
                 if($this->upload->do_upload('image')){
                     // if something need after image upload
+                    thumb('images/courseImages/'.$id.'.'.pathinfo($image, PATHINFO_EXTENSION),'80','80');
                 }else{
 
                     $error =array('error'=>$this->upload->display_errors());

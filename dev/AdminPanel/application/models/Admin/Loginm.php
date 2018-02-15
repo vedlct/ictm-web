@@ -23,6 +23,7 @@ class Loginm extends CI_Model {
                 return null;
             }
 
+            //return $res;
         }
         else{
             return null;

@@ -68,14 +68,14 @@
                                         <label for="college_tel1" class="control-label col-lg-2">College Telephone 1: <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_tel1'); ?></font></p>
-                                            <input class="form-control" id="college_tel1" name="college_tel1"  placeholder="only number max 45 " value="<?php echo $infd->collegeTelephone1?>" type="text" required />
+                                            <input class="form-control" id="college_tel1" name="college_tel1" placeholder="+44 xx xxxx xxxx" value="<?php echo $infd->collegeTelephone1?>" type="text" required />
 
                                         </div>
 
                                         <label for="college_tel2" class="control-label col-lg-2">College Telephone 2:</label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('college_tel2'); ?></font></p>
-                                            <input class="form-control" id="college_tel2" name="college_tel2" placeholder="only number max 45 " value="<?php echo $infd->collegeTelephone2?>" type="text" />
+                                            <input class="form-control" id="college_tel2" name="college_tel2" placeholder="+44 xx xxxx xxxx" value="<?php echo $infd->collegeTelephone2?>" type="text" />
 
                                         </div>
 
@@ -209,26 +209,31 @@
         var phone1=document.getElementById("college_tel1").value;
         var phone2=document.getElementById("college_tel2").value;
         var email=document.getElementById("college_email").value;
-        var chk=/^[0-9]*$/;
+        var chk=/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/;
+
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
         if(!phone1.match(chk)) {
-            alert( 'Please enter a valid Phone number!!' );
-            return false;
-        }
-        if(phone1.length >20) {
-            alert( 'Phone number must be less than 20 charecter!!' );
+            alert( 'Please enter a valid College Telephone 1!!' );
             return false;
         }
 
-        if( phone2!=null && !phone2.match(chk)) {
-            alert( 'Please enter a valid Phone number!!' );
-            return false;
-        }
-        if(phone2!=null && phone2.length >20) {
-            alert( 'Phone number must be less than 20 charecter!!' );
-            return false;
-        }
+//        if(phone1.length >20) {
+//            alert( 'Phone number must be less than 20 charecter!!' );
+//            return false;
+//        }
+
+//        if( phone2 != null) {
+//            if (!phone2.match(chk)) {
+//                alert('Please enter a valid Phone number in College Telephone 2!!');
+//                return false;
+//            }
+//        }
+
+//        if(phone2 != null && phone2.length >20) {
+//            alert( 'Phone number must be less than 20 charecter!!' );
+//            return false;
+//        }
 
         if(email.match(mailformat))
         {

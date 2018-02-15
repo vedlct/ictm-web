@@ -15,6 +15,46 @@ class Page extends CI_Controller {
 
 
     }
+    /*---------for creating new News --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Pagem->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $page) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $page->pageTitle;
+            $row[] = $page->pageType;
+            $row[] = $page->pageStatus;
+            $row[] = $page->insertedBy;
+
+            if ($page->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $page->lastModifiedBy;
+            }
+            if ($page->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($page->lastModifiedDate)),1);
+
+            }
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Page/editPageShow/'.$page->pageId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$page->pageId.'"onclick=\'return confirm("Are you sure to Delete This Page?")\' href="'.base_url().'Admin/Page/deletePage/'. $page->pageId.'"><i class="icon_trash"></i></a>';
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Pagem->count_all(),
+            "recordsFiltered" => $this->Pagem->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
 
     // this will show create page
     public function createPage()
@@ -64,34 +104,61 @@ class Page extends CI_Controller {
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Page/managePage";
-            $config["total_rows"] = $this->Pagem->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["pageData"] = $this->Pagem->getPagaData($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Page/managePage";
+//            $config["total_rows"] = $this->Pagem->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["pageData"] = $this->Pagem->getPagaData($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
-             $this->load->view('Admin/managePage', $this->data);
+             $this->load->view('Admin/managePage1');
 
         }
         else{
             redirect('Admin/Login');
         }
     }
+
+//    public function searchByPage(){
+//        if ($this->session->userdata('type') == USER_TYPE[0])
+//        {
+//            $type = $this->input->post('pageType');
+//            //$this->data["links"] = null;
+//            $this->data["menu"] = $this->Page->getPagaDataSearchBytype($type);
+//
+//            $this->load->view('Admin/searchByPageType',$this->data);
+//        }
+//        else{
+//            redirect('Admin/Login');
+//        }
+//    }
+
     public function searchByTitlPage()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-
             $title = $this->input->post('title');
             $this->data["links"] = null;
             $this->data["pageData"] = $this->Pagem->getPagaDataSearchBytitle($title);
-
             $this->load->view('Admin/managePage', $this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function searchBypagetype()
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $pageType = $this->input->post('pageType');
+            $this->data["links"] = null;
+            $this->data["pageData"] = $this->Pagem->getPagaDataSearchBytype($pageType);
+            $this->load->view('Admin/searchByPageType', $this->data);
 
         }
         else{

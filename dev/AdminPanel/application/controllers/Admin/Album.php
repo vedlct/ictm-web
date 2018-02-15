@@ -11,6 +11,60 @@ class Album extends CI_Controller
 
     }
 
+    /*---------datatable code --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Albumm->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $Album) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $Album->albumTitle;
+            $row[] = $Album->albumCategoryName;
+            $row[] = $Album->albumStatus;
+            $row[] = $Album->insertedBy;
+
+            if ($Album->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $Album->lastModifiedBy;
+            }
+            if ($Album->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($Album->lastModifiedDate)),1);
+            }
+
+            if ($Album->albumStatus == STATUS[0])
+            {
+                if ($Album->homeStatus == SELECT_APPROVE[0]){
+                    $row[] = '<input type="checkbox" data-panel-id="'. $Album->albumId .'" onclick="selectHome(this)" checked="checked"
+                                                               id="appearInHome" name="appearInHome">Yes';
+                }else{
+                    $row[] = '<input type="checkbox" data-panel-id="'. $Album->albumId .'" onclick="selectHome(this)" id="appearInHome" name="appearInHome">Yes';
+                }
+
+            }else{
+                $row[] = ' Status Should be Active First !! ';
+            }
+
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Album/editAlbumView/'.$Album->albumId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn" data-panel-id="'.$Album->albumId.'"onclick=\'selectid(this)\'><i class="icon_trash"></i></a>';
+
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Albumm->count_all(),
+            "recordsFiltered" => $this->Albumm->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
     /* this will show  create Album */
     public function newAlbum()
     {
@@ -66,19 +120,19 @@ class Album extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Album/manageAlbum";
-            $config["total_rows"] = $this->Albumm->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["Albums"] = $this->Albumm->getAllforManageAlbum($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Album/manageAlbum";
+//            $config["total_rows"] = $this->Albumm->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["Albums"] = $this->Albumm->getAllforManageAlbum($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
-            $this->load->view('Admin/manageAlbum',$this->data);
+            $this->load->view('Admin/manageAlbum1');
         }
         else{
             redirect('Admin/Login');
@@ -161,6 +215,7 @@ class Album extends CI_Controller
     public function appearInHomePage($albumId)
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
+
 
             $approve=$this->Albumm->appearInHomePage($albumId);
             echo $approve;

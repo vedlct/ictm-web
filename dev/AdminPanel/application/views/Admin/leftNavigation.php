@@ -101,17 +101,17 @@
                 </ul>
             </li>
 
-<!--            <li class="sub-menu">-->
-<!--                <a href="javascript:;" class="">-->
-<!--                    <i class="icon_group"></i>-->
-<!--                    <span>Users</span>-->
-<!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
-<!--                </a>-->
-<!--                <ul class="sub">-->
-<!--                    <li><a class="" href="#">New User Roles</a></li>-->
-<!--                    <li><a class="" href="#">Manage User Roles</a></li>-->
-<!--                </ul>-->
-<!--            </li>-->
+            <!--            <li class="sub-menu">-->
+            <!--                <a href="javascript:;" class="">-->
+            <!--                    <i class="icon_group"></i>-->
+            <!--                    <span>Users</span>-->
+            <!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
+            <!--                </a>-->
+            <!--                <ul class="sub">-->
+            <!--                    <li><a class="" href="#">New User Roles</a></li>-->
+            <!--                    <li><a class="" href="#">Manage User Roles</a></li>-->
+            <!--                </ul>-->
+            <!--            </li>-->
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_clock"></i>
@@ -188,7 +188,7 @@
             </li>
 
             <li class="sub-menu">
-                <a href="<?php echo base_url()?>Admin/RegisterInterest/viewRI" class="">
+                <a href="<?php echo base_url()?>Admin/RegisterInterest1/viewRI" class="">
                     <i class="icon_info"></i>
                     <span>Register Interest</span>
 
@@ -212,7 +212,6 @@
 
 <script>
     jQuery(document).ready(function() {
-
         var loc = window.location.href;
         jQuery(".sidebar-menu li").removeClass('active');
         jQuery(".sidebar-menu li a").each(function() {
@@ -229,7 +228,7 @@
         table = document.getElementById("myTable");
         switching = true;
         //Set the sorting direction to ascending:
-        dir = "asc";
+        dir = "asce";
         /*Make a loop that will continue until
          no switching has been done:*/
         while (switching) {
@@ -247,13 +246,13 @@
                 y = rows[i + 1].getElementsByTagName("TD")[n];
                 /*check if the two rows should switch place,
                  based on the direction, asc or desc:*/
-                if (dir == "asc") {
+                if (dir == "desc") {
                     if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
                         break;
                     }
-                } else if (dir == "desc") {
+                } else if (dir == "asce") {
                     if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
                         //if so, mark as a switch and break the loop:
                         shouldSwitch= true;
@@ -271,11 +270,22 @@
             } else {
                 /*If no switching has been done AND the direction is "asc",
                  set the direction to "desc" and run the while loop again.*/
-                if (switchcount == 0 && dir == "asc") {
+                if (switchcount == 0 && dir == "asce") {
                     dir = "desc";
                     switching = true;
                 }
             }
+        }
+        var up = n+"up";
+        var down = n+"down";
+        if (flag == true){
+            document.getElementById(up).style.display = "block";
+            document.getElementById(down).style.display = "none";
+            flag = false;
+        }else {
+            document.getElementById(up).style.display = "none";
+            document.getElementById(down).style.display = "block";
+            flag = true;
         }
     }
 </script>

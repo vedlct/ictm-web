@@ -43,12 +43,12 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/insertPageSection" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="feedback_form" name="feedback_form" method="post" action="<?php echo base_url()?>Admin/PageSection/insertPageSection" onsubmit="return validate()" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="inputSuccess">Page</label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('pageId'); ?></font></p>
-                                            <select class="form-control m-bot15" name="pageId" required>
+                                            <select class="form-control m-bot15" id="pageId" name="pageId" required>
                                                 <option value=""><?php echo SELECT_PAGE ?></option>
                                                <?php foreach ($pagename as $pg) { ?>
                                                    <option value="<?php echo $pg->pageId?>" <?php echo set_select('pageId',  $pg->pageId, False); ?>><?php echo $pg->pageTitle?></option>
@@ -72,8 +72,15 @@
                                         <div class="form-group">
                                                 <label class="control-label col-lg-2">Content #1 : </label>
                                             <div class="col-lg-10 ">
-                                                <p><font color="red"> <?php echo form_error('text[]'); ?></font></p>
+                                                <p><font color="red"> <?php echo form_error('text[0]'); ?></font></p>
                                                 <textarea class="form-control ckeditor" id="ckeditor" name="text[]" value="<?php echo set_value('text[]'); ?>" rows="6"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-2">Order Number #1 : <span class="required">*</span></label>
+                                            <div class="col-lg-10 ">
+                                                <p><font color="red"> <?php echo form_error('ordernumber[]'); ?></font></p>
+                                                <input class="form-control cls" type='number' id='ordernumber[0]' name="ordernumber[]" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -102,7 +109,7 @@
 
                                     <div class="form-group " align="center">
                                         <div class="col-lg-10">
-                                            <input class="btn btn-success" type="submit" style="margin-left: 180px">
+                                            <input class="btn btn-success" id="submit" type="submit" style="margin-left: 180px">
                                             <input class="btn btn-close" type="reset" >
                                         </div>
                                     </div>
@@ -137,7 +144,89 @@
 
 
 <script type="text/javascript">
+
+    function validate() {
+
+        var mutliPhoto = document.feedback_form.elements["ordernumber[]"];
+        var pageId=document.getElementById("pageId").value;
+        var isOk = [];
+
+        for(i=0;i<mutliPhoto.length;i++)
+        {
+            var ordernumber = document.getElementById(mutliPhoto[i]).value;
+            $.ajax({
+                type: 'GET',
+                url: '<?php echo base_url("Admin/PageSection/chkorderForCreatePageSection/")?>'+pageId+"/"+ordernumber,
+                data: {},
+                cache: false,
+                async: false,
+                success: function (data) {
+
+                    if (data=="2")
+                    {
+
+                       // document.getElementById('submit').disabled= true;
+                        //  document.getElementById('duplicateCat').style.display='block';
+                        isOk.push("value") ;
+
+                    }
+
+
+                }
+            });
+            if (isOk.length>0){
+                alert("order Number "+ ordernumber + " Allready given for this Page!!");
+                return false;
+            }
+
+        }
+
+
+
+
+    }
+
+
+
+//    $(".cls").focusout( function(){
+//
+//        var pageId=document.getElementById("pageId").value;
+//        var ordernumber = document.getElementById("ordernumber[" +(counter - 2)+ "]").value;
+//
+//
+//        $.ajax({
+//            type: 'GET',
+//            url: '<?php //echo base_url("Admin/PageSection/chkorderForCreatePageSection/")?>//'+pageId+"/"+ordernumber,
+//            data: {},
+//            cache: false,
+//            async: false,
+//            success: function (data) {
+//
+//                if (data=="2")
+//                {
+//
+//                   // document.getElementById('submit').disabled= true;
+//                  //  document.getElementById('duplicateCat').style.display='block';
+//                    isOk = true;
+//
+//                }
+//                else {
+//                   // document.getElementById('duplicateCat').style.display='none';
+//                    document.getElementById('submit').disabled= false;
+//                }
+//
+//
+//            }
+//        });
+//        if (isOk){
+//            alert("order Number "+ ordernumber + " Allready given for this Page!!");
+//            return false;
+//        }
+//    });
+
     $(document).ready(function(){
+
+
         var counter = 2;
         $("#addButton").click(function () {
              if(counter>10){
@@ -148,7 +237,12 @@
             if(counter == '2')
             {
                 var title=document.getElementById("textbox1").value;
+                var pageId=document.getElementById("pageId").value;
                 var status=document.getElementById("status1").value;
+                var isOk = false;
+                if(pageId==""){alert("Please Select a Page First!!");
+                    return false;
+                }
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
@@ -157,6 +251,33 @@
                     return false;
                 }
                 if(status==""){alert("Please Select Section Status First!!");
+                    return false;
+                }
+                var ordernumber = document.getElementById("ordernumber[" +(counter - 2)+ "]").value;
+
+                if(ordernumber==""){alert("Please Type Order Number First!!");
+                    return false;
+                }
+
+
+                $.ajax({
+                    type: 'GET',
+                    url: '<?php echo base_url("Admin/PageSection/chkorderForCreatePageSection/")?>'+pageId+"/"+ordernumber,
+                    data: {},
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data == "2"){
+
+                            isOk = true;
+
+
+                        }
+                    }
+
+                });
+                if (isOk){
+                    alert("order Number "+ ordernumber + " Allready given for this Page!!");
                     return false;
                 }
             }
@@ -165,6 +286,10 @@
 
                 var title=document.getElementById("textbox"+(counter-1)).value;
                 var status=document.getElementById("status"+(counter-1)).value;
+                var pageId=document.getElementById("pageId").value;
+                if(pageId==""){alert("Please Select a Page First!!");
+                    return false;
+                }
                 if(title==""){alert("Please Type Section Title First!!");
                     return false;
                 }
@@ -173,6 +298,34 @@
                     return false;
                 }
                 if(status==""){alert("Please Select Section Status First!!");
+                    return false;
+                }
+
+                var ordernumber = document.getElementById("ordernumber[" +(counter - 1)+ "]").value;
+
+                if(ordernumber==""){alert("Please Type Order Number First!!");
+                    return false;
+                }
+
+
+                $.ajax({
+                    type: 'GET',
+                    url: '<?php echo base_url("Admin/PageSection/chkorderForCreatePageSection/")?>'+pageId+"/"+ordernumber,
+                    data: {},
+                    cache: false,
+                    async: false,
+                    success: function (data) {
+                        if (data == "2"){
+
+                            isOk = true;
+
+
+                        }
+                    }
+
+                });
+                if (isOk){
+                    alert("order Number "+ ordernumber + " Allready given for this Page!!");
                     return false;
                 }
             }
@@ -183,8 +336,13 @@
                 '<div class="col-lg-10 ">'+'<p><font color="red"> <?php echo form_error('textbox[]'); ?></font></p>'+'<input class="form-control" type="text" name="textbox[]' + counter +
                 '" id="textbox' + counter + '" value="" required >'+'</div>' + '<label class="control-label col-lg-2">Content #'+ counter + ' : </label>' +
                 '<div class="col-lg-10">'+'<p><font color="red"> <?php echo form_error('text[]'); ?></font></p>'+'<textarea id="replace_element_'+counter+'" class="form-control ckeditor" rows="6" name="text[]' + counter +
-                 + counter + '" value="" ></textarea>'+'</div>'
-                +'<label class="control-label col-lg-2" for="inputSuccess">Page Section Status #'+counter+'<span class="required">*</span></label>'+
+                 + counter + '" value="" ></textarea>'+'</div>'+
+                '<label class="control-label col-lg-2">Order Number #'+counter+' : <span class="required">*</span></label>'+
+                '<div class="col-lg-10 ">'+
+                '<p><font color="red"> <?php echo form_error('ordernumber[]'); ?></font></p>'+
+                '<input class="form-control" type="number" id="ordernumber['+counter+']" name="ordernumber[]" required>'+
+                '</div>'+
+                '<label class="control-label col-lg-2" for="inputSuccess">Page Section Status #'+counter+'<span class="required">*</span></label>'+
                 '<div class="col-lg-10">'+'<p><font color="red"> '+'<?php echo form_error('status[]'); ?>'+'</font></p>'+'<select class="form-control m-bot15" id="status'+counter+'"name="status[]" required>' +
                 '<option value="" selected><?php echo SELECT_STATUS ?></option>'+'<?php for ($i=0;$i<count(STATUS);$i++){?>'+
                 '<option><?php echo STATUS[$i]?></option>'+

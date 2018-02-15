@@ -15,36 +15,48 @@
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+
+
     <!-- Bootstrap  -->
-<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
-<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>
+    <!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrap.css" >-->
+    <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/bootstrapV3.3.7.min.css" rel="stylesheet"/>-->
 
 
+<!--    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
 
-    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/bootstrap-theme.css" rel="stylesheet">
-    <!--external css-->
-    <!-- font icon -->
-<!--    <link href="--><?php //echo base_url()?><!--public/stylesheets/font-awesome.css" rel="stylesheet" />-->
-
-    <!-- Theme Style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/style.css">
-
-    <!-- Responsive -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/responsive.css">
-    
-
-    <!-- Animation Style -->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>public/stylesheets/animate.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/all.css" rel="stylesheet"/>
 
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.theme.default.min.css">
 
-    <!-- for Application Form -->
-    <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/application-form-style.css">
 
-    <link href="<?php echo base_url()?><?php echo FOLDER_NAME ?>/public/css/elegant-icons-style.css" rel="stylesheet" />
+
+
+<!--    <link href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/bootstrap-theme.css" rel="stylesheet">-->
+    <!--external css-->
+    <!-- font icon -->
+    <!--    <link href="--><?php //echo base_url()?><!--public/stylesheets/font-awesome.css" rel="stylesheet" />-->
+
+    <!-- Theme Style -->
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/style.css">-->
+
+    <!-- Responsive -->
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/responsive.css">-->
+
+
+    <!-- Animation Style -->
+<!--    <link rel="stylesheet" type="text/css" href="--><?php //echo base_url()?><!--public/stylesheets/animate.css">-->
+
+    <!-- Owl Carousel -->
+    <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.carousel.min.css">-->
+    <!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/owl.theme.default.min.css">-->
+
+    <!-- for Application Form -->
+<!--    <link rel="stylesheet" href="--><?php //echo base_url()?><!--public/stylesheets/application-form-style.css">-->
+
+<!--    <link href="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/public/css/elegant-icons-style.css" rel="stylesheet" />-->
 
 
 
@@ -55,15 +67,58 @@
 
 
 
-    <!--[if lt IE 9]>
+    <!--[if lt IE 9]-->
     <script src="<?php echo base_url()?>public/javascript/html5shiv.js"></script>
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>-->
+
     <script src="<?php echo base_url()?>public/javascript/respond.min.js"></script>
-    <![endif]-->
+
+<!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>-->
+    <!--[endif]-->
 
 
 
     <script type="text/javascript" src="<?php echo base_url()?>public/javascript/jquery.min.js"></script>
-<!--    <script type="text/javascript" src="--><?php //echo base_url()?><!--public/javascript/owl.carousel.js"></script>-->
+
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+    </style>
 
 
 </head>
@@ -112,6 +167,9 @@
                                             case "registerInterest.php":
                                                 ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
+                                            case "feedback-form.php":
+                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $tm->menuName?></a></li> <?php
+                                                break;
                                             default:
                                         }
                                     }
@@ -137,7 +195,7 @@
                         <div class="submenu top-search">
                             <form class="search-form">
                                 <div class="input-group">
-                                    <input type="search" class="search-field" placeholder="Search Here">
+                                    <input type="search" id="myInput" onkeyup="myFunction()" class="search-field" placeholder="Search Here">
                                     <span class="input-group-btn">
                                             <button type="submit"><i class="fa fa-search fa-4x"></i></button>
                                         </span>
@@ -145,7 +203,11 @@
                             </form>
                         </div>
 
-                        <div class="navbar-right topnav-sidebar">
+
+
+                      
+            <div class="navbar-right topnav-sidebar" style="margin-right: 0px">
+
 
                             <ul class="textwidget">
                                 <?php foreach ($contact as $contactInfo){?>
@@ -227,6 +289,9 @@
                                                             case "registerInterest.php":
                                                                 ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $q->menuName?></a></li> <?php
                                                                 break;
+                                                            case "feedback-form.php":
+                                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $q->menuName?></a></li> <?php
+                                                                break;
                                                             default:
                                                         }
                                                     }
@@ -273,6 +338,9 @@
                                             case "registerInterest.php":
                                                 ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $cm->menuName?></a></li> <?php
                                                 break;
+                                            case "feedback-form.php":
+                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $cm->menuName ?></a></li> <?php
+                                                break;
                                             default:
                                         }
                                     }
@@ -295,6 +363,31 @@
         </div><!-- /.header-wrap-->
     </header><!-- /.header -->
 
+    <div class="searchdiv">
+        <ul id="myUL" style="display:none;">
+            <?php foreach ($searchpage as $spage) {?>
+                <li><a href="<?php echo base_url()?>Page/<?php echo $spage->pageId?>"><?php echo $spage->pageTitle?></a></li>
+            <?php } ?>
+            <?php foreach ($searchnews as $snews) {?>
+                <li><a href="<?php echo base_url()?>News/newsDetails/<?php echo $snews->newsId?>"><?php echo $snews->newsTitle?></a></li>
+            <?php } ?>
+            <?php foreach ($searchevents as $sevents) {?>
+                <li><a href="<?php echo base_url()?>Event/eventDetails/<?php echo $sevents->eventId?>"><?php echo $sevents->eventTitle?></a></li>
+            <?php } ?>
+            <?php
+            ?> <li><a href="<?php echo base_url()?>course-list">Course List</li> <?php
+            ?> <li><a href="<?php echo base_url()?>Department">Department</a></li> <?php
+            ?><li><a href="<?php echo base_url()?>Faculty-list">Faculty</a></li> <?php
+            ?><li><a href="<?php echo base_url()?>Photo-Gallery">Photo Gallery</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>News">News</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>Events">Event List</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>Contact">Contact</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>RegisterInterest">RegisterInterest</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>Feedback">Feedback</a></li>
+
+        </ul>
+    </div>
+
     <script>
         jQuery(document).ready(function() {
             var loc = window.location.href;
@@ -305,4 +398,29 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        function myFunction() {
+
+            document.getElementById("myUL").style.display="block";
+            // alert(document.getElementById("myInput").value);
+            if (document.getElementById("myInput").value == ''){
+                document.getElementById("myUL").style.display="none";
+            }
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "block";
+                } else {
+                    li[i].style.display = "none";
+
+                }
+            }
+        }
     </script>

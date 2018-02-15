@@ -69,7 +69,7 @@
                                             <select class="form-control m-bot15" name="departmentStatus" id="departmentStatus" required>
                                                 <option value="" selected><?php echo SELECT_STATUS ?></option>
                                                 <?php for ($i=0;$i<count(STATUS);$i++){?>
-                                                    <option><?php echo STATUS[$i]?></option>
+                                                    <option <?php echo set_select('departmentStatus',  STATUS[$i], False); ?>><?php echo STATUS[$i]?></option>
                                                 <?php } ?>
                                             </select>
 
@@ -79,7 +79,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="departmentSummary">Department Summary</label>
                                         <div class="col-lg-10">
-                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" ><?php echo set_value('name'); ?></textarea>
+                                            <textarea class="form-control ckeditor" name="departmentSummary" id="departmentSummary" ><?php echo set_value('departmentSummary'); ?></textarea>
                                         </div>
                                     </div>
 
@@ -129,6 +129,34 @@
 <script>
     function submitform() {
 
+        var image =document.getElementById("image").value;
+
+        if(image!='')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("image");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
         var departmentName =  document.getElementById("departmentName").value;
         if (departmentName.length >255){
             alert("Department Name Should not more than 255 Charecter Length");
@@ -139,6 +167,11 @@
             alert("Department Head Should not more than 100 Charecter Length");
             return false;
         }
+
+
+
+
+
     }
 </script>
 

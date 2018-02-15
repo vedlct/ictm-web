@@ -1,6 +1,7 @@
 
 		<?php include("header.php"); ?>
         <script src='https://www.google.com/recaptcha/api.js'></script>
+
         <div class="page-title full-color">
             <div class="container">
                 <div class="row">
@@ -102,15 +103,25 @@
                                 <div class="col-md-12">
                                 	
                                         <h2 style="font-size:24px" class="title">Get in touch</h2>
+
+
 								
                                     <div class="contact-form">
                                         <div class="line-box"></div>
-                                        <form action="<?php echo base_url()?>Email/FacultyEmail" method="post"  id="contactform" class="comment-form" novalidate>
+
+                                        <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                                            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+                                        <?php }
+                                        elseif($this->session->flashdata('successMessage')!=null){?>
+                                            <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+                                        <?php }?>
+
+                                        <form action="<?php echo base_url()?>Email/FacultyEmail/<?php echo $facultyinfo->facultyId?>" onsubmit="return chkFacultymail()" method="post" id="contactform" class="comment-form">
                                         	<div class="row">
                                             	<div class="col-md-12">
                                                 	<label><strong>Your Name *</strong></label>
                                                 	<fieldset class="style-1 full-name">
-                                                        <input type="text" id="name" class="tb-my-input" name="name" tabindex="1" value="" size="32" aria-required="true">
+                                                        <input type="text" id="name" required class="tb-my-input" name="name" tabindex="2" value="" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
 
@@ -119,27 +130,28 @@
                                             	<div class="col-md-6">
                                                 	<label><strong>Your E-Mail *</strong></label>
                                                 	<fieldset class="style-1 email-address">
-                                                        <input type="email" id="email" class="tb-my-input" name="email" tabindex="2" value="" size="32" aria-required="true">
-                                                    </fieldset> 
+                                                        <input type="email" id="email"  class="tb-my-input" name="email" required tabindex="2" value="" size="32" aria-required="true">
+                                                    </fieldset>
                                                 </div>
                                                 <div class="col-md-6">
                                                 	<label><strong>Your Contact Number</strong></label>
                                                 	<fieldset class="style-1 contact">
-                                                        <input type="text" id="contact" class="tb-my-input" name="contact" tabindex="2" value="" size="32" aria-required="true">
-                                                    </fieldset> 
+                                                        <input type="text" id="contact"  class="tb-my-input" name="contact" required tabindex="2" size="32" aria-required="true">
+                                                    </fieldset>
                                                 </div>
                                             </div>                           
 											<label><strong>Your Enquiry *</strong></label>
                                             <fieldset class="message-form">
-                                                <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                                <textarea required id="comment" name="comment" rows="8" tabindex="2"></textarea>
                                             </fieldset>
                                             <input name="facultyEmail" type="hidden" value="<?php echo $facultyinfo->facultyEmail?>">
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
-                                                <button class="flat-button button-style style-v1">Send &nbsp;<i class="fa fa-angle-right"></i></button>
+                                                <button type="submit" class="flat-button button-style style-v1">Send</button>
                                             </div>             
                                         </form>
-                                    </div><!-- contact-form -->
+                                    </div>
+                                    <!-- contact-form -->
                                 </div><!-- col-md-12 -->
                             </div><!-- /row-->
                             </div>
@@ -167,3 +179,45 @@
 
 
 </html>
+
+        <script>
+
+            function chkFacultymail() {
+
+                var name =  document.getElementById("name").value;
+                var email =  document.getElementById("email").value;
+//                var subject =  document.getElementById("subject").value;
+                var contact =  document.getElementById("contact").value;
+                var comment =  document.getElementById("comment").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if (name ==""){
+                    alert("name field can not be empty !! ");
+                    return false;
+                }
+                if (contact ==""){
+                    alert("contact field can not be empty !! ");
+                    return false;
+                }
+//                if (subject ==""){
+//                    alert("Subject field can not be empty !! ");
+//                    return false;
+//                }
+                if (comment == ""){
+                    alert("Comment field can not be empty !! ");
+                    return false;
+                }
+                if(email.match(mailformat))
+                {
+                    return true;
+                }
+                else
+                {
+                    alert("You have entered an invalid email address!");
+                    return false;
+                }
+
+
+            }
+
+        </script>

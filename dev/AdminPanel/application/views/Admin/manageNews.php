@@ -64,23 +64,23 @@
                             <table class="table table-striped table-advance  table-bordered table-hover" id="myTable">
                                 <tbody>
                                 <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%" onclick="sortTable(0)"> News Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> News Date</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> News Title</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> News Date</th>
 
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)"> News Type</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left" onclick="sortTable(2)" > News Type</th>
 
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Status</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Action</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Status</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Inserted By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified By</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Last Modified Date</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Appear In Home</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align:left"> Action</th>
                                 </tr>
 
                                 <?php if (!empty($news)){
                                     foreach ($news as $newsdata){?>
 
-                                        <tr align="center">
+                                        <tr align=left>
                                             <td>
                                                 <?php echo $newsdata->newsTitle?>
                                             </td>
@@ -210,6 +210,10 @@
                     else if(data=='0'){
                         alert('News Removed Successfully From Home Page');
                     }
+                    else if(data=='3'){
+                        alert('Allready 3 News in the Home Page');
+                    }
+                    location.reload();
 
                 }
             });
@@ -239,5 +243,7 @@
 
     }
 
+
+   var flag=true;
 
 </script>

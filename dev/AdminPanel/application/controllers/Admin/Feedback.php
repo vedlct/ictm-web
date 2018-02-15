@@ -72,24 +72,93 @@ class Feedback extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Feedback/manageFeedback";
-            $config["total_rows"] = $this->Feedbackm->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["feedback"] = $this->Feedbackm->getAllforManageFeedback($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
-
-            $this->load->view('Admin/manageFeedback',$this->data);
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Feedback/manageFeedback";
+//            $config["total_rows"] = $this->Feedbackm->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["feedback"] = $this->Feedbackm->getAllforManageFeedback($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
+            $this->load->helper('url');
+            $this->load->view('Admin/manageFeedback1');
 
         }
         else{
             redirect('Admin/Login');
         }
+    }
+
+    public function ajax_list()
+    {
+        $list = $this->Feedbackm->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $customers) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $customers->feedbackByName;
+            $row[] = $customers->feedbackByProfession;
+            $row[] = $customers->feedbackSource;
+            $row[] = $customers->feedbackStatus;
+            $row[] = $customers->feedbackApprove;
+            $row[] = $customers->feedbackApprovedBy;
+
+            if ($customers->feedbackApprovedDate == ""){
+                $row[] = 'Pending!!';
+            }else{
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($customers->feedbackApprovedDate)),1);
+            }
+            $row[] = $customers->insertedBy;
+
+            if ($customers->lastModifiedBy==""){
+                $row[] = "Never Modified";
+
+            }else{
+                $row[] = $customers->lastModifiedBy;
+            }
+            if ($customers->lastModifiedDate==""){
+                $row[] = "Never Modified";
+
+            }else{
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($customers->lastModifiedDate)),1);
+            }
+            if ($customers->feedbackApprove == SELECT_APPROVE[0]){
+
+                if ($customers->homeStatus === SELECT_APPROVE[0]){
+
+                    $row[]='<input type="checkbox" id="appearInHome" name="appearInHome" data-panel-id="'. $customers->feedbackId .'" onclick="selectHome(this)" checked="checked">Yes';
+                }
+                else{
+                    $row[]='<input type="checkbox" id="appearInHome" name="appearInHome" data-panel-id="'. $customers->feedbackId .'" onclick="selectHome(this)" >Yes';
+                }
+
+
+            }else{
+                $row[] = 'Need Approval First !!';
+            }
+
+            $row[] = '<a class="btn" href="'. base_url()."Admin/Feedback/editFeedbackView/".$customers->feedbackId.'"><i class="icon_pencil-edit"></i></a>
+                                                    <a class="btn" data-panel-id="'. $customers->feedbackId .'"  onclick="selectid(this)"><i class="icon_trash"></i></a>';
+
+
+
+            $data[] = $row;
+        }
+
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Feedbackm->count_all(),
+            "recordsFiltered" => $this->Feedbackm->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+
     }
 
     public function editFeedbackView($feedbackId) // for edit  Selected Feedback view
@@ -100,7 +169,6 @@ class Feedback extends CI_Controller
             $this->data['editFeedback'] = $this->Feedbackm->getAllFeedbackbyId($feedbackId);
             $this->load->view('Admin/editFeedback', $this->data);
         }
-
         else{
             redirect('Admin/Login');
         }

@@ -35,6 +35,8 @@
                 <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
             <?php }?>
 
+            <?php $alCov = $this->session->flashdata('alCover');?>
+
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -45,17 +47,23 @@
                             </span>
                         </header>
                         <div class="panel-body">
+                            <form class="row">
                             <div class="form-group">
                                 <label class="control-label col-lg-2" for="albumId">Album Title</label>
                                 <div class="col-lg-10">
+
                                     <select class="form-control m-bot15" id="albumId" name="albumId" onchange="showtable()">
                                         <option><?php echo SELECT_ALBUM ?></option>
                                         <?php foreach ($album as $album){?>
+                                        <?php if ($alCov != ""){?>
+                                        <option <?php if (!empty($alCov) && $alCov == $album->albumId)  echo 'selected = "selected"'; ?> value="<?php echo $album->albumId?>"><?php echo $album->albumTitle?></option>
+                                        <?php }else{?>
                                             <option value="<?php echo $album->albumId?>"><?php echo $album->albumTitle?></option>
-                                        <?php }?>
+                                        <?php }}?>
                                     </select>
                                 </div>
                             </div>
+                            </form>
 
                             <div id="tableid" style="display: none">
 
@@ -81,6 +89,19 @@
 
 <script>
 
+    $(document).ready(function(){
+
+        var alcover= '<?php echo $alCov?>';
+
+        if (alcover != ''){
+            showtable2(alcover);
+        }else {
+
+        }
+
+
+    });
+
     $.ajaxSetup({
         data: {
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
@@ -92,6 +113,23 @@
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("Admin/Photo/showPhotoManageTable/")?>'+x,
+            data:{},
+            cache: false,
+            success:function(data)
+            {
+                $('#tableid').html(data);
+
+            }
+        });
+        document.getElementById("tableid").style.display ="block";
+    }
+
+    function showtable2(alcover)
+    {
+        //var x = document.getElementById('albumId').value;
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin/Photo/showPhotoManageTable/")?>'+alcover,
             data:{},
             cache: false,
             success:function(data)

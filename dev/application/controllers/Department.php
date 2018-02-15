@@ -15,6 +15,7 @@ class Department extends CI_Controller {
         $this->load->model('Departmentm');
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
+        $this->load->model('Searchm');
     }
     public function index()
     {
@@ -32,6 +33,7 @@ class Department extends CI_Controller {
     }
     public function menu() //  get all the menu+ footer
     {
+        $this->data['affiliation'] = $this->Menum->getAffiliations();
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();
@@ -42,6 +44,10 @@ class Department extends CI_Controller {
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
+
+        $this->data['searchpage'] = $this->Searchm->getpage();
+        $this->data['searchnews'] = $this->Searchm->getNews();
+        $this->data['searchevents'] = $this->Searchm->getEvents();
 
     }
 }

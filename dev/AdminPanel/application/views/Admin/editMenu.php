@@ -122,6 +122,14 @@
 
 
                                     </div>
+                                    <div class="form-group ">
+                                        <label for="menuTitle" class="control-label col-lg-2">Order Number<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <p><font color="red"> <?php echo form_error('orderNumber'); ?></font></p>
+                                            <input class="form-control" id="orderNumber" name="orderNumber"  value="<?php echo $menu->orderNumber?>" type="text" required />
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-lg-2" for="menuStatus">Menu Status<span class="required">*</span></label>
                                         <div class="col-lg-10">

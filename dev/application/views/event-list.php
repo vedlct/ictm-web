@@ -35,6 +35,7 @@
 			]
 
 		});
+//        $('#calendar').fullCalendar('changeView', 'listWeek');
 
 	});
 
@@ -83,9 +84,6 @@
         
     </div>
 </body>
-
-
-
 
 </html>
 

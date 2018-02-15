@@ -56,7 +56,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]">
+                                            <input class="form-control"id="image[0]" type="file" name="image[]">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $sliderdata->slideImage1 ;?>" target="_blank"><span> <?php echo $sliderdata->slideImage1 ;?> </span></a>
 
                                         </div>
@@ -81,7 +81,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]">
+                                            <input class="form-control" type="file" id="image[1]"name="image[]">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $sliderdata->slideImage2 ;?>" target="_blank"><span> <?php echo $sliderdata->slideImage2 ;?> </span></a>
                                         </div>
 
@@ -107,7 +107,7 @@
                                         <div class="col-sm-4">
 
                                             <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                            <input class="form-control" type="file" name="image[]" id="image[]">
+                                            <input class="form-control" type="file" name="image[]" id="image[2]">
                                             <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $sliderdata->slideImage3;?>" target="_blank"><span> <?php echo $sliderdata->slideImage3;?> </span></a>
                                         </div>
 
@@ -185,6 +185,37 @@
         if(Text3.length >255) {
             alert( 'Text3 must be less than 255 charecter!!' );
             return false;
+        }
+        var Image = document.homeSlider.elements["image[]"];
+        for (i=0;i<Image.length;i++){
+
+            var imagess =document.getElementById("image["+i+"]").value;
+
+            if(imagess!='')
+            {
+
+                var ext = imagess.substring(imagess.lastIndexOf('.') + 1);
+                //alert(ext);
+                if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+                {
+
+                }
+                else {
+                    alert("Upload images of correct format!! in image field"+(i+1));
+                    return false;
+                }
+
+                var img = document.getElementById("image["+i+"]");
+                //alert((img.files[0].size/1024));
+                if((img.files[0].size/1024) >  4096)  // validation according to file size
+                {
+                    //document.getElementById("imageerror").innerHTML="Image size too big";
+                    alert('Image size too big in image'+(i+1));
+                    return false;
+                }
+
+                //return true;
+            }
         }
 
     }

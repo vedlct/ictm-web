@@ -30,17 +30,21 @@
                         	<div class="col-md-3">
                             	<div class="project-listing">
                                     <div class="project-portfolio v1">
-                                        <div class="item">
+                                        <div id="itemresized" class="item">
                                             <div class="thumb-item">
+
+                                                <?php if ($listOfFaculty->facultyImage !=null){?>
+
+<!--                                            item-thumbnail -->
 
                                                 <div  class="itmthmb item-thumbnail">
 
-                                                    <?php if ($listOfFaculty->facultyImage !=null){?>
-                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="360px" width="360px" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/<?php echo $listOfFaculty->facultyImage?>" alt="image"></a>
-                                                    <?php }else{?>
-                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><img height="" width="" src="<?php echo base_url()?><?php echo FOLDER_NAME ?>/images/facultyImages/dummy_profile.png" alt="image"></a>
-                                                    <?php } ?>
-                                                </div><!-- /item-thumbnail -->
+                                                    <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>">
+                                                        <img src="<?php echo base_url(FOLDER_NAME.'/images/facultyImages/'.thumb(FOLDER_NAME.'/images/facultyImages/'.$listOfFaculty->facultyImage,'360','360')); ?>" alt="image">
+                                                    </a>
+                                                </div>
+<!--                                              item-thumbnail -->
+                                                <?php } ?>
         
                                                 <div class="itmcntnt item-content">
                                                     <h3 class="item-title">

@@ -61,7 +61,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventStartDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker1'>
-                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime" value="<?php echo set_value('eventStartDateTime'); ?>" class="form-control" required/>
+                                                <input type='text' id="eventStartDateTime" name="eventStartDateTime" placeholder="dd-mm-yyy H:m" value="<?php echo set_value('eventStartDateTime'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -72,7 +72,7 @@
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('eventEndDateTime'); ?></font></p>
                                             <div class='input-group date datetimepicker' id='datetimepicker2'>
-                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" value="<?php echo set_value('eventEndDateTime'); ?>" class="form-control" required/>
+                                                <input type='text' id="eventEndDateTime" name="eventEndDateTime" placeholder="dd-mm-yyy H:m" value="<?php echo set_value('eventEndDateTime'); ?>" class="form-control" required/>
                                                 <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                                 </span>
@@ -175,13 +175,44 @@
 <script type="text/javascript">
     $(function () {
         $('.datetimepicker').datetimepicker({
-            format: 'DD-MM-YYYY h:m A'
+            format: 'DD-MM-YYYY H:m'
         });
+
     });
+
 </script>
 
 <script type="text/javascript">
     function onsumit(){
+
+        var image =document.getElementById("event_image").value;
+
+        if(image!='')
+        {
+
+            var ext = image.substring(image.lastIndexOf('.') + 1);
+            //alert(ext);
+            if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+            {
+
+            }
+            else {
+                alert("Upload images of correct format!!");
+                return false;
+            }
+
+            var img = document.getElementById("event_image");
+            //alert((img.files[0].size/1024));
+            if((img.files[0].size/1024) >  4096)  // validation according to file size
+            {
+                //document.getElementById("imageerror").innerHTML="Image size too big";
+                alert('Image size too big');
+                return false;
+            }
+
+            //return true;
+        }
+
         var length =  document.getElementById("eventTitle").value;
         if (length.length >255){
             alert("Event Title Should not more than 255 Charecter Length");
@@ -197,24 +228,27 @@
             alert( 'Please enter a Event Content' );
             return false;
         }
-        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
-        var eventEndDateTime =  document.getElementById("eventEndDateTime").value;
+//        var eventStartDateTime =  document.getElementById("eventStartDateTime").value;
+//        var eventEndDateTime =   document.getElementById("eventEndDateTime").value;
+//        alert(eventStartDateTime);
+//        alert(eventStartDateTime);
+//
+//        if (eventStartDateTime > eventEndDateTime) {
+//            alert ("Event End Date Can not be before Event Start Date!!");
+//            return false;
+//        }
 
-        if (eventStartDateTime>eventEndDateTime) {
-            alert ("Event End Date Can not be after Event Start Date!!");
-            return false;
-        }
     }
 </script>
 
 <script>
-$('#eventStartDateTime').keydown(function(e) {
-e.preventDefault();
-return false;
-});
+//$('#eventStartDateTime').keydown(function(e) {
+//e.preventDefault();
+//return false;
+//});
 
-$('#eventEndDateTime').keydown(function(e) {
-    e.preventDefault();
-    return false;
-});
+//$('#eventEndDateTime').keydown(function(e) {
+//    e.preventDefault();
+//    return false;
+//});
 </script>

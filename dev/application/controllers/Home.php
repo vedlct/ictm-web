@@ -10,7 +10,7 @@ class Home extends CI_Controller {
         $this->load->model('Menum');
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
-
+        $this->load->model('Searchm');
     }
 
 
@@ -22,17 +22,18 @@ class Home extends CI_Controller {
         $this->menu();
         $this->data['news'] = $this->Homem->getNews();
         $this->data['events'] = $this->Homem->getEvents();
-        $this->data['affiliation'] = $this->Homem->getAffiliations();
+//        $this->data['affiliation'] = $this->Homem->getAffiliations();
         $this->data['feedback'] = $this->Homem->getFeedback();
         $this->data['home'] = $this->Homem->getHomeAlldata();
         $this->load->view('home', $this->data);
+
 
     }
 
     public function menu() //  get all the menu+ footer
     {
 
-
+        $this->data['affiliation'] = $this->Menum->getAffiliations();
         $this->data['topmenu'] = $this->Menum->getTopMenu();
         $this->data['parentmenu'] = $this->Menum->getParentMenu();
         $this->data['checkparentmenu'] = $this->Menum->checkParentMenu();
@@ -43,6 +44,10 @@ class Home extends CI_Controller {
         $this->data['bottom'] = $this->Menum->getBottomMenu();
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
+
+        $this->data['searchpage'] = $this->Searchm->getpage();
+        $this->data['searchnews'] = $this->Searchm->getNews();
+        $this->data['searchevents'] = $this->Searchm->getEvents();
 
     }
 }

@@ -54,24 +54,24 @@
                                 <tbody>
 
                                 <tr align="center" bgcolor="#D3D3D3">
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)">Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)">Profession </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(2)">Source </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Status </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Approve </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">ApprovedBy </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">ApprovedDate(d-m-Y)</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">Inserted By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%"> Last Modified Date(d-m-Y) </th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center;width: 10%"> Action </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Name</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span>Profession </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(2)"><span id="2down"><i class="fa fa-sort-desc"></i> </span><span id="2up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Source </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Status </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Approve </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedBy </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedDate(d-m-Y)</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left; width: 15%"> Last Modified Date(d-m-Y) </th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
+                                    <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                 </tr>
 
 
                                 <?php if (!empty($feedback)){
                                     foreach ($feedback as $feedback){?>
-                                        <tr align="center">
+                                        <tr align="left">
                                             <td>
                                                 <?php echo $feedback->feedbackByName?>
                                             </td>
@@ -126,8 +126,7 @@
                                             </td>
                                             <td>
                                                 <?php if ($feedback->feedbackApprove == SELECT_APPROVE[0]){?>
-                                                    <input type="checkbox" data-panel-id="<?php echo $feedback->feedbackId ?>" onclick="selectHome(this)" <?php if ($feedback->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>
-                                                           id="appearInHome" name="appearInHome">Yes
+                                                    <input type="checkbox" id="appearInHome" name="appearInHome" data-panel-id="<?php echo $feedback->feedbackId ?>" onclick="selectHome(this)" <?php if ($feedback->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?> >Yes
                                                 <?php }else{ echo "Need Approval First !!";}?>
 
                                             </td>
@@ -224,4 +223,6 @@
             location.reload();
         }
     }
+
+    var flag=true;
 </script>

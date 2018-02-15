@@ -3,6 +3,91 @@
 
 class Facultym extends CI_Model
 {
+    /////////datatable//////////
+    var $table = 'ictmfaculty';
+    var $select = array('facultyId','facultyTitle','facultyFirstName','facultyLastName','facultyEmail','facultyPosition','facultyEmpType','facultyStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_order = array(null,null,'facultyFirstName','facultyLastName','facultyEmail','facultyPosition','facultyEmpType','facultyStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_search = array('facultyFirstName','facultyLastName'); //set column field database for datatable searchable
+    var $order = array('facultyId' => 'desc'); // default order
+
+    private function _get_datatables_query()
+    {
+
+        $this->db->select($this->select);
+        $this->db->from($this->table);
+
+//        $i = 0;
+
+        foreach ($this->column_search as $item) // loop column
+        {
+
+            if($_POST['search']['value']) // if datatable send POST for search
+            {
+                $searchbox = explode(' ', $_POST['search']['value']);
+                $where = array();
+                foreach($searchbox as $word)
+                {
+                    $where[] = "(facultyFirstName LIKE '%".$word."%' OR facultyLastName LIKE '%".$word."%')";
+                }
+
+                $this->db->where(implode(' AND ', $where));
+
+
+
+//                if($i===0) // first loop
+//                {
+//                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+//
+//                    $this->db->like($item,$_POST['search']['value']);
+//
+//                }
+//                else
+//                {
+//
+//                    $this->db->or_like($item, $_POST['search']['value']);
+//
+//                }
+
+//                if(count($this->column_search) - 1 == $i) //last loop
+//                    $this->db->group_end(); //close bracket
+            }
+//            $i++;
+        }
+
+        if(isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        }
+        else if(isset($this->order))
+        {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables()
+    {
+        $this->_get_datatables_query();
+        if($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+    ///////////////////end of datatable/////////////////////////////
+
     /*---------for creating new Faculty --------------------- */
     public function createNewFaculty()  // creates new faculty in database
     {
@@ -67,6 +152,7 @@ class Facultym extends CI_Model
 
             if($this->upload->do_upload('facultyImage')){
                 // if something need after image upload
+                thumb('images/facultyImages/'.$facultyId.'.'.pathinfo($facultyImage, PATHINFO_EXTENSION),'360','360');
             }
             else{
 
@@ -111,7 +197,7 @@ class Facultym extends CI_Model
 
     /*---------for Manage Faculty -----------------------*/
     public function getAllforManageFaculty($limit, $start) {
-        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyDegree,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName,facultyEmail,facultyPosition,facultyEmpType,facultyStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmfaculty');
         $this->db->order_by("facultyId", "desc");
         $this->db->limit($limit, $start);
@@ -193,6 +279,7 @@ class Facultym extends CI_Model
 
             if($this->upload->do_upload('facultyImage')){
                 // if something need after image upload
+                thumb('images/facultyImages/'.$id.'.'.pathinfo($facultyImage, PATHINFO_EXTENSION),'360','360');
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -296,6 +383,13 @@ class Facultym extends CI_Model
         $this->db->where('facultyId',$id);
         $query = $this->db->get('ictmfaculty');
         foreach ($query->result() as $image){$facultyImage=$image->facultyImage;}
+
+        $info = pathinfo($facultyImage);
+        $name = $info['filename'];
+        $format = $info['extension'];
+        $pathanother   = $name."_360_360".".".$format;
+
+        unlink(FCPATH."images/facultyImages/".$pathanother);
 
         unlink(FCPATH."images/facultyImages/".$facultyImage);
 

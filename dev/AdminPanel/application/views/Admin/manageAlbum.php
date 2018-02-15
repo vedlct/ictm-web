@@ -7,8 +7,6 @@
     .pagination2 {
         letter-spacing: 15px;
     }
-
-
 </style>
 
 <body>
@@ -17,7 +15,6 @@
     <!--header start-->
     <?php include ('topNavigation.php')?>
     <!--header end-->
-
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--main content start-->
@@ -53,70 +50,69 @@
                         </header>
                         <div class="panel-body">
                             <div class="table table-responsive">
-                            <table class="table table-bordered table-hover table-striped table-advance" id="myTable">
-                                <tbody>
-                                <tr>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(0)"> Album Title</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center" onclick="sortTable(1)"> Category Name</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Album Status</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Inserted By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified By</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Last Modified Date (d-m-Y)</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center"> Appear In Home</th>
-                                    <th style="background-color: #394A59; color: whitesmoke; text-align: center">  Action</th>
-                                </tr>
-                                <?php if (!empty($Albums)){
-                                    foreach ($Albums as $Album){?>
+                                <table class="table table-bordered table-hover table-striped table-advance" id="myTable">
+                                    <tbody>
+                                    <tr>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Album Title</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" onclick="sortTable(1)"> Category Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Album Status</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Inserted By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified Date (d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Appear In Home</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left">  Action</th>
+                                    </tr>
+                                    <?php if (!empty($Albums)){
+                                        foreach ($Albums as $Album){?>
 
 
-                                        <tr align="center">
-                                            <td><?php echo $Album->albumTitle?></td>
-                                            <td><?php echo $Album->albumCategoryName?></td>
+                                            <tr align="left">
+                                                <td><?php echo $Album->albumTitle?></td>
+                                                <td><?php echo $Album->albumCategoryName?></td>
 
-                                            <td>
-                                                <?php echo $Album->albumStatus?>
-                                            </td>
+                                                <td>
+                                                    <?php echo $Album->albumStatus?>
+                                                </td>
 
-                                            <td>
-                                                <?php echo $Album->insertedBy?>
-                                            </td>
+                                                <td>
+                                                    <?php echo $Album->insertedBy?>
+                                                </td>
 
-                                            <td>
-                                                <?php if ($Album->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $Album->lastModifiedBy;} ?>
-                                            </td>
+                                                <td>
+                                                    <?php if ($Album->lastModifiedBy==""){echo NEVER_MODIFIED;}else{echo $Album->lastModifiedBy;} ?>
+                                                </td>
 
-                                            <td><?php if ($Album->lastModifiedDate==""){echo NEVER_MODIFIED;}
-                                                else
-                                                {
-                                                    echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($Album->lastModifiedDate)),1);
+                                                <td><?php if ($Album->lastModifiedDate==""){echo NEVER_MODIFIED;}
+                                                    else
+                                                    {
+                                                        echo preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($Album->lastModifiedDate)),1);
+                                                    }
+                                                    ?>
 
-                                                }
-                                                ?>
+                                                </td>
+                                                <td>
+                                                    <?php if ($Album->albumStatus == STATUS[0]){?>
+                                                        <input type="checkbox" data-panel-id="<?php echo $Album->albumId ?>" onclick="selectHome(this)" <?php if ($Album->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>
+                                                               id="appearInHome" name="appearInHome">Yes
+                                                    <?php }else{ echo "Status Should be Active First !!";}?>
 
-                                            </td>
-                                            <td>
-                                                <?php if ($Album->albumStatus == STATUS[0]){?>
-                                                    <input type="checkbox" data-panel-id="<?php echo $Album->albumId ?>" onclick="selectHome(this)" <?php if ($Album->homeStatus == SELECT_APPROVE[0])echo 'checked="checked"';?>
-                                                           id="appearInHome" name="appearInHome">Yes
-                                                <?php }else{ echo "Status Should be Active First !!";}?>
+                                                </td>
+                                                <td>
 
-                                            </td>
-                                            <td>
+                                                    <div class="btn-group">
+                                                        <a class="btn" href="<?php echo base_url("Admin/Album/editAlbumView/")?><?php echo $Album->albumId ?>"><i class="icon_pencil-edit"></i></a>
+                                                        <a class="btn" data-panel-id="<?php echo $Album->albumId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
+                                                    </div>
+                                                </td>
 
-                                                <div class="btn-group">
-                                                    <a class="btn" href="<?php echo base_url("Admin/Album/editAlbumView/")?><?php echo $Album->albumId ?>"><i class="icon_pencil-edit"></i></a>
-                                                    <a class="btn" data-panel-id="<?php echo $Album->albumId ?>"  onclick="selectid(this)"><i class="icon_trash"></i></a>
-                                                </div>
-                                            </td>
-
-                                        </tr>
+                                            </tr>
 
 
-                                    <?php }
-                                }?>
+                                        <?php }
+                                    }?>
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
                             </div>
                             <div class="pagination2" align="center">
                                 <a href="#"><?php echo $links?></a>
@@ -145,13 +141,11 @@
 </body>
 </html>
 <script>
-
     $.ajaxSetup({
         data: {
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
         }
     });
-
     function selectid(x) {
         if (confirm("Are you sure you want to delete this Album?")) {
             btn = $(x).data('panel-id');
@@ -161,7 +155,6 @@
                 data:{},
                 cache: false,
                 success:function(data) {
-
                     location.reload();
                 }
             });
@@ -185,7 +178,10 @@
                     else if(data=='0'){
                         alert('Album Removed Successfully From Home Page');
                     }
-
+                    else if(data=='3'){
+                        alert('Allready 6 Album in the Home Page');
+                    }
+                    location.reload();
                 }
             });
         }
@@ -193,4 +189,7 @@
             location.reload();
         }
     }
+
+    var flag=true;
+
 </script>

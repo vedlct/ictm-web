@@ -3,19 +3,21 @@
 <table class="table table-striped table-advance table-bordered table-hover " id="myTable">
     <tbody>
     <tr>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 15%" onclick="sortTable(0)"> Page Section Title </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 5%"> Status </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Inserted By </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Last Modified By </th>
-        <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 10%"> Last Modified Date (d-m-Y) </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 15%" onclick="sortTable(0)" > <span id="0down"><i class="fa fa-sort-desc"></i> </span><span id="0up" style="display: none"><i class="fa fa-sort-asc"></i> </span> Page Section Title </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%" onclick="sortTable(1)"> <span id="1down"><i class="fa fa-sort-desc"></i> </span><span id="1up" style="display: none"><i class="fa fa-sort-asc"></i> </span> O N</th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 5%"> Status </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> Inserted By </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> Last Modified By </th>
+        <th style="background-color: #394A59; color: whitesmoke; text-align:left; width: 10%"> Last Modified Date (d-m-Y) </th>
 
         <th style="background-color: #394A59; color: whitesmoke; text-align: center; width: 5%"> Action</th>
     </tr>
 
         <?php if (!empty($pagedata)){
             foreach ($pagedata as $pg) { ?>
-                <tr align="center">
+                <tr align="left">
                     <td><?php echo $pg->pageSectionTitle ?></td>
+                    <td><?php echo $pg->orderNumber ?></td>
                     <td><?php echo $pg->pageSectionStatus ?></td>
                     <td><?php echo $pg->insertedBy?></td>
                     <td>
@@ -48,3 +50,6 @@
     </tbody>
 </table>
 </div>
+   <script>
+       var flag=true;
+    </script>

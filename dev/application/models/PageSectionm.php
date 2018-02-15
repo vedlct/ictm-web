@@ -9,6 +9,7 @@ class PageSectionm extends CI_Model
 
         $this->db->select( 'pageSectionId,ictmpagesection.pageId,pageSectionTitle,pageSectionContent,pageSectionImage,pageSectionStatus, pageTitle, pageType, pageContent, pageImage,pageMetaData,pageKeywords' );
         $this->db->join('ictmpagesection ', '(ictmpagesection.pageId = ictmpage.pageId) AND (ictmpagesection.pageSectionStatus = "Active")','left');
+        $this->db->order_by("ictmpagesection.orderNumber", "asc");
         $this->db->where('ictmpage.pageId=', $id);
         $query = $this->db->get('ictmpage');
         return $query->result();

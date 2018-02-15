@@ -1,7 +1,91 @@
- <?php
+<?php
 
 class Pagem extends CI_Model
 {
+
+    /////////datatable//////////
+    var $table = 'ictmpage ';
+
+    var $select =array('pageId','pageTitle','pageType','pageStatus','insertedBy','lastModifiedBy','lastModifiedDate');
+    var $column_order = array(null,'pageTitle','pageType'); //set column field database for datatable orderable
+    var $column_search = array('pageTitle' ); //set column field database for datatable searchable
+    var $order = array('pageId' => 'desc'); // default order
+
+    private function _get_datatables_query()
+    {
+        if($this->input->post('pageType1'))
+        {
+            $this->db->where('pageType', $this->input->post('pageType1'));
+        }
+
+
+        $this->db->select($this->select);
+        $this->db->from($this->table);
+//        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
+//        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+
+
+
+        $i = 0;
+
+        foreach ($this->column_search as $item) // loop column
+        {
+            if($_POST['search']['value']) // if datatable send POST for search
+            {
+
+                if($i===0) // first loop
+                {
+                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                    $this->db->like($item, $_POST['search']['value']);
+                }
+                else
+                {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+
+                if(count($this->column_search) - 1 == $i) //last loop
+                    $this->db->group_end(); //close bracket
+            }
+            $i++;
+        }
+
+        if(isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        }
+        else if(isset($this->order))
+        {
+            $order = $this->order;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+
+    function get_datatables()
+    {
+
+        $this->_get_datatables_query();
+
+        if($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    function count_filtered()
+    {
+        $this->_get_datatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+
+    public function count_all()
+    {
+        $this->db->from($this->table);
+        return $this->db->count_all_results();
+    }
+
+
+    ///////////////////end of datatable/////////////////////////////
     //this will insert page
     public function insertPage() // creates a new page in database
     {
@@ -100,7 +184,7 @@ class Pagem extends CI_Model
     public function getPageIdName()
     {
 
-        $this->db->select('pageId, pageTitle');
+        $this->db->select('pageId,pageTitle');
         $this->db->where('pageType !=',PAGE_TYPE[3]);
         $this->db->where('pageType !=',PAGE_TYPE[4]);
         $this->db->group_by('pageTitle');
@@ -142,6 +226,17 @@ class Pagem extends CI_Model
         $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
         $this->db->from('ictmpage');
         $this->db->like('pageTitle',$title);
+        //$this->db->where();
+        $this->db->order_by("pageId", "desc");
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getPagaDataSearchBytype($type){
+
+        $this->db->select('pageId,pageTitle,pageType,pageStatus,insertedBy,lastModifiedBy,lastModifiedDate');
+        $this->db->from('ictmpage');
+        $this->db->like('pageType',$type);
         //$this->db->where();
         $this->db->order_by("pageId", "desc");
         $query = $this->db->get();

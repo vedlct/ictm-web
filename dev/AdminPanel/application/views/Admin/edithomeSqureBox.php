@@ -81,7 +81,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image2">
+                                                <input class="form-control" type="file" name="image[]" id="image[0]">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage2;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage2;?> </span></a>
 
                                             </div>
@@ -109,7 +109,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image3">
+                                                <input class="form-control" type="file" name="image[]" id="image[1]"">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage3;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage3;?> </span></a>
 
                                             </div>
@@ -137,7 +137,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image4">
+                                                <input class="form-control" type="file" name="image[]" id="image[2]">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage4;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage4;?> </span></a>
 
                                             </div>
@@ -165,7 +165,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image5">
+                                                <input class="form-control" type="file" name="image[]" id="image[3]">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage5;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage5;?> </span></a>
 
                                             </div>
@@ -193,7 +193,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image6">
+                                                <input class="form-control" type="file" name="image[]" id="image[4]">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage6;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage6;?> </span></a>
 
                                             </div>
@@ -221,7 +221,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image7">
+                                                <input class="form-control" type="file" name="image[]" id="image[5]">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage7;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage7;?> </span></a>
 
                                             </div>
@@ -249,7 +249,7 @@
                                             <div class="col-sm-4">
 
                                                 <span>Image Allowed :&nbsp;&nbsp; <strong>jpg/png/jpeg/gif & MaxSize(4MB)</strong></span>
-                                                <input class="form-control" type="file" name="image[]" id="image8">
+                                                <input class="form-control" type="file" name="image[]" id="image[6]">
                                                 <span>View Existing Image:</span><a href="<?php echo base_url()?>Admin/Home/showImageForEdit/<?php echo $squreBoxdata->squareBoxImage8;?>" target="_blank"><span> <?php echo $squreBoxdata->squareBoxImage8;?> </span></a>
 
                                             </div>
@@ -321,6 +321,7 @@
                 return false;
             }
         }
+
         var Link1=document.getElementById("link1").value;
         var Link2=document.getElementById("link2").value;
         var Link3=document.getElementById("link3").value;
@@ -361,6 +362,42 @@
         if (Link8.length > 500){
             alert( 'Link8 must be less than 500 charecter!!' );
             return false;
+        }
+        var Image = document.squreBoxes.elements["image[]"];
+
+        for (var i=0;i<Image.length;i++)
+        {
+//            if (Image[i].value == '')
+//            {
+//                alert( 'Please Select a Image in Image field Image'+(i+2));
+//                return false;
+//            }
+            var imagess =document.getElementById("image["+i+"]").value;
+            if(imagess!='')
+            {
+
+                var ext = imagess.substring(imagess.lastIndexOf('.') + 1);
+                //alert(ext);
+                if(ext == "gif" || ext == "GIF" || ext == "JPEG" || ext == "jpeg" || ext == "jpg" || ext == "JPG" || ext == "png" || ext == "PNG")
+                {
+
+                }
+                else {
+                    alert("Upload images of correct format!! in image field"+(i+2));
+                    return false;
+                }
+
+                var img = document.getElementById("image["+i+"]");
+                //alert((img.files[0].size/1024));
+                if((img.files[0].size/1024) >  4096)  // validation according to file size
+                {
+                    //document.getElementById("imageerror").innerHTML="Image size too big";
+                    alert('Image size too big in image'+(i+2));
+                    return false;
+                }
+
+                //return true;
+            }
         }
 
     }

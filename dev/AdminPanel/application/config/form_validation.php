@@ -41,6 +41,11 @@ $config = array (
             'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars'
         ),
         array(
+            'field' => 'orderNumber',
+            'label' => 'Order Number',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_menuOrderCheckFormNewMenu|htmlspecialchars'
+        ),
+        array(
             'field' => 'menuStatus',
             'label' => 'Menu Status',
             'rules' => 'required|max_length[50]|in_list['.STATUS[0].','.STATUS[1].']|xss_clean|htmlspecialchars'
@@ -64,6 +69,11 @@ $config = array (
             'label' => 'Parent Menu',
             'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|htmlspecialchars',
 
+        ),
+        array(
+            'field' => 'orderNumber',
+            'label' => 'Order Number',
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_menuOrderCheckFormeditMenu|htmlspecialchars'
         ),
         array(
             'field' => 'pageId',
@@ -159,6 +169,11 @@ $config = array (
             'label' => 'Section Title',
             'rules' => 'trim|required|max_length[255]|xss_clean|htmlspecialchars'
         ),
+        array(
+            'field' => 'ordernumber[]',
+            'label' => 'Order Number',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_PageSectionOrderNumberFromInsert|htmlspecialchars'
+        ),
 
         array(
             'field' => 'status[]',
@@ -170,8 +185,13 @@ $config = array (
     'editPageSection'=> array (
         array(
             'field' => 'textbox',
-            'label' => 'Section Title',
+            'label' => 'Title',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+        ),
+        array(
+            'field' => 'ordernumber',
+            'label' => 'Order Number',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[11]|xss_clean|callback_PageSectionOrderNumber|htmlspecialchars'
         ),
         array(
             'field' => 'status',
@@ -564,7 +584,7 @@ $config = array (
         array(
             'field' => 'ordernumber',
             'label' => 'Order Number ',
-            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+            'rules' => 'required|max_length[11]|xss_clean|callback_CourseSectionOrderNumber|htmlspecialchars',
         ),
     ),
 
@@ -722,13 +742,13 @@ $config = array (
         array(
             'field' => 'college_tel1',
             'label' => 'College Telephone 1',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars',
+            'rules' => 'required|regex_match[/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/]|max_length[20]|xss_clean|htmlspecialchars',
 
         ),
         array(
             'field' => 'college_tel2',
             'label' => 'College Telephone 2',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars',
+            'rules' => 'regex_match[/^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$/]|max_length[20]|xss_clean|htmlspecialchars',
 
         ),
         array(

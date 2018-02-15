@@ -13,6 +13,57 @@ class Event extends CI_Controller
     {
     }
 
+    /*---------datatable code --------------------- */
+    public function ajax_list()
+    {
+        $list = $this->Eventm->get_datatables();
+        $data = array();
+        $no = $_POST['start'];
+        foreach ($list as $event) {
+            $no++;
+            $row = array();
+            $row[] = $no;
+            $row[] = $event->eventTitle;
+            $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($event->eventStartDate)),1);
+            $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($event->eventEndDate)),1);
+            $row[] = $event->eventLocation;
+            $row[] = $event->eventType;
+            $row[] = $event->eventStatus;
+            $row[] = $event->insertedBy;
+
+            if ($event->lastModifiedBy==""){
+                $row[]='Never Modified';
+            }else{
+                $row[] = $event->lastModifiedBy;
+            }
+            if ($event->lastModifiedDate==""){
+                $row[]='Never Modified';
+            }else{
+
+                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($event->lastModifiedDate)),1);
+
+            }
+
+            if ($event->homeStatus == SELECT_APPROVE[0]){
+                $row[] = '<input type="checkbox" checked data-panel-id="'. $event->eventId .'" onclick=\'selectHome(this)\' id="appearInHome" name="appearInHome">Yes';
+            }else{
+                $row[] = '<input type="checkbox" data-panel-id="'. $event->eventId .'" id="appearInHome" onclick=\'selectHome(this)\' name="appearInHome">Yes';
+            }
+            $row[] = '<a class="btn" href="'.base_url().'Admin/Event/editEventView/'.$event->eventId.'"><i class="icon_pencil-edit"></i></a>
+            <a class="btn " data-panel-id="'.$event->eventId.'"onclick=\'return confirm("Are you sure to Delete This Event?")\' href="'.base_url().'Admin/Event/deleteEvent/'. $event->eventId.'"><i class="icon_trash"></i></a>';
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Eventm->count_all(),
+            "recordsFiltered" => $this->Eventm->count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+
+
     /*---------for creating new Event --------------------- */
 
     public function newEvent() // for new Event view
@@ -62,20 +113,20 @@ class Event extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
 
-            $config = array();
-            $config["base_url"] = base_url() . "Admin/Event/manageEvent";
-            $config["total_rows"] = $this->Eventm->record_count();
-            $config["per_page"] = 10;
-            $config["uri_segment"] = 4;
-            $choice = $config["total_rows"] / $config["per_page"];
-            $config["num_links"] = round($choice);
-            $this->pagination->initialize($config);
-            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
-            $this->data["events"] = $this->Eventm->getAllforManageEvent($config["per_page"], $page);
-            $this->data["links"] = $this->pagination->create_links();
+//            $config = array();
+//            $config["base_url"] = base_url() . "Admin/Event/manageEvent";
+//            $config["total_rows"] = $this->Eventm->record_count();
+//            $config["per_page"] = 10;
+//            $config["uri_segment"] = 4;
+//            $choice = $config["total_rows"] / $config["per_page"];
+//            $config["num_links"] = round($choice);
+//            $this->pagination->initialize($config);
+//            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
+//            $this->data["events"] = $this->Eventm->getAllforManageEvent($config["per_page"], $page);
+//            $this->data["links"] = $this->pagination->create_links();
 
             //$this->data['events'] = $this->Eventm->getAllforManageEvent();
-            $this->load->view('Admin/manageEvent',$this->data);
+            $this->load->view('Admin/manageEvent1');
         }
         else{
             redirect('Admin/Login');

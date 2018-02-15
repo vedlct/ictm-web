@@ -105,7 +105,7 @@ $config = array (
             array(
                 'field' => 'details',
                 'label' => 'Details',
-                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+                'rules' => 'required|xss_clean|htmlspecialchars'
             ),
             array(
                 'field' => 'image',
@@ -113,6 +113,353 @@ $config = array (
                 'rules' => 'callback_val_img_check'
             ),
 		),
+
+
+    'studentRegistation'=>
+    array(
+
+        array(
+            'field' => 'type',
+            'label' => 'Type',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'title',
+            'label' => 'Title',
+            'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'firstname',
+            'label' => 'First Name',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'surname',
+            'label' => 'User name',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'email',
+            'label' => 'Email Address',
+            'rules' => 'required|max_length[100]|is_unique[studentregistration.email]|valid_email|xss_clean|htmlspecialchars',
+            'errors' => array(
+                'is_unique' => 'Email Allready Existed ! ',
+            ),
+        ),
+        array(
+            'field' => 'password',
+            'label' => 'Password',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+
+        array(
+            'field' => 'confirmpassword',
+            'label' => 'Confirm password',
+            'rules' => 'required|matches[password]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'gender',
+            'label' => 'Gender',
+            'rules' => 'required|max_length[50]|in_list[male,female,other]|xss_clean|htmlspecialchars'
+        ),
+
+
+  ),
+
+
+    'applyfrom4'=>
+        array(
+
+
+            array(
+                'field' => 'title',
+                'label' => 'Title',
+                'rules' => 'required|max_length[11]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'name',
+                'label' => 'Name',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'relation',
+                'label' => 'Relation ',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'address',
+                'label' => 'Address',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'mobile',
+                'label' => 'Moble number',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'email',
+                'label' => 'Email Address',
+                'rules' => 'required|max_length[100]|is_unique[studentregistration.email]|valid_email|xss_clean|htmlspecialchars',
+                'errors' => array(
+                    'is_unique' => 'Email Allready Existed ! ',
+                ),
+            ),
+
+
+            array(
+                'field' => 'telephone',
+                'label' => 'Telephone',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+            ),
+            array(
+                'field' => 'fax',
+                'label' => 'Fax',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+            ),
+
+
+        ),
+
+
+
+
+
+    'checkApplicationForm1' => array (
+        array(
+            'field' => 'title',
+            'label' => 'Title',
+            'rules' => 'required|max_length[12]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'firstName',
+            'label' => 'First Name',
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'surName',
+            'label' => 'Sur Name',
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'otherName',
+            'label' => 'Other Name',
+            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+        ),
+        array(
+            'field' => 'dob',
+            'label' => 'Date Of Birth',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'gender',
+            'label' => 'Gender',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'placeOfBirth',
+            'label' => 'Place of Birth',
+            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars',
+        ),
+        array(
+            'field' => 'nationality',
+            'label' => 'Nationality',
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'passportNo',
+            'label' => 'PassportNumber',
+            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'passportExpiryDate',
+            'label' => 'Passport Expiry Date ',
+            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'UkEntryDate',
+            'label' => 'Uk Entry Date',
+            'rules' => 'required|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'visaExpiryDate',
+            'label' => 'visa Expiry Date',
+            'rules' => 'required|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'visaExpiryDate',
+            'label' => 'visa Expiry Date',
+            'rules' => 'required|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'currentAddress',
+            'label' => 'Current Address',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'overseasHomeAddress',
+            'label' => 'overseas Home Address',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'telephone',
+            'label' => 'Telephone',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[50]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'mobile',
+            'label' => 'Mobile',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[50]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'fax',
+            'label' => 'Fax',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'email',
+            'label' => 'Email Address',
+            'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'EmergencyContactTitle',
+            'label' => 'Emergency Contact Title',
+            'rules' => 'required|max_length[12]|xss_clean|htmlspecialchars',
+
+        ),
+
+        array(
+            'field' => 'EmergencyContactName',
+            'label' => 'Emergency Contact Name',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+
+        array(
+            'field' => 'EmergencyContactRelation',
+            'label' => 'Emergency Contact Relation',
+            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'EmergencyContactAddress',
+            'label' => 'Emergency Contact Address',
+            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
+
+        ),
+
+        array(
+            'field' => 'EmergencyContactMobile',
+            'label' => 'Emergency Contact Mobile',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[45]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'EmergencyContactEmail',
+            'label' => 'Emergency Contact Email',
+            'rules' => 'required|max_length[45]|valid_email|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'courseName',
+            'label' => 'course Name',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'awardingBody',
+            'label' => 'Awarding Body',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
+
+//        array(
+//            'field' => 'courseLevel',
+//            'label' => 'courseLevel',
+//            'rules' => 'required|max_length[20]|xss_clean|htmlspecialchars'
+//        ),
+
+        array(
+            'field' => 'courseStartDate',
+            'label' => 'course Start Date',
+            'rules' => 'required|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'courseEndDate',
+            'label' => 'course End Date',
+            'rules' => 'required|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'courseEndDate',
+            'label' => 'course End Date',
+            'rules' => 'required|xss_clean|htmlspecialchars'
+        ),
+
+        array(
+            'field' => 'methodeOfStudy',
+            'label' => 'Method Of Study',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+
+
+
+     ),
+
+
+    'applyfrom5'=>
+        array(
+
+
+            array(
+                'field' => 'courseChoiceStatement',
+                'label' => 'Course Choice Statement',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'collegeChoiceStatement',
+                'label' => 'College Choice Statement',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+
+
+
+
+
+
+
+        ),
 
 
 
