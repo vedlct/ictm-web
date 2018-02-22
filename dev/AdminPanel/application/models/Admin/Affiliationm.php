@@ -123,7 +123,7 @@ class Affiliationm extends CI_Model
 
                 if ($this->upload->do_upload('affiliationImage')) {
                     // if something need after image upload
-                    thumb('images/affiliationImages/'.$affiliationId.'.'.pathinfo($affiliationImage, PATHINFO_EXTENSION),'248','103');
+                    thumb('images/affiliationImages/'.$affiliationId.'.'.pathinfo($affiliationImage, PATHINFO_EXTENSION),'226','94');
                 } else {
 
                     $error = array('error' => $this->upload->display_errors());
@@ -211,7 +211,7 @@ class Affiliationm extends CI_Model
 
             if($this->upload->do_upload('affiliationImage')){
                 // if something need after image upload
-                thumb('images/affiliationImages/'.$affiliationId.'.'.pathinfo($affiliationImage, PATHINFO_EXTENSION),'248','103');
+                thumb('images/affiliationImages/'.$affiliationId.'.'.pathinfo($affiliationImage, PATHINFO_EXTENSION),'226','94');
             }else{
                 $error =array('error'=>$this->upload->display_errors());
                 $che=json_encode($error);
@@ -285,7 +285,7 @@ class Affiliationm extends CI_Model
         $name = $info['filename'];
         $format = $info['extension'];
 
-        $pathanother   = $name."_103_248".".".$format;
+        $pathanother   = $name."_94_226".".".$format;
 
 
         unlink(FCPATH."images/affiliationImages/".$pathanother);
