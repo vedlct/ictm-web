@@ -35,6 +35,7 @@
             "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe");
 
         ?>
+
 <!--        <script src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME?><!--/public/js/jquery-1.12.4.js"></script>-->
         <link href="<?php echo base_url()?>public/stylesheets/bootstrap-datetimepicker.css" rel="stylesheet" media="screen">
         <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -77,14 +78,13 @@
                                             <label class="control-label col-md-2">Title</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                                    <select style="width: 100%" name="title" >
-                                                        <option value="#" selected disabled>Select...</option>
-                                                        <option value="Mr">Mr</option>
-                                                        <option value="Mrs">Mrs</option>
-                                                        <option value="Miss">Miss</option>
-                                                        <option value="MS">MS</option>
-                                                        <option value="Doc">Doc</option>
-                                                        <option value="Engr">Engr</option>
+                                                    <select style="width: 100%" name="title" required >
+
+                                                        <option value="" selected disabled>Select...</option>
+                                                        <?php for ($i=0;$i<count(RegisterInterestTitle);$i++){?>
+                                                            <option value="<?php echo RegisterInterestTitle[$i]?>"<?php echo set_select('title',  RegisterInterestTitle[$i], False); ?>><?php echo RegisterInterestTitle[$i]?></option>
+                                                        <?php } ?>
+
                                                     </select>
                                                 </select>
                                             </div>
@@ -93,21 +93,21 @@
 				                    		<label class="control-label col-md-2">First Name*</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('fname'); ?></font></p>
-				                        		<input type="text" name="fname" placeholder="" class="form-control" id="" value="<?php echo set_value('fname'); ?>">
+				                        		<input type="text" name="fname" placeholder="" class="form-control" id="" required value="<?php echo set_value('fname'); ?>">
                                             </div>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="control-label col-md-2">Surname*</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('sname'); ?></font></p>
-				                        		<input type="text" name="sname" class="form-control" id="" value="<?php echo set_value('sname'); ?>">
+				                        		<input type="text" name="sname" class="form-control" id="" required value="<?php echo set_value('sname'); ?>">
                                             </div>
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="control-label col-md-2">House Name/Numbe* </label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('house'); ?></font></p>
-                                                <input type="text" name="house" placeholder="" class="form-control" id="" value="<?php echo set_value('house'); ?>">
+                                                <input type="text" name="house" placeholder="" class="form-control" id="" required value="<?php echo set_value('house'); ?>">
                                             </div>
 				                        </div>
                                         <div class="form-group">
@@ -158,7 +158,7 @@
 				                    		<label class="control-label col-md-2">Email Address*</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-				                        		<input type="text" name="email" placeholder="" class="form-control" id="" value="<?php echo set_value('email'); ?>">
+				                        		<input type="text" name="email" placeholder="" class="form-control" id="" required value="<?php echo set_value('email'); ?>">
                                             </div>
 				                        </div>
                                         <div class="form-group">
@@ -180,9 +180,9 @@
                                             <div class="col-md-10">
 
                                                 <p><font color="red"> <?php echo form_error('hear');?></font></p>
-                                                <select style="width: 100%" name="hear">
+                                                <select style="width: 100%" name="hear" required>
 
-                                                	<option value="#" selected disabled>Select...</option>
+                                                	<option value="" selected disabled>Select...</option>
                                                     <option value="Hotcourses">Hotcourses</option>
                                                     <option value="Whatuni">Whatuni</option>
                                                     <option value="Metro Newspaper">Metro Newspaper</option>
