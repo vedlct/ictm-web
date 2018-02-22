@@ -149,6 +149,9 @@ define("FOLDER_NAME", "AdminPanel");
 ///////////// For FeedBack ////////////////
 define("FEEDBACK_SOURCE",array ("Website","Facebook","Twitter","Youtube","LinkedIn","Google+","Application Form","Feedback Form","Other source"));
 
+///////////// For Register Interest ///////////
+define("RegisterInterestTitle",array ("Mr","Mrs","Miss","Ms","Prof","Dr.","Other"));
+
 /////////////reCapcha////////
 define("ADMIN_EMAIL", "md.sakibrahman@gmail.com");
 define("SITE_KEY_CONTACT", "6LdJ7UAUAAAAAN7eZtytQzkfyvAi85C7GN_sU-Z5");
