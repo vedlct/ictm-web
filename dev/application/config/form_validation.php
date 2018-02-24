@@ -47,7 +47,7 @@ $config = array (
         array(
             'field' => 'phone',
             'label' => 'Phone Number',
-            'rules' => 'regex_match[/^[0-9]*$/]|max_length[10]|xss_clean|htmlspecialchars'
+            'rules' => 'regex_match[/^[0-9]*$/]|max_length[20]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'email',
@@ -68,12 +68,14 @@ $config = array (
         array(
             'field' => 'other',
             'label' => 'Other',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+//            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'disability',
             'label' => 'Disability requirement',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+//            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'appoinment',
@@ -83,7 +85,8 @@ $config = array (
         array(
             'field' => 'comments',
             'label' => 'Comments',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+//            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
 
     ),

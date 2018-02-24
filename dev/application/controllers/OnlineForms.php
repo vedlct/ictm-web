@@ -36,7 +36,7 @@ class OnlineForms extends CI_Controller
         if (!$this->form_validation->run('RegisterInterest')) {
 
 
-            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+            //$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
             $this->registerInterest();
 
         } else {
@@ -91,7 +91,7 @@ class OnlineForms extends CI_Controller
 //            $this->email->RegisterInsertEmail();
 
 
-                $admin_email = "md.sakibrahman@gmail.com";
+               // $admin_email = "md.sakibrahman@gmail.com";
 
                 mail(ADMIN_EMAIL, $subject, $message, $email);
 
