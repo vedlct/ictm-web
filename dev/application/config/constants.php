@@ -105,6 +105,9 @@ define("SELECT_TYPE","Select Type");
 define("Type",array("Student","Agent"));
 
 
+define("VISA_TYPE",array("Student","Travel"));
+
+
 //////////// For Menu    /////////////////
 define("NEW_MENU", "New Menu");
 define("SELECT_PARENT_MENU", "Select Parent Menu");

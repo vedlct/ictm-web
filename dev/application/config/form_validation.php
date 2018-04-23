@@ -258,7 +258,7 @@ $config = array (
         array(
             'field' => 'surName',
             'label' => 'Sur Name',
-            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+            'rules' => 'max_length[50]|xss_clean|htmlspecialchars',
 
         ),
         array(
@@ -280,7 +280,7 @@ $config = array (
         array(
             'field' => 'placeOfBirth',
             'label' => 'Place of Birth',
-            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
         ),
         array(
             'field' => 'nationality',
@@ -303,6 +303,11 @@ $config = array (
             'label' => 'Uk Entry Date',
             'rules' => 'required|xss_clean|htmlspecialchars'
         ),
+        array(
+            'field' => 'VisaType',
+            'label' => 'Visa Type',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
 
         array(
             'field' => 'visaExpiryDate',
@@ -321,11 +326,21 @@ $config = array (
             'label' => 'Current Address',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
         ),
+        array(
+            'field' => 'currentAddressPO',
+            'label' => 'Current Address Post Office',
+            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+        ),
 
         array(
             'field' => 'overseasHomeAddress',
             'label' => 'overseas Home Address',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'overseasAddressPO',
+            'label' => 'OverSeas Address Post Office',
+            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
         ),
 
         array(
@@ -377,6 +392,12 @@ $config = array (
             'label' => 'Emergency Contact Address',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
 
+        ),
+
+        array(
+            'field' => 'EmergencyContactAddressPO',
+            'label' => 'Emergency Contact Address Post Office',
+            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
         ),
 
         array(
