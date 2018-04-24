@@ -37,6 +37,17 @@ class OnlineFormsm extends CI_Model
 
 
     }
+    public function insertStudentApplicationForm($data3){
+
+        $this->security->xss_clean($data3);
+        $error=$this->db->insert('studentapplicationform', $data3);
+
+        $insert_id = $this->db->insert_id();
+        return  $insert_id;
+
+
+
+    }
 
 
     public function getAllapplynow4()
@@ -252,7 +263,7 @@ public function getAllapplynow6($id)
         $startdate = $this->input->post('startdate[]');
         $enddate = $this->input->post('enddate[]');
         $grade = $this->input->post('grade[]');
-        //$data = array();
+
 
             for ($i = 0; $i < count($qualification); $i++) {
                 $data = array(
@@ -285,12 +296,8 @@ public function getAllapplynow6($id)
             return $this->db->error();
         } else {
 
-
-            $candidId = $this->db->insert_id();
-
-
             $data2 = array(
-                'fkCandidateId' => $candidId,
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
             );
             $newdata1 = array_merge($data1, $data2);
             $newdata1 = $this->security->xss_clean($newdata1);
@@ -299,7 +306,7 @@ public function getAllapplynow6($id)
             if (empty($error)) {
                 return $this->db->error();
             } else {
-                return $candidId;
+                return $error = null;
             }
 
         }
@@ -313,7 +320,14 @@ public function getAllapplynow6($id)
         return $query->result();
 
     }
-    public function getQualifications(){
+    public function getQualifications($applicationId){
+
+        $this->db->select('qualification.institution,startDate,endDate,obtainResult');
+        $this->db->where('fkApplicationId',$applicationId);
+        $this->db->from('personqualifications');
+        $query=$this->db->get();
+        return $query->result();
+
 
     }
 }

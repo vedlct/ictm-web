@@ -79,8 +79,6 @@ class Registration extends CI_Controller {
 
                 if (empty($this->data['error'])) {
 
-                    //$this->session->set_flashdata('successMessage','Registation Successfully');
-                    //redirect('Registration');
 
                     $this->menu();
                     $this->load->view("login",$this->data);

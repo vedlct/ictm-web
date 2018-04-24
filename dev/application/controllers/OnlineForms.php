@@ -19,7 +19,7 @@ class OnlineForms extends CI_Controller
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('application-form', $this->data);
+        $this->load->view('application-form2', $this->data);
     }
     public function contactUs() //go to the contact us page
     {
@@ -135,12 +135,13 @@ class OnlineForms extends CI_Controller
 
         echo $body;
     }
-    private function applyNow2($id) // go to the apply page of selected course
+    public function applyNow2() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-        //$this->OnlineFormsm->applyNow2();
-        $this->data['qualification'] = $this->OnlineFormsm->getQualifications();
+        $applicationId=$this->session->userdata('studentApplicationId');
+        $this->data['qualification'] = $this->OnlineFormsm->getQualifications($applicationId);
+
         if (empty($this->data['qualification'])) {
             $this->load->view('application-form2', $this->data);
         } else {
@@ -150,8 +151,8 @@ class OnlineForms extends CI_Controller
     public function applyNow2insert() // go to the apply page of selected course
     {
 
-        $this->OnlineFormsm->applyNow2();
-        redirect('OnlineForms/applyNow2');
+//        $this->OnlineFormsm->applyNow2();
+//        redirect('OnlineForms/applyNow2');
     }
     public function applyNow3() // go to the apply page of selected course
     {
@@ -715,9 +716,24 @@ class OnlineForms extends CI_Controller
                 $courseStartDate = $this->input->post("courseStartDate");
                 $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
+                $aplicationFormid=$this->session->userdata('id').time();
+
+                $data3=array(
+                    'studentOrAgentId'=>$this->session->userdata('id'),
+                    'studentApplicationFormId'=>$aplicationFormid
+
+                );
+
+                $studentApplicationId = $this->OnlineFormsm->insertStudentApplicationForm($data3);
+
+                $dataSession = [
+                    'studentApplicationId' => $studentApplicationId,
+
+                ];
+                $this->session->set_userdata($dataSession);
 
                 $data=array(
-                    'applicationId'=>$this->session->userdata('id'),
+                    'applicationId'=>$studentApplicationId,
                     'title'=>$candidateTitle,
                     'firstName'=>$candidateFirstName,
                     'surName'=>$candidateSurName,
@@ -729,10 +745,14 @@ class OnlineForms extends CI_Controller
                     'passportNo'=>$candidatePassportNo,
                     'passportExpiryDate'=>$candidatePassportExpiryDate,
                     'ukEntryDate'=>$candidateUkEntryDate,
+                    'visaType'=>$candidateVisaType,
                     'visaExpiryDate'=>$candidateVisaExpiryDate,
-
                     'currentAddress'=>$candidateCurrentAddress,
+                    'currentAddressPo'=>$candidateCurrentAddressPO,
+
                     'overseasAddress'=>$candidateOverseasHomeAddress,
+                    'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
+
                     'telephoneNo'=>$candidateTelephone,
                     'mobileNo'=>$candidateMobile,
                     'email'=>$candidateEmail,
@@ -741,10 +761,11 @@ class OnlineForms extends CI_Controller
                     'emergencyContactTitle'=>$EmergencyContactTitle,
                     'emergencyContactRelation'=>$EmergencyContactRelation,
                     'emergencyContactAddress'=>$EmergencyContactAddress,
+                    'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
+
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
 
-                    'applydate'=>date('Y-m-d h:i:s A'),
                 );
 
                 $data1=array(
@@ -755,10 +776,9 @@ class OnlineForms extends CI_Controller
                     'courseEndDate'=>$courseEndDate,
                     'methodOfStudy'=>$methodeOfStudy,
                 );
+                $this->OnlineFormsm->insertApplyForm1($data,$data1);
 
-                $candidedId = $this->OnlineFormsm->insertApplyForm1($data,$data1);
-
-
+                redirect('ApplyForm2');
 
             }
 

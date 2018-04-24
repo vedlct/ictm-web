@@ -88,9 +88,9 @@
                                         	<label class="control-label col-md-2">Gender:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
-                                            	<input type="radio" required id="gender" name="gender" value="male"> Male&nbsp;&nbsp;
-                                                <input type="radio" required id="gender" name="gender" value="female"> Female&nbsp;&nbsp;
-                                                <input type="radio" required id="gender" name="gender" value="other"> Other
+                                            	<input type="radio" required id="gender" name="gender" value="M"> Male&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="F"> Female&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="O"> Other
                                           	</div>
 				                        </div>
                                         
@@ -549,7 +549,7 @@
                                         	<label class="control-label col-md-2">Awarding Body:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
-                                            	<input type="text" disabled class="form-control" id="awardingBody" name="awardingBody">
+                                            	<input type="text" readonly class="form-control" id="awardingBody" name="awardingBody">
                                           	</div>
 				                        </div>
                                         
@@ -581,10 +581,10 @@
                                         	<label class="control-label col-md-2">Method of study:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
-                                            	<input type="radio" required name="methodeOfStudy" value="Full Time"> Full Time&nbsp;&nbsp;
-                                                <input type="radio" required name="methodeOfStudy" value="Part Time"> Part Time&nbsp;&nbsp;
-                                                <input type="radio" required name="methodeOfStudy" value="Day"> Day&nbsp;&nbsp;
-                                                <input type="radio" required name="methodeOfStudy" value="Evenings & Weekend"> Evenings & Weekend
+                                            	<input type="radio" required name="methodeOfStudy" value="FT"> Full Time&nbsp;&nbsp;
+                                                <input type="radio" required name="methodeOfStudy" value="PT"> Part Time&nbsp;&nbsp;
+                                                <input type="radio" required name="methodeOfStudy" value="D"> Day&nbsp;&nbsp;
+                                                <input type="radio" required name="methodeOfStudy" value="E&W"> Evenings & Weekend
                                           	</div>
 				                        </div>
                                         
