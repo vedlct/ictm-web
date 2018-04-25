@@ -155,3 +155,4 @@ define("RegisterInterestTitle",array ("Mr","Mrs","Miss","Ms","Prof","Dr.","Other
 /////////////reCapcha////////
 define("ADMIN_EMAIL", "md.sakibrahman@gmail.com");
 define("SITE_KEY_CONTACT", "6LdJ7UAUAAAAAN7eZtytQzkfyvAi85C7GN_sU-Z5");
+define("SERECT_KEY_CONTACT", "6LdJ7UAUAAAAAN7eZtytQzkfyvAi85C7GN_sU-Z5");
