@@ -116,14 +116,7 @@ class OnlineForms extends CI_Controller
             }
         }
     }
-    public function applyNow() // go to the apply page of selected course
-    {
-        $this->menu();
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        $this->data['courseInfo']=$this->Coursem->getCourseInfo();
-       // $this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-        $this->load->view('application-form', $this->data);
-    }
+
     public function getCourseAwardBody() // get Award body of selected course
     {
 
@@ -136,19 +129,8 @@ class OnlineForms extends CI_Controller
 
         echo $body;
     }
-    public function applyNow2() // go to the apply page of selected course
-    {
-        $this->menu();
-        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-        $applicationId=$this->session->userdata('studentApplicationId');
-        $this->data['qualification'] = $this->OnlineFormsm->getQualifications($applicationId);
 
-        if (empty($this->data['qualification'])) {
-            $this->load->view('application-form2', $this->data);
-        } else {
-            $this->load->view('application-form2v', $this->data);
-        }
-    }
+
     public function applyNow2insert() // go to the apply page of selected course
     {
 
@@ -671,127 +653,7 @@ class OnlineForms extends CI_Controller
         $this->data['searchevents'] = $this->Searchm->getEvents();
     }
 
-    public function insertApplicationForm1()
-    {
-        if ($this->session->userdata('loggedin') == "true") {
 
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('checkApplicationForm1')) {
-
-                $this->menu();
-                $this->data['coursedata']=$this->Coursem->getCourseTitle();
-                $this->data['courseInfo']=$this->Coursem->getCourseInfo();
-
-                $this->load->view('application-form', $this->data);
-            }
-            else{
-                $candidateTitle = $this->input->post("title");
-                $candidateFirstName = $this->input->post("firstName");
-                $candidateSurName = $this->input->post("surName");
-                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = $this->input->post("dob");
-                $candidateGender = $this->input->post("gender");
-                $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
-                $candidateNationality = $this->input->post("nationality");
-                $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
-                $candidateUkEntryDate = $this->input->post("UkEntryDate");
-                $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
-                $candidateCurrentAddress = $this->input->post("currentAddress");
-                $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
-                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
-                $candidateOverseasHomeAddressPO = $this->input->post("overseasAddressPO");
-                $candidateTelephone = $this->input->post("telephone");
-                $candidateMobile = $this->input->post("mobile");
-                $candidateEmail = $this->input->post("email");
-                $candidateFax = $this->input->post("fax");
-                $EmergencyContactTitle = $this->input->post("EmergencyContactTitle");
-                $EmergencyContactName = $this->input->post("EmergencyContactName");
-                $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
-                $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
-
-                $EmergencyContactAddressPO = $this->input->post("EmergencyContactAddressPO");
-
-                $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
-                $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
-                $courseName = $this->input->post("courseName");
-                $awardingBody = $this->input->post("awardingBody");
-                $courseLevel = $this->input->post("courseLevel");
-                $courseStartDate = $this->input->post("courseStartDate");
-                $courseEndDate = $this->input->post("courseEndDate");
-                $methodeOfStudy = $this->input->post("methodeOfStudy");
-                $aplicationFormid=$this->session->userdata('id').time();
-
-                $data3=array(
-                    'studentOrAgentId'=>$this->session->userdata('id'),
-                    'studentApplicationFormId'=>$aplicationFormid
-
-                );
-
-                $studentApplicationId = $this->OnlineFormsm->insertStudentApplicationForm($data3);
-
-                $dataSession = [
-                    'studentApplicationId' => $studentApplicationId,
-
-                ];
-                $this->session->set_userdata($dataSession);
-
-                $data=array(
-                    'applicationId'=>$studentApplicationId,
-                    'title'=>$candidateTitle,
-                    'firstName'=>$candidateFirstName,
-                    'surName'=>$candidateSurName,
-                    'otherNames'=>$candidateOtherNamee,
-                    'dateOfBirth'=>$candidateDob,
-                    'gender'=>$candidateGender,
-                    'placeOfBirth'=>$candidatePlaceOfBirth,
-                    'nationality'=>$candidateNationality,
-                    'passportNo'=>$candidatePassportNo,
-                    'passportExpiryDate'=>$candidatePassportExpiryDate,
-                    'ukEntryDate'=>$candidateUkEntryDate,
-                    'visaType'=>$candidateVisaType,
-                    'visaExpiryDate'=>$candidateVisaExpiryDate,
-                    'currentAddress'=>$candidateCurrentAddress,
-                    'currentAddressPo'=>$candidateCurrentAddressPO,
-
-                    'overseasAddress'=>$candidateOverseasHomeAddress,
-                    'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
-
-                    'telephoneNo'=>$candidateTelephone,
-                    'mobileNo'=>$candidateMobile,
-                    'email'=>$candidateEmail,
-                    'fax'=>$candidateFax,
-                    'emergencyContactName'=>$EmergencyContactName,
-                    'emergencyContactTitle'=>$EmergencyContactTitle,
-                    'emergencyContactRelation'=>$EmergencyContactRelation,
-                    'emergencyContactAddress'=>$EmergencyContactAddress,
-                    'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
-
-                    'emergencyContactMobile'=>$EmergencyContactMobile,
-                    'emergencyContactEmail'=>$EmergencyContactEmail,
-
-                );
-
-                $data1=array(
-                    'courseName'=>$courseName,
-                    'awardingBody'=>$awardingBody,
-                    'courseLevel'=>$courseLevel,
-                    'courseStartDate'=>$courseStartDate,
-                    'courseEndDate'=>$courseEndDate,
-                    'methodOfStudy'=>$methodeOfStudy,
-                );
-                $this->OnlineFormsm->insertApplyForm1($data,$data1);
-
-                redirect('ApplyForm2');
-
-            }
-
-        }
-        else {
-            redirect('Admin/Login');
-        }
-    }
     /* -------------------------------Image validation-------------------------*/
     public function val_img_check()
     {

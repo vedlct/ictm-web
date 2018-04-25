@@ -64,8 +64,8 @@ $route['Events'] = 'Event/EventList';
 $route['Event-Details/(:any)'] = 'Event/eventDetails/$1';
 
 $route['Contact'] = 'OnlineForms/contactUs';
-$route['Apply'] = 'OnlineForms/applyNow';
-$route['ApplyForm2'] = 'OnlineForms/applyNow2';
+$route['Apply'] = 'ApplyOnline/viewForm1';
+$route['ApplyForm2'] = 'ApplyOnline/applyNow2';
 $route['RegisterInterest'] = 'OnlineForms/registerInterest';
 
 $route['Feedback'] = 'OnlineForms/feedback';
