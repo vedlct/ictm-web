@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-md-12">
 	
-                        	<form role="form" action="<?php echo base_url()?>Registation/newRegistaion" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
+                        	<form role="form" action="<?php echo base_url()?>Registration/newRegistaion" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
 
 		                        
 		                            <div class="form-bottom">

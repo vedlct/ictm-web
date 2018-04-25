@@ -105,6 +105,9 @@ define("SELECT_TYPE","Select Type");
 define("Type",array("Student","Agent"));
 
 
+define("VISA_TYPE",array("Student","Travel"));
+
+
 //////////// For Menu    /////////////////
 define("NEW_MENU", "New Menu");
 define("SELECT_PARENT_MENU", "Select Parent Menu");
@@ -151,8 +154,17 @@ define("FEEDBACK_SOURCE",array ("Website","Facebook","Twitter","Youtube","Linked
 
 ///////////// For Register Interest ///////////
 define("RegisterInterestTitle",array ("Mr","Mrs","Miss","Ms","Prof","Dr.","Other"));
+define("HearAboutUs",array ("Hotcourses","Whatuni","Metro Newspaper","Evening Standard","Eastend Life Newspaper","Bill Board","Internet","Friends","Google Ad","Facebook","TV advert","Other"));
 
 /////////////reCapcha////////
+
 define("ADMIN_EMAIL", "md.sakibrahman@gmail.com");
 define("SITE_KEY_CONTACT", "6LdJ7UAUAAAAAN7eZtytQzkfyvAi85C7GN_sU-Z5");
 define("SERECT_KEY_CONTACT", "6LdJ7UAUAAAAAN7eZtytQzkfyvAi85C7GN_sU-Z5");
+
+
+
+//define("ADMIN_EMAIL", "ictmuk2003@gmail.com");
+//define("SITE_KEY_CONTACT", "6LccSkgUAAAAAAkvFU-ws0nvfDZz8wu1MXIRQN36");
+//define("SERECT_KEY_CONTACT", "6LccSkgUAAAAALZ-4nk3o5TGALcatFYt2KUPhqz0");
+//

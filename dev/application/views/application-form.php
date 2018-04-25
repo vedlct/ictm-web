@@ -88,9 +88,9 @@
                                         	<label class="control-label col-md-2">Gender:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
-                                            	<input type="radio" required id="gender" name="gender" value="male"> Male&nbsp;&nbsp;
-                                                <input type="radio" required id="gender" name="gender" value="female"> Female&nbsp;&nbsp;
-                                                <input type="radio" required id="gender" name="gender" value="other"> Other
+                                            	<input type="radio" required id="gender" name="gender" value="M"> Male&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="F"> Female&nbsp;&nbsp;
+                                                <input type="radio" required id="gender" name="gender" value="O"> Other
                                           	</div>
 				                        </div>
                                         
@@ -98,7 +98,7 @@
                                         	<label class="control-label col-md-2">Place of Birth:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
-                                            	<input type="text" class="form-control" required id="placeOfBirth" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
+                                            	<input type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
                                           	</div>
 				                        </div>
                                         
@@ -374,6 +374,21 @@
                                             	<input type="date" class="form-control" required id="UkEntryDate" name="UkEntryDate" value="<?php echo set_value('UkEntryDate'); ?>">
                                           	</div>
 				                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Visa Type:<span class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
+                                                <select style="width: 100%" id="VisaType" required name="VisaType">
+
+                                                    <option value="" selected><?php echo SELECT_TYPE?></option>
+                                                    <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
+                                                        <option <?php echo set_select('VisaType',  VISA_TYPE[$i], False); ?>><?php echo VISA_TYPE[$i]?></option>
+                                                    <?php } ?>
+
+                                                </select>
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Visa Expiry Date:<span class="required">*</span></label>
@@ -389,17 +404,33 @@
                                         	<label class="control-label col-md-2">Current Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
-                                            	<textarea id="comment-message" required id="currentAddress" name="currentAddress" rows="8" tabindex="4"><?php echo set_value('currentAddress'); ?></textarea>
+                                            	<textarea id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo set_value('currentAddress'); ?></textarea>
                                           	</div>
 				                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Current Address P.O :<span class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
+                                                <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo set_value('currentAddressPO'); ?>">
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Overseas (Home) Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                            	<textarea id="comment-message" required id="overseasHomeAddress" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo set_value('overseasHomeAddress');?></textarea>
+                                            	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo set_value('overseasHomeAddress');?></textarea>
                                           	</div>
 				                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Overseas (Home) Address P.O :<span class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
+                                                <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo set_value('overseasAddressPO'); ?>">
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Telephone:</label>
@@ -473,6 +504,14 @@
                                             	<textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"></textarea>
                                           	</div>
 				                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Emergency Contact Address P.O :<span class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
+                                                <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo set_value('EmergencyContactAddressPO'); ?>">
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
@@ -510,7 +549,7 @@
                                         	<label class="control-label col-md-2">Awarding Body:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
-                                            	<input type="text" disabled class="form-control" id="awardingBody" name="awardingBody">
+                                            	<input type="text" readonly class="form-control" id="awardingBody" name="awardingBody">
                                           	</div>
 				                        </div>
                                         
@@ -539,13 +578,13 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Method of study:</label>
+                                        	<label class="control-label col-md-2">Method of study:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
-                                            	<input type="radio" name="methodeOfStudy" value="Full Time"> Full Time&nbsp;&nbsp;
-                                                <input type="radio" name="methodeOfStudy" value="Part Time"> Part Time&nbsp;&nbsp;
-                                                <input type="radio" name="methodeOfStudy" value="Day"> Day&nbsp;&nbsp;
-                                                <input type="radio" name="methodeOfStudy" value="Evenings & Weekend"> Evenings & Weekend
+                                            	<input type="radio" required name="methodeOfStudy" value="FT"> Full Time&nbsp;&nbsp;
+                                                <input type="radio" required name="methodeOfStudy" value="PT"> Part Time&nbsp;&nbsp;
+                                                <input type="radio" required name="methodeOfStudy" value="D"> Day&nbsp;&nbsp;
+                                                <input type="radio" required name="methodeOfStudy" value="E&W"> Evenings & Weekend
                                           	</div>
 				                        </div>
                                         

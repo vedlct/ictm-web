@@ -5,9 +5,9 @@
             <?php foreach ($affiliation as $af) { ?>
                 <div class="item">
                     <?php if ($af->AffiliationsPhotoPath !=null){?>
-                    <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'248','103')); ?>" alt="image">
+                    <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'226','94')); ?>" alt="image">
                 <?php }else{ ?>
-                        <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'."noImage.jpg",'248','103')); ?>" alt="image">
+                        <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'."noImage.jpg",'226','94')); ?>" alt="image">
 
                     <?php } ?>
                 </div>
