@@ -27,15 +27,28 @@ class Login extends CI_Controller {
             if(!empty($result)) {
                 $data = [
                     'email' => $result->email,
-                    'id'=>$result->id,
-                    'type'=>$result->type,
-                    'title'=>$result->title,
-                    'loggedin'=>"true",
+                    'id' => $result->id,
+                    'type' => $result->type,
+                    'title' => $result->title,
+                    'loggedin' => "true",
                 ];
                 $this->session->set_userdata($data);
 
-                    redirect('Home');
+                $studentOrAgentId = $result->id;
+
+
+                if ($result->type == 'Student') {
+
+                    redirect('Apply');
+
                 }
+                elseif ($result->type == 'Agent') {
+
+                    redirect('AllFormForAgents');
+
+
+                }
+            }
 
             else
             {
