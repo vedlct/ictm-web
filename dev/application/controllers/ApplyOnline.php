@@ -40,7 +40,7 @@ class ApplyOnline extends CI_Controller
 
                 $this->load->view('application-form', $this->data);
             }
-            else{
+            else {
                 $candidateTitle = $this->input->post("title");
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
@@ -156,13 +156,21 @@ class ApplyOnline extends CI_Controller
         $applicationId=$this->session->userdata('studentApplicationId');
         $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
 
-        
         if (empty($this->data['qualification'])) {
             $this->load->view('application-form2', $this->data);
         } else {
             $this->load->view('application-form2v', $this->data);
         }
     }
+
+    public function applyNow3() // go to the apply page of selected course
+    {
+        $this->menu();
+        $this->data['coursedata']=$this->Coursem->getCourseTitle();
+        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+        $this->load->view('application-form3', $this->data);
+    }
+
 
     public function menu() // get all the menu + footer
     {

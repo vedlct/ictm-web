@@ -28,7 +28,7 @@
 
 
 
-                    <fieldset>
+
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>English Language Proficiency</h3>
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+
 
                 </form>
 
