@@ -76,7 +76,7 @@ class ApplyOnline extends CI_Controller
 
                 $this->load->view('application-form', $this->data);
             }
-            else{
+            else {
                 $candidateTitle = $this->input->post("title");
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
@@ -194,6 +194,7 @@ class ApplyOnline extends CI_Controller
         $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
 
 
+
         if (empty($this->data['qualification'])) {
             $this->load->view('application-form2', $this->data);
         } else {
@@ -201,17 +202,27 @@ class ApplyOnline extends CI_Controller
         }
     }
 
+
+    public function applyNow3() // go to the apply page of selected course
+    {
+        $this->menu();
+        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+        $this->load->view('application-form3', $this->data);
+    }
     public function insertApplicationForm2() // go to the apply page of selected course
     {
         $this->ApplyOnlinem->applyNow2Insert();
         redirect('ApplyForm2');
     }
-    public function EditPersonalQualification() // go to the apply page of selected course
+    public function EditPersonalQualification()
     {
-
         $qualificationId = $this->input->post("id");
+
         $this->data['qualification'] = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
-        $this->load->view('EditPersonalQualification', $this->data);
+
+       echo $this->data['qualification'];
+
     }
 
 

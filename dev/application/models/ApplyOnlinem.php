@@ -53,7 +53,8 @@ class ApplyOnlinem extends CI_Model
     public function getQualificationsDetails($qualificationId)
     {
 
-        $this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
+        //$this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
+        $this->db->select('*');
         $this->db->where('id',$qualificationId);
         $this->db->from('personqualifications');
         $query=$this->db->get();

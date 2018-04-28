@@ -30,7 +30,7 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.carousel.min.css">
     <link rel="stylesheet" href="<?php echo base_url()?>public/stylesheets/owl.theme.default.min.css">
-    
+
 
 
 
@@ -82,6 +82,43 @@
 
 <!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>-->
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+    </style>
 
 
 </head>
@@ -166,7 +203,7 @@
                         <div class="submenu top-search">
                             <form class="search-form">
                                 <div class="input-group">
-                                    <input type="search" class="search-field" placeholder="Search Here">
+                                    <input type="search" id="myInput" onkeyup="myFunction()" class="search-field" placeholder="Search Here">
                                     <span class="input-group-btn">
                                             <button type="submit"><i class="fa fa-search fa-4x"></i></button>
                                         </span>
@@ -174,7 +211,11 @@
                             </form>
                         </div>
 
-                        <div class="navbar-right topnav-sidebar" style="margin-right: 0px">
+
+
+                      
+            <div class="navbar-right topnav-sidebar" style="margin-right: 0px">
+
 
                             <ul class="textwidget">
                                 <?php foreach ($contact as $contactInfo){?>
@@ -330,6 +371,31 @@
         </div><!-- /.header-wrap-->
     </header><!-- /.header -->
 
+    <div class="searchdiv">
+        <ul id="myUL" style="display:none;">
+            <?php foreach ($searchpage as $spage) {?>
+                <li><a href="<?php echo base_url()?>Page/<?php echo $spage->pageId?>"><?php echo $spage->pageTitle?></a></li>
+            <?php } ?>
+            <?php foreach ($searchnews as $snews) {?>
+                <li><a href="<?php echo base_url()?>News/newsDetails/<?php echo $snews->newsId?>"><?php echo $snews->newsTitle?></a></li>
+            <?php } ?>
+            <?php foreach ($searchevents as $sevents) {?>
+                <li><a href="<?php echo base_url()?>Event/eventDetails/<?php echo $sevents->eventId?>"><?php echo $sevents->eventTitle?></a></li>
+            <?php } ?>
+            <?php
+            ?> <li><a href="<?php echo base_url()?>course-list">Course List</li> <?php
+            ?> <li><a href="<?php echo base_url()?>Department">Department</a></li> <?php
+            ?><li><a href="<?php echo base_url()?>Faculty-list">Faculty</a></li> <?php
+            ?><li><a href="<?php echo base_url()?>Photo-Gallery">Photo Gallery</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>News">News</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>Events">Event List</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>Contact">Contact</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>RegisterInterest">RegisterInterest</a></li> <?php
+            ?> <li><a href="<?php echo base_url()?>Feedback">Feedback</a></li>
+
+        </ul>
+    </div>
+
     <script>
         jQuery(document).ready(function() {
             var loc = window.location.href;
@@ -340,4 +406,29 @@
                 }
             });
         });
+    </script>
+
+    <script>
+        function myFunction() {
+
+            document.getElementById("myUL").style.display="block";
+            // alert(document.getElementById("myInput").value);
+            if (document.getElementById("myInput").value == ''){
+                document.getElementById("myUL").style.display="none";
+            }
+            var input, filter, ul, li, a, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "block";
+                } else {
+                    li[i].style.display = "none";
+
+                }
+            }
+        }
     </script>
