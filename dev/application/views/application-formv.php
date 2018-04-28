@@ -24,6 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
+            <?php foreach ($candidateInfos as $candidateInfo){?>
                 <form role="form" action="" method="post" class="registration-form form-horizontal">
 
                     <fieldset>
@@ -41,11 +42,10 @@
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-10">
                                     <select style="width: 100%" name="">
-                                        <option value="">Mr.</option>
-                                        <option value="">Mrs.</option>
-                                        <option value="">Ms.</option>
-                                        <option value="">Miss.</option>
-                                        <option value="">Other...</option>
+                                        <?php for ($i=0;$i<count(Title);$i++){?>
+                                        <option <?php if ($candidateInfo->title == Title[$i]){?> selected <?php } ?> value="<?php echo Title[$i]?>"><?php echo Title[$i]?></option>
+                                        <?php } ?>
+
                                     </select>
                                 </div>
                             </div>
@@ -1159,6 +1159,8 @@
                     </fieldset>
 
                 </form>
+
+                <?php } ?>
 
 
 

@@ -98,7 +98,7 @@ define("SELECT_APPROVE",array ("Yes","No"));
 
 define("SELECT_TITLE","Select Title");
 
-define("Title",array ("Mr","Mrs","Miss","Ms","Other"));
+define("Title",array ("Mr","Mrs","Miss","Ms","Prof","Dr.","Other"));
 
 
 define("SELECT_TYPE","Select Type");
