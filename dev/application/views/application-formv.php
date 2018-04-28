@@ -53,28 +53,28 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">First Name:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="firstName">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Surname:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="surName">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Other Names:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="otherName">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Date of Birth:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
+                                    <input type="date" class="form-control" id="" name="dob">
                                 </div>
                             </div>
 
