@@ -38,9 +38,7 @@
                                 <p>Step 2 / 9</p>
                             </div>
                         </div>
-                        <div id="moreQualification"style="margin: 10px;text-align: right">
-                        <button type="button"  onclick="moreQualification()"  class="btn btn-previous">Add More Qualification</button>
-                        </div>
+
                         <table class="table  table-bordered">
                             <tr>
                                 <th>Qualification</th>
@@ -66,57 +64,73 @@
                             <?php } ?>
                         </table>
 
-                        <div id="txtHint"></div>
 
-
-
-                        <div id="qualification" style="display: none" class="form-bottom">
-                            <div id='TextBoxesGroup'>
-                                <div id="TextBoxDiv1" >
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Qualification:</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="" name="qualification[]">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Institution:</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="" name="institution[]">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Start Date:</label>
-                                        <div class="col-md-10">
-                                            <input type="date" class="form-control" id="" name="startdate[]">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">End Date:</label>
-                                        <div class="col-md-10">
-                                            <input type="date" class="form-control" id="" name="enddate[]">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Grade:</label>
-                                        <div class="col-md-10">
-                                            <input type="text" class="form-control" id="" name="grade[]">
-                                        </div>
-                                    </div>
-
+                <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm2" method="post" class="registration-form form-horizontal">
+                <div class="form-bottom">
+                    <div id='TextBoxesGroup'>
+                        <div id="TextBoxDiv1" >
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Qualification:</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="" name="qualification[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button id='addButton' type="button" class="btn">Add New Qualification</button>
-                                    <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
+                                <label class="control-label col-md-2">Institution:</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="" name="institution[]">
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Start Date:</label>
+                                <div class="col-md-10">
+                                    <input type="date" class="form-control" id="" name="startdate[]">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">End Date:</label>
+                                <div class="col-md-10">
+                                    <input type="date" class="form-control" id="" name="enddate[]">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Grade:</label>
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" id="" name="grade[]">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-md-10">
+                            <button id='addButton' type="button" class="btn">Add New Qualification</button>
+                            <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
+                        </div>
+                    </div>
+
+
+
+
+
+<!--                    <div class="form-group">-->
+<!--                        <div class="col-sm-offset-2 col-md-10">-->
+<!--                            <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
+<!---->
+<!--                            <button type="button" class="btn btn-previous">Previous</button>-->
+<!--                            <button type="submit" class="btn">Next</button>-->
+<!---->
+<!--                            <button type="button" class="btn btn-next">Save Application</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+
+<!--                </div>-->
 
 <!--                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Work Experience</h2>-->
 
@@ -150,11 +164,11 @@
 
 
 
-                        </div>
+<!--                        </div>-->
 
                     <div style="margin: 4px" class="form-group form-bottom">
                         <div class="col-sm-offset-2 col-md-10">
-                            <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
+<!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                             <button type="button" class="btn btn-previous">Previous</button>
                             <button type="button" class="btn">Next</button>
@@ -163,7 +177,9 @@
                     </div>
 <!--                    </fieldset>-->
 
-<!--                </form>-->
+
+                </div>
+                </form>
 
 
 
