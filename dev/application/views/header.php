@@ -187,9 +187,9 @@
 
                                 <li>
                                     <?php if ($this->session->userdata('loggedin') == "true"){?>
-                                    <a href="<?php echo base_url()?>Login/logout" class="btn btn-info"><i class="fa fa-sign-out"></i></a>
+                                    <a href="<?php echo base_url()?>Login/logout">Logout</a>
                                     <?php }else{?>
-                                    <a href="<?php echo base_url()?>Login" class="btn btn-info"><i class="fa fa-sign-in"></i></a>
+                                    <a href="<?php echo base_url()?>Login">Login</a>
                                     <?php } ?>
                                 </li>
 
