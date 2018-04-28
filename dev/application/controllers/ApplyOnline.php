@@ -24,8 +24,8 @@ class ApplyOnline extends CI_Controller
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->data['courseInfo']=$this->Coursem->getCourseInfo();
 
-        $studentId=$this->session->userdata('id');
-        $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentId);
+        $studentOrAgentId=$this->session->userdata('id');
+        $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
 
 
 
