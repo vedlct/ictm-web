@@ -179,29 +179,18 @@
                             <?php } ?>
                         </table>
 
-
-
                     </div>
                 </form>
-
-
-
-
-
-
-
-
-
 
             </div><!-- /col-md-9 -->
 
             <div class="col-md-3">
                 <div class="sidebar">
 
-                    <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
-                    </div><!-- /widget-posts -->
+<!--                    <div class="widget widget-courses">-->
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
+<!--                    </div><!-- /widget-posts -->-->
 
 
 
@@ -213,6 +202,7 @@
 
 <?php include("footer.php"); ?>
 <!-- for Application form -->
+
 <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
 <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
 
@@ -276,7 +266,7 @@
     }
     function selectid(x) {
         btn = $(x).data('panel-id');
-       // alert(btn);
+        alert(btn);
         $.ajax({
             type: 'POST',
             url: '<?php echo base_url("ApplyOnline/EditPersonalQualification/")?>' + btn,

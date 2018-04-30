@@ -215,14 +215,20 @@ class ApplyOnline extends CI_Controller
         $this->ApplyOnlinem->applyNow2Insert();
         redirect('ApplyForm2');
     }
-    public function EditPersonalQualification($id) // go to the apply page of selected course
+    public function EditPersonalQualification() // go to the apply page of selected course
     {
+
 
         $qualificationId = $this->input->post("id");
       //  $this->data['qualification'] = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
     //    $data = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
        // $this->load->view('EditPersonalQualification', $this->data);
 
+        return $qualificationId;
+    }
+
+    public function showedit(){
+        $id = $this->input->post('id');
         return $id;
     }
 
