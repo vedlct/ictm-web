@@ -48,47 +48,47 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Qualification:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="" name="qualification[]">
+                                        <input type="text" class="form-control" id="qualification" name="qualification">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Institution:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="" name="institution[]">
+                                        <input type="text" class="form-control" id="institution" name="institution">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Start Date:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="" name="startdate[]">
+                                        <input type="date" class="form-control" id="startdate" name="startdate">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">End Date:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="" name="enddate[]">
+                                        <input type="date" class="form-control" id="enddate" name="enddate">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Grade:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="" name="grade[]">
+                                        <input type="text" class="form-control" id="grade" name="grade">
                                     </div>
                                 </div>
 
                             </div>
                         </div>
 
-<!--                        <div class="form-group">-->
-<!--                            <div class="col-sm-offset-2 col-md-10">-->
-<!--                                <button id='addButton' type="button" class="btn">Add New Qualification</button>-->
-<!--                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div class="form-group">-->
+                        <!--                            <div class="col-sm-offset-2 col-md-10">-->
+                        <!--                                <button id='addButton' type="button" class="btn">Add New Qualification</button>-->
+                        <!--                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
 
 
@@ -156,6 +156,7 @@
 
                         <table class="table  table-bordered">
                             <tr>
+                                <th>Id</th>
                                 <th>Qualification</th>
                                 <th>Institution</th>
                                 <th>Start Date</th>
@@ -166,6 +167,7 @@
                             </tr>
                             <?php foreach ($qualification as $qualifications){?>
                                 <tr>
+                                    <td><?php echo $qualifications->id ?></td>
                                     <td><?php echo $qualifications->qualification ?></td>
                                     <td><?php echo $qualifications->institution ?></td>
                                     <td><?php echo $qualifications->startDate ?></td>
@@ -207,74 +209,43 @@
 <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
 
 <script>
-    $(document).ready(function(){
-        var counter = 2;
-        $("#addButton").click(function () {
-            if(counter>100){
-                alert("Only 100 textboxes allow");
-                return false;
-            }
-            var newTextBoxDiv = $(document.createElement('div'))
-                .attr("id", 'TextBoxDiv' + counter);
-            newTextBoxDiv.after().html( '<div class="form-group">'+
-                '<label class="control-label col-md-2">Qualification'+counter+':</label>'+
-                '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="qualification[]">'+
-                '</div>'+
-                '</div>'+
-                '<div class="form-group">'+
-                '<label class="control-label col-md-2">Institution'+counter+':</label>'+
-                '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="institution[]">'+
-                '</div>'+
-                '</div>'+
-                '<div class="form-group">'+
-                '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
-                '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="" name="startdate[]">'+
-                '</div>'+
-                '</div>'+
-                '<div class="form-group">'+
-                '<label class="control-label col-md-2">End Date'+counter+':</label>'+
-                '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="" name="enddate[]">'+
-                '</div>'+
-                '</div>'+
-                '<div class="form-group">'+
-                '<label class="control-label col-md-2">Grade'+counter+':</label>'+
-                '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="grade[]">'+
-                '</div>'+
-                '</div>'
-            );
-            newTextBoxDiv.appendTo("#TextBoxesGroup");
-            counter++;
-        });
-        $("#removeButton").click(function () {
-            if(counter==2){
-                document.getElementById('moreQualification').style.display = 'block';
-                document.getElementById('qualification').style.display = 'none';
-                return false;
-            }
-            counter--;
-            $("#TextBoxDiv" + counter).remove();
-        });
-    });
+
     function moreQualification() {
         document.getElementById('moreQualification').style.display = 'none';
         document.getElementById('qualification').style.display = 'block';
     }
     function selectid(x) {
         btn = $(x).data('panel-id');
-        alert(btn);
+
+        //alert(btn);
+
         $.ajax({
-            type: 'POST',
-            url: '<?php echo base_url("ApplyOnline/EditPersonalQualification/")?>' + btn,
-            data: {'id': btn},
+            type:'POST',
+            url:'<?php echo base_url("ApplyOnline/EditPersonalQualification")?>',
+            data:{'id': btn},
             cache: false,
-            success: function (data) {
-               alert(data)
+            dataType: 'json',
+            success:function(response) {
+                var len = response.length;
+
+                if(len > 0){
+                    // Read values
+                    var qualification = response[0].qualification;
+                    var institution = response[0].institution;
+                    var startDate = response[0].startDate;
+                    var endDate = response[0].endDate;
+                    var grade = response[0].obtainResult;
+                }
+
+
+                document.getElementById("qualification").value= qualification;
+                document.getElementById("institution").value= institution;
+                document.getElementById("startdate").value= startDate;
+                document.getElementById("enddate").value= endDate;
+                document.getElementById("grade").value= grade;
+
             }
+
         });
     }
 </script>

@@ -8,72 +8,50 @@ class ApplyOnline extends CI_Controller
         $this->load->model('Menum');
         $this->load->model('CollegeInfom');
         $this->load->model('Photom');
-
         $this->load->model('Coursem');
         $this->load->model('ApplyOnlinem');
-
     }
-
     public function index()
     {
-
     }
     public function viewForm1()
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->data['courseInfo']=$this->Coursem->getCourseInfo();
-
         $studentOrAgentId=$this->session->userdata('id');
         $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
-
-
-
         if (empty($this->data['applicationId'])) {
             $this->load->view('application-form', $this->data);
         } else {
-
             foreach ($this->data['applicationId'] as $studentApplication){
                 $studentApplicationId= $studentApplication->id;
             }
-
             $dataSession = [
                 'studentApplicationId' => $studentApplicationId,
-
             ];
             $this->session->set_userdata($dataSession);
-
             $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($studentApplicationId);
-
             $this->load->view('application-formv', $this->data);
         }
-
-
     }
     public function viewallFormsForAgents()
     {
         $this->menu();
         $this->data['coursedata']=$this->Coursem->getCourseTitle();
         $this->data['courseInfo']=$this->Coursem->getCourseInfo();
-
         $studentOrAgentId=$this->session->userdata('id');
         $this->data['applications'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
-
         $this->load->view('allApplicationsForAgent', $this->data);
-
     }
-
     public function insertApplicationForm1()
     {
         if ($this->session->userdata('loggedin') == "true") {
-
             $this->load->library('form_validation');
             if (!$this->form_validation->run('checkApplicationForm1')) {
-
                 $this->menu();
                 $this->data['coursedata']=$this->Coursem->getCourseTitle();
                 $this->data['courseInfo']=$this->Coursem->getCourseInfo();
-
                 $this->load->view('application-form', $this->data);
             }
             else {
@@ -102,9 +80,7 @@ class ApplyOnline extends CI_Controller
                 $EmergencyContactName = $this->input->post("EmergencyContactName");
                 $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
                 $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
-
                 $EmergencyContactAddressPO = $this->input->post("EmergencyContactAddressPO");
-
                 $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
                 $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
                 $courseName = $this->input->post("courseName");
@@ -114,21 +90,15 @@ class ApplyOnline extends CI_Controller
                 $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
                 $aplicationFormid=$this->session->userdata('id').date("YmdHis");
-
                 $data3=array(
                     'studentOrAgentId'=>$this->session->userdata('id'),
                     'studentApplicationFormId'=>$aplicationFormid
-
                 );
-
                 $studentApplicationId = $this->ApplyOnlinem->insertStudentApplicationForm($data3);
-
                 $dataSession = [
                     'studentApplicationId' => $studentApplicationId,
-
                 ];
                 $this->session->set_userdata($dataSession);
-
                 $data=array(
                     'applicationId'=>$studentApplicationId,
                     'title'=>$candidateTitle,
@@ -146,10 +116,8 @@ class ApplyOnline extends CI_Controller
                     'visaExpiryDate'=>$candidateVisaExpiryDate,
                     'currentAddress'=>$candidateCurrentAddress,
                     'currentAddressPo'=>$candidateCurrentAddressPO,
-
                     'overseasAddress'=>$candidateOverseasHomeAddress,
                     'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
-
                     'telephoneNo'=>$candidateTelephone,
                     'mobileNo'=>$candidateMobile,
                     'email'=>$candidateEmail,
@@ -159,12 +127,9 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactRelation'=>$EmergencyContactRelation,
                     'emergencyContactAddress'=>$EmergencyContactAddress,
                     'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
-
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
-
                 );
-
                 $data1=array(
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
@@ -174,35 +139,25 @@ class ApplyOnline extends CI_Controller
                     'methodOfStudy'=>$methodeOfStudy,
                 );
                 $this->ApplyOnlinem->insertApplyForm1($data,$data1);
-
                 redirect('ApplyForm2');
-
             }
-
         }
         else {
             redirect('Admin/Login');
         }
     }
-
     public function applyNow2() // go to the apply page of selected course
     {
         $this->menu();
         $this->data['coursedata'] = $this->Coursem->getCourseTitle();
         $applicationId=$this->session->userdata('studentApplicationId');
-
         $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
-
-
-
         if (empty($this->data['qualification'])) {
             $this->load->view('application-form2', $this->data);
         } else {
             $this->load->view('application-form2v', $this->data);
         }
     }
-
-
     public function applyNow3() // go to the apply page of selected course
     {
         $this->menu();
@@ -215,24 +170,13 @@ class ApplyOnline extends CI_Controller
         $this->ApplyOnlinem->applyNow2Insert();
         redirect('ApplyForm2');
     }
-    public function EditPersonalQualification() // go to the apply page of selected course
+    public function EditPersonalQualification()
     {
-
-
         $qualificationId = $this->input->post("id");
-      //  $this->data['qualification'] = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
-    //    $data = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
-       // $this->load->view('EditPersonalQualification', $this->data);
+        $data = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
 
-        return $qualificationId;
+        echo  json_encode($data);
     }
-
-    public function showedit(){
-        $id = $this->input->post('id');
-        return $id;
-    }
-
-
     public function menu() // get all the menu + footer
     {
         $this->data['affiliation'] = $this->Menum->getAffiliations();
