@@ -165,10 +165,45 @@ class ApplyOnline extends CI_Controller
         //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
         $this->load->view('application-form3', $this->data);
     }
-    public function insertApplicationForm2() // go to the apply page of selected course
+    public function insertApplicationForm2() // insert application form 2
     {
         $this->ApplyOnlinem->applyNow2Insert();
         redirect('ApplyForm2');
+    }
+    public function editApplicationForm() // go to the apply page of selected course
+    {
+        $qualificationId = $this->input->post("qualificationId");
+        $qualification = $this->input->post("qualification");
+        $institution = $this->input->post("institution");
+        $startdate = $this->input->post("startdate");
+        $enddate = $this->input->post("enddate");
+        $grade = $this->input->post("grade");
+
+        $data=array(
+            'qualification'=>$qualification,
+            'institution'=>$institution,
+            'startdate'=>$startdate,
+            'enddate'=>$enddate,
+            'obtainResult'=>$grade,
+        );
+
+        if (!empty($qualificationId)){
+
+            $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId,$data);
+            redirect('ApplyForm2');
+        }
+        else{
+
+            $data2 = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+            );
+            $data = array_merge($data, $data2);
+            $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
+
+            redirect('ApplyForm2');
+
+        }
+
     }
     public function EditPersonalQualification()
     {

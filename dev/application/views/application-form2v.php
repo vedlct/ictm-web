@@ -41,10 +41,11 @@
 
 
 
-                <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm2" method="post" class="registration-form form-horizontal">
+                <form action="<?php echo base_url()?>ApplyOnline/editApplicationForm" method="post" class="registration-form form-horizontal">
                     <div class="form-bottom">
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
+                                <input type="hidden" class="form-control" id="qualificationId"  name="qualificationId">
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Qualification:</label>
                                     <div class="col-md-10">
@@ -83,72 +84,13 @@
                             </div>
                         </div>
 
-                        <!--                        <div class="form-group">-->
-                        <!--                            <div class="col-sm-offset-2 col-md-10">-->
-                        <!--                                <button id='addButton' type="button" class="btn">Add New Qualification</button>-->
-                        <!--                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-
-
-
-
-
-                        <!--                    <div class="form-group">-->
-                        <!--                        <div class="col-sm-offset-2 col-md-10">-->
-                        <!--                            <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
-                        <!---->
-                        <!--                            <button type="button" class="btn btn-previous">Previous</button>-->
-                        <!--                            <button type="submit" class="btn">Next</button>-->
-                        <!---->
-                        <!--                            <button type="button" class="btn btn-next">Save Application</button>-->
-                        <!--                        </div>-->
-                        <!--                    </div>-->
-
-
-                        <!--                </div>-->
-
-                        <!--                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Work Experience</h2>-->
-
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label class="control-label col-md-2">Organisation:</label>-->
-                        <!--                                <div class="col-md-10">-->
-                        <!--                                    <input type="text" class="form-control" id="" name="">-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!---->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label class="control-label col-md-2">Position Held:</label>-->
-                        <!--                                <div class="col-md-10">-->
-                        <!--                                    <input type="text" class="form-control" id="" name="">-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!---->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label class="control-label col-md-2">From:</label>-->
-                        <!--                                <div class="col-md-10">-->
-                        <!--                                    <input type="date" class="form-control" id="" name="">-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!---->
-                        <!--                            <div class="form-group">-->
-                        <!--                                <label class="control-label col-md-2">To:</label>-->
-                        <!--                                <div class="col-md-10">-->
-                        <!--                                    <input type="date" class="form-control" id="" name="">-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-
-
-
-                        <!--                        </div>-->
-
                         <div style="margin: 4px" class="form-group form-bottom">
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <button type="button" class="btn btn-previous">Previous</button>
                                 <button type="button" class="btn">Next</button>
-                                <button type="button" class="btn btn-next">Save Application</button>
+                                <button type="submit" class="btn btn-next">Save Application</button>
                             </div>
                         </div>
                         <!--                    </fieldset>-->
@@ -189,10 +131,10 @@
             <div class="col-md-3">
                 <div class="sidebar">
 
-<!--                    <div class="widget widget-courses">-->
-<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
-<!--                        --><?php //include("course-sidebar.php"); ?>
-<!--                    </div><!-- /widget-posts -->-->
+                    <div class="widget widget-courses">
+                        <h2 class="widget-title">COURSES LIST</h2>
+                        <?php include("course-sidebar.php"); ?>
+                    </div><!-- /widget-posts -->
 
 
 
@@ -217,8 +159,6 @@
     function selectid(x) {
         btn = $(x).data('panel-id');
 
-        //alert(btn);
-
         $.ajax({
             type:'POST',
             url:'<?php echo base_url("ApplyOnline/EditPersonalQualification")?>',
@@ -234,6 +174,7 @@
                     var institution = response[0].institution;
                     var startDate = response[0].startDate;
                     var endDate = response[0].endDate;
+                    var qualificationId = response[0].id;
                     var grade = response[0].obtainResult;
                 }
 
@@ -243,6 +184,7 @@
                 document.getElementById("startdate").value= startDate;
                 document.getElementById("enddate").value= endDate;
                 document.getElementById("grade").value= grade;
+                document.getElementById("qualificationId").value= qualificationId;
 
             }
 
