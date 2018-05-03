@@ -54,7 +54,7 @@ class ApplyOnlinem extends CI_Model
     {
 
         $this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
-       // $this->db->select('*');
+
         $this->db->where('id',$qualificationId);
         $this->db->from('personqualifications');
         $query=$this->db->get();
@@ -109,6 +109,30 @@ class ApplyOnlinem extends CI_Model
 
             $error = $this->db->insert('personqualifications', $data);
         }
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+    public function editQualificationsDetailsById($qualificationId,$data)
+    {
+
+        $this->db->where('id',$qualificationId);
+        $error = $this->db->update('personqualifications',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+    public function insertQualificationsDetailsFromEdit($data)
+    {
+
+        $this->security->xss_clean($data);
+        $error = $this->db->insert('personqualifications',$data);
 
         if (empty($error)) {
             return $this->db->error();
