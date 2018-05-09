@@ -90,6 +90,7 @@ class ApplyOnline extends CI_Controller
                 $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
                 $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+
                 $data3=array(
                     'studentOrAgentId'=>$this->session->userdata('id'),
                     'studentApplicationFormId'=>$aplicationFormid
@@ -162,15 +163,25 @@ class ApplyOnline extends CI_Controller
     {
         $this->menu();
         $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-        //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+
+        $applicationId=$this->session->userdata('studentApplicationId');
+        $this->load->view('application-form3', $this->data);
+        $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
+
         $this->load->view('application-form3', $this->data);
     }
+
     public function insertApplicationForm2() // insert application form 2
     {
         $this->ApplyOnlinem->applyNow2Insert();
         redirect('ApplyForm2');
     }
-    public function editApplicationForm() // go to the apply page of selected course
+    public function insertApplicationForm2AndNext() // insert application form 2 and go form 3
+    {
+        $this->ApplyOnlinem->applyNow2Insert();
+        redirect('ApplyForm3');
+    }
+    public function editORInsertApplicationForm2() // edit OR Insert Application Form2
     {
         $qualificationId = $this->input->post("qualificationId");
         $qualification = $this->input->post("qualification");
@@ -190,6 +201,7 @@ class ApplyOnline extends CI_Controller
         if (!empty($qualificationId)){
 
             $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId,$data);
+            $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
             redirect('ApplyForm2');
         }
         else{
@@ -199,8 +211,44 @@ class ApplyOnline extends CI_Controller
             );
             $data = array_merge($data, $data2);
             $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
-
+            $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
             redirect('ApplyForm2');
+
+        }
+
+    }
+    public function editORInsertApplicationForm2AndNext() // edit OR Insert Application Form2 And Next
+    {
+        $qualificationId = $this->input->post("qualificationId");
+        $qualification = $this->input->post("qualification");
+        $institution = $this->input->post("institution");
+        $startdate = $this->input->post("startdate");
+        $enddate = $this->input->post("enddate");
+        $grade = $this->input->post("grade");
+
+        $data=array(
+            'qualification'=>$qualification,
+            'institution'=>$institution,
+            'startdate'=>$startdate,
+            'enddate'=>$enddate,
+            'obtainResult'=>$grade,
+        );
+
+        if (!empty($qualificationId)){
+
+            $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId,$data);
+            $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
+            redirect('ApplyForm3');
+        }
+        else{
+
+            $data2 = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+            );
+            $data = array_merge($data, $data2);
+            $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
+            $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
+            redirect('ApplyForm3');
 
         }
 
@@ -211,6 +259,72 @@ class ApplyOnline extends CI_Controller
         $data = $this->ApplyOnlinem->getQualificationsDetails($qualificationId);
 
         echo  json_encode($data);
+    }
+    public function DeletePersonalQualification()
+    {
+        $qualificationId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->deleteQualifications($qualificationId);
+        $this->session->set_flashdata('successMessage', 'Qualification Deleted Successfully');
+
+    }
+    public function applyNow4() // go to the apply page of selected course
+    {
+        $this->menu();
+        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
+
+        if (empty($this->data['Financer'])) {
+            $this->load->view('application-form4', $this->data);
+        } else {
+            $this->load->view('application-form4v', $this->data);
+        }
+
+    }
+
+    public function insertapplyNow4()
+
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom4')) {
+//                $this->menu();
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//
+//                $applicationId=$this->session->userdata('studentApplicationId');
+//
+//                $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
+//
+//                $this->load->view('application-form4', $this->data);
+//
+//            } else {
+
+                $this->data['error'] = $this->ApplyOnlinem->insertnewfrom4();
+
+            $applicationId=$this->session->userdata('studentApplicationId');
+
+
+                    if (empty($this->data['error'])) {
+
+
+                        $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                        redirect('ApplyForm4');
+
+                    } else {
+
+
+                        $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                        redirect('ApplyForm4');
+
+                    }
+
+//            }
+        }
+
     }
     public function menu() // get all the menu + footer
     {

@@ -50,11 +50,41 @@ class ApplyOnlinem extends CI_Model
 
 
     }
+    public function getFinancerData($applicationId){
+
+        $this->db->select('selfFinance');
+        $this->db->where('applicationId',$applicationId);
+        $this->db->from('candidateinfo');
+        $query=$this->db->get();
+        foreach ($query->result() as $selfFinance){
+            $finance=$selfFinance->selfFinance;
+        }
+        if (!empty($finance)) {
+            if ($finance == 'y') {
+                return $finance;
+            } elseif ($finance == 'n') {
+
+                $this->db->select('id,name,title,relation,address,addressPo', 'mobile', 'telephone', 'email', 'fax');
+                $this->db->where('fkApplicationId', $applicationId);
+                $this->db->from('financer');
+                $query = $this->db->get();
+                return $query->result();
+
+
+            }
+        }else{
+            return null;
+        }
+
+
+
+
+
+    }
     public function getQualificationsDetails($qualificationId)
     {
 
         $this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
-
         $this->db->where('id',$qualificationId);
         $this->db->from('personqualifications');
         $query=$this->db->get();
@@ -70,6 +100,14 @@ class ApplyOnlinem extends CI_Model
         $this->db->from('studentapplicationform');
         $query=$this->db->get();
         return $query->result();
+
+
+    }
+    public function deleteQualifications($qualificationId)
+    {
+
+        $this->db->where('id', $qualificationId);
+        $this->db->delete('personqualifications');
 
 
     }
@@ -116,6 +154,69 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
+    public function insertnewfrom4()
+    {
+        $selfFinance=$this->input->post('selfFinance');
+
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        if ($selfFinance =='y'){
+
+            $data1 = array(
+                'selfFinance' => 'y',
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $error = $this->db->update('candidateinfo', $data1);
+
+        }else{
+            $title = $this->input->post('title');
+            $name = $this->input->post('name');
+            $relation = $this->input->post('relation');
+            $address = $this->input->post('address');
+            $mobilee = $this->input->post('mobile');
+            $telephone = $this->input->post('telephone');
+            $email = $this->input->post('email');
+            $fax = $this->input->post('fax');
+            $AddressPO = $this->input->post('AddressPO');
+
+            $data1 = array(
+                'selfFinance' => 'n',
+
+            );
+
+            $data = array(
+
+                'title' => $title,
+                'name' => $name,
+                'relation' => $relation,
+                'address' => $address,
+                'mobile' => $mobilee,
+                'telephone' => $telephone,
+                'email' => $email,
+                'fax' => $fax,
+                'addressPo'=>$AddressPO,
+                'fkApplicationId'=>$applicationId
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $this->db->update('candidateinfo', $data1);
+
+
+            $error = $this->db->insert('financer', $data);
+
+        }
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+    }
+
     public function editQualificationsDetailsById($qualificationId,$data)
     {
 

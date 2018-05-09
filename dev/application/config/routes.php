@@ -69,10 +69,14 @@ $route['AllFormForAgents'] = 'ApplyOnline/viewallFormsForAgents';
 
 $route['Apply'] = 'ApplyOnline/viewForm1';
 $route['ApplyForm2'] = 'ApplyOnline/applyNow2';
+
 $route['RegisterInterest'] = 'OnlineForms/registerInterest';
 
 $route['Feedback'] = 'OnlineForms/feedback';
 $route['SubmitFeedback'] = 'OnlineForms/SubmitFeedback';
+
+$route['ApplyForm3'] = 'ApplyOnline/applyNow3';
+$route['ApplyForm4'] = 'ApplyOnline/applyNow4';
 
 $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';
