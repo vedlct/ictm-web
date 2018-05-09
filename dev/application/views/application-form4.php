@@ -29,7 +29,6 @@
         <?php }?>
         <div class="row">
             <div class="col-md-9">
-                <form role="form" action="<?php echo base_url()?>OnlineForms/insertapplyNow4" method="post" class="registration-form form-horizontal"  onsubmit="return formvalidate()">
 
 <!--                    <fieldset>-->
                         <div class="form-top">
@@ -41,15 +40,34 @@
                                 <p>Step 4 / 9</p>
                             </div>
                         </div>
+
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
+
                         <div class="form-bottom">
-                            <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
+
+
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Self Finance:</label>
+                                <div class="col-md-10">
+                                    <input type="radio"  required name="selfFinance" value="y"> Yes&nbsp;&nbsp;
+                                    <input type="radio" required name="selfFinance" value="n"> No&nbsp;&nbsp;
+                                </div>
+                            </div>
+
+                            <div style="display: none" id="otherFinance">
+
+
+
+
+                                <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
 <!--                         --><?php //   $userId=$this->session->userdata('id'); ?>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select style="width: 100%"  id="title" required name="title">
+                                    <select style="width: 100%"  id="title"  name="title">
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
@@ -64,7 +82,7 @@
                                 <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name" name="name"  required value="<?php echo set_value('name'); ?>" >
+                                    <input type="text" class="form-control" id="name" name="name"   value="<?php echo set_value('name'); ?>" >
 
 
                                 </div>
@@ -85,6 +103,14 @@
                                     <textarea  name="address"  id="address" rows="8" tabindex="4" ><?php echo set_value('address'); ?></textarea>
                                 </div>
                             </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Address P.O :<span class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
+                                        <input type="text" class="form-control" id="AddressPO" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
+                                    </div>
+                                </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Mobile:</label>
@@ -118,20 +144,23 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" href="<?php echo base_url()?>OnlineForms/applyNow5" class="btn ">Next</button>
 
-                                    <button type="submit" class="btn btn-next">Save Application</button>
-                                </div>
                             </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-md-10">
+<!--                                        <button type="button" class="btn btn-previous">Previous</button>-->
+<!--                                        <button type="button" href="--><?php //echo base_url()?><!--OnlineForms/applyNow5" class="btn ">Next</button>-->
+                                        <button type="submit" class="btn btn-next">Save Application</button>
+                                    </div>
+                                </div>
+
+
 
                         </div>
 <!--                    </fieldset>-->
 
-                </form>
 
+                </form>
 
 
 
@@ -169,68 +198,96 @@
 
 <script>
 
+    $(document).ready( function () {
+
+        if ('<?php  ?>')
+
+    });
+
+
+    $("input[name=selfFinance]").click( function () {
+
+        if ($(this).val()=='y'){
+            document.getElementById("otherFinance").style.display = "none";
+        }else {
+            document.getElementById("otherFinance").style.display = "block";
+        }
+
+    });
+
+
+
     function formvalidate() {
 
-
-        var email =  document.getElementById("email").value;
-         var name =  document.getElementById("name").value;
-        var relation =  document.getElementById("relation").value;
-        var address =  document.getElementById("address").value;
-        var phone =  document.getElementById("mobile").value;
-        var fax =  document.getElementById("fax").value;
-        var telephone =  document.getElementById("telephone").value;
-       var chk=/^[0-9]*$/;
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        var finance=$("input[name=selfFinance]").val();
+        if (finance == 'n') {
 
 
-        if(!email.match(mailformat))
-        {
-            alert("You have entered an invalid email address!");
-            return false;
-        }
+            var email = document.getElementById("email").value;
+            var name = document.getElementById("name").value;
+            var AddressPO = document.getElementById("AddressPO").value;
+            var relation = document.getElementById("relation").value;
+            var address = document.getElementById("address").value;
+            var phone = document.getElementById("mobile").value;
+            var fax = document.getElementById("fax").value;
+            var telephone = document.getElementById("telephone").value;
+            var chk = /^[0-9]*$/;
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
-        if ( name==""){
-            alert("Name  Can not Empty");
-            return false;
-        }
+            if (!email.match(mailformat)) {
+                alert("You have entered an invalid email address!");
+                return false;
+            }
 
 
-        if(!phone.match(chk)) {
-            alert( 'Please enter a valid Phone number!!' );
-            return false;
-        }
-        if(phone.length >45) {
-            alert( 'Phone number must be less than 45 charecter!!' );
-            return false;
-        }
+            if (name == "") {
+                alert("Name  Can not Empty");
+                return false;
+            }
+            if (AddressPO == "") {
+                alert("Address PO  Can not Empty");
+                return false;
+            }
+            if (AddressPO.length >15) {
+                alert("Address PO  must be less than 15 charecter");
+                return false;
+            }
 
 
-        if (relation=="" )
-        {
-            alert(" Relation  Can not Empty");
-            return false;
-        }
-
-        if(fax=="")
-        {
-            alert(" fax can not empty");
-            return false;
-        }
-        if(address=="")
-        {
-            alert("Address  can not  empty");
-            return false;
-        }
-        if(telephone=="")
-        {
-            alert("Give the telephone number ");
-            return false;
-        }
+            if (!phone.match(chk)) {
+                alert('Please enter a valid Phone number!!');
+                return false;
+            }
+            if (phone.length > 50) {
+                alert('Mobile Phone number must be less than 50 charecter!!');
+                return false;
+            }
 
 
-        else
-        {
+            if (relation == "") {
+                alert(" Relation  Can not Empty");
+                return false;
+            }
+
+            if (fax == "") {
+                alert(" fax can not empty");
+                return false;
+            }
+            if (address == "") {
+                alert("Address  can not  empty");
+                return false;
+            }
+            if (telephone == "") {
+                alert("Give the telephone number ");
+                return false;
+            }
+
+
+            else {
+                return true;
+            }
+        }else {
             return true;
         }
     }

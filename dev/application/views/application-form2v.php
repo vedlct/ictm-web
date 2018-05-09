@@ -17,6 +17,16 @@
         </div><!-- /.row -->
     </div><!-- /.container -->
 </div><!-- /page-title -->
+<div id="sessionFlashMessageDiv">
+<?php if ($this->session->flashdata('errorMessage')!=null){?>
+    <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+<?php }
+elseif($this->session->flashdata('successMessage')!=null){?>
+    <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+<?php }?>
+
+</div>
+
 
 <section class="flat-row padding-small-v1">
     <div class="container">
@@ -41,43 +51,43 @@
 
 
 
-                <form action="<?php echo base_url()?>ApplyOnline/editApplicationForm" method="post" class="registration-form form-horizontal">
+                <form action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
                     <div class="form-bottom">
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <input type="hidden" class="form-control" id="qualificationId"  name="qualificationId">
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Qualification:</label>
+                                    <label class="control-label col-md-2">Qualification<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="qualification" name="qualification">
+                                        <input type="text" class="form-control" id="qualification" required name="qualification">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Institution:</label>
+                                    <label class="control-label col-md-2">Institution<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="institution" name="institution">
+                                        <input type="text" class="form-control" id="institution" required name="institution">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Start Date:</label>
+                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="startdate" name="startdate">
+                                        <input type="date" class="form-control" id="startdate" required name="startdate">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">End Date:</label>
+                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="enddate" name="enddate">
+                                        <input type="date" class="form-control" id="enddate" required name="enddate">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Grade:</label>
+                                    <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="grade" name="grade">
+                                        <input type="text" class="form-control" id="grade" required name="grade">
                                     </div>
                                 </div>
 
@@ -89,14 +99,15 @@
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <button type="button" class="btn btn-previous">Previous</button>
-                                <button type="button" class="btn">Next</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="button" onclick="btnNext()" class="btn btn-next">Next</button>
                             </div>
                         </div>
                         <!--                    </fieldset>-->
 
-
-                        <table class="table  table-bordered">
+<div id="qualificationTable">
+                        <table  class="table  table-bordered">
                             <tr>
                                 <th>Id</th>
                                 <th>Qualification</th>
@@ -117,11 +128,12 @@
                                     <td><?php echo $qualifications->obtainResult ?></td>
                                     <td>
                                         <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
-                                        <a class="btn" ><i class="fa fa-trash"></i></a>
+                                        <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
                         </table>
+</div>
 
                     </div>
                 </form>
@@ -189,6 +201,71 @@
             }
 
         });
+    }
+    function selectidForDelete(x) {
+
+        if (confirm("Are you sure you want to delete this Qualification?")) {
+        btn = $(x).data('panel-id');
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("ApplyOnline/DeletePersonalQualification")?>',
+            data:{'id': btn},
+            cache: false,
+
+            success:function(data) {
+
+
+                location.reload();
+
+            }
+
+        });
+    }else {
+            $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+        }
+    }
+    function checkForm() {
+
+        var Qualification=$('#qualification').val();
+        var institution=$('#institution').val();
+        var startdate=$('#startdate').val();
+        var enddate=$('#enddate').val();
+        var grade=$('#grade').val();
+
+        if (Qualification == ""){
+            alert('Please add a Qualification');
+            return false;
+        }if (Qualification.length > 100){
+            alert('Qualification must be less then 100 charecter');
+            return false;
+        }if (institution == ""){
+            alert('Please add a institution');
+            return false;
+        }if (institution.length > 100){
+            alert('Institution must be less then 100 charecter');
+            return false;
+        }if (startdate == ""){
+            alert('Please add a startdate');
+            return false;
+        }if (enddate == ""){
+            alert('Please add a enddate');
+            return false;
+        }if (grade == ""){
+            alert('Please add a grade');
+            return false;
+        }if (grade.length > 20){
+            alert('grade must be less then 20 charecter');
+            return false;
+        }if (enddate < startdate){
+            alert('Please Select StartDate and EndDate Correctly');
+            return false;
+        }
+    }
+    function btnNext() {
+
+        location.href='ApplyForm3';
+
+
     }
 </script>
 
