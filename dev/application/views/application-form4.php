@@ -197,12 +197,7 @@
 </html>
 
 <script>
-
-    $(document).ready( function () {
-
-        if ('<?php  ?>')
-
-    });
+    
 
 
     $("input[name=selfFinance]").click( function () {
