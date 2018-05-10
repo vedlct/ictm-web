@@ -32,8 +32,6 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/insertapplyNow6" method="post" class="registration-form form-horizontal">
-
 
                         <div class="form-top">
                             <div class="form-top-left">
@@ -44,16 +42,17 @@
                                 <p>Step 6 / 9</p>
                             </div>
                         </div>
-                        <div class="form-bottom">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow6" method="post" class="registration-form form-horizontal">
+                <div class="form-bottom">
                             <p>Equal opportunities monitoring: (please select from the dropdown lists)</p>
+                    <?php foreach($opportunitySubGroupId as $a6){ ?>
+                    <?php  if($a6->opportunityTitle=='Ethnicity') { ?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Ethnicity:</label>
                                 <div class="col-md-10 table-responsive">
                                     <table class="table ">
                                         <tr>
-<!--                                            --><?php // foreach ($title as $id ) { ?>
-<!--                                               --><?php // if( $id->opportunityTitle == 'Ethnicity') {  ?>
-<!--                                                 <input type="text" value="--><?php //echo $id->id ?><!--">-->
+
                                                 <td ><input type = "radio" name = "check_list" value = "white" > White</td >
                                             <td ><input type = "radio" name = "check_list" value = "White - Scottish" > White - Scottish</td >
 
@@ -97,6 +96,10 @@
                                     </table >
                                 </div >
                             </div >
+                    <?php } break; } ?>
+
+                    <?php foreach($opportunitySubGroupId as $a6){ ?>
+                    <?php if($a6->opportunityTitle=='Disability'){ ?>
 
                             <div class="form-group" >
                                 <label class="control-label col-md-2" > Disability:</label >
@@ -134,6 +137,11 @@
                                 </div >
                             </div >
 
+                        <?php } break; }?>
+                    <?php foreach($opportunitySubGroupId as $a6){ ?>
+                    <?php
+                    if($a6->opportunityTitle=='Religion Belief')   { ?>
+
                             <div class="form-group" >
                                 <label class="control-label col-md-2" > Religion Belief:</label >
                                 <div class="col-md-10 table-responsive" >
@@ -169,6 +177,9 @@
                                     </table >
                                 </div >
                             </div >
+                    <?php }break;} ?>
+                    <?php foreach($opportunitySubGroupId as $a6){ ?>
+                    <?php if($a6->opportunityTitle=='Sexual Orientation')   { ?>
 
                             <div class="form-group" >
                                 <label class="control-label col-md-2" > Sexual Orientation:</label >
@@ -189,6 +200,7 @@
                                     </table >
                                 </div >
                             </div >
+                    <?php }break;} ?>
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-10" >

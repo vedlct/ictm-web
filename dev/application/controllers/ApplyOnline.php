@@ -640,21 +640,173 @@ class ApplyOnline extends CI_Controller
         if ($this->session->userdata('loggedin') == "true") {
             $this->menu();
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-            $this->load->view('application-form6', $this->data);
-//            $this->data['apllyfrom6'] = $this->OnlineFormsm->getAllapplynow6($id);
-//
-//            if (empty($this->data['apllyfrom6'])) {
-//
-//                $this->load->view('application-form6', $this->data);
-//            } else {
-//
-//                $this->load->view('application-form6v', $this->data);
-//            }
 
+            $this->data['EqualOpportunity'] = $this->ApplyOnlinem->getAllEqualOpportunity();
+            $this->data['opportunitySubGroupId']= $this->ApplyOnlinem->getOpportunitySubGroupId();
+
+          //  print_r($this->data['opportunitySubGroupId']);
+
+
+            if (empty($this->data['EqualOpportunity'])) {
+
+                $this->load->view('application-form6', $this->data);
+            } else {
+
+                $this->load->view('application-form6v', $this->data);
+            }
+
+        }
+
+    }
+
+    public function insertapplyNow6()
+    {
+
+
+        $check_list = $this->input->post('check_list');
+        $check_list1 = $this->input->post('check_list1');
+        $check_list2 = $this->input->post('check_list2');
+        $check_list3 = $this->input->post('check_list3');
+
+        $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
+        foreach ($this->data['opportunityTitle'] as $title) {
+
+            if ($title->opportunityTitle == 'Ethnicity')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list
+                );
+
+            if ($title->opportunityTitle == 'Disability')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list1
+                );
+
+            if ($title->opportunityTitle == 'Religion Belief')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list2
+                );
+            if ($title->opportunityTitle == 'Sexual Orientation')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list3
+                );
+
+
+            $id = $this->ApplyOnlinem->insertApplyNow6($data);
+
+            $applicationId=$this->session->userdata('studentApplicationId');
+            $data1 = array(
+                'fkEqualOpportunitySubGroupId' => $id,
+                'fkApplicationId' => $applicationId,
+
+            );
+            $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
 
 
         }
+
+        if (empty($this->data['error'])) {
+
+
+            $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+            redirect('ApplyForm6');
+
+
+        }
+
+        else {
+
+            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+            redirect('ApplyForm6');
+
+        }
+
+
+    }
+    public function updatefrom6()
+    {
+
+
+        $check_list = $this->input->post('check_list');
+        $check_list1 = $this->input->post('check_list1');
+        $check_list2 = $this->input->post('check_list2');
+        $check_list3 = $this->input->post('check_list3');
+
+        $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
+        foreach ($this->data['opportunityTitle'] as $title) {
+
+            if ($title->opportunityTitle == 'Ethnicity')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list
+                );
+
+            if ($title->opportunityTitle == 'Disability')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list1
+                );
+
+            if ($title->opportunityTitle == 'Religion Belief')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list2
+                );
+            if ($title->opportunityTitle == 'Sexual Orientation')
+
+                $data = array
+                (
+                    "fkGroupId" => $title->id,
+                    'subGroupTitle' => $check_list3
+                );
+
+
+            $id = $this->ApplyOnlinem->insertApplyNow6($data);
+
+            $applicationId=$this->session->userdata('studentApplicationId');
+            $data1 = array(
+                'fkEqualOpportunitySubGroupId' => $id,
+                'fkApplicationId' => $applicationId,
+
+            );
+            $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
+
+
+        }
+
+        if (empty($this->data['error'])) {
+
+
+            $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+            redirect('ApplyForm6');
+
+
+        }
+
+        else {
+
+            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+            redirect('ApplyForm6');
+
+        }
+
 
     }
 
