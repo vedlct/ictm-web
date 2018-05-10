@@ -228,19 +228,19 @@ class ApplyOnline extends CI_Controller
                 $courseStartDate = $this->input->post("courseStartDate");
                 $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
-                $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+               // $aplicationFormid=$this->session->userdata('id').date("YmdHis");
 
-                $data3=array(
-                    'studentOrAgentId'=>$this->session->userdata('id'),
-                    'studentApplicationFormId'=>$aplicationFormid
-                );
-                $studentApplicationId = $this->ApplyOnlinem->insertStudentApplicationForm($data3);
-                $dataSession = [
-                    'studentApplicationId' => $studentApplicationId,
-                ];
-                $this->session->set_userdata($dataSession);
+//                $data3=array(
+//                    'studentOrAgentId'=>$this->session->userdata('id'),
+//                    'studentApplicationFormId'=>$aplicationFormid
+//                );
+//                $studentApplicationId = $this->ApplyOnlinem->insertStudentApplicationForm($data3);
+//                $dataSession = [
+//                    'studentApplicationId' => $studentApplicationId,
+//                ];
+//                $this->session->set_userdata($dataSession);
                 $data=array(
-                    'applicationId'=>$studentApplicationId,
+                    //'applicationId'=>$this->session->userdata('studentApplicationId'),
                     'title'=>$candidateTitle,
                     'firstName'=>$candidateFirstName,
                     'surName'=>$candidateSurName,

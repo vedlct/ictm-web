@@ -25,7 +25,7 @@
             <div class="col-md-9">
                 <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="registration-form form-horizontal">
 
                     <!--                        		<fieldset>-->
                     <div class="form-top">
