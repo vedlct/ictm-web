@@ -417,4 +417,57 @@ class ApplyOnlinem extends CI_Model
         }
     }
 
+    public  function checkopportunityTitle()
+    {
+        $this->db->select('id,opportunityTitle');
+        $this->db->from('equalopportunitygroup');
+        $query=$this->db->get();
+        return $query->result();
+    }
+    public  function getOpportunitySubGroupId()
+    {
+        $this->db->select('equalopportunitysubgroup.id,equalopportunitysubgroup.fkGroupId,equalopportunitygroup.opportunityTitle');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->from('equalopportunitysubgroup');
+        $query=$this->db->get();
+        return $query->result();
+    }
+
+    public function getAllEqualOpportunity()
+
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $this->db->select('equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle');
+        $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('personequalopportunity.fkApplicationId=',$applicationId);
+        $this->db->from('personequalopportunity');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+
+    public function insertApplyNow6($data)
+    {
+        $this->security->xss_clean($data);
+        $this->db->insert('equalopportunitysubgroup', $data);
+        $insert_id = $this->db->insert_id();
+        return  $insert_id;
+
+    }
+
+    public function insertapplyNow6personal($data1)
+    {
+
+        $error=$this->db->insert('personequalopportunity', $data1);
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+    }
+
 }

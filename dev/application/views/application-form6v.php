@@ -33,9 +33,7 @@
             <div class="col-md-9">
 
 
-                <?php foreach($apllyfrom6 as $a6){ ?>
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/updatefrom6/<?php echo  $a6->id ?> " method="post" class="registration-form form-horizontal">
 
 
 
@@ -48,9 +46,13 @@
                             <p>Step 6 / 9</p>
                         </div>
                     </div>
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/updatefrom6" method="post" class="form-horizontal">
+
+
                     <div class="form-bottom">
                         <p>Equal opportunities monitoring: (please select from the dropdown lists)</p>
-<!--                   --><?php // if($a6->opportunityTitle=='Ethnicity')   { ?>
+                        <?php foreach($EqualOpportunity as $a6){ ?>
+                   <?php  if($a6->opportunityTitle=='Ethnicity')   { ?>
                         <div class="form-group">
                             <label class="control-label col-md-2">Ethnicity:</label>
                             <div class="col-md-10 table-responsive">
@@ -100,10 +102,9 @@
                             </div >
                         </div >
 
-<!--                        --><?php //} ?>
-
-                       <?php
-//                           if($a6->opportunityTitle=='Disability')   { ?>
+                        <?php }} ?>
+                        <?php foreach($EqualOpportunity as $a6){ ?>
+                       <?php if($a6->opportunityTitle=='Disability')   { ?>
                         <div class="form-group" >
                             <label class="control-label col-md-2" > Disability:</label >
                             <div class="col-md-10 table-responsive" >
@@ -139,10 +140,10 @@
                                 </table >
                             </div >
                         </div >
-<!--                        --><?php //} ?>
-
+                        <?php } }?>
+                        <?php foreach($EqualOpportunity as $a6){ ?>
                         <?php
-//                            if($a6->opportunityTitle=='Religion Belief')   { ?>
+                            if($a6->opportunityTitle=='Religion Belief')   { ?>
                         <div class="form-group" >
                             <label class="control-label col-md-2" > Religion Belief:</label >
                             <div class="col-md-10 table-responsive" >
@@ -179,9 +180,9 @@
                             </div >
                         </div >
 
-<!--                        --><?php //} ?>
-                        <?php
-//                            if($a6->opportunityTitle=='Sexual Orientation')   { ?>
+                        <?php }} ?>
+                        <?php foreach($EqualOpportunity as $a6){ ?>
+                        <?php if($a6->opportunityTitle=='Sexual Orientation')   { ?>
                         <div class="form-group" >
                             <label class="control-label col-md-2" > Sexual Orientation:</label >
                             <div class="col-md-10 table-responsive" >
@@ -201,7 +202,7 @@
                                 </table >
                             </div >
                         </div >
-<!--                  --><?php //} ?>
+                  <?php }} ?>
                         <div class="form-group" >
                             <div class="col-sm-offset-2 col-md-10" >
                                 <button type = "button" class="btn btn-previous" > Previous</button >
@@ -217,7 +218,7 @@
 
 
 
-                 <?php break; } ?>
+
             </div><!-- /col-md-9 -->
 
             <div class="col-md-3">
