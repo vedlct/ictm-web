@@ -229,6 +229,8 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
+
+
     public function insertQualificationsDetailsFromEdit($data)
     {
 
