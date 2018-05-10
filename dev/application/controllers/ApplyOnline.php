@@ -277,9 +277,17 @@ class ApplyOnline extends CI_Controller
         $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
 
         if (empty($this->data['Financer'])) {
+            $this->data['financeYes']=null;
             $this->load->view('application-form4', $this->data);
         } else {
-            $this->load->view('application-form4v', $this->data);
+            if ($this->data['Financer']=='y'){
+                $this->data['financeYes']='y';
+                $this->load->view('application-form4', $this->data);
+            }else{
+                $this->data['financeYes']='n';
+                $this->load->view('application-form4v', $this->data);
+            }
+
         }
 
     }
@@ -305,7 +313,7 @@ class ApplyOnline extends CI_Controller
 
                 $this->data['error'] = $this->ApplyOnlinem->insertnewfrom4();
 
-            $applicationId=$this->session->userdata('studentApplicationId');
+
 
 
                     if (empty($this->data['error'])) {
@@ -326,6 +334,223 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+
+    public function updateInfoApply4()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            //$userId = $this->session->userdata('fkCandidateId');
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom4')) {
+//                $this->menu();
+//                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4($id);
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//                $this->load->view('application-form4v', $this->data);
+//
+//            }
+//
+//            else {
+
+
+            $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
+
+
+
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm4');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm4');
+
+                }
+
+            }
+//        }
+    }
+    public function editORInsertApplicationForm4AndNext()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            //$userId = $this->session->userdata('fkCandidateId');
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom4')) {
+//                $this->menu();
+//                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4($id);
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//                $this->load->view('application-form4v', $this->data);
+//
+//            }
+//
+//            else {
+
+
+            $applicationId=$this->session->userdata('studentApplicationId');
+
+            $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
+
+            if (empty($this->data['Financer'])) {
+
+                $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+
+            } else {
+                if ($this->data['Financer']=='y'){
+                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+                }else{
+
+                    $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
+                }
+
+            }
+
+
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm5');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm5');
+
+                }
+
+            }
+//        }
+    }
+
+    public function applyNow5() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+            $applicationId=$this->session->userdata('studentApplicationId');
+
+            $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
+
+          //  print_r($this->data['PersonalStatementData']);
+            $this->load->view('application-form5v', $this->data);
+
+
+
+
+
+
+        }
+
+    }
+
+    public function updateAapplyNow5()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            //$userId = $this->session->userdata('fkCandidateId');
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom5')) {
+//                $this->menu();
+//                $this->data['apllyfrom5'] = $this->OnlineFormsm->getAllapplynow4($id);
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//                $this->load->view('application-form5v', $this->data);
+//
+//            } else {
+
+
+                $this->data['error'] = $this->ApplyOnlinem->updatApplynow5();
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm5');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm5');
+
+                }
+
+            }
+
+//        }
+    }
+    public function editApplicationForm5AndNext()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            //$userId = $this->session->userdata('fkCandidateId');
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom5')) {
+//                $this->menu();
+//                $this->data['apllyfrom5'] = $this->OnlineFormsm->getAllapplynow4($id);
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//                $this->load->view('application-form5v', $this->data);
+//
+//            } else {
+
+
+                $this->data['error'] = $this->ApplyOnlinem->updatApplynow5();
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm6');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm6');
+
+                }
+
+            }
+
+//        }
+    }
+
+    public function applyNow6() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
+            $this->load->view('application-form6', $this->data);
+//            $this->data['apllyfrom6'] = $this->OnlineFormsm->getAllapplynow6($id);
+//
+//            if (empty($this->data['apllyfrom6'])) {
+//
+//                $this->load->view('application-form6', $this->data);
+//            } else {
+//
+//                $this->load->view('application-form6v', $this->data);
+//            }
+
+
+
+        }
+
+    }
+
     public function menu() // get all the menu + footer
     {
         $this->data['affiliation'] = $this->Menum->getAffiliations();
