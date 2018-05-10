@@ -135,24 +135,6 @@ public function getAllapplynow6($id)
 }
 
 
-
-
-    public function updatApplynow4($id, $data)
-    {
-
-        $error=$this->db->where('id',$id)->update('financer',$data);
-
-        if (empty($error))
-        {
-            return $this->db->error();
-        }
-        else {
-
-            return $error = null;
-        }
-    }
-
-
     public function insertnewfrom4($data)
     {
         $this->security->xss_clean($data);

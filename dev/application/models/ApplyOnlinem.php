@@ -64,7 +64,7 @@ class ApplyOnlinem extends CI_Model
                 return $finance;
             } elseif ($finance == 'n') {
 
-                $this->db->select('id,name,title,relation,address,addressPo', 'mobile', 'telephone', 'email', 'fax');
+                $this->db->select('id,name,title,relation,address,addressPo,mobile,telephone,email,fax');
                 $this->db->where('fkApplicationId', $applicationId);
                 $this->db->from('financer');
                 $query = $this->db->get();
@@ -76,11 +76,151 @@ class ApplyOnlinem extends CI_Model
             return null;
         }
 
-
-
-
-
     }
+
+    public function updatApplynow4()
+    {
+
+        $selfFinance=$this->input->post('selfFinance');
+
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        if ($selfFinance =='y'){
+
+            $data1 = array(
+                'selfFinance' => 'y',
+
+            );
+
+            $this->db->where('fkApplicationId',$applicationId);
+            $this->db->delete('financer');
+
+            $this->db->where('applicationId',$applicationId);
+            $error = $this->db->update('candidateinfo', $data1);
+
+
+
+        }else{
+
+            $title = $this->input->post('title');
+            $name = $this->input->post('name');
+            $relation = $this->input->post('relation');
+            $address = $this->input->post('address');
+            $mobilee = $this->input->post('mobile');
+            $telephone = $this->input->post('telephone');
+            $email = $this->input->post('email');
+            $fax = $this->input->post('fax');
+            $AddressPO = $this->input->post('AddressPO');
+
+            $data1 = array(
+                'selfFinance' => 'n',
+
+            );
+
+            $data = array(
+
+                'title' => $title,
+                'name' => $name,
+                'relation' => $relation,
+                'address' => $address,
+                'mobile' => $mobilee,
+                'telephone' => $telephone,
+                'email' => $email,
+                'fax' => $fax,
+                'addressPo'=>$AddressPO,
+                'fkApplicationId'=>$applicationId
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $this->db->update('candidateinfo', $data1);
+
+            $this->db->where('fkApplicationId',$applicationId);
+            $error = $this->db->update('financer',$data);
+
+
+        }
+
+
+
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+    public function editORInsertApplicationForm4()
+    {
+
+        $selfFinance=$this->input->post('selfFinance');
+
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        if ($selfFinance =='y'){
+
+            $data1 = array(
+                'selfFinance' => 'y',
+
+            );
+
+
+            $this->db->where('applicationId',$applicationId);
+            $error = $this->db->update('candidateinfo', $data1);
+
+
+
+        }else{
+
+            $title = $this->input->post('title');
+            $name = $this->input->post('name');
+            $relation = $this->input->post('relation');
+            $address = $this->input->post('address');
+            $mobilee = $this->input->post('mobile');
+            $telephone = $this->input->post('telephone');
+            $email = $this->input->post('email');
+            $fax = $this->input->post('fax');
+            $AddressPO = $this->input->post('AddressPO');
+
+            $data1 = array(
+                'selfFinance' => 'n',
+
+            );
+
+            $data = array(
+
+                'title' => $title,
+                'name' => $name,
+                'relation' => $relation,
+                'address' => $address,
+                'mobile' => $mobilee,
+                'telephone' => $telephone,
+                'email' => $email,
+                'fax' => $fax,
+                'addressPo'=>$AddressPO,
+                'fkApplicationId'=>$applicationId
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $this->db->update('candidateinfo', $data1);
+
+
+            $error = $this->db->insert('financer',$data);
+
+
+        }
+
+
+
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
     public function getQualificationsDetails($qualificationId)
     {
 
@@ -240,6 +380,41 @@ class ApplyOnlinem extends CI_Model
         if (empty($error)) {
             return $this->db->error();
         } else {
+            return $error = null;
+        }
+    }
+
+    public function getPersonalStatementData($applicationId){
+
+        $this->db->select('courseChoiceStatement,collegeChoiceStatement');
+        $this->db->where('applicationId',$applicationId);
+        $this->db->from('candidateinfo');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+
+    public function updatApplynow5()
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $courseChoiceStatement = $this->input->post('courseChoiceStatement');
+        $collegeChoiceStatement = $this->input->post('collegeChoiceStatement');
+
+        $data = array(
+            'courseChoiceStatement' => $courseChoiceStatement,
+            'collegeChoiceStatement' => $collegeChoiceStatement
+
+        );
+
+        $error=$this->db->where('applicationId',$applicationId)->update('candidateinfo',$data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
             return $error = null;
         }
     }

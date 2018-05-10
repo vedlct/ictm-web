@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/insertapplyNow5" method="post" class="registration-form form-horizontal">
+
 
 
                     <div class="form-top">
@@ -36,11 +36,12 @@
                             <p>Step 5 / 9</p>
                         </div>
                     </div>
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" onsubmit="return formvalidate()" class="form-horizontal">
                     <div class="form-bottom">
                         <div class="form-group">
                             <label class="control-label col-md-2">Why do you wish to do this course?:</label>
                             <div class="col-md-10">
-                                <textarea id="courseChoiceStatement" name="courseChoiceStatement" rows="8" tabindex="4"  > </textarea>
+                                <textarea id="courseChoiceStatement" name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
                             </div>
                         </div>
 
@@ -106,8 +107,7 @@
 
 
         var courseChoiceStatement =  document.getElementById("courseChoiceStatement").value;
-        var collegeChoiceStatement  document.getElementById("collegeChoiceStatement").value;
-
+        var collegeChoiceStatement=  document.getElementById("collegeChoiceStatement").value;
 
 
         if ( courseChoiceStatement==""){

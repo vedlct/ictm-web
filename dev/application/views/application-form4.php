@@ -50,8 +50,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Self Finance:</label>
                                 <div class="col-md-10">
-                                    <input type="radio"  required name="selfFinance" value="y"> Yes&nbsp;&nbsp;
-                                    <input type="radio" required name="selfFinance" value="n"> No&nbsp;&nbsp;
+                                    <input type="radio" <?php if (!empty($financeYes) && $financeYes=='y'){?> checked <?php }?> required name="selfFinance" value="y"> Yes&nbsp;&nbsp;
+                                    <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='n'){?> checked <?php }?> required name="selfFinance" value="n"> No&nbsp;&nbsp;
                                 </div>
                             </div>
 
@@ -61,7 +61,7 @@
 
 
                                 <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
-<!--                         --><?php //   $userId=$this->session->userdata('id'); ?>
+
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title*:</label>
@@ -148,9 +148,11 @@
                             </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-md-10">
-<!--                                        <button type="button" class="btn btn-previous">Previous</button>-->
-<!--                                        <button type="button" href="--><?php //echo base_url()?><!--OnlineForms/applyNow5" class="btn ">Next</button>-->
+                                        <button type="button" class="btn btn-previous">Previous</button>
+
                                         <button type="submit" class="btn btn-next">Save Application</button>
+                                        <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
+                                        <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn ">Next</button></a>
                                     </div>
                                 </div>
 
@@ -214,7 +216,7 @@
 
     function formvalidate() {
 
-        var finance=$("input[name=selfFinance]").val();
+        var finance=$('input[name=selfFinance]:checked').val();
         if (finance == 'n') {
 
 

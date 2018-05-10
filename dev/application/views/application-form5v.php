@@ -30,11 +30,6 @@
 
         <div class="row">
             <div class="col-md-9">
-                <?php foreach ($apllyfrom5 as $f5) { ?>
-
-
-
-                    <form role="form" action="<?php echo base_url()?>OnlineForms/updateInfoApply5/<?php echo $f5->id ?>" method="post" class="registration-form form-horizontal" onsubmit="return formvalidate()">
 
 
 
@@ -47,7 +42,11 @@
                                 <p>Step 5 / 9</p>
                             </div>
                         </div>
-                        <div class="form-bottom">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="registration-form form-horizontal">
+
+                <?php foreach ($PersonalStatementData as $f5) { ?>
+
+                    <div class="form-bottom">
                             <div class="form-group">
                                 <label class="control-label col-md-2">Why do you wish to do this course?:</label>
                                 <div class="col-md-10">
@@ -65,15 +64,17 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
                         </div>
+                <?php    } ?>
 
                     </form>
 
-                    <?php    } ?>
+
 
 
 
@@ -115,7 +116,7 @@
 
 
         var courseChoiceStatement =  document.getElementById("courseChoiceStatement").value;
-        var collegeChoiceStatement  document.getElementById("collegeChoiceStatement").value;
+        var collegeChoiceStatement = document.getElementById("collegeChoiceStatement").value;
 
 
 

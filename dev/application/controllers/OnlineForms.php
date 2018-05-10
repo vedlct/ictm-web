@@ -227,64 +227,7 @@ class OnlineForms extends CI_Controller
     }
 
 
-    public function updateInfoApply4($id)
-    {
 
-        if ($this->session->userdata('loggedin') == "true") {
-
-
-            //$userId = $this->session->userdata('fkCandidateId');
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('applyfrom4')) {
-                $this->menu();
-                $this->data['apllyfrom4'] = $this->OnlineFormsm->getAllapplynow4($id);
-                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-                $this->load->view('application-form4v', $this->data);
-
-            }
-
-            else {
-
-                $title = $this->input->post('title');
-                $name = $this->input->post('name');
-                $relation = $this->input->post('relation');
-                $address = $this->input->post('address');
-                $mobilee = $this->input->post('mobile');
-                $telephone = $this->input->post('telephone');
-                $email = $this->input->post('email');
-                $fax = $this->input->post('fax');
-
-                $data = array(
-                    'fkCandidateId' => 1,
-                    'title' => $title,
-                    'name' => $name,
-                    'relation' => $relation,
-                    'address' => $address,
-                    'mobile' => $mobilee,
-                    'telephone' => $telephone,
-                    'email' => $email,
-                    'fax' => $fax
-
-                );
-
-                $this->data['error'] = $this->OnlineFormsm->updatApplynow4($id, $data);
-                if (empty($this->data['error'])) {
-
-
-                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                    redirect("OnlineForms/applyNow5".$id);
-
-
-                } else {
-
-                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect("OnlineForms/applyNow4");
-
-                }
-
-            }
-        }
-    }
 
 
 
@@ -339,74 +282,11 @@ class OnlineForms extends CI_Controller
 //
 //    }
 
-    public function updateInfoApply5($id)
-    {
-
-        if ($this->session->userdata('loggedin') == "true") {
-
-
-            //$userId = $this->session->userdata('fkCandidateId');
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('applyfrom5')) {
-                $this->menu();
-                $this->data['apllyfrom5'] = $this->OnlineFormsm->getAllapplynow4($id);
-                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-                $this->load->view('application-form5v', $this->data);
-
-            } else {
-
-                $courseChoiceStatement = $this->input->post('courseChoiceStatement');
-                $collegeChoiceStatement = $this->input->post('collegeChoiceStatement');
-
-                $data = array(
-                    'courseChoiceStatement' => $courseChoiceStatement,
-                    'collegeChoiceStatement' => $collegeChoiceStatement
-
-                );
-
-                $this->data['error'] = $this->OnlineFormsm->updatApplynow5($id, $data);
-                if (empty($this->data['error'])) {
-
-
-                    $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                    redirect("OnlineForms/applyNow6/" . $id);
-
-
-                } else {
-
-                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect("OnlineForms/applyNow5" .$id);
-
-                }
-
-            }
-
-        }
-    }
 
 
 
-    public function applyNow6($id) // go to the apply page of selected course
-    {
-        if ($this->session->userdata('loggedin') == "true") {
-            $this->menu();
-            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-            //$this->data['candiddata']=$this->OnlineFormsm->getCandidateinfo();
-            $this->data['apllyfrom6'] = $this->OnlineFormsm->getAllapplynow6($id);
-
-            if (empty($this->data['apllyfrom6'])) {
-
-                $this->load->view('application-form6', $this->data);
-            } else {
-
-                $this->load->view('application-form6v', $this->data);
-            }
 
 
-
-        }
-
-    }
 
     public function insertapplyNow6()
     {
