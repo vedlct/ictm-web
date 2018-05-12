@@ -646,7 +646,7 @@ class ApplyOnline extends CI_Controller
             $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
             $this->data['opportunitySubGroupId']= $this->ApplyOnlinem->getOpportunitySubGroupId();
 
-          //  print_r($this->data['opportunitySubGroupId']);
+          //  print_r($this->data['EqualOpportunity']);
 
 
             if (empty($this->data['EqualOpportunity'])) {
@@ -669,49 +669,44 @@ class ApplyOnline extends CI_Controller
         $check_list2 = $this->input->post('check_list2');
         $check_list3 = $this->input->post('check_list3');
 
+
         $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
+        $applicationId=$this->session->userdata('studentApplicationId');
         foreach ($this->data['opportunityTitle'] as $title) {
 
             if ($title->opportunityTitle == 'Ethnicity')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list,
+                    'fkApplicationId' => $applicationId,
+
                 );
 
             if ($title->opportunityTitle == 'Disability')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list1
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list1,
+                    'fkApplicationId' => $applicationId,
+
                 );
 
             if ($title->opportunityTitle == 'Religion Belief')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list2
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list2,
+                    'fkApplicationId' => $applicationId,
+
                 );
+
             if ($title->opportunityTitle == 'Sexual Orientation')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list3
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list3,
+                    'fkApplicationId' => $applicationId,
+
                 );
 
 
-            $id = $this->ApplyOnlinem->insertApplyNow6($data);
-
-            $applicationId=$this->session->userdata('studentApplicationId');
-            $data1 = array(
-                'fkEqualOpportunitySubGroupId' => $id,
-                'fkApplicationId' => $applicationId,
-
-            );
             $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
 
 
@@ -745,49 +740,41 @@ class ApplyOnline extends CI_Controller
         $check_list3 = $this->input->post('check_list3');
 
         $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
+        $applicationId=$this->session->userdata('studentApplicationId');
         foreach ($this->data['opportunityTitle'] as $title) {
 
             if ($title->opportunityTitle == 'Ethnicity')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list,
+                    'fkApplicationId' => $applicationId,
+
                 );
 
             if ($title->opportunityTitle == 'Disability')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list1
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list1,
+                    'fkApplicationId' => $applicationId,
+
                 );
 
             if ($title->opportunityTitle == 'Religion Belief')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list2
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list2,
+                    'fkApplicationId' => $applicationId,
+
                 );
             if ($title->opportunityTitle == 'Sexual Orientation')
 
-                $data = array
-                (
-                    "fkGroupId" => $title->id,
-                    'subGroupTitle' => $check_list3
+                $data1 = array(
+                    'fkEqualOpportunitySubGroupId' => $check_list3,
+                    'fkApplicationId' => $applicationId,
+
                 );
 
-
-            $id = $this->ApplyOnlinem->insertApplyNow6($data);
-
-            $applicationId=$this->session->userdata('studentApplicationId');
-            $data1 = array(
-                'fkEqualOpportunitySubGroupId' => $id,
-                'fkApplicationId' => $applicationId,
-
-            );
-            $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
+            $this->data['error'] = $this->ApplyOnlinem->updateApplyNow6personal($data1);
 
 
         }
@@ -819,8 +806,6 @@ class ApplyOnline extends CI_Controller
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
             $this->load->view('application-form7', $this->data);
-
-
 
             //  print_r($this->data['opportunitySubGroupId']);
 
