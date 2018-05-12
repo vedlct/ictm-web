@@ -643,6 +643,7 @@ class ApplyOnline extends CI_Controller
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
             $this->data['EqualOpportunity'] = $this->ApplyOnlinem->getAllEqualOpportunity();
+            $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
             $this->data['opportunitySubGroupId']= $this->ApplyOnlinem->getOpportunitySubGroupId();
 
           //  print_r($this->data['opportunitySubGroupId']);

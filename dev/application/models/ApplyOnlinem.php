@@ -452,8 +452,8 @@ class ApplyOnlinem extends CI_Model
     }
     public  function getOpportunitySubGroupId()
     {
-        $this->db->select('equalopportunitysubgroup.id,equalopportunitysubgroup.fkGroupId,equalopportunitygroup.opportunityTitle');
-        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->select('id,fkGroupId,subGroupTitle');
+        //$this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
         $this->db->from('equalopportunitysubgroup');
         $query=$this->db->get();
         return $query->result();
