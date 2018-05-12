@@ -33,9 +33,6 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                 <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow3" method="post" class="registration-form form-horizontal">
 
-
-
-
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>English Language Proficiency</h3>
@@ -56,6 +53,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                             <p>If English is not your first language, please state your qualifications.</p>
 
+                            <div id='TextBoxesGroup'>
+                                <div id="TextBoxDiv1" >
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
@@ -109,11 +108,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <input type="date" class="form-control" id="" name="">
                                 </div>
                             </div>
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button id='addButton' type="button" class="btn">Add New Proficiency</button>
-                                    <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
+                                    <button class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
 
@@ -159,118 +160,70 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 
+<script>
+
+</script>
 
 <script>
+
     $(document).ready(function(){
         var counter = 2;
         $("#addButton").click(function () {
             if(counter>10){
                 alert("Only 10 textboxes allow");
                 return false;
-//            }if (counter == 2){
-//                var Qualification=$('#qualification').val();
-//                var institution=$('#institution').val();
-//                var startdate=$('#startdate').val();
-//                var enddate=$('#enddate').val();
-//                var grade=$('#grade').val();
-//
-//                if (Qualification == ""){
-//                    alert('Please add a Qualification');
-//                    return false;
-//                }if (Qualification.length > 100){
-//                    alert('Qualification must be less then 100 charecter');
-//                    return false;
-//                }if (institution == ""){
-//                    alert('Please add a institution');
-//                    return false;
-//                }if (institution.length >100){
-//                    alert('Institution must be less then 100 charecter');
-//                    return false;
-//                }if (startdate == ""){
-//                    alert('Please add a startdate');
-//                    return false;
-//                }if (enddate == ""){
-//                    alert('Please add a enddate');
-//                    return false;
-//                }if (grade == ""){
-//                    alert('Please add a grade');
-//                    return false;
-//                }if (grade.length > 20){
-//                    alert('grade must be less then 20 charecter');
-//                    return false;
-//                }if (enddate < startdate){
-//                    alert('Please Select StartDate and EndDate Correctly');
-//                    return false;
-//                }
-//            }else{
-//
-//                var Qualification=$('#qualification'+(counter-1)).val();
-//                var institution=$('#institution'+(counter-1)).val();
-//                var startdate=$('#startdate'+(counter-1)).val();
-//                var enddate=$('#enddate'+(counter-1)).val();
-//                var grade=$('#grade'+(counter-1)).val();
-//
-//
-//                if (Qualification == ""){
-//                    alert('Please add a Qualification');
-//                    return false;
-//                }if (Qualification.length > 100){
-//                    alert('Qualification must be less then 100 charecter');
-//                    return false;
-//                }if (institution == ""){
-//                    alert('Please add a institution');
-//                    return false;
-//                }if (institution.length >100){
-//                    alert('Institution must be less then 100 charecter');
-//                    return false;
-//                }if (startdate == ""){
-//                    alert('Please add a startdate');
-//                    return false;
-//                }if (enddate == ""){
-//                    alert('Please add a enddate');
-//                    return false;
-//                }if (grade == ""){
-//                    alert('Please add a grade');
-//                    return false;
-//                }if (grade.length > 20){
-//                    alert('grade must be less then 20 charecter');
-//                    return false;
-//                }if (enddate < startdate){
-//                    alert('Please Select StartDate and EndDate Correctly');
-//                    return false;
-//                }
-//            }
-
+            }
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html( '<div class="form-group">'+
-                '<label class="control-label col-md-2">Qualification'+counter+':</label>'+
+                '<label class="control-label col-md-2">Tests'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="qualification'+counter+'" name="qualification[]">'+
+                '<select style="width: 100%" name="">'+
+                '<option value="" disabled selected>Select test...</option>'+
+                '<option value="">IELTS</option>'+
+                '<option value="">TOEFL</option>'+
+                '<option value="">PTE</option>'+
+                '</select>'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Institution'+counter+':</label>'+
+                '<label class="control-label col-md-2">Listening'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="institution'+counter+'" name="institution[]">'+
+                '<input type="text" class="form-control" id="" name="">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
+                '<label class="control-label col-md-2">Reading'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="startdate'+counter+'" name="startdate[]">'+
+                '<input type="text" class="form-control" id="" name="">'+
                 '</div>'+
                 '</div>'+
+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">End Date'+counter+':</label>'+
+                '<label class="control-label col-md-2">Writing'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="enddate'+counter+'" name="enddate[]">'+
+                '<input type="text" class="form-control" id="" name="">'+
                 '</div>'+
                 '</div>'+
+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Grade'+counter+':</label>'+
+                '<label class="control-label col-md-2">Speaking'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="grade'+counter+'" name="grade[]">'+
+                '<input type="text" class="form-control" id="" name="">'+
+                '</div>'+
+                '</div>'+
+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Overall'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="" name="">'+
+                '</div>'+
+                '</div>'+
+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Expiry Date'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="date" class="form-control" id="" name="">'+
                 '</div>'+
                 '</div>'
             );
