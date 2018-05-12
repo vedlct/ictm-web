@@ -166,7 +166,7 @@ class ApplyOnline extends CI_Controller
         $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
         $applicationId=$this->session->userdata('studentApplicationId');
-        $this->load->view('application-form3', $this->data);
+
         $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
 
         $this->load->view('application-form3', $this->data);
@@ -191,6 +191,7 @@ class ApplyOnline extends CI_Controller
                 $this->menu();
                 $this->data['coursedata']=$this->Coursem->getCourseTitle();
                 $this->data['courseInfo']=$this->Coursem->getCourseInfo();
+                $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($this->session->userdata('studentApplicationId'));
                 $this->load->view('application-formv', $this->data);
             }
             else {
@@ -662,8 +663,7 @@ class ApplyOnline extends CI_Controller
     public function insertapplyNow6()
     {
 
-
-        $check_list = $this->input->post('check_list');
+        $check_list =  $this->input->post('check_list');
         $check_list1 = $this->input->post('check_list1');
         $check_list2 = $this->input->post('check_list2');
         $check_list3 = $this->input->post('check_list3');

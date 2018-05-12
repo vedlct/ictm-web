@@ -42,7 +42,7 @@
                             <label class="control-label col-md-2">Title:<span class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                <select style="width: 100%" name="">
+                                <select style="width: 100%" name="title">
                                     <?php for ($i=0;$i<count(Title);$i++){?>
 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
                                         <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->title) && $candidateInfo->title == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>

@@ -112,7 +112,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Add New</button>
+                                    <button id='addButton' type="button" class="btn">Add New Proficiency</button>
+                                    <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
 
@@ -132,17 +133,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
                         </div>
 
-
                 </form>
-
-
-
-
-
-
-
-
-
 
             </div><!-- /col-md-9 -->
 
@@ -153,8 +144,6 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <h2 class="widget-title">COURSES LIST</h2>
                         <?php include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
-
-
 
                 </div><!-- sidebar -->
             </div><!-- /col-md-3 -->
@@ -170,4 +159,138 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 
+
+<script>
+    $(document).ready(function(){
+        var counter = 2;
+        $("#addButton").click(function () {
+            if(counter>10){
+                alert("Only 10 textboxes allow");
+                return false;
+//            }if (counter == 2){
+//                var Qualification=$('#qualification').val();
+//                var institution=$('#institution').val();
+//                var startdate=$('#startdate').val();
+//                var enddate=$('#enddate').val();
+//                var grade=$('#grade').val();
+//
+//                if (Qualification == ""){
+//                    alert('Please add a Qualification');
+//                    return false;
+//                }if (Qualification.length > 100){
+//                    alert('Qualification must be less then 100 charecter');
+//                    return false;
+//                }if (institution == ""){
+//                    alert('Please add a institution');
+//                    return false;
+//                }if (institution.length >100){
+//                    alert('Institution must be less then 100 charecter');
+//                    return false;
+//                }if (startdate == ""){
+//                    alert('Please add a startdate');
+//                    return false;
+//                }if (enddate == ""){
+//                    alert('Please add a enddate');
+//                    return false;
+//                }if (grade == ""){
+//                    alert('Please add a grade');
+//                    return false;
+//                }if (grade.length > 20){
+//                    alert('grade must be less then 20 charecter');
+//                    return false;
+//                }if (enddate < startdate){
+//                    alert('Please Select StartDate and EndDate Correctly');
+//                    return false;
+//                }
+//            }else{
+//
+//                var Qualification=$('#qualification'+(counter-1)).val();
+//                var institution=$('#institution'+(counter-1)).val();
+//                var startdate=$('#startdate'+(counter-1)).val();
+//                var enddate=$('#enddate'+(counter-1)).val();
+//                var grade=$('#grade'+(counter-1)).val();
+//
+//
+//                if (Qualification == ""){
+//                    alert('Please add a Qualification');
+//                    return false;
+//                }if (Qualification.length > 100){
+//                    alert('Qualification must be less then 100 charecter');
+//                    return false;
+//                }if (institution == ""){
+//                    alert('Please add a institution');
+//                    return false;
+//                }if (institution.length >100){
+//                    alert('Institution must be less then 100 charecter');
+//                    return false;
+//                }if (startdate == ""){
+//                    alert('Please add a startdate');
+//                    return false;
+//                }if (enddate == ""){
+//                    alert('Please add a enddate');
+//                    return false;
+//                }if (grade == ""){
+//                    alert('Please add a grade');
+//                    return false;
+//                }if (grade.length > 20){
+//                    alert('grade must be less then 20 charecter');
+//                    return false;
+//                }if (enddate < startdate){
+//                    alert('Please Select StartDate and EndDate Correctly');
+//                    return false;
+//                }
+//            }
+
+            var newTextBoxDiv = $(document.createElement('div'))
+                .attr("id", 'TextBoxDiv' + counter);
+            newTextBoxDiv.after().html( '<div class="form-group">'+
+                '<label class="control-label col-md-2">Qualification'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="qualification'+counter+'" name="qualification[]">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Institution'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="institution'+counter+'" name="institution[]">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="date" class="form-control" id="startdate'+counter+'" name="startdate[]">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">End Date'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="date" class="form-control" id="enddate'+counter+'" name="enddate[]">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Grade'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="grade'+counter+'" name="grade[]">'+
+                '</div>'+
+                '</div>'
+            );
+
+            newTextBoxDiv.appendTo("#TextBoxesGroup");
+            counter++;
+        });
+        $("#removeButton").click(function () {
+            if(counter==2){
+                alert(" There Should be atleast one Qualification");
+                document.getElementById('Item_price').style.display = "block";
+//                    document.getElementById('Item_Status').style.display = "block";
+                document.getElementById('add_remove_button').style.display = "none";
+                document.getElementById('showattr').style.display = "none";
+                return false;
+            }
+            counter--;
+            $("#TextBoxDiv" + counter).remove();
+        });
+    });
+
+</script>
 </html>

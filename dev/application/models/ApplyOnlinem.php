@@ -16,6 +16,7 @@ class ApplyOnlinem extends CI_Model
 
     public function insertApplyForm1($data,$data1)
     {
+
         $data=$this->security->xss_clean($data);
         $error=$this->db->insert('candidateinfo', $data);
 
@@ -38,24 +39,23 @@ class ApplyOnlinem extends CI_Model
 
         }
 
-
     }
 
     public function editApplyform1($data,$data1){
-        $data=$this->security->xss_clean($data);
-        $error=$this->db->insert('candidateinfo', $data);
 
+        $id = $this->session->userdata('studentApplicationId');
+
+        $data=$this->security->xss_clean($data);
+        $this->db->where('applicationId', $id);
+        $error=$this->db->update('candidateinfo', $data);
         if (empty($error)) {
             return $this->db->error();
         } else {
 
-            $data2 = array(
-                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
-            );
-            $newdata1 = array_merge($data1, $data2);
-            $newdata1 = $this->security->xss_clean($newdata1);
-            $error=$this->db->insert('coursedetails', $newdata1);
+            $data1 = $this->security->xss_clean($data1);
 
+            $this->db->where('fkApplicationId', $id);
+            $error=$this->db->update('coursedetails', $data1);
             if (empty($error)) {
                 return $this->db->error();
             } else {
