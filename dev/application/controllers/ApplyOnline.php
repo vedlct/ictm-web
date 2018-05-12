@@ -810,6 +810,32 @@ class ApplyOnline extends CI_Controller
 
     }
 
+    public function applyNow7() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+            $this->load->view('application-form7', $this->data);
+
+
+
+            //  print_r($this->data['opportunitySubGroupId']);
+
+
+//            if (empty($this->data['EqualOpportunity'])) {
+//
+//                $this->load->view('application-form6', $this->data);
+//            } else {
+//
+//                $this->load->view('application-form6v', $this->data);
+//            }
+
+        }
+
+    }
+
     public function menu() // get all the menu + footer
     {
         $this->data['affiliation'] = $this->Menum->getAffiliations();
