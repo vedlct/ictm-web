@@ -31,8 +31,6 @@
 
         <div class="row">
             <div class="col-md-9">
-
-
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Equal Opportunity</h3>
@@ -45,162 +43,130 @@
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow6" method="post" class="registration-form form-horizontal">
                 <div class="form-bottom">
                             <p>Equal opportunities monitoring: (please select from the dropdown lists)</p>
-                    <?php foreach($opportunitySubGroupId as $a6){ ?>
+                    <?php foreach($opportunityTitle as $a6){
+                       // echo $a6->opportunityTitle;
+                        ?>
                     <?php  if($a6->opportunityTitle=='Ethnicity') { ?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Ethnicity:</label>
                                 <div class="col-md-10 table-responsive">
                                     <table class="table ">
-                                        <tr>
 
-                                                <td ><input type = "radio" name = "check_list" value = "white" > White</td >
-                                            <td ><input type = "radio" name = "check_list" value = "White - Scottish" > White - Scottish</td >
+                        <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
+                            <?php if ($osg->fkGroupId == $a6->id) { ?>
 
-                                        </tr >
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Other White background" > Other White background </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Gypsy or Traveller" > Gypsy or Traveller </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Black or Black British - Caribbean" > Black or Black British - Caribbean </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Black or Black British - African" > Black or Black British - African </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Other Black background" > Other Black background </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Indian" > Asian or Asian British - Indian </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Pakistani" > Asian or Asian British - Pakistani </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Bangladeshi" > Asian or Asian British - Bangladeshi </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Chinese" > Chinese</td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Other Asian background" > Other Asian background </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = " Mixed - White and Black Caribbean" > Mixed - White and Black Caribbean </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "ixed - White and Black African" > Mixed - White and Black African </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Mixed - White and Asian" > Mixed - White and Asian </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Other mixed background" > Other mixed background </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Arab" > Arab</td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Not known" > Not known </td >-->
-<!--                                        </tr >-->
-<!--                                        <tr >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = " Prefer not to say" > Prefer not to say </td >-->
-<!--                                            <td ><input type = "radio" name = "check_list" value = "Other" > Other</td >-->
-<!--                                        </tr >-->
+                                <?php if ($count % 2 ==0) { ?>
+
+                                    <tr>
+                                    <?php } ?>
+                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+<!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
+                                    <?php if ($count % 2 !=0) { ?>
+                                    </tr>
+                                    <?php } ?>
+
+                                    <?php }
+                            $count++ ?>
+                            <?php }  ?>
+
                                     </table >
                                 </div >
                             </div >
-                    <?php } break; } ?>
+                    <?php }  } ?>
 
-                    <?php foreach($opportunitySubGroupId as $a6){ ?>
-                    <?php if($a6->opportunityTitle=='Disability'){ ?>
 
-                            <div class="form-group" >
-                                <label class="control-label col-md-2" > Disability:</label >
-                                <div class="col-md-10 table-responsive" >
-                                    <table class="table" >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "No known disability" > No known disability </td >
-                                            <td ><input type = "radio" name = "check_list1" value = "Personal care support" > Personal care support </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "Special Learning Difficulty" > Special Learning Difficulty </td >
-                                            <td ><input type = "radio" name = "check_list1" value = "Mental health difficulties" > Mental health difficulties </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "Autistic Spectrum Disorder" > Autistic Spectrum Disorder </td >
-                                            <td ><input type = "radio" name = "check_list1" value = "Unseen disability e.g. diabetes" > Unseen disability e . g . diabetes </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "Blind/partially sighted" > Blind / partially sighted </td >
-                                            <td ><input type = "radio" name = "check_list1" value = "Multiple disabilities" > Multiple disabilities </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "Deaf/hearing impairment" > Deaf / hearing impairment </td >
-                                            <td ><input type = "radio" name = "check_list1" value = "Other" > Other</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "Dyslexia" > Dyslexia</td >
-                                            <td ><input type = "radio" name = "check_list1" value = "Prefer not to say" > Prefer not to say </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list1" value = "Wheelchair user/mobility difficulties" > Wheelchair user / mobility difficulties </td >
-                                            <td ></td >
-                                        </tr >
+                    <?php foreach($opportunityTitle as $a6){
+                        // echo $a6->opportunityTitle;
+                        ?>
+                        <?php  if($a6->opportunityTitle=='Disability') { ?>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Disability:</label>
+                                <div class="col-md-10 table-responsive">
+                                    <table class="table ">
+
+                                        <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
+                                            <?php if ($osg->fkGroupId == $a6->id) { ?>
+
+                                                <?php if ($count % 2 ==0) { ?>
+
+                                                    <tr>
+                                                <?php } ?>
+                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
+                                                <?php if ($count % 2 !=0) { ?>
+                                                    </tr>
+                                                <?php } ?>
+
+                                            <?php }
+                                            $count++ ?>
+                                        <?php }  ?>
+
                                     </table >
                                 </div >
                             </div >
+                        <?php }  } ?>
 
-                        <?php } break; }?>
-                    <?php foreach($opportunitySubGroupId as $a6){ ?>
-                    <?php
-                    if($a6->opportunityTitle=='Religion Belief')   { ?>
+                    <?php foreach($opportunityTitle as $a6){
+                        // echo $a6->opportunityTitle;
+                        ?>
+                        <?php  if($a6->opportunityTitle=='Religion Belief') { ?>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Religion Belief:</label>
+                                <div class="col-md-10 table-responsive">
+                                    <table class="table ">
 
-                            <div class="form-group" >
-                                <label class="control-label col-md-2" > Religion Belief:</label >
-                                <div class="col-md-10 table-responsive" >
-                                    <table class="table" >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = " No religion" > No religion </td >
-                                            <td ><input type = "radio" name = "check_list2" value = "Jewish" > Jewish</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = "Buddhist" > Buddhist</td >
-                                            <td ><input type = "radio" name = "check_list2" value = "Muslim" > Muslim</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = "Christian" > Christian</td >
-                                            <td ><input type = "radio" name = "check_list2" value = "Sikh" > Sikh</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = "Christian - Church of Scotland" > Christian - Church of Scotland </td >
-                                            <td ><input type = "radio" name = "check_list2" value = "Spiritual" > Spiritual</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = "Christian - Roman Catholic" > Christian - Roman Catholic </td >
-                                            <td ><input type = "radio" name = "check_list2" value = "Other" > Other</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = "Christian - Other denomination" > Christian - Other denomination </td >
-                                            <td ><input type = "radio" name = "check_list2" value = "Prefer not to say" > Prefer not to say </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list2" value = "Hindu" > Hindu</td >
-                                            <td ></td >
-                                        </tr >
+                                        <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
+                                            <?php if ($osg->fkGroupId == $a6->id) { ?>
+
+                                                <?php if ($count % 2 ==0) { ?>
+
+                                                    <tr>
+                                                <?php } ?>
+                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
+                                                <?php if ($count % 2 !=0) { ?>
+                                                    </tr>
+                                                <?php } ?>
+
+                                            <?php }
+                                            $count++ ?>
+                                        <?php }  ?>
+
                                     </table >
                                 </div >
                             </div >
-                    <?php }break;} ?>
-                    <?php foreach($opportunitySubGroupId as $a6){ ?>
-                    <?php if($a6->opportunityTitle=='Sexual Orientation')   { ?>
+                        <?php }  } ?>
 
-                            <div class="form-group" >
-                                <label class="control-label col-md-2" > Sexual Orientation:</label >
-                                <div class="col-md-10 table-responsive" >
-                                    <table class="table" >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list3" value = "Bisexual" > Bisexual</td >
-                                            <td ><input type = "radio" name = "check_list3" value = "Heterosexual" > Heterosexual</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list3" value = "Gay" > Gay</td >
-                                            <td ><input type = "radio" name = "check_list3" value = "Other" > Other</td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list3" value = "Lesbian" > Lesbian</td >
-                                            <td ><input type = "radio" name = "check_list3" value = "Prefer not to say" > Prefer not to say </td >
-                                        </tr >
+                    <?php foreach($opportunityTitle as $a6){
+                        // echo $a6->opportunityTitle;
+                        ?>
+                        <?php  if($a6->opportunityTitle=='Sexual Orientation') { ?>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Sexual Orientation:</label>
+                                <div class="col-md-10 table-responsive">
+                                    <table class="table ">
+
+                                        <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
+                                            <?php if ($osg->fkGroupId == $a6->id) { ?>
+
+                                                <?php if ($count % 2 ==0) { ?>
+
+                                                    <tr>
+                                                <?php } ?>
+                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
+                                                <?php if ($count % 2 !=0) { ?>
+                                                    </tr>
+                                                <?php } ?>
+
+                                            <?php }
+                                            $count++ ?>
+                                        <?php }  ?>
+
                                     </table >
                                 </div >
                             </div >
-                    <?php }break;} ?>
+                        <?php }  } ?>
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-10" >
