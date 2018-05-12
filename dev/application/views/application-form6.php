@@ -57,42 +57,42 @@
                                             <td ><input type = "radio" name = "check_list" value = "White - Scottish" > White - Scottish</td >
 
                                         </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Other White background" > Other White background </td >
-                                            <td ><input type = "radio" name = "check_list" value = "Gypsy or Traveller" > Gypsy or Traveller </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Black or Black British - Caribbean" > Black or Black British - Caribbean </td >
-                                            <td ><input type = "radio" name = "check_list" value = "Black or Black British - African" > Black or Black British - African </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Other Black background" > Other Black background </td >
-                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Indian" > Asian or Asian British - Indian </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Pakistani" > Asian or Asian British - Pakistani </td >
-                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Bangladeshi" > Asian or Asian British - Bangladeshi </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Chinese" > Chinese</td >
-                                            <td ><input type = "radio" name = "check_list" value = "Other Asian background" > Other Asian background </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = " Mixed - White and Black Caribbean" > Mixed - White and Black Caribbean </td >
-                                            <td ><input type = "radio" name = "check_list" value = "ixed - White and Black African" > Mixed - White and Black African </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Mixed - White and Asian" > Mixed - White and Asian </td >
-                                            <td ><input type = "radio" name = "check_list" value = "Other mixed background" > Other mixed background </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = "Arab" > Arab</td >
-                                            <td ><input type = "radio" name = "check_list" value = "Not known" > Not known </td >
-                                        </tr >
-                                        <tr >
-                                            <td ><input type = "radio" name = "check_list" value = " Prefer not to say" > Prefer not to say </td >
-                                            <td ><input type = "radio" name = "check_list" value = "Other" > Other</td >
-                                        </tr >
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Other White background" > Other White background </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Gypsy or Traveller" > Gypsy or Traveller </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Black or Black British - Caribbean" > Black or Black British - Caribbean </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Black or Black British - African" > Black or Black British - African </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Other Black background" > Other Black background </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Indian" > Asian or Asian British - Indian </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Pakistani" > Asian or Asian British - Pakistani </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Asian or Asian British - Bangladeshi" > Asian or Asian British - Bangladeshi </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Chinese" > Chinese</td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Other Asian background" > Other Asian background </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = " Mixed - White and Black Caribbean" > Mixed - White and Black Caribbean </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "ixed - White and Black African" > Mixed - White and Black African </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Mixed - White and Asian" > Mixed - White and Asian </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Other mixed background" > Other mixed background </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Arab" > Arab</td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Not known" > Not known </td >-->
+<!--                                        </tr >-->
+<!--                                        <tr >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = " Prefer not to say" > Prefer not to say </td >-->
+<!--                                            <td ><input type = "radio" name = "check_list" value = "Other" > Other</td >-->
+<!--                                        </tr >-->
                                     </table >
                                 </div >
                             </div >
