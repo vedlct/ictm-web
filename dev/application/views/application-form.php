@@ -249,7 +249,7 @@
 
                                                     <option value="" selected><?php echo SELECT_TITLE?></option>
                                                     <?php for ($i=0;$i<count(Title);$i++){?>
-                                                        <option <?php echo set_select('EmergencyContactDetails',  Title[$i], False); ?>><?php echo Title[$i]?></option>
+                                                        <option <?php echo set_select('EmergencyContactTitle',  Title[$i], False); ?>><?php echo Title[$i]?></option>
                                                     <?php } ?>
 
                                                     </select> 
@@ -324,7 +324,7 @@
                                         	<label class="control-label col-md-2">Awarding Body:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
-                                            	<input type="text" readonly class="form-control" id="awardingBody" name="awardingBody">
+                                            	<input type="text" readonly class="form-control" id="awardingBody" value="<?php echo set_value('awardingBody'); ?>" name="awardingBody">
                                           	</div>
 				                        </div>
                                         
