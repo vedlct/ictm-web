@@ -343,7 +343,6 @@ class ApplyOnlinem extends CI_Model
 
             );
 
-
             $error = $this->db->insert('personqualifications', $data);
         }
 
