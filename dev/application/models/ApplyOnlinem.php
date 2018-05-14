@@ -318,6 +318,41 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
+
+
+    public function applyNow3Insert()
+    {
+        $test = $this->input->post('test[]');
+        $listening = $this->input->post('listening[]');
+        $reading = $this->input->post('reading[]');
+        $writing = $this->input->post('writing[]');
+        $speaking = $this->input->post('speaking[]');
+        $overall = $this->input->post('overall[]');
+        $exirydate = $this->input->post('expirydate[]');
+        $other = $this->input->post('other');
+
+
+        for ($i = 0; $i < count($test); $i++) {
+            $data = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                'qualification' => $qualification[$i],
+                'institution' => $institution[$i],
+                'startDate' => $startdate[$i],
+                'endDate' => $enddate[$i],
+                'obtainResult' => $grade[$i],
+
+            );
+
+
+            $error = $this->db->insert('personqualifications', $data);
+        }
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
     public function insertnewfrom4()
     {
         $selfFinance=$this->input->post('selfFinance');

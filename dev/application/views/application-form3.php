@@ -46,8 +46,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Is English your first language?:</label>
                                 <div class="col-md-10">
-                                    <input type="radio" name="" value=""> Yes&nbsp;&nbsp;
-                                    <input type="radio" name="" value=""> No&nbsp;&nbsp;
+                                    <input type="radio" name="firstlanguage" value="yes"> Yes&nbsp;&nbsp;
+                                    <input type="radio" name="firstlanguage" value="no"> No&nbsp;&nbsp;
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="">
+                                    <select style="width: 100%" id="test" name="test[]">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="">IELTS</option>
                                         <option value="">TOEFL</option>
@@ -70,42 +70,42 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="listening" name="listening[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="reading" name="reading[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="writing" name="writing[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="speaking" name="speaking[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="overall" name="overall[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
+                                    <input type="date" class="form-control" id="expirydate" name="expirydate[]">
                                 </div>
                             </div>
                                 </div>
@@ -121,7 +121,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
+                                    <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
 
