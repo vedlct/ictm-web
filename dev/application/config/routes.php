@@ -79,6 +79,7 @@ $route['ApplyForm3'] = 'ApplyOnline/applyNow3';
 $route['ApplyForm4'] = 'ApplyOnline/applyNow4';
 $route['ApplyForm5'] = 'ApplyOnline/applyNow5';
 $route['ApplyForm6'] = 'ApplyOnline/applyNow6';
+$route['ApplyForm7'] = 'ApplyOnline/applyNow7';
 
 $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';

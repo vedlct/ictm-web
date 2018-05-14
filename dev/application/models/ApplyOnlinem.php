@@ -428,6 +428,18 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
+    public function updateApplyNow6personal($data1)
+    {
+
+        $this->db->where('id',$qualificationId);
+        $error = $this->db->update('personqualifications',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
 
 
     public function insertQualificationsDetailsFromEdit($data)
@@ -499,7 +511,7 @@ class ApplyOnlinem extends CI_Model
     {
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        $this->db->select('equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle');
+        $this->db->select('equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
         $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
         $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
         $this->db->where('personequalopportunity.fkApplicationId=',$applicationId);

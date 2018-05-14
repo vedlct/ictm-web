@@ -59,7 +59,7 @@
 
                                     <tr>
                                     <?php } ?>
-                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                     <?php if ($count % 2 !=0) { ?>
                                     </tr>
@@ -91,7 +91,7 @@
 
                                                     <tr>
                                                 <?php } ?>
-                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" name = "check_list1" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -115,14 +115,14 @@
                                 <div class="col-md-10 table-responsive">
                                     <table class="table ">
 
-                                        <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
+                                        <?php $count=1; foreach($opportunitySubGroupId as $osg){ ?>
                                             <?php if ($osg->fkGroupId == $a6->id) { ?>
 
                                                 <?php if ($count % 2 ==0) { ?>
 
                                                     <tr>
-                                                <?php } ?>
-                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <?php }?>
+                                                <td ><input type = "radio" name = "check_list2" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -154,7 +154,7 @@
 
                                                     <tr>
                                                 <?php } ?>
-                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->subGroupTitle?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" name = "check_list3" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
