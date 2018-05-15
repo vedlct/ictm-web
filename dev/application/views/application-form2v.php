@@ -118,7 +118,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <th>Action</th>
 
                             </tr>
-                            <?php foreach ($qualification as $qualifications){?>
+                            <?php foreach ($languagetest as $ltest){?>
                                 <tr>
                                     <td><?php echo $qualifications->id ?></td>
                                     <td><?php echo $qualifications->qualification ?></td>

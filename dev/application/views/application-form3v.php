@@ -28,7 +28,7 @@
 
 
 
-                    <fieldset>
+
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>English Language Proficiency</h3>
@@ -64,42 +64,42 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="listening">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="reading">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="writing">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="speaking">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="">
+                                    <input type="text" class="form-control" id="" name="overall">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="">
+                                    <input type="date" class="form-control" id="" name="expirydate">
                                 </div>
                             </div>
 
@@ -124,12 +124,39 @@
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+
 
                 </form>
 
 
+                <div id="qualificationTable">
+                    <table  class="table  table-bordered">
+                        <tr>
+                            <th>Id</th>
+                            <th>Qualification</th>
+                            <th>Institution</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Grade</th>
+                            <th>Action</th>
 
+                        </tr>
+                        <?php foreach ($qualification as $qualifications){?>
+                            <tr>
+                                <td><?php echo $qualifications->id ?></td>
+                                <td><?php echo $qualifications->qualification ?></td>
+                                <td><?php echo $qualifications->institution ?></td>
+                                <td><?php echo $qualifications->startDate ?></td>
+                                <td><?php echo $qualifications->endDate ?></td>
+                                <td><?php echo $qualifications->obtainResult ?></td>
+                                <td>
+                                    <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
+                                    <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </table>
+                </div>
 
 
 
