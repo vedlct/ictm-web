@@ -183,6 +183,18 @@ class ApplyOnline extends CI_Controller
         redirect('ApplyForm3');
     }
 
+
+    public function insertApplicationForm3() // insert application form 2
+    {
+        $this->ApplyOnlinem->applyNow3Insert();
+        redirect('ApplyForm3');
+    }
+    public function insertApplicationForm3AndNext() // insert application form 2 and go form 3
+    {
+        $this->ApplyOnlinem->applyNow3Insert();
+        redirect('ApplyForm4');
+    }
+
     public function editApplicationForm1(){
 
         if ($this->session->userdata('loggedin') == "true") {
