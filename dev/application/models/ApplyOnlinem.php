@@ -393,18 +393,18 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
-    public function updateApplyNow6personal($data1)
-    {
-
-        $this->db->where('id',$qualificationId);
-        $error = $this->db->update('personqualifications',$data);
-
-        if (empty($error)) {
-            return $this->db->error();
-        } else {
-            return $error = null;
-        }
-    }
+//    public function updateApplyNow6personal($data1)
+//    {
+//
+//        $this->db->where('id',$qualificationId);
+//        $error = $this->db->update('personqualifications',$data);
+//
+//        if (empty($error)) {
+//            return $this->db->error();
+//        } else {
+//            return $error = null;
+//        }
+//    }
 
 
     public function insertQualificationsDetailsFromEdit($data)

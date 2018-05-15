@@ -646,16 +646,16 @@ class ApplyOnline extends CI_Controller
             $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
             $this->data['opportunitySubGroupId']= $this->ApplyOnlinem->getOpportunitySubGroupId();
 
-          //  print_r($this->data['EqualOpportunity']);
+            print_r($this->data['EqualOpportunity']);
 
 
-            if (empty($this->data['EqualOpportunity'])) {
-
-                $this->load->view('application-form6', $this->data);
-            } else {
-
-                $this->load->view('application-form6v', $this->data);
-            }
+//            if (empty($this->data['EqualOpportunity'])) {
+//
+//                $this->load->view('application-form6', $this->data);
+//            } else {
+//
+//                $this->load->view('application-form6v', $this->data);
+//            }
 
         }
 
@@ -741,59 +741,7 @@ class ApplyOnline extends CI_Controller
 
         $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
         $applicationId=$this->session->userdata('studentApplicationId');
-        foreach ($this->data['opportunityTitle'] as $title) {
 
-            if ($title->opportunityTitle == 'Ethnicity')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Disability')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list1,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Religion Belief')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list2,
-                    'fkApplicationId' => $applicationId,
-
-                );
-            if ($title->opportunityTitle == 'Sexual Orientation')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list3,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            $this->data['error'] = $this->ApplyOnlinem->updateApplyNow6personal($data1);
-
-
-        }
-
-        if (empty($this->data['error'])) {
-
-
-            $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-            redirect('ApplyForm6');
-
-
-        }
-
-        else {
-
-            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-            redirect('ApplyForm6');
-
-        }
 
 
     }
