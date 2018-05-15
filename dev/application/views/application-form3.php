@@ -31,7 +31,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow3" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm3" method="post" class="registration-form form-horizontal">
 
                         <div class="form-top">
                             <div class="form-top-left">
@@ -51,6 +51,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
 
+
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div id='TextBoxesGroup'>
@@ -60,9 +61,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="col-md-10">
                                     <select style="width: 100%" id="test" name="test[]">
                                         <option value="" disabled selected>Select test...</option>
-                                        <option value="">IELTS</option>
-                                        <option value="">TOEFL</option>
-                                        <option value="">PTE</option>
+                                        <option value="1">IELTS</option>
+                                        <option value="2">TOEFL</option>
+                                        <option value="3">PTE</option>
                                     </select>
                                 </div>
                             </div>
@@ -128,8 +129,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
+                                    <button type="button" class="btn ">Next</button>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +179,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             newTextBoxDiv.after().html( '<div class="form-group">'+
                 '<label class="control-label col-md-2">Tests'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<select style="width: 100%" name="">'+
+                '<select style="width: 100%" name="test[]">'+
                 '<option value="" disabled selected>Select test...</option>'+
                 '<option value="">IELTS</option>'+
                 '<option value="">TOEFL</option>'+
@@ -189,41 +190,41 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Listening'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="">'+
+                '<input type="text" class="form-control" id="" name="listening[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Reading'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="">'+
+                '<input type="text" class="form-control" id="" name="reading[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Writing'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="">'+
+                '<input type="text" class="form-control" id="" name="writing[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Speaking'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="">'+
+                '<input type="text" class="form-control" id="" name="speaking[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Overall'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="">'+
+                '<input type="text" class="form-control" id="" name="overall[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Expiry Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="" name="">'+
+                '<input type="date" class="form-control" id="" name="expirydate[]">'+
                 '</div>'+
                 '</div>'
             );

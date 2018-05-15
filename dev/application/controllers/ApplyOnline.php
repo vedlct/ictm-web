@@ -167,9 +167,14 @@ class ApplyOnline extends CI_Controller
 
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
+        $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
 
-        $this->load->view('application-form3', $this->data);
+        if (empty($this->data['languagetest'])) {
+            $this->load->view('application-form3', $this->data);
+        } else {
+            $this->load->view('application-form3v', $this->data);
+        }
+
     }
 
     public function insertApplicationForm2() // insert application form 2
@@ -186,6 +191,8 @@ class ApplyOnline extends CI_Controller
 
     public function insertApplicationForm3() // insert application form 2
     {
+
+
         $this->ApplyOnlinem->applyNow3Insert();
         redirect('ApplyForm3');
     }
