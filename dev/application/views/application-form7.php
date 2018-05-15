@@ -31,9 +31,9 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow7" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow7" enctype="multipart/form-data" method="post" class="registration-form form-horizontal">
 
-                    <fieldset>
+<!--                    <fieldset>-->
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Upload Documents</h3>
@@ -67,25 +67,20 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-10">
-                                    <input type="file" class="form-control" id="" name="">
+                                    <input type="file" class="form-control"  name="fileUpload[]" multiple>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Add Another File</button>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
                         </div>
-                    </fieldset>
+<!--                    </fieldset>-->
 
                 </form>
 

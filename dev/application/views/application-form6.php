@@ -59,7 +59,7 @@
 
                                     <tr>
                                     <?php } ?>
-                                                <td ><input type = "radio" name = "check_list" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" required name = "check_list" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                     <?php if ($count % 2 !=0) { ?>
                                     </tr>
@@ -91,7 +91,7 @@
 
                                                     <tr>
                                                 <?php } ?>
-                                                <td ><input type = "radio" name = "check_list1" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" required name = "check_list1" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -122,7 +122,7 @@
 
                                                     <tr>
                                                 <?php }?>
-                                                <td ><input type = "radio" name = "check_list2" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" required name = "check_list2" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -154,7 +154,7 @@
 
                                                     <tr>
                                                 <?php } ?>
-                                                <td ><input type = "radio" name = "check_list3" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input type = "radio" required name = "check_list3" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -171,9 +171,10 @@
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-10" >
-                                    <button type = "button" class="btn btn-previous" > Previous</button >
-                                    <button type = "submit" class="btn " > Next</button >
-                                    <button type = "submit" class="btn btn-next" > Save Application </button >
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
                                 </div >
                             </div >
                         </div >
