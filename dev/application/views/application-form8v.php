@@ -234,15 +234,15 @@
 
 
                 document.getElementById("refereesId").value= id;
-                document.getElementById("title").value= name;
-                document.getElementById("name").value= title;
+                document.getElementById("title").value= title;
+                document.getElementById("name").value= name;
                 document.getElementById("company").value= workingCompany;
                 document.getElementById("jobTitle").value= jobTitle;
-                document.getElementById("telephone").value= address;
-                document.getElementById("email").value= postCode;
-                document.getElementById("address").value= fkCountry;
-                document.getElementById("addressPo").value= contactNo;
-                document.getElementById("country").value= email;
+                document.getElementById("telephone").value= contactNo;
+                document.getElementById("email").value= email;
+                document.getElementById("address").value= address;
+                document.getElementById("addressPo").value= postCode;
+                document.getElementById("country").value= fkCountry;
 
             }
 
