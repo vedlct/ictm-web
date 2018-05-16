@@ -682,137 +682,237 @@ class ApplyOnline extends CI_Controller
 
     public function insertapplyNow6()
     {
+        if ($this->session->userdata('loggedin') == "true") {
 
-        $check_list =  $this->input->post('check_list');
-        $check_list1 = $this->input->post('check_list1');
-        $check_list2 = $this->input->post('check_list2');
-        $check_list3 = $this->input->post('check_list3');
-
-
-        $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
-        $applicationId=$this->session->userdata('studentApplicationId');
-        foreach ($this->data['opportunityTitle'] as $title) {
-
-            if ($title->opportunityTitle == 'Ethnicity')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Disability')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list1,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Religion Belief')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list2,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Sexual Orientation')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list3,
-                    'fkApplicationId' => $applicationId,
-
-                );
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
 
 
-            $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
+            $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
+            $applicationId = $this->session->userdata('studentApplicationId');
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Disability')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Religion Belief')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Sexual Orientation')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+                        'fkApplicationId' => $applicationId,
+
+                    );
 
 
-        }
-
-        if (empty($this->data['error'])) {
+                $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
 
 
-            $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-            redirect('ApplyForm6');
+            }
+
+            if (empty($this->data['error'])) {
 
 
-        }
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm6');
 
-        else {
 
-            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-            redirect('ApplyForm6');
+            } else {
 
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm6');
+
+            }
         }
 
 
     }
     public function updatefrom6()
     {
+        if ($this->session->userdata('loggedin') == "true") {
 
 
-        $check_list = $this->input->post('check_list');
-        $check_list1 = $this->input->post('check_list1');
-        $check_list2 = $this->input->post('check_list2');
-        $check_list3 = $this->input->post('check_list3');
-
-        $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
-        $applicationId=$this->session->userdata('studentApplicationId');
-        foreach ($this->data['opportunityTitle'] as $title) {
-
-            if ($title->opportunityTitle == 'Ethnicity')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Disability')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list1,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            if ($title->opportunityTitle == 'Religion Belief')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list2,
-                    'fkApplicationId' => $applicationId,
-
-                );
-            if ($title->opportunityTitle == 'Sexual Orientation')
-
-                $data1 = array(
-                    'fkEqualOpportunitySubGroupId' => $check_list3,
-                    'fkApplicationId' => $applicationId,
-
-                );
-
-            $this->data['error'] = $this->ApplyOnlinem->updateApplyNow6personal($data1);
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
+            $Id_check_list = $this->input->post('id_check_list');
+            $Id_check_list1 = $this->input->post('id_check_list1');
+            $Id_check_list2 = $this->input->post('id_check_list2');
+            $Id_check_list3 = $this->input->post('id_check_list3');
 
 
+            $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
+
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+
+
+                    );
+                    $id = $Id_check_list;
+                }
+
+
+                if ($title->opportunityTitle == 'Disability') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+
+
+                    );
+                    $id = $Id_check_list1;
+                }
+
+                if ($title->opportunityTitle == 'Religion Belief') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+
+
+                    );
+                    $id = $Id_check_list2;
+                }
+
+                if ($title->opportunityTitle == 'Sexual Orientation') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+
+
+                    );
+                    $id = $Id_check_list3;
+                }
+
+
+                $this->data['error'] = $this->ApplyOnlinem->updateApplyNow6personal($id, $data1);
+
+
+            }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm6');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm6');
+
+            }
         }
 
-        if (empty($this->data['error'])) {
 
 
-            $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-            redirect('ApplyForm6');
+    }
+    public function editApplicationForm6AndNext()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
+            $Id_check_list = $this->input->post('id_check_list');
+            $Id_check_list1 = $this->input->post('id_check_list1');
+            $Id_check_list2 = $this->input->post('id_check_list2');
+            $Id_check_list3 = $this->input->post('id_check_list3');
 
 
+            $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
+
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+
+
+                    );
+                    $id = $Id_check_list;
+                }
+
+
+                if ($title->opportunityTitle == 'Disability') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+
+
+                    );
+                    $id = $Id_check_list1;
+                }
+
+                if ($title->opportunityTitle == 'Religion Belief') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+
+
+                    );
+                    $id = $Id_check_list2;
+                }
+
+                if ($title->opportunityTitle == 'Sexual Orientation') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+
+
+                    );
+                    $id = $Id_check_list3;
+                }
+
+
+                $this->data['error'] = $this->ApplyOnlinem->updateApplyNow6personal($id, $data1);
+
+
+            }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm7');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm7');
+
+            }
         }
 
-        else {
-
-            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-            redirect('ApplyForm6');
-
-        }
 
 
     }
@@ -840,6 +940,217 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+
+    public function insertapplyNow7()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $applicatfiles = $_FILES['fileUpload']['name'];
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $files = $_FILES;
+            $data = array();
+            $fileCount = 0;
+
+            if (array_filter($applicatfiles)!=null ) {
+
+                for ($i = 0; $i < count($applicatfiles); $i++) {
+
+                    if ($applicatfiles[$i] != null) {
+
+
+                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+
+                        $this->load->library('upload');
+
+                        $this->upload->initialize($this->set_upload_options($applicationId));
+
+                        if (!$this->upload->do_upload('fileUpload')) {
+                            $error[$i] = $this->upload->display_errors();
+                            $data[$error[$i]];
+
+                        }
+
+                        $fileCount++;
+
+
+                    } else {
+
+                    }
+                }
+
+                if (empty($data)) {
+
+
+                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                    redirect('ApplyForm7');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm7');
+
+                }
+
+            }else{
+
+                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+                redirect('ApplyForm7');
+
+            }
+        }
+    }
+    public function editApplicationForm7AndNext()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $applicatfiles = $_FILES['fileUpload']['name'];
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $files = $_FILES;
+            $data = array();
+            $fileCount = 0;
+
+            if (array_filter($applicatfiles)!=null ) {
+
+                for ($i = 0; $i < count($applicatfiles); $i++) {
+
+                    if ($applicatfiles[$i] != null) {
+
+
+                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+
+                        $this->load->library('upload');
+
+                        $this->upload->initialize($this->set_upload_options($applicationId));
+
+                        if (!$this->upload->do_upload('fileUpload')) {
+                            $error[$i] = $this->upload->display_errors();
+                            $data[$error[$i]];
+
+                        }
+
+                        $fileCount++;
+
+
+                    } else {
+
+                    }
+                }
+
+                if (empty($data)) {
+
+
+                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                    redirect('ApplyForm8');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm8');
+
+                }
+
+            }else{
+
+                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+                redirect('ApplyForm7');
+
+            }
+        }
+    }
+
+    //upload an image options
+    private function set_upload_options($applicationId)
+    {
+
+        $config = array();
+        $config['upload_path'] = 'AdminPanel/studentApplications/'.$applicationId."/";
+        $config['allowed_types'] = 'jpg|jpeg|gif|png|xlsx|pdf|doc|docx|xls|xlsx';
+
+        $config['overwrite'] = true;
+        //  $config['file_name'] = $photoId;
+
+        return $config;
+    }
+
+    public function applyNow8() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+            $this->data['References'] = $this->ApplyOnlinem->getAllRefences();
+
+
+            if (empty($this->data['References'])) {
+
+                $this->load->view('application-form8', $this->data);
+            } else {
+
+                $this->load->view('application-form8v', $this->data);
+            }
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+    }
+    public function insertapplyNow8() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $this->data['error'] = $this->ApplyOnlinem->insertAllReferees();
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm8');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm8');
+
+            }
+
+        }else{
+
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
+
+    public function EditPersonalReferees()
+    {
+        $refereesId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->getRefereesDetails($refereesId);
+
+        echo  json_encode($data);
+    }
+
+
 
     public function menu() // get all the menu + footer
     {

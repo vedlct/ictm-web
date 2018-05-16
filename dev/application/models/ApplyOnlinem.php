@@ -468,11 +468,11 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
-    public function updateApplyNow6personal($data1)
+    public function updateApplyNow6personal($id,$data1)
     {
 
-        $this->db->where('id',$qualificationId);
-        $error = $this->db->update('personqualifications',$data);
+        $this->db->where('id',$id);
+        $error = $this->db->update('personequalopportunity',$data1);
 
         if (empty($error)) {
             return $this->db->error();
@@ -551,11 +551,24 @@ class ApplyOnlinem extends CI_Model
     {
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        $this->db->select('equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
+        $this->db->select('personequalopportunity.id as personalOpportunityId,equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
         $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
         $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
         $this->db->where('personequalopportunity.fkApplicationId=',$applicationId);
         $this->db->from('personequalopportunity');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+    public function getAllRefences()
+
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $this->db->select('id, name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->where('fkApplicationId',$applicationId);
+        $this->db->from('candidatereferees');
         $query=$this->db->get();
         return $query->result();
 
@@ -580,6 +593,58 @@ class ApplyOnlinem extends CI_Model
         } else {
             return $error = null;
         }
+
+    }
+
+    public function insertAllReferees()
+    {
+        $title = $this->input->post('title[]');
+        $name = $this->input->post('name[]');
+        $company = $this->input->post('company[]');
+        $jobTitle = $this->input->post('jobTitle[]');
+        $address = $this->input->post('address[]');
+        $telephone = $this->input->post('telephone[]');
+        $email = $this->input->post('email[]');
+        $country = $this->input->post('country[]');
+        $addressPo = $this->input->post('addressPo[]');
+
+
+
+        for ($i = 0; $i < count($title); $i++) {
+            $data = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                'name' => $name[$i],
+                'title' => $title[$i],
+                'workingCompany' => $company[$i],
+                'jobTitle' => $jobTitle[$i],
+                'address' => $address[$i],
+                'postCode' => $addressPo[$i],
+                'contactNo' => $telephone[$i],
+                'email' => $email[$i],
+                'fkCountry' => $country[$i],
+
+            );
+
+
+            $error = $this->db->insert('candidatereferees', $data);
+        }
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function getRefereesDetails($refereesId)
+    {
+
+        $this->db->select('id,name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->where('id',$refereesId);
+        $this->db->from('candidatereferees');
+        $query=$this->db->get();
+        return $query->result();
+
 
     }
 
