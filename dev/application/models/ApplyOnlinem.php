@@ -648,4 +648,49 @@ class ApplyOnlinem extends CI_Model
 
     }
 
+    public function editRefereesDetailsById($refereesId,$data)
+    {
+
+        $this->db->where('id',$refereesId);
+        $error = $this->db->update('candidatereferees',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function insertRefereesDetailsFromEdit($data)
+    {
+
+        $this->security->xss_clean($data);
+        $error = $this->db->insert('candidatereferees',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function insertApplyForm9()
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $data = array(
+            'isSubmited' => '1',
+
+        );
+
+        $this->db->where('id',$applicationId);
+        $error = $this->db->update('studentapplicationform',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
 }

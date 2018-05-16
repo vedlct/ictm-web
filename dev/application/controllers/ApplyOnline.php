@@ -1141,6 +1141,37 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+    public function insertApplicationForm8AndNext() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $this->data['error'] = $this->ApplyOnlinem->insertAllReferees();
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm9');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm9');
+
+            }
+
+        }else{
+
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
 
     public function EditPersonalReferees()
     {
@@ -1149,6 +1180,157 @@ class ApplyOnline extends CI_Controller
 
         echo  json_encode($data);
     }
+
+    public function editORInsertApplicationForm8() // edit OR Insert Application Form2
+    {
+        $refereesId = $this->input->post("refereesId");
+        $title = $this->input->post("title");
+        $name = $this->input->post("name");
+        $company = $this->input->post("company");
+        $jobTitle = $this->input->post("jobTitle");
+        $telephone = $this->input->post("telephone");
+        $email = $this->input->post("email");
+        $address = $this->input->post("address");
+        $addressPo = $this->input->post("addressPo");
+        $country = $this->input->post("country");
+
+
+        $data = array(
+
+            'name' => $title,
+            'title' => $name,
+            'workingCompany' => $company,
+            'jobTitle' => $jobTitle,
+            'address' => $telephone,
+            'postCode' => $email,
+            'contactNo' => $address,
+            'email' => $addressPo,
+            'fkCountry' => $country,
+
+        );
+
+        if (!empty($refereesId)){
+
+            $this->ApplyOnlinem->editRefereesDetailsById($refereesId,$data);
+            $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
+            redirect('ApplyForm8');
+        }
+        else{
+
+            $data2 = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+            );
+            $data = array_merge($data, $data2);
+            $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
+            $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
+            redirect('ApplyForm8');
+
+        }
+
+    }
+    public function editApplicationForm8AndNext() // edit OR Insert Application Form2
+    {
+        $refereesId = $this->input->post("refereesId");
+        $title = $this->input->post("title");
+        $name = $this->input->post("name");
+        $company = $this->input->post("company");
+        $jobTitle = $this->input->post("jobTitle");
+        $telephone = $this->input->post("telephone");
+        $email = $this->input->post("email");
+        $address = $this->input->post("address");
+        $addressPo = $this->input->post("addressPo");
+        $country = $this->input->post("country");
+
+
+        $data = array(
+
+            'name' => $title,
+            'title' => $name,
+            'workingCompany' => $company,
+            'jobTitle' => $jobTitle,
+            'address' => $telephone,
+            'postCode' => $email,
+            'contactNo' => $address,
+            'email' => $addressPo,
+            'fkCountry' => $country,
+
+        );
+
+        if (!empty($refereesId)){
+
+            $this->ApplyOnlinem->editRefereesDetailsById($refereesId,$data);
+            $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
+            redirect('ApplyForm9');
+        }
+        else{
+
+            $data2 = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+            );
+            $data = array_merge($data, $data2);
+            $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
+            $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
+            redirect('ApplyForm9');
+
+        }
+
+    }
+
+    public function applyNow9() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+            $this->load->view('application-form9', $this->data);
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+    }
+    public function insertApplyNow9() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $check = $this->input->post("check");
+            if ($check){
+
+                $this->data['error'] = $this->ApplyOnlinem->insertApplyForm9();
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
+                    redirect('Login');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm9');
+
+                }
+
+            }
+
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+    }
+
+
 
 
 
