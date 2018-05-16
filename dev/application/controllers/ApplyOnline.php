@@ -1102,6 +1102,11 @@ class ApplyOnline extends CI_Controller
                 $this->load->view('application-form8v', $this->data);
             }
 
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
         }
 
     }
@@ -1110,21 +1115,39 @@ class ApplyOnline extends CI_Controller
         if ($this->session->userdata('loggedin') == "true") {
 
 
-           // $this->data['error'] = $this->ApplyOnlinem->insertAllReferees();
+            $this->data['error'] = $this->ApplyOnlinem->insertAllReferees();
 
-            
+            if (empty($this->data['error'])) {
 
 
-//            if (empty($this->data['References'])) {
-//
-//                $this->load->view('application-form8', $this->data);
-//            } else {
-//
-//                $this->load->view('application-form8v', $this->data);
-//            }
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm8');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm8');
+
+            }
+
+        }else{
+
+            echo "<script>
+                    alert('Some thing Went Wrong !! Please Try Again!!');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
 
         }
 
+    }
+
+    public function EditPersonalReferees()
+    {
+        $refereesId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->getRefereesDetails($refereesId);
+
+        echo  json_encode($data);
     }
 
 

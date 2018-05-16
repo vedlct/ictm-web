@@ -19,8 +19,23 @@
     </div><!-- /.container -->
 </div><!-- /page-title -->
 
+
+
 <section class="flat-row padding-small-v1">
     <div class="container">
+
+        <div id="sessionFlashMessageDiv">
+            <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <?php }
+            elseif($this->session->flashdata('successMessage')!=null){?>
+                <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+            <?php }?>
+
+        </div>
+
+
+
         <div class="row">
             <div class="col-md-9">
 
@@ -76,6 +91,20 @@
                                 </div>
                             </div>
 
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Telephone:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="telephone1" name="telephone[]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">E-mail:</label>
+                                        <div class="col-md-10">
+                                            <input type="email" class="form-control" id="email1" name="email[]">
+                                        </div>
+                                    </div>
+
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address:</label>
                                 <div class="col-md-10">
@@ -83,33 +112,27 @@
                                 </div>
                             </div>
 
+
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone:</label>
+                                <label class="control-label col-md-2">Address P.O :</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="telephone1" name="telephone[]">
+                                    <input type="text" class="form-control" id="addressPo1" name="addressPo[]">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:</label>
+                                <label class="control-label col-md-2">Country:</label>
                                 <div class="col-md-10">
-                                    <input type="email" class="form-control" id="email1" name="email[]">
+                                    <select style="width: 100%" id="country1"  name="country[]">
+                                        <option value="" disabled selected>Select country...</option>
+                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                            <option value="<?php echo COUNTRY[$i]?>"<?php
+                                            echo set_value('country') == COUNTRY[$i] ? "selected" : "";
+                                            ?>><?php echo COUNTRY[$i]?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
-<!--                            <div class="form-group">-->
-<!--                                <label class="control-label col-md-2">Country:</label>-->
-<!--                                <div class="col-md-10">-->
-<!--                                    <select style="width: 100%" id="country1"  name="country[]">-->
-<!--                                        <option value="" disabled selected>Select country...</option>-->
-<!--                                        --><?php //for ($i=0;$i<count(COUNTRY);$i++){?>
-<!--                                            <!--                                        <option -->--><?php ////if ($candidateInfo->title == Title[$i]){?><!--<!-- selected -->--><?php ////} ?><!--<!-- value="-->--><?php ////echo Title[$i]?><!--<!--">-->--><?php ////echo Title[$i]?><!--<!--</option>-->-->
-<!--                                            <option value="--><?php //echo COUNTRY[$i]?><!--"--><?php
-//                                            echo set_value('country') == COUNTRY[$i] ? "selected" : "";
-//                                            ?><!-->--><?php //echo COUNTRY[$i]?><!--</option>-->
-<!--                                        --><?php //} ?>
-<!--                                    </select>-->
-<!--                                </div>-->
-<!--                            </div>-->
 
 
                                 </div>
@@ -191,7 +214,8 @@
                 var address1=$('#address1').val();
                 var telephone1=$('#telephone1').val();
                 var email1=$('#email1').val();
-//                var country=$('#country1').val();
+                var country=$('#country1').val();
+                var addressPo=$('#addressPo1').val();
 
                 var chk = /^[0-9]*$/;
                 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -246,27 +270,34 @@
                     alert('Email must be less then 100 charecter');
                     return false;
                 }
-//                if (email1 == ""){
-//                    alert('Please add a Email');
-//                    return false;
-//                }
-//                if (email1.length >100){
-//                    alert('Email must be less then 100 charecter');
-//                    return false;
-//                }
+                if (country == ""){
+                    alert('Please add a Country');
+                    return false;
+                }
+                if (country.length >255){
+                    alert('Country Name must be less then 255 charecter');
+                    return false;
+                }if (addressPo == ""){
+                    alert('Please add a Address P.O');
+                    return false;
+                }
+                if (addressPo.length >8){
+                    alert('Address P.O. must be less then 8 charecter');
+                    return false;
+                }
                 if (!email1.match(mailformat)) {
                     alert("You have entered an invalid email address!");
+                    return false;
+                }
+                if (!telephone1.match(chk)) {
+                    alert("please enter phone number correctly!");
                     return false;
                 }
 
             }
             else{
 
-//                var Qualification=$('#qualification'+(counter-1)).val();
-//                var institution=$('#institution'+(counter-1)).val();
-//                var startdate=$('#startdate'+(counter-1)).val();
-//                var enddate=$('#enddate'+(counter-1)).val();
-//                var grade=$('#grade'+(counter-1)).val();
+
 
                 var title=$('#title'+(counter-1)).val();
                 var name=$('#name'+(counter-1)).val();
@@ -276,62 +307,84 @@
                 var telephone=$('#telephone'+(counter-1)).val();
                 var email=$('#email'+(counter-1)).val();
 
+                var country=$('#country'+(counter-1)).val();
+                var addressPo=$('#addressPo'+(counter-1)).val();
+
                 var chk = /^[0-9]*$/;
                 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
                 if (title == ""){
-                    alert('Please add a Title');
+                    alert('Please add a Title'+(counter-1));
                     return false;
                 }if (title.length > 12){
-                    alert('Title must be less then 12 charecter');
+                    alert('Title must be less then 12 charecter'+(counter-1));
                     return false;
                 }if (name == ""){
-                    alert('Please add a Name');
+                    alert('Please add a Name'+(counter-1));
                     return false;
                 }if (name.length >100){
-                    alert('Name must be less then 100 charecter');
+                    alert('Name must be less then 100 charecter'+(counter-1));
                     return false;
                 }if (company == ""){
-                    alert('Please add a Company');
+                    alert('Please add a Company'+(counter-1));
                     return false;
                 }
                 if (company.length >80){
-                    alert('Company name must be less then 80 charecter');
+                    alert('Company name must be less then 80 charecter'+(counter-1));
                     return false;
                 }
                 if (jobTitle.length >60){
-                    alert('JobTitle name must be less then 80 charecter');
+                    alert('JobTitle name must be less then 80 charecter'+(counter-1));
                     return false;
                 }
                 if (address.length >1000){
-                    alert('address name must be less then 1000 charecter');
+                    alert('address name must be less then 1000 charecter'+(counter-1));
                     return false;
                 }
                 if (jobTitle == ""){
-                    alert('Please add a jobTitle');
+                    alert('Please add a jobTitle'+(counter-1));
                     return false;
                 }if (address == ""){
-                    alert('Please add a Address');
+                    alert('Please add a Address'+(counter-1));
                     return false;
                 }if (telephone == ""){
-                    alert('Please add a Telephone');
+                    alert('Please add a Telephone'+(counter-1));
                     return false;
                 }
                 if (telephone.length >20){
-                    alert('Telephone must be less then 20 charecter');
+                    alert('Telephone must be less then 20 charecter'+(counter-1));
                     return false;
                 }
                 if (email == ""){
-                    alert('Please add a Email');
+                    alert('Please add a Email'+(counter-1));
                     return false;
                 }
                 if (email.length >100){
-                    alert('Email must be less then 100 charecter');
+                    alert('Email must be less then 100 charecter'+(counter-1));
+                    return false;
+                }
+                if (country == ""){
+                    alert('Please add a Country'+(counter-1));
+                    return false;
+                }
+                if (country.length >255){
+                    alert('Country Name must be less then 255 charecter'+(counter-1));
+                    return false;
+                }if (addressPo == ""){
+                    alert('Please add a Address P.O'+(counter-1));
+                    return false;
+                }
+                if (addressPo.length >8){
+                    alert('Email must be less then 8 charecter'+(counter-1));
                     return false;
                 }
 
                 if (!email.match(mailformat)) {
-                    alert("You have entered an invalid email address!");
+                    alert("You have entered an invalid email address!"+(counter-1));
+                    return false;
+                }
+                if (!telephone.match(chk)) {
+                    alert("please enter phone number correctly!"+(counter-1));
                     return false;
                 }
 
@@ -342,7 +395,14 @@
             newTextBoxDiv.after().html( '<div class="form-group">'+
                 '<label class="control-label col-md-2">Title'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="title'+counter+'" name="title[]">'+
+                '<select required style="width: 100%"  id="title'+counter+'"  name="title[]">'+
+
+                '<option value="" selected><?php echo SELECT_TITLE?></option>'+
+            '<?php for ($i=0;$i<count(Title);$i++){?>'+
+            '<option ><?php echo Title[$i]?></option>'+
+            '<?php  } ?>'+
+
+            '</select>'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
@@ -354,19 +414,13 @@
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Institution/Company'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="company'+counter+'" name="company[]">'+
+                '<input type="text" class="form-control" id="company'+counter+'" name="company[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Position / Job Title'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="jobTitle'+counter+'" name="jobTitle[]">'+
-                '</div>'+
-                '</div>'+
-                '<div class="form-group">'+
-                '<label class="control-label col-md-2">Address'+counter+':</label>'+
-                '<div class="col-md-10">'+
-                '<textarea id="address'+counter+'" name="address[]" rows="8" tabindex="4"></textarea>'+
+                '<input type="text" class="form-control" id="jobTitle'+counter+'" name="jobTitle[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
@@ -377,9 +431,33 @@
                 '</div>'+'<div class="form-group">'+
                 '<label class="control-label col-md-2">E-mail'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="email'+counter+'" name="email[]">'+
+                '<input type="email" class="form-control" id="email'+counter+'" name="email[]">'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Address'+counter+':</label>'+
+                '<div class="col-md-10">'+
+                '<textarea id="address'+counter+'" name="address[]" rows="8" tabindex="4"></textarea>'+
+                '</div>'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Address P.O :</label>'+
+                '<div class="col-md-10">'+
+                '<input type="text" class="form-control" id="addressPo'+counter+'" name="addressPo[]">'+
+                '</div>'+
+                '<div class="form-group">'+
+                '<label class="control-label col-md-2">Country:</label>'+
+                '<div class="col-md-10">'+
+                '<select style="width: 100%" id="country'+counter+'"  name="country[]">'+
+                '<option value=""  selected>Select country...</option>'+
+                '<?php for ($i=0;$i<count(COUNTRY);$i++){?>'+
+                '<option value="<?php echo COUNTRY[$i]?>">'+'<?php echo COUNTRY[$i]?></option>'+
+                '<?php } ?>'+
+                '</select>'+
+                '</div>'+
                 '</div>'+
                 '</div>'
+
 
             );
 

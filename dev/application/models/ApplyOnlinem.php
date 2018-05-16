@@ -605,6 +605,8 @@ class ApplyOnlinem extends CI_Model
         $address = $this->input->post('address[]');
         $telephone = $this->input->post('telephone[]');
         $email = $this->input->post('email[]');
+        $country = $this->input->post('country[]');
+        $addressPo = $this->input->post('addressPo[]');
 
 
 
@@ -616,9 +618,10 @@ class ApplyOnlinem extends CI_Model
                 'workingCompany' => $company[$i],
                 'jobTitle' => $jobTitle[$i],
                 'address' => $address[$i],
-//                'postCode' => $email[$i],
+                'postCode' => $addressPo[$i],
                 'contactNo' => $telephone[$i],
                 'email' => $email[$i],
+                'fkCountry' => $country[$i],
 
             );
 
@@ -631,6 +634,18 @@ class ApplyOnlinem extends CI_Model
         } else {
             return $error = null;
         }
+    }
+
+    public function getRefereesDetails($refereesId)
+    {
+
+        $this->db->select('id,name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->where('id',$refereesId);
+        $this->db->from('candidatereferees');
+        $query=$this->db->get();
+        return $query->result();
+
+
     }
 
 }
