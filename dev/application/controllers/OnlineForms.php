@@ -422,7 +422,7 @@ class OnlineForms extends CI_Controller
         }else{
             echo "<script>alert('Please select the recaptcha');
                     window.location.href='".site_url('Contact')."';
-                   
+
                     </script>";
 
         }

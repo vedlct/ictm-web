@@ -94,6 +94,21 @@
                                     </div>
 
                                     <div class="form-group ">
+                                        <label for="feedbackByName" class="control-label col-lg-2">Feedback By Email <span class="required">*</span></label>
+                                        <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('feedbackByEmail'); ?></font></p>
+                                            <input class="form-control" id="feedbackByEmail" name="feedbackByEmail"  value="<?php echo $editFeedback->feedbackByEmail?>" type="email" required />
+                                        </div>
+
+                                        <label for="feedbackByProfession" class="control-label col-lg-2">Feedback By Mobile N.O. </label>
+                                        <div class="col-lg-4">
+                                            <p><font color="red"> <?php echo form_error('feedbackByMobile'); ?></font></p>
+                                            <input class="form-control" id="feedbackByMobile" name="feedbackByMobile"  value="<?php echo $editFeedback->feedbackByMobile?>" type="text" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group ">
                                         <label for="feedbackByImage" class="control-label col-lg-2">Feedback By Image </label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('feedbackByImage'); ?></font></p>
@@ -195,12 +210,35 @@
         var feedbackByName =  document.getElementById("feedbackByName").value;
         var feedbackByProfession =  document.getElementById("feedbackByProfession").value;
 
+        var feedbackByEmail =  document.getElementById("feedbackByEmail").value;
+        var feedbackByMobile =  document.getElementById("feedbackByMobile").value;
+
+        var chk=/^[0-9]*$/;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
         if (feedbackByName.length >100){
             alert("Feedback By Name Should not more than 100 Charecter Length");
             return false;
         }
         if (feedbackByProfession.length >100){
             alert("Feedback By Profession Should not more than 100 Charecter Length");
+            return false;
+        }
+        if (feedbackByEmail ==""){
+            alert("Email field can not be empty !! ");
+            return false;
+        }
+        if(!feedbackByEmail.match(mailformat))
+        {
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+        if(!feedbackByMobile.match(chk)) {
+            alert( 'Please enter a valid Mobile number!!' );
+            return false;
+        }
+        if(feedbackByMobile.length >45) {
+            alert( 'Mobile number must be less than 45 charecter!!' );
             return false;
         }
         else

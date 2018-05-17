@@ -120,12 +120,16 @@ class OnlineFormsm extends CI_Model
         $feedbackName = $this->input->post("name");
         $feedbackProfession = $this->input->post("profession");
         $feedbackDetails = $this->input->post("details");
+        $feedbackEmail = $this->input->post("email");
+        $feedbackMobile = $this->input->post("mobile");
 
 
         $data= array(
             'feedbackByName'=>$feedbackName,
             'feedbackByProfession'=>$feedbackProfession,
             'feedbackDetails'=>$feedbackDetails,
+            'feedbackByEmail'=>$feedbackEmail,
+            'feedbackByMobile'=>$feedbackMobile,
             'feedbackStatus'=>STATUS[1],
             'feedbackApprove'=>SELECT_APPROVE[1],
             'feedbackSource'=>FEEDBACK_SOURCE[7],

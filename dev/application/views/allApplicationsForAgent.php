@@ -40,10 +40,9 @@
 
                 <table class="table  table-bordered">
                     <tr>
-                        <th>Qualification</th>
-                        <th>Institution</th>
-                        <th>Start Date</th>
-
+                        <th>Applicant's Name</th>
+                        <th>Applicant's Email</th>
+                        <th>Status</th>
                         <th>Action</th>
 
                     </tr>
@@ -51,12 +50,10 @@
                         <tr>
                             <td><?php echo $application->id ?></td>
                             <td><?php echo $application->studentApplicationFormId ?></td>
-                            <td></td>
-
+                            <td><?php if ($application->isSubmited=='0'){echo "Not Submitted";}elseif($application->isSubmited=='1'){echo "Submitted";} ?></td>
 
                             <td>
                                 <a class="btn" href=""><i class="fa fa-edit"></i></a>
-<!--                                <a class="btn" data-panel-id="--><?php //echo $qualifications->id ?><!--"  onclick="selectid(this)"><i class="fa fa-trash"></i></a>-->
                             </td>
                         </tr>
                     <?php } ?>

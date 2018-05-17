@@ -100,10 +100,22 @@ $config = array (
 		        'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
 		     ),
+            array(
+		        'field' => 'email',
+		        'label' => 'Email',
+		        'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+		     ),
+            array(
+		        'field' => 'mobile',
+		        'label' => 'Mobile',
+		        'rules' => 'max_length[45]|xss_clean|htmlspecialchars',
+
+		     ),
 		    array(
 		        'field' => 'profession',
 		        'label' => 'Profession',
-		        'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+		        'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
 		     ),
             array(
                 'field' => 'details',

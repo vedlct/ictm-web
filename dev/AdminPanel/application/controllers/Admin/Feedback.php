@@ -102,7 +102,7 @@ class Feedback extends CI_Controller
             $row = array();
             $row[] = $no;
             $row[] = $customers->feedbackByName;
-            $row[] = $customers->feedbackByProfession;
+            $row[] = $customers->feedbackByEmail;
             $row[] = $customers->feedbackSource;
             $row[] = $customers->feedbackStatus;
             $row[] = $customers->feedbackApprove;

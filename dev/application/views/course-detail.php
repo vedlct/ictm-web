@@ -51,6 +51,7 @@
 
                                                     <!--  <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>-->
                                                     <li><a target="_blank" href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">Download Application Form</a></li>
+                                                    <li><a target="_blank" href="<?php echo base_url('public/pdf-files/ICON-College-Prospectus.pdf')?>">Download course handbook</a></li>
 
 
 

@@ -66,7 +66,7 @@
                                     <tr align="center" bgcolor="#D3D3D3">
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 3%"> No.</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Profession </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left" > Email </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Source </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">Status </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">Approve </th>
