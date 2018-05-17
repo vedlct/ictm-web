@@ -271,7 +271,7 @@ class ApplyOnlinem extends CI_Model
     public function getApplicationId($studentOrAgentId)
     {
 
-        $this->db->select('id,studentApplicationFormId');
+        $this->db->select('id,studentApplicationFormId,isSubmited');
         $this->db->where('studentOrAgentId',$studentOrAgentId);
         $this->db->from('studentapplicationform');
         $query=$this->db->get();
@@ -279,6 +279,7 @@ class ApplyOnlinem extends CI_Model
 
 
     }
+
     public function deleteQualifications($qualificationId)
     {
 

@@ -98,7 +98,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <button type="button" class="btn btn-previous">Previous</button>
+                                <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="button" onclick="btnNext()" class="btn btn-next">Next</button>
