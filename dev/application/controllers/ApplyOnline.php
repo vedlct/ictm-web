@@ -14,6 +14,47 @@ class ApplyOnline extends CI_Controller
     public function index()
     {
     }
+    public function newApplyFromAgent()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
+            $this->load->view('application-form', $this->data);
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
+    public function editApplyFromAgent($id)
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
+            $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($id);
+            $this->load->view('application-formv', $this->data);
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
     public function viewForm1()
     {
         if ($this->session->userdata('loggedin') == "true") {
@@ -65,7 +106,7 @@ class ApplyOnline extends CI_Controller
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
             $studentOrAgentId = $this->session->userdata('id');
-            $this->data['applications'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
+            $this->data['applications'] = $this->ApplyOnlinem->getApplicationInfoForAgent($studentOrAgentId);
             $this->load->view('allApplicationsForAgent', $this->data);
         }else{
             echo "<script>
