@@ -418,6 +418,27 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+///////////////////////////////////FORM 3 ///////////////////////////////////
+
+
+    public  function EditLanguageTest(){
+        $languagetestId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->getLanguageTestDetails($languagetestId);
+
+        echo  json_encode($data);
+
+    }
+    public function EditLanguageTestHead(){
+        $languagetestId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->getLanguageTestHeadDetails($languagetestId);
+
+        echo  json_encode($data);
+    }
+
+    public function editapplyNow3(){
+        echo "ola";
+    }
+/////////////////////////////////////////////////////////////////////
 
     public function insertapplyNow4()
 

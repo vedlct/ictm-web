@@ -85,6 +85,24 @@ class ApplyOnlinem extends CI_Model
 
     }
 
+    public function getLanguageTestDetails($languagetestId){
+
+        $this->db->select('id,fkTestId,overallScore,expireDate');
+        $this->db->where('id',$languagetestId);
+        $this->db->from('candidatelanguagetest');
+        $query=$this->db->get();
+        return $query->result();
+
+    }
+    public function getLanguageTestHeadDetails($languagetestId){
+
+        $this->db->select('*');
+        $this->db->where('fkCandidateTestId',$languagetestId);
+        $this->db->from('cadidatelanguagetestscores');
+        $query=$this->db->get();
+        return $query->result();
+
+    }
 
         public function getFinancerData($applicationId){
 
