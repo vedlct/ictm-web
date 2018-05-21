@@ -970,9 +970,21 @@ $config = array (
             'rules' => 'callback_val_img_check'
         ),
         array(
+            'field' => 'feedbackByEmail',
+            'label' => 'Email',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'feedbackByMobile',
+            'label' => 'Mobile',
+            'rules' => 'max_length[45]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
             'field' => 'feedbackByProfession',
             'label' => 'feedback By Profession',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'feedbackStatus',
@@ -996,7 +1008,19 @@ $config = array (
         array(
             'field' => 'feedbackByProfession',
             'label' => 'feedback By Profession',
-            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'feedbackByEmail',
+            'label' => 'Email',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'feedbackByMobile',
+            'label' => 'Mobile',
+            'rules' => 'max_length[45]|xss_clean|htmlspecialchars',
+
         ),
         array(
             'field' => 'feedbackStatus',

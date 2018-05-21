@@ -6,8 +6,8 @@ class Feedbackm extends CI_Model
     /////////datatable//////////
     var $table = 'ictmfeedback';
 //    var $column_order = array('feedbackId,feedbackByName,feedbackByProfession,feedbackSource,feedbackApprove,feedbackApprovedBy,feedbackApprovedDate,feedbackStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate'); //set column field database for datatable orderable
-    var $column_order = array('feedbackId','feedbackByName','feedbackByProfession','feedbackSource','feedbackApprove','feedbackApprovedBy','feedbackApprovedDate','feedbackStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
-    var $column_search = array('feedbackByName','feedbackByProfession','feedbackSource'); //set column field database for datatable searchable
+    var $column_order = array('feedbackId','feedbackByName','feedbackByEmail','feedbackSource','feedbackApprove','feedbackApprovedBy','feedbackApprovedDate','feedbackStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_search = array('feedbackByName','feedbackByEmail','feedbackSource'); //set column field database for datatable searchable
     var $order = array('feedbackId' =>'desc'); // default order
 
     private function _get_datatables_query()
@@ -85,12 +85,16 @@ class Feedbackm extends CI_Model
         $feedbackStatus = $this->input->post("feedbackStatus");
         $feedbackSource = $this->input->post("feedbackSource");
         $feedbackDetails = $this->input->post("feedbackDetails");
+        $feedbackByEmail = $this->input->post("feedbackByEmail");
+        $feedbackByMobile = $this->input->post("feedbackByMobile");
 
 
         $data = array(
             'feedbackByName' => $feedbackByName,
             'feedbackByProfession' => $feedbackByProfession,
             'feedbackDetails' => $feedbackDetails,
+            'feedbackByEmail'=>$feedbackByEmail,
+            'feedbackByMobile'=>$feedbackByMobile,
             'feedbackStatus' => $feedbackStatus,
             'feedbackApprovedBy'=>$this->session->userdata('userEmail'),
             'feedbackApprovedDate'=>date("Y-m-d H:i:s"),
@@ -187,7 +191,7 @@ class Feedbackm extends CI_Model
     // for edit  Selected Feedback view
     public function getAllFeedbackbyId($feedbackId)
     {
-        $this->db->select('feedbackId,feedbackByName,feedbackByProfession,feedbackDetails,feedbackByPhoto,feedbackSource,feedbackApprove,feedbackApprovedBy,feedbackApprovedDate,feedbackStatus');
+        $this->db->select('feedbackId,feedbackByName,feedbackByEmail,feedbackByMobile,feedbackByProfession,feedbackDetails,feedbackByPhoto,feedbackSource,feedbackApprove,feedbackApprovedBy,feedbackApprovedDate,feedbackStatus');
         $this->db->from('ictmfeedback');
         $this->db->where('feedbackId',$feedbackId);
         $query = $this->db->get();
@@ -202,7 +206,10 @@ class Feedbackm extends CI_Model
         $feedbackDetails = $this->input->post("feedbackDetails");
         $feedbackSource = $this->input->post("feedbackSource");
         $feedbackApprove = $this->input->post("feedbackApprove");
+        $feedbackByEmail = $this->input->post("feedbackByEmail");
+        $feedbackByMobile = $this->input->post("feedbackByMobile");
         $feedbackByImage=$_FILES['feedbackByImage']['name'];
+
 
         if ($feedbackApprove ==SELECT_APPROVE[0])
         {
@@ -254,6 +261,8 @@ class Feedbackm extends CI_Model
                 'feedbackByPhoto' => $feedbackId.".".pathinfo($feedbackByImage, PATHINFO_EXTENSION),
                 'feedbackApprove' => $feedbackApprove,
                 'feedbackStatus' => $feedbackStatus,
+                'feedbackByEmail' => $feedbackByEmail,
+                'feedbackByMobile' => $feedbackByMobile,
                 'feedbackApprovedBy' =>$feedbackApproveBy,
                 'feedbackApprovedDate' =>$feedbackApprovedDate,
                 'homeStatus' => $homeStatus,
@@ -271,6 +280,8 @@ class Feedbackm extends CI_Model
                 'feedbackSource' =>$feedbackSource,
                 'feedbackApprove' => $feedbackApprove,
                 'feedbackStatus' => $feedbackStatus,
+                'feedbackByEmail' => $feedbackByEmail,
+                'feedbackByMobile' => $feedbackByMobile,
                 'feedbackApprovedBy' => $feedbackApproveBy,
                 'feedbackApprovedDate' => $feedbackApprovedDate,
                 'homeStatus' => $homeStatus,

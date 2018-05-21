@@ -19,6 +19,16 @@
     </div><!-- /.container -->
 </div><!-- /page-title -->
 
+<div id="sessionFlashMessageDiv">
+    <?php if ($this->session->flashdata('errorMessage')!=null){?>
+        <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+    <?php }
+    elseif($this->session->flashdata('successMessage')!=null){?>
+        <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+    <?php }?>
+
+</div>
+
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
@@ -361,7 +371,11 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
+
                                 <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
+                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>
+
                             </div>
                         </div>
                     </div>

@@ -289,7 +289,7 @@ class ApplyOnlinem extends CI_Model
     public function getApplicationId($studentOrAgentId)
     {
 
-        $this->db->select('id,studentApplicationFormId');
+        $this->db->select('id,studentApplicationFormId,isSubmited');
         $this->db->where('studentOrAgentId',$studentOrAgentId);
         $this->db->from('studentapplicationform');
         $query=$this->db->get();
@@ -297,6 +297,19 @@ class ApplyOnlinem extends CI_Model
 
 
     }
+    public function getApplicationInfoForAgent($studentOrAgentId)
+    {
+
+        $this->db->select('studentapplicationform.id,studentapplicationform.isSubmited,candidateinfo.title,candidateinfo.firstName,candidateinfo.surName,candidateinfo.email');
+        $this->db->join('candidateinfo', 'candidateinfo.applicationId = studentapplicationform.id','left');
+        $this->db->where('studentapplicationform.studentOrAgentId',$studentOrAgentId);
+        $this->db->from('studentapplicationform');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+
     public function deleteQualifications($qualificationId)
     {
 
@@ -664,6 +677,57 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
 
+    }
+
+    public function editRefereesDetailsById($refereesId,$data)
+    {
+
+        $this->db->where('id',$refereesId);
+        $error = $this->db->update('candidatereferees',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function insertRefereesDetailsFromEdit($data)
+    {
+
+        $this->security->xss_clean($data);
+        $error = $this->db->insert('candidatereferees',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function insertApplyForm9()
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+        $data1=array(
+            'applydate'=>date('Y-m-d H:i:s'),
+        );
+
+        $this->db->where('id',$applicationId);
+        $error = $this->db->update('candidateinfo',$data1);
+
+        $data = array(
+            'isSubmited' => '1',
+
+        );
+
+        $this->db->where('id',$applicationId);
+        $error = $this->db->update('studentapplicationform',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
     }
 
 }

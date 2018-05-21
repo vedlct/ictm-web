@@ -40,33 +40,34 @@
 
                 <table class="table  table-bordered">
                     <tr>
-                        <th>Qualification</th>
-                        <th>Institution</th>
-                        <th>Start Date</th>
-
+                        <th>Applicant's Name</th>
+                        <th>Applicant's Email</th>
+                        <th>Status</th>
                         <th>Action</th>
 
                     </tr>
                     <?php foreach ($applications as $application){?>
                         <tr>
-                            <td><?php echo $application->id ?></td>
-                            <td><?php echo $application->studentApplicationFormId ?></td>
-                            <td></td>
 
+                            <td><?php echo $application->title.' '.$application->firstName.' '.$application->surName ?></td>
+                            <td><?php echo $application->email ?></td>
+                            <td><?php if ($application->isSubmited=='0'){echo "Not Submitted";}elseif($application->isSubmited=='1'){echo "Submitted";} ?></td>
 
                             <td>
-                                <a class="btn" href=""><i class="fa fa-edit"></i></a>
-<!--                                <a class="btn" data-panel-id="--><?php //echo $qualifications->id ?><!--"  onclick="selectid(this)"><i class="fa fa-trash"></i></a>-->
+                                <?php if ($application->isSubmited=='0'){?>
+                                <a class="btn" href="<?php echo base_url()?>ApplyOnline/editApplyFromAgent/<?php echo $application->id ?>"><i class="fa fa-edit"></i></a>
+                                <?php } elseif($application->isSubmited=='1'){echo "Allready Submitted";} ?>
+
                             </td>
                         </tr>
                     <?php } ?>
                 </table>
 
-
-
-
-
-
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-md-10">
+                        <a href="<?php echo base_url()?>ApplyOnline/newApplyFromAgent" ><button type="button" class="btn btn-previous">New Application</button></a>
+                    </div>
+                </div>
 
 
 

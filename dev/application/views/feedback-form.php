@@ -31,7 +31,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-12">
 
-                <form role="form" action="<?php echo base_url()?>SubmitFeedback" method="post" enctype="multipart/form-data" class="registration-form form-horizontal" onsubmit="return submitFeedback()">
+                <form role="form" action="<?php echo base_url()?>SubmitFeedback" method="post" enctype="multipart/form-data" class="form-horizontal" onsubmit="return submitFeedback()">
 
 
                         <div class="form-bottom">
@@ -44,10 +44,24 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Profession *</label>
+                                <label class="control-label col-md-2">Profession </label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('profession'); ?></font></p>
-                                    <input type="text" name="profession" placeholder="Your Prefession (maximum 100 charecter)" value="<?php echo set_value('profession'); ?>"class="form-control" id="profession" maxlength="100" required>
+                                    <input type="text" name="profession" placeholder="Your Prefession (maximum 100 charecter)" value="<?php echo set_value('profession'); ?>"class="form-control" id="profession" maxlength="100" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Email *</label>
+                                <div class="col-md-10">
+                                    <p><font color="red"> <?php echo form_error('email'); ?></font></p>
+                                    <input type="text" name="email" placeholder="Your Email (maximum 255 charecter)" value="<?php echo set_value('email'); ?>"class="form-control" id="email" maxlength="255" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Mobile Number</label>
+                                <div class="col-md-10">
+                                    <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
+                                    <input type="text" name="mobile" placeholder="Your Mobile N.O. (maximum 45 charecter)" value="<?php echo set_value('mobile'); ?>"class="form-control" id="mobile" maxlength="45">
                                 </div>
                             </div>
 
@@ -60,10 +74,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Upload Image *</label>
+                                <label class="control-label col-md-2">Upload Image </label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('image'); ?></font></p>
-                                    <input type="file" class="form-control" id="image" name="image" required>
+                                    <input type="file" class="form-control" id="image" name="image" >
                                 </div>
                             </div>
 
@@ -95,6 +109,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var name =  document.getElementById("name").value;
         var profession =  document.getElementById("profession").value;
         var details =  document.getElementById("details").value;
+        var email =  document.getElementById("email").value;
+        var mobile =  document.getElementById("mobile").value;
+
+        var chk=/^[0-9]*$/;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
 
@@ -106,8 +125,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             alert("Name field can not be greater than 100 charecter !! ");
             return false;
         }
-        if (profession ==""){
-            alert("Profession field can not be empty !! ");
+        if (email ==""){
+            alert("Email field can not be empty !! ");
             return false;
         }
         if (profession.length > 100){
@@ -116,6 +135,19 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }
         if (details == ""){
             alert("Details field can not be empty !! ");
+            return false;
+        }
+        if(!mobile.match(chk)) {
+            alert( 'Please enter a valid Mobile number!!' );
+            return false;
+        }
+        if(mobile.length >45) {
+            alert( 'Mobile number must be less than 45 charecter!!' );
+            return false;
+        }
+        if(!email.match(mailformat))
+        {
+            alert("You have entered an invalid email address!");
             return false;
         }
 

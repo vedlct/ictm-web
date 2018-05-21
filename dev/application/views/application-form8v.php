@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow8" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm8" method="post" class="form-horizontal">
 
 <!--                    <fieldset>-->
                         <div class="form-top">
@@ -115,7 +115,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Country:</label>
                                 <div class="col-md-10">
-                                    <select required style="width: 100%" id="country"  name="country[]">
+                                    <select required style="width: 100%" id="country"  name="country">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                             <option value="<?php echo COUNTRY[$i]?>"<?php
@@ -129,10 +129,10 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
 
