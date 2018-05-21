@@ -42,6 +42,14 @@ class ApplyOnline extends CI_Controller
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
 
+            $dataSession = [
+                'studentApplicationId' => $id,
+            ];
+            $this->session->set_userdata($dataSession);
+
+         //   print_r($id);
+         //   print_r($this->session->userdata('studentApplicationId'));
+
             $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($id);
             $this->load->view('application-formv', $this->data);
 
@@ -61,8 +69,10 @@ class ApplyOnline extends CI_Controller
             $this->menu();
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
             $studentOrAgentId = $this->session->userdata('id');
             $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
+
             if (empty($this->data['applicationId'])) {
                 $this->load->view('application-form', $this->data);
             } else {
@@ -271,6 +281,10 @@ class ApplyOnline extends CI_Controller
     public function insertApplicationForm2() // insert application form 2
     {
         if ($this->session->userdata('loggedin') == "true") {
+
+         //   print_r($this->session->userdata('studentApplicationId'));
+
+
             $this->ApplyOnlinem->applyNow2Insert();
             redirect('ApplyForm2');
         }else{
@@ -1593,6 +1607,24 @@ class ApplyOnline extends CI_Controller
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
             $this->load->view('application-form9', $this->data);
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+    }
+    public function applyNow10() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+            $this->load->view('application-form10', $this->data);
 
 
         }else{
