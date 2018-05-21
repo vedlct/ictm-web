@@ -270,11 +270,11 @@ $config = array (
             'rules' => 'max_length[50]|xss_clean|htmlspecialchars',
 
         ),
-        array(
-            'field' => 'otherName',
-            'label' => 'Other Name',
-            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
-        ),
+//        array(
+//            'field' => 'otherName',
+//            'label' => 'Other Name',
+//            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+//        ),
         array(
             'field' => 'dob',
             'label' => 'Date Of Birth',
@@ -336,6 +336,11 @@ $config = array (
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
         ),
         array(
+            'field' => 'currentAddressCountry',
+            'label' => 'Current Address Country',
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
+        ),
+        array(
             'field' => 'currentAddressPO',
             'label' => 'Current Address Post Office',
             'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
@@ -345,6 +350,11 @@ $config = array (
             'field' => 'overseasHomeAddress',
             'label' => 'overseas Home Address',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'permanentAddressCountry',
+            'label' => 'Permanent Address Country',
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'overseasAddressPO',
@@ -407,6 +417,11 @@ $config = array (
             'field' => 'EmergencyContactAddressPO',
             'label' => 'Emergency Contact Address Post Office',
             'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'emergencyContactCountry',
+            'label' => 'Emergency Contact Country',
+            'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
         ),
 
         array(

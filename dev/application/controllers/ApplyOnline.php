@@ -139,7 +139,7 @@ class ApplyOnline extends CI_Controller
                 $candidateTitle = $this->input->post("title");
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
-                $candidateOtherNamee = $this->input->post("otherName");
+//                $candidateOtherNamee = $this->input->post("otherName");
                 $candidateDob = $this->input->post("dob");
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
@@ -149,10 +149,17 @@ class ApplyOnline extends CI_Controller
                 $candidateUkEntryDate = $this->input->post("UkEntryDate");
                 $candidateVisaType = $this->input->post("VisaType");
                 $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+
                 $candidateCurrentAddress = $this->input->post("currentAddress");
+                $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
+
+                //This is overseas Address ,We consider this permanent address
+
                 $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
+                $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
                 $candidateOverseasHomeAddressPO = $this->input->post("overseasAddressPO");
+
                 $candidateTelephone = $this->input->post("telephone");
                 $candidateMobile = $this->input->post("mobile");
                 $candidateEmail = $this->input->post("email");
@@ -162,6 +169,7 @@ class ApplyOnline extends CI_Controller
                 $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
                 $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
                 $EmergencyContactAddressPO = $this->input->post("EmergencyContactAddressPO");
+                $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
                 $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
                 $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
                 $courseName = $this->input->post("courseName");
@@ -186,7 +194,7 @@ class ApplyOnline extends CI_Controller
                     'title'=>$candidateTitle,
                     'firstName'=>$candidateFirstName,
                     'surName'=>$candidateSurName,
-                    'otherNames'=>$candidateOtherNamee,
+//                    'otherNames'=>$candidateOtherNamee,
                     'dateOfBirth'=>$candidateDob,
                     'gender'=>$candidateGender,
                     'placeOfBirth'=>$candidatePlaceOfBirth,
@@ -198,8 +206,10 @@ class ApplyOnline extends CI_Controller
                     'visaExpiryDate'=>$candidateVisaExpiryDate,
                     'currentAddress'=>$candidateCurrentAddress,
                     'currentAddressPo'=>$candidateCurrentAddressPO,
+                    'currentAddressCountry'=>$candidateCurrentAddressCountry,
                     'overseasAddress'=>$candidateOverseasHomeAddress,
                     'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
+                    'permanentAddressCountry'=>$candidatePermanentAddressCountry,
                     'telephoneNo'=>$candidateTelephone,
                     'mobileNo'=>$candidateMobile,
                     'email'=>$candidateEmail,
@@ -209,6 +219,7 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactRelation'=>$EmergencyContactRelation,
                     'emergencyContactAddress'=>$EmergencyContactAddress,
                     'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
+                    'emergencyContactCountry'=>$EmergencyContactCountry,
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
                 );
@@ -350,7 +361,7 @@ class ApplyOnline extends CI_Controller
                 $candidateTitle = $this->input->post("title");
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
-                $candidateOtherNamee = $this->input->post("otherName");
+//                $candidateOtherNamee = $this->input->post("otherName");
                 $candidateDob = $this->input->post("dob");
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
@@ -397,7 +408,7 @@ class ApplyOnline extends CI_Controller
                     'title'=>$candidateTitle,
                     'firstName'=>$candidateFirstName,
                     'surName'=>$candidateSurName,
-                    'otherNames'=>$candidateOtherNamee,
+//                    'otherNames'=>$candidateOtherNamee,
                     'dateOfBirth'=>$candidateDob,
                     'gender'=>$candidateGender,
                     'placeOfBirth'=>$candidatePlaceOfBirth,

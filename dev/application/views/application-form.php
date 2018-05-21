@@ -68,13 +68,13 @@
                                           	</div>
 				                        </div>
                                         
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Other Names:</label>
-                                          	<div class="col-md-10">
-                                                <p><font color="red"> <?php echo form_error('otherName'); ?></font></p>
-                                            	<input type="text" class="form-control" id="otherName" name="otherName" value="<?php echo set_value('otherName'); ?>">
-                                          	</div>
-				                        </div>
+<!--                                        <div class="form-group">-->
+<!--                                        	<label class="control-label col-md-2">Other Names:</label>-->
+<!--                                          	<div class="col-md-10">-->
+<!--                                                <p><font color="red"> --><?php //echo form_error('otherName'); ?><!--</font></p>-->
+<!--                                            	<input type="text" class="form-control" id="otherName" name="otherName" value="--><?php //echo set_value('otherName'); ?><!--">-->
+<!--                                          	</div>-->
+<!--				                        </div>-->
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
@@ -182,6 +182,22 @@
                                             	<textarea id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo set_value('currentAddress'); ?></textarea>
                                           	</div>
 				                        </div>
+                                        <div class="form-group">
+                                        	<label class="control-label col-md-2">Current Address Courntry:<span class="required">*</span></label>
+                                          	<div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
+
+                                                <select style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
+                                                    <option value="" disabled selected>Select country...</option>
+                                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                        <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                        <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                        echo set_value('currentAddressCountry') == COUNTRY[$i] ? "selected" : "";
+                                                        ?>><?php echo COUNTRY[$i]?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+				                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-md-2">Current Address P.O :<span class="required">*</span></label>
@@ -190,9 +206,9 @@
                                                 <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo set_value('currentAddressPO'); ?>">
                                             </div>
                                         </div>
-                                        
+                                        <!-- This is overseas Address ,We consider this permanent address -->
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Overseas (Home) Address:<span class="required">*</span></label>
+                                        	<label class="control-label col-md-2">Permanent (Home) Address:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
                                             	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo set_value('overseasHomeAddress');?></textarea>
@@ -200,7 +216,24 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Overseas (Home) Address P.O :<span class="required">*</span></label>
+                                            <label class="control-label col-md-2">Permanent Address Courntry:<span class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
+
+                                                <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
+                                                    <option value="" disabled selected>Select country...</option>
+                                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                        <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                        <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                        echo set_value('permanentAddressCountry') == COUNTRY[$i] ? "selected" : "";
+                                                        ?>><?php echo COUNTRY[$i]?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Permanent (Home) Address P.O :<span class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
                                                 <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo set_value('overseasAddressPO'); ?>">
@@ -285,6 +318,22 @@
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
                                                 <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo set_value('EmergencyContactAddressPO'); ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Emergency Contact Country :<span class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
+
+                                                <select style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
+                                                    <option value="" disabled selected>Select country...</option>
+                                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                        <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                        <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                        echo set_value('emergencyContactCountry') == COUNTRY[$i] ? "selected" : "";
+                                                        ?>><?php echo COUNTRY[$i]?></option>
+                                                    <?php } ?>
+                                                </select>
                                             </div>
                                         </div>
                                         
