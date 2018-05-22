@@ -77,13 +77,13 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Other Names:</label>
-                            <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('otherName'); ?></font></p>
-                                <input type="text" class="form-control" id="otherName" name="otherName" value="<?php echo $candidateInfo->otherNames ?>">
-                            </div>
-                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <label class="control-label col-md-2">Other Names:</label>-->
+<!--                            <div class="col-md-10">-->
+<!--                                <p><font color="red"> --><?php //echo form_error('otherName'); ?><!--</font></p>-->
+<!--                                <input type="text" class="form-control" id="otherName" name="otherName" value="--><?php //echo $candidateInfo->otherNames ?><!--">-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="form-group">
                             <label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
