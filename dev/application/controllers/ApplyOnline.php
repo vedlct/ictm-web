@@ -175,10 +175,21 @@ class ApplyOnline extends CI_Controller
                 $courseName = $this->input->post("courseName");
                 $awardingBody = $this->input->post("awardingBody");
                 $courseLevel = $this->input->post("courseLevel");
-                $courseStartDate = $this->input->post("courseStartDate");
-                $courseEndDate = $this->input->post("courseEndDate");
+
+//                $courseStartDate = $this->input->post("courseStartDate");
+//                $courseEndDate = $this->input->post("courseEndDate");
+
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
                 $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+
+                $courseSession = $this->input->post("courseSession");
+                $courseYear = $this->input->post("courseYear");
+                $timeOfStudy = $this->input->post("timeOfStudy");
+                $ulnNo = $this->input->post("ulnNo");
+                $ucasCourseCode = $this->input->post("ucasCourseCode");
+
+
+
 
                 $data3=array(
                     'studentOrAgentId'=>$this->session->userdata('id'),
@@ -222,14 +233,22 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactCountry'=>$EmergencyContactCountry,
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
+
+
                 );
                 $data1=array(
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
                     'courseLevel'=>$courseLevel,
-                    'courseStartDate'=>$courseStartDate,
-                    'courseEndDate'=>$courseEndDate,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
                     'methodOfStudy'=>$methodeOfStudy,
+
+                    'courseSession'=>$courseSession,
+                    'courseYear'=>$courseYear,
+                    'timeOfStudy'=>$timeOfStudy,
+                    'ulnNo'=>$ulnNo,
+                    'ucasCourseCode'=>$ucasCourseCode,
                 );
                 $this->ApplyOnlinem->insertApplyForm1($data,$data1);
                 redirect('ApplyForm2');
@@ -389,11 +408,23 @@ class ApplyOnline extends CI_Controller
                 $courseName = $this->input->post("courseName");
                 $awardingBody = $this->input->post("awardingBody");
                 $courseLevel = $this->input->post("courseLevel");
-                $courseStartDate = $this->input->post("courseStartDate");
-                $courseEndDate = $this->input->post("courseEndDate");
+//                $courseStartDate = $this->input->post("courseStartDate");
+//                $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
-               // $aplicationFormid=$this->session->userdata('id').date("YmdHis");
 
+                $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
+                $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
+                $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
+
+                $courseSession = $this->input->post("courseSession");
+                $courseYear = $this->input->post("courseYear");
+                $timeOfStudy = $this->input->post("timeOfStudy");
+                $ulnNo = $this->input->post("ulnNo");
+                $ucasCourseCode = $this->input->post("ucasCourseCode");
+
+
+//                $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+//
 //                $data3=array(
 //                    'studentOrAgentId'=>$this->session->userdata('id'),
 //                    'studentApplicationFormId'=>$aplicationFormid
@@ -433,14 +464,25 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
+
+                    'currentAddressCountry'=>$candidateCurrentAddressCountry,
+                    'permanentAddressCountry'=>$candidatePermanentAddressCountry,
+                    'emergencyContactCountry'=>$EmergencyContactCountry,
                 );
                 $data1=array(
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
                     'courseLevel'=>$courseLevel,
-                    'courseStartDate'=>$courseStartDate,
-                    'courseEndDate'=>$courseEndDate,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
                     'methodOfStudy'=>$methodeOfStudy,
+
+                    'courseSession'=>$courseSession,
+                    'courseYear'=>$courseYear,
+                    'timeOfStudy'=>$timeOfStudy,
+                    'ulnNo'=>$ulnNo,
+                    'ucasCourseCode'=>$ucasCourseCode,
+
                 );
                 $this->data['error']=$this->ApplyOnlinem->editApplyForm1($data,$data1);
 

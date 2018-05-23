@@ -454,23 +454,23 @@ $config = array (
 //            'rules' => 'required|max_length[20]|xss_clean|htmlspecialchars'
 //        ),
 
-        array(
-            'field' => 'courseStartDate',
-            'label' => 'course Start Date',
-            'rules' => 'required|xss_clean|htmlspecialchars'
-        ),
+//        array(
+//            'field' => 'courseStartDate',
+//            'label' => 'course Start Date',
+//            'rules' => 'required|xss_clean|htmlspecialchars'
+//        ),
+//
+//        array(
+//            'field' => 'courseEndDate',
+//            'label' => 'course End Date',
+//            'rules' => 'required|xss_clean|htmlspecialchars'
+//        ),
 
-        array(
-            'field' => 'courseEndDate',
-            'label' => 'course End Date',
-            'rules' => 'required|xss_clean|htmlspecialchars'
-        ),
-
-        array(
-            'field' => 'courseEndDate',
-            'label' => 'course End Date',
-            'rules' => 'required|xss_clean|htmlspecialchars'
-        ),
+//        array(
+//            'field' => 'courseEndDate',
+//            'label' => 'course End Date',
+//            'rules' => 'required|xss_clean|htmlspecialchars'
+//        ),
 
         array(
             'field' => 'methodeOfStudy',
