@@ -84,35 +84,28 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
     }
+    public function getFinancerDataFromOthers($applicationId)
+    {
+
+        $this->db->select('id,name,title,relation,address,addressPo,mobile,telephone,email');
+        $this->db->where('fkApplicationId', $applicationId);
+        $this->db->from('financer');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
 
 
         public function getFinancerData($applicationId){
 
-        $this->db->select('selfFinance');
+//        $this->db->select('selfFinance');
+        $this->db->select('sourceOfFinance');
         $this->db->where('applicationId',$applicationId);
         $this->db->from('candidateinfo');
         $query=$this->db->get();
-        foreach ($query->result() as $selfFinance){
-            $finance=$selfFinance->selfFinance;
+        return $query->result();
+
         }
-        if (!empty($finance)) {
-            if ($finance == 'y') {
-                return $finance;
-            } elseif ($finance == 'n') {
-
-                $this->db->select('id,name,title,relation,address,addressPo,mobile,telephone,email,fax');
-                $this->db->where('fkApplicationId', $applicationId);
-                $this->db->from('financer');
-                $query = $this->db->get();
-                return $query->result();
-
-
-            }
-        }else{
-            return null;
-        }
-
-    }
 
     public function updatApplynow4()
     {
@@ -121,10 +114,10 @@ class ApplyOnlinem extends CI_Model
 
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        if ($selfFinance =='y'){
+        if ($selfFinance =='own'){
 
             $data1 = array(
-                'selfFinance' => 'y',
+                'sourceOfFinance' => 'own',
 
             );
 
@@ -145,11 +138,11 @@ class ApplyOnlinem extends CI_Model
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
-            $fax = $this->input->post('fax');
+//            $fax = $this->input->post('fax');
             $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
-                'selfFinance' => 'n',
+                'sourceOfFinance' => $selfFinance,
 
             );
 
@@ -162,7 +155,7 @@ class ApplyOnlinem extends CI_Model
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
-                'fax' => $fax,
+//                'fax' => $fax,
                 'addressPo'=>$AddressPO,
                 'fkApplicationId'=>$applicationId
 
@@ -193,10 +186,10 @@ class ApplyOnlinem extends CI_Model
 
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        if ($selfFinance =='y'){
+        if ($selfFinance =='own'){
 
             $data1 = array(
-                'selfFinance' => 'y',
+                'sourceOfFinance' => 'own',
 
             );
 
@@ -215,11 +208,11 @@ class ApplyOnlinem extends CI_Model
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
-            $fax = $this->input->post('fax');
+//            $fax = $this->input->post('fax');
             $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
-                'selfFinance' => 'n',
+                'sourceOfFinance' => $selfFinance,
 
             );
 
@@ -232,7 +225,7 @@ class ApplyOnlinem extends CI_Model
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
-                'fax' => $fax,
+//                'fax' => $fax,
                 'addressPo'=>$AddressPO,
                 'fkApplicationId'=>$applicationId
 
@@ -428,10 +421,10 @@ class ApplyOnlinem extends CI_Model
 
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        if ($selfFinance =='y'){
+        if ($selfFinance =='own'){
 
             $data1 = array(
-                'selfFinance' => 'y',
+                'sourceOfFinance' => 'own',
 
             );
 
@@ -446,11 +439,11 @@ class ApplyOnlinem extends CI_Model
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
-            $fax = $this->input->post('fax');
+//            $fax = $this->input->post('fax');
             $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
-                'selfFinance' => 'n',
+                'sourceOfFinance' => $selfFinance,
 
             );
 
@@ -463,7 +456,7 @@ class ApplyOnlinem extends CI_Model
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
-                'fax' => $fax,
+//                'fax' => $fax,
                 'addressPo'=>$AddressPO,
                 'fkApplicationId'=>$applicationId
 

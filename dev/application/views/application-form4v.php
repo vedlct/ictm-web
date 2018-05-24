@@ -54,8 +54,9 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Self Finance:</label>
                                     <div class="col-md-10">
-                                        <input type="radio" <?php if ($financeYes=='y'){?> checked <?php }?> required name="selfFinance" value="y"> Yes&nbsp;&nbsp;
-                                        <input type="radio" <?php if ($financeYes=='n'){?> checked <?php }?> required name="selfFinance" value="n"> No&nbsp;&nbsp;
+                                        <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC &nbsp;&nbsp;
+                                        <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> Yes&nbsp;&nbsp;
+                                        <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsor&nbsp;&nbsp;&nbsp;
                                     </div>
                                 </div>
 
@@ -135,13 +136,14 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Fax*:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('fax'); ?></font></p>
-                                    <input type="text" class="form-control" id="fax" name="fax"  value="<?php echo $f4->fax ?>">
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Fax*:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <p><font color="red"> --><?php //echo form_error('fax'); ?><!--</font></p>-->
+<!--                                    <input type="text" class="form-control" id="fax" name="fax"  value="--><?php //echo $f4->fax ?><!--">-->
+<!--                                </div>-->
+<!--                            </div>-->
+
                             </div>
 
                             <div class="form-group">
@@ -203,7 +205,7 @@
 
     $("input[name=selfFinance]").click( function () {
 
-        if ($(this).val()=='y'){
+        if ($(this).val()=='own'){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -215,7 +217,7 @@
 
         var finance=$('input[name=selfFinance]:checked').val();
 
-        if (finance == 'n') {
+        if (finance != 'own') {
 
             var email = document.getElementById("email").value;
             var name = document.getElementById("name").value;
