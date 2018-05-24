@@ -57,9 +57,27 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div id="TextBoxDiv1" >
                                 <input type="hidden" class="form-control" id="qualificationId"  name="qualificationId">
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Qualification<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Qualification Name<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
                                         <input type="text" class="form-control" id="qualification" required name="qualification">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Qualification Level<span style="color: red">*</span>:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="qualificationLevel" required name="qualificationLevel">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Awarding Body<span style="color: red">*</span>:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="awardingBody" required name="awardingBody">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Subject<span style="color: red">*</span>:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="subject" required name="subject">
                                     </div>
                                 </div>
 
@@ -69,20 +87,26 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         <input type="text" class="form-control" id="institution" required name="institution">
                                     </div>
                                 </div>
-
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="startdate" required name="startdate">
+                                        <input type="text" class="form-control" id="completionYear" required name="completionYear">
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
-                                        <input type="date" class="form-control" id="enddate" required name="enddate">
-                                    </div>
-                                </div>
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>-->
+<!--                                    <div class="col-md-10">-->
+<!--                                        <input type="date" class="form-control" id="startdate" required name="startdate">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!---->
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>-->
+<!--                                    <div class="col-md-10">-->
+<!--                                        <input type="date" class="form-control" id="enddate" required name="enddate">-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
@@ -109,22 +133,26 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <div id="qualificationTable">
                         <table  class="table  table-bordered">
                             <tr>
-                                <th>Id</th>
+
                                 <th>Qualification</th>
+                                <th>Level</th>
                                 <th>Institution</th>
-                                <th>Start Date</th>
-                                <th>End Date</th>
+                                <th>Awarding Body</th>
+                                <th>Subject</th>
+                                <th>Complettion Year</th>
                                 <th>Grade</th>
                                 <th>Action</th>
 
                             </tr>
                             <?php foreach ($qualification as $qualifications){?>
                                 <tr>
-                                    <td><?php echo $qualifications->id ?></td>
+
                                     <td><?php echo $qualifications->qualification ?></td>
+                                    <td><?php echo $qualifications->qualificationLevel?></td>
                                     <td><?php echo $qualifications->institution ?></td>
-                                    <td><?php echo $qualifications->startDate ?></td>
-                                    <td><?php echo $qualifications->endDate ?></td>
+                                    <td><?php echo $qualifications->awardingBody ?></td>
+                                    <td><?php echo $qualifications->subject ?></td>
+                                    <td><?php echo $qualifications->completionYear ?></td>
                                     <td><?php echo $qualifications->obtainResult ?></td>
                                     <td>
                                         <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
@@ -184,19 +212,29 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     // Read values
                     var qualification = response[0].qualification;
                     var institution = response[0].institution;
-                    var startDate = response[0].startDate;
-                    var endDate = response[0].endDate;
+//                    var startDate = response[0].startDate;
+//                    var endDate = response[0].endDate;
                     var qualificationId = response[0].id;
                     var grade = response[0].obtainResult;
+
+                    var qualificationLevel = response[0].qualificationLevel;
+                    var awardingBody = response[0].awardingBody;
+                    var subject = response[0].subject;
+                    var completionYear = response[0].completionYear;
                 }
 
 
                 document.getElementById("qualification").value= qualification;
                 document.getElementById("institution").value= institution;
-                document.getElementById("startdate").value= startDate;
-                document.getElementById("enddate").value= endDate;
+//                document.getElementById("startdate").value= startDate;
+//                document.getElementById("enddate").value= endDate;
                 document.getElementById("grade").value= grade;
                 document.getElementById("qualificationId").value= qualificationId;
+
+                document.getElementById("qualificationLevel").value= qualificationLevel;
+                document.getElementById("awardingBody").value= awardingBody;
+                document.getElementById("subject").value= subject;
+                document.getElementById("completionYear").value= completionYear;
 
             }
 
@@ -228,9 +266,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
         var Qualification=$('#qualification').val();
         var institution=$('#institution').val();
-        var startdate=$('#startdate').val();
-        var enddate=$('#enddate').val();
+//        var startdate=$('#startdate').val();
+//        var enddate=$('#enddate').val();
         var grade=$('#grade').val();
+
+        var qualificationLevel=$('#qualificationLevel').val();
+        var awardingBody=$('#awardingBody').val();
+        var subject=$('#subject').val();
+        var completionYear=$('#completionYear').val();
 
         if (Qualification == ""){
             alert('Please add a Qualification');
@@ -244,22 +287,38 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }if (institution.length > 100){
             alert('Institution must be less then 100 charecter');
             return false;
-        }if (startdate == ""){
-            alert('Please add a startdate');
+        }
+//        if (startdate == ""){
+//            alert('Please add a startdate');
+//            return false;
+//        }if (enddate == ""){
+//            alert('Please add a enddate');
+//            return false;
+//        }
+        if (qualificationLevel == ""){
+            alert('Please add a qualificationLevel');
             return false;
-        }if (enddate == ""){
-            alert('Please add a enddate');
+        }if (awardingBody == ""){
+            alert('Please add a awardingBody');
+            return false;
+        }if (subject == ""){
+            alert('Please add a subject');
+            return false;
+        }if (completionYear == ""){
+            alert('Please add a completionYear');
             return false;
         }if (grade == ""){
             alert('Please add a grade');
             return false;
-        }if (grade.length > 20){
+        }
+        if (grade.length > 20){
             alert('grade must be less then 20 charecter');
             return false;
-        }if (enddate < startdate){
-            alert('Please Select StartDate and EndDate Correctly');
-            return false;
         }
+//        if (enddate < startdate){
+//            alert('Please Select StartDate and EndDate Correctly');
+//            return false;
+//        }
     }
     function btnNext() {
 

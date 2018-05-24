@@ -338,7 +338,7 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
+                                        	<label class="control-label col-md-2">Mobile/Telephone:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
                                             	<input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
@@ -385,24 +385,41 @@
                                           	</div>
 				                        </div>
                                         
+<!--                                        <div class="form-group">-->
+<!--                                        	<label class="control-label col-md-2">Course Start Date:</label>-->
+<!--                                          	<div class="col-md-10">-->
+<!--                                                <p><font color="red"> --><?php //echo form_error('courseStartDate'); ?><!--</font></p>-->
+<!--                                            	<input type="date" class="form-control" id="courseStartDate" name="courseStartDate" value="--><?php //echo set_value('courseStartDate'); ?><!--" >-->
+<!--                                          	</div>-->
+<!--				                        </div>-->
+<!--                                        -->
+<!--                                        <div class="form-group">-->
+<!--                                        	<label class="control-label col-md-2">Course End Date:</label>-->
+<!--                                          	<div class="col-md-10">-->
+<!--                                                <p><font color="red"> --><?php //echo form_error('courseEndDate'); ?><!--</font></p>-->
+<!--                                            	<input type="date" class="form-control" id="courseEndDate" name="courseEndDate" value="--><?php //echo set_value('courseEndDate'); ?><!--">-->
+<!--                                          	</div>-->
+<!--				                        </div>-->
+
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Course Start Date:</label>
-                                          	<div class="col-md-10">
-                                                <p><font color="red"> <?php echo form_error('courseStartDate'); ?></font></p>
-                                            	<input type="date" class="form-control" id="courseStartDate" name="courseStartDate" value="<?php echo set_value('courseStartDate'); ?>" >
-                                          	</div>
-				                        </div>
+                                            <label class="control-label col-md-2">Course Session:</label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
+                                                <input type="text" class="form-control" id="courseSession" name="courseSession" value="<?php echo set_value('courseSession'); ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Year:</label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
+                                                <input type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo set_value('courseYear'); ?>">
+                                            </div>
+                                        </div>
+
+
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Course End Date:</label>
-                                          	<div class="col-md-10">
-                                                <p><font color="red"> <?php echo form_error('courseEndDate'); ?></font></p>
-                                            	<input type="date" class="form-control" id="courseEndDate" name="courseEndDate" value="<?php echo set_value('courseEndDate'); ?>">
-                                          	</div>
-				                        </div>
-                                        
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Method of study:<span class="required">*</span></label>
+                                        	<label class="control-label col-md-2">Mode of study:<span class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
                                             	<input type="radio" required name="methodeOfStudy" <?php
@@ -411,14 +428,36 @@
                                                 <input type="radio" required name="methodeOfStudy" <?php
                                                 echo set_value('methodeOfStudy') == 'PT' ? "checked" : "";
                                                 ?> value="PT"> Part Time&nbsp;&nbsp;
-                                                <input type="radio" required name="methodeOfStudy" <?php
-                                                echo set_value('methodeOfStudy') == 'D' ? "checked" : "";
+
+                                          	</div>
+				                        </div>
+                                        <div class="form-group">
+                                        	<label class="control-label col-md-2">Time of study:<span class="required">*</span></label>
+                                          	<div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
+
+                                                <input type="radio" required name="timeOfStudy" <?php
+                                                echo set_value('timeOfStudy') == 'D' ? "checked" : "";
                                                 ?> value="D"> Day&nbsp;&nbsp;
-                                                <input type="radio" required name="methodeOfStudy" <?php
-                                                echo set_value('methodeOfStudy') == 'E&W' ? "checked" : "";
+                                                <input type="radio" required name="timeOfStudy" <?php
+                                                echo set_value('timeOfStudy') == 'E&W' ? "checked" : "";
                                                 ?> value="E&W"> Evenings & Weekend
                                           	</div>
 				                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">ULN No.:</label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('ulnNo'); ?></font></p>
+                                                <input type="text" class="form-control" id="ulnNo" name="ulnNo" value="<?php echo set_value('ulnNo'); ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">UCAS Course Code:</label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('ucasCourseCode'); ?></font></p>
+                                                <input type="text" class="form-control" id="ucasCourseCode" name="ucasCourseCode" value="<?php echo set_value('ucasCourseCode'); ?>">
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">

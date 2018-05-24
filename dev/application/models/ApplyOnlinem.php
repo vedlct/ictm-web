@@ -66,7 +66,7 @@ class ApplyOnlinem extends CI_Model
     }
     public function getQualifications($applicationId){
 
-        $this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
+        $this->db->select('id,qualification,institution,qualificationLevel,awardingBody,subject,completionYear,obtainResult');
         $this->db->where('fkApplicationId',$applicationId);
         $this->db->from('personqualifications');
         $query=$this->db->get();
@@ -278,7 +278,8 @@ class ApplyOnlinem extends CI_Model
     public function getQualificationsDetails($qualificationId)
     {
 
-        $this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
+//        $this->db->select('id,qualification,institution,startDate,endDate,obtainResult');
+        $this->db->select('id,qualification,institution,qualificationLevel,awardingBody,subject,completionYear,obtainResult');
         $this->db->where('id',$qualificationId);
         $this->db->from('personqualifications');
         $query=$this->db->get();
@@ -321,7 +322,11 @@ class ApplyOnlinem extends CI_Model
     public function getCandidateInfo($studentApplicationId)
     {
 
-        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddressPo,overseasAddress,overseasAddressPo,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,emergencyContactAddressPo,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,methodOfStudy');
+        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,
+        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddressPo,overseasAddress,
+        overseasAddressPo,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
+        emergencyContactAddressPo,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
+        methodOfStudy,courseSession,courseYear,timeOfStudy,ulnNo,ucasCourseCode');
         $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->where('applicationId',$studentApplicationId);
         $this->db->from('candidateinfo');
@@ -335,9 +340,14 @@ class ApplyOnlinem extends CI_Model
     {
         $qualification = $this->input->post('qualification[]');
         $institution = $this->input->post('institution[]');
-        $startdate = $this->input->post('startdate[]');
-        $enddate = $this->input->post('enddate[]');
+//        $startdate = $this->input->post('startdate[]');
+//        $enddate = $this->input->post('enddate[]');
         $grade = $this->input->post('grade[]');
+
+        $qualificationLevel = $this->input->post('qualificationLevel[]');
+        $awardingBody = $this->input->post('awardingBody[]');
+        $subject = $this->input->post('subject[]');
+        $completionYear = $this->input->post('completionYear[]');
 
 
         for ($i = 0; $i < count($qualification); $i++) {
@@ -345,9 +355,15 @@ class ApplyOnlinem extends CI_Model
                 'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                 'qualification' => $qualification[$i],
                 'institution' => $institution[$i],
-                'startDate' => $startdate[$i],
-                'endDate' => $enddate[$i],
+//                'startDate' => $startdate[$i],
+//                'endDate' => $enddate[$i],
                 'obtainResult' => $grade[$i],
+
+                'qualificationLevel' => $qualificationLevel[$i],
+                'awardingBody' => $awardingBody[$i],
+                'subject' => $subject[$i],
+                'completionYear' => $completionYear[$i],
+
 
             );
 

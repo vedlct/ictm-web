@@ -175,10 +175,21 @@ class ApplyOnline extends CI_Controller
                 $courseName = $this->input->post("courseName");
                 $awardingBody = $this->input->post("awardingBody");
                 $courseLevel = $this->input->post("courseLevel");
-                $courseStartDate = $this->input->post("courseStartDate");
-                $courseEndDate = $this->input->post("courseEndDate");
+
+//                $courseStartDate = $this->input->post("courseStartDate");
+//                $courseEndDate = $this->input->post("courseEndDate");
+
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
                 $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+
+                $courseSession = $this->input->post("courseSession");
+                $courseYear = $this->input->post("courseYear");
+                $timeOfStudy = $this->input->post("timeOfStudy");
+                $ulnNo = $this->input->post("ulnNo");
+                $ucasCourseCode = $this->input->post("ucasCourseCode");
+
+
+
 
                 $data3=array(
                     'studentOrAgentId'=>$this->session->userdata('id'),
@@ -222,14 +233,22 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactCountry'=>$EmergencyContactCountry,
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
+
+
                 );
                 $data1=array(
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
                     'courseLevel'=>$courseLevel,
-                    'courseStartDate'=>$courseStartDate,
-                    'courseEndDate'=>$courseEndDate,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
                     'methodOfStudy'=>$methodeOfStudy,
+
+                    'courseSession'=>$courseSession,
+                    'courseYear'=>$courseYear,
+                    'timeOfStudy'=>$timeOfStudy,
+                    'ulnNo'=>$ulnNo,
+                    'ucasCourseCode'=>$ucasCourseCode,
                 );
                 $this->ApplyOnlinem->insertApplyForm1($data,$data1);
                 redirect('ApplyForm2');
@@ -389,11 +408,23 @@ class ApplyOnline extends CI_Controller
                 $courseName = $this->input->post("courseName");
                 $awardingBody = $this->input->post("awardingBody");
                 $courseLevel = $this->input->post("courseLevel");
-                $courseStartDate = $this->input->post("courseStartDate");
-                $courseEndDate = $this->input->post("courseEndDate");
+//                $courseStartDate = $this->input->post("courseStartDate");
+//                $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
-               // $aplicationFormid=$this->session->userdata('id').date("YmdHis");
 
+                $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
+                $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
+                $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
+
+                $courseSession = $this->input->post("courseSession");
+                $courseYear = $this->input->post("courseYear");
+                $timeOfStudy = $this->input->post("timeOfStudy");
+                $ulnNo = $this->input->post("ulnNo");
+                $ucasCourseCode = $this->input->post("ucasCourseCode");
+
+
+//                $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+//
 //                $data3=array(
 //                    'studentOrAgentId'=>$this->session->userdata('id'),
 //                    'studentApplicationFormId'=>$aplicationFormid
@@ -433,14 +464,25 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
+
+                    'currentAddressCountry'=>$candidateCurrentAddressCountry,
+                    'permanentAddressCountry'=>$candidatePermanentAddressCountry,
+                    'emergencyContactCountry'=>$EmergencyContactCountry,
                 );
                 $data1=array(
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
                     'courseLevel'=>$courseLevel,
-                    'courseStartDate'=>$courseStartDate,
-                    'courseEndDate'=>$courseEndDate,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
                     'methodOfStudy'=>$methodeOfStudy,
+
+                    'courseSession'=>$courseSession,
+                    'courseYear'=>$courseYear,
+                    'timeOfStudy'=>$timeOfStudy,
+                    'ulnNo'=>$ulnNo,
+                    'ucasCourseCode'=>$ucasCourseCode,
+
                 );
                 $this->data['error']=$this->ApplyOnlinem->editApplyForm1($data,$data1);
 
@@ -595,19 +637,30 @@ class ApplyOnline extends CI_Controller
     public function editORInsertApplicationForm2() // edit OR Insert Application Form2
     {
         if ($this->session->userdata('loggedin') == "true") {
+
             $qualificationId = $this->input->post("qualificationId");
             $qualification = $this->input->post("qualification");
             $institution = $this->input->post("institution");
-            $startdate = $this->input->post("startdate");
-            $enddate = $this->input->post("enddate");
+//            $startdate = $this->input->post("startdate");
+//            $enddate = $this->input->post("enddate");
             $grade = $this->input->post("grade");
+
+
+            $qualificationLevel = $this->input->post("qualificationLevel");
+            $awardingBody = $this->input->post("awardingBody");
+            $subject = $this->input->post("subject");
+            $completionYear = $this->input->post("completionYear");
 
             $data = array(
                 'qualification' => $qualification,
                 'institution' => $institution,
-                'startdate' => $startdate,
-                'enddate' => $enddate,
+//                'startdate' => $startdate,
+//                'enddate' => $enddate,
                 'obtainResult' => $grade,
+                'qualificationLevel' => $qualificationLevel,
+                'awardingBody' => $awardingBody,
+                'subject' => $subject,
+                'completionYear' => $completionYear,
             );
 
             if (!empty($qualificationId)) {
@@ -640,16 +693,27 @@ class ApplyOnline extends CI_Controller
             $qualificationId = $this->input->post("qualificationId");
             $qualification = $this->input->post("qualification");
             $institution = $this->input->post("institution");
-            $startdate = $this->input->post("startdate");
-            $enddate = $this->input->post("enddate");
+//            $startdate = $this->input->post("startdate");
+//            $enddate = $this->input->post("enddate");
             $grade = $this->input->post("grade");
+
+            $qualificationLevel = $this->input->post("qualificationLevel");
+            $awardingBody = $this->input->post("awardingBody");
+            $subject = $this->input->post("subject");
+            $completionYear = $this->input->post("completionYear");
 
             $data = array(
                 'qualification' => $qualification,
                 'institution' => $institution,
-                'startdate' => $startdate,
-                'enddate' => $enddate,
+//                'startdate' => $startdate,
+//                'enddate' => $enddate,
                 'obtainResult' => $grade,
+
+                'qualificationLevel' => $qualificationLevel,
+                'awardingBody' => $awardingBody,
+                'subject' => $subject,
+                'completionYear' => $completionYear,
+
             );
 
             if (!empty($qualificationId)) {
