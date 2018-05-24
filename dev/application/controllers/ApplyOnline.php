@@ -637,19 +637,30 @@ class ApplyOnline extends CI_Controller
     public function editORInsertApplicationForm2() // edit OR Insert Application Form2
     {
         if ($this->session->userdata('loggedin') == "true") {
+
             $qualificationId = $this->input->post("qualificationId");
             $qualification = $this->input->post("qualification");
             $institution = $this->input->post("institution");
-            $startdate = $this->input->post("startdate");
-            $enddate = $this->input->post("enddate");
+//            $startdate = $this->input->post("startdate");
+//            $enddate = $this->input->post("enddate");
             $grade = $this->input->post("grade");
+
+
+            $qualificationLevel = $this->input->post("qualificationLevel");
+            $awardingBody = $this->input->post("awardingBody");
+            $subject = $this->input->post("subject");
+            $completionYear = $this->input->post("completionYear");
 
             $data = array(
                 'qualification' => $qualification,
                 'institution' => $institution,
-                'startdate' => $startdate,
-                'enddate' => $enddate,
+//                'startdate' => $startdate,
+//                'enddate' => $enddate,
                 'obtainResult' => $grade,
+                'qualificationLevel' => $qualificationLevel,
+                'awardingBody' => $awardingBody,
+                'subject' => $subject,
+                'completionYear' => $completionYear,
             );
 
             if (!empty($qualificationId)) {
@@ -682,16 +693,27 @@ class ApplyOnline extends CI_Controller
             $qualificationId = $this->input->post("qualificationId");
             $qualification = $this->input->post("qualification");
             $institution = $this->input->post("institution");
-            $startdate = $this->input->post("startdate");
-            $enddate = $this->input->post("enddate");
+//            $startdate = $this->input->post("startdate");
+//            $enddate = $this->input->post("enddate");
             $grade = $this->input->post("grade");
+
+            $qualificationLevel = $this->input->post("qualificationLevel");
+            $awardingBody = $this->input->post("awardingBody");
+            $subject = $this->input->post("subject");
+            $completionYear = $this->input->post("completionYear");
 
             $data = array(
                 'qualification' => $qualification,
                 'institution' => $institution,
-                'startdate' => $startdate,
-                'enddate' => $enddate,
+//                'startdate' => $startdate,
+//                'enddate' => $enddate,
                 'obtainResult' => $grade,
+
+                'qualificationLevel' => $qualificationLevel,
+                'awardingBody' => $awardingBody,
+                'subject' => $subject,
+                'completionYear' => $completionYear,
+
             );
 
             if (!empty($qualificationId)) {
