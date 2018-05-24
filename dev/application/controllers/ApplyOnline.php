@@ -319,7 +319,7 @@ class ApplyOnline extends CI_Controller
     }
 
 
-    public function insertApplicationForm3() // insert application form 2
+    public function insertApplicationForm3() // insert application form 3
     {
 
         if ($this->session->userdata('loggedin') == "true") {
@@ -723,6 +723,7 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+
 ///////////////////////////////////FORM 3 ///////////////////////////////////
 
 
@@ -741,8 +742,17 @@ class ApplyOnline extends CI_Controller
     }
 
     public function editapplyNow3(){
-        echo "ola";
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->ApplyOnlinem->applyNow3update();
+            redirect('ApplyForm3');
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
     }
+
 /////////////////////////////////////////////////////////////////////
 
     public function insertapplyNow4()
@@ -1651,14 +1661,17 @@ class ApplyOnline extends CI_Controller
     }
     public function applyNow10() // go to the apply page of selected course
     {
+
         if ($this->session->userdata('loggedin') == "true") {
             $this->menu();
-
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-
-            $this->load->view('application-form10', $this->data);
-
-
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
+            if (empty($this->data['experience'])) {
+                $this->load->view('application-form10', $this->data);
+            } else {
+                $this->load->view('application-form10v', $this->data);
+            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -1666,7 +1679,12 @@ class ApplyOnline extends CI_Controller
                     </script>";
         }
 
+
+
     }
+
+
+
     public function insertApplyNow9() // go to the apply page of selected course
     {
         if ($this->session->userdata('loggedin') == "true") {
@@ -1704,7 +1722,47 @@ class ApplyOnline extends CI_Controller
     }
 
 
+    public function insertApplicationForm10(){
 
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $this->data['error'] = $this->ApplyOnlinem->insertApplyForm10();
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
+                redirect('Login');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm9');
+
+            }
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+
+    public function EditPersonalExperience()
+    {
+        $experienceId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->getExprerienceDetails($experienceId);
+
+        echo  json_encode($data);
+    }
+
+
+    public function updateApplicationForm10(){
+
+    }
 
 
     public function menu() // get all the menu + footer
@@ -1721,4 +1779,6 @@ class ApplyOnline extends CI_Controller
         $this->data['contact'] = $this->CollegeInfom->getCollegeContact();
         $this->data['photoGalleryForFooter'] = $this->Photom->getFooterPhotoGallery();
     }
+
+
 }

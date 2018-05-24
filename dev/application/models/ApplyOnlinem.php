@@ -424,6 +424,86 @@ class ApplyOnlinem extends CI_Model
             return $error = null;
         }
     }
+
+
+    public function applyNow3update(){
+
+        $test = $this->input->post('test');
+        $listening = $this->input->post('listening');
+        $reading = $this->input->post('reading');
+        $writing = $this->input->post('writing');
+        $speaking = $this->input->post('speaking');
+        $overall = $this->input->post('overall');
+        $exirydate = $this->input->post('expirydate');
+        $languagetestid = $this->input->post('languagetestid');
+
+        $listeningid = $this->input->post('listeningid');
+        $readingid = $this->input->post('readingid');
+        $writingid = $this->input->post('writingid');
+        $speakingid = $this->input->post('speakingid');
+
+       // $other = $this->input->post('other');
+
+
+            $data = array(
+
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                'fkTestId' => $test,
+                'overallScore' => $overall,
+                'expireDate' => $exirydate,
+
+            );
+
+        $this->db->where('id',$languagetestid);
+        $error = $this->db->update('candidatelanguagetest', $data);
+
+
+
+        $data1 = array(
+
+                'score' => $listening,
+            );
+        $this->db->where('fkCandidateTestId',$languagetestid);
+        $this->db->where('fkTestHeadId',$listeningid);
+        $error = $this->db->update('cadidatelanguagetestscores', $data1);
+
+
+            $data2 = array(
+                'score' => $reading,
+            );
+        $this->db->where('fkCandidateTestId',$languagetestid);
+        $this->db->where('fkTestHeadId',$readingid);
+        $error = $this->db->update('cadidatelanguagetestscores', $data2);
+
+        $data3 = array(
+                'score' => $writing,
+            );
+        $this->db->where('fkCandidateTestId',$languagetestid);
+        $this->db->where('fkTestHeadId',$writingid);
+        $error = $this->db->update('cadidatelanguagetestscores', $data3);
+
+        $data4 = array(
+                'score' => $speaking,
+            );
+        $this->db->where('fkCandidateTestId',$languagetestid);
+        $this->db->where('fkTestHeadId',$speakingid);
+        $error = $this->db->update('cadidatelanguagetestscores', $data4);
+
+
+//        $error = $this->db->insert('cadidatelanguagetestscores', $data1);
+//            $error = $this->db->insert('cadidatelanguagetestscores', $data2);
+//            $error = $this->db->insert('cadidatelanguagetestscores', $data3);
+//            $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+
+
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+    }
     public function insertnewfrom4()
     {
         $selfFinance=$this->input->post('selfFinance');
@@ -728,6 +808,55 @@ class ApplyOnlinem extends CI_Model
         } else {
             return $error = null;
         }
+    }
+
+    public function insertApplyForm10(){
+        $organisation = $this->input->post('organisation[]');
+        $positionHeld = $this->input->post('positionHeld[]');
+        $startdate = $this->input->post('startdate[]');
+        $enddate = $this->input->post('enddate[]');
+
+
+
+        for ($i = 0; $i < count($organisation); $i++) {
+            $data = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                'organization' => $organisation[$i],
+                'positionHeld' => $positionHeld[$i],
+                'startDate' => $startdate[$i],
+                'endDate' => $enddate[$i],
+
+
+            );
+
+            $error = $this->db->insert('personexperience', $data);
+        }
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+    }
+
+    public function getExprerience($applicationId){
+        $this->db->select('id,organization,positionHeld,startDate,endDate');
+        $this->db->where('fkApplicationId',$applicationId);
+        $this->db->from('personexperience');
+        $query=$this->db->get();
+        return $query->result();
+
+    }
+
+
+    public function getExprerienceDetails($experienceId){
+        $this->db->select('*');
+        $this->db->where('id',$experienceId);
+        $this->db->from('personexperience');
+        $query=$this->db->get();
+        return $query->result();
+
     }
 
 }

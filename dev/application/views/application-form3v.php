@@ -65,6 +65,7 @@
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="listening" name="listening">
+                                    <input type="hidden" id="listeningid" name="listeningid">
                                 </div>
                             </div>
 
@@ -72,6 +73,7 @@
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="reading" name="reading">
+                                    <input type="hidden" id="readingid" name="readingid">
                                 </div>
                             </div>
 
@@ -79,6 +81,7 @@
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="writing" name="writing">
+                                    <input type="hidden" id="writingid" name="writingid">
                                 </div>
                             </div>
 
@@ -86,6 +89,7 @@
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="speaking" name="speaking">
+                                    <input type="hidden" id="speakingid" name="speakingid">
                                 </div>
                             </div>
 
@@ -102,6 +106,7 @@
                                     <input type="date" class="form-control" id="expirydate" name="expirydate">
                                 </div>
                             </div>
+                            <input type="hidden" value="" name="languagetestid" id="languagetestid">
 
 <!--                            <div class="form-group">-->
 <!--                                <div class="col-sm-offset-2 col-md-10">-->
@@ -232,6 +237,7 @@
                 document.getElementById("test").value= test;
                 document.getElementById("overall").value= overallScore;
                 document.getElementById("expirydate").value= expireDate;
+                document.getElementById("languagetestid").value= btn;
 
 
             }
@@ -252,15 +258,18 @@
 
                 if(len > 0){
                     // Read values
-                    var listening = response[0].fkTestHeadId;
-                    var reading = response[1].fkTestHeadId;
-                    var writing = response[2].fkTestHeadId;
-                    var speaking = response[3].fkTestHeadId;
+                    var listeningid = response[0].fkTestHeadId;
+                    var readingid = response[1].fkTestHeadId;
+                    var writingid = response[2].fkTestHeadId;
+                    var speakingid = response[3].fkTestHeadId;
 
                     var listeningscore = response[0].score;
                     var readingscore = response[1].score;
                     var writingscore = response[2].score;
                     var speakingscore = response[3].score;
+
+
+
 
                 }
 
@@ -268,6 +277,11 @@
                 document.getElementById("reading").value= readingscore;
                 document.getElementById("writing").value= writingscore;
                 document.getElementById("speaking").value= speakingscore;
+
+                document.getElementById("listeningid").value= listeningid;
+                document.getElementById("readingid").value= readingid;
+                document.getElementById("writingid").value= writingid;
+                document.getElementById("speakingid").value= speakingid;
 
 
             }

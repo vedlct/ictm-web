@@ -31,7 +31,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm10" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
+                <form action="<?php echo base_url()?>ApplyOnline/updateApplicationForm10" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
 
                     <div class="form-top">
                         <div class="form-top-left">
@@ -73,16 +73,16 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     </div>
                                 </div>
 
-
+                                <input type="hidden" name="experience" id="experience">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-md-10">
-                                <button id='addButton' type="button" class="btn">Add New Qualification</button>
-                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
-                            </div>
-                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <div class="col-sm-offset-2 col-md-10">-->
+<!--                                <button id='addButton' type="button" class="btn">Add New Qualification</button>-->
+<!--                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
 
 
@@ -97,7 +97,34 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>
+                        <div id="qualificationTable">
+                            <table  class="table  table-bordered">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Organization</th>
+                                    <th>PositionHeld</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
 
+                                    <th>Action</th>
+
+                                </tr>
+                                <?php foreach ($experience as $experiences){?>
+                                    <tr>
+                                        <td><?php echo $experiences->id ?></td>
+                                        <td><?php echo $experiences->organization ?></td>
+                                        <td><?php echo $experiences->positionHeld ?></td>
+                                        <td><?php echo $experiences->startDate ?></td>
+                                        <td><?php echo $experiences->endDate ?></td>
+
+                                        <td>
+                                            <a style="cursor: pointer" data-panel-id="<?php echo $experiences->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
+                                            <a style="cursor: pointer" data-panel-id="<?php echo $experiences->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </table>
+                        </div>
 
                     </div>
                 </form>
@@ -282,6 +309,42 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }
+    }
+
+    function selectid(x) {
+        btn = $(x).data('panel-id');
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("ApplyOnline/EditPersonalExperience")?>',
+            data:{'id': btn},
+            cache: false,
+            dataType: 'json',
+            success:function(response) {
+
+                var len = response.length;
+
+                if(len > 0){
+                    // Read values
+                    var organisation = response[0].organization;
+                    var positionHeld = response[0].positionHeld;
+                    var startDate = response[0].startDate;
+                    var endDate = response[0].endDate;
+                    var experienceId = response[0].id;
+
+                }
+
+
+                document.getElementById("organisation").value= organisation;
+                document.getElementById("positionHeld").value= positionHeld;
+                document.getElementById("startdate").value= startDate;
+                document.getElementById("enddate").value= endDate;
+                document.getElementById("experience").value= experienceId;
+
+            }
+
+        });
     }
 
 </script>
