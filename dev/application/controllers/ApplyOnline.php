@@ -1826,9 +1826,27 @@ class ApplyOnline extends CI_Controller
 
     public function updateApplicationForm10(){
 
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->ApplyOnlinem->applyNow10update();
+            redirect('ApplyForm3');
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
     }
 
+    public function DeletePersonalExperience()
+    {
 
+        $experienceId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->deleteExperience($experienceId);
+        $this->session->set_flashdata('successMessage', 'Experience Deleted Successfully');
+
+
+    }
     public function menu() // get all the menu + footer
     {
         $this->data['affiliation'] = $this->Menum->getAffiliations();

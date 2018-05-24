@@ -470,11 +470,41 @@ class ApplyOnlinem extends CI_Model
 
             );
 
+
+
+        if (empty($languagetestid)){
+
+            $error = $this->db->insert('candidatelanguagetest', $data);
+            $insert_id = $this->db->insert_id();
+            $data1 = array(
+                'fkCandidateTestId' => $insert_id,
+                'fkTestHeadId' => languageTest['Lisiting'],
+                'score' => $listening,
+            );
+            $data2 = array(
+                'fkCandidateTestId' => $insert_id,
+                'fkTestHeadId' => languageTest['Reading'],
+                'score' => $reading,
+            );
+            $data3 = array(
+                'fkCandidateTestId' => $insert_id,
+                'fkTestHeadId' => languageTest['Speaking'],
+                'score' => $writing,
+            );
+            $data4 = array(
+                'fkCandidateTestId' => $insert_id,
+                'fkTestHeadId' => languageTest['Writing'],
+                'score' => $speaking,
+            );
+            $error = $this->db->insert('cadidatelanguagetestscores', $data1);
+            $error = $this->db->insert('cadidatelanguagetestscores', $data2);
+            $error = $this->db->insert('cadidatelanguagetestscores', $data3);
+            $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+        }
+
+
         $this->db->where('id',$languagetestid);
         $error = $this->db->update('candidatelanguagetest', $data);
-
-
-
         $data1 = array(
 
                 'score' => $listening,
@@ -504,6 +534,9 @@ class ApplyOnlinem extends CI_Model
         $this->db->where('fkCandidateTestId',$languagetestid);
         $this->db->where('fkTestHeadId',$speakingid);
         $error = $this->db->update('cadidatelanguagetestscores', $data4);
+
+
+
 
 
 //        $error = $this->db->insert('cadidatelanguagetestscores', $data1);
@@ -827,6 +860,7 @@ class ApplyOnlinem extends CI_Model
     }
 
     public function insertApplyForm10(){
+
         $organisation = $this->input->post('organisation[]');
         $positionHeld = $this->input->post('positionHeld[]');
         $startdate = $this->input->post('startdate[]');
@@ -875,4 +909,46 @@ class ApplyOnlinem extends CI_Model
 
     }
 
+    public function applyNow10update(){
+
+        $organisation = $this->input->post('organisation');
+        $positionHeld = $this->input->post('positionHeld');
+        $startdate = $this->input->post('startdate');
+        $enddate = $this->input->post('enddate');
+        $experienceid = $this->input->post('experience');
+
+        $data = array(
+
+            'organization' => $organisation,
+            'positionHeld' => $positionHeld,
+            'startDate' => $startdate,
+            'endDate' => $enddate,
+
+
+        );
+        $data1 = array(
+
+            'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+            'organization' => $organisation,
+            'positionHeld' => $positionHeld,
+            'startDate' => $startdate,
+            'endDate' => $enddate,
+
+        );
+        if (empty($experienceid)){
+
+            $error = $this->db->insert('personexperience', $data1);
+
+        }
+
+      //  $error = $this->db->insert('personexperience', $data);
+
+        $this->db->where('id', $experienceid);
+        $error=$this->db->update('personexperience', $data);
+    }
+
+    public function deleteExperience($experienceId){
+        $this->db->where('id', $experienceId);
+        $this->db->delete('personexperience');
+    }
 }

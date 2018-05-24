@@ -48,28 +48,28 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="organisation" required name="organisation[]">
+                                        <input type="text" class="form-control" id="organisation" required name="organisation">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="positionHeld" required name="positionHeld[]">
+                                        <input type="text" class="form-control" id="positionHeld" required name="positionHeld">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="startdate" required name="startdate[]">
+                                        <input type="date" class="form-control" id="startdate" required name="startdate">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="enddate" required name="enddate[]">
+                                        <input type="date" class="form-control" id="enddate" required name="enddate">
                                     </div>
                                 </div>
 
@@ -345,6 +345,29 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             }
 
         });
+    }
+
+    function selectidForDelete(x) {
+
+        if (confirm("Are you sure you want to delete this Experience?")) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("ApplyOnline/DeletePersonalExperience")?>',
+                data:{'id': btn},
+                cache: false,
+
+                success:function(data) {
+
+
+                    location.reload();
+
+                }
+
+            });
+        }else {
+          //  $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+        }
     }
 
 </script>
