@@ -48,10 +48,14 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Self Finance:</label>
+<!--                                <label class="control-label col-md-2">Self Finance:</label>-->
+                                <label class="control-label col-md-2">Source of Finance:</label>
+
                                 <div class="col-md-10">
-                                    <input type="radio" <?php if (!empty($financeYes) && $financeYes=='y'){?> checked <?php }?> required name="selfFinance" value="y"> Yes&nbsp;&nbsp;
-                                    <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='n'){?> checked <?php }?> required name="selfFinance" value="n"> No&nbsp;&nbsp;
+                                    <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC
+                                    <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> Yes&nbsp;&nbsp;
+                                    <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsor&nbsp;
+
                                 </div>
                             </div>
 
@@ -121,7 +125,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone*:</label>
+                                <label class="control-label col-md-2">Telephone:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
                                     <input type="text" class="form-control" id="telephone" name="telephone"  value="<?php echo set_value('telephone'); ?>" >
@@ -136,13 +140,13 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Fax*:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('fax'); ?></font></p>
-                                    <input type="text" class="form-control" id="fax" name="fax"  value="<?php echo set_value('fax'); ?>" >
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Fax*:</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <p><font color="red"> --><?php //echo form_error('fax'); ?><!--</font></p>-->
+<!--                                    <input type="text" class="form-control" id="fax" name="fax"  value="--><?php //echo set_value('fax'); ?><!--" >-->
+<!--                                </div>-->
+<!--                            </div>-->
 
 
                             </div>
@@ -203,7 +207,7 @@
 
     $("input[name=selfFinance]").click( function () {
 
-        if ($(this).val()=='y'){
+        if ($(this).val()=='own'){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -216,7 +220,7 @@
     function formvalidate() {
 
         var finance=$('input[name=selfFinance]:checked').val();
-        if (finance == 'n') {
+        if (finance != 'own') {
 
 
             var email = document.getElementById("email").value;
@@ -225,7 +229,7 @@
             var relation = document.getElementById("relation").value;
             var address = document.getElementById("address").value;
             var phone = document.getElementById("mobile").value;
-            var fax = document.getElementById("fax").value;
+//            var fax = document.getElementById("fax").value;
             var telephone = document.getElementById("telephone").value;
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -266,10 +270,10 @@
                 return false;
             }
 
-            if (fax == "") {
-                alert(" fax can not empty");
-                return false;
-            }
+//            if (fax == "") {
+//                alert(" fax can not empty");
+//                return false;
+//            }
             if (address == "") {
                 alert("Address  can not  empty");
                 return false;

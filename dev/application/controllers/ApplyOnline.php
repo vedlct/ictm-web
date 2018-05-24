@@ -766,15 +766,24 @@ class ApplyOnline extends CI_Controller
 
             $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
 
-            if (empty($this->data['Financer'])) {
+            foreach ($this->data['Financer'] as $Financer){
+                $finance=$Financer->sourceOfFinance;
+            }
+
+
+            if (empty($finance)) {
                 $this->data['financeYes'] = null;
                 $this->load->view('application-form4', $this->data);
             } else {
-                if ($this->data['Financer'] == 'y') {
-                    $this->data['financeYes'] = 'y';
+
+
+                if ($finance == 'own') {
+                    $this->data['financeYes'] = 'own';
                     $this->load->view('application-form4', $this->data);
                 } else {
-                    $this->data['financeYes'] = 'n';
+                    $this->data['financeYes'] = $finance;
+                    $this->data['Financer'] = $this->ApplyOnlinem->getFinancerDataFromOthers($applicationId);
+                    //print_r($this->data['Financer']);
                     $this->load->view('application-form4v', $this->data);
                 }
 
@@ -914,17 +923,30 @@ class ApplyOnline extends CI_Controller
 
             $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
 
-            if (empty($this->data['Financer'])) {
+            foreach ($this->data['Financer'] as $Financer){
+                $finance=$Financer->sourceOfFinance;
+            }
+
+            if (empty($finance)) {
 
                 $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
 
             } else {
-                if ($this->data['Financer']=='y'){
-                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
-                }else{
 
+                if ($finance == 'own') {
+                    $this->data['financeYes'] = 'own';
+                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+                } else {
+                    $this->data['financeYes'] = $finance;
                     $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
                 }
+
+//                if ($this->data['Financer']=='y'){
+//                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+//                }else{
+//
+//                    $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
+//                }
 
             }
 
