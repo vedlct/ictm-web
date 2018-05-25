@@ -311,10 +311,7 @@ class ApplyOnline extends CI_Controller
     public function insertApplicationForm2() // insert application form 2
     {
         if ($this->session->userdata('loggedin') == "true") {
-
-         //   print_r($this->session->userdata('studentApplicationId'));
-
-
+            
             $this->ApplyOnlinem->applyNow2Insert();
             redirect('ApplyForm2');
         }else{
