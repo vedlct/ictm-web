@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow3" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/editapplyNow3" method="post" class="registration-form form-horizontal">
 
 
 
@@ -52,11 +52,11 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="">
+                                    <select style="width: 100%" name="test" id="test">
                                         <option value="" disabled selected>Select test...</option>
-                                        <option value="">IELTS</option>
-                                        <option value="">TOEFL</option>
-                                        <option value="">PTE</option>
+                                        <option value="1">IELTS</option>
+                                        <option value="2">TOEFL</option>
+                                        <option value="3">PTE</option>
                                     </select>
                                 </div>
                             </div>
@@ -64,66 +64,72 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="listening">
+                                    <input type="text" class="form-control" id="listening" name="listening">
+                                    <input type="hidden" id="listeningid" name="listeningid">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="reading">
+                                    <input type="text" class="form-control" id="reading" name="reading">
+                                    <input type="hidden" id="readingid" name="readingid">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="writing">
+                                    <input type="text" class="form-control" id="writing" name="writing">
+                                    <input type="hidden" id="writingid" name="writingid">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="speaking">
+                                    <input type="text" class="form-control" id="speaking" name="speaking">
+                                    <input type="hidden" id="speakingid" name="speakingid">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="" name="overall">
+                                    <input type="text" class="form-control" id="overall" name="overall">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="" name="expirydate">
+                                    <input type="date" class="form-control" id="expirydate" name="expirydate">
                                 </div>
                             </div>
+                            <input type="hidden" value="" name="languagetestid" id="languagetestid">
 
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Add New</button>
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <div class="col-sm-offset-2 col-md-10">-->
+<!--                                    <button type="button" class="btn btn-previous">Add New</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Other (Please Specify):</label>
-                                <div class="col-md-10">
-                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>
-                                </div>
-                            </div>
+
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Other (Please Specify):</label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button type="button" class="btn btn-previous">Previous</button>
                                     <button type="submit" class="btn ">Next</button>
-                                    <button type="button" class="btn btn-next">Save Application</button>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>
                             </div>
-                        </div>
+
 
 
                 </form>
@@ -132,34 +138,46 @@
                 <div id="qualificationTable">
                     <table  class="table  table-bordered">
                         <tr>
-                            <th>Id</th>
-                            <th>Qualification</th>
-                            <th>Institution</th>
-                            <th>Start Date</th>
-                            <th>End Date</th>
-                            <th>Grade</th>
+                            <th>SL</th>
+                            <th>Test Name</th>
+                            <th>Overall Score</th>
+                            <th>expireDate</th>
                             <th>Action</th>
 
                         </tr>
-                        <?php foreach ($qualification as $qualifications){?>
+                        <?php $count = 1;foreach ($languagetest as $lt){?>
                             <tr>
-                                <td><?php echo $qualifications->id ?></td>
-                                <td><?php echo $qualifications->qualification ?></td>
-                                <td><?php echo $qualifications->institution ?></td>
-                                <td><?php echo $qualifications->startDate ?></td>
-                                <td><?php echo $qualifications->endDate ?></td>
-                                <td><?php echo $qualifications->obtainResult ?></td>
+                                <td><?php echo $count ?></td>
                                 <td>
-                                    <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
-                                    <a style="cursor: pointer" data-panel-id="<?php echo $qualifications->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
+                                    <?php
+                                    switch ($lt->fkTestId) {
+                                        case "1":
+                                            echo "IELTS";
+                                            break;
+                                        case "2":
+                                            echo "TOFEL";
+                                            break;
+                                        case "3":
+                                            echo "PTE";
+                                            break;
+                                        default:
+                                            echo "Your favorite color is neither red, blue, nor green!";
+                                    }
+                                    ?>
+                                </td>
+                                <td><?php echo $lt->overallScore ?></td>
+
+                                <td><?php echo $lt->expireDate ?></td>
+                                <td>
+                                    <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
+                                    <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
-                        <?php } ?>
+                        <?php $count++ ;} ?>
                     </table>
                 </div>
 
-
-
+            </div>
 
 
 
@@ -191,3 +209,83 @@
 </body>
 
 </html>
+
+<script>
+    function selectid(x) {
+        btn = $(x).data('panel-id');
+       // alert(btn);
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("ApplyOnline/EditLanguageTest")?>',
+            data:{'id': btn},
+            cache: false,
+            dataType: 'json',
+            success:function(response) {
+
+
+                var len = response.length;
+
+                if(len > 0){
+                    // Read values
+                    var test = response[0].fkTestId;
+                    var overallScore = response[0].overallScore;
+                    var expireDate = response[0].expireDate;
+
+                }
+
+                document.getElementById("test").value= test;
+                document.getElementById("overall").value= overallScore;
+                document.getElementById("expirydate").value= expireDate;
+                document.getElementById("languagetestid").value= btn;
+
+
+            }
+
+        });
+
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("ApplyOnline/EditLanguageTestHead")?>',
+            data:{'id': btn},
+            cache: false,
+            dataType: 'json',
+            success:function(response) {
+
+
+                var len = response.length;
+
+                if(len > 0){
+                    // Read values
+                    var listeningid = response[0].fkTestHeadId;
+                    var readingid = response[1].fkTestHeadId;
+                    var writingid = response[2].fkTestHeadId;
+                    var speakingid = response[3].fkTestHeadId;
+
+                    var listeningscore = response[0].score;
+                    var readingscore = response[1].score;
+                    var writingscore = response[2].score;
+                    var speakingscore = response[3].score;
+
+
+
+
+                }
+
+                document.getElementById("listening").value= listeningscore;
+                document.getElementById("reading").value= readingscore;
+                document.getElementById("writing").value= writingscore;
+                document.getElementById("speaking").value= speakingscore;
+
+                document.getElementById("listeningid").value= listeningid;
+                document.getElementById("readingid").value= readingid;
+                document.getElementById("writingid").value= writingid;
+                document.getElementById("speakingid").value= speakingid;
+
+
+            }
+
+        });
+    }
+</script>

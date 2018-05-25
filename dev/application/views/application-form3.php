@@ -181,9 +181,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="col-md-10">'+
                 '<select style="width: 100%" name="test[]">'+
                 '<option value="" disabled selected>Select test...</option>'+
-                '<option value="">IELTS</option>'+
-                '<option value="">TOEFL</option>'+
-                '<option value="">PTE</option>'+
+                '<option value="1">IELTS</option>'+
+                '<option value="2">TOEFL</option>'+
+                '<option value="3">PTE</option>'+
                 '</select>'+
                 '</div>'+
                 '</div>'+
