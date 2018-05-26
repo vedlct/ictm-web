@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editapplyNow3" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/editapplyNow3" method="post" class=" form-horizontal">
 
 
 
@@ -64,7 +64,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="listening" name="listening">
+                                    <p><font color="red"> <?php echo form_error('listening'); ?></font></p>
+                                    <input type="text" class="form-control" id="listening" name="listening" required>
                                     <input type="hidden" id="listeningid" name="listeningid">
                                 </div>
                             </div>
@@ -72,7 +73,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="reading" name="reading">
+                                    <p><font color="red"> <?php echo form_error('reading'); ?></font></p>
+                                    <input type="text" class="form-control" id="reading" name="reading" required>
                                     <input type="hidden" id="readingid" name="readingid">
                                 </div>
                             </div>
@@ -80,7 +82,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="writing" name="writing">
+                                    <p><font color="red"> <?php echo form_error('writing'); ?></font></p>
+                                    <input type="text" class="form-control" id="writing" name="writing" required>
                                     <input type="hidden" id="writingid" name="writingid">
                                 </div>
                             </div>
@@ -88,7 +91,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="speaking" name="speaking">
+                                    <p><font color="red"> <?php echo form_error('speaking'); ?></font></p>
+                                    <input type="text" class="form-control" id="speaking" name="speaking" required>
                                     <input type="hidden" id="speakingid" name="speakingid">
                                 </div>
                             </div>
@@ -96,14 +100,16 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="overall" name="overall">
+                                    <p><font color="red"> <?php echo form_error('overall'); ?></font></p>
+                                    <input type="text" class="form-control" id="overall" name="overall" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="expirydate" name="expirydate">
+                                    <p><font color="red"> <?php echo form_error('expirydate'); ?></font></p>
+                                    <input type="date" class="form-control" id="expirydate" name="expirydate" required>
                                 </div>
                             </div>
                             <input type="hidden" value="" name="languagetestid" id="languagetestid">

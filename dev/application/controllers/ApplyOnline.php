@@ -813,8 +813,24 @@ class ApplyOnline extends CI_Controller
 
     public function editapplyNow3(){
         if ($this->session->userdata('loggedin') == "true") {
-            $this->ApplyOnlinem->applyNow3update();
-            redirect('ApplyForm3');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom3')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+
+                $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+
+                if (empty($this->data['languagetest'])) {
+                    $this->load->view('application-form3', $this->data);
+                } else {
+                    $this->load->view('application-form3v', $this->data);
+                }
+            }else {
+                $this->ApplyOnlinem->applyNow3update();
+                redirect('ApplyForm3');
+            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -1799,29 +1815,7 @@ class ApplyOnline extends CI_Controller
         }
 
     }
-    public function applyNow10() // go to the apply page of selected course
-    {
 
-        if ($this->session->userdata('loggedin') == "true") {
-            $this->menu();
-            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-            $applicationId = $this->session->userdata('studentApplicationId');
-            $this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
-            if (empty($this->data['experience'])) {
-                $this->load->view('application-form10', $this->data);
-            } else {
-                $this->load->view('application-form10v', $this->data);
-            }
-        }else{
-            echo "<script>
-                    alert('Your Session has Expired ,Please Login Again');
-                    window.location.href= '" . base_url() . "Login';
-                    </script>";
-        }
-
-
-
-    }
 
 
 
@@ -1861,6 +1855,30 @@ class ApplyOnline extends CI_Controller
 
     }
 
+    public function applyNow10() // go to the apply page of selected course
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
+            if (empty($this->data['experience'])) {
+                $this->load->view('application-form10', $this->data);
+            } else {
+                $this->load->view('application-form10v', $this->data);
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+
+
+    }
+
 
     public function insertApplicationForm10(){
 
@@ -1893,18 +1911,36 @@ class ApplyOnline extends CI_Controller
 
     public function EditPersonalExperience()
     {
+
+
         $experienceId = $this->input->post("id");
         $data = $this->ApplyOnlinem->getExprerienceDetails($experienceId);
 
-        echo  json_encode($data);
+        echo json_encode($data);
+
     }
+
 
 
     public function updateApplicationForm10(){
 
         if ($this->session->userdata('loggedin') == "true") {
-            $this->ApplyOnlinem->applyNow10update();
-            redirect('ApplyForm3');
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom10')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $applicationId = $this->session->userdata('studentApplicationId');
+                $this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
+                if (empty($this->data['experience'])) {
+                    $this->load->view('application-form10', $this->data);
+                } else {
+                    $this->load->view('application-form10v', $this->data);
+                }
+            }else {
+
+                $this->ApplyOnlinem->applyNow10update();
+                redirect('ApplyForm3');
+            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
