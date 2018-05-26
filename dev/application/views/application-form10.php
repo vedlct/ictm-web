@@ -48,14 +48,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="organisation" required name="organisation[]">
+                                        <input type="text" class="form-control" maxlength="100" id="organisation" required name="organisation[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="positionHeld" required name="positionHeld[]">
+                                        <input type="text" class="form-control" id="positionHeld" maxlength="100" required name="positionHeld[]">
                                     </div>
                                 </div>
 
@@ -92,8 +92,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Apply" ><button type="button" class="btn btn-previous">Previous</button></a>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
+
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>
@@ -130,6 +131,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 </div>
 </body>
+</html>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 <script type="text/javascript">
     $(document).ready(function(){
@@ -252,7 +254,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var institution=$('#institution').val();
         var startdate=$('#startdate').val();
         var enddate=$('#enddate').val();
-        var grade=$('#grade').val();
+
 
         if (Qualification == ""){
             alert('Please add a Qualification');
@@ -272,13 +274,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }if (enddate == ""){
             alert('Please add a enddate');
             return false;
-        }if (grade == ""){
-            alert('Please add a grade');
-            return false;
-        }if (grade.length > 20){
-            alert('grade must be less then 20 charecter');
-            return false;
-        }if (enddate < startdate){
+        }
+        if (enddate < startdate){
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }
@@ -286,4 +283,3 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 </script>
 
-</html>

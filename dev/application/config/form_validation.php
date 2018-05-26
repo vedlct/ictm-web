@@ -692,6 +692,38 @@ $config = array (
 
 
         ),
+    'applyfromPersonexperience'=>
+        array(
+
+            array(
+                'field' => 'organisation',
+                'label' => 'Organisation',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'positionHeld',
+                'label' => 'Position Held',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'startdate',
+                'label' => 'Start Date',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'enddate',
+                'label' => 'End Date',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+
+
+
+        ),
 
 
 

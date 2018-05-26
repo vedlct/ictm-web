@@ -1934,7 +1934,35 @@ class ApplyOnline extends CI_Controller
 
 
                 $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
-                redirect('Login');
+                redirect('ApplyForm9');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm9');
+
+            }
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+    public function insertApplicationForm10AndNext(){
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $this->data['error'] = $this->ApplyOnlinem->insertApplyForm10();
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Work Experience Saved  Successfully');
+                redirect('ApplyForm9');
 
 
             } else {
@@ -1964,9 +1992,72 @@ class ApplyOnline extends CI_Controller
     public function updateApplicationForm10(){
 
         if ($this->session->userdata('loggedin') == "true") {
-            $this->ApplyOnlinem->applyNow10update();
-            redirect('ApplyForm3');
-        }else{
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromPersonexperience')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+
+                $this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
+                if (empty($this->data['experience'])) {
+                    $this->load->view('application-form10', $this->data);
+                } else {
+                    $this->load->view('application-form10v', $this->data);
+                }
+
+
+            }else{
+
+                $this->ApplyOnlinem->applyNow10update();
+                redirect('ApplyForm10');
+
+            }
+
+
+
+        }
+        else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+    }
+    public function updateApplicationForm10AndNext(){
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromPersonexperience')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+
+                $this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
+                if (empty($this->data['experience'])) {
+                    $this->load->view('application-form10', $this->data);
+                } else {
+                    $this->load->view('application-form10v', $this->data);
+                }
+
+            }
+            else{
+
+                $this->ApplyOnlinem->applyNow10update();
+                redirect('ApplyForm9');
+
+            }
+
+
+
+        }
+        else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
                     window.location.href= '" . base_url() . "Login';
