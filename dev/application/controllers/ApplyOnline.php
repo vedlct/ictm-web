@@ -311,10 +311,7 @@ class ApplyOnline extends CI_Controller
     public function insertApplicationForm2() // insert application form 2
     {
         if ($this->session->userdata('loggedin') == "true") {
-
-         //   print_r($this->session->userdata('studentApplicationId'));
-
-
+            
             $this->ApplyOnlinem->applyNow2Insert();
             redirect('ApplyForm2');
         }else{
@@ -834,18 +831,25 @@ class ApplyOnline extends CI_Controller
 
         if ($this->session->userdata('loggedin') == "true") {
 
-//            $this->load->library('form_validation');
-//            if (!$this->form_validation->run('applyfrom4')) {
-//                $this->menu();
-//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-//
-//                $applicationId=$this->session->userdata('studentApplicationId');
-//
-//                $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
-//
-//                $this->load->view('application-form4', $this->data);
-//
-//            } else {
+            $selfFinance=$this->input->post('selfFinance');
+
+            if ($selfFinance != 'own'){
+
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfromfinance')) {
+                    $this->menu();
+                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                    $applicationId=$this->session->userdata('studentApplicationId');
+
+                    $this->data['financeYes'] = $selfFinance;
+                    $this->data['Financer'] = $this->ApplyOnlinem->getFinancerDataFromOthers($applicationId);
+                    $this->load->view('application-form4', $this->data);
+
+                }
+
+            }
+
 
                 $this->data['error'] = $this->ApplyOnlinem->insertnewfrom4();
 
@@ -866,7 +870,7 @@ class ApplyOnline extends CI_Controller
 
                     }
 
-//            }
+
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -881,10 +885,48 @@ class ApplyOnline extends CI_Controller
 
         if ($this->session->userdata('loggedin') == "true") {
 
+            $selfFinance=$this->input->post('selfFinance');
+            if ($selfFinance != 'own'){
 
-            $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfromfinance')) {
+                    $this->menu();
+                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                    $applicationId=$this->session->userdata('studentApplicationId');
+
+                    $this->data['financeYes'] = $selfFinance;
+                    $this->data['Financer'] = $this->ApplyOnlinem->getFinancerDataFromOthers($applicationId);
+                    $this->load->view('application-form4v', $this->data);
+
+                }
+
+            }
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+
+                $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
+
+                foreach ($this->data['Financer'] as $Financer) {
+                    $finance = $Financer->sourceOfFinance;
+                }
+
+                if (empty($finance)) {
+
+                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+
+                } else {
+
+                    if ($finance == 'own') {
+                        $this->data['financeYes'] = 'own';
+                        $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+                    } else {
+                        $this->data['financeYes'] = $finance;
+                        $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
+                    }
 
 
+                }
 
 
                 if (empty($this->data['error'])) {
@@ -900,6 +942,7 @@ class ApplyOnline extends CI_Controller
                     redirect('ApplyForm4');
 
                 }
+
 
             }
             else{
@@ -917,40 +960,50 @@ class ApplyOnline extends CI_Controller
 
         if ($this->session->userdata('loggedin') == "true") {
 
+            $selfFinance=$this->input->post('selfFinance');
 
+            if ($selfFinance != 'own'){
 
-            $applicationId=$this->session->userdata('studentApplicationId');
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfromfinance')) {
+                    $this->menu();
+                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
-            $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
+                    $applicationId=$this->session->userdata('studentApplicationId');
 
-            foreach ($this->data['Financer'] as $Financer){
-                $finance=$Financer->sourceOfFinance;
-            }
+                    $this->data['financeYes'] = $selfFinance;
+                    $this->data['Financer'] = $this->ApplyOnlinem->getFinancerDataFromOthers($applicationId);
+                    $this->load->view('application-form4v', $this->data);
 
-            if (empty($finance)) {
-
-                $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
-
-            } else {
-
-                if ($finance == 'own') {
-                    $this->data['financeYes'] = 'own';
-                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
-                } else {
-                    $this->data['financeYes'] = $finance;
-                    $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
                 }
 
-//                if ($this->data['Financer']=='y'){
-//                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
-//                }else{
-//
-//                    $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
-//                }
-
             }
 
 
+                $applicationId = $this->session->userdata('studentApplicationId');
+
+                $this->data['Financer'] = $this->ApplyOnlinem->getFinancerData($applicationId);
+
+                foreach ($this->data['Financer'] as $Financer) {
+                    $finance = $Financer->sourceOfFinance;
+                }
+
+                if (empty($finance)) {
+
+                    $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+
+                } else {
+
+                    if ($finance == 'own') {
+                        $this->data['financeYes'] = 'own';
+                        $this->data['error'] = $this->ApplyOnlinem->editORInsertApplicationForm4();
+                    } else {
+                        $this->data['financeYes'] = $finance;
+                        $this->data['error'] = $this->ApplyOnlinem->updatApplynow4();
+                    }
+
+
+                }
 
                 if (empty($this->data['error'])) {
 
@@ -965,6 +1018,7 @@ class ApplyOnline extends CI_Controller
                     redirect('ApplyForm5');
 
                 }
+
 
             }else{
             echo "<script>

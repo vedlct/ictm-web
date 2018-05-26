@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 4 / 9</p>
+                                <p>Step 4 / 10</p>
                             </div>
                         </div>
 
@@ -86,7 +86,7 @@
                                 <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name" name="name"   value="<?php echo set_value('name'); ?>" >
+                                    <input type="text" class="form-control" id="name" name="name" maxlength="100"  value="<?php echo set_value('name'); ?>" >
 
 
                                 </div>
@@ -96,7 +96,7 @@
                                 <label class="control-label col-md-2">Relation*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input type="text" class="form-control" id="relation" name="relation"  value="<?php echo set_value('relation'); ?>" >
+                                    <input type="text" class="form-control" id="relation" name="relation" maxlength="50"  value="<?php echo set_value('relation'); ?>" >
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@
                                 <label class="control-label col-md-2">Address*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea  name="address"  id="address" rows="8" tabindex="4" ><?php echo set_value('address'); ?></textarea>
+                                    <textarea  name="address"  id="address" rows="8"  maxlength="1000" tabindex="4" ><?php echo set_value('address'); ?></textarea>
                                 </div>
                             </div>
 
@@ -112,7 +112,7 @@
                                     <label class="control-label col-md-2">Address P.O :<span class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
-                                        <input type="text" class="form-control" id="AddressPO" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
+                                        <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
                                     </div>
                                 </div>
 
@@ -120,7 +120,7 @@
                                 <label class="control-label col-md-2">Mobile:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input type="text" class="form-control" id="mobile" name="mobile"  value="<?php echo set_value('mobile'); ?>" >
+                                    <input type="text" class="form-control" id="mobile" name="mobile" maxlength="50" value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
@@ -128,7 +128,7 @@
                                 <label class="control-label col-md-2">Telephone:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input type="text" class="form-control" id="telephone" name="telephone"  value="<?php echo set_value('telephone'); ?>" >
+                                    <input type="text" class="form-control" id="telephone" name="telephone" maxlength="50" value="<?php echo set_value('telephone'); ?>" >
                                 </div>
                             </div>
 
@@ -136,7 +136,7 @@
                                 <label class="control-label col-md-2">E-mail*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email'); ?>" >
+                                    <input type="email" class="form-control" id="email" name="email" maxlength="50" value="<?php echo set_value('email'); ?>" >
                                 </div>
                             </div>
 
@@ -256,7 +256,7 @@
 
 
             if (!phone.match(chk)) {
-                alert('Please enter a valid Phone number!!');
+                alert('Please enter a valid Mobile Phone number!!');
                 return false;
             }
             if (phone.length > 50) {

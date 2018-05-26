@@ -44,7 +44,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     </div>
 
                     <div class="form-top-right">
-                        <p>Step 2 / 9</p>
+                        <p>Step 2 / 10</p>
                     </div>
                 </div>
 

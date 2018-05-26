@@ -33,7 +33,7 @@
 		                        		</div>
                                         
                                         <div class="form-top-right">
-		                        			<p>Step 1 / 9</p>
+		                        			<p>Step 1 / 10</p>
 		                        		</div>
 		                            </div>
 		                            <div class="form-bottom">

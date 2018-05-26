@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 4 / 9</p>
+                                <p>Step 4 / 10</p>
                             </div>
                         </div>
                 <?php foreach ($Financer as $f4) { ?>
@@ -81,7 +81,7 @@
                                 <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name"   name="name" value="<?php echo $f4->name ?>" >
+                                    <input type="text" class="form-control" id="name"  maxlength="100" name="name" value="<?php echo $f4->name ?>" >
                                 </div>
                             </div>
 
@@ -89,7 +89,7 @@
                                 <label class="control-label col-md-2">Relation*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input type="text" class="form-control" id="relation" name="relation" value="<?php echo $f4->relation?>">
+                                    <input type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
                                 </div>
                             </div>
 
@@ -97,7 +97,7 @@
                                 <label class="control-label col-md-2">Address*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea id="address" name="address" rows="8" tabindex="4"> <?php echo $f4->address ?></textarea>
+                                    <textarea id="address" name="address" rows="8"  maxlength="1000" tabindex="4"> <?php echo $f4->address ?></textarea>
                                 </div>
                             </div>
 
@@ -105,7 +105,7 @@
                                     <label class="control-label col-md-2">Address P.O :<span class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
-                                        <input type="text" class="form-control" id="AddressPO" name="AddressPO" value="<?php echo $f4->addressPo?>">
+                                        <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo $f4->addressPo?>">
                                     </div>
                                 </div>
 
@@ -114,7 +114,7 @@
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input type="text" class="form-control" id="mobile" name="mobile" value="<?php echo $f4->mobile ?>">
+                                    <input type="text" class="form-control" id="mobile"maxlength="50" name="mobile" value="<?php echo $f4->mobile ?>">
                                 </div>
                             </div>
 
@@ -123,7 +123,7 @@
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
-                                    <input type="text" class="form-control" id="telephone" name="telephone"value="<?php echo $f4->telephone ?>">
+                                    <input type="text" class="form-control" id="telephone" maxlength="50" name="telephone"value="<?php echo $f4->telephone ?>">
                                 </div>
                             </div>
 
@@ -132,7 +132,7 @@
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
 
-                                    <input type="email" class="form-control" id="email" name="email" value="<?php echo $f4->email ?>">
+                                    <input type="email" class="form-control" id="email" maxlength="50" name="email" value="<?php echo $f4->email ?>">
                                 </div>
                             </div>
 
@@ -253,7 +253,7 @@
 
 
             if (!phone.match(chk)) {
-                alert('Please enter a valid Phone number!!');
+                alert('Please enter a valid  Mobile Phone number!!');
                 return false;
             }
             if (phone.length > 50) {
