@@ -1059,6 +1059,20 @@ class ApplyOnline extends CI_Controller
 
         if ($this->session->userdata('loggedin') == "true") {
 
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromPersonalStatement')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                $applicationId=$this->session->userdata('studentApplicationId');
+
+                $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
+                $this->load->view('application-form5v', $this->data);
+
+            }
+            else {
+
+
                 $this->data['error'] = $this->ApplyOnlinem->updatApplynow5();
                 if (empty($this->data['error'])) {
 
@@ -1072,6 +1086,7 @@ class ApplyOnline extends CI_Controller
                     redirect('ApplyForm5');
 
                 }
+            }
 
             }
             else{
@@ -1088,6 +1103,18 @@ class ApplyOnline extends CI_Controller
 
         if ($this->session->userdata('loggedin') == "true") {
 
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromPersonalStatement')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                $applicationId=$this->session->userdata('studentApplicationId');
+
+                $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
+                $this->load->view('application-form5v', $this->data);
+
+            }else {
+
 
                 $this->data['error'] = $this->ApplyOnlinem->updatApplynow5();
                 if (empty($this->data['error'])) {
@@ -1102,6 +1129,7 @@ class ApplyOnline extends CI_Controller
                     redirect('ApplyForm6');
 
                 }
+            }
 
             }else{
             echo "<script>
@@ -1404,16 +1432,6 @@ class ApplyOnline extends CI_Controller
 
             $this->load->view('application-form7', $this->data);
 
-            //  print_r($this->data['opportunitySubGroupId']);
-
-
-//            if (empty($this->data['EqualOpportunity'])) {
-//
-//                $this->load->view('application-form6', $this->data);
-//            } else {
-//
-//                $this->load->view('application-form6v', $this->data);
-//            }
 
         }else{
             echo "<script>
@@ -1677,47 +1695,69 @@ class ApplyOnline extends CI_Controller
     public function editORInsertApplicationForm8() // edit OR Insert Application Form2
     {
         if ($this->session->userdata('loggedin') == "true") {
-            $refereesId = $this->input->post("refereesId");
-            $title = $this->input->post("title");
-            $name = $this->input->post("name");
-            $company = $this->input->post("company");
-            $jobTitle = $this->input->post("jobTitle");
-            $telephone = $this->input->post("telephone");
-            $email = $this->input->post("email");
-            $address = $this->input->post("address");
-            $addressPo = $this->input->post("addressPo");
-            $country = $this->input->post("country");
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromRefrees')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
 
-            $data = array(
+                $this->data['References'] = $this->ApplyOnlinem->getAllRefences();
 
-                'name' => $title,
-                'title' => $name,
-                'workingCompany' => $company,
-                'jobTitle' => $jobTitle,
-                'address' => $telephone,
-                'postCode' => $email,
-                'contactNo' => $address,
-                'email' => $addressPo,
-                'fkCountry' => $country,
+                if (empty($this->data['References'])) {
 
-            );
+                    $this->load->view('application-form8', $this->data);
+                } else {
 
-            if (!empty($refereesId)) {
+                    $this->load->view('application-form8v', $this->data);
+                }
 
-                $this->ApplyOnlinem->editRefereesDetailsById($refereesId, $data);
-                $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
-                redirect('ApplyForm8');
-            } else {
+            }
+            else {
 
-                $data2 = array(
-                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+
+                $refereesId = $this->input->post("refereesId");
+                $title = $this->input->post("title");
+                $name = $this->input->post("name");
+                $company = $this->input->post("company");
+                $jobTitle = $this->input->post("jobTitle");
+                $telephone = $this->input->post("telephone");
+                $email = $this->input->post("email");
+                $address = $this->input->post("address");
+                $addressPo = $this->input->post("addressPo");
+                $country = $this->input->post("country");
+
+
+                $data = array(
+
+                    'name' => $title,
+                    'title' => $name,
+                    'workingCompany' => $company,
+                    'jobTitle' => $jobTitle,
+                    'address' => $telephone,
+                    'postCode' => $email,
+                    'contactNo' => $address,
+                    'email' => $addressPo,
+                    'fkCountry' => $country,
+
                 );
-                $data = array_merge($data, $data2);
-                $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
-                $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
-                redirect('ApplyForm8');
 
+                if (!empty($refereesId)) {
+
+                    $this->ApplyOnlinem->editRefereesDetailsById($refereesId, $data);
+                    $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
+                    redirect('ApplyForm8');
+                } else {
+
+                    $data2 = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    );
+                    $data = array_merge($data, $data2);
+                    $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
+                    $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
+                    redirect('ApplyForm8');
+
+                }
             }
         }else{
             echo "<script>
@@ -1727,50 +1767,71 @@ class ApplyOnline extends CI_Controller
         }
 
     }
-    public function editApplicationForm8AndNext() // edit OR Insert Application Form2
+    public function editApplicationForm8AndNext() // edit OR Insert Application Form8
     {
         if ($this->session->userdata('loggedin') == "true") {
-            $refereesId = $this->input->post("refereesId");
-            $title = $this->input->post("title");
-            $name = $this->input->post("name");
-            $company = $this->input->post("company");
-            $jobTitle = $this->input->post("jobTitle");
-            $telephone = $this->input->post("telephone");
-            $email = $this->input->post("email");
-            $address = $this->input->post("address");
-            $addressPo = $this->input->post("addressPo");
-            $country = $this->input->post("country");
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromRefrees')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
 
-            $data = array(
+                $this->data['References'] = $this->ApplyOnlinem->getAllRefences();
 
-                'name' => $title,
-                'title' => $name,
-                'workingCompany' => $company,
-                'jobTitle' => $jobTitle,
-                'address' => $telephone,
-                'postCode' => $email,
-                'contactNo' => $address,
-                'email' => $addressPo,
-                'fkCountry' => $country,
+                if (empty($this->data['References'])) {
 
-            );
+                    $this->load->view('application-form8', $this->data);
+                } else {
 
-            if (!empty($refereesId)) {
+                    $this->load->view('application-form8v', $this->data);
+                }
 
-                $this->ApplyOnlinem->editRefereesDetailsById($refereesId, $data);
-                $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
-                redirect('ApplyForm9');
-            } else {
+            }else {
 
-                $data2 = array(
-                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+
+                $refereesId = $this->input->post("refereesId");
+                $title = $this->input->post("title");
+                $name = $this->input->post("name");
+                $company = $this->input->post("company");
+                $jobTitle = $this->input->post("jobTitle");
+                $telephone = $this->input->post("telephone");
+                $email = $this->input->post("email");
+                $address = $this->input->post("address");
+                $addressPo = $this->input->post("addressPo");
+                $country = $this->input->post("country");
+
+
+                $data = array(
+
+                    'name' => $title,
+                    'title' => $name,
+                    'workingCompany' => $company,
+                    'jobTitle' => $jobTitle,
+                    'address' => $telephone,
+                    'postCode' => $email,
+                    'contactNo' => $address,
+                    'email' => $addressPo,
+                    'fkCountry' => $country,
+
                 );
-                $data = array_merge($data, $data2);
-                $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
-                $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
-                redirect('ApplyForm9');
 
+                if (!empty($refereesId)) {
+
+                    $this->ApplyOnlinem->editRefereesDetailsById($refereesId, $data);
+                    $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
+                    redirect('ApplyForm9');
+                } else {
+
+                    $data2 = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    );
+                    $data = array_merge($data, $data2);
+                    $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
+                    $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
+                    redirect('ApplyForm9');
+
+                }
             }
         }else{
             echo "<script>
