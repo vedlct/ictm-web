@@ -48,16 +48,23 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
+
                                         <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
-                                        <input type="text" class="form-control" id="organisation" required name="organisation">
+
+
+                                        <input type="text" class="form-control" id="organisation"  maxlength="100" required name="organisation">
+
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
+
                                         <p><font color="red"> <?php echo form_error('positionHeld'); ?></font></p>
-                                        <input type="text" class="form-control" id="positionHeld" required name="positionHeld">
+
+                                        <input type="text" class="form-control" id="positionHeld" maxlength="100" required name="positionHeld">
+
                                     </div>
                                 </div>
 
@@ -96,8 +103,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Apply" ><button type="button" class="btn btn-previous">Previous</button></a>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
+
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>

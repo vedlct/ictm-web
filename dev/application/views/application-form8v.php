@@ -43,7 +43,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 8 / 9</p>
+                                <p>Step 8 / 10</p>
                             </div>
                         </div>
 
@@ -64,57 +64,65 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name:</label>
+                                <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
-                                    <input required type="text" class="form-control" id="name" name="name">
+                                    <p><font color="red"> <?php echo form_error('name'); ?></font></p>
+                                    <input required type="text" maxlength="100" class="form-control" id="name" name="name">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Institution/Company:</label>
+                                <label class="control-label col-md-2">Institution/Company*:</label>
                                 <div class="col-md-10">
-                                    <input required type="text" class="form-control" id="company" name="company">
+                                    <p><font color="red"> <?php echo form_error('company'); ?></font></p>
+                                    <input required type="text" maxlength="80" class="form-control" id="company" name="company">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Position / Job Title:</label>
                                 <div class="col-md-10">
-                                    <input required type="text" class="form-control" id="jobTitle" name="jobTitle">
+                                    <p><font color="red"> <?php echo form_error('jobTitle'); ?></font></p>
+                                    <input required type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone:</label>
+                                <label class="control-label col-md-2">Telephone/Mobile*:</label>
                                 <div class="col-md-10">
-                                    <input required type="text" class="form-control" id="telephone" name="telephone">
+                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
+                                    <input required type="text" class="form-control" maxlength="20" id="telephone" name="telephone">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">E-mail:</label>
                                 <div class="col-md-10">
-                                    <input required type="email" class="form-control" id="email" name="email">
+                                    <p><font color="red"> <?php echo form_error('email'); ?></font></p>
+                                    <input required type="email" class="form-control" maxlength="100" id="email" name="email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address:</label>
                                 <div class="col-md-10">
-                                    <textarea required id="address" name="address" rows="8" tabindex="4"></textarea>
+                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
+                                    <textarea required id="address" name="address" rows="8" maxlength="1000" tabindex="4"></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address P.O :</label>
                                 <div class="col-md-10">
-                                    <input required type="text" class="form-control" id="addressPo" name="addressPo">
+                                    <p><font color="red"> <?php echo form_error('addressPo'); ?></font></p>
+                                    <input required type="text" class="form-control" maxlength="8" id="addressPo" name="addressPo">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Country:</label>
                                 <div class="col-md-10">
+                                    <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                     <select required style="width: 100%" id="country"  name="country">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
@@ -140,7 +148,7 @@
                             <div id="refereesTable">
                                 <table  class="table  table-bordered">
                                     <tr>
-                                        <th>Id</th>
+<!--                                        <th>Id</th>-->
                                         <th>Name</th>
                                         <th>Company</th>
                                         <th>Job Title</th>
@@ -152,7 +160,7 @@
                                     </tr>
                                     <?php foreach ($References as $Reference){?>
                                         <tr>
-                                            <td><?php echo $Reference->id ?></td>
+<!--                                            <td>--><?php //echo $Reference->id ?><!--</td>-->
                                             <td><?php echo $Reference->title ?> <?php echo $Reference->name ?></td>
                                             <td><?php echo $Reference->workingCompany ?></td>
                                             <td><?php echo $Reference->jobTitle ?></td>
