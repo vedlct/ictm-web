@@ -635,46 +635,63 @@ class ApplyOnline extends CI_Controller
     {
         if ($this->session->userdata('loggedin') == "true") {
 
-            $qualificationId = $this->input->post("qualificationId");
-            $qualification = $this->input->post("qualification");
-            $institution = $this->input->post("institution");
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromQualification')) {
+                $this->menu();
+                $this->data['coursedata']=$this->Coursem->getCourseTitle();
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+                $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
+                if (empty($this->data['qualification'])) {
+                    $this->load->view('application-form2', $this->data);
+                } else {
+                    $this->load->view('application-form2v', $this->data);
+                }
+
+            }else {
+
+
+                $qualificationId = $this->input->post("qualificationId");
+                $qualification = $this->input->post("qualification");
+                $institution = $this->input->post("institution");
 //            $startdate = $this->input->post("startdate");
 //            $enddate = $this->input->post("enddate");
-            $grade = $this->input->post("grade");
+                $grade = $this->input->post("grade");
 
 
-            $qualificationLevel = $this->input->post("qualificationLevel");
-            $awardingBody = $this->input->post("awardingBody");
-            $subject = $this->input->post("subject");
-            $completionYear = $this->input->post("completionYear");
+                $qualificationLevel = $this->input->post("qualificationLevel");
+                $awardingBody = $this->input->post("awardingBody");
+                $subject = $this->input->post("subject");
+                $completionYear = $this->input->post("completionYear");
 
-            $data = array(
-                'qualification' => $qualification,
-                'institution' => $institution,
+                $data = array(
+                    'qualification' => $qualification,
+                    'institution' => $institution,
 //                'startdate' => $startdate,
 //                'enddate' => $enddate,
-                'obtainResult' => $grade,
-                'qualificationLevel' => $qualificationLevel,
-                'awardingBody' => $awardingBody,
-                'subject' => $subject,
-                'completionYear' => $completionYear,
-            );
-
-            if (!empty($qualificationId)) {
-
-                $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId, $data);
-                $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
-                redirect('ApplyForm2');
-            } else {
-
-                $data2 = array(
-                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    'obtainResult' => $grade,
+                    'qualificationLevel' => $qualificationLevel,
+                    'awardingBody' => $awardingBody,
+                    'subject' => $subject,
+                    'completionYear' => $completionYear,
                 );
-                $data = array_merge($data, $data2);
-                $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
-                $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
-                redirect('ApplyForm2');
 
+                if (!empty($qualificationId)) {
+
+                    $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId, $data);
+                    $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
+                    redirect('ApplyForm2');
+                } else {
+
+                    $data2 = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    );
+                    $data = array_merge($data, $data2);
+                    $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
+                    $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
+                    redirect('ApplyForm2');
+
+                }
             }
         }else{
             echo "<script>
@@ -687,47 +704,65 @@ class ApplyOnline extends CI_Controller
     public function editORInsertApplicationForm2AndNext() // edit OR Insert Application Form2 And Next
     {
         if ($this->session->userdata('loggedin') == "true") {
-            $qualificationId = $this->input->post("qualificationId");
-            $qualification = $this->input->post("qualification");
-            $institution = $this->input->post("institution");
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromQualification')) {
+                $this->menu();
+                $this->data['coursedata']=$this->Coursem->getCourseTitle();
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+                $this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
+                if (empty($this->data['qualification'])) {
+                    $this->load->view('application-form2', $this->data);
+                } else {
+                    $this->load->view('application-form2v', $this->data);
+                }
+
+            }else {
+
+
+                $qualificationId = $this->input->post("qualificationId");
+                $qualification = $this->input->post("qualification");
+                $institution = $this->input->post("institution");
 //            $startdate = $this->input->post("startdate");
 //            $enddate = $this->input->post("enddate");
-            $grade = $this->input->post("grade");
+                $grade = $this->input->post("grade");
 
-            $qualificationLevel = $this->input->post("qualificationLevel");
-            $awardingBody = $this->input->post("awardingBody");
-            $subject = $this->input->post("subject");
-            $completionYear = $this->input->post("completionYear");
+                $qualificationLevel = $this->input->post("qualificationLevel");
+                $awardingBody = $this->input->post("awardingBody");
+                $subject = $this->input->post("subject");
+                $completionYear = $this->input->post("completionYear");
 
-            $data = array(
-                'qualification' => $qualification,
-                'institution' => $institution,
+                $data = array(
+                    'qualification' => $qualification,
+                    'institution' => $institution,
 //                'startdate' => $startdate,
 //                'enddate' => $enddate,
-                'obtainResult' => $grade,
+                    'obtainResult' => $grade,
 
-                'qualificationLevel' => $qualificationLevel,
-                'awardingBody' => $awardingBody,
-                'subject' => $subject,
-                'completionYear' => $completionYear,
+                    'qualificationLevel' => $qualificationLevel,
+                    'awardingBody' => $awardingBody,
+                    'subject' => $subject,
+                    'completionYear' => $completionYear,
 
-            );
-
-            if (!empty($qualificationId)) {
-
-                $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId, $data);
-                $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
-                redirect('ApplyForm3');
-            } else {
-
-                $data2 = array(
-                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                 );
-                $data = array_merge($data, $data2);
-                $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
-                $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
-                redirect('ApplyForm3');
 
+                if (!empty($qualificationId)) {
+
+                    $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId, $data);
+                    $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
+                    redirect('ApplyForm3');
+                } else {
+
+                    $data2 = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    );
+                    $data = array_merge($data, $data2);
+                    $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
+                    $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
+                    redirect('ApplyForm3');
+
+                }
             }
         }else{
             echo "<script>

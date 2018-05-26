@@ -48,7 +48,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="organisation" maxlength="100" required name="organisation">
+                                        <input type="text" class="form-control" id="organisation"  maxlength="100" required name="organisation">
                                     </div>
                                 </div>
 

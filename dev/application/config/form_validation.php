@@ -724,6 +724,56 @@ $config = array (
 
 
         ),
+    'applyfromQualification'=>
+        array(
+
+            array(
+                'field' => 'qualification',
+                'label' => 'Qualification',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'qualificationLevel',
+                'label' => 'Qualification Level',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'awardingBody',
+                'label' => 'Awarding Body',
+                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'subject',
+                'label' => 'Subject',
+                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'institution',
+                'label' => 'Institution',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'completionYear',
+                'label' => 'CompletionYear',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'grade',
+                'label' => 'Grade',
+                'rules' => 'required|max_length[20]|xss_clean|htmlspecialchars',
+
+            ),
+
+
+
+        ),
 
 
 

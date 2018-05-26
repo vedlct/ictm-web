@@ -59,38 +59,38 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Qualification Name<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="qualification" required name="qualification">
+                                        <input type="text" class="form-control" id="qualification" maxlength="100" required name="qualification">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Qualification Level<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="qualificationLevel" required name="qualificationLevel">
+                                        <input type="text" class="form-control" id="qualificationLevel" maxlength="100" required name="qualificationLevel">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Awarding Body<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="awardingBody" required name="awardingBody">
+                                        <input type="text" class="form-control" id="awardingBody" maxlength="255" required name="awardingBody">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Subject<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="subject" required name="subject">
+                                        <input type="text" class="form-control" id="subject" maxlength="255" required name="subject">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Institution<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="institution" required name="institution">
+                                        <input type="text" class="form-control" id="institution" maxlength="100" required name="institution">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="completionYear" required name="completionYear">
+                                        <input type="text" class="form-control" id="completionYear" maxlength="100" required name="completionYear">
                                     </div>
                                 </div>
 
@@ -111,7 +111,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="grade" required name="grade">
+                                        <input type="text" class="form-control" id="grade" maxlength="20" required name="grade">
                                     </div>
                                 </div>
 
