@@ -188,6 +188,67 @@ $config = array (
   ),
 
 
+    'applyfrom3'=>
+        array(
+
+            array(
+                'field' => 'title',
+                'label' => 'Title',
+                'rules' => 'required|max_length[12]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'name',
+                'label' => 'Name',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'relation',
+                'label' => 'Relation ',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'address',
+                'label' => 'Address',
+                'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'mobile',
+                'label' => 'Moble number',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'email',
+                'label' => 'Email Address',
+                'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars',
+
+            ),
+
+
+            array(
+                'field' => 'telephone',
+                'label' => 'Telephone',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+            ),
+            array(
+                'field' => 'fax',
+                'label' => 'Fax',
+                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+            ),
+
+
+        ),
+
+
+
     'applyfrom4'=>
         array(
 
