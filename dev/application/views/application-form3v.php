@@ -121,12 +121,12 @@
 <!--                            </div>-->
 
 
-<!--                            <div class="form-group">-->
-<!--                                <label class="control-label col-md-2">Other (Please Specify):</label>-->
-<!--                                <div class="col-md-10">-->
-<!--                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Other (Please Specify):</label>
+                                <div class="col-md-10">
+                                    <textarea id="other" name="other" rows="8" tabindex="4"></textarea>
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
@@ -237,12 +237,14 @@
                     var test = response[0].fkTestId;
                     var overallScore = response[0].overallScore;
                     var expireDate = response[0].expireDate;
+                    var other = response[0].other;
 
                 }
 
                 document.getElementById("test").value= test;
                 document.getElementById("overall").value= overallScore;
                 document.getElementById("expirydate").value= expireDate;
+                document.getElementById("other").value= other;
                 document.getElementById("languagetestid").value= btn;
 
 
@@ -274,9 +276,6 @@
                     var writingscore = response[2].score;
                     var speakingscore = response[3].score;
 
-
-
-
                 }
 
                 document.getElementById("listening").value= listeningscore;
@@ -293,5 +292,28 @@
             }
 
         });
+    }
+
+    function selectidForDelete(x) {
+
+        if (confirm("Are you sure you want to delete this Language Proficiency?")) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("ApplyOnline/DeleteLanguageProficiency")?>',
+                data:{'id': btn},
+                cache: false,
+
+                success:function(data) {
+
+
+                    location.reload();
+
+                }
+
+            });
+        }else {
+            $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+        }
     }
 </script>

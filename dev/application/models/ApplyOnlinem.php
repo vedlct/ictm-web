@@ -97,7 +97,7 @@ class ApplyOnlinem extends CI_Model
 
     public function getLanguageTestDetails($languagetestId){
 
-        $this->db->select('id,fkTestId,overallScore,expireDate');
+        $this->db->select('id,fkTestId,overallScore,expireDate, other');
         $this->db->where('id',$languagetestId);
         $this->db->from('candidatelanguagetest');
         $query=$this->db->get();
@@ -392,6 +392,7 @@ class ApplyOnlinem extends CI_Model
                 'fkTestId' => $test[$i],
                 'overallScore' => $overall[$i],
                 'expireDate' => $exirydate[$i],
+                'other' =>$other
 
             );
 
@@ -941,7 +942,19 @@ class ApplyOnlinem extends CI_Model
     }
 
     public function deleteExperience($experienceId){
+
         $this->db->where('id', $experienceId);
         $this->db->delete('personexperience');
+    }
+
+    public function deleteLanguageProficiency($LanguageProficiencyId){
+
+        $this->db->where('id', $LanguageProficiencyId);
+        $this->db->delete('candidatelanguagetest');
+
+        $this->db->where('fkCandidateTestId', $LanguageProficiencyId);
+        $this->db->delete('cadidatelanguagetestscores');
+
+
     }
 }

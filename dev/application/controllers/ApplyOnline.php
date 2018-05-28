@@ -874,6 +874,13 @@ class ApplyOnline extends CI_Controller
         }
     }
 
+    public function DeleteLanguageProficiency(){
+
+        $LanguageProficiencyId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->deleteLanguageProficiency($LanguageProficiencyId);
+        $this->session->set_flashdata('successMessage', 'Language Proficiency Deleted Successfully');
+    }
+
 /////////////////////////////////////////////////////////////////////
 
     public function insertapplyNow4()
