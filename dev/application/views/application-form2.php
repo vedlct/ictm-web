@@ -250,13 +250,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     alert('Please add a Qualification'+counter);
                     return false;
                 }if (Qualification.length > 100){
-                    alert('Qualification'+counter' must be less then 100 charecter');
+                    alert('Qualification'+counter+' must be less then 100 charecter');
                     return false;
                 }if (institution == ""){
                     alert('Please add a institution'+counter);
                     return false;
                 }if (institution.length >100){
-                    alert('Institution'+counter' must be less then 100 charecter');
+                    alert('Institution'+counter+' must be less then 100 charecter');
                     return false;
                 }
                 if (qualificationLevel == ""){
@@ -288,7 +288,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     alert('Please add a grade'+counter);
                     return false;
                 }if (grade.length > 20){
-                    alert('grade'+counter' must be less then 20 charecter');
+                    alert('grade'+counter+' must be less then 20 charecter');
                     return false;
                 }
 //                if (enddate < startdate){
