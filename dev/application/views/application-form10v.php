@@ -31,7 +31,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form action="<?php echo base_url()?>ApplyOnline/updateApplicationForm10" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
+                <form action="<?php echo base_url()?>ApplyOnline/updateApplicationForm10" method="post" onsubmit="return checkForm()" class=" form-horizontal">
 
                     <div class="form-top">
                         <div class="form-top-left">
@@ -48,20 +48,30 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
+
+                                        <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
+
+
                                         <input type="text" class="form-control" id="organisation"  maxlength="100" required name="organisation">
+
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
+
+                                        <p><font color="red"> <?php echo form_error('positionHeld'); ?></font></p>
+
                                         <input type="text" class="form-control" id="positionHeld" maxlength="100" required name="positionHeld">
+
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('startdate'); ?></font></p>
                                         <input type="date" class="form-control" id="startdate" required name="startdate">
                                     </div>
                                 </div>
@@ -69,6 +79,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('enddate'); ?></font></p>
                                         <input type="date" class="form-control" id="enddate" required name="enddate">
                                     </div>
                                 </div>
