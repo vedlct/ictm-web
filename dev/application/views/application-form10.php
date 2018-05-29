@@ -39,7 +39,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-top-right">
-                            <p>Step 10 / 10</p>
+                            <p>Step 3 / 10</p>
                         </div>
                     </div>
                     <div class="form-bottom">
@@ -91,10 +91,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>Apply" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
-
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>

@@ -290,13 +290,19 @@ class ApplyOnline extends CI_Controller
 
             $applicationId = $this->session->userdata('studentApplicationId');
 
+            $firstLanguage = $this->ApplyOnlinem->getfirstLanguage($applicationId);
+            foreach ( $firstLanguage as $First){
+                $this->data['fLanguage']=$First->firstLanguageEnglish;
+            }
             $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+
 
             if (empty($this->data['languagetest'])) {
                 $this->load->view('application-form3', $this->data);
             } else {
                 $this->load->view('application-form3v', $this->data);
             }
+
         }else{
 
             echo "<script>
@@ -325,7 +331,7 @@ class ApplyOnline extends CI_Controller
     {
         if ($this->session->userdata('loggedin') == "true") {
             $this->ApplyOnlinem->applyNow2Insert();
-            redirect('ApplyForm3');
+            redirect('Apply-Work-Experience');
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -348,7 +354,7 @@ class ApplyOnline extends CI_Controller
                     </script>";
         }
     }
-    public function insertApplicationForm3AndNext() // insert application form 2 and go form 3
+    public function insertApplicationForm3AndNext() // insert application form 3 and go form 4
     {
         if ($this->session->userdata('loggedin') == "true") {
             $this->ApplyOnlinem->applyNow3Insert();
@@ -751,7 +757,7 @@ class ApplyOnline extends CI_Controller
 
                     $this->ApplyOnlinem->editQualificationsDetailsById($qualificationId, $data);
                     $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
-                    redirect('ApplyForm3');
+                    redirect('Apply-Work-Experience');
                 } else {
 
                     $data2 = array(
@@ -760,7 +766,7 @@ class ApplyOnline extends CI_Controller
                     $data = array_merge($data, $data2);
                     $this->ApplyOnlinem->insertQualificationsDetailsFromEdit($data);
                     $this->session->set_flashdata('successMessage', 'Qualification Added Successfully');
-                    redirect('ApplyForm3');
+                    redirect('Apply-Work-Experience');
 
                 }
             }
@@ -862,9 +868,68 @@ class ApplyOnline extends CI_Controller
                 } else {
                     $this->load->view('application-form3v', $this->data);
                 }
-            }else {
-                $this->ApplyOnlinem->applyNow3update();
-                redirect('ApplyForm3');
+            }
+            else {
+                $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm3');
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm3');
+
+                }
+
+
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+    public function editORInsertApplicationForm3AndNext(){
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfrom3')) {
+                $this->menu();
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                $applicationId = $this->session->userdata('studentApplicationId');
+
+                $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+
+                if (empty($this->data['languagetest'])) {
+                    $this->load->view('application-form3', $this->data);
+                } else {
+                    $this->load->view('application-form3v', $this->data);
+                }
+            }
+            else {
+                $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm4');
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm4');
+
+                }
+
+
             }
         }else{
             echo "<script>
@@ -2022,13 +2087,13 @@ class ApplyOnline extends CI_Controller
 
 
                 $this->session->set_flashdata('successMessage', 'Work Experience Saved  Successfully');
-                redirect('ApplyForm9');
+                redirect('ApplyForm3');
 
 
             } else {
 
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                redirect('ApplyForm9');
+                redirect('ApplyForm3');
 
             }
 
@@ -2094,7 +2159,7 @@ class ApplyOnline extends CI_Controller
             }
             else{
                 $this->ApplyOnlinem->applyNow10update();
-                redirect('ApplyForm9');
+                redirect('ApplyForm3');
             }
         }
         else{

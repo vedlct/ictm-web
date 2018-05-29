@@ -84,6 +84,16 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
     }
+    public function getfirstLanguage($applicationId)
+    {
+
+        $this->db->select('firstLanguageEnglish');
+        $this->db->where('applicationId', $applicationId);
+        $this->db->from('candidateinfo');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
     public function getFinancerDataFromOthers($applicationId)
     {
 
@@ -97,7 +107,7 @@ class ApplyOnlinem extends CI_Model
 
     public function getLanguageTestDetails($languagetestId){
 
-        $this->db->select('id,fkTestId,overallScore,expireDate, other');
+        $this->db->select('id,fkTestId,overallScore,expireDate,other');
         $this->db->where('id',$languagetestId);
         $this->db->from('candidatelanguagetest');
         $query=$this->db->get();
@@ -374,6 +384,12 @@ class ApplyOnlinem extends CI_Model
 
     public function applyNow3Insert()
     {
+        $firstLanguage = $this->input->post('firstLanguage');
+        $dataCandidate=array('firstLanguageEnglish'=>$firstLanguage);
+
+        $this->db->where('applicationId',$this->session->userdata('studentApplicationId'));
+        $error = $this->db->update('candidateinfo', $dataCandidate);
+
         $test = $this->input->post('test[]');
         $listening = $this->input->post('listening[]');
         $reading = $this->input->post('reading[]');
@@ -438,6 +454,14 @@ class ApplyOnlinem extends CI_Model
 
     public function applyNow3update(){
 
+        $firstLanguage = $this->input->post('firstLanguage');
+        $dataCandidate=array('firstLanguageEnglish'=>$firstLanguage);
+
+        $this->db->where('applicationId',$this->session->userdata('studentApplicationId'));
+        $error = $this->db->update('candidateinfo', $dataCandidate);
+
+
+
         $test = $this->input->post('test');
         $listening = $this->input->post('listening');
         $reading = $this->input->post('reading');
@@ -452,7 +476,7 @@ class ApplyOnlinem extends CI_Model
         $writingid = $this->input->post('writingid');
         $speakingid = $this->input->post('speakingid');
 
-       // $other = $this->input->post('other');
+        $other = $this->input->post('other');
 
 
             $data = array(
@@ -461,6 +485,7 @@ class ApplyOnlinem extends CI_Model
                 'fkTestId' => $test,
                 'overallScore' => $overall,
                 'expireDate' => $exirydate,
+                'other'=>$other
 
             );
 

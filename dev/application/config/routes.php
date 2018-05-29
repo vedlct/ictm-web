@@ -82,7 +82,7 @@ $route['ApplyForm6'] = 'ApplyOnline/applyNow6';
 $route['ApplyForm7'] = 'ApplyOnline/applyNow7';
 $route['ApplyForm8'] = 'ApplyOnline/applyNow8';
 $route['ApplyForm9'] = 'ApplyOnline/applyNow9';
-$route['ApplyForm10'] = 'ApplyOnline/applyNow10';
+$route['Apply-Work-Experience'] = 'ApplyOnline/applyNow10';
 
 $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';

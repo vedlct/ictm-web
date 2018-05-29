@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 5 / 9</p>
+                                <p>Step 6 / 10</p>
                             </div>
                         </div>
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="registration-form form-horizontal">

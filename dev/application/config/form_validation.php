@@ -253,22 +253,22 @@ $config = array (
             ),
 
             array(
-                'field' => 'Relation',
-                'label' => 'relation ',
-                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
-
-            ),
-
-            array(
                 'field' => 'writing',
-                'label' => 'Writing',
+                'label' => 'Writing ',
                 'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
 
             ),
 
             array(
-                'field' => 'Overall',
-                'label' => 'overall',
+                'field' => 'speaking',
+                'label' => 'Speaking',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'overall',
+                'label' => 'Overall',
                 'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
 
             ),
