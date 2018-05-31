@@ -47,11 +47,14 @@ class ApplyOnline extends CI_Controller
             ];
             $this->session->set_userdata($dataSession);
 
-         //   print_r($id);
-         //   print_r($this->session->userdata('studentApplicationId'));
+            redirect('Apply');
 
-            $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($id);
-            $this->load->view('application-formv', $this->data);
+         //   print_r($id);
+          //  print_r($this->session->userdata('studentApplicationId'));
+
+//            $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($id);
+//
+//            $this->load->view('application-formv', $this->data);
 
         } else{
 
@@ -70,35 +73,51 @@ class ApplyOnline extends CI_Controller
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
 
-            $studentOrAgentId = $this->session->userdata('id');
-            $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
+            $this->data['studentApplicationId'] = $this->session->userdata('studentApplicationId');
+            //print_r($this->session->userdata('studentApplicationId'));
 
-            if (empty($this->data['applicationId'])) {
-                $this->load->view('application-form', $this->data);
-            } else {
-                foreach ($this->data['applicationId'] as $studentApplication) {
-                    $studentApplicationId = $studentApplication->id;
-                    $studentApplicationSubmited = $studentApplication->isSubmited;
-                }
-                $dataSession = [
-                    'studentApplicationId' => $studentApplicationId,
-                ];
-                $this->session->set_userdata($dataSession);
-                //$this->data['applicationSubmited'] = $this->ApplyOnlinem->getApplicationInfo($studentApplicationId);
-                if ($studentApplicationSubmited == '0') {
+            if (!empty($this->data['studentApplicationId'])){
+                $studentApplicationId=$this->data['studentApplicationId'];
+                $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($studentApplicationId);
+                $this->load->view('application-formv', $this->data);
 
-                    $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($studentApplicationId);
-                    $this->load->view('application-formv', $this->data);
 
-                } elseif ($studentApplicationSubmited == '1') {
+            }
+            else {
 
-                    echo "<script>
+
+                $studentOrAgentId = $this->session->userdata('id');
+
+                $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
+
+
+                if (empty($this->data['applicationId'])) {
+                    $this->load->view('application-form', $this->data);
+                } else {
+                    foreach ($this->data['applicationId'] as $studentApplication) {
+                        $studentApplicationId = $studentApplication->id;
+                        $studentApplicationSubmited = $studentApplication->isSubmited;
+                    }
+                    $dataSession = [
+                        'studentApplicationId' => $studentApplicationId,
+                    ];
+                    $this->session->set_userdata($dataSession);
+                    //$this->data['applicationSubmited'] = $this->ApplyOnlinem->getApplicationInfo($studentApplicationId);
+                    if ($studentApplicationSubmited == '0') {
+
+                        $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($studentApplicationId);
+                        $this->load->view('application-formv', $this->data);
+
+                    } elseif ($studentApplicationSubmited == '1') {
+
+                        echo "<script>
                     alert('You Have Already Submitted Your Application');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
 
-                }
+                    }
 
+                }
             }
         }else{
 
@@ -370,6 +389,7 @@ class ApplyOnline extends CI_Controller
 
     public function editApplicationForm1(){
 
+
         if ($this->session->userdata('loggedin') == "true") {
             $this->load->library('form_validation');
             if (!$this->form_validation->run('checkApplicationForm1')) {
@@ -487,11 +507,14 @@ class ApplyOnline extends CI_Controller
                     'ucasCourseCode'=>$ucasCourseCode,
 
                 );
+
                 $this->data['error']=$this->ApplyOnlinem->editApplyForm1($data,$data1);
 
+              //  print_r($this->session->userdata('studentApplicationId'));
+
+
                 if (empty($this->data['error'])) {
-
-
+                    
                     $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
                     redirect('Apply');
 

@@ -204,6 +204,20 @@
 
             </li>
 
+            <li class="sub-menu">
+                <a href="javascript:;" class="">
+                    <i class="icon_comment"></i>
+                    <span>Students-Apply</span>
+                    <span class="menu-arrow arrow_carrot-right"></span>
+                </a>
+                <ul class="sub">
+
+                    <li><a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageApplication">Manage Application</a></li>
+
+                </ul>
+            </li>
+
+
         </ul>
         <!-- sidebar menu end-->
     </div>

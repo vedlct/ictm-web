@@ -293,7 +293,8 @@ class ApplyOnlinem extends CI_Model
     public function getApplicationId($studentOrAgentId)
     {
 
-        $this->db->select('id,studentApplicationFormId,isSubmited');
+        $this->db->select('studentapplicationform.id,studentapplicationform.studentApplicationFormId,studentapplicationform.isSubmited,studentregistration.type,');
+        $this->db->join('studentregistration', 'studentregistration.id = studentapplicationform.studentOrAgentId','left');
         $this->db->where('studentOrAgentId',$studentOrAgentId);
         $this->db->from('studentapplicationform');
         $query=$this->db->get();
