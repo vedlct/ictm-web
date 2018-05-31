@@ -480,9 +480,18 @@ class ApplyOnline extends CI_Controller
             $applicationId = $this->session->userdata('studentApplicationId');
 
             $firstLanguage = $this->ApplyOnlinem->getfirstLanguage($applicationId);
-            foreach ( $firstLanguage as $First){
-                $this->data['fLanguage']=$First->firstLanguageEnglish;
+
+            if(!empty($firstLanguage)){
+
+                foreach ( $firstLanguage as $First){
+                    $this->data['fLanguage']=$First->firstLanguageEnglish;
+                }
+
+            }else{
+                $this->data['fLanguage']=null;
+
             }
+
             $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
 
 
@@ -506,7 +515,7 @@ class ApplyOnline extends CI_Controller
     public function insertApplicationForm2() // insert application form 2
     {
         if ($this->session->userdata('loggedin') == "true") {
-            
+
             $this->ApplyOnlinem->applyNow2Insert();
             redirect('ApplyForm2');
         }else{
