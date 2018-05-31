@@ -74,9 +74,10 @@ class ApplyOnline extends CI_Controller
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
 
             $this->data['studentApplicationId'] = $this->session->userdata('studentApplicationId');
-            //print_r($this->session->userdata('studentApplicationId'));
-
+           // print_r($this->session->userdata('studentApplicationId'));
+//
             if (!empty($this->data['studentApplicationId'])){
+
                 $studentApplicationId=$this->data['studentApplicationId'];
                 $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($studentApplicationId);
                 $this->load->view('application-formv', $this->data);
@@ -87,9 +88,14 @@ class ApplyOnline extends CI_Controller
 
 
                 $studentOrAgentId = $this->session->userdata('id');
+                $type = $this->session->userdata('type');
 
-                $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
+                if ($type != 'Agent'){
 
+                    $this->data['applicationId'] = $this->ApplyOnlinem->getApplicationId($studentOrAgentId);
+                } else{
+                    $this->data['applicationId']=null;
+                }
 
                 if (empty($this->data['applicationId'])) {
                     $this->load->view('application-form', $this->data);
@@ -269,8 +275,172 @@ class ApplyOnline extends CI_Controller
                     'ulnNo'=>$ulnNo,
                     'ucasCourseCode'=>$ucasCourseCode,
                 );
-                $this->ApplyOnlinem->insertApplyForm1($data,$data1);
-                redirect('ApplyForm2');
+                $this->data['error']=$this->ApplyOnlinem->insertApplyForm1($data,$data1);
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('Apply');
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Apply');
+
+                }
+
+            }
+        }
+        else {
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+    public function insertApplicationForm1AndNext()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('checkApplicationForm1')) {
+                $this->menu();
+                $this->data['coursedata']=$this->Coursem->getCourseTitle();
+                $this->data['courseInfo']=$this->Coursem->getCourseInfo();
+                $this->load->view('application-form', $this->data);
+            }
+            else {
+                $candidateTitle = $this->input->post("title");
+                $candidateFirstName = $this->input->post("firstName");
+                $candidateSurName = $this->input->post("surName");
+//                $candidateOtherNamee = $this->input->post("otherName");
+                $candidateDob = $this->input->post("dob");
+                $candidateGender = $this->input->post("gender");
+                $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
+                $candidateNationality = $this->input->post("nationality");
+                $candidatePassportNo = $this->input->post("passportNo");
+                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
+                $candidateUkEntryDate = $this->input->post("UkEntryDate");
+                $candidateVisaType = $this->input->post("VisaType");
+                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+
+                $candidateCurrentAddress = $this->input->post("currentAddress");
+                $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
+                $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
+
+                //This is overseas Address ,We consider this permanent address
+
+                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
+                $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
+                $candidateOverseasHomeAddressPO = $this->input->post("overseasAddressPO");
+
+                $candidateTelephone = $this->input->post("telephone");
+                $candidateMobile = $this->input->post("mobile");
+                $candidateEmail = $this->input->post("email");
+                $candidateFax = $this->input->post("fax");
+                $EmergencyContactTitle = $this->input->post("EmergencyContactTitle");
+                $EmergencyContactName = $this->input->post("EmergencyContactName");
+                $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
+                $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
+                $EmergencyContactAddressPO = $this->input->post("EmergencyContactAddressPO");
+                $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
+                $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
+                $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
+                $courseName = $this->input->post("courseName");
+                $awardingBody = $this->input->post("awardingBody");
+                $courseLevel = $this->input->post("courseLevel");
+
+//                $courseStartDate = $this->input->post("courseStartDate");
+//                $courseEndDate = $this->input->post("courseEndDate");
+
+                $methodeOfStudy = $this->input->post("methodeOfStudy");
+                $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+
+                $courseSession = $this->input->post("courseSession");
+                $courseYear = $this->input->post("courseYear");
+                $timeOfStudy = $this->input->post("timeOfStudy");
+                $ulnNo = $this->input->post("ulnNo");
+                $ucasCourseCode = $this->input->post("ucasCourseCode");
+
+
+
+
+                $data3=array(
+                    'studentOrAgentId'=>$this->session->userdata('id'),
+                    'studentApplicationFormId'=>$aplicationFormid
+                );
+                $studentApplicationId = $this->ApplyOnlinem->insertStudentApplicationForm($data3);
+                $dataSession = [
+                    'studentApplicationId' => $studentApplicationId,
+                ];
+                $this->session->set_userdata($dataSession);
+                $data=array(
+                    'applicationId'=>$studentApplicationId,
+                    'title'=>$candidateTitle,
+                    'firstName'=>$candidateFirstName,
+                    'surName'=>$candidateSurName,
+//                    'otherNames'=>$candidateOtherNamee,
+                    'dateOfBirth'=>$candidateDob,
+                    'gender'=>$candidateGender,
+                    'placeOfBirth'=>$candidatePlaceOfBirth,
+                    'nationality'=>$candidateNationality,
+                    'passportNo'=>$candidatePassportNo,
+                    'passportExpiryDate'=>$candidatePassportExpiryDate,
+                    'ukEntryDate'=>$candidateUkEntryDate,
+                    'visaType'=>$candidateVisaType,
+                    'visaExpiryDate'=>$candidateVisaExpiryDate,
+                    'currentAddress'=>$candidateCurrentAddress,
+                    'currentAddressPo'=>$candidateCurrentAddressPO,
+                    'currentAddressCountry'=>$candidateCurrentAddressCountry,
+                    'overseasAddress'=>$candidateOverseasHomeAddress,
+                    'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
+                    'permanentAddressCountry'=>$candidatePermanentAddressCountry,
+                    'telephoneNo'=>$candidateTelephone,
+                    'mobileNo'=>$candidateMobile,
+                    'email'=>$candidateEmail,
+                    'fax'=>$candidateFax,
+                    'emergencyContactName'=>$EmergencyContactName,
+                    'emergencyContactTitle'=>$EmergencyContactTitle,
+                    'emergencyContactRelation'=>$EmergencyContactRelation,
+                    'emergencyContactAddress'=>$EmergencyContactAddress,
+                    'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
+                    'emergencyContactCountry'=>$EmergencyContactCountry,
+                    'emergencyContactMobile'=>$EmergencyContactMobile,
+                    'emergencyContactEmail'=>$EmergencyContactEmail,
+
+
+                );
+                $data1=array(
+                    'courseName'=>$courseName,
+                    'awardingBody'=>$awardingBody,
+                    'courseLevel'=>$courseLevel,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
+                    'methodOfStudy'=>$methodeOfStudy,
+
+                    'courseSession'=>$courseSession,
+                    'courseYear'=>$courseYear,
+                    'timeOfStudy'=>$timeOfStudy,
+                    'ulnNo'=>$ulnNo,
+                    'ucasCourseCode'=>$ucasCourseCode,
+                );
+                $this->data['error']=$this->ApplyOnlinem->insertApplyForm1($data,$data1);
+
+
+
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('ApplyForm2');
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm2');
+
+                }
             }
         }
         else {
@@ -514,7 +684,7 @@ class ApplyOnline extends CI_Controller
 
 
                 if (empty($this->data['error'])) {
-                    
+
                     $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
                     redirect('Apply');
 
