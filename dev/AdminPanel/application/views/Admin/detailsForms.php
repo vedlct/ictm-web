@@ -46,7 +46,8 @@
                     <?php foreach ($personalDetails as $pd) { ?>
                     <tr>
                         <td>First Name(s)</td>
-                        <td colspan="3" >Title (Mr / Mrs / Ms / Miss, others....)</td>
+<!--                        <td colspan="3" >Title (Mr / Mrs / Ms / Miss, others....)</td>-->
+                        <td colspan="3" ><?php echo $pd->title." ".$pd->firstName." ".$pd->surName ?></td>
                     </tr>
                     <tr>
                         <td>Sure Name</td>
