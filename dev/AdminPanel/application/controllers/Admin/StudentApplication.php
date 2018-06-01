@@ -6,7 +6,7 @@ class StudentApplication extends CI_Controller
     {
         parent::__construct();
 
-
+        $this->load->model('StudentApplicationm');
     }
 
     public function index()
@@ -274,4 +274,18 @@ class StudentApplication extends CI_Controller
             }
         }
     }
+
+
+
+    ///////////////////////////////sakib//////////////////
+
+    public function ApplicationDetails(){
+
+        //$applicationId = $this->input->post();
+        $applicationId = 9;
+
+        $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
+        $this->load->view('Admin/detailsForms');
+    }
+    /////////////////////////////////////////////////////
 }
