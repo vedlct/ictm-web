@@ -12,21 +12,18 @@
     
     <style>
         @page { size: auto;  margin: 0mm; }
-        .table{
-            text-align: center;
-        }
     </style>
     <body>
         <div class="structure">
-            <div style= "background: #fff; margin-bottom: 30px; " class="container">
+            <div style= "background: #fff; margin-bottom: 30px;padding: 25px "  class="container">
                
-                <table border="0" style="width:90%; margin-top: 30px; border: none; ;text-align: center">
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
                     <tr>
                         <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
                         <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
                     </tr>
                 </table> 
-                <table border="0" style="width:90%; margin-top: 30px; border: none;">
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
                     <tr>
                         <td style="text-align: center; border: none; margin-left: 20px;"><h3 style="color: #E3352E; margin-left: 70px;">APPLICATION FORM</h3></td>
                        <td style="width: 13%; text-align: center; height: 120px;">photograph</td>
@@ -35,7 +32,7 @@
                         <td style="border: none;"><b>Please complete this form in BLOCK letters using black ink.</b> <br><small>(You must complete all sections for the application to be accepted)</small> </td>
                     </tr>
                 </table> 
-                <table border="0" style="width:90%;">
+                <table border="0" style="width:100%;">
 
                     <tr style="background: #B0DBF0;">
                         <td> <b>Section A</b> <b style="margin-left: 200px;">Personal Details</b></td>
@@ -45,7 +42,7 @@
                 </table>     
                 
 
-                <table style="width:90%">
+                <table style="width:100%">
                     <?php foreach ($personalDetails as $pd) { ?>
                     <tr>
                         <td>First Name(s)</td>
@@ -95,7 +92,7 @@
                     <?php } ?>
                 </table>
                                            
-                <table style="width:90%; margin-top: 30px;">
+                <table style="width:100%; margin-top: 30px;">
                     <?php foreach ($contactDetails as $cd) {?>
                     <tr>
                         <td colspan="5"> <b>Contact Details</b> </td>
@@ -168,38 +165,33 @@
                         <td>Email</td>
                         <td><?php echo $ec->emergencyContactEmail?></td>
                     </tr>   
-                                                       
+                          <?php } ?>
                 </table>     
                                            
                 <table style="width:100%; margin-top: 30px;">
+                    <?php foreach ($courseDetails as $cod)  {?>
                     <tr>
                         <td colspan="4"> <b>Course Details</b></td>
                     </tr>
                     
                     <tr>
                         <td >Course Name</td>
-                        <td colspan="3"><input type="text" name="firstname"></td>
+                        <td colspan="3"><?php echo $cod->courseTitle?></td>
                     </tr>
                     
+
                     <tr>
                         <td>Awarding Body</td>
-                        <td><input type="text" name="firstname"></td>
-                        <td>Mobile/Telephone</td>
-                        <td><input type="text" name="firstname"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td>Awarding Body</td>
-                        <td colspan=""><input type="text" name="firstname"></td>
+                        <td colspan=""><?php echo $cod->awardbody?></td>
                         <td>Course Level</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cod->courseLevel?></td>
                     </tr>
                     
                     <tr>
                         <td>Session</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cod->courseSession?></td>
                         <td>Year</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cod->courseYear?></td>
                     </tr>
                     
                     <tr>
@@ -215,9 +207,9 @@
                     
                     <tr>
                         <td>ULN no (if any): </td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cod->ulnNo?></td>
                         <td>UCAS course code:</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cod->ucasCourseCode?></td>
                     </tr>
                     <?php } ?>
                 </table> 

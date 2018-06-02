@@ -96,7 +96,7 @@ class StudentApplication extends CI_Controller
         $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
         $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
         $this->data['emmergencyContact'] = $this->StudentApplicationm->emmergancyContact($applicationId);
-      //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
+        $this->data['courseDetails'] = $this->StudentApplicationm->courseDetails($applicationId);
       //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
       //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
       //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);

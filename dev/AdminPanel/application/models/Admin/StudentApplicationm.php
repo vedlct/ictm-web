@@ -112,8 +112,13 @@ class StudentApplicationm extends CI_Model
 
     }
 
-    public function courseDetails(){
+    public function courseDetails($applicationId){
 
+        $this->db->select('courseTitle, courseName,courseSession,courseYear,ulnNo,ucasCourseCode,coursedetails.awardingBody as awardbody,courseLevel,courseStartDate, courseEndDate, methodOfStudy, timeOfStudy');
+        $this->db->join('ictmcourse', 'ictmcourse.courseId = coursedetails.courseName', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('coursedetails');
+        return $query->result();
 
     }
 
