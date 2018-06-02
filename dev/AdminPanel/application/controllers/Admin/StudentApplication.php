@@ -43,6 +43,9 @@ class StudentApplication extends CI_Controller
             $row = array();
             $row[] = $no;
             $row[] = $application->title.' '.$application->firstName.' '.$application->surName;
+            $row[] = $application->email;
+            $row[] = $application->mobileNo;
+            $row[] = $application->courseName;
             $row[] = $application->studentApplicationFormId;
 
             if ($application->applydate==""){
