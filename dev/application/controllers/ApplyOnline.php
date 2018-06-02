@@ -2093,6 +2093,7 @@ class ApplyOnline extends CI_Controller
 
     }
     public function editApplicationForm8AndNext() // edit OR Insert Application Form8
+
     {
         if ($this->session->userdata('loggedin') == "true") {
 
