@@ -12,18 +12,21 @@
     
     <style>
         @page { size: auto;  margin: 0mm; }
+        .table{
+            text-align: center;
+        }
     </style>
     <body>
         <div class="structure">
             <div style= "background: #fff; margin-bottom: 30px; " class="container">
                
-                <table border="0" style="width:100%; margin-top: 30px; border: none;">  
+                <table border="0" style="width:90%; margin-top: 30px; border: none; ;text-align: center">
                     <tr>
                         <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
                         <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
                     </tr>
                 </table> 
-                <table border="0" style="width:100%; margin-top: 30px; border: none;">  
+                <table border="0" style="width:90%; margin-top: 30px; border: none;">
                     <tr>
                         <td style="text-align: center; border: none; margin-left: 20px;"><h3 style="color: #E3352E; margin-left: 70px;">APPLICATION FORM</h3></td>
                        <td style="width: 13%; text-align: center; height: 120px;">photograph</td>
@@ -32,7 +35,7 @@
                         <td style="border: none;"><b>Please complete this form in BLOCK letters using black ink.</b> <br><small>(You must complete all sections for the application to be accepted)</small> </td>
                     </tr>
                 </table> 
-                <table border="0" style="width:100%;">
+                <table border="0" style="width:90%;">
 
                     <tr style="background: #B0DBF0;">
                         <td> <b>Section A</b> <b style="margin-left: 200px;">Personal Details</b></td>
@@ -42,7 +45,7 @@
                 </table>     
                 
 
-                <table style="width:100%">
+                <table style="width:90%">
                     <?php foreach ($personalDetails as $pd) { ?>
                     <tr>
                         <td>First Name(s)</td>
@@ -51,7 +54,7 @@
                     </tr>
                     <tr>
                         <td>Sure Name</td>
-                        <td><input type="text" name="firstname"> </td>
+                        <td><?php echo $pd->surName?></td>
                         <td>Sex</td>
                         <td><input type="checkbox"> Mail
                             <input type="checkbox"> Femail
@@ -60,7 +63,7 @@
                     </tr>
                     <tr>
                         <td>Date of Birth</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->dateOfBirth?></td>
                         <td>Any Gender Changed</td>
                         <td><input type="checkbox"> Yes
                            <input type="checkbox"> No
@@ -68,99 +71,102 @@
                     </tr>
                     <tr>
                         <td>Place of Birth</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->placeOfBirth?></td>
                         <td>Nationality</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->nationality?></td>
                     </tr>
                     <tr>
                         <td>Passport/ID No.</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->passportNo?></td>
                         <td>Passport/ID Expiry date</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->passportExpiryDate?></td>
                     </tr>
                     <tr>
                         <td>UK entry Date</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->ukEntryDate?></td>
                         <td>Visa Expiry date</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $pd->visaExpiryDate?></td>
                     </tr>
                     <tr>
-                        <td colspan="2">Visa Type(where applicable)</td>
+                        <td colspan="2">Visa Type(where applicable): <?php echo $pd->visaType?></td>
                         <td><input type="checkbox"> ILR </td>
                         <td>Other</td>
                     </tr>
                     <?php } ?>
                 </table>
                                            
-                <table style="width:100%; margin-top: 30px;">
+                <table style="width:90%; margin-top: 30px;">
+                    <?php foreach ($contactDetails as $cd) {?>
                     <tr>
                         <td colspan="5"> <b>Contact Details</b> </td>
                     </tr>  
                                      
                     <tr>
                         <td >Current Address</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td style="width: 40%"><?php echo $cd->currentAddress ?></td>
                         <td>Permanent Address</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td style="width: 40%"><?php echo $cd->overseasAddress ?></td>
                     </tr>
                     
                     <tr>
                         <td>Post Code</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cd->currentAddressPo?></td>
                         <td>Post Code</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cd->overseasAddressPo?></td>
                     </tr>
                     
                     <tr>
                         <td>Country</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cd->currentAddressCountry ?></td>
                         <td>Country</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cd->permanentAddressCountry?></td>
                     </tr>
                     
                     <tr>
                         <td>Mobile</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cd->mobileNo?></td>
                         <td>Telephone</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $cd->telephoneNo?></td>
                     </tr>
                     
                     <tr>
                         <td>Email</td>
-                        <td colspan="3"><input type="text" name="firstname"></td>
+                        <td colspan="3"><?php echo $cd->email?></td>
                     </tr>
+                    <?php } ?>
                 </table> 
                                           <p style="page-break-before: always"></p>  
                                            
                 <table style="width:100%; margin-top: 50px;">
+                    <?php foreach ($emmergencyContact as $ec){ ?>
                     <tr>
                         <td colspan="6"> <b>Emmergency Contact Details/Next of kin</b> <small>(please tell us who you would like the college to contact in case of emmergency)</small> </td>
                     </tr>
                     
                     <tr>
                         <td >Name</td>
-                        <td colspan="5" >Title (Mr / Mrs / Ms / Miss, others....)</td>
+                        <td colspan="5" ><?php echo $ec->emergencyContactTitle." ".$ec->emergencyContactName?></td>
                     </tr>
                     
                     <tr>
                         <td>Relation</td>
-                        <td colspan="5"><input type="text" name="firstname"></td>
+                        <td colspan="5"><?php echo $ec->emergencyContactRelation?></td>
                     </tr>
                     
                     <tr>
                         <td>Address</td>
-                        <td colspan="3"><input type="text" name="firstname"></td>
+                        <td colspan="3"><?php echo $ec->emergencyContactAddress?></td>
                         <td>Mobile/Telephone</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $ec->emergencyContactMobile?></td>
                     </tr>
                     
                     <tr>
                         <td>Country</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $ec->emergencyContactCountry?></td>
                         <td>Post Code</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $ec->emergencyContactAddressPo?></td>
                         <td>Email</td>
-                        <td><input type="text" name="firstname"></td>
+                        <td><?php echo $ec->emergencyContactEmail?></td>
                     </tr>   
                                                        
                 </table>     
@@ -213,7 +219,7 @@
                         <td>UCAS course code:</td>
                         <td><input type="text" name="firstname"></td>
                     </tr>
-                    
+                    <?php } ?>
                 </table> 
                                            
                 <table border="0" style="width:100%; margin-top: 30px;">

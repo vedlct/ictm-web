@@ -12,13 +12,21 @@ class StudentApplicationm extends CI_Model
 
     }
 
-    public function contactDetails(){
+    public function contactDetails($applicationId){
 
+        $this->db->select('currentAddress,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,email,fax,overseasAddress,overseasAddressPo,permanentAddressCountry');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
 
     }
 
-    public function emmergancyContact(){
+    public function emmergancyContact($applicationId){
 
+        $this->db->select('emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,emergencyContactAddressPo,emergencyContactCountry,emergencyContactMobile,emergencyContactEmail');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
 
     }
 
