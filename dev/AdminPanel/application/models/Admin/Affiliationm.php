@@ -17,6 +17,7 @@ class Affiliationm extends CI_Model
 
 
         $this->db->select($this->select);
+
         $this->db->from($this->table);
 
 
