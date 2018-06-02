@@ -51,9 +51,12 @@
 
                                     <tr align="center" bgcolor="#D3D3D3">
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 30%">Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 20%">Application Id</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 20%"">Submit Date(d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Course Name</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Application Id</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date(d-m-Y)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                     </tr>
                                     </thead>
@@ -107,7 +110,7 @@
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [4], //first column / numbering column
+                    "targets": [7], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],

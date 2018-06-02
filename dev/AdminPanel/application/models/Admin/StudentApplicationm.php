@@ -6,9 +6,9 @@ class StudentApplicationm extends CI_Model
     /////////datatable//////////
     var $table = 'candidateinfo';
 
-    var $select =array('candidateinfo.id','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate',);
-    var $column_order = array(null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable orderable
-    var $column_search = array('studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable searchable
+    var $select =array('candidateinfo.id','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName');
+    var $column_order = array(null,null,null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','coursedetails.courseName','candidateinfo.applydate'); //set column field database for datatable orderable
+    var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable searchable
     var $order = array('id' => 'desc'); // default order
 
     private function _get_datatables_query()
@@ -17,6 +17,7 @@ class StudentApplicationm extends CI_Model
 
         $this->db->select($this->select);
         $this->db->join('studentapplicationform', 'studentapplicationform.id = candidateinfo.applicationId','left');
+        $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->where('studentapplicationform.isSubmited','1');
         $this->db->from($this->table);
 
