@@ -755,6 +755,12 @@ class ApplyOnlinem extends CI_Model
 
     }
 
+    public function deleteRefereesDetailsById($refereesId){
+
+        $this->db->where('id', $refereesId);
+        $this->db->delete('candidatereferees');
+    }
+
     public function insertApplyNow6($data)
     {
         $this->security->xss_clean($data);

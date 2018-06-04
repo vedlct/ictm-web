@@ -256,5 +256,23 @@
 
         });
     }
+    function selectidForDelete(x) {
+
+        if (confirm('Are You sure You want to delete this reference?'))
+        btn = $(x).data('panel-id');
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("ApplyOnline/deletePersonalReferees")?>',
+            data:{'id': btn},
+            cache: false,
+            success:function(data) {
+
+                location.reload();
+
+            }
+
+        });
+    }
 
 </script>

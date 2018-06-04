@@ -118,7 +118,7 @@ class ApplyOnline extends CI_Controller
 
                         echo "<script>
                     alert('You Have Already Submitted Your Application');
-                    window.location.href= '" . base_url() . "Login';
+                    window.location.href= '" . base_url() . "Login/logout';
                     </script>";
 
                     }
@@ -543,8 +543,22 @@ class ApplyOnline extends CI_Controller
     {
 
         if ($this->session->userdata('loggedin') == "true") {
-            $this->ApplyOnlinem->applyNow3Insert();
-            redirect('ApplyForm3');
+            $this->data['error']=$this->ApplyOnlinem->applyNow3Insert();
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                redirect('ApplyForm3');
+
+            } else {
+
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm3');
+
+            }
+
+
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -555,8 +569,23 @@ class ApplyOnline extends CI_Controller
     public function insertApplicationForm3AndNext() // insert application form 3 and go form 4
     {
         if ($this->session->userdata('loggedin') == "true") {
-            $this->ApplyOnlinem->applyNow3Insert();
-            redirect('ApplyForm4');
+
+            $this->data['error']=$this->ApplyOnlinem->applyNow3Insert();
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                redirect('ApplyForm4');
+
+            } else {
+
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm4');
+
+            }
+
+
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -2055,14 +2084,14 @@ class ApplyOnline extends CI_Controller
 
                 $data = array(
 
-                    'name' => $title,
-                    'title' => $name,
+                    'name' => $name,
+                    'title' => $title,
                     'workingCompany' => $company,
                     'jobTitle' => $jobTitle,
-                    'address' => $telephone,
-                    'postCode' => $email,
-                    'contactNo' => $address,
-                    'email' => $addressPo,
+                    'address' => $address,
+                    'postCode' => $addressPo,
+                    'contactNo' => $telephone,
+                    'email' => $email,
                     'fkCountry' => $country,
 
                 );
@@ -2168,6 +2197,16 @@ class ApplyOnline extends CI_Controller
 
     }
 
+    public function deletePersonalReferees() // delete personal Referees
+    {
+        $refereesId = $this->input->post("id");
+
+        $this->ApplyOnlinem->deleteRefereesDetailsById($refereesId);
+
+
+
+
+    }
     public function applyNow9() // go to the apply page of selected course
     {
         if ($this->session->userdata('loggedin') == "true") {

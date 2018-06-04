@@ -31,7 +31,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm3" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm3" method="post" class="form-horizontal">
 
                         <div class="form-top">
                             <div class="form-top-left">
@@ -47,7 +47,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <label class="control-label col-md-2">Is English your first language?:</label>
                                 <div class="col-md-10">
                                     <input type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
-                                    <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php } ?>name="firstLanguage" value="0"> No&nbsp;&nbsp;
+                                    <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php } ?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
 
@@ -131,8 +131,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
                                     <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>
 
                                 </div>

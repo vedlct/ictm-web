@@ -64,7 +64,7 @@
                             <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title*:</label>
+                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                     <select style="width: 100%"  id="title"   name="title">
@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name*:</label>
+                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
                                     <input type="text" class="form-control" id="name"  maxlength="100" name="name" value="<?php echo $f4->name ?>" >
@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Relation*:</label>
+                                <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
                                     <input type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
@@ -94,7 +94,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address*:</label>
+                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
                                     <textarea id="address" name="address" rows="8"  maxlength="1000" tabindex="4"> <?php echo $f4->address ?></textarea>
@@ -102,7 +102,7 @@
                             </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address P.O :<span class="required">*</span></label>
+                                    <label class="control-label col-md-2">Address P.O:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
                                         <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo $f4->addressPo?>">
@@ -110,7 +110,7 @@
                                 </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Mobile*:</label>
+                                <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
@@ -119,7 +119,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone*:</label>
+                                <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
@@ -128,7 +128,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail*:</label>
+                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
 
@@ -219,6 +219,7 @@
 
         if (finance != 'own') {
 
+            var title = document.getElementById("title").value;
             var email = document.getElementById("email").value;
             var name = document.getElementById("name").value;
             var AddressPO = document.getElementById("AddressPO").value;
@@ -231,17 +232,24 @@
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-
-            if (!email.match(mailformat)) {
-                alert("You have entered an invalid email address!");
+            if (title == "") {
+                alert("Please select a Title");
                 return false;
             }
-
-
             if (name == "") {
                 alert("Name  Can not Empty");
                 return false;
             }
+
+            if (relation == "") {
+                alert(" Relation  Can not Empty");
+                return false;
+            }
+            if (address == "") {
+                alert("Address  can not  empty");
+                return false;
+            }
+
             if (AddressPO == "") {
                 alert("Address PO  Can not Empty");
                 return false;
@@ -253,7 +261,7 @@
 
 
             if (!phone.match(chk)) {
-                alert('Please enter a valid  Mobile Phone number!!');
+                alert('Please enter a valid Mobile Phone number!!');
                 return false;
             }
             if (phone.length > 50) {
@@ -261,20 +269,15 @@
                 return false;
             }
 
-
-            if (relation == "") {
-                alert(" Relation  Can not Empty");
+            if (email == "") {
+                alert("email can not empty");
+                return false;
+            }
+            if (!email.match(mailformat)) {
+                alert("You have entered an invalid email address!");
                 return false;
             }
 
-            if (fax == "") {
-                alert(" fax can not empty");
-                return false;
-            }
-            if (address == "") {
-                alert("Address  can not  empty");
-                return false;
-            }
             if (telephone == "") {
                 alert("Give the telephone number ");
                 return false;
