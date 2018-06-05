@@ -89,7 +89,7 @@
                             <label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                <input type="date" class="form-control" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
+                                <input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
                             </div>
                         </div>
 
@@ -494,6 +494,14 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+</script>
 
 <script>
 
