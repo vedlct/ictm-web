@@ -6,12 +6,12 @@
                 <div class="row">
                     <div class="col-md-12">                    
                         <div class="page-title-heading">
-                            <h2 class="title">Student Registration</h2>
+                            <h2 class="title">Agent/Student Registration</h2>
                         </div>
                         <div class="breadcrumbs">
                             <ul>
                                 <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                                <li>\ Student Registration</li>
+                                <li>\ Agent/Student Registration</li>
                             </ul>                   
                         </div>                  
                     </div><!-- /.col-md-12 -->  
@@ -37,7 +37,7 @@
 		                            <div class="form-bottom">
                                     <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Personal Details</h2>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Type:</label>
+                                            <label class="control-label col-md-2">Type:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('type'); ?></font></p>
                                                 <select style="width: 100%"  id="type" required name="type">
@@ -51,7 +51,7 @@
                                             </div>
                                         </div>
                                     	<div class="form-group">
-                                                    <label class="control-label col-md-2">Title:</label>
+                                                    <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                                     <div class="col-md-10">
                                                         <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                                         <select style="width: 100%"  id="title" required name="title">
@@ -67,28 +67,28 @@
 
 
 				                    	<div class="form-group">
-				                    		<label class="control-label col-md-2">First Name*</label>
+				                    		<label class="control-label col-md-2">First Name<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('firstname'); ?></font></p>
 				                        		<input type="text" name="firstname" placeholder="" required value="<?php echo set_value('firstname'); ?>" class="form-control" id="firstname">
                                             </div>
 				                        </div>
 				                        <div class="form-group">
-				                        	<label class="control-label col-md-2">Surname*</label>
+				                        	<label class="control-label col-md-2">Surname<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('surname'); ?></font></p>
 				                        		<input type="text" name="surname" required value="<?php echo set_value('surname'); ?>" class="form-control" id="surname">
                                             </div>
 				                        </div>
                                         <div class="form-group">
-				                    		<label class="control-label col-md-2">Email Address*</label>
+				                    		<label class="control-label col-md-2">Email<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('email'); ?></font></p>
 				                        		<input type="email" name="email" required value="<?php echo set_value('email'); ?>" placeholder="" class="form-control" id="email">
                                             </div>
 				                        </div>
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Gender:</label>
+                                        	<label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10" >
                                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                             	<input type="radio" required name="gender" value="male"> Male&nbsp;&nbsp;
@@ -100,7 +100,7 @@
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Password</h2>
                                         
                                         <div class="form-group">
-				                    		<label class="control-label col-md-2">Password*</label>
+				                    		<label class="control-label col-md-2">Password<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('password'); ?></font></p>
 				                        		<input type="password" name="password" required value="<?php echo set_value('password'); ?>" placeholder="Enter Password" class="form-control" id="password">
@@ -108,7 +108,7 @@
 				                        </div>
                                         
                                         <div class="form-group">
-				                    		<label class="control-label col-md-2">Repassword*</label>
+				                    		<label class="control-label col-md-2">Repassword<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('confirmpassword'); ?></font></p>
 				                        		<input type="password" name="confirmpassword" required value="<?php echo set_value('confirmpassword'); ?>" placeholder="Re type Password" class="form-control" id="confirmpassword">

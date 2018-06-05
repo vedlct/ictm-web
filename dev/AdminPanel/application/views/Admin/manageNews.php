@@ -237,7 +237,7 @@
 
                 $('#myTable').html(data);
                 document.getElementById("pagi").style.display="none";
-                //alert(data);
+
             }
         });
 
