@@ -314,25 +314,24 @@
                         <td>Overall</td>
                         <td>Expiry Date</td>
                     </tr>
-                    <?php foreach ($languageProficiency as $lp) { ?>
+                    <?php foreach ($languageProficiency as $lp) {   ?>
                     <tr>
                         <td style="width: 15%"><?php echo $lp->title ?></td>
                         <?php foreach ($languageProficiencyTestScore as $lpts) {
-                            echo $lp->ltId;
-                            if ($lpts->fkCandidateTestId == $lp->id){
+
+                            if ($lpts->fkCandidateTestId == $lp->ctestid){
                             ?>
                         <td><?php echo $lpts->score ?></td>
-                        <td><?php echo $lpts->score ?></td>
-                        <td><?php echo $lpts->score ?></td>
-                        <td><?php echo $lpts->score ?></td>
+
                             <?php } } ?>
-                        <td></td>
-                        <td></td>
+                        <td><?php echo $lp->overallScore ?></td>
+                        <td><?php echo $lp->expireDate ?></td>
                     </tr>
                     <?php } ?>
 
                     <tr>
                        <td>Other (Please specify)</td>
+                        <td colspan="6"><?php echo $lp->other ?></td>
                     </tr>
                 </table>  
                                                                                                                                                                                               

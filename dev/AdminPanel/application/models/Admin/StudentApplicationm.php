@@ -142,7 +142,7 @@ class StudentApplicationm extends CI_Model
 
     public function  languageProficiency($applicationId){
 
-        $this->db->select('* , languagetests.id as ltId');
+        $this->db->select('* , languagetests.id as ltId, candidatelanguagetest.id as ctestid ');
         $this->db->where('fkApplicationId =', $applicationId);
         $this->db->join('languagetests', 'languagetests.id = candidatelanguagetest.fkTestId', 'left');
         $query = $this->db->get('candidatelanguagetest');
