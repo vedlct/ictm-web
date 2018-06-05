@@ -366,7 +366,7 @@ class ApplyOnlinem extends CI_Model
                 'qualificationLevel' => $qualificationLevel[$i],
                 'awardingBody' => $awardingBody[$i],
                 'subject' => $subject[$i],
-                'completionYear' => $completionYear[$i],
+                'completionYear' => date('Y',strtotime($completionYear[$i])),
 
 
             );
@@ -408,7 +408,7 @@ class ApplyOnlinem extends CI_Model
                 'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                 'fkTestId' => $test[$i],
                 'overallScore' => $overall[$i],
-                'expireDate' => $exirydate[$i],
+                'expireDate' => date('Y-m-d',strtotime($exirydate[$i])),
                 'other' =>$other
 
             );
@@ -469,7 +469,7 @@ class ApplyOnlinem extends CI_Model
         $writing = $this->input->post('writing');
         $speaking = $this->input->post('speaking');
         $overall = $this->input->post('overall');
-        $exirydate = $this->input->post('expirydate');
+        $exirydate = date('Y-m-d',strtotime($this->input->post('expirydate')));
         $languagetestid = $this->input->post('languagetestid');
 
         $listeningid = $this->input->post('listeningid');
@@ -899,8 +899,8 @@ class ApplyOnlinem extends CI_Model
                 'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                 'organization' => $organisation[$i],
                 'positionHeld' => $positionHeld[$i],
-                'startDate' => $startdate[$i],
-                'endDate' => $enddate[$i],
+                'startDate' => date('Y-m-d',strtotime($startdate[$i])),
+                'endDate' => date('Y-m-d',strtotime($enddate[$i])),
 
 
             );
@@ -939,8 +939,8 @@ class ApplyOnlinem extends CI_Model
 
         $organisation = $this->input->post('organisation');
         $positionHeld = $this->input->post('positionHeld');
-        $startdate = $this->input->post('startdate');
-        $enddate = $this->input->post('enddate');
+        $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+        $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
         $experienceid = $this->input->post('experience');
 
         $data = array(

@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -94,7 +99,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="completionYear" required name="completionYear[]">
+                                            <input type="text" class="form-control datetimepicker" id="completionYear" required name="completionYear[]">
                                         </div>
                                     </div>
 
@@ -162,6 +167,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;
@@ -332,7 +349,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Completion Year:</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="completionYear"  name="completionYear[]">'+
+                '<input type="text" class="form-control datetimepicker" id="completionYear"  name="completionYear[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
