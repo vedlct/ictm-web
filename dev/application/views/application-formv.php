@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-bottom">
                         <div class="form-group">
-                            <label class="control-label col-md-2">Title:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                 <select style="width: 100%" name="title">
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">First Name:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">First Name:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
                                 <input type="text" class="form-control" required id="firstName" name="firstName" value="<?php echo $candidateInfo->firstName ?>">
@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Surname:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Surname:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
                                 <input type="text" class="form-control" required id="surName" name="surName" value="<?php echo $candidateInfo->surName ?>">
@@ -91,7 +91,7 @@
 <!--                        </div>-->
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
                                 <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Gender:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                 <input type="radio" required id="gender" name="gender" value="M" <?php if($candidateInfo->gender=='M'){ echo "checked=checked";}?>> Male&nbsp;&nbsp;
@@ -109,7 +109,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Place of Birth:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
                                 <input type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo $candidateInfo->placeOfBirth ?>">
@@ -117,7 +117,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Nationality:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Nationality:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                 <select style="width: 100%" id="nationality" required name="nationality">
@@ -131,7 +131,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Passport No.:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Passport No.:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
                                 <input type="text" class="form-control" required id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
@@ -139,7 +139,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">PP Expiry Date:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">PP Expiry Date:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
                                 <input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
@@ -147,7 +147,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">UK Entry Date:<span class="required">*</span> </label>
+                            <label class="control-label col-md-2">UK Entry Date:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
                                 <input type="text" class="form-control datetimepicker" required id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
@@ -155,7 +155,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Visa Type:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Visa Type:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
                                 <select style="width: 100%" id="VisaType" required name="VisaType">
@@ -172,7 +172,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Visa Expiry Date:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Visa Expiry Date:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
                                 <input type="text" class="form-control datetimepicker" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
@@ -182,7 +182,7 @@
                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Current Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
                                 <textarea id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
@@ -190,7 +190,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address P.O :<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Current Address P.O :<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
                                 <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
@@ -198,7 +198,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address Courntry:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Current Address Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
                                 <select style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
@@ -211,7 +211,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Overseas (Home) Address:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Overseas (Home) Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
                                 <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
@@ -219,7 +219,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Overseas (Home) Address P.O :<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Overseas (Home) Address P.O :<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
                                 <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
@@ -227,7 +227,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Overseas Address Courntry:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Overseas Address Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
                                 <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
@@ -248,7 +248,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Mobile:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
                                 <input type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
@@ -256,7 +256,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">E-mail:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('email'); ?></font></p>
                                 <input type="email" class="form-control" required id="email" name="email" value="<?php echo $candidateInfo->email ?>">
@@ -274,7 +274,7 @@
                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Title:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactTitle'); ?></font></p>
                                 <select style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
@@ -290,7 +290,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Name:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactName'); ?></font></p>
                                 <input type="text" class="form-control" required id="EmergencyContactName" name="EmergencyContactName" value="<?php echo $candidateInfo->emergencyContactName ?>">
@@ -298,7 +298,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Relation:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactRelation'); ?></font></p>
                                 <input type="text" class="form-control" required id="EmergencyContactRelation" name="EmergencyContactRelation" value="<?php echo $candidateInfo->emergencyContactRelation ?>">
@@ -306,7 +306,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Address:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
                                 <textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
@@ -314,7 +314,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Emergency Contact Address P.O :<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Emergency Contact Address P.O :<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
                                 <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>">
@@ -322,7 +322,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Emergency Contact Country :<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Emergency Contact Country :<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
                                 <select style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
@@ -335,7 +335,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Mobile/Telephone:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
                                 <input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
@@ -343,7 +343,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">E-mail:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactEmail'); ?></font></p>
                                 <input type="email" class="form-control" required id="EmergencyContactEmail" name="EmergencyContactEmail" value="<?php echo $candidateInfo->emergencyContactEmail ?>">
@@ -417,7 +417,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Mode of study:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Mode of study:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
                                 <input type="radio" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
@@ -425,7 +425,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Time of study:<span class="required">*</span></label>
+                            <label class="control-label col-md-2">Time of study:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
                                 <input type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;

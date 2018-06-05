@@ -169,6 +169,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 </div>
 </body>
+</html>
 
 <script type="text/javascript">
     $(function () {
@@ -241,7 +242,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Expiry Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="" name="expirydate[]">'+
+                '<input type="text" class="form-control datetimepicker" id="" name="expirydate[]">'+
                 '</div>'+
                 '</div>'
             );
@@ -264,4 +265,3 @@ elseif($this->session->flashdata('successMessage')!=null){?>
     });
 
 </script>
-</html>
