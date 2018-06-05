@@ -47,7 +47,7 @@
                     <tr>
                         <td>First Name(s)</td>
 <!--                        <td colspan="3" >Title (Mr / Mrs / Ms / Miss, others....)</td>-->
-                        <td colspan="3" ><?php echo $pd->title." ".$pd->firstName." ".$pd->surName ?></td>
+                        <td colspan="3" ><?php echo $pd->title." ".$pd->firstName ?></td>
                     </tr>
                     <tr>
                         <td>Sure Name</td>
@@ -232,24 +232,29 @@
                         <td>Year of Completion</td>
                         <td>Grade</td>
                     </tr>
+
+                   <?php foreach ($qualifications as $qu) {?>
                     <tr>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
+                        <td style=""><?php echo $qu->qualification?></td>
+                        <td style=""><?php echo $qu->qualificationLevel?></td>
+                        <td style=""><?php echo $qu->institution?></td>
+                        <td style=""><?php echo $qu->awardingBody?></td>
+                        <td style=""><?php echo $qu->subject?></td>
+                        <td style=""><?php echo $qu->completionYear?></td>
+                        <td style=""><?php echo $qu->obtainResult?></td>
                     </tr>
-                    <tr>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                        <td style="height: 70px;"></td>
-                    </tr>
+
+                    <?php } ?>
+
+<!--                    <tr>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                        <td style="height: 70px;"></td>-->
+<!--                    </tr>-->
                     <tr>
                         <td colspan="7">Please forward the certificate and transcript of your qualifications(Officialy translated if not in English)</td>
                     </tr>
@@ -265,18 +270,16 @@
                         <td colspan="2"><b>From </b></td>
                         <td colspan="2"><b>To</b></td>
                     </tr>
+
+                   <?php foreach ($experience as $ex){ ?>
                     <tr>
-                        <td style="height: 30px;" colspan=""></td>
-                        <td style="height: 30px;" colspan="2"></td>
-                        <td style="height: 30px;" colspan="2"></td>
-                        <td style="height: 30px;" colspan="2"></td>
+                        <td style="height: 30px;" colspan=""><?php echo  $ex->organization?></td>
+                        <td style="height: 30px;" colspan="2"><?php echo  $ex->positionHeld?></td>
+                        <td style="height: 30px;" colspan="2"><?php echo  $ex->startDate?></td>
+                        <td style="height: 30px;" colspan="2"><?php echo  $ex->endDate?></td>
                     </tr>
-                    <tr>
-                        <td style="height: 30px;" colspan=""></td>
-                        <td style="height: 30px;" colspan="2"></td>
-                        <td style="height: 30px;" colspan="2"></td>
-                        <td style="height: 30px;" colspan="2"></td>
-                    </tr>
+                    <?php } ?>
+
 
 
 
@@ -311,24 +314,23 @@
                         <td>Overall</td>
                         <td>Expiry Date</td>
                     </tr>
+                    <?php foreach ($languageProficiency as $lp) { ?>
                     <tr>
-                        <td style="width: 15%">IELTS</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td style="width: 15%"><?php echo $lp->title ?></td>
+                        <?php foreach ($languageProficiencyTestScore as $lpts) {
+                            echo $lp->ltId;
+                            if ($lpts->fkCandidateTestId == $lp->id){
+                            ?>
+                        <td><?php echo $lpts->score ?></td>
+                        <td><?php echo $lpts->score ?></td>
+                        <td><?php echo $lpts->score ?></td>
+                        <td><?php echo $lpts->score ?></td>
+                            <?php } } ?>
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td style="width: 15%">PTE</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    <?php } ?>
+
                     <tr>
                        <td>Other (Please specify)</td>
                     </tr>

@@ -91,19 +91,23 @@ class StudentApplication extends CI_Controller
 
     ///////////////////////////////sakib//////////////////
 
-    public function ApplicationDetails(){
+    public function ApplicationDetails()
+    {
 
         //$applicationId = $this->input->post();
-        $applicationId = 9;
+        $applicationId = 4;
 
         $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
         $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
         $this->data['emmergencyContact'] = $this->StudentApplicationm->emmergancyContact($applicationId);
         $this->data['courseDetails'] = $this->StudentApplicationm->courseDetails($applicationId);
-      //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
-      //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
-      //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
-      //  $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
+        $this->data['qualifications'] = $this->StudentApplicationm->qualifications($applicationId);
+        $this->data['experience'] = $this->StudentApplicationm->workExperience($applicationId);
+        $this->data['languageProficiency'] = $this->StudentApplicationm->languageProficiency($applicationId);
+        $this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore();
+       // print_r($this->data['languageProficiency']);
+        //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
+        //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
         $this->load->view('Admin/detailsForms', $this->data);
     }
     /////////////////////////////////////////////////////
