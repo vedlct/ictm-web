@@ -1,4 +1,9 @@
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -90,7 +95,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="completionYear" maxlength="100" required name="completionYear">
+                                        <input type="text" class="form-control datetimepicker" id="completionYear" maxlength="100" required name="completionYear">
                                     </div>
                                 </div>
 
@@ -189,6 +194,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
 <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
 
 <script>
 

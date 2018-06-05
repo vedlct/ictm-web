@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -109,7 +114,7 @@
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('expirydate'); ?></font></p>
-                                    <input type="date" class="form-control" id="expirydate" name="expirydate" required>
+                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate" required>
                                 </div>
                             </div>
                             <input type="hidden" value="" name="languagetestid" id="languagetestid">
@@ -219,6 +224,18 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
 
 <script>
     function selectid(x) {

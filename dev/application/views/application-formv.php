@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -89,7 +94,7 @@
                             <label class="control-label col-md-2">Date of Birth:<span class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
+                                <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
                             </div>
                         </div>
 
@@ -137,7 +142,7 @@
                             <label class="control-label col-md-2">PP Expiry Date:<span class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                <input type="date" class="form-control" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
+                                <input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
                             </div>
                         </div>
 
@@ -145,7 +150,7 @@
                             <label class="control-label col-md-2">UK Entry Date:<span class="required">*</span> </label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                <input type="date" class="form-control" required id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
+                                <input type="text" class="form-control datetimepicker" required id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
                             </div>
                         </div>
 
@@ -170,7 +175,7 @@
                             <label class="control-label col-md-2">Visa Expiry Date:<span class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                <input type="date" class="form-control" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
+                                <input type="text" class="form-control datetimepicker" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
                             </div>
                         </div>
 
@@ -499,6 +504,10 @@
     $(function () {
         $('.datetimepicker').datetimepicker({
             format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
         });
     });
 </script>

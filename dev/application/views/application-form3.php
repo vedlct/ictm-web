@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -106,7 +111,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="expirydate" name="expirydate[]">
+                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
                                 </div>
                             </div>
                                 </div>
@@ -165,8 +170,16 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 
-<script>
-
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
 </script>
 
 <script>

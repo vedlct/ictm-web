@@ -165,15 +165,15 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = $this->input->post("dob");
+                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
-                $candidateUkEntryDate = $this->input->post("UkEntryDate");
+                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
 
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -314,15 +314,15 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = $this->input->post("dob");
+                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
-                $candidateUkEntryDate = $this->input->post("UkEntryDate");
+                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
 
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -612,15 +612,15 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = $this->input->post("dob");
+                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
-                $candidateUkEntryDate = $this->input->post("UkEntryDate");
+                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
                 $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
@@ -760,15 +760,15 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
                 $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = $this->input->post("dob");
+                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = $this->input->post("passportExpiryDate");
-                $candidateUkEntryDate = $this->input->post("UkEntryDate");
+                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = $this->input->post("visaExpiryDate");
+                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
                 $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
@@ -899,7 +899,7 @@ class ApplyOnline extends CI_Controller
                 $qualificationLevel = $this->input->post("qualificationLevel");
                 $awardingBody = $this->input->post("awardingBody");
                 $subject = $this->input->post("subject");
-                $completionYear = $this->input->post("completionYear");
+                $completionYear = date('Y',strtotime($this->input->post("completionYear")));
 
                 $data = array(
                     'qualification' => $qualification,
@@ -968,7 +968,7 @@ class ApplyOnline extends CI_Controller
                 $qualificationLevel = $this->input->post("qualificationLevel");
                 $awardingBody = $this->input->post("awardingBody");
                 $subject = $this->input->post("subject");
-                $completionYear = $this->input->post("completionYear");
+                $completionYear = date('Y',strtotime($this->input->post("completionYear")));
 
                 $data = array(
                     'qualification' => $qualification,

@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -62,14 +67,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="startdate" required name="startdate[]">
+                                        <input type="text" class="form-control datetimepicker" id="startdate" required name="startdate[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="enddate" required name="enddate[]">
+                                        <input type="text" class="form-control datetimepicker" id="enddate" required name="enddate[]">
                                     </div>
                                 </div>
 
@@ -132,6 +137,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </body>
 </html>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;

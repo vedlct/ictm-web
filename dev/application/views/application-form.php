@@ -1,5 +1,10 @@
 		
         <?php include("header.php"); ?>
+        <style>
+            .datepicker .next ,.prev {
+                position: relative !important;
+            }
+        </style>
 
         <div class="page-title full-color">
             <div class="container">
@@ -80,7 +85,7 @@
                                         	<label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                            	<input type="date" class="form-control" required id="dob" name="dob" value="<?php echo set_value('dob'); ?>">
+                                            	<input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo set_value('dob'); ?>">
                                           	</div>
 				                        </div>
                                         
@@ -138,7 +143,7 @@
                                         	<label class="control-label col-md-2">PP Expiry Date:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                            	<input type="date" class="form-control" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo set_value('passportExpiryDate'); ?>" >
+                                            	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo set_value('passportExpiryDate'); ?>" >
                                           	</div>
 				                        </div>
                                         
@@ -146,7 +151,7 @@
                                         	<label class="control-label col-md-2">UK Entry Date:<span style="color: red" class="required">*</span> </label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                            	<input type="date" class="form-control" required id="UkEntryDate" name="UkEntryDate" value="<?php echo set_value('UkEntryDate'); ?>">
+                                            	<input type="text" class="form-control datetimepicker" required id="UkEntryDate" name="UkEntryDate" value="<?php echo set_value('UkEntryDate'); ?>">
                                           	</div>
 				                        </div>
 
@@ -169,7 +174,7 @@
                                         	<label class="control-label col-md-2">Visa Expiry Date:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                            	<input type="date" class="form-control" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo set_value('visaExpiryDate'); ?>">
+                                            	<input type="text" class="form-control datetimepicker" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo set_value('visaExpiryDate'); ?>">
                                           	</div>
 				                        </div>
                                         
@@ -510,6 +515,18 @@
 </body>
 
 </html>
+
+        <script type="text/javascript">
+            $(function () {
+                $('.datetimepicker').datetimepicker({
+                    format: 'YYYY-MM-DD'
+                });
+                $('.datetimepicker').keydown(function(e) {
+                    e.preventDefault();
+                    return false;
+                });
+            });
+        </script>
 
         <script>
 
