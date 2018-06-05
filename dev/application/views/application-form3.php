@@ -249,6 +249,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             counter++;
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
         });
         $("#removeButton").click(function () {
             if(counter==2){
