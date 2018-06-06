@@ -128,8 +128,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                     <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
@@ -329,25 +329,25 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Qualification Level:</label>'+
+                '<label class="control-label col-md-2">Qualification Level'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control" id="qualificationLevel"  name="qualificationLevel[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Awarding Body:</label>'+
+                '<label class="control-label col-md-2">Awarding Body'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control" id="awardingBody"  name="awardingBody[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Subject:</label>'+
+                '<label class="control-label col-md-2">Subject'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control" id="subject" required name="subject[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Completion Year:</label>'+
+                '<label class="control-label col-md-2">Completion Year'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control datetimepicker" id="completionYear"  name="completionYear[]">'+
                 '</div>'+
@@ -362,6 +362,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             counter++;
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY'
+            });
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
         });
         $("#removeButton").click(function () {
             if(counter==2){

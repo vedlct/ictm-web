@@ -235,13 +235,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="startdate'+counter+'" name="startdate[]">'+
+                '<input type="text" class="form-control datetimepicker" id="startdate'+counter+'" name="startdate[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">End Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="enddate'+counter+'" name="enddate[]">'+
+                '<input type="text" class="form-control datetimepicker" id="enddate'+counter+'" name="enddate[]">'+
                 '</div>'+
                 '</div>'
 
@@ -249,6 +249,15 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             counter++;
+
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
+
         });
         $("#removeButton").click(function () {
             if(counter==2){
