@@ -39,16 +39,16 @@
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" onsubmit="return formvalidate()" class="form-horizontal">
                     <div class="form-bottom">
                         <div class="form-group">
-                            <label class="control-label col-md-2">Why do you wish to do this course?:</label>
+                            <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="courseChoiceStatement" name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
+                                <textarea id="courseChoiceStatement" required name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
+                            <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="collegeChoiceStatement" name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
+                                <textarea id="collegeChoiceStatement" required name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
                             </div>
                         </div>
 
