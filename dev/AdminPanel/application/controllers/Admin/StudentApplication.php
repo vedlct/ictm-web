@@ -109,8 +109,11 @@ class StudentApplication extends CI_Controller
         $this->data['experience'] = $this->StudentApplicationm->workExperience($applicationId);
         $this->data['languageProficiency'] = $this->StudentApplicationm->languageProficiency($applicationId);
         $this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore();
-      //  print_r($this->data['languageProficiency']);
-        //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
+        $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+        $this->data['finance'] = $this->StudentApplicationm->finance($applicationId);
+        $this->data['referees'] = $this->StudentApplicationm->referees($applicationId);
+        //$this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+
         //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
         $this->load->view('Admin/detailsForms', $this->data);
     }

@@ -155,14 +155,21 @@ class StudentApplicationm extends CI_Model
         return $query->result();
     }
 
-    public function  personalStatement(){
+    public function  personalStatement($applicationId){
 
-
+        $this->db->select('courseChoiceStatement,collegeChoiceStatement');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
     }
 
-     public function  finance(){
+     public function  finance($applicationId){
 
-
+         $this->db->select('financer.*,sourceOfFinance ');
+         $this->db->where('fkApplicationId =', $applicationId);
+         $this->db->join('candidateinfo', 'candidateinfo.applicationId = financer.fkApplicationId', 'left');
+         $query = $this->db->get('financer');
+         return $query->result();
     }
 
      public function  equalOppurtunities(){
@@ -170,9 +177,12 @@ class StudentApplicationm extends CI_Model
 
     }
 
-     public function  referees(){
+     public function  referees($applicationId){
 
-
+         $this->db->select('*');
+         $this->db->where('fkApplicationId =', $applicationId);
+         $query = $this->db->get('candidatereferees');
+         return $query->result();
     }
 
 

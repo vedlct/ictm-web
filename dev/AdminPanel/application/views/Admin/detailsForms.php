@@ -343,18 +343,23 @@
                     <tr>
                         <td>Why do you wish to do this course ? (please attach an extra sheet if needed)</td>
 
-                    </tr> 
+                    </tr>
+                    <?php foreach ($personalstatement as $ps){ ?>
                     <tr>
-                        <td style="height: 300px;"></td>
+                        <td style="height: 300px;"><?php echo $ps->courseChoiceStatement?></td>
 
-                    </tr> 
+                    </tr>
+                    <?php } ?>
 
                     <tr>
                         <td>Where did you find out about this courses of our college ?</td>
                     </tr>
-                    <tr>
-                        <td style="height: 25px;"></td>
-                    </tr>
+                    <?php foreach ($personalstatement as $ps){ ?>
+                        <tr>
+                            <td style="height: 300px;"><?php echo $ps->collegeChoiceStatement?></td>
+
+                        </tr>
+                    <?php } ?>
                 </table> 
                                                                                                                                                                                               
                 <table border="0" style="width:100%; margin-top: 30px;">
@@ -362,7 +367,7 @@
                         <td colspan="4"> <b>Section E</b> <b style="margin-left: 200px;">Finance</b></td>
 
                     </tr> 
-                    
+                    <?php foreach ($finance as $f) {?>
                     <tr>
                         <td style="width: 25%;">Source of Finance:</td>
                         <td><input type="checkbox">  SLC &nbsp;
@@ -377,24 +382,27 @@
                     
                     <tr>
                         <td>Name</td>
-                        <td style="width: 30%;"></td>
-                        <td colspan="2">Title (Mr / Mrs / Ms / Miss, other.... )</td>
+                        <td style="" colspan="7"><?php echo  $f->title." ".$f->name ?></td>
+
                     </tr>
                     <tr>
-                        <td colspan="4">Relation</td>
+                        <td colspan="">Relation</td>
+                        <td colspan="7"><?php echo  $f->relation ?></td>
+
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td style="width: 40%;"></td>
+                        <td style="width: 40%;"><?php echo  $f->address ?></td>
                         <td>Mobile / Tel</td>
-                        <td style="width: 25%;"></td>
+                        <td style="width: 25%;"><?php echo  $f->mobile ?></td>
                     </tr>
                     <tr>
                         <td style="width: 20%;">Post code</td>
-                        <td style="width: 15%;"></td>
+                        <td style="width: 15%;"><?php echo  $f->addressPo ?></td>
                         <td style="width: 10%;">Email</td>
-                        <td style="width: 50%;"></td>
+                        <td style="width: 50%;"><?php echo  $f->email ?></td>
                     </tr>
+                    <?php } ?>
                 </table>
                 
                 <p style="page-break-before: always"></p> 
@@ -505,66 +513,40 @@
                     <tr style="background: #B0DBF0;">
                         <td colspan="4"> <b>Section G</b> <b style="margin-left: 200px;">Referees</b></td>
                     </tr> 
-                    <tr>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td><b>Referee 1</b></td>
-                    </tr>
+
                 </table> 
                 <table border="0" style="width:100%;">
+                    <?php $count = 1;foreach ($referees as $cr) {?>
+                    <tr>
+                        <td colspan="7"><b>Referee <?php echo $count ?></b></td>
+                    </tr>
+
                     <tr>
                         <td>Name</td>
-                        <td style="width: 30%;"></td>
-                        <td colspan="2">Title (Mr / Mrs / Ms / Miss, other.... )</td>
+                        <td style="width: 30%;"><?php echo $cr->title." ".$cr->name?></td>
+                        <td colspan="2"></td>
                     </tr>
                     <tr>
                         <td>Institution/Company</td>
-                        <td style="width: 40%;"></td>
+                        <td style="width: 40%;"><?php echo $cr->workingCompany?></td>
                         <td>Position/Job title</td>
-                        <td style="width: 25%;"></td>
+                        <td style="width: 25%;"><?php echo $cr->jobTitle?></td>
                     </tr>
                     <tr>
                         <td>Address</td>
-                        <td style="width: 40%;"></td>
+                        <td style="width: 40%;"><?php echo $cr->address?></td>
                         <td>Telephone/Mobile</td>
-                        <td style="width: 25%;"></td>
+                        <td style="width: 25%;"><?php echo $cr->contactNo?></td>
                     </tr>
                     <tr>
                         <td style="width: 20%;">Post code</td>
-                        <td style="width: 15%;"></td>
+                        <td style="width: 15%;"><?php echo $cr->postCode?></td>
                         <td style="width: 10%;">Email</td>
-                        <td style="width: 50%;"></td>
+                        <td style="width: 50%;"><?php echo $cr->email?></td>
                     </tr>
+                    <?php $count++ ;} ?>
                 </table>                                                                                                                                     
-                <table border="0" style="width:100%; margin-top: 20px;">
-                    <tr>
-                        <td><b>Referee 2</b></td>
-                    </tr>
-                    <tr>
-                        <td>Name</td>
-                        <td style="width: 30%;"></td>
-                        <td colspan="2">Title (Mr / Mrs / Ms / Miss, other.... )</td>
-                    </tr>
-                    <tr>
-                        <td>Institution/Company</td>
-                        <td style="width: 40%;"></td>
-                        <td>Position/Job title</td>
-                        <td style="width: 25%;"></td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td style="width: 40%;"></td>
-                        <td>Telephone/Mobile</td>
-                        <td style="width: 25%;"></td>
-                    </tr>
-                    <tr>
-                        <td style="width: 20%;">Post code</td>
-                        <td style="width: 15%;"></td>
-                        <td style="width: 10%;">Email</td>
-                        <td style="width: 50%;"></td>
-                    </tr>
-                </table>                                                                                                                                     
+
                 <table border="0" style="width:100%; margin-top: 20px; border: none;">
                     <tr>
                         <td style="border: none;">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
