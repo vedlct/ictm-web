@@ -69,6 +69,7 @@ class ApplyOnline extends CI_Controller
     public function viewForm1()
     {
         if ($this->session->userdata('loggedin') == "true") {
+
             $this->menu();
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();

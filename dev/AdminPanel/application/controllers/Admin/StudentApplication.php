@@ -54,7 +54,7 @@ class StudentApplication extends CI_Controller
 
 
 
-            $html = '<a class="btn" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->id.'"><i class="icon_pencil-edit"></i></a>
+            $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->id.'"><i class="icon_pencil-edit"></i></a>
                                                     <a class="btn" data-panel-id="'.$application->id .'"  onclick="selectid(this)"><i class="icon_trash"></i></a>';
 
             $row[] = $html;
@@ -77,8 +77,15 @@ class StudentApplication extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $this->data['viewApplication'] = $this->StudentApplicationm->getApplication($applicationId);
-            $this->load->view('Admin/viewStudentApplication', $this->data);
+            $dataSession = [
+                'studentApplicationId' => $applicationId,
+            ];
+
+            $this->session->set_userdata($dataSession);
+
+           // print_r($this->session->userdata('studentApplicationId'));
+
+            redirect("../"."ApplyOnline/viewForm1");
         }
 
         else{
