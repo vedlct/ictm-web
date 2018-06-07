@@ -14,9 +14,6 @@ class StudentApplication extends CI_Controller
 
     }
 
-
-
-
     /*---------for Manage StudentApplication -----------------------*/
 
     public function manageApplication() // for manage Application view
