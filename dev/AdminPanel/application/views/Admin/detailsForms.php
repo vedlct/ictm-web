@@ -53,10 +53,10 @@
                         <td>Sure Name</td>
                         <td><?php echo $pd->surName?></td>
                         <td>Sex</td>
-                        <td><input type="checkbox"> Mail
-                            <input type="checkbox"> Femail
-                            <input type="checkbox"> Other
-                            <input type="checkbox"> Prefer Not to say</td>
+                        <td><input type="checkbox" <?php if ($pd->gender =="M") {?> checked <?php } ?>>Male
+                            <input type="checkbox" <?php if ($pd->gender =="F") {?> checked <?php } ?>> Female
+                            <input type="checkbox" <?php if ($pd->gender =="O") {?> checked <?php } ?>> Other
+                            <input type="checkbox" <?php if ($pd->gender =="") {?> checked <?php } ?>> Prefer Not to say</td>
                     </tr>
                     <tr>
                         <td>Date of Birth</td>
@@ -196,12 +196,12 @@
                     
                     <tr>
                         <td>Mode of study</td>
-                      <td><input type="checkbox"> Full time
-                        <input type="checkbox"> Part time
+                      <td><input type="checkbox" <?php if ($cod->methodOfStudy =="FT") {?> checked <?php } ?>> Full time
+                        <input type="checkbox" <?php if ($cod->methodOfStudy =="PT") {?> checked <?php } ?>> Part time
                        </td>
                         <td>Time of study</td>
-                        <td><input type="checkbox"> Day
-                            <input type="checkbox"> Evening & Weekend
+                        <td><input type="checkbox" <?php if ($cod->timeOfStudy =="D") {?> checked <?php } ?> >  Day
+                            <input type="checkbox"  <?php if ($cod->timeOfStudy =="E&W") {?> checked <?php } ?> > Evening & Weekend
                         </td>
                     </tr>
                     
@@ -296,7 +296,7 @@
                 <table style="width:100%;">
                     <tr>
                         <td style="width: 30%">Is English your first language ?</td>
-                        <td><input type="checkbox">  Yes &nbsp; &nbsp;
+                        <td><input type="checkbox" >  Yes &nbsp; &nbsp;
                             <input type="checkbox">  No</td>
                     </tr>
                     <tr>
@@ -346,7 +346,7 @@
                     </tr>
                     <?php foreach ($personalstatement as $ps){ ?>
                     <tr>
-                        <td style="height: 300px;"><?php echo $ps->courseChoiceStatement?></td>
+                        <td style=""><?php echo $ps->courseChoiceStatement?></td>
 
                     </tr>
                     <?php } ?>
@@ -356,7 +356,7 @@
                     </tr>
                     <?php foreach ($personalstatement as $ps){ ?>
                         <tr>
-                            <td style="height: 300px;"><?php echo $ps->collegeChoiceStatement?></td>
+                            <td style=""><?php echo $ps->collegeChoiceStatement?></td>
 
                         </tr>
                     <?php } ?>
