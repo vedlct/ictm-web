@@ -55,7 +55,8 @@ class StudentApplication extends CI_Controller
 
 
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->id.'"><i class="icon_pencil-edit"></i></a>
-                                                    <a class="btn" data-panel-id="'.$application->id .'"  onclick="selectid(this)"><i class="icon_trash"></i></a>';
+                                                    
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->id.'"><i class="fa fa-file-pdf-o"></i></a>';
 
             $row[] = $html;
 
@@ -81,12 +82,51 @@ class StudentApplication extends CI_Controller
                 'studentApplicationId' => $applicationId,
             ];
 
-          //  $this->session->set_userdata($dataSession);
+          //   $this->session->set_userdata($dataSession);
             $sessionId=session_id();
 
             //print_r(session_id());
 
             //redirect("../"."ApplyOnline/viewForm1as/".$sessionId);
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
+    public function showApplicationPdf($applicationId) // for selected Application view
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0])
+        {
+            $this->load->library('pdfgenerator');
+//            $data='';
+//
+//            $html = $this->load->view('Admin/testPdf', $data, true);
+//            $filename = 'testPdf';
+//            $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+
+            //$applicationId = $this->input->post();
+            $applicationId = 4;
+
+            $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
+            $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
+            $this->data['emmergencyContact'] = $this->StudentApplicationm->emmergancyContact($applicationId);
+            $this->data['courseDetails'] = $this->StudentApplicationm->courseDetails($applicationId);
+            $this->data['qualifications'] = $this->StudentApplicationm->qualifications($applicationId);
+            $this->data['experience'] = $this->StudentApplicationm->workExperience($applicationId);
+//            $this->data['languageProficiency'] = $this->StudentApplicationm->languageProficiency($applicationId);
+            $this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore();
+            $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+            $this->data['finance'] = $this->StudentApplicationm->finance($applicationId);
+            $this->data['referees'] = $this->StudentApplicationm->referees($applicationId);
+            //$this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+
+            //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
+            $html=$this->load->view('Admin/detailsForms', $this->data,true);
+
+            $filename = 'testPdf';
+            $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+
         }
 
         else{

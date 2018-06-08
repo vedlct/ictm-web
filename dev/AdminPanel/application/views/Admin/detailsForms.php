@@ -314,24 +314,24 @@
                         <td>Overall</td>
                         <td>Expiry Date</td>
                     </tr>
-                    <?php foreach ($languageProficiency as $lp) {   ?>
-                    <tr>
-                        <td style="width: 15%"><?php echo $lp->title ?></td>
-                        <?php foreach ($languageProficiencyTestScore as $lpts) {
-
-                            if ($lpts->fkCandidateTestId == $lp->ctestid){
-                            ?>
-                        <td><?php echo $lpts->score ?></td>
-
-                            <?php } } ?>
-                        <td><?php echo $lp->overallScore ?></td>
-                        <td><?php echo $lp->expireDate ?></td>
-                    </tr>
-                    <?php } ?>
+<!--                    --><?php //foreach ($languageProficiency as $lp) {   ?>
+<!--                    <tr>-->
+<!--                        <td style="width: 15%">--><?php //echo $lp->title ?><!--</td>-->
+<!--                        --><?php //foreach ($languageProficiencyTestScore as $lpts) {
+//
+//                            if ($lpts->fkCandidateTestId == $lp->ctestid){
+//                            ?>
+<!--                        <td>--><?php //echo $lpts->score ?><!--</td>-->
+<!---->
+<!--                            --><?php //} } ?>
+<!--                        <td>--><?php //echo $lp->overallScore ?><!--</td>-->
+<!--                        <td>--><?php //echo $lp->expireDate ?><!--</td>-->
+<!--                    </tr>-->
+<!--                    --><?php //} ?>
 
                     <tr>
                        <td>Other (Please specify)</td>
-                        <td colspan="6"><?php echo $lp->other ?></td>
+<!--                        <td colspan="6">--><?php //echo $lp->other ?><!--</td>-->
                     </tr>
                 </table>  
                                                                                                                                                                                               
