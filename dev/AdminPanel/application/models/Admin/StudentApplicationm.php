@@ -123,28 +123,53 @@ class StudentApplicationm extends CI_Model
 
     }
 
-    public function qualifications(){
+    public function qualifications($applicationId){
 
-
-    }
-
-    public function workExperience(){
-
-
-    }
-
-    public function  languageProficiency(){
+        $this->db->select('qualification, institution,qualificationLevel,awardingBody,subject,completionYear,startDate,endDate,obtainResult');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('personqualifications');
+        return $query->result();
 
     }
 
-    public function  personalStatement(){
+    public function workExperience($applicationId){
 
-
+        $this->db->select('fkApplicationId,organization,positionHeld,startDate,endDate');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('personexperience');
+        return $query->result();
     }
 
-     public function  finance(){
+    public function  languageProficiency($applicationId){
 
+        $this->db->select('* , languagetests.id as ltId, candidatelanguagetest.id as ctestid ');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->join('languagetests', 'languagetests.id = candidatelanguagetest.fkTestId', 'left');
+        $query = $this->db->get('candidatelanguagetest');
+        return $query->result();
+    }
+    public function  languageProficiencyTestScore(){
 
+        $this->db->select('*');
+        $query = $this->db->get('cadidatelanguagetestscores');
+        return $query->result();
+    }
+
+    public function  personalStatement($applicationId){
+
+        $this->db->select('courseChoiceStatement,collegeChoiceStatement');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
+    }
+
+     public function  finance($applicationId){
+
+         $this->db->select('financer.*,sourceOfFinance ');
+         $this->db->where('fkApplicationId =', $applicationId);
+         $this->db->join('candidateinfo', 'candidateinfo.applicationId = financer.fkApplicationId', 'left');
+         $query = $this->db->get('financer');
+         return $query->result();
     }
 
      public function  equalOppurtunities(){
@@ -152,9 +177,12 @@ class StudentApplicationm extends CI_Model
 
     }
 
-     public function  referees(){
+     public function  referees($applicationId){
 
-
+         $this->db->select('*');
+         $this->db->where('fkApplicationId =', $applicationId);
+         $query = $this->db->get('candidatereferees');
+         return $query->result();
     }
 
 
