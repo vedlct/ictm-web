@@ -14,6 +14,7 @@ class ApplyOnline extends CI_Controller
     public function index()
     {
     }
+
     public function newApplyFromAgent()
     {
         if ($this->session->userdata('loggedin') == "true") {

@@ -84,11 +84,12 @@ class StudentApplication extends CI_Controller
                 'studentApplicationId' => $applicationId,
             ];
 
-            $this->session->set_userdata($dataSession);
+          //  $this->session->set_userdata($dataSession);
+            $sessionId=session_id();
 
-           // print_r($this->session->userdata('studentApplicationId'));
+            //print_r(session_id());
 
-            redirect("../"."ApplyOnline/viewForm1");
+            //redirect("../"."ApplyOnline/viewForm1as/".$sessionId);
         }
 
         else{
