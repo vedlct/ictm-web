@@ -172,7 +172,12 @@ class StudentApplicationm extends CI_Model
          return $query->result();
     }
 
-     public function  equalOppurtunities(){
+     public function  equalOppurtunitiesgroup(){
+
+
+    }
+
+    public function  equalOppurtunities(){
 
 
     }

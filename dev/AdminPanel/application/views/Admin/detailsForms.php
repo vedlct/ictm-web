@@ -53,7 +53,7 @@
                         <td>Sure Name</td>
                         <td><?php echo $pd->surName?></td>
                         <td>Sex</td>
-                        <td><input type="checkbox" <?php if ($pd->gender =="M") {?> checked <?php } ?>>Male
+                        <td><input type="checkbox" <?php if ($pd->gender =="M") {?> checked <?php } ?> >Male
                             <input type="checkbox" <?php if ($pd->gender =="F") {?> checked <?php } ?>> Female
                             <input type="checkbox" <?php if ($pd->gender =="O") {?> checked <?php } ?>> Other
                             <input type="checkbox" <?php if ($pd->gender =="") {?> checked <?php } ?>> Prefer Not to say</td>
@@ -437,9 +437,9 @@
                             <input type="checkbox">  Please specify.................. 
                         </td>
                     </tr>
-                </table>   
+<!--                </table>   -->
                 
-                <table border="0" style="width:100%; margin-top: 30px;">
+<!--                <table border="0" style="width:100%; margin-top: 30px;">-->
                     <tr>
                         <td colspan="2"><b>Disabilities</b></td>
                     </tr>
@@ -466,9 +466,9 @@
                             <input type="checkbox">  Prefer Not to say
                         </td>
                     </tr>
-                </table>  
-                
-                <table border="0" style="width:100%; margin-top: 30px;">
+<!--                </table>  -->
+<!--                -->
+<!--                <table border="0" style="width:100%; margin-top: 30px;">-->
                     <tr>
                         <td colspan="2"><b>Religion or Belief</b></td>
                     </tr>
@@ -489,9 +489,9 @@
                             <input type="checkbox">  other................  
                         </td>
                     </tr>
-                </table> 
-                
-                <table border="0" style="width:100%; margin-top: 30px;">
+<!--                </table> -->
+<!--                -->
+<!--                <table border="0" style="width:100%; margin-top: 30px;">-->
                     <tr>
                         <td colspan="2"><b>Sexual Orientation</b></td>
                     </tr>
