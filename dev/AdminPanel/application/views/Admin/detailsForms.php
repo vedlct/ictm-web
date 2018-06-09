@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url()?>public/css/styleform.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    -->
     </head>
     
     <style>
@@ -131,10 +131,10 @@
                         <td colspan="3"><?php echo $cd->email?></td>
                     </tr>
                     <?php } ?>
-                </table> 
-                                          <p style="page-break-before: always"></p>  
+                </table>
+<!--                                          <p style="page-break-before: always"></p>-->
                                            
-                <table style="width:100%; margin-top: 50px;">
+                <table style="width:100%; margin-top: 50px; page-break-before: always">
                     <?php foreach ($emmergencyContact as $ec){ ?>
                     <tr>
                         <td colspan="6"> <b>Emmergency Contact Details/Next of kin</b> <small>(please tell us who you would like the college to contact in case of emmergency)</small> </td>
@@ -284,7 +284,7 @@
 
 
                 </table>  
-                <p style="page-break-before: always"></p>    
+<!--                <p style="page-break-before: always"></p>    -->
 
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
@@ -335,7 +335,7 @@
                     </tr>
                 </table>  
                                                                                                                                                                                               
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
                     <tr style="background: #B0DBF0;">
                         <td> <b>Section D</b> <b style="margin-left: 200px;">Personal Statement</b></td>
 
@@ -405,7 +405,7 @@
                     <?php } ?>
                 </table>
                 
-                <p style="page-break-before: always"></p> 
+<!--                <p style="page-break-before: always"></p> -->
                  
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
@@ -439,7 +439,7 @@
                     </tr>
                 </table>   
                 
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
                     <tr>
                         <td colspan="2"><b>Disabilities</b></td>
                     </tr>
@@ -507,7 +507,7 @@
                     </tr>
                 </table> 
                 
-                <p style="page-break-before: always"></p>  
+<!--                <p style="page-break-before: always"></p>  -->
                 
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
@@ -569,7 +569,7 @@
                     </tr>
 
                 </table> 
-                <p style="page-break-before: always"></p>  
+<!--                <p style="page-break-before: always"></p>  -->
                 
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
