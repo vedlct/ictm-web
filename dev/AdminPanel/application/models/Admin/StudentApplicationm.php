@@ -172,7 +172,12 @@ class StudentApplicationm extends CI_Model
          return $query->result();
     }
 
-     public function  equalOppurtunities(){
+     public function  equalOppurtunitiesgroup(){
+
+
+    }
+
+    public function  equalOppurtunities(){
 
 
     }
@@ -184,6 +189,71 @@ class StudentApplicationm extends CI_Model
          $query = $this->db->get('candidatereferees');
          return $query->result();
     }
+
+    /* for student Application edit */
+
+    public function getCandidateInfo($studentApplicationId)
+    {
+
+        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,
+        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddressPo,overseasAddress,
+        overseasAddressPo,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
+        emergencyContactAddressPo,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
+        methodOfStudy,courseSession,courseYear,timeOfStudy,ulnNo,ucasCourseCode');
+        $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
+        $this->db->where('applicationId',$studentApplicationId);
+        $this->db->from('candidateinfo');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+    public function getCourseInfo() //get the course information for online
+    {
+        $this->db->select('courseId,courseTitle');
+        $this->db->where('courseStatus =', STATUS[0]);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+    }
+
+    public function getCourseAwardBody($courseId) //get the course AwardBody for online
+    {
+        $this->db->select('awardingBody');
+        $this->db->where('courseStatus =', STATUS[0]);
+        $this->db->where('courseId =', $courseId);
+        $query = $this->db->get('ictmcourse');
+        return $query->result();
+    }
+
+    public function editApplyform1($data,$data1){
+
+        $id = $this->session->userdata('studentApplicationId');
+
+        $data=$this->security->xss_clean($data);
+        $this->db->where('applicationId', $id);
+        $error=$this->db->update('candidateinfo', $data);
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+
+            $data1 = $this->security->xss_clean($data1);
+
+            $this->db->where('fkApplicationId', $id);
+            $error=$this->db->update('coursedetails', $data1);
+            if (empty($error)) {
+                return $this->db->error();
+            } else {
+                return $error = null;
+            }
+
+        }
+    }
+
+
+
+    /* for student Application edit end */
+
+
 
 
 }
