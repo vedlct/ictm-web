@@ -1,6 +1,12 @@
 
-<?php include("header.php"); ?>
+<?php $this->load->view('Admin/head.php'); ?>
+<!-- for Application Form -->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
+<!-- dateTimepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
 <style>
+
     .datepicker .next ,.prev {
         position: relative !important;
     }
@@ -10,15 +16,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h2 class="title">Application Form</h2>
-                </div>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
-                    </ul>
-                </div>
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                    <tr>
+                        <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                    </tr>
+                </table>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -29,7 +32,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editapplyNow3" method="post" class=" form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/updateEnglishLagugeProficiency" method="post" class=" form-horizontal">
 
 
 
@@ -137,9 +140,9 @@
                                 <div class="col-sm-offset-2 col-md-10">
 
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button type="button"  class="btn btn-next">Next</button></a>
 
 
                                 </div>
@@ -185,7 +188,7 @@
                                 <td><?php echo $lt->expireDate ?></td>
                                 <td>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
-                                    <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
+                                    <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                         <?php $count++ ;} ?>
@@ -203,8 +206,8 @@
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
 
 
@@ -215,15 +218,25 @@
     </div>
 </section>
 
-<?php include("footer.php"); ?>
-<!-- for Application form -->
-<script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-<script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<?php //include("footer.php"); ?>
+<!--<!-- for Application form -->-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
+
+
 
 </div>
 </body>
 
 </html>
+
+<!-- datePicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+</div>
+</body>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
 
 <script type="text/javascript">
     $(function () {
@@ -244,7 +257,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("ApplyOnline/EditLanguageTest")?>',
+            url:'<?php echo base_url("Admin/StudentApplication/EditLanguageTest")?>',
             data:{'id': btn},
             cache: false,
             dataType: 'json',
@@ -276,7 +289,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("ApplyOnline/EditLanguageTestHead")?>',
+            url:'<?php echo base_url("Admin/StudentApplication/EditLanguageTestHead")?>',
             data:{'id': btn},
             cache: false,
             dataType: 'json',
@@ -321,7 +334,7 @@
             btn = $(x).data('panel-id');
             $.ajax({
                 type:'POST',
-                url:'<?php echo base_url("ApplyOnline/DeleteLanguageProficiency")?>',
+                url:'<?php echo base_url("Admin/StudentApplication/DeleteLanguageProficiency")?>',
                 data:{'id': btn},
                 cache: false,
 

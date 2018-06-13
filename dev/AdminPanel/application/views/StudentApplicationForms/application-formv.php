@@ -457,7 +457,7 @@
 
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
-                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>
+                                <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button type="button"  class="btn btn-next">Next</button></a>
 
                             </div>
                         </div>

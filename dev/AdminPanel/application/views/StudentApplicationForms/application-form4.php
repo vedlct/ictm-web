@@ -1,19 +1,19 @@
-
-<?php include("header.php"); ?>
+<?php $this->load->view('Admin/head.php'); ?>
+<!-- for Application Form -->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
+<!-- dateTimepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h2 class="title">Application Form</h2>
-                </div>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
-                    </ul>
-                </div>
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                    <tr>
+                        <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                    </tr>
+                </table>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/insertapplyNow4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
 
                         <div class="form-bottom">
 
@@ -154,7 +154,7 @@
                                     <div class="col-sm-offset-2 col-md-10">
                                         <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
                                         <button type="submit" class="btn btn-next">Save Application</button>
-                                        <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
+                                        <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
                                         <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn ">Next</button></a>
                                     </div>
                                 </div>

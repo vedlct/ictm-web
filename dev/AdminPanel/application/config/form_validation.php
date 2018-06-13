@@ -1583,5 +1583,193 @@ $config = array (
 
 
     ),
+    'applyfromQualification'=>
+        array(
+
+            array(
+                'field' => 'qualification',
+                'label' => 'Qualification',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'qualificationLevel',
+                'label' => 'Qualification Level',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'awardingBody',
+                'label' => 'Awarding Body',
+                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'subject',
+                'label' => 'Subject',
+                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'institution',
+                'label' => 'Institution',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'completionYear',
+                'label' => 'CompletionYear',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'grade',
+                'label' => 'Grade',
+                'rules' => 'required|max_length[20]|xss_clean|htmlspecialchars',
+
+            ),
+
+
+
+        ),
+    'applyfromPersonexperience'=>
+        array(
+
+            array(
+                'field' => 'organisation',
+                'label' => 'Organisation',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'positionHeld',
+                'label' => 'Position Held',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'startdate',
+                'label' => 'Start Date',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'enddate',
+                'label' => 'End Date',
+                'rules' => 'required|xss_clean|htmlspecialchars',
+
+            ),
+
+
+
+        ),
+    'applyfrom3'=>
+        array(
+
+            array(
+                'field' => 'listening',
+                'label' => 'Lstening',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'reading',
+                'label' => 'Reading',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'writing',
+                'label' => 'Writing ',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'speaking',
+                'label' => 'Speaking',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'overall',
+                'label' => 'Overall',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'expirydate',
+                'label' => 'Expiry Date',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
+
+        ),
+
+    'applyfromfinance'=>
+        array(
+
+            array(
+                'field' => 'title',
+                'label' => 'Title',
+                'rules' => 'required|max_length[12]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'name',
+                'label' => 'Name',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'relation',
+                'label' => 'Relation ',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'address',
+                'label' => 'Address',
+                'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'mobile',
+                'label' => 'Moble number',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
+                'field' => 'email',
+                'label' => 'Email Address',
+                'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars',
+
+            ),
+
+
+            array(
+                'field' => 'telephone',
+                'label' => 'Telephone',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+            ),
+            array(
+                'field' => 'AddressPO',
+                'label' => 'Address P.O.',
+                'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars',
+            ),
+
+
+
+        ),
+
     /* student Application form end*/
 );
