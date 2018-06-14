@@ -2,8 +2,7 @@
 <?php $this->load->view('Admin/head.php'); ?>
 <!-- for Application Form -->
 <link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
-<!-- dateTimepicker -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
 
 <div class="page-title full-color">
     <div class="container">
@@ -153,7 +152,7 @@
 
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn ">Next</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button type="button"  class="btn ">Next</button></a>
 
                                 </div>
                             </div>

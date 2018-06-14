@@ -887,7 +887,7 @@ class StudentApplication extends CI_Controller
 
                 if ($finance == 'own') {
                     $this->data['financeYes'] = 'own';
-                    $this->load->view('application-form4', $this->data);
+                    $this->load->view('StudentApplicationForms/application-form4', $this->data);
                 } else {
                     $this->data['financeYes'] = $finance;
                     $this->data['Financer'] = $this->StudentApplicationm->getFinancerDataFromOthers($applicationId);
@@ -1032,7 +1032,7 @@ class StudentApplication extends CI_Controller
 
 
                 $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                redirect('Admin/StudentApplication/editStudentApplicationFinance');
+                redirect('Admin/StudentApplication/editStudentApplicationPersonalStatement');
 
 
             } else {
@@ -1070,7 +1070,7 @@ class StudentApplication extends CI_Controller
                     $this->data['financeYes'] = $selfFinance;
                     $this->data['Financer'] = $this->StudentApplicationm->getFinancerDataFromOthers($applicationId);
 
-                    $this->load->view('application-form4', $this->data);
+                    $this->load->view('StudentApplicationForms/application-form4', $this->data);
 
                 }
 
@@ -1101,6 +1101,705 @@ class StudentApplication extends CI_Controller
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
                     window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function editStudentApplicationPersonalStatement() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $applicationId=$this->session->userdata('studentApplicationId');
+
+            $this->data['PersonalStatementData'] = $this->StudentApplicationm->getPersonalStatementData($applicationId);
+
+
+            $this->load->view('StudentApplicationForms/application-form5v', $this->data);
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function updateAapplyNow5()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromPersonalStatement')) {
+
+
+                $applicationId=$this->session->userdata('studentApplicationId');
+                $this->data['PersonalStatementData'] = $this->StudentApplicationm->getPersonalStatementData($applicationId);
+                $this->load->view('StudentApplicationForms/application-form5v', $this->data);
+
+            }
+            else {
+
+
+                $this->data['error'] = $this->StudentApplicationm->updatApplynow5();
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationPersonalStatement');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/StudentApplication/editStudentApplicationPersonalStatement');
+
+                }
+            }
+
+        }
+        else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+
+    }
+
+    public function editApplicationForm5AndNext()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromPersonalStatement')) {
+
+
+                $applicationId=$this->session->userdata('studentApplicationId');
+                $this->data['PersonalStatementData'] = $this->StudentApplicationm->getPersonalStatementData($applicationId);
+                $this->load->view('StudentApplicationForms/application-form5v', $this->data);
+
+            }else {
+
+
+                $this->data['error'] = $this->StudentApplicationm->updatApplynow5();
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/StudentApplication/editStudentApplicationPersonalStatement');
+
+                }
+            }
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+    }
+
+    public function editStudentApplicationEqualOppertunity() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->data['EqualOpportunity'] = $this->StudentApplicationm->getAllEqualOpportunity();
+            $this->data['opportunityTitle']= $this->StudentApplicationm->checkopportunityTitle();
+            $this->data['opportunitySubGroupId']= $this->StudentApplicationm->getOpportunitySubGroupId();
+
+
+            $this->load->view('StudentApplicationForms/application-form6v', $this->data);
+
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function updatefrom6()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
+            $Id_check_list = $this->input->post('id_check_list');
+            $Id_check_list1 = $this->input->post('id_check_list1');
+            $Id_check_list2 = $this->input->post('id_check_list2');
+            $Id_check_list3 = $this->input->post('id_check_list3');
+
+
+            $this->data['opportunityTitle'] = $this->StudentApplicationm->checkopportunityTitle();
+
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+
+
+                    );
+                    $id = $Id_check_list;
+                }
+
+
+                if ($title->opportunityTitle == 'Disability') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+
+
+                    );
+                    $id = $Id_check_list1;
+                }
+
+                if ($title->opportunityTitle == 'Religion Belief') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+
+
+                    );
+                    $id = $Id_check_list2;
+                }
+
+                if ($title->opportunityTitle == 'Sexual Orientation') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+
+
+                    );
+                    $id = $Id_check_list3;
+                }
+
+
+                $this->data['error'] = $this->StudentApplicationm->updateApplyNow6personal($id, $data1);
+
+
+            }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
+
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+
+
+    }
+
+    public function editApplicationForm6AndNext()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
+            $Id_check_list = $this->input->post('id_check_list');
+            $Id_check_list1 = $this->input->post('id_check_list1');
+            $Id_check_list2 = $this->input->post('id_check_list2');
+            $Id_check_list3 = $this->input->post('id_check_list3');
+
+
+            $this->data['opportunityTitle'] = $this->StudentApplicationm->checkopportunityTitle();
+
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+
+
+                    );
+                    $id = $Id_check_list;
+                }
+
+
+                if ($title->opportunityTitle == 'Disability') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+
+
+                    );
+                    $id = $Id_check_list1;
+                }
+
+                if ($title->opportunityTitle == 'Religion Belief') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+
+
+                    );
+                    $id = $Id_check_list2;
+                }
+
+                if ($title->opportunityTitle == 'Sexual Orientation') {
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+
+
+                    );
+                    $id = $Id_check_list3;
+                }
+
+
+                $this->data['error'] = $this->StudentApplicationm->updateApplyNow6personal($id, $data1);
+
+
+            }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
+
+            }
+        }else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+
+
+    }
+
+    public function editStudentApplicationDocumentUpload() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->view('StudentApplicationForms/application-form7');
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function insertapplyNow7()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $applicatfiles = $_FILES['fileUpload']['name'];
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $files = $_FILES;
+            $data = array();
+            $fileCount = 0;
+
+            if (array_filter($applicatfiles)!=null ) {
+
+                for ($i = 0; $i < count($applicatfiles); $i++) {
+
+                    if ($applicatfiles[$i] != null) {
+
+
+                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+
+                        $this->load->library('upload');
+
+                        $this->upload->initialize($this->set_upload_options($applicationId));
+
+                        if (!$this->upload->do_upload('fileUpload')) {
+                            $error[$i] = $this->upload->display_errors();
+                            $data[$error[$i]];
+
+                        }
+
+                        $fileCount++;
+
+
+                    } else {
+
+                    }
+                }
+
+                if (empty($data)) {
+
+
+                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+
+                }
+
+            }else{
+
+                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+                redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+    }
+
+    public function editApplicationForm7AndNext()
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $applicatfiles = $_FILES['fileUpload']['name'];
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $files = $_FILES;
+            $data = array();
+            $fileCount = 0;
+
+            if (array_filter($applicatfiles)!=null ) {
+
+                for ($i = 0; $i < count($applicatfiles); $i++) {
+
+                    if ($applicatfiles[$i] != null) {
+
+
+                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+
+                        $this->load->library('upload');
+
+                        $this->upload->initialize($this->set_upload_options($applicationId));
+
+                        if (!$this->upload->do_upload('fileUpload')) {
+                            $error[$i] = $this->upload->display_errors();
+                            $data[$error[$i]];
+
+                        }
+
+                        $fileCount++;
+
+
+                    } else {
+
+                    }
+                }
+
+                if (empty($data)) {
+
+
+                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+
+                }
+
+            }else{
+
+                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+                redirect('ApplyForm7');
+
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+    }
+
+    //upload an image options
+    private function set_upload_options($applicationId)
+    {
+
+        $config = array();
+        $config['upload_path'] = 'studentApplications/'.$applicationId."/";
+        $config['allowed_types'] = 'jpg|jpeg|gif|png|xlsx|pdf|doc|docx|xls|xlsx';
+
+        $config['overwrite'] = true;
+        //  $config['file_name'] = $photoId;
+
+        return $config;
+    }
+
+    public function editStudentApplicationReferences() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->data['References'] = $this->StudentApplicationm->getAllRefences();
+
+            $this->load->view('StudentApplicationForms/application-form8v', $this->data);
+
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function editORInsertApplicationForm8() // edit OR Insert Application Form2
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromRefrees')) {
+
+                $this->data['References'] = $this->StudentApplicationm->getAllRefences();
+
+                $this->load->view('StudentApplicationForms/application-form8v', $this->data);
+
+            }
+            else {
+
+
+                $refereesId = $this->input->post("refereesId");
+                $title = $this->input->post("title");
+                $name = $this->input->post("name");
+                $company = $this->input->post("company");
+                $jobTitle = $this->input->post("jobTitle");
+                $telephone = $this->input->post("telephone");
+                $email = $this->input->post("email");
+                $address = $this->input->post("address");
+                $addressPo = $this->input->post("addressPo");
+                $country = $this->input->post("country");
+
+
+                $data = array(
+
+                    'name' => $name,
+                    'title' => $title,
+                    'workingCompany' => $company,
+                    'jobTitle' => $jobTitle,
+                    'address' => $address,
+                    'postCode' => $addressPo,
+                    'contactNo' => $telephone,
+                    'email' => $email,
+                    'fkCountry' => $country,
+
+                );
+
+                if (!empty($refereesId)) {
+
+                    $this->StudentApplicationm->editRefereesDetailsById($refereesId, $data);
+                    $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+                } else {
+
+                    $data2 = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    );
+                    $data = array_merge($data, $data2);
+                    $this->StudentApplicationm->insertRefereesDetailsFromEdit($data);
+                    $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+
+                }
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function editApplicationForm8AndNext() // edit OR Insert Application Form8
+
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('applyfromRefrees')) {
+
+                $this->data['References'] = $this->StudentApplicationm->getAllRefences();
+
+                $this->load->view('StudentApplicationForms/application-form8v', $this->data);
+
+            }else {
+
+
+                $refereesId = $this->input->post("refereesId");
+                $title = $this->input->post("title");
+                $name = $this->input->post("name");
+                $company = $this->input->post("company");
+                $jobTitle = $this->input->post("jobTitle");
+                $telephone = $this->input->post("telephone");
+                $email = $this->input->post("email");
+                $address = $this->input->post("address");
+                $addressPo = $this->input->post("addressPo");
+                $country = $this->input->post("country");
+
+
+                $data = array(
+
+                    'name' => $name,
+                    'title' => $title,
+                    'workingCompany' => $company,
+                    'jobTitle' => $jobTitle,
+                    'address' => $address,
+                    'postCode' => $addressPo,
+                    'contactNo' => $telephone,
+                    'email' => $email,
+                    'fkCountry' => $country,
+
+                );
+
+                if (!empty($refereesId)) {
+
+                    $this->StudentApplicationm->editRefereesDetailsById($refereesId, $data);
+                    $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationSubmitApplication');
+                } else {
+
+                    $data2 = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    );
+                    $data = array_merge($data, $data2);
+                    $this->StudentApplicationm->insertRefereesDetailsFromEdit($data);
+                    $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+
+                }
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function editStudentApplicationSubmitApplication() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->load->view('StudentApplicationForms/application-form9');
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
+
+    }
+
+    public function EditPersonalReferees()
+    {
+        $refereesId = $this->input->post("id");
+        $data = $this->StudentApplicationm->getRefereesDetails($refereesId);
+
+        echo  json_encode($data);
+    }
+
+    public function deletePersonalReferees() // delete personal Referees
+    {
+        $refereesId = $this->input->post("id");
+
+        $this->StudentApplicationm->deleteRefereesDetailsById($refereesId);
+        $this->session->set_flashdata('successMessage', 'Referees Deleted Successfully');
+
+
+    }
+
+    public function insertApplyNow9() // go to the apply page of selected course
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $check = $this->input->post("check");
+            if ($check){
+
+                $this->data['error'] = $this->StudentApplicationm->insertApplyForm9();
+
+                if (empty($this->data['error'])) {
+
+
+                    $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
+                    redirect('Login');
+
+
+                } else {
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyForm9');
+
+                }
+
+            }
+
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
                     </script>";
         }
 

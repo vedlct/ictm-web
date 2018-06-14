@@ -1,19 +1,18 @@
 
-<?php include("header.php"); ?>
+<?php $this->load->view('Admin/head.php'); ?>
+<!-- for Application Form -->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
 
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h2 class="title">Application Form</h2>
-                </div>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
-                    </ul>
-                </div>
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                    <tr>
+                        <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                    </tr>
+                </table>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -34,7 +33,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm8" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm8" method="post" class="form-horizontal">
 
 <!--                    <fieldset>-->
                         <div class="form-top">
@@ -139,8 +138,8 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationSubmitApplication" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
 
@@ -169,7 +168,7 @@
                                             <td><?php echo $Reference->email ?></td>
                                             <td>
                                                 <a style="cursor: pointer" data-panel-id="<?php echo $Reference->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
-                                                <a style="cursor: pointer" data-panel-id="<?php echo $Reference->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
+                                                <a style="cursor: pointer" data-panel-id="<?php echo $Reference->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -190,8 +189,8 @@
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
 
 
@@ -202,10 +201,10 @@
     </div>
 </section>
 
-<?php include("footer.php"); ?>
-<!-- for Application form -->
-<script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-<script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<?php //include("footer.php"); ?>
+<!--<!-- for Application form -->-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 </div>
 </body>
@@ -219,7 +218,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("ApplyOnline/EditPersonalReferees")?>',
+            url:'<?php echo base_url("Admin/StudentApplication/EditPersonalReferees")?>',
             data:{'id': btn},
             cache: false,
             dataType: 'json',
@@ -263,7 +262,7 @@
 
         $.ajax({
             type:'POST',
-            url:'<?php echo base_url("ApplyOnline/deletePersonalReferees")?>',
+            url:'<?php echo base_url("Admin/StudentApplication/deletePersonalReferees")?>',
             data:{'id': btn},
             cache: false,
             success:function(data) {

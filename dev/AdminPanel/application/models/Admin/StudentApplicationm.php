@@ -768,6 +768,167 @@ class StudentApplicationm extends CI_Model
 
     }
 
+    public function getPersonalStatementData($applicationId){
+
+        $this->db->select('courseChoiceStatement,collegeChoiceStatement');
+        $this->db->where('applicationId',$applicationId);
+        $this->db->from('candidateinfo');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+
+    public function updatApplynow5()
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $courseChoiceStatement = $this->input->post('courseChoiceStatement');
+        $collegeChoiceStatement = $this->input->post('collegeChoiceStatement');
+
+        $data = array(
+            'courseChoiceStatement' => $courseChoiceStatement,
+            'collegeChoiceStatement' => $collegeChoiceStatement
+
+        );
+
+        $error=$this->db->where('applicationId',$applicationId)->update('candidateinfo',$data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else {
+
+            return $error = null;
+        }
+    }
+
+    public function getAllEqualOpportunity()
+
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $this->db->select('personequalopportunity.id as personalOpportunityId,equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
+        $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('personequalopportunity.fkApplicationId=',$applicationId);
+        $this->db->from('personequalopportunity');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+    public  function checkopportunityTitle()
+    {
+        $this->db->select('id,opportunityTitle');
+        $this->db->from('equalopportunitygroup');
+        $query=$this->db->get();
+        return $query->result();
+    }
+    public  function getOpportunitySubGroupId()
+    {
+        $this->db->select('id,fkGroupId,subGroupTitle');
+        //$this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->from('equalopportunitysubgroup');
+        $query=$this->db->get();
+        return $query->result();
+    }
+
+    public function updateApplyNow6personal($id,$data1)
+    {
+
+        $this->db->where('id',$id);
+        $error = $this->db->update('personequalopportunity',$data1);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function getAllRefences()
+
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+
+        $this->db->select('id, name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->where('fkApplicationId',$applicationId);
+        $this->db->from('candidatereferees');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+
+    public function editRefereesDetailsById($refereesId,$data)
+    {
+
+        $this->db->where('id',$refereesId);
+        $error = $this->db->update('candidatereferees',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+    public function insertRefereesDetailsFromEdit($data)
+    {
+
+        $this->security->xss_clean($data);
+        $error = $this->db->insert('candidatereferees',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function getRefereesDetails($refereesId)
+    {
+
+        $this->db->select('id,name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->where('id',$refereesId);
+        $this->db->from('candidatereferees');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+
+    public function deleteRefereesDetailsById($refereesId){
+
+        $this->db->where('id', $refereesId);
+        $this->db->delete('candidatereferees');
+    }
+
+    public function insertApplyForm9()
+    {
+        $applicationId=$this->session->userdata('studentApplicationId');
+        $data1=array(
+            'applydate'=>date('Y-m-d H:i:s'),
+        );
+
+        $this->db->where('id',$applicationId);
+        $error = $this->db->update('candidateinfo',$data1);
+
+        $data = array(
+            'isSubmited' => '1',
+
+        );
+
+        $this->db->where('id',$applicationId);
+        $error = $this->db->update('studentapplicationform',$data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
 
 
     /* for student Application edit end */
