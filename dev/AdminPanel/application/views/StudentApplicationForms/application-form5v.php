@@ -62,7 +62,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button type="button" class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEqualOppertunity" ><button type="button"  class="btn ">Next</button></a>

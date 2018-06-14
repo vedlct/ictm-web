@@ -1219,7 +1219,6 @@ class StudentApplication extends CI_Controller
             $this->data['opportunityTitle']= $this->StudentApplicationm->checkopportunityTitle();
             $this->data['opportunitySubGroupId']= $this->StudentApplicationm->getOpportunitySubGroupId();
 
-
             $this->load->view('StudentApplicationForms/application-form6v', $this->data);
 
 
@@ -1714,7 +1713,7 @@ class StudentApplication extends CI_Controller
 
                     $this->StudentApplicationm->editRefereesDetailsById($refereesId, $data);
                     $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
-                    redirect('Admin/StudentApplication/editStudentApplicationSubmitApplication');
+                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
                 } else {
 
                     $data2 = array(
@@ -1736,20 +1735,7 @@ class StudentApplication extends CI_Controller
 
     }
 
-    public function editStudentApplicationSubmitApplication() // go to the apply page of selected course
-    {
-        if ($this->session->userdata('loggedin') == "true") {
 
-            $this->load->view('StudentApplicationForms/application-form9');
-
-        }else{
-            echo "<script>
-                    alert('Your Session has Expired ,Please Login Again');
-                    window.location.href= '" . base_url() . "Admin/Login';
-                    </script>";
-        }
-
-    }
 
     public function EditPersonalReferees()
     {
@@ -1769,41 +1755,20 @@ class StudentApplication extends CI_Controller
 
     }
 
-    public function insertApplyNow9() // go to the apply page of selected course
-    {
-        if ($this->session->userdata('loggedin') == "true") {
-
-            $check = $this->input->post("check");
-            if ($check){
-
-                $this->data['error'] = $this->StudentApplicationm->insertApplyForm9();
-
-                if (empty($this->data['error'])) {
-
-
-                    $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
-                    redirect('Login');
-
-
-                } else {
-
-                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm9');
-
-                }
-
-            }
-
-
-
-        }else{
-            echo "<script>
-                    alert('Your Session has Expired ,Please Login Again');
-                    window.location.href= '" . base_url() . "Login';
-                    </script>";
-        }
-
-    }
+//    public function editStudentApplicationSubmitApplication() // go to the apply page of selected course
+//    {
+//        if ($this->session->userdata('loggedin') == "true") {
+//
+//            $this->load->view('StudentApplicationForms/application-form9');
+//
+//        }else{
+//            echo "<script>
+//                    alert('Your Session has Expired ,Please Login Again');
+//                    window.location.href= '" . base_url() . "Admin/Login';
+//                    </script>";
+//        }
+//
+//    }
 
 
     /* for edit application end */

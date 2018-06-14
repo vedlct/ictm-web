@@ -904,30 +904,7 @@ class StudentApplicationm extends CI_Model
         $this->db->delete('candidatereferees');
     }
 
-//    public function insertApplyForm9()
-//    {
-//        $applicationId=$this->session->userdata('studentApplicationId');
-//        $data1=array(
-//            'applydate'=>date('Y-m-d H:i:s'),
-//        );
-//
-//        $this->db->where('id',$applicationId);
-//        $error = $this->db->update('candidateinfo',$data1);
-//
-//        $data = array(
-//            'isSubmited' => '1',
-//
-//        );
-//
-//        $this->db->where('id',$applicationId);
-//        $error = $this->db->update('studentapplicationform',$data);
-//
-//        if (empty($error)) {
-//            return $this->db->error();
-//        } else {
-//            return $error = null;
-//        }
-//    }
+
 
 
 
