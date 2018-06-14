@@ -14,6 +14,7 @@ class ApplyOnline extends CI_Controller
     public function index()
     {
     }
+
     public function newApplyFromAgent()
     {
         if ($this->session->userdata('loggedin') == "true") {
@@ -2160,14 +2161,14 @@ class ApplyOnline extends CI_Controller
 
                 $data = array(
 
-                    'name' => $title,
-                    'title' => $name,
+                    'name' => $name,
+                    'title' => $title,
                     'workingCompany' => $company,
                     'jobTitle' => $jobTitle,
-                    'address' => $telephone,
-                    'postCode' => $email,
-                    'contactNo' => $address,
-                    'email' => $addressPo,
+                    'address' => $address,
+                    'postCode' => $addressPo,
+                    'contactNo' => $telephone,
+                    'email' => $email,
                     'fkCountry' => $country,
 
                 );

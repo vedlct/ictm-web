@@ -1,6 +1,12 @@
 
-<?php include("header.php"); ?>
+<?php $this->load->view('Admin/head.php'); ?>
+<!-- for Application Form -->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
+<!-- dateTimepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
 <style>
+
     .datepicker .next ,.prev {
         position: relative !important;
     }
@@ -10,15 +16,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h2 class="title">Application Form</h2>
-                </div>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
-                    </ul>
-                </div>
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                    <tr>
+                        <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                    </tr>
+                </table>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -40,7 +43,7 @@
             <div class="col-md-9">
                 <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" method="post" class="form-horizontal">
 
                     <!--                        		<fieldset>-->
                     <div class="form-top">
@@ -185,7 +188,7 @@
                             <label class="control-label col-md-2">Current Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
+                                <textarea id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8"><?php echo $candidateInfo->currentAddress ?></textarea>
                             </div>
                         </div>
 
@@ -214,7 +217,7 @@
                             <label class="control-label col-md-2">Overseas (Home) Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
+                                <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" ><?php echo $candidateInfo->overseasAddress?></textarea>
                             </div>
                         </div>
 
@@ -309,7 +312,7 @@
                             <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
+                                <textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" ><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
                             </div>
                         </div>
 
@@ -453,8 +456,8 @@
                                 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
                                 <button type="submit" class="btn btn-next">Save Application</button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
-                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>
+                                <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
+                                <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button type="button"  class="btn btn-next">Next</button></a>
 
                             </div>
                         </div>
@@ -478,8 +481,8 @@
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
 
 
@@ -490,10 +493,15 @@
     </div>
 </section>
 
-<?php include("footer.php"); ?>
+<?php //include("footer.php"); ?>
+
+<!-- datePicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
 <!-- for Application form -->
-<script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-<script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 </div>
 </body>
@@ -548,7 +556,9 @@
 
     function courseAwardBody() {
 
+
         var courseId=document.getElementById("courseName").value;
+
         if (courseId ==""){
             alert('please select a course First');
             document.getElementById('awardingBody').value = "";
@@ -557,7 +567,7 @@
 
             $.ajax({
                 type: 'POST',
-                url: '<?php echo base_url("OnlineForms/getCourseAwardBody")?>',
+                url: '<?php echo base_url("Admin/StudentApplication/getCourseAwardBody")?>',
                 data: {courseId: courseId},
                 cache: false,
                 success: function (data) {

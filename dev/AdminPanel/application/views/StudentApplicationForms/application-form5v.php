@@ -1,19 +1,18 @@
 
-<?php include("header.php"); ?>
+<?php $this->load->view('Admin/head.php'); ?>
+<!-- for Application Form -->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
 
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h2 class="title">Application Form</h2>
-                </div>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
-                    </ul>
-                </div>
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                    <tr>
+                        <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                    </tr>
+                </table>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -42,7 +41,7 @@
                                 <p>Step 6 / 10</p>
                             </div>
                         </div>
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/updateAapplyNow5" method="post" class="registration-form form-horizontal">
 
                 <?php foreach ($PersonalStatementData as $f5) { ?>
 
@@ -65,8 +64,8 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm4" ><button type="button" class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEqualOppertunity" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
                         </div>
@@ -89,8 +88,8 @@
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
 
 
@@ -101,10 +100,10 @@
     </div>
 </section>
 
-<?php include("footer.php"); ?>
-<!-- for Application form -->
-<script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-<script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<?php //include("footer.php"); ?>
+<!--<!-- for Application form -->-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 </div>
 </body>

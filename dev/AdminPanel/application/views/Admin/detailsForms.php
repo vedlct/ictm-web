@@ -6,8 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url()?>public/css/styleform.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    -->
     </head>
     
     <style>
@@ -131,10 +131,10 @@
                         <td colspan="3"><?php echo $cd->email?></td>
                     </tr>
                     <?php } ?>
-                </table> 
-                                          <p style="page-break-before: always"></p>  
+                </table>
+<!--                                          <p style="page-break-before: always"></p>-->
                                            
-                <table style="width:100%; margin-top: 50px;">
+                <table style="width:100%; margin-top: 50px; page-break-before: always">
                     <?php foreach ($emmergencyContact as $ec){ ?>
                     <tr>
                         <td colspan="6"> <b>Emmergency Contact Details/Next of kin</b> <small>(please tell us who you would like the college to contact in case of emmergency)</small> </td>
@@ -284,7 +284,7 @@
 
 
                 </table>  
-                <p style="page-break-before: always"></p>    
+<!--                <p style="page-break-before: always"></p>    -->
 
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
@@ -314,28 +314,28 @@
                         <td>Overall</td>
                         <td>Expiry Date</td>
                     </tr>
-                    <?php foreach ($languageProficiency as $lp) {   ?>
-                    <tr>
-                        <td style="width: 15%"><?php echo $lp->title ?></td>
-                        <?php foreach ($languageProficiencyTestScore as $lpts) {
-
-                            if ($lpts->fkCandidateTestId == $lp->ctestid){
-                            ?>
-                        <td><?php echo $lpts->score ?></td>
-
-                            <?php } } ?>
-                        <td><?php echo $lp->overallScore ?></td>
-                        <td><?php echo $lp->expireDate ?></td>
-                    </tr>
-                    <?php } ?>
+<!--                    --><?php //foreach ($languageProficiency as $lp) {   ?>
+<!--                    <tr>-->
+<!--                        <td style="width: 15%">--><?php //echo $lp->title ?><!--</td>-->
+<!--                        --><?php //foreach ($languageProficiencyTestScore as $lpts) {
+//
+//                            if ($lpts->fkCandidateTestId == $lp->ctestid){
+//                            ?>
+<!--                        <td>--><?php //echo $lpts->score ?><!--</td>-->
+<!---->
+<!--                            --><?php //} } ?>
+<!--                        <td>--><?php //echo $lp->overallScore ?><!--</td>-->
+<!--                        <td>--><?php //echo $lp->expireDate ?><!--</td>-->
+<!--                    </tr>-->
+<!--                    --><?php //} ?>
 
                     <tr>
                        <td>Other (Please specify)</td>
-                        <td colspan="6"><?php echo $lp->other ?></td>
+<!--                        <td colspan="6">--><?php //echo $lp->other ?><!--</td>-->
                     </tr>
                 </table>  
                                                                                                                                                                                               
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
                     <tr style="background: #B0DBF0;">
                         <td> <b>Section D</b> <b style="margin-left: 200px;">Personal Statement</b></td>
 
@@ -404,12 +404,11 @@
                     </tr>
                     <?php } ?>
                 </table>
-                
-                <p style="page-break-before: always"></p> 
-                 
+
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
-                        <td colspan="4"> <b>Section F</b> <b style="margin-left: 200px;">Equal oppurtunities Monitoring</b></td>
+                        <td colspan="4"> <b>Section F</b> <b style="margin-left: 200px;">Equal oppurtunities Monitoring</b>
+                        </td>
                     </tr> 
                     <tr>
                         <td colspan="2">( Please put cross (X) in appropriate box )</td>
@@ -417,7 +416,7 @@
                     <tr>
                         <td colspan="2"><b>Ethnicity</b></td>
                     </tr>
-                    <tr>
+                    <tr style="width: 100%">
                         <td><input type="checkbox">  White - British <br>
                             <input type="checkbox">  White - Irish <br> 
                             <input type="checkbox">  White - Other <br>
@@ -437,9 +436,11 @@
                             <input type="checkbox">  Please specify.................. 
                         </td>
                     </tr>
-<!--                </table>   -->
+                </table>
                 
-<!--                <table border="0" style="width:100%; margin-top: 30px;">-->
+
+                <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
+
                     <tr>
                         <td colspan="2"><b>Disabilities</b></td>
                     </tr>
@@ -466,9 +467,9 @@
                             <input type="checkbox">  Prefer Not to say
                         </td>
                     </tr>
-<!--                </table>  -->
+                </table>
 <!--                -->
-<!--                <table border="0" style="width:100%; margin-top: 30px;">-->
+                <table border="0" style="width:100%; margin-top: 30px;">
                     <tr>
                         <td colspan="2"><b>Religion or Belief</b></td>
                     </tr>
@@ -489,9 +490,9 @@
                             <input type="checkbox">  other................  
                         </td>
                     </tr>
-<!--                </table> -->
+                </table>
 <!--                -->
-<!--                <table border="0" style="width:100%; margin-top: 30px;">-->
+                <table border="0" style="width:100%; margin-top: 30px;">
                     <tr>
                         <td colspan="2"><b>Sexual Orientation</b></td>
                     </tr>
@@ -507,7 +508,7 @@
                     </tr>
                 </table> 
                 
-                <p style="page-break-before: always"></p>  
+<!--                <p style="page-break-before: always"></p>  -->
                 
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
@@ -569,7 +570,7 @@
                     </tr>
 
                 </table> 
-                <p style="page-break-before: always"></p>  
+<!--                <p style="page-break-before: always"></p>  -->
                 
                 <table border="0" style="width:100%; margin-top: 30px;">
                     <tr style="background: #B0DBF0;">
