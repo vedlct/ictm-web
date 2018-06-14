@@ -838,7 +838,7 @@ class StudentApplication extends CI_Controller
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
-                    window.location.href= '" . base_url() . "Login';
+                    window.location.href= '" . base_url() . "Admin/Login';
                     </script>";
         }
     }
@@ -881,7 +881,7 @@ class StudentApplication extends CI_Controller
 
             if (empty($finance)) {
                 $this->data['financeYes'] = null;
-                $this->load->view('application-form4', $this->data);
+                $this->load->view('StudentApplicationForms/application-form4', $this->data);
             } else {
 
 
@@ -1405,7 +1405,7 @@ class StudentApplication extends CI_Controller
 
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
-                    window.location.href= '" . base_url() . "Login';
+                    window.location.href= '" . base_url() . "Admin/Login';
                     </script>";
         }
 
