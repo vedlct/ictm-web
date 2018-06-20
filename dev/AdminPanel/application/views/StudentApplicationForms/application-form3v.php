@@ -139,7 +139,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
 
-                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button type="button"  class="btn btn-next">Next</button></a>
