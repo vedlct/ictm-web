@@ -965,12 +965,16 @@ class ApplyOnlinem extends CI_Model
 
             $error = $this->db->insert('personexperience', $data1);
 
+        }else{
+
+            //  $error = $this->db->insert('personexperience', $data);
+
+            $this->db->where('id', $experienceid);
+            $error=$this->db->update('personexperience', $data);
+
         }
 
-      //  $error = $this->db->insert('personexperience', $data);
 
-        $this->db->where('id', $experienceid);
-        $error=$this->db->update('personexperience', $data);
     }
 
     public function deleteExperience($experienceId){

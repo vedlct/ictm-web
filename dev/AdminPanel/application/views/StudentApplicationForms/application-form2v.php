@@ -131,7 +131,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                <a href="<?php echo base_url()?>Admin/StudentApplication/viewApplication/<?php echo $this->session->userdata('studentApplicationId')?>" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button type="button"  class="btn ">Next</button></a>

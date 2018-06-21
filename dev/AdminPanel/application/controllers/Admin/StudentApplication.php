@@ -298,9 +298,9 @@ class StudentApplication extends CI_Controller
 
                 );
 
+
                 $this->data['error']=$this->StudentApplicationm->editApplyForm1($data,$data1);
 
-                //  print_r($this->session->userdata('studentApplicationId'));
 
 
                 if (empty($this->data['error'])) {
@@ -370,9 +370,20 @@ class StudentApplication extends CI_Controller
                 $courseName = $this->input->post("courseName");
                 $awardingBody = $this->input->post("awardingBody");
                 $courseLevel = $this->input->post("courseLevel");
-                $courseStartDate = $this->input->post("courseStartDate");
-                $courseEndDate = $this->input->post("courseEndDate");
+//                $courseStartDate = $this->input->post("courseStartDate");
+//                $courseEndDate = $this->input->post("courseEndDate");
                 $methodeOfStudy = $this->input->post("methodeOfStudy");
+
+                $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
+                $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
+                $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
+
+                $courseSession = $this->input->post("courseSession");
+                $courseYear = $this->input->post("courseYear");
+                $timeOfStudy = $this->input->post("timeOfStudy");
+                $ulnNo = $this->input->post("ulnNo");
+                $ucasCourseCode = $this->input->post("ucasCourseCode");
+
                 // $aplicationFormid=$this->session->userdata('id').date("YmdHis");
 
 //                $data3=array(
@@ -414,15 +425,35 @@ class StudentApplication extends CI_Controller
                     'emergencyContactAddressPo'=>$EmergencyContactAddressPO,
                     'emergencyContactMobile'=>$EmergencyContactMobile,
                     'emergencyContactEmail'=>$EmergencyContactEmail,
+
+                    'currentAddressCountry'=>$candidateCurrentAddressCountry,
+                    'permanentAddressCountry'=>$candidatePermanentAddressCountry,
+                    'emergencyContactCountry'=>$EmergencyContactCountry,
                 );
                 $data1=array(
+
+//                    'courseName'=>$courseName,
+//                    'awardingBody'=>$awardingBody,
+//                    'courseLevel'=>$courseLevel,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
+//                    'methodOfStudy'=>$methodeOfStudy,
+
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
                     'courseLevel'=>$courseLevel,
-                    'courseStartDate'=>$courseStartDate,
-                    'courseEndDate'=>$courseEndDate,
+//                    'courseStartDate'=>$courseStartDate,
+//                    'courseEndDate'=>$courseEndDate,
                     'methodOfStudy'=>$methodeOfStudy,
+
+                    'courseSession'=>$courseSession,
+                    'courseYear'=>$courseYear,
+                    'timeOfStudy'=>$timeOfStudy,
+                    'ulnNo'=>$ulnNo,
+                    'ucasCourseCode'=>$ucasCourseCode,
+
                 );
+
                 $this->data['error']=$this->StudentApplicationm->editApplyForm1($data,$data1);
 
                 if (empty($this->data['error'])) {
@@ -430,7 +461,7 @@ class StudentApplication extends CI_Controller
 
                     $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
 
-                    redirect('Admin/StudentApplication/viewApplication/'.$this->session->userdata('studentApplicationId'));
+                    redirect('Admin/StudentApplication/editStudentApplicationQualification');
 
                 } else {
 
@@ -655,7 +686,8 @@ class StudentApplication extends CI_Controller
                 $this->data['experience'] = $this->StudentApplicationm->getExprerience($applicationId);
                 $this->load->view('StudentApplicationForms/application-form10v', $this->data);
 
-            }else{
+            }
+            else{
                 $this->StudentApplicationm->applyNow10update();
                 redirect('Admin/StudentApplication/editStudentApplicationWorkExperience');
             }
@@ -703,17 +735,31 @@ class StudentApplication extends CI_Controller
                 foreach ( $firstLanguage as $First){
                     $this->data['fLanguage']=$First->firstLanguageEnglish;
                 }
+                if ($this->data['fLanguage'] == '1') {
+
+                    $this->data['fLanguage']='1';
+                    $this->load->view('StudentApplicationForms/application-form3', $this->data);
+
+                }else{
+
+
+                    $this->data['fLanguage']='0';
+                    $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
+                    $this->load->view('StudentApplicationForms/application-form3v', $this->data);
+
+                }
+
 
             }else{
                 $this->data['fLanguage']=null;
+                $this->load->view('StudentApplicationForms/application-form3', $this->data);
 
             }
 
-            $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
-            $this->load->view('StudentApplicationForms/application-form3v', $this->data);
 
 
-        }else{
+        }
+        else{
 
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -722,6 +768,68 @@ class StudentApplication extends CI_Controller
 
         }
 
+    }
+
+    public function insertApplicationForm3AndNext() // insert application form 3 and go form 4
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->data['error']=$this->StudentApplicationm->applyNow3Insert();
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                redirect('Admin/StudentApplication/editStudentApplicationFinance');
+
+            } else {
+
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
+
+            }
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+
+        }
+    }
+
+    public function insertApplicationForm3() // insert application form 3
+    {
+
+        if ($this->session->userdata('loggedin') == "true") {
+
+
+
+
+            $this->data['error']=$this->StudentApplicationm->applyNow3Insert();
+
+
+            if (empty($this->data['error'])) {
+
+                $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
+
+            } else {
+
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
+
+            }
+
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
     }
 
     public function EditPersonalExperience()
@@ -744,27 +852,38 @@ class StudentApplication extends CI_Controller
 
     public function updateEnglishLagugeProficiency(){
         if ($this->session->userdata('loggedin') == "true") {
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('applyfrom3')) {
+
+
+            $firstLanguage = $this->input->post('firstLanguage');
+            if ($firstLanguage=='0'){
+
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfrom3')) {
 
 
 
-                $applicationId = $this->session->userdata('studentApplicationId');
-                $firstLanguage = $this->StudentApplicationm->getfirstLanguage($applicationId);
+                    $applicationId = $this->session->userdata('studentApplicationId');
+                 //   $firstLanguage = $this->StudentApplicationm->getfirstLanguage($applicationId);
+                    $this->data['fLanguage']='0';
 
-                if(!empty($firstLanguage)){
-
-                    foreach ( $firstLanguage as $First){
-                        $this->data['fLanguage']=$First->firstLanguageEnglish;
-                    }
-
+                    $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
+                    $this->load->view('StudentApplicationForms/application-form3v', $this->data);
                 }else{
-                    $this->data['fLanguage']=null;
+                    $this->data['error']=$this->StudentApplicationm->applyNow3update();
+                    if (empty($this->data['error'])) {
 
+
+                        $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                        redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
+
+                    } else {
+
+
+                        $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                        redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
+
+                    }
                 }
-
-                $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
-                $this->load->view('StudentApplicationForms/application-form3v', $this->data);
 
             }
             else {
@@ -783,9 +902,8 @@ class StudentApplication extends CI_Controller
                     redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
 
                 }
-
-
             }
+
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -795,28 +913,65 @@ class StudentApplication extends CI_Controller
     }
     public function editORInsertApplicationForm3AndNext(){
         if ($this->session->userdata('loggedin') == "true") {
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('applyfrom3')) {
 
-                $applicationId = $this->session->userdata('studentApplicationId');
-                $firstLanguage = $this->StudentApplicationm->getfirstLanguage($applicationId);
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom3')) {
+//
+//                $applicationId = $this->session->userdata('studentApplicationId');
+//                $firstLanguage = $this->StudentApplicationm->getfirstLanguage($applicationId);
+//
+//                if(!empty($firstLanguage)){
+//
+//                    foreach ( $firstLanguage as $First){
+//                        $this->data['fLanguage']=$First->firstLanguageEnglish;
+//                    }
+//
+//                }else{
+//                    $this->data['fLanguage']=null;
+//
+//                }
+//
+//                $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
+//                $this->load->view('StudentApplicationForms/application-form3v', $this->data);
+//
+//            }
+//            else {
+            $firstLanguage = $this->input->post('firstLanguage');
+            if ($firstLanguage=='0'){
 
-                if(!empty($firstLanguage)){
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfrom3')) {
 
-                    foreach ( $firstLanguage as $First){
-                        $this->data['fLanguage']=$First->firstLanguageEnglish;
-                    }
 
+
+                    $applicationId = $this->session->userdata('studentApplicationId');
+                    //   $firstLanguage = $this->StudentApplicationm->getfirstLanguage($applicationId);
+                    $this->data['fLanguage']='0';
+
+                    $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
+                    $this->load->view('StudentApplicationForms/application-form3v', $this->data);
                 }else{
-                    $this->data['fLanguage']=null;
+
+                    $this->data['error']=$this->StudentApplicationm->applyNow3update();
+
+                    if (empty($this->data['error'])) {
+
+
+                        $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                        redirect('Admin/StudentApplication/editStudentApplicationFinance');
+
+                    } else {
+
+
+                        $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                        redirect('Admin/StudentApplication/editStudentApplicationFinance');
+
+                    }
 
                 }
 
-                $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
-                $this->load->view('StudentApplicationForms/application-form3v', $this->data);
+            }else{
 
-            }
-            else {
                 $this->data['error']=$this->StudentApplicationm->applyNow3update();
 
                 if (empty($this->data['error'])) {
@@ -833,8 +988,11 @@ class StudentApplication extends CI_Controller
 
                 }
 
-
             }
+
+
+
+//            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
