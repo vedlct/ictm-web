@@ -483,25 +483,47 @@ class ApplyOnline extends CI_Controller
 
             $firstLanguage = $this->ApplyOnlinem->getfirstLanguage($applicationId);
 
-            if(!empty($firstLanguage)){
-
-                foreach ( $firstLanguage as $First){
+            foreach ( $firstLanguage as $First){
                     $this->data['fLanguage']=$First->firstLanguageEnglish;
+            }
+
+
+
+            if(($this->data['fLanguage'] != null)){
+
+
+                if ($this->data['fLanguage'] == 1) {
+
+                    $this->data['fLanguage']='1';
+                    $this->load->view('application-form3', $this->data);
+
+                }
+                else{
+
+                    $this->data['fLanguage']='0';
+                    $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+
+                    $this->load->view('application-form3v', $this->data);
+
+
                 }
 
-            }else{
+            }
+
+            else{
                 $this->data['fLanguage']=null;
-
-            }
-
-            $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
-
-
-            if (empty($this->data['languagetest'])) {
                 $this->load->view('application-form3', $this->data);
-            } else {
-                $this->load->view('application-form3v', $this->data);
+
             }
+
+//            $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+//
+//
+//            if (empty($this->data['languagetest'])) {
+//                $this->load->view('application-form3', $this->data);
+//            } else {
+//                $this->load->view('application-form3v', $this->data);
+//            }
 
         }else{
 
@@ -1198,20 +1220,40 @@ class ApplyOnline extends CI_Controller
 
     public function editapplyNow3(){
         if ($this->session->userdata('loggedin') == "true") {
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('applyfrom3')) {
-                $this->menu();
-                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
-                $applicationId = $this->session->userdata('studentApplicationId');
+            $firstLanguage = $this->input->post('firstLanguage');
+            if ($firstLanguage=='0'){
 
-                $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfrom3')) {
 
-                if (empty($this->data['languagetest'])) {
-                    $this->load->view('application-form3', $this->data);
-                } else {
-                    $this->load->view('application-form3v', $this->data);
+                    $this->menu();
+                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                    $applicationId = $this->session->userdata('studentApplicationId');
+
+                    $this->data['fLanguage']='0';
+
+                    $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+                    $this->load->view('StudentApplicationForms/application-form3v', $this->data);
                 }
+                else{
+                    $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+                    if (empty($this->data['error'])) {
+
+
+                        $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                        redirect('ApplyForm3');
+
+                    } else {
+
+
+                        $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                        redirect('ApplyForm3');
+
+                    }
+                }
+
             }
             else {
                 $this->data['error']=$this->ApplyOnlinem->applyNow3update();
@@ -1232,6 +1274,42 @@ class ApplyOnline extends CI_Controller
 
 
             }
+
+            ////////////////////////
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom3')) {
+//                $this->menu();
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//
+//                $applicationId = $this->session->userdata('studentApplicationId');
+//
+//                $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+//
+//                if (empty($this->data['languagetest'])) {
+//                    $this->load->view('application-form3', $this->data);
+//                } else {
+//                    $this->load->view('application-form3v', $this->data);
+//                }
+//            }
+//            else {
+//                $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+//
+//                if (empty($this->data['error'])) {
+//
+//
+//                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+//                    redirect('ApplyForm3');
+//
+//                } else {
+//
+//
+//                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                    redirect('ApplyForm3');
+//
+//                }
+//
+//
+//            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -1240,23 +1318,49 @@ class ApplyOnline extends CI_Controller
         }
     }
     public function editORInsertApplicationForm3AndNext(){
+
         if ($this->session->userdata('loggedin') == "true") {
-            $this->load->library('form_validation');
-            if (!$this->form_validation->run('applyfrom3')) {
-                $this->menu();
-                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
-                $applicationId = $this->session->userdata('studentApplicationId');
 
-                $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+            $firstLanguage = $this->input->post('firstLanguage');
+            if ($firstLanguage=='0'){
 
-                if (empty($this->data['languagetest'])) {
-                    $this->load->view('application-form3', $this->data);
-                } else {
-                    $this->load->view('application-form3v', $this->data);
+                $this->load->library('form_validation');
+                if (!$this->form_validation->run('applyfrom3')) {
+
+                    $this->menu();
+                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                    $applicationId = $this->session->userdata('studentApplicationId');
+
+                    $this->data['fLanguage']='0';
+
+                    $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+                    $this->load->view('StudentApplicationForms/application-form3v', $this->data);
                 }
-            }
-            else {
+
+                else {
+                    $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+
+                    if (empty($this->data['error'])) {
+
+
+                        $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                        redirect('ApplyForm4');
+
+                    } else {
+
+
+                        $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                        redirect('ApplyForm4');
+
+                    }
+
+
+                }
+
+            }else{
+
                 $this->data['error']=$this->ApplyOnlinem->applyNow3update();
 
                 if (empty($this->data['error'])) {
@@ -1273,8 +1377,45 @@ class ApplyOnline extends CI_Controller
 
                 }
 
-
             }
+
+
+            ///////
+
+//            $this->load->library('form_validation');
+//            if (!$this->form_validation->run('applyfrom3')) {
+//                $this->menu();
+//                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+//
+//                $applicationId = $this->session->userdata('studentApplicationId');
+//
+//                $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+//
+//                if (empty($this->data['languagetest'])) {
+//                    $this->load->view('application-form3', $this->data);
+//                } else {
+//                    $this->load->view('application-form3v', $this->data);
+//                }
+//            }
+//            else {
+//                $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+//
+//                if (empty($this->data['error'])) {
+//
+//
+//                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+//                    redirect('ApplyForm4');
+//
+//                } else {
+//
+//
+//                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                    redirect('ApplyForm4');
+//
+//                }
+//
+//
+//            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');

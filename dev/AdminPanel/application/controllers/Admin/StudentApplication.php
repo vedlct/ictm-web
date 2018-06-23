@@ -868,7 +868,8 @@ class StudentApplication extends CI_Controller
 
                     $this->data['languagetest'] = $this->StudentApplicationm->getlanguagetest($applicationId);
                     $this->load->view('StudentApplicationForms/application-form3v', $this->data);
-                }else{
+                }
+                else{
                     $this->data['error']=$this->StudentApplicationm->applyNow3update();
                     if (empty($this->data['error'])) {
 

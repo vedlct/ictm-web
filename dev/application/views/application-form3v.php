@@ -51,7 +51,7 @@
                                     <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php }?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
-
+                            <div style="display: none" id="Englishproficience">
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div class="form-group">
@@ -70,7 +70,7 @@
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('listening'); ?></font></p>
-                                    <input type="text" class="form-control" id="listening" name="listening" required>
+                                    <input type="text" class="form-control" id="listening" name="listening" >
                                     <input type="hidden" id="listeningid" name="listeningid">
                                 </div>
                             </div>
@@ -79,7 +79,7 @@
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('reading'); ?></font></p>
-                                    <input type="text" class="form-control" id="reading" name="reading" required>
+                                    <input type="text" class="form-control" id="reading" name="reading" >
                                     <input type="hidden" id="readingid" name="readingid">
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('writing'); ?></font></p>
-                                    <input type="text" class="form-control" id="writing" name="writing" required>
+                                    <input type="text" class="form-control" id="writing" name="writing" >
                                     <input type="hidden" id="writingid" name="writingid">
                                 </div>
                             </div>
@@ -97,7 +97,7 @@
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('speaking'); ?></font></p>
-                                    <input type="text" class="form-control" id="speaking" name="speaking" required>
+                                    <input type="text" class="form-control" id="speaking" name="speaking" >
                                     <input type="hidden" id="speakingid" name="speakingid">
                                 </div>
                             </div>
@@ -106,7 +106,7 @@
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('overall'); ?></font></p>
-                                    <input type="text" class="form-control" id="overall" name="overall" required>
+                                    <input type="text" class="form-control" id="overall" name="overall" >
                                 </div>
                             </div>
 
@@ -114,7 +114,7 @@
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('expirydate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate" required>
+                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate" >
                                 </div>
                             </div>
                             <input type="hidden" value="" name="languagetestid" id="languagetestid">
@@ -132,13 +132,15 @@
                                     <textarea id="other" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
 
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
+
                                     <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>
 
 
@@ -235,6 +237,23 @@
             return false;
         });
     });
+
+    $("input[name=firstLanguage]").click( function () {
+
+        if ($(this).val()=='1'){
+            document.getElementById("Englishproficience").style.display = "none";
+        }else {
+            document.getElementById("Englishproficience").style.display = "block";
+        }
+    });
+    $(document).ready(function(){
+        if ('<?php echo $fLanguage?>'== '0'){
+            document.getElementById("Englishproficience").style.display = "block";
+        }else {
+            document.getElementById("Englishproficience").style.display = "none";
+        }
+    });
+
 </script>
 
 <script>
