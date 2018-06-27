@@ -130,6 +130,7 @@ class StudentApplication extends CI_Controller
         $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
         $this->data['finance'] = $this->StudentApplicationm->finance($applicationId);
         $this->data['referees'] = $this->StudentApplicationm->referees($applicationId);
+
         //$this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
 
         //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);

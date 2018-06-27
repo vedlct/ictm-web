@@ -413,6 +413,7 @@
                     <tr>
                         <td colspan="2">( Please put cross (X) in appropriate box )</td>
                     </tr>
+
                     <tr>
                         <td colspan="2"><b>Ethnicity</b></td>
                     </tr>
