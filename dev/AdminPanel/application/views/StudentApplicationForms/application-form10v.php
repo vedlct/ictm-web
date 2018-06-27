@@ -311,37 +311,32 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
     function checkForm() {
 
-        var Qualification=$('#qualification').val();
-        var institution=$('#institution').val();
+        var organisation=$('#organisation').val();
+        var positionHeld=$('#positionHeld').val();
         var startdate=$('#startdate').val();
         var enddate=$('#enddate').val();
-        var grade=$('#grade').val();
 
-        if (Qualification == ""){
+
+
+
+        if (organisation == ""){
             alert('Please add a Qualification');
             return false;
-        }if (Qualification.length > 100){
+        }if (positionHeld.length > 100){
             alert('Qualification must be less then 100 charecter');
             return false;
-        }if (institution == ""){
-            alert('Please add a institution');
-            return false;
-        }if (institution.length > 100){
-            alert('Institution must be less then 100 charecter');
-            return false;
+
         }if (startdate == ""){
             alert('Please add a startdate');
             return false;
         }if (enddate == ""){
             alert('Please add a enddate');
             return false;
-        }if (grade == ""){
-            alert('Please add a grade');
-            return false;
-        }if (grade.length > 20){
-            alert('grade must be less then 20 charecter');
-            return false;
-        }if (enddate < startdate){
+
+
+        }
+        if (enddate < startdate){
+
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }

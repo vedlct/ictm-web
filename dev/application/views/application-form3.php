@@ -56,7 +56,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
 
-
+                            <div style="display: none" id="Englishproficience">
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div id='TextBoxesGroup'>
@@ -130,6 +130,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
@@ -181,6 +182,23 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             return false;
         });
     });
+
+    $("input[name=firstLanguage]").click( function () {
+
+        if ($(this).val()=='1'){
+            document.getElementById("Englishproficience").style.display = "none";
+        }else {
+            document.getElementById("Englishproficience").style.display = "block";
+        }
+    });
+    $(document).ready(function(){
+        if ('<?php echo $fLanguage?>'== '0'){
+            document.getElementById("Englishproficience").style.display = "block";
+        }else {
+            document.getElementById("Englishproficience").style.display = "none";
+        }
+    });
+
 </script>
 
 <script>

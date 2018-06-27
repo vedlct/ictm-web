@@ -1,6 +1,13 @@
 
-<?php include("header.php"); ?>
+
+<?php $this->load->view('Admin/head.php'); ?>
+<!-- for Application Form -->
+<link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
+<!-- dateTimepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+
 <style>
+
     .datepicker .next ,.prev {
         position: relative !important;
     }
@@ -36,7 +43,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm3" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm3" method="post" class="form-horizontal">
 
                         <div class="form-top">
                             <div class="form-top-left">
@@ -56,7 +63,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
 
-
+                            <div style="display: none" id="Englishproficience">
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div id='TextBoxesGroup'>
@@ -130,6 +137,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
@@ -137,7 +145,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
                                     <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>
 
                                 </div>
@@ -152,8 +160,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
 
                 </div><!-- sidebar -->
@@ -162,14 +170,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
     </div>
 </section>
 
-<?php include("footer.php"); ?>
+<?php //include("footer.php"); ?>
 <!-- for Application form -->
-<script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-<script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 </div>
 </body>
 </html>
+
+<!-- datePicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 <script type="text/javascript">
     $(function () {
@@ -180,6 +192,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             e.preventDefault();
             return false;
         });
+    });
+
+    $("input[name=firstLanguage]").click( function () {
+
+        if ($(this).val()=='1'){
+            document.getElementById("Englishproficience").style.display = "none";
+        }else {
+            document.getElementById("Englishproficience").style.display = "block";
+        }
+    });
+    $(document).ready(function(){
+        if ('<?php echo $fLanguage?>'== '1'){
+            document.getElementById("Englishproficience").style.display = "none";
+        }else {
+            document.getElementById("Englishproficience").style.display = "block";
+        }
     });
 </script>
 

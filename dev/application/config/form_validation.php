@@ -595,13 +595,6 @@ $config = array (
                 'rules' => 'required|xss_clean|htmlspecialchars',
 
             ),
-
-
-
-
-
-
-
         ),
 
     'applyfromRefrees'=>

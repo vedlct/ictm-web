@@ -38,7 +38,7 @@
 </div>
 
 <section class="flat-row padding-small-v1">
-    <div class="container">
+    <div  class="container">
         <div class="row">
             <div class="col-md-9">
                 <?php foreach ($candidateInfos as $candidateInfo){ ?>
