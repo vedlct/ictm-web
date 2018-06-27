@@ -172,13 +172,25 @@ class StudentApplicationm extends CI_Model
          return $query->result();
     }
 
-     public function  equalOppurtunitiesgroup(){
+     public function  equalOppurtunitiesGroup(){
 
-
+         $this->db->select('*');
+         $query = $this->db->get('equalopportunitygroup');
+         return $query->result();
     }
 
-    public function  equalOppurtunities(){
+    public function  equalOppurtunitiesSubGroup(){
 
+        $this->db->select('*');
+        $query = $this->db->get('equalopportunitysubgroup');
+        return $query->result();
+    }
+    public function  personequalOppurtunities($applicationId){
+
+        $this->db->select('*');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('personequalopportunity');
+        return $query->result();
 
     }
 

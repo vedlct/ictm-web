@@ -414,29 +414,57 @@
                         <td colspan="2">( Please put cross (X) in appropriate box )</td>
                     </tr>
 
-                    <tr>
-                        <td colspan="2"><b>Ethnicity</b></td>
-                    </tr>
-                    <tr style="width: 100%">
-                        <td><input type="checkbox">  White - British <br>
-                            <input type="checkbox">  White - Irish <br> 
-                            <input type="checkbox">  White - Other <br>
-                            <input type="checkbox">  Mixed White / Black African <br>
-                            <input type="checkbox">  Mixed White / Black Caribbean <br>
-                            <input type="checkbox">  Mixed White / Asian <br>
-                            <input type="checkbox">  Mixed - Other <br>
-                            <input type="checkbox">  Chinese 
-                        </td>
-                        <td><input type="checkbox">  Asian / Asian British - Indian <br>
-                            <input type="checkbox">  Asian / Asian British - Pakistani <br> 
-                            <input type="checkbox">  Asian / Asian British - Bangladeshi <br>
-                            <input type="checkbox">  Black / Black British - Caribbean <br>
-                            <input type="checkbox">  Black / Black British - African <br>
-                            <input type="checkbox">  Black / Black British - Other <br>
-                            <input type="checkbox">  Other ethnic group <br>
-                            <input type="checkbox">  Please specify.................. 
-                        </td>
-                    </tr>
+                    <?php foreach ($equaloppurtunitiesgroup as $eog) {
+                        if ($eog->opportunityTitle == 'Ethnicity' ){
+
+                        ?>
+                                        <tr>
+                                            <td colspan="2"><b>Ethnicity</b></td>
+                                        </tr>
+
+                                    <tr style="width: 100%">
+                                        <td>
+                                       <?php $count = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+
+                                           if ($eosub->fkGroupId == $eog->id  ){
+                                               echo $count;
+                                           ?>
+
+
+                                        <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+
+                                       <?php $count++; } }?>
+                                        </td>
+                                    </tr>
+
+                        <?php
+                            break;
+                        } } ?>
+
+
+<!--                    <tr>-->
+<!--                        <td colspan="2"><b>Ethnicity</b></td>-->
+<!--                    </tr>-->
+<!--                    <tr style="width: 100%">-->
+<!--                        <td><input type="checkbox">  White - British <br>-->
+<!--                            <input type="checkbox">  White - Irish <br> -->
+<!--                            <input type="checkbox">  White - Other <br>-->
+<!--                            <input type="checkbox">  Mixed White / Black African <br>-->
+<!--                            <input type="checkbox">  Mixed White / Black Caribbean <br>-->
+<!--                            <input type="checkbox">  Mixed White / Asian <br>-->
+<!--                            <input type="checkbox">  Mixed - Other <br>-->
+<!--                            <input type="checkbox">  Chinese -->
+<!--                        </td>-->
+<!--                        <td><input type="checkbox">  Asian / Asian British - Indian <br>-->
+<!--                            <input type="checkbox">  Asian / Asian British - Pakistani <br> -->
+<!--                            <input type="checkbox">  Asian / Asian British - Bangladeshi <br>-->
+<!--                            <input type="checkbox">  Black / Black British - Caribbean <br>-->
+<!--                            <input type="checkbox">  Black / Black British - African <br>-->
+<!--                            <input type="checkbox">  Black / Black British - Other <br>-->
+<!--                            <input type="checkbox">  Other ethnic group <br>-->
+<!--                            <input type="checkbox">  Please specify.................. -->
+<!--                        </td>-->
+<!--                    </tr>-->
                 </table>
                 
 
