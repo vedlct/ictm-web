@@ -430,7 +430,7 @@
                                                echo $count;
                                            ?>
 
-
+                                        
                                         <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
 
                                        <?php $count++; } }?>
