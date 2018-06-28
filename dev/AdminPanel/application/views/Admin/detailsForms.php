@@ -426,14 +426,15 @@
                                         <td>
                                        <?php $count = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
 
-                                           if ($eosub->fkGroupId == $eog->id  ){
-                                               echo $count;
+                                           if ($eosub->fkGroupId == $eog->id  ){ ?>
+
+                                               <?php  if ($count==10){ ?> <td> <?php }
                                            ?>
 
 
                                         <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
 
-                                       <?php $count++; } }?>
+                                       <?php $count++; ?>  <?php } }?>
                                         </td>
                                     </tr>
 
