@@ -314,24 +314,24 @@
                         <td>Overall</td>
                         <td>Expiry Date</td>
                     </tr>
-<!--                    --><?php //foreach ($languageProficiency as $lp) {   ?>
-<!--                    <tr>-->
-<!--                        <td style="width: 15%">--><?php //echo $lp->title ?><!--</td>-->
-<!--                        --><?php //foreach ($languageProficiencyTestScore as $lpts) {
-//
-//                            if ($lpts->fkCandidateTestId == $lp->ctestid){
-//                            ?>
-<!--                        <td>--><?php //echo $lpts->score ?><!--</td>-->
-<!---->
-<!--                            --><?php //} } ?>
-<!--                        <td>--><?php //echo $lp->overallScore ?><!--</td>-->
-<!--                        <td>--><?php //echo $lp->expireDate ?><!--</td>-->
-<!--                    </tr>-->
-<!--                    --><?php //} ?>
+                    <?php foreach ($languageProficiency as $lp) {   ?>
+                    <tr>
+                        <td style="width: 15%"><?php echo $lp->title ?></td>
+                        <?php foreach ($languageProficiencyTestScore as $lpts) {
+
+                            if ($lpts->fkCandidateTestId == $lp->ctestid){
+                            ?>
+                        <td><?php echo $lpts->score ?></td>
+
+                            <?php } } ?>
+                        <td><?php echo $lp->overallScore ?></td>
+                        <td><?php echo $lp->expireDate ?></td>
+                    </tr>
+                    <?php } ?>
 
                     <tr>
                        <td>Other (Please specify)</td>
-<!--                        <td colspan="6">--><?php //echo $lp->other ?><!--</td>-->
+                        <td colspan="6"><?php echo $lp->other ?></td>
                     </tr>
                 </table>  
                                                                                                                                                                                               
@@ -414,8 +414,14 @@
                         <td colspan="2">( Please put cross (X) in appropriate box )</td>
                     </tr>
 
-                    <?php foreach ($equaloppurtunitiesgroup as $eog) {
+
+                    <?php $new = array() ;foreach ( $personequaloppurtunities as $po) {  array_push($new , $po->fkEqualOpportunitySubGroupId) ;}
+                    print_r($new);
+
+                   foreach ($equaloppurtunitiesgroup as $eog) {
                         if ($eog->opportunityTitle == 'Ethnicity' ){
+                            $n = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+                                if ($eosub->fkGroupId == $eog->id  ){$n++; }}
 
                         ?>
                                         <tr>
@@ -428,11 +434,11 @@
 
                                            if ($eosub->fkGroupId == $eog->id  ){ ?>
 
-                                               <?php  if ($count==10){ ?> <td> <?php }
+                                               <?php  if ($count==(round($n/2))){ ?> <td> <?php }
                                            ?>
 
-                                        
-                                        <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+
+                                        <input type="checkbox" <?php if (array_search($eosub->id , $new)!= null){ ?>checked <?php } ?> ><?php echo $eosub->subGroupTitle ?> <br>
 
                                        <?php $count++; ?>  <?php } }?>
                                         </td>
@@ -442,54 +448,40 @@
                             break;
                         } } ?>
 
-
-<!--                    <tr>-->
-<!--                        <td colspan="2"><b>Ethnicity</b></td>-->
-<!--                    </tr>-->
-<!--                    <tr style="width: 100%">-->
-<!--                        <td><input type="checkbox">  White - British <br>-->
-<!--                            <input type="checkbox">  White - Irish <br> -->
-<!--                            <input type="checkbox">  White - Other <br>-->
-<!--                            <input type="checkbox">  Mixed White / Black African <br>-->
-<!--                            <input type="checkbox">  Mixed White / Black Caribbean <br>-->
-<!--                            <input type="checkbox">  Mixed White / Asian <br>-->
-<!--                            <input type="checkbox">  Mixed - Other <br>-->
-<!--                            <input type="checkbox">  Chinese -->
-<!--                        </td>-->
-<!--                        <td><input type="checkbox">  Asian / Asian British - Indian <br>-->
-<!--                            <input type="checkbox">  Asian / Asian British - Pakistani <br> -->
-<!--                            <input type="checkbox">  Asian / Asian British - Bangladeshi <br>-->
-<!--                            <input type="checkbox">  Black / Black British - Caribbean <br>-->
-<!--                            <input type="checkbox">  Black / Black British - African <br>-->
-<!--                            <input type="checkbox">  Black / Black British - Other <br>-->
-<!--                            <input type="checkbox">  Other ethnic group <br>-->
-<!--                            <input type="checkbox">  Please specify.................. -->
-<!--                        </td>-->
-<!--                    </tr>-->
                 </table>
                 
 
                 <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
 
-                    <tr>
-                        <td colspan="2"><b>Disabilities</b></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox">  No known disability <br>
-                            <input type="checkbox">  Special learning difficulty / Dyslexia <br> 
-                            <input type="checkbox">  Autistic Spectrum Disorder <br>
-                            <input type="checkbox">  Blind / Partially sighted <br>
-                            <input type="checkbox">  Deaf / hearing impairment <br>
-                            <input type="checkbox">  Two or More Impairments <br>
-                        </td>
-                        <td><input type="checkbox">  Wheelchair user / Mobility difficulties <br>
-                            <input type="checkbox">  Personal care support <br> 
-                            <input type="checkbox">  Mental health difficulties <br>
-                            <input type="checkbox">  Unseen disability e.g. diabetes <br>
-                            <input type="checkbox">  Multiple disabities <br>
-                            <input type="checkbox">  other................  
-                        </td>
-                    </tr>
+                    <?php foreach ($equaloppurtunitiesgroup as $eog) {
+                        if ($eog->opportunityTitle == 'Disability' ){
+                            $n = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+                                if ($eosub->fkGroupId == $eog->id  ){$n++; }}
+
+                            ?>
+                            <tr>
+                                <td colspan="2"><b>Disabilities</b></td>
+                            </tr>
+
+                            <tr style="width: 100%">
+                                <td>
+                                    <?php $count = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+
+                                    if ($eosub->fkGroupId == $eog->id  ){ ?>
+
+                                    <?php  if ($count==round($n/2)){ ?> <td> <?php }
+                                    ?>
+
+
+                                    <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+
+                                    <?php $count++; ?>  <?php } }?>
+                                </td>
+                            </tr>
+
+                            <?php
+                            break;
+                        } } ?>
                     <tr>
                         <td  colspan="2" style="width: 50%;"><span style="margin-right: 100px;">If disabled, are you receiving any Disability Allowances ? </span>
                              <input type="checkbox">  Yes
@@ -500,42 +492,75 @@
                 </table>
 <!--                -->
                 <table border="0" style="width:100%; margin-top: 30px;">
-                    <tr>
-                        <td colspan="2"><b>Religion or Belief</b></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox">  No religion <br>
-                            <input type="checkbox">  Buddhist <br> 
-                            <input type="checkbox">  Christian <br>
-                            <input type="checkbox">  Christian - Church of Scotland <br>
-                            <input type="checkbox">  Christian - Roman Catholic <br>
-                            <input type="checkbox">  Christian - Other denomination <br>
-                            <input type="checkbox">  Hindu
-                        </td>
-                        <td><input type="checkbox">  Jewish <br>
-                            <input type="checkbox">  Muslim <br> 
-                            <input type="checkbox">  Sikh <br>
-                            <input type="checkbox">  Prefer not to say <br>
-                            <input type="checkbox">  Not known <br>
-                            <input type="checkbox">  other................  
-                        </td>
-                    </tr>
+
+
+                    <?php foreach ($equaloppurtunitiesgroup as $eog) {
+                        if ($eog->opportunityTitle == 'Religion Belief' ){
+                            $n = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+                                if ($eosub->fkGroupId == $eog->id  ){$n++; }}
+
+                            ?>
+                            <tr>
+                                <td colspan="2"><b>Religion Belief</b></td>
+                            </tr>
+
+                            <tr style="width: 100%">
+                                <td>
+                                    <?php $count = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+
+                                    if ($eosub->fkGroupId == $eog->id  ){ ?>
+
+                                    <?php  if ($count==round($n/2)){ ?> <td> <?php }
+                                    ?>
+
+
+                                    <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+
+                                    <?php $count++; ?>  <?php } }?>
+                                </td>
+                            </tr>
+
+                            <?php
+                            break;
+                        } } ?>
+
+
                 </table>
 <!--                -->
                 <table border="0" style="width:100%; margin-top: 30px;">
-                    <tr>
-                        <td colspan="2"><b>Sexual Orientation</b></td>
-                    </tr>
-                    <tr>
-                        <td><input type="checkbox">  Bisexual <br>
-                            <input type="checkbox">  Gay man <br> 
-                            <input type="checkbox">  Gay woman/lesbian
-                        </td>
-                        <td><input type="checkbox">  Heterosexual <br>
-                            <input type="checkbox">  Prefer not to say <br> 
-                            <input type="checkbox">  other................  
-                        </td>
-                    </tr>
+
+                    <?php foreach ($equaloppurtunitiesgroup as $eog) {
+                        if ($eog->opportunityTitle == 'Sexual Orientation' ){
+                            $n = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+                                if ($eosub->fkGroupId == $eog->id  ){$n++; }}
+
+                            ?>
+                            <tr>
+                                <td colspan="2"><b>Sexual Orientation</b></td>
+                            </tr>
+
+                            <tr style="width: 100%">
+                                <td>
+                                    <?php $count = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+
+                                    if ($eosub->fkGroupId == $eog->id  ){ ?>
+
+                                    <?php  if ($count==round($n/2)){ ?> <td> <?php }
+                                    ?>
+
+
+                                    <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+
+                                    <?php $count++; ?>  <?php } }?>
+                                </td>
+                            </tr>
+
+                            <?php
+                            break;
+                        } }   ?>
+
+
+
                 </table> 
                 
 <!--                <p style="page-break-before: always"></p>  -->
