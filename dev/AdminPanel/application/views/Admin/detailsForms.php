@@ -416,7 +416,7 @@
 
 
                     <?php $new = array() ;foreach ( $personequaloppurtunities as $po) {  array_push($new , $po->fkEqualOpportunitySubGroupId) ;}
-                    print_r($new);
+                   // print_r($new);
 
                    foreach ($equaloppurtunitiesgroup as $eog) {
                         if ($eog->opportunityTitle == 'Ethnicity' ){
@@ -436,9 +436,13 @@
 
                                                <?php  if ($count==(round($n/2))){ ?> <td> <?php }
                                            ?>
+                                            <?php foreach ( $personequaloppurtunities as $po) {  if ($po->fkEqualOpportunitySubGroupId == $eosub->id) { ?>
 
+                                        <input type="checkbox"  checked ><?php echo $eosub->subGroupTitle ?> <br>
 
-                                        <input type="checkbox" <?php if (array_search($eosub->id , $new)!= null){ ?>checked <?php } ?> ><?php echo $eosub->subGroupTitle ?> <br>
+                                                <?php }else { ?>
+                                                   <input type="checkbox"  ><?php echo $eosub->subGroupTitle ?> <br>
+                                                <?php } }?>
 
                                        <?php $count++; ?>  <?php } }?>
                                         </td>
