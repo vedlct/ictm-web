@@ -136,7 +136,7 @@ class StudentApplication extends CI_Controller
 
         $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
 
-       // print_r($this->data['finance']);
+        // print_r($this->data['personequaloppurtunities']);
 
         //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
         $this->load->view('Admin/detailsForms', $this->data);

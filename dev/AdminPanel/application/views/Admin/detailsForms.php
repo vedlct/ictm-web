@@ -486,16 +486,23 @@
                                 </td>
                             </tr>
 
+
+                    <tr>
+                        <td  colspan="2" style="width: 50%;"><span style="margin-right: 100px;">If disabled, are you receiving any Disability Allowances ? </span>
+
+                            <?php foreach ( $personequaloppurtunities as $po) { if ($po->opportunityTitle == 'Disability'){ ?>
+
+
+
+                             <input type="checkbox"  <?php if ($po->disabilityAllowance == '1') {echo "checked=checked";}?> >  Yes
+                            <input type="checkbox" <?php if ($po->disabilityAllowance == '0') {echo "checked=checked";}?> >  No
+                            <input type="checkbox" <?php if ($po->disabilityAllowance == '2') {echo "checked=checked";}?> >  Prefer Not to say
+                            <?php }} ?>
+                        </td>
+                    </tr>
                             <?php
                             break;
                         } } ?>
-                    <tr>
-                        <td  colspan="2" style="width: 50%;"><span style="margin-right: 100px;">If disabled, are you receiving any Disability Allowances ? </span>
-                             <input type="checkbox">  Yes
-                            <input type="checkbox">  No
-                            <input type="checkbox">  Prefer Not to say
-                        </td>
-                    </tr>
                 </table>
 <!--                -->
                 <table border="0" style="width:100%; margin-top: 30px;">

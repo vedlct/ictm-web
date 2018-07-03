@@ -1787,6 +1787,8 @@ class ApplyOnline extends CI_Controller
             $check_list2 = $this->input->post('check_list2');
             $check_list3 = $this->input->post('check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
             $applicationId = $this->session->userdata('studentApplicationId');
@@ -1805,6 +1807,7 @@ class ApplyOnline extends CI_Controller
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
                         'fkApplicationId' => $applicationId,
+                        'disabilityAllowance' => $disabilityAllowance,
 
                     );
 
@@ -1866,6 +1869,8 @@ class ApplyOnline extends CI_Controller
             $Id_check_list2 = $this->input->post('id_check_list2');
             $Id_check_list3 = $this->input->post('id_check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
 
@@ -1886,6 +1891,7 @@ class ApplyOnline extends CI_Controller
 
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'disabilityAllowance' => $disabilityAllowance,
 
 
                     );
@@ -1954,6 +1960,8 @@ class ApplyOnline extends CI_Controller
             $Id_check_list2 = $this->input->post('id_check_list2');
             $Id_check_list3 = $this->input->post('id_check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
 
@@ -1974,6 +1982,7 @@ class ApplyOnline extends CI_Controller
 
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'disabilityAllowance' => $disabilityAllowance,
 
 
                     );
