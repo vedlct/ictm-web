@@ -134,7 +134,9 @@ class StudentApplication extends CI_Controller
         $this->data['equaloppurtunitiesgroupsubgroup'] = $this->StudentApplicationm->equalOppurtunitiesSubGroup();
         $this->data['personequaloppurtunities'] = $this->StudentApplicationm->personequalOppurtunities($applicationId);
 
-        //$this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+        $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+
+       // print_r($this->data['finance']);
 
         //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
         $this->load->view('Admin/detailsForms', $this->data);

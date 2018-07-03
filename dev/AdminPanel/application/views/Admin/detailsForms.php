@@ -370,12 +370,13 @@
                     <?php foreach ($finance as $f) {?>
                     <tr>
                         <td style="width: 25%;">Source of Finance:</td>
-                        <td><input type="checkbox">  SLC &nbsp;
-                            <input type="checkbox">  Own Funding &nbsp;
-                            <input type="checkbox">  Sponsorship
+                        <td><input type="checkbox" <?php if ($f->sourceOfFinance == 'slc') {echo "checked=checked";}?> >  SLC &nbsp;
+                            <input type="checkbox" <?php if ($f->sourceOfFinance == 'own') {echo "checked=checked";}?> >  Own Funding &nbsp;
+                            <input type="checkbox" <?php if ($f->sourceOfFinance == 'sponsor') {echo "checked=checked";}?> >  Sponsorship
                             
                         </td>
                     </tr>
+                        <?php if ($f->sourceOfFinance != 'own'){?>
                     <tr>
                         <td colspan="4"><b>Name and address of person or organisation of sponsorship</b></td>
                     </tr>
@@ -402,7 +403,7 @@
                         <td style="width: 10%;">Email</td>
                         <td style="width: 50%;"><?php echo  $f->email ?></td>
                     </tr>
-                    <?php } ?>
+                    <?php }} ?>
                 </table>
 
                 <table border="0" style="width:100%; margin-top: 30px;">
@@ -415,12 +416,13 @@
                     </tr>
 
 
-                    <?php $new = array() ;foreach ( $personequaloppurtunities as $po) {  array_push($new , $po->fkEqualOpportunitySubGroupId) ;}
+<!--                    --><?php //$new = array() ;foreach ( $personequaloppurtunities as $po) {  array_push($new , $po->fkEqualOpportunitySubGroupId) ;}
                    // print_r($new);
 
                    foreach ($equaloppurtunitiesgroup as $eog) {
                         if ($eog->opportunityTitle == 'Ethnicity' ){
-                            $n = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
+                            $n = 0 ;
+                            foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
                                 if ($eosub->fkGroupId == $eog->id  ){$n++; }}
 
                         ?>
@@ -436,15 +438,12 @@
 
                                                <?php  if ($count==(round($n/2))){ ?> <td> <?php }
                                            ?>
-                                            <?php foreach ( $personequaloppurtunities as $po) {  if ($po->fkEqualOpportunitySubGroupId == $eosub->id) { ?>
+                                            <?php foreach ( $personequaloppurtunities as $po) { if ($po->opportunityTitle == 'Ethnicity'){ ?>
 
-                                        <input type="checkbox"  checked ><?php echo $eosub->subGroupTitle ?> <br>
+                                                   <input type="checkbox" <?php if ($po->fkEqualOpportunitySubGroupId == $eosub->id) {echo "checked=checked";}?> > <?php echo $eosub->subGroupTitle ?> <br>
+                                                <?php }} ?>
 
-                                                <?php }else { ?>
-                                                   <input type="checkbox"  ><?php echo $eosub->subGroupTitle ?> <br>
-                                                <?php } }?>
-
-                                       <?php $count++; ?>  <?php } }?>
+                                       <?php $count++; ?>  <?php } } ?>
                                         </td>
                                     </tr>
 
@@ -476,8 +475,12 @@
                                     <?php  if ($count==round($n/2)){ ?> <td> <?php }
                                     ?>
 
+                                    <?php foreach ( $personequaloppurtunities as $po) { if ($po->opportunityTitle == 'Disability'){ ?>
 
-                                    <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+                                        <input type="checkbox" <?php if ($po->fkEqualOpportunitySubGroupId == $eosub->id) {echo "checked=checked";}?>><?php echo $eosub->subGroupTitle ?> <br>
+                                    <?php }} ?>
+
+
 
                                     <?php $count++; ?>  <?php } }?>
                                 </td>
@@ -517,8 +520,12 @@
                                     <?php  if ($count==round($n/2)){ ?> <td> <?php }
                                     ?>
 
+                                    <?php foreach ( $personequaloppurtunities as $po) { if ($po->opportunityTitle == 'Religion Belief'){ ?>
 
-                                    <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+                                        <input type="checkbox" <?php if ($po->fkEqualOpportunitySubGroupId == $eosub->id) {echo "checked=checked";}?>><?php echo $eosub->subGroupTitle ?> <br>
+                                    <?php }} ?>
+
+
 
                                     <?php $count++; ?>  <?php } }?>
                                 </td>
@@ -552,8 +559,12 @@
                                     <?php  if ($count==round($n/2)){ ?> <td> <?php }
                                     ?>
 
+                                    <?php foreach ( $personequaloppurtunities as $po) { if ($po->opportunityTitle == 'Sexual Orientation'){ ?>
 
-                                    <input type="checkbox"><?php echo $eosub->subGroupTitle ?> <br>
+                                        <input type="checkbox" <?php if ($po->fkEqualOpportunitySubGroupId == $eosub->id) {echo "checked=checked";}?>><?php echo $eosub->subGroupTitle ?> <br>
+                                    <?php }} ?>
+
+
 
                                     <?php $count++; ?>  <?php } }?>
                                 </td>

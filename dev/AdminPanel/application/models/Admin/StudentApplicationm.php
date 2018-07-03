@@ -165,10 +165,10 @@ class StudentApplicationm extends CI_Model
 
      public function  finance($applicationId){
 
-         $this->db->select('financer.*,sourceOfFinance ');
-         $this->db->where('fkApplicationId =', $applicationId);
-         $this->db->join('candidateinfo', 'candidateinfo.applicationId = financer.fkApplicationId', 'left');
-         $query = $this->db->get('financer');
+         $this->db->select('financer.*,candidateinfo.sourceOfFinance ');
+         $this->db->where('applicationId =', $applicationId);
+         $this->db->join('financer', 'financer.fkApplicationId = candidateinfo.applicationId', 'left');
+         $query = $this->db->get('candidateinfo');
          return $query->result();
     }
 
@@ -188,6 +188,8 @@ class StudentApplicationm extends CI_Model
     public function  personequalOppurtunities($applicationId){
 
         $this->db->select('*');
+        $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
         $this->db->where('fkApplicationId =', $applicationId);
         $query = $this->db->get('personequalopportunity');
         return $query->result();
