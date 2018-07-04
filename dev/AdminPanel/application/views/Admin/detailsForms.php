@@ -284,10 +284,13 @@
 <!--                </table>-->
 <!--                <table style="width:100%;">-->
                     <tr>
+
                         <td colspan="2">Is English your first language ?</td>
-                        <td colspan="5">
-                            <input type="checkbox" >  Yes &nbsp; &nbsp;
-                            <input type="checkbox">  No</td>
+                        <?php foreach ($contactDetails as $cd){?>
+                        <td colspan="5"><input type="checkbox" value="1" <?php if ($cd->firstLanguageEnglish =="1") {?> checked <?php } ?>>  Yes &nbsp; &nbsp;
+                            <input type="checkbox" value="0" <?php if ($cd->firstLanguageEnglish =="0") {?> checked <?php } ?> >  No</td>
+                        <?php } ?>
+
                     </tr>
                 </table> 
                                                                                                        
@@ -494,7 +497,7 @@
                         } } ?>
                 </table>
 
-                <table border="0" style="width:100%; margin-top: 15px; page-break-before: always">
+                <table border="0" style="width:100%; margin-top: 15px;page-break-before: always ">
 
 
                     <?php foreach ($equaloppurtunitiesgroup as $eog) {
@@ -576,7 +579,7 @@
                 
 
                 
-                <table border="0" style="width:100%; margin-top: 15px;">
+                <table border="0" style="width:100%; margin-top: 15px; ">
                     <tr style="background: #B0DBF0;">
                         <td colspan="4"> <b>Section G</b> <b style="margin-left: 200px;">Referees</b></td>
                     </tr> 
