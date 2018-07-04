@@ -296,8 +296,10 @@
                 <table style="width:100%;">
                     <tr>
                         <td style="width: 30%">Is English your first language ?</td>
-                        <td><input type="checkbox" >  Yes &nbsp; &nbsp;
-                            <input type="checkbox">  No</td>
+                        <?php foreach ($contactDetails as $cd){?>
+                        <td><input type="checkbox" value="1" <?php if ($cd->firstLanguageEnglish =="1") {?> checked <?php } ?>>  Yes &nbsp; &nbsp;
+                            <input type="checkbox" value="0" <?php if ($cd->firstLanguageEnglish =="0") {?> checked <?php } ?> >  No</td>
+                        <?php } ?>
                     </tr>
                     <tr>
                         <td colspan="2">If English is not your first language, please state your qualifications.</td>
