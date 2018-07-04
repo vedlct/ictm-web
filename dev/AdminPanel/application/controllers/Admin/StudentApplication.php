@@ -83,7 +83,7 @@ class StudentApplication extends CI_Controller
 //            $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
 
             //$applicationId = $this->input->post();
-            $applicationId = 4;
+       /*     $applicationId = 4;
 
             $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
             $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
@@ -99,6 +99,28 @@ class StudentApplication extends CI_Controller
             //$this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
 
             //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
+            $html=$this->load->view('Admin/detailsForms', $this->data,true);
+
+            $filename = 'testPdf';
+            $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');*/
+
+            $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
+            $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
+            $this->data['emmergencyContact'] = $this->StudentApplicationm->emmergancyContact($applicationId);
+            $this->data['courseDetails'] = $this->StudentApplicationm->courseDetails($applicationId);
+            $this->data['qualifications'] = $this->StudentApplicationm->qualifications($applicationId);
+            $this->data['experience'] = $this->StudentApplicationm->workExperience($applicationId);
+            $this->data['languageProficiency'] = $this->StudentApplicationm->languageProficiency($applicationId);
+            $this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore();
+            $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+            $this->data['finance'] = $this->StudentApplicationm->finance($applicationId);
+            $this->data['referees'] = $this->StudentApplicationm->referees($applicationId);
+            $this->data['equaloppurtunitiesgroup'] = $this->StudentApplicationm->equalOppurtunitiesGroup();
+            $this->data['equaloppurtunitiesgroupsubgroup'] = $this->StudentApplicationm->equalOppurtunitiesSubGroup();
+            $this->data['personequaloppurtunities'] = $this->StudentApplicationm->personequalOppurtunities($applicationId);
+
+            $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
+
             $html=$this->load->view('Admin/detailsForms', $this->data,true);
 
             $filename = 'testPdf';
@@ -136,7 +158,7 @@ class StudentApplication extends CI_Controller
 
         $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
 
-        // print_r($this->data['personequaloppurtunities']);
+       //  print_r($this->data['languageProficiency']);
 
         //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
         $this->load->view('Admin/detailsForms', $this->data);
@@ -1411,6 +1433,8 @@ class StudentApplication extends CI_Controller
             $Id_check_list2 = $this->input->post('id_check_list2');
             $Id_check_list3 = $this->input->post('id_check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->StudentApplicationm->checkopportunityTitle();
 
@@ -1431,6 +1455,7 @@ class StudentApplication extends CI_Controller
 
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'disabilityAllowance' => $disabilityAllowance,
 
 
                     );
@@ -1500,6 +1525,8 @@ class StudentApplication extends CI_Controller
             $Id_check_list2 = $this->input->post('id_check_list2');
             $Id_check_list3 = $this->input->post('id_check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->StudentApplicationm->checkopportunityTitle();
 
@@ -1520,6 +1547,7 @@ class StudentApplication extends CI_Controller
 
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'disabilityAllowance' => $disabilityAllowance,
 
 
                     );
