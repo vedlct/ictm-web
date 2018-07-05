@@ -79,7 +79,32 @@
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
+
+                            <?php
+                            $applicationId = $this->session->userdata('studentApplicationId');
+                            $dir =   "./AdminPanel/studentApplications/$applicationId/";
+
+                            // Open a directory, and read its contents
+                            if (is_dir($dir)){
+                                if ($dh = opendir($dir)){
+                                    $count=1;
+                                    while (($file = readdir($dh)) !== false) {
+                                       if ($file != "." && $file != "..") {
+                                        echo $count . ". " ?>
+
+                                            <a target = "_blank" href = "<?php echo $dir ." / ". $file?>" > <?php echo $file . "<br>" ?> </a>
+                                            <?php
+                                    $count++;
+                                    }
+                                    }
+                                   // closedir($dh);
+                                }
+                            }
+                            ?>
+
+
                         </div>
+
 <!--                    </fieldset>-->
 
                 </form>
