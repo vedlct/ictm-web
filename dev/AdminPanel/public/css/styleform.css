@@ -55,10 +55,21 @@ table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
-th, td {
+/*th, td {*/
+    /*padding: 5px;*/
+    /*text-align: left;    */
+/*}*/
+
+/* rumi */
+th {
     padding: 5px;
-    text-align: left;    
+    text-align: left;
 }
+td {
+    padding: 3px;
+    text-align: left;
+}
+/* rumi */
 
 input {
     border: medium none;

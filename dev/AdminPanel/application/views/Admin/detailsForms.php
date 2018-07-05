@@ -6,24 +6,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url()?>public/css/styleform.css">
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-<!--        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    -->
+
     </head>
     
     <style>
         @page { size: auto;  margin: 0mm; }
+
     </style>
     <body>
         <div class="structure">
             <div style= "background: #fff; margin-bottom: 30px;padding: 25px "  class="container">
                
-                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                <table border="0" style="width:100%; margin-top: 15px; border: none;">
                     <tr>
                         <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
                         <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
                     </tr>
                 </table> 
-                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                <table border="0" style="width:100%; margin-top: 15px; border: none;">
                     <tr>
                         <td style="text-align: center; border: none; margin-left: 20px;"><h3 style="color: #E3352E; margin-left: 70px;">APPLICATION FORM</h3></td>
                        <td style="width: 13%; text-align: center; height: 120px;">photograph</td>
@@ -39,14 +39,11 @@
 
                     </tr>  
 
-                </table>     
-                
-
+                </table>
                 <table style="width:100%">
                     <?php foreach ($personalDetails as $pd) { ?>
                     <tr>
                         <td>First Name(s)</td>
-<!--                        <td colspan="3" >Title (Mr / Mrs / Ms / Miss, others....)</td>-->
                         <td colspan="3" ><?php echo $pd->title." ".$pd->firstName ?></td>
                     </tr>
                     <tr>
@@ -62,9 +59,11 @@
                         <td>Date of Birth</td>
                         <td><?php echo $pd->dateOfBirth?></td>
                         <td>Any Gender Changed</td>
-                        <td><input type="checkbox"> Yes
-                           <input type="checkbox"> No
-                            <input type="checkbox"> Prefer Not to say</td>
+                        <td>
+                            <input type="checkbox"> Yes
+                            <input type="checkbox"> No
+                            <input type="checkbox"> Prefer Not to say
+                        </td>
                     </tr>
                     <tr>
                         <td>Place of Birth</td>
@@ -92,10 +91,10 @@
                     <?php } ?>
                 </table>
                                            
-                <table style="width:100%; margin-top: 30px;">
+                <table style="width:100%; margin-top: 15px;">
                     <?php foreach ($contactDetails as $cd) {?>
                     <tr>
-                        <td colspan="5"> <b>Contact Details</b> </td>
+                        <td colspan="4"> <b>Contact Details</b> </td>
                     </tr>  
                                      
                     <tr>
@@ -132,9 +131,9 @@
                     </tr>
                     <?php } ?>
                 </table>
-<!--                                          <p style="page-break-before: always"></p>-->
+
                                            
-                <table style="width:100%; margin-top: 50px; page-break-before: always">
+                <table style="width:100%; margin-top: 15px;" >
                     <?php foreach ($emmergencyContact as $ec){ ?>
                     <tr>
                         <td colspan="6"> <b>Emmergency Contact Details/Next of kin</b> <small>(please tell us who you would like the college to contact in case of emmergency)</small> </td>
@@ -168,7 +167,7 @@
                           <?php } ?>
                 </table>     
                                            
-                <table style="width:100%; margin-top: 30px;">
+                <table style="width:100%; margin-top: 15px;page-break-before: always"" >
                     <?php foreach ($courseDetails as $cod)  {?>
                     <tr>
                         <td colspan="4"> <b>Course Details</b></td>
@@ -214,7 +213,7 @@
                     <?php } ?>
                 </table> 
                                            
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 15px;">
                    
                     <tr style="background: #B0DBF0;">
                         <td> <b>Section B</b> <b style="margin-left: 200px;">Qualifications</b> <small>(Highest qualification obtained or expected)</small></td>
@@ -246,15 +245,6 @@
 
                     <?php } ?>
 
-<!--                    <tr>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                        <td style="height: 70px;"></td>-->
-<!--                    </tr>-->
                     <tr>
                         <td colspan="7">Please forward the certificate and transcript of your qualifications(Officialy translated if not in English)</td>
                     </tr>
@@ -284,29 +274,30 @@
 
 
                 </table>  
-<!--                <p style="page-break-before: always"></p>    -->
 
-                <table border="0" style="width:100%; margin-top: 30px;">
+
+                <table border="0" style="width:100%; margin-top: 15px;">
                     <tr style="background: #B0DBF0;">
-                        <td> <b>Section C</b> <b style="margin-left: 200px;">English Language Proficiency</b></td>
+                        <td colspan="7"> <b>Section C</b> <b style="margin-left: 200px;">English Language Proficiency</b></td>
 
                     </tr> 
-                </table>  
-                                                                                                       
-                <table style="width:100%;">
+<!--                </table>-->
+<!--                <table style="width:100%;">-->
                     <tr>
-                        <td style="width: 30%">Is English your first language ?</td>
+
+                        <td colspan="2">Is English your first language ?</td>
                         <?php foreach ($contactDetails as $cd){?>
-                        <td><input type="checkbox" value="1" <?php if ($cd->firstLanguageEnglish =="1") {?> checked <?php } ?>>  Yes &nbsp; &nbsp;
+                        <td colspan="5"><input type="checkbox" value="1" <?php if ($cd->firstLanguageEnglish =="1") {?> checked <?php } ?>>  Yes &nbsp; &nbsp;
                             <input type="checkbox" value="0" <?php if ($cd->firstLanguageEnglish =="0") {?> checked <?php } ?> >  No</td>
                         <?php } ?>
-                    </tr>
-                    <tr>
-                        <td colspan="2">If English is not your first language, please state your qualifications.</td>
+
                     </tr>
                 </table> 
                                                                                                        
                 <table style="width:100%;">
+                    <tr>
+                        <td colspan="7">If English is not your first language, please state your qualifications.</td>
+                    </tr>
                     <tr>
                         <td style="width: 15%">Tests</td>
                         <td>Listening</td>
@@ -337,7 +328,7 @@
                     </tr>
                 </table>  
                                                                                                                                                                                               
-                <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
+                <table border="0" style="width:100%; margin-top: 15px;">
                     <tr style="background: #B0DBF0;">
                         <td> <b>Section D</b> <b style="margin-left: 200px;">Personal Statement</b></td>
 
@@ -364,33 +355,35 @@
                     <?php } ?>
                 </table> 
                                                                                                                                                                                               
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 15px; page-break-before: always">
                     <tr style="background: #B0DBF0;">
-                        <td colspan="4"> <b>Section E</b> <b style="margin-left: 200px;">Finance</b></td>
+                        <td colspan="4">
+                            <b>Section E</b> <b style="margin-left: 200px;">Finance</b>
+                        </td>
 
                     </tr> 
                     <?php foreach ($finance as $f) {?>
                     <tr>
                         <td style="width: 25%;">Source of Finance:</td>
-                        <td><input type="checkbox" <?php if ($f->sourceOfFinance == 'slc') {echo "checked=checked";}?> >  SLC &nbsp;
+                        <td colspan="3"><input type="checkbox" <?php if ($f->sourceOfFinance == 'slc') {echo "checked=checked";}?> >  SLC &nbsp;
                             <input type="checkbox" <?php if ($f->sourceOfFinance == 'own') {echo "checked=checked";}?> >  Own Funding &nbsp;
                             <input type="checkbox" <?php if ($f->sourceOfFinance == 'sponsor') {echo "checked=checked";}?> >  Sponsorship
                             
                         </td>
                     </tr>
-                        <?php if ($f->sourceOfFinance != 'own'){?>
+
                     <tr>
                         <td colspan="4"><b>Name and address of person or organisation of sponsorship</b></td>
                     </tr>
                     
                     <tr>
                         <td>Name</td>
-                        <td style="" colspan="7"><?php echo  $f->title." ".$f->name ?></td>
+                        <td style="" colspan="3"><?php echo  $f->title." ".$f->name ?></td>
 
                     </tr>
                     <tr>
                         <td colspan="">Relation</td>
-                        <td colspan="7"><?php echo  $f->relation ?></td>
+                        <td colspan="3"><?php echo  $f->relation ?></td>
 
                     </tr>
                     <tr>
@@ -405,23 +398,20 @@
                         <td style="width: 10%;">Email</td>
                         <td style="width: 50%;"><?php echo  $f->email ?></td>
                     </tr>
-                    <?php }} ?>
+                    <?php } ?>
                 </table>
 
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 15px;">
                     <tr style="background: #B0DBF0;">
-                        <td colspan="4"> <b>Section F</b> <b style="margin-left: 200px;">Equal oppurtunities Monitoring</b>
+                        <td colspan="4">
+                            <b>Section F</b> <b style="margin-left: 200px;">Equal oppurtunities Monitoring</b>
                         </td>
                     </tr> 
                     <tr>
-                        <td colspan="2">( Please put cross (X) in appropriate box )</td>
+                        <td colspan="4">( Please put cross (X) in appropriate box )</td>
                     </tr>
 
-
-<!--                    --><?php //$new = array() ;foreach ( $personequaloppurtunities as $po) {  array_push($new , $po->fkEqualOpportunitySubGroupId) ;}
-                   // print_r($new);
-
-                   foreach ($equaloppurtunitiesgroup as $eog) {
+                   <?php foreach ($equaloppurtunitiesgroup as $eog) {
                         if ($eog->opportunityTitle == 'Ethnicity' ){
                             $n = 0 ;
                             foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
@@ -429,16 +419,16 @@
 
                         ?>
                                         <tr>
-                                            <td colspan="2"><b>Ethnicity</b></td>
+                                            <td colspan="4"><b>Ethnicity</b></td>
                                         </tr>
 
                                     <tr style="width: 100%">
-                                        <td>
+                                        <td colspan="2">
                                        <?php $count = 0 ;foreach ($equaloppurtunitiesgroupsubgroup as $eosub) {
 
                                            if ($eosub->fkGroupId == $eog->id  ){ ?>
 
-                                               <?php  if ($count==(round($n/2))){ ?> <td> <?php }
+                                       <?php  if ($count==(round($n/2))){ ?></td> <td colspan="2"> <?php }
                                            ?>
                                             <?php foreach ( $personequaloppurtunities as $po) { if ($po->opportunityTitle == 'Ethnicity'){ ?>
 
@@ -456,7 +446,7 @@
                 </table>
                 
 
-                <table border="0" style="width:100%; margin-top: 30px;page-break-before: always">
+                <table border="0" style="width:100%; margin-top: 15px;">
 
                     <?php foreach ($equaloppurtunitiesgroup as $eog) {
                         if ($eog->opportunityTitle == 'Disability' ){
@@ -506,8 +496,8 @@
                             break;
                         } } ?>
                 </table>
-<!--                -->
-                <table border="0" style="width:100%; margin-top: 30px;">
+
+                <table border="0" style="width:100%; margin-top: 15px;page-break-before: always ">
 
 
                     <?php foreach ($equaloppurtunitiesgroup as $eog) {
@@ -546,8 +536,8 @@
 
 
                 </table>
-<!--                -->
-                <table border="0" style="width:100%; margin-top: 30px;">
+
+                <table border="0" style="width:100%; margin-top: 15px;">
 
                     <?php foreach ($equaloppurtunitiesgroup as $eog) {
                         if ($eog->opportunityTitle == 'Sexual Orientation' ){
@@ -587,9 +577,9 @@
 
                 </table> 
                 
-<!--                <p style="page-break-before: always"></p>  -->
+
                 
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 15px; ">
                     <tr style="background: #B0DBF0;">
                         <td colspan="4"> <b>Section G</b> <b style="margin-left: 200px;">Referees</b></td>
                     </tr> 
@@ -598,13 +588,13 @@
                 <table border="0" style="width:100%;">
                     <?php $count = 1;foreach ($referees as $cr) {?>
                     <tr>
-                        <td colspan="7"><b>Referee <?php echo $count ?></b></td>
+                        <td colspan="4"><b>Referee <?php echo $count ?></b></td>
                     </tr>
 
                     <tr>
                         <td>Name</td>
-                        <td style="width: 30%;"><?php echo $cr->title." ".$cr->name?></td>
-                        <td colspan="2"></td>
+                        <td colspan="3"><?php echo $cr->title." ".$cr->name?></td>
+
                     </tr>
                     <tr>
                         <td>Institution/Company</td>
@@ -649,9 +639,9 @@
                     </tr>
 
                 </table> 
-<!--                <p style="page-break-before: always"></p>  -->
+
                 
-                <table border="0" style="width:100%; margin-top: 30px;">
+                <table border="0" style="width:100%; margin-top: 15px;">
                     <tr style="background: #B0DBF0;">
                         <td colspan="4"> <b>FOR OFFICE USE ONLY</b></td>
                     </tr> 
@@ -710,8 +700,4 @@
                             <b>E-mail: <a href="mailto:info@iconcollege.ac.uk" target="_top">info@iconcollege.ac.uk</a>  &nbsp; Web: <a href="">www.iconcollege.ac.uk</a> </b> 
                             </td>
                     </tr>
-                </table>                                                                                                                                  
-            </div>
-        </div>
-    </body>
-</html>
+                </table></div></div></body></html>
