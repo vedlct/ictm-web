@@ -9,7 +9,26 @@ class Loginm extends CI_Model {
         $useremail = $this->input->post('useremail');
         $password = $this->input->post('password');
 
-        $q=$this->db->where(['email'=>$useremail,'password'=>$password])
+        $q=$this->db->where(['email'=>$useremail,'password'=>$password,'accountActivation'])
+            ->get('studentregistration');
+
+        if($q->num_rows())
+        {
+            return $q->row();
+        }
+
+
+        else
+        {
+            return false;
+        }
+    }
+    public function validate_userAfterActivatation($id)
+    {
+
+
+
+        $q=$this->db->where(['id'=>$id])
             ->get('studentregistration');
 
         if($q->num_rows())

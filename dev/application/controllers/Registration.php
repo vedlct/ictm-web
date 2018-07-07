@@ -44,6 +44,41 @@ class Registration extends CI_Controller {
 
 
     }
+    public function activateUser()
+    {
+        $id=$this->input->post('userId');
+        $token=$this->input->post('userToken');
+//        $id=9;
+//        $token='001317772eb8460a204df4200aef7ac5';
+        $userValidation=$this->Registrationm->checkUserForActive($id,$token);
+        if (!empty($userValidation)){
+            $userActivate=$this->Registrationm->makeUserActive($id);
+            if (empty($userActivate)){
+
+                $this->session->set_flashdata('successMessage','User Activated Successfully');
+                redirect('Login/loginAfterRegistration/'.$id);
+
+
+            }else{
+
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Home');
+
+            }
+        }else{
+
+            $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Contact us!!');
+            redirect('Registration');
+
+        }
+
+
+
+
+
+
+
+    }
 
     public function newRegistaion()
     {
@@ -68,6 +103,13 @@ class Registration extends CI_Controller {
 
             if($password==$confirmpassword ) {
 
+
+
+                $activationToken=md5(uniqid(rand(), true));
+
+
+
+
                 $data = array(
                     'type'=>$type,
                     'title' => $title,
@@ -76,16 +118,46 @@ class Registration extends CI_Controller {
                     'email' => $email,
                     'gender' => $gender,
                     'password' => $password,
+                    'accountActivation'=>'0',
+                    'activationToken'=>$activationToken
 
 
                 );
 
-                $this->data['error']=$this->Registrationm->newRegistaion($data);
-
-                if (empty($this->data['error'])) {
+                $this->data['userId']=$this->Registrationm->newRegistaion($data);
 
 
-                    $this->session->set_flashdata('successMessage','Registration completed Successfully');
+
+                if (!empty($this->data['userId'])) {
+
+                    $this->data['info']=array('email'=>$email,'token'=>$activationToken ,'userId'=>$this->data['userId']);
+
+                    $this->load->helper(array('email'));
+                    $this->load->library(array('email'));
+
+                    $this->email->set_mailtype("html");
+                    $this->email->from('noreply@techcloudltd.com','Icon College');
+                    $this->email->to($email);
+                    $this->email->subject('Account Activation Reqeust');
+                    $message = $this->load->view('AccountActivationReqeust', $this->data,true);
+                    $this->email->message($message);
+                    $this->email->send();
+
+//                    if($this->email->send()){
+//
+//                        $this->session->set_flashdata('successMessage','Registration completed Successfully Please Activate Your Acount via email');
+//                        redirect('Login');
+//
+//                    }
+//                    else
+//                    {
+//                        $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+//                        redirect('Registration');
+//                    }
+
+
+
+                    $this->session->set_flashdata('successMessage','Registration completed Successfully Please Activate Your Acount via email');
                     redirect('Login');
 
 
@@ -94,6 +166,7 @@ class Registration extends CI_Controller {
                 {
                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
                     redirect('Registration');
+
                 }
 
             }

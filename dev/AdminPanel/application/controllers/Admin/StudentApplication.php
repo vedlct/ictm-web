@@ -104,6 +104,8 @@ class StudentApplication extends CI_Controller
             $filename = 'testPdf';
             $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');*/
 
+
+
             $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
             $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
             $this->data['emmergencyContact'] = $this->StudentApplicationm->emmergancyContact($applicationId);

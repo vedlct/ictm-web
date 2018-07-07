@@ -26,34 +26,88 @@ class Login extends CI_Controller {
 
             $result = $this->Loginm->validate_user($_POST);
             if(!empty($result)) {
-                $data = [
-                    'email' => $result->email,
-                    'id' => $result->id,
-                    'type' => $result->type,
-                    'title' => $result->title,
-                    'loggedin' => "true",
-                ];
-                $this->session->set_userdata($data);
+                if ($result->accountActivation=='0'){
 
-                $studentOrAgentId = $result->id;
+                    echo "<script>
+                    alert(' Please Activate Your Account First !! ');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+                }else {
 
 
-                if ($result->type == 'Student') {
+                    $data = [
+                        'email' => $result->email,
+                        'id' => $result->id,
+                        'type' => $result->type,
+                        'title' => $result->title,
+                        'loggedin' => "true",
+                    ];
 
-                    redirect('Apply');
+                    $this->session->set_userdata($data);
 
-                }
-                elseif ($result->type == 'Agent') {
-
-                    redirect('AllFormForAgents');
+                    $studentOrAgentId = $result->id;
 
 
+                    if ($result->type == 'Student') {
+
+                        redirect('Apply');
+
+                    } elseif ($result->type == 'Agent') {
+
+                        redirect('AllFormForAgents');
+
+
+                    }
                 }
             }
             else
             {
                 echo "<script>
                     alert(' Wrong UserEmail and Password !! ');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+            }
+
+    }
+    public  function loginAfterRegistration($id)
+    {
+
+
+            $result = $this->Loginm->validate_userAfterActivatation($id);
+            if(!empty($result)) {
+
+
+
+                    $data = [
+                        'email' => $result->email,
+                        'id' => $result->id,
+                        'type' => $result->type,
+                        'title' => $result->title,
+                        'loggedin' => "true",
+                    ];
+
+                    $this->session->set_userdata($data);
+
+                    $studentOrAgentId = $result->id;
+
+
+                    if ($result->type == 'Student') {
+
+                        redirect('Apply');
+
+                    } elseif ($result->type == 'Agent') {
+
+                        redirect('AllFormForAgents');
+
+
+                    }
+
+            }
+            else
+            {
+                echo "<script>
+                    alert(' Some thing Went Wrong !! Please Contact us !! ');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
             }
