@@ -79,7 +79,71 @@
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
+
+                            <div id="qualificationTable">
+                                <table  class="table  table-bordered">
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>File Name</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                    <?php
+                                    $applicationId = $this->session->userdata('studentApplicationId');
+                                    $dir =   "./AdminPanel/studentApplications/$applicationId/";
+
+                                    // Open a directory, and read its contents
+                                    if (is_dir($dir)) {
+                                        if ($dh = opendir($dir)) {
+                                            $count = 1;
+                                            while (($file = readdir($dh)) !== false) {
+                                                if ($file != "." && $file != "..") { ?>
+                                                    <tr>
+                                                        <td><?php echo $count ?></td>
+                                                        <td>
+                                                            <a target="_blank"
+                                                               href="<?php echo $dir . " / " . $file ?>"> <?php echo $file . "<br>" ?> </a>
+                                                        </td>
+
+                                                        <td>
+                                                             <a style="cursor: pointer" data-panel-id="" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php $count++;
+                                                }
+                                            }
+                                        }
+                                    }?>
+                                </table>
+                            </div>
+
+
+<!---->
+<!--                            --><?php
+//                            $applicationId = $this->session->userdata('studentApplicationId');
+//                            $dir =   "./AdminPanel/studentApplications/$applicationId/";
+//
+//                            // Open a directory, and read its contents
+//                            if (is_dir($dir)){
+//                                if ($dh = opendir($dir)){
+//                                    $count=1;
+//                                    while (($file = readdir($dh)) !== false) {
+//                                       if ($file != "." && $file != "..") {
+//                                        echo $count . ". " ?>
+<!---->
+<!--                                            <a target = "_blank" href = "--><?php //echo $dir ." / ". $file?><!--" > --><?php //echo $file . "<br>" ?><!-- </a>-->
+<!--                                            --><?php
+//                                    $count++;
+//                                    }
+//                                    }
+//                                   // closedir($dh);
+//                                }
+//                            }
+//                            ?>
+
+
                         </div>
+
 <!--                    </fieldset>-->
 
                 </form>
