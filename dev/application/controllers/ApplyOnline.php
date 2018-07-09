@@ -2085,6 +2085,8 @@ class ApplyOnline extends CI_Controller
             $data = array();
             $fileCount = 0;
 
+
+
             if (array_filter($applicatfiles)!=null ) {
 
                 for ($i = 0; $i < count($applicatfiles); $i++) {
@@ -2222,7 +2224,6 @@ class ApplyOnline extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg|gif|png|xlsx|pdf|doc|docx|xls|xlsx';
 
         $config['overwrite'] = true;
-        //  $config['file_name'] = $photoId;
 
         return $config;
     }

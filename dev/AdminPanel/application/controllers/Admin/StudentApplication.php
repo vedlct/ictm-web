@@ -1783,6 +1783,10 @@ class StudentApplication extends CI_Controller
     private function set_upload_options($applicationId)
     {
 
+        if (!is_dir('studentApplications/'.$applicationId)){
+            mkdir('studentApplications/'.$applicationId, 0777, TRUE);
+        }
+
         $config = array();
         $config['upload_path'] = 'studentApplications/'.$applicationId."/";
         $config['allowed_types'] = 'jpg|jpeg|gif|png|xlsx|pdf|doc|docx|xls|xlsx';

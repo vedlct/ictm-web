@@ -91,11 +91,6 @@
                                     $dir =   "./studentApplications/$applicationId/";
 
 
-
-                                    if (is_dir($dir)) {
-                                        echo  $dir ;
-                                    }
-
                                     // Open a directory, and read its contents
                                     if (is_dir($dir)) {
                                         if ($dh = opendir($dir)) {
@@ -126,7 +121,7 @@
 <!--                    </fieldset>-->
 
                 </form>
-                
+
 
             </div><!-- /col-md-9 -->
 
