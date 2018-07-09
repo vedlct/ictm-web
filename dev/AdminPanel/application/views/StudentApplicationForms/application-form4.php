@@ -70,7 +70,7 @@
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select style="width: 100%"  id="title"  name="title">
+                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;"   id="title"  name="title">
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
@@ -103,7 +103,7 @@
                                 <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea  name="address"  id="address" rows="8"  maxlength="1000" tabindex="4" ><?php echo set_value('address'); ?></textarea>
+                                    <textarea style="border: 1px solid #bababa; width: 100%;"  name="address"  id="address" rows="8"  maxlength="1000" tabindex="4" ><?php echo set_value('address'); ?></textarea>
                                 </div>
                             </div>
 
@@ -151,10 +151,10 @@
                             </div>
                                 <div class="form-group">
                                     <div class="col-sm-offset-2 col-md-10">
-                                        <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency" ><button style="color: #fff; background-color: #841A29;" type="button" class="btn btn-previous">Previous</button></a>
-                                        <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                        <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
-                                        <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
+                                        <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency" ><button style="margin-top:20px; color: #fff; background-color: #841A29;" type="button" class="btn btn-previous">Previous</button></a>
+                                        <button style="margin-top:20px; color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                        <button style="margin-top:20px; color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
+                                        <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button style="margin-top:20px; color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                                     </div>
                                 </div>
 
