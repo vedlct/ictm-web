@@ -114,6 +114,20 @@
                                                         $count++ ?>
                                                     <?php }  ?>
 
+                                                    <tr>
+                                                        <td  colspan="2" style="width: 50%;"><span style="margin-right: 100px;">If disabled, are you receiving any Disability Allowances ? </span>
+
+
+
+
+
+                                                            <input type="radio" name="disabilityAllowance" value="1"  <?php if ($EO->personalDisabilityAllowance == '1') {echo "checked=checked";}?> >  Yes
+                                                            <input type="radio" name="disabilityAllowance" value="0" <?php if ($EO->personalDisabilityAllowance == '0') {echo "checked=checked";}?> >  No
+                                                            <input type="radio" name="disabilityAllowance" value="2" <?php if ($EO->personalDisabilityAllowance == '2') {echo "checked=checked";}?> >  Prefer Not to say
+
+                                                        </td>
+                                                    </tr>
+
                                                 </table >
                                             </div >
                                         </div >
@@ -217,8 +231,7 @@
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
-<!--                        --><?php //include("course-sidebar.php"); ?>
+
                     </div><!-- /widget-posts -->
 
 
@@ -230,7 +243,7 @@
 </section>
 
 <?php //include("footer.php"); ?>
-<!--<!-- for Application form -->-->
+<!-- for Application form -->
 <!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
 <!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 

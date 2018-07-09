@@ -97,7 +97,7 @@ class StudentApplicationm extends CI_Model
 
     public function contactDetails($applicationId){
 
-        $this->db->select('currentAddress,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,email,fax,overseasAddress,overseasAddressPo,permanentAddressCountry');
+        $this->db->select('currentAddress,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,email,fax,overseasAddress,overseasAddressPo,permanentAddressCountry, firstLanguageEnglish');
         $this->db->where('applicationId =', $applicationId);
         $query = $this->db->get('candidateinfo');
         return $query->result();
@@ -922,7 +922,7 @@ class StudentApplicationm extends CI_Model
     {
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        $this->db->select('personequalopportunity.id as personalOpportunityId,equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
+        $this->db->select('personequalopportunity.id as personalOpportunityId,equalopportunitysubgroup.subGroupTitle,personequalopportunity.disabilityAllowance as personalDisabilityAllowance,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
         $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
         $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
         $this->db->where('personequalopportunity.fkApplicationId=',$applicationId);
@@ -930,6 +930,17 @@ class StudentApplicationm extends CI_Model
         $query=$this->db->get();
         return $query->result();
 
+
+    }
+    public function insertapplyNow6personal($data1)
+    {
+
+        $error=$this->db->insert('personequalopportunity', $data1);
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
 
     }
     public  function checkopportunityTitle()

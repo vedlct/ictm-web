@@ -1787,6 +1787,8 @@ class ApplyOnline extends CI_Controller
             $check_list2 = $this->input->post('check_list2');
             $check_list3 = $this->input->post('check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
             $applicationId = $this->session->userdata('studentApplicationId');
@@ -1805,6 +1807,7 @@ class ApplyOnline extends CI_Controller
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
                         'fkApplicationId' => $applicationId,
+                        'disabilityAllowance' => $disabilityAllowance,
 
                     );
 
@@ -1852,6 +1855,83 @@ class ApplyOnline extends CI_Controller
 
 
     }
+    public function insertApplicationForm6AndNext()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
+
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
+
+            $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
+            $applicationId = $this->session->userdata('studentApplicationId');
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Disability')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'fkApplicationId' => $applicationId,
+                        'disabilityAllowance' => $disabilityAllowance,
+
+                    );
+
+                if ($title->opportunityTitle == 'Religion Belief')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Sexual Orientation')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+
+                $this->data['error'] = $this->ApplyOnlinem->insertapplyNow6personal($data1);
+
+
+            }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('ApplyForm7');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('ApplyForm6');
+
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+
+    }
     public function updatefrom6()
     {
         if ($this->session->userdata('loggedin') == "true") {
@@ -1865,6 +1945,8 @@ class ApplyOnline extends CI_Controller
             $Id_check_list1 = $this->input->post('id_check_list1');
             $Id_check_list2 = $this->input->post('id_check_list2');
             $Id_check_list3 = $this->input->post('id_check_list3');
+
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
 
 
             $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
@@ -1886,6 +1968,7 @@ class ApplyOnline extends CI_Controller
 
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'disabilityAllowance' => $disabilityAllowance,
 
 
                     );
@@ -1954,6 +2037,8 @@ class ApplyOnline extends CI_Controller
             $Id_check_list2 = $this->input->post('id_check_list2');
             $Id_check_list3 = $this->input->post('id_check_list3');
 
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
 
             $this->data['opportunityTitle'] = $this->ApplyOnlinem->checkopportunityTitle();
 
@@ -1974,6 +2059,7 @@ class ApplyOnline extends CI_Controller
 
                     $data1 = array(
                         'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'disabilityAllowance' => $disabilityAllowance,
 
 
                     );
@@ -2049,6 +2135,21 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+    public function deleteStudentFile()
+    {
+        $fileName = $this->input->post('fileName');
+        $applicationId = $this->session->userdata('studentApplicationId');
+        $filePath= 'AdminPanel/studentApplications/'.$applicationId.'/';
+
+        if (file_exists($filePath.$fileName)) {
+            unlink ($filePath.$fileName);
+            echo '1';
+        } else {
+            echo '0';
+        }
+       // echo  $filePath.$fileName;
+
+    }
 
     public function insertapplyNow7()
     {
@@ -2060,6 +2161,8 @@ class ApplyOnline extends CI_Controller
             $files = $_FILES;
             $data = array();
             $fileCount = 0;
+
+
 
             if (array_filter($applicatfiles)!=null ) {
 
@@ -2198,7 +2301,6 @@ class ApplyOnline extends CI_Controller
         $config['allowed_types'] = 'jpg|jpeg|gif|png|xlsx|pdf|doc|docx|xls|xlsx';
 
         $config['overwrite'] = true;
-        //  $config['file_name'] = $photoId;
 
         return $config;
     }

@@ -79,7 +79,49 @@
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
+
+                            <div id="qualificationTable">
+                                <table  class="table  table-bordered">
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>File Name</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                    <?php
+                                    $applicationId = $this->session->userdata('studentApplicationId');
+                                    $dir =   "./AdminPanel/studentApplications/$applicationId/";
+
+                                    // Open a directory, and read its contents
+                                    if (is_dir($dir)) {
+                                        if ($dh = opendir($dir)) {
+                                            $count = 1;
+                                            while (($file = readdir($dh)) !== false) {
+                                                if ($file != "." && $file != "..") { ?>
+                                                    <tr>
+                                                        <td><?php echo $count ?></td>
+                                                        <td>
+
+                                                            <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
+
+                                                        </td>
+
+                                                        <td>
+                                                             <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php $count++;
+                                                }
+                                            }
+                                        }
+                                    }?>
+                                </table>
+                            </div>
+
+
+
                         </div>
+
 <!--                    </fieldset>-->
 
                 </form>
@@ -120,3 +162,38 @@
 </body>
 
 </html>
+
+<script>
+    function selectidForDelete(x) {
+
+        var fileName=$(x).data('panel-id');
+        if (confirm('Are you sure to delete this file!')){
+
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url("ApplyOnline/deleteStudentFile")?>',
+                    data: {fileName: fileName},
+                    cache: false,
+                    success: function (data) {
+
+
+                        if (data=='0'){
+
+                            alert('there is a problem with a file please contact us');
+
+                        }else if(data=='1'){
+
+                            $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+
+                        }
+
+
+
+                    }
+                });
+
+        }
+
+
+    }
+</script>
