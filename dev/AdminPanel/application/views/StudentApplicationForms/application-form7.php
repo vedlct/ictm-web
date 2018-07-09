@@ -88,7 +88,7 @@
                                     </tr>
                                     <?php
                                     $applicationId = $this->session->userdata('studentApplicationId');
-                                    $dir =   "./studentApplications/$applicationId/";
+                                    $dir =   "./studentApplications/$applicationId";
 
 
                                     // Open a directory, and read its contents
@@ -100,8 +100,7 @@
                                                     <tr>
                                                         <td><?php echo $count ?></td>
                                                         <td>
-                                                            <a target="_blank"
-                                                               href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
+                                                            <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
 
                                                         </td>
 
