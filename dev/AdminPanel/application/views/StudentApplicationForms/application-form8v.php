@@ -10,7 +10,7 @@
                 <table border="0" style="width:100%; margin-top: 30px; border: none;">
                     <tr>
                         <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
-                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                        <td style="border: none;"><h2 style="  border: medium none;font-size: 33px;margin-bottom: 22px;margin-left: 37px;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
                     </tr>
                 </table>
             </div><!-- /.col-md-12 -->
@@ -31,7 +31,7 @@
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm8" method="post" class="form-horizontal">
 
@@ -51,7 +51,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-10">
-                                    <select required style="width: 100%"  id="title"  name="title">
+                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;"  required style="width: 100%"  id="title"  name="title">
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
@@ -106,7 +106,7 @@
                                 <label class="control-label col-md-2">Address:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea required id="address" name="address" rows="8" maxlength="1000" tabindex="4"></textarea>
+                                    <textarea style="border: 1px solid #bababa; width: 100%;" required id="address" name="address" rows="8" maxlength="1000" tabindex="4"></textarea>
                                 </div>
                             </div>
 
@@ -122,7 +122,9 @@
                                 <label class="control-label col-md-2">Country:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                    <select required style="width: 100%" id="country"  name="country">
+                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;" 
+
+                                            required style="width: 100%" id="country"  name="country">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                             <option value="<?php echo COUNTRY[$i]?>"<?php
@@ -136,8 +138,8 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationDocumentUpload" ><button type="button"  class="btn ">Previous</button></a>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationDocumentUpload" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Previous</button></a>
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
 <!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--Admin/StudentApplication/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>-->
 <!--                                    <a href="--><?php //echo base_url()?><!--Admin/StudentApplication/editStudentApplicationSubmitApplication" ><button type="button"  class="btn ">Next</button></a>-->
                                 </div>

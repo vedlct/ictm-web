@@ -30,7 +30,7 @@
         <?php }?>
 
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Equal Opportunity</h3>

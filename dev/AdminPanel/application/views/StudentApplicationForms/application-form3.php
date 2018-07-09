@@ -41,7 +41,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm3" method="post" class="form-horizontal">
 

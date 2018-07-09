@@ -34,7 +34,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm10" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
 
