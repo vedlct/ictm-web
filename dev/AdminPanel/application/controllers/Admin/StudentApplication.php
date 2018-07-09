@@ -1506,6 +1506,83 @@ class StudentApplication extends CI_Controller
 
 
     }
+    public function insertApplicationForm6AndNext()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $check_list = $this->input->post('check_list');
+            $check_list1 = $this->input->post('check_list1');
+            $check_list2 = $this->input->post('check_list2');
+            $check_list3 = $this->input->post('check_list3');
+
+            $disabilityAllowance = $this->input->post('disabilityAllowance');
+
+
+            $this->data['opportunityTitle'] = $this->StudentApplicationm->checkopportunityTitle();
+            $applicationId = $this->session->userdata('studentApplicationId');
+            foreach ($this->data['opportunityTitle'] as $title) {
+
+                if ($title->opportunityTitle == 'Ethnicity')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Disability')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list1,
+                        'fkApplicationId' => $applicationId,
+                        'disabilityAllowance' => $disabilityAllowance,
+
+                    );
+
+                if ($title->opportunityTitle == 'Religion Belief')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list2,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+                if ($title->opportunityTitle == 'Sexual Orientation')
+
+                    $data1 = array(
+                        'fkEqualOpportunitySubGroupId' => $check_list3,
+                        'fkApplicationId' => $applicationId,
+
+                    );
+
+
+                $this->data['error'] = $this->StudentApplicationm->insertapplyNow6personal($data1);
+
+
+            }
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
+
+            }
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+
+
+    }
 
     public function updatefrom6()
     {

@@ -22,7 +22,7 @@
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
 
 
@@ -41,14 +41,14 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="courseChoiceStatement" required name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
+                                <textarea style="border: 1px solid #bababa; width: 100%;" id="courseChoiceStatement" required name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="collegeChoiceStatement" required name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
+                                <textarea style="border: 1px solid #bababa; width: 100%;" id="collegeChoiceStatement" required name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
                             </div>
                         </div>
 

@@ -19,7 +19,7 @@
                 <table border="0" style="width:100%; margin-top: 30px; border: none;">
                     <tr>
                         <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
-                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                        <td style="border: none;"><h2 style="  border: medium none;font-size: 33px;margin-bottom: 22px;margin-left: 37px;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
                     </tr>
                 </table>
             </div><!-- /.col-md-12 -->
@@ -30,7 +30,7 @@
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/updateEnglishLagugeProficiency" method="post" class=" form-horizontal">
 
@@ -64,7 +64,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="test" id="test">
+                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;" name="test" id="test">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
@@ -136,7 +136,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
-                                    <textarea id="other" name="other" rows="8" tabindex="4"></textarea>
+                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="other" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
                             </div>
@@ -144,11 +144,11 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
 
-                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button style="margin-top:20px; color: #fff; background-color: #841A29;" type="button"  class="btn btn-previous">Previous</button></a>
 
-                                    <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button type="button"  class="btn btn-next">Next</button></a>
+                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button style="margin-top:20px; color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>
 
 
                                 </div>

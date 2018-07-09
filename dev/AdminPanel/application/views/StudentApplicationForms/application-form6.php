@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> e9e841076df206f0a952bab6f6c41f1476c8bc8e
 <?php $this->load->view('Admin/head.php'); ?>
 <!-- for Application Form -->
 <link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
@@ -29,7 +32,7 @@
         <?php }?>
 
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
                         <div class="form-top">
                             <div class="form-top-left">
                                 <h3>Equal Opportunity</h3>
@@ -183,7 +186,7 @@
                                 <div class="col-sm-offset-2 col-md-10" >
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationDocumentUpload" ><button type="button"  class="btn ">Next</button></a>
                                 </div >
                             </div >
