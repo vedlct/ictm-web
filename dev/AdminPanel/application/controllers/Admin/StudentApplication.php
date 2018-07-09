@@ -1768,7 +1768,7 @@ class StudentApplication extends CI_Controller
             }else{
 
                 $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
-                redirect('ApplyForm7');
+                redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
 
             }
         }else{
