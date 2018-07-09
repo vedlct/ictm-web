@@ -101,11 +101,13 @@
                                                     <tr>
                                                         <td><?php echo $count ?></td>
                                                         <td>
-                                                            <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file . "<br>" ?> </a>
+
+                                                            <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
+
                                                         </td>
 
                                                         <td>
-                                                             <a style="cursor: pointer" data-panel-id="" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
+                                                             <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
                                                         </td>
                                                     </tr>
                                                     <?php $count++;
@@ -116,29 +118,6 @@
                                 </table>
                             </div>
 
-
-<!---->
-<!--                            --><?php
-//                            $applicationId = $this->session->userdata('studentApplicationId');
-//                            $dir =   "./AdminPanel/studentApplications/$applicationId/";
-//
-//                            // Open a directory, and read its contents
-//                            if (is_dir($dir)){
-//                                if ($dh = opendir($dir)){
-//                                    $count=1;
-//                                    while (($file = readdir($dh)) !== false) {
-//                                       if ($file != "." && $file != "..") {
-//                                        echo $count . ". " ?>
-<!---->
-<!--                                            <a target = "_blank" href = "--><?php //echo $dir ." / ". $file?><!--" > --><?php //echo $file . "<br>" ?><!-- </a>-->
-<!--                                            --><?php
-//                                    $count++;
-//                                    }
-//                                    }
-//                                   // closedir($dh);
-//                                }
-//                            }
-//                            ?>
 
 
                         </div>
@@ -183,3 +162,38 @@
 </body>
 
 </html>
+
+<script>
+    function selectidForDelete(x) {
+
+        var fileName=$(x).data('panel-id');
+        if (confirm('Are you sure to delete this file!')){
+
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url("ApplyOnline/deleteStudentFile")?>',
+                    data: {fileName: fileName},
+                    cache: false,
+                    success: function (data) {
+
+
+                        if (data=='0'){
+
+                            alert('there is a problem with a file please contact us');
+
+                        }else if(data=='1'){
+
+                            $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+
+                        }
+
+
+
+                    }
+                });
+
+        }
+
+
+    }
+</script>
