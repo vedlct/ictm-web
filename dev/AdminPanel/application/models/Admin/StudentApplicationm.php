@@ -932,6 +932,17 @@ class StudentApplicationm extends CI_Model
 
 
     }
+    public function insertapplyNow6personal($data1)
+    {
+
+        $error=$this->db->insert('personequalopportunity', $data1);
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+    }
     public  function checkopportunityTitle()
     {
         $this->db->select('id,opportunityTitle');

@@ -40,7 +40,7 @@
                                 <p>Step 7 / 10</p>
                             </div>
                         </div>
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow6" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/insertapplyNow6" method="post" class="registration-form form-horizontal">
                 <div class="form-bottom">
                             <p>Equal opportunities monitoring: (please select from the dropdown lists)</p>
                     <?php foreach($opportunityTitle as $a6){
@@ -200,8 +200,8 @@
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
-                        <h2 class="widget-title">COURSES LIST</h2>
-                        <?php include("course-sidebar.php"); ?>
+<!--                        <h2 class="widget-title">COURSES LIST</h2>-->
+<!--                        --><?php //include("course-sidebar.php"); ?>
                     </div><!-- /widget-posts -->
 
 
@@ -212,10 +212,10 @@
     </div>
 </section>
 
-<?php include("footer.php"); ?>
+<?php //include("footer.php"); ?>
 <!-- for Application form -->
-<script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
-<script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
+<!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
 </div>
 </body>
