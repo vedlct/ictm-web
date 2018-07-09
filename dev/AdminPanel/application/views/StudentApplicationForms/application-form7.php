@@ -77,19 +77,56 @@
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationReferences" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
+
+                            <div id="qualificationTable">
+                                <table  class="table  table-bordered">
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>File Name</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                    <?php
+                                    $applicationId = $this->session->userdata('studentApplicationId');
+                                    $dir =   "./studentApplications/$applicationId/";
+
+
+
+                                    if (is_dir($dir)) {
+                                        echo  $dir ;
+                                    }
+
+                                    // Open a directory, and read its contents
+                                    if (is_dir($dir)) {
+                                        if ($dh = opendir($dir)) {
+                                            $count = 1;
+                                            while (($file = readdir($dh)) !== false) {
+                                                if ($file != "." && $file != "..") { ?>
+                                                    <tr>
+                                                        <td><?php echo $count ?></td>
+                                                        <td>
+                                                            <a target="_blank"
+                                                               href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
+
+                                                        </td>
+
+                                                        <td>
+                                                            <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="glyphicon glyphicon-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php $count++;
+                                                }
+                                            }
+                                        }
+                                    }?>
+                                </table>
+                            </div>
+
                         </div>
 <!--                    </fieldset>-->
 
                 </form>
-
-
-
-
-
-
-
-
-
+                
 
             </div><!-- /col-md-9 -->
 
@@ -110,7 +147,7 @@
 </section>
 
 <?php //include("footer.php"); ?>
-<!--<!-- for Application form -->-->
+<!-- for Application form -->
 <!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
 <!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
@@ -118,3 +155,38 @@
 </body>
 
 </html>
+
+<script>
+    function selectidForDelete(x) {
+
+        var fileName=$(x).data('panel-id');
+        if (confirm('Are you sure to delete this file!')){
+
+            $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url("Admin/StudentApplication/deleteStudentFile")?>',
+                data: {fileName: fileName},
+                cache: false,
+                success: function (data) {
+
+
+                    if (data=='0'){
+
+                        alert('there is a problem with a file please contact us');
+
+                    }else if(data=='1'){
+
+                        $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+
+                    }
+
+
+
+                }
+            });
+
+        }
+
+
+    }
+</script>

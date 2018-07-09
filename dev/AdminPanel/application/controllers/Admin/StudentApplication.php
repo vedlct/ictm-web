@@ -1623,6 +1623,22 @@ class StudentApplication extends CI_Controller
 
     }
 
+    public function deleteStudentFile()
+    {
+        $fileName = $this->input->post('fileName');
+        $applicationId = $this->session->userdata('studentApplicationId');
+        $filePath= 'studentApplications/'.$applicationId.'/';
+
+        if (file_exists($filePath.$fileName)) {
+            unlink ($filePath.$fileName);
+            echo '1';
+        } else {
+            echo '0';
+        }
+        // echo  $filePath.$fileName;
+
+    }
+
     public function insertapplyNow7()
     {
 
