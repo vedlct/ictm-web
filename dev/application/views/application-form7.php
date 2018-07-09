@@ -101,8 +101,7 @@
                                                     <tr>
                                                         <td><?php echo $count ?></td>
                                                         <td>
-                                                            <a target="_blank"
-                                                               href="<?php echo $dir . " / " . $file ?>"> <?php echo $file . "<br>" ?> </a>
+                                                            <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file . "<br>" ?> </a>
                                                         </td>
 
                                                         <td>
