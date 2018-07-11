@@ -18,7 +18,7 @@
                 <table border="0" style="width:100%; margin-top: 30px; border: none;">
                     <tr>
                         <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
-                        <td style="border: none;"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                        <td style="border: none;"><h2 style="  border: medium none;font-size: 33px;margin-bottom: 22px;margin-left: 37px;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
                     </tr>
                 </table>
             </div><!-- /.col-md-12 -->
@@ -40,7 +40,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <!--                <form role="form" action="--><?php //echo base_url()?><!--OnlineForms/applyNow2" method="post" class="registration-form form-horizontal">-->
 
@@ -131,10 +131,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>Admin/StudentApplication/viewApplication/<?php echo $this->session->userdata('studentApplicationId')?>" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                <button type="submit" class="btn btn-next">Save Application</button>
-                                <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
-                                <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button type="button"  class="btn ">Next</button></a>
+                                <a href="<?php echo base_url()?>Admin/StudentApplication/viewApplication/<?php echo $this->session->userdata('studentApplicationId')?>" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-previous">Previous</button></a>
+                                <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
+                                <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                             </div>
                         </div>
                         <!--                    </fieldset>-->

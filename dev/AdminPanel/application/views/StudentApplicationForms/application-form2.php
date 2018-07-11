@@ -34,7 +34,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm2" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
 
@@ -127,10 +127,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="col-sm-offset-2 col-md-10">
 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                    <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn ">Next</button></a>
+                                    <a href="<?php echo base_url()?>Apply" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-previous">Previous</button></a>
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
 
