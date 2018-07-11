@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> e9e841076df206f0a952bab6f6c41f1476c8bc8e
 <?php $this->load->view('Admin/head.php'); ?>
 <!-- for Application Form -->
 <link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
