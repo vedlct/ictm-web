@@ -181,10 +181,10 @@
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-10" >
-                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button type="button"  class="btn ">Previous</button></a>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationDocumentUpload" ><button type="button"  class="btn ">Next</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button style="color: #fff; background-color: #841A29;"type="button"  class="btn ">Previous</button></a>
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationDocumentUpload" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                                 </div >
                             </div >
                         </div >

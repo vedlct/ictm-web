@@ -54,9 +54,9 @@ class StudentApplication extends CI_Controller
 
 
 
-            $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->id.'"><i class="icon_pencil-edit"></i></a>
+            $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->applicationId.'"><i class="icon_pencil-edit"></i></a>
                                                     
-                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->id.'"><i class="fa fa-file-pdf-o"></i></a>';
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>';
 
             $row[] = $html;
 
@@ -105,6 +105,7 @@ class StudentApplication extends CI_Controller
             $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');*/
 
 
+            $this->data['applicationDetails'] = $this->StudentApplicationm->applicationDetails($applicationId);
 
             $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
             $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
@@ -125,7 +126,7 @@ class StudentApplication extends CI_Controller
 
             $html=$this->load->view('Admin/detailsForms', $this->data,true);
 
-            $filename = 'testPdf';
+            $filename = 'ApplicationFormPDF';
             $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
 
         }
@@ -143,6 +144,7 @@ class StudentApplication extends CI_Controller
         //$applicationId = $this->input->post();
         $applicationId = 4;
 
+        $this->data['applicationDetails'] = $this->StudentApplicationm->applicationDetails($applicationId);
         $this->data['personalDetails'] = $this->StudentApplicationm->personalDetails($applicationId);
         $this->data['contactDetails'] = $this->StudentApplicationm->contactDetails($applicationId);
         $this->data['emmergencyContact'] = $this->StudentApplicationm->emmergancyContact($applicationId);
@@ -160,7 +162,7 @@ class StudentApplication extends CI_Controller
 
         $this->data['personalstatement'] = $this->StudentApplicationm->personalStatement($applicationId);
 
-       //  print_r($this->data['languageProficiency']);
+       //  print_r($this->data['applicationDetails']);
 
         //$this->data['languageProficiencyTestScore'] = $this->StudentApplicationm->languageProficiencyTestScore($applicationId);
         $this->load->view('Admin/detailsForms', $this->data);
@@ -182,6 +184,7 @@ class StudentApplication extends CI_Controller
             $studentApplicationId=$applicationId;
             $this->data['courseInfo'] = $this->StudentApplicationm->getCourseInfo();
             $this->data['candidateInfos'] = $this->StudentApplicationm->getCandidateInfo($studentApplicationId);
+
             $this->load->view('StudentApplicationForms/application-formv', $this->data);
 
 
@@ -217,7 +220,7 @@ class StudentApplication extends CI_Controller
                 $this->data['courseInfo']=$this->StudentApplicationm->getCourseInfo();
 
                 $this->data['candidateInfos'] = $this->StudentApplicationm->getCandidateInfo($this->session->userdata('studentApplicationId'));
-                $this->load->view('application-formv', $this->data);
+                $this->load->view('StudentApplicationForms/application-formv', $this->data);
             }
             else {
                 $candidateTitle = $this->input->post("title");
@@ -366,7 +369,7 @@ class StudentApplication extends CI_Controller
                 $this->data['courseInfo']=$this->StudentApplicationm->getCourseInfo();
 
                 $this->data['candidateInfos'] = $this->StudentApplicationm->getCandidateInfo($this->session->userdata('studentApplicationId'));
-                $this->load->view('application-formv', $this->data);
+                $this->load->view('StudentApplicationForms/application-formv', $this->data);
             }
             else {
                 $candidateTitle = $this->input->post("title");

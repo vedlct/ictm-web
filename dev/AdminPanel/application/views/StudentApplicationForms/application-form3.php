@@ -1,31 +1,19 @@
 
-
 <?php $this->load->view('Admin/head.php'); ?>
 <!-- for Application Form -->
 <link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
-<!-- dateTimepicker -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 
-<style>
-
-    .datepicker .next ,.prev {
-        position: relative !important;
-    }
-</style>
 
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="page-title-heading">
-                    <h2 class="title">Application Form</h2>
-                </div>
-                <div class="breadcrumbs">
-                    <ul>
-                        <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
-                    </ul>
-                </div>
+                <table border="0" style="width:100%; margin-top: 30px; border: none;">
+                    <tr>
+                        <td style="border: none;"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                        <td style="border: none;"><h2 style="  border: medium none;font-size: 33px;margin-bottom: 22px;margin-left: 37px;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
+                    </tr>
+                </table>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
     </div><!-- /.container -->
@@ -71,7 +59,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" id="test" name="test[]">
+                                    <select style="width: 100%; height: 30px; border: 1px solid #bababa;" id="test" name="test[]">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
@@ -124,17 +112,17 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div style="margin: 10px" class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button id='addButton' type="button" class="btn">Add New Proficiency</button>
-                                    <button class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
+                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;"id='addButton' type="button" class="btn">Add New Proficiency</button>
+                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;"class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
+                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="comment-message" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
                             </div>
@@ -143,10 +131,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="col-sm-offset-2 col-md-10">
 
 
-                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button style="margin-top:20px; color: #fff; background-color: #841A29;"type="button"  class="btn btn-previous">Previous</button></a>
+                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;"type="submit" class="btn btn-next">Save Application</button>
+                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;"type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button style="margin-top:20px; color: #fff; background-color: #841A29;"type="button"  class="btn btn-next">Next</button></a>
 
                                 </div>
                             </div>
