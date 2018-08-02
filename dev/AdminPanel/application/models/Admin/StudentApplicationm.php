@@ -6,7 +6,7 @@ class StudentApplicationm extends CI_Model
     /////////datatable//////////
     var $table = 'candidateinfo';
 
-    var $select =array('candidateinfo.id','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName');
+    var $select =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName');
     var $column_order = array(null,null,null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','coursedetails.courseName','candidateinfo.applydate'); //set column field database for datatable orderable
     var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable searchable
     var $order = array('id' => 'desc'); // default order
@@ -89,6 +89,14 @@ class StudentApplicationm extends CI_Model
     public function personalDetails($applicationId){
 
         $this->db->select('title,firstName,surName,otherNames,dateOfBirth,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaExpiryDate,visaType');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
+
+    }
+    public function applicationDetails($applicationId){
+
+        $this->db->select('applyDate');
         $this->db->where('applicationId =', $applicationId);
         $query = $this->db->get('candidateinfo');
         return $query->result();

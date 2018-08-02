@@ -170,7 +170,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </section>
 
 <?php //include("footer.php"); ?>
-<!--<!-- for Application form -->-->
+<!-- for Application form -->
 <!--<script src="--><?php //echo base_url()?><!--public/javascript/jquery.backstretch.min.js"></script>-->
 <!--<script src="--><?php //echo base_url()?><!--public/javascript/scripts.js"></script>-->
 
