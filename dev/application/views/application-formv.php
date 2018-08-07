@@ -99,12 +99,23 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                 <input type="radio" required id="gender" name="gender" value="M" <?php if($candidateInfo->gender=='M'){ echo "checked=checked";}?>> Male&nbsp;&nbsp;
                                 <input type="radio" required id="gender" name="gender" value="F" <?php if($candidateInfo->gender=='F'){ echo "checked=checked";}?>> Female&nbsp;&nbsp;
                                 <input type="radio" required id="gender" name="gender" value="O" <?php if($candidateInfo->gender=='O'){ echo "checked=checked";}?>> Other
+                                <input type="radio" required id="gender" name="gender" value="PNTS" <?php if($candidateInfo->gender=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Any Sex Change:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('genderchange'); ?></font></p>
+                                <input type="radio" required id="genderChange" name="genderChange" value="M" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
+                                <input type="radio" required id="genderChange" name="genderChange" value="F" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
+                                <input type="radio" required id="genderChange" name="genderChange" value="PNTS" <?php if($candidateInfo->ganderChange=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
                             </div>
                         </div>
 
@@ -131,34 +142,34 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Passport No.:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Passport No.:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
-                                <input type="text" class="form-control" required id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
+                                <input type="text" class="form-control"  id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">PP Expiry Date:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">PP Expiry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
+                                <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">UK Entry Date:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">UK Entry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker" required id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
+                                <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Visa Type:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Visa Type:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
-                                <select style="width: 100%" id="VisaType" required name="VisaType">
+                                <select style="width: 100%" id="VisaType"  name="VisaType">
 
                                     <option value="" selected><?php echo SELECT_TYPE?></option>
                                     <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
@@ -172,10 +183,10 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Visa Expiry Date:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Visa Expiry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
+                                <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
                             </div>
                         </div>
 
@@ -185,12 +196,12 @@
                             <label class="control-label col-md-2">Current Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
+                                <textarea id="currentAddress" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address P.O :<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
                                 <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
@@ -198,42 +209,13 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address Courntry:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
                                 <select style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
                                     <option value="" disabled selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
-                                    <?php } ?>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Overseas (Home) Address:<span style="color: red" class="required">*</span></label>
-                            <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Overseas (Home) Address P.O :<span style="color: red" class="required">*</span></label>
-                            <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
-                                <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Overseas Address Courntry:<span style="color: red" class="required">*</span></label>
-                            <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
-                                <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
-                                    <option value="" disabled selected>Select country...</option>
-                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -263,13 +245,41 @@
                             </div>
                         </div>
 
+
+                        <label>Same as Current </label>
+                        <input type="checkbox" id="samecheck">
                         <div class="form-group">
-                            <label class="control-label col-md-2">Fax:</label>
+                            <label class="control-label col-md-2">Present Address:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('fax'); ?></font></p>
-                                <input type="text" class="form-control" id="fax" name="fax" value="<?php echo $candidateInfo->fax ?>">
+                                <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
+                                <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
+                                <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
+                                <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
+                                    <option value="" disabled selected>Select country...</option>
+                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                    <?php } ?>
+                                </select>
+                            </div>
+                        </div>
+
+
+
+
 
                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
 
@@ -499,7 +509,8 @@
 </body>
 
 </html>
-
+<script type='text/javascript'
+        src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
 <script type="text/javascript">
     $(function () {
         $('.datetimepicker').datetimepicker({
@@ -569,5 +580,26 @@
         }
 
     }
+    $(window).load(function(){
+    $("#samecheck").on("click", function(){
+        if(samecheck.checked) {
+
+
+            var caddress = document.getElementById('currentAddress').value;
+            var cpostcode = document.getElementById('currentAddressPO').value;
+            var ccountry = document.getElementById('currentAddressCountry').value;
+
+           // alert(caddress+ccountry+cpostcode);
+
+            $("#overseasHomeAddress").text(caddress);
+
+
+
+           //document.getElementById('overseasHomeAddress').value = caddress;
+            document.getElementById('overseasAddressPO').value = cpostcode;
+            document.getElementById('permanentAddressCountry').value = ccountry;
+        }
+    });
+    });
 
 </script>

@@ -90,7 +90,7 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>
+                                        	<label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                             	<input type="radio" required id="gender" name="gender"<?php
@@ -102,9 +102,27 @@
                                                 <input type="radio" required id="gender" name="gender" <?php
                                                 echo set_value('gender') == 'O' ? "checked" : "";
                                                 ?> value="O"> Other
+                                                <input type="radio" required id="gender" name="gender" <?php
+                                                echo set_value('gender') == 'PNTS' ? "checked" : "";
+                                                ?> value="PNTS"> Pefer Not to Say
                                           	</div>
 				                        </div>
-                                        
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('genderChange'); ?></font></p>
+                                                <input type="radio" required id="genderChange" name="gender"<?php
+                                                echo set_value('genderChange') == 'Y' ? "checked" : "";
+                                                ?> value="M"> Y&nbsp;&nbsp;
+                                                <input type="radio" required id="genderChange" name="genderChange" <?php
+                                                echo set_value('genderChange') == 'N' ? "checked" : "";
+                                                ?> value="F"> N&nbsp;&nbsp;
+                                                <input type="radio" required id="genderChange" name="genderChange" <?php
+                                                echo set_value('genderChange') == 'PNTS' ? "checked" : "";
+                                                ?> value="PNTS"> Pefer Not to Say
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
