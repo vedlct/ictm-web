@@ -169,6 +169,7 @@ class ApplyOnline extends CI_Controller
 //                $candidateOtherNamee = $this->input->post("otherName");
                 $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
+                $candidateGenderChanged = $this->input->post("genderChange");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
@@ -235,6 +236,7 @@ class ApplyOnline extends CI_Controller
 //                    'otherNames'=>$candidateOtherNamee,
                     'dateOfBirth'=>$candidateDob,
                     'gender'=>$candidateGender,
+                    'ganderChange'=>$candidateGenderChanged,
                     'placeOfBirth'=>$candidatePlaceOfBirth,
                     'nationality'=>$candidateNationality,
                     'passportNo'=>$candidatePassportNo,
@@ -638,6 +640,7 @@ class ApplyOnline extends CI_Controller
 //                $candidateOtherNamee = $this->input->post("otherName");
                 $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
+                $candidateGenderChanged = $this->input->post("ganderChanged");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
@@ -698,6 +701,7 @@ class ApplyOnline extends CI_Controller
 //                    'otherNames'=>$candidateOtherNamee,
                     'dateOfBirth'=>$candidateDob,
                     'gender'=>$candidateGender,
+                    'ganderChange'=>$candidateGenderChanged,
                     'placeOfBirth'=>$candidatePlaceOfBirth,
                     'nationality'=>$candidateNationality,
                     'passportNo'=>$candidatePassportNo,

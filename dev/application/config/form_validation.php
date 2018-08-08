@@ -577,6 +577,11 @@ $config = array (
             'label' => 'Method Of Study',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
+        ), array(
+            'field' => 'timeOfStudy',
+            'label' => 'Time of study',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
         ),
 
 
