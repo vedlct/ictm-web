@@ -114,10 +114,10 @@
                                                 <p><font color="red"> <?php echo form_error('genderChange'); ?></font></p>
                                                 <input type="radio" required id="genderChange" name="genderChange"<?php
                                                 echo set_value('genderChange') == 'Y' ? "checked" : "";
-                                                ?> value="M"> Y&nbsp;&nbsp;
+                                                ?> value="Y"> Y&nbsp;&nbsp;
                                                 <input type="radio" required id="genderChange" name="genderChange" <?php
                                                 echo set_value('genderChange') == 'N' ? "checked" : "";
-                                                ?> value="F"> N&nbsp;&nbsp;
+                                                ?> value="N"> N&nbsp;&nbsp;
                                                 <input type="radio" required id="genderChange" name="genderChange" <?php
                                                 echo set_value('genderChange') == 'PNTS' ? "checked" : "";
                                                 ?> value="PNTS"> Pefer Not to Say
@@ -189,7 +189,7 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Visa Expiry Date:*</span></label>
+                                        	<label class="control-label col-md-2">Visa Expiry Date:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
                                             	<input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo set_value('visaExpiryDate'); ?>">

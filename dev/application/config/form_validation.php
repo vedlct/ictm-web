@@ -365,11 +365,6 @@ $config = array (
             'rules' => 'max_length[50]|xss_clean|htmlspecialchars',
 
         ),
-//        array(
-//            'field' => 'otherName',
-//            'label' => 'Other Name',
-//            'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
-//        ),
         array(
             'field' => 'dob',
             'label' => 'Date Of Birth',
@@ -396,44 +391,15 @@ $config = array (
             'label' => 'Nationality',
             'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
         ),
-//        array(
-//            'field' => 'passportNo',
-//            'label' => 'PassportNumber',
-//            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars'
-//        ),
-//        array(
-//            'field' => 'passportExpiryDate',
-//            'label' => 'Passport Expiry Date ',
-//            'rules' => 'required|max_length[45]|xss_clean|htmlspecialchars'
-//        ),
-//
-//        array(
-//            'field' => 'UkEntryDate',
-//            'label' => 'Uk Entry Date',
-//            'rules' => 'required|xss_clean|htmlspecialchars'
-//        ),
-//        array(
-//            'field' => 'VisaType',
-//            'label' => 'Visa Type',
-//            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
-//        ),
-//
-//        array(
-//            'field' => 'visaExpiryDate',
-//            'label' => 'visa Expiry Date',
-//            'rules' => 'required|xss_clean|htmlspecialchars'
-//        ),
-//
-//        array(
-//            'field' => 'visaExpiryDate',
-//            'label' => 'visa Expiry Date',
-//            'rules' => 'required|xss_clean|htmlspecialchars'
-//        ),
-
         array(
             'field' => 'currentAddress',
             'label' => 'Current Address',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'currentAddressPO',
+            'label' => 'Post Code',
+            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'currentAddressCountry',
@@ -441,11 +407,15 @@ $config = array (
             'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'currentAddressPO',
-            'label' => 'Post Code',
-            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+            'field' => 'mobile',
+            'label' => 'Mobile',
+            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[50]|xss_clean|htmlspecialchars'
         ),
-
+        array(
+            'field' => 'email',
+            'label' => 'Email Address',
+            'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars'
+        ),
         array(
             'field' => 'overseasHomeAddress',
             'label' => 'Permanet Address',
@@ -461,38 +431,12 @@ $config = array (
             'label' => 'Post Code',
             'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
         ),
-
-//        array(
-//            'field' => 'telephone',
-//            'label' => 'Telephone',
-//            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[50]|xss_clean|htmlspecialchars'
-//        ),
-
-        array(
-            'field' => 'mobile',
-            'label' => 'Mobile',
-            'rules' => 'required|regex_match[/^[0-9]*$/]|max_length[50]|xss_clean|htmlspecialchars'
-        ),
-
-//        array(
-//            'field' => 'fax',
-//            'label' => 'Fax',
-//            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars'
-//        ),
-
-        array(
-            'field' => 'email',
-            'label' => 'Email Address',
-            'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars'
-        ),
-
         array(
             'field' => 'EmergencyContactTitle',
             'label' => 'Title',
             'rules' => 'required|max_length[12]|xss_clean|htmlspecialchars',
 
         ),
-
         array(
             'field' => 'EmergencyContactName',
             'label' => 'Name',
@@ -541,50 +485,29 @@ $config = array (
             'label' => 'Course Name',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
-
-//        array(
-//            'field' => 'awardingBody',
-//            'label' => 'Awarding Body',
-//            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
-//        ),
-
-//        array(
-//            'field' => 'courseLevel',
-//            'label' => 'courseLevel',
-//            'rules' => 'required|max_length[20]|xss_clean|htmlspecialchars'
-//        ),
-
         array(
             'field' => 'courseSession',
-            'label' => 'course Session',
+            'label' => 'Course Session',
             'rules' => 'required|xss_clean|htmlspecialchars'
         ),
 
         array(
-            'field' => 'year',
+            'field' => 'courseYear',
             'label' => 'Year',
             'rules' => 'required|xss_clean|htmlspecialchars'
         ),
-
-//        array(
-//            'field' => 'courseEndDate',
-//            'label' => 'course End Date',
-//            'rules' => 'required|xss_clean|htmlspecialchars'
-//        ),
-
         array(
             'field' => 'methodeOfStudy',
             'label' => 'Method Of Study',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
-        ), array(
+        ),
+        array(
             'field' => 'timeOfStudy',
             'label' => 'Time of study',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
         ),
-
-
 
      ),
 
@@ -731,7 +654,7 @@ $config = array (
             ),
             array(
                 'field' => 'institution',
-                'label' => 'Institution',
+                'label' => 'Name of Institution',
                 'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
             ),
