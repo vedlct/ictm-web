@@ -1178,19 +1178,23 @@ class ApplyOnline extends CI_Controller
             }
 
 
+
             if (empty($finance)) {
                 $this->data['financeYes'] = null;
                 $this->load->view('application-form4', $this->data);
             } else {
 
 
-                if ($finance == 'own') {
+                if ($finance == 'own' ) {
                     $this->data['financeYes'] = 'own';
+                    $this->load->view('application-form4', $this->data);
+                }if ($finance == 'slc' ) {
+                    $this->data['financeYes'] = 'slc';
                     $this->load->view('application-form4', $this->data);
                 } else {
                     $this->data['financeYes'] = $finance;
                     $this->data['Financer'] = $this->ApplyOnlinem->getFinancerDataFromOthers($applicationId);
-                    //print_r($this->data['Financer']);
+                   // print_r($this->data['Financer']);
                     $this->load->view('application-form4v', $this->data);
                 }
 
@@ -1444,7 +1448,7 @@ class ApplyOnline extends CI_Controller
 
             $selfFinance=$this->input->post('selfFinance');
 
-            if ($selfFinance != 'own'){
+            if ($selfFinance != 'own' || $selfFinance != 'slc'){
 
                 $this->load->library('form_validation');
                 if (!$this->form_validation->run('applyfromfinance')) {

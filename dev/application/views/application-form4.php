@@ -109,10 +109,28 @@
                             </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address P.O :<span style="color: red" class="required">*</span></label>
+                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
                                         <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('country'); ?></font></p>
+                                        <select style="width: 100%" id="country"  name="country">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
+                                                ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+
+
                                     </div>
                                 </div>
 
@@ -202,12 +220,20 @@
 </html>
 
 <script>
+
+    $(document).ready(function(){
+        if ('<?php echo $financeYes?>'== 'own' || '<?php echo $financeYes?>'=='slc'){
+            document.getElementById("otherFinance").style.display = "none";
+        }else {
+            document.getElementById("otherFinance").style.display = "block";
+        }
+    });
     
 
 
     $("input[name=selfFinance]").click( function () {
 
-        if ($(this).val()=='own'){
+        if ($(this).val()=='own' || $(this).val()=='slc'){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -220,7 +246,8 @@
     function formvalidate() {
 
         var finance=$('input[name=selfFinance]:checked').val();
-        if (finance != 'own') {
+
+        if ((finance != 'own' )&& (finance != "slc" )) {
 
 
             var title = document.getElementById("title").value;

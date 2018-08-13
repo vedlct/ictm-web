@@ -45,28 +45,29 @@
                         </div>
                         <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Is English your first language?:</label>
+                                <label class="control-label col-md-2">Is English your first language?<span style="color: red" class="required">*</span>:</label>
                                 <div class="col-md-10">
                                     <input type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
                                     <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php }?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
-                            <div style="display: none" id="Englishproficience">
+                            <div style="display: none" id="Englishproficience" >
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="test" id="test">
+                                    <select style="width: 100%" name="test" id="test" onchange="checkother()">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
                                         <option value="3">PTE</option>
+                                        <option value="4">Other</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="listendiv" style="display: block">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('listening'); ?></font></p>
@@ -75,7 +76,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="readingdiv" style="display: block">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('reading'); ?></font></p>
@@ -84,7 +85,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="writingdiv" style="display: block">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('writing'); ?></font></p>
@@ -93,7 +94,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="speakingdiv" style="display: block">
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('speaking'); ?></font></p>
@@ -102,7 +103,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="overralldiv" style="display: block">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('overall'); ?></font></p>
@@ -110,7 +111,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="expirediv" style="display: block">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('expirydate'); ?></font></p>
@@ -126,7 +127,7 @@
 <!--                            </div>-->
 
 
-                            <div class="form-group">
+                            <div class="form-group" id="otherdiv" style="display: none">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
                                     <textarea id="other" name="other" rows="8" tabindex="4"></textarea>
@@ -157,8 +158,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Test Name</th>
-                            <th>Overall Score</th>
-                            <th>expireDate</th>
+
                             <th>Action</th>
 
                         </tr>
@@ -177,14 +177,15 @@
                                         case "3":
                                             echo "PTE";
                                             break;
+                                        case "4":
+                                            echo "OTHER";
+                                            break;
                                         default:
-                                            echo "Your favorite color is neither red, blue, nor green!";
+                                            echo "None";
                                     }
                                     ?>
                                 </td>
-                                <td><?php echo $lt->overallScore ?></td>
 
-                                <td><?php echo $lt->expireDate ?></td>
                                 <td>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
@@ -257,6 +258,37 @@
 </script>
 
 <script>
+
+    function checkother() {
+        if(document.getElementById('test').value == "4"){
+
+
+            document.getElementById('listendiv').style.display = 'none';
+            document.getElementById('readingdiv').style.display = 'none';
+            document.getElementById('writingdiv').style.display = 'none';
+            document.getElementById('speakingdiv').style.display = 'none';
+            document.getElementById('overralldiv').style.display = 'none';
+            document.getElementById('expirediv').style.display = 'none';
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('listendiv').style.display = 'block';
+            document.getElementById('readingdiv').style.display = 'block';
+            document.getElementById('writingdiv').style.display = 'block';
+            document.getElementById('speakingdiv').style.display = 'block';
+            document.getElementById('overralldiv').style.display = 'block';
+            document.getElementById('expirediv').style.display = 'block';
+
+
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
+
+
     function selectid(x) {
         btn = $(x).data('panel-id');
        // alert(btn);
@@ -270,6 +302,8 @@
             success:function(response) {
 
 
+
+
                 var len = response.length;
 
                 if(len > 0){
@@ -281,13 +315,29 @@
 
                 }
 
-                document.getElementById("test").value= test;
-                document.getElementById("overall").value= overallScore;
-                document.getElementById("expirydate").value= expireDate;
-                document.getElementById("other").value= other;
-                document.getElementById("languagetestid").value= btn;
+                if(test == "4"){
+                    document.getElementById('listendiv').style.display = 'none';
+                    document.getElementById('readingdiv').style.display = 'none';
+                    document.getElementById('writingdiv').style.display = 'none';
+                    document.getElementById('speakingdiv').style.display = 'none';
+                    document.getElementById('overralldiv').style.display = 'none';
+                    document.getElementById('expirediv').style.display = 'none';
 
 
+                    document.getElementById('otherdiv').style.display = 'block';
+
+                    document.getElementById("test").value = test;
+                    document.getElementById("other").value = other;
+
+                }else {
+
+                    document.getElementById("test").value = test;
+                    document.getElementById("overall").value = overallScore;
+                    document.getElementById("expirydate").value = expireDate;
+                    document.getElementById("other").value = other;
+                    document.getElementById("languagetestid").value = btn;
+
+                }
             }
 
         });

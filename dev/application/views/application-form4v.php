@@ -37,7 +37,7 @@
 
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Finance</h3>
+                                <h3>Finance </h3>
                             </div>
 
                             <div class="form-top-right">
@@ -102,10 +102,28 @@
                             </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address P.O:<span style="color: red" class="required">*</span></label>
+                                    <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
                                         <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo $f4->addressPo?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('country'); ?></font></p>
+                                        <select style="width: 100%" id="country"  name="country">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
+                                                ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+
+
                                     </div>
                                 </div>
 
@@ -135,15 +153,6 @@
                                     <input type="email" class="form-control" id="email" maxlength="50" name="email" value="<?php echo $f4->email ?>">
                                 </div>
                             </div>
-
-<!--                            <div class="form-group">-->
-<!--                                <label class="control-label col-md-2">Fax*:</label>-->
-<!--                                <div class="col-md-10">-->
-<!--                                    <p><font color="red"> --><?php //echo form_error('fax'); ?><!--</font></p>-->
-<!--                                    <input type="text" class="form-control" id="fax" name="fax"  value="--><?php //echo $f4->fax ?><!--">-->
-<!--                                </div>-->
-<!--                            </div>-->
-
                             </div>
 
                             <div class="form-group">
@@ -159,7 +168,7 @@
 
                         </div>
                 </form>
-<?php } ?>
+            <?php } ?>
 
 
 
@@ -196,7 +205,7 @@
 <script>
 
     $(document).ready(function(){
-        if ('<?php echo $financeYes?>'== 'y'){
+        if ('<?php echo $financeYes?>'== 'y' ){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -205,7 +214,7 @@
 
     $("input[name=selfFinance]").click( function () {
 
-        if ($(this).val()=='own'){
+        if ($(this).val()=='own' || $(this).val()=='slc'){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -217,7 +226,7 @@
 
         var finance=$('input[name=selfFinance]:checked').val();
 
-        if (finance != 'own') {
+        if (finance != 'own'  && finance != "slc") {
 
             var title = document.getElementById("title").value;
             var email = document.getElementById("email").value;

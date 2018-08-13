@@ -217,6 +217,18 @@ $config = array (
                 'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
 
             ),
+            array(
+                'field' => 'AddressPO',
+                'label' => 'Post Code',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'country',
+                'label' => 'country',
+                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+
+            ),
 
             array(
                 'field' => 'mobile',
@@ -240,43 +252,50 @@ $config = array (
         array(
 
             array(
+                'field' => 'firstLanguage',
+                'label' => 'Is English your first language?',
+                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+
+            ),
+
+            array(
                 'field' => 'listening',
                 'label' => 'Lstening',
-                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[3]|xss_clean|htmlspecialchars',
 
             ),
             array(
                 'field' => 'reading',
                 'label' => 'Reading',
-                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[3]|xss_clean|htmlspecialchars',
 
             ),
 
             array(
                 'field' => 'writing',
                 'label' => 'Writing ',
-                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[3]|xss_clean|htmlspecialchars',
 
             ),
 
             array(
                 'field' => 'speaking',
                 'label' => 'Speaking',
-                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[3]|xss_clean|htmlspecialchars',
 
             ),
 
             array(
                 'field' => 'overall',
                 'label' => 'Overall',
-                'rules' => 'required|max_length[3]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[3]|xss_clean|htmlspecialchars',
 
             ),
 
             array(
                 'field' => 'expirydate',
                 'label' => 'Expiry Date',
-                'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[50]|xss_clean|htmlspecialchars',
 
             ),
 
@@ -682,27 +701,27 @@ $config = array (
 
 
             array(
-                'field' => 'organisation',
+                'field' => 'Organisation / Regulatory Body',
                 'label' => 'Organisation',
-                'rules' => 'required|xss_clean|htmlspecialchars',
+                'rules' => 'xss_clean|htmlspecialchars',
 
             ),
             array(
                 'field' => 'positionHeld',
                 'label' => 'Position Held',
-                'rules' => 'required|xss_clean|htmlspecialchars',
+                'rules' => 'xss_clean|htmlspecialchars',
 
             ),
             array(
-                'field' => 'startdate',
+                'field' => 'From',
                 'label' => 'Start Date',
-                'rules' => 'required|xss_clean|htmlspecialchars',
+                'rules' => 'xss_clean|htmlspecialchars',
 
             ),
             array(
-                'field' => 'enddate',
+                'field' => 'To',
                 'label' => 'enddate',
-                'rules' => 'required|xss_clean|htmlspecialchars',
+                'rules' => 'xss_clean|htmlspecialchars',
 
             ),
 

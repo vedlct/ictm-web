@@ -49,7 +49,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
                         <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Is English your first language?:</label>
+                                <label class="control-label col-md-2">Is English your first language?<span style="color: red" class="required">*</span>:</label>
                                 <div class="col-md-10">
                                     <input type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
                                     <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php } ?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
@@ -64,51 +64,51 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" id="test" name="test[]">
+                                    <select style="width: 100%" id="test" name="test[]" onchange="checkother()">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
                                         <option value="3">PTE</option>
+                                        <option value="4">OTHER</option>
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="form-group">
+                            <div class="form-group" id="listendiv" style="display: block">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="listening" name="listening[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="readingdiv" style="display: block">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="reading" name="reading[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="writingdiv" style="display: block">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="writing" name="writing[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Speaking:</label>
+                            <div class="form-group" id="speakingdiv" style="display: block">
+                                <label class="control-label col-md-2">Speaking: </label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="speaking" name="speaking[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="overralldiv" style="display: block">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="overall" name="overall[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="expirediv" style="display: block">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
@@ -117,14 +117,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="addmore" style="display: block">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button id='addButton' type="button" class="btn">Add New Proficiency</button>
                                     <button class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="otherdiv" style="display: none">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
                                     <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
@@ -202,6 +202,37 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </script>
 
 <script>
+
+    function checkother() {
+        if(document.getElementById('test').value == "4"){
+
+
+            document.getElementById('listendiv').style.display = 'none';
+            document.getElementById('readingdiv').style.display = 'none';
+            document.getElementById('writingdiv').style.display = 'none';
+            document.getElementById('speakingdiv').style.display = 'none';
+            document.getElementById('overralldiv').style.display = 'none';
+            document.getElementById('expirediv').style.display = 'none';
+            document.getElementById('addmore').style.display = 'none';
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('listendiv').style.display = 'block';
+            document.getElementById('readingdiv').style.display = 'block';
+            document.getElementById('writingdiv').style.display = 'block';
+            document.getElementById('speakingdiv').style.display = 'block';
+            document.getElementById('overralldiv').style.display = 'block';
+            document.getElementById('expirediv').style.display = 'block';
+            document.getElementById('addmore').style.display = 'block';
+
+
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
 
     $(document).ready(function(){
         var counter = 2;

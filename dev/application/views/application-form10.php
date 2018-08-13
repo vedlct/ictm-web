@@ -1,4 +1,4 @@
-
+<!--Work Experience / Training -->
 <?php include("header.php"); ?>
 <style>
     .datepicker .next ,.prev {
@@ -51,30 +51,30 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Organisation / Regulatory Body:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" maxlength="100" id="organisation" required name="organisation[]">
+                                        <input type="text" class="form-control" maxlength="100" id="organisation"  name="organisation[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Position Held:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="positionHeld" maxlength="100" required name="positionHeld[]">
+                                        <input type="text" class="form-control" id="positionHeld" maxlength="100"  name="positionHeld[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">From:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="startdate" required name="startdate[]">
+                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">To:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="enddate" required name="enddate[]">
+                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">
                                     </div>
                                 </div>
 

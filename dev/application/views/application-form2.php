@@ -40,7 +40,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Qualifications</h3>
+                                <h3>Qualifications </h3>
                             </div>
 
                             <div class="form-top-right">
