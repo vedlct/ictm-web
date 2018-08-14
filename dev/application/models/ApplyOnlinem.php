@@ -314,6 +314,18 @@ class ApplyOnlinem extends CI_Model
 
 
     }
+    public function getApplicationInfoForStudens($studentOrAgentId)
+    {
+
+        $this->db->select('studentapplicationform.id,studentapplicationform.isSubmited,candidateinfo.title,candidateinfo.firstName,candidateinfo.surName,candidateinfo.email');
+        $this->db->join('candidateinfo', 'candidateinfo.applicationId = studentapplicationform.id','left');
+        $this->db->where('studentapplicationform.studentOrAgentId',$studentOrAgentId);
+        $this->db->from('studentapplicationform');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
 
     public function deleteQualifications($qualificationId)
     {
@@ -1030,6 +1042,22 @@ class ApplyOnlinem extends CI_Model
             $error=$this->db->update('personexperience', $data);
 
         }
+
+
+    }
+    public function cancelApplication($applicationId){
+
+
+        $data1 = array(
+
+            'isSubmited' => '2',
+
+        );
+
+        $this->db->where('id', $applicationId);
+        $error=$this->db->update('studentapplicationform', $data1);
+
+
 
 
     }
