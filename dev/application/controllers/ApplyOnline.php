@@ -10,12 +10,33 @@ class ApplyOnline extends CI_Controller
         $this->load->model('Photom');
         $this->load->model('Coursem');
         $this->load->model('ApplyOnlinem');
+
     }
     public function index()
     {
     }
 
     public function newApplyFromAgent()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
+            $this->load->view('application-form', $this->data);
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
+    public function newApplyFromStudents()
     {
         if ($this->session->userdata('loggedin') == "true") {
 
@@ -67,6 +88,32 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+    public function editApplyFromStudents($id)
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
+            $dataSession = [
+                'studentApplicationId' => $id,
+            ];
+            $this->session->set_userdata($dataSession);
+
+            redirect('Apply');
+
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
     public function viewForm1()
     {
         if ($this->session->userdata('loggedin') == "true") {
@@ -82,6 +129,8 @@ class ApplyOnline extends CI_Controller
 
                 $studentApplicationId=$this->data['studentApplicationId'];
                 $this->data['candidateInfos'] = $this->ApplyOnlinem->getCandidateInfo($studentApplicationId);
+
+                //print_r($this->data['candidateInfos']);
                 $this->load->view('application-formv', $this->data);
 
 
@@ -145,6 +194,22 @@ class ApplyOnline extends CI_Controller
             $studentOrAgentId = $this->session->userdata('id');
             $this->data['applications'] = $this->ApplyOnlinem->getApplicationInfoForAgent($studentOrAgentId);
             $this->load->view('allApplicationsForAgent', $this->data);
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+    public function viewallFormsForStudents()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+            $studentOrAgentId = $this->session->userdata('id');
+            $this->data['applications'] = $this->ApplyOnlinem->getApplicationInfoForStudens($studentOrAgentId);
+            $this->load->view('allApplicationsForStudents', $this->data);
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -2779,6 +2844,36 @@ class ApplyOnline extends CI_Controller
         $experienceId = $this->input->post("id");
         $data = $this->ApplyOnlinem->deleteExperience($experienceId);
         $this->session->set_flashdata('successMessage', 'Experience Deleted Successfully');
+    }
+
+    public function cancelApplication($applicationId) // for selected Application cancel
+    {
+        if ($this->session->userdata('loggedin') == "true")
+        {
+            $this->data['error']=$this->ApplyOnlinem->cancelApplication($applicationId);
+
+            if (empty($this->data['error'])) {
+
+
+                $this->session->set_flashdata('successMessage', 'Application Cancelled  Successfully');
+                redirect('AllFormForStudents');
+
+
+            } else {
+
+                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                redirect('AllFormForStudents');
+
+            }
+
+        }
+
+        else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
     }
 
     public function menu() // get all the menu + footer

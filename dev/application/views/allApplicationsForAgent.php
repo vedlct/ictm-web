@@ -19,6 +19,13 @@
     </div><!-- /.container -->
 </div><!-- /page-title -->
 
+<?php if ($this->session->flashdata('errorMessage')!=null){?>
+    <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+<?php }
+elseif($this->session->flashdata('successMessage')!=null){?>
+    <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+<?php }?>
+
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
@@ -29,7 +36,7 @@
 
                     <div class="form-top">
                         <div class="form-top-left">
-                            <h3>Personal Details</h3>
+                            <h3>Application Details</h3>
                         </div>
 
                         <div class="form-top-right">

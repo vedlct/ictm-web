@@ -33,7 +33,7 @@
 <!--                    <fieldset>-->
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Finance</h3>
+                                <h3>Finance ggdfgdfgdf Rumi</h3>
                             </div>
 
                             <div class="form-top-right">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
+                <form  action="<?php echo base_url()?>ApplyOnline/insertapplyNow4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
 
                         <div class="form-bottom">
 
@@ -59,7 +59,7 @@
                                 </div>
                             </div>
 
-                            <div style="display: none" id="otherFinance">
+                            <div style="display: none" id="otherFinance121">
 
 
 
@@ -222,21 +222,24 @@
 <script>
 
     $(document).ready(function(){
-        if ('<?php echo $financeYes?>'== 'own' || '<?php echo $financeYes?>'=='slc'){
-            document.getElementById("otherFinance").style.display = "none";
-        }else {
-            document.getElementById("otherFinance").style.display = "block";
+        if ( $('input[name=selfFinance]:checked').val() == "slc" || $('input[name=selfFinance]:checked').val() == "own" ){
+            $('#otherFinance121').hide();
+
+        }
+        else if ($('input[name=selfFinance]:checked').val() == 'sponsor'){
+            $('#otherFinance121').show();
         }
     });
-    
 
 
     $("input[name=selfFinance]").click( function () {
 
         if ($(this).val()=='own' || $(this).val()=='slc'){
-            document.getElementById("otherFinance").style.display = "none";
+            //document.getElementById("otherFinance").style.display = "none";
+            $('#otherFinance121').hide();
         }else {
-            document.getElementById("otherFinance").style.display = "block";
+            //document.getElementById("otherFinance").style.display = "block";
+            $('#otherFinance121').show();
         }
 
     });
@@ -247,7 +250,7 @@
 
         var finance=$('input[name=selfFinance]:checked').val();
 
-        if ((finance != 'own' )&& (finance != "slc" )) {
+        if ((finance != 'own' ) && (finance != "slc" )) {
 
 
             var title = document.getElementById("title").value;

@@ -51,7 +51,8 @@ class Login extends CI_Controller {
 
                     if ($result->type == 'Student') {
 
-                        redirect('Apply');
+//                        redirect('Apply');
+                        redirect('AllFormForStudents');
 
                     } elseif ($result->type == 'Agent') {
 
