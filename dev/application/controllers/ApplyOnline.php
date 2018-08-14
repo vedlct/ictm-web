@@ -36,6 +36,82 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+    public function userProfile()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+            $studentOrAgentId = $this->session->userdata('id');
+            $this->data['applications'] = $this->ApplyOnlinem->getUserInfo($studentOrAgentId);
+            $this->load->view('UserAllInfo', $this->data);
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
+    public function editUserInfo($id)
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $title = $this->input->post('title');
+            $firstname = $this->input->post('firstname');
+            $surname = $this->input->post('surname');
+            $email = $this->input->post('email');
+            $password = $this->input->post('password');
+            $confirmpassword = $this->input->post('confirmpassword');
+
+            if ($password == $confirmpassword){
+
+                $data = array(
+
+                    'title' => $title,
+                    'firstname' => $firstname,
+                    'surname' => $surname,
+                    'email' => $email,
+                    'password' => $password,
+
+
+                );
+
+                $this->data['error'] = $this->ApplyOnlinem->updateUserInfo($data,$id);
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage', 'Information Updated  Successfully');
+                    redirect('ApplyOnline/userProfile');
+
+                } else {
+
+
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('ApplyOnline/userProfile');
+
+                }
+
+            }
+
+
+
+
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
     public function newApplyFromStudents()
     {
         if ($this->session->userdata('loggedin') == "true") {
@@ -188,12 +264,14 @@ class ApplyOnline extends CI_Controller
     public function viewallFormsForAgents()
     {
         if ($this->session->userdata('loggedin') == "true") {
+
             $this->menu();
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
             $studentOrAgentId = $this->session->userdata('id');
             $this->data['applications'] = $this->ApplyOnlinem->getApplicationInfoForAgent($studentOrAgentId);
             $this->load->view('allApplicationsForAgent', $this->data);
+
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -217,6 +295,30 @@ class ApplyOnline extends CI_Controller
                     </script>";
         }
     }
+    public function userApplications()
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
+            $studentOrAgentType = $this->session->userdata('type');
+
+            if ($studentOrAgentType == 'Student'){
+                redirect('AllFormForStudents');
+            }elseif ($studentOrAgentType == 'Agent'){
+                redirect('AllFormForAgents');
+            }
+
+        }else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+
     public function insertApplicationForm1()
     {
         if ($this->session->userdata('loggedin') == "true") {

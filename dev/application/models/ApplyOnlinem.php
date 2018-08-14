@@ -1003,6 +1003,30 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
     }
+    public function getUserInfo($studentOrAgentId){
+        $this->db->select('*');
+        $this->db->where('id',$studentOrAgentId);
+        $this->db->from('studentregistration');
+        $query=$this->db->get();
+        return $query->result();
+
+    }
+
+    public function updateUserInfo($data,$id){
+
+
+            $this->db->where('id', $id);
+            $error=$this->db->update('studentregistration', $data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+
+
+    }
 
     public function applyNow10update(){
 

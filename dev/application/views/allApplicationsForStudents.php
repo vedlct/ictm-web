@@ -29,7 +29,15 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <section class="flat-row padding-small-v1">
     <div class="container">
         <div class="row">
+
             <div class="col-md-9">
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-md-10">
+                        <a href="<?php echo base_url()?>ApplyOnline/userProfile" ><button type="button" class="btn btn-previous">User Profile</button></a>
+                    </div>
+                </div>
+                <br>
 
 
 
