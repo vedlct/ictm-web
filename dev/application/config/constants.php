@@ -176,3 +176,4 @@ define("languageTest", array("Lisiting"=>'1',"Reading"=>'2', "Speaking"=>'3', "W
 //////////////Aplication/////////////////
 
 define("COURSESESSION",array ("February","May","September"));
+define("PERSONAL_STATEMENT",array ("Facebook","Friend","Family","News"));
