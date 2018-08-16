@@ -65,6 +65,9 @@ $route['Event-Details/(:any)'] = 'Event/eventDetails/$1';
 
 $route['Contact'] = 'OnlineForms/contactUs';
 
+$route['ForgetPass'] = 'Login/ViewForgetPass';
+$route['ForgetPassChangedFromMail/(:any)/(:any)/(:any)'] = 'Login/ChangedPass/$1/$2/$3';
+
 $route['AllFormForAgents'] = 'ApplyOnline/viewallFormsForAgents';
 $route['AllFormForStudents'] = 'ApplyOnline/viewallFormsForStudents';
 

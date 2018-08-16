@@ -21,6 +21,7 @@
 
         <section class="flat-row padding-small-v1">
             <div class="container">
+
                 <?php if ($this->session->flashdata('errorMessage')!=null){?>
                     <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
                 <?php }
@@ -35,9 +36,9 @@
 
 		                        
 		                            <div class="form-bottom">
-                                    <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Personal Details</h2>
+                                    <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Registration</h2>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Type:<span style="color: red" class="required">*</span></label>
+                                            <label class="control-label col-md-2">Application Type:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('type'); ?></font></p>
                                                 <select style="width: 100%"  id="type" required name="type">
@@ -87,15 +88,17 @@
 				                        		<input type="email" name="email" required value="<?php echo set_value('email'); ?>" placeholder="" class="form-control" id="email">
                                             </div>
 				                        </div>
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10" >
-                                                <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
-                                            	<input type="radio" required name="gender" value="male"> Male&nbsp;&nbsp;
-                                                <input type="radio" required name="gender" value="female"> Female&nbsp;&nbsp;
-                                                <input type="radio" required name="gender" value="other"> Other
-                                          	</div>
-				                        </div><br>
+
+<!--                                        <div class="form-group">-->
+<!--                                        	<label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>-->
+<!--                                          	<div class="col-md-10" >-->
+<!--                                                <p><font color="red"> --><?php //echo form_error('gender'); ?><!--</font></p>-->
+<!--                                            	<input type="radio" required name="gender" value="male"> Male&nbsp;&nbsp;-->
+<!--                                                <input type="radio" required name="gender" value="female"> Female&nbsp;&nbsp;-->
+<!--                                                <input type="radio" required name="gender" value="other"> Other-->
+<!--                                          	</div>-->
+<!--				                        </div>-->
+                                        <br>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Password</h2>
                                         

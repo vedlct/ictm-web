@@ -57,4 +57,5 @@ class Registrationm extends CI_Model
 
     }
 
+
 }

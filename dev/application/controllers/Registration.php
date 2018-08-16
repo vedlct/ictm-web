@@ -97,7 +97,7 @@ class Registration extends CI_Controller {
             $firstname = $this->input->post('firstname');
             $surname = $this->input->post('surname');
             $email = $this->input->post('email');
-            $gender = $this->input->post('gender');
+//            $gender = $this->input->post('gender');
             $password = $this->input->post('password');
             $confirmpassword = $this->input->post('confirmpassword');
 
@@ -116,7 +116,7 @@ class Registration extends CI_Controller {
                     'firstname' => $firstname,
                     'surname' => $surname,
                     'email' => $email,
-                    'gender' => $gender,
+//                    'gender' => $gender,
                     'password' => $password,
                     'accountActivation'=>'0',
                     'activationToken'=>$activationToken
