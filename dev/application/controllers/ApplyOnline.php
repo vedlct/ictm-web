@@ -191,6 +191,33 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+    public function editApplyFromAgents($id)
+    {
+        if ($this->session->userdata('loggedin') == "true") {
+
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+
+            $dataSession = [
+                'studentApplicationId' => $id,
+            ];
+            $this->session->set_userdata($dataSession);
+
+            redirect('Apply');
+
+
+        } else{
+
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+        }
+
+    }
+
     public function viewForm1()
     {
         if ($this->session->userdata('loggedin') == "true") {

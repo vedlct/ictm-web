@@ -76,7 +76,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <a class="btn" target="_blank" href="<?php echo base_url()?>ApplyOnline/showApplicationPdf/<?php echo $application->id ?>"><i class="fa fa-file-pdf-o"></i></a>
 
                                     <a class="btn" href="<?php echo base_url()?>ApplyOnline/cancelApplication/<?php echo $application->id ?>"><i class="fa fa-times-circle-o"></i></a>
-                                    
+
                                 <?php } elseif($application->isSubmited=='2') {}?>
 
                             </td>
