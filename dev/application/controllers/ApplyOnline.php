@@ -795,13 +795,13 @@ class ApplyOnline extends CI_Controller
             if (empty($this->data['error'])) {
 
                 $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                redirect('ApplyForm4');
+                redirect('ApplyForm5');
 
             } else {
 
 
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                redirect('ApplyForm4');
+                redirect('ApplyForm5');
 
             }
 
@@ -1548,13 +1548,13 @@ class ApplyOnline extends CI_Controller
 
 
                         $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                        redirect('ApplyForm4');
+                        redirect('ApplyForm5');
 
                     } else {
 
 
                         $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                        redirect('ApplyForm4');
+                        redirect('ApplyForm3');
 
                     }
 
@@ -1569,13 +1569,13 @@ class ApplyOnline extends CI_Controller
 
 
                     $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                    redirect('ApplyForm4');
+                    redirect('ApplyForm5');
 
                 } else {
 
 
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm4');
+                    redirect('ApplyForm3');
 
                 }
 
@@ -1819,13 +1819,13 @@ class ApplyOnline extends CI_Controller
 
 
                     $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                    redirect('ApplyForm5');
+                    redirect('ApplyForm6');
 
 
                 } else {
 
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm5');
+                    redirect('ApplyForm4');
 
                 }
 
@@ -1930,13 +1930,13 @@ class ApplyOnline extends CI_Controller
                 if (empty($this->data['error'])) {
 
                     $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                    redirect('ApplyForm6');
+                    redirect('ApplyForm4');
 
 
                 } else {
 
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm6');
+                    redirect('ApplyForm5');
 
                 }
             }
@@ -2116,7 +2116,7 @@ class ApplyOnline extends CI_Controller
 
 
                 $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                redirect('ApplyForm7');
+                redirect('ApplyForm8');
 
 
             } else {
@@ -2298,13 +2298,13 @@ class ApplyOnline extends CI_Controller
 
 
                 $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                redirect('ApplyForm7');
+                redirect('ApplyForm8');
 
 
             } else {
 
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                redirect('ApplyForm7');
+                redirect('ApplyForm6');
 
             }
         }else{
@@ -2470,13 +2470,13 @@ class ApplyOnline extends CI_Controller
 
 
                     $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
-                    redirect('ApplyForm8');
+                    redirect('ApplyForm9');
 
 
                 } else {
 
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm8');
+                    redirect('ApplyForm7');
 
                 }
 
@@ -2575,13 +2575,13 @@ class ApplyOnline extends CI_Controller
 
 
                 $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                redirect('ApplyForm9');
+                redirect('ApplyForm7');
 
 
             } else {
 
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                redirect('ApplyForm9');
+                redirect('ApplyForm8');
 
             }
 
@@ -2733,7 +2733,7 @@ class ApplyOnline extends CI_Controller
 
                     $this->ApplyOnlinem->editRefereesDetailsById($refereesId, $data);
                     $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
-                    redirect('ApplyForm9');
+                    redirect('ApplyForm7');
                 } else {
 
                     $data2 = array(
@@ -2742,7 +2742,7 @@ class ApplyOnline extends CI_Controller
                     $data = array_merge($data, $data2);
                     $this->ApplyOnlinem->insertRefereesDetailsFromEdit($data);
                     $this->session->set_flashdata('successMessage', 'Referees Added Successfully');
-                    redirect('ApplyForm9');
+                    redirect('ApplyForm7');
 
                 }
             }

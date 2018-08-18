@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 8 / 10</p>
+                                <p>Step 9 / 10</p>
                             </div>
                         </div>
                         <div class="form-bottom">
@@ -73,10 +73,10 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
 
