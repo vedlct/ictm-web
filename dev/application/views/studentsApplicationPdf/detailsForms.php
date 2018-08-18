@@ -95,7 +95,7 @@
     <div style= "background: #fff; margin-bottom: 30px;padding: 25px "  class="container">
         <table border="0" style="width:100%; margin-top: 15px; border: none;">
             <tr>
-                <td style="border: none;width:8%"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/img/logoform.jpg" alt=""></td>
+                <td style="border: none;width:8%"><img style="height: 80px; border: none;" src="<?php echo base_url()?>public/images/logoform.jpg" alt=""></td>
                 <td style="border: none;width: 92%"><h2 style="font-size: 24px; border: none;"> <span style="color: #E3352E">ICON</span> COLLEGE OF TECHNOLOGY OF MANAGEMENT</h2></td>
             </tr>
         </table>

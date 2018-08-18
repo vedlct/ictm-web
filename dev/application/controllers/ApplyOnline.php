@@ -10,6 +10,7 @@ class ApplyOnline extends CI_Controller
         $this->load->model('Photom');
         $this->load->model('Coursem');
         $this->load->model('ApplyOnlinem');
+        $this->load->model('studentApplicationPdfm');
 
     }
     public function index()
@@ -2977,6 +2978,81 @@ class ApplyOnline extends CI_Controller
                     </script>";
         }
     }
+
+
+    // show Pdf
+
+    public function ApplicationDetails()
+    {
+
+        $applicationId = 4;
+
+        $this->data['applicationDetails'] = $this->studentApplicationPdfm->applicationDetails($applicationId);
+        $this->data['personalDetails'] = $this->studentApplicationPdfm->personalDetails($applicationId);
+        $this->data['contactDetails'] = $this->studentApplicationPdfm->contactDetails($applicationId);
+        $this->data['emmergencyContact'] = $this->studentApplicationPdfm->emmergancyContact($applicationId);
+        $this->data['courseDetails'] = $this->studentApplicationPdfm->courseDetails($applicationId);
+        $this->data['qualifications'] = $this->studentApplicationPdfm->qualifications($applicationId);
+        $this->data['experience'] = $this->studentApplicationPdfm->workExperience($applicationId);
+        $this->data['languageProficiency'] = $this->studentApplicationPdfm->languageProficiency($applicationId);
+        $this->data['languageProficiencyTestScore'] = $this->studentApplicationPdfm->languageProficiencyTestScore();
+        $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
+        $this->data['finance'] = $this->studentApplicationPdfm->finance($applicationId);
+        $this->data['referees'] = $this->studentApplicationPdfm->referees($applicationId);
+        $this->data['equaloppurtunitiesgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesGroup();
+        $this->data['equaloppurtunitiesgroupsubgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesSubGroup();
+        $this->data['personequaloppurtunities'] = $this->studentApplicationPdfm->personequalOppurtunities($applicationId);
+
+        $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
+
+        $this->load->view('studentsApplicationPdf/detailsForms', $this->data);
+    }
+
+    public function showApplicationPdf($applicationId) // for selected Application view
+    {
+        if ($this->session->userdata('loggedin') == "true")
+        {
+            $this->load->library('pdfgenerator');
+
+
+            $this->data['applicationDetails'] = $this->studentApplicationPdfm->applicationDetails($applicationId);
+
+            $this->data['personalDetails'] = $this->studentApplicationPdfm->personalDetails($applicationId);
+            $this->data['contactDetails'] = $this->studentApplicationPdfm->contactDetails($applicationId);
+            $this->data['emmergencyContact'] = $this->studentApplicationPdfm->emmergancyContact($applicationId);
+            $this->data['courseDetails'] = $this->studentApplicationPdfm->courseDetails($applicationId);
+            $this->data['qualifications'] = $this->studentApplicationPdfm->qualifications($applicationId);
+            $this->data['experience'] = $this->studentApplicationPdfm->workExperience($applicationId);
+            $this->data['languageProficiency'] = $this->studentApplicationPdfm->languageProficiency($applicationId);
+            $this->data['languageProficiencyTestScore'] = $this->studentApplicationPdfm->languageProficiencyTestScore();
+            $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
+            $this->data['finance'] = $this->studentApplicationPdfm->finance($applicationId);
+            $this->data['referees'] = $this->studentApplicationPdfm->referees($applicationId);
+            $this->data['equaloppurtunitiesgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesGroup();
+            $this->data['equaloppurtunitiesgroupsubgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesSubGroup();
+            $this->data['personequaloppurtunities'] = $this->studentApplicationPdfm->personequalOppurtunities($applicationId);
+
+            $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
+
+            $html=$this->load->view('studentsApplicationPdf/detailsForms', $this->data,true);
+
+            $filename = 'ApplicationFormPDF';
+            $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+
+        }
+
+        else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+
+    /* for pdf end */
+
+
+
 
     public function menu() // get all the menu + footer
     {

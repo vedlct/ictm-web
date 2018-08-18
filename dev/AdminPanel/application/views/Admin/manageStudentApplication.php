@@ -133,48 +133,8 @@
         }
     });
 
-    function selectid(x) {
-        if (confirm("Are you sure you want to delete this Affiliation?")) {
-//            btn = $(x).data('panel-id');
-//            $.ajax({
-//                type:'POST',
-//                url:'<?php //echo base_url("Admin/Affiliation/deleteAffiliation/")?>//'+btn,
-//                data:{},
-//                cache: false,
-//                success:function(data) {
-//
-//                    location.reload();
-//
-//                }
-//            });
-//        }
-//        else {
-//            location.reload();
-        }
-    }
-    function selectHome(x) {
-        if (confirm("Are you sure ?")) {
-            btn = $(x).data('panel-id');
-            $.ajax({
-                type:'POST',
-                url:'<?php echo base_url("Admin/Affiliation/appearInHomePage/")?>'+btn,
-                data:{},
-                cache: false,
-                success:function(data) {
-                    if (data=='1'){
-                        alert('Affiliation Added Successfully To Home Page');
-                    }
-                    else if(data=='0'){
-                        alert('Affiliation Removed Successfully From Home Page');
-                    }
 
-                }
-            });
-        }
-        else {
-            location.reload();
-        }
-    }
+
 
 
 </script>

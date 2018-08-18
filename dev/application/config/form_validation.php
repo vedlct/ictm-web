@@ -178,11 +178,7 @@ $config = array (
             'rules' => 'required|matches[password]|xss_clean|htmlspecialchars',
 
         ),
-        array(
-            'field' => 'gender',
-            'label' => 'Gender',
-            'rules' => 'required|max_length[50]|in_list[male,female,other]|xss_clean|htmlspecialchars'
-        ),
+
 
 
   ),

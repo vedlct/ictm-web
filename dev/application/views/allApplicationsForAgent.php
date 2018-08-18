@@ -66,9 +66,17 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <td><?php if ($application->isSubmited=='0'){echo "Not Submitted";}elseif($application->isSubmited=='1'){echo "Submitted";} ?></td>
 
                             <td>
+
                                 <?php if ($application->isSubmited=='0'){?>
-                                <a class="btn" href="<?php echo base_url()?>ApplyOnline/editApplyFromAgent/<?php echo $application->id ?>"><i class="fa fa-edit"></i></a>
-                                <?php } elseif($application->isSubmited=='1'){echo "Allready Submitted";} ?>
+                                    <a class="btn" href="<?php echo base_url()?>ApplyOnline/editApplyFromAgents/<?php echo $application->id ?>"><i class="fa fa-edit"></i></a>
+                                <?php } elseif($application->isSubmited=='1'){?>
+
+                                <a class="btn" target="_blank" href="<?php echo base_url()?>ApplyOnline/showApplicationPdf/<?php echo $application->id ?>"><i class="fa fa-file-pdf-o"></i></a>
+
+                                    <a class="btn" href="<?php echo base_url()?>ApplyOnline/cancelApplication/<?php echo $application->id ?>"><i class="fa fa-times-circle-o"></i></a>
+                                <?php } elseif($application->isSubmited=='2') {}?>
+
+
 
                             </td>
                         </tr>
