@@ -55,7 +55,7 @@
                                     <label class="control-label col-md-2">Self Finance:</label>
                                     <div class="col-md-10">
                                         <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC &nbsp;&nbsp;
-                                        <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> Yes&nbsp;&nbsp;
+                                        <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> OWN&nbsp;&nbsp;
                                         <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsor&nbsp;&nbsp;&nbsp;
                                     </div>
                                 </div>
@@ -160,7 +160,7 @@
                                     <a href="<?php echo base_url()?>ApplyForm5" ><button type="button" class="btn btn-previous">Previous</button></a>
 
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>-->
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Next</button></a>
 
                                 </div>

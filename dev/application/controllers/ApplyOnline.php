@@ -2399,9 +2399,11 @@ class ApplyOnline extends CI_Controller
 
                 if (empty($data)) {
 
+                    print_r($applicationId);
 
-                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
-                    redirect('ApplyForm7');
+
+                   // $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                 //   redirect('ApplyForm7');
 
 
                 } else {
@@ -2497,6 +2499,9 @@ class ApplyOnline extends CI_Controller
     //upload an image options
     private function set_upload_options($applicationId)
     {
+        if (!is_dir('AdminPanel/studentApplications/'.$applicationId)){
+            mkdir('AdminPanel/studentApplications/'.$applicationId, 0777, TRUE);
+        }
 
         $config = array();
         $config['upload_path'] = 'AdminPanel/studentApplications/'.$applicationId."/";
