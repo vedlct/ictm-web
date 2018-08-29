@@ -11,7 +11,7 @@
                 <div class="breadcrumbs">
                     <ul>
                         <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
+                        <li>\ Application Form </li>
                     </ul>
                 </div>
             </div><!-- /.col-md-12 -->
@@ -32,8 +32,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             <div class="col-md-9">
 
                 <div class="form-group">
-                    <div class="col-sm-offset-2 col-md-10">
+                    <div align="right" class=" col-md-12">
                         <a href="<?php echo base_url()?>ApplyOnline/userProfile" ><button type="button" class="btn btn-previous">User Profile</button></a>
+                        <a href="<?php echo base_url()?>ApplyOnline/newApplyFromAgent" ><button type="button" class="btn btn-previous">New Application</button></a>
                     </div>
                 </div>
                 <br>
@@ -44,9 +45,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <h3>Application Details</h3>
                         </div>
 
-                        <div class="form-top-right">
-                            <p>Step 1 / 9</p>
-                        </div>
+<!--                        <div class="form-top-right">-->
+<!--                            <p>Step 1 / 9</p>-->
+<!--                        </div>-->
                     </div>
 
 
@@ -85,7 +86,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                 <div class="form-group">
                     <div class="col-sm-offset-2 col-md-10">
-                        <a href="<?php echo base_url()?>ApplyOnline/newApplyFromAgent" ><button type="button" class="btn btn-previous">New Application</button></a>
+
                     </div>
                 </div>
 

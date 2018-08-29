@@ -114,7 +114,7 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address P.O :<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="addressPo1" name="addressPo[]" required>
                                 </div>

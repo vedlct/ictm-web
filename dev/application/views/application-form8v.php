@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address P.O :</label>
+                                <label class="control-label col-md-2">Post Code:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('addressPo'); ?></font></p>
                                     <input required type="text" class="form-control" maxlength="8" id="addressPo" name="addressPo">
