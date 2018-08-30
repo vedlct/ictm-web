@@ -2,6 +2,14 @@
 <?php $this->load->view('Admin/head.php'); ?>
 <!-- for Application Form -->
 <link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
+<style>
+    select{
+        height: 30px; border: 1px solid #bababa;
+    }
+    textarea{
+        border: 1px solid #bababa; width: 100%;
+    }
+</style>
 
 
 <div class="page-title full-color">
@@ -54,77 +62,84 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div style="display: none" id="Englishproficience">
                             <p>If English is not your first language, please state your qualifications.</p>
 
-                            <div id='TextBoxesGroup'>
+                            <div  id='TextBoxesGroup'>
                                 <div id="TextBoxDiv1" >
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%; height: 30px; border: 1px solid #bababa;" id="test" name="test[]">
+<!--                                    <select style="width: 100%; height: 30px; border: 1px solid #bababa;" id="test" name="test[]">-->
+<!--                                        <option value="" disabled selected>Select test...</option>-->
+<!--                                        <option value="1">IELTS</option>-->
+<!--                                        <option value="2">TOEFL</option>-->
+<!--                                        <option value="3">PTE</option>-->
+<!--                                    </select>-->
+                                    <select style="width: 100%" id="test" name="test[]" onchange="checkother()">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
                                         <option value="3">PTE</option>
+                                        <option value="4">OTHER</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Listening:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="listening" name="listening[]">
+                                    <div class="form-group" id="listendiv" style="display: block">
+                                        <label class="control-label col-md-2">Listening:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="listening" name="listening[]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="readingdiv" style="display: block">
+                                        <label class="control-label col-md-2">Reading:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="reading" name="reading[]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="writingdiv" style="display: block">
+                                        <label class="control-label col-md-2">Writing:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="writing" name="writing[]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="speakingdiv" style="display: block">
+                                        <label class="control-label col-md-2">Speaking: </label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="speaking" name="speaking[]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="overralldiv" style="display: block">
+                                        <label class="control-label col-md-2">Overall:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control" id="overall" name="overall[]">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="expirediv" style="display: block">
+                                        <label class="control-label col-md-2">Expiry Date:</label>
+                                        <div class="col-md-10">
+                                            <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Reading:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="reading" name="reading[]">
+                                <div class="form-group" id="addmore" style="display: block">
+                                    <div class="col-sm-offset-2 col-md-10">
+                                        <button style="margin-top:20px; color: #fff; background-color: #841A29;"id='addButton' type="button" class="btn">Add New Proficiency</button>
+                                        <button style="margin-top:20px; color: #fff; background-color: #841A29;"class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Writing:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="writing" name="writing[]">
+                                <div class="form-group" id="otherdiv" style="display: none">
+                                    <label class="control-label col-md-2">Other (Please Specify):</label>
+                                    <div class="col-md-10">
+                                        <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Speaking:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="speaking" name="speaking[]">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Overall:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control" id="overall" name="overall[]">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Expiry Date:</label>
-                                <div class="col-md-10">
-                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
-                                </div>
-                            </div>
-                                </div>
-                            </div>
-
-                            <div style="margin: 10px" class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;"id='addButton' type="button" class="btn">Add New Proficiency</button>
-                                    <button style="margin-top:20px; color: #fff; background-color: #841A29;"class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Other (Please Specify):</label>
-                                <div class="col-md-10">
-                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="comment-message" name="other" rows="8" tabindex="4"></textarea>
-                                </div>
-                            </div>
                             </div>
 
                             <div class="form-group">
@@ -200,6 +215,37 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </script>
 
 <script>
+
+    function checkother() {
+        if(document.getElementById('test').value == "4"){
+
+
+            document.getElementById('listendiv').style.display = 'none';
+            document.getElementById('readingdiv').style.display = 'none';
+            document.getElementById('writingdiv').style.display = 'none';
+            document.getElementById('speakingdiv').style.display = 'none';
+            document.getElementById('overralldiv').style.display = 'none';
+            document.getElementById('expirediv').style.display = 'none';
+            document.getElementById('addmore').style.display = 'none';
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('listendiv').style.display = 'block';
+            document.getElementById('readingdiv').style.display = 'block';
+            document.getElementById('writingdiv').style.display = 'block';
+            document.getElementById('speakingdiv').style.display = 'block';
+            document.getElementById('overralldiv').style.display = 'block';
+            document.getElementById('expirediv').style.display = 'block';
+            document.getElementById('addmore').style.display = 'block';
+
+
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
 
     $(document).ready(function(){
         var counter = 2;

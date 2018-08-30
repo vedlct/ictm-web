@@ -313,8 +313,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
         var organisation=$('#organisation').val();
         var positionHeld=$('#positionHeld').val();
-        var startdate=$('#startdate').val();
-        var enddate=$('#enddate').val();
+        var startdate=Date($('#startdate').val());
+        var enddate=Date($('#enddate').val());
 
 
 

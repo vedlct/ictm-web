@@ -224,12 +224,14 @@ class StudentApplication extends CI_Controller
                 $this->load->view('StudentApplicationForms/application-formv', $this->data);
             }
             else {
+
                 $candidateTitle = $this->input->post("title");
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
                 $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
+                $candidateGenderChanged = $this->input->post("genderChange");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
@@ -281,6 +283,7 @@ class StudentApplication extends CI_Controller
 //                    'studentApplicationId' => $studentApplicationId,
 //                ];
 //                $this->session->set_userdata($dataSession);
+
                 $data=array(
                     //'applicationId'=>$this->session->userdata('studentApplicationId'),
                     'title'=>$candidateTitle,
@@ -289,6 +292,7 @@ class StudentApplication extends CI_Controller
 //                    'otherNames'=>$candidateOtherNamee,
                     'dateOfBirth'=>$candidateDob,
                     'gender'=>$candidateGender,
+                    'ganderChange'=>$candidateGenderChanged,
                     'placeOfBirth'=>$candidatePlaceOfBirth,
                     'nationality'=>$candidateNationality,
                     'passportNo'=>$candidatePassportNo,
@@ -332,7 +336,6 @@ class StudentApplication extends CI_Controller
 
                 );
 
-
                 $this->data['error']=$this->StudentApplicationm->editApplyForm1($data,$data1);
 
 
@@ -373,12 +376,14 @@ class StudentApplication extends CI_Controller
                 $this->load->view('StudentApplicationForms/application-formv', $this->data);
             }
             else {
+
                 $candidateTitle = $this->input->post("title");
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
-                $candidateOtherNamee = $this->input->post("otherName");
+//                $candidateOtherNamee = $this->input->post("otherName");
                 $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
+                $candidateGenderChanged = $this->input->post("genderChange");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
@@ -418,8 +423,9 @@ class StudentApplication extends CI_Controller
                 $ulnNo = $this->input->post("ulnNo");
                 $ucasCourseCode = $this->input->post("ucasCourseCode");
 
-                // $aplicationFormid=$this->session->userdata('id').date("YmdHis");
 
+//                $aplicationFormid=$this->session->userdata('id').date("YmdHis");
+//
 //                $data3=array(
 //                    'studentOrAgentId'=>$this->session->userdata('id'),
 //                    'studentApplicationFormId'=>$aplicationFormid
@@ -429,14 +435,16 @@ class StudentApplication extends CI_Controller
 //                    'studentApplicationId' => $studentApplicationId,
 //                ];
 //                $this->session->set_userdata($dataSession);
+
                 $data=array(
                     //'applicationId'=>$this->session->userdata('studentApplicationId'),
                     'title'=>$candidateTitle,
                     'firstName'=>$candidateFirstName,
                     'surName'=>$candidateSurName,
-                    'otherNames'=>$candidateOtherNamee,
+//                    'otherNames'=>$candidateOtherNamee,
                     'dateOfBirth'=>$candidateDob,
                     'gender'=>$candidateGender,
+                    'ganderChange'=>$candidateGenderChanged,
                     'placeOfBirth'=>$candidatePlaceOfBirth,
                     'nationality'=>$candidateNationality,
                     'passportNo'=>$candidatePassportNo,
@@ -465,14 +473,6 @@ class StudentApplication extends CI_Controller
                     'emergencyContactCountry'=>$EmergencyContactCountry,
                 );
                 $data1=array(
-
-//                    'courseName'=>$courseName,
-//                    'awardingBody'=>$awardingBody,
-//                    'courseLevel'=>$courseLevel,
-//                    'courseStartDate'=>$courseStartDate,
-//                    'courseEndDate'=>$courseEndDate,
-//                    'methodOfStudy'=>$methodeOfStudy,
-
                     'courseName'=>$courseName,
                     'awardingBody'=>$awardingBody,
                     'courseLevel'=>$courseLevel,
