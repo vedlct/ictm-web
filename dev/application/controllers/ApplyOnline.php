@@ -2399,11 +2399,11 @@ class ApplyOnline extends CI_Controller
 
                 if (empty($data)) {
 
-                    print_r($applicationId);
+                  //  print_r($applicationId);
 
 
-                   // $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
-                 //   redirect('ApplyForm7');
+                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                    redirect('ApplyForm7');
 
 
                 } else {

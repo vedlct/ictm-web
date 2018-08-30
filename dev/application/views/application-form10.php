@@ -84,8 +84,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
-                                <button id='addButton' type="button" class="btn">Add New Qualification</button>
-                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
+                                <button id='addButton' type="button" class="btn " style="background-color: #4cae4c">Add New Qualification</button>
+                                <button class="btn " type='button' value='Remove' id='removeButton' style="background-color: darkred"> Remove</button>
                             </div>
                         </div>
 
