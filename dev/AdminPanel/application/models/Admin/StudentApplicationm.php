@@ -411,44 +411,59 @@ class StudentApplicationm extends CI_Model
 
 
             for ($i = 0; $i < count($test); $i++) {
-                $data = array(
-                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
-                    'fkTestId' => $test[$i],
-                    'overallScore' => $overall[$i],
-                    'expireDate' => date('Y-m-d',strtotime($exirydate[$i])),
-                    'other' =>$other
 
-                );
+                if ($test[$i] == '4') {
+                    $data = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                        'fkTestId' => $test[$i],
+                        'other' => $other
 
-                $error = $this->db->insert('candidatelanguagetest', $data);
-                $insert_id = $this->db->insert_id();
+                    );
+                    //   $error = $this->db->insert('candidatelanguagetest', $data);
+                    // $insert_id = $this->db->insert_id();
+
+                } else {
 
 
-                $data1 = array(
-                    'fkCandidateTestId' => $insert_id,
-                    'fkTestHeadId' => languageTest['Lisiting'],
-                    'score' => $listening[$i],
-                );
-                $data2 = array(
-                    'fkCandidateTestId' => $insert_id,
-                    'fkTestHeadId' => languageTest['Reading'],
-                    'score' => $reading[$i],
-                );
-                $data3 = array(
-                    'fkCandidateTestId' => $insert_id,
-                    'fkTestHeadId' => languageTest['Speaking'],
-                    'score' => $writing[$i],
-                );
-                $data4 = array(
-                    'fkCandidateTestId' => $insert_id,
-                    'fkTestHeadId' => languageTest['Writing'],
-                    'score' => $speaking[$i],
-                );
+                    $data = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                        'fkTestId' => $test[$i],
+                        'overallScore' => $overall[$i],
+                        'expireDate' => date('Y-m-d', strtotime($exirydate[$i])),
+                        'other' => $other
 
-                $error = $this->db->insert('cadidatelanguagetestscores', $data1);
-                $error = $this->db->insert('cadidatelanguagetestscores', $data2);
-                $error = $this->db->insert('cadidatelanguagetestscores', $data3);
-                $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+                    );
+
+                    $error = $this->db->insert('candidatelanguagetest', $data);
+                    $insert_id = $this->db->insert_id();
+
+
+                    $data1 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Lisiting'],
+                        'score' => $listening[$i],
+                    );
+                    $data2 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Reading'],
+                        'score' => $reading[$i],
+                    );
+                    $data3 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Speaking'],
+                        'score' => $writing[$i],
+                    );
+                    $data4 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Writing'],
+                        'score' => $speaking[$i],
+                    );
+
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data1);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data2);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data3);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+                }
 
             }
 
