@@ -10,6 +10,12 @@
     .datepicker .next ,.prev {
         position: relative !important;
     }
+    select{
+        height: 32px; border: 1px solid #bababa;
+    }
+    textarea{
+        border: 1px solid #bababa; width: 100%;
+    }
 </style>
 
 <div class="maindiv">
@@ -56,15 +62,16 @@
                                 <p>Step 1 / 10</p>
                             </div>
                         </div>
+
                         <div class="form-bottom">
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;" name="title">
+                                    <select style="width: 100%" name="title">
                                         <?php for ($i=0;$i<count(Title);$i++){?>
-                                        <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                        <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->title) && $candidateInfo->title == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
+                                            <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                            <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->title) && $candidateInfo->title == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -103,12 +110,23 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Gender:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                     <input type="radio" required id="gender" name="gender" value="M" <?php if($candidateInfo->gender=='M'){ echo "checked=checked";}?>> Male&nbsp;&nbsp;
                                     <input type="radio" required id="gender" name="gender" value="F" <?php if($candidateInfo->gender=='F'){ echo "checked=checked";}?>> Female&nbsp;&nbsp;
                                     <input type="radio" required id="gender" name="gender" value="O" <?php if($candidateInfo->gender=='O'){ echo "checked=checked";}?>> Other
+                                    <input type="radio" required id="gender" name="gender" value="PNTS" <?php if($candidateInfo->gender=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Any Sex Change:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <p><font color="red"> <?php echo form_error('genderchange'); ?></font></p>
+                                    <input type="radio" required id="genderChange" name="genderChange" value="Y" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
+                                    <input type="radio" required id="genderChange" name="genderChange" value="N" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
+                                    <input type="radio" required id="genderChange" name="genderChange" value="PNTS" <?php if($candidateInfo->ganderChange=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
                                 </div>
                             </div>
 
@@ -124,50 +142,50 @@
                                 <label class="control-label col-md-2">Nationality:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
-                                    <select style="width: 100%; height: 30px; border: 1px solid #bababa;" id="nationality" required name="nationality">
+                                    <select style="width: 100%" id="nationality" required name="nationality">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                        <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Passport No.:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Passport No.:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
-                                    <input type="text" class="form-control" required id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
+                                    <input type="text" class="form-control"  id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">PP Expiry Date:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">PP Expiry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
+                                    <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">UK Entry Date:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">UK Entry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker" required id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
+                                    <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Visa Type:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Visa Type:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
-                                    <select style="width: 100%; height: 30px; border: 1px solid #bababa;" id="VisaType" required name="VisaType">
+                                    <select style="width: 100%" id="VisaType"  name="VisaType">
 
                                         <option value="" selected><?php echo SELECT_TYPE?></option>
                                         <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
-                                        <!--                                        <option --><?php //echo set_select('VisaType',  VISA_TYPE[$i], False); ?><!-->--><?php //echo VISA_TYPE[$i]?><!--</option>-->
-                                        <option value="<?php echo VISA_TYPE[$i]?>"<?php if (!empty($candidateInfo->visaType) && $candidateInfo->visaType == VISA_TYPE[$i])  echo 'selected = "selected"'; ?>><?php echo VISA_TYPE[$i]?></option>
+                                            <!--                                        <option --><?php //echo set_select('VisaType',  VISA_TYPE[$i], False); ?><!-->--><?php //echo VISA_TYPE[$i]?><!--</option>-->
+                                            <option value="<?php echo VISA_TYPE[$i]?>"<?php if (!empty($candidateInfo->visaType) && $candidateInfo->visaType == VISA_TYPE[$i])  echo 'selected = "selected"'; ?>><?php echo VISA_TYPE[$i]?></option>
 
                                         <?php } ?>
 
@@ -176,10 +194,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Visa Expiry Date:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Visa Expiry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker" required id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
+                                    <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
                                 </div>
                             </div>
 
@@ -189,12 +207,12 @@
                                 <label class="control-label col-md-2">Current Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
-                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="comment-message" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8"><?php echo $candidateInfo->currentAddress ?></textarea>
+                                    <textarea id="currentAddress" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Current Address P.O :<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
                                     <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
@@ -202,42 +220,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Current Address Country:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
-                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;" id="currentAddressCountry" required name="currentAddressCountry">
+                                    <select style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Overseas (Home) Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" ><?php echo $candidateInfo->overseasAddress?></textarea>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Overseas (Home) Address P.O :<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
-                                    <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Overseas Address Country:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
-                                    <select style="width: 100%; height: 32px;border: 1px solid #bababa; " id="permanentAddressCountry" required name="permanentAddressCountry">
-                                        <option value="" disabled selected>Select country...</option>
-                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -267,13 +256,41 @@
                                 </div>
                             </div>
 
+
+                            <label>Same as Current </label>
+                            <input type="checkbox" id="samecheck">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Fax:</label>
+                                <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('fax'); ?></font></p>
-                                    <input type="text" class="form-control" id="fax" name="fax" value="<?php echo $candidateInfo->fax ?>">
+                                    <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
+                                    <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
                                 </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
+                                    <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
+                                    <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
+                                        <option value="" disabled selected>Select country...</option>
+                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
 
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
 
@@ -281,11 +298,11 @@
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('EmergencyContactTitle'); ?></font></p>
-                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;" id="EmergencyContactTitle" required name="EmergencyContactTitle">
+                                    <select style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
-                                        <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->emergencyContactTitle) && $candidateInfo->emergencyContactTitle == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
+                                            <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->emergencyContactTitle) && $candidateInfo->emergencyContactTitle == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
 
                                         <?php } ?>
 
@@ -313,12 +330,12 @@
                                 <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
-                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" ><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
+                                    <textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Emergency Contact Address P.O :<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
                                     <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>">
@@ -326,13 +343,13 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Emergency Contact Country :<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
-                                    <select style="width: 100%; height: 32px;border: 1px solid #bababa;" id="emergencyContactCountry" required name="emergencyContactCountry">
+                                    <select style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                         <?php } ?>
                                     </select>
                                 </div>
@@ -358,15 +375,15 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Course Name:</label>
+                                <label class="control-label col-md-2">Course Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('courseName'); ?></font></p>
-                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;" onchange="courseAwardBody()" id="courseName" required name="courseName">
+                                    <select style="width: 100%" onchange="courseAwardBody()" id="courseName" required name="courseName">
                                         <option value=""><?php echo SELECT_COURSE?></option>
                                         <?php foreach ($courseInfo as $course){?>
-                                        <!--                                        <option value="--><?php //echo $course->courseId?><!--" --><?php //echo set_select('courseName',$course->courseId, False); ?><!-->--><?php //echo $course->courseTitle?><!--</option>-->
+                                            <!--                                        <option value="--><?php //echo $course->courseId?><!--" --><?php //echo set_select('courseName',$course->courseId, False); ?><!-->--><?php //echo $course->courseTitle?><!--</option>-->
 
-                                        <option value="<?php echo $course->courseId ?>"<?php if (!empty($candidateInfo->courseName) && $candidateInfo->courseName == $course->courseId)  echo 'selected = "selected"'; ?>><?php echo $course->courseTitle ?></option>
+                                            <option value="<?php echo $course->courseId ?>"<?php if (!empty($candidateInfo->courseName) && $candidateInfo->courseName == $course->courseId)  echo 'selected = "selected"'; ?>><?php echo $course->courseTitle ?></option>
 
                                         <?php } ?>
                                     </select>
@@ -406,14 +423,19 @@
                             <!--                        </div>-->
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Course Session:</label>
+                                <label class="control-label col-md-2">Course Session:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
-                                    <input type="text" class="form-control" id="courseSession" name="courseSession" value="<?php echo $candidateInfo->courseSession ?>">
+                                    <select style="width: 100%;  id="courseSession" required name="courseSession">
+                                        <option value="" disabled selected>Select Session...</option>
+                                        <?php for ($i=0;$i<count(COURSESESSION);$i++){?>
+                                            <option value="<?php echo COURSESESSION[$i]?>"<?php if (!empty($candidateInfo->courseSession) && $candidateInfo->courseSession == COURSESESSION[$i])  echo 'selected = "selected"'; ?>><?php echo COURSESESSION[$i]?></option>
+                                        <?php } ?>
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Year:</label>
+                                <label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
                                     <input type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo $candidateInfo->courseYear ?>">

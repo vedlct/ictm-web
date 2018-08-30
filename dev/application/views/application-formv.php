@@ -52,6 +52,7 @@
                             <p>Step 1 / 10</p>
                         </div>
                     </div>
+
                     <div class="form-bottom">
                         <div class="form-group">
                             <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
@@ -113,8 +114,8 @@
                             <label class="control-label col-md-2">Any Sex Change:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('genderchange'); ?></font></p>
-                                <input type="radio" required id="genderChange" name="genderChange" value="M" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
-                                <input type="radio" required id="genderChange" name="genderChange" value="F" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
+                                <input type="radio" required id="genderChange" name="genderChange" value="Y" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
+                                <input type="radio" required id="genderChange" name="genderChange" value="N" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
                                 <input type="radio" required id="genderChange" name="genderChange" value="PNTS" <?php if($candidateInfo->ganderChange=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
                             </div>
                         </div>
