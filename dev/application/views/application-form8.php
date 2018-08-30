@@ -114,7 +114,7 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address P.O :<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="addressPo1" name="addressPo[]" required>
                                 </div>
@@ -150,7 +150,7 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/insertApplicationForm8AndNext" class="btn btn-next">Save And Next</button>-->
                                     <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>

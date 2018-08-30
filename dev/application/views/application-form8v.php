@@ -112,7 +112,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address P.O :</label>
+                                <label class="control-label col-md-2">Post Code:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('addressPo'); ?></font></p>
                                     <input required type="text" class="form-control" maxlength="8" id="addressPo" name="addressPo">
@@ -139,7 +139,7 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>-->
                                     <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
