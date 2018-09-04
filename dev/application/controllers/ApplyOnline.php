@@ -99,10 +99,6 @@ class ApplyOnline extends CI_Controller
 
             }
 
-
-
-
-
         } else{
 
             echo "<script>

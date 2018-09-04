@@ -152,6 +152,11 @@ define("COUNTRY",array ("Afghanistan", "Albania", "Algeria", "American Samoa", "
 define("languageTest", array("Lisiting"=>'1',"Reading"=>'2', "Speaking"=>'3', "Writing"=>'4' ));
 define("VISA_TYPE",array("Student","Travel"));
 
+//////////course HandBook////////////
+
+define("HAND_BOOK",array("ICTM_Course_Handbook_Business_RQF","ICTM_Course_Handbook_Computing_RQF","ICTM_Course_Handbook_HCP_RQF","ICTM_Course_Handbook_HM_RQF","ICTM_Course_Handbook_IntTTM_RQF"));
+
+
 //////////////Aplication/////////////////
 
 define("COURSESESSION",array ("February","May","September"));

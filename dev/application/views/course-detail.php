@@ -7,7 +7,7 @@
                 <div class="page-title-heading">
                     <?php foreach ($coursedetail as $cd) { ?>
                         <h2 class="title">Course Title: <?php echo $cd->courseTitle ?><br><span style="font-size:16px">Course Code: <?php echo $cd->courseCodePearson ?></span>
-                          <span style="font-size:16px"> | <a style="color: #0000A0" href="<?php echo base_url()?>/">Download HandBook</a> </span>
+                          <span style="font-size:16px"> | <a style="color: #0000A0" href="<?php echo base_url()."/Course_Handbook/".$cd->couseHandBook.".pdf"?>">Download HandBook</a> </span>
                         </h2>
                     <?php } ?>
 
