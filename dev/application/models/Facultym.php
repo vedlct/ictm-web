@@ -6,6 +6,7 @@ class Facultym extends CI_Model
         $this->db->select('facultyId,facultyTitle,facultyFirstName,facultyLastName, facultyPosition,facultyEmail,facultyTwitter,facultyLinkedIn,facultyImage');
         $this->db->from('ictmfaculty');
         $this->db->where('facultyStatus', STATUS[0]);
+        $this->db->order_by("facultyId", "asc");
         $query = $this->db->get();
         return $query->result();
     }
