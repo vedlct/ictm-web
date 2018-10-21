@@ -235,6 +235,19 @@
                                             </div>
                                         </div>
 
+                                        <div class="col-lg-6">
+                                            <label class="control-label col-lg-2" for="inputSuccess">Course HandBook<span class="required">*</span></label>
+                                            <div class="col-lg-10">
+                                                <p><font color="red"> <?php echo form_error('status'); ?></font></p>
+                                                <select class="form-control m-bot15" id="status" name="handbook" required>
+                                                    <option value="" selected>Select HankBook</option>
+                                                    <?php for ($i=0;$i<count(HAND_BOOK);$i++){?>
+                                                        <option ><?php echo HAND_BOOK[$i]?></option>
+                                                    <?php } ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <div class="form-group" align="center">

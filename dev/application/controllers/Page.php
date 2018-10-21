@@ -31,26 +31,38 @@ class Page extends CI_Controller {
             if ($pt->pageType == 'About Type') {
 
                 $this->data['aboutdata']= $this->PageSectionm->getPageData($id);
-                $this->data['coursedata']=$this->Coursem->getCourseTitle();
-                $this->load->view('about', $this->data);
-
+                if (!empty($this->data['aboutdata'])) {
+                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                    $this->load->view('about', $this->data);
+                }else{
+                    $this->load->view('error');
+                }
             }
             else if ($pt->pageType == 'Health Type') {
 
 
                 $this->data['healthdata']= $this->PageSectionm->getPageData($id);
-                $this->load->view('health-safety', $this->data);
+                if (!empty($this->data['healthdata'])) {
+                    $this->load->view('health-safety', $this->data);
+
+                }else{
+                    $this->load->view('error');
+                }
 
             } else if ($pt->pageType == 'Terms Type'){
 
 
                 $this->data['termsdata']= $this->PageSectionm->getPageData($id);
+                if (!empty($this->data['termsdata'])) {
                 $this->data['newsdata']= $this->Newsm->getLatestNews();
                 $this->data['eventdata']= $this->Eventm->getLatestEvents();
                 $this->data['coursedata']=$this->Coursem->getCourseTitle();
 
                 $this->load->view('terms-conditions', $this->data);
 
+            }else{
+                    $this->load->view('error');
+                }
             }
 
     }

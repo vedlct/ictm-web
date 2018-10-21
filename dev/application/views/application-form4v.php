@@ -37,11 +37,11 @@
 
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Finance</h3>
+                                <h3>Finance </h3>
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 4 / 10</p>
+                                <p>Step 6 / 10</p>
                             </div>
                         </div>
                 <?php foreach ($Financer as $f4) { ?>
@@ -55,7 +55,7 @@
                                     <label class="control-label col-md-2">Self Finance:</label>
                                     <div class="col-md-10">
                                         <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC &nbsp;&nbsp;
-                                        <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> Yes&nbsp;&nbsp;
+                                        <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> OWN&nbsp;&nbsp;
                                         <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsor&nbsp;&nbsp;&nbsp;
                                     </div>
                                 </div>
@@ -64,7 +64,7 @@
                             <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title*:</label>
+                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                     <select style="width: 100%"  id="title"   name="title">
@@ -78,7 +78,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name*:</label>
+                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
                                     <input type="text" class="form-control" id="name"  maxlength="100" name="name" value="<?php echo $f4->name ?>" >
@@ -86,7 +86,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Relation*:</label>
+                                <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
                                     <input type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
@@ -94,7 +94,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address*:</label>
+                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
                                     <textarea id="address" name="address" rows="8"  maxlength="1000" tabindex="4"> <?php echo $f4->address ?></textarea>
@@ -102,15 +102,33 @@
                             </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address P.O :<span class="required">*</span></label>
+                                    <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
                                         <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo $f4->addressPo?>">
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('country'); ?></font></p>
+                                        <select style="width: 100%" id="country"  name="country">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
+                                                ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+
+
+                                    </div>
+                                </div>
+
                             <div class="form-group">
-                                <label class="control-label col-md-2">Mobile*:</label>
+                                <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
@@ -119,7 +137,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone*:</label>
+                                <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
@@ -128,38 +146,29 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail*:</label>
+                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
 
                                     <input type="email" class="form-control" id="email" maxlength="50" name="email" value="<?php echo $f4->email ?>">
                                 </div>
                             </div>
-
-<!--                            <div class="form-group">-->
-<!--                                <label class="control-label col-md-2">Fax*:</label>-->
-<!--                                <div class="col-md-10">-->
-<!--                                    <p><font color="red"> --><?php //echo form_error('fax'); ?><!--</font></p>-->
-<!--                                    <input type="text" class="form-control" id="fax" name="fax"  value="--><?php //echo $f4->fax ?><!--">-->
-<!--                                </div>-->
-<!--                            </div>-->
-
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button" class="btn btn-previous">Previous</button></a>
 
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn ">Next</button></a>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Next</button></a>
 
                                 </div>
                             </div>
 
                         </div>
                 </form>
-<?php } ?>
+            <?php } ?>
 
 
 
@@ -196,7 +205,7 @@
 <script>
 
     $(document).ready(function(){
-        if ('<?php echo $financeYes?>'== 'y'){
+        if ('<?php echo $financeYes?>'== 'y' ){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -205,7 +214,7 @@
 
     $("input[name=selfFinance]").click( function () {
 
-        if ($(this).val()=='own'){
+        if ($(this).val()=='own' || $(this).val()=='slc'){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -217,8 +226,9 @@
 
         var finance=$('input[name=selfFinance]:checked').val();
 
-        if (finance != 'own') {
+        if (finance != 'own'  && finance != "slc") {
 
+            var title = document.getElementById("title").value;
             var email = document.getElementById("email").value;
             var name = document.getElementById("name").value;
             var AddressPO = document.getElementById("AddressPO").value;
@@ -231,17 +241,24 @@
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-
-            if (!email.match(mailformat)) {
-                alert("You have entered an invalid email address!");
+            if (title == "") {
+                alert("Please select a Title");
                 return false;
             }
-
-
             if (name == "") {
                 alert("Name  Can not Empty");
                 return false;
             }
+
+            if (relation == "") {
+                alert(" Relation  Can not Empty");
+                return false;
+            }
+            if (address == "") {
+                alert("Address  can not  empty");
+                return false;
+            }
+
             if (AddressPO == "") {
                 alert("Address PO  Can not Empty");
                 return false;
@@ -253,7 +270,7 @@
 
 
             if (!phone.match(chk)) {
-                alert('Please enter a valid  Mobile Phone number!!');
+                alert('Please enter a valid Mobile Phone number!!');
                 return false;
             }
             if (phone.length > 50) {
@@ -261,20 +278,15 @@
                 return false;
             }
 
-
-            if (relation == "") {
-                alert(" Relation  Can not Empty");
+            if (email == "") {
+                alert("email can not empty");
+                return false;
+            }
+            if (!email.match(mailformat)) {
+                alert("You have entered an invalid email address!");
                 return false;
             }
 
-            if (fax == "") {
-                alert(" fax can not empty");
-                return false;
-            }
-            if (address == "") {
-                alert("Address  can not  empty");
-                return false;
-            }
             if (telephone == "") {
                 alert("Give the telephone number ");
                 return false;

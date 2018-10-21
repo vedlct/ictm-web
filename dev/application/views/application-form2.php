@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -35,7 +40,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Qualifications</h3>
+                                <h3>Qualifications </h3>
                             </div>
 
                             <div class="form-top-right">
@@ -94,7 +99,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="completionYear" required name="completionYear[]">
+                                            <input type="text" class="form-control datetimepicker" id="completionYear" required name="completionYear[]">
                                         </div>
                                     </div>
 
@@ -122,10 +127,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="col-sm-offset-2 col-md-10">
 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn ">Next</button></a>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
 
@@ -162,6 +167,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;
@@ -250,13 +267,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     alert('Please add a Qualification'+counter);
                     return false;
                 }if (Qualification.length > 100){
-                    alert('Qualification'+counter' must be less then 100 charecter');
+                    alert('Qualification'+counter+' must be less then 100 charecter');
                     return false;
                 }if (institution == ""){
                     alert('Please add a institution'+counter);
                     return false;
                 }if (institution.length >100){
-                    alert('Institution'+counter' must be less then 100 charecter');
+                    alert('Institution'+counter+' must be less then 100 charecter');
                     return false;
                 }
                 if (qualificationLevel == ""){
@@ -288,7 +305,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     alert('Please add a grade'+counter);
                     return false;
                 }if (grade.length > 20){
-                    alert('grade'+counter' must be less then 20 charecter');
+                    alert('grade'+counter+' must be less then 20 charecter');
                     return false;
                 }
 //                if (enddate < startdate){
@@ -312,27 +329,27 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Qualification Level:</label>'+
+                '<label class="control-label col-md-2">Qualification Level'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control" id="qualificationLevel"  name="qualificationLevel[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Awarding Body:</label>'+
+                '<label class="control-label col-md-2">Awarding Body'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control" id="awardingBody"  name="awardingBody[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Subject:</label>'+
+                '<label class="control-label col-md-2">Subject'+counter+':</label>'+
                 '<div class="col-md-10">'+
                 '<input type="text" class="form-control" id="subject" required name="subject[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Completion Year:</label>'+
+                '<label class="control-label col-md-2">Completion Year'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="completionYear"  name="completionYear[]">'+
+                '<input type="text" class="form-control datetimepicker" id="completionYear"  name="completionYear[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
@@ -345,6 +362,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             counter++;
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY'
+            });
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
         });
         $("#removeButton").click(function () {
             if(counter==2){

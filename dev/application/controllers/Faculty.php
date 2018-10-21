@@ -26,12 +26,18 @@ class Faculty extends CI_Controller {
     }
     public function facultyDetails($id) //get all the details of selected faculty
     {
-        $this->menu();
+
         $this->data['facultydetails']= $this->Facultym->getfacultyDetails($id);
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        $this->data['facultyCourseData']=$this->Coursem->facultyAllCourseData($id);
-        $this->load->view('faculty-member-detail',$this->data);
+        if (!empty($this->data['facultydetails'])) {
+            $this->menu();
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['facultyCourseData'] = $this->Coursem->facultyAllCourseData($id);
+            $this->load->view('faculty-member-detail', $this->data);
+        }else{
+            $this->load->view('error');
+        }
     }
+
     public function menu() //  get all the menu+ footer
     {
         $this->data['affiliation'] = $this->Menum->getAffiliations();

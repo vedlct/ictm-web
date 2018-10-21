@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 7 / 9</p>
+                                <p>Step 9 / 10</p>
                             </div>
                         </div>
                         <div class="form-bottom">
@@ -66,20 +66,65 @@
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
-                                <div class="col-md-10">
+                                <div class="col-md-8">
                                     <input type="file" class="form-control"  name="fileUpload[]" multiple>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="submit" class="btn btn-next">Add File</button>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
+<!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
+
+                            <div id="qualificationTable">
+                                <table  class="table  table-bordered">
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>File Name</th>
+                                        <th>Action</th>
+
+                                    </tr>
+                                    <?php
+                                    $applicationId = $this->session->userdata('studentApplicationId');
+                                    $dir =   "./AdminPanel/studentApplications/$applicationId/";
+
+                                    // Open a directory, and read its contents
+                                    if (is_dir($dir)) {
+                                        if ($dh = opendir($dir)) {
+                                            $count = 1;
+                                            while (($file = readdir($dh)) !== false) {
+                                                if ($file != "." && $file != "..") { ?>
+                                                    <tr>
+                                                        <td><?php echo $count ?></td>
+                                                        <td>
+
+                                                            <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
+
+                                                        </td>
+
+                                                        <td>
+                                                             <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
+                                                        </td>
+                                                    </tr>
+                                                    <?php $count++;
+                                                }
+                                            }
+                                        }
+                                    }?>
+                                </table>
+                            </div>
+
+
+
                         </div>
+
 <!--                    </fieldset>-->
 
                 </form>
@@ -120,3 +165,38 @@
 </body>
 
 </html>
+
+<script>
+    function selectidForDelete(x) {
+
+        var fileName=$(x).data('panel-id');
+        if (confirm('Are you sure to delete this file!')){
+
+                $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url("ApplyOnline/deleteStudentFile")?>',
+                    data: {fileName: fileName},
+                    cache: false,
+                    success: function (data) {
+
+
+                        if (data=='0'){
+
+                            alert('there is a problem with a file please contact us');
+
+                        }else if(data=='1'){
+
+                            $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+
+                        }
+
+
+
+                    }
+                });
+
+        }
+
+
+    }
+</script>

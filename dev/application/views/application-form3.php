@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -31,7 +36,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm3" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm3" method="post" class="form-horizontal">
 
                         <div class="form-top">
                             <div class="form-top-left">
@@ -39,19 +44,19 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 3 / 9</p>
+                                <p>Step 4 / 10</p>
                             </div>
                         </div>
                         <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Is English your first language?:</label>
+                                <label class="control-label col-md-2">Is English your first language?<span style="color: red" class="required">*</span>:</label>
                                 <div class="col-md-10">
-                                    <input type="radio" name="firstlanguage" value="yes"> Yes&nbsp;&nbsp;
-                                    <input type="radio" name="firstlanguage" value="no"> No&nbsp;&nbsp;
+                                    <input type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
+                                    <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php } ?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
 
-
+                            <div style="display: none" id="Englishproficience">
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div id='TextBoxesGroup'>
@@ -59,78 +64,83 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" id="test" name="test[]">
+                                    <select style="width: 100%" id="test" name="test[]" onchange="checkother()">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
                                         <option value="3">PTE</option>
+                                        <option value="4">OTHER</option>
                                     </select>
                                 </div>
                             </div>
-
-                            <div class="form-group">
+                            <div class="form-group" id="listendiv" style="display: block">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="listening" name="listening[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="readingdiv" style="display: block">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="reading" name="reading[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="writingdiv" style="display: block">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="writing" name="writing[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Speaking:</label>
+                            <div class="form-group" id="speakingdiv" style="display: block">
+                                <label class="control-label col-md-2">Speaking: </label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="speaking" name="speaking[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="overralldiv" style="display: block">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
                                     <input type="text" class="form-control" id="overall" name="overall[]">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="expirediv" style="display: block">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="date" class="form-control" id="expirydate" name="expirydate[]">
+                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
                                 </div>
                             </div>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="addmore" style="display: block">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <button id='addButton' type="button" class="btn">Add New Proficiency</button>
                                     <button class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="otherdiv" style="display: none">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
                                     <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="button" class="btn ">Next</button>
+
+
+                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/insertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>
+
                                 </div>
                             </div>
                         </div>
@@ -160,12 +170,69 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 </div>
 </body>
+</html>
 
-<script>
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+
+    $("input[name=firstLanguage]").click( function () {
+
+        if ($(this).val()=='1'){
+            document.getElementById("Englishproficience").style.display = "none";
+        }else {
+            document.getElementById("Englishproficience").style.display = "block";
+        }
+    });
+    $(document).ready(function(){
+        if ('<?php echo $fLanguage?>'== '0'){
+            document.getElementById("Englishproficience").style.display = "block";
+        }else {
+            document.getElementById("Englishproficience").style.display = "none";
+        }
+    });
 
 </script>
 
 <script>
+
+    function checkother() {
+        if(document.getElementById('test').value == "4"){
+
+
+            document.getElementById('listendiv').style.display = 'none';
+            document.getElementById('readingdiv').style.display = 'none';
+            document.getElementById('writingdiv').style.display = 'none';
+            document.getElementById('speakingdiv').style.display = 'none';
+            document.getElementById('overralldiv').style.display = 'none';
+            document.getElementById('expirediv').style.display = 'none';
+            document.getElementById('addmore').style.display = 'none';
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('listendiv').style.display = 'block';
+            document.getElementById('readingdiv').style.display = 'block';
+            document.getElementById('writingdiv').style.display = 'block';
+            document.getElementById('speakingdiv').style.display = 'block';
+            document.getElementById('overralldiv').style.display = 'block';
+            document.getElementById('expirediv').style.display = 'block';
+            document.getElementById('addmore').style.display = 'block';
+
+
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
 
     $(document).ready(function(){
         var counter = 2;
@@ -224,13 +291,20 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Expiry Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="" name="expirydate[]">'+
+                '<input type="text" class="form-control datetimepicker" id="" name="expirydate[]">'+
                 '</div>'+
                 '</div>'
             );
 
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             counter++;
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
         });
         $("#removeButton").click(function () {
             if(counter==2){
@@ -247,4 +321,3 @@ elseif($this->session->flashdata('successMessage')!=null){?>
     });
 
 </script>
-</html>

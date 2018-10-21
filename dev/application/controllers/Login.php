@@ -19,6 +19,11 @@ class Login extends CI_Controller {
         $this->menu();
         $this->load->view('login',$this->data);
     }
+    public function ViewForgetPass()
+    {
+        $this->menu();
+        $this->load->view('forget-pass',$this->data);
+    }
 
     public  function check_user()
     {
@@ -26,35 +31,160 @@ class Login extends CI_Controller {
 
             $result = $this->Loginm->validate_user($_POST);
             if(!empty($result)) {
-                $data = [
-                    'email' => $result->email,
-                    'id' => $result->id,
-                    'type' => $result->type,
-                    'title' => $result->title,
-                    'loggedin' => "true",
-                ];
-                $this->session->set_userdata($data);
+                if ($result->accountActivation=='0'){
 
-                $studentOrAgentId = $result->id;
+                    echo "<script>
+                    alert(' Please Activate Your Account First !! ');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+
+                }else {
 
 
-                if ($result->type == 'Student') {
+                    $data = [
+                        'email' => $result->email,
+                        'id' => $result->id,
+                        'type' => $result->type,
+                        'title' => $result->title,
+                        'loggedin' => "true",
+                    ];
 
-                    redirect('Apply');
+                    $this->session->set_userdata($data);
 
-                }
-                elseif ($result->type == 'Agent') {
-
-                    redirect('AllFormForAgents');
+                    $studentOrAgentId = $result->id;
 
 
+                    if ($result->type == 'Student') {
+
+//                        redirect('Apply');
+                        redirect('AllFormForStudents');
+
+                    } elseif ($result->type == 'Agent') {
+
+                        redirect('AllFormForAgents');
+
+
+                    }
                 }
             }
-
             else
             {
                 echo "<script>
                     alert(' Wrong UserEmail and Password !! ');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+            }
+
+    }
+    public  function changeForgetPassword()
+    {
+
+
+            $result = $this->Loginm->validate_userForForgetPass($_POST);
+            if(!empty($result)) {
+                if ($result->accountActivation=='0'){
+
+                    echo "<script>
+                    alert(' Please Activate Your Account First !! ');
+                    window.location.href= '" . base_url() . "ForgetPass';
+                    </script>";
+
+                }else {
+                    $this->load->helper('string');
+                    $userToken=random_string('alnum',64);
+
+                    $this->Loginm->changeToken_userForForgetPass($result->id,$userToken);
+
+
+                    $this->data['mailData']= array(
+                        'email' => $result->email,
+                        'password' => $this->input->post('password'),
+                        'Token' => $userToken,
+                    );
+
+                    $this->load->helper(array('email'));
+                    $this->load->library(array('email'));
+
+                    $this->email->set_mailtype("html");
+                    $this->email->from('noreply@techcloudltd.com','Icon College');
+                    $this->email->to($result->email);
+                    $this->email->subject('Forget Password Reqeust');
+                    $message = $this->load->view('ForgetPasswordReqeust', $this->data,true);
+                    $this->email->message($message);
+                    $this->email->send();
+
+                    $this->session->set_flashdata('successMessage','A Password Change varification is send via email');
+                    redirect('ForgetPass');
+
+
+                }
+            }
+            else
+            {
+                $this->session->set_flashdata('errorMessage','Please Type Your Mail Correctly or Register First');
+                redirect('ForgetPass');
+            }
+
+    }
+    public  function ChangedPass($email,$pas,$token)
+    {
+
+
+            $result = $this->Loginm->findUserForPasswordChange($email,$token);
+            if(!empty($result)) {
+
+                $data=array(
+                    'password'=>$pas,
+                    'activationToken'=>null,
+                );
+                $result = $this->Loginm->PasswordChangeForUser($result->id,$data);
+
+                $this->session->set_flashdata('successMessage','Password Changed SuccessFully');
+
+                redirect('Login');
+
+            }
+
+    }
+    public  function loginAfterRegistration($id)
+    {
+
+
+            $result = $this->Loginm->validate_userAfterActivatation($id);
+            if(!empty($result)) {
+
+
+
+                    $data = [
+                        'email' => $result->email,
+                        'id' => $result->id,
+                        'type' => $result->type,
+                        'title' => $result->title,
+                        'loggedin' => "true",
+                    ];
+
+                    $this->session->set_userdata($data);
+
+                    $studentOrAgentId = $result->id;
+
+
+                    if ($result->type == 'Student') {
+
+//                        redirect('Apply');
+                        redirect('AllFormForStudents');
+
+                    } elseif ($result->type == 'Agent') {
+
+                        redirect('AllFormForAgents');
+
+
+                    }
+
+            }
+            else
+            {
+                echo "<script>
+                    alert(' Some thing Went Wrong !! Please Contact us !! ');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
             }

@@ -27,9 +27,12 @@ class Department extends CI_Controller {
 
         $this->menu();
         $this->data['dDeteails'] = $this->Departmentm->getDepartmentDetails($id);
-        $this->data['coursedata']=$this->Coursem->getCourseTitle();
-        $this->load->view('department', $this->data);
-
+        if (!empty($this->data['Eventdetails'])) {
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->load->view('department', $this->data);
+        }else{
+            $this->load->view('error');
+        }
     }
     public function menu() //  get all the menu+ footer
     {

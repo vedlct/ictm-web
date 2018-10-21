@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -39,48 +44,48 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-top-right">
-                            <p>Step 10 / 10</p>
+                            <p>Step 3 / 10</p>
                         </div>
                     </div>
                     <div class="form-bottom">
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Organisation:</label>
                                     <div class="col-md-10">
 
                                         <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
 
 
-                                        <input type="text" class="form-control" id="organisation"  maxlength="100" required name="organisation">
+                                        <input type="text" class="form-control" id="organisation"  maxlength="100"  name="organisation">
 
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Position Held:</label>
                                     <div class="col-md-10">
 
                                         <p><font color="red"> <?php echo form_error('positionHeld'); ?></font></p>
 
-                                        <input type="text" class="form-control" id="positionHeld" maxlength="100" required name="positionHeld">
+                                        <input type="text" class="form-control" id="positionHeld" maxlength="100"  name="positionHeld">
 
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">From:</label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('startdate'); ?></font></p>
-                                        <input type="date" class="form-control" id="startdate" required name="startdate">
+                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">To:</label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('enddate'); ?></font></p>
-                                        <input type="date" class="form-control" id="enddate" required name="enddate">
+                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate">
                                     </div>
                                 </div>
 
@@ -102,9 +107,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>Apply" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
+<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>-->
 
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
@@ -170,6 +175,19 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;
@@ -287,37 +305,32 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
     function checkForm() {
 
-        var Qualification=$('#qualification').val();
-        var institution=$('#institution').val();
+        var organisation=$('#organisation').val();
+        var positionHeld=$('#positionHeld').val();
         var startdate=$('#startdate').val();
         var enddate=$('#enddate').val();
-        var grade=$('#grade').val();
 
-        if (Qualification == ""){
+
+
+
+        if (organisation == ""){
             alert('Please add a Qualification');
             return false;
-        }if (Qualification.length > 100){
+        }if (positionHeld.length > 100){
             alert('Qualification must be less then 100 charecter');
             return false;
-        }if (institution == ""){
-            alert('Please add a institution');
-            return false;
-        }if (institution.length > 100){
-            alert('Institution must be less then 100 charecter');
-            return false;
+
         }if (startdate == ""){
             alert('Please add a startdate');
             return false;
         }if (enddate == ""){
             alert('Please add a enddate');
             return false;
-        }if (grade == ""){
-            alert('Please add a grade');
-            return false;
-        }if (grade.length > 20){
-            alert('grade must be less then 20 charecter');
-            return false;
-        }if (enddate < startdate){
+
+
+        }
+        if (enddate < startdate){
+
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }

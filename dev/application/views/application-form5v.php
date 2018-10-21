@@ -39,7 +39,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 5 / 9</p>
+                                <p>Step 5 / 10</p>
                             </div>
                         </div>
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="registration-form form-horizontal">
@@ -48,25 +48,32 @@
 
                     <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Why do you wish to do this course?:</label>
+                                <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <textarea id="courseChoiceStatement"  name="courseChoiceStatement" rows="8" tabindex="4"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
+                                    <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="4"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
+                                <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <textarea id="collegeChoiceStatement" name="collegeChoiceStatement" rows="8" tabindex="4"><?php echo $f5->collegeChoiceStatement ?></textarea>
+
+                                    <select style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
+                                        <option value="" disabled selected>Select Source...</option>
+                                        <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
+                                            <option value="<?php echo PERSONAL_STATEMENT[$i]?>"<?php if (!empty($f5->collegeChoiceStatement) && $f5->collegeChoiceStatement == PERSONAL_STATEMENT[$i])  echo 'selected = "selected"'; ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
+                                        <?php } ?>
+                                    </select>
+                                  
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Next</button></a>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
                         </div>

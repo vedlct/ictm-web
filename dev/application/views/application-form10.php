@@ -1,5 +1,10 @@
-
+<!--Work Experience / Training -->
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -39,37 +44,37 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-top-right">
-                            <p>Step 10 / 10</p>
+                            <p>Step 3 / 10</p>
                         </div>
                     </div>
                     <div class="form-bottom">
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Organisation<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Organisation / Regulatory Body:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" maxlength="100" id="organisation" required name="organisation[]">
+                                        <input type="text" class="form-control" maxlength="100" id="organisation"  name="organisation[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Position Held<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">Position Held:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="positionHeld" maxlength="100" required name="positionHeld[]">
+                                        <input type="text" class="form-control" id="positionHeld" maxlength="100"  name="positionHeld[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">From:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="startdate" required name="startdate[]">
+                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>
+                                    <label class="control-label col-md-2">To:</label>
                                     <div class="col-md-10">
-                                        <input type="date" class="form-control" id="enddate" required name="enddate[]">
+                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">
                                     </div>
                                 </div>
 
@@ -79,8 +84,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
-                                <button id='addButton' type="button" class="btn">Add New Qualification</button>
-                                <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
+                                <button id='addButton' type="button" class="btn " style="background-color: #4cae4c">Add New Qualification</button>
+                                <button class="btn " type='button' value='Remove' id='removeButton' style="background-color: darkred"> Remove</button>
                             </div>
                         </div>
 
@@ -91,10 +96,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>Apply" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
-
+<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>-->
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>
@@ -133,6 +137,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </body>
 </html>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;
@@ -219,13 +235,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="startdate'+counter+'" name="startdate[]">'+
+                '<input type="text" class="form-control datetimepicker" id="startdate'+counter+'" name="startdate[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">End Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="date" class="form-control" id="enddate'+counter+'" name="enddate[]">'+
+                '<input type="text" class="form-control datetimepicker" id="enddate'+counter+'" name="enddate[]">'+
                 '</div>'+
                 '</div>'
 
@@ -233,6 +249,15 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
             newTextBoxDiv.appendTo("#TextBoxesGroup");
             counter++;
+
+            $('.datetimepicker').datetimepicker({
+                format: 'YYYY-MM-DD'
+            });
+            $('.datetimepicker').keydown(function(e) {
+                e.preventDefault();
+                return false;
+            });
+
         });
         $("#removeButton").click(function () {
             if(counter==2){

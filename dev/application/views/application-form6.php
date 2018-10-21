@@ -37,7 +37,7 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 6 / 9</p>
+                                <p>Step 7 / 10</p>
                             </div>
                         </div>
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow6" method="post" class="registration-form form-horizontal">
@@ -97,9 +97,22 @@
                                                     </tr>
                                                 <?php } ?>
 
+
+
                                             <?php }
                                             $count++ ?>
                                         <?php }  ?>
+
+                                        <tr>
+                                            <td  colspan="2" style="width: 50%;"><span style="margin-right: 100px;">If disabled, are you receiving any Disability Allowances ? </span>
+
+
+                                                <input type="radio" name="disabilityAllowance" value="1"  >  Yes
+                                                <input type="radio" name="disabilityAllowance" value="0" >  No
+                                                <input type="radio" name="disabilityAllowance" value="2" >  Prefer Not to say
+
+                                            </td>
+                                        </tr>
 
                                     </table >
                                 </div >
@@ -171,10 +184,10 @@
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-10" >
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/insertApplicationForm6AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
                                 </div >
                             </div >
                         </div >

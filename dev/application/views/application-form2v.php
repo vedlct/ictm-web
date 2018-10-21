@@ -1,4 +1,9 @@
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -68,6 +73,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         <input type="text" class="form-control" id="qualificationLevel" maxlength="100" required name="qualificationLevel">
                                     </div>
                                 </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Name of Institution<span style="color: red">*</span>:</label>
+                                    <div class="col-md-10">
+                                        <input type="text" class="form-control" id="institution" maxlength="100" required name="institution">
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Awarding Body<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
@@ -81,32 +93,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Institution<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
-                                        <input type="text" class="form-control" id="institution" maxlength="100" required name="institution">
-                                    </div>
-                                </div>
+
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="completionYear" maxlength="100" required name="completionYear">
+                                        <input type="text" class="form-control datetimepicker" id="completionYear" maxlength="100" required name="completionYear">
                                     </div>
                                 </div>
-
-<!--                                <div class="form-group">-->
-<!--                                    <label class="control-label col-md-2">Start Date<span style="color: red">*</span>:</label>-->
-<!--                                    <div class="col-md-10">-->
-<!--                                        <input type="date" class="form-control" id="startdate" required name="startdate">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!---->
-<!--                                <div class="form-group">-->
-<!--                                    <label class="control-label col-md-2">End Date<span style="color: red">*</span>:</label>-->
-<!--                                    <div class="col-md-10">-->
-<!--                                        <input type="date" class="form-control" id="enddate" required name="enddate">-->
-<!--                                    </div>-->
-<!--                                </div>-->
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
@@ -123,14 +116,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
-                                <button type="button" onclick="btnNext()" class="btn btn-next">Next</button>
+<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>-->
+                                <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn ">Next</button></a>
                             </div>
                         </div>
                         <!--                    </fieldset>-->
 
-<div id="qualificationTable">
+                    <div id="qualificationTable">
                         <table  class="table  table-bordered">
                             <tr>
 
@@ -161,7 +154,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </tr>
                             <?php } ?>
                         </table>
-</div>
+                    </div>
 
                     </div>
                 </form>
@@ -189,6 +182,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
 <script src="<?php echo base_url()?>public/javascript/scripts.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
 
 <script>
 
@@ -264,57 +269,57 @@ elseif($this->session->flashdata('successMessage')!=null){?>
     }
     function checkForm() {
 
-        var Qualification=$('#qualification').val();
-        var institution=$('#institution').val();
-//        var startdate=$('#startdate').val();
-//        var enddate=$('#enddate').val();
-        var grade=$('#grade').val();
-
-        var qualificationLevel=$('#qualificationLevel').val();
-        var awardingBody=$('#awardingBody').val();
-        var subject=$('#subject').val();
-        var completionYear=$('#completionYear').val();
-
-        if (Qualification == ""){
-            alert('Please add a Qualification');
-            return false;
-        }if (Qualification.length > 100){
-            alert('Qualification must be less then 100 charecter');
-            return false;
-        }if (institution == ""){
-            alert('Please add a institution');
-            return false;
-        }if (institution.length > 100){
-            alert('Institution must be less then 100 charecter');
-            return false;
-        }
-//        if (startdate == ""){
-//            alert('Please add a startdate');
+//        var Qualification=$('#qualification').val();
+//        var institution=$('#institution').val();
+////        var startdate=$('#startdate').val();
+////        var enddate=$('#enddate').val();
+//        var grade=$('#grade').val();
+//
+//        var qualificationLevel=$('#qualificationLevel').val();
+//        var awardingBody=$('#awardingBody').val();
+//        var subject=$('#subject').val();
+//        var completionYear=$('#completionYear').val();
+//
+//        if (Qualification == ""){
+//            alert('Please add a Qualification');
 //            return false;
-//        }if (enddate == ""){
-//            alert('Please add a enddate');
+//        }if (Qualification.length > 100){
+//            alert('Qualification must be less then 100 charecter');
+//            return false;
+//        }if (institution == ""){
+//            alert('Please add a institution');
+//            return false;
+//        }if (institution.length > 100){
+//            alert('Institution must be less then 100 charecter');
 //            return false;
 //        }
-        if (qualificationLevel == ""){
-            alert('Please add a qualificationLevel');
-            return false;
-        }if (awardingBody == ""){
-            alert('Please add a awardingBody');
-            return false;
-        }if (subject == ""){
-            alert('Please add a subject');
-            return false;
-        }if (completionYear == ""){
-            alert('Please add a completionYear');
-            return false;
-        }if (grade == ""){
-            alert('Please add a grade');
-            return false;
-        }
-        if (grade.length > 20){
-            alert('grade must be less then 20 charecter');
-            return false;
-        }
+////        if (startdate == ""){
+////            alert('Please add a startdate');
+////            return false;
+////        }if (enddate == ""){
+////            alert('Please add a enddate');
+////            return false;
+////        }
+//        if (qualificationLevel == ""){
+//            alert('Please add a qualificationLevel');
+//            return false;
+//        }if (awardingBody == ""){
+//            alert('Please add a awardingBody');
+//            return false;
+//        }if (subject == ""){
+//            alert('Please add a subject');
+//            return false;
+//        }if (completionYear == ""){
+//            alert('Please add a completionYear');
+//            return false;
+//        }if (grade == ""){
+//            alert('Please add a grade');
+//            return false;
+//        }
+//        if (grade.length > 20){
+//            alert('grade must be less then 20 charecter');
+//            return false;
+//        }
 //        if (enddate < startdate){
 //            alert('Please Select StartDate and EndDate Correctly');
 //            return false;

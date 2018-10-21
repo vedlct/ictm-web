@@ -29,26 +29,33 @@
 
                     <div class="form-top">
                         <div class="form-top-left">
-                            <h3>Personal Statement</h3>
+                            <h3>Personal Statement </h3>
                         </div>
 
                         <div class="form-top-right">
-                            <p>Step 5 / 9</p>
+                            <p>Step 5 / 10</p>
                         </div>
                     </div>
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" onsubmit="return formvalidate()" class="form-horizontal">
                     <div class="form-bottom">
                         <div class="form-group">
-                            <label class="control-label col-md-2">Why do you wish to do this course?:</label>
+                            <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="courseChoiceStatement" name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
+                                <textarea id="courseChoiceStatement" required name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Where did you find out about the courses of our College?:</label>
+                            <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="collegeChoiceStatement" name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
+                                <select style="width: 100%" id="collegeChoiceStatement"  name="collegeChoiceStatement">
+
+                                    <option value="" selected>Select Source</option>
+                                    <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
+                                        <option <?php echo set_select('collegeChoiceStatement',  PERSONAL_STATEMENT[$i], False); ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
+                                    <?php } ?>
+
+                                </select>
                             </div>
                         </div>
 

@@ -21,6 +21,14 @@
 
         <section class="flat-row padding-small-v1">
             <div class="container">
+
+                <?php if ($this->session->flashdata('errorMessage')!=null){?>
+                    <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+                <?php }
+                elseif($this->session->flashdata('successMessage')!=null){?>
+                    <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+                <?php }?>
+
                 <div class="row">
                     <div class="col-md-6">	
                         	<form role="form" action="" method="post" class="registration-form">                        		
@@ -43,7 +51,7 @@
                     
                     <div class="col-md-6">
                     	<form role="form" action="<?php echo base_url()?>Login/check_user" method="post"  class="registration-form">
-<!--                        		<fieldset>-->
+
 		                            <div class="form-bottom">
 				                    	<div class="form-group">
 				                    		<label>E-Mail*</label>
@@ -53,15 +61,18 @@
 				                        	<label>Password*</label>
 				                        	<input type="password" name="password" class="form-last-name form-control" id="form-last-name">
 				                        </div>
-<!--				                        <a href="">-->
+
 
                                             <button type="submit" class="btn btn-next">Login</button>
 
-<!--                                        </a>-->
+                                        <a href="<?php echo base_url()?>ForgetPass" class="pull-right"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+
 				                    </div>
-<!--			                    </fieldset>		                    -->
+
+
 		                    </form>
-                    	                 
+
+
                     </div><!-- /col-md-6 -->
 
                     

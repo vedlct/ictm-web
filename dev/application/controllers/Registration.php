@@ -44,6 +44,41 @@ class Registration extends CI_Controller {
 
 
     }
+    public function activateUser()
+    {
+        $id=$this->input->post('userId');
+        $token=$this->input->post('userToken');
+//        $id=9;
+//        $token='001317772eb8460a204df4200aef7ac5';
+        $userValidation=$this->Registrationm->checkUserForActive($id,$token);
+        if (!empty($userValidation)){
+            $userActivate=$this->Registrationm->makeUserActive($id);
+            if (empty($userActivate)){
+
+                $this->session->set_flashdata('successMessage','User Activated Successfully');
+                redirect('Login/loginAfterRegistration/'.$id);
+
+
+            }else{
+
+                $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                redirect('Home');
+
+            }
+        }else{
+
+            $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Contact us!!');
+            redirect('Registration');
+
+        }
+
+
+
+
+
+
+
+    }
 
     public function newRegistaion()
     {
@@ -62,11 +97,18 @@ class Registration extends CI_Controller {
             $firstname = $this->input->post('firstname');
             $surname = $this->input->post('surname');
             $email = $this->input->post('email');
-            $gender = $this->input->post('gender');
+//            $gender = $this->input->post('gender');
             $password = $this->input->post('password');
             $confirmpassword = $this->input->post('confirmpassword');
 
             if($password==$confirmpassword ) {
+
+
+
+                $activationToken=md5(uniqid(rand(), true));
+
+
+
 
                 $data = array(
                     'type'=>$type,
@@ -74,19 +116,49 @@ class Registration extends CI_Controller {
                     'firstname' => $firstname,
                     'surname' => $surname,
                     'email' => $email,
-                    'gender' => $gender,
+//                    'gender' => $gender,
                     'password' => $password,
+                    'accountActivation'=>'0',
+                    'activationToken'=>$activationToken
 
 
                 );
 
-                $this->data['error']=$this->Registrationm->newRegistaion($data);
-
-                if (empty($this->data['error'])) {
+                $this->data['userId']=$this->Registrationm->newRegistaion($data);
 
 
-                    $this->menu();
-                    $this->load->view("login",$this->data);
+
+                if (!empty($this->data['userId'])) {
+
+                    $this->data['info']=array('email'=>$email,'token'=>$activationToken ,'userId'=>$this->data['userId']);
+
+                    $this->load->helper(array('email'));
+                    $this->load->library(array('email'));
+
+                    $this->email->set_mailtype("html");
+                    $this->email->from('noreply@iconcollege.ac.uk','Icon College');
+                    $this->email->to($email);
+                    $this->email->subject('Account Activation Reqeust');
+                    $message = $this->load->view('AccountActivationReqeust', $this->data,true);
+                    $this->email->message($message);
+                    $this->email->send();
+
+//                    if($this->email->send()){
+//
+//                        $this->session->set_flashdata('successMessage','Registration completed Successfully Please Activate Your Acount via email');
+//                        redirect('Login');
+//
+//                    }
+//                    else
+//                    {
+//                        $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+//                        redirect('Registration');
+//                    }
+
+
+
+                    $this->session->set_flashdata('successMessage','Registration completed Successfully Please Activate Your Acount via email');
+                    redirect('Login');
 
 
                 }
@@ -94,6 +166,7 @@ class Registration extends CI_Controller {
                 {
                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
                     redirect('Registration');
+
                 }
 
             }

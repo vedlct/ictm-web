@@ -6,14 +6,21 @@
             <div class="col-md-12">
                 <div class="page-title-heading">
                     <?php foreach ($coursedetail as $cd) { ?>
-                        <h2 class="title">Course Title: <?php echo $cd->courseTitle ?><br><span style="font-size:16px">Course Code: <?php echo $cd->courseCodePearson ?></span></h2>
+                        <h2 class="title">Course Title: <?php echo $cd->courseTitle ?><br><span style="font-size:16px">Course Code: <?php echo $cd->courseCodePearson ?></span>
+                          <span style="font-size:16px"> | <a style="color: #0000A0" href="<?php echo base_url()."/Course_Handbook/".$cd->couseHandBook.".pdf"?>">Download HandBook</a> </span>
+                        </h2>
                     <?php } ?>
+
+
                 </div>
-                <div class="breadcrumbs">
-                    <ul>
+                <div class="breadcrumbs" style="margin-top: 20px">
+                    <ul >
                         <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
                         <li class="home"><a href="#">\ COURSE </a></li>
                     </ul>
+
+                      <h2 style="font-size: 16px"><a style="color: #0000A0" href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>"><b>Download Application Form</b></a></h2>
+
                 </div>
             </div><!-- /.col-md-12 -->
         </div><!-- /.row -->
@@ -50,8 +57,8 @@
                                                 <?php foreach ($coursedetail as $cd) { ?>
 
                                                     <!--  <li><a href="<?php echo base_url()?>Apply">APPLY NOW</a></li>-->
-                                                    <li><a target="_blank" href="<?php echo base_url('public/pdf-files/Application_Form.pdf')?>">Download Application Form</a></li>
-                                                    <li><a target="_blank" href="<?php echo base_url('public/pdf-files/ICON-College-Prospectus.pdf')?>">Download course handbook</a></li>
+<!--                                                    <li><a target="_blank" href="--><?php //echo base_url('public/pdf-files/Application_Form.pdf')?><!--">Download Application Form</a></li>-->
+<!--                                                    <li><a target="_blank" href="--><?php //echo base_url('public/pdf-files/ICON-College-Prospectus.pdf')?><!--">Download course handbook</a></li>-->
 
 
 

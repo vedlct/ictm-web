@@ -1,5 +1,10 @@
 
 <?php include("header.php"); ?>
+<style>
+    .datepicker .next ,.prev {
+        position: relative !important;
+    }
+</style>
 
 <div class="page-title full-color">
     <div class="container">
@@ -35,81 +40,82 @@
                             </div>
 
                             <div class="form-top-right">
-                                <p>Step 3 / 9</p>
+                                <p>Step 4 / 10</p>
                             </div>
                         </div>
                         <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Is English your first language?:</label>
+                                <label class="control-label col-md-2">Is English your first language?<span style="color: red" class="required">*</span>:</label>
                                 <div class="col-md-10">
-                                    <input type="radio" name="" value=""> Yes&nbsp;&nbsp;
-                                    <input type="radio" name="" value=""> No&nbsp;&nbsp;
+                                    <input type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
+                                    <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php }?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
-
+                            <div style="display: none" id="Englishproficience" >
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" name="test" id="test">
+                                    <select style="width: 100%" name="test" id="test" onchange="checkother()">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
                                         <option value="2">TOEFL</option>
                                         <option value="3">PTE</option>
+                                        <option value="4">Other</option>
                                     </select>
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="listendiv" style="display: block">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('listening'); ?></font></p>
-                                    <input type="text" class="form-control" id="listening" name="listening" required>
+                                    <input type="text" class="form-control" id="listening" name="listening" >
                                     <input type="hidden" id="listeningid" name="listeningid">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="readingdiv" style="display: block">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('reading'); ?></font></p>
-                                    <input type="text" class="form-control" id="reading" name="reading" required>
+                                    <input type="text" class="form-control" id="reading" name="reading" >
                                     <input type="hidden" id="readingid" name="readingid">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="writingdiv" style="display: block">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('writing'); ?></font></p>
-                                    <input type="text" class="form-control" id="writing" name="writing" required>
+                                    <input type="text" class="form-control" id="writing" name="writing" >
                                     <input type="hidden" id="writingid" name="writingid">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="speakingdiv" style="display: block">
                                 <label class="control-label col-md-2">Speaking:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('speaking'); ?></font></p>
-                                    <input type="text" class="form-control" id="speaking" name="speaking" required>
+                                    <input type="text" class="form-control" id="speaking" name="speaking" >
                                     <input type="hidden" id="speakingid" name="speakingid">
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="overralldiv" style="display: block">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('overall'); ?></font></p>
-                                    <input type="text" class="form-control" id="overall" name="overall" required>
+                                    <input type="text" class="form-control" id="overall" name="overall" >
                                 </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" id="expirediv" style="display: block">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('expirydate'); ?></font></p>
-                                    <input type="date" class="form-control" id="expirydate" name="expirydate" required>
+                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate" >
                                 </div>
                             </div>
                             <input type="hidden" value="" name="languagetestid" id="languagetestid">
@@ -121,18 +127,24 @@
 <!--                            </div>-->
 
 
-<!--                            <div class="form-group">-->
-<!--                                <label class="control-label col-md-2">Other (Please Specify):</label>-->
-<!--                                <div class="col-md-10">-->
-<!--                                    <textarea id="comment-message" name="comment" rows="8" tabindex="4"></textarea>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <div class="form-group" id="otherdiv" style="display: none">
+                                <label class="control-label col-md-2">Other (Please Specify):</label>
+                                <div class="col-md-10">
+                                    <textarea id="other" name="other" rows="8" tabindex="4"></textarea>
+                                </div>
+                            </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button type="button" class="btn btn-previous">Previous</button>
-                                    <button type="submit" class="btn ">Next</button>
+
+                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>-->
+
+                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>
+
+
                                 </div>
                             </div>
 
@@ -146,8 +158,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Test Name</th>
-                            <th>Overall Score</th>
-                            <th>expireDate</th>
+
                             <th>Action</th>
 
                         </tr>
@@ -166,14 +177,15 @@
                                         case "3":
                                             echo "PTE";
                                             break;
+                                        case "4":
+                                            echo "OTHER";
+                                            break;
                                         default:
-                                            echo "Your favorite color is neither red, blue, nor green!";
+                                            echo "None";
                                     }
                                     ?>
                                 </td>
-                                <td><?php echo $lt->overallScore ?></td>
 
-                                <td><?php echo $lt->expireDate ?></td>
                                 <td>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectidForDelete(this)"   ><i class="fa fa-trash"></i></a>
@@ -216,7 +228,67 @@
 
 </html>
 
+<script type="text/javascript">
+    $(function () {
+        $('.datetimepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+        $('.datetimepicker').keydown(function(e) {
+            e.preventDefault();
+            return false;
+        });
+    });
+
+    $("input[name=firstLanguage]").click( function () {
+
+        if ($(this).val()=='1'){
+            document.getElementById("Englishproficience").style.display = "none";
+        }else {
+            document.getElementById("Englishproficience").style.display = "block";
+        }
+    });
+    $(document).ready(function(){
+        if ('<?php echo $fLanguage?>'== '0'){
+            document.getElementById("Englishproficience").style.display = "block";
+        }else {
+            document.getElementById("Englishproficience").style.display = "none";
+        }
+    });
+
+</script>
+
 <script>
+
+    function checkother() {
+        if(document.getElementById('test').value == "4"){
+
+
+            document.getElementById('listendiv').style.display = 'none';
+            document.getElementById('readingdiv').style.display = 'none';
+            document.getElementById('writingdiv').style.display = 'none';
+            document.getElementById('speakingdiv').style.display = 'none';
+            document.getElementById('overralldiv').style.display = 'none';
+            document.getElementById('expirediv').style.display = 'none';
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('listendiv').style.display = 'block';
+            document.getElementById('readingdiv').style.display = 'block';
+            document.getElementById('writingdiv').style.display = 'block';
+            document.getElementById('speakingdiv').style.display = 'block';
+            document.getElementById('overralldiv').style.display = 'block';
+            document.getElementById('expirediv').style.display = 'block';
+
+
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
+
+
     function selectid(x) {
         btn = $(x).data('panel-id');
        // alert(btn);
@@ -230,6 +302,8 @@
             success:function(response) {
 
 
+
+
                 var len = response.length;
 
                 if(len > 0){
@@ -237,15 +311,33 @@
                     var test = response[0].fkTestId;
                     var overallScore = response[0].overallScore;
                     var expireDate = response[0].expireDate;
+                    var other = response[0].other;
 
                 }
 
-                document.getElementById("test").value= test;
-                document.getElementById("overall").value= overallScore;
-                document.getElementById("expirydate").value= expireDate;
-                document.getElementById("languagetestid").value= btn;
+                if(test == "4"){
+                    document.getElementById('listendiv').style.display = 'none';
+                    document.getElementById('readingdiv').style.display = 'none';
+                    document.getElementById('writingdiv').style.display = 'none';
+                    document.getElementById('speakingdiv').style.display = 'none';
+                    document.getElementById('overralldiv').style.display = 'none';
+                    document.getElementById('expirediv').style.display = 'none';
 
 
+                    document.getElementById('otherdiv').style.display = 'block';
+
+                    document.getElementById("test").value = test;
+                    document.getElementById("other").value = other;
+
+                }else {
+
+                    document.getElementById("test").value = test;
+                    document.getElementById("overall").value = overallScore;
+                    document.getElementById("expirydate").value = expireDate;
+                    document.getElementById("other").value = other;
+                    document.getElementById("languagetestid").value = btn;
+
+                }
             }
 
         });
@@ -274,9 +366,6 @@
                     var writingscore = response[2].score;
                     var speakingscore = response[3].score;
 
-
-
-
                 }
 
                 document.getElementById("listening").value= listeningscore;
@@ -293,5 +382,28 @@
             }
 
         });
+    }
+
+    function selectidForDelete(x) {
+
+        if (confirm("Are you sure you want to delete this Language Proficiency?")) {
+            btn = $(x).data('panel-id');
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("ApplyOnline/DeleteLanguageProficiency")?>',
+                data:{'id': btn},
+                cache: false,
+
+                success:function(data) {
+
+
+                    location.reload();
+
+                }
+
+            });
+        }else {
+            $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+        }
     }
 </script>

@@ -84,6 +84,16 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
     }
+    public function getfirstLanguage($applicationId)
+    {
+
+        $this->db->select('firstLanguageEnglish');
+        $this->db->where('applicationId', $applicationId);
+        $this->db->from('candidateinfo');
+        $query = $this->db->get();
+        return $query->result();
+
+    }
     public function getFinancerDataFromOthers($applicationId)
     {
 
@@ -97,7 +107,7 @@ class ApplyOnlinem extends CI_Model
 
     public function getLanguageTestDetails($languagetestId){
 
-        $this->db->select('id,fkTestId,overallScore,expireDate');
+        $this->db->select('id,fkTestId,overallScore,expireDate,other');
         $this->db->where('id',$languagetestId);
         $this->db->from('candidatelanguagetest');
         $query=$this->db->get();
@@ -283,7 +293,8 @@ class ApplyOnlinem extends CI_Model
     public function getApplicationId($studentOrAgentId)
     {
 
-        $this->db->select('id,studentApplicationFormId,isSubmited');
+        $this->db->select('studentapplicationform.id,studentapplicationform.studentApplicationFormId,studentapplicationform.isSubmited,studentregistration.type,');
+        $this->db->join('studentregistration', 'studentregistration.id = studentapplicationform.studentOrAgentId','left');
         $this->db->where('studentOrAgentId',$studentOrAgentId);
         $this->db->from('studentapplicationform');
         $query=$this->db->get();
@@ -292,6 +303,18 @@ class ApplyOnlinem extends CI_Model
 
     }
     public function getApplicationInfoForAgent($studentOrAgentId)
+    {
+
+        $this->db->select('studentapplicationform.id,studentapplicationform.isSubmited,candidateinfo.title,candidateinfo.firstName,candidateinfo.surName,candidateinfo.email');
+        $this->db->join('candidateinfo', 'candidateinfo.applicationId = studentapplicationform.id','left');
+        $this->db->where('studentapplicationform.studentOrAgentId',$studentOrAgentId);
+        $this->db->from('studentapplicationform');
+        $query=$this->db->get();
+        return $query->result();
+
+
+    }
+    public function getApplicationInfoForStudens($studentOrAgentId)
     {
 
         $this->db->select('studentapplicationform.id,studentapplicationform.isSubmited,candidateinfo.title,candidateinfo.firstName,candidateinfo.surName,candidateinfo.email');
@@ -315,7 +338,7 @@ class ApplyOnlinem extends CI_Model
     public function getCandidateInfo($studentApplicationId)
     {
 
-        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,
+        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,ganderChange,
         placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddressPo,overseasAddress,
         overseasAddressPo,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
         emergencyContactAddressPo,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
@@ -355,7 +378,7 @@ class ApplyOnlinem extends CI_Model
                 'qualificationLevel' => $qualificationLevel[$i],
                 'awardingBody' => $awardingBody[$i],
                 'subject' => $subject[$i],
-                'completionYear' => $completionYear[$i],
+                'completionYear' => date('Y',strtotime($completionYear[$i])),
 
 
             );
@@ -374,57 +397,80 @@ class ApplyOnlinem extends CI_Model
 
     public function applyNow3Insert()
     {
-        $test = $this->input->post('test[]');
-        $listening = $this->input->post('listening[]');
-        $reading = $this->input->post('reading[]');
-        $writing = $this->input->post('writing[]');
-        $speaking = $this->input->post('speaking[]');
-        $overall = $this->input->post('overall[]');
-        $exirydate = $this->input->post('expirydate[]');
-        $other = $this->input->post('other');
+
+        $firstLanguage = $this->input->post('firstLanguage');
+        $dataCandidate=array('firstLanguageEnglish'=>$firstLanguage);
+
+        $this->db->where('applicationId',$this->session->userdata('studentApplicationId'));
+        $error = $this->db->update('candidateinfo', $dataCandidate);
+
+        if ($firstLanguage == '0') {
 
 
+            $test = $this->input->post('test[]');
+            $listening = $this->input->post('listening[]');
+            $reading = $this->input->post('reading[]');
+            $writing = $this->input->post('writing[]');
+            $speaking = $this->input->post('speaking[]');
+            $overall = $this->input->post('overall[]');
+            $exirydate = $this->input->post('expirydate[]');
+            $other = $this->input->post('other');
 
 
-        for ($i = 0; $i < count($test); $i++) {
-            $data = array(
-                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
-                'fkTestId' => $test[$i],
-                'overallScore' => $overall[$i],
-                'expireDate' => $exirydate[$i],
+            for ($i = 0; $i < count($test); $i++) {
 
-            );
+                if ($test[$i] == '4') {
+                    $data = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                        'fkTestId' => $test[$i],
+                        'other' => $other
 
-            $error = $this->db->insert('candidatelanguagetest', $data);
-            $insert_id = $this->db->insert_id();
+                    );
+                 //   $error = $this->db->insert('candidatelanguagetest', $data);
+                    // $insert_id = $this->db->insert_id();
+
+                } else {
+                    $data = array(
+                        'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                        'fkTestId' => $test[$i],
+                        'overallScore' => $overall[$i],
+                        'expireDate' => date('Y-m-d', strtotime($exirydate[$i])),
+                        'other' => $other
+
+                    );
+
+                  //  $error = $this->db->insert('candidatelanguagetest', $data);
+                    $insert_id = $this->db->insert_id();
 
 
-            $data1 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Lisiting'],
-                'score' => $listening[$i],
-            );
-            $data2 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Reading'],
-                'score' => $reading[$i],
-            );
-            $data3 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Speaking'],
-                'score' => $writing[$i],
-            );
-            $data4 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Writing'],
-                'score' => $speaking[$i],
-            );
+                    $data1 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Lisiting'],
+                        'score' => $listening[$i],
+                    );
+                    $data2 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Reading'],
+                        'score' => $reading[$i],
+                    );
+                    $data3 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Speaking'],
+                        'score' => $writing[$i],
+                    );
+                    $data4 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Writing'],
+                        'score' => $speaking[$i],
+                    );
 
-            $error = $this->db->insert('cadidatelanguagetestscores', $data1);
-            $error = $this->db->insert('cadidatelanguagetestscores', $data2);
-            $error = $this->db->insert('cadidatelanguagetestscores', $data3);
-            $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data1);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data2);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data3);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data4);
 
+                }
+            }
         }
 
         if (empty($error)) {
@@ -437,98 +483,132 @@ class ApplyOnlinem extends CI_Model
 
     public function applyNow3update(){
 
-        $test = $this->input->post('test');
-        $listening = $this->input->post('listening');
-        $reading = $this->input->post('reading');
-        $writing = $this->input->post('writing');
-        $speaking = $this->input->post('speaking');
-        $overall = $this->input->post('overall');
-        $exirydate = $this->input->post('expirydate');
-        $languagetestid = $this->input->post('languagetestid');
+        $firstLanguage = $this->input->post('firstLanguage');
+        if ($firstLanguage == '1'){
 
-        $listeningid = $this->input->post('listeningid');
-        $readingid = $this->input->post('readingid');
-        $writingid = $this->input->post('writingid');
-        $speakingid = $this->input->post('speakingid');
+            $dataCandidate=array('firstLanguageEnglish'=>$firstLanguage);
 
-       // $other = $this->input->post('other');
+            $this->db->where('applicationId',$this->session->userdata('studentApplicationId'));
+            $error = $this->db->update('candidateinfo', $dataCandidate);
 
+            $this->db->where('fkApplicationId',$this->session->userdata('studentApplicationId'));
+            $this->db->delete('candidatelanguagetest');
 
-            $data = array(
+        }else {
 
-                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
-                'fkTestId' => $test,
-                'overallScore' => $overall,
-                'expireDate' => $exirydate,
+            $firstLanguage = $this->input->post('firstLanguage');
+            $dataCandidate = array('firstLanguageEnglish' => $firstLanguage);
 
-            );
+            $this->db->where('applicationId', $this->session->userdata('studentApplicationId'));
+            $error = $this->db->update('candidateinfo', $dataCandidate);
 
 
+            $test = $this->input->post('test');
+            $listening = $this->input->post('listening');
+            $reading = $this->input->post('reading');
+            $writing = $this->input->post('writing');
+            $speaking = $this->input->post('speaking');
+            $overall = $this->input->post('overall');
+            $exirydate = date('Y-m-d', strtotime($this->input->post('expirydate')));
+            $languagetestid = $this->input->post('languagetestid');
 
-        if (empty($languagetestid)){
+            $listeningid = $this->input->post('listeningid');
+            $readingid = $this->input->post('readingid');
+            $writingid = $this->input->post('writingid');
+            $speakingid = $this->input->post('speakingid');
 
-            $error = $this->db->insert('candidatelanguagetest', $data);
-            $insert_id = $this->db->insert_id();
-            $data1 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Lisiting'],
-                'score' => $listening,
-            );
-            $data2 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Reading'],
-                'score' => $reading,
-            );
-            $data3 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Speaking'],
-                'score' => $writing,
-            );
-            $data4 = array(
-                'fkCandidateTestId' => $insert_id,
-                'fkTestHeadId' => languageTest['Writing'],
-                'score' => $speaking,
-            );
-            $error = $this->db->insert('cadidatelanguagetestscores', $data1);
-            $error = $this->db->insert('cadidatelanguagetestscores', $data2);
-            $error = $this->db->insert('cadidatelanguagetestscores', $data3);
-            $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+            $other = $this->input->post('other');
+
+            if ($test == '4') {
+
+                $data = array(
+
+                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    'fkTestId' => $test,
+                    'other' => $other
+
+                );
+                $error = $this->db->insert('candidatelanguagetest', $data);
+            } else {
+
+                $data = array(
+
+                    'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                    'fkTestId' => $test,
+                    'overallScore' => $overall,
+                    'expireDate' => $exirydate,
+                    'other' => $other
+
+                );
+
+
+                if (empty($languagetestid)) {
+
+                    $error = $this->db->insert('candidatelanguagetest', $data);
+                    $insert_id = $this->db->insert_id();
+                    $data1 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Lisiting'],
+                        'score' => $listening,
+                    );
+                    $data2 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Reading'],
+                        'score' => $reading,
+                    );
+                    $data3 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Speaking'],
+                        'score' => $writing,
+                    );
+                    $data4 = array(
+                        'fkCandidateTestId' => $insert_id,
+                        'fkTestHeadId' => languageTest['Writing'],
+                        'score' => $speaking,
+                    );
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data1);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data2);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data3);
+                    $error = $this->db->insert('cadidatelanguagetestscores', $data4);
+                }
+
+
+                $this->db->where('id', $languagetestid);
+                $error = $this->db->update('candidatelanguagetest', $data);
+                $data1 = array(
+
+                    'score' => $listening,
+                );
+                $this->db->where('fkCandidateTestId', $languagetestid);
+                $this->db->where('fkTestHeadId', $listeningid);
+                $error = $this->db->update('cadidatelanguagetestscores', $data1);
+
+
+                $data2 = array(
+                    'score' => $reading,
+                );
+                $this->db->where('fkCandidateTestId', $languagetestid);
+                $this->db->where('fkTestHeadId', $readingid);
+                $error = $this->db->update('cadidatelanguagetestscores', $data2);
+
+                $data3 = array(
+                    'score' => $writing,
+                );
+                $this->db->where('fkCandidateTestId', $languagetestid);
+                $this->db->where('fkTestHeadId', $writingid);
+                $error = $this->db->update('cadidatelanguagetestscores', $data3);
+
+                $data4 = array(
+                    'score' => $speaking,
+                );
+                $this->db->where('fkCandidateTestId', $languagetestid);
+                $this->db->where('fkTestHeadId', $speakingid);
+                $error = $this->db->update('cadidatelanguagetestscores', $data4);
+
+            }
+
+
         }
-
-
-        $this->db->where('id',$languagetestid);
-        $error = $this->db->update('candidatelanguagetest', $data);
-        $data1 = array(
-
-                'score' => $listening,
-            );
-        $this->db->where('fkCandidateTestId',$languagetestid);
-        $this->db->where('fkTestHeadId',$listeningid);
-        $error = $this->db->update('cadidatelanguagetestscores', $data1);
-
-
-            $data2 = array(
-                'score' => $reading,
-            );
-        $this->db->where('fkCandidateTestId',$languagetestid);
-        $this->db->where('fkTestHeadId',$readingid);
-        $error = $this->db->update('cadidatelanguagetestscores', $data2);
-
-        $data3 = array(
-                'score' => $writing,
-            );
-        $this->db->where('fkCandidateTestId',$languagetestid);
-        $this->db->where('fkTestHeadId',$writingid);
-        $error = $this->db->update('cadidatelanguagetestscores', $data3);
-
-        $data4 = array(
-                'score' => $speaking,
-            );
-        $this->db->where('fkCandidateTestId',$languagetestid);
-        $this->db->where('fkTestHeadId',$speakingid);
-        $error = $this->db->update('cadidatelanguagetestscores', $data4);
-
-
 
 
 
@@ -562,11 +642,25 @@ class ApplyOnlinem extends CI_Model
             $this->db->where('applicationId',$applicationId);
             $error = $this->db->update('candidateinfo', $data1);
 
-        }else{
+        }else if ($selfFinance =='slc'){
+
+            $data2 = array(
+                'sourceOfFinance' => 'slc',
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $error = $this->db->update('candidateinfo', $data2);
+
+        }
+
+        else{
             $title = $this->input->post('title');
             $name = $this->input->post('name');
             $relation = $this->input->post('relation');
             $address = $this->input->post('address');
+            $postcode = $this->input->post('AddressPO');
+            $country = $this->input->post('country');
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
@@ -584,6 +678,8 @@ class ApplyOnlinem extends CI_Model
                 'name' => $name,
                 'relation' => $relation,
                 'address' => $address,
+                'addressPo' => $postcode,
+                'country' => $country,
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
@@ -704,7 +800,7 @@ class ApplyOnlinem extends CI_Model
     {
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        $this->db->select('personequalopportunity.id as personalOpportunityId,equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
+        $this->db->select('personequalopportunity.id as personalOpportunityId,personequalopportunity.disabilityAllowance as personalDisabilityAllowance,equalopportunitysubgroup.subGroupTitle,equalopportunitysubgroup.id,equalopportunitygroup.opportunityTitle,equalopportunitygroup.id as groupId');
         $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
         $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
         $this->db->where('personequalopportunity.fkApplicationId=',$applicationId);
@@ -726,6 +822,12 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
 
+    }
+
+    public function deleteRefereesDetailsById($refereesId){
+
+        $this->db->where('id', $refereesId);
+        $this->db->delete('candidatereferees');
     }
 
     public function insertApplyNow6($data)
@@ -866,8 +968,8 @@ class ApplyOnlinem extends CI_Model
                 'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                 'organization' => $organisation[$i],
                 'positionHeld' => $positionHeld[$i],
-                'startDate' => $startdate[$i],
-                'endDate' => $enddate[$i],
+                'startDate' => date('Y-m-d',strtotime($startdate[$i])),
+                'endDate' => date('Y-m-d',strtotime($enddate[$i])),
 
 
             );
@@ -901,13 +1003,37 @@ class ApplyOnlinem extends CI_Model
         return $query->result();
 
     }
+    public function getUserInfo($studentOrAgentId){
+        $this->db->select('*');
+        $this->db->where('id',$studentOrAgentId);
+        $this->db->from('studentregistration');
+        $query=$this->db->get();
+        return $query->result();
+
+    }
+
+    public function updateUserInfo($data,$id){
+
+
+            $this->db->where('id', $id);
+            $error=$this->db->update('studentregistration', $data);
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+
+
+
+    }
 
     public function applyNow10update(){
 
         $organisation = $this->input->post('organisation');
         $positionHeld = $this->input->post('positionHeld');
-        $startdate = $this->input->post('startdate');
-        $enddate = $this->input->post('enddate');
+        $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+        $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
         $experienceid = $this->input->post('experience');
 
         $data = array(
@@ -932,16 +1058,48 @@ class ApplyOnlinem extends CI_Model
 
             $error = $this->db->insert('personexperience', $data1);
 
+        }else{
+
+            //  $error = $this->db->insert('personexperience', $data);
+
+            $this->db->where('id', $experienceid);
+            $error=$this->db->update('personexperience', $data);
+
         }
 
-      //  $error = $this->db->insert('personexperience', $data);
 
-        $this->db->where('id', $experienceid);
-        $error=$this->db->update('personexperience', $data);
+    }
+    public function cancelApplication($applicationId){
+
+
+        $data1 = array(
+
+            'isSubmited' => '2',
+
+        );
+
+        $this->db->where('id', $applicationId);
+        $error=$this->db->update('studentapplicationform', $data1);
+
+
+
+
     }
 
     public function deleteExperience($experienceId){
+
         $this->db->where('id', $experienceId);
         $this->db->delete('personexperience');
+    }
+
+    public function deleteLanguageProficiency($LanguageProficiencyId){
+
+        $this->db->where('id', $LanguageProficiencyId);
+        $this->db->delete('candidatelanguagetest');
+
+        $this->db->where('fkCandidateTestId', $LanguageProficiencyId);
+        $this->db->delete('cadidatelanguagetestscores');
+
+
     }
 }
