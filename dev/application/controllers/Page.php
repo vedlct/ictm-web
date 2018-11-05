@@ -25,45 +25,47 @@ class Page extends CI_Controller {
     {
         $this->menu();
         $this->data['pagetype']=$this->Pagem->getPageType($id);
+        if (!empty( $this->data['pagetype'])) {
+            foreach ($this->data['pagetype'] as $pt)
 
-        foreach ($this->data['pagetype'] as $pt)
+                if ($pt->pageType == 'About Type') {
 
-            if ($pt->pageType == 'About Type') {
+                    $this->data['aboutdata'] = $this->PageSectionm->getPageData($id);
+                    if (!empty($this->data['aboutdata'])) {
+                        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                        $this->load->view('about', $this->data);
+                    } else {
+                        $this->load->view('error');
+                    }
+                } else if ($pt->pageType == 'Health Type') {
 
-                $this->data['aboutdata']= $this->PageSectionm->getPageData($id);
-                if (!empty($this->data['aboutdata'])) {
-                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-                    $this->load->view('about', $this->data);
-                }else{
-                    $this->load->view('error');
+
+                    $this->data['healthdata'] = $this->PageSectionm->getPageData($id);
+                    if (!empty($this->data['healthdata'])) {
+                        $this->load->view('health-safety', $this->data);
+
+                    } else {
+                        $this->load->view('error');
+                    }
+
+                } else if ($pt->pageType == 'Terms Type') {
+
+
+                    $this->data['termsdata'] = $this->PageSectionm->getPageData($id);
+                    if (!empty($this->data['termsdata'])) {
+                        $this->data['newsdata'] = $this->Newsm->getLatestNews();
+                        $this->data['eventdata'] = $this->Eventm->getLatestEvents();
+                        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+
+                        $this->load->view('terms-conditions', $this->data);
+
+                    } else {
+                        $this->load->view('error');
+                    }
                 }
-            }
-            else if ($pt->pageType == 'Health Type') {
-
-
-                $this->data['healthdata']= $this->PageSectionm->getPageData($id);
-                if (!empty($this->data['healthdata'])) {
-                    $this->load->view('health-safety', $this->data);
-
-                }else{
-                    $this->load->view('error');
-                }
-
-            } else if ($pt->pageType == 'Terms Type'){
-
-
-                $this->data['termsdata']= $this->PageSectionm->getPageData($id);
-                if (!empty($this->data['termsdata'])) {
-                $this->data['newsdata']= $this->Newsm->getLatestNews();
-                $this->data['eventdata']= $this->Eventm->getLatestEvents();
-                $this->data['coursedata']=$this->Coursem->getCourseTitle();
-
-                $this->load->view('terms-conditions', $this->data);
-
-            }else{
-                    $this->load->view('error');
-                }
-            }
+        }else{
+            $this->load->view('error');
+        }
 
     }
 
