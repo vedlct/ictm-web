@@ -451,7 +451,7 @@
                                     <div class="content-pad">
                                         <div class="post-item row">
                                             <div   class="col-md-12 col-sm-12">
-                                                <a  class="twitter-timeline"  data-height="750"  href="https://twitter.com/educationgovuk">Tweets by DfE</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                                <a  class="twitter-timeline"  data-height="750"  href="https://twitter.com/officestudents">Tweets by DfE</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                                             </div>
                                         </div><!--/post-item-->
                                     </div>
