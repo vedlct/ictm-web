@@ -27,7 +27,7 @@ class Department extends CI_Controller {
 
         $this->menu();
         $this->data['dDeteails'] = $this->Departmentm->getDepartmentDetails($id);
-        if (!empty($this->data['Eventdetails'])) {
+        if (!empty($this->data['dDeteails'])) {
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $this->load->view('department', $this->data);
         }else{
