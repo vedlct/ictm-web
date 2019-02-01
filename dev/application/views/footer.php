@@ -53,7 +53,7 @@
                         </div>
                     </div>
 
-                    <div class=" col-md-3  widget widget-text">
+                    <div class=" col-md-3  widget widget-text" style="margin-top: -1px">
                         <div class=" widget-inner">
                             <h2 class="widget-title maincolor1">Key Info & Policies</h2>
                             <div class="menu-others-container">
@@ -109,7 +109,7 @@
                         </div>
                     </div>
 
-                    <div class=" col-md-3  widget widget-nav-menu">
+                    <div class=" col-md-3  widget widget-nav-menu" style="margin-top: -2px">
                         <div class=" widget-inner">
                             <h2 class="widget-title maincolor1">IMPORTANT LINKS</h2>
                             <div class="menu-others-container">
@@ -164,13 +164,13 @@
                         </div>
                     </div>
 
-                    <div class=" col-md-3 border widget widget-text">
+                    <div class=" col-md-3 border widget widget-text" style="margin-top: -1px">
                         <div class=" widget-inner">
                             <h2 class="widget-title maincolor1">CONTACT</h2>
                             <div class="textwidget">
                                 <?php foreach ($contact as $contactInfo){?>
                                     <p><?php echo $contactInfo->collegeName;?> <br>
-                                        <?php echo $contactInfo->collegeAddress;?> <br>
+                                        <?php echo substr_replace($contactInfo->collegeAddress, '<br>', 30, 0);?> <br>
                                         Tel: <?php echo $contactInfo->collegeTelephone1;?><br>
                                         Fax: <?php echo $contactInfo->collegeFax;?><br>
                                         E-mail: <a href="mailto:<?php echo $contactInfo->collegeEmail;?>" target="_top"><?php echo $contactInfo->collegeEmail;?></a></p>
@@ -264,7 +264,7 @@
 
 
 
-                    <span style="font-size:11px">© 2017 <a href="#">Icon College</a> - All rights reserved. | Website Designed & Developed by: <a target="_blank" href="http://a2ninfotech.co.uk/">A2N Info Tech Ltd</a>.</span>
+                    <span style="font-size:11px">© <?php echo date("Y"); ?> <a href="#">Icon College</a> - All rights reserved. | Website Designed & Developed by: <a target="_blank" href="http://a2ninfotech.co.uk/">A2N Info Tech Ltd</a>.</span>
                 </div>
                 <nav class="col-md-6 footer-social">
                     <?php foreach ($contact as $contactInfo){?>
