@@ -14,13 +14,21 @@
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month,agendaWeek,agendaDay,listWeek'
+				right: 'month,agendaWeek,agendaDay,list'
+
 			},
+
 			defaultDate: '<?php echo date('Y-m-d')?>',
 			navLinks: true, // can click day/week names to navigate views
-			editable: false,
+			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 
+            views: {
+                list: {
+                    duration: { days: 365 },
+                    listDayAltFormat: 'dddd',
+                }
+            },
 			events: [
                 <?php foreach ($allEvents as $events){?>
 				{
@@ -35,7 +43,8 @@
 			]
 
 		});
-//        $('#calendar').fullCalendar('changeView', 'listWeek');
+
+       // $('#calendar').fullCalendar('changeView', 'listWeek');
 
 	});
 
@@ -44,7 +53,6 @@
         <style>
 
             body {
-
 
                 font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
                 font-size: 14px;

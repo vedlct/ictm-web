@@ -3115,7 +3115,7 @@ body.mac .dropcap {
 	box-shadow: inset 0 -6px 0 rgba(0,0,0,.25);
 }
 
-.nav-tabs > li.active > a {
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
 	color: #fff;
 	cursor: default;
 	background-color: #841a29;
