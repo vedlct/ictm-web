@@ -157,7 +157,18 @@ class ApplyOnlinem extends CI_Model
 
 
 
-        }else{
+        }else if ($selfFinance =='slc'){
+
+            $data2 = array(
+                'sourceOfFinance' => 'slc',
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $error = $this->db->update('candidateinfo', $data2);
+
+        }
+        else{
 
             $title = $this->input->post('title');
             $name = $this->input->post('name');
@@ -227,7 +238,19 @@ class ApplyOnlinem extends CI_Model
 
 
 
-        }else{
+        }else if ($selfFinance =='slc'){
+
+            $data2 = array(
+                'sourceOfFinance' => 'slc',
+
+            );
+
+            $this->db->where('applicationId',$applicationId);
+            $error = $this->db->update('candidateinfo', $data2);
+
+        }
+
+        else{
 
             $title = $this->input->post('title');
             $name = $this->input->post('name');
@@ -426,7 +449,7 @@ class ApplyOnlinem extends CI_Model
                         'other' => $other
 
                     );
-                 //   $error = $this->db->insert('candidatelanguagetest', $data);
+                    $error = $this->db->insert('candidatelanguagetest', $data);
                     // $insert_id = $this->db->insert_id();
 
                 } else {
@@ -528,7 +551,18 @@ class ApplyOnlinem extends CI_Model
                     'other' => $other
 
                 );
-                $error = $this->db->insert('candidatelanguagetest', $data);
+
+                if (empty($languagetestid)) {
+
+                    $error = $this->db->insert('candidatelanguagetest', $data);
+
+                }else{
+                    $this->db->where('id', $languagetestid);
+                    $error = $this->db->update('candidatelanguagetest', $data);
+                }
+
+
+
             } else {
 
                 $data = array(

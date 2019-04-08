@@ -1,6 +1,15 @@
 
 <?php include("header.php"); ?>
 
+<style>
+    select{
+        height: 30px; border: 1px solid #bababa;
+    }
+    textarea{
+        border: 1px solid #bababa; width: 100%;
+    }
+</style>
+
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
@@ -48,7 +57,14 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea style="border: 1px solid #bababa; width: 100%;" id="collegeChoiceStatement" required name="collegeChoiceStatement" rows="8" tabindex="4"></textarea>
+                                <select style="width: 100%" id="collegeChoiceStatement"  name="collegeChoiceStatement">
+
+                                    <option value="" selected>Select Source</option>
+                                    <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
+                                        <option <?php echo set_select('collegeChoiceStatement',  PERSONAL_STATEMENT[$i], False); ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
+                                    <?php } ?>
+
+                                </select>
                             </div>
                         </div>
 

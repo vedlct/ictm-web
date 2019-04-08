@@ -71,7 +71,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
                     <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
                 <?php }?>
 
-                <form role="form" action="<?php echo  base_url()?>OnlineForms/insertRegisterInterest" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo  base_url()?>OnlineForms/insertRegisterInterest" onsubmit="return checkSubmit()" method="post" class="registration-form form-horizontal">
 
                     <div class="form-bottom">
                         <div class="form-group">
@@ -279,6 +279,18 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
         e.preventDefault();
         return false;
     });
+
+    function checkSubmit() {
+
+        if(grecaptcha && grecaptcha.getResponse().length <= 0)
+        {
+            //the recaptcha is checked
+            // Do what you want here
+            alert('Please select the recaptcha !');
+            return false;
+        }
+
+    }
 
 </script>
 

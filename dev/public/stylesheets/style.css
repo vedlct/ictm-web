@@ -805,6 +805,7 @@ input[type="color"],
 #mainnav .submenu li {
 	background-color: #000;
 	opacity: 0.9;
+	width: 380px;
 }
 
 #mainnav .submenu li:hover {

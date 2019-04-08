@@ -136,17 +136,14 @@
                                 </div>
                                 <input type="hidden" value="" name="languagetestid" id="languagetestid">
 
-                                <!--                            <div class="form-group">-->
-                                <!--                                <div class="col-sm-offset-2 col-md-10">-->
-                                <!--                                    <button type="button" class="btn btn-previous">Add New</button>-->
-                                <!--                                </div>-->
-                                <!--                            </div>-->
+
 
 
                                 <div class="form-group" id="otherdiv" style="display: none">
                                     <label class="control-label col-md-2">Other (Please Specify):</label>
                                     <div class="col-md-10">
                                         <textarea id="other" name="other" rows="8" tabindex="4"></textarea>
+                                        <input type="hidden" class="form-control" id="otherTab" name="otherTab"value="1">
                                     </div>
                                 </div>
                             </div>
@@ -349,6 +346,7 @@
 
                     document.getElementById("test").value = test;
                     document.getElementById("other").value = other;
+                    document.getElementById("languagetestid").value = btn;
 
                 }else {
 

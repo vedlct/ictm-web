@@ -56,93 +56,104 @@
                                     <div class="col-md-10">
                                         <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC &nbsp;&nbsp;
                                         <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> OWN&nbsp;&nbsp;
-                                        <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsor&nbsp;&nbsp;&nbsp;
+                                        <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsorship&nbsp;&nbsp;&nbsp;
                                     </div>
                                 </div>
 
                             <div style="display: none" id="otherFinance">
                             <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select style="width: 100%; height: 32px; border: 1px solid #bababa;"  id="title"   name="title">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('title'); ?></font></p>
+                                        <select style="width: 100%"  id="title"   name="title">
 
-                                        <option value="" selected><?php echo SELECT_TITLE?></option>
-                                        <?php for ($i=0;$i<count(Title);$i++){?>
-                                            <option value="<?php echo Title[$i];?>" <?php if(!empty($f4->title) &&  $f4->title == Title[$i] ) echo 'selected = "selected"'; ?> > <?php echo Title[$i] ?></option>
-                                        <?php } ?>
-                                    </select>
+                                            <option value="" selected><?php echo SELECT_TITLE?></option>
+                                            <?php for ($i=0;$i<count(Title);$i++){?>
+                                                <option value="<?php echo Title[$i];?>" <?php if(!empty($f4->title) &&  $f4->title == Title[$i] ) echo 'selected = "selected"'; ?> > <?php echo Title[$i] ?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name"  maxlength="100" name="name" value="<?php echo $f4->name ?>" >
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea style="border: 1px solid #bababa; width: 100%;" id="address" name="address" rows="8"  maxlength="1000" tabindex="4"> <?php echo $f4->address ?></textarea>
-                                </div>
-                            </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address P.O:<span style="color: red" class="required">*</span></label>
+                                    <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('name'); ?></font></p>
+                                        <input type="text" class="form-control" id="name"  maxlength="100" name="name" value="<?php echo $f4->name ?>" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
+                                        <input type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('address'); ?></font></p>
+                                        <textarea id="address" name="address" rows="8"  maxlength="1000" tabindex="4"> <?php echo $f4->address ?></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
                                         <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo $f4->addressPo?>">
                                     </div>
                                 </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('country'); ?></font></p>
+                                        <select style="width: 100%" id="country"  name="country">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php
+                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
+                                                ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
 
-                                    <input type="text" class="form-control" id="mobile"maxlength="50" name="mobile" value="<?php echo $f4->mobile ?>">
+
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input type="text" class="form-control" id="telephone" maxlength="50" name="telephone"value="<?php echo $f4->telephone ?>">
+                                        <input type="text" class="form-control" id="mobile"maxlength="50" name="mobile" value="<?php echo $f4->mobile ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('email'); ?></font></p>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
-                                    <input type="email" class="form-control" id="email" maxlength="50" name="email" value="<?php echo $f4->email ?>">
+                                        <input type="text" class="form-control" id="telephone" maxlength="50" name="telephone"value="<?php echo $f4->telephone ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-<!--                            <div class="form-group">-->
-<!--                                <label class="control-label col-md-2">Fax*:</label>-->
-<!--                                <div class="col-md-10">-->
-<!--                                    <p><font color="red"> --><?php //echo form_error('fax'); ?><!--</font></p>-->
-<!--                                    <input type="text" class="form-control" id="fax" name="fax"  value="--><?php //echo $f4->fax ?><!--">-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('email'); ?></font></p>
+
+                                        <input type="email" class="form-control" id="email" maxlength="50" name="email" value="<?php echo $f4->email ?>">
+                                    </div>
+                                </div>
+
 
                             </div>
 
@@ -205,7 +216,7 @@
 
     $("input[name=selfFinance]").click( function () {
 
-        if ($(this).val()=='own'){
+        if ( $(this).val()=='own' || $(this).val()=='slc' ){
             document.getElementById("otherFinance").style.display = "none";
         }else {
             document.getElementById("otherFinance").style.display = "block";
@@ -217,7 +228,7 @@
 
         var finance=$('input[name=selfFinance]:checked').val();
 
-        if (finance != 'own') {
+        if (finance != 'own' && finance != "slc" ) {
 
             var title = document.getElementById("title").value;
             var email = document.getElementById("email").value;
