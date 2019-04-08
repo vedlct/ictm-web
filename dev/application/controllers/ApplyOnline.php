@@ -1307,7 +1307,7 @@ class ApplyOnline extends CI_Controller
                 } else {
                     $this->data['financeYes'] = $finance;
                     $this->data['Financer'] = $this->ApplyOnlinem->getFinancerDataFromOthers($applicationId);
-                   // print_r($this->data['Financer']);
+
                     $this->load->view('application-form4v', $this->data);
                 }
 
@@ -1342,23 +1342,44 @@ class ApplyOnline extends CI_Controller
         if ($this->session->userdata('loggedin') == "true") {
 
             $firstLanguage = $this->input->post('firstLanguage');
+            $otherTab = $this->input->post('otherTab');
+
             if ($firstLanguage=='0'){
 
-                $this->load->library('form_validation');
-                if (!$this->form_validation->run('applyfrom3')) {
+                if ($otherTab != '1' ) {
 
-                    $this->menu();
-                    $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                    $this->load->library('form_validation');
+                    if (!$this->form_validation->run('applyfrom3')) {
 
-                    $applicationId = $this->session->userdata('studentApplicationId');
+                        $this->menu();
+                        $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
-                    $this->data['fLanguage']='0';
+                        $applicationId = $this->session->userdata('studentApplicationId');
 
-                    $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
-                    $this->load->view('StudentApplicationForms/application-form3v', $this->data);
-                }
-                else{
+                        $this->data['fLanguage'] = '0';
+
+                        $this->data['languagetest'] = $this->ApplyOnlinem->getlanguagetest($applicationId);
+                        $this->load->view('application-form3v', $this->data);
+                    } else {
+                        $this->data['error'] = $this->ApplyOnlinem->applyNow3update();
+                        if (empty($this->data['error'])) {
+
+
+                            $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
+                            redirect('ApplyForm3');
+
+                        } else {
+
+
+                            $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                            redirect('ApplyForm3');
+
+                        }
+                    }
+                }else{
+
                     $this->data['error']=$this->ApplyOnlinem->applyNow3update();
+
                     if (empty($this->data['error'])) {
 
 
@@ -1372,6 +1393,7 @@ class ApplyOnline extends CI_Controller
                         redirect('ApplyForm3');
 
                     }
+
                 }
 
             }
@@ -1614,7 +1636,7 @@ class ApplyOnline extends CI_Controller
         if ($this->session->userdata('loggedin') == "true") {
 
             $selfFinance=$this->input->post('selfFinance');
-            if ($selfFinance != 'own'){
+            if ($selfFinance != 'own' || $selfFinance != 'slc'){
 
                 $this->load->library('form_validation');
                 if (!$this->form_validation->run('applyfromfinance')) {
@@ -1690,7 +1712,7 @@ class ApplyOnline extends CI_Controller
 
             $selfFinance=$this->input->post('selfFinance');
 
-            if ($selfFinance != 'own'){
+            if ($selfFinance != 'own' || $selfFinance != 'slc' ){
 
                 $this->load->library('form_validation');
                 if (!$this->form_validation->run('applyfromfinance')) {

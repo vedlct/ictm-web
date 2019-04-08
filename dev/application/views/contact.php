@@ -38,19 +38,19 @@
 
                                         <form action="<?php echo base_url()?>Email/contactEmail" onsubmit="return chkContactEmail()" method="post" id="contactform" class="comment-form" >
                                             <fieldset class="style-1 full-name">
-                                                <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="name"  required tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="name"  required tabindex="1" value="<?php echo set_value('name'); ?>" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 email-address">
-                                                <input type="email" id="email" placeholder="Your email" class="tb-my-input" required name="email" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="email" id="email" placeholder="Your email" class="tb-my-input" required name="email" tabindex="2" value="<?php echo set_value('email'); ?>" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 subject">
-                                                <input type="text" id="subject" placeholder="Subject" class="tb-my-input" required name="subject" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="text" id="subject" placeholder="Subject" class="tb-my-input" required name="subject" tabindex="2" value="<?php echo set_value('subject'); ?>" size="32" aria-required="true">
                                             </fieldset> 
 
                                             <fieldset class="message-form">
-                                                <textarea id="comment" placeholder="Your Message" required name="comment" rows="8" tabindex="4"></textarea>
+                                                <textarea id="comment" placeholder="Your Message" required name="comment" rows="8" tabindex="4"><?php echo set_value('comment'); ?></textarea>
                                             </fieldset>
 
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
