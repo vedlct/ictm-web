@@ -118,6 +118,15 @@
                 var comment =  document.getElementById("comment").value;
                 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+                if(grecaptcha && grecaptcha.getResponse().length <= 0)
+                {
+                    //the recaptcha is checked
+                    // Do what you want here
+                    alert('Please select the recaptcha !');
+                    return false;
+                }
+
+
                 if (name ==""){
                     alert("name field can not be empty !! ");
                     return false;
