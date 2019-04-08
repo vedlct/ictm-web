@@ -29,9 +29,15 @@ class Course extends CI_Controller {
     {
         $this->menu();
         $this->data['coursedetail']= $this->Coursem->getCourseDetails($id);
-        $this->data['courseSectiondetail']= $this->CourseSectionm->getCourseSectionDetails($id);
+        if (!empty( $this->data['coursedetail'])) {
 
+        $this->data['courseSectiondetail']= $this->CourseSectionm->getCourseSectionDetails($id);
         $this->load->view('course-detail', $this->data);
+
+        }else{
+
+            $this->load->view('error');
+        }
     }
 
     public function menu() // get all the menu + footer

@@ -27,6 +27,7 @@ class News extends CI_Controller {
     {
         $this->menu();
         $this->data['newsDetails'] = $this->Newsm->getNewsDetails($id);
+        if (!empty($this->data['newsDetails'])) {
         foreach ($this->data['newsDetails'] as $nd){$date = $nd->newsDate;}
         $this->data['next'] = $this->Newsm->getNext($date);
         $this->data['previous'] = $this->Newsm->getPrevious($date);
@@ -34,6 +35,9 @@ class News extends CI_Controller {
         $this->data['year'] = $this->Newsm->getYear();
         $this->data['month'] = $this->Newsm->getMonth();
         $this->load->view('news-detail', $this->data);
+        }else{
+            $this->load->view('error');
+        }
     }
     public function newsDetailsArchive($id) //get the news details form selected news from archive
     {

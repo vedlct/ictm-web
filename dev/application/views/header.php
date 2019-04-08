@@ -5,6 +5,7 @@
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
+
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>ICON College</title>
 
@@ -264,11 +265,11 @@
                         <nav id="mainnav" class="mainnav">
 
                             <ul class="menu">
-                                <li ><a href="<?php echo base_url()?>Home">Home</a></li>
+                                <li ><a href="<?php echo base_url()?>Home"><b>Home </b> </a></li>
 
                                 <?php foreach ($mainmenu as $mn) {?>
 
-                                    <li><a><?php echo $mn->menuName; ?></a>
+                                    <li><a><b><?php echo $mn->menuName." "; ?></b><i class="fa fa-caret-down" aria-hidden="true"></i></a>
 
                                         <ul class="submenu">
                                             <?php
@@ -277,42 +278,42 @@
                                                     if ($q->pageType == 'Static Type') {
                                                         switch ($q->pageContent) {
                                                             case "course-list.php":
-                                                                ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>course-list"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "department.php":
-                                                                ?> <li><a href="<?php echo base_url()?>Department"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>Department"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "faculty-members.php":
-                                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $q->menuName?></a></li> <?php
+                                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "photo-gallery.php":
-                                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $q->menuName?></a></li> <?php
+                                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "news.php":
-                                                                ?> <li><a href="<?php echo base_url()?>News"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>News"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "event-list.php":
-                                                                ?> <li><a href="<?php echo base_url()?>Events"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>Events"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "contact.php":
-                                                                ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>Contact"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "registerInterest.php":
-                                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "feedback-form.php":
-                                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $q->menuName?></a></li> <?php
+                                                                ?> <li><a href="<?php echo base_url()?>Feedback"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             default:
                                                         }
                                                     }
                                                     else if ($q->pageType == 'Link Type'){
-                                                        ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><?php echo $q->menuName?></a></li><?php
+                                                        ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><b><?php echo $q->menuName?></b></a></li><?php
                                                     } else {
                                                         if (empty($q->pageId)){
-                                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $q->menuName?></a></li> <?php
+                                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><b><?php echo $q->menuName?></b></a></li> <?php
                                                         }else {
-                                                            ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><?php echo $q->menuName ?></a> </li> <?php
+                                                            ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><b><?php echo $q->menuName ?></b></a> </li> <?php
                                                         }
                                                     }
                                                 } }
@@ -326,42 +327,42 @@
                                     if ($cm->pageType == 'Static Type') {
                                         switch ($cm->pageContent) {
                                             case "course-list.php":
-                                                ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $cm->menuName?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>course-list"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "department.php":
-                                                ?> <li><a href="<?php echo base_url()?>Department"><?php echo $cm->menuName?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>Department"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "faculty-members.php":
-                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $cm->menuName?></a></li> <?php
+                                                ?><li><a href="<?php echo base_url()?>Faculty-list"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "photo-gallery.php":
-                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $cm->menuName?></a></li> <?php
+                                                ?><li><a href="<?php echo base_url()?>Photo-Gallery"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "news.php":
-                                                ?> <li><a href="<?php echo base_url()?>News"><?php echo $cm->menuName?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>News"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "event-list.php":
-                                                ?> <li><a href="<?php echo base_url()?>Events"><?php echo $cm->menuName?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>Events"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "contact.php":
-                                                ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $cm->menuName?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>Contact"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "registerInterest.php":
-                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $cm->menuName?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>RegisterInterest"><b><?php echo $cm->menuName?></b></a></li> <?php
                                                 break;
                                             case "feedback-form.php":
-                                                ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $cm->menuName ?></a></li> <?php
+                                                ?> <li><a href="<?php echo base_url()?>Feedback"><b><?php echo $cm->menuName ?></b></a></li> <?php
                                                 break;
                                             default:
                                         }
                                     }
                                     else if ($cm->pageType == 'Link Type'){
-                                        ?><li><a href="<?php echo $cm->pageContent?>" target="_blank"><?php echo $cm->menuName?></a></li><?php
+                                        ?><li><a href="<?php echo $cm->pageContent?>" target="_blank"><b><?php echo $cm->menuName?></b></a></li><?php
                                     } else {
                                         if (empty($cm->pageId)){
-                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $cm->menuName?></a></li> <?php
+                                            ?> <li><a href="<?php echo base_url()?>page-not-found"><b><?php echo $cm->menuName?></b></a></li> <?php
                                         }else {
-                                            ?><li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><?php echo $cm->menuName ?></a> </li> <?php
+                                            ?><li><a href="<?php echo base_url() ?>Page/<?php echo $cm->pageId ?>" ><b><?php echo $cm->menuName ?></b></a> </li> <?php
                                         }
                                     }
                                 }

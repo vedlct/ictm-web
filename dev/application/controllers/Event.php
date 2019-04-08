@@ -37,12 +37,17 @@ class Event extends CI_Controller {
     {
         $this->menu();
         $this->data['Eventdetails'] = $this->Eventm->getEventDetails($id);
-        foreach ($this->data['Eventdetails'] as $eventdetails){$date=$eventdetails->eventStartDate;}
-        $this->data['next'] = $this->Eventm->getNext($date,$id);
-        $this->data['previous'] = $this->Eventm->getPrevious($date,$id);
-        $this->data['eventdata']= $this->Eventm->getLatestEvents();
-        $this->load->view('event-detail', $this->data);
-
+        if (!empty($this->data['Eventdetails'])) {
+            foreach ($this->data['Eventdetails'] as $eventdetails) {
+                $date = $eventdetails->eventStartDate;
+            }
+            $this->data['next'] = $this->Eventm->getNext($date, $id);
+            $this->data['previous'] = $this->Eventm->getPrevious($date, $id);
+            $this->data['eventdata'] = $this->Eventm->getLatestEvents();
+            $this->load->view('event-detail', $this->data);
+        }else{
+            $this->load->view('error');
+        }
     }
 
     public function menu() // get all the menu + footer

@@ -136,7 +136,7 @@ class Registration extends CI_Controller {
                     $this->load->library(array('email'));
 
                     $this->email->set_mailtype("html");
-                    $this->email->from('noreply@techcloudltd.com','Icon College');
+                    $this->email->from('noreply@iconcollege.ac.uk','Icon College');
                     $this->email->to($email);
                     $this->email->subject('Account Activation Reqeust');
                     $message = $this->load->view('AccountActivationReqeust', $this->data,true);

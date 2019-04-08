@@ -107,6 +107,7 @@ class Coursem extends CI_Model
         $fees = $this->input->post("fees");
         $timetables = $this->input->post("timetables");
         $status= $this->input->post("status");
+        $handbook = $this->input->post("handbook");
         $department= $this->input->post("department");
 
 
@@ -130,6 +131,7 @@ class Coursem extends CI_Model
             'timeTable' => $timetables,
             'courseStatus' => $status,
             'departmentId'=>$department,
+            'couseHandBook'=>$handbook,
             'insertedBy' => $this->session->userdata('userEmail'),
             'insertedDate' => date("Y-m-d H:i:s"),
 
@@ -301,6 +303,8 @@ class Coursem extends CI_Model
         $timetables = $this->input->post("timetables");
         $status= $this->input->post("status");
         $department= $this->input->post("department");
+        $handbook = $this->input->post("handbook");
+
 
         $image = $_FILES["image"]["name"];
 
@@ -352,6 +356,7 @@ class Coursem extends CI_Model
                 'couseLocation' => $location,
                 'timeTable' => $timetables,
                 'courseStatus' => $status,
+                'couseHandBook'=>$handbook,
                 'courseImage' => $id.".".pathinfo($image, PATHINFO_EXTENSION),
                 'departmentId'=>$department,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
@@ -378,6 +383,7 @@ class Coursem extends CI_Model
                 'couseLocation' => $location,
                 'timeTable' => $timetables,
                 'courseStatus' => $status,
+                'couseHandBook'=>$handbook,
                 'departmentId'=>$department,
                 'lastModifiedBy'=>$this->session->userdata('userEmail'),
                 'lastModifiedDate'=>date("Y-m-d H:i:s"),
