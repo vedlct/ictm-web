@@ -123,7 +123,12 @@
             background-color: #eee;
         }
     </style>
-
+    
+    <style>
+        .owl-stage{
+            margin: 0 auto;
+        }
+    </style>
 
 </head>
 

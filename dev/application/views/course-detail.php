@@ -71,7 +71,7 @@
                                                     <div class="tab-pane fade in active" id="<?php echo $csd->courseSectionId ?>">
                                                         <div class="course-detail-section">
                                                             <h3><?php echo  $csd->courseSectionTitle?></h3>
-                                                            <div class="content-dropcap">
+                                                            <div class="">
                                                                 <?php echo $csd->courseSectionContent ?>
                                                             </div>
                                                         </div>
@@ -82,7 +82,7 @@
                                                     <div class="tab-pane fade in " id="<?php echo $csd->courseSectionId ?>">
                                                         <div class="course-detail-section">
                                                             <h3><?php echo  $csd->courseSectionTitle?></h3>
-                                                            <div class="content-dropcap">
+                                                            <div class="">
                                                                 <?php echo $csd->courseSectionContent ?>
                                                             </div>
                                                         </div>
