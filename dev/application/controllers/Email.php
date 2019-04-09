@@ -38,7 +38,7 @@ class Email extends CI_Controller {
             $message .= "$comment \r\n\n";
 
             if (mail(ADMIN_EMAIL, $subject, $message, $email)){
-                $this->session->set_flashdata('successMessage', 'Email Sent Successfully');
+                $this->session->set_flashdata('successMessage', 'We have received your message and we will reply you as soon as possible. However, if your inquiry is urgent, please telephone us to talk to one of our staff members.');
                 redirect('Contact');
             }else{
                 $this->session->set_flashdata('errorMessage', 'Email Not Sent, Some thing Went Wrong !! Please Try Again!!');
@@ -114,21 +114,52 @@ class Email extends CI_Controller {
             $message .= "$comment \r\n\n";
 
             if (mail($facultyEmail, $subject, $message, $email)) {
-                $this->session->set_flashdata('successMessage', 'Email Sent Successfully');
+                $this->session->set_flashdata('successMessage', 'We have received your message and we will reply you as soon as possible. However, if your inquiry is urgent, please telephone us to talk to one of our staff members.');
                 redirect('Faculty-details/'.$facultyid);
             }
             else{
                 $this->session->set_flashdata('errorMessage', 'Email Not Sent, Some thing Went Wrong !! Please Try Again!!');
-                redirect('Faculty-details/'.$facultyid);
+
+                $this->menu();
+
+                $this->data['name']=$this->input->post('name');
+                $this->data['iam']=$this->input->post('iam');
+                $this->data['email']=$this->input->post('email');
+                $this->data['contact']=$this->input->post('contact');
+                $this->data['comment']=$this->input->post('comment');
+                $this->data['facultyEmail']=$this->input->post('facultyEmail');
+
+                $this->data['facultydetails']= $this->Facultym->getfacultyDetails($facultyid);
+                $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+                $this->data['facultyCourseData'] = $this->Coursem->facultyAllCourseData($facultyid);
+                $this->load->view('faculty-member-detail', $this->data);
+
+//                redirect('Faculty-details/'.$facultyid);
             }
 
 
         }
         else{
-            $this->session->set_flashdata('errorMessage', 'Email Not Sent, Please select the recaptcha !! And Try Again!!');
-            echo "<script>alert('Please select the recaptcha');
-                    window.location.href='".site_url('Faculty-details/'.$facultyid)."';
-                </script>";
+//            $this->session->set_flashdata('errorMessage', 'Email Not Sent, Please select the recaptcha !! And Try Again!!');
+//            echo "<script>alert('Please select the recaptcha');
+//                    window.location.href='".site_url('Faculty-details/'.$facultyid)."';
+//                </script>";
+
+            $this->session->set_flashdata('errorMessage', 'Please select the recaptcha!!');
+
+            $this->menu();
+
+            $this->data['name']=$this->input->post('name');
+            $this->data['iam']=$this->input->post('iam');
+            $this->data['email']=$this->input->post('email');
+            $this->data['contact']=$this->input->post('contact');
+            $this->data['comment']=$this->input->post('comment');
+            $this->data['facultyEmail']=$this->input->post('facultyEmail');
+
+            $this->data['facultydetails']= $this->Facultym->getfacultyDetails($facultyid);
+            $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $this->data['facultyCourseData'] = $this->Coursem->facultyAllCourseData($facultyid);
+            $this->load->view('faculty-member-detail', $this->data);
 
 
         }

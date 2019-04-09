@@ -1,5 +1,10 @@
 <?php include("header.php"); ?>
 <head>
+    <style>
+        .owl-stage{
+            margin: 0 auto;
+        }
+    </style>
 
 
 </head>

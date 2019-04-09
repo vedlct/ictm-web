@@ -102,7 +102,7 @@ class OnlineForms extends CI_Controller
 
 
                 if (empty($this->data['error'])) {
-                    $this->session->set_flashdata('successMessage', 'Your Form Submit Successfully');
+                    $this->session->set_flashdata('successMessage', 'We have received your message and we will reply you as soon as possible. However, if your inquiry is urgent, please telephone us to talk to one of our staff members.');
                     redirect('OnlineForms/registerInterest');
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
