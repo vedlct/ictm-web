@@ -18,6 +18,7 @@ class Email extends CI_Controller {
         $this->load->model('OnlineFormsm');
         $this->load->helper('cookie');
         $this->load->model('Searchm');
+        $this->load->model('Facultym');
     }
 
     public function contactEmail()
@@ -52,7 +53,7 @@ class Email extends CI_Controller {
                 $this->data['email']=$this->input->post('email');
                 $this->data['comment']=$this->input->post('comment');
 
-                redirect('Contact');
+                $this->load->view('Contact', $this->data);
             }
         }
         else{
@@ -118,6 +119,7 @@ class Email extends CI_Controller {
                 redirect('Faculty-details/'.$facultyid);
             }
             else{
+
                 $this->session->set_flashdata('errorMessage', 'Email Not Sent, Some thing Went Wrong !! Please Try Again!!');
 
                 $this->menu();
