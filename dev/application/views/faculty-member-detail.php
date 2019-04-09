@@ -136,7 +136,7 @@
                                                 <div class="col-md-6">
                                                 	<label><strong>Your Contact Number</strong></label>
                                                 	<fieldset class="style-1 contact">
-                                                        <input type="text" id="contact"  class="tb-my-input" value="<?php echo set_value('contact'); ?>" name="contact" required tabindex="2" size="32" aria-required="true">
+                                                        <input type="text" id="contact"  class="tb-my-input" value="<?php echo set_value('contact'); ?>" name="contact"  tabindex="2" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
                                             </div>                           
@@ -187,7 +187,7 @@
                 var name =  document.getElementById("name").value;
                 var email =  document.getElementById("email").value;
 //                var subject =  document.getElementById("subject").value;
-                var contact =  document.getElementById("contact").value;
+//                var contact =  document.getElementById("contact").value;
                 var comment =  document.getElementById("comment").value;
                 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -203,10 +203,10 @@
                     alert("name field can not be empty !! ");
                     return false;
                 }
-                if (contact ==""){
-                    alert("contact field can not be empty !! ");
-                    return false;
-                }
+//                if (contact ==""){
+//                    alert("contact field can not be empty !! ");
+//                    return false;
+//                }
 //                if (subject ==""){
 //                    alert("Subject field can not be empty !! ");
 //                    return false;
