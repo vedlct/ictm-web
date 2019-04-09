@@ -17,7 +17,7 @@
                                                 ?>
 
                                                 <div class="thumb item-thumbnail">
-                                                    <a href="#">
+                                                    <a href="<?php echo base_url()?>course-details/<?php echo $cd->courseId ?>">
                                                         <?php   ;
                                                         switch ($cd->courseCodeIcon) {
 
