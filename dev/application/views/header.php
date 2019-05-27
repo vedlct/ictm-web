@@ -180,7 +180,7 @@
                                                 ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
                                             case "sitemap.php":
-                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $menuItem->menuName?></a></h3> <?php
+                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $tm->menuName?></a></h3> <?php
                                                 break;
 
                                             default:
@@ -319,7 +319,7 @@
                                                                 ?> <li><a href="<?php echo base_url()?>Feedback"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "sitemap.php":
-                                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $menuItem->menuName?></a></h3> <?php
+                                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $q->menuName?></a></h3> <?php
                                                                 break;
 
                                                             default:
@@ -377,7 +377,7 @@
                                                 ?> <li><a href="<?php echo base_url()?>Feedback"><b><?php echo $cm->menuName ?></b></a></li> <?php
                                                 break;
                                             case "sitemap.php":
-                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $menuItem->menuName?></a></h3> <?php
+                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $cm->menuName?></a></h3> <?php
                                                 break;
 
                                             default:

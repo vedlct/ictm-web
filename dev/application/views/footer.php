@@ -90,7 +90,7 @@
                                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $ki->menuName ?></a></li> <?php
                                                     break;
                                                 case "sitemap.php":
-                                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $menuItem->menuName?></a></h3> <?php
+                                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $ki->menuName?></a></h3> <?php
                                                     break;
 
                                                 default:
@@ -154,7 +154,7 @@
                                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $il->menuName ?></a></li> <?php
                                                     break;
                                                 case "sitemap.php":
-                                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $menuItem->menuName?></a></h3> <?php
+                                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $il->menuName?></a></h3> <?php
                                                     break;
 
                                                 default:
@@ -266,7 +266,7 @@
                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $bm->menuName ?></a></li> <?php
                                     break;
                                 case "sitemap.php":
-                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $menuItem->menuName?></a></h3> <?php
+                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $bm->menuName?></a></h3> <?php
                                     break;
 
                                 default:
