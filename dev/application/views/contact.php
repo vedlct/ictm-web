@@ -24,6 +24,7 @@
                 <div class="row">
                     <div class="post-contact">
                         <div class="col-md-12">
+
                             <div class="row">
 
                                 <?php if ($this->session->flashdata('errorMessage')!=null){?>
@@ -34,6 +35,15 @@
                                 <?php }?>
 
                                 <div class="col-md-6">
+                                    <div >
+                                        ICON College of Technology and Management<br>
+                                        Unit 21, 1-13 Adler Street,<br>
+                                        London E1 1EG , UK<br>
+
+                                        Tel: 020 7377 2800 <br>
+                                        E-mail: info@iconcollege.ac.uk <br><br>
+                                    </div>
+                                    <h2><b>Send us your Enquiry</b></h2><br>
                                     <div class="contact-form">
 
                                         <form action="<?php echo base_url()?>Email/contactEmail" onsubmit="return chkContactEmail()" method="post" id="contactform" class="comment-form" >
@@ -47,7 +57,7 @@
 
                                             <fieldset class="style-1 subject">
                                                 <input type="text" id="subject" placeholder="Subject" class="tb-my-input" required name="subject" tabindex="2" value="<?php echo set_value('subject'); ?>" size="32" aria-required="true">
-                                            </fieldset> 
+                                            </fieldset>
 
                                             <fieldset class="message-form">
                                                 <textarea id="comment" placeholder="Your Message" required name="comment" rows="8" tabindex="4"><?php echo set_value('comment'); ?></textarea>
@@ -56,16 +66,16 @@
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
                                                 <button type="submit" class="flat-button button-style style-v1">Send <i class="fa fa-angle-right"></i></button>
-                                            </div>             
+                                            </div>
                                         </form>
 
                                     </div><!-- contact-form -->
                                 </div><!-- col-md-6 -->
-
+                                <br>
                                 <div class="col-md-6">
                                     <div class="container-fluid">
                                         <div class="row">
-                                            <div id="map" style="width: 100%; height: 500px; "></div> 
+                                            <div id="map" style="width: 100%; height: 500px; "></div>
                                         </div>
                                     </div><!-- /container-fluid -->
                                 </div>
