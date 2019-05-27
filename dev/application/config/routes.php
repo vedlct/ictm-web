@@ -92,3 +92,5 @@ $route['404_override'] = '';
 $route['page-not-found'] = 'ErrorPage';
 
 $route['translate_uri_dashes'] = FALSE;
+
+$route['sitemap'] = "Sitemap/index";
