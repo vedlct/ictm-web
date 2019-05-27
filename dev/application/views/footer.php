@@ -3,10 +3,10 @@
     <div class="row">
         <div class=" bottom-logo-slider owl-carousel owl-theme">
             <?php foreach ($affiliation as $af) { ?>
-                <div class="item">
+                <div class="item" style="margin-right: 55px !important;">
                     <?php if ($af->AffiliationsPhotoPath !=null){?>
                     <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'226','94')); ?>" alt="image">
-                <?php }else{ ?>
+                    <?php }else{ ?>
                         <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'."noImage.jpg",'226','94')); ?>" alt="image">
 
                     <?php } ?>
@@ -93,7 +93,12 @@
                                             }
                                         }
                                         else if ($ki->pageType == 'Link Type'){
-                                            ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $ki->pageContent?>" target="_blank"><?php echo $ki->menuName?></a></li><?php
+                                            if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                                ?>
+                                                <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                                <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }
                                         } else {
                                             if (empty($ki->pageId)){
                                                 ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $ki->menuName?></a></li> <?php
@@ -148,7 +153,12 @@
                                             }
                                         }
                                         else if ($il->pageType == 'Link Type'){
-                                            ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $il->pageContent?>" target="_blank"><?php echo $il->menuName?></a></li><?php
+                                            if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                                ?>
+                                                <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                                <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }
                                         } else {
                                             if (empty($il->pageId)){
                                                 ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $il->menuName?></a></li> <?php
@@ -251,7 +261,12 @@
                             }
                         }
                         else if ($bm->pageType == 'Link Type'){
-                            ?><a href="<?php echo $bm->pageContent?>" target="_blank"><?php echo $bm->menuName?></a> | <?php
+                            if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                ?>
+                                <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                            <?php }
                         } else {
                             if (empty($bm->pageId)){
                                 ?> <a href="<?php echo base_url()?>page-not-found"><?php echo $bm->menuName?></a> | <?php

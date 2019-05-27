@@ -183,7 +183,12 @@
                                         }
                                     }
                                     else if ($tm->pageType == 'Link Type'){
-                                        ?><li><a href="<?php echo $tm->pageContent?>" target="_blank"><?php echo $tm->menuName?></a></li><?php
+                                        if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                        ?>
+                                            <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                            <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                       <?php }
                                     } else {
                                         if (empty($tm->pageId)){
                                             ?> <li><a href="<?php echo base_url()?>page-not-found"><?php echo $tm->menuName?></a></li> <?php
@@ -194,20 +199,20 @@
                                 }
                                 ?>
 
-                                <li>
-                                    <?php if ($this->session->userdata('loggedin') == "true"){?>
-                                    <a href="<?php echo base_url()?>Login/logout">Logout</a>
-                                    <?php }else{?>
-                                    <a href="<?php echo base_url()?>Login">Login</a>
-                                    <?php } ?>
-                                </li>
+<!--                                <li>-->
+<!--                                    --><?php //if ($this->session->userdata('loggedin') == "true"){?>
+<!--                                    <a href="--><?php //echo base_url()?><!--Login/logout">Logout</a>-->
+<!--                                    --><?php //}else{?>
+<!--                                    <a href="--><?php //echo base_url()?><!--Login">Login</a>-->
+<!--                                    --><?php //} ?>
+<!--                                </li>-->
 
                             </ul><!-- /.menu -->
                         </nav><!-- /.mainnav -->
 
-                        <a class="navbar-right search-toggle show-search" href="#">
-                            <i class="fa fa-search"></i>
-                        </a>
+<!--                        <a class="navbar-right search-toggle show-search" href="#">-->
+<!--                            <i class="fa fa-search"></i>-->
+<!--                        </a>-->
 
                         <div class="submenu top-search">
                             <form class="search-form">
@@ -313,7 +318,12 @@
                                                         }
                                                     }
                                                     else if ($q->pageType == 'Link Type'){
-                                                        ?><li><a href="<?php echo $q->pageContent?>" target="_blank"><b><?php echo $q->menuName?></b></a></li><?php
+                                                        if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                                            ?>
+                                                            <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                                        <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                                            <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                                        <?php }
                                                     } else {
                                                         if (empty($q->pageId)){
                                                             ?> <li><a href="<?php echo base_url()?>page-not-found"><b><?php echo $q->menuName?></b></a></li> <?php
@@ -362,7 +372,12 @@
                                         }
                                     }
                                     else if ($cm->pageType == 'Link Type'){
-                                        ?><li><a href="<?php echo $cm->pageContent?>" target="_blank"><b><?php echo $cm->menuName?></b></a></li><?php
+                                        if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                            ?>
+                                            <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                        <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                            <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                        <?php }
                                     } else {
                                         if (empty($cm->pageId)){
                                             ?> <li><a href="<?php echo base_url()?>page-not-found"><b><?php echo $cm->menuName?></b></a></li> <?php

@@ -3052,7 +3052,7 @@ body.mac .dropcap {
 /* Revolution Slider
 -------------------------------------------------------------- */
 .tp-banner-container {
-	max-height: 1000px !important;
+	max-height: 720px !important;
 	width: 100% !important;
 	position: relative;
 	overflow: hidden !important;
