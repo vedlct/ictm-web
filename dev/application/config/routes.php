@@ -91,7 +91,7 @@ $route['ApplyForm8'] = 'ApplyOnline/applyNow8';
 $route['ApplyForm9'] = 'ApplyOnline/applyNow9';
 $route['Apply-Work-Experience'] = 'ApplyOnline/applyNow10';
 
-$route['404_override'] = '';
+$route['404_override'] = 'ErrorPage';
 $route['page-not-found'] = 'ErrorPage';
 
 $route['translate_uri_dashes'] = FALSE;

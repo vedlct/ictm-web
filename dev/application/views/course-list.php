@@ -48,14 +48,14 @@
                         <div class="col-md-6 col-sm-12">
                             <div id="itmtitle" class="content-pad">
                                 <div class="item-content">
-                                    <h3 class="item-title">
+                                    <h5 style="margin-top: -12px" class="item-title">
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>" title="Your Career Starts Here"
                                            class="main-color-1-hover"><?php echo $dp->departmentName?></a>
-                                    </h3>
+                                    </h5>
                                     <?php
                                     foreach ($coourselist as $cl){
                                         if ( $cl->departmentId == $dp->departmentId ){ ?>
-                                            <div class="shortcode-blog-excerpt"><strong><a href="<?php echo base_url()?>course-details/<?php echo $cl->courseId?>">
+                                            <div style="margin-top: -12px" class="shortcode-blog-excerpt"><strong style="font: x-large"><a href="<?php echo base_url()?>course-details/<?php echo $cl->courseId?>">
                                                         <?php echo $cl->courseTitle ?></a></strong></div>
                                         <?php } } ?>
 

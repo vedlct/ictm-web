@@ -37,8 +37,9 @@ class Email extends CI_Controller {
 
             $message = "Name: $name \r\n\n";
             $message .= "$comment \r\n\n";
+            $headers = 'From: <'.$email.'>' . "\r\n";
 
-            if (mail(ADMIN_EMAIL, $subject, $message, $email)){
+            if (mail(ADMIN_EMAIL, $subject, $message, $headers)){
                 $this->session->set_flashdata('successMessage', 'We have received your message and we will reply you as soon as possible. However, if your inquiry is urgent, please telephone us to talk to one of our staff members.');
                 redirect('Contact');
             }else{
@@ -113,8 +114,9 @@ class Email extends CI_Controller {
             $message = "Name: $name \r\n\n";
             $message .= "Email: $email \r\n\n";
             $message .= "$comment \r\n\n";
+            $headers = 'From: <'.$email.'>' . "\r\n";
 
-            if (mail($facultyEmail, $subject, $message, $email)) {
+            if (mail($facultyEmail, $subject, $message, $headers)) {
                 $this->session->set_flashdata('successMessage', 'We have received your message and we will reply you as soon as possible. However, if your inquiry is urgent, please telephone us to talk to one of our staff members.');
                 redirect('Faculty-details/'.$facultyid);
             }

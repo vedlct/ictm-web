@@ -90,7 +90,7 @@
                                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $ki->menuName ?></a></li> <?php
                                                     break;
                                                 case "sitemap.php":
-                                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $ki->menuName?></a></h3> <?php
+                                                    ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $ki->menuName?></a> <?php
                                                     break;
 
                                                 default:
@@ -154,7 +154,7 @@
                                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $il->menuName ?></a></li> <?php
                                                     break;
                                                 case "sitemap.php":
-                                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $il->menuName?></a></h3> <?php
+                                                    ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $il->menuName?></a> <?php
                                                     break;
 
                                                 default:
@@ -239,34 +239,34 @@
                         if ($bm->pageType == 'Static Type') {
                             switch ($bm->pageContent) {
                                 case "course-list.php":
-                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "department.php":
-                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "faculty-members.php":
-                                    ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $bm->menuName?></a></li> <?php
+                                    ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "photo-gallery.php":
-                                    ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $bm->menuName?></a></li> <?php
+                                    ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "news.php":
-                                    ?> <li><a href="<?php echo base_url()?>News"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>News"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "event-list.php":
-                                    ?> <li><a href="<?php echo base_url()?>Events"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Events"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "contact.php":
-                                    ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "registerInterest.php":
-                                    ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "feedback-form.php":
-                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $bm->menuName ?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $bm->menuName ?></a> | </li> <?php
                                     break;
                                 case "sitemap.php":
-                                    ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $bm->menuName?></a></h3> <?php
+                                    ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $bm->menuName?></a> |  <?php
                                     break;
 
                                 default:

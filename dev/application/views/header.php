@@ -180,7 +180,7 @@
                                                 ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $tm->menuName?></a></li> <?php
                                                 break;
                                             case "sitemap.php":
-                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $tm->menuName?></a></h3> <?php
+                                                ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $tm->menuName?></a> <?php
                                                 break;
 
                                             default:
@@ -319,7 +319,7 @@
                                                                 ?> <li><a href="<?php echo base_url()?>Feedback"><b><?php echo $q->menuName?></b></a></li> <?php
                                                                 break;
                                                             case "sitemap.php":
-                                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $q->menuName?></a></h3> <?php
+                                                                ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $q->menuName?></a> <?php
                                                                 break;
 
                                                             default:
@@ -377,7 +377,7 @@
                                                 ?> <li><a href="<?php echo base_url()?>Feedback"><b><?php echo $cm->menuName ?></b></a></li> <?php
                                                 break;
                                             case "sitemap.php":
-                                                ?> <h3><a href="<?php  echo base_url()?>sitemap"><?php echo $cm->menuName?></a></h3> <?php
+                                                ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $cm->menuName?></a> <?php
                                                 break;
 
                                             default:
@@ -467,4 +467,14 @@
                 }
             }
         }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140892866-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-140892866-1');
     </script>

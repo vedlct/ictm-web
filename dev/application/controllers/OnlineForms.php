@@ -97,8 +97,8 @@ class OnlineForms extends CI_Controller
 
 
                // $admin_email = "md.sakibrahman@gmail.com";
-
-                mail(ADMIN_EMAIL, $subject, $message, $email);
+                $headers = 'From: <'.$email.'>' . "\r\n";
+                mail(ADMIN_EMAIL, $subject, $message, $headers);
 
 
                 if (empty($this->data['error'])) {
