@@ -236,10 +236,8 @@ $config = array (
         array(
             'field' => 'facultyEmail',
             'label' => 'Email',
-            'rules' => 'required|valid_email|is_unique[ictmfaculty.facultyEmail]|max_length[100]|xss_clean|htmlspecialchars',
-            'errors' => array(
-                'is_unique' => 'Email Allready Existed ! Faculty  Existed !',
-            ),
+            'rules' => 'required|valid_email|max_length[100]|xss_clean|htmlspecialchars',
+
         ),
         array(
             'field' => 'facultyPhone',
@@ -309,7 +307,7 @@ $config = array (
         array(
             'field' => 'faculty_email',
             'label' => 'Email',
-            'rules' => 'required|valid_email|max_length[100]|callback_emailCheckFormEditFaculty|xss_clean|htmlspecialchars'
+            'rules' => 'required|valid_email|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'faculty_phone',

@@ -48,7 +48,7 @@
         
                                                 <div class="itmcntnt item-content">
                                                     <h3 class="item-title">
-                                                        <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><?php echo $listOfFaculty->facultyTitle." ".$listOfFaculty->facultyFirstName." ".$listOfFaculty->facultyLastName?></a>
+                                                        <a href="<?php echo base_url()?>Faculty-details/<?php echo $listOfFaculty->facultyId?>"><b><?php echo $listOfFaculty->facultyTitle." ".$listOfFaculty->facultyFirstName." ".$listOfFaculty->facultyLastName?></b></a>
                                                     </h3>
                                                     <h4 class="small-text"><?php echo str_replace(","," AND<br>",$listOfFaculty->facultyPosition);?></h4>
                                                     <ul class="list-inline social-light">

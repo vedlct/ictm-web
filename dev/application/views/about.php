@@ -48,14 +48,15 @@
 
                                                     <?php foreach ($aboutdata as $ad){
 
+                                                        if($ad->pageImage != null){?>
+                                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $ad->pageImage?>"><br><br>
+                                                        <?php };
+                                                        break;
+                                                    }
                                                      if ($ad->pageContent !=null){
                                                          echo $ad->pageContent;
                                                      }
-                                                     if($ad->pageImage != null){?>
-                                                        <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/pageImages/<?php echo $ad->pageImage?>"><br><br>
-                                                        <?php };
-                                                     break;
-                                                    }
+
                                                     ?>
 
                                                     <?php foreach ($aboutdata as $ad) {}
