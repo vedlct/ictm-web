@@ -64,6 +64,9 @@ $route['Events'] = 'Event/EventList';
 $route['Event-Details/(:any)'] = 'Event/eventDetails/$1';
 
 $route['Contact'] = 'OnlineForms/contactUs';
+$route['Logout'] = 'Login/logout';
+
+
 
 $route['ForgetPass'] = 'Login/ViewForgetPass';
 $route['ForgetPassChangedFromMail/(:any)/(:any)/(:any)'] = 'Login/ChangedPass/$1/$2/$3';
@@ -88,7 +91,9 @@ $route['ApplyForm8'] = 'ApplyOnline/applyNow8';
 $route['ApplyForm9'] = 'ApplyOnline/applyNow9';
 $route['Apply-Work-Experience'] = 'ApplyOnline/applyNow10';
 
-$route['404_override'] = '';
+$route['404_override'] = 'ErrorPage';
 $route['page-not-found'] = 'ErrorPage';
 
 $route['translate_uri_dashes'] = FALSE;
+
+$route['sitemap'] = "Sitemap/index";

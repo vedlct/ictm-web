@@ -3,7 +3,7 @@ class Coursem extends CI_Model
 {
     public function getCourseTitle() //get the course information
     {
-        $this->db->select('courseId,courseTitle,courseImage,academicYear, departmentId');
+        $this->db->select('courseId,courseTitle,courseCodeIcon,courseImage,academicYear, departmentId');
         $this->db->where('courseStatus =', STATUS[0]);
         $query = $this->db->get('ictmcourse');
         return $query->result();

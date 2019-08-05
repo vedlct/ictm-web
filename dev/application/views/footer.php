@@ -3,10 +3,10 @@
     <div class="row">
         <div class=" bottom-logo-slider owl-carousel owl-theme">
             <?php foreach ($affiliation as $af) { ?>
-                <div class="item">
+                <div class="item" style="margin-right: 55px !important;">
                     <?php if ($af->AffiliationsPhotoPath !=null){?>
                     <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'226','94')); ?>" alt="image">
-                <?php }else{ ?>
+                    <?php }else{ ?>
                         <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'."noImage.jpg",'226','94')); ?>" alt="image">
 
                     <?php } ?>
@@ -89,11 +89,20 @@
                                                 case "feedback-form.php":
                                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $ki->menuName ?></a></li> <?php
                                                     break;
+                                                case "sitemap.php":
+                                                    ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $ki->menuName?></a> <?php
+                                                    break;
+
                                                 default:
                                             }
                                         }
                                         else if ($ki->pageType == 'Link Type'){
-                                            ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $ki->pageContent?>" target="_blank"><?php echo $ki->menuName?></a></li><?php
+                                            if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                                ?>
+                                                <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                                <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }
                                         } else {
                                             if (empty($ki->pageId)){
                                                 ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $ki->menuName?></a></li> <?php
@@ -144,11 +153,20 @@
                                                 case "feedback-form.php":
                                                     ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $il->menuName ?></a></li> <?php
                                                     break;
+                                                case "sitemap.php":
+                                                    ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $il->menuName?></a> <?php
+                                                    break;
+
                                                 default:
                                             }
                                         }
                                         else if ($il->pageType == 'Link Type'){
-                                            ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo $il->pageContent?>" target="_blank"><?php echo $il->menuName?></a></li><?php
+                                            if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                                ?>
+                                                <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                                <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <?php }
                                         } else {
                                             if (empty($il->pageId)){
                                                 ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $il->menuName?></a></li> <?php
@@ -170,7 +188,7 @@
                             <div class="textwidget">
                                 <?php foreach ($contact as $contactInfo){?>
                                     <p><?php echo $contactInfo->collegeName;?> <br>
-                                        <?php echo $contactInfo->collegeAddress;?> <br>
+                                        <?php echo substr_replace($contactInfo->collegeAddress, '<br>', 30, 0);?> <br>
                                         Tel: <?php echo $contactInfo->collegeTelephone1;?><br>
                                         Fax: <?php echo $contactInfo->collegeFax;?><br>
                                         E-mail: <a href="mailto:<?php echo $contactInfo->collegeEmail;?>" target="_top"><?php echo $contactInfo->collegeEmail;?></a></p>
@@ -221,37 +239,46 @@
                         if ($bm->pageType == 'Static Type') {
                             switch ($bm->pageContent) {
                                 case "course-list.php":
-                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "department.php":
-                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Department"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "faculty-members.php":
-                                    ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $bm->menuName?></a></li> <?php
+                                    ?><li><a href="<?php echo base_url()?>Faculty-list"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "photo-gallery.php":
-                                    ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $bm->menuName?></a></li> <?php
+                                    ?><li><a href="<?php echo base_url()?>Photo-Gallery"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "news.php":
-                                    ?> <li><a href="<?php echo base_url()?>News"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>News"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "event-list.php":
-                                    ?> <li><a href="<?php echo base_url()?>Events"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Events"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "contact.php":
-                                    ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Contact"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "registerInterest.php":
-                                    ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $bm->menuName?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>RegisterInterest"><?php echo $bm->menuName?></a> | </li> <?php
                                     break;
                                 case "feedback-form.php":
-                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $bm->menuName ?></a></li> <?php
+                                    ?> <li><a href="<?php echo base_url()?>Feedback"><?php echo $bm->menuName ?></a> | </li> <?php
                                     break;
+                                case "sitemap.php":
+                                    ?> <a href="<?php  echo base_url()?>sitemap"><?php echo $bm->menuName?></a> |  <?php
+                                    break;
+
                                 default:
                             }
                         }
                         else if ($bm->pageType == 'Link Type'){
-                            ?><a href="<?php echo $bm->pageContent?>" target="_blank"><?php echo $bm->menuName?></a> | <?php
+                            if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                ?>
+                                <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                            <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
+                                <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                            <?php }
                         } else {
                             if (empty($bm->pageId)){
                                 ?> <a href="<?php echo base_url()?>page-not-found"><?php echo $bm->menuName?></a> | <?php

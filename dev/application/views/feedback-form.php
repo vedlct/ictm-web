@@ -115,6 +115,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var chk=/^[0-9]*$/;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+        if(grecaptcha && grecaptcha.getResponse().length <= 0)
+        {
+            //the recaptcha is checked
+            // Do what you want here
+            alert('Please select the recaptcha !');
+            return false;
+        }
+
 
 
         if (name ==""){

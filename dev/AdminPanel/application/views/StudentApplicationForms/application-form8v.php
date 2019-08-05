@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Position / Job Title:</label>
+                                <label class="control-label col-md-2">Position / Job Title*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('jobTitle'); ?></font></p>
                                     <input required type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
@@ -96,14 +96,14 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:</label>
+                                <label class="control-label col-md-2">E-mail*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
                                     <input required type="email" class="form-control" maxlength="100" id="email" name="email">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address:</label>
+                                <label class="control-label col-md-2">Address*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
                                     <textarea style="border: 1px solid #bababa; width: 100%;" required id="address" name="address" rows="8" maxlength="1000" tabindex="4"></textarea>
@@ -111,7 +111,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address P.O :</label>
+                                <label class="control-label col-md-2">Post Code*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('addressPo'); ?></font></p>
                                     <input required type="text" class="form-control" maxlength="8" id="addressPo" name="addressPo">
@@ -119,7 +119,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Country:</label>
+                                <label class="control-label col-md-2">Country*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                     <select style="width: 100%; height: 32px; border: 1px solid #bababa;" 

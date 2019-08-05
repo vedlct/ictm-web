@@ -1,5 +1,12 @@
 <?php include("header.php"); ?>
 <head>
+    <style>
+        .owl-stage{
+            margin: 0 auto;
+        }
+    </style>
+
+
 
 
 </head>
@@ -66,7 +73,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink1?>" target="_blank" title="<?php echo $hm->verticalBarTitle1?>"><?php echo $hm->verticalBarTitle1?></a></h4>
+                                                            <h4><a  style="color: #209ED7" class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink1?>" target="_blank" title="<?php echo $hm->verticalBarTitle1?>"><?php echo $hm->verticalBarTitle1?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText1?></div>
                                                         </div>
                                                     </div>
@@ -89,7 +96,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink2?>" target="_blank" title="<?php echo $hm->verticalBarTitle2?>"><?php echo $hm->verticalBarTitle2?></a></h4>
+                                                            <h4><a style="color: #209ED7" class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink2?>" target="_blank" title="<?php echo $hm->verticalBarTitle2?>"><?php echo $hm->verticalBarTitle2?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText2?></div>
                                                         </div>
                                                     </div>
@@ -112,7 +119,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink3?>" title="<?php echo $hm->verticalBarTitle3?>"><?php echo $hm->verticalBarTitle3?></a></h4>
+                                                            <h4><a  style="color: #209ED7" class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink3?>" title="<?php echo $hm->verticalBarTitle3?>"><?php echo $hm->verticalBarTitle3?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText3?></div>
                                                         </div>
                                                     </div>
@@ -135,7 +142,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-8 col-sm-8 col-xs-8 post-content-mini">
-                                                            <h4><a class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink4?>" title="<?php echo $hm->verticalBarTitle4?>"><?php echo $hm->verticalBarTitle4?></a></h4>
+                                                            <h4><a style="color: #209ED7" class="post-title-mini main-color-1-hover" href="<?php echo $hm->verticalBarLink4?>" title="<?php echo $hm->verticalBarTitle4?>"><?php echo $hm->verticalBarTitle4?></a></h4>
                                                             <div class="post-excerpt-mini"><?php echo $hm->verticalBarText4?></div>
                                                         </div>
                                                     </div>
@@ -511,10 +518,14 @@
                         <h1 class="title"><?php echo $hm->bottomBannerTitle;?></h1>
                         <h4><?php echo $hm->bottomBannerSubTitle;?></h4>
                     </div>
-                    <div class="img-news">
-                        <!--                        <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->bottomBannerImage ?><!--" alt="image">-->
+                    <div class="img-news" >
+                        <!--                                                <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->bottomBannerImage ?><!--" alt="image">-->
                         <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->bottomBannerImage,'2000','331')); ?>" alt="image">
+                        <!--                                                                        <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/white.png" alt="image">-->
+
+
                     </div>
+
                 <?php } ?>
             </div>
         </div>

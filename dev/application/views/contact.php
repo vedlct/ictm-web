@@ -24,6 +24,7 @@
                 <div class="row">
                     <div class="post-contact">
                         <div class="col-md-12">
+
                             <div class="row">
 
                                 <?php if ($this->session->flashdata('errorMessage')!=null){?>
@@ -34,38 +35,47 @@
                                 <?php }?>
 
                                 <div class="col-md-6">
+                                    <div >
+                                        ICON College of Technology and Management<br>
+                                        Unit 21, 1-13 Adler Street,<br>
+                                        London E1 1EG , UK<br>
+
+                                        Tel: 020 7377 2800 <br>
+                                        E-mail: info@iconcollege.ac.uk <br><br>
+                                    </div>
+                                    <h2><b>Send us your Enquiry</b></h2><br>
                                     <div class="contact-form">
 
                                         <form action="<?php echo base_url()?>Email/contactEmail" onsubmit="return chkContactEmail()" method="post" id="contactform" class="comment-form" >
                                             <fieldset class="style-1 full-name">
-                                                <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="name"  required tabindex="1" value="" size="32" aria-required="true">
+                                                <input type="text" id="name" placeholder="Your name" class="tb-my-input" name="name"  required tabindex="1" value="<?php echo set_value('name'); ?>" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 email-address">
-                                                <input type="email" id="email" placeholder="Your email" class="tb-my-input" required name="email" tabindex="2" value="" size="32" aria-required="true">
+                                                <input type="email" id="email" placeholder="Your email" class="tb-my-input" required name="email" tabindex="2" value="<?php echo set_value('email'); ?>" size="32" aria-required="true">
                                             </fieldset>
 
                                             <fieldset class="style-1 subject">
-                                                <input type="text" id="subject" placeholder="Subject" class="tb-my-input" required name="subject" tabindex="2" value="" size="32" aria-required="true">
-                                            </fieldset> 
+                                                <input type="text" id="subject" placeholder="Subject" class="tb-my-input" required name="subject" tabindex="2" value="<?php echo set_value('subject'); ?>" size="32" aria-required="true">
+                                            </fieldset>
 
                                             <fieldset class="message-form">
-                                                <textarea id="comment" placeholder="Your Message" required name="comment" rows="8" tabindex="4"></textarea>
+                                                <textarea id="comment" placeholder="Your Message" required name="comment" rows="8" tabindex="4"><?php echo set_value('comment'); ?></textarea>
                                             </fieldset>
 
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                                             <div class="submit-wrap">
                                                 <button type="submit" class="flat-button button-style style-v1">Send <i class="fa fa-angle-right"></i></button>
-                                            </div>             
+                                            </div>
                                         </form>
 
                                     </div><!-- contact-form -->
                                 </div><!-- col-md-6 -->
-
+                                <br>
                                 <div class="col-md-6">
                                     <div class="container-fluid">
                                         <div class="row">
-                                            <div id="map" style="width: 100%; height: 500px; "></div> 
+                                            <div id="map" style="width: 100%; height: 500px; "></div>
                                         </div>
                                     </div><!-- /container-fluid -->
                                 </div>
@@ -117,6 +127,15 @@
                 var subject =  document.getElementById("subject").value;
                 var comment =  document.getElementById("comment").value;
                 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(grecaptcha && grecaptcha.getResponse().length <= 0)
+                {
+                    //the recaptcha is checked
+                    // Do what you want here
+                    alert('Please select the recaptcha !');
+                    return false;
+                }
+
 
                 if (name ==""){
                     alert("name field can not be empty !! ");

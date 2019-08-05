@@ -121,7 +121,7 @@
                                             	<div class="col-md-12">
                                                 	<label><strong>Your Name *</strong></label>
                                                 	<fieldset class="style-1 full-name">
-                                                        <input type="text" id="name" required class="tb-my-input" name="name" tabindex="2" value="" size="32" aria-required="true">
+                                                        <input type="text" id="name" required class="tb-my-input" name="name" tabindex="2" value="<?php echo set_value('name'); ?>" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
 
@@ -130,19 +130,19 @@
                                             	<div class="col-md-6">
                                                 	<label><strong>Your E-Mail *</strong></label>
                                                 	<fieldset class="style-1 email-address">
-                                                        <input type="email" id="email"  class="tb-my-input" name="email" required tabindex="2" value="" size="32" aria-required="true">
+                                                        <input type="email" id="email"  class="tb-my-input" name="email" required tabindex="2" value="<?php echo set_value('email'); ?>" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
                                                 <div class="col-md-6">
                                                 	<label><strong>Your Contact Number</strong></label>
                                                 	<fieldset class="style-1 contact">
-                                                        <input type="text" id="contact"  class="tb-my-input" name="contact" required tabindex="2" size="32" aria-required="true">
+                                                        <input type="text" id="contact"  class="tb-my-input" value="<?php echo set_value('contact'); ?>" name="contact"  tabindex="2" size="32" aria-required="true">
                                                     </fieldset>
                                                 </div>
                                             </div>                           
 											<label><strong>Your Enquiry *</strong></label>
                                             <fieldset class="message-form">
-                                                <textarea required id="comment" name="comment" rows="8" tabindex="2"></textarea>
+                                                <textarea required id="comment" name="comment" rows="8" tabindex="2"><?php echo set_value('comment'); ?></textarea>
                                             </fieldset>
                                             <input name="facultyEmail" type="hidden" value="<?php echo $facultyinfo->facultyEmail?>">
                                             <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
@@ -187,18 +187,26 @@
                 var name =  document.getElementById("name").value;
                 var email =  document.getElementById("email").value;
 //                var subject =  document.getElementById("subject").value;
-                var contact =  document.getElementById("contact").value;
+//                var contact =  document.getElementById("contact").value;
                 var comment =  document.getElementById("comment").value;
                 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(grecaptcha && grecaptcha.getResponse().length <= 0)
+                {
+                    //the recaptcha is checked
+                    // Do what you want here
+                    alert('Please select the recaptcha !');
+                    return false;
+                }
 
                 if (name ==""){
                     alert("name field can not be empty !! ");
                     return false;
                 }
-                if (contact ==""){
-                    alert("contact field can not be empty !! ");
-                    return false;
-                }
+//                if (contact ==""){
+//                    alert("contact field can not be empty !! ");
+//                    return false;
+//                }
 //                if (subject ==""){
 //                    alert("Subject field can not be empty !! ");
 //                    return false;

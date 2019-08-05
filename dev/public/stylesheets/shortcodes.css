@@ -314,10 +314,11 @@
 
 .post-scroller-wrap {
     padding: 30px;
-    background :#ffffff;
+    background: #ffffff;
     background: rgba(255,255,255,.7);
-    height: 790px;
+    height: 720px;
 }
+
 
 .post-scroller-carousel {
     max-height: 659px;

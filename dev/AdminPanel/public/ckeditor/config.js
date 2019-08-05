@@ -7,8 +7,8 @@
 CKEDITOR.editorConfig = function( config ) {
 
 
-     // var base_url ="http://localhost/ictm-web/dev/AdminPanel/public/";
-      var base_url =ckBaseUrl+"public/";
+    // var base_url ="http://localhost/ictm-web/dev/AdminPanel/public/";
+    var base_url =ckBaseUrl+"public/";
 
 
     config.filebrowserBrowseUrl = base_url+'ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
@@ -17,4 +17,7 @@ CKEDITOR.editorConfig = function( config ) {
     config.filebrowserUploadUrl = base_url+'ckeditor/kcfinder/upload.php?opener=ckeditor&type=files';
     config.filebrowserImageUploadUrl = base_url+'ckeditor/kcfinder/upload.php?opener=ckeditor&type=images';
     config.filebrowserFlashUploadUrl = base_url+'ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash';
+    config.allowedContent = true;
+    config.extraAllowedContent = 'section article header nav aside[lang,foo] div(*) p(*) figure caption figcaption blockquote button'
 };
+

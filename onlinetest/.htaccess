@@ -1,0 +1,144 @@
+#RewriteEngine On
+   #RewriteCond %{HTTPS} off [OR] 
+   #RewriteCond %{HTTP_HOST} !^www\. [OR]
+   #RewriteCond %{HTTP_HOST} ^techcloudltd\.com$ [NC]
+   #RewriteRule ^ https://www.iconcollege.ac.uk/%{REQUEST_URI} [R=301,L,NE]
+   #RewriteCond %{THE_REQUEST} ^[A-Z]+\ /index\.php(/[^\ ]*)?\ HTTP/ 
+   #RewriteRule ^index\.php(/(.*))?$ techcloudltd.com/$2 [R=301,L]
+   #RewriteCond %{REQUEST_FILENAME} !-f
+   #RewriteCond %{REQUEST_FILENAME} !-d
+   #RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+RewriteEngine on
+#RewriteCond %{SERVER_PORT} 80     
+#RewriteCond %{HTTP_HOST} ^techcloudltd\.com$ [OR]
+#RewriteCond %{HTTP_HOST} ^www\.techcloudltd\.com$
+#RewriteRule ^(.*)$ https://www.techcloudltd.com/$1 [R,L] 
+RewriteCond %{HTTP_HOST} ^iconcollege\.ac.uk [NC]
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://www.iconcollege.ac.uk/$1 [R,L]
+
+
+#RewriteEngine on
+
+#RewriteCond $1 !^(index\.php|public|\.txt)
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?$1
+
+
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+
+RewriteCond %{HTTP_HOST} ^www.iconcollege.ac.uk/ [NC]
+RewriteRule ^(.*)$ https://www.iconcollege.ac.uk//$1 [L,R=301]
+
+
+#RewriteCond %{SERVER_PORT} 80
+#RewriteCond %{HTTP_HOST} ^techcloudltd\.com$|^www\.techcloudltd\.com$
+#RewriteRule ^(.*)$ https://techcloudltd.com/$1 [R,L]
+
+
+#RewriteCond %{HTTPS} !=on
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{REQUEST_URI} ^system.*
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^.*$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{REQUEST_URI} ^system.*
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L]
+
+
+#RewriteEngine On
+#RewriteRule ^$ http://127.0.0.1:49152/ [P,L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ http://127.0.0.1:49152/$1 [P,L]
+
+
+#RewriteEngine on
+#RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+#RewriteRule ^(.*)$ https//%1%{REQUEST_URI} [R=301,QSA,NC,L]
+
+
+
+# Leverage Browser Caching
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access 1 month"
+  ExpiresByType text/html "access 1 month"
+  ExpiresByType application/pdf "access 1 month"
+  ExpiresByType text/x-javascript "access 1 month"
+  ExpiresByType application/x-shockwave-flash "access 1 month"
+  ExpiresByType application/x-font-ttf    "access plus 1 month"
+  ExpiresByType font/opentype             "access plus 1 month"
+  ExpiresByType application/x-font-woff   "access plus 1 month"
+  ExpiresDefault "access 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  			<FilesMatch "\.(js|css|xml|gz)$">
+    				Header append Vary: Accept-Encoding
+  			</FilesMatch>
+		</IfModule>
+
+<IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+        SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+        RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
+</IfModule>
+
+# Compress all output labeled with one of the following MIME-types
+# (for Apache versions below 2.3.7, you don't need to enable `mod_filter`
+#  and can remove the `<IfModule mod_filter.c>` and `</IfModule>` lines
+#  as `AddOutputFilterByType` is still in the core directives).
+<IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE application/atom+xml \
+                                  application/javascript \
+                                  application/json \
+                                  application/ld+json \
+                                  application/rss+xml \
+                                  application/vnd.ms-fontobject \
+                                  application/x-font-ttf \
+                                  application/x-web-app-manifest+json \
+                                  application/xhtml+xml \
+                                  application/xml \
+                                  font/opentype \
+                                  image/svg+xml \
+                                  image/x-icon \
+                                  text/css \
+                                  text/html \
+                                  text/plain \
+                                  text/x-component \
+                                  text/xml
+</IfModule>
+
+<FilesMatch "\.(gif|jpg|jpeg|png|swf)$">
+ExpiresDefault A604800
+Header append Cache-Control "public"
+</FilesMatch>
+#RewriteCond %{HTTP_HOST} ^www\.techcloudltd\.com$
+#RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+#RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+#RewriteRule ^/?$ "https\:\/\/techcloudltd\.com\/" [R=301,L]
+

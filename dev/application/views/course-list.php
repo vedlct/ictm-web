@@ -34,12 +34,12 @@
 
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>">
                                             <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/noImage.jpg" alt="image">
-                                            <span class="thumbnail-overlay">September 3, 2017</span>
+                                            <span class="thumbnail-overlay">Academic Year <?php echo date("Y")-1 . "-". date("Y");?></span>
                                         </a>
                                     <?php } else { ?>
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>">
                                             <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/<?php echo $dp->departmentImage; ?>" alt="image">
-                                            <span class="thumbnail-overlay">September 3, 2017</span>
+                                            <span class="thumbnail-overlay">Academic Year <?php echo date("Y")-1 . "-" .date("Y");?></span>
                                         </a>
                                     <?php } ?>
                                 </div>
@@ -48,14 +48,14 @@
                         <div class="col-md-6 col-sm-12">
                             <div id="itmtitle" class="content-pad">
                                 <div class="item-content">
-                                    <h3 class="item-title">
+                                   <h3 style="font-size: 16px; margin-top: -12px" class="item-title">
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>" title="Your Career Starts Here"
                                            class="main-color-1-hover"><?php echo $dp->departmentName?></a>
                                     </h3>
                                     <?php
                                     foreach ($coourselist as $cl){
                                         if ( $cl->departmentId == $dp->departmentId ){ ?>
-                                            <div class="shortcode-blog-excerpt"><strong><a href="<?php echo base_url()?>course-details/<?php echo $cl->courseId?>">
+                                            <div style= "margin-top: -12px" class="shortcode-blog-excerpt"><strong style="font-size: 14px;"><a href="<?php echo base_url()?>course-details/<?php echo $cl->courseId?>">
                                                         <?php echo $cl->courseTitle ?></a></strong></div>
                                         <?php } } ?>
 

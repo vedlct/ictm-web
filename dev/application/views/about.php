@@ -37,6 +37,7 @@
 
         <section class="main-content course-single">
             <div class="container">
+
                 <div class="content-course">
                     <div class="row">
                         <div class="col-md-9">

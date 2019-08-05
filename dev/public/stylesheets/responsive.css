@@ -15,6 +15,15 @@
     .tp-caption.sft.desc-slide.center.color-white.color-full.start {
         margin-left: 140px !important;
     }
+	.tp-caption.color-full {
+		bottom: 53px !important;
+		padding: 29px 40px 33px;
+		position: absolute;
+		right: 0;
+		white-space: normal;
+		width: 360px;
+		z-index: 9999;
+	}
 }
 @media screen and (max-width: 1700px) {
 		.tp-caption.color-full {
@@ -401,7 +410,7 @@
 
 	#mainnav-mobi {
 		position: absolute;
-		top: 40px;
+		top: 83px;
 		left: 0;
 	}
 

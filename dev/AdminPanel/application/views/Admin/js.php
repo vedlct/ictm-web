@@ -30,6 +30,8 @@
 
 
 <script>
-    var ckBaseUrl = "<?php echo base_url(); ?>";
+    var
+
+        ckBaseUrl = "<?php echo base_url(); ?>";
 </script>
 

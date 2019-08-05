@@ -97,21 +97,70 @@ class OnlineForms extends CI_Controller
 
 
                // $admin_email = "md.sakibrahman@gmail.com";
-
-                mail(ADMIN_EMAIL, $subject, $message, $email);
+                $headers = 'From: <'.$email.'>' . "\r\n";
+                mail(ADMIN_EMAIL, $subject, $message, $headers);
 
 
                 if (empty($this->data['error'])) {
-                    $this->session->set_flashdata('successMessage', 'Your Form Submit Successfully');
+                    $this->session->set_flashdata('successMessage', 'We have received your message and we will reply you as soon as possible. However, if your inquiry is urgent, please telephone us to talk to one of our staff members.');
                     redirect('OnlineForms/registerInterest');
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('OnlineForms/registerInterest');
+
+                    $this->menu();
+//                    $this->session->set_flashdata('errorMessage', 'Please select the recaptcha!!');
+
+                    $this->data['title']=$this->input->post('title');
+                    $this->data['fname']=$this->input->post('fname');
+                    $this->data['sname']=$this->input->post('sname');
+                    $this->data['house']=$this->input->post('house');
+                    $this->data['street']=$this->input->post('street');
+                    $this->data['postcode']=$this->input->post('postcode');
+                    $this->data['city']=$this->input->post('city');
+                    $this->data['country']=$this->input->post('country');
+                    $this->data['phone']=$this->input->post('phone');
+                    $this->data['email']=$this->input->post('email');
+                    $this->data['course']=$this->input->post('course');
+                    $this->data['hear']=$this->input->post('hear');
+                    $this->data['other']=$this->input->post('other');
+                    $this->data['disability']=$this->input->post('disability');
+                    $this->data['appoinment']=$this->input->post('appoinment');
+                    $this->data['comments']=$this->input->post('comments');
+
+
+                    $this->data['course']=$this->Coursem->getCourseTitle();
+                    $this->load->view('register-ineterest', $this->data);
+
+//                    redirect('OnlineForms/registerInterest');
                 }
             }else {
-                echo "<script>alert('Please select the recaptcha');
-                    window.location = 'RegisterInterest';
-                    </script>";
+//                echo "<script>alert('Please select the recaptcha');
+//                    window.location = 'RegisterInterest';
+//                    </script>";
+
+                $this->menu();
+                $this->session->set_flashdata('errorMessage', 'Please select the recaptcha!!');
+
+                $this->data['title']=$this->input->post('title');
+                $this->data['fname']=$this->input->post('fname');
+                $this->data['sname']=$this->input->post('sname');
+                $this->data['house']=$this->input->post('house');
+                $this->data['street']=$this->input->post('street');
+                $this->data['postcode']=$this->input->post('postcode');
+                $this->data['city']=$this->input->post('city');
+                $this->data['country']=$this->input->post('country');
+                $this->data['phone']=$this->input->post('phone');
+                $this->data['email']=$this->input->post('email');
+                $this->data['course']=$this->input->post('course');
+                $this->data['hear']=$this->input->post('hear');
+                $this->data['other']=$this->input->post('other');
+                $this->data['disability']=$this->input->post('disability');
+                $this->data['appoinment']=$this->input->post('appoinment');
+                $this->data['comments']=$this->input->post('comments');
+
+
+                $this->data['course']=$this->Coursem->getCourseTitle();
+                $this->load->view('register-ineterest', $this->data);
 
             }
         }
@@ -415,15 +464,37 @@ class OnlineForms extends CI_Controller
                     redirect('Feedback');
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('Feedback');
+
+                    $this->menu();
+
+                    $this->data['name']=$this->input->post('name');
+                    $this->data['profession']=$this->input->post('profession');
+                    $this->data['email']=$this->input->post('email');
+                    $this->data['mobile']=$this->input->post('mobile');
+                    $this->data['details']=$this->input->post('details');
+                    $this->load->view('feedback-form', $this->data);
+
+//                    redirect('Feedback');
                 }
 
             }
         }else{
-            echo "<script>alert('Please select the recaptcha');
-                    window.location.href='".site_url('Contact')."';
+//            echo "<script>alert('Please select the recaptcha');
+//                    window.location.href='".site_url('Contact')."';
+//
+//                    </script>";
 
-                    </script>";
+
+            $this->session->set_flashdata('errorMessage', 'Please select the recaptcha!!');
+
+            $this->menu();
+
+            $this->data['name']=$this->input->post('name');
+            $this->data['profession']=$this->input->post('profession');
+            $this->data['email']=$this->input->post('email');
+            $this->data['mobile']=$this->input->post('mobile');
+            $this->data['details']=$this->input->post('details');
+            $this->load->view('feedback-form', $this->data);
 
         }
     }
