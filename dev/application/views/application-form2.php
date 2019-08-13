@@ -115,8 +115,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <button id='addButton' type="button" class="btn">Add New Qualification</button>
-                                    <button class="btn " type='button' value='Remove' id='removeButton'> Remove</button>
+                                    <button id='addButton' type="button" class="btn btn-next">Add New Qualification</button>
+                                    <button class="btn btn-next" type='button'  value='Remove' id='removeButton'> Remove</button>
                                 </div>
                             </div>
 
@@ -130,7 +130,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
 <!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>-->
-                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn ">Next</button></a>
+                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>
                                 </div>
                             </div>
 

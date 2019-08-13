@@ -1787,10 +1787,13 @@ class ApplyOnline extends CI_Controller
 
             $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
 
+            if (empty($this->data['PersonalStatementData'])){
+                $this->load->view('application-form5' );
+            }else {
 
-            $this->load->view('application-form5v', $this->data);
+                $this->load->view('application-form5v', $this->data);
 
-
+            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');

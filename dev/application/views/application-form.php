@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-9">
 	
-                        	<form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post" class="registration-form form-horizontal">
+                        	<form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post"  onsubmit=" return checkvalidation()" class="registration-form form-horizontal">
                         		
 <!--                        		<fieldset>-->
 		                        	<div class="form-top">
@@ -109,15 +109,15 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Any Sex changed:<span style="color: red" class="required">*</span></label>
+                                            <label class="control-label col-md-2">Any Gender changed:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('genderChange'); ?></font></p>
                                                 <input type="radio" required id="genderChange" name="genderChange"<?php
                                                 echo set_value('genderChange') == 'Y' ? "checked" : "";
-                                                ?> value="Y"> Y&nbsp;&nbsp;
+                                                ?> value="Y"> Yes&nbsp;&nbsp;
                                                 <input type="radio" required id="genderChange" name="genderChange" <?php
                                                 echo set_value('genderChange') == 'N' ? "checked" : "";
-                                                ?> value="N"> N&nbsp;&nbsp;
+                                                ?> value="N"> No&nbsp;&nbsp;
                                                 <input type="radio" required id="genderChange" name="genderChange" <?php
                                                 echo set_value('genderChange') == 'PNTS' ? "checked" : "";
                                                 ?> value="PNTS"> Pefer Not to Say
@@ -158,7 +158,7 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">PP Expiry Date:</label>
+                                        	<label class="control-label col-md-2">Passport Expiry Date:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
                                             	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo set_value('passportExpiryDate'); ?>" >
@@ -235,7 +235,7 @@
                                             <label class="control-label col-md-2">Telephone:</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                                <input type="text" class="form-control"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
+                                                <input type="text" class="form-control" maxlength="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
                                             </div>
                                         </div>
 
@@ -243,7 +243,7 @@
                                             <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                                <input type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
+                                                <input type="text"  maxlength="11"  class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
                                             </div>
                                         </div>
 
@@ -255,12 +255,14 @@
                                             </div>
                                         </div>
 
-                                        <label>Same as Current </label>
-                                        <input type="checkbox" id="samecheck2">
+
                                         <!-- This is overseas Address ,We consider this permanent address -->
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+
+                                            <label>Same as Current </label>
+                                            <input type="checkbox" id="samecheck2">
+                                            <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
                                             	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo set_value('overseasHomeAddress');?></textarea>
                                           	</div>
@@ -362,7 +364,7 @@
                                         	<label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                            	<input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
+                                            	<input type="text" maxlength="11" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
                                           	</div>
 				                        </div>
                                         
@@ -573,7 +575,7 @@
             function courseAwardBody() {
 
                 var courseId=document.getElementById("courseName").value;
-                if (courseId ==""){
+                if (courseId == ""){
                     alert('please select a course First');
                     document.getElementById('awardingBody').value = "";
                     return false;
@@ -587,6 +589,7 @@
                         success: function (data) {
 
                             document.getElementById('awardingBody').value = data;
+                            document.getElementById('courseLevel').value = "Course Level 5";
 
                         }
                     });
@@ -613,5 +616,26 @@
                         document.getElementById('permanentAddressCountry').value = ccountry;
                     }
                 });
+
+        </script>
+
+
+        <script>
+            function checkphonenumber() {
+               // var x = document.getElementById('telephone');
+                var value = document.getElementById('telephone').value;
+                if (value.length > 11) {
+                    return false; // keep form from submitting
+                }
+            }
+
+            function checkvalidation() {
+
+               if ( document.getElementById('courseYear').value > 2019){
+                  alert("year cant be future")
+                   return false;
+               }else
+                   return true;
+            }
 
         </script>
