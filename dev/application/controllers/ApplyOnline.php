@@ -1896,7 +1896,7 @@ class ApplyOnline extends CI_Controller
             $this->data['opportunityTitle']= $this->ApplyOnlinem->checkopportunityTitle();
             $this->data['opportunitySubGroupId']= $this->ApplyOnlinem->getOpportunitySubGroupId();
 
-          //  print_r($this->data['EqualOpportunity']);
+//            print_r($this->data['EqualOpportunity']);
 
 
             if (empty($this->data['EqualOpportunity'])) {
