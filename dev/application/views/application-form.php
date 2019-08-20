@@ -86,7 +86,7 @@
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
 <!--                                            	<input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="--><?php //echo set_value('dob'); ?><!--">-->
-                                                <?php   echo "Year: ". yearDropdownMenu(1950);?>
+                                                <?php   echo "Year: ". dobyearDropdownMenu(1950);?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
                                                 <select name="dobmonth">
@@ -538,7 +538,51 @@
         </section>
 
         <?php
-        function yearDropdownMenu($start_year, $end_year = null, $id='dobyear', $selected=null) {
+        function dobyearDropdownMenu($start_year, $end_year = null, $id='dobyear', $selected=null) {
+
+            // curret year as end year
+            $end_year = is_null($end_year) ? date('Y') : $end_year;
+
+            // the current year
+            $selected = is_null($selected) ? date('Y') : $selected;
+
+            // range of years
+            $r = range($start_year, $end_year);
+
+            //create the HTML select
+            $select = '<select name="'.$id.'" id="'.$id.'">';
+            foreach( $r as $year )
+            {
+                $select .= "<option value=\"$year\"";
+                $select .= ($year==$selected) ? ' selected="selected"' : '';
+                $select .= ">$year</option>\n";
+            }
+            $select .= '</select>';
+            return $select;
+        }
+        function ppyearDropdownMenu($start_year, $end_year = null, $id='ppyear', $selected=null) {
+
+            // curret year as end year
+            $end_year = is_null($end_year) ? date('Y') : $end_year;
+
+            // the current year
+            $selected = is_null($selected) ? date('Y') : $selected;
+
+            // range of years
+            $r = range($start_year, $end_year);
+
+            //create the HTML select
+            $select = '<select name="'.$id.'" id="'.$id.'">';
+            foreach( $r as $year )
+            {
+                $select .= "<option value=\"$year\"";
+                $select .= ($year==$selected) ? ' selected="selected"' : '';
+                $select .= ">$year</option>\n";
+            }
+            $select .= '</select>';
+            return $select;
+        }
+        function visayearDropdownMenu($start_year, $end_year = null, $id='visayear', $selected=null) {
 
             // curret year as end year
             $end_year = is_null($end_year) ? date('Y') : $end_year;

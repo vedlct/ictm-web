@@ -428,7 +428,7 @@ class ApplyOnline extends CI_Controller
             ];
             $this->session->set_userdata($dataSession);
             $data = array(
-              //  'applicationId' => $studentApplicationId,
+                'applicationId' => $studentApplicationId,
                 'title' => $candidateTitle,
                 'firstName' => $candidateFirstName,
                 'surName' => $candidateSurName,

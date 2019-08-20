@@ -95,7 +95,35 @@
                             <label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
+<!--                                <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="--><?php //echo $candidateInfo->dateOfBirth ?><!--">-->
+
+                                <?php
+                                $dob=$candidateInfo->dateOfBirth;
+                                $a=explode('-',$dob);
+                                $dobyear = $a[0];
+                                $dobmonth = $a[1];
+                                $dobdate = $a[2];
+                                ?>
+
+                                <?php   echo "Year: ". dobyearDropdownMenu(1950);?>
+                                &nbsp;&nbsp;&nbsp;
+                                Month:
+                                <select name="dobmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        echo "<option value='$monthNumber' >{$month}</option>";
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;
+                                Date:
+                                <select name="dobdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        echo "<option value='$dateNumber'>{$date}</option>";
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
 
@@ -506,7 +534,30 @@
         </div>
     </div>
 </section>
+<?php
+function dobyearDropdownMenu($start_year, $end_year = null, $id='dobyear', $selected=null) {
 
+    // curret year as end year
+    $end_year = is_null($end_year) ? date('Y') : $end_year;
+
+    // the current year
+    $selected = is_null($selected) ? date('Y') : $selected;
+
+    // range of years
+    $r = range($start_year, $end_year);
+
+    //create the HTML select
+    $select = '<select name="'.$id.'" id="'.$id.'">';
+    foreach( $r as $year )
+    {
+        $select .= "<option value=\"$year\"";
+        $select .= ($year==$selected) ? ' selected="selected"' : '';
+        $select .= ">$year</option>\n";
+    }
+    $select .= '</select>';
+    return $select;
+}
+?>
 <?php include("footer.php"); ?>
 <!-- for Application form -->
 <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
