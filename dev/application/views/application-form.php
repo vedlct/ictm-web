@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-9">
 	
-                        	<form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post" class="registration-form form-horizontal">
+                        	<form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post"  onsubmit=" return checkvalidation()" class="registration-form form-horizontal">
                         		
 <!--                        		<fieldset>-->
 		                        	<div class="form-top">
@@ -85,8 +85,29 @@
                                         	<label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                            	<input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo set_value('dob'); ?>">
-                                          	</div>
+<!--                                            	<input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="--><?php //echo set_value('dob'); ?><!--">-->
+                                                <?php   echo "Year: ". yearDropdownMenu(1950);?>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Month:
+                                                <select name="dobmonth">
+                                                    <?php
+                                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                        echo "<option value='$monthNumber'>{$month}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Date:
+                                                <select name="dobdate">
+                                                    <?php
+                                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                        echo "<option value='$dateNumber'>{$date}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+
+
+                                            </div>
 				                        </div>
                                         
                                         <div class="form-group">
@@ -109,15 +130,15 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Any Sex changed:<span style="color: red" class="required">*</span></label>
+                                            <label class="control-label col-md-2">Any Gender changed:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('genderChange'); ?></font></p>
                                                 <input type="radio" required id="genderChange" name="genderChange"<?php
                                                 echo set_value('genderChange') == 'Y' ? "checked" : "";
-                                                ?> value="Y"> Y&nbsp;&nbsp;
+                                                ?> value="Y"> Yes&nbsp;&nbsp;
                                                 <input type="radio" required id="genderChange" name="genderChange" <?php
                                                 echo set_value('genderChange') == 'N' ? "checked" : "";
-                                                ?> value="N"> N&nbsp;&nbsp;
+                                                ?> value="N"> No&nbsp;&nbsp;
                                                 <input type="radio" required id="genderChange" name="genderChange" <?php
                                                 echo set_value('genderChange') == 'PNTS' ? "checked" : "";
                                                 ?> value="PNTS"> Pefer Not to Say
@@ -158,7 +179,7 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">PP Expiry Date:</label>
+                                        	<label class="control-label col-md-2">Passport Expiry Date:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
                                             	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo set_value('passportExpiryDate'); ?>" >
@@ -235,7 +256,7 @@
                                             <label class="control-label col-md-2">Telephone:</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                                <input type="text" class="form-control"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
+                                                <input type="text" class="form-control" maxlength="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
                                             </div>
                                         </div>
 
@@ -243,7 +264,7 @@
                                             <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                                <input type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
+                                                <input type="text"  maxlength="11"  class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
                                             </div>
                                         </div>
 
@@ -255,12 +276,14 @@
                                             </div>
                                         </div>
 
-                                        <label>Same as Current </label>
-                                        <input type="checkbox" id="samecheck2">
+
                                         <!-- This is overseas Address ,We consider this permanent address -->
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+
+                                            <label>Same as Current </label>
+                                            <input type="checkbox" id="samecheck2">
+                                            <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
                                             	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo set_value('overseasHomeAddress');?></textarea>
                                           	</div>
@@ -362,7 +385,7 @@
                                         	<label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                            	<input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
+                                            	<input type="text" maxlength="11" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
                                           	</div>
 				                        </div>
                                         
@@ -514,6 +537,31 @@
             </div>
         </section>
 
+        <?php
+        function yearDropdownMenu($start_year, $end_year = null, $id='dobyear', $selected=null) {
+
+            // curret year as end year
+            $end_year = is_null($end_year) ? date('Y') : $end_year;
+
+            // the current year
+            $selected = is_null($selected) ? date('Y') : $selected;
+
+            // range of years
+            $r = range($start_year, $end_year);
+
+            //create the HTML select
+            $select = '<select name="'.$id.'" id="'.$id.'">';
+            foreach( $r as $year )
+            {
+                $select .= "<option value=\"$year\"";
+                $select .= ($year==$selected) ? ' selected="selected"' : '';
+                $select .= ">$year</option>\n";
+            }
+            $select .= '</select>';
+            return $select;
+        }
+        ?>
+
 		<?php include("footer.php"); ?>
         <!-- for Application form -->
         <script src="<?php echo base_url()?>public/javascript/jquery.backstretch.min.js"></script>
@@ -573,7 +621,7 @@
             function courseAwardBody() {
 
                 var courseId=document.getElementById("courseName").value;
-                if (courseId ==""){
+                if (courseId == ""){
                     alert('please select a course First');
                     document.getElementById('awardingBody').value = "";
                     return false;
@@ -587,6 +635,7 @@
                         success: function (data) {
 
                             document.getElementById('awardingBody').value = data;
+                            document.getElementById('courseLevel').value = "Course Level 5";
 
                         }
                     });
@@ -613,5 +662,26 @@
                         document.getElementById('permanentAddressCountry').value = ccountry;
                     }
                 });
+
+        </script>
+
+
+        <script>
+            function checkphonenumber() {
+               // var x = document.getElementById('telephone');
+                var value = document.getElementById('telephone').value;
+                if (value.length > 11) {
+                    return false; // keep form from submitting
+                }
+            }
+
+            function checkvalidation() {
+
+               if ( document.getElementById('courseYear').value > 2019){
+                  alert("year cant be future")
+                   return false;
+               }else
+                   return true;
+            }
 
         </script>

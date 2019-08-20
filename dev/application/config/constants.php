@@ -182,3 +182,7 @@ define("COURSESESSION",array ("February","May","September"));
 define("PERSONAL_STATEMENT",array ("Facebook","Friend","Family","News"));
 define("Login",array ("Login","Sigin"));
 define("Logout",array ("Logout","Sigout"));
+
+
+/////////////Date//////////////////////////////
+define ("Year",array ("Seminar", "Training", "Festival"));

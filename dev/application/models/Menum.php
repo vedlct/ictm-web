@@ -10,7 +10,7 @@ class Menum extends CI_Model
         $this->db->select('menuId, menuName,pageTitle,ictmpage.pageId,pageType,pageContent');
         $this->db->where('menuType',MENU_TYPE[0]);
         $this->db->where('menuStatus',STATUS[0]);
-        $this->db->order_by("ictmmenu.orderNumber", "asc");
+        $this->db->order_by("orderNumber", "asc");
         $this->db->join('ictmpage','ictmmenu.pageId = ictmpage.pageId','left');
         $query = $this->db->get('ictmmenu');
         return $query->result();
@@ -19,13 +19,13 @@ class Menum extends CI_Model
     public function getMainMenu() //get the main menu info
     {
 
-        $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ');
+        $this->db->select('menuId, menuName, parentId,pageTitle, ictmpage.pageId,pageType,pageContent ,ictmmenu.orderNumber');
         $this->db->where('menuType', MENU_TYPE[1]);
         $this->db->where('menuStatus', STATUS[0]);
         $this->db->where('parentId =', null);
         $this->db->where('ictmmenu.pageId =', null);
-        $this->db->order_by("ictmmenu.orderNumber", "asc");
         $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
+        $this->db->order_by("ictmmenu.orderNumber", "asc");
         $query = $this->db->get('ictmmenu');
         return $query->result();
 
@@ -81,8 +81,9 @@ class Menum extends CI_Model
         $this->db->where('menuStatus', STATUS[0]);
         $this->db->where('parentId =', null);
         $this->db->where('ictmmenu.pageId !=', null);
-        $this->db->order_by("ictmmenu.orderNumber", "asc");
+
         $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
+        $this->db->order_by("ictmmenu.orderNumber", "asc");
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
@@ -95,6 +96,7 @@ class Menum extends CI_Model
         $this->db->where('parentId !=', null);
 
         $this->db->join('ictmpage', 'ictmmenu.pageId = ictmpage.pageId','left');
+        $this->db->order_by("ictmmenu.orderNumber", "asc");
         $query = $this->db->get('ictmmenu');
         return $query->result();
 

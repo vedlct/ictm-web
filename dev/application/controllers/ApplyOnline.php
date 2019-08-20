@@ -358,7 +358,17 @@ class ApplyOnline extends CI_Controller
             $candidateFirstName = $this->input->post("firstName");
             $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-            $candidateDob = date('Y-m-d', strtotime($this->input->post("dob")));
+            $dobyear = $this->input->post("dobyear");
+            $dobmonth = $this->input->post("dobmonth");
+            $dobdate = $this->input->post("dobdate");
+            if ($dobmonth < 9){
+                $dobmonth = "0".$dobmonth;
+            }
+            if ($dobdate < 9){
+                    $dobdate = "0".$dobdate;
+            }
+            $candidateDob = $dobyear."-".$dobmonth."-".$dobdate;
+            //$candidateDob = date('Y-m-d', strtotime($this->input->post("dob")));
             $candidateGender = $this->input->post("gender");
             $candidateGenderChanged = $this->input->post("genderChange");
             $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
@@ -418,7 +428,7 @@ class ApplyOnline extends CI_Controller
             ];
             $this->session->set_userdata($dataSession);
             $data = array(
-                'applicationId' => $studentApplicationId,
+              //  'applicationId' => $studentApplicationId,
                 'title' => $candidateTitle,
                 'firstName' => $candidateFirstName,
                 'surName' => $candidateSurName,
@@ -471,7 +481,7 @@ class ApplyOnline extends CI_Controller
             $this->data['error'] = $this->ApplyOnlinem->insertApplyForm1($data, $data1);
 
             if (empty($this->data['error'])) {
-
+                
                 $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
                 redirect('Apply');
 
@@ -1787,10 +1797,13 @@ class ApplyOnline extends CI_Controller
 
             $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
 
+            if (empty($this->data['PersonalStatementData'])){
+                $this->load->view('application-form5' );
+            }else {
 
-            $this->load->view('application-form5v', $this->data);
+                $this->load->view('application-form5v', $this->data);
 
-
+            }
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');

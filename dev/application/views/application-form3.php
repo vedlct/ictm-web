@@ -117,12 +117,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
                             </div>
 
-                            <div class="form-group" id="addmore" style="display: block">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <button id='addButton' type="button" class="btn">Add New Proficiency</button>
-                                    <button class="btn" type='button' value='Remove' id='removeButton'> Remove</button>
-                                </div>
-                            </div>
+<!--                            <div class="form-group" id="addmore" style="display: block">-->
+<!--                                <div class="col-sm-offset-2 col-md-10">-->
+<!--                                    <button id='addButton' type="button" class="btn">Add New Proficiency</button>-->
+<!--                                    <button class="btn" type='button' value='Remove' id='removeButton'> Remove</button>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="form-group" id="otherdiv" style="display: none">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>

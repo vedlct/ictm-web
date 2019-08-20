@@ -62,8 +62,8 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <button type="button" class="btn btn-previous">Previous</button>
-                                <button type="submit" class="btn ">Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" class="btn ">Next</button>
                             </div>
                         </div>
                     </div>

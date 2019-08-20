@@ -111,11 +111,11 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Any Sex Change:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Any Gender Change:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('genderchange'); ?></font></p>
-                                <input type="radio" required id="genderChange" name="genderChange" value="Y" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
-                                <input type="radio" required id="genderChange" name="genderChange" value="N" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
+                                <input type="radio" required id="genderChange" name="genderChange" value="Y" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Yes&nbsp;&nbsp;
+                                <input type="radio" required id="genderChange" name="genderChange" value="N" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> No&nbsp;&nbsp;
                                 <input type="radio" required id="genderChange" name="genderChange" value="PNTS" <?php if($candidateInfo->ganderChange=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">PP Expiry Date:</label>
+                            <label class="control-label col-md-2">Passport Expiry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
                                 <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
@@ -247,10 +247,11 @@
                         </div>
 
 
-                        <label>Same as Current </label>
-                        <input type="checkbox" id="samecheck">
+
                         <div class="form-group">
                             <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
+                            <label>Same as Current </label>
+                            <input type="checkbox" id="samecheck">
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
                                 <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
@@ -580,6 +581,8 @@
                 success: function (data) {
 
                     document.getElementById('awardingBody').value = data;
+                    document.getElementById('courseLevel').value = "Course Level 5";
+
 
                 }
             });

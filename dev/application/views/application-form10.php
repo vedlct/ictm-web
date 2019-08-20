@@ -82,12 +82,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-md-10">
-                                <button id='addButton' type="button" class="btn " style="background-color: #4cae4c">Add New Qualification</button>
-                                <button class="btn " type='button' value='Remove' id='removeButton' style="background-color: darkred"> Remove</button>
-                            </div>
-                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <div class="col-sm-offset-2 col-md-10">-->
+<!--                                <button id='addButton' type="button" class="btn " style="background-color: #4cae4c">Add New Qualification</button>-->
+<!--                                <button class="btn " type='button' value='Remove' id='removeButton' style="background-color: darkred"> Remove</button>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
 
 
@@ -279,9 +279,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var positionHeld=$('#positionHeld').val();
         var startdate=$('#startdate').val();
         var enddate=$('#enddate').val();
+        var strdate = new Date(startdate);
+        var stryear = strdate.getFullYear();
+        var enddate = new Date(enddate);
+        var endyear = enddate.getFullYear();
+        var recentyr = new Date().getFullYear();
 
-
-
+        alert(stryear);
 
         if (organisation == ""){
             alert('Please add a Qualification');
@@ -304,6 +308,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }
+        if (stryear > recentyr){
+
+            alert('Future Year cannot be selected');
+            return false;
+        }
+        if (endyear > recentyr){
+
+            alert('Future Year cannot be selected');
+            return false;
+        }
+
+
     }
 
 </script>

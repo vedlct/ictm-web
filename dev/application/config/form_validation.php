@@ -381,8 +381,8 @@ $config = array (
 
         ),
         array(
-            'field' => 'dob',
-            'label' => 'Date Of Birth',
+            'field' => 'dobyear',
+            'label' => 'Year',
             'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
         ),

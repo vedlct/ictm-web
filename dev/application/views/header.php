@@ -233,7 +233,7 @@
                         <nav class="navbar menu-top">
                             <ul class="menu">
                                 <?php foreach ($topmenu as $tm) {
-                                    if ($tm->pageType == 'Static Type') {
+                                    if ($tm->pageType == 'Static Type'  ) {
                                         switch ($tm->pageContent) {
                                             case "course-list.php":
                                                 ?> <li><a href="<?php echo base_url()?>course-list"><?php echo $tm->menuName?></a></li> <?php
@@ -283,6 +283,7 @@
                                             ?><li><a href="<?php echo base_url() ?>Page/<?php echo $tm->pageId ?>" ><?php echo $tm->menuName ?></a> </li> <?php
                                         }
                                     }
+
                                 }
                                 ?>
 
@@ -371,7 +372,9 @@
                                         <ul class="submenu">
                                             <?php
                                             foreach ($parentmenu as $q) {
+
                                                 if ($q->parentId ==  $mn->menuId){
+
                                                     if ($q->pageType == 'Static Type') {
                                                         switch ($q->pageContent) {
                                                             case "course-list.php":
@@ -422,7 +425,9 @@
                                                             ?><li><a href="<?php echo base_url() ?>Page/<?php echo $q->pageId ?>" ><b><?php echo $q->menuName ?></b></a> </li> <?php
                                                         }
                                                     }
-                                                } }
+                                                }
+
+                                            }
                                             ?>
                                         </ul>
                                     </li>
