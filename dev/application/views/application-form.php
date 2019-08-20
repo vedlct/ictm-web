@@ -171,7 +171,7 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Passport No.:</label>
+                                        	<label class="control-label col-md-2">Passport / ID No.:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
                                             	<input type="text" class="form-control"  id="passportNo" name="passportNo" value="<?php echo set_value('passportNo'); ?>">
@@ -179,7 +179,7 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Passport Expiry Date:</label>
+                                        	<label class="control-label col-md-2">Passport / ID Expiry Date:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
                                             	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo set_value('passportExpiryDate'); ?>" >
