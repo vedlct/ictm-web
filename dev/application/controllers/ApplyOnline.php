@@ -481,7 +481,7 @@ class ApplyOnline extends CI_Controller
             $this->data['error'] = $this->ApplyOnlinem->insertApplyForm1($data, $data1);
 
             if (empty($this->data['error'])) {
-                
+
                 $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
                 redirect('Apply');
 
