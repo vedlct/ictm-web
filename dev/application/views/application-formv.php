@@ -95,7 +95,47 @@
                             <label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
+<!--                                <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="--><?php //echo $candidateInfo->dateOfBirth ?><!--">-->
+
+                                <?php
+                                $dob=$candidateInfo->dateOfBirth;
+                                $a=explode('-',$dob);
+                                $dobyear = $a[0];
+                                $dobmonth = (int)$a[1];
+                                $dobdate = (int)$a[2];
+                                ?>
+
+                                Year:
+                                <?php
+                                 $currently_selected = $dobyear;
+                                 $earliest_year = 1950;
+                                 $latest_year = date('Y');
+                                 print '<select name="dobyear">';
+                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                 }
+                                 print '</select>';
+                                ?>
+
+                                &nbsp;
+                                Month:
+                                <select name="dobmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $dobmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;
+                                Date:
+                                <select name="dobdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                       // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $dobdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
                             </div>
                         </div>
 
@@ -154,7 +194,49 @@
                             <label class="control-label col-md-2">Passport / ID Expiry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
+<!--                                <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="--><?php //echo $candidateInfo->passportExpiryDate ?><!--" >-->
+
+
+                                <?php
+                                $pp=$candidateInfo->passportExpiryDate;
+                                $b=explode('-',$pp);
+                                $ppyear = $b[0];
+                                $ppmonth = (int)$b[1];
+                                $ppdate = (int)$b[2];
+                                ?>
+
+                                Year:
+                                <?php
+                                $currently_selected = $ppyear;
+                                $earliest_year = 1950;
+                                $latest_year = date('Y');
+                                print '<select name="ppyear">';
+                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                }
+                                print '</select>';
+                                ?>
+
+                                &nbsp;
+                                Month:
+                                <select name="ppmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ppmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;
+                                Date:
+                                <select name="ppdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $ppdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+
                             </div>
                         </div>
 
@@ -162,7 +244,50 @@
                             <label class="control-label col-md-2">UK Entry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
+<!--                                <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="--><?php //echo $candidateInfo->ukEntryDate ?><!--">-->
+
+                                <?php
+                                $uk=$candidateInfo->ukEntryDate;
+                                $c=explode('-',$uk);
+                                $ukyear = $c[0];
+                                $ukmonth = (int)$c[1];
+                                $ukdate = (int) $c[2];
+                                ?>
+
+                                Year:
+                                <?php
+                                $currently_selected = $ukyear;
+                                $earliest_year = 1950;
+                                $latest_year = date('Y');
+                                print '<select name="ukyear">';
+                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                }
+                                print '</select>';
+                                ?>
+
+                                &nbsp;
+                                Month:
+                                <select name="ukmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ukmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;
+                                &nbsp;
+                                Date:
+                                <select name="ukdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $ukdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+
+
                             </div>
                         </div>
 
@@ -187,7 +312,47 @@
                             <label class="control-label col-md-2">Visa Expiry Date:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
+<!--                                <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="--><?php //echo $candidateInfo->visaExpiryDate ?><!--">-->
+                                <?php
+                                $visa=$candidateInfo->visaExpiryDate;
+                                $d=explode('-',$visa);
+                                $visayear = $d[0];
+                                $visamonth = (int)$d[1];
+                                $visadate = (int)$d[2];
+                                ?>
+
+                                Year:
+                                <?php
+                                $currently_selected = $visayear;
+                                $earliest_year = 1950;
+                                $latest_year = date('Y');
+                                print '<select name="visayear">';
+                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                }
+                                print '</select>';
+                                ?>
+
+                                &nbsp;
+                                Month:
+                                <select name="visamonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $visamonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;
+                                Date:
+                                <select name="visadate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $visadate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+
                             </div>
                         </div>
 
@@ -483,7 +648,7 @@
                 </form>
 
 
-                <?php } ?>
+                <?php break;} ?>
 
 
 

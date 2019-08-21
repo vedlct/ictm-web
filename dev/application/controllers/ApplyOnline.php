@@ -359,8 +359,8 @@ class ApplyOnline extends CI_Controller
             $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
             $dobyear = $this->input->post("dobyear");
-            $dobmonth = $this->input->post("dobmonth");
-            $dobdate = $this->input->post("dobdate");
+            $dobmonth = $this->input->post("dobmonth")+1;
+            $dobdate = $this->input->post("dobdate")+1;
             if ($dobmonth < 9){
                 $dobmonth = "0".$dobmonth;
             }
@@ -374,10 +374,42 @@ class ApplyOnline extends CI_Controller
             $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
             $candidateNationality = $this->input->post("nationality");
             $candidatePassportNo = $this->input->post("passportNo");
-            $candidatePassportExpiryDate = date('Y-m-d', strtotime($this->input->post("passportExpiryDate")));
-            $candidateUkEntryDate = date('Y-m-d', strtotime($this->input->post("UkEntryDate")));
+                $ppyear = $this->input->post("ppyear");
+                $ppmonth = $this->input->post("ppmonth")+1;
+                $ppdate = $this->input->post("ppdate")+1;
+                if ($ppmonth < 9){
+                    $ppmonth = "0".$ppmonth;
+                }
+                if ($ppdate < 9){
+                    $ppdate = "0".$ppdate;
+                }
+            $candidatePassportExpiryDate = $ppyear."-".$ppmonth."-".$ppdate;
+//            $candidatePassportExpiryDate = date('Y-m-d', strtotime($this->input->post("passportExpiryDate")));
+                $ukyear = $this->input->post("ukyear");
+                $ukmonth = $this->input->post("ukmonth")+1;
+                $ukdate = $this->input->post("ukdate")+1;
+                if ($ukmonth < 9){
+                    $ukmonth = "0".$ukmonth;
+                }
+                if ($ukdate < 9){
+                    $ukdate = "0".$ukdate;
+                }
+
+            $candidateUkEntryDate = $ukyear."-".$ukmonth."-".$ukdate;
+//            $candidateUkEntryDate = date('Y-m-d', strtotime($this->input->post("UkEntryDate")));
             $candidateVisaType = $this->input->post("VisaType");
-            $candidateVisaExpiryDate = date('Y-m-d', strtotime($this->input->post("visaExpiryDate")));
+                $visayear = $this->input->post("visayear");
+                $visamonth = $this->input->post("visamonth")+1;
+                $visadate = $this->input->post("visadate")+1;
+                if ($visamonth < 9){
+                    $visamonth = "0".$visamonth;
+                }
+                if ($visadate < 9){
+                    $visadate = "0".$visadate;
+                }
+
+            $candidateVisaExpiryDate = $visayear."-".$visamonth."-".$visadate;
+//            $candidateVisaExpiryDate = date('Y-m-d', strtotime($this->input->post("visaExpiryDate")));
 
             $candidateCurrentAddress = $this->input->post("currentAddress");
             $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -428,7 +460,7 @@ class ApplyOnline extends CI_Controller
             ];
             $this->session->set_userdata($dataSession);
             $data = array(
-              //  'applicationId' => $studentApplicationId,
+                'applicationId' => $studentApplicationId,
                 'title' => $candidateTitle,
                 'firstName' => $candidateFirstName,
                 'surName' => $candidateSurName,
@@ -518,15 +550,59 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
+                $dobyear = $this->input->post("dobyear");
+                $dobmonth = $this->input->post("dobmonth")+1;
+                $dobdate = $this->input->post("dobdate")+1;
+                if ($dobmonth < 9){
+                    $dobmonth = "0".$dobmonth;
+                }
+                if ($dobdate < 9){
+                    $dobdate = "0".$dobdate;
+                }
+                $candidateDob = $dobyear."-".$dobmonth."-".$dobdate;
+//                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
-                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
+
+                $ppyear = $this->input->post("ppyear");
+                $ppmonth = $this->input->post("ppmonth")+1;
+                $ppdate = $this->input->post("ppdate")+1;
+                if ($ppmonth < 9){
+                    $ppmonth = "0".$ppmonth;
+                }
+                if ($ppdate < 9){
+                    $ppdate = "0".$ppdate;
+                }
+                $candidatePassportExpiryDate = $ppyear."-".$ppmonth."-".$ppdate;
+//                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $ukyear = $this->input->post("ukyear");
+                $ukmonth = $this->input->post("ukmonth")+1;
+                $ukdate = $this->input->post("ukdate")+1;
+                if ($ukmonth < 9){
+                    $ukmonth = "0".$ukmonth;
+                }
+                if ($ukdate < 9){
+                    $ukdate = "0".$ukdate;
+                }
+
+                $candidateUkEntryDate = $ukyear."-".$ukmonth."-".$ukdate;
+//                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
+
+                $visayear = $this->input->post("visayear");
+                $visamonth = $this->input->post("visamonth")+1;
+                $visadate = $this->input->post("visadate")+1;
+                if ($visamonth < 9){
+                    $visamonth = "0".$visamonth;
+                }
+                if ($visadate < 9){
+                    $visadate = "0".$visadate;
+                }
+
+                $candidateVisaExpiryDate = $visayear."-".$visamonth."-".$visadate;
+//                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
 
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -839,16 +915,59 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
+                $dobyear = $this->input->post("dobyear");
+                $dobmonth = $this->input->post("dobmonth")+1;
+                $dobdate = $this->input->post("dobdate")+1;
+                if ($dobmonth < 9){
+                    $dobmonth = "0".$dobmonth;
+                }
+                if ($dobdate < 9){
+                    $dobdate = "0".$dobdate;
+                }
+                $candidateDob = $dobyear."-".$dobmonth."-".$dobdate;
+//                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidateGenderChanged = $this->input->post("ganderChanged");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
-                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
+                $ppyear = $this->input->post("ppyear");
+                $ppmonth = $this->input->post("ppmonth")+1;
+                $ppdate = $this->input->post("ppdate")+1;
+                if ($ppmonth < 9){
+                    $ppmonth = "0".$ppmonth;
+                }
+                if ($ppdate < 9){
+                    $ppdate = "0".$ppdate;
+                }
+                $candidatePassportExpiryDate = $ppyear."-".$ppmonth."-".$ppdate;
+//                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $ukyear = $this->input->post("ukyear");
+                $ukmonth = $this->input->post("ukmonth")+1;
+                $ukdate = $this->input->post("ukdate")+1;
+                if ($ukmonth < 9){
+                    $ukmonth = "0".$ukmonth;
+                }
+                if ($ukdate < 9){
+                    $ukdate = "0".$ukdate;
+                }
+
+                $candidateUkEntryDate = $ukyear."-".$ukmonth."-".$ukdate;
+//                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
+
+                $visayear = $this->input->post("visayear");
+                $visamonth = $this->input->post("visamonth")+1;
+                $visadate = $this->input->post("visadate")+1;
+                if ($visamonth < 9){
+                    $visamonth = "0".$visamonth;
+                }
+                if ($visadate < 9){
+                    $visadate = "0".$visadate;
+                }
+
+                $candidateVisaExpiryDate = $visayear."-".$visamonth."-".$visadate;
+//                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
                 $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
@@ -992,15 +1111,57 @@ class ApplyOnline extends CI_Controller
                 $candidateFirstName = $this->input->post("firstName");
                 $candidateSurName = $this->input->post("surName");
 //                $candidateOtherNamee = $this->input->post("otherName");
-                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
+                $dobyear = $this->input->post("dobyear");
+                $dobmonth = $this->input->post("dobmonth")+1;
+                $dobdate = $this->input->post("dobdate")+1;
+                if ($dobmonth < 9){
+                    $dobmonth = "0".$dobmonth;
+                }
+                if ($dobdate < 9){
+                    $dobdate = "0".$dobdate;
+                }
+                $candidateDob = $dobyear."-".$dobmonth."-".$dobdate;
+//                $candidateDob = date('Y-m-d',strtotime($this->input->post("dob")));
                 $candidateGender = $this->input->post("gender");
                 $candidatePlaceOfBirth = $this->input->post("placeOfBirth");
                 $candidateNationality = $this->input->post("nationality");
                 $candidatePassportNo = $this->input->post("passportNo");
-                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
-                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
+                $ppyear = $this->input->post("ppyear");
+                $ppmonth = $this->input->post("ppmonth")+1;
+                $ppdate = $this->input->post("ppdate")+1;
+                if ($ppmonth < 9){
+                    $ppmonth = "0".$ppmonth;
+                }
+                if ($ppdate < 9){
+                    $ppdate = "0".$ppdate;
+                }
+                $candidatePassportExpiryDate = $ppyear."-".$ppmonth."-".$ppdate;
+//                $candidatePassportExpiryDate = date('Y-m-d',strtotime($this->input->post("passportExpiryDate")));
+                $ukyear = $this->input->post("ukyear");
+                $ukmonth = $this->input->post("ukmonth")+1;
+                $ukdate = $this->input->post("ukdate")+1;
+                if ($ukmonth < 9){
+                    $ukmonth = "0".$ukmonth;
+                }
+                if ($ukdate < 9){
+                    $ukdate = "0".$ukdate;
+                }
+
+                $candidateUkEntryDate = $ukyear."-".$ukmonth."-".$ukdate;
+//                $candidateUkEntryDate = date('Y-m-d',strtotime($this->input->post("UkEntryDate")));
                 $candidateVisaType = $this->input->post("VisaType");
-                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
+                $visayear = $this->input->post("visayear");
+                $visamonth = $this->input->post("visamonth")+1;
+                $visadate = $this->input->post("visadate")+1;
+                if ($visamonth < 9){
+                    $visamonth = "0".$visamonth;
+                }
+                if ($visadate < 9){
+                    $visadate = "0".$visadate;
+                }
+
+                $candidateVisaExpiryDate = $visayear."-".$visamonth."-".$visadate;
+//                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
                 $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");

@@ -86,7 +86,19 @@
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
 <!--                                            	<input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="--><?php //echo set_value('dob'); ?><!--">-->
-                                                <?php   echo "Year: ". yearDropdownMenu(1950);?>
+
+
+                                                Year:
+                                                <?php
+                                                $currently_selected = $dobyear;
+                                                $earliest_year = 1950;
+                                                $latest_year = date('Y');
+                                                print '<select name="dobyear">';
+                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                                }
+                                                print '</select>';
+                                                ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
                                                 <select name="dobmonth">
@@ -182,16 +194,82 @@
                                         	<label class="control-label col-md-2">Passport / ID Expiry Date:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                            	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="<?php echo set_value('passportExpiryDate'); ?>" >
-                                          	</div>
+<!--                                            	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="--><?php //echo set_value('passportExpiryDate'); ?><!--" >-->
+
+
+                                                Year:
+                                                <?php
+                                                $currently_selected = $dobyear;
+                                                $earliest_year = 1950;
+                                                $latest_year = date('Y');
+                                                print '<select name="ppyear">';
+                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                                }
+                                                print '</select>';
+                                                ?>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Month:
+                                                <select name="ppmonth">
+                                                    <?php
+                                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                        echo "<option value='$monthNumber'>{$month}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Date:
+                                                <select name="ppdate">
+                                                    <?php
+                                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                        echo "<option value='$dateNumber'>{$date}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+
+
+
+                                            </div>
 				                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">UK Entry Date: </label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                            	<input type="text" class="form-control datetimepicker"  id="UkEntryDate" name="UkEntryDate" value="<?php echo set_value('UkEntryDate'); ?>">
-                                          	</div>
+<!--                                            	<input type="text" class="form-control datetimepicker"  id="UkEntryDate" name="UkEntryDate" value="--><?php //echo set_value('UkEntryDate'); ?><!--">-->
+                                                Year:
+                                                <?php
+                                                $currently_selected = $dobyear;
+                                                $earliest_year = 1950;
+                                                $latest_year = date('Y');
+                                                print '<select name="ukyear">';
+                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                                }
+                                                print '</select>';
+                                                ?>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Month:
+                                                <select name="ukmonth">
+                                                    <?php
+                                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                        echo "<option value='$monthNumber'>{$month}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Date:
+                                                <select name="ukdate">
+                                                    <?php
+                                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                        echo "<option value='$dateNumber'>{$date}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+
+
+
+                                            </div>
 				                        </div>
 
                                         <div class="form-group">
@@ -213,8 +291,40 @@
                                         	<label class="control-label col-md-2">Visa Expiry Date:</label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                            	<input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo set_value('visaExpiryDate'); ?>">
-                                          	</div>
+<!--                                            	<input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="--><?php //echo set_value('visaExpiryDate'); ?><!--">-->
+
+                                                Year:
+                                                <?php
+                                                $currently_selected = $dobyear;
+                                                $earliest_year = 1950;
+                                                $latest_year = date('Y');
+                                                print '<select name="visayear">';
+                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                                }
+                                                print '</select>';
+                                                ?>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Month:
+                                                <select name="visamonth">
+                                                    <?php
+                                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                        echo "<option value='$monthNumber'>{$month}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+                                                &nbsp;&nbsp;&nbsp;
+                                                Date:
+                                                <select name="visadate">
+                                                    <?php
+                                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                        echo "<option value='$dateNumber'>{$date}</option>";
+                                                    }
+                                                    ?>
+                                                </select>
+
+
+                                            </div>
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
@@ -536,31 +646,6 @@
                 </div>
             </div>
         </section>
-
-        <?php
-        function yearDropdownMenu($start_year, $end_year = null, $id='dobyear', $selected=null) {
-
-            // curret year as end year
-            $end_year = is_null($end_year) ? date('Y') : $end_year;
-
-            // the current year
-            $selected = is_null($selected) ? date('Y') : $selected;
-
-            // range of years
-            $r = range($start_year, $end_year);
-
-            //create the HTML select
-            $select = '<select name="'.$id.'" id="'.$id.'">';
-            foreach( $r as $year )
-            {
-                $select .= "<option value=\"$year\"";
-                $select .= ($year==$selected) ? ' selected="selected"' : '';
-                $select .= ">$year</option>\n";
-            }
-            $select .= '</select>';
-            return $select;
-        }
-        ?>
 
 		<?php include("footer.php"); ?>
         <!-- for Application form -->
