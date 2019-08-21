@@ -67,14 +67,44 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">From:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">
+<!--                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">-->
+
+                                        Year:
+                                        <?php
+                                        $currently_selected = date('Y');
+                                        $earliest_year = 1950;
+                                        $latest_year = date('Y');
+                                        print '<select name="dobyear">';
+                                        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                            print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                        }
+                                        print '</select>';
+                                        ?>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Month:
+                                        <select name="dobmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Date:
+                                        <select name="dobdate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">To:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">
+<!--                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">-->
                                     </div>
                                 </div>
 
