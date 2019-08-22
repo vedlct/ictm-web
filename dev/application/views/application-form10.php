@@ -1,10 +1,10 @@
 <!--Work Experience / Training -->
 <?php include("header.php"); ?>
-<style>
-    .datepicker .next ,.prev {
-        position: relative !important;
-    }
-</style>
+<!--<style>-->
+<!--    .datepicker .next ,.prev {-->
+<!--        position: relative !important;-->
+<!--    }-->
+<!--</style>-->
 
 <div class="page-title full-color">
     <div class="container">
@@ -67,14 +67,75 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">From:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">
+<!--                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">-->
+
+                                        Year:
+                                        <?php
+                                        $currently_selected = date('Y');
+                                        $earliest_year = 1950;
+                                        $latest_year = date('Y');
+                                        print '<select id="workstryear" name="workstryear">';
+                                        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                            print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                        }
+                                        print '</select>';
+                                        ?>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Month:
+                                        <select id="workstrmonth" name="workstrmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Date:
+                                        <select id="workstrdate" name="workstrdate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">To:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">
+<!--                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">-->
+
+                                        Year:
+                                        <?php
+                                        $currently_selected = date('Y');
+                                        $earliest_year = 1950;
+                                        $latest_year = date('Y');
+                                        print '<select id="workendyear" name="workendyear">';
+                                        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                            print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                        }
+                                        print '</select>';
+                                        ?>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Month:
+                                        <select id="workendmonth" name="workendmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Date:
+                                        <select id="workenddate" name="workenddate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
+
                                     </div>
                                 </div>
 
@@ -137,17 +198,17 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </body>
 </html>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-<script type="text/javascript">
-    $(function () {
-        $('.datetimepicker').datetimepicker({
-            format: 'YYYY-MM-DD'
-        });
-        $('.datetimepicker').keydown(function(e) {
-            e.preventDefault();
-            return false;
-        });
-    });
-</script>
+<!--<script type="text/javascript">-->
+<!--    $(function () {-->
+<!--        $('.datetimepicker').datetimepicker({-->
+<!--            format: 'YYYY-MM-DD'-->
+<!--        });-->
+<!--        $('.datetimepicker').keydown(function(e) {-->
+<!--            e.preventDefault();-->
+<!--            return false;-->
+<!--        });-->
+<!--    });-->
+<!--</script>-->
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -275,40 +336,58 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
     function checkForm() {
 
-        var organisation=$('#organisation').val();
-        var positionHeld=$('#positionHeld').val();
-        var startdate=$('#startdate').val();
-        var enddate=$('#enddate').val();
-        var strdate = new Date(startdate);
-        var stryear = strdate.getFullYear();
-        var enddate = new Date(enddate);
-        var endyear = enddate.getFullYear();
+
+        var organisation = $('#organisation').val();
+        var positionHeld = $('#positionHeld').val();
+//        var startdate=$('#startdate').val();
+//        var enddate=$('#enddate').val();
+//        var strdate = new Date(startdate);
+//        var stryear = strdate.getFullYear();
+//        var enddate = new Date(enddate);
+//        var endyear = enddate.getFullYear();
         var recentyr = new Date().getFullYear();
 
-        alert(stryear);
+        var startyear = $('#workstryear').val();
+        var startmonth = $('#workstrmonth').val();
+        var startdat = $('#workstrdate').val();
 
-        if (organisation == ""){
-            alert('Please add a Qualification');
-            return false;
-        }if (positionHeld.length > 100){
-            alert('Qualification must be less then 100 charecter');
-            return false;
+        var stratdate = new Date(startyear+"-"+startmonth+"-"+startdat);
 
-        }if (startdate == ""){
-            alert('Please add a startdate');
-            return false;
-        }if (enddate == ""){
-            alert('Please add a enddate');
-            return false;
+        var endyear = $('#workendyear').val();
+        var endmonth = $('#workendmonth').val();
+        var enddat = $('#workenddate').val();
+        var enddate = new Date(endyear+"-"+endmonth+"-"+enddat);
 
-            
-        }
-        if (enddate < startdate){
+        alert(stratdate)
+        if (enddate < stratdate) {
 
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }
-        if (stryear > recentyr){
+
+        if (organisation == "") {
+            alert('Please add a Qualification');
+            return false;
+        }
+        if (positionHeld.length > 100) {
+            alert('Qualification must be less then 100 charecter');
+            return false;
+
+//        }if (startdate == ""){
+//            alert('Please add a startdate');
+//            return false;
+//        }if (enddate == ""){
+//            alert('Please add a enddate');
+//            return false;
+//
+//
+//        }
+//        if (enddate < startdate){
+//
+//            alert('Please Select StartDate and EndDate Correctly');
+//            return false;
+//        }
+        if (startyear > recentyr){
 
             alert('Future Year cannot be selected');
             return false;
@@ -320,6 +399,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }
 
 
+        }
     }
 
 </script>

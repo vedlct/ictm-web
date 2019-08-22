@@ -90,7 +90,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = $dobyear;
+                                                $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select name="dobyear">';
@@ -199,7 +199,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = $dobyear;
+                                                $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select name="ppyear">';
@@ -239,7 +239,7 @@
 <!--                                            	<input type="text" class="form-control datetimepicker"  id="UkEntryDate" name="UkEntryDate" value="--><?php //echo set_value('UkEntryDate'); ?><!--">-->
                                                 Year:
                                                 <?php
-                                                $currently_selected = $dobyear;
+                                                $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select name="ukyear">';
@@ -295,7 +295,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = $dobyear;
+                                                $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select name="visayear">';
