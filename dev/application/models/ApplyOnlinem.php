@@ -401,7 +401,7 @@ class ApplyOnlinem extends CI_Model
                 'qualificationLevel' => $qualificationLevel[$i],
                 'awardingBody' => $awardingBody[$i],
                 'subject' => $subject[$i],
-                'completionYear' => date('Y',strtotime($completionYear[$i])),
+                'completionYear' => $completionYear[$i],
 
 
             );
@@ -992,8 +992,30 @@ class ApplyOnlinem extends CI_Model
 
         $organisation = $this->input->post('organisation[]');
         $positionHeld = $this->input->post('positionHeld[]');
-        $startdate = $this->input->post('startdate[]');
-        $enddate = $this->input->post('enddate[]');
+        $workstryear = $this->input->post("workstryear");
+        $workstrmonth = $this->input->post("workstrmonth")+1;
+        $workstrdate = $this->input->post("workstrdate")+1;
+        if ($workstrmonth < 9){
+            $workstrmonth = "0".$workstrmonth;
+        }
+        if ($workstrdate < 9){
+            $workstrdate = "0".$workstrdate;
+        }
+        $startdate = $workstryear."-".$workstrmonth."-".$workstrdate;
+
+//        $startdate = $this->input->post('startdate[]');
+
+        $workendyear = $this->input->post("workendyear");
+        $workendmonth = $this->input->post("workendmonth")+1;
+        $workenddate = $this->input->post("workenddate")+1;
+        if ($workendmonth < 9){
+            $workendmonth = "0".$workendmonth;
+        }
+        if ($workenddate < 9){
+            $workenddate = "0".$workenddate;
+        }
+        $enddate = $workendyear."-".$workendmonth."-".$workenddate;
+//        $enddate = $this->input->post('enddate[]');
 
 
 
@@ -1002,8 +1024,8 @@ class ApplyOnlinem extends CI_Model
                 'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                 'organization' => $organisation[$i],
                 'positionHeld' => $positionHeld[$i],
-                'startDate' => date('Y-m-d',strtotime($startdate[$i])),
-                'endDate' => date('Y-m-d',strtotime($enddate[$i])),
+                'startDate' => $startdate,
+                'endDate' => $enddate,
 
 
             );
@@ -1066,8 +1088,33 @@ class ApplyOnlinem extends CI_Model
 
         $organisation = $this->input->post('organisation');
         $positionHeld = $this->input->post('positionHeld');
-        $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
-        $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
+        $workstryear = $this->input->post("workstryear");
+        $workstrmonth = $this->input->post("workstrmonth")+1;
+        $workstrdate = $this->input->post("workstrdate")+1;
+        if ($workstrmonth < 9){
+            $workstrmonth = "0".$workstrmonth;
+        }
+        if ($workstrdate < 9){
+            $workstrdate = "0".$workstrdate;
+        }
+        $startdate = $workstryear."-".$workstrmonth."-".$workstrdate;
+
+//        $startdate = $this->input->post('startdate[]');
+
+        $workendyear = $this->input->post("workendyear");
+        $workendmonth = $this->input->post("workendmonth")+1;
+        $workenddate = $this->input->post("workenddate")+1;
+        if ($workendmonth < 9){
+            $workendmonth = "0".$workendmonth;
+        }
+        if ($workenddate < 9){
+            $workenddate = "0".$workenddate;
+        }
+        $enddate = $workendyear."-".$workendmonth."-".$workenddate;
+
+
+      //  $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+      //  $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
         $experienceid = $this->input->post('experience');
 
         $data = array(

@@ -621,20 +621,7 @@ $config = array (
                 'label' => 'Position Held',
                 'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
-            ),
-
-            array(
-                'field' => 'startdate',
-                'label' => 'Start Date',
-                'rules' => 'required|xss_clean|htmlspecialchars',
-
-            ),
-            array(
-                'field' => 'enddate',
-                'label' => 'End Date',
-                'rules' => 'required|xss_clean|htmlspecialchars',
-
-            ),
+            )
 
 
 
