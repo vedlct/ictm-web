@@ -105,7 +105,7 @@ define("SELECT_TYPE","Select Type");
 define("Type",array("Student","Agent"));
 
 
-define("VISA_TYPE",array("Student","Travel"));
+define("VISA_TYPE",array("Work Visa","Business Visa", "Study Visa", "Visitor Visa", "Family Visa", "Settlement Visa", "Transit Visa", "Other"));
 
 
 //////////// For Menu    /////////////////
