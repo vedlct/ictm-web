@@ -408,14 +408,31 @@ $config = array (
         ),
         array(
             'field' => 'currentAddress',
-            'label' => 'Current Address',
-            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+            'label' => 'Current Address Line 1',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'currentAddressPO',
-            'label' => 'Post Code',
-            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+            'field' => 'currentAddress2',
+            'label' => 'Current Address Line 1',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
+        array(
+            'field' => 'currentAddress3',
+            'label' => 'Current Address Line 1',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'currentAddressCity',
+            'label' => 'Current City/Town',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'currentAddressState',
+            'label' => 'Current County/State',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
+        ),
+
+
         array(
             'field' => 'currentAddressCountry',
             'label' => 'Country',
@@ -432,19 +449,34 @@ $config = array (
             'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'overseasHomeAddress',
-            'label' => 'Permanet Address',
-            'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
+            'field' => 'permanentAddress',
+            'label' => 'Permanent Address Line 1',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'permanentAddress2',
+            'label' => 'Permanent Address Line 2',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'permanentAddress2',
+            'label' => 'Permanent Address Line 3',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'permanentAddressCity',
+            'label' => 'Permanent City/Town',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'permanentAddressState',
+            'label' => 'Permanent County/State',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'permanentAddressCountry',
-            'label' => 'Country',
+            'label' => 'Permanent Country',
             'rules' => 'max_length[255]|xss_clean|htmlspecialchars'
-        ),
-        array(
-            'field' => 'overseasAddressPO',
-            'label' => 'Post Code',
-            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
         ),
         array(
             'field' => 'EmergencyContactTitle',
@@ -467,16 +499,35 @@ $config = array (
         ),
         array(
             'field' => 'EmergencyContactAddress',
-            'label' => 'Address',
+            'label' => 'Address Line 1',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
 
         ),
-
         array(
-            'field' => 'EmergencyContactAddressPO',
-            'label' => 'Post Code',
-            'rules' => 'required|max_length[15]|xss_clean|htmlspecialchars'
+            'field' => 'EmergencyContactAddress2',
+            'label' => 'Address Line 2',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+
         ),
+        array(
+            'field' => 'EmergencyContactAddress3',
+            'label' => 'Address Line 3',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'EmergencyContactCity',
+            'label' => 'City/Town',
+            'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+        array(
+            'field' => 'EmergencyContactState',
+            'label' => 'Country/State:',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+
+        ),
+
         array(
             'field' => 'emergencyContactCountry',
             'label' => 'Country',
@@ -621,20 +672,7 @@ $config = array (
                 'label' => 'Position Held',
                 'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
-            ),
-
-            array(
-                'field' => 'startdate',
-                'label' => 'Start Date',
-                'rules' => 'required|xss_clean|htmlspecialchars',
-
-            ),
-            array(
-                'field' => 'enddate',
-                'label' => 'End Date',
-                'rules' => 'required|xss_clean|htmlspecialchars',
-
-            ),
+            )
 
 
 

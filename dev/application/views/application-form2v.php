@@ -97,7 +97,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control datetimepicker" id="completionYear" maxlength="100" required name="completionYear">
+<!--                                        <input type="text" class="form-control datetimepicker" id="completionYear" maxlength="100" required name="completionYear">-->
+
+                                        <?php
+                                        $currently_selected = date('Y');
+                                        $earliest_year = 1950;
+                                        $latest_year = date('Y');
+                                        print '<select id="completionYear" name="completionYear">';
+                                        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                            print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                        }
+                                        print '</select>';
+                                        ?>
                                     </div>
                                 </div>
 

@@ -77,7 +77,38 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <label class="control-label col-md-2">From:</label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('startdate'); ?></font></p>
-                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate">
+<!--                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate">-->
+
+                                        Year:
+                                        <?php
+                                        $currently_selected = date('Y');
+                                        $earliest_year = 1950;
+                                        $latest_year = date('Y');
+                                        print '<select id="workstryear" name="workstryear">';
+                                        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                            print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                        }
+                                        print '</select>';
+                                        ?>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Month:
+                                        <select id="workstrmonth" name="workstrmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Date:
+                                        <select id="workstrdate" name="workstrdate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
+
                                     </div>
                                 </div>
 
@@ -85,7 +116,39 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <label class="control-label col-md-2">To:</label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('enddate'); ?></font></p>
-                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate">
+<!--                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate">-->
+
+                                        Year:
+                                        <?php
+                                        $currently_selected = date('Y');
+                                        $earliest_year = 1950;
+                                        $latest_year = date('Y');
+                                        print '<select id="workendyear" name="workendyear">';
+                                        foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                            print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                        }
+                                        print '</select>';
+                                        ?>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Month:
+                                        <select id="workendmonth" name="workendmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;
+                                        Date:
+                                        <select id="workenddate" name="workenddate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
+
+
                                     </div>
                                 </div>
 
@@ -358,13 +421,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     var endDate = response[0].endDate;
                     var experienceId = response[0].id;
 
+
+                    var startDateArr = startDate.split('-');
+                    var endDateArr = endDate.split('-');
+
                 }
+
 
 
                 document.getElementById("organisation").value= organisation;
                 document.getElementById("positionHeld").value= positionHeld;
-                document.getElementById("startdate").value= startDate;
-                document.getElementById("enddate").value= endDate;
+                document.getElementById("workstryear").value= startDateArr[0];
+                document.getElementById("workstrmonth").value= parseInt(startDateArr[1])-1;
+                document.getElementById("workstrdate").value= parseInt(startDateArr[2])-1;
+                document.getElementById("workendyear").value= endDateArr[0];
+                document.getElementById("workendmonth").value= parseInt(endDateArr[1])-1;
+                document.getElementById("workenddate").value= parseInt(endDateArr[2])-1;
                 document.getElementById("experience").value= experienceId;
 
             }
