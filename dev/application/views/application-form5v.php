@@ -50,7 +50,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="4"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
+                                    <textarea id="courseChoiceStatement" minlength="300" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="4"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
