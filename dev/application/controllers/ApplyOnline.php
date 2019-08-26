@@ -436,12 +436,14 @@ class ApplyOnline extends CI_Controller
             $EmergencyContactTitle = $this->input->post("EmergencyContactTitle");
             $EmergencyContactName = $this->input->post("EmergencyContactName");
             $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
+
             $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
             $EmergencyContactAddress2 = $this->input->post("EmergencyContactAddress2");
             $EmergencyContactAddress3 = $this->input->post("EmergencyContactAddress3");
             $EmergencyContactCity = $this->input->post("EmergencyContactCity");
             $EmergencyContactState = $this->input->post("EmergencyContactState");
             $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
+
             $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
             $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
             $courseName = $this->input->post("courseName");
