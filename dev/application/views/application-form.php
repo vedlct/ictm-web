@@ -386,7 +386,7 @@
                                             <label class="control-label col-md-2">Telephone:</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                                <input type="text" class="form-control" maxlength="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
+                                                <input type="text" class="form-control" minlength="11" length="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
                                             </div>
                                         </div>
 

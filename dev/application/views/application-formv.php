@@ -410,7 +410,7 @@
                             <label class="control-label col-md-2">Telephone:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                <input type="text" class="form-control" required id="telephone" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
+                                <input type="text" class="form-control" required id="telephone" minlength="11" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
                             </div>
                         </div>
 
