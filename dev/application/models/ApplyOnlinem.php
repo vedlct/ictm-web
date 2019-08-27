@@ -892,10 +892,14 @@ class ApplyOnlinem extends CI_Model
         $company = $this->input->post('company[]');
         $jobTitle = $this->input->post('jobTitle[]');
         $address = $this->input->post('address[]');
+        $address2 = $this->input->post('address2[]');
+        $address3 = $this->input->post('address3[]');
+        $city = $this->input->post('city[]');
+        $state = $this->input->post('state[]');
+        $country = $this->input->post('country[]');
         $telephone = $this->input->post('telephone[]');
         $email = $this->input->post('email[]');
-        $country = $this->input->post('country[]');
-        $addressPo = $this->input->post('addressPo[]');
+        //$addressPo = $this->input->post('addressPo[]');
 
 
 
@@ -907,7 +911,11 @@ class ApplyOnlinem extends CI_Model
                 'workingCompany' => $company[$i],
                 'jobTitle' => $jobTitle[$i],
                 'address' => $address[$i],
-                'postCode' => $addressPo[$i],
+                'address' => $address[$i],
+                'address2' => $address2[$i],
+                'address3' => $address3[$i],
+                'city' => $city[$i],
+                'state' => $state[$i],
                 'contactNo' => $telephone[$i],
                 'email' => $email[$i],
                 'fkCountry' => $country[$i],
@@ -928,7 +936,7 @@ class ApplyOnlinem extends CI_Model
     public function getRefereesDetails($refereesId)
     {
 
-        $this->db->select('id,name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->select('id,name,title,workingCompany,jobTitle,address,address2,address3,city,state,postCode,fkCountry,contactNo,email');
         $this->db->where('id',$refereesId);
         $this->db->from('candidatereferees');
         $query=$this->db->get();

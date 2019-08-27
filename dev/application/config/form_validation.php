@@ -639,8 +639,32 @@ $config = array (
 
             array(
                 'field' => 'address',
-                'label' => 'Address',
+                'label' => 'Address Line 1',
                 'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'address2',
+                'label' => 'Address Line 2',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'address3',
+                'label' => 'Address Line 3',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'city',
+                'label' => 'City/Town',
+                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'state',
+                'label' => 'County/State',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
 
             ),
 
@@ -649,13 +673,7 @@ $config = array (
                 'label' => 'Telephone',
                 'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
             ),
-            array(
-                'field' => 'addressPo',
-                'label' => 'Address P.O.',
-                'rules' => 'required|max_length[8]|xss_clean|htmlspecialchars',
-            ),
-
-
+            
 
         ),
     'applyfromPersonexperience'=>

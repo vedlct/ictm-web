@@ -2830,8 +2830,6 @@ class ApplyOnline extends CI_Controller
             if (!$this->form_validation->run('applyfromRefrees')) {
                 $this->menu();
                 $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-
-
                 $this->data['References'] = $this->ApplyOnlinem->getAllRefences();
 
                 if (empty($this->data['References'])) {
@@ -2854,7 +2852,10 @@ class ApplyOnline extends CI_Controller
                 $telephone = $this->input->post("telephone");
                 $email = $this->input->post("email");
                 $address = $this->input->post("address");
-                $addressPo = $this->input->post("addressPo");
+                $address2 = $this->input->post("address2");
+                $address3 = $this->input->post("address3");
+                $city = $this->input->post("city");
+                $state = $this->input->post("state");
                 $country = $this->input->post("country");
 
 
@@ -2865,7 +2866,10 @@ class ApplyOnline extends CI_Controller
                     'workingCompany' => $company,
                     'jobTitle' => $jobTitle,
                     'address' => $address,
-                    'postCode' => $addressPo,
+                    'address2' => $address2,
+                    'address3' => $address3,
+                    'city' => $city,
+                    'state' => $state,
                     'contactNo' => $telephone,
                     'email' => $email,
                     'fkCountry' => $country,
