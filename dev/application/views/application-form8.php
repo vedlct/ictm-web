@@ -106,19 +106,41 @@
                                     </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
-                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>
+<!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="address" name="address[]" required>
                                 </div>
                             </div>
-
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
+                           <div class="form-group">
+                            <label class="control-label col-md-2">Address Line 2:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="addressPo1" name="addressPo[]" required>
+                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="address2" name="address2[]" required>
                                 </div>
                             </div>
+                                <div class="form-group">
+                                        <label class="control-label col-md-2">Address Line 3:</label>
+                                        <div class="col-md-10">
+                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                            <input type="text" class="form-control" id="address3" name="address3[]" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                                        <div class="col-md-10">
+                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                            <input type="text" class="form-control" id="city" name="city[]" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">County/State:</label>
+                                        <div class="col-md-10">
+                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                            <input type="text" class="form-control" id="state" name="state[]" required>
+                                        </div>
+                                    </div>
+
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>

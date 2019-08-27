@@ -104,18 +104,38 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address:</label>
+                                <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea required id="address" name="address" rows="8" maxlength="1000" tabindex="4"></textarea>
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="address" name="address" required>
                                 </div>
                             </div>
-
                             <div class="form-group">
-                                <label class="control-label col-md-2">Post Code:</label>
+                                <label class="control-label col-md-2">Address Line 2:</label>
                                 <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('addressPo'); ?></font></p>
-                                    <input required type="text" class="form-control" maxlength="8" id="addressPo" name="addressPo">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="address2" name="address2" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Address Line 3:</label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="address3" name="address3" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="city" name="city" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">County/State:</label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input type="text" class="form-control" id="state" name="state" required>
                                 </div>
                             </div>
 
@@ -139,6 +159,7 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="reset" class="btn btn-next">Reset</button>
 <!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>-->
                                     <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
@@ -164,7 +185,8 @@
                                             <td><?php echo $Reference->title ?> <?php echo $Reference->name ?></td>
                                             <td><?php echo $Reference->workingCompany ?></td>
                                             <td><?php echo $Reference->jobTitle ?></td>
-                                            <td><?php echo $Reference->address ?><br><b>P.O:</b><?php echo $Reference->postCode?> , <b>Country :</b><?php echo $Reference->fkCountry?></td>
+                                            <td><?php echo $Reference->address ?><br><?php echo $Reference->address2 ?><br><?php echo $Reference->address3 ?>
+                                                <br><?php echo $Reference->city ?><br><?php echo $Reference->state ?></td>
                                             <td><?php echo $Reference->contactNo ?></td>
                                             <td><?php echo $Reference->email ?></td>
                                             <td>
@@ -234,6 +256,10 @@
                     var workingCompany = response[0].workingCompany;
                     var jobTitle = response[0].jobTitle;
                     var address = response[0].address;
+                    var address2 = response[0].address2;
+                    var address3 = response[0].address3;
+                    var city = response[0].city;
+                    var state = response[0].state;
                     var postCode = response[0].postCode;
                     var fkCountry = response[0].fkCountry;
                     var contactNo = response[0].contactNo;
@@ -249,7 +275,10 @@
                 document.getElementById("telephone").value= contactNo;
                 document.getElementById("email").value= email;
                 document.getElementById("address").value= address;
-                document.getElementById("addressPo").value= postCode;
+                document.getElementById("address2").value= address2;
+                document.getElementById("address3").value= address3;
+                document.getElementById("city").value= city;
+                document.getElementById("state").value= state;
                 document.getElementById("country").value= fkCountry;
 
             }
