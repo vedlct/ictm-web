@@ -807,11 +807,24 @@
 
             function checkvalidation() {
 
-               if ( document.getElementById('courseYear').value > 2019){
-                  alert("year cant be future")
-                   return false;
-               }else
-                   return true;
+                if (document.getElementById('courseYear').value > 2019) {
+                    alert("year cant be future")
+                    return false;
+                } else
+                    return true;
+
+
+                var startyear = $('#dobyear').val();
+                var startmonth = $('#dobmonth').val();
+                var startdat = $('#dobdate').val();
+
+                var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+                var today = new Date();
+                today.setHours(0, 0, 0, 0)
+                if (stratdate == today){
+                    alert("DOB cann't be Today")
+                }
+
             }
 
         </script>

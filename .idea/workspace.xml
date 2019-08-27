@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81f6dac5-3a63-4dcb-952a-b2c3651f56ba" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/config.php" afterPath="$PROJECT_DIR$/dev/application/config/config.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/application/config/form_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" afterPath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form8.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form8.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form8v.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,134 +22,38 @@
       <file leaf-file-name="application-form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+            <state relative-caret-position="199">
+              <caret line="814" column="0" lean-forward="true" selection-start-line="814" selection-start-column="0" selection-end-line="814" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+      <file leaf-file-name="application-formv.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="511">
+              <caret line="825" column="35" lean-forward="false" selection-start-line="825" selection-start-column="28" selection-end-line="825" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-form2.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form2.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-864">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application-form10.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="600">
-              <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-form8.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="125" column="96" lean-forward="false" selection-start-line="125" selection-start-column="96" selection-end-line="125" selection-end-column="96" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-form8v.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8v.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="36" column="105" lean-forward="false" selection-start-line="36" selection-start-column="77" selection-end-line="36" selection-end-column="105" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/public/stylesheets/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="3182" column="76" lean-forward="false" selection-start-line="3182" selection-start-column="70" selection-end-line="3182" selection-end-column="76" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplyOnline.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="1396" column="73" lean-forward="true" selection-start-line="1396" selection-start-column="73" selection-end-line="1396" selection-end-column="73" />
-              <folding>
-                <marker date="1566890428475" expanded="true" signature="878:1052" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="1612:1786" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="3149:3323" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="3739:3913" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="4708:4882" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="5418:5592" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="6126:6300" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="8669:8849" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="8950:9124" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="9718:9892" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="10490:10664" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="11290:11464" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="22374:22548" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="33992:34166" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="34878:35052" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="36696:36870" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="37164:37338" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="37660:37834" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="38492:38666" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="39343:39517" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="51336:51510" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="63272:63446" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="66345:66519" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="69456:69630" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="71589:71763" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="76225:76399" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="79651:79825" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="81631:81805" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="84054:84228" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="86484:86658" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="87385:87559" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="88796:88970" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="90188:90362" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="91246:91420" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="93756:93930" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="96280:96454" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="98996:99170" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="101729:101903" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="102280:102454" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="105046:105220" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="107320:107494" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="108633:108807" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="109480:109654" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="110342:110516" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="113621:113795" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="116394:116568" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="117150:117324" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="118117:118291" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="118999:119173" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="119831:120005" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="120645:120819" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="122028:122202" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="123197:123371" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="124367:124541" ph="..." />
-                <marker date="1566890428475" expanded="true" signature="128719:128893" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplyOnlinem.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="852" column="57" lean-forward="false" selection-start-line="852" selection-start-column="43" selection-end-line="852" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="form_validation.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/application/config/form_validation.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="675" column="12" lean-forward="false" selection-start-line="675" selection-start-column="12" selection-end-line="675" selection-end-column="12" />
+              <caret line="361" column="24" lean-forward="false" selection-start-line="361" selection-start-column="24" selection-end-line="361" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -184,6 +85,8 @@
         <option value="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" />
         <option value="$PROJECT_DIR$/dev/application/config/form_validation.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/application-form.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/application-formv.php" />
       </list>
     </option>
   </component>
@@ -260,8 +163,22 @@
               <option name="myItemId" value="public" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ictm-web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -279,7 +196,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -289,6 +210,58 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
+      <BehatRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -300,15 +273,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566881484360</updated>
-      <workItem from="1566881487111" duration="8122000" />
+      <workItem from="1566881487111" duration="10202000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8122000" />
+    <option name="totallyTimeSpent" value="10202000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -341,14 +314,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="23" column="55" lean-forward="false" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -457,6 +422,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="597">
           <caret line="675" column="12" lean-forward="false" selection-start-line="675" selection-start-column="12" selection-end-line="675" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="814" column="0" lean-forward="true" selection-start-line="814" selection-start-column="0" selection-end-line="814" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="825" column="35" lean-forward="false" selection-start-line="825" selection-start-column="28" selection-end-line="825" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="361" column="24" lean-forward="false" selection-start-line="361" selection-start-column="24" selection-end-line="361" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -673,7 +673,7 @@ $config = array (
                 'label' => 'Telephone',
                 'rules' => 'required|max_length[50]|xss_clean|htmlspecialchars',
             ),
-            
+
 
         ),
     'applyfromPersonexperience'=>
