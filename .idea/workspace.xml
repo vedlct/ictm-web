@@ -1,367 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="252162f2-541f-4f23-980d-62d3ce88fe84" name="Default" comment="">
-<<<<<<< HEAD
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-=======
-<<<<<<< HEAD
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/courseImages/14.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/courseImages/14_80_80.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/departmentImages/23.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/departmentImages/24.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/departmentImages/25.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/departmentImages/27.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/facultyImages/7_360_360.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/pageImages/40.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/photoAlbum/ICON Convocation 2017/33_60_80.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/photoAlbum/Picture of Student/38_60_80.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/photoAlbum/student in Campus/29_60_80.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/photoAlbum/student in Campus/39.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/Sorting icons.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/images/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/Sorting icons.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/images/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/RegisterInterest1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/RegisterInterestm1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/css/dataTables.bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/css/jquery.dataTables.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/js/dataTables.bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/js/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/bootstrap/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/css/dataTables.bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/css/jquery.dataTables.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/js/dataTables.bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/js/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session01e21dea4beb27f3240d65a60f2683f9794daa94" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session06fdfe288a6a597b8817aba79c16d6b545accc02" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session25833e8434aa68f6f41bdd7f73b2ad32db951c12" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session3b8b2479c6ecbd7c09a48fff954a0ab9e2b277d4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session3bbccec5edd23b4f2442bae2ccb3856239aaee50" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session3ddb5518272c316215c6900f1ad3e273769ac914" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session41233e403d3876bbe3a5df24361e0dcacfaeadd9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session4a951414ec226279a5192b42de16f0abb94cdf2a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session4beb268b5dc5393dfdde3592596145f2d5356fb9" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session4db713b90e254ba68a7ece4ddc149ef4a592a9f4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session54bd488167f358fccb285272545e6fb9c4482f91" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session6f55cba82b62f82f24463bf029ceefb60db24e3f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session7d71f8d5f04d6d9f8089285c84f38fb0c24399e4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session93b65d0579ccc5d71ec23617bd56f99244dccb38" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session96d5474025b3f68aa862ecdbee364870c718bf4c" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session9924125903f6abd0feaae1fccafee7867a94f259" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session9ff4e967902ebe468489056f0129a4dec734da6e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionb2cbf4d8ffd619800fd1ddd10e9596f2b0fa850e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionbbd90d2c2b58918ffc78b10b45fa28e06d5923ed" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiondbf961342494b3b0f7ed01b74ff44aa5c27a07f6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessione5d7d80af23ea06bf5fb60438c91f431bbaa53e2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionfed1589f27a6623e1c2304f194779a92f921ebd0" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session06fdfe288a6a597b8817aba79c16d6b545accc02" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session133d82249bc1ce083aa6e2f52f2cb73b19dfe296" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session4a951414ec226279a5192b42de16f0abb94cdf2a" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session4db713b90e254ba68a7ece4ddc149ef4a592a9f4" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session50c8b254cf083ff0db5484480d805464253ac350" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session527d8fc005a3d2b096cb769e39bcef13e70e7a99" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session6f55cba82b62f82f24463bf029ceefb60db24e3f" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session7debc7be65d8882d7905036cb736916cf4b63927" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session9924125903f6abd0feaae1fccafee7867a94f259" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session9ff4e967902ebe468489056f0129a4dec734da6e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiona7a8e51f5312941797ae52d3de43ff06f766be91" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionb2cbf4d8ffd619800fd1ddd10e9596f2b0fa850e" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiondbf961342494b3b0f7ed01b74ff44aa5c27a07f6" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/images/facultyImages/7.jpg" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/facultyImages/7.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/images/homeImage/sliderImage1.jpg" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/homeImage/sliderImage1.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/images/homeImage/sliderImage2.jpg" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/homeImage/sliderImage2.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/images/homeImage/sliderImage3.jpg" afterPath="$PROJECT_DIR$/dev/AdminPanel/images/homeImage/sliderImage3.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ictm-web.iml" afterPath="$PROJECT_DIR$/.idea/ictm-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Photo.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Photo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/collegeinfo.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/collegeinfo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editAffiliation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editAffiliation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editCollegeinfo.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editCollegeinfo.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editCourse.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editCourse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editDepartment.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editDepartment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editEvent.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editEvent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editFaculty.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editFaculty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editFeedback.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editFeedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editNews.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editNews.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPage.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPhoto.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPhoto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeBottomBanner.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeBottomBanner.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeSlider.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeSlider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeSqureBox.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeSqureBox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeVerticalBar.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/edithomeVerticalBar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeBottomBanner.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeBottomBanner.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeSlider.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeSlider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeSqureBox.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeSqureBox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeVerticalBar.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/homeVerticalBar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEventAfterSearch.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEventAfterSearch.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterestAfterSearch.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterestAfterSearch.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newAffiliation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newAffiliation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newCourse.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newCourse.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newDepartment.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newDepartment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newEvent.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newEvent.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newFaculty.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newFaculty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newFeedback.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newFeedback.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newNews.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newNews.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPage.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPhoto.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPhoto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePhoto.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePhoto.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/Email.php" afterPath="$PROJECT_DIR$/dev/application/controllers/Email.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/course-detail.php" afterPath="$PROJECT_DIR$/dev/application/views/course-detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/faculty-member-detail.php" afterPath="$PROJECT_DIR$/dev/application/views/faculty-member-detail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/footer.php" afterPath="$PROJECT_DIR$/dev/application/views/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/home.php" afterPath="$PROJECT_DIR$/dev/application/views/home.php" />
-=======
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent1.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Event.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Event.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Eventm.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Eventm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Facultym.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Facultym.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
+    <list default="true" id="6ce2ae66-e61f-4175-adea-26d4ca4b9126" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionh60rh3mr8h9793a939kt7r0nd9dq19ad" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionhar65ohcv7q8ne02kij811go541lf6uq" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionhtv1ougrttirmfmg2p6gdc94m7vl8l5v" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionja8nd3h417cakki0gjl4trvnvqeaq9gf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionktn5j85fg5dv5qn6h2sphq7fbq8bm0mu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionnm6g30tv2h657a2j83gktij1e8jemnvu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionr4uc97d7tim22g50g529nut4tudcmltb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessiontcurq1hvt58hcrp69431ilkof3v77gmu" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessiontj98g3iq07ji1vmtjso79n4a0v74kt07" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ictm-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ictm-web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/config/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/config/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session08ekqp36v22it7qcrlchv9moievg8gic" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session4bppcg6hb7ii8rid3pp1cjp2q701u4u6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session6lopjbkuhok0iu1bjohosuiot9svbc1m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session9g8hq4v7thq672nfmm3luak1qkegj1e1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionacbm289cia6itbi28nvsqn5vqafc9unt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionalfdkun1rj2j1onej1s14di98ffcdad9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionb9j8hjmd7r0926m8o051oicc9chsbt3j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessioncblievk0kpl1hlcucir12o0ppg6v7qbj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionilofm6tdkdil13q87u518em3ra866s80" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionjhejhlj9iha8rc04nd6hicdcbmsgco9n" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionmaphmmv028d38pan3rdcs7el2t3sarvc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionsn72tu3lqjm4u1kcqhkqtgd8v68srcfd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionv56gbgqft76l604r1bqg1p8kn4fsfohc" beforeDir="false" />
     </list>
-    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CreatePatchCommitExecutor">
-    <option name="PATCH_PATH" value="" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
-  <component name="FavoritesManager">
-    <favorites_list name="ictm-web" />
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/dev/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-<<<<<<< HEAD
-      <file leaf-file-name="manageFaculty.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="66" column="206" selection-start-line="66" selection-start-column="206" selection-end-line="66" selection-end-column="206" />
-              <folding />
+            <state relative-caret-position="550">
+              <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manageCourse.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageCourse.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="201" selection-start-line="53" selection-start-column="201" selection-end-line="53" selection-end-column="201" />
-              <folding />
+            <state relative-caret-position="62832">
+              <caret line="2856" column="22" selection-start-line="2856" selection-start-column="18" selection-end-line="2856" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="showManagePageSec.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePageSec.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-              <folding />
-=======
-      <file leaf-file-name="manageRegisterInterest1.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="846">
-              <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="129" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manageEvent1.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent1.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-<<<<<<< HEAD
-              <folding />
-=======
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manageFaculty1.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty1.php">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="954">
-              <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-              <folding />
-=======
-<<<<<<< HEAD
-            <state relative-caret-position="1785">
-              <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="115" selection-end-column="12" />
-              <folding />
-=======
-            <state relative-caret-position="144">
-              <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-              <folding>
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="searchByMenuType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/searchByMenuType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
-              <folding />
-=======
-      <file leaf-file-name="Facultym.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Facultym.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="72" lean-forward="false" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-              <folding>
-                <marker date="1515656632132" expanded="true" signature="5406:5563" ph="..." />
-                <marker date="1515656632132" expanded="true" signature="10123:10353" ph="..." />
-              </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Event.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Event.php">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="936">
-              <caret line="52" column="5" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
-=======
-<<<<<<< HEAD
-            <state relative-caret-position="3060">
-              <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-=======
-            <state relative-caret-position="288">
-              <caret line="52" column="5" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Faculty.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php">
-          <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-            <state relative-caret-position="-576">
-=======
-<<<<<<< HEAD
-            <state relative-caret-position="517">
-              <caret line="290" column="9" selection-start-line="290" selection-start-column="9" selection-end-line="290" selection-end-column="9" />
-=======
-            <state relative-caret-position="288">
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-              <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/home.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="562" column="7" selection-start-line="562" selection-start-column="7" selection-end-line="562" selection-end-column="7" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#3;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="course-detail.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/course-detail.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="169" column="30" selection-start-line="166" selection-start-column="22" selection-end-line="169" selection-end-column="30" />
-              <folding />
-=======
-      <file leaf-file-name="Eventm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Eventm.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1314">
-              <caret line="73" column="0" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <marker date="1515651174462" expanded="true" signature="4872:5025" ph="..." />
-                <marker date="1515651174462" expanded="true" signature="8598:8754" ph="..." />
-              </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-            </state>
-          </provider>
-        </entry>
-      </file>
-<<<<<<< HEAD
-      <file leaf-file-name="manageNews.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="134" selection-start-line="69" selection-start-column="134" selection-end-line="69" selection-end-column="134" />
-=======
-      <file leaf-file-name="dataTables.bootstrap.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/css/dataTables.bootstrap.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="123" lean-forward="false" selection-start-line="0" selection-start-column="121" selection-end-line="0" selection-end-column="123" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="112" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -370,14 +81,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>is_unique</find>
-      <find>pagesec</find>
-      <find>order</find>
-      <find>callback</find>
-      <find>callback_pa</find>
-      <find>courseSec</find>
-      <find>l</find>
-      <find>search</find>
+      <find>mail</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -386,1393 +90,165 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPageSection.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/PageSection.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editPageSection.php" />
         <option value="$PROJECT_DIR$/dev/application/config/config.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/PageSectionm.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/Menum.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/CourseSection.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/CourseSectionm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/CourseSectionm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAffiliation.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlbum.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageMenu.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageDepartment.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFeedback.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageCourse.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/searchByPageType.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/searchByMenuType.php" />
-<<<<<<< HEAD
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/home.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/course-detail.php" />
-=======
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePageSec.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePhoto.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/home.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/footer.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/test.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Eventm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Event.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent1.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty1.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Facultym.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
+        <option value="$PROJECT_DIR$/dev/application/views/application-form8.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
+  <component name="ProjectConfigurationFiles">
+    <option name="files">
+      <list>
+        <option value="$PROJECT_DIR$/.idea/misc.xml" />
+        <option value="$PROJECT_DIR$/.idea/modules.xml" />
+        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
+      </list>
+    </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-<<<<<<< HEAD
-=======
-    <option name="y" value="-8" />
-<<<<<<< HEAD
-    <option name="width" value="1386" />
-    <option name="height" value="788" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
-=======
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-    <option name="width" value="1932" />
-    <option name="height" value="1056" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
-      <manualOrder />
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
       <pane id="Scope" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-<<<<<<< HEAD
-=======
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-<<<<<<< HEAD
-=======
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datatables" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="datatables" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-<<<<<<< HEAD
+          <expand>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminPanel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="AdminPanel" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-=======
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Admin" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-<<<<<<< HEAD
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../image upload" />
-    <property name="js.eslint.eslintPackage" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../yellowbook" />
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
-  <component name="ShelveChangesManager" show_recycled="false">
-    <option name="remove_strategy" value="false" />
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="252162f2-541f-4f23-980d-62d3ce88fe84" name="Default" comment="" />
-      <created>1514270945239</created>
+      <changelist id="6ce2ae66-e61f-4175-adea-26d4ca4b9126" name="Default Changelist" comment="" />
+      <created>1566838153645</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1514270945239</updated>
-      <workItem from="1514270949482" duration="929000" />
-      <workItem from="1514272219663" duration="17704000" />
-      <workItem from="1514354156805" duration="14610000" />
-<<<<<<< HEAD
-      <workItem from="1515156870568" duration="1139000" />
-=======
-      <workItem from="1514440720148" duration="2644000" />
-      <workItem from="1514616249428" duration="3540000" />
-      <workItem from="1514966826562" duration="3755000" />
-      <workItem from="1515222256073" duration="9361000" />
-      <workItem from="1515476763895" duration="772000" />
-      <workItem from="1515565911693" duration="3733000" />
-      <workItem from="1515647856131" duration="10082000" />
-<<<<<<< HEAD
-      <workItem from="1515820723554" duration="601000" />
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
+      <updated>1566838153645</updated>
+      <workItem from="1566838158992" duration="957000" />
+      <workItem from="1566919745012" duration="669000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="67731000" />
-=======
-<<<<<<< HEAD
-    <option name="totallyTimeSpent" value="34382000" />
+    <option name="totallyTimeSpent" value="1626000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1386" height="788" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2489051" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-=======
-    <option name="totallyTimeSpent" value="67130000" />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
-    <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17750533" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
-  </component>
-  <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USER_GROUPS">
-      <collection />
-    </option>
-    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-      <collection />
-    </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager />
-    <watches-manager />
+    <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Page.php">
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-    <entry file="file://$PROJECT_DIR$/dev/application/models/Menum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="69" column="59" lean-forward="false" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
+        <state relative-caret-position="550">
+          <caret line="25" column="39" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/form_validation.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="1710">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-=======
-        <state relative-caret-position="5544">
-          <caret line="410" column="27" lean-forward="false" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="27" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
+        <state relative-caret-position="62832">
+          <caret line="2856" column="22" selection-start-line="2856" selection-start-column="18" selection-end-line="2856" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8.php">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="3276">
-          <caret line="182" column="29" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
-=======
-        <state relative-caret-position="719">
-          <caret line="581" column="91" lean-forward="false" selection-start-line="581" selection-start-column="67" selection-end-line="581" selection-end-column="91" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/CourseSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-=======
-        <state relative-caret-position="423">
-          <caret line="165" column="128" lean-forward="true" selection-start-line="165" selection-start-column="74" selection-end-line="165" selection-end-column="128" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/PageSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="4230">
-          <caret line="235" column="9" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
-=======
-        <state relative-caret-position="585">
-          <caret line="162" column="9" lean-forward="true" selection-start-line="142" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/CourseSectionm.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="4410">
-          <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
-=======
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/CourseSectionm.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="3546">
-          <caret line="197" column="5" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
-=======
-        <state relative-caret-position="711">
-          <caret line="104" column="43" lean-forward="false" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="918">
-          <caret line="51" column="91" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="91" />
-          <folding />
-=======
-        <state relative-caret-position="-1242">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAffiliation.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="576">
-          <caret line="56" column="147" lean-forward="false" selection-start-line="56" selection-start-column="147" selection-end-line="56" selection-end-column="147" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlbum.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="504">
-          <caret line="28" column="39" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
-=======
-        <state relative-caret-position="612">
-          <caret line="55" column="207" lean-forward="false" selection-start-line="55" selection-start-column="207" selection-end-line="55" selection-end-column="207" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageMenu.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="233">
-          <caret line="79" column="50" selection-start-line="79" selection-start-column="50" selection-end-line="79" selection-end-column="50" />
-=======
-        <state relative-caret-position="486">
-          <caret line="78" column="208" lean-forward="false" selection-start-line="78" selection-start-column="208" selection-end-line="78" selection-end-column="208" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageCourseSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="877">
-          <caret line="68" column="79" selection-start-line="68" selection-start-column="79" selection-end-line="68" selection-end-column="79" />
-=======
-        <state relative-caret-position="-540">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageDepartment.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="558">
-          <caret line="52" column="268" lean-forward="false" selection-start-line="52" selection-start-column="137" selection-end-line="52" selection-end-column="268" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePhoto.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="-486">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="3546">
-          <caret line="197" column="5" selection-start-line="197" selection-start-column="5" selection-end-line="197" selection-end-column="5" />
-=======
-        <state relative-caret-position="1170">
-          <caret line="65" column="207" lean-forward="false" selection-start-line="65" selection-start-column="207" selection-end-line="65" selection-end-column="207" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="4410">
-          <caret line="245" column="5" selection-start-line="245" selection-start-column="5" selection-end-line="245" selection-end-column="5" />
-=======
-        <state relative-caret-position="954">
-          <caret line="53" column="201" lean-forward="false" selection-start-line="53" selection-start-column="201" selection-end-line="53" selection-end-column="201" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="4230">
-          <caret line="235" column="9" selection-start-line="235" selection-start-column="9" selection-end-line="235" selection-end-column="9" />
-=======
-        <state relative-caret-position="5058">
-          <caret line="281" column="28" lean-forward="false" selection-start-line="280" selection-start-column="6" selection-end-line="281" selection-end-column="28" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/searchByPageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="918">
-          <caret line="51" column="91" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="91" />
-=======
-        <state relative-caret-position="1890">
-          <caret line="105" column="9" lean-forward="false" selection-start-line="105" selection-start-column="9" selection-end-line="115" selection-end-column="12" />
-<<<<<<< HEAD
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/searchByMenuType.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="6912">
-          <caret line="384" column="37" selection-start-line="384" selection-start-column="37" selection-end-line="384" selection-end-column="37" />
-=======
-        <state relative-caret-position="2250">
-          <caret line="125" column="9" lean-forward="false" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="432">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/faculty-member-detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="287">
-          <caret line="98" column="48" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="48" />
-=======
-        <state relative-caret-position="2718">
-          <caret line="151" column="32" lean-forward="false" selection-start-line="151" selection-start-column="32" selection-end-line="151" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePageSection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/PageSectionm.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="216">
-          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
-=======
-        <state relative-caret-position="1044">
-          <caret line="58" column="60" lean-forward="false" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePageSec.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="207">
-          <caret line="69" column="59" selection-start-line="69" selection-start-column="59" selection-end-line="69" selection-end-column="59" />
-=======
-        <state relative-caret-position="90">
-          <caret line="5" column="250" lean-forward="false" selection-start-line="5" selection-start-column="119" selection-end-line="5" selection-end-column="250" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/showManagePhoto.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="5544">
-          <caret line="410" column="27" selection-start-line="410" selection-start-column="24" selection-end-line="410" selection-end-column="27" />
-=======
-        <state relative-caret-position="72">
-          <caret line="4" column="88" lean-forward="false" selection-start-line="4" selection-start-column="88" selection-end-line="4" selection-end-column="88" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="719">
-          <caret line="581" column="91" selection-start-line="581" selection-start-column="67" selection-end-line="581" selection-end-column="91" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="423">
-          <caret line="165" column="128" selection-start-line="165" selection-start-column="74" selection-end-line="165" selection-end-column="128" />
-=======
-        <state relative-caret-position="8190">
-          <caret line="455" column="63" lean-forward="false" selection-start-line="455" selection-start-column="63" selection-end-line="455" selection-end-column="63" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="585">
-          <caret line="162" column="9" selection-start-line="142" selection-start-column="9" selection-end-line="162" selection-end-column="9" />
-=======
-        <state relative-caret-position="4554">
-          <caret line="253" column="0" lean-forward="false" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/RegisterInterest.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="270">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-=======
-        <state relative-caret-position="-729">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/RegisterInterestm1.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="675">
-          <caret line="88" column="51" selection-start-line="88" selection-start-column="51" selection-end-line="88" selection-end-column="51" />
-=======
-        <state relative-caret-position="90">
-          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="70" selection-end-column="5" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/ViewRegisterInterest.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="711">
-          <caret line="104" column="43" selection-start-line="104" selection-start-column="43" selection-end-line="104" selection-end-column="43" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/RegisterInterest1.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-1242">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="288">
-          <caret line="16" column="60" lean-forward="false" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="60" />
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="576">
-          <caret line="56" column="147" selection-start-line="56" selection-start-column="147" selection-end-line="56" selection-end-column="147" />
-=======
-        <state relative-caret-position="3240">
-          <caret line="180" column="17" lean-forward="false" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-<<<<<<< HEAD
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="612">
-          <caret line="55" column="207" selection-start-line="55" selection-start-column="207" selection-end-line="55" selection-end-column="207" />
-=======
-        <state relative-caret-position="4014">
-          <caret line="223" column="5" lean-forward="false" selection-start-line="223" selection-start-column="5" selection-end-line="223" selection-end-column="5" />
-<<<<<<< HEAD
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="486">
-          <caret line="78" column="208" selection-start-line="78" selection-start-column="208" selection-end-line="78" selection-end-column="208" />
-=======
-        <state relative-caret-position="756">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-<<<<<<< HEAD
-=======
-          <folding>
-            <marker date="1515566329530" expanded="true" signature="1411:1510" ph="..." />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-540">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="607">
-          <caret line="211" column="30" lean-forward="true" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
-<<<<<<< HEAD
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/News.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="558">
-          <caret line="52" column="268" selection-start-line="52" selection-start-column="137" selection-end-line="52" selection-end-column="268" />
-          <folding />
-=======
-        <state relative-caret-position="90">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="48" selection-end-column="5" />
-          <folding>
-            <marker date="1515404372867" expanded="true" signature="9697:9710" ph="..." />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Newsm.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="468">
-          <caret line="56" column="203" selection-start-line="56" selection-start-column="203" selection-end-line="56" selection-end-column="203" />
-=======
-        <state relative-caret-position="90">
-          <caret line="5" column="2" lean-forward="false" selection-start-line="5" selection-start-column="2" selection-end-line="72" selection-end-column="68" />
-<<<<<<< HEAD
-=======
-          <folding>
-            <marker date="1515231132588" expanded="true" signature="4779:4930" ph="..." />
-            <marker date="1515231132588" expanded="true" signature="8210:8364" ph="..." />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageNews1.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-918">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="702">
-          <caret line="58" column="114" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="-486">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-=======
-        <state relative-caret-position="396">
-          <caret line="66" column="206" lean-forward="false" selection-start-line="66" selection-start-column="206" selection-end-line="66" selection-end-column="206" />
-<<<<<<< HEAD
-=======
-          <folding />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFeedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="1088">
-          <caret line="64" column="137" selection-start-line="64" selection-start-column="137" selection-end-line="64" selection-end-column="137" />
-=======
-        <state relative-caret-position="468">
-          <caret line="56" column="203" lean-forward="false" selection-start-line="56" selection-start-column="203" selection-end-line="56" selection-end-column="203" />
-<<<<<<< HEAD
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/css/dataTables.bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="1156">
-          <caret line="68" column="134" selection-start-line="68" selection-start-column="134" selection-end-line="68" selection-end-column="134" />
-=======
-        <state relative-caret-position="0">
-          <caret line="0" column="123" lean-forward="false" selection-start-line="0" selection-start-column="121" selection-end-line="0" selection-end-column="123" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/js/dataTables.bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="1122">
-          <caret line="66" column="206" selection-start-line="66" selection-start-column="206" selection-end-line="66" selection-end-column="206" />
-=======
-        <state relative-caret-position="36">
-          <caret line="2" column="50" lean-forward="false" selection-start-line="2" selection-start-column="50" selection-end-line="2" selection-end-column="50" />
-<<<<<<< HEAD
-=======
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/public/css/datatables/js/jquery.dataTables.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="901">
-          <caret line="53" column="201" selection-start-line="53" selection-start-column="201" selection-end-line="53" selection-end-column="201" />
-          <folding />
-=======
-        <state relative-caret-position="-2113">
-          <caret line="6" column="382" lean-forward="false" selection-start-line="6" selection-start-column="376" selection-end-line="6" selection-end-column="382" />
-<<<<<<< HEAD
-=======
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageRegisterInterest1.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="846">
-=======
-<<<<<<< HEAD
-        <state relative-caret-position="850">
-          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
-          <folding />
-=======
-        <state relative-caret-position="288">
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-          <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="50" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Eventm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="73" column="0" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <marker date="1515651174462" expanded="true" signature="4872:5025" ph="..." />
-            <marker date="1515651174462" expanded="true" signature="8598:8754" ph="..." />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="936">
-          <caret line="52" column="5" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
-=======
-<<<<<<< HEAD
-        <state relative-caret-position="1785">
-          <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="115" selection-end-column="12" />
-=======
-        <state relative-caret-position="288">
-          <caret line="52" column="5" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="52" selection-end-column="5" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageEvent1.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="954">
-          <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-          <folding />
-=======
-<<<<<<< HEAD
-        <state relative-caret-position="1173">
-          <caret line="69" column="134" selection-start-line="69" selection-start-column="134" selection-end-line="69" selection-end-column="134" />
-          <folding />
-=======
-        <state relative-caret-position="322">
-          <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty1.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="954">
-          <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-          <folding />
-=======
-<<<<<<< HEAD
-        <state relative-caret-position="3060">
-          <caret line="180" column="17" selection-start-line="180" selection-start-column="17" selection-end-line="180" selection-end-column="17" />
-          <folding />
-=======
-        <state relative-caret-position="144">
-          <caret line="53" column="122" lean-forward="false" selection-start-line="53" selection-start-column="122" selection-end-line="53" selection-end-column="122" />
-          <folding>
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Facultym.php">
-      <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-        <state relative-caret-position="126">
-=======
-<<<<<<< HEAD
-        <state relative-caret-position="522">
-          <caret line="125" column="9" selection-start-line="125" selection-start-column="9" selection-end-line="125" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="290" column="9" selection-start-line="290" selection-start-column="9" selection-end-line="290" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="562" column="7" selection-start-line="562" selection-start-column="7" selection-end-line="562" selection-end-column="7" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#3;n#!!top" expanded="true" />
-=======
-        <state relative-caret-position="72">
->>>>>>> 23957526b70cd997a7477a09bbf5aa246c009755
-          <caret line="7" column="72" lean-forward="false" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-          <folding>
-            <marker date="1515656632132" expanded="true" signature="5406:5563" ph="..." />
-            <marker date="1515656632132" expanded="true" signature="10123:10353" ph="..." />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          </folding>
-        </state>
-      </provider>
-    </entry>
-<<<<<<< HEAD
-    <entry file="file://$PROJECT_DIR$/dev/application/views/course-detail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="169" column="30" selection-start-line="166" selection-start-column="22" selection-end-line="169" selection-end-column="30" />
-=======
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="28" column="48" lean-forward="false" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
->>>>>>> 7aa192ba27ef53f46c9b67d93f2296e7430be810
-          <folding />
+        <state relative-caret-position="300">
+          <caret line="107" column="28" selection-start-line="107" selection-start-column="28" selection-end-line="112" selection-end-column="34" />
         </state>
       </provider>
     </entry>

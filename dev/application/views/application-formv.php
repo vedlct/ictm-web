@@ -359,21 +359,40 @@
                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Current Address Line 1:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
-                                <textarea id="currentAddress" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
+                                <input type="text" class="form-control" required id="currentAddress" name="currentAddress" value="<?php echo $candidateInfo->currentAddress ?>">
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Current Address Line 2:</label>
                             <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
-                                <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
+                                <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
+                                <input type="text" class="form-control"  id="currentAddress2" name="currentAddress2" value="<?php echo $candidateInfo->currentAddress2 ?>">
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Current Address Line 3:</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('currentAddress3'); ?></font></p>
+                                <input type="text" class="form-control"  id="currentAddress3" name="currentAddress3" value="<?php echo $candidateInfo->currentAddress3 ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Current City/Town:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('currentAddressCity'); ?></font></p>
+                                <input type="text" class="form-control" required id="currentAddressCity" name="currentAddressCity" value="<?php echo $candidateInfo->currentAddressCity ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Current County/State:</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
+                                <input type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo $candidateInfo->currentAddressState ?>">
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
@@ -391,7 +410,7 @@
                             <label class="control-label col-md-2">Telephone:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                <input type="text" class="form-control" required id="telephone" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
+                                <input type="text" class="form-control" required id="telephone" minlength="11" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
                             </div>
                         </div>
 
@@ -411,28 +430,49 @@
                             </div>
                         </div>
 
-
-
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Permanent Address Line 1:<span style="color: red" class="required">*</span></label>
+
                             <label>Same as Current </label>
-                            <input type="checkbox" id="samecheck">
+                            <input type="checkbox" id="samecheck2" onclick="addresscheck()">
                             <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
+                                <p><font color="red"> <?php echo form_error('permanentAddress'); ?></font></p>
+                                <!--                                            	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4">--><?php //echo set_value('overseasHomeAddress');?><!--</textarea>-->
+                                <input type="text" class="form-control" required id="permanentAddress" name="permanentAddress" value="<?php echo $candidateInfo->permanentAddress?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Permanent Address Line 2:</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('permanentAddress2'); ?></font></p>
+                                <input type="text" class="form-control"  id="permanentAddress2" name="permanentAddress2" value="<?php echo $candidateInfo->permanentAddress2?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Permanent Address Line 3:</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
+                                <input type="text" class="form-control" required id="permanentAddress3" name="permanentAddress3" value="<?php echo $candidateInfo->permanentAddress3?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Permanent City/Town:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('permanentAddressCity'); ?></font></p>
+                                <input type="text" class="form-control" required id="permanentAddressCity" name="permanentAddressCity" value="<?php echo $candidateInfo->permanentAddressCity?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Permanent County/State:</label>
+
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('permanentAddressState'); ?></font></p>
+                                <input type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo $candidateInfo->permanentAddressState?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
-                            <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
-                                <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Permanent Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
                                 <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
@@ -483,18 +523,38 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
-                                <textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
+                                <input type="text" class="form-control" required id="EmergencyContactAddress" value="<?php echo $candidateInfo->emergencyContactAddress ?>" name="EmergencyContactAddress">
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Address Line 2:</label>
                             <div class="col-md-10">
-                                <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
-                                <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>">
+                                <p><font color="red"> <?php echo form_error('EmergencyContactAddress2'); ?></font></p>
+                                <input type="text" class="form-control"  id="EmergencyContactAddress2" value="<?php echo $candidateInfo->emergencyContactAddress2 ?>" name="EmergencyContactAddress2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Address Line 3:</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
+                                <input type="text" class="form-control"  id="EmergencyContactAddress3" value="<?php echo $candidateInfo->emergencyContactAddress3 ?>" name="EmergencyContactAddress3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('EmergencyContactCity'); ?></font></p>
+                                <input type="text" class="form-control" required id="EmergencyContactCity" value="<?php echo $candidateInfo->emergencyContactAddressCity ?>" name="EmergencyContactCity">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Country/State:</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
+                                <input type="text" class="form-control" required id="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" name="EmergencyContactState">
                             </div>
                         </div>
 
@@ -754,26 +814,17 @@
         }
 
     }
-    $(window).load(function(){
-    $("#samecheck").on("click", function(){
-        if(samecheck.checked) {
 
-
-            var caddress = document.getElementById('currentAddress').value;
-            var cpostcode = document.getElementById('currentAddressPO').value;
-            var ccountry = document.getElementById('currentAddressCountry').value;
-
-           // alert(caddress+ccountry+cpostcode);
-
-            $("#overseasHomeAddress").text(caddress);
-
-
-
-           //document.getElementById('overseasHomeAddress').value = caddress;
-            document.getElementById('overseasAddressPO').value = cpostcode;
-            document.getElementById('permanentAddressCountry').value = ccountry;
+</script>
+<script type="text/javascript">
+    function addresscheck() {
+        if (document.getElementById('samecheck2').checked) {
+            document.getElementById('permanentAddress').value = document.getElementById('currentAddress').value;
+            document.getElementById('permanentAddress2').value = document.getElementById('currentAddress2').value;
+            document.getElementById('permanentAddress3').value = document.getElementById('currentAddress3').value;
+            document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
+            document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
+            document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
         }
-    });
-    });
-
+    }
 </script>

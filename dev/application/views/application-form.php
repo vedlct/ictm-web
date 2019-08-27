@@ -386,7 +386,7 @@
                                             <label class="control-label col-md-2">Telephone:</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                                <input type="text" class="form-control" maxlength="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
+                                                <input type="text" class="form-control" minlength="11" length="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
                                             </div>
                                         </div>
 
@@ -412,7 +412,7 @@
                                             <label class="control-label col-md-2">Permanent Address Line 1:<span style="color: red" class="required">*</span></label>
 
                                             <label>Same as Current </label>
-                                            <input type="checkbox" id="samecheck2">
+                                            <input type="checkbox" id="samecheck2" onclick="addresscheck()">
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress'); ?></font></p>
                                                 <!--                                            	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4">--><?php //echo set_value('overseasHomeAddress');?><!--</textarea>-->
@@ -791,23 +791,7 @@
 
 
 
-                $("#samecheck2").on("click", function(){
-                    if(samecheck2.checked) {
 
-
-                        var caddress = document.getElementById('currentAddress').value;
-                        var cpostcode = document.getElementById('currentAddressPO').value;
-                        var ccountry = document.getElementById('currentAddressCountry').value;
-
-                         alert(caddress+ccountry+cpostcode);
-
-                        $("#overseasHomeAddress").text(caddress);
-
-                        //document.getElementById('overseasHomeAddress').value = caddress;
-                        document.getElementById('overseasAddressPO').value = cpostcode;
-                        document.getElementById('permanentAddressCountry').value = ccountry;
-                    }
-                });
 
         </script>
 
@@ -830,4 +814,17 @@
                    return true;
             }
 
+        </script>
+
+        <script type="text/javascript">
+            function addresscheck() {
+                if (document.getElementById('samecheck2').checked) {
+                    document.getElementById('permanentAddress').value = document.getElementById('currentAddress').value;
+                    document.getElementById('permanentAddress2').value = document.getElementById('currentAddress2').value;
+                    document.getElementById('permanentAddress3').value = document.getElementById('currentAddress3').value;
+                    document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
+                    document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
+                    document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
+                }
+            }
         </script>
