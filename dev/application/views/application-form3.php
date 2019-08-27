@@ -51,8 +51,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Is English your first language?<span style="color: red" class="required">*</span>:</label>
                                 <div class="col-md-10">
-                                    <input type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
-                                    <input type="radio" <?php if ($fLanguage=='0'){?>checked<?php } ?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
+                                    <input tabindex="1" type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
+                                    <input tabindex="2" type="radio" <?php if ($fLanguage=='0'){?>checked<?php } ?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
 
@@ -64,54 +64,54 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Tests:</label>
                                 <div class="col-md-10">
-                                    <select style="width: 100%" id="test" name="test[]" onchange="checkother()">
-                                        <option value="" disabled selected>Select test...</option>
-                                        <option value="1">IELTS</option>
-                                        <option value="2">TOEFL</option>
-                                        <option value="3">PTE</option>
-                                        <option value="4">OTHER</option>
+                                    <select tabindex="3" style="width: 100%" id="test" name="test[]" onchange="checkother()">
+                                        <option  value="" disabled selected>Select test...</option>
+                                        <option  value="1">IELTS</option>
+                                        <option  value="2">TOEFL</option>
+                                        <option  value="3">PTE</option>
+                                        <option  value="4">OTHER</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="form-group" id="listendiv" style="display: block">
                                 <label class="control-label col-md-2">Listening:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="listening" name="listening[]">
+                                    <input tabindex="4" type="text" class="form-control" id="listening" name="listening[]">
                                 </div>
                             </div>
 
                             <div class="form-group" id="readingdiv" style="display: block">
                                 <label class="control-label col-md-2">Reading:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="reading" name="reading[]">
+                                    <input tabindex="5" type="text" class="form-control" id="reading" name="reading[]">
                                 </div>
                             </div>
 
                             <div class="form-group" id="writingdiv" style="display: block">
                                 <label class="control-label col-md-2">Writing:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="writing" name="writing[]">
+                                    <input tabindex="6" type="text" class="form-control" id="writing" name="writing[]">
                                 </div>
                             </div>
 
                             <div class="form-group" id="speakingdiv" style="display: block">
                                 <label class="control-label col-md-2">Speaking: </label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="speaking" name="speaking[]">
+                                    <input tabindex="7" type="text" class="form-control" id="speaking" name="speaking[]">
                                 </div>
                             </div>
 
                             <div class="form-group" id="overralldiv" style="display: block">
                                 <label class="control-label col-md-2">Overall:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="overall" name="overall[]">
+                                    <input tabindex="8" type="text" class="form-control" id="overall" name="overall[]">
                                 </div>
                             </div>
 
                             <div class="form-group" id="expirediv" style="display: block">
                                 <label class="control-label col-md-2">Expiry Date:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
+                                    <input tabindex="9" type="text" class="form-control datetimepicker" id="expirydate" name="expirydate[]">
                                 </div>
                             </div>
                                 </div>
@@ -127,7 +127,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group" id="otherdiv" style="display: none">
                                 <label class="control-label col-md-2">Other (Please Specify):</label>
                                 <div class="col-md-10">
-                                    <textarea id="comment-message" name="other" rows="8" tabindex="4"></textarea>
+                                    <textarea tabindex="10" id="comment-message" name="other" rows="8" tabindex="4"></textarea>
                                 </div>
                             </div>
                             </div>
@@ -183,7 +183,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         });
     });
 
-    $("input[name=firstLanguage]").click( function () {
+    $("input  [name=firstLanguage]").click( function () {
 
         if ($(this).val()=='1'){
             document.getElementById("Englishproficience").style.display = "none";
@@ -246,7 +246,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             newTextBoxDiv.after().html( '<div class="form-group">'+
                 '<label class="control-label col-md-2">Tests'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<select style="width: 100%" name="test[]">'+
+                '<select tabindex="11" style="width: 100%" name="test[]">'+
                 '<option value="" disabled selected>Select test...</option>'+
                 '<option value="1">IELTS</option>'+
                 '<option value="2">TOEFL</option>'+
@@ -257,41 +257,41 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Listening'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="listening[]">'+
+                '<input tabindex="12" type="text" class="form-control" id="" name="listening[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Reading'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="reading[]">'+
+                '<input tabindex="13" type="text" class="form-control" id="" name="reading[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Writing'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="writing[]">'+
+                '<input tabindex="14" type="text" class="form-control" id="" name="writing[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Speaking'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="speaking[]">'+
+                '<input tabindex="15" type="text" class="form-control" id="" name="speaking[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Overall'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="" name="overall[]">'+
+                '<input tabindex="16" type="text" class="form-control" id="" name="overall[]">'+
                 '</div>'+
                 '</div>'+
 
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Expiry Date'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control datetimepicker" id="" name="expirydate[]">'+
+                '<input tabindex="17" type="text" class="form-control datetimepicker" id="" name="expirydate[]">'+
                 '</div>'+
                 '</div>'
             );

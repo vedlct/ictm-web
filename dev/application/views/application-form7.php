@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-8">
-                                    <input type="file" class="form-control"  name="fileUpload[]" multiple>
+                                    <input tabindex="1" type="file" class="form-control"  name="fileUpload[]" multiple>
                                 </div>
                                 <div class="col-md-2">
                                     <button type="submit" class="btn btn-next">Add File</button>

@@ -52,9 +52,9 @@
                                 <label class="control-label col-md-2">Source of Finance:</label>
 
                                 <div class="col-md-10">
-                                    <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC
-                                    <input type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> OWN&nbsp;&nbsp;
-                                    <input type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsorship&nbsp;
+                                    <input tabindex="1" type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC
+                                    <input tabindex="2" type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> OWN&nbsp;&nbsp;
+                                    <input tabindex="3" type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsorship&nbsp;
 
                                 </div>
                             </div>
@@ -71,7 +71,7 @@
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select style="width: 100%"  id="title"  name="title">
+                                    <select tabindex="4" style="width: 100%"  id="title"  name="title">
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
@@ -86,7 +86,7 @@
                                 <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input type="text" class="form-control" id="name" name="name" maxlength="100"  value="<?php echo set_value('name'); ?>" >
+                                    <input tabindex="5" type="text" class="form-control" id="name" name="name" maxlength="100"  value="<?php echo set_value('name'); ?>" >
 
 
                                 </div>
@@ -96,7 +96,7 @@
                                 <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input type="text" class="form-control" id="relation" name="relation" maxlength="50"  value="<?php echo set_value('relation'); ?>" >
+                                    <input tabindex="6" type="text" class="form-control" id="relation" name="relation" maxlength="50"  value="<?php echo set_value('relation'); ?>" >
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@
                                 <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea  name="address"  id="address" rows="8"  maxlength="1000" tabindex="4" ><?php echo set_value('address'); ?></textarea>
+                                    <textarea  name="address"  id="address" rows="8"  maxlength="1000" tabindex="7" ><?php echo set_value('address'); ?></textarea>
                                 </div>
                             </div>
 
@@ -112,7 +112,7 @@
                                     <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
-                                        <input type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
+                                        <input tabindex="8" type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
                                     </div>
                                 </div>
 
@@ -120,7 +120,7 @@
                                     <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                        <select style="width: 100%" id="country"  name="country">
+                                        <select tabindex="9" style="width: 100%" id="country"  name="country">
                                             <option value="" disabled selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
@@ -138,7 +138,7 @@
                                 <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input type="text" class="form-control" id="mobile" name="mobile" maxlength="50" value="<?php echo set_value('mobile'); ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile" name="mobile" maxlength="50" value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
@@ -146,7 +146,7 @@
                                 <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input type="text" class="form-control" id="telephone" name="telephone" maxlength="50" value="<?php echo set_value('telephone'); ?>" >
+                                    <input tabindex="11" type="text" class="form-control" id="telephone" name="telephone" maxlength="50" value="<?php echo set_value('telephone'); ?>" >
                                 </div>
                             </div>
 
@@ -154,7 +154,7 @@
                                 <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                    <input type="email" class="form-control" id="email" name="email" maxlength="50" value="<?php echo set_value('email'); ?>" >
+                                    <input tabindex="12" type="email" class="form-control" id="email" name="email" maxlength="50" value="<?php echo set_value('email'); ?>" >
                                 </div>
                             </div>
 

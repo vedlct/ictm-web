@@ -60,7 +60,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-10">
-                                    <input type="file" class="form-control" id="" name="">
+                                    <input tabindex="1" type="file" class="form-control" id="" name="">
                                 </div>
                             </div>
 

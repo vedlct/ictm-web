@@ -53,32 +53,32 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Qualification<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="qualification" required name="qualification[]">
+                                    <input tabindex="1" type="text" class="form-control" id="qualification" required name="qualification[]">
                                 </div>
                             </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Qualification Level<span style="color: red">*</span>:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="qualificationLevel" required name="qualificationLevel[]">
+                                            <input tabindex="2" type="text" class="form-control" id="qualificationLevel" required name="qualificationLevel[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Awarding Body<span style="color: red">*</span>:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="awardingBody" required name="awardingBody[]">
+                                            <input tabindex="3" type="text" class="form-control" id="awardingBody" required name="awardingBody[]">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Subject<span style="color: red">*</span>:</label>
                                         <div class="col-md-10">
-                                            <input type="text" class="form-control" id="subject" required name="subject[]">
+                                            <input tabindex="4" type="text" class="form-control" id="subject" required name="subject[]">
                                         </div>
                                     </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Institution<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="institution" required name="institution[]">
+                                    <input tabindex="5" type="text" class="form-control" id="institution" required name="institution[]">
                                 </div>
                             </div>
 
@@ -104,7 +104,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                             $currently_selected = date('Y');
                                             $earliest_year = 1950;
                                             $latest_year = date('Y');
-                                            print '<select name="completionYear[]">';
+                                            print '<select tabindex="6" name="completionYear[]">';
                                             foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                 print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                             }
@@ -117,7 +117,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <input type="text" class="form-control" id="grade" required name="grade[]">
+                                    <input tabindex="7" type="text" class="form-control" id="grade" required name="grade[]">
                                 </div>
                             </div>
 
@@ -330,43 +330,43 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             newTextBoxDiv.after().html( '<div class="form-group">'+
                 '<label class="control-label col-md-2">Qualification'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="qualification'+counter+'" name="qualification[]">'+
+                '<input tabindex="8" type="text" class="form-control" id="qualification'+counter+'" name="qualification[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Institution'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="institution'+counter+'" name="institution[]">'+
+                '<input tabindex="9" type="text" class="form-control" id="institution'+counter+'" name="institution[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Qualification Level'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="qualificationLevel"  name="qualificationLevel[]">'+
+                '<input tabindex="10" type="text" class="form-control" id="qualificationLevel"  name="qualificationLevel[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Awarding Body'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="awardingBody"  name="awardingBody[]">'+
+                '<input tabindex="11" type="text" class="form-control" id="awardingBody"  name="awardingBody[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Subject'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="subject" required name="subject[]">'+
+                '<input tabindex="12" type="text" class="form-control" id="subject" required name="subject[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Completion Year'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control datetimepicker" id="completionYear"  name="completionYear[]">'+
+                '<input tabindex="13" type="text" class="form-control datetimepicker" id="completionYear"  name="completionYear[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
                 '<label class="control-label col-md-2">Grade'+counter+':</label>'+
                 '<div class="col-md-10">'+
-                '<input type="text" class="form-control" id="grade'+counter+'" name="grade[]">'+
+                '<input tabindex="14" type="text" class="form-control" id="grade'+counter+'" name="grade[]">'+
                 '</div>'+
                 '</div>'
             );

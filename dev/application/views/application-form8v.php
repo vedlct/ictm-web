@@ -48,11 +48,11 @@
                         </div>
 
                         <div class="form-bottom">
-                            <input type="hidden" class="form-control" id="refereesId"  name="refereesId">
+                            <input tabindex="1"  type="hidden" class="form-control" id="refereesId"  name="refereesId">
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-10">
-                                    <select required style="width: 100%"  id="title"  name="title">
+                                    <select tabindex="2"  required style="width: 100%"  id="title"  name="title">
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
@@ -67,7 +67,7 @@
                                 <label class="control-label col-md-2">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input required type="text" maxlength="100" class="form-control" id="name" name="name">
+                                    <input tabindex="3"  required type="text" maxlength="100" class="form-control" id="name" name="name">
                                 </div>
                             </div>
 
@@ -75,7 +75,7 @@
                                 <label class="control-label col-md-2">Institution/Company*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('company'); ?></font></p>
-                                    <input required type="text" maxlength="80" class="form-control" id="company" name="company">
+                                    <input tabindex="4"  required type="text" maxlength="80" class="form-control" id="company" name="company">
                                 </div>
                             </div>
 
@@ -83,7 +83,7 @@
                                 <label class="control-label col-md-2">Position / Job Title:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('jobTitle'); ?></font></p>
-                                    <input required type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
+                                    <input tabindex="5"  required type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
                                 </div>
                             </div>
 
@@ -92,7 +92,7 @@
                                 <label class="control-label col-md-2">Telephone/Mobile*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input required type="text" class="form-control" maxlength="20" id="telephone" name="telephone">
+                                    <input tabindex="6"  required type="text" class="form-control" maxlength="20" id="telephone" name="telephone">
                                 </div>
                             </div>
 
@@ -100,42 +100,42 @@
                                 <label class="control-label col-md-2">E-mail:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                    <input required type="email" class="form-control" maxlength="100" id="email" name="email">
+                                    <input tabindex="7"  required type="email" class="form-control" maxlength="100" id="email" name="email">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input type="text" class="form-control" id="address" name="address" required>
+                                    <input tabindex="8"  type="text" class="form-control" id="address" name="address" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address Line 2:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input type="text" class="form-control" id="address2" name="address2" required>
+                                    <input tabindex="9"  type="text" class="form-control" id="address2" name="address2" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address Line 3:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input type="text" class="form-control" id="address3" name="address3" required>
+                                    <input tabindex="10"  type="text" class="form-control" id="address3" name="address3" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input type="text" class="form-control" id="city" name="city" required>
+                                    <input tabindex="11"  type="text" class="form-control" id="city" name="city" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">County/State:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input type="text" class="form-control" id="state" name="state" required>
+                                    <input tabindex="12"  type="text" class="form-control" id="state" name="state" required>
                                 </div>
                             </div>
 
@@ -143,7 +143,7 @@
                                 <label class="control-label col-md-2">Country:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                    <select required style="width: 100%" id="country"  name="country">
+                                    <select tabindex="13"  required style="width: 100%" id="country"  name="country">
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                             <option value="<?php echo COUNTRY[$i]?>"<?php

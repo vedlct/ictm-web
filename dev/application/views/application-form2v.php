@@ -60,36 +60,36 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                     <div class="form-bottom">
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
-                                <input type="hidden" class="form-control" id="qualificationId"  name="qualificationId">
+                                <input tabindex="" type="hidden" class="form-control" id="qualificationId"  name="qualificationId">
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Qualification Name<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="qualification" maxlength="100" required name="qualification">
+                                        <input tabindex="2" type="text" class="form-control" id="qualification" maxlength="100" required name="qualification">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Qualification Level<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="qualificationLevel" maxlength="100" required name="qualificationLevel">
+                                        <input tabindex="2" type="text" class="form-control" id="qualificationLevel" maxlength="100" required name="qualificationLevel">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Name of Institution<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="institution" maxlength="100" required name="institution">
+                                        <input tabindex="2" type="text" class="form-control" id="institution" maxlength="100" required name="institution">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Awarding Body<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="awardingBody" maxlength="255" required name="awardingBody">
+                                        <input tabindex="2" type="text" class="form-control" id="awardingBody" maxlength="255" required name="awardingBody">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Subject<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="subject" maxlength="255" required name="subject">
+                                        <input tabindex="2" type="text" class="form-control" id="subject" maxlength="255" required name="subject">
                                     </div>
                                 </div>
 
@@ -103,7 +103,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         $currently_selected = date('Y');
                                         $earliest_year = 1950;
                                         $latest_year = date('Y');
-                                        print '<select id="completionYear" name="completionYear">';
+                                        print '<select tabindex="2" id="completionYear" name="completionYear">';
                                         foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                             print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                         }
@@ -115,7 +115,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
                                     <div class="col-md-10">
-                                        <input type="text" class="form-control" id="grade" maxlength="20" required name="grade">
+                                        <input tabindex="2" type="text" class="form-control" id="grade" maxlength="20" required name="grade">
                                     </div>
                                 </div>
 

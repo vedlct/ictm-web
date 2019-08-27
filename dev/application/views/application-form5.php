@@ -41,14 +41,14 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="courseChoiceStatement" minlength="300" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="4"> </textarea>
+                                <textarea id="courseChoiceStatement" minlength="300" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <select style="width: 100%" id="collegeChoiceStatement"  name="collegeChoiceStatement">
+                                <select tabindex="2" style="width: 100%" id="collegeChoiceStatement"  name="collegeChoiceStatement">
 
                                     <option value="" selected>Select Source</option>
                                     <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>

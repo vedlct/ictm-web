@@ -59,7 +59,7 @@
 
                                     <tr>
                                     <?php } ?>
-                                                <td ><input type = "radio" required name = "check_list" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input tabindex="1" type = "radio" required name = "check_list" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                     <?php if ($count % 2 !=0) { ?>
                                     </tr>
@@ -91,7 +91,7 @@
 
                                                     <tr>
                                                 <?php } ?>
-                                                <td ><input type = "radio" required name = "check_list1" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input tabindex="2" type = "radio" required name = "check_list1" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -107,9 +107,9 @@
                                             <td  colspan="2" style="width: 50%;"><span style="margin-right: 100px;">If disabled, are you receiving any Disability Allowances ? </span>
 
 
-                                                <input type="radio" name="disabilityAllowance" value="1"  >  Yes
-                                                <input type="radio" name="disabilityAllowance" value="0" >  No
-                                                <input type="radio" name="disabilityAllowance" value="2" >  Prefer Not to say
+                                                <input tabindex="3" type="radio" name="disabilityAllowance" value="1"  >  Yes
+                                                <input tabindex="4" type="radio" name="disabilityAllowance" value="0" >  No
+                                                <input tabindex="5" type="radio" name="disabilityAllowance" value="2" >  Prefer Not to say
 
                                             </td>
                                         </tr>
@@ -135,7 +135,7 @@
 
                                                     <tr>
                                                 <?php }?>
-                                                <td ><input type = "radio" required name = "check_list2" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input tabindex="6" type = "radio" required name = "check_list2" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
@@ -167,7 +167,7 @@
 
                                                     <tr>
                                                 <?php } ?>
-                                                <td ><input type = "radio" required name = "check_list3" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
+                                                <td ><input tabindex="7" type = "radio" required name = "check_list3" value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?></td >
                                                 <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                 <?php if ($count % 2 !=0) { ?>
                                                     </tr>
