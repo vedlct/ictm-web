@@ -57,7 +57,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
 
 
-                                        <input type="text" class="form-control" id="organisation"  maxlength="100"  name="organisation">
+                                        <input tabindex="1"  type="text" class="form-control" id="organisation"  maxlength="100"  name="organisation">
 
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                         <p><font color="red"> <?php echo form_error('positionHeld'); ?></font></p>
 
-                                        <input type="text" class="form-control" id="positionHeld" maxlength="100"  name="positionHeld">
+                                        <input tabindex="2"  type="text" class="form-control" id="positionHeld" maxlength="100"  name="positionHeld">
 
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         $currently_selected = date('Y');
                                         $earliest_year = 1950;
                                         $latest_year = date('Y');
-                                        print '<select id="workstryear" name="workstryear">';
+                                        print '<select tabindex="3"  id="workstryear" name="workstryear">';
                                         foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                             print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                         }
@@ -92,7 +92,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         ?>
                                         &nbsp;&nbsp;&nbsp;
                                         Month:
-                                        <select id="workstrmonth" name="workstrmonth">
+                                        <select tabindex="4"  id="workstrmonth" name="workstrmonth">
                                             <?php
                                             foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                 echo "<option value='$monthNumber'>{$month}</option>";
@@ -101,7 +101,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         </select>
                                         &nbsp;&nbsp;&nbsp;
                                         Date:
-                                        <select id="workstrdate" name="workstrdate">
+                                        <select tabindex="5"  id="workstrdate" name="workstrdate">
                                             <?php
                                             foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                 echo "<option value='$dateNumber'>{$date}</option>";
@@ -123,7 +123,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         $currently_selected = date('Y');
                                         $earliest_year = 1950;
                                         $latest_year = date('Y');
-                                        print '<select id="workendyear" name="workendyear">';
+                                        print '<select tabindex="6"  id="workendyear" name="workendyear">';
                                         foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                             print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                         }
@@ -131,7 +131,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         ?>
                                         &nbsp;&nbsp;&nbsp;
                                         Month:
-                                        <select id="workendmonth" name="workendmonth">
+                                        <select tabindex="7"  id="workendmonth" name="workendmonth">
                                             <?php
                                             foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                 echo "<option value='$monthNumber'>{$month}</option>";
@@ -140,7 +140,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         </select>
                                         &nbsp;&nbsp;&nbsp;
                                         Date:
-                                        <select id="workenddate" name="workenddate">
+                                        <select tabindex="8"  id="workenddate" name="workenddate">
                                             <?php
                                             foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                 echo "<option value='$dateNumber'>{$date}</option>";
@@ -152,7 +152,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     </div>
                                 </div>
 
-                                <input type="hidden" name="experience" id="experience">
+                                <input tabindex="9"  type="hidden" name="experience" id="experience">
                             </div>
                         </div>
 
@@ -172,9 +172,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
-<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>-->
-
-                                <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
+<!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
                             </div>
                         </div>
                         <div id="qualificationTable">

@@ -69,8 +69,8 @@
 
                                                         <tr>
                                                     <?php } ?>
-                                                    <td ><input type = "radio" required name = "check_list" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
-                                                    <input type="hidden" name="id_check_list" value="<?php echo $EO->personalOpportunityId ?>"></td >
+                                                    <td ><input tabindex="1" type = "radio" required name = "check_list" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
+                                                    <input tabindex="2" type="hidden" name="id_check_list" value="<?php echo $EO->personalOpportunityId ?>"></td >
                                                     <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                     <?php if ($count % 2 !=0) { ?>
                                                         </tr>
@@ -103,8 +103,8 @@
 
                                                                 <tr>
                                                             <?php } ?>
-                                                            <td ><input type = "radio" required name = "check_list1" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
-                                                                <input type="hidden" name="id_check_list1" value="<?php echo $EO->personalOpportunityId ?>">
+                                                            <td ><input tabindex="3" type = "radio" required name = "check_list1" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
+                                                                <input tabindex="4" type="hidden" name="id_check_list1" value="<?php echo $EO->personalOpportunityId ?>">
                                                             </td >
                                                             <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                             <?php if ($count % 2 !=0) { ?>
@@ -122,9 +122,9 @@
 
 
 
-                                                                <input type="radio" name="disabilityAllowance" value="1"  <?php if ($EO->personalDisabilityAllowance == '1') {echo "checked=checked";}?> >  Yes
-                                                                <input type="radio" name="disabilityAllowance" value="0" <?php if ($EO->personalDisabilityAllowance == '0') {echo "checked=checked";}?> >  No
-                                                                <input type="radio" name="disabilityAllowance" value="2" <?php if ($EO->personalDisabilityAllowance == '2') {echo "checked=checked";}?> >  Prefer Not to say
+                                                                <input tabindex="5" type="radio" name="disabilityAllowance" value="1"  <?php if ($EO->personalDisabilityAllowance == '1') {echo "checked=checked";}?> >  Yes
+                                                                <input tabindex="6" type="radio" name="disabilityAllowance" value="0" <?php if ($EO->personalDisabilityAllowance == '0') {echo "checked=checked";}?> >  No
+                                                                <input tabindex="7" type="radio" name="disabilityAllowance" value="2" <?php if ($EO->personalDisabilityAllowance == '2') {echo "checked=checked";}?> >  Prefer Not to say
 
                                                         </td>
                                                     </tr>
@@ -153,8 +153,8 @@
 
                                                         <tr>
                                                     <?php }?>
-                                                    <td ><input type = "radio" required name = "check_list2" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
-                                                        <input type="hidden" name="id_check_list2" value="<?php echo $EO->personalOpportunityId ?>">
+                                                    <td ><input tabindex="8" type = "radio" required name = "check_list2" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
+                                                        <input tabindex="9" type="hidden" name="id_check_list2" value="<?php echo $EO->personalOpportunityId ?>">
                                                     </td >
                                                     <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                     <?php if ($count % 2 !=0) { ?>
@@ -189,8 +189,8 @@
 
                                                         <tr>
                                                     <?php } ?>
-                                                    <td ><input type = "radio" required name = "check_list3" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
-                                                        <input type="hidden" name="id_check_list3" value="<?php echo $EO->personalOpportunityId ?>">
+                                                    <td ><input tabindex="10" type = "radio" required name = "check_list3" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
+                                                        <input tabindex="11" type="hidden" name="id_check_list3" value="<?php echo $EO->personalOpportunityId ?>">
                                                     </td >
                                                     <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                     <?php if ($count % 2 !=0) { ?>
@@ -211,8 +211,8 @@
                             <div class="col-sm-offset-2 col-md-10" >
                                 <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
-<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm6AndNext" class="btn btn-next">Save And Next</button>-->
-                                <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
+<!--                                <a href="--><?php //echo base_url()?><!--ApplyForm8" ><button type="button"  class="btn ">Next</button></a>-->
                             </div >
                         </div >
                     </div >
