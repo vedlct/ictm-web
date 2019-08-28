@@ -121,6 +121,14 @@
 
                                             </div>
 				                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-10">
+                                                <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
+                                                <input tabindex="14" type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
+                                            </div>
+                                        </div>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
@@ -156,13 +164,7 @@
                                                 ?> value="PNTS"> Pefer Not to Say
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                        	<label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
-                                                <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
-                                            	<input tabindex="14" type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
-                                          	</div>
-				                        </div>
+
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-2">Nationality:<span style="color: red" class="required">*</span></label>

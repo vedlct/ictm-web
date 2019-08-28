@@ -100,19 +100,46 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea  name="address"  id="address" rows="8"  maxlength="1000" tabindex="7" ><?php echo set_value('address'); ?></textarea>
-                                </div>
-                            </div>
-
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>-->
+<!--                                <div class="col-md-10">-->
+<!--                                    <p><font color="red"> --><?php //echo form_error('address'); ?><!--</font></p>-->
+<!--                                    <textarea  name="address"  id="address" rows="8"  maxlength="1000" tabindex="7" >--><?php //echo set_value('address'); ?><!--</textarea>-->
+<!--                                </div>-->
+<!--                            </div>-->
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                    <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
-                                        <input tabindex="8" type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo set_value('AddressPO'); ?>">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="7"  type="text" class="form-control" id="address" name="address" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Address Line 2:</label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="8"  type="text" class="form-control" id="address2" name="address2" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Address Line 3:</label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="9"  type="text" class="form-control" id="address3" name="address3" >
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="10"  type="text" class="form-control" id="city" name="city" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">County/State:</label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="11"  type="text" class="form-control" id="state" name="state" >
                                     </div>
                                 </div>
 

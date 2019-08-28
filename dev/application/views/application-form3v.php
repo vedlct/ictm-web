@@ -143,7 +143,7 @@
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
 
-<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>-->
+                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>
 
 
                                 </div>

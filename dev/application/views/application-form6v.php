@@ -212,7 +212,7 @@
                                 <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
-<!--                                <a href="--><?php //echo base_url()?><!--ApplyForm8" ><button type="button"  class="btn ">Next</button></a>-->
+                                <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Next</button></a>
                             </div >
                         </div >
                     </div >

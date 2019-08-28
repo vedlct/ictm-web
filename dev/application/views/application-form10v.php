@@ -173,7 +173,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
-<!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
+                                <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>
                         <div id="qualificationTable">
@@ -369,9 +369,24 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
         var organisation=$('#organisation').val();
         var positionHeld=$('#positionHeld').val();
-        var startdate=$('#startdate').val();
-        var enddate=$('#enddate').val();
 
+        var startyear = $('#workstryear').val();
+        var startmonth = $('#workstrmonth').val();
+        var startdat = $('#workstrdate').val();
+
+        var stratdate = new Date(startyear, startmonth ,startdat);
+
+        var endyear = $('#workendyear').val();
+        var endmonth = $('#workendmonth').val();
+        var enddat = $('#workenddate').val();
+        var enddate = new Date(endyear,endmonth,enddat);
+
+        //alert(stratdate)
+        if (enddate < stratdate) {
+
+            alert('Please Select StartDate and EndDate Correctly');
+            return false;
+        }
 
 
 
@@ -382,20 +397,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             alert('Qualification must be less then 100 charecter');
             return false;
 
-        }if (startdate == ""){
-            alert('Please add a startdate');
-            return false;
-        }if (enddate == ""){
-            alert('Please add a enddate');
-            return false;
-
-
         }
-        if (enddate < startdate){
 
-            alert('Please Select StartDate and EndDate Correctly');
-            return false;
-        }
     }
 
     function selectid(x) {
