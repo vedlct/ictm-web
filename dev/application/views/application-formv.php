@@ -110,7 +110,7 @@
                                  $currently_selected = $dobyear;
                                  $earliest_year = 1950;
                                  $latest_year = date('Y');
-                                 print '<select tabindex="4"  name="dobyear">';
+                                 print '<select tabindex="4"  id="dobyear" name="dobyear">';
                                  foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                  }
@@ -119,7 +119,7 @@
 
                                 &nbsp;
                                 Month:
-                                <select tabindex="5"  name="dobmonth">
+                                <select tabindex="5" id="dobmonth" name="dobmonth">
                                     <?php
                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                         ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $dobmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
@@ -128,7 +128,7 @@
                                 </select>
                                 &nbsp;&nbsp;&nbsp;
                                 Date:
-                                <select tabindex="6"  name="dobdate">
+                                <select tabindex="6" id="dobdate" name="dobdate">
                                     <?php
                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                        // echo "<option value='$dateNumber'>{$date}</option>";
@@ -824,16 +824,18 @@
 //        }
 
         var startyear = $('#dobyear').val();
-        var startmonth = $('#dobmonth').val();
-        var startdat = $('#dobdate').val();
+        var startmonth = document.getElementById('dobmonth').value;
+        var startdat = document.getElementById('dobdate').value;
 
-        var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
-        alert(stratdate)
+        //alert(startyear);
+        //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
         var today = new Date();
         today.setHours(0, 0, 0, 0);
-        alert(today)
-        if (stratdate == today){
-            alert("DOB cann't be Today")
+        
+        if (startdat == today.getDate()-1 && startmonth == today.getMonth() && startyear == today.getFullYear()){
+            alert("DOB cann't be Today");
+            return false;
         }
 
     }
