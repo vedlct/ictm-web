@@ -50,7 +50,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
-                                    <textarea id="courseChoiceStatement" minlength="300" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="4"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
+                                    <textarea id="courseChoiceStatement" minlength="300" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
@@ -58,7 +58,7 @@
                                 <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
                                 <div class="col-md-10">
 
-                                    <select style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
+                                    <select tabindex="2" style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
                                         <option value="" disabled selected>Select Source...</option>
                                         <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
                                             <option value="<?php echo PERSONAL_STATEMENT[$i]?>"<?php if (!empty($f5->collegeChoiceStatement) && $f5->collegeChoiceStatement == PERSONAL_STATEMENT[$i])  echo 'selected = "selected"'; ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
@@ -72,8 +72,8 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
 
-<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>-->
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
+<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm4" ><button type="button"  class="btn ">Next</button></a>-->
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                 </div>
                             </div>

@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-8">
-                                    <input type="file" class="form-control"  name="fileUpload[]" multiple>
+                                    <input tabindex="1" type="file" class="form-control"  name="fileUpload[]" multiple>
                                 </div>
                                 <div class="col-md-2">
                                     <button type="submit" class="btn btn-next">Add File</button>
@@ -78,8 +78,8 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
 <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
-<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>-->
-                                    <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
+<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm9" ><button type="button"  class="btn ">Next</button></a>-->
                                 </div>
                             </div>
 
