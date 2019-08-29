@@ -832,7 +832,7 @@
 
         var today = new Date();
         today.setHours(0, 0, 0, 0);
-        
+
         if (startdat == today.getDate()-1 && startmonth == today.getMonth() && startyear == today.getFullYear()){
             alert("DOB cann't be Today");
             return false;
