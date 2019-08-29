@@ -138,7 +138,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
