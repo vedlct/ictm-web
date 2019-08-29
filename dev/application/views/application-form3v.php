@@ -140,10 +140,11 @@
                                 <div class="col-sm-offset-2 col-md-10">
 
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <button type="reset" class="btn btn-next">Reset</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
 
-<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>-->
+                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>
 
 
                                 </div>

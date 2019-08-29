@@ -93,19 +93,39 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea id="address" name="address" rows="8"  maxlength="1000" tabindex="7"> <?php echo $f4->address ?></textarea>
-                                </div>
-                            </div>
-
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
+                                    <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('AddressPO'); ?></font></p>
-                                        <input tabindex="8" type="text" class="form-control" id="AddressPO" maxlength="15" name="AddressPO" value="<?php echo $f4->addressPo?>">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="7"  type="text" class="form-control" id="address" name="address" required value="<?php echo $f4->address?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Address Line 2:</label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="8"  type="text" class="form-control" id="address2" name="address2" value="<?php echo $f4->address2?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Address Line 3:</label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="9"  type="text" class="form-control" id="address3" name="address3" value="<?php echo $f4->address3?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="10"  type="text" class="form-control" id="city" name="city" required value="<?php echo $f4->city?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">County/State:</label>
+                                    <div class="col-md-10">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="11"  type="text" class="form-control" id="state" name="state" value="<?php echo $f4->state?>">
                                     </div>
                                 </div>
 
@@ -117,13 +137,9 @@
                                             <option value="" disabled selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                                <option value="<?php echo COUNTRY[$i]?>"<?php
-                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
-                                                ?>><?php echo COUNTRY[$i]?></option>
+                                                <option value="<?php echo COUNTRY[$i]?>" <?php if(!empty($f4->country) &&  $f4->country == COUNTRY[$i] ) echo 'selected = "selected"'; ?>> <?php echo COUNTRY[$i]?></option>
                                             <?php } ?>
                                         </select>
-
-
                                     </div>
                                 </div>
 
@@ -159,9 +175,10 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm5" ><button type="button" class="btn btn-previous">Previous</button></a>
 
+                                    <button type="reset" class="btn btn-next">Reset</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
-<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm6" ><button type="button"  class="btn ">Next</button></a>-->
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Next</button></a>
 
                                 </div>
                             </div>

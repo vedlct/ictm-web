@@ -158,6 +158,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                <button type="reset" class="btn btn-next">Reset</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
@@ -351,19 +352,20 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var startmonth = $('#workstrmonth').val();
         var startdat = $('#workstrdate').val();
 
-        var stratdate = new Date(startyear+"-"+startmonth+"-"+startdat);
+        var stratdate = new Date(startyear, startmonth ,startdat);
 
         var endyear = $('#workendyear').val();
         var endmonth = $('#workendmonth').val();
         var enddat = $('#workenddate').val();
-        var enddate = new Date(endyear+"-"+endmonth+"-"+enddat);
+        var enddate = new Date(endyear,endmonth,enddat);
 
-        alert(stratdate)
+        //alert(stratdate)
         if (enddate < stratdate) {
 
             alert('Please Select StartDate and EndDate Correctly');
             return false;
         }
+
 
         if (organisation == "") {
             alert('Please add a Qualification');
@@ -372,7 +374,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         if (positionHeld.length > 100) {
             alert('Qualification must be less then 100 charecter');
             return false;
-
+        }
 //        }if (startdate == ""){
 //            alert('Please add a startdate');
 //            return false;
@@ -400,7 +402,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
         }
-    }
+
 
 </script>
 

@@ -114,14 +114,14 @@
                                 <label class="control-label col-md-2">Address Line 2:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input tabindex="9"  type="text" class="form-control" id="address2" name="address2" required>
+                                    <input tabindex="9"  type="text" class="form-control" id="address2" name="address2" >
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Address Line 3:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input tabindex="10"  type="text" class="form-control" id="address3" name="address3" required>
+                                    <input tabindex="10"  type="text" class="form-control" id="address3" name="address3" >
                                 </div>
                             </div>
                             <div class="form-group">
@@ -135,7 +135,7 @@
                                 <label class="control-label col-md-2">County/State:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input tabindex="12"  type="text" class="form-control" id="state" name="state" required>
+                                    <input tabindex="12"  type="text" class="form-control" id="state" name="state" >
                                 </div>
                             </div>
 
@@ -158,10 +158,10 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="reset" class="btn btn-next">Reset</button>
+                                    <button type="submit" class="btn btn-next">Save Application</button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
-<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm7" ><button type="button"  class="btn ">Next</button></a>-->
+                                    <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
 

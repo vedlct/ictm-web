@@ -24,9 +24,6 @@
         <div class="row">
             <div class="col-md-9">
 
-
-
-
                     <div class="form-top">
                         <div class="form-top-left">
                             <h3>Personal Statement </h3>
@@ -41,7 +38,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-10">
-                                <textarea id="courseChoiceStatement" minlength="300" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
+                                <textarea id="courseChoiceStatement" minlength="200" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
                             </div>
                         </div>
 
@@ -63,24 +60,17 @@
                             <div class="col-sm-offset-2 col-md-10">
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
 
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
                                 <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm4" ><button type="button"  class="btn ">Next</button></a>-->
+                                <button type="reset" class="btn btn-next">Reset</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
+
                             </div>
                         </div>
                     </div>
 
 
                 </form>
-
-
-
-
-
-
-
-
-
 
             </div><!-- /col-md-9 -->
 
@@ -98,6 +88,7 @@
             </div><!-- /col-md-3 -->
         </div>
     </div>
+
 </section>
 
 <?php include("footer.php"); ?>

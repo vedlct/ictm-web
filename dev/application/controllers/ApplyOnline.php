@@ -436,12 +436,14 @@ class ApplyOnline extends CI_Controller
             $EmergencyContactTitle = $this->input->post("EmergencyContactTitle");
             $EmergencyContactName = $this->input->post("EmergencyContactName");
             $EmergencyContactRelation = $this->input->post("EmergencyContactRelation");
+
             $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
             $EmergencyContactAddress2 = $this->input->post("EmergencyContactAddress2");
             $EmergencyContactAddress3 = $this->input->post("EmergencyContactAddress3");
             $EmergencyContactCity = $this->input->post("EmergencyContactCity");
             $EmergencyContactState = $this->input->post("EmergencyContactState");
             $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
+
             $EmergencyContactMobile = $this->input->post("EmergencyContactMobile");
             $EmergencyContactEmail = $this->input->post("EmergencyContactEmail");
             $courseName = $this->input->post("courseName");
@@ -2053,19 +2055,22 @@ class ApplyOnline extends CI_Controller
     {
         if ($this->session->userdata('loggedin') == "true") {
 
-
             $this->menu();
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
             $applicationId=$this->session->userdata('studentApplicationId');
 
+
             $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
 
-            if (empty($this->data['PersonalStatementData'])){
-                $this->load->view('application-form5' );
-            }else {
+            echo count($this->data['PersonalStatementData']);
+            if ( count($this->data['PersonalStatementData'])>0) {
 
                 $this->load->view('application-form5v', $this->data);
+
+            }else {
+
+                $this->load->view('application-form5');
 
             }
         }else{
