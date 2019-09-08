@@ -696,8 +696,9 @@
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
+                                <button type="reset" class="btn btn-next">Reset</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>
+<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>-->
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>
 
                             </div>
@@ -834,7 +835,7 @@
 
         var today = new Date();
         today.setHours(0, 0, 0, 0);
-        
+
         if (startdat == today.getDate()-1 && startmonth == today.getMonth() && startyear == today.getFullYear()){
             alert("DOB cann't be Today");
             return false;

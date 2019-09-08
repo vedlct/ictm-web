@@ -2055,19 +2055,22 @@ class ApplyOnline extends CI_Controller
     {
         if ($this->session->userdata('loggedin') == "true") {
 
-
             $this->menu();
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
             $applicationId=$this->session->userdata('studentApplicationId');
 
+
             $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
 
-            if (empty($this->data['PersonalStatementData'])){
-                $this->load->view('application-form5' );
-            }else {
+            echo count($this->data['PersonalStatementData']);
+            if ( count($this->data['PersonalStatementData'])>0) {
 
                 $this->load->view('application-form5v', $this->data);
+
+            }else {
+
+                $this->load->view('application-form5');
 
             }
         }else{
