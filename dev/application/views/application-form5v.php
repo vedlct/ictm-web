@@ -48,15 +48,15 @@
 
                     <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Why do you wish to do this course?<span style="color: red">*</span>:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Why do you wish to do this course?<span style="color: red">*</span>:</label>
+                                <div class="col-md-9">
                                     <textarea id="courseChoiceStatement" minlength="200" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
+                                <div class="col-md-9">
 
                                     <select tabindex="2" style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
                                         <option value="" disabled selected>Select Source...</option>
@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
+                                <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
                                     <button type="reset" class="btn btn-next">Reset</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>

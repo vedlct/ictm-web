@@ -56,8 +56,8 @@
                             <div id='TextBoxesGroup'>
                                 <div id="TextBoxDiv1" >
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                     <select tabindex="1" required style="width: 100%"  id="title1"  name="title[]">
 
@@ -71,71 +71,71 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Name:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <input tabindex="2"  type="text" class="form-control" id="name1" name="name[]" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Institution/Company:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Institution/Company:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <input tabindex="3"  type="text" class="form-control" id="company1" name="company[]" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Position / Job Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Position / Job Title:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <input tabindex="4"  type="text" class="form-control" id="jobTitle1" name="jobTitle[]" required>
                                 </div>
                             </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
-                                        <div class="col-md-10">
+                                        <label class="control-label col-md-3">Telephone:<span style="color: red" class="required">*</span></label>
+                                        <div class="col-md-9">
                                             <input tabindex="5"  type="text" class="form-control" id="telephone1" name="telephone[]" required>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                        <div class="col-md-10">
+                                        <label class="control-label col-md-3">E-mail:<span style="color: red" class="required">*</span></label>
+                                        <div class="col-md-9">
                                             <input tabindex="6"  type="email" class="form-control" id="email1" name="email[]" required>
                                         </div>
                                     </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
 <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="7"  type="text" class="form-control" id="address" name="address[]" required>
                                 </div>
                             </div>
                            <div class="form-group">
-                            <label class="control-label col-md-2">Address Line 2:</label>
-                                <div class="col-md-10">
+                            <label class="control-label col-md-3">Address Line 2:</label>
+                                <div class="col-md-9">
                                             <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="8"  type="text" class="form-control" id="address2" name="address2[]" >
                                 </div>
                             </div>
                                 <div class="form-group">
-                                        <label class="control-label col-md-2">Address Line 3:</label>
-                                        <div class="col-md-10">
+                                        <label class="control-label col-md-3">Address Line 3:</label>
+                                        <div class="col-md-9">
                                             <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                             <input tabindex="9"  type="text" class="form-control" id="address3" name="address3[]" >
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
-                                        <div class="col-md-10">
+                                        <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
+                                        <div class="col-md-9">
                                             <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                             <input tabindex="10"  type="text" class="form-control" id="city" name="city[]" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-2">County/State:</label>
-                                        <div class="col-md-10">
+                                        <label class="control-label col-md-3">County/State:</label>
+                                        <div class="col-md-9">
                                             <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                             <input tabindex="11"  type="text" class="form-control" id="state" name="state[]" >
                                         </div>
@@ -143,8 +143,8 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <select tabindex="12" style="width: 100%" id="country1"  name="country[]" required>
                                         <option value="" disabled selected>Select country...</option>
                                         <?php for ($i=0;$i<count(COUNTRY);$i++){?>
@@ -161,7 +161,7 @@
                             </div>
 
 <!--                            <div class="form-group">-->
-<!--                                <div class="col-sm-offset-2 col-md-10">-->
+<!--                                <div class="col-sm-offset-2 col-md-9">-->
 <!--                                    <button id='addButton' type="button" class="btn" style="background-color: #4cae4c">Add Another Referee</button>-->
 <!--                                    <button class="btn " type='button' value='Remove' id='removeButton' style="background-color: darkred"> Remove</button>-->
 <!--                                </div>-->
@@ -169,7 +169,7 @@
 <!--                            </div>-->
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
+                                <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="reset" class="btn btn-next">Reset</button>
                                     <button type="submit" class="btn btn-next">Save Application</button>
@@ -408,8 +408,8 @@
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html( '<div class="form-group">'+
-                '<label class="control-label col-md-2">Title'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Title'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<select required style="width: 100%"  id="title'+counter+'"  name="title[]">'+
 
                 '<option value="" selected><?php echo SELECT_TITLE?></option>'+
@@ -421,48 +421,48 @@
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Name'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Name'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="name'+counter+'" name="name[]" required >'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Institution/Company'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Institution/Company'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="company'+counter+'" name="company[]" required >'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Position / Job Title'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Position / Job Title'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="jobTitle'+counter+'" name="jobTitle[]" required >'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Telephone'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Telephone'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="telephone'+counter+'" name="telephone[]" required >'+
                 '</div>'+
                 '</div>'+'<div class="form-group">'+
-                '<label class="control-label col-md-2">E-mail'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">E-mail'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<input type="email" class="form-control" id="email'+counter+'" name="email[]" required >'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Address'+counter+':<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Address'+counter+':<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<textarea id="address'+counter+'" name="address[]" rows="8"  required tabindex="4"></textarea>'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Address P.O :<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Address P.O :<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="addressPo'+counter+'" name="addressPo[]" required >'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>'+
+                '<div class="col-md-9">'+
                 '<select style="width: 100%" id="country'+counter+'"  name="country[]" required >'+
                 '<option value=""  selected>Select country...</option>'+
                 '<?php for ($i=0;$i<count(COUNTRY);$i++){?>'+

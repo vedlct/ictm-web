@@ -2063,7 +2063,6 @@ class ApplyOnline extends CI_Controller
 
             $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
 
-            echo count($this->data['PersonalStatementData']);
             if ( count($this->data['PersonalStatementData'])>0) {
 
                 $this->load->view('application-form5v', $this->data);

@@ -43,8 +43,8 @@
 		                            </div>
 		                            <div class="form-bottom">
                                     	<div class="form-group">
-                                        	<label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                             	<select tabindex="1" style="width: 100%" name="title" required id="title">
 
@@ -58,32 +58,32 @@
 				                        </div>
                                         
 				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">First Name:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">First Name:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
                                             	<input tabindex="2" type="text" class="form-control" required id="firstName" name="firstName" value="<?php echo set_value('firstName'); ?>">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Surname:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Surname:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
                                             	<input tabindex="3" type="text" class="form-control" required id="surName" name="surName" value="<?php echo set_value('surName'); ?>">
                                           	</div>
 				                        </div>
                                         
 <!--                                        <div class="form-group">-->
-<!--                                        	<label class="control-label col-md-2">Other Names:</label>-->
-<!--                                          	<div class="col-md-10">-->
+<!--                                        	<label class="control-label col-md-3">Other Names:</label>-->
+<!--                                          	<div class="col-md-9">-->
 <!--                                                <p><font color="red"> --><?php //echo form_error('otherName'); ?><!--</font></p>-->
 <!--                                            	<input type="text" class="form-control" id="otherName" name="otherName" value="--><?php //echo set_value('otherName'); ?><!--">-->
 <!--                                          	</div>-->
 <!--				                        </div>-->
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Date of Birth:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
 <!--                                            	<input type="text" class="form-control datetimepicker" required id="dob" name="dob" value="--><?php //echo set_value('dob'); ?><!--">-->
 
@@ -123,16 +123,16 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Place of Birth:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
                                                 <input tabindex="6" type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Sex:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                             	<input tabindex="7" type="radio" required id="gender" name="gender"<?php
                                                 echo set_value('gender') == 'M' ? "checked" : "";
@@ -150,8 +150,8 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Any Gender changed:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Any Gender changed:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('genderChange'); ?></font></p>
                                                 <input tabindex="11" type="radio" required id="genderChange" name="genderChange"<?php
                                                 echo set_value('genderChange') == 'Y' ? "checked" : "";
@@ -167,8 +167,8 @@
 
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Nationality:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Nationality:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                                 <select tabindex="15" style="width: 100%" id="nationality" required name="nationality">
                                                     <option value="" disabled selected>Select country...</option>
@@ -185,16 +185,16 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Passport / ID No.:</label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Passport / ID No.:</label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
                                             	<input tabindex="16" type="text" class="form-control"  id="passportNo" name="passportNo" value="<?php echo set_value('passportNo'); ?>">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Passport / ID Expiry Date:</label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Passport / ID Expiry Date:</label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
 <!--                                            	<input type="text" class="form-control datetimepicker" required id="passportExpiryDate" name="passportExpiryDate" value="--><?php //echo set_value('passportExpiryDate'); ?><!--" >-->
 
@@ -235,8 +235,8 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">UK Entry Date: </label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">UK Entry Date: </label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
 <!--                                            	<input type="text" class="form-control datetimepicker"  id="UkEntryDate" name="UkEntryDate" value="--><?php //echo set_value('UkEntryDate'); ?><!--">-->
                                                 Year:
@@ -275,8 +275,8 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Visa Type:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Visa Type:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
                                                 <select tabindex="23" style="width: 100%" id="VisaType"  name="VisaType">
 
@@ -290,8 +290,8 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Visa Expiry Date:</label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Visa Expiry Date:</label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
 <!--                                            	<input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="--><?php //echo set_value('visaExpiryDate'); ?><!--">-->
 
@@ -330,46 +330,47 @@
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
-                                        
+                                        <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Current Address Details</h2>
+
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Current Address Line 1:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
                                             	<input tabindex="27" type="text" class="form-control" required id="currentAddress" name="currentAddress" value="<?php echo set_value('currentAddress'); ?>">
                                             </div>
 				                        </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Current Address Line 2:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Address Line 2:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
                                                 <input tabindex="28" type="text" class="form-control"  id="currentAddress2" name="currentAddress2" value="<?php echo set_value('currentAddress2'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Current Address Line 3:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Address Line 3:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddress3'); ?></font></p>
                                                 <input tabindex="29" type="text" class="form-control"  id="currentAddress3" name="currentAddress3" value="<?php echo set_value('currentAddress3'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Current City/Town:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddressCity'); ?></font></p>
                                                 <input tabindex="30" type="text" class="form-control" required id="currentAddressCity" name="currentAddressCity" value="<?php echo set_value('currentAddressCity'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Current County/State:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">County/State:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
                                                 <input tabindex="31" type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo set_value('currentAddressState'); ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
 
                                                 <select tabindex="32" style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
@@ -385,75 +386,76 @@
 				                        </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Telephone:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Telephone:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
                                                 <input tabindex="33" type="text" class="form-control" minlength="11"  maxlength="20" length="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
                                                 <input tabindex="34" type="text"  minlength="11"  maxlength="20"  class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">E-mail:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('email'); ?></font></p>
                                                 <input tabindex="35" type="email" class="form-control" required id="email" name="email"  value="<?php echo set_value('email'); ?>" >
                                             </div>
                                         </div>
 
+                                        <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent  Address Details</h2>
 
                                         <!-- This is overseas Address ,We consider this permanent address -->
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Permanent Address Line 1:<span style="color: red" class="required">*</span></label>
+                                            <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
 
                                             <label>Same as Current </label>
                                             <input tabindex="36" type="checkbox" id="samecheck2" onclick="addresscheck()">
-                                            <div class="col-md-10">
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress'); ?></font></p>
                                                 <!--                                            	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4">--><?php //echo set_value('overseasHomeAddress');?><!--</textarea>-->
                                                 <input tabindex="37" type="text" class="form-control" required id="permanentAddress" name="permanentAddress" value="<?php echo set_value('permanentAddress'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Permanent Address Line 2:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Address Line 2:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress2'); ?></font></p>
                                                 <input tabindex="38" type="text" class="form-control"  id="permanentAddress2" name="permanentAddress2" value="<?php echo set_value('permanentAddress2'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Permanent Address Line 3:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Address Line 3:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
                                                 <input tabindex="39" type="text" class="form-control" required id="permanentAddress3" name="permanentAddress3" value="<?php echo set_value('permanentAddress3'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Permanent City/Town:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddressCity'); ?></font></p>
                                                 <input tabindex="40" type="text" class="form-control" required id="permanentAddressCity" name="permanentAddressCity" value="<?php echo set_value('permanentAddressCity'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Permanent County/State:</label>
+                                            <label class="control-label col-md-3">County/State:</label>
 
-                                            <div class="col-md-10">
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddressState'); ?></font></p>
                                                 <input tabindex="41" type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo set_value('permanentAddressState'); ?>">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2"> Permanent Country:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
 
                                                 <select tabindex="42" style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
@@ -471,8 +473,8 @@
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactTitle'); ?></font></p>
                                             	<select tabindex="43" style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
 
@@ -486,60 +488,61 @@
 				                        </div>
                                         
 				                    	<div class="form-group">
-                                        	<label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Name:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactName'); ?></font></p>
                                             	<input tabindex="44" type="text" class="form-control" required id="EmergencyContactName" name="EmergencyContactName" value="<?php echo set_value('EmergencyContactName'); ?>">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Relation:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactRelation'); ?></font></p>
                                             	<input tabindex="45" type="text" class="form-control" required id="EmergencyContactRelation" value="<?php echo set_value('EmergencyContactRelation'); ?>" name="EmergencyContactRelation">
                                           	</div>
 				                        </div>
-                                        
+                                        <h2 style="font-weight:bold; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Address Details</h2>
+
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
                                                 <input tabindex="46" type="text" class="form-control" required id="EmergencyContactAddress" value="<?php echo set_value('EmergencyContactAddress'); ?>" name="EmergencyContactAddress">
                                           	</div>
 				                        </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Address Line 2:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Address Line 2:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress2'); ?></font></p>
                                                 <input tabindex="47" type="text" class="form-control"  id="EmergencyContactAddress2" value="<?php echo set_value('EmergencyContactAddress2'); ?>" name="EmergencyContactAddress2">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Address Line 3:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Address Line 3:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
                                                 <input tabindex="48" type="text" class="form-control"  id="EmergencyContactAddress3" value="<?php echo set_value('EmergencyContactAddress3'); ?>" name="EmergencyContactAddress3">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactCity'); ?></font></p>
                                                 <input tabindex="49" type="text" class="form-control" required id="EmergencyContactCity" value="<?php echo set_value('EmergencyContactCity'); ?>" name="EmergencyContactCity">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Country/State:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Country/State:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
                                                 <input tabindex="50" type="text" class="form-control" required id="EmergencyContactState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Country :<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
 
                                                 <select tabindex="51" style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
@@ -555,16 +558,16 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
                                             	<input tabindex="52" type="text" minlength="11"  maxlength="20" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">E-mail:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactEmail'); ?></font></p>
                                             	<input tabindex="53" type="email" class="form-control" required id="EmergencyContactEmail" name="EmergencyContactEmail" value="<?php echo set_value('EmergencyContactEmail'); ?>">
                                           	</div>
@@ -574,8 +577,8 @@
 
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Course Name:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Course Name:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseName'); ?></font></p>
                                                 <select tabindex="54" style="width: 100%" onchange="courseAwardBody()" id="courseName" required name="courseName">
                                                 <option value=""><?php echo SELECT_COURSE?></option>
@@ -587,26 +590,26 @@
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Awarding Body:</label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Awarding Body:</label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
                                             	<input tabindex="55" type="text" readonly class="form-control" id="awardingBody" value="<?php echo set_value('awardingBody'); ?>" name="awardingBody">
                                           	</div>
 				                        </div>
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Course Level:</label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Course Level:</label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseLevel'); ?></font></p>
-                                            	<input tabindex="56" type="text" class="form-control" id="courseLevel" name="courseLevel" value="<?php echo set_value('courseLevel'); ?>">
+                                            	<input tabindex="56" type="text" class="form-control" id="courseLevel" name="courseLevel" disabled value="<?php echo set_value('courseLevel'); ?>">
                                           	</div>
 				                        </div>
 
 
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Course Session:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Course Session:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
                                                 <select tabindex="57" style="width: 100%" id="courseSession" required name="courseSession">
                                                     <option value="" disabled selected>Select Session...</option>
@@ -618,8 +621,8 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">Year:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
                                                 <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo set_value('courseYear'); ?>">
                                             </div>
@@ -628,8 +631,8 @@
 
                                         
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Mode of study:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Mode of study:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
                                             	<input tabindex="59" type="radio" required name="methodeOfStudy" <?php
                                                 echo set_value('methodeOfStudy') == 'FT' ? "checked" : "";
@@ -641,8 +644,8 @@
                                           	</div>
 				                        </div>
                                         <div class="form-group">
-                                        	<label class="control-label col-md-2">Time of study:<span style="color: red" class="required">*</span></label>
-                                          	<div class="col-md-10">
+                                        	<label class="control-label col-md-3">Time of study:<span style="color: red" class="required">*</span></label>
+                                          	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
 
                                                 <input tabindex="61" type="radio" required name="timeOfStudy" <?php
@@ -654,22 +657,22 @@
                                           	</div>
 				                        </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">ULN No.:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">ULN No.:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('ulnNo'); ?></font></p>
                                                 <input tabindex="63" type="text" class="form-control" id="ulnNo" name="ulnNo" value="<?php echo set_value('ulnNo'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">UCAS Course Code:</label>
-                                            <div class="col-md-10">
+                                            <label class="control-label col-md-3">UCAS Course Code:</label>
+                                            <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('ucasCourseCode'); ?></font></p>
                                                 <input tabindex="64" type="text" class="form-control" id="ucasCourseCode" name="ucasCourseCode" value="<?php echo set_value('ucasCourseCode'); ?>">
                                             </div>
                                         </div>
                                         
                                         <div class="form-group">        
-                                          <div class="col-sm-offset-2 col-md-10">
+                                          <div class="col-sm-offset-2 col-md-9">
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
                                               <button type="reset" class="btn btn-next">Reset</button>
                                               <button type="submit" class="btn btn-next">Save Application</button>

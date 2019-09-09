@@ -52,8 +52,8 @@
                     <div class="form-bottom">
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Self Finance:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Self Finance:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="1" type="radio"  <?php if (!empty($financeYes) && $financeYes=='slc'){?> checked <?php }?> required name="selfFinance" value="slc"> SLC &nbsp;&nbsp;
                                         <input tabindex="2" type="radio" <?php if (!empty($financeYes) && $financeYes=='own'){?> checked <?php }?> required name="selfFinance" value="own"> OWN&nbsp;&nbsp;
                                         <input tabindex="3" type="radio"  <?php if (!empty($financeYes) && $financeYes=='sponsor'){?> checked <?php }?> required name="selfFinance" value="sponsor"> Sponsorship&nbsp;&nbsp;&nbsp;
@@ -64,8 +64,8 @@
                             <p>Name and address of person or organisation responsible for paying fees (if not yourself):</p>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                     <select tabindex="4" style="width: 100%"  id="title"   name="title">
 
@@ -78,60 +78,60 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Name:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
                                     <input tabindex="5" type="text" class="form-control" id="name"  maxlength="100" name="name" value="<?php echo $f4->name ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Relation:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
                                     <input tabindex="6" type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
                                 </div>
                             </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                         <input tabindex="7"  type="text" class="form-control" id="address" name="address" required value="<?php echo $f4->address?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address Line 2:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Address Line 2:</label>
+                                    <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                         <input tabindex="8"  type="text" class="form-control" id="address2" name="address2" value="<?php echo $f4->address2?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Address Line 3:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Address Line 3:</label>
+                                    <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                         <input tabindex="9"  type="text" class="form-control" id="address3" name="address3" value="<?php echo $f4->address3?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                         <input tabindex="10"  type="text" class="form-control" id="city" name="city" required value="<?php echo $f4->city?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">County/State:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">County/State:</label>
+                                    <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                         <input tabindex="11"  type="text" class="form-control" id="state" name="state" value="<?php echo $f4->state?>">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-9">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                         <select tabindex="9" style="width: 100%" id="country"  name="country">
                                             <option value="" disabled selected>Select country...</option>
@@ -144,8 +144,8 @@
                                 </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
                                     <input tabindex="10" type="text" class="form-control" id="mobile"maxlength="50" name="mobile" value="<?php echo $f4->mobile ?>">
@@ -153,8 +153,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Telephone:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
                                     <input tabindex="11" type="text" class="form-control" id="telephone" maxlength="50" name="telephone"value="<?php echo $f4->telephone ?>">
@@ -162,8 +162,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">E-mail:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
 
                                     <input tabindex="12" type="email" class="form-control" id="email" maxlength="50" name="email" value="<?php echo $f4->email ?>">
@@ -172,7 +172,7 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
+                                <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm5" ><button type="button" class="btn btn-previous">Previous</button></a>
 
                                     <button type="reset" class="btn btn-next">Reset</button>

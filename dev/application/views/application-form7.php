@@ -48,8 +48,8 @@
                             <p style="font-weight:bold; text-decoration:underline">Entry Requirement Documents:</p>
                             <p>Submit a completed Application Form along with the following:</p>
                             <div class="form-group">
-                                <div class="col-md-2"></div>
-                                <div class="col-md-10">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-9">
                                     <ul style="list-style-type:disc">
                                         <li>Passport size photo – 2</li>
                                         <li>Academic certificates and transcripts (a qualification that is equivalent to UK NVQ Level 3)</li>
@@ -65,17 +65,17 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Upload file:</label>
+                                <label class="control-label col-md-3">Upload file:</label>
                                 <div class="col-md-8">
                                     <input tabindex="1" type="file" class="form-control"  name="fileUpload[]" multiple>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-3">
                                     <button type="submit" class="btn btn-next">Add File</button>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
+                                <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
 <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>

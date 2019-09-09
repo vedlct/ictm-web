@@ -45,8 +45,8 @@
                         </div>
                         <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Is English your first language?<span style="color: red" class="required">*</span>:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Is English your first language?<span style="color: red" class="required">*</span>:</label>
+                                <div class="col-md-9">
                                     <input tabindex="1" type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
                                     <input tabindex="2" type="radio" <?php if ($fLanguage=='0'){?>checked<?php }?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
@@ -55,8 +55,8 @@
                             <p>If English is not your first language, please state your qualifications.</p>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Tests:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Tests:</label>
+                                <div class="col-md-9">
                                     <select tabindex="3" style="width: 100%" name="test" id="test" onchange="checkother()">
                                         <option value="" disabled selected>Select test...</option>
                                         <option value="1">IELTS</option>
@@ -68,8 +68,8 @@
                             </div>
 
                             <div class="form-group" id="listendiv" style="display: block">
-                                <label class="control-label col-md-2">Listening:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Listening:</label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('listening'); ?></font></p>
                                     <input tabindex="4" type="text" class="form-control" id="listening" name="listening" >
                                     <input tabindex="5" type="hidden" id="listeningid" name="listeningid">
@@ -77,8 +77,8 @@
                             </div>
 
                             <div class="form-group" id="readingdiv" style="display: block">
-                                <label class="control-label col-md-2">Reading:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Reading:</label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('reading'); ?></font></p>
                                     <input tabindex="6" type="text" class="form-control" id="reading" name="reading" >
                                     <input tabindex="7" type="hidden" id="readingid" name="readingid">
@@ -86,8 +86,8 @@
                             </div>
 
                             <div class="form-group" id="writingdiv" style="display: block">
-                                <label class="control-label col-md-2">Writing:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Writing:</label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('writing'); ?></font></p>
                                     <input tabindex="8" type="text" class="form-control" id="writing" name="writing" >
                                     <input tabindex="9" type="hidden" id="writingid" name="writingid">
@@ -95,8 +95,8 @@
                             </div>
 
                             <div class="form-group" id="speakingdiv" style="display: block">
-                                <label class="control-label col-md-2">Speaking:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Speaking:</label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('speaking'); ?></font></p>
                                     <input tabindex="10" type="text" class="form-control" id="speaking" name="speaking" >
                                     <input tabindex="11" type="hidden" id="speakingid" name="speakingid">
@@ -104,16 +104,16 @@
                             </div>
 
                             <div class="form-group" id="overralldiv" style="display: block">
-                                <label class="control-label col-md-2">Overall:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Overall:</label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('overall'); ?></font></p>
                                     <input tabindex="12" type="text" class="form-control" id="overall" name="overall" >
                                 </div>
                             </div>
 
                             <div class="form-group" id="expirediv" style="display: block">
-                                <label class="control-label col-md-2">Expiry Date:</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Expiry Date:</label>
+                                <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('expirydate'); ?></font></p>
                                     <input tabindex="13" type="text" class="form-control datetimepicker" id="expirydate" name="expirydate" >
                                 </div>
@@ -121,15 +121,15 @@
                             <input tabindex="14" type="hidden" value="" name="languagetestid" id="languagetestid">
 
 <!--                            <div class="form-group">-->
-<!--                                <div class="col-sm-offset-2 col-md-10">-->
+<!--                                <div class="col-sm-offset-2 col-md-9">-->
 <!--                                    <button type="button" class="btn btn-previous">Add New</button>-->
 <!--                                </div>-->
 <!--                            </div>-->
 
 
                             <div class="form-group" id="otherdiv" style="display: none">
-                                <label class="control-label col-md-2">Other (Please Specify):</label>
-                                <div class="col-md-10">
+                                <label class="control-label col-md-3">Other (Please Specify):</label>
+                                <div class="col-md-9">
                                     <textarea id="other" name="other" rows="8" tabindex="15"></textarea>
                                     <input tabindex="16" type="hidden" class="form-control" id="otherTab" name="otherTab"value="1">
                                 </div>
@@ -137,7 +137,7 @@
                             </div>
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
+                                <div class="col-sm-offset-2 col-md-9">
 
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="reset" class="btn btn-next">Reset</button>

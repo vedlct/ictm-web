@@ -58,8 +58,8 @@
                             ?>
                             <?php  if($a6->opportunityTitle=='Ethnicity') { ?>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Ethnicity:</label>
-                                    <div class="col-md-10 table-responsive">
+                                    <label class="control-label col-md-3">Ethnicity:</label>
+                                    <div class="col-md-9 table-responsive">
                                         <table class="table ">
 
                                             <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
@@ -92,8 +92,8 @@
                                     ?>
                                     <?php  if($a6->opportunityTitle=='Disability') { ?>
                                         <div class="form-group">
-                                            <label class="control-label col-md-2">Disability:</label>
-                                            <div class="col-md-10 table-responsive">
+                                            <label class="control-label col-md-3">Disability:</label>
+                                            <div class="col-md-9 table-responsive">
                                                 <table class="table ">
 
                                                     <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
@@ -142,8 +142,8 @@
                             ?>
                             <?php  if($a6->opportunityTitle=='Religion Belief') { ?>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Religion Belief:</label>
-                                    <div class="col-md-10 table-responsive">
+                                    <label class="control-label col-md-3">Religion Belief:</label>
+                                    <div class="col-md-9 table-responsive">
                                         <table class="table ">
 
                                             <?php $count=1; foreach($opportunitySubGroupId as $osg){ ?>
@@ -178,8 +178,8 @@
                             ?>
                             <?php  if($a6->opportunityTitle=='Sexual Orientation') { ?>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Sexual Orientation:</label>
-                                    <div class="col-md-10 table-responsive">
+                                    <label class="control-label col-md-3">Sexual Orientation:</label>
+                                    <div class="col-md-9 table-responsive">
                                         <table class="table ">
 
                                             <?php $count=0; foreach($opportunitySubGroupId as $osg){ ?>
@@ -208,7 +208,7 @@
 
 
                         <div class="form-group" >
-                            <div class="col-sm-offset-2 col-md-10" >
+                            <div class="col-sm-offset-2 col-md-9" >
                                 <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Previous</button></a>
                                 <button type="reset" class="btn btn-next">Reset</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>

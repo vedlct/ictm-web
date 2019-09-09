@@ -50,7 +50,7 @@
                         <div class="form-bottom">
                             <input tabindex="1"  type="hidden" class="form-control" id="refereesId"  name="refereesId">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:</label>
+                                <label class="control-label col-md-3">Title:</label>
                                 <div class="col-md-10">
                                     <select tabindex="2"  required style="width: 100%"  id="title"  name="title">
 
@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name*:</label>
+                                <label class="control-label col-md-3">Name*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
                                     <input tabindex="3"  required type="text" maxlength="100" class="form-control" id="name" name="name">
@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Institution/Company*:</label>
+                                <label class="control-label col-md-3">Institution/Company*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('company'); ?></font></p>
                                     <input tabindex="4"  required type="text" maxlength="80" class="form-control" id="company" name="company">
@@ -80,7 +80,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Position / Job Title:</label>
+                                <label class="control-label col-md-3">Position / Job Title:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('jobTitle'); ?></font></p>
                                     <input tabindex="5"  required type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
@@ -89,7 +89,7 @@
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone/Mobile*:</label>
+                                <label class="control-label col-md-3">Telephone/Mobile*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
                                     <input tabindex="6"  required type="text" class="form-control" maxlength="20" id="telephone" name="telephone">
@@ -97,42 +97,42 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:</label>
+                                <label class="control-label col-md-3">E-mail:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
                                     <input tabindex="7"  required type="email" class="form-control" maxlength="100" id="email" name="email">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="8"  type="text" class="form-control" id="address" name="address" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address Line 2:</label>
+                                <label class="control-label col-md-3">Address Line 2:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="9"  type="text" class="form-control" id="address2" name="address2" >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address Line 3:</label>
+                                <label class="control-label col-md-3">Address Line 3:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="10"  type="text" class="form-control" id="address3" name="address3" >
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="11"  type="text" class="form-control" id="city" name="city" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">County/State:</label>
+                                <label class="control-label col-md-3">County/State:</label>
                                 <div class="col-md-10">
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                     <input tabindex="12"  type="text" class="form-control" id="state" name="state" >
@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Country:</label>
+                                <label class="control-label col-md-3">Country:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                     <select tabindex="13"  required style="width: 100%" id="country"  name="country">

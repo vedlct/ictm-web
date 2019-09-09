@@ -720,7 +720,7 @@ class ApplyOnlinem extends CI_Model
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
 //            $fax = $this->input->post('fax');
-            $AddressPO = $this->input->post('AddressPO');
+        //    $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
                 'sourceOfFinance' => $selfFinance,
@@ -743,7 +743,7 @@ class ApplyOnlinem extends CI_Model
                 'telephone' => $telephone,
                 'email' => $email,
 //                'fax' => $fax,
-                'addressPo'=>$AddressPO,
+            //    'addressPo'=>$AddressPO,
                 'fkApplicationId'=>$applicationId
 
             );
