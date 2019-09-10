@@ -143,7 +143,7 @@
                             <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
-                                <input tabindex="14"  type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo $candidateInfo->placeOfBirth ?>">
+                                <input tabindex="6"  type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo $candidateInfo->placeOfBirth ?>">
                             </div>
                         </div>
 
@@ -211,7 +211,7 @@
                                 <?php
                                 $currently_selected = $ppyear;
                                 $earliest_year = 1950;
-                                $latest_year = date('Y');
+                                $latest_year = date('Y')+6;
                                 print '<select tabindex="17"  name="ppyear">';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -327,7 +327,7 @@
                                 <?php
                                 $currently_selected = $visayear;
                                 $earliest_year = 1950;
-                                $latest_year = date('Y');
+                                $latest_year = date('Y')+6;
                                 print '<select tabindex="24"  name="visayear">';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -361,35 +361,35 @@
                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address Line 1:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
                                 <input tabindex="27"  type="text" class="form-control" required id="currentAddress" name="currentAddress" value="<?php echo $candidateInfo->currentAddress ?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address Line 2:</label>
+                            <label class="control-label col-md-2">Address Line 2:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
                                 <input tabindex="28"  type="text" class="form-control"  id="currentAddress2" name="currentAddress2" value="<?php echo $candidateInfo->currentAddress2 ?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current Address Line 3:</label>
+                            <label class="control-label col-md-2">Address Line 3:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddress3'); ?></font></p>
                                 <input tabindex="29"  type="text" class="form-control"  id="currentAddress3" name="currentAddress3" value="<?php echo $candidateInfo->currentAddress3 ?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current City/Town:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddressCity'); ?></font></p>
                                 <input tabindex="30"  type="text" class="form-control" required id="currentAddressCity" name="currentAddressCity" value="<?php echo $candidateInfo->currentAddressCity ?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Current County/State:</label>
+                            <label class="control-label col-md-2">County/State:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
                                 <input tabindex="31"  type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo $candidateInfo->currentAddressState ?>">
@@ -412,7 +412,7 @@
                             <label class="control-label col-md-2">Telephone:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                <input tabindex="33"  type="text" class="form-control" required id="telephone" minlength="11" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
+                                <input tabindex="33"  type="text" class="form-control" required id="telephone" minlength="11"  maxlength="20" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
                             </div>
                         </div>
 
@@ -420,7 +420,7 @@
                             <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                <input tabindex="34"  type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
+                                <input tabindex="34"  type="text" minlength="11"  maxlength="20" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
                             </div>
                         </div>
 
@@ -431,9 +431,9 @@
                                 <input tabindex="35"  type="email" class="form-control" required id="email" name="email" value="<?php echo $candidateInfo->email ?>">
                             </div>
                         </div>
-
+                        <h4 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Permanent Address Details</h4>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent Address Line 1:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2"> Address Line 1:<span style="color: red" class="required">*</span></label>
 
                             <label>Same as Current </label>
                             <input tabindex="36"  type="checkbox" id="samecheck2" onclick="addresscheck()">
@@ -444,28 +444,28 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent Address Line 2:</label>
+                            <label class="control-label col-md-2">Address Line 2:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddress2'); ?></font></p>
                                 <input tabindex="38"  type="text" class="form-control"  id="permanentAddress2" name="permanentAddress2" value="<?php echo $candidateInfo->permanentAddress2?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent Address Line 3:</label>
+                            <label class="control-label col-md-2">Address Line 3:</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
                                 <input tabindex="39"  type="text" class="form-control" required id="permanentAddress3" name="permanentAddress3" value="<?php echo $candidateInfo->permanentAddress3?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent City/Town:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCity'); ?></font></p>
                                 <input tabindex="40"  type="text" class="form-control" required id="permanentAddressCity" name="permanentAddressCity" value="<?php echo $candidateInfo->permanentAddressCity?>">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent County/State:</label>
+                            <label class="control-label col-md-2">County/State:</label>
 
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddressState'); ?></font></p>
@@ -474,7 +474,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Permanent Courntry:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
                                 <select tabindex="42"  style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
@@ -577,7 +577,7 @@
                             <label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                <input tabindex="52"  type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
+                                <input tabindex="52"  type="text" minlength="11"  maxlength="20" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
                             </div>
                         </div>
 

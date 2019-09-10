@@ -126,7 +126,7 @@
                                             <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
-                                                <input tabindex="14" type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
+                                                <input tabindex="6" type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo set_value('placeOfBirth'); ?>">
                                             </div>
                                         </div>
                                         
@@ -203,7 +203,7 @@
                                                 <?php
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
-                                                $latest_year = date('Y');
+                                                $latest_year = date('Y')+6;
                                                 print '<select tabindex="17" name="ppyear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -299,7 +299,7 @@
                                                 <?php
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
-                                                $latest_year = date('Y');
+                                                $latest_year = date('Y')+6;
                                                 print '<select tabindex="24" name="visayear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -388,7 +388,7 @@
                                             <label class="control-label col-md-2">Telephone:</label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                                <input tabindex="33" type="text" class="form-control" minlength="11" length="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
+                                                <input tabindex="33" type="text" class="form-control" minlength="11"  maxlength="20" length="11"  id="telephone" name="telephone" value="<?php echo set_value('telephone'); ?>">
                                             </div>
                                         </div>
 
@@ -396,7 +396,7 @@
                                             <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                                <input tabindex="34" type="text"  maxlength="11"  class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
+                                                <input tabindex="34" type="text"  minlength="11"  maxlength="20"  class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
                                             </div>
                                         </div>
 
@@ -558,7 +558,7 @@
                                         	<label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-10">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                            	<input tabindex="52" type="text" maxlength="11" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
+                                            	<input tabindex="52" type="text" minlength="11"  maxlength="20" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo set_value('EmergencyContactMobile'); ?>">
                                           	</div>
 				                        </div>
                                         
