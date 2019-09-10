@@ -2063,7 +2063,6 @@ class ApplyOnline extends CI_Controller
 
             $this->data['PersonalStatementData'] = $this->ApplyOnlinem->getPersonalStatementData($applicationId);
 
-            echo count($this->data['PersonalStatementData']);
             if ( count($this->data['PersonalStatementData'])>0) {
 
                 $this->load->view('application-form5v', $this->data);
@@ -2597,7 +2596,21 @@ class ApplyOnline extends CI_Controller
                         $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
                         $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
 
+//
                         $this->load->library('upload');
+
+                        $applicationId = $this->session->userdata('studentApplicationId');
+                        $dir =   "./AdminPanel/studentApplications/$applicationId/";
+
+                        $fcount = 0;
+                        $files = glob($dir . "*");
+                        if ($files){
+                            $fcount = count($files);
+                        }
+                        if($fcount > 9 ){
+                            $this->session->set_flashdata('errorMessage', 'cannot upload more then 10 files');
+                            redirect('ApplyForm7');
+                        }
 
                         $this->upload->initialize($this->set_upload_options($applicationId));
 
@@ -2606,11 +2619,18 @@ class ApplyOnline extends CI_Controller
                             $data[$error[$i]];
 
                         }
-
                         $fileCount++;
 
+                        if($fileCount > 9 ){
+                        $this->session->set_flashdata('errorMessage', 'cannot upload more then 10 files');
+                        redirect('ApplyForm7');
+                         }
 
-                    } else {
+
+                        } else {
+
+                        $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                        redirect('ApplyForm7');
 
                     }
                 }

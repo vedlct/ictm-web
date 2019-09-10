@@ -29,7 +29,7 @@
             <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
         <?php }?>
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-10">
 
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow7" enctype="multipart/form-data" method="post" class="registration-form form-horizontal">
 
@@ -67,10 +67,10 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-8">
-                                    <input tabindex="1" type="file" class="form-control"  name="fileUpload[]" multiple>
+                                    <input tabindex="1" type="file" class="form-control" id="file-upload" name="fileUpload[]" multiple>
                                 </div>
                                 <div class="col-md-2">
-                                    <button type="submit" class="btn btn-next">Add File</button>
+                                    <button type="submit" class="btn btn-next" onclick="return VerifyUploadSizeIsOK()">Add File</button>
                                 </div>
                             </div>
 
@@ -79,7 +79,18 @@
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
 <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
-<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm9" ><button type="button"  class="btn ">Next</button></a>-->
+
+                                    <?php
+                                    $applicationId = $this->session->userdata('studentApplicationId');
+                                    $dir =   "./AdminPanel/studentApplications/$applicationId/";
+
+                                    $fcount = 0;
+                                    $files = glob($dir . "*");
+                                    if ($files){
+                                         $fcount = count($files);
+                                    }
+                                    ?>
+                                    <?php if($fcount >=1) { ?><a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button> <?php }?></a>
                                 </div>
                             </div>
 
@@ -98,9 +109,10 @@
                                     // Open a directory, and read its contents
                                     if (is_dir($dir)) {
                                         if ($dh = opendir($dir)) {
+
                                             $count = 1;
                                             while (($file = readdir($dh)) !== false) {
-                                                if ($file != "." && $file != "..") { ?>
+                                                if ($file != "." && $file != "..") {  ?>
                                                     <tr>
                                                         <td><?php echo $count ?></td>
                                                         <td>
@@ -115,7 +127,9 @@
                                                     </tr>
                                                     <?php $count++;
                                                 }
+
                                             }
+
                                         }
                                     }?>
                                 </table>
@@ -138,9 +152,9 @@
 
 
 
-            </div><!-- /col-md-9 -->
+            </div><!-- /col-md-10 -->
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
@@ -151,7 +165,7 @@
 
 
                 </div><!-- sidebar -->
-            </div><!-- /col-md-3 -->
+            </div><!-- /col-md-2 -->
         </div>
     </div>
 </section>
@@ -167,6 +181,8 @@
 </html>
 
 <script>
+
+
     function selectidForDelete(x) {
 
         var fileName=$(x).data('panel-id');
@@ -199,4 +215,19 @@
 
 
     }
+</script>
+<script type="text/javascript">
+    function VerifyUploadSizeIsOK()
+    {
+        /* Attached file size check. Will Bontrager Software LLC, https://www.willmaster.com */
+        var UploadFieldID = "file-upload";
+        var MaxSizeInBytes = 5097152;
+        var fld = document.getElementById(UploadFieldID);
+        if( fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes )
+        {
+            alert("The file size must be no more than " + parseInt(MaxSizeInBytes/1024/1024) + "MB");
+            return false;
+        }
+        return true;
+    } // function VerifyUploadSizeIsOK()
 </script>

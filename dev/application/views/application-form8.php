@@ -37,7 +37,7 @@
 
 
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-10">
 
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow8" method="post" class="form-horizontal">
 
@@ -184,9 +184,9 @@
                 </form>
 
 
-            </div><!-- /col-md-9 -->
+            </div><!-- /col-md-10 -->
 
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <div class="sidebar">
 
                     <div class="widget widget-courses">
@@ -197,7 +197,7 @@
 
 
                 </div><!-- sidebar -->
-            </div><!-- /col-md-3 -->
+            </div><!-- /col-md-2 -->
         </div>
     </div>
 </section>

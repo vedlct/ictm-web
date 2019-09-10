@@ -62,41 +62,41 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div id="TextBoxDiv1" >
                                 <input tabindex="" type="hidden" class="form-control" id="qualificationId"  name="qualificationId">
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Qualification Name<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Qualification Name<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2" type="text" class="form-control" id="qualification" maxlength="100" required name="qualification">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Qualification Level<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Qualification Level<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2" type="text" class="form-control" id="qualificationLevel" maxlength="100" required name="qualificationLevel">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Name of Institution<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Name of Institution<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2" type="text" class="form-control" id="institution" maxlength="100" required name="institution">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Awarding Body<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Awarding Body<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2" type="text" class="form-control" id="awardingBody" maxlength="255" required name="awardingBody">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Subject<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Subject<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2" type="text" class="form-control" id="subject" maxlength="255" required name="subject">
                                     </div>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Completion Year<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Completion Year<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="completionYear" maxlength="100" required name="completionYear">-->
 
                                         <?php
@@ -113,8 +113,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Grade<span style="color: red">*</span>:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Grade<span style="color: red">*</span>:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2" type="text" class="form-control" id="grade" maxlength="20" required name="grade">
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div style="margin: 4px" class="form-group form-bottom">
-                            <div class="col-sm-offset-2 col-md-10">
+                            <div class="col-sm-offset-2 col-md-9">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>

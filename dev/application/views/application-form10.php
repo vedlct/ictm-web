@@ -51,22 +51,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Organisation / Regulatory Body:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Organisation / Regulatory Body:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="1"  type="text" class="form-control" maxlength="100" id="organisation"  name="organisation[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Position Held:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">Position Held:</label>
+                                    <div class="col-md-9">
                                         <input tabindex="2"  type="text" class="form-control" id="positionHeld" maxlength="100"  name="positionHeld[]">
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">From:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">From:</label>
+                                    <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">-->
 
                                         Year:
@@ -102,8 +102,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">To:</label>
-                                    <div class="col-md-10">
+                                    <label class="control-label col-md-3">To:</label>
+                                    <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">-->
 
                                         Year:
@@ -144,7 +144,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
 <!--                        <div class="form-group">-->
-<!--                            <div class="col-sm-offset-2 col-md-10">-->
+<!--                            <div class="col-sm-offset-2 col-md-9">-->
 <!--                                <button id='addButton' type="button" class="btn " style="background-color: #4cae4c">Add New Qualification</button>-->
 <!--                                <button class="btn " type='button' value='Remove' id='removeButton' style="background-color: darkred"> Remove</button>-->
 <!--                            </div>-->
@@ -154,7 +154,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
                         <div class="form-group">
-                            <div class="col-sm-offset-2 col-md-10">
+                            <div class="col-sm-offset-2 col-md-9">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
@@ -283,26 +283,26 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             var newTextBoxDiv = $(document.createElement('div'))
                 .attr("id", 'TextBoxDiv' + counter);
             newTextBoxDiv.after().html( '<div class="form-group">'+
-                '<label class="control-label col-md-2">Qualification'+counter+':</label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Qualification'+counter+':</label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="organisation'+counter+'" name="organisation[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Institution'+counter+':</label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Institution'+counter+':</label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control" id="positionHeld'+counter+'" name="positionHeld[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">Start Date'+counter+':</label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">Start Date'+counter+':</label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control datetimepicker" id="startdate'+counter+'" name="startdate[]">'+
                 '</div>'+
                 '</div>'+
                 '<div class="form-group">'+
-                '<label class="control-label col-md-2">End Date'+counter+':</label>'+
-                '<div class="col-md-10">'+
+                '<label class="control-label col-md-3">End Date'+counter+':</label>'+
+                '<div class="col-md-9">'+
                 '<input type="text" class="form-control datetimepicker" id="enddate'+counter+'" name="enddate[]">'+
                 '</div>'+
                 '</div>'
