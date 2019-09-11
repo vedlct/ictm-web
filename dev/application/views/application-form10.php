@@ -159,7 +159,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="reset" class="btn btn-next">Reset</button>
-                                <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" class="btn btn-next">Add experience</button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
                             </div>

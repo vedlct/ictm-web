@@ -172,7 +172,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="reset" class="btn btn-next">Reset</button>
-                                <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" class="btn btn-next"><span id="update">Add experience</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
@@ -441,6 +441,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 document.getElementById("workendmonth").value= parseInt(endDateArr[1])-1;
                 document.getElementById("workenddate").value= parseInt(endDateArr[2])-1;
                 document.getElementById("experience").value= experienceId;
+
+                $('#update').html('update');
 
             }
 
