@@ -138,7 +138,7 @@
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label class="control-label col-md-3">Place of Birth:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
@@ -825,26 +825,30 @@
 
 
         var startyear = $('#dobyear').val();
-        var startmonth = parseInt(document.getElementById('dobmonth').value);
-        var startdat = parseInt(document.getElementById('dobdate').value);
+        var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
+        var startdat = parseInt(document.getElementById('dobdate').value)+1;
         var dob = startdat+'/'+startmonth+'/'+startyear;
         var d = new Date(dob);
 
 
-        alert(d);
+
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
         var today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        if (startdat == today.getDate()-1 && startmonth == today.getMonth() && startyear == today.getFullYear()){
+        if (startdat-1 == today.getDate()-1 && startmonth-1 == today.getMonth() && startyear == today.getFullYear()){
             alert("DOB cann't be Today");
             return false;
         }
 
 
         //alert(dob);
-       validatedate(dob);
+      if(validatedate(startdat, startmonth , startyear)=="false"){
+            return false;
+      }
+
+
 
     }
 
@@ -880,38 +884,11 @@
     }
 
 
-    function validatedate(inputText)
+    function validatedate(dd , mm , yy)
     {
-        alert(inputText);
-        var dateformat = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
-        // Match the date format through regular expression
-        if(inputText.value.match(dateformat))
-        {
-            alert("work");
-            //document.form1.text1.focus();
-            //Test which seperator is used '/' or '-'
-            var opera1 = inputText.value.split('/');
-            var opera2 = inputText.value.split('-');
-            lopera1 = opera1.length;
-            lopera2 = opera2.length;
-            // Extract the string into month, date and year
-            if (lopera1>1)
-            {
-                var pdate = inputText.value.split('/');
-                alert(pdate);
-            }
-            else if (lopera2>1)
-            {
-                var pdate = inputText.value.split('-');
-            }
-
-
-            var dd = parseInt(pdate[0]);
-            var mm  = parseInt(pdate[1]);
-            var yy = parseInt(pdate[2]);
-            alert(dd);
-            alert(mm);
-            alert(yy);
+            var dd = parseInt(dd);
+            var mm  = parseInt(mm);
+            var yy = parseInt(yy);
 
             // Create list of days of a month [assume there is no leap year by default]
             var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
@@ -920,7 +897,7 @@
                 if (dd>ListofDays[mm-1])
                 {
                     alert('Invalid date format!');
-                    return false;
+                    return "false";
                 }
             }
             if (mm==2)
@@ -933,20 +910,15 @@
                 if ((lyear==false) && (dd>=29))
                 {
                     alert('Invalid date format!');
-                    return false;
+                    return "false";
                 }
                 if ((lyear==true) && (dd>29))
                 {
                     alert('Invalid date format!');
-                    return false;
+                    return "false";
                 }
             }
         }
-        else
-        {
-            alert("Invalid date format!");
-           // document.form1.text1.focus();
-            return false;
-        }
-    }
+
+
 </script>
