@@ -93,7 +93,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
-                                                print '<select tabindex="4" name="dobyear">';
+                                                print '<select tabindex="4" name="dobyear" id="dobyear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -101,7 +101,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="5" name="dobmonth">
+                                                <select tabindex="5" name="dobmonth" id="dobmonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -110,7 +110,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="6" name="dobdate">
+                                                <select tabindex="6" name="dobdate" id="dobdate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -204,7 +204,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
-                                                print '<select tabindex="17" name="ppyear">';
+                                                print '<select tabindex="17" name="ppyear" id="ppyear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -212,7 +212,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="18" tab name="ppmonth">
+                                                <select tabindex="18" tab name="ppmonth" id="ppmonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -221,7 +221,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="19" name="ppdate">
+                                                <select tabindex="19" name="ppdate" id="ppdate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -244,7 +244,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
-                                                print '<select tabindex="20" name="ukyear">';
+                                                print '<select tabindex="20" name="ukyear" id="ukyear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -252,7 +252,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="21" name="ukmonth">
+                                                <select tabindex="21" name="ukmonth" id="ukmonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -261,7 +261,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="22" name="ukdate">
+                                                <select tabindex="22" name="ukdate" id="ukdate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -300,7 +300,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
-                                                print '<select tabindex="24" name="visayear">';
+                                                print '<select tabindex="24" name="visayear" id="visayear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -308,7 +308,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="25" name="visamonth">
+                                                <select tabindex="25" name="visamonth" id="visamonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -317,7 +317,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="26" name="visadate">
+                                                <select tabindex="26" name="visadate" id="visadate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -819,23 +819,93 @@
 
             function checkvalidation() {
 
-                if (document.getElementById('courseYear').value > 2019) {
-                    alert("year cant be future")
-                    return false;
-                } else
-                    return true;
+                // if (document.getElementById('courseYear').value > 2019) {
+                //     alert("year cant be future")
+                //     return false;
+                // } else
+                //     return true;
+				//
+				//
+                // var startyear = $('#dobyear').val();
+                // var startmonth = $('#dobmonth').val();
+                // var startdat = $('#dobdate').val();
+				//
+                // var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+                // var today = new Date();
+                // today.setHours(0, 0, 0, 0)
+                // if (stratdate == today){
+                //     alert("DOB cann't be Today")
+                // }
+                //
+
 
 
                 var startyear = $('#dobyear').val();
-                var startmonth = $('#dobmonth').val();
-                var startdat = $('#dobdate').val();
+                var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
+                var startdat = parseInt(document.getElementById('dobdate').value)+1;
 
-                var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
                 var today = new Date();
-                today.setHours(0, 0, 0, 0)
-                if (stratdate == today){
-                    alert("DOB cann't be Today")
+                today.setHours(0, 0, 0, 0);
+
+                if (startdat-1 == today.getDate()-1 && startmonth-1 == today.getMonth() && startyear == today.getFullYear()){
+                    alert("DOB cann't be Today");
+                    return false;
                 }
+
+
+                //alert(dob);
+                if(validatedate(startdat, startmonth , startyear)=="false"){
+                    return false;
+                }
+
+
+
+                var startyearpp = $('#ppyear').val();
+                var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
+                var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
+
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+
+                //alert(dob);
+                if(validatedate(startdatpp, startmonthpp , startyearpp)=="false"){
+                    return false;
+                }
+
+
+
+                var startyearvs = $('#visayear').val();
+                var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
+                var startdatvs = parseInt(document.getElementById('visadate').value)+1;
+
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+
+                //alert(dob);
+                if(validatedate(startdatvs, startmonthvs , startyearvs)=="false"){
+                    return false;
+                }
+
+
+
+                var startyearuk = $('#ukyear').val();
+                var startmonthuk = parseInt(document.getElementById('ukmonth').value)+1;
+                var startdatuk = parseInt(document.getElementById('ukdate').value)+1;
+
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+
+
+                //alert(dob);
+                if(validatedate(startdatuk, startmonthuk , startyearuk)=="false"){
+                    return false;
+                }
+
 
             }
 
@@ -913,4 +983,43 @@
 
                 }
             }
+
+            function validatedate(dd , mm , yy)
+            {
+                var dd = parseInt(dd);
+                var mm  = parseInt(mm);
+                var yy = parseInt(yy);
+
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+                if (mm==1 || mm>2)
+                {
+                    if (dd>ListofDays[mm-1])
+                    {
+                        alert('Invalid date format!');
+                        return "false";
+                    }
+                }
+                if (mm==2)
+                {
+                    var lyear = false;
+                    if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+                    {
+                        lyear = true;
+                    }
+                    if ((lyear==false) && (dd>=29))
+                    {
+                        alert('Invalid date format!');
+                        return "false";
+                    }
+                    if ((lyear==true) && (dd>29))
+                    {
+                        alert('Invalid date format!');
+                        return "false";
+                    }
+                }
+            }
+
         </script>
+
+
