@@ -202,6 +202,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 </script>
 
+
+
 <script>
 
     function checkother() {

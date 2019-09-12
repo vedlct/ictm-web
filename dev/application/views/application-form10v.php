@@ -254,7 +254,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <script type="text/javascript">
     $(document).ready(function(){
         var counter = 2;
-        $("#addButton").click(function () {
+        $("#addButton").click(function() {
             if(counter>10){
                 alert("Only 10 textboxes allow");
                 return false;
@@ -400,7 +400,56 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
         }
 
-    }
+
+
+        var startyear = $('#workstryear').val();
+        var startmonth = parseInt(document.getElementById('workstrmonth').value)+1;
+        var startdat = parseInt(document.getElementById('workstrdate').value)+1;
+
+        //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (startdat-1 == today.getDate()-1 && startmonth-1 == today.getMonth() && startyear == today.getFullYear()){
+            alert("DOB cann't be Today");
+            return false;
+        }
+
+
+        //alert(dob);
+        if(validatedate(startdat, startmonth , startyear)=="false"){
+            return false;
+        }
+
+
+
+
+
+        var endyear = $('#workendyear').val();
+        var endmonth = parseInt(document.getElementById('workendmonth').value)+1;
+        var enddat = parseInt(document.getElementById('workenddate').value)+1;
+
+        //var endatdate = new Date(endyear + "-" + endmonth + "-" + enddat);
+
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        if (enddat-1 == today.getDate()-1 && endmonth-1 == today.getMonth() && endyear == today.getFullYear()){
+            alert("DOB cann't be Today");
+            return false;
+        }
+
+
+        //alert(dob);
+        if(validatedate(enddat, endmonth , endyear)=="false"){
+            return false;
+        }
+
+
+}
+
+
 
     function selectid(x) {
         btn = $(x).data('panel-id');
@@ -470,6 +519,44 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }
     }
 
+</script>
+
+<script>
+    function validatedate(dd , mm , yy)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                alert('Invalid date format!');
+                return "false";
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                alert('Invalid date format!');
+                return "false";
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                alert('Invalid date format!');
+                return "false";
+            }
+        }
+    }
 </script>
 
 </html>
