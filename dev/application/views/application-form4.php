@@ -165,7 +165,7 @@
                                 <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input tabindex="10" type="text" class="form-control" id="mobile" name="mobile" maxlength="50" value="<?php echo set_value('mobile'); ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile" name="mobile" minlength="11" maxlength="20" value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
@@ -173,7 +173,7 @@
                                 <label class="control-label col-md-3">Telephone:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input tabindex="11" type="text" class="form-control" id="telephone" name="telephone" maxlength="50" value="<?php echo set_value('telephone'); ?>" >
+                                    <input tabindex="11" type="text" class="form-control" id="telephone" name="telephone"minlength="11" maxlength="20" value="<?php echo set_value('telephone'); ?>" >
                                 </div>
                             </div>
 
@@ -278,47 +278,17 @@
 
         var finance=$('input[name=selfFinance]:checked').val();
 
-        if ((finance != 'own' ) && (finance != "slc" )) {
-
+        if (finance != 'own'  && finance != "slc") {
 
             var title = document.getElementById("title").value;
             var email = document.getElementById("email").value;
             var name = document.getElementById("name").value;
-            var AddressPO = document.getElementById("AddressPO").value;
             var relation = document.getElementById("relation").value;
             var address = document.getElementById("address").value;
             var phone = document.getElementById("mobile").value;
             var telephone = document.getElementById("telephone").value;
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-            if (title == "") {
-                alert("Please select a Title");
-                return false;
-            }
-            if (name == "") {
-                alert("Name  Can not Empty");
-                return false;
-            }
-            if (relation == "") {
-                alert(" Relation  Can not Empty");
-                return false;
-            }
-            if (address == "") {
-                alert("Address  can not  empty");
-                return false;
-            }
-
-            if (AddressPO == "") {
-                alert("Address PO  Can not Empty");
-                return false;
-            }
-            if (AddressPO.length >15) {
-                alert("Address PO  must be less than 15 charecter");
-                return false;
-            }
-
-
             if (!phone.match(chk)) {
                 alert('Please enter a valid Mobile Phone number!!');
                 return false;
@@ -327,18 +297,8 @@
                 alert('Mobile Phone number must be less than 50 charecter!!');
                 return false;
             }
-
-            if (email == "") {
-                alert("email can not empty");
-                return false;
-            }
             if (!email.match(mailformat)) {
                 alert("You have entered an invalid email address!");
-                return false;
-            }
-
-            if (telephone == "") {
-                alert("Give the telephone number ");
                 return false;
             }
             else {

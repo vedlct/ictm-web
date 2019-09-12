@@ -45,9 +45,8 @@
                             </div>
                         </div>
                 <?php foreach ($Financer as $f4) { ?>
+
                     <form role="form" action="<?php echo base_url()?>ApplyOnline/updateInfoApply4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
-
-
 
                     <div class="form-bottom">
 
@@ -148,7 +147,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input tabindex="10" type="text" class="form-control" id="mobile"maxlength="50" name="mobile" value="<?php echo $f4->mobile ?>">
+                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20""  name="mobile" value="<?php echo $f4->mobile ?>" required>
                                 </div>
                             </div>
 
@@ -157,7 +156,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
-                                    <input tabindex="11" type="text" class="form-control" id="telephone" maxlength="50" name="telephone"value="<?php echo $f4->telephone ?>">
+                                    <input tabindex="11" type="number" class="form-control" id="telephone" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" required>
                                 </div>
                             </div>
 
@@ -245,47 +244,16 @@
 
         if (finance != 'own'  && finance != "slc") {
 
+
             var title = document.getElementById("title").value;
             var email = document.getElementById("email").value;
             var name = document.getElementById("name").value;
-            var AddressPO = document.getElementById("AddressPO").value;
             var relation = document.getElementById("relation").value;
             var address = document.getElementById("address").value;
-
             var phone = document.getElementById("mobile").value;
-            var fax = document.getElementById("fax").value;
             var telephone = document.getElementById("telephone").value;
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-            if (title == "") {
-                alert("Please select a Title");
-                return false;
-            }
-            if (name == "") {
-                alert("Name  Can not Empty");
-                return false;
-            }
-
-            if (relation == "") {
-                alert(" Relation  Can not Empty");
-                return false;
-            }
-            if (address == "") {
-                alert("Address  can not  empty");
-                return false;
-            }
-
-            if (AddressPO == "") {
-                alert("Address PO  Can not Empty");
-                return false;
-            }
-            if (AddressPO.length >15) {
-                alert("Address PO  must be less than 15 charecter");
-                return false;
-            }
-
-
             if (!phone.match(chk)) {
                 alert('Please enter a valid Mobile Phone number!!');
                 return false;
@@ -294,27 +262,16 @@
                 alert('Mobile Phone number must be less than 50 charecter!!');
                 return false;
             }
-
-            if (email == "") {
-                alert("email can not empty");
-                return false;
-            }
             if (!email.match(mailformat)) {
                 alert("You have entered an invalid email address!");
                 return false;
             }
-
-            if (telephone == "") {
-                alert("Give the telephone number ");
-                return false;
-            }
-
-
             else {
                 return true;
             }
         }else {
             return true;
         }
+
     }
 </script>

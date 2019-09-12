@@ -92,7 +92,7 @@
                                 <label class="control-label col-md-2">Telephone/Mobile*:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input tabindex="6"  required type="text" class="form-control" maxlength="20" id="telephone" name="telephone">
+                                    <input tabindex="6"  required type="text" class="form-control" minlength="11" maxlength="20" id="telephone" name="telephone">
                                 </div>
                             </div>
 
@@ -159,7 +159,7 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
                                     <button type="reset" class="btn btn-next">Reset</button>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit"  class="btn btn-next"><span id="update">Add Referees</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
                                     <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn ">Next</button></a>
                                 </div>
@@ -280,6 +280,8 @@
                 document.getElementById("city").value= city;
                 document.getElementById("state").value= state;
                 document.getElementById("country").value= fkCountry;
+
+               $('#update').html("update");
 
             }
 
