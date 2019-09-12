@@ -123,12 +123,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div style="margin: 4px" class="form-group form-bottom">
-                            <div class="col-sm-offset-2 col-md-9">
+                            <div class="col-sm-offset-2 col-md-10">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                 <button type="reset" class="btn btn-next">Reset</button>
-                                <button type="submit" class="btn btn-next">Save Application</button>
+                                <button type="submit" class="btn btn-next"><span id="update">Add qualifications</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
                                 <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
@@ -252,6 +252,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 document.getElementById("awardingBody").value= awardingBody;
                 document.getElementById("subject").value= subject;
                 document.getElementById("completionYear").value= completionYear;
+
+                $('#update').html("update");
 
             }
 

@@ -505,38 +505,40 @@
                                         <h2 style="font-weight:bold; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Address Details</h2>
 
                                         <div class="form-group">
+                                            <label>Same as Permanet </label>
+                                            <input tabindex="36"  type="checkbox" id="samecheck3" onclick="addresscheck2()">
                                         	<label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
-                                                <input tabindex="46" type="text" class="form-control" required id="EmergencyContactAddress" value="<?php echo set_value('EmergencyContactAddress'); ?>" name="EmergencyContactAddress">
+                                                <input tabindex="46" type="text" class="form-control" required id="emaddress" value="<?php echo set_value('EmergencyContactAddress'); ?>" name="EmergencyContactAddress">
                                           	</div>
 				                        </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Address Line 2:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress2'); ?></font></p>
-                                                <input tabindex="47" type="text" class="form-control"  id="EmergencyContactAddress2" value="<?php echo set_value('EmergencyContactAddress2'); ?>" name="EmergencyContactAddress2">
+                                                <input tabindex="47" type="text" class="form-control"  id="emaddress2" value="<?php echo set_value('EmergencyContactAddress2'); ?>" name="EmergencyContactAddress2">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Address Line 3:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
-                                                <input tabindex="48" type="text" class="form-control"  id="EmergencyContactAddress3" value="<?php echo set_value('EmergencyContactAddress3'); ?>" name="EmergencyContactAddress3">
+                                                <input tabindex="48" type="text" class="form-control"  id="emaddress3" value="<?php echo set_value('EmergencyContactAddress3'); ?>" name="EmergencyContactAddress3">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactCity'); ?></font></p>
-                                                <input tabindex="49" type="text" class="form-control" required id="EmergencyContactCity" value="<?php echo set_value('EmergencyContactCity'); ?>" name="EmergencyContactCity">
+                                                <input tabindex="49" type="text" class="form-control" required id="emaddressCity" value="<?php echo set_value('EmergencyContactCity'); ?>" name="EmergencyContactCity">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Country/State:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
-                                                <input tabindex="50" type="text" class="form-control" required id="EmergencyContactState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
+                                                <input tabindex="50" type="text" class="form-control" required id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
                                             </div>
                                         </div>
 
@@ -545,7 +547,7 @@
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
 
-                                                <select tabindex="51" style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
+                                                <select tabindex="51" style="width: 100%" id="emaddressCountry" required name="emergencyContactCountry">
                                                     <option value="" disabled selected>Select country...</option>
                                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
@@ -856,20 +858,12 @@
 
 
 
-
                 var startyearpp = $('#ppyear').val();
                 var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
                 var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
 
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
-                var today = new Date();
-                today.setHours(0, 0, 0, 0);
-
-                if (startdatpp-1 == today.getDate()-1 && startmonthpp-1 == today.getMonth() && startyearpp == today.getFullYear()){
-                    alert("DOB cann't be Today");
-                    return false;
-                }
 
 
                 //alert(dob);
@@ -879,20 +873,12 @@
 
 
 
-
                 var startyearvs = $('#visayear').val();
                 var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
                 var startdatvs = parseInt(document.getElementById('visadate').value)+1;
 
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
-                var today = new Date();
-                today.setHours(0, 0, 0, 0);
-
-                if (startdatvs-1 == today.getDate()-1 && startmonthvs-1 == today.getMonth() && startyearvs == today.getFullYear()){
-                    alert("DOB cann't be Today");
-                    return false;
-                }
 
 
                 //alert(dob);
@@ -908,21 +894,13 @@
 
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
-                var today = new Date();
-                today.setHours(0, 0, 0, 0);
 
-                if (startdatuk-1 == today.getDate()-1 && startmonthuk-1 == today.getMonth() && startyearuk == today.getFullYear()){
-                    alert("DOB cann't be Today");
-                    return false;
-                }
 
 
                 //alert(dob);
                 if(validatedate(startdatuk, startmonthuk , startyearuk)=="false"){
                     return false;
                 }
-
-
 
 
             }
@@ -940,7 +918,16 @@
                     document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
                 }
             }
-
+            function addresscheck2() {
+                if (document.getElementById('samecheck3').checked) {
+                    document.getElementById('emaddress').value = document.getElementById('permanentAddress').value;
+                    document.getElementById('emaddress2').value = document.getElementById('permanentAddress2').value;
+                    document.getElementById('emaddress3').value = document.getElementById('permanentAddress3').value;
+                    document.getElementById('emaddressCity').value = document.getElementById('permanentAddressCity').value;
+                    document.getElementById('emaddressState').value = document.getElementById('permanentAddressState').value;
+                    document.getElementById('emaddressCountry').value = document.getElementById('permanentAddressCountry').value;
+                }
+            }
 
             function validatedate(dd , mm , yy)
             {
@@ -978,6 +965,6 @@
                 }
             }
 
-
-
         </script>
+
+

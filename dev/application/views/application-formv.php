@@ -527,40 +527,40 @@
                         <h4 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Address Details</h4>
 
                         <div class="form-group">
-                            <label>Same as Current </label>
+                            <label>Same as Permanet </label>
                             <input tabindex="36"  type="checkbox" id="samecheck3" onclick="addresscheck2()">
                             <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
-                                <input tabindex="46"  type="text" class="form-control" required id="EmergencyContactAddress" value="<?php echo $candidateInfo->emergencyContactAddress ?>" name="EmergencyContactAddress">
+                                <input tabindex="46"  type="text" class="form-control" required id="emaddress" name="EmergencyContactAddress" value="<?php echo $candidateInfo->emergencyContactAddress ?>" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Address Line 2:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress2'); ?></font></p>
-                                <input tabindex="47"  type="text" class="form-control"  id="EmergencyContactAddress2" value="<?php echo $candidateInfo->emergencyContactAddress2 ?>" name="EmergencyContactAddress2">
+                                <input tabindex="47"  type="text" class="form-control"  id="emaddress2" name="EmergencyContactAddress2" value="<?php echo $candidateInfo->emergencyContactAddress2 ?>" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Address Line 3:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
-                                <input tabindex="48"  type="text" class="form-control"  id="EmergencyContactAddress3" value="<?php echo $candidateInfo->emergencyContactAddress3 ?>" name="EmergencyContactAddress3">
+                                <input tabindex="48"  type="text" class="form-control"  id="emaddress3" name="EmergencyContactAddress3" value="<?php echo $candidateInfo->emergencyContactAddress3 ?>" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactCity'); ?></font></p>
-                                <input tabindex="49"  type="text" class="form-control" required id="EmergencyContactCity" value="<?php echo $candidateInfo->emergencyContactAddressCity ?>" name="EmergencyContactCity">
+                                <input tabindex="49"  type="text" class="form-control" required id="emaddressCity" name="EmergencyContactCity" value="<?php echo $candidateInfo->emergencyContactAddressCity ?>" >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Country/State:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
-                                <input tabindex="50"  type="text" class="form-control" required id="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" name="EmergencyContactState">
+                                <input tabindex="50"  type="text" class="form-control" required id="emaddressState" name="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" >
                             </div>
                         </div>
 
@@ -568,7 +568,7 @@
                             <label class="control-label col-md-3">Country :<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
-                                <select tabindex="51"  style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
+                                <select tabindex="51"  style="width: 100%" id="emaddressCountry" required name="emergencyContactCountry">
                                     <option value="" disabled selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
@@ -624,7 +624,7 @@
                             <label class="control-label col-md-3">Course Level:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('courseLevel'); ?></font></p>
-                                <input tabindex="56"  type="text" class="form-control" id="courseLevel" name="courseLevel" disabled value="<?php echo $candidateInfo->courseLevel ?>">
+                                <input tabindex="56"  type="text" class="form-control" id="courseLevel" name="courseLevel" readonly value="<?php echo $candidateInfo->courseLevel ?>">
                             </div>
                         </div>
 
@@ -872,20 +872,12 @@
 
 
 
-
         var startyearpp = $('#ppyear').val();
         var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
         var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
-        var today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        if (startdatpp-1 == today.getDate()-1 && startmonthpp-1 == today.getMonth() && startyearpp == today.getFullYear()){
-            alert("DOB cann't be Today");
-            return false;
-        }
 
 
         //alert(dob);
@@ -895,20 +887,12 @@
 
 
 
-
         var startyearuk = $('#ukyear').val();
         var startmonthuk = parseInt(document.getElementById('ukmonth').value)+1;
         var startdatuk = parseInt(document.getElementById('ukdate').value)+1;
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
-        var today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        if (startdatuk-1 == today.getDate()-1 && startmonthuk-1 == today.getMonth() && startyearuk == today.getFullYear()){
-            alert("DOB cann't be Today");
-            return false;
-        }
 
 
         //alert(dob);
@@ -918,35 +902,18 @@
 
 
 
-
         var startyearvs = $('#visayear').val();
         var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
         var startdatvs = parseInt(document.getElementById('visadate').value)+1;
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
-        var today = new Date();
-        today.setHours(0, 0, 0, 0);
-
-        if (startdatvs-1 == today.getDate()-1 && startmonthvs-1 == today.getMonth() && startyearvs == today.getFullYear()){
-            alert("DOB cann't be Today");
-            return false;
-        }
 
 
         //alert(dob);
         if(validatedate(startdatvs, startmonthvs , startyearvs)=="false"){
             return false;
         }
-
-
-
-
-
-
-
-
-
 
 
     }
@@ -961,24 +928,19 @@
             document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
             document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
             document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
+
         }
     }
 
 
     function addresscheck2() {
         if (document.getElementById('samecheck3').checked) {
-            //alert(document.getElementById('currentAddress').value);
-         //   alert(document.getElementById('currentAddress2').value);
-         //   alert(document.getElementById('currentAddress3').value);
-         //   alert(document.getElementById('currentAddressCity').value);
-         //   alert(document.getElementById('currentAddressState').value);
-         //   alert(document.getElementById('currentAddressCountry').value);
-            document.getElementById('emergencycontactaddress').value = document.getElementById('currentAddress').value;
-            document.getElementById('emergencycontactaddress2').value = document.getElementById('currentAddress2').value;
-            document.getElementById('emergencycontactaddress3').value = document.getElementById('currentAddress3').value;
-            document.getElementById('emergencycontactcity').value = document.getElementById('currentAddressCity').value;
-            document.getElementById('emergencycontactstate').value = document.getElementById('currentAddressState').value;
-            document.getElementById('emergencycontactcountry').value = document.getElementById('currentAddressCountry').value;
+            document.getElementById('emaddress').value = document.getElementById('permanentAddress').value;
+            document.getElementById('emaddress2').value = document.getElementById('permanentAddress2').value;
+            document.getElementById('emaddress3').value = document.getElementById('permanentAddress3').value;
+            document.getElementById('emaddressCity').value = document.getElementById('permanentAddressCity').value;
+            document.getElementById('emaddressState').value = document.getElementById('permanentAddressState').value;
+            document.getElementById('emaddressCountry').value = document.getElementById('permanentAddressCountry').value;
         }
     }
 

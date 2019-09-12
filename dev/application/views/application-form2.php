@@ -135,12 +135,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
                             <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-9">
+                                <div class="col-sm-offset-2 col-md-10">
 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                     <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                     <button type="reset" class="btn btn-next">Reset</button>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
+                                    <button type="submit" class="btn btn-next">Add qualifications</button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
 <!--                                    <a href="--><?php //echo base_url()?><!--Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                 </div>
