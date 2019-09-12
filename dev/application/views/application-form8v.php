@@ -64,7 +64,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name*:</label>
+                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
                                     <input tabindex="3"  required type="text" maxlength="100" class="form-control" id="name" name="name">
@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Institution/Company*:</label>
+                                <label class="control-label col-md-2">Institution/Company:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('company'); ?></font></p>
                                     <input tabindex="4"  required type="text" maxlength="80" class="form-control" id="company" name="company">
@@ -83,21 +83,21 @@
                                 <label class="control-label col-md-2">Position / Job Title:</label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('jobTitle'); ?></font></p>
-                                    <input tabindex="5"  required type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
+                                    <input tabindex="5"   type="text" maxlength="60" class="form-control" id="jobTitle" name="jobTitle">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Telephone/Mobile*:</label>
+                                <label class="control-label col-md-2">Telephone/Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input tabindex="6"  required type="text" class="form-control" maxlength="20" id="telephone" name="telephone">
+                                    <input tabindex="6"  required type="text" class="form-control" minlength="11" maxlength="20" id="telephone" name="telephone">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:</label>
+                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
                                     <input tabindex="7"  required type="email" class="form-control" maxlength="100" id="email" name="email">
@@ -140,7 +140,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Country:</label>
+                                <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                     <select tabindex="13"  required style="width: 100%" id="country"  name="country">

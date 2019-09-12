@@ -69,6 +69,25 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">-->
 
+
+                                        Date:
+                                        <select tabindex="5"  id="workstrdate" name="workstrdate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;
+                                        Month:
+                                        <select tabindex="4"  id="workstrmonth" name="workstrmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;
                                         Year:
                                         <?php
                                         $currently_selected = date('Y');
@@ -80,24 +99,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         }
                                         print '</select>';
                                         ?>
-                                        &nbsp;&nbsp;&nbsp;
-                                        Month:
-                                        <select tabindex="4"  id="workstrmonth" name="workstrmonth">
-                                            <?php
-                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
-                                                echo "<option value='$monthNumber'>{$month}</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                        &nbsp;&nbsp;&nbsp;
-                                        Date:
-                                        <select tabindex="5"  id="workstrdate" name="workstrdate">
-                                            <?php
-                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
-                                                echo "<option value='$dateNumber'>{$date}</option>";
-                                            }
-                                            ?>
-                                        </select>
+
                                     </div>
                                 </div>
 
@@ -106,6 +108,25 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">-->
 
+
+                                        Date:
+                                        <select tabindex="8"  id="workenddate" name="workenddate">
+                                            <?php
+                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                                echo "<option value='$dateNumber'>{$date}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;
+                                        Month:
+                                        <select tabindex="7"  id="workendmonth" name="workendmonth">
+                                            <?php
+                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                                echo "<option value='$monthNumber'>{$month}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                        &nbsp;
                                         Year:
                                         <?php
                                         $currently_selected = date('Y');
@@ -117,24 +138,6 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         }
                                         print '</select>';
                                         ?>
-                                        &nbsp;&nbsp;&nbsp;
-                                        Month:
-                                        <select tabindex="7"  id="workendmonth" name="workendmonth">
-                                            <?php
-                                            foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
-                                                echo "<option value='$monthNumber'>{$month}</option>";
-                                            }
-                                            ?>
-                                        </select>
-                                        &nbsp;&nbsp;&nbsp;
-                                        Date:
-                                        <select tabindex="8"  id="workenddate" name="workenddate">
-                                            <?php
-                                            foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
-                                                echo "<option value='$dateNumber'>{$date}</option>";
-                                            }
-                                            ?>
-                                        </select>
 
                                     </div>
                                 </div>
@@ -348,6 +351,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 //        var endyear = enddate.getFullYear();
         var recentyr = new Date().getFullYear();
 
+
+
         var startyear = $('#workstryear').val();
         var startmonth = $('#workstrmonth').val();
         var startdat = $('#workstrdate').val();
@@ -401,8 +406,77 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }
 
 
+
+        var startyear = $('#workstryear').val();
+        var startmonth = parseInt(document.getElementById('workstrmonth').value)+1;
+        var startdat = parseInt(document.getElementById('workstrdate').value)+1;
+
+        //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+        //alert(dob);
+        if(validatedate(startdat, startmonth , startyear)=="false"){
+            return false;
         }
+
+
+
+
+
+
+        var endyear = $('#workendyear').val();
+		var endmonth = parseInt(document.getElementById('workendmonth').value)+1;
+		var enddat = parseInt(document.getElementById('workenddate').value)+1;
+
+		//var endatdate = new Date(endyear + "-" + endmonth + "-" + enddat);
+
+
+		//alert(dob);
+		if(validatedate(enddat, endmonth , endyear)=="false"){
+			return false;
+		}
+
+}
+
 
 
 </script>
 
+
+<script>
+    function validatedate(dd , mm , yy)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                alert('Invalid date format!');
+                return "false";
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                alert('Invalid date format!');
+                return "false";
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                alert('Invalid date format!');
+                return "false";
+            }
+        }
+    }
+</script>

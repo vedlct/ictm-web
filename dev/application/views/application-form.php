@@ -93,7 +93,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
-                                                print '<select tabindex="4" name="dobyear">';
+                                                print '<select tabindex="4" name="dobyear" id="dobyear" required>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -101,7 +101,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="5" name="dobmonth">
+                                                <select tabindex="5" name="dobmonth" id="dobmonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -110,7 +110,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="6" name="dobdate">
+                                                <select tabindex="6" name="dobdate" id="dobdate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -204,7 +204,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
-                                                print '<select tabindex="17" name="ppyear">';
+                                                print '<select tabindex="17" name="ppyear" id="ppyear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -212,7 +212,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="18" tab name="ppmonth">
+                                                <select tabindex="18" tab name="ppmonth" id="ppmonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -221,7 +221,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="19" name="ppdate">
+                                                <select tabindex="19" name="ppdate" id="ppdate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -244,7 +244,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
-                                                print '<select tabindex="20" name="ukyear">';
+                                                print '<select tabindex="20" name="ukyear" id="ukyear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -252,7 +252,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="21" name="ukmonth">
+                                                <select tabindex="21" name="ukmonth" id="ukmonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -261,7 +261,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="22" name="ukdate">
+                                                <select tabindex="22" name="ukdate" id="ukdate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -300,7 +300,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
-                                                print '<select tabindex="24" name="visayear">';
+                                                print '<select tabindex="24" name="visayear" id="visayear">';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -308,7 +308,7 @@
                                                 ?>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
-                                                <select tabindex="25" name="visamonth">
+                                                <select tabindex="25" name="visamonth" id="visamonth">
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -317,7 +317,7 @@
                                                 </select>
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
-                                                <select tabindex="26" name="visadate">
+                                                <select tabindex="26" name="visadate" id="visadate">
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -410,41 +410,44 @@
                                         </div>
 
                                         <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent  Address Details</h2>
-
-                                        <!-- This is overseas Address ,We consider this permanent address -->
                                         <div class="form-group">
+                                            <label class="control-label col-md-3">Same as Current </label>
+                                            <div class="col-md-9">
+                                                <input style="margin-top: 10px" tabindex="36"  type="checkbox" id="samecheck2" onclick="addresscheck()">
+                                            </div>
+                                        </div>
+                                        <!-- This is overseas Address ,We consider this permanent address -->
+                                        <div class="form-group" id="paddresslabel">
                                             <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
 
-                                            <label>Same as Current </label>
-                                            <input tabindex="36" type="checkbox" id="samecheck2" onclick="addresscheck()">
-                                            <div class="col-md-9">
+                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress'); ?></font></p>
                                                 <!--                                            	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4">--><?php //echo set_value('overseasHomeAddress');?><!--</textarea>-->
                                                 <input tabindex="37" type="text" class="form-control" required id="permanentAddress" name="permanentAddress" value="<?php echo set_value('permanentAddress'); ?>">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="paddresslabel2">
                                             <label class="control-label col-md-3">Address Line 2:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress2'); ?></font></p>
                                                 <input tabindex="38" type="text" class="form-control"  id="permanentAddress2" name="permanentAddress2" value="<?php echo set_value('permanentAddress2'); ?>">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="paddresslabel3">
                                             <label class="control-label col-md-3">Address Line 3:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
-                                                <input tabindex="39" type="text" class="form-control" required id="permanentAddress3" name="permanentAddress3" value="<?php echo set_value('permanentAddress3'); ?>">
+                                                <input tabindex="39" type="text" class="form-control"  id="permanentAddress3" name="permanentAddress3" value="<?php echo set_value('permanentAddress3'); ?>">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="paddresslabelCity">
                                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddressCity'); ?></font></p>
                                                 <input tabindex="40" type="text" class="form-control" required id="permanentAddressCity" name="permanentAddressCity" value="<?php echo set_value('permanentAddressCity'); ?>">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="paddresslabelState">
                                             <label class="control-label col-md-3">County/State:</label>
 
                                             <div class="col-md-9">
@@ -453,7 +456,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" id="paddresslabelCountry">
                                             <label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
@@ -503,46 +506,49 @@
                                           	</div>
 				                        </div>
                                         <h2 style="font-weight:bold; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Address Details</h2>
-
                                         <div class="form-group">
-                                            <label>Same as Permanet </label>
-                                            <input tabindex="36"  type="checkbox" id="samecheck3" onclick="addresscheck2()">
-                                        	<label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                            <label class="control-label col-md-3">Same as Permanet </label>
+                                            <div class="col-md-9">
+                                                <input style="margin-top: 10px" tabindex="36"  type="checkbox" id="samecheck3" onclick="addresscheck2()">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" id="eaddresslabel">
+                                           <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
                                                 <input tabindex="46" type="text" class="form-control" required id="emaddress" value="<?php echo set_value('EmergencyContactAddress'); ?>" name="EmergencyContactAddress">
                                           	</div>
 				                        </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="eaddresslabel2">
                                             <label class="control-label col-md-3">Address Line 2:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress2'); ?></font></p>
                                                 <input tabindex="47" type="text" class="form-control"  id="emaddress2" value="<?php echo set_value('EmergencyContactAddress2'); ?>" name="EmergencyContactAddress2">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="eaddresslabel3">
                                             <label class="control-label col-md-3">Address Line 3:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
                                                 <input tabindex="48" type="text" class="form-control"  id="emaddress3" value="<?php echo set_value('EmergencyContactAddress3'); ?>" name="EmergencyContactAddress3">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="ecitylabel">
                                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactCity'); ?></font></p>
                                                 <input tabindex="49" type="text" class="form-control" required id="emaddressCity" value="<?php echo set_value('EmergencyContactCity'); ?>" name="EmergencyContactCity">
                                             </div>
                                         </div>
-                                        <div class="form-group">
+                                        <div class="form-group" id="estatelabel">
                                             <label class="control-label col-md-3">Country/State:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
-                                                <input tabindex="50" type="text" class="form-control" required id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
+                                                <input tabindex="50" type="text" class="form-control"  id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" id="ecountrylabel">
                                             <label class="control-label col-md-3">Country :<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
@@ -603,7 +609,7 @@
                                         	<label class="control-label col-md-3">Course Level:</label>
                                           	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseLevel'); ?></font></p>
-                                            	<input tabindex="56" type="text" class="form-control" id="courseLevel" name="courseLevel" disabled value="<?php echo set_value('courseLevel'); ?>">
+                                            	<input tabindex="56" type="text" class="form-control" id="courseLevel" name="courseLevel" readonly value="<?php echo set_value('courseLevel'); ?>">
                                           	</div>
 				                        </div>
 
@@ -678,15 +684,13 @@
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
                                               <button type="reset" class="btn btn-next">Reset</button>
                                               <button type="submit" class="btn btn-next">Save Application</button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"> Next</button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"> Save and Next</button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                           </div>
                                         </div>
 				                    </div>
 <!--			                    </fieldset>-->
-			                    
 
-		                    
 		                    </form>
 
 
@@ -815,23 +819,93 @@
 
             function checkvalidation() {
 
-                if (document.getElementById('courseYear').value > 2019) {
-                    alert("year cant be future")
-                    return false;
-                } else
-                    return true;
+                // if (document.getElementById('courseYear').value > 2019) {
+                //     alert("year cant be future")
+                //     return false;
+                // } else
+                //     return true;
+				//
+				//
+                // var startyear = $('#dobyear').val();
+                // var startmonth = $('#dobmonth').val();
+                // var startdat = $('#dobdate').val();
+				//
+                // var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+                // var today = new Date();
+                // today.setHours(0, 0, 0, 0)
+                // if (stratdate == today){
+                //     alert("DOB cann't be Today")
+                // }
+                //
+
 
 
                 var startyear = $('#dobyear').val();
-                var startmonth = $('#dobmonth').val();
-                var startdat = $('#dobdate').val();
+                var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
+                var startdat = parseInt(document.getElementById('dobdate').value)+1;
 
-                var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
                 var today = new Date();
-                today.setHours(0, 0, 0, 0)
-                if (stratdate == today){
-                    alert("DOB cann't be Today")
+                today.setHours(0, 0, 0, 0);
+
+                if (startdat-1 == today.getDate()-1 && startmonth-1 == today.getMonth() && startyear == today.getFullYear()){
+                    alert("DOB cann't be Today");
+                    return false;
                 }
+
+
+                //alert(dob);
+                if(validatedate(startdat, startmonth , startyear)=="false"){
+                    return false;
+                }
+
+
+
+                var startyearpp = $('#ppyear').val();
+                var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
+                var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
+
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+
+                //alert(dob);
+                if(validatedate(startdatpp, startmonthpp , startyearpp)=="false"){
+                    return false;
+                }
+
+
+
+                var startyearvs = $('#visayear').val();
+                var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
+                var startdatvs = parseInt(document.getElementById('visadate').value)+1;
+
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+
+                //alert(dob);
+                if(validatedate(startdatvs, startmonthvs , startyearvs)=="false"){
+                    return false;
+                }
+
+
+
+                var startyearuk = $('#ukyear').val();
+                var startmonthuk = parseInt(document.getElementById('ukmonth').value)+1;
+                var startdatuk = parseInt(document.getElementById('ukdate').value)+1;
+
+                //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
+
+
+
+
+                //alert(dob);
+                if(validatedate(startdatuk, startmonthuk , startyearuk)=="false"){
+                    return false;
+                }
+
 
             }
 
@@ -846,6 +920,40 @@
                     document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
                     document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
                     document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
+
+
+                    document.getElementById('permanentAddress').style.display = "none";
+                    document.getElementById('permanentAddress2').style.display = "none";
+                    document.getElementById('permanentAddress3').style.display = "none";
+                    document.getElementById('permanentAddressCity').style.display = "none";
+                    document.getElementById('permanentAddressState').style.display = "none";
+                    document.getElementById('permanentAddressCountry').style.display = "none";
+
+                    document.getElementById('paddresslabel').style.display = "none";
+                    document.getElementById('paddresslabel2').style.display = "none";
+                    document.getElementById('paddresslabel3').style.display = "none";
+                    document.getElementById('paddresslabelCity').style.display = "none";
+                    document.getElementById('paddresslabelState').style.display = "none";
+                    document.getElementById('paddresslabelCountry').style.display = "none";
+                    // document.getElementById('sameascurrent').style.display = "block";
+
+
+
+                }else
+                {
+                    document.getElementById('permanentAddress').style.display = "block";
+                    document.getElementById('permanentAddress2').style.display = "block";
+                    document.getElementById('permanentAddress3').style.display = "block";
+                    document.getElementById('permanentAddressCity').style.display = "block";
+                    document.getElementById('permanentAddressState').style.display = "block";
+                    document.getElementById('permanentAddressCountry').style.display = "block";
+
+                    document.getElementById('paddresslabel').style.display = "block";
+                    document.getElementById('paddresslabel2').style.display = "block";
+                    document.getElementById('paddresslabel3').style.display = "block";
+                    document.getElementById('paddresslabelCity').style.display = "block";
+                    document.getElementById('paddresslabelState').style.display = "block";
+                    document.getElementById('paddresslabelCountry').style.display = "block";
                 }
             }
             function addresscheck2() {
@@ -856,6 +964,62 @@
                     document.getElementById('emaddressCity').value = document.getElementById('permanentAddressCity').value;
                     document.getElementById('emaddressState').value = document.getElementById('permanentAddressState').value;
                     document.getElementById('emaddressCountry').value = document.getElementById('permanentAddressCountry').value;
+
+                    document.getElementById('eaddresslabel').style.display = "none";
+                    document.getElementById('eaddresslabel2').style.display = "none";
+                    document.getElementById('eaddresslabel3').style.display = "none";
+                    document.getElementById('ecitylabel').style.display = "none";
+                    document.getElementById('estatelabel').style.display = "none";
+                    document.getElementById('ecountrylabel').style.display = "none";
+
+                }else
+                {
+                    document.getElementById('eaddresslabel').style.display = "block";
+                    document.getElementById('eaddresslabel2').style.display = "block";
+                    document.getElementById('eaddresslabel3').style.display = "block";
+                    document.getElementById('ecitylabel').style.display = "block";
+                    document.getElementById('estatelabel').style.display = "block";
+                    document.getElementById('ecountrylabel').style.display = "block";
+
                 }
             }
+
+            function validatedate(dd , mm , yy)
+            {
+                var dd = parseInt(dd);
+                var mm  = parseInt(mm);
+                var yy = parseInt(yy);
+
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+                if (mm==1 || mm>2)
+                {
+                    if (dd>ListofDays[mm-1])
+                    {
+                        alert('Invalid date format!');
+                        return "false";
+                    }
+                }
+                if (mm==2)
+                {
+                    var lyear = false;
+                    if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+                    {
+                        lyear = true;
+                    }
+                    if ((lyear==false) && (dd>=29))
+                    {
+                        alert('Invalid date format!');
+                        return "false";
+                    }
+                    if ((lyear==true) && (dd>29))
+                    {
+                        alert('Invalid date format!');
+                        return "false";
+                    }
+                }
+            }
+
         </script>
+
+

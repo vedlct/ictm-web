@@ -94,7 +94,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
                                         <div class="col-md-10">
-                                            <input tabindex="5"  type="text" class="form-control" id="telephone1" name="telephone[]" required>
+                                            <input tabindex="5"  type="text" class="form-control" id="telephone1" minlength="11" maxlength="20" name="telephone[]" required>
                                         </div>
                                     </div>
 
