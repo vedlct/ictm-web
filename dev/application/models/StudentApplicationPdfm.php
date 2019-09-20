@@ -13,7 +13,7 @@ class studentApplicationPdfm extends CI_Model
     }
     public function applicationDetails($applicationId){
 
-        $this->db->select('applyDate');
+        $this->db->select('applydate');
         $this->db->where('applicationId =', $applicationId);
         $query = $this->db->get('candidateinfo');
         return $query->result();

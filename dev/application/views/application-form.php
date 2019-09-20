@@ -93,7 +93,7 @@
                                                 $currently_selected = date('Y');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
-                                                print '<select tabindex="4" name="dobyear" id="dobyear">';
+                                                print '<select tabindex="4" name="dobyear" id="dobyear" required>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -437,7 +437,7 @@
                                             <label class="control-label col-md-3">Address Line 3:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
-                                                <input tabindex="39" type="text" class="form-control" required id="permanentAddress3" name="permanentAddress3" value="<?php echo set_value('permanentAddress3'); ?>">
+                                                <input tabindex="39" type="text" class="form-control"  id="permanentAddress3" name="permanentAddress3" value="<?php echo set_value('permanentAddress3'); ?>">
                                             </div>
                                         </div>
                                         <div class="form-group" id="paddresslabelCity">
@@ -544,7 +544,7 @@
                                             <label class="control-label col-md-3">Country/State:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
-                                                <input tabindex="50" type="text" class="form-control" required id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
+                                                <input tabindex="50" type="text" class="form-control"  id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
                                             </div>
                                         </div>
 

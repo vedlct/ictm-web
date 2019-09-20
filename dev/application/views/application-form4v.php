@@ -88,7 +88,7 @@
                                 <label class="control-label col-md-3">Relation:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input tabindex="6" type="text" class="form-control" id="relation"  maxlength="50" name="relation" value="<?php echo $f4->relation?>">
+                                    <input tabindex="6" type="text" class="form-control" id="relation"  maxlength="50" name="relation" required value="<?php echo $f4->relation?>">
                                 </div>
                             </div>
 
@@ -147,7 +147,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20""  name="mobile" value="<?php echo $f4->mobile ?>" required>
+                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20"  name="mobile" value="<?php echo $f4->mobile ?>" required>
                                 </div>
                             </div>
 

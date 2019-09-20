@@ -3047,7 +3047,7 @@ class ApplyOnline extends CI_Controller
 
 
                     $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
-                    redirect('Login');
+                    redirect('AllFormForStudents');
 
 
                 } else {
@@ -3261,23 +3261,23 @@ class ApplyOnline extends CI_Controller
 
         $applicationId = 4;
 
-        $this->data['applicationDetails'] = $this->studentApplicationPdfm->applicationDetails($applicationId);
-        $this->data['personalDetails'] = $this->studentApplicationPdfm->personalDetails($applicationId);
-        $this->data['contactDetails'] = $this->studentApplicationPdfm->contactDetails($applicationId);
-        $this->data['emmergencyContact'] = $this->studentApplicationPdfm->emmergancyContact($applicationId);
-        $this->data['courseDetails'] = $this->studentApplicationPdfm->courseDetails($applicationId);
-        $this->data['qualifications'] = $this->studentApplicationPdfm->qualifications($applicationId);
-        $this->data['experience'] = $this->studentApplicationPdfm->workExperience($applicationId);
-        $this->data['languageProficiency'] = $this->studentApplicationPdfm->languageProficiency($applicationId);
-        $this->data['languageProficiencyTestScore'] = $this->studentApplicationPdfm->languageProficiencyTestScore();
-        $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
-        $this->data['finance'] = $this->studentApplicationPdfm->finance($applicationId);
-        $this->data['referees'] = $this->studentApplicationPdfm->referees($applicationId);
-        $this->data['equaloppurtunitiesgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesGroup();
-        $this->data['equaloppurtunitiesgroupsubgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesSubGroup();
-        $this->data['personequaloppurtunities'] = $this->studentApplicationPdfm->personequalOppurtunities($applicationId);
+        $this->data['applicationDetails'] = $this->StudentApplicationPdfm->applicationDetails($applicationId);
+        $this->data['personalDetails'] = $this->StudentApplicationPdfm->personalDetails($applicationId);
+        $this->data['contactDetails'] = $this->StudentApplicationPdfm->contactDetails($applicationId);
+        $this->data['emmergencyContact'] = $this->StudentApplicationPdfm->emmergancyContact($applicationId);
+        $this->data['courseDetails'] = $this->StudentApplicationPdfm->courseDetails($applicationId);
+        $this->data['qualifications'] = $this->StudentApplicationPdfm->qualifications($applicationId);
+        $this->data['experience'] = $this->StudentApplicationPdfm->workExperience($applicationId);
+        $this->data['languageProficiency'] = $this->StudentApplicationPdfm->languageProficiency($applicationId);
+        $this->data['languageProficiencyTestScore'] = $this->StudentApplicationPdfm->languageProficiencyTestScore();
+        $this->data['personalstatement'] = $this->StudentApplicationPdfm->personalStatement($applicationId);
+        $this->data['finance'] = $this->StudentApplicationPdfm->finance($applicationId);
+        $this->data['referees'] = $this->StudentApplicationPdfm->referees($applicationId);
+        $this->data['equaloppurtunitiesgroup'] = $this->StudentApplicationPdfm->equalOppurtunitiesGroup();
+        $this->data['equaloppurtunitiesgroupsubgroup'] = $this->StudentApplicationPdfm->equalOppurtunitiesSubGroup();
+        $this->data['personequaloppurtunities'] = $this->StudentApplicationPdfm->personequalOppurtunities($applicationId);
 
-        $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
+        $this->data['personalstatement'] = $this->StudentApplicationPdfm->personalStatement($applicationId);
 
         $this->load->view('studentsApplicationPdf/detailsForms', $this->data);
     }
@@ -3289,24 +3289,25 @@ class ApplyOnline extends CI_Controller
             $this->load->library('pdfgenerator');
 
 
-            $this->data['applicationDetails'] = $this->studentApplicationPdfm->applicationDetails($applicationId);
 
-            $this->data['personalDetails'] = $this->studentApplicationPdfm->personalDetails($applicationId);
-            $this->data['contactDetails'] = $this->studentApplicationPdfm->contactDetails($applicationId);
-            $this->data['emmergencyContact'] = $this->studentApplicationPdfm->emmergancyContact($applicationId);
-            $this->data['courseDetails'] = $this->studentApplicationPdfm->courseDetails($applicationId);
-            $this->data['qualifications'] = $this->studentApplicationPdfm->qualifications($applicationId);
-            $this->data['experience'] = $this->studentApplicationPdfm->workExperience($applicationId);
-            $this->data['languageProficiency'] = $this->studentApplicationPdfm->languageProficiency($applicationId);
-            $this->data['languageProficiencyTestScore'] = $this->studentApplicationPdfm->languageProficiencyTestScore();
-            $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
-            $this->data['finance'] = $this->studentApplicationPdfm->finance($applicationId);
-            $this->data['referees'] = $this->studentApplicationPdfm->referees($applicationId);
-            $this->data['equaloppurtunitiesgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesGroup();
-            $this->data['equaloppurtunitiesgroupsubgroup'] = $this->studentApplicationPdfm->equalOppurtunitiesSubGroup();
-            $this->data['personequaloppurtunities'] = $this->studentApplicationPdfm->personequalOppurtunities($applicationId);
+            $this->data['applicationDetails'] = $this->StudentApplicationPdfm->applicationDetails($applicationId);
 
-            $this->data['personalstatement'] = $this->studentApplicationPdfm->personalStatement($applicationId);
+            $this->data['personalDetails'] = $this->StudentApplicationPdfm->personalDetails($applicationId);
+            $this->data['contactDetails'] = $this->StudentApplicationPdfm->contactDetails($applicationId);
+            $this->data['emmergencyContact'] = $this->StudentApplicationPdfm->emmergancyContact($applicationId);
+            $this->data['courseDetails'] = $this->StudentApplicationPdfm->courseDetails($applicationId);
+            $this->data['qualifications'] = $this->StudentApplicationPdfm->qualifications($applicationId);
+            $this->data['experience'] = $this->StudentApplicationPdfm->workExperience($applicationId);
+            $this->data['languageProficiency'] = $this->StudentApplicationPdfm->languageProficiency($applicationId);
+            $this->data['languageProficiencyTestScore'] = $this->StudentApplicationPdfm->languageProficiencyTestScore();
+            $this->data['personalstatement'] = $this->StudentApplicationPdfm->personalStatement($applicationId);
+            $this->data['finance'] = $this->StudentApplicationPdfm->finance($applicationId);
+            $this->data['referees'] = $this->StudentApplicationPdfm->referees($applicationId);
+            $this->data['equaloppurtunitiesgroup'] = $this->StudentApplicationPdfm->equalOppurtunitiesGroup();
+            $this->data['equaloppurtunitiesgroupsubgroup'] = $this->StudentApplicationPdfm->equalOppurtunitiesSubGroup();
+            $this->data['personequaloppurtunities'] = $this->StudentApplicationPdfm->personequalOppurtunities($applicationId);
+
+            $this->data['personalstatement'] = $this->StudentApplicationPdfm->personalStatement($applicationId);
 
             $html=$this->load->view('studentsApplicationPdf/detailsForms', $this->data,true);
 

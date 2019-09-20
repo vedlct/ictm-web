@@ -999,10 +999,10 @@ class ApplyOnlinem extends CI_Model
     {
         $applicationId=$this->session->userdata('studentApplicationId');
         $data1=array(
-            'applydate'=>date('Y-m-d H:i:s'),
+            'applydate'=> date('Y-m-d H:i:s'),
         );
 
-        $this->db->where('id',$applicationId);
+        $this->db->where('applicationId',$applicationId);
         $error = $this->db->update('candidateinfo',$data1);
 
         $data = array(

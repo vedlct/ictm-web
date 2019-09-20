@@ -104,7 +104,25 @@
                                 $dobmonth = (int)$a[1];
                                 $dobdate = (int)$a[2];
                                 ?>
-
+                                Date:
+                                <select tabindex="6" name="dobdate" id="dobdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $dobdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
+                                Month:
+                                <select tabindex="5" name="dobmonth" id="dobmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $dobmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;&nbsp;&nbsp;
                                 Year:
                                 <?php
                                  $currently_selected = $dobyear;
@@ -117,25 +135,7 @@
                                  print '</select>';
                                 ?>
 
-                                &nbsp;
-                                Month:
-                                <select tabindex="5" name="dobmonth" id="dobmonth">
-                                    <?php
-                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
-                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $dobmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
-                                &nbsp;&nbsp;&nbsp;
-                                Date:
-                                <select tabindex="6" name="dobdate" id="dobdate">
-                                    <?php
-                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
-                                       // echo "<option value='$dateNumber'>{$date}</option>";
-                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $dobdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
+
                             </div>
                         </div>
 
@@ -207,6 +207,25 @@
                                 $ppdate = (int)$b[2];
                                 ?>
 
+                                Date:
+                                <select tabindex="19"  name="ppdate" id="ppdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $ppdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
+                                Month:
+                                <select tabindex="18"  name="ppmonth" id="ppmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ppmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
                                 Year:
                                 <?php
                                 $currently_selected = $ppyear;
@@ -219,25 +238,9 @@
                                 print '</select>';
                                 ?>
 
-                                &nbsp;
-                                Month:
-                                <select tabindex="18"  name="ppmonth" id="ppmonth">
-                                    <?php
-                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
-                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ppmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
+
                                 &nbsp;&nbsp;&nbsp;
-                                Date:
-                                <select tabindex="19"  name="ppdate" id="ppdate">
-                                    <?php
-                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
-                                        // echo "<option value='$dateNumber'>{$date}</option>";
-                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $ppdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
+
 
                             </div>
                         </div>
@@ -256,6 +259,26 @@
                                 $ukdate = (int) $c[2];
                                 ?>
 
+
+                                Date:
+                                <select tabindex="22"  name="ukdate" id="ukdate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $ukdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
+                                Month:
+                                <select tabindex="21"  name="ukmonth" id="ukmonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ukmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
                                 Year:
                                 <?php
                                 $currently_selected = $ukyear;
@@ -268,26 +291,9 @@
                                 print '</select>';
                                 ?>
 
-                                &nbsp;
-                                Month:
-                                <select tabindex="21"  name="ukmonth" id="ukmonth">
-                                    <?php
-                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
-                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ukmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
                                 &nbsp;&nbsp;&nbsp;
                                 &nbsp;
-                                Date:
-                                <select tabindex="22"  name="ukdate" id="ukdate">
-                                    <?php
-                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
-                                        // echo "<option value='$dateNumber'>{$date}</option>";
-                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $ukdate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
+
 
 
                             </div>
@@ -323,6 +329,25 @@
                                 $visadate = (int)$d[2];
                                 ?>
 
+                                Date:
+                                <select tabindex="26"  name="visadate" id="visadate">
+                                    <?php
+                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
+                                        // echo "<option value='$dateNumber'>{$date}</option>";
+                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $visadate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
+                                Month:
+                                <select tabindex="25"  name="visamonth" id="visamonth">
+                                    <?php
+                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
+                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $visamonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
+                                    }
+                                    ?>
+                                </select>
+                                &nbsp;
                                 Year:
                                 <?php
                                 $currently_selected = $visayear;
@@ -335,25 +360,6 @@
                                 print '</select>';
                                 ?>
 
-                                &nbsp;
-                                Month:
-                                <select tabindex="25"  name="visamonth" id="visamonth">
-                                    <?php
-                                    foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
-                                        ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $visamonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
-                                &nbsp;&nbsp;&nbsp;
-                                Date:
-                                <select tabindex="26"  name="visadate" id="visadate">
-                                    <?php
-                                    foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
-                                        // echo "<option value='$dateNumber'>{$date}</option>";
-                                        ?><option value="<?php echo $dateNumber?>" <?php if ($dateNumber == $visadate-1) echo 'selected = "selected"'?> ><?php echo $date?></option>;<?php
-                                    }
-                                    ?>
-                                </select>
 
                             </div>
                         </div>
@@ -413,7 +419,7 @@
                             <label class="control-label col-md-3">Telephone:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                <input tabindex="33"  type="text" class="form-control" required id="telephone" minlength="11"  maxlength="20" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
+                                <input tabindex="33"  type="text" class="form-control"  id="telephone" minlength="11"  maxlength="20" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
                             </div>
                         </div>
 
@@ -459,7 +465,7 @@
                             <label class="control-label col-md-3" >Address Line 3:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
-                                <input tabindex="39"  type="text" class="form-control" required id="permanentAddress3" name="permanentAddress3" value="<?php echo $candidateInfo->permanentAddress3?>">
+                                <input tabindex="39"  type="text" class="form-control"  id="permanentAddress3" name="permanentAddress3" value="<?php echo $candidateInfo->permanentAddress3?>">
                             </div>
                         </div>
                         <div class="form-group" id="paddresslabelCity">
@@ -567,7 +573,7 @@
                             <label class="control-label col-md-3" id="estatelabel">Country/State:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
-                                <input tabindex="50"  type="text" class="form-control" required id="emaddressState" name="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" >
+                                <input tabindex="50"  type="text" class="form-control"  id="emaddressState" name="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" >
                             </div>
                         </div>
 
@@ -667,7 +673,7 @@
                             <label class="control-label col-md-3">Year:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo $candidateInfo->courseYear ?>">
+                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" required value="<?php echo $candidateInfo->courseYear ?>">
                             </div>
                         </div>
 
