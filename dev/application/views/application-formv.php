@@ -389,6 +389,13 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="control-label col-md-3" id="currentAddressPo">Postal Code:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-9">
+                                <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
+                                <input tabindex="29"  type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo $candidateInfo->currentAddressPo ?>">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="control-label col-md-3" id="caddressCity">City/Town:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentAddressCity'); ?></font></p>
@@ -466,6 +473,13 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
                                 <input tabindex="39"  type="text" class="form-control"  id="permanentAddress3" name="permanentAddress3" value="<?php echo $candidateInfo->permanentAddress3?>">
+                            </div>
+                        </div>
+                        <div class="form-group" id="overseasAddressPo">
+                            <label class="control-label col-md-3" >Postal Code:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-9">
+                                <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
+                                <input tabindex="39"  type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo $candidateInfo->overseasAddressPo?>">
                             </div>
                         </div>
                         <div class="form-group" id="paddresslabelCity">
@@ -560,6 +574,13 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
                                 <input tabindex="48"  type="text" class="form-control"  id="emaddress3" name="EmergencyContactAddress3" value="<?php echo $candidateInfo->emergencyContactAddress3 ?>" >
+                            </div>
+                        </div>
+                        <div class="form-group" id="epostalcodelabel">
+                            <label class="control-label col-md-3" id="epostalcodelabel">Postal Code:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-9">
+                                <p><font color="red"> <?php echo form_error('emergencyContactAddressPo'); ?></font></p>
+                                <input tabindex="48"  type="text" class="form-control"  id="emergencyContactAddressPo" name="emergencyContactAddressPo" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>" >
                             </div>
                         </div>
                         <div class="form-group" id="ecitylabel">

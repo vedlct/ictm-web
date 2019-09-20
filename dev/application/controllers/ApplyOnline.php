@@ -414,6 +414,7 @@ class ApplyOnline extends CI_Controller
             $candidateCurrentAddress = $this->input->post("currentAddress");
             $candidateCurrentAddress2 = $this->input->post("currentAddress2");
             $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+            $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
             $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
             $candidateCurrentAddressState = $this->input->post("currentAddressState");
             $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -425,6 +426,7 @@ class ApplyOnline extends CI_Controller
             $candidatePermanentAddress = $this->input->post("permanentAddress");
             $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
             $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
+            $candidatePermanentPostalCode = $this->input->post("overseasAddressPo");
             $candidatePermanentAddressCity = $this->input->post("permanentAddressCity");
             $candidatePermanentAddressState = $this->input->post("permanentAddressState");
             $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
@@ -440,6 +442,7 @@ class ApplyOnline extends CI_Controller
             $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
             $EmergencyContactAddress2 = $this->input->post("EmergencyContactAddress2");
             $EmergencyContactAddress3 = $this->input->post("EmergencyContactAddress3");
+            $EmergencyPostalCode = $this->input->post("emergencyContactAddressPo");
             $EmergencyContactCity = $this->input->post("EmergencyContactCity");
             $EmergencyContactState = $this->input->post("EmergencyContactState");
             $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
@@ -491,12 +494,14 @@ class ApplyOnline extends CI_Controller
                 'currentAddress' => $candidateCurrentAddress,
                 'currentAddress2' => $candidateCurrentAddress2,
                 'currentAddress3' => $candidateCurrentAddress3,
+                'currentAddressPo'=> $candidateCurrentPostalCode,
                 'currentAddressCity' => $candidateCurrentAddressCity,
                 'currentAddressState' => $candidateCurrentAddressState,
                 'currentAddressCountry' => $candidateCurrentAddressCountry,
                 'permanentAddress' => $candidatePermanentAddress,
                 'permanentAddress2' => $candidatePermanentAddress2,
                 'permanentAddress3' => $candidatePermanentAddress3,
+                'overseasAddressPo' => $candidatePermanentPostalCode,
                 'permanentAddressCity' => $candidatePermanentAddressCity,
                 'permanentAddressState' => $candidatePermanentAddressState,
                 'permanentAddressCountry' => $candidatePermanentAddressCountry,
@@ -510,6 +515,7 @@ class ApplyOnline extends CI_Controller
                 'emergencyContactAddress' => $EmergencyContactAddress,
                 'emergencyContactAddress2' => $EmergencyContactAddress2,
                 'emergencyContactAddress3' => $EmergencyContactAddress3,
+                'emergencyContactAddressPo' => $EmergencyPostalCode,
                 'emergencyContactAddressCity' => $EmergencyContactCity,
                 'emergencyContactAddressState' => $EmergencyContactState,
                 'emergencyContactCountry' => $EmergencyContactCountry,
@@ -629,6 +635,7 @@ class ApplyOnline extends CI_Controller
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddress2 = $this->input->post("currentAddress2");
                 $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+                $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");
                 $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -640,6 +647,7 @@ class ApplyOnline extends CI_Controller
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
+                $candidatePermanentPostalCode = $this->input->post("overseasAddressPo");
                 $candidatePermanentAddressCity = $this->input->post("permanentAddressCity");
                 $candidatePermanentAddressState = $this->input->post("permanentAddressState");
                 $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
@@ -655,6 +663,7 @@ class ApplyOnline extends CI_Controller
                 $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
                 $EmergencyContactAddress2 = $this->input->post("EmergencyContactAddress2");
                 $EmergencyContactAddress3 = $this->input->post("EmergencyContactAddress3");
+                $EmergencyPostalCode = $this->input->post("emergencyContactAddressPo");
                 $EmergencyContactCity = $this->input->post("EmergencyContactCity");
                 $EmergencyContactState = $this->input->post("EmergencyContactState");
                 $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
@@ -707,12 +716,14 @@ class ApplyOnline extends CI_Controller
                     'currentAddress' => $candidateCurrentAddress,
                     'currentAddress2' => $candidateCurrentAddress2,
                     'currentAddress3' => $candidateCurrentAddress3,
+                    'currentAddressPo'=> $candidateCurrentPostalCode,
                     'currentAddressCity' => $candidateCurrentAddressCity,
                     'currentAddressState' => $candidateCurrentAddressState,
                     'currentAddressCountry' => $candidateCurrentAddressCountry,
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
+                    'overseasAddressPo' => $candidatePermanentPostalCode,
                     'permanentAddressCity' => $candidatePermanentAddressCity,
                     'permanentAddressState' => $candidatePermanentAddressState,
                     'permanentAddressCountry' => $candidatePermanentAddressCountry,
@@ -726,6 +737,7 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactAddress' => $EmergencyContactAddress,
                     'emergencyContactAddress2' => $EmergencyContactAddress2,
                     'emergencyContactAddress3' => $EmergencyContactAddress3,
+                    'emergencyContactAddressPo' => $EmergencyPostalCode,
                     'emergencyContactAddressCity' => $EmergencyContactCity,
                     'emergencyContactAddressState' => $EmergencyContactState,
                     'emergencyContactCountry' => $EmergencyContactCountry,
@@ -1015,6 +1027,7 @@ class ApplyOnline extends CI_Controller
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddress2 = $this->input->post("currentAddress2");
                 $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+                $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");
                 $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -1022,6 +1035,7 @@ class ApplyOnline extends CI_Controller
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
+                $candidatePermanentPostalCode = $this->input->post("overseasAddressPo");
                 $candidatePermanentAddressCity = $this->input->post("permanentAddressCity");
                 $candidatePermanentAddressState = $this->input->post("permanentAddressState");
                 $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
@@ -1037,6 +1051,7 @@ class ApplyOnline extends CI_Controller
                 $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
                 $EmergencyContactAddress2 = $this->input->post("EmergencyContactAddress2");
                 $EmergencyContactAddress3 = $this->input->post("EmergencyContactAddress3");
+                $EmergencyPostalCode = $this->input->post("emergencyContactAddressPo");
                 $EmergencyContactCity = $this->input->post("EmergencyContactCity");
                 $EmergencyContactState = $this->input->post("EmergencyContactState");
                 $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
@@ -1092,12 +1107,14 @@ class ApplyOnline extends CI_Controller
                     'currentAddress' => $candidateCurrentAddress,
                     'currentAddress2' => $candidateCurrentAddress2,
                     'currentAddress3' => $candidateCurrentAddress3,
+                    'currentAddressPo'=> $candidateCurrentPostalCode,
                     'currentAddressCity' => $candidateCurrentAddressCity,
                     'currentAddressState' => $candidateCurrentAddressState,
                     'currentAddressCountry' => $candidateCurrentAddressCountry,
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
+                    'overseasAddressPo' => $candidatePermanentPostalCode,
                     'permanentAddressCity' => $candidatePermanentAddressCity,
                     'permanentAddressState' => $candidatePermanentAddressState,
                     'permanentAddressCountry' => $candidatePermanentAddressCountry,
@@ -1112,6 +1129,7 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactAddress' => $EmergencyContactAddress,
                     'emergencyContactAddress2' => $EmergencyContactAddress2,
                     'emergencyContactAddress3' => $EmergencyContactAddress3,
+                    'emergencyContactAddressPo' => $EmergencyPostalCode,
                     'emergencyContactAddressCity' => $EmergencyContactCity,
                     'emergencyContactAddressState' => $EmergencyContactState,
                     'emergencyContactCountry' => $EmergencyContactCountry,
@@ -1240,6 +1258,7 @@ class ApplyOnline extends CI_Controller
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddress2 = $this->input->post("currentAddress2");
                 $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+                $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");
                 $candidateCurrentAddressCountry = $this->input->post("currentAddressCountry");
@@ -1248,6 +1267,7 @@ class ApplyOnline extends CI_Controller
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
+                $candidatePermanentPostalCode = $this->input->post("overseasAddressPo");
                 $candidatePermanentAddressCity = $this->input->post("permanentAddressCity");
                 $candidatePermanentAddressState = $this->input->post("permanentAddressState");
                 $candidatePermanentAddressCountry = $this->input->post("permanentAddressCountry");
@@ -1262,6 +1282,7 @@ class ApplyOnline extends CI_Controller
                 $EmergencyContactAddress = $this->input->post("EmergencyContactAddress");
                 $EmergencyContactAddress2 = $this->input->post("EmergencyContactAddress2");
                 $EmergencyContactAddress3 = $this->input->post("EmergencyContactAddress3");
+                $EmergencyPostalCode = $this->input->post("emergencyContactAddressPo");
                 $EmergencyContactCity = $this->input->post("EmergencyContactCity");
                 $EmergencyContactState = $this->input->post("EmergencyContactState");
                 $EmergencyContactCountry = $this->input->post("emergencyContactCountry");
@@ -1316,12 +1337,14 @@ class ApplyOnline extends CI_Controller
                     'currentAddress' => $candidateCurrentAddress,
                     'currentAddress2' => $candidateCurrentAddress2,
                     'currentAddress3' => $candidateCurrentAddress3,
+                    'currentAddressPo'=> $candidateCurrentPostalCode,
                     'currentAddressCity' => $candidateCurrentAddressCity,
                     'currentAddressState' => $candidateCurrentAddressState,
                     'currentAddressCountry' => $candidateCurrentAddressCountry,
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
+                    'overseasAddressPo' => $candidatePermanentPostalCode,
                     'permanentAddressCity' => $candidatePermanentAddressCity,
                     'permanentAddressState' => $candidatePermanentAddressState,
                     'permanentAddressCountry' => $candidatePermanentAddressCountry,
@@ -1336,6 +1359,7 @@ class ApplyOnline extends CI_Controller
                     'emergencyContactAddress' => $EmergencyContactAddress,
                     'emergencyContactAddress2' => $EmergencyContactAddress2,
                     'emergencyContactAddress3' => $EmergencyContactAddress3,
+                    'emergencyContactAddressPo' => $EmergencyPostalCode,
                     'emergencyContactAddressCity' => $EmergencyContactCity,
                     'emergencyContactAddressState' => $EmergencyContactState,
                     'emergencyContactCountry' => $EmergencyContactCountry,
@@ -2879,6 +2903,7 @@ class ApplyOnline extends CI_Controller
                 $address = $this->input->post("address");
                 $address2 = $this->input->post("address2");
                 $address3 = $this->input->post("address3");
+                $postCode = $this->input->post("postCode");
                 $city = $this->input->post("city");
                 $state = $this->input->post("state");
                 $country = $this->input->post("country");
@@ -2893,6 +2918,7 @@ class ApplyOnline extends CI_Controller
                     'address' => $address,
                     'address2' => $address2,
                     'address3' => $address3,
+                    'postCode' => $postCode,
                     'city' => $city,
                     'state' => $state,
                     'contactNo' => $telephone,
@@ -2958,7 +2984,7 @@ class ApplyOnline extends CI_Controller
                 $telephone = $this->input->post("telephone");
                 $email = $this->input->post("email");
                 $address = $this->input->post("address");
-                $addressPo = $this->input->post("addressPo");
+                $postCode = $this->input->post("postCode");
                 $country = $this->input->post("country");
 
 
@@ -2969,7 +2995,7 @@ class ApplyOnline extends CI_Controller
                     'workingCompany' => $company,
                     'jobTitle' => $jobTitle,
                     'address' => $address,
-                    'postCode' => $addressPo,
+                    'postCode' => $postCode,
                     'contactNo' => $telephone,
                     'email' => $email,
                     'fkCountry' => $country,
