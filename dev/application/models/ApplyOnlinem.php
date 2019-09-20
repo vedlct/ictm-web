@@ -97,7 +97,7 @@ class ApplyOnlinem extends CI_Model
     public function getFinancerDataFromOthers($applicationId)
     {
 
-        $this->db->select('id,name,title,relation,address,address2,address3,city,state,country,mobile,telephone,email');
+        $this->db->select('id,name,title,relation,address,address2,address3,addressPo,city,state,country,mobile,telephone,email');
         $this->db->where('fkApplicationId', $applicationId);
         $this->db->from('financer');
         $query = $this->db->get();
@@ -176,13 +176,14 @@ class ApplyOnlinem extends CI_Model
             $address = $this->input->post('address');
             $address2 = $this->input->post('address2');
             $address3 = $this->input->post('address3');
+            $addressPo = $this->input->post('addressPo');
             $city = $this->input->post('city');
             $state = $this->input->post('state');
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
 //            $fax = $this->input->post('fax');
-            $AddressPO = $this->input->post('AddressPO');
+//            $AddressPO = $this->input->post('AddressPO');
             $country  = $this->input->post('country');
             $data1 = array(
                 'sourceOfFinance' => $selfFinance,
@@ -197,6 +198,7 @@ class ApplyOnlinem extends CI_Model
                 'address' => $address,
                 'address2' => $address2,
                 'address3' => $address3,
+                'addressPo' => $addressPo,
                 'city' => $city,
                 'state' => $state,
                 'country' => $country,
@@ -266,6 +268,7 @@ class ApplyOnlinem extends CI_Model
             $address = $this->input->post('address');
             $address2 = $this->input->post('address2');
             $address3 = $this->input->post('address3');
+            $addressPo = $this->input->post('addressPo');
             $city = $this->input->post('city');
             $state = $this->input->post('state');
             $mobilee = $this->input->post('mobile');
@@ -288,6 +291,7 @@ class ApplyOnlinem extends CI_Model
                 'address' => $address,
                 'address2' => $address2,
                 'address3' => $address3,
+                'addressPo' => $addressPo,
                 'city' => $city,
                 'state' => $state,
                 'mobile' => $mobilee,
@@ -379,7 +383,7 @@ class ApplyOnlinem extends CI_Model
     {
 
         $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,ganderChange,
-        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddress2,currentAddress3,currentAddressCity,currentAddressState,
+        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddress2,currentAddress3,currentAddressPo,currentAddressCity,currentAddressState,
         ,overseasAddress,overseasAddressPo,permanentAddress,permanentAddress2,permanentAddress3,permanentAddressCity,permanentAddressState,permanentAddressCountry,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
         emergencyContactAddress2,emergencyContactAddress3,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactAddressPo,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
         methodOfStudy,courseSession,courseYear,timeOfStudy,ulnNo,ucasCourseCode');
@@ -714,7 +718,7 @@ class ApplyOnlinem extends CI_Model
             $address3 = $this->input->post('address3');
             $city = $this->input->post('city');
             $state = $this->input->post('state');
-            $postcode = $this->input->post('AddressPO');
+            $postcode = $this->input->post('addressPo');
             $country = $this->input->post('country');
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
@@ -918,6 +922,7 @@ class ApplyOnlinem extends CI_Model
         $address = $this->input->post('address[]');
         $address2 = $this->input->post('address2[]');
         $address3 = $this->input->post('address3[]');
+        $postCode = $this->input->post('postCode[]');
         $city = $this->input->post('city[]');
         $state = $this->input->post('state[]');
         $country = $this->input->post('country[]');
@@ -934,7 +939,7 @@ class ApplyOnlinem extends CI_Model
                 'title' => $title[$i],
                 'workingCompany' => $company[$i],
                 'jobTitle' => $jobTitle[$i],
-                'address' => $address[$i],
+                'postCode' => $postCode[$i],
                 'address' => $address[$i],
                 'address2' => $address2[$i],
                 'address3' => $address3[$i],

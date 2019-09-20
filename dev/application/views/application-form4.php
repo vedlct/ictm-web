@@ -129,6 +129,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
