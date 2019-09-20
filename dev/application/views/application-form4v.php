@@ -88,7 +88,7 @@
                                 <label class="control-label col-md-3">Relation:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input tabindex="6" type="text" class="form-control" id="relation"  maxlength="50" name="relation" required value="<?php echo $f4->relation?>">
+                                    <input tabindex="6" type="text" class="form-control" id="relation"  maxlength="50" name="relation"  value="<?php echo $f4->relation?>">
                                 </div>
                             </div>
 
@@ -96,7 +96,7 @@
                                     <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="7"  type="text" class="form-control" id="address" name="address" required value="<?php echo $f4->address?>">
+                                        <input tabindex="7"  type="text" class="form-control" id="address" name="address"  value="<?php echo $f4->address?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -118,7 +118,7 @@
                                     <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo" required value="<?php echo $f4->addressPo?>">
+                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo"  value="<?php echo $f4->addressPo?>">
                                     </div>
                                 </div>
 
@@ -126,7 +126,7 @@
                                     <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="10"  type="text" class="form-control" id="city" name="city" required value="<?php echo $f4->city?>">
+                                        <input tabindex="10"  type="text" class="form-control" id="city" name="city"  value="<?php echo $f4->city?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -156,7 +156,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20"  name="mobile" value="<?php echo $f4->mobile ?>" required>
+                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20"  name="mobile" value="<?php echo $f4->mobile ?>" >
                                 </div>
                             </div>
 
@@ -165,7 +165,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
-                                    <input tabindex="11" type="number" class="form-control" id="telephone" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" required>
+                                    <input tabindex="11" type="number" class="form-control" id="telephone" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
                                 </div>
                             </div>
 
@@ -263,6 +263,27 @@
             var telephone = document.getElementById("telephone").value;
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+            if (title = ""){
+                alert("Please select a title");
+                return false;
+            }
+            if (name = ""){
+                alert("Please fill up Name");
+                return false;
+            }
+            if (relation = ""){
+                alert("Please fill up relation");
+                return false;
+            }
+            if (address = ""){
+                alert("Please fill up address");
+                return false;
+            }
+            if (title = ""){
+                alert("Please select a title");
+                return false;
+            }
             if (!phone.match(chk)) {
                 alert('Please enter a valid Mobile Phone number!!');
                 return false;

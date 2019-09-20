@@ -127,10 +127,10 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Postal Code:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
-                                    <?php foreach ($References as $Reference){?>
+
                                     <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                    <input tabindex="8"  type="text" class="form-control" id="postCode" name="postCode" value="<?php echo $Reference->postCode?>" required>
-                                <?php }?>
+                                    <input tabindex="8"  type="text" class="form-control" id="postCode" name="postCode"  required>
+
                                 </div>
                             </div>
 
@@ -287,6 +287,7 @@
                 document.getElementById("address").value= address;
                 document.getElementById("address2").value= address2;
                 document.getElementById("address3").value= address3;
+                document.getElementById("postCode").value= postCode;
                 document.getElementById("city").value= city;
                 document.getElementById("state").value= state;
                 document.getElementById("country").value= fkCountry;

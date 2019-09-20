@@ -71,7 +71,7 @@
                                 <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select tabindex="4" style="width: 100%"  id="title"  name="title" required>
+                                    <select tabindex="4" style="width: 100%"  id="title"  name="title" >
 
                                         <option value="" selected><?php echo SELECT_TITLE?></option>
                                         <?php for ($i=0;$i<count(Title);$i++){?>
@@ -86,7 +86,7 @@
                                 <label class="control-label col-md-3">Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('name'); ?></font></p>
-                                    <input tabindex="5" type="text" class="form-control" id="name" name="name" maxlength="100"  required value="<?php echo set_value('name'); ?>" >
+                                    <input tabindex="5" type="text" class="form-control" id="name" name="name" maxlength="100"   value="<?php echo set_value('name'); ?>" >
 
 
                                 </div>
@@ -96,7 +96,7 @@
                                 <label class="control-label col-md-3">Relation:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('relation'); ?></font></p>
-                                    <input tabindex="6" type="text" class="form-control" id="relation" name="relation" maxlength="50"  required value="<?php echo set_value('relation'); ?>" >
+                                    <input tabindex="6" type="text" class="form-control" id="relation" name="relation" maxlength="50"   value="<?php echo set_value('relation'); ?>" >
                                 </div>
                             </div>
 
@@ -111,7 +111,7 @@
                                     <label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="7"  type="text" class="form-control" id="address" name="address" required>
+                                        <input tabindex="7"  type="text" class="form-control" id="address" name="address" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -132,14 +132,14 @@
                                     <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo" required>
+                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo" >
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="10"  type="text" class="form-control" id="city" name="city" required>
+                                        <input tabindex="10"  type="text" class="form-control" id="city" name="city" >
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -172,7 +172,7 @@
                                 <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input tabindex="10" type="text" class="form-control" id="mobile" name="mobile" minlength="11" maxlength="20"  required value="<?php echo set_value('mobile'); ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile" name="mobile" minlength="11" maxlength="20"   value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
