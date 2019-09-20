@@ -3408,3 +3408,14 @@ img.hover-shadow {
 	z-index: 9999;
 
 }
+
+
+.img-affiliation {
+	margin-right: 55px !important;
+}
+
+@media only screen and (max-width: 600px) {
+	.img-affiliation {
+		margin-right: 1px !important;
+	}
+}

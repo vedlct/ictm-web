@@ -4,6 +4,8 @@
         .owl-stage{
             margin: 0 auto;
         }
+
+
     </style>
 
 
@@ -522,7 +524,6 @@
                         <!--                                                <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/--><?php //echo $hm->bottomBannerImage ?><!--" alt="image">-->
                         <img src="<?php echo base_url(FOLDER_NAME.'/images/homeImage/'.thumb(FOLDER_NAME.'/images/homeImage/'.$hm->bottomBannerImage,'2000','331')); ?>" alt="image">
                         <!--                                                                        <img src="--><?php //echo base_url()?><!----><?php //echo FOLDER_NAME ?><!--/images/homeImage/white.png" alt="image">-->
-
 
                     </div>
 

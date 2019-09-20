@@ -3,7 +3,7 @@
     <div class="row">
         <div class=" bottom-logo-slider owl-carousel owl-theme">
             <?php foreach ($affiliation as $af) { ?>
-                <div class="item" style="margin-right: 55px !important;">
+                <div class="item img-affiliation">
                     <?php if ($af->AffiliationsPhotoPath !=null){?>
                     <img src="<?php echo base_url(FOLDER_NAME.'/images/affiliationImages/'.thumb(FOLDER_NAME.'/images/affiliationImages/'.$af->AffiliationsPhotoPath,'226','94')); ?>" alt="image">
                     <?php }else{ ?>
