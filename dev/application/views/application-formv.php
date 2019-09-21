@@ -392,7 +392,7 @@
                             <label class="control-label col-md-3" id="currentAddressPo">Postal Code:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
-                                <input tabindex="29"  type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo $candidateInfo->currentAddressPo ?>">
+                                <input tabindex="29"  type="text" class="form-control"  id="currentAddressPo2" name="currentAddressPo" value="<?php echo $candidateInfo->currentAddressPo ?>">
                             </div>
                         </div>
                         <div class="form-group">
@@ -479,7 +479,7 @@
                             <label class="control-label col-md-3" >Postal Code:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
-                                <input tabindex="39"  type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo $candidateInfo->overseasAddressPo?>">
+                                <input tabindex="39"  type="text" class="form-control"  id="overseasAddressPo2" name="overseasAddressPo" value="<?php echo $candidateInfo->overseasAddressPo?>">
                             </div>
                         </div>
                         <div class="form-group" id="paddresslabelCity">
@@ -959,6 +959,7 @@
             document.getElementById('permanentAddress').value = document.getElementById('currentAddress').value;
             document.getElementById('permanentAddress2').value = document.getElementById('currentAddress2').value;
             document.getElementById('permanentAddress3').value = document.getElementById('currentAddress3').value;
+            document.getElementById('overseasAddressPo2').value = document.getElementById('currentAddressPo2').value;
             document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
             document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
             document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
@@ -967,6 +968,7 @@
             document.getElementById('permanentAddress').style.display = "none";
             document.getElementById('permanentAddress2').style.display = "none";
             document.getElementById('permanentAddress3').style.display = "none";
+            document.getElementById('overseasAddressPo').style.display = "none";
             document.getElementById('permanentAddressCity').style.display = "none";
             document.getElementById('permanentAddressState').style.display = "none";
             document.getElementById('permanentAddressCountry').style.display = "none";
@@ -974,6 +976,7 @@
             document.getElementById('paddresslabel').style.display = "none";
             document.getElementById('paddresslabel2').style.display = "none";
             document.getElementById('paddresslabel3').style.display = "none";
+            document.getElementById('overseasAddressPo').style.display = "none";
             document.getElementById('paddresslabelCity').style.display = "none";
             document.getElementById('paddresslabelState').style.display = "none";
             document.getElementById('paddresslabelCountry').style.display = "none";
@@ -986,6 +989,7 @@
             document.getElementById('permanentAddress').style.display = "block";
             document.getElementById('permanentAddress2').style.display = "block";
             document.getElementById('permanentAddress3').style.display = "block";
+            document.getElementById('overseasAddressPo').style.display = "block";
             document.getElementById('permanentAddressCity').style.display = "block";
             document.getElementById('permanentAddressState').style.display = "block";
             document.getElementById('permanentAddressCountry').style.display = "block";
@@ -993,6 +997,7 @@
             document.getElementById('paddresslabel').style.display = "block";
             document.getElementById('paddresslabel2').style.display = "block";
             document.getElementById('paddresslabel3').style.display = "block";
+            document.getElementById('overseasAddressPo').style.display = "block";
             document.getElementById('paddresslabelCity').style.display = "block";
             document.getElementById('paddresslabelState').style.display = "block";
             document.getElementById('paddresslabelCountry').style.display = "block";
@@ -1005,6 +1010,7 @@
             document.getElementById('emaddress').value = document.getElementById('permanentAddress').value;
             document.getElementById('emaddress2').value = document.getElementById('permanentAddress2').value;
             document.getElementById('emaddress3').value = document.getElementById('permanentAddress3').value;
+            document.getElementById('emergencyContactAddressPo').value = document.getElementById('overseasAddressPo').value;
             document.getElementById('emaddressCity').value = document.getElementById('permanentAddressCity').value;
             document.getElementById('emaddressState').value = document.getElementById('permanentAddressState').value;
             document.getElementById('emaddressCountry').value = document.getElementById('permanentAddressCountry').value;
@@ -1012,6 +1018,7 @@
             document.getElementById('eaddresslabel').style.display = "none";
             document.getElementById('eaddresslabel2').style.display = "none";
             document.getElementById('eaddresslabel3').style.display = "none";
+            document.getElementById('epostalcodelabel').style.display = "none";
             document.getElementById('ecitylabel').style.display = "none";
             document.getElementById('estatelabel').style.display = "none";
             document.getElementById('ecountrylabel').style.display = "none";
@@ -1021,6 +1028,7 @@
             document.getElementById('eaddresslabel').style.display = "block";
             document.getElementById('eaddresslabel2').style.display = "block";
             document.getElementById('eaddresslabel3').style.display = "block";
+            document.getElementById('epostalcodelabel').style.display = "block";
             document.getElementById('ecitylabel').style.display = "block";
             document.getElementById('estatelabel').style.display = "block";
             document.getElementById('ecountrylabel').style.display = "block";
