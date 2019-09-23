@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="col-md-9">
 	
-                        	<form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post"  onsubmit=" return checkvalidation()" class="registration-form form-horizontal">
+                        	<form role="form" action="<?php echo base_url()?>ApplyOnline/insertApplicationForm1" method="post"  onsubmit=" return checkvalidation()" class="form-horizontal">
                         		
 <!--                        		<fieldset>-->
 		                        	<div class="form-top">
@@ -342,7 +342,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Address Line 2:</label>
                                             <div class="col-md-9">
-                                                <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
+                                                <p><font color="red"> <?php echo form_error('currentAddress2'); ?></font></p>
                                                 <input tabindex="28" type="text" class="form-control"  id="currentAddress2" name="currentAddress2" value="<?php echo set_value('currentAddress2'); ?>">
                                             </div>
                                         </div>

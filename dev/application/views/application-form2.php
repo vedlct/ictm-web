@@ -36,7 +36,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         <div class="row">
             <div class="col-md-9">
 
-                <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm2" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
+                <form action="<?php echo base_url()?>ApplyOnline/insertApplicationForm2" method="post" onsubmit="return checkForm()" class="form-horizontal">
 
                         <div class="form-top">
                             <div class="form-top-left">

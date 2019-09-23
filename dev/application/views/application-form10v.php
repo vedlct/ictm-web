@@ -179,8 +179,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
                             </div>
                         </div>
-                        <div id="qualificationTable">
-                            <table  class="table  table-bordered">
+                        <div id="qualificationTable" class="table-responsive">
+                            <table  class="table  table-bordered ">
                                 <tr>
                                     <th>Id</th>
                                     <th>Organization</th>

@@ -783,7 +783,7 @@ $config = array (
             ),
             array(
                 'field' => 'completionYear',
-                'label' => 'CompletionYear',
+                'label' => 'Completion Year',
                 'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
             ),

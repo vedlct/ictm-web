@@ -42,7 +42,7 @@
                                 <p>Step 5 / 10</p>
                             </div>
                         </div>
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="form-horizontal">
 
                 <?php foreach ($PersonalStatementData as $f5) { ?>
 

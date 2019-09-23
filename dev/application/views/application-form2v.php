@@ -56,7 +56,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
 
-                <form action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2" method="post" onsubmit="return checkForm()" class="registration-form form-horizontal">
+                <form action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2" method="post" onsubmit="return checkForm()" class="form-horizontal">
                     <div class="form-bottom">
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >

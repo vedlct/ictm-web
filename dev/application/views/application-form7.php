@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-10">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow7" enctype="multipart/form-data" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow7" enctype="multipart/form-data" method="post" class="form-horizontal">
 
 <!--                    <fieldset>-->
                         <div class="form-top">

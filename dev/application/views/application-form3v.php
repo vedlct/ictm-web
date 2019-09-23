@@ -29,7 +29,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editapplyNow3" method="post" class=" form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/editapplyNow3" method="post" class="form-horizontal">
 
 
 

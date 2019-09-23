@@ -1442,11 +1442,10 @@ class ApplyOnline extends CI_Controller
 //            $enddate = $this->input->post("enddate");
                 $grade = $this->input->post("grade");
 
-
                 $qualificationLevel = $this->input->post("qualificationLevel");
                 $awardingBody = $this->input->post("awardingBody");
                 $subject = $this->input->post("subject");
-                $completionYear = date('Y',strtotime($this->input->post("completionYear")));
+                $completionYear = $this->input->post("completionYear");
 
                 $data = array(
                     'qualification' => $qualification,
@@ -1515,7 +1514,7 @@ class ApplyOnline extends CI_Controller
                 $qualificationLevel = $this->input->post("qualificationLevel");
                 $awardingBody = $this->input->post("awardingBody");
                 $subject = $this->input->post("subject");
-                $completionYear = date('Y',strtotime($this->input->post("completionYear")));
+                $completionYear = $this->input->post("completionYear");
 
                 $data = array(
                     'qualification' => $qualification,

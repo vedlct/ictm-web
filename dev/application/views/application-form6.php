@@ -40,7 +40,7 @@
                                 <p>Step 7 / 10</p>
                             </div>
                         </div>
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow6" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow6" method="post" class="form-horizontal">
                 <div class="form-bottom">
                             <p>Equal opportunities monitoring: (please select from the dropdown lists)</p>
                     <?php foreach($opportunityTitle as $a6){

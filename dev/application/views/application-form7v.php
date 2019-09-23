@@ -24,7 +24,7 @@
         <div class="row">
             <div class="col-md-9">
 
-                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow7" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>OnlineForms/applyNow7" method="post" class="form-horizontal">
 
                     <fieldset>
                         <div class="form-top">

@@ -259,7 +259,10 @@
             var name = document.getElementById("name").value;
             var relation = document.getElementById("relation").value;
             var address = document.getElementById("address").value;
+            var postcode = document.getElementById("addressPo").value;
             var phone = document.getElementById("mobile").value;
+            var city = document.getElementById("city").value;
+            var country = document.getElementById("country").value;
             var telephone = document.getElementById("telephone").value;
             var chk = /^[0-9]*$/;
             var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -280,8 +283,16 @@
                 alert("Please fill up address");
                 return false;
             }
-            if (title = ""){
-                alert("Please select a title");
+            if (postcode = ""){
+                alert("Please fill up Postcode");
+                return false;
+            }
+            if (city = ""){
+                alert("Please select a City");
+                return false;
+            }
+            if (country = ""){
+                alert("Please select a Country");
                 return false;
             }
             if (!phone.match(chk)) {
