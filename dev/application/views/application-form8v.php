@@ -176,7 +176,7 @@
                             </div>
 
 
-                            <div id="refereesTable">
+                            <div id="refereesTable" class="table-responsive">
                                 <table  class="table  table-bordered">
                                     <tr>
 <!--                                        <th>Id</th>-->

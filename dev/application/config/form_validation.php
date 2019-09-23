@@ -734,13 +734,13 @@ $config = array (
             array(
                 'field' => 'organisation',
                 'label' => 'Organisation',
-                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
 
             ),
             array(
                 'field' => 'positionHeld',
                 'label' => 'Position Held',
-                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
 
             )
 
@@ -828,11 +828,6 @@ $config = array (
                 'rules' => 'xss_clean|htmlspecialchars',
 
             ),
-
-
-
-
-
 
 
         ),
