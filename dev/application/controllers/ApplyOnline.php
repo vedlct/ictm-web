@@ -2983,7 +2983,11 @@ class ApplyOnline extends CI_Controller
                 $telephone = $this->input->post("telephone");
                 $email = $this->input->post("email");
                 $address = $this->input->post("address");
+                $address2 = $this->input->post("address2");
+                $address3 = $this->input->post("address3");
                 $postCode = $this->input->post("postCode");
+                $city = $this->input->post("city");
+                $state = $this->input->post("state");
                 $country = $this->input->post("country");
 
 
@@ -2994,10 +2998,15 @@ class ApplyOnline extends CI_Controller
                     'workingCompany' => $company,
                     'jobTitle' => $jobTitle,
                     'address' => $address,
+                    'address2' => $address2,
+                    'address3' => $address3,
                     'postCode' => $postCode,
+                    'city' => $city,
+                    'state' => $state,
                     'contactNo' => $telephone,
                     'email' => $email,
                     'fkCountry' => $country,
+
 
                 );
 
