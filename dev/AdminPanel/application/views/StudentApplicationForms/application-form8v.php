@@ -103,10 +103,39 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Address*:</label>
+                                <label class="control-label col-md-2">Address Line 1:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <textarea style="border: 1px solid #bababa; width: 100%;" required id="address" name="address" rows="8" maxlength="1000" tabindex="4"></textarea>
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input tabindex="8"  type="text" class="form-control" id="address" name="address" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Address Line 2:</label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input tabindex="9"  type="text" class="form-control" id="address2" name="address2" >
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Address Line 3:</label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input tabindex="10"  type="text" class="form-control" id="address3" name="address3" >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input tabindex="11"  type="text" class="form-control" id="city" name="city" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-2">County/State:</label>
+                                <div class="col-md-10">
+                                    <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                    <input tabindex="12"  type="text" class="form-control" id="state" name="state" >
                                 </div>
                             </div>
 
@@ -235,6 +264,10 @@
                     var workingCompany = response[0].workingCompany;
                     var jobTitle = response[0].jobTitle;
                     var address = response[0].address;
+                    var address2 = response[0].address2;
+                    var address3 = response[0].address3;
+                    var city = response[0].city;
+                    var state = response[0].state;
                     var postCode = response[0].postCode;
                     var fkCountry = response[0].fkCountry;
                     var contactNo = response[0].contactNo;
@@ -250,6 +283,10 @@
                 document.getElementById("telephone").value= contactNo;
                 document.getElementById("email").value= email;
                 document.getElementById("address").value= address;
+                document.getElementById("address2").value= address2;
+                document.getElementById("address3").value= address3;
+                document.getElementById("city").value= city;
+                document.getElementById("state").value= state;
                 document.getElementById("addressPo").value= postCode;
                 document.getElementById("country").value= fkCountry;
 

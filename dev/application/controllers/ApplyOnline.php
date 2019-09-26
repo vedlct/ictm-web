@@ -413,7 +413,7 @@ class ApplyOnline extends CI_Controller
 
             $candidateCurrentAddress = $this->input->post("currentAddress");
             $candidateCurrentAddress2 = $this->input->post("currentAddress2");
-            $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+            $candidateCurrentAddress3 = $this->input->post("currentAddress3");
             $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
             $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
             $candidateCurrentAddressState = $this->input->post("currentAddressState");
@@ -634,7 +634,7 @@ class ApplyOnline extends CI_Controller
 
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddress2 = $this->input->post("currentAddress2");
-                $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+                $candidateCurrentAddress3 = $this->input->post("currentAddress3");
                 $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");
@@ -1026,7 +1026,7 @@ class ApplyOnline extends CI_Controller
 //                $candidateVisaExpiryDate = date('Y-m-d',strtotime($this->input->post("visaExpiryDate")));
                 $candidateCurrentAddress = $this->input->post("currentAddress");
                 $candidateCurrentAddress2 = $this->input->post("currentAddress2");
-                $candidateCurrentAddress3 = $this->input->post("currentAddress2");
+                $candidateCurrentAddress3 = $this->input->post("currentAddress3");
                 $candidateCurrentPostalCode = $this->input->post("currentAddressPo");
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");

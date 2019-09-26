@@ -214,13 +214,29 @@ class StudentApplicationm extends CI_Model
 
     /* for student Application edit */
 
+//    public function getCandidateInfo($studentApplicationId)
+//    {
+//
+//        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCity,currentAddressState,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,ganderChange,
+//        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddress2,currentAddress3,currentAddressPo,overseasAddress,permanentAddress,
+//        overseasAddressPo,permanentAddress2,permanentAddress3,permanentAddressCity,permanentAddressState,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
+//        emergencyContactAddressPo,emergencyContactAddress2,emergencyContactAddress3,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
+//        methodOfStudy,courseSession,courseYear,timeOfStudy,ulnNo,ucasCourseCode');
+//        $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
+//        $this->db->where('applicationId',$studentApplicationId);
+//        $this->db->from('candidateinfo');
+//        $query=$this->db->get();
+//        return $query->result();
+//
+//
+//    }
     public function getCandidateInfo($studentApplicationId)
     {
 
-        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,ganderChange,
-        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddressPo,overseasAddress,
-        overseasAddressPo,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
-        emergencyContactAddressPo,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
+        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCity,currentAddressState,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,ganderChange,
+        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddress2,currentAddress3,currentAddressPo,overseasAddress,permanentAddress,permanentAddress2,permanentAddress3,
+        overseasAddressPo,emergencyContactAddress2,emergencyContactAddress3,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
+        emergencyContactAddressPo,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
         methodOfStudy,courseSession,courseYear,timeOfStudy,ulnNo,ucasCourseCode');
         $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->where('applicationId',$studentApplicationId);
@@ -685,7 +701,7 @@ class StudentApplicationm extends CI_Model
     public function getFinancerDataFromOthers($applicationId)
     {
 
-        $this->db->select('id,name,title,relation,address,addressPo,mobile,telephone,email');
+        $this->db->select('id,name,title,relation,address,address2,address3,city,state,addressPo,mobile,telephone,email');
         $this->db->where('fkApplicationId', $applicationId);
         $this->db->from('financer');
         $query = $this->db->get();
@@ -760,6 +776,10 @@ class StudentApplicationm extends CI_Model
             $name = $this->input->post('name');
             $relation = $this->input->post('relation');
             $address = $this->input->post('address');
+            $address2 = $this->input->post('address2');
+            $address3 = $this->input->post('address3');
+            $city = $this->input->post('city');
+            $state = $this->input->post('state');
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
@@ -777,6 +797,10 @@ class StudentApplicationm extends CI_Model
                 'name' => $name,
                 'relation' => $relation,
                 'address' => $address,
+                'address2' => $address2,
+                'address3' => $address3,
+                'city' => $city,
+                'state' => $state,
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
@@ -844,6 +868,10 @@ class StudentApplicationm extends CI_Model
             $name = $this->input->post('name');
             $relation = $this->input->post('relation');
             $address = $this->input->post('address');
+            $address2 = $this->input->post('address2');
+            $address3 = $this->input->post('address3');
+            $city = $this->input->post('city');
+            $state = $this->input->post('state');
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
@@ -861,6 +889,10 @@ class StudentApplicationm extends CI_Model
                 'name' => $name,
                 'relation' => $relation,
                 'address' => $address,
+                'address2' => $address2,
+                'address3' => $address3,
+                'city' => $city,
+                'state' => $state,
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
@@ -921,6 +953,10 @@ class StudentApplicationm extends CI_Model
             $name = $this->input->post('name');
             $relation = $this->input->post('relation');
             $address = $this->input->post('address');
+            $address2 = $this->input->post('address2');
+            $address3 = $this->input->post('address3');
+            $city = $this->input->post('city');
+            $state = $this->input->post('state');
             $mobilee = $this->input->post('mobile');
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
@@ -938,6 +974,10 @@ class StudentApplicationm extends CI_Model
                 'name' => $name,
                 'relation' => $relation,
                 'address' => $address,
+                'address2' => $address2,
+                'address3' => $address3,
+                'city' => $city,
+                'state' => $state,
                 'mobile' => $mobilee,
                 'telephone' => $telephone,
                 'email' => $email,
@@ -1058,7 +1098,7 @@ class StudentApplicationm extends CI_Model
     {
         $applicationId=$this->session->userdata('studentApplicationId');
 
-        $this->db->select('id, name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->select('id, name,title,workingCompany,jobTitle,address,address2,address3,city,state,postCode,fkCountry,contactNo,email');
         $this->db->where('fkApplicationId',$applicationId);
         $this->db->from('candidatereferees');
         $query=$this->db->get();
@@ -1095,7 +1135,7 @@ class StudentApplicationm extends CI_Model
     public function getRefereesDetails($refereesId)
     {
 
-        $this->db->select('id,name,title,workingCompany,jobTitle,address,postCode,fkCountry,contactNo,email');
+        $this->db->select('id,name,title,workingCompany,jobTitle,address,address2,address3,city,state,postCode,fkCountry,contactNo,email');
         $this->db->where('id',$refereesId);
         $this->db->from('candidatereferees');
         $query=$this->db->get();
