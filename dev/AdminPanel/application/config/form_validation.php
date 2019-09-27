@@ -1598,7 +1598,6 @@ $config = array (
             'rules' => 'required|max_length[50]|valid_email|xss_clean|htmlspecialchars'
         ),
         array(
-            'field' => 'overseasHomeAddress',
             'label' => 'Permanet Address',
             'rules' => 'required|max_length[1000]|xss_clean|htmlspecialchars'
         ),
