@@ -234,7 +234,7 @@ class StudentApplicationm extends CI_Model
     {
 
         $this->db->select('title,firstName,surName,otherNames,dateOfBirth,currentAddressCity,currentAddressState,currentAddressCountry,permanentAddressCountry,emergencyContactCountry,gender,ganderChange,
-        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddress2,currentAddress3,currentAddressPo,overseasAddress,permanentAddress,permanentAddress2,permanentAddress3,
+        placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaType,visaExpiryDate,currentAddress,currentAddress2,currentAddress3,currentAddressPo,overseasAddress,permanentAddress,permanentAddress2,permanentAddress3,permanentAddressCity,permanentAddressState,
         overseasAddressPo,emergencyContactAddress2,emergencyContactAddress3,telephoneNo,mobileNo,email,fax,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,
         emergencyContactAddressPo,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactMobile,emergencyContactEmail,courseName, awardingBody, courseLevel,courseStartDate,courseEndDate,
         methodOfStudy,courseSession,courseYear,timeOfStudy,ulnNo,ucasCourseCode');

@@ -322,7 +322,24 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" id="paddresslabelCity">
+                                    <label class="control-label col-md-2" >City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddressCity'); ?></font></p>
+                                        <input tabindex="40"  type="text" class="form-control" required id="permanentAddressCity" name="permanentAddressCity" value="<?php echo $candidateInfo->permanentAddressCity?>">
+                                    </div>
+                                </div>
+                                <div class="form-group" id="paddresslabelState">
+                                    <label class="control-label col-md-2" >County/State:</label>
+
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddressState'); ?></font></p>
+                                        <input tabindex="41"  type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo $candidateInfo->permanentAddressState?>">
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group" id="overseasAddressPo">
                                     <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
@@ -330,7 +347,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" id="paddresslabelCountry">
                                     <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
@@ -384,7 +401,7 @@
                                 <h4 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Address Details</h4>
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-2">Same as Permanet </label>
+                                    <label class="control-label col-md-2">Same as Permanent </label>
                                     <div class="col-md-10">
                                         <input style="margin-top: 10px" tabindex="36"  type="checkbox" id="samecheck3" onclick="addresscheck2()">
                                     </div>
@@ -428,7 +445,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" id="epostalcodelabel">
                                     <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
@@ -436,7 +453,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" id="ecountrylabel">
                                     <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
@@ -644,7 +661,7 @@
             document.getElementById('permanentAddress').value = document.getElementById('currentAddress').value;
             document.getElementById('permanentAddress2').value = document.getElementById('currentAddress2').value;
             document.getElementById('permanentAddress3').value = document.getElementById('currentAddress3').value;
-            document.getElementById('overseasAddressPo2').value = document.getElementById('currentAddressPo2').value;
+            document.getElementById('overseasAddressPO').value = document.getElementById('currentAddressPO').value;
             document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
             document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
             document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
@@ -653,7 +670,7 @@
             document.getElementById('permanentAddress').style.display = "none";
             document.getElementById('permanentAddress2').style.display = "none";
             document.getElementById('permanentAddress3').style.display = "none";
-            document.getElementById('overseasAddressPo').style.display = "none";
+            document.getElementById('overseasAddressPO').style.display = "none";
             document.getElementById('permanentAddressCity').style.display = "none";
             document.getElementById('permanentAddressState').style.display = "none";
             document.getElementById('permanentAddressCountry').style.display = "none";
@@ -674,7 +691,7 @@
             document.getElementById('permanentAddress').style.display = "block";
             document.getElementById('permanentAddress2').style.display = "block";
             document.getElementById('permanentAddress3').style.display = "block";
-            document.getElementById('overseasAddressPo').style.display = "block";
+            document.getElementById('overseasAddressPO').style.display = "block";
             document.getElementById('permanentAddressCity').style.display = "block";
             document.getElementById('permanentAddressState').style.display = "block";
             document.getElementById('permanentAddressCountry').style.display = "block";
@@ -694,10 +711,10 @@
             document.getElementById('emaddress').value = document.getElementById('permanentAddress').value;
             document.getElementById('emaddress2').value = document.getElementById('permanentAddress2').value;
             document.getElementById('emaddress3').value = document.getElementById('permanentAddress3').value;
-            document.getElementById('emergencyContactAddressPo').value = document.getElementById('overseasAddressPo').value;
+            document.getElementById('EmergencyContactAddressPO').value = document.getElementById('overseasAddressPO').value;
             document.getElementById('emaddressCity').value = document.getElementById('permanentAddressCity').value;
             document.getElementById('emaddressState').value = document.getElementById('permanentAddressState').value;
-            document.getElementById('emaddressCountry').value = document.getElementById('permanentAddressCountry').value;
+            document.getElementById('emergencyContactCountry').value = document.getElementById('permanentAddressCountry').value;
 
             document.getElementById('eaddresslabel').style.display = "none";
             document.getElementById('eaddresslabel2').style.display = "none";
@@ -783,55 +800,5 @@
     }
 
 </script>
-<script type="text/javascript">
-    function addresscheck() {
-        if (document.getElementById('samecheck2').checked) {
-            document.getElementById('permanentAddress').value = document.getElementById('currentAddress').value;
-            document.getElementById('permanentAddress2').value = document.getElementById('currentAddress2').value;
-            document.getElementById('permanentAddress3').value = document.getElementById('currentAddress3').value;
-            document.getElementById('overseasAddressPo2').value = document.getElementById('currentAddressPo2').value;
-            document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
-            document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
-            document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
-
-
-            document.getElementById('permanentAddress').style.display = "none";
-            document.getElementById('permanentAddress2').style.display = "none";
-            document.getElementById('permanentAddress3').style.display = "none";
-            document.getElementById('overseasAddressPo').style.display = "none";
-            document.getElementById('permanentAddressCity').style.display = "none";
-            document.getElementById('permanentAddressState').style.display = "none";
-            document.getElementById('permanentAddressCountry').style.display = "none";
-
-            document.getElementById('paddresslabel').style.display = "none";
-            document.getElementById('paddresslabel2').style.display = "none";
-            document.getElementById('paddresslabel3').style.display = "none";
-            document.getElementById('overseasAddressPo').style.display = "none";
-            document.getElementById('paddresslabelCity').style.display = "none";
-            document.getElementById('paddresslabelState').style.display = "none";
-            document.getElementById('paddresslabelCountry').style.display = "none";
-            // document.getElementById('sameascurrent').style.display = "block";
-
-
-
-        }else
-        {
-            document.getElementById('permanentAddress').style.display = "block";
-            document.getElementById('permanentAddress2').style.display = "block";
-            document.getElementById('permanentAddress3').style.display = "block";
-            document.getElementById('overseasAddressPo').style.display = "block";
-            document.getElementById('permanentAddressCity').style.display = "block";
-            document.getElementById('permanentAddressState').style.display = "block";
-            document.getElementById('permanentAddressCountry').style.display = "block";
-
-            document.getElementById('paddresslabel').style.display = "block";
-            document.getElementById('paddresslabel2').style.display = "block";
-            document.getElementById('paddresslabel3').style.display = "block";
-            document.getElementById('overseasAddressPo').style.display = "block";
-            document.getElementById('paddresslabelCity').style.display = "block";
-            document.getElementById('paddresslabelState').style.display = "block";
-            document.getElementById('paddresslabelCountry').style.display = "block";
-        }
-    }
 
 

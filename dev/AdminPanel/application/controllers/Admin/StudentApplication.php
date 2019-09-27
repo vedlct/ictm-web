@@ -249,6 +249,8 @@ class StudentApplication extends CI_Controller
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
+                $candidatePermanentAddressCity = $this->input->post("permanentAddressCity");
+                $candidatePermanentAddressState = $this->input->post("permanentAddressState");
                 $candidateOverseasHomeAddressPO = $this->input->post("overseasAddressPO");
                 $candidateTelephone = $this->input->post("telephone");
                 $candidateMobile = $this->input->post("mobile");
@@ -321,6 +323,8 @@ class StudentApplication extends CI_Controller
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
+                    'permanentAddressCity' => $candidatePermanentAddressCity,
+                    'permanentAddressState' => $candidatePermanentAddressState,
                     'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
                     'telephoneNo'=>$candidateTelephone,
                     'mobileNo'=>$candidateMobile,
@@ -423,6 +427,8 @@ class StudentApplication extends CI_Controller
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
+                $candidatePermanentAddressCity = $this->input->post("permanentAddressCity");
+                $candidatePermanentAddressState = $this->input->post("permanentAddressState");
                 $candidateOverseasHomeAddressPO = $this->input->post("overseasAddressPO");
                 $candidateTelephone = $this->input->post("telephone");
                 $candidateMobile = $this->input->post("mobile");
@@ -495,6 +501,8 @@ class StudentApplication extends CI_Controller
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
+                    'permanentAddressCity' => $candidatePermanentAddressCity,
+                    'permanentAddressState' => $candidatePermanentAddressState,
                     'overseasAddressPo'=>$candidateOverseasHomeAddressPO,
                     'telephoneNo'=>$candidateTelephone,
                     'mobileNo'=>$candidateMobile,
@@ -2150,6 +2158,10 @@ class StudentApplication extends CI_Controller
                 $telephone = $this->input->post("telephone");
                 $email = $this->input->post("email");
                 $address = $this->input->post("address");
+                $address2 = $this->input->post('address2');
+                $address3 = $this->input->post('address3');
+                $city = $this->input->post('city');
+                $state = $this->input->post('state');
                 $addressPo = $this->input->post("addressPo");
                 $country = $this->input->post("country");
 
@@ -2161,6 +2173,10 @@ class StudentApplication extends CI_Controller
                     'workingCompany' => $company,
                     'jobTitle' => $jobTitle,
                     'address' => $address,
+                    'address2' => $address2,
+                    'address3' => $address3,
+                    'city' => $city,
+                    'state' => $state,
                     'postCode' => $addressPo,
                     'contactNo' => $telephone,
                     'email' => $email,
