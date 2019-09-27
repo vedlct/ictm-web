@@ -36,10 +36,10 @@
 
     <div id="sessionFlashMessageDiv">
         <?php if ($this->session->flashdata('errorMessage')!=null){?>
-        <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
+            <div class="alert alert-danger" align="center"><strong><?php echo $this->session->flashdata('errorMessage');?></strong></div>
         <?php }
-      elseif($this->session->flashdata('successMessage')!=null){?>
-        <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
+        elseif($this->session->flashdata('successMessage')!=null){?>
+            <div class="alert alert-success" align="center"><strong><?php echo $this->session->flashdata('successMessage');?></strong></div>
         <?php }?>
 
     </div>
@@ -50,446 +50,557 @@
                 <div class="col-md-12">
                     <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                    <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" method="post" class="form-horizontal">
+                        <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" method="post" class="form-horizontal">
 
-                        <!--                        		<fieldset>-->
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h3>Personal Details</h3>
-                            </div>
+                            <!--                        		<fieldset>-->
+                            <div class="form-top">
+                                <div class="form-top-left">
+                                    <h3>Personal Details</h3>
+                                </div>
 
-                            <div class="form-top-right">
-                                <p>Step 1 / 10</p>
-                            </div>
-                        </div>
-
-                        <div class="form-bottom">
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <select style="width: 100%" name="title">
-                                        <?php for ($i=0;$i<count(Title);$i++){?>
-                                            <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                            <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->title) && $candidateInfo->title == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
-                                        <?php } ?>
-                                    </select>
+                                <div class="form-top-right">
+                                    <p>Step 1 / 10</p>
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">First Name:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
-                                    <input type="text" class="form-control" required id="firstName" name="firstName" value="<?php echo $candidateInfo->firstName ?>">
+                            <div class="form-bottom">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('title'); ?></font></p>
+                                        <select style="width: 100%" name="title">
+                                            <?php for ($i=0;$i<count(Title);$i++){?>
+                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->title) && $candidateInfo->title == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Surname:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
-                                    <input type="text" class="form-control" required id="surName" name="surName" value="<?php echo $candidateInfo->surName ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">First Name:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
+                                        <input type="text" class="form-control" required id="firstName" name="firstName" value="<?php echo $candidateInfo->firstName ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--                        <div class="form-group">-->
-                            <!--                            <label class="control-label col-md-2">Other Names:</label>-->
-                            <!--                            <div class="col-md-10">-->
-                            <!--                                <p><font color="red"> --><?php //echo form_error('otherName'); ?><!--</font></p>-->
-                            <!--                                <input type="text" class="form-control" id="otherName" name="otherName" value="--><?php //echo $candidateInfo->otherNames ?><!--">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
-                                    <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Surname:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
+                                        <input type="text" class="form-control" required id="surName" name="surName" value="<?php echo $candidateInfo->surName ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
-                                    <input type="radio" required id="gender" name="gender" value="M" <?php if($candidateInfo->gender=='M'){ echo "checked=checked";}?>> Male&nbsp;&nbsp;
-                                    <input type="radio" required id="gender" name="gender" value="F" <?php if($candidateInfo->gender=='F'){ echo "checked=checked";}?>> Female&nbsp;&nbsp;
-                                    <input type="radio" required id="gender" name="gender" value="O" <?php if($candidateInfo->gender=='O'){ echo "checked=checked";}?>> Other
-                                    <input type="radio" required id="gender" name="gender" value="PNTS" <?php if($candidateInfo->gender=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
+                                <!--                        <div class="form-group">-->
+                                <!--                            <label class="control-label col-md-2">Other Names:</label>-->
+                                <!--                            <div class="col-md-10">-->
+                                <!--                                <p><font color="red"> --><?php //echo form_error('otherName'); ?><!--</font></p>-->
+                                <!--                                <input type="text" class="form-control" id="otherName" name="otherName" value="--><?php //echo $candidateInfo->otherNames ?><!--">-->
+                                <!--                            </div>-->
+                                <!--                        </div>-->
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Date of Birth:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('dob'); ?></font></p>
+                                        <input type="text"  class="form-control datetimepicker" required id="dob" name="dob" value="<?php echo $candidateInfo->dateOfBirth ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Any Sex Change:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('genderchange'); ?></font></p>
-                                    <input type="radio" required id="genderChange" name="genderChange" value="Y" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
-                                    <input type="radio" required id="genderChange" name="genderChange" value="N" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
-                                    <input type="radio" required id="genderChange" name="genderChange" value="PNTS" <?php if($candidateInfo->ganderChange=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Sex:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
+                                        <input type="radio" required id="gender" name="gender" value="M" <?php if($candidateInfo->gender=='M'){ echo "checked=checked";}?>> Male&nbsp;&nbsp;
+                                        <input type="radio" required id="gender" name="gender" value="F" <?php if($candidateInfo->gender=='F'){ echo "checked=checked";}?>> Female&nbsp;&nbsp;
+                                        <input type="radio" required id="gender" name="gender" value="O" <?php if($candidateInfo->gender=='O'){ echo "checked=checked";}?>> Other
+                                        <input type="radio" required id="gender" name="gender" value="PNTS" <?php if($candidateInfo->gender=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
-                                    <input type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo $candidateInfo->placeOfBirth ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Any Sex Change:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('genderchange'); ?></font></p>
+                                        <input type="radio" required id="genderChange" name="genderChange" value="Y" <?php if($candidateInfo->ganderChange=='Y'){ echo "checked=checked";}?>> Y&nbsp;&nbsp;
+                                        <input type="radio" required id="genderChange" name="genderChange" value="N" <?php if($candidateInfo->ganderChange=='N'){ echo "checked=checked";}?>> N&nbsp;&nbsp;
+                                        <input type="radio" required id="genderChange" name="genderChange" value="PNTS" <?php if($candidateInfo->ganderChange=='PNTS'){ echo "checked=checked";}?>> Pefer Not To Say
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Nationality:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
-                                    <select style="width: 100%" id="nationality" required name="nationality">
-                                        <option value="" disabled selected>Select country...</option>
-                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                            <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
-                                        <?php } ?>
-                                    </select>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Place of Birth:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('placeOfBirth'); ?></font></p>
+                                        <input type="text" class="form-control" required id="placeOfBirth" maxlength="100" name="placeOfBirth" value="<?php echo $candidateInfo->placeOfBirth ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Passport No.:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
-                                    <input type="text" class="form-control"  id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Nationality:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
+                                        <select style="width: 100%" id="nationality" required name="nationality">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">PP Expiry Date:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Passport No.:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('passportNo'); ?></font></p>
+                                        <input type="text" class="form-control"  id="passportNo" name="passportNo" value="<?php echo $candidateInfo->passportNo ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">UK Entry Date:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">PP Expiry Date:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
+                                        <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="<?php echo $candidateInfo->passportExpiryDate ?>" >
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Visa Type:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
-                                    <select style="width: 100%" id="VisaType"  name="VisaType">
-
-                                        <option value="" selected><?php echo SELECT_TYPE?></option>
-                                        <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
-                                            <!--                                        <option --><?php //echo set_select('VisaType',  VISA_TYPE[$i], False); ?><!-->--><?php //echo VISA_TYPE[$i]?><!--</option>-->
-                                            <option value="<?php echo VISA_TYPE[$i]?>"<?php if (!empty($candidateInfo->visaType) && $candidateInfo->visaType == VISA_TYPE[$i])  echo 'selected = "selected"'; ?>><?php echo VISA_TYPE[$i]?></option>
-
-                                        <?php } ?>
-
-                                    </select>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">UK Entry Date:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
+                                        <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="<?php echo $candidateInfo->ukEntryDate ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Visa Expiry Date:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
-                                    <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Visa Type:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
+                                        <select style="width: 100%" id="VisaType"  name="VisaType">
+
+                                            <option value="" selected><?php echo SELECT_TYPE?></option>
+                                            <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
+                                                <!--                                        <option --><?php //echo set_select('VisaType',  VISA_TYPE[$i], False); ?><!-->--><?php //echo VISA_TYPE[$i]?><!--</option>-->
+                                                <option value="<?php echo VISA_TYPE[$i]?>"<?php if (!empty($candidateInfo->visaType) && $candidateInfo->visaType == VISA_TYPE[$i])  echo 'selected = "selected"'; ?>><?php echo VISA_TYPE[$i]?></option>
+
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Current Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
-                                    <textarea id="currentAddress" required id="currentAddress" maxlength="1000" name="currentAddress" rows="8" tabindex="4"><?php echo $candidateInfo->currentAddress ?></textarea>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Visa Expiry Date:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
+                                        <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="<?php echo $candidateInfo->visaExpiryDate ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
-                                    <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
+                                <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" id="caddresslabel">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
+                                        <input tabindex="27"  type="text" class="form-control" required id="currentAddress" name="currentAddress" value="<?php echo $candidateInfo->currentAddress ?>">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
-                                    <select style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
-                                        <option value="" disabled selected>Select country...</option>
-                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
-                                        <?php } ?>
-                                    </select>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" id="caddresslabel2">Address Line 2:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddress'); ?></font></p>
+                                        <input tabindex="28"  type="text" class="form-control"  id="currentAddress2" name="currentAddress2" value="<?php echo $candidateInfo->currentAddress2 ?>">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Telephone:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input type="text" class="form-control" required id="telephone" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" id="caddresslabel3">Address Line 3:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddress3'); ?></font></p>
+                                        <input tabindex="29"  type="text" class="form-control"  id="currentAddress3" name="currentAddress3" value="<?php echo $candidateInfo->currentAddress3 ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
+                                        <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                    <input type="email" class="form-control" required id="email" name="email" value="<?php echo $candidateInfo->email ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" id="caddressCity">City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddressCity'); ?></font></p>
+                                        <input tabindex="30"  type="text" class="form-control" required id="currentAddressCity" name="currentAddressCity" value="<?php echo $candidateInfo->currentAddressCity ?>">
+                                    </div>
                                 </div>
-                            </div>
-
-
-                            <label>Same as Current </label>
-                            <input type="checkbox" id="samecheck">
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                    <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2" id="caddressState">County/State:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
+                                        <input tabindex="31"  type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo $candidateInfo->currentAddressState ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
-                                    <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
+                                        <select style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
-                                    <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
-                                        <option value="" disabled selected>Select country...</option>
-                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
-                                        <?php } ?>
-                                    </select>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Telephone:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
+                                        <input type="text" class="form-control" required id="telephone" name="telephone" value="<?php echo $candidateInfo->telephoneNo ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-
-
-
-
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactTitle'); ?></font></p>
-                                    <select style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
-
-                                        <option value="" selected><?php echo SELECT_TITLE?></option>
-                                        <?php for ($i=0;$i<count(Title);$i++){?>
-                                            <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->emergencyContactTitle) && $candidateInfo->emergencyContactTitle == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
-
-                                        <?php } ?>
-
-                                    </select>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
+                                        <input type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactName'); ?></font></p>
-                                    <input type="text" class="form-control" required id="EmergencyContactName" name="EmergencyContactName" value="<?php echo $candidateInfo->emergencyContactName ?>">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('email'); ?></font></p>
+                                        <input type="email" class="form-control" required id="email" name="email" value="<?php echo $candidateInfo->email ?>">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactRelation'); ?></font></p>
-                                    <input type="text" class="form-control" required id="EmergencyContactRelation" name="EmergencyContactRelation" value="<?php echo $candidateInfo->emergencyContactRelation ?>">
+                                <h4 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent Address Details</h4>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Same as Current </label>
+                                    <div class="col-md-10">
+                                        <input style="margin-top: 10px" tabindex="36"  type="checkbox" id="samecheck2" onclick="addresscheck()">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Address:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
-                                    <textarea id="comment-message" required id="EmergencyContactAddress" name="EmergencyContactAddress" rows="8" tabindex="4"><?php echo $candidateInfo->emergencyContactAddress ?></textarea>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
+                                        <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
-                                    <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>">
+                                <div class="form-group" id="paddresslabel">
+                                    <label class="control-label col-md-2" > Address Line 1:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddress'); ?></font></p>
+                                        <!--                                            	<textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4">--><?php //echo set_value('overseasHomeAddress');?><!--</textarea>-->
+                                        <input tabindex="37"  type="text" class="form-control" required id="permanentAddress" name="permanentAddress" value="<?php echo $candidateInfo->permanentAddress?>">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
-                                    <select style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
-                                        <option value="" disabled selected>Select country...</option>
-                                        <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                            <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
-                                        <?php } ?>
-                                    </select>
+                                <div class="form-group" id="paddresslabel2">
+                                    <label class="control-label col-md-2" >Address Line 2:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddress2'); ?></font></p>
+                                        <input tabindex="38"  type="text" class="form-control"  id="permanentAddress2" name="permanentAddress2" value="<?php echo $candidateInfo->permanentAddress2?>">
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                    <input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
+                                <div class="form-group" id="paddresslabel3">
+                                    <label class="control-label col-md-2" >Address Line 3:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddress3'); ?></font></p>
+                                        <input tabindex="39"  type="text" class="form-control"  id="permanentAddress3" name="permanentAddress3" value="<?php echo $candidateInfo->permanentAddress3?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('EmergencyContactEmail'); ?></font></p>
-                                    <input type="email" class="form-control" required id="EmergencyContactEmail" name="EmergencyContactEmail" value="<?php echo $candidateInfo->emergencyContactEmail ?>">
+                                <div class="form-group" id="paddresslabelCity">
+                                    <label class="control-label col-md-2" >City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddressCity'); ?></font></p>
+                                        <input tabindex="40"  type="text" class="form-control" required id="permanentAddressCity" name="permanentAddressCity" value="<?php echo $candidateInfo->permanentAddressCity?>">
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="form-group" id="paddresslabelState">
+                                    <label class="control-label col-md-2" >County/State:</label>
 
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Course Details</h2>
-
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Course Name:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('courseName'); ?></font></p>
-                                    <select style="width: 100%" onchange="courseAwardBody()" id="courseName" required name="courseName">
-                                        <option value=""><?php echo SELECT_COURSE?></option>
-                                        <?php foreach ($courseInfo as $course){?>
-                                            <!--                                        <option value="--><?php //echo $course->courseId?><!--" --><?php //echo set_select('courseName',$course->courseId, False); ?><!-->--><?php //echo $course->courseTitle?><!--</option>-->
-
-                                            <option value="<?php echo $course->courseId ?>"<?php if (!empty($candidateInfo->courseName) && $candidateInfo->courseName == $course->courseId)  echo 'selected = "selected"'; ?>><?php echo $course->courseTitle ?></option>
-
-                                        <?php } ?>
-                                    </select>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddressState'); ?></font></p>
+                                        <input tabindex="41"  type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo $candidateInfo->permanentAddressState?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Awarding Body:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
-                                    <input type="text" readonly class="form-control" id="awardingBody" name="awardingBody" value="<?php echo $candidateInfo->awardingBody ?>">
+
+                                <div class="form-group" id="overseasAddressPo">
+                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('overseasAddressPO'); ?></font></p>
+                                        <input type="text" class="form-control" required id="overseasAddressPO" name="overseasAddressPO" value="<?php echo $candidateInfo->overseasAddressPo ?>">
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Course Level:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('courseLevel'); ?></font></p>
-                                    <input type="text" class="form-control" id="courseLevel" name="courseLevel" value="<?php echo $candidateInfo->courseLevel ?>">
+                                <div class="form-group" id="paddresslabelCountry">
+                                    <label class="control-label col-md-2">Courntry:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
+                                        <select style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!--                        <div class="form-group">-->
-                            <!--                            <label class="control-label col-md-2">Course Start Date:</label>-->
-                            <!--                            <div class="col-md-10">-->
-                            <!--                                <p><font color="red"> --><?php //echo form_error('courseStartDate'); ?><!--</font></p>-->
-                            <!--                                <input type="date" class="form-control" id="courseStartDate" name="courseStartDate" value="--><?php //echo $candidateInfo->courseStartDate ?><!--">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
-                            <!---->
-                            <!--                        <div class="form-group">-->
-                            <!--                            <label class="control-label col-md-2">Course End Date:</label>-->
-                            <!--                            <div class="col-md-10">-->
-                            <!--                                <p><font color="red"> --><?php //echo form_error('courseEndDate'); ?><!--</font></p>-->
-                            <!--                                <input type="date" class="form-control" id="courseEndDate" name="courseEndDate" value="--><?php //echo $candidateInfo->courseEndDate ?><!--">-->
-                            <!--                            </div>-->
-                            <!--                        </div>-->
 
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Course Session:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
-                                    <select style="width: 100%;  id="courseSession" required name="courseSession">
+
+
+
+                                <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactTitle'); ?></font></p>
+                                        <select style="width: 100%" id="EmergencyContactTitle" required name="EmergencyContactTitle">
+
+                                            <option value="" selected><?php echo SELECT_TITLE?></option>
+                                            <?php for ($i=0;$i<count(Title);$i++){?>
+                                                <option value="<?php echo Title[$i]?>"<?php if (!empty($candidateInfo->emergencyContactTitle) && $candidateInfo->emergencyContactTitle == Title[$i])  echo 'selected = "selected"'; ?>><?php echo Title[$i]?></option>
+
+                                            <?php } ?>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Name:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactName'); ?></font></p>
+                                        <input type="text" class="form-control" required id="EmergencyContactName" name="EmergencyContactName" value="<?php echo $candidateInfo->emergencyContactName ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Relation:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactRelation'); ?></font></p>
+                                        <input type="text" class="form-control" required id="EmergencyContactRelation" name="EmergencyContactRelation" value="<?php echo $candidateInfo->emergencyContactRelation ?>">
+                                    </div>
+                                </div>
+
+                                <h4 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Address Details</h4>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Same as Permanent </label>
+                                    <div class="col-md-10">
+                                        <input style="margin-top: 10px" tabindex="36"  type="checkbox" id="samecheck3" onclick="addresscheck2()">
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="eaddresslabel">
+                                    <label class="control-label col-md-2" id="eaddresslabel">Address Line 1:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactAddress'); ?></font></p>
+                                        <input tabindex="46"  type="text" class="form-control" required id="emaddress" name="EmergencyContactAddress" value="<?php echo $candidateInfo->emergencyContactAddress ?>" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="eaddresslabel2">
+                                    <label class="control-label col-md-2" id="eaddresslabel2">Address Line 2:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactAddress2'); ?></font></p>
+                                        <input tabindex="47"  type="text" class="form-control"  id="emaddress2" name="EmergencyContactAddress2" value="<?php echo $candidateInfo->emergencyContactAddress2 ?>" >
+                                    </div>
+                                </div>
+                                <div class="form-group" id="eaddresslabel3">
+                                    <label class="control-label col-md-2" id="eaddresslabel3">Address Line 3:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactAddress3'); ?></font></p>
+                                        <input tabindex="48"  type="text" class="form-control"  id="emaddress3" name="EmergencyContactAddress3" value="<?php echo $candidateInfo->emergencyContactAddress3 ?>" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="ecitylabel">
+                                    <label class="control-label col-md-2" id="ecitylabel">City/Town:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactCity'); ?></font></p>
+                                        <input tabindex="49"  type="text" class="form-control" required id="emaddressCity" name="EmergencyContactCity" value="<?php echo $candidateInfo->emergencyContactAddressCity ?>" >
+                                    </div>
+                                </div>
+                                <div class="form-group" id="estatelabel">
+                                    <label class="control-label col-md-2" id="estatelabel">Country/State:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
+                                        <input tabindex="50"  type="text" class="form-control"  id="emaddressState" name="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" >
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="epostalcodelabel">
+                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactAddressPO'); ?></font></p>
+                                        <input type="text" class="form-control" required id="EmergencyContactAddressPO" name="EmergencyContactAddressPO" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group" id="ecountrylabel">
+                                    <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
+                                        <select style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
+                                            <option value="" disabled selected>Select country...</option>
+                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
+                                        <input type="text" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('EmergencyContactEmail'); ?></font></p>
+                                        <input type="email" class="form-control" required id="EmergencyContactEmail" name="EmergencyContactEmail" value="<?php echo $candidateInfo->emergencyContactEmail ?>">
+                                    </div>
+                                </div>
+
+                                <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Course Details</h2>
+
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Course Name:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('courseName'); ?></font></p>
+                                        <select style="width: 100%" onchange="courseAwardBody()" id="courseName" required name="courseName">
+                                            <option value=""><?php echo SELECT_COURSE?></option>
+                                            <?php foreach ($courseInfo as $course){?>
+                                                <!--                                        <option value="--><?php //echo $course->courseId?><!--" --><?php //echo set_select('courseName',$course->courseId, False); ?><!-->--><?php //echo $course->courseTitle?><!--</option>-->
+
+                                                <option value="<?php echo $course->courseId ?>"<?php if (!empty($candidateInfo->courseName) && $candidateInfo->courseName == $course->courseId)  echo 'selected = "selected"'; ?>><?php echo $course->courseTitle ?></option>
+
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Awarding Body:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('awardingBody'); ?></font></p>
+                                        <input type="text" readonly class="form-control" id="awardingBody" name="awardingBody" value="<?php echo $candidateInfo->awardingBody ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Course Level:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('courseLevel'); ?></font></p>
+                                        <input type="text" class="form-control" id="courseLevel" name="courseLevel" value="<?php echo $candidateInfo->courseLevel ?>">
+                                    </div>
+                                </div>
+
+                                <!--                        <div class="form-group">-->
+                                <!--                            <label class="control-label col-md-2">Course Start Date:</label>-->
+                                <!--                            <div class="col-md-10">-->
+                                <!--                                <p><font color="red"> --><?php //echo form_error('courseStartDate'); ?><!--</font></p>-->
+                                <!--                                <input type="date" class="form-control" id="courseStartDate" name="courseStartDate" value="--><?php //echo $candidateInfo->courseStartDate ?><!--">-->
+                                <!--                            </div>-->
+                                <!--                        </div>-->
+                                <!---->
+                                <!--                        <div class="form-group">-->
+                                <!--                            <label class="control-label col-md-2">Course End Date:</label>-->
+                                <!--                            <div class="col-md-10">-->
+                                <!--                                <p><font color="red"> --><?php //echo form_error('courseEndDate'); ?><!--</font></p>-->
+                                <!--                                <input type="date" class="form-control" id="courseEndDate" name="courseEndDate" value="--><?php //echo $candidateInfo->courseEndDate ?><!--">-->
+                                <!--                            </div>-->
+                                <!--                        </div>-->
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Course Session:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
+                                        <select style="width: 100%;  id="courseSession" required name="courseSession">
                                         <option value="" disabled selected>Select Session...</option>
                                         <?php for ($i=0;$i<count(COURSESESSION);$i++){?>
                                             <option value="<?php echo COURSESESSION[$i]?>"<?php if (!empty($candidateInfo->courseSession) && $candidateInfo->courseSession == COURSESESSION[$i])  echo 'selected = "selected"'; ?>><?php echo COURSESESSION[$i]?></option>
                                         <?php } ?>
-                                    </select>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
+                                        <input type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo $candidateInfo->courseYear ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Mode of study:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
+                                        <input type="radio" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
+                                        <input type="radio" required name="methodeOfStudy" value="PT"   <?php if($candidateInfo->methodOfStudy=='PT'){ echo "checked=checked";}?>> Part Time&nbsp;&nbsp;
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Time of study:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
+                                        <input type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
+                                        <input type="radio" required name="timeOfStudy" value="E&W"  <?php if($candidateInfo->timeOfStudy=='E&W'){ echo "checked=checked";}?>> Evenings & Weekend
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">ULN No.:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('ulnNo'); ?></font></p>
+                                        <input type="text" class="form-control" id="ulnNo" name="ulnNo" value="<?php echo $candidateInfo->ulnNo ?>">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">UCAS Course Code:</label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('ucasCourseCode'); ?></font></p>
+                                        <input type="text" class="form-control" id="ucasCourseCode" name="ucasCourseCode" value="<?php echo $candidateInfo->ucasCourseCode ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-md-10">
+                                        <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
+
+                                        <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                        <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
+                                        <a  href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>
+
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-                                    <input type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo $candidateInfo->courseYear ?>">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Mode of study:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
-                                    <input type="radio" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
-                                    <input type="radio" required name="methodeOfStudy" value="PT"   <?php if($candidateInfo->methodOfStudy=='PT'){ echo "checked=checked";}?>> Part Time&nbsp;&nbsp;
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Time of study:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
-                                    <input type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
-                                    <input type="radio" required name="timeOfStudy" value="E&W"  <?php if($candidateInfo->timeOfStudy=='E&W'){ echo "checked=checked";}?>> Evenings & Weekend
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label col-md-2">ULN No.:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('ulnNo'); ?></font></p>
-                                    <input type="text" class="form-control" id="ulnNo" name="ulnNo" value="<?php echo $candidateInfo->ulnNo ?>">
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-2">UCAS Course Code:</label>
-                                <div class="col-md-10">
-                                    <p><font color="red"> <?php echo form_error('ucasCourseCode'); ?></font></p>
-                                    <input type="text" class="form-control" id="ucasCourseCode" name="ucasCourseCode" value="<?php echo $candidateInfo->ucasCourseCode ?>">
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <div class="col-sm-offset-2 col-md-10">
-                                    <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
-
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
-                                    <a  href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--			                    </fieldset>-->
+                            <!--			                    </fieldset>-->
 
 
 
-                    </form>
+                        </form>
 
 
                     <?php } ?>
@@ -542,6 +653,90 @@
             return false;
         });
     });
+</script>
+
+<script type="text/javascript">
+    function addresscheck() {
+        if (document.getElementById('samecheck2').checked) {
+            document.getElementById('permanentAddress').value = document.getElementById('currentAddress').value;
+            document.getElementById('permanentAddress2').value = document.getElementById('currentAddress2').value;
+            document.getElementById('permanentAddress3').value = document.getElementById('currentAddress3').value;
+            document.getElementById('overseasAddressPO').value = document.getElementById('currentAddressPO').value;
+            document.getElementById('permanentAddressCity').value = document.getElementById('currentAddressCity').value;
+            document.getElementById('permanentAddressState').value = document.getElementById('currentAddressState').value;
+            document.getElementById('permanentAddressCountry').value = document.getElementById('currentAddressCountry').value;
+
+
+            document.getElementById('permanentAddress').style.display = "none";
+            document.getElementById('permanentAddress2').style.display = "none";
+            document.getElementById('permanentAddress3').style.display = "none";
+            document.getElementById('overseasAddressPO').style.display = "none";
+            document.getElementById('permanentAddressCity').style.display = "none";
+            document.getElementById('permanentAddressState').style.display = "none";
+            document.getElementById('permanentAddressCountry').style.display = "none";
+
+            document.getElementById('paddresslabel').style.display = "none";
+            document.getElementById('paddresslabel2').style.display = "none";
+            document.getElementById('paddresslabel3').style.display = "none";
+            document.getElementById('overseasAddressPo').style.display = "none";
+            document.getElementById('paddresslabelCity').style.display = "none";
+            document.getElementById('paddresslabelState').style.display = "none";
+            document.getElementById('paddresslabelCountry').style.display = "none";
+            // document.getElementById('sameascurrent').style.display = "block";
+
+
+
+        }else
+        {
+            document.getElementById('permanentAddress').style.display = "block";
+            document.getElementById('permanentAddress2').style.display = "block";
+            document.getElementById('permanentAddress3').style.display = "block";
+            document.getElementById('overseasAddressPO').style.display = "block";
+            document.getElementById('permanentAddressCity').style.display = "block";
+            document.getElementById('permanentAddressState').style.display = "block";
+            document.getElementById('permanentAddressCountry').style.display = "block";
+
+            document.getElementById('paddresslabel').style.display = "block";
+            document.getElementById('paddresslabel2').style.display = "block";
+            document.getElementById('paddresslabel3').style.display = "block";
+            document.getElementById('overseasAddressPo').style.display = "block";
+            document.getElementById('paddresslabelCity').style.display = "block";
+            document.getElementById('paddresslabelState').style.display = "block";
+            document.getElementById('paddresslabelCountry').style.display = "block";
+        }
+    }
+
+    function addresscheck2() {
+        if (document.getElementById('samecheck3').checked) {
+            document.getElementById('emaddress').value = document.getElementById('permanentAddress').value;
+            document.getElementById('emaddress2').value = document.getElementById('permanentAddress2').value;
+            document.getElementById('emaddress3').value = document.getElementById('permanentAddress3').value;
+            document.getElementById('EmergencyContactAddressPO').value = document.getElementById('overseasAddressPO').value;
+            document.getElementById('emaddressCity').value = document.getElementById('permanentAddressCity').value;
+            document.getElementById('emaddressState').value = document.getElementById('permanentAddressState').value;
+            document.getElementById('emergencyContactCountry').value = document.getElementById('permanentAddressCountry').value;
+
+            document.getElementById('eaddresslabel').style.display = "none";
+            document.getElementById('eaddresslabel2').style.display = "none";
+            document.getElementById('eaddresslabel3').style.display = "none";
+            document.getElementById('epostalcodelabel').style.display = "none";
+            document.getElementById('ecitylabel').style.display = "none";
+            document.getElementById('estatelabel').style.display = "none";
+            document.getElementById('ecountrylabel').style.display = "none";
+
+        }else
+        {
+            document.getElementById('eaddresslabel').style.display = "block";
+            document.getElementById('eaddresslabel2').style.display = "block";
+            document.getElementById('eaddresslabel3').style.display = "block";
+            document.getElementById('epostalcodelabel').style.display = "block";
+            document.getElementById('ecitylabel').style.display = "block";
+            document.getElementById('estatelabel').style.display = "block";
+            document.getElementById('ecountrylabel').style.display = "block";
+
+        }
+    }
+
 </script>
 
 <script>
@@ -605,3 +800,5 @@
     }
 
 </script>
+
+
