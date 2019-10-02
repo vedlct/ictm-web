@@ -13,12 +13,20 @@ class StudentApplicationm extends CI_Model
 
     private function _get_datatables_query()
     {
-
+        if($this->input->post('courseTitle1'))
+        {
+            $this->db->where('courseTitle', $this->input->post('courseTitle1'));
+        }
+        elseif ($this->input->post('userTitle1'))
+        {
+            $this->db->where('type', $this->input->post('userTitle1'));
+        }
 
         $this->db->select($this->select);
         $this->db->join('studentapplicationform', 'studentapplicationform.id = candidateinfo.applicationId','left');
         $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->join('ictmcourse', 'ictmcourse.courseId = coursedetails.courseName','left');
+        $this->db->join('studentregistration', 'studentregistration.id = studentapplicationform.studentOrAgentId','left');
         $this->db->where('studentapplicationform.isSubmited','1');
         $this->db->from($this->table);
 

@@ -115,6 +115,14 @@ define("SELECT_PAGE_TYPE", "Select Page Type");
 define("ALL_PAGE_TYPE", "ALL Page Type");
 define("PAGE_TYPE", array ("About Type","Health Type","Terms Type", "Static Type", "Link Type"));
 
+////////// For Course ///////////////////////
+
+//define("SELECT_PAGE_TYPE", "Select Page Type");
+define("ALL_COURSE_TITLE", "ALL Courses");
+define("COURSE_TITLE", array ("HND in Computing","HND in Business","HND in HealthCare Practice (Integrated Health and Social Care)", "HND in Engineering (Electrical and Electronic Engineering", "HND in International Travel and Tourism Management","HND in Hospitality Mangement"));
+/////////user type////////////
+define("ALL_USER_TITLE", "ALL Users");
+define("USER_TITLE", array ("Student","Agent"));
 ////////////    faculy page      ///////////////
 define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
 define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));

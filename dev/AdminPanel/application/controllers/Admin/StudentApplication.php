@@ -35,16 +35,17 @@ class StudentApplication extends CI_Controller
     {
         $list = $this->StudentApplicationm->get_datatables();
         $data = array();
-        $no = $_POST['start'];
+//        $no = $_POST['start'];
         foreach ($list as $application) {
-            $no++;
+//            $no++;
             $row = array();
-            $row[] = $no;
+//            $row[] = $no;
+            $row[] = $application->studentApplicationFormId;
             $row[] = $application->title.' '.$application->firstName.' '.$application->surName;
             $row[] = $application->email;
             $row[] = $application->mobileNo;
             $row[] = $application->courseTitle;
-            $row[] = $application->studentApplicationFormId;
+
 
             if ($application->applydate==""){
                 $row[] = '';
