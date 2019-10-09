@@ -84,7 +84,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Course Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date(d-m-Y)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%"> Action </th>
                                     </tr>
                                     </thead>
 

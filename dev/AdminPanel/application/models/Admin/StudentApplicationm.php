@@ -93,6 +93,19 @@ class StudentApplicationm extends CI_Model
 
     ///////////////////end of datatable/////////////////////////////
 
+    ////////////////////excel//////////////
+//    function candidateinfoDetails(){
+//
+//        $response = array();
+//
+//        // Select record
+//        $this->db->select('currentAddress,currentAddress2,currentAddress3,currentAddressCity');
+//        $q = $this->db->get('candidateinfo');
+//        $response = $q->result_array();
+//
+//        return $response;
+//    }
+    ///////////////////////////////////
 
 
     public function personalDetails($applicationId){
@@ -120,6 +133,7 @@ class StudentApplicationm extends CI_Model
         return $query->result();
 
     }
+
 
     public function emmergancyContact($applicationId){
 
@@ -220,6 +234,64 @@ class StudentApplicationm extends CI_Model
          $query = $this->db->get('candidatereferees');
          return $query->result();
     }
+
+    ///////////csv/////////
+    public function allDetails($applicationId){
+
+        $this->db->select('candidateinfo.title,candidateinfo.courseChoiceStatement,candidateinfo.collegeChoiceStatement,firstName,surName,otherNames,dateOfBirth,ganderChange,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaExpiryDate,visaType,currentAddress,currentAddress2,currentAddress3,currentAddressCity,currentAddressState,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,candidateinfo.email,candidateinfo.fax,permanentAddress,permanentAddress2,permanentAddress3,overseasAddressPo,permanentAddressCountry,firstLanguageEnglish,applydate,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,emergencyContactAddressPo,emergencyContactCountry,emergencyContactMobile,emergencyContactEmail,courseName,courseSession,courseYear,ulnNo,ucasCourseCode,courseLevel,courseStartDate, courseEndDate, methodOfStudy, timeOfStudy,qualification, institution,qualificationLevel,subject,completionYear,personqualifications.startDate,personqualifications.endDate,obtainResult,organization,positionHeld,personexperience.startDate,personexperience.endDate,courseChoiceStatement,collegeChoiceStatement,financer.*,candidateinfo.sourceOfFinance,candidatereferees.*,courseChoiceStatement,collegeChoiceStatement');
+        $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
+        $this->db->join('personqualifications', 'personqualifications.fkApplicationId = candidateinfo.applicationId','left');
+        $this->db->join('personexperience', 'personexperience.fkApplicationId = candidateinfo.applicationId','left');
+        $this->db->join('financer','financer.fkApplicationId = candidateinfo.applicationId','left');
+        $this->db->join('candidatereferees','candidatereferees.fkApplicationId = candidateinfo.applicationId','left');
+       // $this->db->join('personequalopportunity','candidateinfo.applicationId = personequalopportunity.fkApplicationId');
+       // $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+       // $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
+
+    }
+    public function equalopportunity($applicationId){
+        $this->db->select('subGroupTitle');
+         $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+         $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('opportunityTitle =', 'Ethnicity');
+        $query = $this->db->get('personequalopportunity');
+        return $query->result();
+    }
+
+    public function disability($applicationId){
+        $this->db->select('subGroupTitle');
+        $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('opportunityTitle =', 'disability');
+        $query = $this->db->get('personequalopportunity');
+        return $query->result();
+    }
+
+    public function religionbelief($applicationId){
+        $this->db->select('subGroupTitle');
+        $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('opportunityTitle =', 'Religion Belief');
+        $query = $this->db->get('personequalopportunity');
+        return $query->result();
+    }
+
+    public function orientation($applicationId){
+        $this->db->select('subGroupTitle');
+        $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
+        $this->db->join('equalopportunitygroup', 'equalopportunitygroup.id=equalopportunitysubgroup.fkGroupId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('opportunityTitle =', 'Sexual Orientation');
+        $query = $this->db->get('personequalopportunity');
+        return $query->result();
+    }
+    ///////////////////////
 
     /* for student Application edit */
 

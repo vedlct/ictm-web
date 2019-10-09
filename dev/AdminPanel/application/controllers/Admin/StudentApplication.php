@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
 class StudentApplication extends CI_Controller
 {
     public function __construct()
@@ -12,6 +13,7 @@ class StudentApplication extends CI_Controller
 
     public function index()
     {
+
 
     }
 
@@ -58,7 +60,10 @@ class StudentApplication extends CI_Controller
 
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->applicationId.'"><i class="icon_pencil-edit"></i></a>
                                                     
-                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>';
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/exportCSV/'.$application->applicationId.'"><i class="fa fa-file-excel-o"></i></a>
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/createXMLfile/'.$application->applicationId.'"><i class="fa fa-file-excel-o"></i></a>';
+
 
             $row[] = $html;
 
@@ -137,6 +142,161 @@ class StudentApplication extends CI_Controller
             redirect('Admin/Login');
         }
     }
+
+    //////////////////CSV//////////////////
+
+    public function exportCSV($applicationId)
+    {
+        // get data
+        //$myData['ab'] = $this->StudentApplicationm->personalDetails($applicationId);
+        // $myData2 = $this->StudentApplicationm->contactDetails($applicationId);
+        $myData= $this->StudentApplicationm->allDetails($applicationId);
+//        $myData1= $this->StudentApplicationm->equalOppurtunitiesGroup();
+//        print_r($myData);
+//        exit();
+        $Ethnicity = $this->StudentApplicationm->equalopportunity($applicationId);
+        foreach ($Ethnicity as $ethci){
+         $ethnicity = $ethci->subGroupTitle;
+        }
+
+        $disability = $this->StudentApplicationm->disability($applicationId);
+        foreach ($disability as $ethci){
+            $disability = $ethci->subGroupTitle;
+        }
+
+        $religionbelief = $this->StudentApplicationm->religionbelief($applicationId);
+        foreach ($religionbelief as $ethci){
+            $religionbelief = $ethci->subGroupTitle;
+        }
+
+        $orientation = $this->StudentApplicationm->orientation($applicationId);
+        foreach ($orientation as $ethci){
+            $orientation = $ethci->subGroupTitle;
+        }
+
+        // file name
+        $filename = 'applicationForm_' . date('Ymd') . '.csv';
+        header("Content-Description: File Transfer");
+        header("Content-Disposition: attachment; filename=$filename");
+        header("Content-Type: application/csv; ");
+
+
+        // file creation
+        $file = fopen('php://output', 'w');
+
+
+        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","City/Town","County/State","Post Code", "Courntry", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3", "overseasAddressPo", "permanentAddressCountry", "firstLanguageEnglish", "applydate", "emergencyContactName", "emergencyContactTitle", "emergencyContactRelation", "emergencyContactAddress", "emergencyContactAddressPo", "emergencyContactCountry", "emergencyContactMobile", "emergencyContactEmail", "courseName", "courseSession", "courseYear", "ulnNo", "ucasCourseCode", "courseLevel", "courseStartDate", "courseEndDate", "methodOfStudy", "timeOfStudy", "qualification", "institution", "qualificationLevel", "subject", "completionYear", "startDate", "endDate", "obtainResult", "organization", "positionHeld", "startDate", "endDate", "courseChoiceStatement", "collegeChoiceStatement", "sourceOfFinance", "FinancerName", "FinancerTitle", "relation", "address", "address2", "address3", "city", "state", "PostCode", "country", "mobile", "telephone", "FinancerEmail", "FinancerFax", "RefereesName", "RefereesTitle", "workingCompany", "jobTitle", "Refereesaddress", "Refereesaddress2", "Refereesaddress3", "city", "state", "postCode", "fkCountry", "contactNo", "email","CourseChoiceStatement","CollegeChoiceStatement","Disability", "Ethnicity", "Religion Belief","Sexual Orientation");
+        fputcsv($file, $header);
+
+//            print_r($newarray);
+//            exit();
+
+        foreach ($myData as $line){
+            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressPo,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->overseasAddressPo,$line->permanentAddressCountry,$line->firstLanguageEnglish,$line->applydate,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->courseStartDate,$line->courseEndDate,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->startDate,$line->endDate,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->fax,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$ethnicity,$disability,$religionbelief,$orientation));
+        }
+
+
+
+        fclose($file);
+        exit;
+    }
+
+    ///////////////////////xml////////////////////////
+    function createXMLfile($applicationId){
+        $myData= $this->StudentApplicationm->personalStatement($applicationId);
+        $filePath = 'book.xml';
+        $dom     = new DOMDocument('1.0', 'utf-8');
+        $root      = $dom->createElement('candidateinfo');
+        for($i=0; $i<count($applicationId); $i++){
+
+//            $bookId        =  $booksArray[$i]['id'];
+//            $bookName = htmlspecialchars($booksArray[$i]['title']);
+//            $bookAuthor    =  $booksArray[$i]['author_name'];
+//            $bookPrice     =  $booksArray[$i]['price'];
+            $courseChoiceStatement      =  $applicationId[$i]['courseChoiceStatement'];
+            $collegeChoiceStatement  =  $applicationId[$i]['collegeChoiceStatement'];
+//            $book = $dom->createElement('book');
+//            $book->setAttribute('id', $bookId);
+//            $name     = $dom->createElement('title', $bookName);
+//            $book->appendChild($name);
+//            $author   = $dom->createElement('author', $bookAuthor);
+//            $book->appendChild($author);
+//            $price    = $dom->createElement('price', $bookPrice);
+//            $book->appendChild($price);
+            $courseChoiceStatement     = $dom->createElement('courseChoiceStatement', $courseChoiceStatement);
+            $courseChoiceStatement->appendChild($courseChoiceStatement);
+
+            $collegeChoiceStatement = $dom->createElement('collegeChoiceStatement', $collegeChoiceStatement);
+            $collegeChoiceStatement->appendChild($collegeChoiceStatement);
+
+            $root->appendChild($collegeChoiceStatement);
+        }
+        $dom->appendChild($root);
+        $dom->save($filePath);
+    }
+
+    //////end///////
+
+//////////////////CSV//////////////////
+
+//    public function exportData($applicationId)
+//    {
+//
+//        $data   = [];
+//        $this->db->select('title,firstName,surName,otherNames,dateOfBirth,ganderChange,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaExpiryDate,visaType');
+//        $this->db->where('applicationId =', $applicationId);
+//        $query  =	$this->db->get('candidateinfo');
+//        $result	=	$query->result_array();
+////        $this->load->helper('download');
+//
+////        $list = $result;
+////        $fp = fopen('php://output', 'w');
+////        foreach ($list as $fields) {
+////            fputcsv($fp, $fields);
+////        }
+////
+////        $fp = file_get_contents('php://output');
+////        $name = 'data.csv';
+////
+////        // Build the headers to push out the file properly.
+////        header('Pragma: public');     // required
+////        header('Expires: 0');         // no cache
+////        header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+////        header('Cache-Control: private',false);
+////        header('Content-Disposition: attachment; filename="'.basename($name).'"');  // Add the file name
+////        header('Content-Transfer-Encoding: binary');
+////        header('Connection: close');
+////        exit();
+////
+////        force_download($name, $data);
+////        fclose($fp);
+//        if(isset($result)){
+//
+//            $data['export']	=	$result;
+//        }
+//        if(isset($_POST['import']))
+//        {
+//            $query  =	$this->db->get('candidateinfo');
+//            if($query->num_rows() > 0){
+//
+//                $path ="";
+////                $filename = 'mydata_'.date('Ymd').'.csv';
+//                header("Content-Description: File Transfer");
+//                header("Content-Disposition: attachment; filename=$path");
+//                header("Content-Type: application/csv; ");
+//                $this->load->dbutil();
+//                $delimiter = ",";
+//                $newline = "\r\n";
+//                $data = $this->dbutil->csv_from_result($query, $delimiter,
+//                    $newline);
+//                $this->load->helper('download');
+//                force_download('CSV_Report.csv', $data);
+//
+//            }
+//        }
+//        $this->load->view('Admin/csvForms',$data);
+//    }
+
 
     ///////////////////////////////sakib//////////////////
 
