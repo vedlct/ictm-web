@@ -185,14 +185,14 @@ class StudentApplication extends CI_Controller
         $file = fopen('php://output', 'w');
 
 
-        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","City/Town","County/State","Post Code", "Courntry", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3", "overseasAddressPo", "permanentAddressCountry", "firstLanguageEnglish", "applydate", "emergencyContactName", "emergencyContactTitle", "emergencyContactRelation", "emergencyContactAddress", "emergencyContactAddressPo", "emergencyContactCountry", "emergencyContactMobile", "emergencyContactEmail", "courseName", "courseSession", "courseYear", "ulnNo", "ucasCourseCode", "courseLevel", "courseStartDate", "courseEndDate", "methodOfStudy", "timeOfStudy", "qualification", "institution", "qualificationLevel", "subject", "completionYear", "startDate", "endDate", "obtainResult", "organization", "positionHeld", "startDate", "endDate", "courseChoiceStatement", "collegeChoiceStatement", "sourceOfFinance", "FinancerName", "FinancerTitle", "relation", "address", "address2", "address3", "city", "state", "PostCode", "country", "mobile", "telephone", "FinancerEmail", "FinancerFax", "RefereesName", "RefereesTitle", "workingCompany", "jobTitle", "Refereesaddress", "Refereesaddress2", "Refereesaddress3", "city", "state", "postCode", "fkCountry", "contactNo", "email","CourseChoiceStatement","CollegeChoiceStatement","Disability", "Ethnicity", "Religion Belief","Sexual Orientation");
+        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","City/Town","County/State","Post Code", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3", "Post Code", "Courntry", "FirstLanguageEnglish", "Applydate", "EmergencyContactName", "EmergencyContactTitle", "EmergencyContactRelation", "Emergency Address Line 1","Emergency Address Line 2","Emergency Address Line 3","City/Town","Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name", "Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level", "Course Start Date", "Course End Date", "Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year", "Start Date", "End Date", "Grade", "Organisation", "Position Held", "Start Date", "End Date", "Course Choice Statement", "College Choice Statement", "Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail", "Fax", "Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Contact No", "E-mail","Disability", "Ethnicity", "Religion Belief","Sexual Orientation");
         fputcsv($file, $header);
 
 //            print_r($newarray);
 //            exit();
 
         foreach ($myData as $line){
-            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressPo,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->overseasAddressPo,$line->permanentAddressCountry,$line->firstLanguageEnglish,$line->applydate,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->courseStartDate,$line->courseEndDate,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->startDate,$line->endDate,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->fax,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$ethnicity,$disability,$religionbelief,$orientation));
+            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressPo,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->overseasAddressPo,$line->permanentAddressCountry,$line->firstLanguageEnglish,$line->applydate,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->courseStartDate,$line->courseEndDate,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->startDate,$line->endDate,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->fax,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$ethnicity,$disability,$religionbelief,$orientation));
         }
 
 
@@ -203,36 +203,385 @@ class StudentApplication extends CI_Controller
 
     ///////////////////////xml////////////////////////
     function createXMLfile($applicationId){
-        $myData= $this->StudentApplicationm->personalStatement($applicationId);
-        $filePath = 'book.xml';
+        $myData= $this->StudentApplicationm->allDetails($applicationId);
+        $Ethnicity = $this->StudentApplicationm->equalopportunity($applicationId);
+        foreach ($Ethnicity as $ethci){
+            $ethnicity = $ethci->subGroupTitle;
+        }
+        $disability = $this->StudentApplicationm->disability($applicationId);
+        foreach ($disability as $ethci){
+            $disability = $ethci->subGroupTitle;
+        }
+
+        $religionbelief = $this->StudentApplicationm->religionbelief($applicationId);
+        foreach ($religionbelief as $ethci){
+            $religionbelief = $ethci->subGroupTitle;
+        }
+
+        $orientation = $this->StudentApplicationm->orientation($applicationId);
+        foreach ($orientation as $ethci){
+            $orientation = $ethci->subGroupTitle;
+        }
+        $filePath = 'public/xml/book.xml';
+//        $filePath ='/path/to/myfile.xml';
         $dom     = new DOMDocument('1.0', 'utf-8');
-        $root      = $dom->createElement('candidateinfo');
-        for($i=0; $i<count($applicationId); $i++){
+        $root      = $dom->createElement('ApplicationForm');
+        for($i=0; $i<count($myData); $i++){
+            $title = $myData[$i]->title;
+            $firstName  = $myData[$i]->firstName;
+            $surName = $myData[$i]->surName;
+            $dateOfBirth  = $myData[$i]->dateOfBirth;
+            $gender = $myData[$i]->gender;
+            $ganderChange  = $myData[$i]->ganderChange;
+            $placeOfBirth = $myData[$i]->placeOfBirth;
+            $nationality  = $myData[$i]->nationality;
+            $passportNo = $myData[$i]->passportNo;
+            $passportExpiryDate  = $myData[$i]->passportExpiryDate;
+            $ukEntryDate = $myData[$i]->ukEntryDate;
+            $visaExpiryDate = $myData[$i]->visaExpiryDate;
+            $visaType = $myData[$i]->visaType;
+            $currentAddress  = $myData[$i]->currentAddress;
+            $currentAddress2 = $myData[$i]->currentAddress2;
+            $currentAddress3 = $myData[$i]->currentAddress3;
+            $currentAddressCity = $myData[$i]->currentAddressCity;
+            $currentAddressState  = $myData[$i]->currentAddressState;
+            $currentAddressPo = $myData[$i]->currentAddressPo;
+            $currentAddressCountry = $myData[$i]->currentAddressCountry;
+            $telephoneNo = $myData[$i]->telephoneNo;
+            $mobileNo  = $myData[$i]->mobileNo;
+            $email = $myData[$i]->email;
+            $fax = $myData[$i]->fax;
+            $permanentAddress= $myData[$i]->permanentAddress;
+            $permanentAddress2  = $myData[$i]->permanentAddress2;
+            $permanentAddress3 = $myData[$i]->permanentAddress3;
+            $overseasAddressPo = $myData[$i]->overseasAddressPo;
+            $permanentAddressCountry= $myData[$i]->permanentAddressCountry;
+            $firstLanguageEnglish = $myData[$i]->firstLanguageEnglish;
+            $applydate = $myData[$i]->applydate;
+            $emergencyContactName = $myData[$i]->emergencyContactName;
+            $emergencyContactTitle= $myData[$i]->emergencyContactTitle;
+            $emergencyContactRelation = $myData[$i]->emergencyContactRelation;
+            $emergencyContactAddress = $myData[$i]->emergencyContactAddress;
+            $emergencyContactAddress2 = $myData[$i]->emergencyContactAddress2;
+            $emergencyContactAddress3= $myData[$i]->emergencyContactAddress3;
+            $emergencyContactAddressCity = $myData[$i]->emergencyContactAddressCity;
+            $emergencyContactAddressState = $myData[$i]->emergencyContactAddressState;
+            $emergencyContactAddressPo = $myData[$i]->emergencyContactAddressPo;
+            $emergencyContactCountry= $myData[$i]->emergencyContactCountry;
+            $emergencyContactMobile = $myData[$i]->emergencyContactMobile;
+            $emergencyContactEmail = $myData[$i]->emergencyContactEmail;
+            $courseName = $myData[$i]->courseName;
+            $courseSession= $myData[$i]->courseSession;
+            $courseYear = $myData[$i]->courseYear;
+            $ucasCourseCode = $myData[$i]->ucasCourseCode;
+            $courseLevel = $myData[$i]->courseLevel;
+            $courseStartDate= $myData[$i]->courseStartDate;
+            $courseEndDate = $myData[$i]->courseEndDate;
+            $methodOfStudy = $myData[$i]->methodOfStudy;
+            $timeOfStudy = $myData[$i]->timeOfStudy;
+            $qualification= $myData[$i]->qualification;
+            $institution = $myData[$i]->institution;
+            $qualificationLevel = $myData[$i]->qualificationLevel;
+            $subject= $myData[$i]->subject;
+            $completionYear= $myData[$i]->completionYear;
+            $startDate = $myData[$i]->startDate;
+            $endDate = $myData[$i]->endDate;
+            $obtainResult= $myData[$i]->obtainResult;
+            $organization= $myData[$i]->organization;
+            $positionHeld = $myData[$i]->positionHeld;
+            $startDate1 = $myData[$i]->startDate;
+            $endDate1= $myData[$i]->endDate;
+            $courseChoiceStatement= $myData[$i]->courseChoiceStatement;
+            $collegeChoiceStatement= $myData[$i]->collegeChoiceStatement;
+            $sourceOfFinance= $myData[$i]->sourceOfFinance;
+            $name= $myData[$i]->name;
+            $title11= $myData[$i]->title;
+            $relation= $myData[$i]->relation;
+            $address= $myData[$i]->address;
+            $address2= $myData[$i]->address2;
+            $address3= $myData[$i]->address3;
+            $city= $myData[$i]->city;
+            $state= $myData[$i]->state;
+            $addressPo= $myData[$i]->addressPo;
+            $country= $myData[$i]->country;
+            $mobile= $myData[$i]->mobile;
+            $telephone= $myData[$i]->telephone;
+            $email2= $myData[$i]->email;
+            $fax12= $myData[$i]->fax;
+            $name23= $myData[$i]->name;
+            $title23= $myData[$i]->title;
+            $workingCompany= $myData[$i]->workingCompany;
+            $jobTitle= $myData[$i]->jobTitle;
+            $address23= $myData[$i]->address;
+            $address24= $myData[$i]->address2;
+            $address34= $myData[$i]->address3;
+            $city34= $myData[$i]->city;
+            $state34= $myData[$i]->state;
+            $postCode34= $myData[$i]->postCode;
+            $fkCountry34= $myData[$i]->fkCountry;
+            $contactNo34= $myData[$i]->contactNo;
+            $email44= $myData[$i]->email;
 
-//            $bookId        =  $booksArray[$i]['id'];
-//            $bookName = htmlspecialchars($booksArray[$i]['title']);
-//            $bookAuthor    =  $booksArray[$i]['author_name'];
-//            $bookPrice     =  $booksArray[$i]['price'];
-            $courseChoiceStatement      =  $applicationId[$i]['courseChoiceStatement'];
-            $collegeChoiceStatement  =  $applicationId[$i]['collegeChoiceStatement'];
-//            $book = $dom->createElement('book');
-//            $book->setAttribute('id', $bookId);
-//            $name     = $dom->createElement('title', $bookName);
-//            $book->appendChild($name);
-//            $author   = $dom->createElement('author', $bookAuthor);
-//            $book->appendChild($author);
-//            $price    = $dom->createElement('price', $bookPrice);
-//            $book->appendChild($price);
-            $courseChoiceStatement     = $dom->createElement('courseChoiceStatement', $courseChoiceStatement);
-            $courseChoiceStatement->appendChild($courseChoiceStatement);
+            $book = $dom->createElement('ApplicationForm');
+            $title1     = $dom->createElement('Title', $title);
+            $book->appendChild($title1);
 
-            $collegeChoiceStatement = $dom->createElement('collegeChoiceStatement', $collegeChoiceStatement);
-            $collegeChoiceStatement->appendChild($collegeChoiceStatement);
+            $firstName1 = $dom->createElement('FirstName', $firstName);
+            $book->appendChild($firstName1);
 
-            $root->appendChild($collegeChoiceStatement);
+            $surName1     = $dom->createElement('Surname', $surName);
+            $book->appendChild($surName1);
+
+            $dateOfBirth1 = $dom->createElement('DateOfBirth', $dateOfBirth);
+            $book->appendChild($dateOfBirth1);
+
+            $gender1     = $dom->createElement('Gender', $gender);
+            $book->appendChild( $gender1);
+
+            $ganderChange1 = $dom->createElement('GenderChange', $ganderChange);
+            $book->appendChild($ganderChange1);
+
+            $placeOfBirth1 = $dom->createElement('PlaceOfBirth', $placeOfBirth);
+            $book->appendChild($placeOfBirth1);
+
+            $nationality1 = $dom->createElement('Nationality', $nationality);
+            $book->appendChild($nationality1);
+
+            $passportNo1     = $dom->createElement('PassportNo', $passportNo);
+            $book->appendChild( $passportNo1);
+
+            $passportExpiryDate1 = $dom->createElement('PPExpiryDate', $passportExpiryDate);
+            $book->appendChild($passportExpiryDate1);
+
+            $ukEntryDate1 = $dom->createElement('UKEntryDate', $ukEntryDate);
+            $book->appendChild($ukEntryDate1);
+
+            $visaExpiryDate1 = $dom->createElement('VisaExpiryDate', $visaExpiryDate);
+            $book->appendChild($visaExpiryDate1);
+
+            $visaType1     = $dom->createElement('VisaType', $visaType);
+            $book->appendChild( $visaType1);
+
+            $currentAddress1 = $dom->createElement('AddressLine1', $currentAddress);
+            $book->appendChild($currentAddress1);
+
+            $currentAddress21 = $dom->createElement('AddressLine2', $currentAddress2);
+            $book->appendChild($currentAddress21);
+
+            $currentAddress31 = $dom->createElement('AddressLine3', $currentAddress3);
+            $book->appendChild($currentAddress31);
+
+            $currentAddressCity1     = $dom->createElement('City_Town', $currentAddressCity);
+            $book->appendChild( $currentAddressCity1);
+
+            $currentAddressState1 = $dom->createElement('County_State', $currentAddressState);
+            $book->appendChild($currentAddressState1);
+
+            $currentAddressPo1 = $dom->createElement('PostCode', $currentAddressPo);
+            $book->appendChild($currentAddressPo1);
+
+            $currentAddressCountry1 = $dom->createElement('Country', $currentAddressCountry);
+            $book->appendChild($currentAddressCountry1);
+
+            $telephoneNo1     = $dom->createElement('Telephone', $telephoneNo);
+            $book->appendChild( $telephoneNo1);
+
+            $mobileNo1 = $dom->createElement('Mobile', $mobileNo);
+            $book->appendChild($mobileNo1);
+
+            $email1 = $dom->createElement('Email', $email);
+            $book->appendChild($email1);
+
+            $fax1 = $dom->createElement('Fax', $fax);
+            $book->appendChild($fax1);
+
+            $permanentAddress1  = $dom->createElement('Permanent_Address_Line1', $permanentAddress);
+            $book->appendChild( $permanentAddress1);
+
+            $permanentAddress21 = $dom->createElement('Permanent_Address_Line2', $permanentAddress2);
+            $book->appendChild($permanentAddress21);
+
+            $permanentAddress31 = $dom->createElement('Permanent_Address_Line3', $permanentAddress3);
+            $book->appendChild($permanentAddress31);
+
+            $overseasAddressPo1 = $dom->createElement('Post_Code', $overseasAddressPo);
+            $book->appendChild($overseasAddressPo1);
+
+            $permanentAddressCountry1  = $dom->createElement('Country', $permanentAddressCountry);
+            $book->appendChild( $permanentAddressCountry1);
+
+            $firstLanguageEnglish1 = $dom->createElement('FirstLanguageEnglish', $firstLanguageEnglish);
+            $book->appendChild($firstLanguageEnglish1);
+
+            $applydate1 = $dom->createElement('ApplyDate', $applydate);
+            $book->appendChild($applydate1);
+
+            $emergencyContactName1 = $dom->createElement('EmergencyContactName', $emergencyContactName);
+            $book->appendChild($emergencyContactName1);
+
+            $emergencyContactTitle1  = $dom->createElement('EmergencyContactTitle', $emergencyContactTitle);
+            $book->appendChild( $emergencyContactTitle1);
+
+            $emergencyContactRelation1 = $dom->createElement('EmergencyContactRelation', $emergencyContactRelation);
+            $book->appendChild($emergencyContactRelation1);
+
+            $emergencyContactAddress1 = $dom->createElement('Emergency_Address_Line1', $emergencyContactAddress);
+            $book->appendChild($emergencyContactAddress1);
+
+            $emergencyContactAddress21 = $dom->createElement('Emergency_Address_Line2', $emergencyContactAddress2);
+            $book->appendChild($emergencyContactAddress21);
+
+            $emergencyContactAddress31  = $dom->createElement('Emergency_Address_Line3', $emergencyContactAddress3);
+            $book->appendChild( $emergencyContactAddress31);
+
+            $emergencyContactAddressCity1 = $dom->createElement('City', $emergencyContactAddressCity);
+            $book->appendChild($emergencyContactAddressCity1);
+
+            $emergencyContactAddressState1 = $dom->createElement('State', $emergencyContactAddressState);
+            $book->appendChild($emergencyContactAddressState1);
+
+            $emergencyContactAddressPo1 = $dom->createElement('Post_code', $emergencyContactAddressPo);
+            $book->appendChild($emergencyContactAddressPo1);
+
+            $emergencyContactCountry1  = $dom->createElement('Country', $emergencyContactCountry);
+            $book->appendChild( $emergencyContactCountry1);
+
+            $emergencyContactMobile1 = $dom->createElement('Emergency_Mobile', $emergencyContactMobile);
+            $book->appendChild($emergencyContactMobile1);
+
+            $emergencyContactEmail1 = $dom->createElement('Emergency_Contact_Email', $emergencyContactEmail);
+            $book->appendChild($emergencyContactEmail1);
+
+            $courseName1 = $dom->createElement('CourseName', $courseName);
+            $book->appendChild($courseName1);
+
+            $courseSession1  = $dom->createElement('CourseSession', $courseSession);
+            $book->appendChild( $courseSession1);
+
+            $courseYear1 = $dom->createElement('Year', $courseYear);
+            $book->appendChild($courseYear1);
+
+            $ucasCourseCode1 = $dom->createElement('ULN_No', $ucasCourseCode);
+            $book->appendChild($ucasCourseCode1);
+
+            $courseLevel1 = $dom->createElement('UCAS_Course_Code', $courseLevel);
+            $book->appendChild($courseLevel1);
+
+            $courseStartDate1  = $dom->createElement('Course_Start_Date', $courseStartDate);
+            $book->appendChild( $courseStartDate1);
+
+            $courseEndDate1 = $dom->createElement('Course_End_Date', $courseEndDate);
+            $book->appendChild($courseEndDate1);
+
+            $methodOfStudy1 = $dom->createElement('Mode_of_study', $methodOfStudy);
+            $book->appendChild($methodOfStudy1);
+
+            $timeOfStudy1 = $dom->createElement('Time_of_study', $timeOfStudy);
+            $book->appendChild($timeOfStudy1);
+
+            $qualification1  = $dom->createElement('Qualification_Name', $qualification);
+            $book->appendChild( $qualification1);
+
+            $institution1 = $dom->createElement('Institution', $institution);
+            $book->appendChild($institution1);
+
+            $qualificationLevel1 = $dom->createElement('Qualification_Level', $qualificationLevel);
+            $book->appendChild($qualificationLevel1);
+
+            $subject1 = $dom->createElement('Subject', $subject);
+            $book->appendChild($subject1);
+
+            $completionYear1 = $dom->createElement('Completion_Year', $completionYear);
+            $book->appendChild($completionYear1);
+            $startDate13 = $dom->createElement('Start_Date', $startDate);
+            $book->appendChild($startDate13);
+            $endDate13 = $dom->createElement('End_Date', $endDate);
+            $book->appendChild($endDate13);
+            $obtainResult1 = $dom->createElement('Grade', $obtainResult);
+            $book->appendChild($obtainResult1);
+            $organization1 = $dom->createElement('Organisation', $organization);
+            $book->appendChild($organization1);
+            $positionHeld1 = $dom->createElement('Position_Held', $positionHeld);
+            $book->appendChild($positionHeld1);
+            $startDate11 = $dom->createElement('StartDate', $startDate1);
+            $book->appendChild($startDate11);
+            $endDate11 = $dom->createElement('EndDate', $endDate1);
+            $book->appendChild($endDate11);
+            $courseChoiceStatement1 = $dom->createElement('Course_Choice_Statement', $courseChoiceStatement);
+            $book->appendChild($courseChoiceStatement1);
+            $collegeChoiceStatement1 = $dom->createElement('College_Choice_Statement', $collegeChoiceStatement);
+            $book->appendChild($collegeChoiceStatement1);
+            $sourceOfFinance1 = $dom->createElement('Source_Of_Finance', $sourceOfFinance);
+            $book->appendChild($sourceOfFinance1);
+            $name1 = $dom->createElement('Name', $name);
+            $book->appendChild($name1);
+            $title111 = $dom->createElement('Title', $title11);
+            $book->appendChild($title111);
+            $relation1 = $dom->createElement('Relation', $relation);
+            $book->appendChild($relation1);
+            $address1 = $dom->createElement('Address_Line1', $address);
+            $book->appendChild($address1);
+            $address21 = $dom->createElement('Address_Line_2', $address2);
+            $book->appendChild($address21);
+            $address31 = $dom->createElement('Address_Line3',  $address3);
+            $book->appendChild($address31);
+            $city1 = $dom->createElement('CityOrTown',  $city);
+            $book->appendChild($city1);
+            $state1 = $dom->createElement('CountyOrState', $state);
+            $book->appendChild($state1);
+            $addressPo1 = $dom->createElement('PostCode', $addressPo);
+            $book->appendChild($addressPo1);
+            $country1 = $dom->createElement('Country', $country);
+            $book->appendChild($country1);
+            $mobile1 = $dom->createElement('Mobile', $mobile);
+            $book->appendChild($mobile1);
+            $telephone1 = $dom->createElement('Telephone', $telephone);
+            $book->appendChild($telephone1);
+            $email21 = $dom->createElement('Email', $email2);
+            $book->appendChild($email21);
+            $fax121 = $dom->createElement('Email', $fax12);
+            $book->appendChild($fax121);
+            $name231 = $dom->createElement('RefereesName', $name23);
+            $book->appendChild($name231);
+            $title231 = $dom->createElement('Title',  $title23);
+            $book->appendChild($title231);
+            $workingCompany1 = $dom->createElement('Institution',  $workingCompany);
+            $book->appendChild($workingCompany1);
+            $jobTitle1 = $dom->createElement('Position', $jobTitle);
+            $book->appendChild($jobTitle1);
+            $address231 = $dom->createElement('Address_Line1', $address23);
+            $book->appendChild($address231);
+            $address241 = $dom->createElement('Address_Line2', $address24);
+            $book->appendChild($address241);
+            $address341 = $dom->createElement('Address_Line3', $address34);
+            $book->appendChild($address341);
+            $city341 = $dom->createElement('City', $city34);
+            $book->appendChild($city341);
+            $state341 = $dom->createElement('State', $state34);
+            $book->appendChild($state341);
+            $postCode341 = $dom->createElement('Post_Code', $postCode34);
+            $book->appendChild($postCode341);
+            $fkCountry341 = $dom->createElement('Country', $fkCountry34);
+            $book->appendChild($fkCountry341);
+            $contactNo341 = $dom->createElement('Contact_No', $contactNo34);
+            $book->appendChild($contactNo341);
+            $email441 = $dom->createElement('Email', $email44);
+            $book->appendChild($email441);
+            $ethnicity1 = $dom->createElement('Disability', $ethnicity);
+            $book->appendChild($ethnicity1);
+            $disability1 = $dom->createElement('Ethnicity', $disability);
+            $book->appendChild($disability1);
+            $religionbelief1 = $dom->createElement('Religion_Belief', $religionbelief);
+            $book->appendChild($religionbelief1);
+
+            $orientation1 = $dom->createElement('Sexual_Orientation', $orientation);
+            $book->appendChild($orientation1);
+
+            $root->appendChild($book);
         }
         $dom->appendChild($root);
         $dom->save($filePath);
+
     }
 
     //////end///////
