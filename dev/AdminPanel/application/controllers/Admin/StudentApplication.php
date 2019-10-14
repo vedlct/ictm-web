@@ -61,8 +61,8 @@ class StudentApplication extends CI_Controller
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->applicationId.'"><i class="icon_pencil-edit"></i></a>
                                                     
                                                     <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>
-                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/exportCSV/'.$application->applicationId.'"><i class="fa fa-file-excel-o"></i></a>
-                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/createXMLfile/'.$application->applicationId.'"><i class="fa fa-file-excel-o"></i></a>';
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/exportCSV/'.$application->applicationId.'" title="CSV"><i class="fa fa-file-excel-o"></i></a>
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/createXMLfile/'.$application->applicationId.'" title="XML"><i class="fa fa-file-excel-o"></i></a>';
 
 
             $row[] = $html;
@@ -185,14 +185,14 @@ class StudentApplication extends CI_Controller
         $file = fopen('php://output', 'w');
 
 
-        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","City/Town","County/State","Post Code", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3", "Post Code", "Courntry", "FirstLanguageEnglish", "Applydate", "EmergencyContactName", "EmergencyContactTitle", "EmergencyContactRelation", "Emergency Address Line 1","Emergency Address Line 2","Emergency Address Line 3","City/Town","Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name", "Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level", "Course Start Date", "Course End Date", "Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year", "Start Date", "End Date", "Grade", "Organisation", "Position Held", "Start Date", "End Date", "Course Choice Statement", "College Choice Statement", "Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail", "Fax", "Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Contact No", "E-mail","Disability", "Ethnicity", "Religion Belief","Sexual Orientation");
+        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","Post Code","City/Town","County/State", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3","City/Town","County/State","Post Code", "Courntry", "Emergency Contact Name", "Emergency Contact Title", "Emergency Contact Relation", "Emergency Address Line 1","Emergency Address Line 2","Emergency Address Line 3","City/Town","Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name","Awarding Body","Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level","Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year","Grade", "Organisation", "Position Held", "Start Date", "End Date","First Language","Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail","Course Choice Statement", "College Choice Statement","Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Telephone/Mobile", "E-mail","Disability", "Ethnicity", "Religion Belief","Sexual Orientation");
         fputcsv($file, $header);
 
 //            print_r($newarray);
 //            exit();
 
         foreach ($myData as $line){
-            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressPo,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->overseasAddressPo,$line->permanentAddressCountry,$line->firstLanguageEnglish,$line->applydate,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->courseStartDate,$line->courseEndDate,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->startDate,$line->endDate,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->fax,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$ethnicity,$disability,$religionbelief,$orientation));
+            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressPo,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->permanentAddressCity,$line->permanentAddressState,$line->overseasAddressPo,$line->permanentAddressCountry,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->awardingBody,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->firstLanguageEnglish,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$ethnicity,$disability,$religionbelief,$orientation));
         }
 
 
@@ -256,8 +256,10 @@ class StudentApplication extends CI_Controller
             $permanentAddress3 = $myData[$i]->permanentAddress3;
             $overseasAddressPo = $myData[$i]->overseasAddressPo;
             $permanentAddressCountry= $myData[$i]->permanentAddressCountry;
+            $permanentAddressCity= $myData[$i]->permanentAddressCity;
+            $permanentAddressState= $myData[$i]->permanentAddressState;
             $firstLanguageEnglish = $myData[$i]->firstLanguageEnglish;
-            $applydate = $myData[$i]->applydate;
+//            $applydate = $myData[$i]->applydate;
             $emergencyContactName = $myData[$i]->emergencyContactName;
             $emergencyContactTitle= $myData[$i]->emergencyContactTitle;
             $emergencyContactRelation = $myData[$i]->emergencyContactRelation;
@@ -271,6 +273,7 @@ class StudentApplication extends CI_Controller
             $emergencyContactMobile = $myData[$i]->emergencyContactMobile;
             $emergencyContactEmail = $myData[$i]->emergencyContactEmail;
             $courseName = $myData[$i]->courseName;
+            $awardingBody = $myData[$i]->awardingBody;
             $courseSession= $myData[$i]->courseSession;
             $courseYear = $myData[$i]->courseYear;
             $ucasCourseCode = $myData[$i]->ucasCourseCode;
@@ -284,8 +287,6 @@ class StudentApplication extends CI_Controller
             $qualificationLevel = $myData[$i]->qualificationLevel;
             $subject= $myData[$i]->subject;
             $completionYear= $myData[$i]->completionYear;
-            $startDate = $myData[$i]->startDate;
-            $endDate = $myData[$i]->endDate;
             $obtainResult= $myData[$i]->obtainResult;
             $organization= $myData[$i]->organization;
             $positionHeld = $myData[$i]->positionHeld;
@@ -307,7 +308,6 @@ class StudentApplication extends CI_Controller
             $mobile= $myData[$i]->mobile;
             $telephone= $myData[$i]->telephone;
             $email2= $myData[$i]->email;
-            $fax12= $myData[$i]->fax;
             $name23= $myData[$i]->name;
             $title23= $myData[$i]->title;
             $workingCompany= $myData[$i]->workingCompany;
@@ -409,12 +409,16 @@ class StudentApplication extends CI_Controller
 
             $permanentAddressCountry1  = $dom->createElement('Country', $permanentAddressCountry);
             $book->appendChild( $permanentAddressCountry1);
+            $permanentAddressCity1  = $dom->createElement('City', $permanentAddressCity);
+            $book->appendChild( $permanentAddressCity1);
+            $permanentAddressState1  = $dom->createElement('State', $permanentAddressState);
+            $book->appendChild( $permanentAddressState1);
 
             $firstLanguageEnglish1 = $dom->createElement('FirstLanguageEnglish', $firstLanguageEnglish);
             $book->appendChild($firstLanguageEnglish1);
 
-            $applydate1 = $dom->createElement('ApplyDate', $applydate);
-            $book->appendChild($applydate1);
+//            $applydate1 = $dom->createElement('ApplyDate', $applydate);
+//            $book->appendChild($applydate1);
 
             $emergencyContactName1 = $dom->createElement('EmergencyContactName', $emergencyContactName);
             $book->appendChild($emergencyContactName1);
@@ -455,6 +459,9 @@ class StudentApplication extends CI_Controller
             $courseName1 = $dom->createElement('CourseName', $courseName);
             $book->appendChild($courseName1);
 
+            $awardingBody1 = $dom->createElement('Awarding_Body', $awardingBody);
+            $book->appendChild($awardingBody1);
+
             $courseSession1  = $dom->createElement('CourseSession', $courseSession);
             $book->appendChild( $courseSession1);
 
@@ -493,10 +500,7 @@ class StudentApplication extends CI_Controller
 
             $completionYear1 = $dom->createElement('Completion_Year', $completionYear);
             $book->appendChild($completionYear1);
-            $startDate13 = $dom->createElement('Start_Date', $startDate);
-            $book->appendChild($startDate13);
-            $endDate13 = $dom->createElement('End_Date', $endDate);
-            $book->appendChild($endDate13);
+
             $obtainResult1 = $dom->createElement('Grade', $obtainResult);
             $book->appendChild($obtainResult1);
             $organization1 = $dom->createElement('Organisation', $organization);
@@ -539,8 +543,6 @@ class StudentApplication extends CI_Controller
             $book->appendChild($telephone1);
             $email21 = $dom->createElement('Email', $email2);
             $book->appendChild($email21);
-            $fax121 = $dom->createElement('Email', $fax12);
-            $book->appendChild($fax121);
             $name231 = $dom->createElement('RefereesName', $name23);
             $book->appendChild($name231);
             $title231 = $dom->createElement('Title',  $title23);
@@ -581,6 +583,9 @@ class StudentApplication extends CI_Controller
         }
         $dom->appendChild($root);
         $dom->save($filePath);
+        header('Content-disposition: attachment; filename="applicationForm.xml"');
+        header('Content-type: "text/xml"; charset="utf8"');
+        readfile('public/xml/book.xml');
 
     }
 
