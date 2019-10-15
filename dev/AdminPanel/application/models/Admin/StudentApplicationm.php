@@ -238,7 +238,7 @@ class StudentApplicationm extends CI_Model
     ///////////csv/////////
     public function allDetails($applicationId){
 
-        $this->db->select('candidateinfo.title,candidateinfo.courseChoiceStatement,candidateinfo.collegeChoiceStatement,firstName,surName,otherNames,dateOfBirth,ganderChange,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaExpiryDate,visaType,currentAddress,currentAddress2,currentAddress3,currentAddressCity,currentAddressState,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,candidateinfo.email,candidateinfo.fax,permanentAddress,permanentAddress2,permanentAddress3,permanentAddressCity,permanentAddressState,overseasAddressPo,permanentAddressCountry,firstLanguageEnglish,applydate,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,emergencyContactAddress2,emergencyContactAddress3,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactAddressPo,emergencyContactCountry,emergencyContactMobile,emergencyContactEmail,courseName,coursedetails.awardingBody,courseSession,courseYear,ulnNo,ucasCourseCode,courseLevel,courseStartDate, courseEndDate, methodOfStudy, timeOfStudy,qualification, institution,qualificationLevel,subject,completionYear,personqualifications.startDate,personqualifications.endDate,obtainResult,organization,positionHeld,personexperience.startDate,personexperience.endDate,courseChoiceStatement,collegeChoiceStatement,financer.*,candidateinfo.sourceOfFinance,candidatereferees.*,courseChoiceStatement,collegeChoiceStatement,firstLanguageEnglish');
+        $this->db->select('candidateinfo.title,candidateinfo.courseChoiceStatement,candidateinfo.collegeChoiceStatement,firstName,surName,otherNames,dateOfBirth,ganderChange,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaExpiryDate,visaType,currentAddress,currentAddress2,currentAddress3,currentAddressCity,currentAddressState,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,candidateinfo.email,candidateinfo.fax,permanentAddress,permanentAddress2,permanentAddress3,permanentAddressCity,permanentAddressState,overseasAddressPo,permanentAddressCountry,applydate,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,emergencyContactAddress2,emergencyContactAddress3,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactAddressPo,emergencyContactCountry,emergencyContactMobile,emergencyContactEmail,courseName,coursedetails.awardingBody,courseSession,courseYear,ulnNo,ucasCourseCode,courseLevel,courseStartDate, courseEndDate, methodOfStudy, timeOfStudy,qualification, institution,qualificationLevel,subject,completionYear,personqualifications.startDate,personqualifications.endDate,obtainResult,organization,positionHeld,personexperience.startDate,personexperience.endDate,courseChoiceStatement,collegeChoiceStatement,financer.*,candidateinfo.sourceOfFinance,candidatereferees.*,courseChoiceStatement,collegeChoiceStatement');
         $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->join('personqualifications', 'personqualifications.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->join('personexperience', 'personexperience.fkApplicationId = candidateinfo.applicationId','left');
@@ -289,6 +289,78 @@ class StudentApplicationm extends CI_Model
         $this->db->where('fkApplicationId =', $applicationId);
         $this->db->where('opportunityTitle =', 'Sexual Orientation');
         $query = $this->db->get('personequalopportunity');
+        return $query->result();
+    }
+    public function listening($applicationId){
+        $this->db->select('score');
+        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('fkTestHeadId =', 1);
+        $query = $this->db->get('cadidatelanguagetestscores');
+        return $query->result();
+    }
+
+    public function reading($applicationId){
+        $this->db->select('score');
+        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('fkTestHeadId =', 2);
+        $query = $this->db->get('cadidatelanguagetestscores');
+        return $query->result();
+    }
+    public function writing($applicationId){
+        $this->db->select('score');
+        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('fkTestHeadId =', 3);
+        $query = $this->db->get('cadidatelanguagetestscores');
+        return $query->result();
+    }
+
+    public function speaking($applicationId){
+        $this->db->select('score');
+        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $this->db->where('fkTestHeadId =', 4);
+        $query = $this->db->get('cadidatelanguagetestscores');
+        return $query->result();
+    }
+
+    public function overallScore($applicationId){
+        $this->db->select('overallScore');
+        $this->db->join('cadidatelanguagetestscores', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('candidatelanguagetest');
+        return $query->result();
+    }
+    public function test($applicationId){
+        $this->db->select('fkTestId');
+        $this->db->join('cadidatelanguagetestscores', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('candidatelanguagetest');
+        return $query->result();
+    }
+
+    public function language($applicationId){
+        $this->db->select('firstLanguageEnglish');
+        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.fkApplicationId=candidateinfo.applicationId', 'left');
+        $this->db->where('applicationId =', $applicationId);
+        $query = $this->db->get('candidateinfo');
+        return $query->result();
+    }
+
+    public function expireDate($applicationId){
+        $this->db->select('expireDate');
+        $this->db->join('cadidatelanguagetestscores', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('candidatelanguagetest');
+        return $query->result();
+    }
+    public function other($applicationId){
+        $this->db->select('other');
+        $this->db->join('cadidatelanguagetestscores', 'candidatelanguagetest.id=cadidatelanguagetestscores.fkCandidateTestId', 'left');
+        $this->db->where('fkApplicationId =', $applicationId);
+        $query = $this->db->get('candidatelanguagetest');
         return $query->result();
     }
     ///////////////////////

@@ -173,7 +173,67 @@ class StudentApplication extends CI_Controller
         foreach ($orientation as $ethci){
             $orientation = $ethci->subGroupTitle;
         }
+        $test = $this->StudentApplicationm->test($applicationId);
+        foreach ($test as $test){
+            $test = $test->fkTestId;
+            if ($test== 1 ){
+                $test= "IELTS";
+            }elseif ($test== 2){
+                $test= "TOEFL";
+            }
+            elseif ($test== 3){
+                $test= "PTE";
+            }
+            else{
+                $test= "Other";
+            }
 
+        }
+        $language = $this->StudentApplicationm->language($applicationId);
+        foreach ($language as $language){
+            $language = $language->firstLanguageEnglish;
+
+            if ($language== 0 ){
+                $language= "No";
+            }
+            else{
+                $language= "Yes";
+            }
+
+        }
+        $listening = $this->StudentApplicationm->listening($applicationId);
+        foreach ($listening as $listening){
+            $listening = $listening->score;
+        }
+
+        $reading = $this->StudentApplicationm->reading($applicationId);
+        foreach ($reading as $reading){
+            $reading = $reading->score;
+        }
+
+        $writing = $this->StudentApplicationm->writing($applicationId);
+        foreach ($writing as $writing){
+            $writing = $writing->score;
+        }
+
+        $speaking = $this->StudentApplicationm->speaking($applicationId);
+        foreach ($speaking as $speaking){
+            $speaking = $speaking->score;
+        }
+        $overallScore = $this->StudentApplicationm->overallScore($applicationId);
+        foreach ($overallScore as $overallScore){
+            $overallScore = $overallScore->overallScore;
+        }
+
+        $expireDate = $this->StudentApplicationm->expireDate($applicationId);
+        foreach ($expireDate as $expireDate){
+            $expireDate = $expireDate->expireDate;
+        }
+
+        $other = $this->StudentApplicationm->other($applicationId);
+        foreach ($other as $other){
+            $other = $other->other;
+        }
         // file name
         $filename = 'applicationForm_' . date('Ymd') . '.csv';
         header("Content-Description: File Transfer");
@@ -185,14 +245,13 @@ class StudentApplication extends CI_Controller
         $file = fopen('php://output', 'w');
 
 
-        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","Post Code","City/Town","County/State", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3","City/Town","County/State","Post Code", "Courntry", "Emergency Contact Name", "Emergency Contact Title", "Emergency Contact Relation", "Emergency Address Line 1","Emergency Address Line 2","Emergency Address Line 3","City/Town","Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name","Awarding Body","Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level","Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year","Grade", "Organisation", "Position Held", "Start Date", "End Date","First Language","Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail","Course Choice Statement", "College Choice Statement","Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Telephone/Mobile", "E-mail","Disability", "Ethnicity", "Religion Belief","Sexual Orientation");
+        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","Post Code","City/Town","County/State", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3","City/Town","County/State","Post Code", "Courntry", "Emergency Contact Name", "Emergency Contact Title", "Emergency Contact Relation", "Emergency Address Line 1","Emergency Address Line 2","Emergency Address Line 3","City/Town","Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name","Awarding Body","Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level","Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year","Grade", "Organisation", "Position Held", "Start Date", "End Date","Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail","Course Choice Statement", "College Choice Statement","Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Telephone/Mobile", "E-mail","Disability", "Ethnicity", "Religion Belief","Sexual Orientation","First Language","Tests","Listening","Reading","Writing","Speaking","Overall","Expiry Date","Other");
         fputcsv($file, $header);
 
 //            print_r($newarray);
 //            exit();
-
         foreach ($myData as $line){
-            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressPo,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->permanentAddressCity,$line->permanentAddressState,$line->overseasAddressPo,$line->permanentAddressCountry,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->awardingBody,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->firstLanguageEnglish,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$ethnicity,$disability,$religionbelief,$orientation));
+            fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressPo,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->permanentAddressCity,$line->permanentAddressState,$line->overseasAddressPo,$line->permanentAddressCountry,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->awardingBody,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$ethnicity,$disability,$religionbelief,$orientation,$language,$test,$listening,$reading,$writing,$speaking,$overallScore,$expireDate,$other));
         }
 
 
@@ -221,6 +280,67 @@ class StudentApplication extends CI_Controller
         $orientation = $this->StudentApplicationm->orientation($applicationId);
         foreach ($orientation as $ethci){
             $orientation = $ethci->subGroupTitle;
+        }
+        $test = $this->StudentApplicationm->test($applicationId);
+        foreach ($test as $test){
+            $test = $test->fkTestId;
+            if ($test== 1 ){
+                $test= "IELTS";
+            }elseif ($test== 2){
+                $test= "TOEFL";
+            }
+            elseif ($test== 3){
+                $test= "PTE";
+            }
+            else{
+                $test= "Other";
+            }
+
+        }
+        $language = $this->StudentApplicationm->language($applicationId);
+        foreach ($language as $language){
+            $language = $language->firstLanguageEnglish;
+
+            if ($language== 0 ){
+                $language= "No";
+            }
+            else{
+                $language= "Yes";
+            }
+
+        }
+        $listening = $this->StudentApplicationm->listening($applicationId);
+        foreach ($listening as $listening){
+            $listening = $listening->score;
+        }
+
+        $reading = $this->StudentApplicationm->reading($applicationId);
+        foreach ($reading as $reading){
+            $reading = $reading->score;
+        }
+
+        $writing = $this->StudentApplicationm->writing($applicationId);
+        foreach ($writing as $writing){
+            $writing = $writing->score;
+        }
+
+        $speaking = $this->StudentApplicationm->speaking($applicationId);
+        foreach ($speaking as $speaking){
+            $speaking = $speaking->score;
+        }
+        $overallScore = $this->StudentApplicationm->overallScore($applicationId);
+        foreach ($overallScore as $overallScore){
+            $overallScore = $overallScore->overallScore;
+        }
+
+        $expireDate = $this->StudentApplicationm->expireDate($applicationId);
+        foreach ($expireDate as $expireDate){
+            $expireDate = $expireDate->expireDate;
+        }
+
+        $other = $this->StudentApplicationm->other($applicationId);
+        foreach ($other as $other){
+            $other = $other->other;
         }
         $filePath = 'public/xml/book.xml';
 //        $filePath ='/path/to/myfile.xml';
@@ -258,7 +378,7 @@ class StudentApplication extends CI_Controller
             $permanentAddressCountry= $myData[$i]->permanentAddressCountry;
             $permanentAddressCity= $myData[$i]->permanentAddressCity;
             $permanentAddressState= $myData[$i]->permanentAddressState;
-            $firstLanguageEnglish = $myData[$i]->firstLanguageEnglish;
+//            $firstLanguageEnglish = $myData[$i]->firstLanguageEnglish;
 //            $applydate = $myData[$i]->applydate;
             $emergencyContactName = $myData[$i]->emergencyContactName;
             $emergencyContactTitle= $myData[$i]->emergencyContactTitle;
@@ -414,8 +534,6 @@ class StudentApplication extends CI_Controller
             $permanentAddressState1  = $dom->createElement('State', $permanentAddressState);
             $book->appendChild( $permanentAddressState1);
 
-            $firstLanguageEnglish1 = $dom->createElement('FirstLanguageEnglish', $firstLanguageEnglish);
-            $book->appendChild($firstLanguageEnglish1);
 
 //            $applydate1 = $dom->createElement('ApplyDate', $applydate);
 //            $book->appendChild($applydate1);
@@ -578,6 +696,24 @@ class StudentApplication extends CI_Controller
 
             $orientation1 = $dom->createElement('Sexual_Orientation', $orientation);
             $book->appendChild($orientation1);
+            $language1 = $dom->createElement('FirstLanguage', $language);
+            $book->appendChild($language1);
+            $test1 = $dom->createElement('Tests', $test);
+            $book->appendChild($test1);
+            $listening1 = $dom->createElement('Listening', $listening);
+            $book->appendChild($listening1);
+            $reading1 = $dom->createElement('Reading', $reading);
+            $book->appendChild($reading1);
+            $writing1 = $dom->createElement('Writing', $writing);
+            $book->appendChild($writing1);
+            $speaking1 = $dom->createElement('Speaking', $speaking);
+            $book->appendChild($speaking1);
+            $overallScore1 = $dom->createElement('Overall', $overallScore);
+            $book->appendChild($overallScore1);
+            $expireDate1 = $dom->createElement('ExpiryDate', $expireDate);
+            $book->appendChild($expireDate1);
+            $other1 = $dom->createElement('Other', $other);
+            $book->appendChild($other1);
 
             $root->appendChild($book);
         }
