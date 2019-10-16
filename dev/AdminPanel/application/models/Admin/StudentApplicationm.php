@@ -343,7 +343,7 @@ class StudentApplicationm extends CI_Model
 
     public function language($applicationId){
         $this->db->select('firstLanguageEnglish');
-        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.fkApplicationId=candidateinfo.applicationId', 'left');
+//        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.fkApplicationId=candidateinfo.applicationId', 'left');
         $this->db->where('applicationId =', $applicationId);
         $query = $this->db->get('candidateinfo');
         return $query->result();
