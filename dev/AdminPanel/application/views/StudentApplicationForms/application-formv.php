@@ -291,13 +291,13 @@
                                         <input style="margin-top: 10px" tabindex="36"  type="checkbox" id="samecheck2" onclick="addresscheck()">
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('overseasHomeAddress'); ?></font></p>
-                                        <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4"><?php echo $candidateInfo->overseasAddress?></textarea>
-                                    </div>
-                                </div>
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label col-md-2">Permanent Address:<span style="color: red" class="required">*</span></label>-->
+<!--                                    <div class="col-md-10">-->
+<!--                                        <p><font color="red"> --><?php //echo form_error('overseasHomeAddress'); ?><!--</font></p>-->
+<!--                                        <textarea id="comment-message" required id="overseasHomeAddress" maxlength="1000" name="overseasHomeAddress" rows="8" tabindex="4">--><?php //echo $candidateInfo->overseasAddress?><!--</textarea>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                                 <div class="form-group" id="paddresslabel">
                                     <label class="control-label col-md-2" > Address Line 1:<span style="color: red" class="required">*</span></label>

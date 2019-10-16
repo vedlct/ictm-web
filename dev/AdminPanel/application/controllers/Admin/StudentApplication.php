@@ -43,7 +43,7 @@ class StudentApplication extends CI_Controller
             $row[] = $application->title.' '.$application->firstName.' '.$application->surName;
             $row[] = $application->email;
             $row[] = $application->mobileNo;
-            $row[] = $application->courseName;
+            $row[] = $application->courseTitle;
             $row[] = $application->studentApplicationFormId;
 
             if ($application->applydate==""){
@@ -245,7 +245,7 @@ class StudentApplication extends CI_Controller
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
-                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
+//                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
@@ -319,7 +319,7 @@ class StudentApplication extends CI_Controller
                     'currentAddressCity' => $candidateCurrentAddressCity,
                     'currentAddressState' => $candidateCurrentAddressState,
                     'currentAddressPo'=>$candidateCurrentAddressPO,
-                    'overseasAddress'=>$candidateOverseasHomeAddress,
+//                    'overseasAddress'=>$candidateOverseasHomeAddress,
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
@@ -423,7 +423,7 @@ class StudentApplication extends CI_Controller
                 $candidateCurrentAddressCity = $this->input->post("currentAddressCity");
                 $candidateCurrentAddressState = $this->input->post("currentAddressState");
                 $candidateCurrentAddressPO = $this->input->post("currentAddressPO");
-                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
+//                $candidateOverseasHomeAddress = $this->input->post("overseasHomeAddress");
                 $candidatePermanentAddress = $this->input->post("permanentAddress");
                 $candidatePermanentAddress2 = $this->input->post("permanentAddress2");
                 $candidatePermanentAddress3 = $this->input->post("permanentAddress3");
@@ -497,7 +497,7 @@ class StudentApplication extends CI_Controller
                     'currentAddressCity' => $candidateCurrentAddressCity,
                     'currentAddressState' => $candidateCurrentAddressState,
                     'currentAddressPo'=>$candidateCurrentAddressPO,
-                    'overseasAddress'=>$candidateOverseasHomeAddress,
+//                    'overseasAddress'=>$candidateOverseasHomeAddress,
                     'permanentAddress' => $candidatePermanentAddress,
                     'permanentAddress2' => $candidatePermanentAddress2,
                     'permanentAddress3' => $candidatePermanentAddress3,
