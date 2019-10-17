@@ -126,13 +126,7 @@
                                             <input tabindex="9"  type="text" class="form-control" id="address3" name="address3[]" >
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Postal Code:<span style="color: red" class="required">*</span></label>
-                                        <div class="col-md-10">
-                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                            <input tabindex="7"  type="text" class="form-control" id="postCode" name="postCode[]" required>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
                                         <div class="col-md-10">
@@ -145,6 +139,13 @@
                                         <div class="col-md-10">
                                             <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                             <input tabindex="11"  type="text" class="form-control" id="state" name="state[]" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
+                                        <div class="col-md-10">
+                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                            <input tabindex="7"  type="text" class="form-control" id="postCode" name="postCode[]" required>
                                         </div>
                                     </div>
 

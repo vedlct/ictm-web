@@ -114,13 +114,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-9">
-                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo"  value="<?php echo $f4->addressPo?>">
-                                    </div>
-                                </div>
+
 
                                 <div class="form-group">
                                     <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
@@ -134,6 +128,14 @@
                                     <div class="col-md-9">
                                         <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                         <input tabindex="11"  type="text" class="form-control" id="state" name="state" value="<?php echo $f4->state?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                        <input tabindex="7"  type="text" class="form-control" id="addressPo" name="addressPo"  value="<?php echo $f4->addressPo?>">
                                     </div>
                                 </div>
 
