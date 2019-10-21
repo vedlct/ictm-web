@@ -184,9 +184,9 @@
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-9" >
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn ">Previous</button></a>
-                                    <button type="reset" class="btn btn-next">Reset</button>
-                                    <button type="submit" class="btn btn-next">Save Application</button>
+                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save Application</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
 <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm8" ><button type="button"  class="btn ">Next</button></a>-->
                                 </div >

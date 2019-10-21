@@ -10,7 +10,6 @@
     <!--header start-->
     <?php include ('topNavigation.php')?>
     <!--header end-->
-
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--main content start-->
@@ -40,9 +39,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             <b>Manage Affiliations</b>
-<!--                            <span align="">-->
-<!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
-<!--                            </span>-->
+                            <!--                            <span align="">-->
+                            <!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
+                            <!--                            </span>-->
                         </header>
                         <div class="panel-body ">
 
@@ -77,7 +76,7 @@
                                     <thead>
 
                                     <tr align="center" bgcolor="#D3D3D3">
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>-->
+                                        <!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>-->
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Application Id</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
@@ -116,18 +115,13 @@
 </body>
 </html>
 <script>
-
     var table;
-
     $(document).ready(function() {
-
         //datatables
         table = $('#myTable').DataTable({
-
             "processing": true, //Feature control the processing indicator.
             "serverSide": true, //Feature control DataTables' server-side processing mode.
             "order": [], //Initial no order.
-
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/StudentApplication/ajax_list')?>",
@@ -136,9 +130,7 @@
                     data.courseTitle1 = $('#courseTitle').val();
                     data.userTitle1 = $('#userTitle').val();
                 }
-
             },
-
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
@@ -151,8 +143,6 @@
                 "sSearch": "<span>Search By Affiliation Title:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
-
-
         });
 //        $(".dataTables_filter input").attr("placeholder", "Search By Title");
         $('#courseTitle').change(function(){ //button filter event click
@@ -163,19 +153,10 @@
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter
         });
-
-
     });
-
-
     $.ajaxSetup({
         data: {
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
         }
     });
-
-
-
-
-
 </script>
