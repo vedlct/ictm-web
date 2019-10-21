@@ -55,7 +55,10 @@
 
                             <a href="<?php echo base_url()?>ApplyForm7" ><button type="button" class="btn btn-previous">Previous</button></a>
                             <button type="submit"  class="btn btn-next">SUBMIT!</button>
-                            <button type="button" class="btn btn-next">Download PDF</button>
+<!--                            --><?php //foreach ($applications as $application){?>
+<!--                                <a target="_blank" href="--><?php //echo base_url()?><!--ApplyOnline/showApplicationPdf/--><?php //echo $application->id ?><!--"><button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button></a>-->
+<!--                            --><?php //} ?>
+                            <button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button>
                         </div>
 <!--                    </fieldset>-->
 

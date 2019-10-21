@@ -10,7 +10,6 @@
     <!--header start-->
     <?php include ('topNavigation.php')?>
     <!--header end-->
-
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--main content start-->
@@ -40,9 +39,9 @@
                     <section class="panel">
                         <header class="panel-heading">
                             <b>Manage Affiliations</b>
-<!--                            <span align="">-->
-<!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
-<!--                            </span>-->
+                            <!--                            <span align="">-->
+                            <!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
+                            <!--                            </span>-->
                         </header>
                         <div class="panel-body ">
 
@@ -77,7 +76,8 @@
                                     <thead>
 
                                     <tr align="center" bgcolor="#D3D3D3">
-<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>-->
+                                        <!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>-->
+                                        <th style="background-color: #394A59; color: whitesmoke; width: 1%">select</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Application Id</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
@@ -92,7 +92,7 @@
                                     </tbody>
                                 </table>
                             </div>
-
+                            <button onclick="downloadexcel()" type="btn"> Download Excel</button>
                         </div>
 
                     </section>
@@ -116,18 +116,13 @@
 </body>
 </html>
 <script>
-
     var table;
-
     $(document).ready(function() {
-
         //datatables
         table = $('#myTable').DataTable({
-
             "processing": true, //Feature control the processing indicator.
             "serverSide": true, //Feature control DataTables' server-side processing mode.
             "order": [], //Initial no order.
-
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/StudentApplication/ajax_list')?>",
@@ -136,9 +131,7 @@
                     data.courseTitle1 = $('#courseTitle').val();
                     data.userTitle1 = $('#userTitle').val();
                 }
-
             },
-
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
@@ -148,11 +141,9 @@
             ],
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+                "sSearch": "<span>Search:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
-
-
         });
 //        $(".dataTables_filter input").attr("placeholder", "Search By Title");
         $('#courseTitle').change(function(){ //button filter event click
@@ -163,19 +154,66 @@
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter
         });
-
-
     });
-
-
     $.ajaxSetup({
         data: {
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
         }
     });
 
+    var selecteds = [];
+    function selected_rows(x) {
 
+        btn = $(x).data('panel-id');
+        var index = selecteds.indexOf(btn.toString())
+        if (index == "-1"){
+            selecteds.push(btn);
+        }else {
 
+            selecteds.splice(index, 1);
+        }
+
+    }
+    function downloadexcel() {
+        var products=selecteds;
+        alert(products);
+        if (products.length >0) {
+            $.ajax({
+                type: 'POST',
+                url: "{!!route('product.excelExport') !!}",
+                cache: false,
+                data: {'products': products},
+                success: function (data) {
+                    var link = document.createElement("a");
+                    link.download = data.fileName+".xls";
+                    var uri = '{{url("public/excel")}}'+"/"+data.fileName+".xls";
+                    link.href = uri;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    delete link;
+                    selecteds=[];
+                    $(':checkbox:checked').prop('checked',false);
+                }
+            });
+        }
+        else {
+            //  alert("Please Select a product first");
+            $.alert({
+                title: 'Alert!',
+                type: 'Red',
+                content: 'Please select your Product(s) for downloading the Product(s) details',
+                buttons: {
+                    tryAgain: {
+                        text: 'Ok',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                }
+            });
+        }
+    }
 
 
 </script>

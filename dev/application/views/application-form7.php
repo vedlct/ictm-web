@@ -76,7 +76,7 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn btn-previous">Previous</button></a>
 <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
 
@@ -90,7 +90,7 @@
                                          $fcount = count($files);
                                     }
                                     ?>
-                                    <?php if($fcount >=1) { ?><a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button> <?php }?></a>
+                                    <?php if($fcount >=1) { ?><a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn btn-next">Next</button> <?php }?></a>
                                 </div>
                             </div>
 

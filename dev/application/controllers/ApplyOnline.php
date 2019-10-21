@@ -3052,7 +3052,9 @@ class ApplyOnline extends CI_Controller
             $this->menu();
 
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-
+            $this->data['courseInfo'] = $this->Coursem->getCourseInfo();
+            $studentOrAgentId = $this->session->userdata('id');
+            $this->data['applications'] = $this->ApplyOnlinem->getApplicationInfoForStudens($studentOrAgentId);
             $this->load->view('application-form9', $this->data);
 
 
@@ -3064,6 +3066,7 @@ class ApplyOnline extends CI_Controller
         }
 
     }
+
 
 
 
@@ -3357,9 +3360,6 @@ class ApplyOnline extends CI_Controller
                     </script>";
         }
     }
-
-    /* for pdf end */
-
 
 
 
