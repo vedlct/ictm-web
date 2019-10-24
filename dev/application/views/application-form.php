@@ -48,7 +48,7 @@
                                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                             	<select tabindex="1" style="width: 100%" name="title" required id="title">
 
-                                                    <option value="" selected><?php echo SELECT_TITLE?></option>
+                                                    <option value="" selected><?php echo "Select Title"?></option>
                                                     <?php for ($i=0;$i<count(Title);$i++){?>
                                                         <option <?php echo set_select('title',  Title[$i], False); ?>><?php echo Title[$i]?></option>
                                                     <?php } ?>
@@ -171,7 +171,7 @@
                                           	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                                 <select tabindex="15" style="width: 100%" id="nationality" required name="nationality">
-                                                    <option value="" disabled selected>Select country...</option>
+                                                    <option value="" disabled selected>Select Nationality...</option>
                                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
                                                         <option value="<?php echo COUNTRY[$i]?>"<?php
@@ -280,7 +280,7 @@
                                                 <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
                                                 <select tabindex="23" style="width: 100%" id="VisaType"  name="VisaType">
 
-                                                    <option value="" selected><?php echo SELECT_TYPE?></option>
+                                                    <option value="" selected><?php echo "Select Visa Type"?></option>
                                                     <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
                                                         <option <?php echo set_select('VisaType',  VISA_TYPE[$i], False); ?>><?php echo VISA_TYPE[$i]?></option>
                                                     <?php } ?>
@@ -330,8 +330,9 @@
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
-                                        <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Current Address Details</h2>
-
+                                        <div class="form-group">
+                                        <h2 class="control-label col-md-3" style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Current Address Details</h2>
+                                        </div>
                                         <div class="form-group">
                                         	<label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-9">
@@ -416,8 +417,9 @@
                                                 <input tabindex="35" type="email" class="form-control" required id="email" name="email"  value="<?php echo set_value('email'); ?>" >
                                             </div>
                                         </div>
-
-                                        <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent  Address Details</h2>
+                                        <div class="form-group">
+                                        <h2 class="control-label col-md-3" style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent  Address Details</h2>
+                                        </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Same as Current </label>
                                             <div class="col-md-9">
@@ -657,7 +659,18 @@
                                             <label class="control-label col-md-3">Year:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-                                                <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo set_value('courseYear'); ?>">
+<!--                                                <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="--><?php //echo set_value('courseYear'); ?><!--">-->
+                                                <?php
+                                                $currently_selected = date('Y');
+                                                $earliest_year = date('Y');
+                                                $latest_year = date('Y')+6;
+                                                print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                                }
+                                                print '</select>';
+                                                ?>
+
                                             </div>
                                         </div>
 
