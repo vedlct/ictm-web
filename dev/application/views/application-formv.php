@@ -739,6 +739,7 @@
                             <div class="col-sm-offset-2 col-md-9">
                                 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
+<!--                                <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>-->
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
 <!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>-->
@@ -1080,3 +1081,5 @@
 
 
 </script>
+
+

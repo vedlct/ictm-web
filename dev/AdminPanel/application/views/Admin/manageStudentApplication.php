@@ -77,6 +77,7 @@
 
                                     <tr align="center" bgcolor="#D3D3D3">
                                         <!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>-->
+                                        <th style="background-color: #394A59; color: whitesmoke; width: 1%">select</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Application Id</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
@@ -91,7 +92,10 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <button onclick="downloadexcel()" type="btn"> Download CSV</button>
 
+                            <button onclick="downloadxml()" type="btn"> Download XML</button>
+<!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
                         </div>
 
                     </section>
@@ -142,7 +146,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+                "sSearch": "<span>Search:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });
@@ -161,4 +165,232 @@
             '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
         }
     });
+
+    var selecteds = [];
+    function selected_rows(x) {
+
+        btn = $(x).data('panel-id');
+        var index = selecteds.indexOf(btn.toString())
+        if (index == "-1"){
+            selecteds.push(btn);
+        }else {
+
+            selecteds.splice(index, 1);
+        }
+
+    }
+
+//    function downloadexcel() {
+//
+//
+////            var i;
+////            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+////            $(".chk:checked").each(function () {
+////                selecteds.push($(this).val());
+////            });
+//
+//
+//        var products=selecteds;
+//
+////        alert(products);
+//
+//        if (products.length >0) {
+//
+//            $.ajax({
+//                type: 'POST',
+//                url: "<?php //echo base_url('Admin/StudentApplication/csvFile') ?>//",
+//                cache: false,
+//                data: {'products': products},
+//                success: function (data) {
+//
+//                    $('#SessionMessage').load(document.URL +  ' #SessionMessage');
+//                    table.ajax.reload();  //just reload table
+//
+//                    selecteds=[];
+//
+//                    $(':checkbox:checked').prop('checked',false);
+//                    alert(data);
+//
+//                    if (data.success=='1'){
+//
+//                        $.alert({
+//                            title: 'Success!',
+//                            type: 'green',
+//                            content: data.message,
+//                            buttons: {
+//                                tryAgain: {
+//                                    text: 'Ok',
+//                                    btnClass: 'btn-blue',
+//                                    action: function () {
+//
+//
+//                                    }
+//                                }
+//
+//                            }
+//                        });
+//
+//
+//                    }else if(data.success=='0'){
+//
+//                        $.alert({
+//                            title: 'Alert!',
+//                            type: 'Red',
+//                            content: data.message,
+//                            buttons: {
+//                                tryAgain: {
+//                                    text: 'Ok',
+//                                    btnClass: 'btn-red',
+//                                    action: function () {
+//
+//
+//                                    }
+//                                }
+//
+//                            }
+//                        });
+//
+//
+//                    }
+//
+//
+//                }
+//
+//            });
+//        }
+//        else {
+//            // alert("Please Select a product first");
+//
+//            $.alert({
+//                title: 'Alert!',
+//                type: 'Red',
+//                content: 'Please select your Product(s) for exporting into the Product and Offer file',
+//                buttons: {
+//                    tryAgain: {
+//                        text: 'Ok',
+//                        btnClass: 'btn-red',
+//                        action: function () {
+//
+//
+//                        }
+//                    }
+//
+//                }
+//            });
+//        }
+//    }
+
+        function downloadexcel() {
+        var products=selecteds;
+//        alert(products);
+        if (products.length >0) {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo base_url('Admin/StudentApplication/csvFile')?>",
+                cache: false,
+                data: {'products': products},
+                success: function (data) {
+//                    var link = document.createElement("a");
+//                    link.download = data.fileName+".csv";
+//                    var uri = '<?php //echo base_url()?>//public/csv'+"/"+data.fileName+".csv";
+////                    alert(uri);
+//                    link.href = uri;
+//                    document.body.appendChild(link);
+//                    link.click();
+//                    document.body.removeChild(link);
+//                    delete link;
+                    var downloadLink = document.createElement("a");
+                    var fileData = ['\ufeff'+data];
+
+                    var blobObject = new Blob(fileData,{
+                        type: "text/csv;charset=utf-8;"
+                    });
+
+                    var url = URL.createObjectURL(blobObject);
+                    downloadLink.href = url;
+                    downloadLink.download = "ApplicationForm.csv";
+
+                    /*
+                     * Actually download CSV
+                     */
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    selecteds=[];
+                    $(':checkbox:checked').prop('checked',false);
+                }
+            });
+
+        }
+        else {
+            //  alert("Please Select a product first");
+            $.alert({
+                title: 'Alert!',
+                type: 'Red',
+                content: 'Please select your Product(s) for downloading the Product(s) details',
+                buttons: {
+                    tryAgain: {
+                        text: 'Ok',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+    function downloadxml() {
+        var products=selecteds;
+//        alert(products);
+        if (products.length >0) {
+            $.ajax({
+                type: 'POST',
+                url: "<?php echo base_url('Admin/StudentApplication/xmlFile')?>",
+                cache: false,
+                data: {'products': products},
+                success: function (data) {
+//
+                    var downloadLink = document.createElement("a");
+                    var fileData = ['\ufeff'+data];
+
+                    var blobObject = new Blob(fileData,{
+                        type: "text/xml;charset=utf-8;"
+                    });
+
+                    var url = URL.createObjectURL(blobObject);
+                    downloadLink.href = url;
+                    downloadLink.download = "ApplicationForm.xml";
+                    /*
+                     * Actually download CSV
+                     */
+                    document.body.appendChild(downloadLink);
+                    downloadLink.click();
+                    document.body.removeChild(downloadLink);
+                    selecteds=[];
+                    $(':checkbox:checked').prop('checked',false);
+
+                }
+            });
+
+        }
+        else {
+            //  alert("Please Select a product first");
+            $.alert({
+                title: 'Alert!',
+                type: 'Red',
+                content: 'Please select your Product(s) for downloading the Product(s) details',
+                buttons: {
+                    tryAgain: {
+                        text: 'Ok',
+                        btnClass: 'btn-red',
+                        action: function () {
+                        }
+                    }
+                }
+            });
+        }
+    }
+
+
 </script>
