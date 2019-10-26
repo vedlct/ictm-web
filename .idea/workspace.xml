@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37ddc74a-9b37-41e4-a9c3-dcca69bfb24a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session1ve5aikhjesv1hmrr6kll34bs8omobvq" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session29l13kqnc91q7v8llpd7n13u4b74tebo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session6he72b9fbq9t6tn3lbvd0fqvemc8qkpu" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionbnssvts6a3ugr7l3m6ut9sfhli75nbrn" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionfh91g3lehn1jfb6v2p3bf7dg1ibs349c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionlq2ffq9fuusnjp1r2k3fvku1unr3mi58" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionlv3bu957vitarj6bc2tn8ddfp053mnjh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionnc9nv97cp4ge429u6lsgcvqj44mjbu43" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionq469qo3trk6ifosoccb261g5ujp8chm9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiontrgu5qrtf5d5qkppv5bv5qn21ngdiuh8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiontst0ddr3tnkqa3m4rccqqmvacofpc4nf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionu7vgo6fn2jm1tb8p4m93mlodho7q0pbo" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionvuefhfdkhp416lcnqo9maq9k2p8j1pl9" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/system/ci_session29l13kqnc91q7v8llpd7n13u4b74tebo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ictm-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ictm-web.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageStudentApplication.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageStudentApplication.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,14 +10,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/dev/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -52,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/config/constants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="2266">
               <caret line="103" column="29" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
             </state>
           </provider>
@@ -61,11 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="9922">
               <caret line="451" column="59" selection-start-line="451" selection-start-column="59" selection-end-line="451" selection-end-column="59" />
-              <folding>
-                <element signature="e#23980#24069#0#HTML" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1382" />
@@ -148,6 +123,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -175,25 +151,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571938484313</updated>
-      <workItem from="1571938485560" duration="5229000" />
+      <workItem from="1571938485560" duration="5511000" />
+      <workItem from="1572023609576" duration="1197000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5229000" />
+    <option name="totallyTimeSpent" value="6708000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16897655" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1705757" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -201,37 +173,39 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="420" column="75" selection-start-line="420" selection-start-column="75" selection-end-line="420" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/constants.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
+        <state relative-caret-position="2266">
           <caret line="103" column="29" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="9922">
           <caret line="451" column="59" selection-start-line="451" selection-start-column="59" selection-end-line="451" selection-end-column="59" />
-          <folding>
-            <element signature="e#23980#24069#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="420" column="75" selection-start-line="420" selection-start-column="75" selection-end-line="420" selection-end-column="75" />
         </state>
       </provider>
     </entry>
