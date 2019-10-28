@@ -44,9 +44,8 @@ class StudentApplication extends CI_Controller
             }
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->applicationId.'"><i class="icon_pencil-edit"></i></a>
                                                     
-                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>
-                                              <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/exportCSV/'.$application->applicationId.'" title="CSV"><i class="fa fa-file-excel-o"></i></a>
-                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/createXMLfile/'.$application->applicationId.'" title="XML"><i class="fa fa-file-excel-o"></i></a>';
+                                                    <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>';
+
 
             $row[] = $html;
             $data[] = $row;
@@ -198,14 +197,14 @@ class StudentApplication extends CI_Controller
                 $test1= $test->fkTestId;
                 if ($test1== 1 ){
                     $test1= "IELTS";
-                }elseif ($test== 2){
-                    $test= "TOEFL";
+                }elseif ($test1== 2){
+                    $test1= "TOEFL";
                 }
-                elseif ($test== 3){
-                    $test= "PTE";
+                elseif ($test1== 3){
+                    $test1= "PTE";
                 }
                 else{
-                    $test= "Other";
+                    $test1= "Other";
                 }
 
                 $listening = $this->StudentApplicationm->listening1($value);
@@ -249,56 +248,495 @@ class StudentApplication extends CI_Controller
 
     public function xmlFile(){
 
-//        $productList = array();
-
-
-
-//        echo $_POST['products'];
-//        exit();
-//        $type = $_POST['products'];
-//        echo $type;
-//        exit();
-//        $productList=$this->input->post('products');
-//        echo $productList;
-//        exit();
-        $productList = $this->input->$_POST['products'];
-        echo $productList;
-        exit();
-//Either you can print value or you can send value to database
-//        echo json_encode($data);
-       // echo $this->input->$_POST['products'];
-
+        $productList =$_POST['products'];
 //        print_r($productList);
 //        exit();
-//        $data['products'] = "Users Group Update";
 
 
-//        foreach($_POST['products'] as $row=>$value){
-//            $myData= $this->StudentApplicationm->allDetails($value);
-//            $filePath = 'public/xml/book.xml';
-////        $filePath ='/path/to/myfile.xml';
-//            $dom     = new DOMDocument('1.0', 'utf-8');
-//            $root      = $dom->createElement('ApplicationForm');
-//            for($i=0; $i<count($myData); $i++){
-//                $title = $myData[$i]->title;
-//                $firstName  = $myData[$i]->firstName;
-//
-//                $book = $dom->createElement('ApplicationForm');
-//                $title1     = $dom->createElement('Title', $title);
-//                $book->appendChild($title1);
-//                $firstName1 = $dom->createElement('FirstName', $firstName);
-//                $book->appendChild($firstName1);
-//
-//                $root->appendChild($book);
-//            }
-//            $dom->appendChild($root);
-//            $dom->save($filePath);
-//            header('Content-disposition: attachment; filename="applicationForm.xml"');
-//            header('Content-type: "text/xml"; charset="utf8"');
-//            readfile('public/xml/book.xml');
-//
-//        }
+        $filePath = 'public/xml/book.xml';
+        $dom = new DOMDocument('1.0', 'utf-8');
+        $root = $dom->createElement('ApplicationForm');
 
+        foreach($_POST['products'] as $row=>$value) {
+            $language = $this->StudentApplicationm->language1($value);
+            // $language = $language->firstLanguageEnglish;
+            if($language->firstLanguageEnglish== 0 ){
+                $language->firstLanguageEnglish= "No";
+                $myData = $this->StudentApplicationm->allDetails1($value);
+                $Ethnicity = $this->StudentApplicationm->equalopportunity1($value);
+                $disability = $this->StudentApplicationm->disability1($value);
+                $religionbelief = $this->StudentApplicationm->religionbelief1($value);
+                $orientation = $this->StudentApplicationm->orientation1($value);
+                $test = $this->StudentApplicationm->test1($value);
+
+                // $test = $test->fkTestId;
+                if ($test->fkTestId== 1 ){
+                    $test->fkTestId= "IELTS";
+                }elseif ($test->fkTestId== 2){
+                    $test->fkTestId= "TOEFL";
+                }
+                elseif ($test->fkTestId== 3){
+                    $test->fkTestId= "PTE";
+                }
+                else{
+                    $test->fkTestId= "Other";
+                }
+
+                $listening = $this->StudentApplicationm->listening1($value);
+                $reading = $this->StudentApplicationm->reading1($value);
+                $writing = $this->StudentApplicationm->writing1($value);
+                $speaking = $this->StudentApplicationm->speaking1($value);
+                $overallScore = $this->StudentApplicationm->overallScore1($value);
+                $expireDate = $this->StudentApplicationm->expireDate1($value);
+                $other = $this->StudentApplicationm->other1($value);
+
+
+                $book = $dom->createElement('ApplicationForm');
+                $title1 = $dom->createElement('Title', $myData->title);
+                $book->appendChild($title1);
+                $firstName1 = $dom->createElement('FirstName', $myData->firstName);
+                $book->appendChild($firstName1);
+                $surName1 = $dom->createElement('Surname', $myData->surName);
+                $book->appendChild($surName1);
+                $dateOfBirth1 = $dom->createElement('DateOfBirth', $myData->dateOfBirth);
+                $book->appendChild($dateOfBirth1);
+                $gender1 = $dom->createElement('Gender', $myData->gender);
+                $book->appendChild($gender1);
+                $ganderChange1 = $dom->createElement('GenderChange', $myData->ganderChange);
+                $book->appendChild($ganderChange1);
+                $placeOfBirth1 = $dom->createElement('PlaceOfBirth', $myData->placeOfBirth);
+                $book->appendChild($placeOfBirth1);
+                $nationality1 = $dom->createElement('Nationality', $myData->nationality);
+                $book->appendChild($nationality1);
+                $passportNo1 = $dom->createElement('PassportNo', $myData->passportNo);
+                $book->appendChild($passportNo1);
+                $passportExpiryDate1 = $dom->createElement('PPExpiryDate', $myData->passportExpiryDate);
+                $book->appendChild($passportExpiryDate1);
+                $ukEntryDate1 = $dom->createElement('UKEntryDate', $myData->ukEntryDate);
+                $book->appendChild($ukEntryDate1);
+                $visaExpiryDate1 = $dom->createElement('VisaExpiryDate', $myData->visaExpiryDate);
+                $book->appendChild($visaExpiryDate1);
+                $visaType1 = $dom->createElement('VisaType', $myData->visaType);
+                $book->appendChild($visaType1);
+                $currentAddress1 = $dom->createElement('AddressLine1', $myData->currentAddress);
+                $book->appendChild($currentAddress1);
+                $currentAddress21 = $dom->createElement('AddressLine2', $myData->currentAddress2);
+                $book->appendChild($currentAddress21);
+                $currentAddress31 = $dom->createElement('AddressLine3', $myData->currentAddress3);
+                $book->appendChild($currentAddress31);
+                $currentAddressCity1 = $dom->createElement('City_Town', $myData->currentAddressCity);
+                $book->appendChild($currentAddressCity1);
+                $currentAddressState1 = $dom->createElement('County_State', $myData->currentAddressState);
+                $book->appendChild($currentAddressState1);
+                $currentAddressPo1 = $dom->createElement('PostCode', $myData->currentAddressPo);
+                $book->appendChild($currentAddressPo1);
+                $currentAddressCountry1 = $dom->createElement('Country', $myData->currentAddressCountry);
+                $book->appendChild($currentAddressCountry1);
+                $telephoneNo1 = $dom->createElement('Telephone', $myData->telephoneNo);
+                $book->appendChild($telephoneNo1);
+                $mobileNo1 = $dom->createElement('Mobile', $myData->mobileNo);
+                $book->appendChild($mobileNo1);
+                $email1 = $dom->createElement('Email', $myData->email);
+                $book->appendChild($email1);
+                $fax1 = $dom->createElement('Fax', $myData->fax);
+                $book->appendChild($fax1);
+                $permanentAddress1 = $dom->createElement('Permanent_Address_Line1', $myData->permanentAddress);
+                $book->appendChild($permanentAddress1);
+                $permanentAddress21 = $dom->createElement('Permanent_Address_Line2', $myData->permanentAddress2);
+                $book->appendChild($permanentAddress21);
+                $permanentAddress31 = $dom->createElement('Permanent_Address_Line3', $myData->permanentAddress3);
+                $book->appendChild($permanentAddress31);
+                $overseasAddressPo1 = $dom->createElement('Post_Code', $myData->overseasAddressPo);
+                $book->appendChild($overseasAddressPo1);
+                $permanentAddressCountry1 = $dom->createElement('Country', $myData->permanentAddressCountry);
+                $book->appendChild($permanentAddressCountry1);
+                $permanentAddressCity1 = $dom->createElement('City', $myData->permanentAddressCity);
+                $book->appendChild($permanentAddressCity1);
+                $permanentAddressState1 = $dom->createElement('State', $myData->permanentAddressState);
+                $book->appendChild($permanentAddressState1);
+//            $applydate1 = $dom->createElement('ApplyDate', $applydate);
+//            $book->appendChild($applydate1);
+                $emergencyContactName1 = $dom->createElement('EmergencyContactName', $myData->emergencyContactName);
+                $book->appendChild($emergencyContactName1);
+                $emergencyContactTitle1 = $dom->createElement('EmergencyContactTitle', $myData->emergencyContactTitle);
+                $book->appendChild($emergencyContactTitle1);
+                $emergencyContactRelation1 = $dom->createElement('EmergencyContactRelation', $myData->emergencyContactRelation);
+                $book->appendChild($emergencyContactRelation1);
+                $emergencyContactAddress1 = $dom->createElement('Emergency_Address_Line1', $myData->emergencyContactAddress);
+                $book->appendChild($emergencyContactAddress1);
+                $emergencyContactAddress21 = $dom->createElement('Emergency_Address_Line2', $myData->emergencyContactAddress2);
+                $book->appendChild($emergencyContactAddress21);
+                $emergencyContactAddress31 = $dom->createElement('Emergency_Address_Line3', $myData->emergencyContactAddress3);
+                $book->appendChild($emergencyContactAddress31);
+                $emergencyContactAddressCity1 = $dom->createElement('City', $myData->emergencyContactAddressCity);
+                $book->appendChild($emergencyContactAddressCity1);
+                $emergencyContactAddressState1 = $dom->createElement('State', $myData->emergencyContactAddressState);
+                $book->appendChild($emergencyContactAddressState1);
+                $emergencyContactAddressPo1 = $dom->createElement('Post_code', $myData->emergencyContactAddressPo);
+                $book->appendChild($emergencyContactAddressPo1);
+                $emergencyContactCountry1 = $dom->createElement('Country', $myData->emergencyContactCountry);
+                $book->appendChild($emergencyContactCountry1);
+                $emergencyContactMobile1 = $dom->createElement('Emergency_Mobile', $myData->emergencyContactMobile);
+                $book->appendChild($emergencyContactMobile1);
+                $emergencyContactEmail1 = $dom->createElement('Emergency_Contact_Email', $myData->emergencyContactEmail);
+                $book->appendChild($emergencyContactEmail1);
+                $courseName1 = $dom->createElement('CourseName', $myData->courseName);
+                $book->appendChild($courseName1);
+                $awardingBody1 = $dom->createElement('Awarding_Body', $myData->awardingBody);
+                $book->appendChild($awardingBody1);
+                $courseSession1 = $dom->createElement('CourseSession', $myData->courseSession);
+                $book->appendChild($courseSession1);
+                $courseYear1 = $dom->createElement('Year', $myData->courseYear);
+                $book->appendChild($courseYear1);
+                $ucasCourseCode1 = $dom->createElement('ULN_No', $myData->ucasCourseCode);
+                $book->appendChild($ucasCourseCode1);
+                $courseLevel1 = $dom->createElement('UCAS_Course_Code', $myData->courseLevel);
+                $book->appendChild($courseLevel1);
+                $courseStartDate1 = $dom->createElement('Course_Start_Date', $myData->courseStartDate);
+                $book->appendChild($courseStartDate1);
+                $courseEndDate1 = $dom->createElement('Course_End_Date', $myData->courseEndDate);
+                $book->appendChild($courseEndDate1);
+                $methodOfStudy1 = $dom->createElement('Mode_of_study', $myData->methodOfStudy);
+                $book->appendChild($methodOfStudy1);
+                $timeOfStudy1 = $dom->createElement('Time_of_study', $myData->timeOfStudy);
+                $book->appendChild($timeOfStudy1);
+                $qualification1 = $dom->createElement('Qualification_Name', $myData->qualification);
+                $book->appendChild($qualification1);
+                $institution1 = $dom->createElement('Institution', $myData->institution);
+                $book->appendChild($institution1);
+                $qualificationLevel1 = $dom->createElement('Qualification_Level', $myData->qualificationLevel);
+                $book->appendChild($qualificationLevel1);
+                $subject1 = $dom->createElement('Subject', $myData->subject);
+                $book->appendChild($subject1);
+                $completionYear1 = $dom->createElement('Completion_Year', $myData->completionYear);
+                $book->appendChild($completionYear1);
+                $obtainResult1 = $dom->createElement('Grade', $myData->obtainResult);
+                $book->appendChild($obtainResult1);
+                $organization1 = $dom->createElement('Organisation', $myData->organization);
+                $book->appendChild($organization1);
+                $positionHeld1 = $dom->createElement('Position_Held', $myData->positionHeld);
+                $book->appendChild($positionHeld1);
+                $startDate11 = $dom->createElement('StartDate', $myData->startDate);
+                $book->appendChild($startDate11);
+                $endDate11 = $dom->createElement('EndDate', $myData->endDate);
+                $book->appendChild($endDate11);
+                $courseChoiceStatement1 = $dom->createElement('Course_Choice_Statement', $myData->courseChoiceStatement);
+                $book->appendChild($courseChoiceStatement1);
+                $collegeChoiceStatement1 = $dom->createElement('College_Choice_Statement', $myData->collegeChoiceStatement);
+                $book->appendChild($collegeChoiceStatement1);
+                $sourceOfFinance1 = $dom->createElement('Source_Of_Finance', $myData->sourceOfFinance);
+                $book->appendChild($sourceOfFinance1);
+                $name1 = $dom->createElement('Name', $myData->name);
+                $book->appendChild($name1);
+                $title111 = $dom->createElement('Title', $myData->title);
+                $book->appendChild($title111);
+                $relation1 = $dom->createElement('Relation', $myData->relation);
+                $book->appendChild($relation1);
+                $address1 = $dom->createElement('Address_Line1', $myData->address);
+                $book->appendChild($address1);
+                $address21 = $dom->createElement('Address_Line_2', $myData->address2);
+                $book->appendChild($address21);
+                $address31 = $dom->createElement('Address_Line3', $myData->address3);
+                $book->appendChild($address31);
+                $city1 = $dom->createElement('CityOrTown', $myData->city);
+                $book->appendChild($city1);
+                $state1 = $dom->createElement('CountyOrState', $myData->state);
+                $book->appendChild($state1);
+                $addressPo1 = $dom->createElement('PostCode', $myData->addressPo);
+                $book->appendChild($addressPo1);
+                $country1 = $dom->createElement('Country', $myData->country);
+                $book->appendChild($country1);
+                $mobile1 = $dom->createElement('Mobile', $myData->mobile);
+                $book->appendChild($mobile1);
+                $telephone1 = $dom->createElement('Telephone', $myData->telephone);
+                $book->appendChild($telephone1);
+                $email21 = $dom->createElement('Email', $myData->email);
+                $book->appendChild($email21);
+                $name231 = $dom->createElement('RefereesName', $myData->name);
+                $book->appendChild($name231);
+                $title231 = $dom->createElement('Title', $myData->title);
+                $book->appendChild($title231);
+                $workingCompany1 = $dom->createElement('Institution', $myData->workingCompany);
+                $book->appendChild($workingCompany1);
+                $jobTitle1 = $dom->createElement('Position', $myData->jobTitle);
+                $book->appendChild($jobTitle1);
+                $address231 = $dom->createElement('Address_Line1', $myData->address);
+                $book->appendChild($address231);
+                $address241 = $dom->createElement('Address_Line2', $myData->address2);
+                $book->appendChild($address241);
+                $address341 = $dom->createElement('Address_Line3', $myData->address3);
+                $book->appendChild($address341);
+                $city341 = $dom->createElement('City', $myData->city);
+                $book->appendChild($city341);
+                $state341 = $dom->createElement('State', $myData->state);
+                $book->appendChild($state341);
+                $postCode341 = $dom->createElement('Post_Code', $myData->postCode);
+                $book->appendChild($postCode341);
+                $fkCountry341 = $dom->createElement('Country', $myData->fkCountry);
+                $book->appendChild($fkCountry341);
+                $contactNo341 = $dom->createElement('Contact_No', $myData->contactNo);
+                $book->appendChild($contactNo341);
+                $email441 = $dom->createElement('Email', $myData->email);
+                $book->appendChild($email441);
+                $ethnicity1 = $dom->createElement('Disability', $Ethnicity->subGroupTitle);
+                $book->appendChild($ethnicity1);
+                $disability1 = $dom->createElement('Ethnicity', $disability->subGroupTitle);
+                $book->appendChild($disability1);
+                $religionbelief1 = $dom->createElement('Religion_Belief', $religionbelief->subGroupTitle);
+                $book->appendChild($religionbelief1);
+                $orientation1 = $dom->createElement('Sexual_Orientation', $orientation->subGroupTitle);
+                $book->appendChild($orientation1);
+                $language1 = $dom->createElement('FirstLanguage', $language->firstLanguageEnglish);
+                $book->appendChild($language1);
+                $test1 = $dom->createElement('Tests', $test->fkTestId);
+                $book->appendChild($test1);
+                $listening1 = $dom->createElement('Listening', $listening->score);
+                $book->appendChild($listening1);
+                $reading1 = $dom->createElement('Reading', $reading->score);
+                $book->appendChild($reading1);
+                $writing1 = $dom->createElement('Writing', $writing->score);
+                $book->appendChild($writing1);
+                $speaking1 = $dom->createElement('Speaking', $speaking->score);
+                $book->appendChild($speaking1);
+                $overallScore1 = $dom->createElement('Overall', $overallScore->overallScore);
+                $book->appendChild($overallScore1);
+                $expireDate1 = $dom->createElement('ExpiryDate', $expireDate->expireDate);
+                $book->appendChild($expireDate1);
+                $other1 = $dom->createElement('Other', $other->other);
+                $book->appendChild($other1);
+
+                $root->appendChild($book);
+
+                $dom->appendChild($root);
+                $dom->save($filePath);
+
+            }
+            elseif($language->firstLanguageEnglish== 1 ){
+                $language->firstLanguageEnglish= "Yes";
+                $myData = $this->StudentApplicationm->allDetails1($value);
+                $Ethnicity = $this->StudentApplicationm->equalopportunity1($value);
+                $disability = $this->StudentApplicationm->disability1($value);
+                $religionbelief = $this->StudentApplicationm->religionbelief1($value);
+                $orientation = $this->StudentApplicationm->orientation1($value);
+
+
+                $book = $dom->createElement('ApplicationForm');
+                $title1 = $dom->createElement('Title', $myData->title);
+                $book->appendChild($title1);
+                $firstName1 = $dom->createElement('FirstName', $myData->firstName);
+                $book->appendChild($firstName1);
+                $surName1 = $dom->createElement('Surname', $myData->surName);
+                $book->appendChild($surName1);
+                $dateOfBirth1 = $dom->createElement('DateOfBirth', $myData->dateOfBirth);
+                $book->appendChild($dateOfBirth1);
+                $gender1 = $dom->createElement('Gender', $myData->gender);
+                $book->appendChild($gender1);
+                $ganderChange1 = $dom->createElement('GenderChange', $myData->ganderChange);
+                $book->appendChild($ganderChange1);
+                $placeOfBirth1 = $dom->createElement('PlaceOfBirth', $myData->placeOfBirth);
+                $book->appendChild($placeOfBirth1);
+                $nationality1 = $dom->createElement('Nationality', $myData->nationality);
+                $book->appendChild($nationality1);
+                $passportNo1 = $dom->createElement('PassportNo', $myData->passportNo);
+                $book->appendChild($passportNo1);
+                $passportExpiryDate1 = $dom->createElement('PPExpiryDate', $myData->passportExpiryDate);
+                $book->appendChild($passportExpiryDate1);
+                $ukEntryDate1 = $dom->createElement('UKEntryDate', $myData->ukEntryDate);
+                $book->appendChild($ukEntryDate1);
+                $visaExpiryDate1 = $dom->createElement('VisaExpiryDate', $myData->visaExpiryDate);
+                $book->appendChild($visaExpiryDate1);
+                $visaType1 = $dom->createElement('VisaType', $myData->visaType);
+                $book->appendChild($visaType1);
+                $currentAddress1 = $dom->createElement('AddressLine1', $myData->currentAddress);
+                $book->appendChild($currentAddress1);
+                $currentAddress21 = $dom->createElement('AddressLine2', $myData->currentAddress2);
+                $book->appendChild($currentAddress21);
+                $currentAddress31 = $dom->createElement('AddressLine3', $myData->currentAddress3);
+                $book->appendChild($currentAddress31);
+                $currentAddressCity1 = $dom->createElement('City_Town', $myData->currentAddressCity);
+                $book->appendChild($currentAddressCity1);
+                $currentAddressState1 = $dom->createElement('County_State', $myData->currentAddressState);
+                $book->appendChild($currentAddressState1);
+                $currentAddressPo1 = $dom->createElement('PostCode', $myData->currentAddressPo);
+                $book->appendChild($currentAddressPo1);
+                $currentAddressCountry1 = $dom->createElement('Country', $myData->currentAddressCountry);
+                $book->appendChild($currentAddressCountry1);
+                $telephoneNo1 = $dom->createElement('Telephone', $myData->telephoneNo);
+                $book->appendChild($telephoneNo1);
+                $mobileNo1 = $dom->createElement('Mobile', $myData->mobileNo);
+                $book->appendChild($mobileNo1);
+                $email1 = $dom->createElement('Email', $myData->email);
+                $book->appendChild($email1);
+                $fax1 = $dom->createElement('Fax', $myData->fax);
+                $book->appendChild($fax1);
+                $permanentAddress1 = $dom->createElement('Permanent_Address_Line1', $myData->permanentAddress);
+                $book->appendChild($permanentAddress1);
+                $permanentAddress21 = $dom->createElement('Permanent_Address_Line2', $myData->permanentAddress2);
+                $book->appendChild($permanentAddress21);
+                $permanentAddress31 = $dom->createElement('Permanent_Address_Line3', $myData->permanentAddress3);
+                $book->appendChild($permanentAddress31);
+                $overseasAddressPo1 = $dom->createElement('Post_Code', $myData->overseasAddressPo);
+                $book->appendChild($overseasAddressPo1);
+                $permanentAddressCountry1 = $dom->createElement('Country', $myData->permanentAddressCountry);
+                $book->appendChild($permanentAddressCountry1);
+                $permanentAddressCity1 = $dom->createElement('City', $myData->permanentAddressCity);
+                $book->appendChild($permanentAddressCity1);
+                $permanentAddressState1 = $dom->createElement('State', $myData->permanentAddressState);
+                $book->appendChild($permanentAddressState1);
+//            $applydate1 = $dom->createElement('ApplyDate', $applydate);
+//            $book->appendChild($applydate1);
+                $emergencyContactName1 = $dom->createElement('EmergencyContactName', $myData->emergencyContactName);
+                $book->appendChild($emergencyContactName1);
+                $emergencyContactTitle1 = $dom->createElement('EmergencyContactTitle', $myData->emergencyContactTitle);
+                $book->appendChild($emergencyContactTitle1);
+                $emergencyContactRelation1 = $dom->createElement('EmergencyContactRelation', $myData->emergencyContactRelation);
+                $book->appendChild($emergencyContactRelation1);
+                $emergencyContactAddress1 = $dom->createElement('Emergency_Address_Line1', $myData->emergencyContactAddress);
+                $book->appendChild($emergencyContactAddress1);
+                $emergencyContactAddress21 = $dom->createElement('Emergency_Address_Line2', $myData->emergencyContactAddress2);
+                $book->appendChild($emergencyContactAddress21);
+                $emergencyContactAddress31 = $dom->createElement('Emergency_Address_Line3', $myData->emergencyContactAddress3);
+                $book->appendChild($emergencyContactAddress31);
+                $emergencyContactAddressCity1 = $dom->createElement('City', $myData->emergencyContactAddressCity);
+                $book->appendChild($emergencyContactAddressCity1);
+                $emergencyContactAddressState1 = $dom->createElement('State', $myData->emergencyContactAddressState);
+                $book->appendChild($emergencyContactAddressState1);
+                $emergencyContactAddressPo1 = $dom->createElement('Post_code', $myData->emergencyContactAddressPo);
+                $book->appendChild($emergencyContactAddressPo1);
+                $emergencyContactCountry1 = $dom->createElement('Country', $myData->emergencyContactCountry);
+                $book->appendChild($emergencyContactCountry1);
+                $emergencyContactMobile1 = $dom->createElement('Emergency_Mobile', $myData->emergencyContactMobile);
+                $book->appendChild($emergencyContactMobile1);
+                $emergencyContactEmail1 = $dom->createElement('Emergency_Contact_Email', $myData->emergencyContactEmail);
+                $book->appendChild($emergencyContactEmail1);
+                $courseName1 = $dom->createElement('CourseName', $myData->courseName);
+                $book->appendChild($courseName1);
+                $awardingBody1 = $dom->createElement('Awarding_Body', $myData->awardingBody);
+                $book->appendChild($awardingBody1);
+                $courseSession1 = $dom->createElement('CourseSession', $myData->courseSession);
+                $book->appendChild($courseSession1);
+                $courseYear1 = $dom->createElement('Year', $myData->courseYear);
+                $book->appendChild($courseYear1);
+                $ucasCourseCode1 = $dom->createElement('ULN_No', $myData->ucasCourseCode);
+                $book->appendChild($ucasCourseCode1);
+                $courseLevel1 = $dom->createElement('UCAS_Course_Code', $myData->courseLevel);
+                $book->appendChild($courseLevel1);
+                $courseStartDate1 = $dom->createElement('Course_Start_Date', $myData->courseStartDate);
+                $book->appendChild($courseStartDate1);
+                $courseEndDate1 = $dom->createElement('Course_End_Date', $myData->courseEndDate);
+                $book->appendChild($courseEndDate1);
+                $methodOfStudy1 = $dom->createElement('Mode_of_study', $myData->methodOfStudy);
+                $book->appendChild($methodOfStudy1);
+                $timeOfStudy1 = $dom->createElement('Time_of_study', $myData->timeOfStudy);
+                $book->appendChild($timeOfStudy1);
+                $qualification1 = $dom->createElement('Qualification_Name', $myData->qualification);
+                $book->appendChild($qualification1);
+                $institution1 = $dom->createElement('Institution', $myData->institution);
+                $book->appendChild($institution1);
+                $qualificationLevel1 = $dom->createElement('Qualification_Level', $myData->qualificationLevel);
+                $book->appendChild($qualificationLevel1);
+                $subject1 = $dom->createElement('Subject', $myData->subject);
+                $book->appendChild($subject1);
+                $completionYear1 = $dom->createElement('Completion_Year', $myData->completionYear);
+                $book->appendChild($completionYear1);
+                $obtainResult1 = $dom->createElement('Grade', $myData->obtainResult);
+                $book->appendChild($obtainResult1);
+                $organization1 = $dom->createElement('Organisation', $myData->organization);
+                $book->appendChild($organization1);
+                $positionHeld1 = $dom->createElement('Position_Held', $myData->positionHeld);
+                $book->appendChild($positionHeld1);
+                $startDate11 = $dom->createElement('StartDate', $myData->startDate);
+                $book->appendChild($startDate11);
+                $endDate11 = $dom->createElement('EndDate', $myData->endDate);
+                $book->appendChild($endDate11);
+                $courseChoiceStatement1 = $dom->createElement('Course_Choice_Statement', $myData->courseChoiceStatement);
+                $book->appendChild($courseChoiceStatement1);
+                $collegeChoiceStatement1 = $dom->createElement('College_Choice_Statement', $myData->collegeChoiceStatement);
+                $book->appendChild($collegeChoiceStatement1);
+                $sourceOfFinance1 = $dom->createElement('Source_Of_Finance', $myData->sourceOfFinance);
+                $book->appendChild($sourceOfFinance1);
+                $name1 = $dom->createElement('Name', $myData->name);
+                $book->appendChild($name1);
+                $title111 = $dom->createElement('Title', $myData->title);
+                $book->appendChild($title111);
+                $relation1 = $dom->createElement('Relation', $myData->relation);
+                $book->appendChild($relation1);
+                $address1 = $dom->createElement('Address_Line1', $myData->address);
+                $book->appendChild($address1);
+                $address21 = $dom->createElement('Address_Line_2', $myData->address2);
+                $book->appendChild($address21);
+                $address31 = $dom->createElement('Address_Line3', $myData->address3);
+                $book->appendChild($address31);
+                $city1 = $dom->createElement('CityOrTown', $myData->city);
+                $book->appendChild($city1);
+                $state1 = $dom->createElement('CountyOrState', $myData->state);
+                $book->appendChild($state1);
+                $addressPo1 = $dom->createElement('PostCode', $myData->addressPo);
+                $book->appendChild($addressPo1);
+                $country1 = $dom->createElement('Country', $myData->country);
+                $book->appendChild($country1);
+                $mobile1 = $dom->createElement('Mobile', $myData->mobile);
+                $book->appendChild($mobile1);
+                $telephone1 = $dom->createElement('Telephone', $myData->telephone);
+                $book->appendChild($telephone1);
+                $email21 = $dom->createElement('Email', $myData->email);
+                $book->appendChild($email21);
+                $name231 = $dom->createElement('RefereesName', $myData->name);
+                $book->appendChild($name231);
+                $title231 = $dom->createElement('Title', $myData->title);
+                $book->appendChild($title231);
+                $workingCompany1 = $dom->createElement('Institution', $myData->workingCompany);
+                $book->appendChild($workingCompany1);
+                $jobTitle1 = $dom->createElement('Position', $myData->jobTitle);
+                $book->appendChild($jobTitle1);
+                $address231 = $dom->createElement('Address_Line1', $myData->address);
+                $book->appendChild($address231);
+                $address241 = $dom->createElement('Address_Line2', $myData->address2);
+                $book->appendChild($address241);
+                $address341 = $dom->createElement('Address_Line3', $myData->address3);
+                $book->appendChild($address341);
+                $city341 = $dom->createElement('City', $myData->city);
+                $book->appendChild($city341);
+                $state341 = $dom->createElement('State', $myData->state);
+                $book->appendChild($state341);
+                $postCode341 = $dom->createElement('Post_Code', $myData->postCode);
+                $book->appendChild($postCode341);
+                $fkCountry341 = $dom->createElement('Country', $myData->fkCountry);
+                $book->appendChild($fkCountry341);
+                $contactNo341 = $dom->createElement('Contact_No', $myData->contactNo);
+                $book->appendChild($contactNo341);
+                $email441 = $dom->createElement('Email', $myData->email);
+                $book->appendChild($email441);
+                $ethnicity1 = $dom->createElement('Disability', $Ethnicity->subGroupTitle);
+                $book->appendChild($ethnicity1);
+                $disability1 = $dom->createElement('Ethnicity', $disability->subGroupTitle);
+                $book->appendChild($disability1);
+                $religionbelief1 = $dom->createElement('Religion_Belief', $religionbelief->subGroupTitle);
+                $book->appendChild($religionbelief1);
+                $orientation1 = $dom->createElement('Sexual_Orientation', $orientation->subGroupTitle);
+                $book->appendChild($orientation1);
+                $language1 = $dom->createElement('FirstLanguage', $language->firstLanguageEnglish);
+                $book->appendChild($language1);
+                $root->appendChild($book);
+
+                $dom->appendChild($root);
+                $dom->save($filePath);
+
+
+            }
+//
+//
+            // $root->appendChild($book);
+
+            // $dom->appendChild($root);
+            // $dom->save($filePath);
+
+
+        }
+
+        header('Content-disposition: attachment; filename="applicationForm.xml"');
+        header('Content-type: "text/xml"; charset="utf8"');
+        readfile('public/xml/book.xml');
     }
 
     //////////////////CSV//////////////////

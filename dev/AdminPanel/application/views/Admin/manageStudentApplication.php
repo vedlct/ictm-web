@@ -47,7 +47,7 @@
 
                             <div align="center" class="col-md-4 col-sm-4">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Course:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by Course:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="courseTitle" id="courseTitle"  required>
                                             <option value="" selected><?php echo ALL_COURSE_TITLE?></option>
@@ -60,7 +60,7 @@
                             </div>
                             <div align="center" class="col-md-4 col-sm-4">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search User:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by User Type:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="type" id="userTitle"  required>
                                             <option value="" selected><?php echo ALL_USER_TITLE?></option>
@@ -83,7 +83,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Course Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date(d-m-Y)</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%"> Action </th>
                                     </tr>
                                     </thead>
@@ -94,8 +94,8 @@
                             </div>
                             <button onclick="downloadexcel()" type="btn"> Download CSV</button>
 
-                            <button onclick="downloadxml()" type="btn"> Download XML</button>
-<!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
+                            <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn"> Download XML</button></a>
+                            <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
                         </div>
 
                     </section>
@@ -146,7 +146,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search:</span> " //search
+                "sSearch": "<span>Search By Affiliation Title:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });
@@ -180,107 +180,107 @@
 
     }
 
-//    function downloadexcel() {
-//
-//
-////            var i;
-////            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
-////            $(".chk:checked").each(function () {
-////                selecteds.push($(this).val());
-////            });
-//
-//
-//        var products=selecteds;
-//
-////        alert(products);
-//
-//        if (products.length >0) {
-//
-//            $.ajax({
-//                type: 'POST',
-//                url: "<?php //echo base_url('Admin/StudentApplication/csvFile') ?>//",
-//                cache: false,
-//                data: {'products': products},
-//                success: function (data) {
-//
-//                    $('#SessionMessage').load(document.URL +  ' #SessionMessage');
-//                    table.ajax.reload();  //just reload table
-//
-//                    selecteds=[];
-//
-//                    $(':checkbox:checked').prop('checked',false);
-//                    alert(data);
-//
-//                    if (data.success=='1'){
-//
-//                        $.alert({
-//                            title: 'Success!',
-//                            type: 'green',
-//                            content: data.message,
-//                            buttons: {
-//                                tryAgain: {
-//                                    text: 'Ok',
-//                                    btnClass: 'btn-blue',
-//                                    action: function () {
-//
-//
-//                                    }
-//                                }
-//
-//                            }
-//                        });
-//
-//
-//                    }else if(data.success=='0'){
-//
-//                        $.alert({
-//                            title: 'Alert!',
-//                            type: 'Red',
-//                            content: data.message,
-//                            buttons: {
-//                                tryAgain: {
-//                                    text: 'Ok',
-//                                    btnClass: 'btn-red',
-//                                    action: function () {
-//
-//
-//                                    }
-//                                }
-//
-//                            }
-//                        });
-//
-//
-//                    }
-//
-//
-//                }
-//
-//            });
-//        }
-//        else {
-//            // alert("Please Select a product first");
-//
-//            $.alert({
-//                title: 'Alert!',
-//                type: 'Red',
-//                content: 'Please select your Product(s) for exporting into the Product and Offer file',
-//                buttons: {
-//                    tryAgain: {
-//                        text: 'Ok',
-//                        btnClass: 'btn-red',
-//                        action: function () {
-//
-//
-//                        }
-//                    }
-//
-//                }
-//            });
-//        }
-//    }
+    //    function downloadexcel() {
+    //
+    //
+    ////            var i;
+    ////            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+    ////            $(".chk:checked").each(function () {
+    ////                selecteds.push($(this).val());
+    ////            });
+    //
+    //
+    //        var products=selecteds;
+    //
+    ////        alert(products);
+    //
+    //        if (products.length >0) {
+    //
+    //            $.ajax({
+    //                type: 'POST',
+    //                url: "<?php //echo base_url('Admin/StudentApplication/csvFile') ?>//",
+    //                cache: false,
+    //                data: {'products': products},
+    //                success: function (data) {
+    //
+    //                    $('#SessionMessage').load(document.URL +  ' #SessionMessage');
+    //                    table.ajax.reload();  //just reload table
+    //
+    //                    selecteds=[];
+    //
+    //                    $(':checkbox:checked').prop('checked',false);
+    //                    alert(data);
+    //
+    //                    if (data.success=='1'){
+    //
+    //                        $.alert({
+    //                            title: 'Success!',
+    //                            type: 'green',
+    //                            content: data.message,
+    //                            buttons: {
+    //                                tryAgain: {
+    //                                    text: 'Ok',
+    //                                    btnClass: 'btn-blue',
+    //                                    action: function () {
+    //
+    //
+    //                                    }
+    //                                }
+    //
+    //                            }
+    //                        });
+    //
+    //
+    //                    }else if(data.success=='0'){
+    //
+    //                        $.alert({
+    //                            title: 'Alert!',
+    //                            type: 'Red',
+    //                            content: data.message,
+    //                            buttons: {
+    //                                tryAgain: {
+    //                                    text: 'Ok',
+    //                                    btnClass: 'btn-red',
+    //                                    action: function () {
+    //
+    //
+    //                                    }
+    //                                }
+    //
+    //                            }
+    //                        });
+    //
+    //
+    //                    }
+    //
+    //
+    //                }
+    //
+    //            });
+    //        }
+    //        else {
+    //            // alert("Please Select a product first");
+    //
+    //            $.alert({
+    //                title: 'Alert!',
+    //                type: 'Red',
+    //                content: 'Please select your Product(s) for exporting into the Product and Offer file',
+    //                buttons: {
+    //                    tryAgain: {
+    //                        text: 'Ok',
+    //                        btnClass: 'btn-red',
+    //                        action: function () {
+    //
+    //
+    //                        }
+    //                    }
+    //
+    //                }
+    //            });
+    //        }
+    //    }
 
-        function downloadexcel() {
+    function downloadexcel() {
         var products=selecteds;
 //        alert(products);
         if (products.length >0) {
@@ -350,23 +350,40 @@
                 cache: false,
                 data: {'products': products},
                 success: function (data) {
+                    // var Obj = JSON.parse(data)
+                    // alert("ok");
+//                    var downloadLink = document.createElement("a");
+//                    var fileData = ['\ufeff'+data];
 //
-                    var downloadLink = document.createElement("a");
-                    var fileData = ['\ufeff'+data];
+//                    var blobObject = new Blob(fileData,{
+//                        type: "text/plain;charset=utf-8;"
+//                    });
+//
+//                    var url = URL.createObjectURL(blobObject);
+//                    downloadLink.href = url;
+//                    downloadLink.download = "ApplicationForm.xml";
+//                    /*
+//                     * Actually download CSV
+//                     */
+//                    document.body.appendChild(downloadLink);
+//                    downloadLink.click();
+//                    document.body.removeChild(downloadLink);
+//                     var xmltext = "<sometag><someothertag>"+data+"</someothertag></sometag>";
+//                     var pom = document.createElement('a');
+//
+//                     var filename = "applicationForm.xml";
+//                     var pom = document.createElement('a');
+//                     var bb = new Blob([xmltext], {type: 'text/plain'});
+//
+//
+//                     pom.setAttribute('href', window.URL.createObjectURL(bb));
+//                     pom.setAttribute('download', filename);
+//
+//                     pom.dataset.downloadurl = ['text/plain', pom.download, pom.href].join(':');
+//                     pom.draggable = true;
+//                     pom.classList.add('dragout');
+//                     pom.click();
 
-                    var blobObject = new Blob(fileData,{
-                        type: "text/xml;charset=utf-8;"
-                    });
-
-                    var url = URL.createObjectURL(blobObject);
-                    downloadLink.href = url;
-                    downloadLink.download = "ApplicationForm.xml";
-                    /*
-                     * Actually download CSV
-                     */
-                    document.body.appendChild(downloadLink);
-                    downloadLink.click();
-                    document.body.removeChild(downloadLink);
                     selecteds=[];
                     $(':checkbox:checked').prop('checked',false);
 
