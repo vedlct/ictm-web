@@ -759,8 +759,9 @@
 <!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>-->
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next">Save for Later</button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"> Next</button>                            </div>
+                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next">Cancel</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next">Save for Later</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>                            </div>
                         </div>
                     </div>
                     <!--			                    </fieldset>-->

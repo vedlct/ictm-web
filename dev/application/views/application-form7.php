@@ -77,8 +77,10 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next">Cancel</button>
 <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7Save" class="btn btn-next">Save for later</button>
+<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Next</button>-->
 
                                     <?php
                                     $applicationId = $this->session->userdata('studentApplicationId');
@@ -90,6 +92,7 @@
                                          $fcount = count($files);
                                     }
                                     ?>
+
                                     <?php if($fcount >=1) { ?><a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn btn-next">Next</button> <?php }?></a>
                                 </div>
                             </div>
@@ -203,6 +206,7 @@
                         }else if(data=='1'){
 
                             $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+                            location.reload();
 
                         }
 

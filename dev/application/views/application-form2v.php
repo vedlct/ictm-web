@@ -172,7 +172,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                 <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-
+                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next">Cancel</button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save For Later</button>
                                 <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>
 
