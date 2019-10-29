@@ -184,10 +184,11 @@
 
                             <div class="form-group" >
                                 <div class="col-sm-offset-2 col-md-9" >
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                    <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save Application</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm6AndNext" class="btn btn-next">Save And Next</button>
+                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm6AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
 <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm8" ><button type="button"  class="btn ">Next</button></a>-->
                                 </div >
                             </div >

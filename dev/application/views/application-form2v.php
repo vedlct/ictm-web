@@ -170,11 +170,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-10">
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next">Save For Later</button>
-                                <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>
+                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
+                                <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button></a>
 
                             </div>
                         </div>

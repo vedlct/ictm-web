@@ -165,10 +165,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div class="col-sm-offset-2 col-md-9">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10Save" class="btn btn-next">Save For Later</button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Next</button>
+                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10Save" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
                                 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
                             </div>
                         </div>

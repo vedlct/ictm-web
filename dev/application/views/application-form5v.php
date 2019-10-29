@@ -48,14 +48,14 @@
 
                     <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-3">Why do you wish to do this course?<span style="color: red">*</span>:</label>
+                                <label class="control-label col-md-3">Why do you wish to do this course? <br> (Minimum 200 character required)<span style="color: red">*</span>:</label>
                                 <div class="col-md-9">
                                     <textarea id="courseChoiceStatement" minlength="200" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3">Where did you find out about the courses of our College?<span style="color: red">*</span>:</label>
+                                <label class="control-label col-md-3">Where did you find out about the courses of our College? <span style="color: red">*</span>:</label>
                                 <div class="col-md-9">
 
                                     <select tabindex="2" style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
@@ -70,11 +70,12 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-9">
-                                    <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                    <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save Application</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
+<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>-->
 
                                 </div>
                             </div>
