@@ -123,6 +123,11 @@ define("COURSE_TITLE", array ("HND in Computing","HND in Business","HND in Healt
 /////////user type////////////
 define("ALL_USER_TITLE", "ALL Users");
 define("USER_TITLE", array ("Student","Agent"));
+
+/////Status/////
+define("ALL_USER_STATUS", "ALL Status");
+define("USER_STATUS", array ("1","3"));
+define("USER_STATUS1", array ('Completed','Incomplete'));
 ////////////    faculy page      ///////////////
 define("SELECT_EMPLOYEE_TYPE", "Select Employee Type");
 define("EMPLOYEE_TYPE",array ("Part Time","Full Time"));

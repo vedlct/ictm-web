@@ -156,18 +156,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
 
+                        <div class="form-group" align="right">
+                            <div class="col-sm-offset-2 col-md-9">
+                                <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Add experience</span></button>
+                               </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-9">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Add experience</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
-<!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10Save" class="btn btn-next">Save For Later</button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm10AndNext" class="btn btn-next">Next</button>
+                                <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>-->
                             </div>
                         </div>
-
 
                     </div>
                 </form>

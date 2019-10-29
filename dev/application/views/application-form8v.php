@@ -165,14 +165,10 @@
                             </div>
 
 
-                            <div class="form-group">
+                            <div class="form-group" align="right">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                     <button type="submit"  class="btn btn-next"><span id="update" style="color: #FFFFFF;">Add Referees</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
-                                    <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn btn-next">Next</button></a>
-                                </div>
+                                   </div>
                             </div>
 
 
@@ -206,6 +202,14 @@
                                         </tr>
                                     <?php } ?>
                                 </table>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-md-10">
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
+                                    <a href="<?php echo base_url()?>ApplyForm7" ><button type="button"  class="btn btn-next">Next</button></a>
+                                </div>
                             </div>
 
                         </div>

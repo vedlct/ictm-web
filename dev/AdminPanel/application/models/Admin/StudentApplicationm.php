@@ -3,7 +3,7 @@ class StudentApplicationm extends CI_Model
 {
     /////////datatable//////////
     var $table = 'candidateinfo';
-    var $select =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','ictmcourse.courseTitle');
+    var $select =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','ictmcourse.courseTitle','studentapplicationform.isSubmited');
     var $column_order = array(null,null,null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','coursedetails.courseName','candidateinfo.applydate'); //set column field database for datatable orderable
     var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable searchable
     var $order = array('id' => 'desc'); // default order
@@ -17,12 +17,17 @@ class StudentApplicationm extends CI_Model
         {
             $this->db->where('type', $this->input->post('userTitle1'));
         }
+        elseif ($this->input->post('userStatus1'))
+        {
+            $this->db->where('isSubmited',$this->input->post('userStatus1'));
+        }
         $this->db->select($this->select);
         $this->db->join('studentapplicationform', 'studentapplicationform.id = candidateinfo.applicationId','left');
         $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
         $this->db->join('ictmcourse', 'ictmcourse.courseId = coursedetails.courseName','left');
         $this->db->join('studentregistration', 'studentregistration.id = studentapplicationform.studentOrAgentId','left');
-        $this->db->where('studentapplicationform.isSubmited','1');
+//        $this->db->where('studentapplicationform.isSubmited','1');
+        $this->db->where('studentapplicationform.isSubmited != ',2,FALSE);
         $this->db->from($this->table);
         $i = 0;
         foreach ($this->column_search as $item) // loop column
@@ -311,7 +316,7 @@ class StudentApplicationm extends CI_Model
         return $query->result();
     }
 
-    ////multi user csv////
+    ////multi user ////
     public function allDetails1($applicationId){
         $this->db->select('candidateinfo.title,candidateinfo.courseChoiceStatement,candidateinfo.collegeChoiceStatement,firstName,surName,otherNames,dateOfBirth,ganderChange,gender,placeOfBirth,nationality,passportNo,passportExpiryDate,ukEntryDate,visaExpiryDate,visaType,currentAddress,currentAddress2,currentAddress3,currentAddressCity,currentAddressState,currentAddressPo,currentAddressCountry,telephoneNo,mobileNo,candidateinfo.email,candidateinfo.fax,permanentAddress,permanentAddress2,permanentAddress3,permanentAddressCity,permanentAddressState,overseasAddressPo,permanentAddressCountry,applydate,emergencyContactName,emergencyContactTitle,emergencyContactRelation,emergencyContactAddress,emergencyContactAddress2,emergencyContactAddress3,emergencyContactAddressCity,emergencyContactAddressState,emergencyContactAddressPo,emergencyContactCountry,emergencyContactMobile,emergencyContactEmail,courseName,coursedetails.awardingBody,courseSession,courseYear,ulnNo,ucasCourseCode,courseLevel,courseStartDate, courseEndDate, methodOfStudy, timeOfStudy,GROUP_CONCAT(qualification SEPARATOR ",\n") as qualification,GROUP_CONCAT(institution SEPARATOR ",\n") as institution,GROUP_CONCAT(qualificationLevel SEPARATOR ",\n") as qualificationLevel,GROUP_CONCAT(subject SEPARATOR ",\n") as subject,GROUP_CONCAT(completionYear SEPARATOR ",\n") as completionYear,GROUP_CONCAT(obtainResult SEPARATOR ",\n") as obtainResult,organization,positionHeld,personexperience.startDate,personexperience.endDate,courseChoiceStatement,collegeChoiceStatement,financer.*,candidateinfo.sourceOfFinance,candidatereferees.*,courseChoiceStatement,collegeChoiceStatement');
         $this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');

@@ -136,15 +136,10 @@
                             </div>
                             </div>
 
-                            <div class="form-group">
+                            <div class="form-group" align="right">
                                 <div class="col-sm-offset-2 col-md-9">
 
-                                    <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                     <button type="submit" class="btn btn-next"><span id="update" style="color: #FFFFFF;">Add proficiency</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
-
-                                    <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>
 
 
                                 </div>
@@ -197,6 +192,18 @@
                     </table>
                 </div>
 
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-md-9">
+
+                        <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous">Previous</button></a>
+                        <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                        <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next">Save And Next</button>
+
+                        <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next">Next</button></a>
+
+
+                    </div>
+                </div>
             </div>
 
 

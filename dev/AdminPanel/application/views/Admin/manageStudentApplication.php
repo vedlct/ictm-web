@@ -45,7 +45,21 @@
                         </header>
                         <div class="panel-body ">
 
-                            <div align="center" class="col-md-4 col-sm-4">
+                            <div align="center" class="col-md-3 col-sm-3">
+                                <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Status:</label>
+                                    <div class="m-bot15 col-md-5 col-sm-5">
+                                        <select class="form-control m-bot15" name="isSubmited" id="userStatus"  required>
+                                            <option value="" selected><?php echo ALL_USER_STATUS?></option>
+                                            <?php for ($i=0;$i<count(USER_STATUS);$i++){?>
+                                                <option value="<?php echo USER_STATUS[$i]?>"><?php echo USER_STATUS1[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div align="center" class="col-md-3 col-sm-3">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                     <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by Course:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
@@ -58,7 +72,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div align="center" class="col-md-4 col-sm-4">
+                            <div align="center" class="col-md-3 col-sm-3">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                     <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by User Type:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
@@ -92,9 +106,9 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <button onclick="downloadexcel()" type="btn"> Download CSV</button>
+                            <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
 
-                            <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn"> Download XML</button></a>
+                            <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn" class="btn btn-primary"><strong>Download XML</strong></button></a>
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
                         </div>
 
@@ -133,6 +147,8 @@
                 "data": function ( data ) {
                     data.courseTitle1 = $('#courseTitle').val();
                     data.userTitle1 = $('#userTitle').val();
+                    data.userStatus1 = $('#userStatus').val();
+
                 }
             },
             //Set column definition initialisation properties.
@@ -156,6 +172,10 @@
             table.search("").draw(); //just redraw myTableFilter
         });
         $('#userTitle').change(function(){ //button filter event click
+            table.ajax.reload();  //just reload table
+            table.search("").draw(); //just redraw myTableFilter
+        });
+        $('#userStatus').change(function(){ //button filter event click
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter
         });
