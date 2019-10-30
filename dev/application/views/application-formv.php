@@ -196,7 +196,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Passport / ID Expiry Date:</label>
                             <div class="col-md-9">
-                                <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
+                                <p><font color="red"> <?php echo form_error('pp'); ?></font></p>
 <!--                                <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="--><?php //echo $candidateInfo->passportExpiryDate ?><!--" >-->
 
 
@@ -249,7 +249,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">UK Entry Date:</label>
                             <div class="col-md-9">
-                                <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
+                                <p><font color="red"> <?php echo form_error('uk'); ?></font></p>
 <!--                                <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="--><?php //echo $candidateInfo->ukEntryDate ?><!--">-->
 
                                 <?php
@@ -292,11 +292,6 @@
                                 print '</select>';
                                 ?>
 
-                                &nbsp;&nbsp;&nbsp;
-                                &nbsp;
-
-
-
                             </div>
                         </div>
 
@@ -320,7 +315,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Visa Expiry Date:</label>
                             <div class="col-md-9">
-                                <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
+                                <p><font color="red"> <?php echo form_error('visa'); ?></font></p>
 <!--                                <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="--><?php //echo $candidateInfo->visaExpiryDate ?><!--">-->
                                 <?php
                                 $visa=$candidateInfo->visaExpiryDate;
@@ -909,6 +904,8 @@
         var startyear = $('#dobyear').val();
         var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
         var startdat = parseInt(document.getElementById('dobdate').value)+1;
+        var checktype = "dob";
+//        var passporttype ="passportExpiryDate";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
@@ -922,7 +919,7 @@
 
 
         //alert(dob);
-        if(validatedate(startdat, startmonth , startyear)=="false"){
+        if(validatedate(startdat, startmonth , startyear, checktype)=="false"){
             return false;
         }
 
@@ -931,13 +928,14 @@
         var startyearpp = $('#ppyear').val();
         var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
         var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
-
+        var passporttype = "pp";
+//        var passporttype ="passportExpiryDate";
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
         //alert(dob);
-        if(validatedate(startdatpp, startmonthpp , startyearpp)=="false"){
+        if(validatedate1(startdatpp, startmonthpp , startyearpp,passporttype)=="false"){
             return false;
         }
 
@@ -946,13 +944,14 @@
         var startyearuk = $('#ukyear').val();
         var startmonthuk = parseInt(document.getElementById('ukmonth').value)+1;
         var startdatuk = parseInt(document.getElementById('ukdate').value)+1;
+        var uktype ="uk";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
         //alert(dob);
-        if(validatedate(startdatuk, startmonthuk , startyearuk)=="false"){
+        if(validatedate2(startdatuk, startmonthuk , startyearuk,uktype)=="false"){
             return false;
         }
 
@@ -961,13 +960,14 @@
         var startyearvs = $('#visayear').val();
         var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
         var startdatvs = parseInt(document.getElementById('visadate').value)+1;
+        var visatype="visa";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
         //alert(dob);
-        if(validatedate(startdatvs, startmonthvs , startyearvs)=="false"){
+        if(validatedate3(startdatvs, startmonthvs , startyearvs,visatype)=="false"){
             return false;
         }
 
@@ -1059,7 +1059,7 @@
     }
 
 
-    function validatedate(dd , mm , yy)
+    function validatedate(dd , mm , yy, checktype)
     {
             var dd = parseInt(dd);
             var mm  = parseInt(mm);
@@ -1071,8 +1071,11 @@
             {
                 if (dd>ListofDays[mm-1])
                 {
-                    alert('Invalid date format!');
-                    return "false";
+                    if (checktype == "dob") {
+                        alert(' Date of Birth in invalid date format!');
+                        return "false";
+                    }
+
                 }
             }
             if (mm==2)
@@ -1084,16 +1087,162 @@
                 }
                 if ((lyear==false) && (dd>=29))
                 {
-                    alert('Invalid date format!');
-                    return "false";
+                    if (checktype == "dob") {
+                        alert(' Date of Birth in invalid date format!');
+                        return "false";
+                    }
+
+
                 }
                 if ((lyear==true) && (dd>29))
                 {
-                    alert('Invalid date format!');
-                    return "false";
+                    if (checktype == "dob") {
+                        alert(' Date of Birth in invalid date format!');
+                        return "false";
+                    }
+
                 }
             }
         }
+
+    function validatedate1(dd , mm , yy, passporttype)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (passporttype == "pp") {
+                    alert('Passport/ID Expiry Date in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (passporttype == "pp") {
+                    alert(' Passport/ID Expiry Date in invalid date format!');
+                    return "false";
+                }
+
+
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (passporttype == "pp") {
+                    alert(' Passport/ID Expiry Date in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+    }
+
+
+    function validatedate2(dd , mm , yy, uktype)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (uktype == "uk") {
+                    alert('UK Entry Date in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (uktype == "uk") {
+                    alert('UK Entry Date in invalid date format!');
+                    return "false";
+                }
+
+
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (uktype == "uk") {
+                    alert('UK Entry Date in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+    }
+
+    function validatedate3(dd , mm , yy, visatype)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (visatype == "visa") {
+                    alert('Visa Expiry Date in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (visatype == "visa") {
+                    alert('Visa Expiry Date in invalid date format!');
+                    return "false";
+                }
+
+
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (visatype == "visa") {
+                    alert('Visa Expiry Date in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+    }
 
 
 </script>
