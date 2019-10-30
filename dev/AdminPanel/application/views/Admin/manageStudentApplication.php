@@ -45,19 +45,46 @@
 <!--                            </span>-->
                         </header>
                         <div class="panel-body ">
+
+                            <div align="center" class="col-md-4 col-sm-4">
+                                <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Course:</label>
+                                    <div class="m-bot15 col-md-5 col-sm-5">
+                                        <select class="form-control m-bot15" name="courseTitle" id="courseTitle"  required>
+                                            <option value="" selected><?php echo ALL_COURSE_TITLE?></option>
+                                            <?php for ($i=0;$i<count(COURSE_TITLE);$i++){?>
+                                                <option value="<?php echo COURSE_TITLE[$i]?>"><?php echo COURSE_TITLE[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div align="center" class="col-md-4 col-sm-4">
+                                <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search User:</label>
+                                    <div class="m-bot15 col-md-5 col-sm-5">
+                                        <select class="form-control m-bot15" name="type" id="userTitle"  required>
+                                            <option value="" selected><?php echo ALL_USER_TITLE?></option>
+                                            <?php for ($i=0;$i<count(USER_TITLE);$i++){?>
+                                                <option value="<?php echo USER_TITLE[$i]?>"><?php echo USER_TITLE[$i]?></option>
+                                            <?php } ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="table table-responsive" style="overflow-x: inherit">
                                 <table class="table  table-advance  table-bordered table-hover" id="myTable">
                                     <thead>
 
                                     <tr align="center" bgcolor="#D3D3D3">
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>
+<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 5%">No</th>-->
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Application Id</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Course Name</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Application Id</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date(d-m-Y)</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%"> Action </th>
                                     </tr>
                                     </thead>
 
@@ -104,25 +131,39 @@
             // Load data for the table's content from an Ajax source
             "ajax": {
                 "url": "<?php echo base_url('Admin/StudentApplication/ajax_list')?>",
-                "type": "POST"
+                "type": "POST",
+                "data": function ( data ) {
+                    data.courseTitle1 = $('#courseTitle').val();
+                    data.userTitle1 = $('#userTitle').val();
+                }
+
             },
 
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [7], //first column / numbering column
+                    "targets": [6], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
             //for change search name
-//            "oLanguage": {
-//                "sSearch": "<span>Search By Affiliation Title:</span> " //search
-//            },
+            "oLanguage": {
+                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+            },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
 
 
         });
 //        $(".dataTables_filter input").attr("placeholder", "Search By Title");
+        $('#courseTitle').change(function(){ //button filter event click
+            table.ajax.reload();  //just reload table
+            table.search("").draw(); //just redraw myTableFilter
+        });
+        $('#userTitle').change(function(){ //button filter event click
+            table.ajax.reload();  //just reload table
+            table.search("").draw(); //just redraw myTableFilter
+        });
+
 
     });
 
