@@ -180,8 +180,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Telephone:</label>
                                 <div class="col-md-9">
-                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input tabindex="11" type="text" class="form-control" id="telephone" name="telephone"minlength="11" maxlength="20" value="<?php echo set_value('telephone'); ?>" >
+                                    <input tabindex="11" type="text" class="form-control" id="" name="telephone"minlength="11" maxlength="20" value="<?php echo set_value('telephone'); ?>" >
                                 </div>
                             </div>
 

@@ -288,7 +288,7 @@
                     return false;
                 }
                 if (telephone1.length >20){
-                    alert('Telephone must be less then 20 charecter');
+                    alert('Telephone must be less then 20 digit');
                     return false;
                 }
                 if (email1 == ""){

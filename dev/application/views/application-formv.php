@@ -618,7 +618,7 @@
                             <label class="control-label col-md-3">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                <input tabindex="52"  type="text" minlength="11"  maxlength="20" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
+                                <input tabindex="52"  type="text"  class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
                             </div>
                         </div>
 
@@ -756,7 +756,7 @@
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>                            </div>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save And Next</span></button>                            </div>
                         </div>
                     </div>
                     <!--			                    </fieldset>-->
@@ -872,8 +872,29 @@
         }
 
     }
+//
+//    function checkphonenumber() {
+//        // var x = document.getElementById('telephone');
+//        var value = document.getElementById('EmergencyContactMobile').value;
+//        if (value.length < 11) {
+//            alert('not ok');
+//            return false; // keep form from submitting
+//        }
+//
+//    }
     function checkvalidation() {
 
+        var value = document.getElementById('EmergencyContactMobile').value;
+        if (value.length < 11 || value.length > 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+
+//        var name = document.getElementById("EmergencyContactMobile").value;
+//        if (name == "") {
+//            alert(' Date of Birth in invalid date format!');
+//            return "false";
+//        }
 
       //   var startyear = $('#dobyear').val();
       //   var startmonth = parseInt(document.getElementById('dobmonth').value)+1;

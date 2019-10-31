@@ -163,11 +163,10 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3">Telephone:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3">Telephone:</label>
                                 <div class="col-md-9">
-                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
-                                    <input tabindex="11" type="number" class="form-control" id="telephone" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
+                                    <input tabindex="11" type="number" class="form-control" id="" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
                                 </div>
                             </div>
 

@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-9">
-                                <textarea id="courseChoiceStatement" minlength="200" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
+                                <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
                             </div>
                         </div>
 
@@ -106,6 +106,11 @@
 
     function formvalidate() {
 
+        var value = document.getElementById('courseChoiceStatement').value;
+        if (value.length < 200 || value.length > 1000) {
+            alert('Please lengthen this text 200 words or more ');
+            return false; // keep form from submitting
+        }
 
         var courseChoiceStatement =  document.getElementById("courseChoiceStatement").value;
         var collegeChoiceStatement=  document.getElementById("collegeChoiceStatement").value;
@@ -132,3 +137,4 @@
         }
     }
 </script>
+

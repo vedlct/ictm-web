@@ -169,7 +169,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
                         <div class="form-group" align="right">
-                            <div class="col-sm-offset-2 col-md-9">
+                            <div class="col-sm-offset-2 col-md-offset-3 col-md-9">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <button type="submit" class="btn btn-next"><span id="update" style="color: #FFFFFF;">Add experience</span></button>

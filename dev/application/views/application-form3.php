@@ -133,7 +133,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
 
                             <div class="form-group" align="right">
-                                <div class="col-sm-offset-2 col-md-9">
+                                <div class="col-sm-offset-2 col-md-offset-3 col-md-9">
 
                                     <button type="submit" class="btn btn-next"><span id="update" style="color: #FFFFFF;">Add proficiency</span></button>
 

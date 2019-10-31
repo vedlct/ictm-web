@@ -34,7 +34,7 @@
         <div class="row">
             <div class="col-md-10">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm8" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm8" method="post" class="form-horizontal" onsubmit="return checkvalidation()">
 
 <!--                    <fieldset>-->
                         <div class="form-top">
@@ -92,7 +92,7 @@
                                 <label class="control-label col-md-2">Telephone/Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
-                                    <input tabindex="6"  required type="text" class="form-control" minlength="11" maxlength="20" id="telephone" name="telephone">
+                                    <input tabindex="6"  required type="text" class="form-control"  id="telephone" name="telephone">
                                 </div>
                             </div>
 
@@ -323,4 +323,16 @@
         });
     }
 
+
+</script>
+
+<script>
+    function checkvalidation() {
+
+        var value = document.getElementById('telephone').value;
+        if (value.length < 11 || value.length > 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+    }
 </script>

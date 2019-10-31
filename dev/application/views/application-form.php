@@ -723,7 +723,7 @@
                                               <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                               <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                               <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save And Next</span></button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                           </div>
                                         </div>
@@ -857,6 +857,12 @@
             }
 
             function checkvalidation() {
+
+                var value = document.getElementById('EmergencyContactMobile').value;
+                if (value.length < 11 || value.length > 20) {
+                    alert('Please at least 11 digit Telephone/Mobile number');
+                    return false; // keep form from submitting
+                }
 
                 // if (document.getElementById('courseYear').value > 2019) {
                 //     alert("year cant be future")
