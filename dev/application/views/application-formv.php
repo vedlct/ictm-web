@@ -177,9 +177,9 @@
                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                 <select tabindex="15"  style="width: 100%" id="nationality" required name="nationality">
                                     <option value="" disabled selected>Select Nationality...</option>
-                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                    <?php for ($i=0;$i<count(NATIONALITY);$i++){?>
                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                        <option value="<?php echo NATIONALITY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == NATIONALITY[$i])  echo 'selected = "selected"'; ?>><?php echo NATIONALITY[$i]?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -725,7 +725,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
                                 <input tabindex="61"  type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
-                                <input tabindex="62"  type="radio" required name="timeOfStudy" value="E&W"  <?php if($candidateInfo->timeOfStudy=='E&W'){ echo "checked=checked";}?>> Evenings & Weekend
+                                <input tabindex="62"  type="radio" required name="timeOfStudy" value="EW"  <?php if($candidateInfo->timeOfStudy=='EW'){ echo "checked=checked";}?>> Evenings & Weekend
                             </div>
                         </div>
 
@@ -1093,7 +1093,7 @@
                 if (dd>ListofDays[mm-1])
                 {
                     if (checktype == "dob") {
-                        alert(' Date of Birth in invalid date format!');
+                        alert(' Date of Birth is in invalid date format!');
                         return "false";
                     }
 
@@ -1109,7 +1109,7 @@
                 if ((lyear==false) && (dd>=29))
                 {
                     if (checktype == "dob") {
-                        alert(' Date of Birth in invalid date format!');
+                        alert(' Date of Birth is in invalid date format!');
                         return "false";
                     }
 
@@ -1118,7 +1118,7 @@
                 if ((lyear==true) && (dd>29))
                 {
                     if (checktype == "dob") {
-                        alert(' Date of Birth in invalid date format!');
+                        alert(' Date of Birth is in invalid date format!');
                         return "false";
                     }
 
@@ -1139,7 +1139,7 @@
             if (dd>ListofDays[mm-1])
             {
                 if (passporttype == "pp") {
-                    alert('Passport/ID Expiry Date in invalid date format!');
+                    alert('Passport/ID Expiry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1155,7 +1155,7 @@
             if ((lyear==false) && (dd>=29))
             {
                 if (passporttype == "pp") {
-                    alert(' Passport/ID Expiry Date in invalid date format!');
+                    alert(' Passport/ID Expiry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1164,7 +1164,7 @@
             if ((lyear==true) && (dd>29))
             {
                 if (passporttype == "pp") {
-                    alert(' Passport/ID Expiry Date in invalid date format!');
+                    alert(' Passport/ID Expiry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1186,7 +1186,7 @@
             if (dd>ListofDays[mm-1])
             {
                 if (uktype == "uk") {
-                    alert('UK Entry Date in invalid date format!');
+                    alert('UK Entry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1202,7 +1202,7 @@
             if ((lyear==false) && (dd>=29))
             {
                 if (uktype == "uk") {
-                    alert('UK Entry Date in invalid date format!');
+                    alert('UK Entry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1211,7 +1211,7 @@
             if ((lyear==true) && (dd>29))
             {
                 if (uktype == "uk") {
-                    alert('UK Entry Date in invalid date format!');
+                    alert('UK Entry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1232,7 +1232,7 @@
             if (dd>ListofDays[mm-1])
             {
                 if (visatype == "visa") {
-                    alert('Visa Expiry Date in invalid date format!');
+                    alert('Visa Expiry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1248,7 +1248,7 @@
             if ((lyear==false) && (dd>=29))
             {
                 if (visatype == "visa") {
-                    alert('Visa Expiry Date in invalid date format!');
+                    alert('Visa Expiry Date is in invalid date format!');
                     return "false";
                 }
 
@@ -1257,7 +1257,7 @@
             if ((lyear==true) && (dd>29))
             {
                 if (visatype == "visa") {
-                    alert('Visa Expiry Date in invalid date format!');
+                    alert('Visa Expiry Date is in invalid date format!');
                     return "false";
                 }
 

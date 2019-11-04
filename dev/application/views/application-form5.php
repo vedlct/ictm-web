@@ -107,7 +107,7 @@
     function formvalidate() {
 
         var value = document.getElementById('courseChoiceStatement').value;
-        if (value.length < 200 || value.length > 1000) {
+        if (value.length < 200 || value.length > 3000) {
             alert('Please lengthen this text 200 words or more ');
             return false; // keep form from submitting
         }

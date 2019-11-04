@@ -124,7 +124,7 @@ class ApplyOnlinem extends CI_Model
 
     }
 
-        public function getFinancerData($applicationId){
+    public function getFinancerData($applicationId){
 
 //        $this->db->select('selfFinance');
         $this->db->select('sourceOfFinance');
@@ -133,7 +133,7 @@ class ApplyOnlinem extends CI_Model
         $query=$this->db->get();
         return $query->result();
 
-        }
+    }
 
     public function updatApplynow4()
     {
@@ -275,7 +275,7 @@ class ApplyOnlinem extends CI_Model
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
 //            $fax = $this->input->post('fax');
-           // $AddressPO = $this->input->post('AddressPO');
+            // $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
                 'sourceOfFinance' => $selfFinance,
@@ -483,7 +483,7 @@ class ApplyOnlinem extends CI_Model
 
                     );
 
-                  //  $error = $this->db->insert('candidatelanguagetest', $data);
+                    //  $error = $this->db->insert('candidatelanguagetest', $data);
                     $insert_id = $this->db->insert_id();
 
 
@@ -724,7 +724,7 @@ class ApplyOnlinem extends CI_Model
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
 //            $fax = $this->input->post('fax');
-        //    $AddressPO = $this->input->post('AddressPO');
+            //    $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
                 'sourceOfFinance' => $selfFinance,
@@ -747,7 +747,7 @@ class ApplyOnlinem extends CI_Model
                 'telephone' => $telephone,
                 'email' => $email,
 //                'fax' => $fax,
-            //    'addressPo'=>$AddressPO,
+                //    'addressPo'=>$AddressPO,
                 'fkApplicationId'=>$applicationId
 
             );
@@ -1110,8 +1110,8 @@ class ApplyOnlinem extends CI_Model
     public function updateUserInfo($data,$id){
 
 
-            $this->db->where('id', $id);
-            $error=$this->db->update('studentregistration', $data);
+        $this->db->where('id', $id);
+        $error=$this->db->update('studentregistration', $data);
 
         if (empty($error)) {
             return $this->db->error();
@@ -1152,8 +1152,8 @@ class ApplyOnlinem extends CI_Model
         $enddate = $workendyear."-".$workendmonth."-".$workenddate;
 
 
-      //  $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
-      //  $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
+        //  $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+        //  $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
         $experienceid = $this->input->post('experience');
 
         $data = array(

@@ -225,13 +225,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
-                                        <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
-                                    </div>
-                                </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2" id="caddressCity">City/Town:<span style="color: red" class="required">*</span></label>
@@ -245,6 +238,14 @@
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
                                         <input tabindex="31"  type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo $candidateInfo->currentAddressState ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
+                                        <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
                                     </div>
                                 </div>
 
@@ -337,7 +338,6 @@
                                         <input tabindex="41"  type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo $candidateInfo->permanentAddressState?>">
                                     </div>
                                 </div>
-
 
                                 <div class="form-group" id="overseasAddressPo">
                                     <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
@@ -589,9 +589,10 @@
                                     <div class="col-sm-offset-2 col-md-10">
                                         <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
-                                        <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                        <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
+                                        <button formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save for Later</button>
                                         <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
-                                        <a  href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>
+<!--                                        <a  href="--><?php //echo base_url()?><!--Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>-->
 
                                     </div>
                                 </div>

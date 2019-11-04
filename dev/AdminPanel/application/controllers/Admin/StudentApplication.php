@@ -1849,8 +1849,9 @@ class StudentApplication extends CI_Controller
                 );
                 $this->data['error']=$this->StudentApplicationm->editApplyForm1($data,$data1);
                 if (empty($this->data['error'])) {
-                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                    redirect('Admin/StudentApplication/viewApplication/'.$this->session->userdata('studentApplicationId'));
+                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                    redirect('Admin/StudentApplication/manageApplication/'.$this->session->userdata('studentApplicationId'));
+
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                     redirect('Admin/StudentApplication/viewApplication/'.$this->session->userdata('studentApplicationId'));

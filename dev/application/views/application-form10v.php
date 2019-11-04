@@ -534,7 +534,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             if (dd>ListofDays[mm-1])
             {
                 if (start == "startdate") {
-                    alert(' Start Date in invalid date format!');
+                    alert(' Start Date is in invalid date format!');
                     return "false";
                 }
             }
@@ -549,14 +549,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             if ((lyear==false) && (dd>=29))
             {
                 if (start == "startdate") {
-                    alert(' Start Date in invalid date format!');
+                    alert(' Start Date is in invalid date format!');
                     return "false";
                 }
             }
             if ((lyear==true) && (dd>29))
             {
                 if (start == "startdate") {
-                    alert(' Start Date in invalid date format!');
+                    alert(' Start Date is in invalid date format!');
                     return "false";
                 }
             }
@@ -576,7 +576,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             if (dd>ListofDays[mm-1])
             {
                 if (end == "enddate") {
-                    alert(' End Date in invalid date format!');
+                    alert(' End Date is in invalid date format!');
                     return "false";
                 }
             }
@@ -591,14 +591,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             if ((lyear==false) && (dd>=29))
             {
                 if (end == "enddate") {
-                    alert(' End Date in invalid date format!');
+                    alert(' End Date is in invalid date format!');
                     return "false";
                 }
             }
             if ((lyear==true) && (dd>29))
             {
                 if (end == "enddate") {
-                    alert(' End Date in invalid date format!');
+                    alert(' End Date is in invalid date format!');
                     return "false";
                 }
             }

@@ -48,7 +48,7 @@
 
                     <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-3">Why do you wish to do this course?<br> (Minimum 200 word required)<span style="color: red">*</span>:</label>
+                                <label class="control-label col-md-3">Why do you wish to do this course?<br> (Minimum 200 words required)<span style="color: red">*</span>:</label>
                                 <div class="col-md-9">
                                     <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
@@ -147,7 +147,7 @@
     function checkvalidation() {
 
         var value = document.getElementById('courseChoiceStatement').value;
-        if (value.length < 200 || value.length > 1000) {
+        if (value.length < 200 || value.length > 3000) {
             alert('Please lengthen this text 200 words or more ');
             return false; // keep form from submitting
         }
