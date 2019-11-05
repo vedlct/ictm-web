@@ -67,7 +67,14 @@
                         <div class="form-group">
                             <label class="control-label col-md-2">Upload file:</label>
                             <div class="col-md-8">
-                                <input tabindex="1" type="file" class="form-control" id="file-upload" name="fileUpload[]" multiple>
+                                <input tabindex="1" type="file" class="form-control" id="file-upload" name="fileUpload[]" >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-2">Description:</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control " name="description[]" id="photoDetails[]" ></textarea>
                             </div>
                         </div>
 
@@ -99,12 +106,12 @@
                                 <?php if($fcount >=1) { ?><a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn btn-next">Next</button> <?php }?></a>
                             </div>
                         </div>
-
                         <div id="qualificationTable">
                             <table  class="table  table-bordered">
                                 <tr>
                                     <th>SL</th>
                                     <th>File Name</th>
+                                    <th>Description</th>
                                     <th>Action</th>
 
                                 </tr>
@@ -126,7 +133,7 @@
                                                         <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
 
                                                     </td>
-
+                                              <td></td>
 
                                                     <td>
                                                         <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
@@ -139,6 +146,7 @@
 
                                     }
                                 }?>
+
                             </table>
                         </div>
 

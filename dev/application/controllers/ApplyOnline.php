@@ -3161,6 +3161,9 @@ class ApplyOnline extends CI_Controller
                             $data[$error[$i]];
 
                         }
+                        $filename= $_FILES['fileUpload']['name'];
+//// insert file name
+                        $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
                         $fileCount++;
 
                         if($fileCount > 9 ){
@@ -3239,7 +3242,9 @@ class ApplyOnline extends CI_Controller
                             $data[$error[$i]];
 
                         }
-
+                        $filename= $_FILES['fileUpload']['name'];
+//// insert file name
+                        $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
                         $fileCount++;
 
 
@@ -3311,6 +3316,10 @@ class ApplyOnline extends CI_Controller
                             $data[$error[$i]];
 
                         }
+                        $filename= $_FILES['fileUpload']['name'];
+//// insert file name
+                        $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
+                        $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
 
                         $fileCount++;
 

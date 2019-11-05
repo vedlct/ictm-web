@@ -146,9 +146,17 @@
 <script>
     function checkvalidation() {
 
-        var value = document.getElementById('courseChoiceStatement').value;
-        if (value.length < 200 || value.length > 3000) {
-            alert('Please lengthen this text 200 words or more ');
+        var words = document.getElementById('courseChoiceStatement').value;
+        var wordsarray = words.split(" ");
+        var numwords = wordsarray.length;
+//        var words = $.questionField.value.split(" ").length;
+//        if(value.match(words)<200 || value.match(words)>1000){
+//            alert('Please lengthen this text 200 words or more ');
+//            return false;
+//
+//        }
+        if (numwords < 200 || numwords > 1000) {
+            alert('Please lengthen this text 200 words to 1000 words ');
             return false; // keep form from submitting
         }
     }

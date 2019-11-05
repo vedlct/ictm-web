@@ -813,39 +813,40 @@
     });
 </script>
 
+
 <script>
 
-    //            function submitedForm() {
-    //
-    //
-    //                var phone=document.getElementById("title").value;
-    //                var email=document.getElementById("facultyEmail").value;
-    //
-    //                var chk=/^[0-9]*$/;
-    //                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    //                if(!phone.match(chk)) {
-    //                    alert( 'Please enter a valid Phone number!!' );
-    //                    return false;
-    //                }
-    //                if(phone.length >45) {
-    //                    alert( 'Phone number must be less than 45 charecter!!' );
-    //                    return false;
-    //                }
-    //                if( !facultyIntroLength ) {
-    //                    alert( 'Please enter a Faculty Intro' );
-    //                    return false;
-    //                }
-    //                if(email.match(mailformat))
-    //                {
-    //                    return true;
-    //                }
-    //                else
-    //                {
-    //                    alert("You have entered an invalid email address!");
-    //                    return false;
-    //                }
-    //
-    //            }
+//                function submitedForm() {
+//
+//
+//                    var phone=document.getElementById("title").value;
+//                    var email=document.getElementById("email").value;
+//
+//                    var chk=/^[0-9]*$/;
+//                    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//                    if(!phone.match(chk)) {
+//                        alert( 'Please enter a valid Phone number!!' );
+//                        return false;
+//                    }
+//                    if(phone.length >45) {
+//                        alert( 'Phone number must be less than 45 charecter!!' );
+//                        return false;
+//                    }
+//                    if( !facultyIntroLength ) {
+//                        alert( 'Please enter a Faculty Intro' );
+//                        return false;
+//                    }
+//                    if(email.match(mailformat))
+//                    {
+//                        return true;
+//                    }
+//                    else
+//                    {
+//                        alert("You have entered an invalid email address!");
+//                        return false;
+//                    }
+//
+//                }
 
     function courseAwardBody() {
 
@@ -884,10 +885,46 @@
 //    }
     function checkvalidation() {
 
+        var email1=document.getElementById("email").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email1.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+
+//        var email1=document.getElementById("EmergencyContactEmail").value;
+//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+//        if(email1.match(mailformat1))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("You have entered an invalid email address!");
+//            return false;
+//        }
+
         var value = document.getElementById('EmergencyContactMobile').value;
         if (value.length < 11 || value.length > 20) {
             alert('Please at least 11 digit Telephone/Mobile number');
             return false; // keep form from submitting
+        }
+
+        var EmergencyContactEmail=document.getElementById("EmergencyContactEmail").value;
+        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(EmergencyContactEmail.match(mailformat1))
+        {
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            return false;
         }
 
 //        var name = document.getElementById("EmergencyContactMobile").value;
@@ -1267,5 +1304,6 @@
 
 
 </script>
+
 
 

@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-10">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow8" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow8" method="post" class="form-horizontal" onsubmit="return checkvalidation()>
 
 <!--                    <fieldset>-->
                         <div class="form-top">
@@ -506,4 +506,22 @@
             $("#TextBoxDiv" + counter).remove();
         });
     });
+</script>
+
+<script>
+    function checkvalidation() {
+
+        var email1=document.getElementById("email").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email1.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+
+    }
 </script>

@@ -329,6 +329,18 @@
 <script>
     function checkvalidation() {
 
+        var email1=document.getElementById("email").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email1.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+
         var value = document.getElementById('telephone').value;
         if (value.length < 11 || value.length > 20) {
             alert('Please at least 11 digit Telephone/Mobile number');
