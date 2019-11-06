@@ -59,7 +59,7 @@
                                 <div class="col-md-9">
 
                                     <select tabindex="2" style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
-                                        <option value="" disabled selected>Select Source...</option>
+                                        <option value=""  selected>Select Source...</option>
                                         <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
                                             <option value="<?php echo PERSONAL_STATEMENT[$i]?>"<?php if (!empty($f5->collegeChoiceStatement) && $f5->collegeChoiceStatement == PERSONAL_STATEMENT[$i])  echo 'selected = "selected"'; ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
                                         <?php } ?>
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
-                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
@@ -160,4 +160,16 @@
             return false; // keep form from submitting
         }
     }
+</script>
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+//            $("#courseChoiceStatement").removeAttr('value');
+            $('#courseChoiceStatement').val('').empty();
+            $("#collegeChoiceStatement").children().removeAttr("selected");
+
+
+
+        });
+    });
 </script>

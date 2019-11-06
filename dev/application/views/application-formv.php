@@ -40,7 +40,7 @@
             <div class="col-md-9">
                 <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="form-horizontal" onsubmit=" return checkvalidation()">
+                <form role="form"  action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="form-horizontal" onsubmit=" return checkvalidation()">
 
                     <!--                        		<fieldset>-->
                     <div class="form-top">
@@ -58,7 +58,7 @@
                             <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                <select tabindex="1"  style="width: 100%" name="title">
+                                <select tabindex="1"  style="width: 100%" name="title" id="title">
                                     <option value=""><?php echo "Select Title"?></option>
                                     <?php for ($i=0;$i<count(Title);$i++){?>
 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
@@ -176,7 +176,8 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                 <select tabindex="15"  style="width: 100%" id="nationality" required name="nationality">
-                                    <option value="" disabled selected>Select Nationality...</option>
+<!--                                    <option value="">--><?php //echo "Select Title"?><!--</option>-->
+                                    <option value=""  selected>Select Nationality...</option>
                                     <?php for ($i=0;$i<count(NATIONALITY);$i++){?>
                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
                                         <option value="<?php echo NATIONALITY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == NATIONALITY[$i])  echo 'selected = "selected"'; ?>><?php echo NATIONALITY[$i]?></option>
@@ -412,7 +413,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
                                 <select tabindex="32"  style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
-                                    <option value="" disabled selected>Select country...</option>
+                                    <option value=""  selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
@@ -499,12 +500,25 @@
                             </div>
                         </div>
 
+<!--                        <div class="form-group" id="paddresslabelCountry">-->
+<!--                            <label class="control-label col-md-3" >Courntry:<span style="color: red" class="required">*</span></label>-->
+<!--                            <div class="col-md-9">-->
+<!--                                <p><font color="red"> --><?php //echo form_error('permanentAddressCountry'); ?><!--</font></p>-->
+<!--                                <select tabindex="42"  style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">-->
+<!--                                    <option value="" disabled selected>Select country...</option>-->
+<!--                                    --><?php //for ($i=0;$i<count(COUNTRY);$i++){?>
+<!--                                        <option value="--><?php //echo COUNTRY[$i]?><!--"--><?php //if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?><!-->--><?php //echo COUNTRY[$i]?><!--</option>-->
+<!--                                    --><?php //} ?>
+<!--                                </select>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
                         <div class="form-group" id="paddresslabelCountry">
                             <label class="control-label col-md-3" >Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
                                 <select tabindex="42"  style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
-                                    <option value="" disabled selected>Select country...</option>
+                                    <option value=""  selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
@@ -606,7 +620,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
                                 <select tabindex="51"  style="width: 100%" id="emaddressCountry" required name="emergencyContactCountry">
-                                    <option value="" disabled selected>Select country...</option>
+                                    <option value=""  selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
@@ -686,7 +700,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
                                 <select tabindex="57"  style="width: 100%" id="courseSession" required name="courseSession">
-                                    <option value="" disabled selected>Select Session...</option>
+                                    <option value=""  selected>Select Session...</option>
                                     <?php for ($i=0;$i<count(COURSESESSION);$i++){?>
                                         <option value="<?php echo COURSESESSION[$i]?>"<?php if (!empty($candidateInfo->courseSession) && $candidateInfo->courseSession == COURSESESSION[$i])  echo 'selected = "selected"'; ?>><?php echo COURSESESSION[$i]?></option>
                                     <?php } ?>
@@ -716,16 +730,16 @@
                             <label class="control-label col-md-3">Mode of study:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
-                                <input tabindex="59"  type="radio" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
-                                <input tabindex="60"  type="radio" required name="methodeOfStudy" value="PT"   <?php if($candidateInfo->methodOfStudy=='PT'){ echo "checked=checked";}?>> Part Time&nbsp;&nbsp;
+                                <input tabindex="59"  type="radio" id="methodeOfStudy" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
+                                <input tabindex="60"  type="radio" id="methodeOfStudy" required name="methodeOfStudy" value="PT"   <?php if($candidateInfo->methodOfStudy=='PT'){ echo "checked=checked";}?>> Part Time&nbsp;&nbsp;
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Time of study:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
-                                <input tabindex="61"  type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
-                                <input tabindex="62"  type="radio" required name="timeOfStudy" value="EW"  <?php if($candidateInfo->timeOfStudy=='EW'){ echo "checked=checked";}?>> Evenings & Weekend
+                                <input tabindex="61"  type="radio" id="timeOfStudy" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
+                                <input tabindex="62"  type="radio" id="timeOfStudy" required name="timeOfStudy" value="EW"  <?php if($candidateInfo->timeOfStudy=='EW'){ echo "checked=checked";}?>> Evenings & Weekend
                             </div>
                         </div>
 
@@ -753,10 +767,10 @@
 <!--                                <button type="submit" class="btn btn-next">Save Application</button>-->
 <!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>-->
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
-                                <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save And Next</span></button>                            </div>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>                            </div>
                         </div>
                     </div>
                     <!--			                    </fieldset>-->
@@ -1303,6 +1317,68 @@
     }
 
 
+</script>
+
+<!--<script>-->
+<!--    function hideElement() {-->
+<!--        var firstName=document.querySelector("firstName").value;-->
+<!--//        element = document.querySelector('.container');-->
+<!--        firstName.style.visibility = 'hidden';-->
+<!--    }-->
+<!--</script>-->
+
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("#firstName").removeAttr('value');
+            $("#surName").removeAttr('value');
+            $("#placeOfBirth").removeAttr('value');
+            $("#passportNo").removeAttr('value');
+            $("#currentAddress").removeAttr('value');
+            $("#currentAddress2").removeAttr('value');
+            $("#currentAddress3").removeAttr('value');
+            $("#currentAddressCity").removeAttr('value');
+            $("#currentAddressState").removeAttr('value');
+            $("#currentAddressPo2").removeAttr('value');
+            $("#telephone").removeAttr('value');
+            $("#mobile").removeAttr('value');
+            $("#email").removeAttr('value');
+            $("#permanentAddress").removeAttr('value');
+            $("#permanentAddress2").removeAttr('value');
+            $("#permanentAddress3").removeAttr('value');
+            $("#permanentAddressCity").removeAttr('value');
+            $("#permanentAddressState").removeAttr('value');
+            $("#overseasAddressPo2").removeAttr('value');
+            $("#EmergencyContactName").removeAttr('value');
+            $("#EmergencyContactRelation").removeAttr('value');
+            $("#emaddress").removeAttr('value');
+            $("#emaddress2").removeAttr('value');
+            $("#emaddress3").removeAttr('value');
+            $("#emaddressCity").removeAttr('value');
+            $("#emaddressState").removeAttr('value');
+            $("#emergencyContactAddressPo").removeAttr('value');
+            $("#EmergencyContactMobile").removeAttr('value');
+            $("#EmergencyContactEmail").removeAttr('value');
+            $("#awardingBody").removeAttr('value');
+            $("#courseLevel").removeAttr('value');
+            $("#ulnNo").removeAttr('value');
+            $("#ucasCourseCode").removeAttr('value');
+            $("#title").children().removeAttr("selected");
+            $("#nationality").children().removeAttr("selected");
+            $("#VisaType").children().removeAttr("selected");
+            $("#currentAddressCountry").children().removeAttr("selected");
+            $("#permanentAddressCountry").children().removeAttr("selected");
+            $("#EmergencyContactTitle").children().removeAttr("selected");
+            $("#emaddressCountry").children().removeAttr("selected");
+            $("#courseName").children().removeAttr("selected");
+            $("#courseSession").children().removeAttr("selected");
+            $("#gender").removeAttr("checked");
+            $("#genderChange").removeAttr("checked");
+            $("#methodeOfStudy").removeAttr("checked");
+            $("#timeOfStudy").removeAttr("checked");
+
+        });
+    });
 </script>
 
 

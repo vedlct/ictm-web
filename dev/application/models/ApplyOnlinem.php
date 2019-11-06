@@ -379,6 +379,15 @@ class ApplyOnlinem extends CI_Model
 
 
     }
+
+    public function deleteDocument($applicationId)
+    {
+
+        $this->db->where('id', $applicationId);
+        $this->db->delete('filedocument');
+
+
+    }
     public function getCandidateInfo($studentApplicationId)
     {
 
@@ -1251,7 +1260,7 @@ class ApplyOnlinem extends CI_Model
 
     public function getDocument($applicationId){
 
-        $this->db->select('id,description');
+        $this->db->select('id,description,filename');
         $this->db->where('fkApplicationId',$applicationId);
         $this->db->from('filedocument');
         $query=$this->db->get();

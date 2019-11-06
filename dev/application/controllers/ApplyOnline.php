@@ -3084,6 +3084,8 @@ class ApplyOnline extends CI_Controller
             $this->menu();
 
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
 
             $this->load->view('application-form7', $this->data);
 
@@ -3098,17 +3100,20 @@ class ApplyOnline extends CI_Controller
     }
     public function deleteStudentFile()
     {
-        $fileName = $this->input->post('fileName');
-        $applicationId = $this->session->userdata('studentApplicationId');
-        $filePath= 'AdminPanel/studentApplications/'.$applicationId.'/';
-
-        if (file_exists($filePath.$fileName)) {
-            unlink ($filePath.$fileName);
-            echo '1';
-        } else {
-            echo '0';
-        }
+//        $fileName = $this->input->post('fileName');
+//        $applicationId = $this->session->userdata('studentApplicationId');
+//        $filePath= 'AdminPanel/studentApplications/'.$applicationId.'/';
+//
+//        if (file_exists($filePath.$fileName)) {
+//            unlink ($filePath.$fileName);
+//            echo '1';
+//        } else {
+//            echo '0';
+//        }
         // echo  $filePath.$fileName;
+        $applicationId = $this->input->post("id");
+        $data = $this->ApplyOnlinem->deleteDocument($applicationId);
+        $this->session->set_flashdata('successMessage', 'File Deleted Successfully');
 
     }
 
@@ -3319,7 +3324,6 @@ class ApplyOnline extends CI_Controller
                         $filename= $_FILES['fileUpload']['name'];
 //// insert file name
                         $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
-                        $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
 
                         $fileCount++;
 

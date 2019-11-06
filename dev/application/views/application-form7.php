@@ -109,43 +109,56 @@
                         <div id="qualificationTable">
                             <table  class="table  table-bordered">
                                 <tr>
-                                    <th>SL</th>
+<!--                                    <th>SL</th>-->
                                     <th>File Name</th>
                                     <th>Description</th>
                                     <th>Action</th>
 
                                 </tr>
-                                <?php
-                                $applicationId = $this->session->userdata('studentApplicationId');
-                                $dir =   "./AdminPanel/studentApplications/$applicationId/";
+                                <?php foreach ($document as $document){?>
+                                    <tr>
 
-                                // Open a directory, and read its contents
-                                if (is_dir($dir)) {
-                                    if ($dh = opendir($dir)) {
+<!--                                        <td></td>-->
+                                        <td><?php echo $document->filename?></td>
+                                        <td><?php echo $document->description ?></td>
+                                        <td>
+                                            <a style="cursor: pointer" data-panel-id="<?php echo $document->id  ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+<!--                                --><?php
+//                                $applicationId = $this->session->userdata('studentApplicationId');
+//                                $dir =   "./AdminPanel/studentApplications/$applicationId/";
+//
+//                                // Open a directory, and read its contents
+//                                if (is_dir($dir)) {
+//                                    if ($dh = opendir($dir)) {
+//
+//                                        $count = 1;
+//                                        while (($file = readdir($dh)) !== false) {
+//                                            if ($file != "." && $file != "..") {  ?>
+<!--                                                <tr>-->
+<!--                                                    <td>--><?php //echo $count ?><!--</td>-->
+<!--                                                    <td>-->
+<!---->
+<!--                                                        <a target="_blank" href="--><?php //echo $dir . "/" . $file ?><!--"> --><?php //echo $file  ?><!-- </a>-->
+<!---->
+<!--                                                    </td>-->
+<!--                                                    <td></td>-->
+<!---->
+<!--                                                    <td>-->
+<!--                                                        <a style="cursor: pointer" data-panel-id="--><?php //echo $file ?><!--" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>-->
+<!--                                                    </td>-->
+<!--                                                </tr>-->
+<!--                                                --><?php //$count++;
+//                                            }
+//
+//                                        }
+//
+//                                    }
+//                                }?>
 
-                                        $count = 1;
-                                        while (($file = readdir($dh)) !== false) {
-                                            if ($file != "." && $file != "..") {  ?>
-                                                <tr>
-                                                    <td><?php echo $count ?></td>
-                                                    <td>
 
-                                                        <a target="_blank" href="<?php echo $dir . "/" . $file ?>"> <?php echo $file  ?> </a>
-
-                                                    </td>
-                                              <td></td>
-
-                                                    <td>
-                                                        <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <?php $count++;
-                                            }
-
-                                        }
-
-                                    }
-                                }?>
 
                             </table>
                         </div>
@@ -200,27 +213,28 @@
 
     function selectidForDelete(x) {
 
-        var fileName=$(x).data('panel-id');
+//        var fileName=$(x).data('panel-id');
         if (confirm('Are you sure to delete this file!')){
-
+            btn = $(x).data('panel-id');
             $.ajax({
                 type: 'POST',
                 url: '<?php echo base_url("ApplyOnline/deleteStudentFile")?>',
-                data: {fileName: fileName},
+                data: {'id': btn},
                 cache: false,
                 success: function (data) {
 
+                    location.reload();
 
-                    if (data=='0'){
-
-                        alert('there is a problem with a file please contact us');
-
-                    }else if(data=='1'){
-
-                        $('#qualificationTable').load(document.URL +  ' #qualificationTable');
-                        location.reload();
-
-                    }
+//                    if (data=='0'){
+//
+//                        alert('there is a problem with a file please contact us');
+//
+//                    }else if(data=='1'){
+//
+//                        $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+//                        location.reload();
+//
+//                    }
 
 
 

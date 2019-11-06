@@ -144,7 +144,7 @@
                                     <div class="col-md-9">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                         <select tabindex="9" style="width: 100%" id="country"  name="country">
-                                            <option value="" disabled selected>Select country...</option>
+                                            <option value=""  selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
                                                 <option value="<?php echo COUNTRY[$i]?>" <?php if(!empty($f4->country) &&  $f4->country == COUNTRY[$i] ) echo 'selected = "selected"'; ?>> <?php echo COUNTRY[$i]?></option>
@@ -184,7 +184,7 @@
                                 <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm5" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
 
-                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
@@ -350,4 +350,23 @@
         }
 
     }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("#email").removeAttr('value');
+            $("#name").removeAttr('value');
+            $("#relation").removeAttr('value');
+            $("#address").removeAttr('value');
+            $("#addressPo").removeAttr('value');
+            $("#mobile").removeAttr('value');
+            $("#city").removeAttr('value');
+            $("#telephone").removeAttr('value');
+            $("#title").children().removeAttr("selected");
+            $("#country").children().removeAttr("selected");
+
+
+        });
+    });
 </script>
