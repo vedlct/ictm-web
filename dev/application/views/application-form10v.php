@@ -168,15 +168,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
 
-                        <div class="form-group">
+                        <div class="form-group" align="right">
                             <div class="col-sm-offset-2 col-md-9">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous">Previous</button></a>
-                                <button type="reset" class="btn btn-next">Reset</button>
-                                <button type="submit" class="btn btn-next"><span id="update">Add experience</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
-                                <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next">Next</button></a>
+                                <button type="submit" class="btn btn-next"><span id="update" style="color: #FFFFFF;">Add experience</span></button>
+
                             </div>
                         </div>
                         <div id="qualificationTable" class="table-responsive">
@@ -187,7 +184,6 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <th>PositionHeld</th>
                                     <th>Start Date</th>
                                     <th>End Date</th>
-
                                     <th>Action</th>
 
                                 </tr>
@@ -206,6 +202,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     </tr>
                                 <?php } ?>
                             </table>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-md-9">
+                                <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
+
+                                <a href="<?php echo base_url()?>ApplyForm2" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
+                                <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/updateApplicationForm10AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
+                                <a href="<?php echo base_url()?>ApplyForm3" ><button type="button"  class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button></a>
+                            </div>
                         </div>
 
                     </div>

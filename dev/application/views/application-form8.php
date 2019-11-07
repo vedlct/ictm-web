@@ -126,13 +126,7 @@
                                             <input tabindex="9"  type="text" class="form-control" id="address3" name="address3[]" >
                                         </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-2">Postal Code:<span style="color: red" class="required">*</span></label>
-                                        <div class="col-md-10">
-                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
-                                            <input tabindex="7"  type="text" class="form-control" id="postCode" name="postCode[]" required>
-                                        </div>
-                                    </div>
+
                                     <div class="form-group">
                                         <label class="control-label col-md-2">City/Town:<span style="color: red" class="required">*</span></label>
                                         <div class="col-md-10">
@@ -145,6 +139,13 @@
                                         <div class="col-md-10">
                                             <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
                                             <input tabindex="11"  type="text" class="form-control" id="state" name="state[]" >
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-2">Post Code:<span style="color: red" class="required">*</span></label>
+                                        <div class="col-md-10">
+                                            <!--                                    <textarea id="address1" name="address[]" rows="8" tabindex="4" required></textarea>-->
+                                            <input tabindex="7"  type="text" class="form-control" id="postCode" name="postCode[]" required>
                                         </div>
                                     </div>
 
@@ -175,13 +176,19 @@
 <!---->
 <!--                            </div>-->
 
+                            <div class="form-group" align="right">
+                                <div class="col-sm-offset-2 col-md-10">
+                                   <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Add Referees</span></button>
+                                       </div>
+                            </div>
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn ">Previous</button></a>
-                                    <button type="reset" class="btn btn-next">Reset</button>
-                                    <button type="submit" class="btn btn-next">Add Referees</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8AndNext" class="btn btn-next">Save And Next</button>
-<!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm7" ><button type="button"  class="btn ">Next</button></a>-->
+                                    <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
+                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8Save" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
+                                    <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm7" ><button type="button"  class="btn ">Next</button></a>-->
                                 </div>
                             </div>
 

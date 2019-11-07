@@ -48,7 +48,7 @@
                                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                             	<select tabindex="1" style="width: 100%" name="title" required id="title">
 
-                                                    <option value="" selected><?php echo SELECT_TITLE?></option>
+                                                    <option value="" selected><?php echo "Select Title"?></option>
                                                     <?php for ($i=0;$i<count(Title);$i++){?>
                                                         <option <?php echo set_select('title',  Title[$i], False); ?>><?php echo Title[$i]?></option>
                                                     <?php } ?>
@@ -171,7 +171,7 @@
                                           	<div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                                 <select tabindex="15" style="width: 100%" id="nationality" required name="nationality">
-                                                    <option value="" disabled selected>Select country...</option>
+                                                    <option value="" disabled selected>Select Nationality...</option>
                                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
                                                         <option value="<?php echo COUNTRY[$i]?>"<?php
@@ -280,7 +280,7 @@
                                                 <p><font color="red"> <?php echo form_error('VisaType'); ?></font></p>
                                                 <select tabindex="23" style="width: 100%" id="VisaType"  name="VisaType">
 
-                                                    <option value="" selected><?php echo SELECT_TYPE?></option>
+                                                    <option value="" selected><?php echo "Select Visa Type"?></option>
                                                     <?php for ($i=0;$i<count(VISA_TYPE);$i++){?>
                                                         <option <?php echo set_select('VisaType',  VISA_TYPE[$i], False); ?>><?php echo VISA_TYPE[$i]?></option>
                                                     <?php } ?>
@@ -330,8 +330,9 @@
 				                        </div>
                                         
                                         <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Contact Details</h2>
-                                        <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Current Address Details</h2>
-
+                                        <div class="form-group">
+                                        <h2 class="control-label col-md-3" style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Current Address Details</h2>
+                                        </div>
                                         <div class="form-group">
                                         	<label class="control-label col-md-3">Address Line 1:<span style="color: red" class="required">*</span></label>
                                           	<div class="col-md-9">
@@ -353,13 +354,7 @@
                                                 <input tabindex="29" type="text" class="form-control"  id="currentAddress3" name="currentAddress3" value="<?php echo set_value('currentAddress3'); ?>">
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-9">
-                                                <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
-                                                <input tabindex="29" type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo set_value('currentAddressPo'); ?>">
-                                            </div>
-                                        </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
@@ -372,6 +367,13 @@
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
                                                 <input tabindex="31" type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo set_value('currentAddressState'); ?>">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
+                                                <input tabindex="29" type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo set_value('currentAddressPo'); ?>">
                                             </div>
                                         </div>
 
@@ -415,8 +417,9 @@
                                                 <input tabindex="35" type="email" class="form-control" required id="email" name="email"  value="<?php echo set_value('email'); ?>" >
                                             </div>
                                         </div>
-
-                                        <h2 style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent  Address Details</h2>
+                                        <div class="form-group">
+                                        <h2 class="control-label col-md-3" style="font-weight:bold;  margin-bottom:20px; text-align:center; text-decoration:underline">Permanent  Address Details</h2>
+                                        </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Same as Current </label>
                                             <div class="col-md-9">
@@ -447,13 +450,7 @@
                                                 <input tabindex="39" type="text" class="form-control"  id="permanentAddress3" name="permanentAddress3" value="<?php echo set_value('permanentAddress3'); ?>">
                                             </div>
                                         </div>
-                                        <div class="form-group" id="ppostalcodelabel">
-                                            <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-9">
-                                                <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
-                                                <input tabindex="39" type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo set_value('overseasAddressPo'); ?>">
-                                            </div>
-                                        </div>
+
                                         <div class="form-group" id="paddresslabelCity">
                                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
@@ -467,6 +464,14 @@
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('permanentAddressState'); ?></font></p>
                                                 <input tabindex="41" type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo set_value('permanentAddressState'); ?>">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" id="ppostalcodelabel">
+                                            <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
+                                                <input tabindex="39" type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo set_value('overseasAddressPo'); ?>">
                                             </div>
                                         </div>
 
@@ -547,13 +552,6 @@
                                                 <input tabindex="48" type="text" class="form-control"  id="emaddress3" value="<?php echo set_value('EmergencyContactAddress3'); ?>" name="EmergencyContactAddress3">
                                             </div>
                                         </div>
-                                        <div class="form-group" id="epostalcodelabel">
-                                            <label class="control-label col-md-3">Postal Code:<span style="color: red" class="required">*</span></label>
-                                            <div class="col-md-9">
-                                                <p><font color="red"> <?php echo form_error('emergencyContactAddressPo'); ?></font></p>
-                                                <input tabindex="48" type="text" class="form-control"  id="emergencyContactAddressPo" value="<?php echo set_value('emergencyContactAddressPo'); ?>" name="emergencyContactAddressPo">
-                                            </div>
-                                        </div>
                                         <div class="form-group" id="ecitylabel">
                                             <label class="control-label col-md-3">City/Town:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
@@ -566,6 +564,14 @@
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
                                                 <input tabindex="50" type="text" class="form-control"  id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" id="epostalcodelabel">
+                                            <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <p><font color="red"> <?php echo form_error('emergencyContactAddressPo'); ?></font></p>
+                                                <input tabindex="48" type="text" class="form-control"  id="emergencyContactAddressPo" value="<?php echo set_value('emergencyContactAddressPo'); ?>" name="emergencyContactAddressPo">
                                             </div>
                                         </div>
 
@@ -653,7 +659,18 @@
                                             <label class="control-label col-md-3">Year:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-                                                <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo set_value('courseYear'); ?>">
+<!--                                                <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="--><?php //echo set_value('courseYear'); ?><!--">-->
+                                                <?php
+                                                $currently_selected = date('Y');
+                                                $earliest_year = date('Y');
+                                                $latest_year = date('Y')+6;
+                                                print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                    print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+                                                }
+                                                print '</select>';
+                                                ?>
+
                                             </div>
                                         </div>
 
@@ -703,9 +720,10 @@
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-9">
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
-                                              <button type="reset" class="btn btn-next">Reset</button>
-                                              <button type="submit" class="btn btn-next">Save Application</button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"> Save and Next</button>
+                                              <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                           </div>
                                         </div>

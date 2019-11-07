@@ -72,10 +72,10 @@
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-9">
-                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn ">Previous</button></a>
+                                    <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
-                                                                        <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn ">Next</button></a>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                    <a href="<?php echo base_url()?>ApplyForm9" ><button type="button"  class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button></a>
                                 </div>
                             </div>
                         </div>

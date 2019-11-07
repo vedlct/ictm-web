@@ -67,7 +67,7 @@
                                     <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                        <select style="width: 100%"  id="title"   name="title">
+                                        <select style="width: 100%;height: 32px; border: 1px solid #bababa;"  id="title"   name="title">
 
                                             <option value="" selected><?php echo SELECT_TITLE?></option>
                                             <?php for ($i=0;$i<count(Title);$i++){?>
@@ -142,7 +142,7 @@
                                     <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                        <select style="width: 100%" id="country"  name="country">
+                                        <select style="width: 100%;height: 32px; border: 1px solid #bababa;" id="country"  name="country">
                                             <option value="" disabled selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->

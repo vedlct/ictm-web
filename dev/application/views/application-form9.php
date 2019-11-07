@@ -53,9 +53,12 @@
                             <p><input tabindex="1"  required type="checkbox" id="check" name="check"> &nbsp;&nbsp;I confirm that to the best of my knowledge, the information given in this form is correct and complete.  I have read the terms and conditions and other policies of the college and agree to abide by them during my entire course of study. I agree to ICON College of Technology and Management processing personal data submitted in this application form, or any other data that the College may obtain from me to the processing for any purposes connected with my studies or my health and safety, or for any other legitimate reason (in accordance with the Data Protection Act 1998). I authorise ICON College to issue my course result to my sponsor if my sponsor so requests. The Application form and copies of all supporting documents will be retained by ICON College in case of an unsuccessful application for admission.</p>
                             <p><strong>Note:</strong> All decisions by the College are taken in good faith on the basis of the statements made on your application form.  If the College discovers that you have made a false statement or have omitted significant information on your application form, for example in examination results, it may withdraw or amend its offer, or terminate your registration, according to the circumstances. The information given on this application form will be electronically stored and used for administrative purposes by the College in accordance with the provisions of the Data Protection Acts 1984 and 1998.</p>
 
-                            <a href="<?php echo base_url()?>ApplyForm7" ><button type="button" class="btn btn-previous">Previous</button></a>
-                            <button type="submit"  class="btn btn-next">SUBMIT!</button>
-                            <button type="button" class="btn btn-next">Download PDF</button>
+                            <a href="<?php echo base_url()?>ApplyForm7" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
+                            <button type="submit"  class="btn btn-next"><span style="color: #FFFFFF;">SUBMIT!</span></button>
+<!--                            --><?php //foreach ($applications as $application){?>
+<!--                                <a target="_blank" href="--><?php //echo base_url()?><!--ApplyOnline/showApplicationPdf/--><?php //echo $application->id ?><!--"><button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button></a>-->
+<!--                            --><?php //} ?>
+                            <button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button>
                         </div>
 <!--                    </fieldset>-->
 

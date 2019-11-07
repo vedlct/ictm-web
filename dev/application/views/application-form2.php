@@ -134,15 +134,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
 
+                            <div class="form-group" align="right">
+                                <div class="col-sm-offset-2 col-md-10">
+                                    <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Add qualifications</span></button>
+                                    </div>
+                            </div>
+
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
-<!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
+                                    <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
-                                    <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button type="reset" class="btn btn-next">Reset</button>
-                                    <button type="submit" class="btn btn-next">Add qualifications</button>
-                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
-<!--                                    <a href="--><?php //echo base_url()?><!--Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>-->
+                                    <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
+                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                    <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
+                                    <!--                                    <a href="--><?php //echo base_url()?><!--Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                 </div>
                             </div>
 
