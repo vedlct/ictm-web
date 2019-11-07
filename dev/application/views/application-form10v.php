@@ -287,7 +287,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 }if (positionHeld.length >100){
                     alert('Institution must be less then 100 charecter');
                     return false;
-                }if (startdate == ""){
+                }
+                if (startdate == ""){
                     alert('Please add a startdate');
                     return false;
                 }if (enddate == ""){
@@ -318,7 +319,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                 }if (positionHeld.length >100){
                     alert('Institution must be less then 100 charecter');
                     return false;
-                }if (startdate == ""){
+                }
+                if (startdate == ""){
                     alert('Please add a startdate');
                     return false;
                 }if (enddate == ""){
@@ -378,8 +380,8 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
     function checkForm() {
 
-        var organisation=$('#organisation').val();
-        var positionHeld=$('#positionHeld').val();
+//        var organisation=$('#organisation').val();
+//        var positionHeld=$('#positionHeld').val();
 
         var startyear = $('#workstryear').val();
         var startmonth = $('#workstrmonth').val();
@@ -401,14 +403,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
 
-        if (organisation == ""){
-            alert('Please add a Qualification');
-            return false;
-        }if (positionHeld.length > 100){
-            alert('Qualification must be less then 100 charecter');
-            return false;
-
-        }
+//        if (organisation == ""){
+//            alert('Please add a Qualification');
+//            return false;
+//        }if (positionHeld.length > 100){
+//            alert('Qualification must be less then 100 charecter');
+//            return false;
+//
+//        }
 
 
 

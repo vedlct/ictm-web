@@ -158,7 +158,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20"  name="mobile" value="<?php echo $f4->mobile ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile" required  name="mobile" value="<?php echo $f4->mobile ?>" >
                                 </div>
                             </div>
 
@@ -166,7 +166,7 @@
                                 <label class="control-label col-md-3">Telephone:</label>
                                 <div class="col-md-9">
 
-                                    <input tabindex="11" type="number" class="form-control" id="" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
+                                    <input tabindex="11" type="text" class="form-control"  minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
                                 </div>
                             </div>
 
@@ -250,6 +250,25 @@
     });
 
     function formvalidate() {
+//        var email1=document.getElementById("email").value;
+//        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+//        if(email1.match(mailformat))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("You have entered an invalid email address!");
+//            return false;
+//        }
+
+
+        var value = document.getElementById('mobile').value;
+        if (value.length < 11 || value.length> 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+
         var email1=document.getElementById("email").value;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -261,6 +280,7 @@
             alert("You have entered an invalid email address!");
             return false;
         }
+
 
         var finance=$('input[name=selfFinance]:checked').val();
 
@@ -334,7 +354,7 @@
                 alert('Please enter a valid Telephone Phone number!!');
                 return false;
             }
-            if (phone.length > 50) {
+            if (phone.length < 11) {
                 alert('Mobile Phone number must be less than 50 charecter!!');
                 return false;
             }
@@ -359,7 +379,10 @@
             $("#name").removeAttr('value');
             $("#relation").removeAttr('value');
             $("#address").removeAttr('value');
+            $("#address2").removeAttr('value');
+            $("#address3").removeAttr('value');
             $("#addressPo").removeAttr('value');
+            $("#state").removeAttr('value');
             $("#mobile").removeAttr('value');
             $("#city").removeAttr('value');
             $("#telephone").removeAttr('value');

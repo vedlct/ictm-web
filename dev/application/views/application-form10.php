@@ -377,14 +377,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }
 
 
-        if (organisation == "") {
-            alert('Please add a Qualification');
-            return false;
-        }
-        if (positionHeld.length > 100) {
-            alert('Qualification must be less then 100 charecter');
-            return false;
-        }
+//        if (organisation == "") {
+//            alert('Please add a Qualification');
+//            return false;
+//        }
+//        if (positionHeld.length > 100) {
+//            alert('Qualification must be less then 100 charecter');
+//            return false;
+//        }
 //        }if (startdate == ""){
 //            alert('Please add a startdate');
 //            return false;

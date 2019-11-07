@@ -2872,7 +2872,7 @@ class ApplyOnline extends CI_Controller
             if (empty($this->data['error'])) {
 
 
-                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully saved');
                 redirect('ApplyForm8');
 
 
@@ -3056,7 +3056,7 @@ class ApplyOnline extends CI_Controller
             if (empty($this->data['error'])) {
 
 
-                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+                $this->session->set_flashdata('successMessage', 'Information was  Successfully saved');
                 redirect('ApplyForm8');
 
 
@@ -3179,7 +3179,7 @@ class ApplyOnline extends CI_Controller
 
                     } else {
 
-                        $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                        $this->session->set_flashdata('successMessage', $fileCount . ' file are uploaded Successfully');
                         redirect('ApplyForm7');
 
                     }
@@ -3190,7 +3190,7 @@ class ApplyOnline extends CI_Controller
                     //  print_r($applicationId);
 
 
-                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
+                    $this->session->set_flashdata('successMessage', $fileCount . ' file are uploaded Successfully');
                     redirect('ApplyForm7');
 
 

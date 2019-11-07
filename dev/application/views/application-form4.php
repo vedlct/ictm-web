@@ -173,14 +173,14 @@
                                 <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input tabindex="10" type="text" class="form-control" id="mobile" name="mobile" minlength="11" maxlength="20"   value="<?php echo set_value('mobile'); ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile" required name="mobile" value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="control-label col-md-3">Telephone:</label>
                                 <div class="col-md-9">
-                                    <input tabindex="11" type="text" class="form-control" id="" name="telephone"minlength="11" maxlength="20" value="<?php echo set_value('telephone'); ?>" >
+                                    <input tabindex="11" type="text" class="form-control"  name="telephone" minlength="11" maxlength="20" value="<?php echo set_value('telephone'); ?>" >
                                 </div>
                             </div>
 
@@ -283,6 +283,12 @@
 
 
     function formvalidate() {
+        var value = document.getElementById('mobile').value;
+        if (value.length < 11 || value.length> 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+
         var email1=document.getElementById("email").value;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 

@@ -1261,6 +1261,7 @@ class ApplyOnlinem extends CI_Model
     public function getDocument($applicationId){
 
         $this->db->select('id,description,filename');
+        $this->db->limit(9);
         $this->db->where('fkApplicationId',$applicationId);
         $this->db->from('filedocument');
         $query=$this->db->get();
