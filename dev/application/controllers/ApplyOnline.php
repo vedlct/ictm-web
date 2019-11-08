@@ -3179,7 +3179,7 @@ class ApplyOnline extends CI_Controller
 
                     } else {
 
-                        $this->session->set_flashdata('successMessage', $fileCount . ' file are uploaded Successfully');
+                        $this->session->set_flashdata('successMessage', $fileCount . ' file is uploaded Successfully');
                         redirect('ApplyForm7');
 
                     }
@@ -3190,7 +3190,7 @@ class ApplyOnline extends CI_Controller
                     //  print_r($applicationId);
 
 
-                    $this->session->set_flashdata('successMessage', $fileCount . ' file are uploaded Successfully');
+                    $this->session->set_flashdata('successMessage', $fileCount . ' file is uploaded Successfully');
                     redirect('ApplyForm7');
 
 
@@ -3887,34 +3887,34 @@ class ApplyOnline extends CI_Controller
                     </script>";
         }
     }
-    public function insertApplicationForm10AndNext(){
-
-        if ($this->session->userdata('loggedin') == "true") {
-
-
-            $this->data['error'] = $this->ApplyOnlinem->insertApplyForm10();
-
-            if (empty($this->data['error'])) {
-
-
-                $this->session->set_flashdata('successMessage', 'Work Experience Saved  Successfully');
-                redirect('ApplyForm3');
-
-
-            } else {
-
-                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                redirect('ApplyForm3');
-
-            }
-
-        }else{
-            echo "<script>
-                    alert('Your Session has Expired ,Please Login Again');
-                    window.location.href= '" . base_url() . "Login';
-                    </script>";
-        }
-    }
+//    public function insertApplicationForm10AndNext(){
+//
+//        if ($this->session->userdata('loggedin') == "true") {
+//
+//
+//            $this->data['error'] = $this->ApplyOnlinem->insertApplyForm10();
+//
+//            if (empty($this->data['error'])) {
+//
+//
+//                $this->session->set_flashdata('successMessage', 'Work Experience Saved  Successfully');
+//                redirect('ApplyForm3');
+//
+//
+//            } else {
+//
+//                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                redirect('ApplyForm3');
+//
+//            }
+//
+//        }else{
+//            echo "<script>
+//                    alert('Your Session has Expired ,Please Login Again');
+//                    window.location.href= '" . base_url() . "Login';
+//                    </script>";
+//        }
+//    }
     public function insertApplicationForm10Save(){
 
         if ($this->session->userdata('loggedin') == "true") {

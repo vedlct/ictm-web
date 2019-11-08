@@ -51,7 +51,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
-                                    <label class="control-label col-md-3">Organisation:</label>
+                                    <label class="control-label col-md-3">Organization:</label>
                                     <div class="col-md-9">
 
                                         <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
@@ -81,6 +81,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                         Date:
                                         <select tabindex="5"  id="workstrdate" name="workstrdate">
+                                            <option value=""  selected>Select Date</option>
                                             <?php
                                             foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                 echo "<option value='$dateNumber'>{$date}</option>";
@@ -90,6 +91,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         &nbsp;
                                         Month:
                                         <select tabindex="4"  id="workstrmonth" name="workstrmonth">
+                                            <option value=""  selected>Select Month</option>
                                             <?php
                                             foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                 echo "<option value='$monthNumber'>{$month}</option>";
@@ -99,10 +101,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         &nbsp;&nbsp;&nbsp;
                                         Year:
                                         <?php
-                                        $currently_selected = date('Y');
+                                        $currently_selected = date('');
                                         $earliest_year = 1950;
                                         $latest_year = date('Y');
                                         print '<select tabindex="3"  id="workstryear" name="workstryear">';
+                                        print '<option value=""  selected>Select Year</option>';
                                         foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                             print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                         }
@@ -123,6 +126,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                         Date:
                                         <select tabindex="8"  id="workenddate" name="workenddate">
+                                            <option value=""  selected>Select Date</option>
                                             <?php
                                             foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                 echo "<option value='$dateNumber'>{$date}</option>";
@@ -132,6 +136,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         &nbsp;
                                         Month:
                                         <select tabindex="7"  id="workendmonth" name="workendmonth">
+                                            <option value=""  selected>Select Month</option>
                                             <?php
                                             foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                 echo "<option value='$monthNumber'>{$month}</option>";
@@ -141,10 +146,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         &nbsp;
                                         Year:
                                         <?php
-                                        $currently_selected = date('Y');
+                                        $currently_selected = date('');
                                         $earliest_year = 1950;
                                         $latest_year = date('Y');
                                         print '<select tabindex="6"  id="workendyear" name="workendyear">';
+                                        print '<option value=""  selected>Select Year</option>';
                                         foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                             print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                         }

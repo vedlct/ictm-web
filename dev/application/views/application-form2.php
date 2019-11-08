@@ -101,10 +101,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         <div class="col-md-9">
 <!--                                            <input type="text" class="form-control datetimepicker" id="completionYear" required name="completionYear[]">-->
                                             <?php
-                                            $currently_selected = date('Y');
+                                            $currently_selected = date('');
                                             $earliest_year = 1950;
                                             $latest_year = date('Y');
                                             print '<select tabindex="6" name="completionYear[]">';
+                                            print '<option value=""  selected>Select Year</option>';
                                             foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                 print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                             }

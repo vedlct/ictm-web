@@ -50,7 +50,7 @@
                         <div class="form-bottom">
                             <input tabindex="1"  type="hidden" class="form-control" id="refereesId"  name="refereesId">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:</label>
+                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <select tabindex="2"  required style="width: 100%"  id="title"  name="title">
 
@@ -332,7 +332,7 @@
 
         var value = document.getElementById('telephone').value;
         if (value.length < 11 || value.length > 20) {
-            alert('Please at least 11 digit Telephone/Mobile number');
+            alert('Please Enter at least 11 digit Telephone/Mobile number');
             return false; // keep form from submitting
         }
 

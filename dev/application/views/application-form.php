@@ -90,7 +90,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select tabindex="4" name="dobyear" id="dobyear" required>';
@@ -204,7 +204,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="17" name="ppyear" id="ppyear">';
@@ -247,7 +247,7 @@
 <!--                                            	<input type="text" class="form-control datetimepicker"  id="UkEntryDate" name="UkEntryDate" value="--><?php //echo set_value('UkEntryDate'); ?><!--">-->
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select tabindex="20" name="ukyear" id="ukyear">';
@@ -306,7 +306,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="24" name="visayear" id="visayear">';
@@ -673,10 +673,11 @@
                                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
 <!--                                                <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="--><?php //echo set_value('courseYear'); ?><!--">-->
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = date('Y');
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                                print '<option value=""  selected>Select Year</option>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -734,8 +735,8 @@
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
                                               <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                               <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Next</span></button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                           </div>
                                         </div>
@@ -872,13 +873,13 @@
 
                 var mobile = document.getElementById('mobile').value;
                 if (mobile.length < 11 || mobile.length> 20) {
-                    alert('Please at least 11 digit Mobile number');
+                    alert('Please Enter at least 11 digit Current Mobile number');
                     return false; // keep form from submitting
                 }
 
                 var value = document.getElementById('EmergencyContactMobile').value;
                 if (value.length < 11 || value.length > 20) {
-                    alert('Please at least 11 digit Emergency Telephone/Mobile number');
+                    alert('Please Enter at least 11 digit Emergency Telephone/Mobile number');
                     return false; // keep form from submitting
                 }
 
@@ -984,6 +985,20 @@
                 }
 
 
+            }
+
+            function ValidateEmail(){
+                var email=document.getElementById("email").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(email.match(mailformat))
+                {
+                    return true;
+                }
+                else{
+                    alert("Current Email Address is in invalid format!");
+                    return false;
+                }
             }
 
         </script>

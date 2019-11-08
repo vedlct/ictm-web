@@ -673,7 +673,7 @@ $config = array (
             array(
                 'field' => 'jobTitle',
                 'label' => 'Position / Job Title',
-                'rules' => 'required|max_length[60]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[60]|xss_clean|htmlspecialchars',
 
             ),
             array(

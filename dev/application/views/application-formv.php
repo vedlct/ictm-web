@@ -717,6 +717,7 @@
                                 $earliest_year = date('Y');
                                 $latest_year = date('Y')+6;
                                 print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                print '<option value=""  selected>Select Year</option>';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
@@ -769,8 +770,9 @@
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                 <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>                            </div>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Next</span></button>
+                            </div>
                         </div>
                     </div>
                     <!--			                    </fieldset>-->
@@ -870,12 +872,12 @@
 
         var mobile = document.getElementById('mobile').value;
         if (mobile.length < 11 || mobile.length> 20) {
-            alert('Please at least 11 digit Mobile number');
+            alert('Please Enter at least 11 digit Current Mobile number');
             return false; // keep form from submitting
         }
         var value = document.getElementById('EmergencyContactMobile').value;
         if (value.length < 11 || value.length> 20) {
-            alert('Please at least 11 digit Emergency Telephone/Mobile number');
+            alert('Please Enter at least 11 digit Emergency Telephone/Mobile number');
             return false; // keep form from submitting
         }
 
@@ -962,12 +964,47 @@
             alert("Emergency Email Address is in invalid format!");
             return false;
         }
+//        var emtype="EmergencyContactEmail";
+//        if(validatedate4(emtype)=="true"){
+//            return true;
+//        }
+
+//        var email=document.getElementById("email").value;
+//        var emailtype="email";
+//        if(validatedate5(emailtype)=="true"){
+//            return true;
+//        }
+//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+//        if(EmergencyContactEmail.match(mailformat1))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("Emergency Email Address is in invalid format!");
+//            return false;
+//        }
 
 
 
 
 
 
+
+    }
+
+    function ValidateEmail(){
+        var email=document.getElementById("email").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("Current Email Address is in invalid format!");
+            return false;
+        }
     }
 
 </script>
@@ -1240,6 +1277,46 @@
         }
     }
 
+//    function validatedate4(emtype){
+//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+////        if(!emtype.match(mailformat1))
+////        {
+////            alert("Emergency Email Address is in invalid format!");
+////            return false;
+////        }
+//        if(emtype.match(mailformat1))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("Emergency Email Address is in invalid format!");
+//            return false;
+//        }
+//
+//    }
+
+//    function validatedate5(emailtype){
+//        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+////        if(!emailtype.match(mailformat))
+////        {
+////            alert("Current Email Address is in invalid format!");
+////            return false;
+////        }
+//
+//        if(emailtype.match(mailformat))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("Current Email Address is in invalid format!");
+//            return false;
+//        }
+//
+//
+//    }
+
 
 </script>
 
@@ -1301,6 +1378,18 @@
             $("#genderChange").removeAttr("checked");
             $("#methodeOfStudy").removeAttr("checked");
             $("#timeOfStudy").removeAttr("checked");
+            $("#dobdate").children().removeAttr("selected");
+            $("#dobmonth").children().removeAttr("selected");
+            $("#dobyear").children().removeAttr("selected");
+            $("#ppdate").children().removeAttr("selected");
+            $("#ppmonth").children().removeAttr("selected");
+            $("#ppyear").children().removeAttr("selected");
+            $("#ukdate").children().removeAttr("selected");
+            $("#ukmonth").children().removeAttr("selected");
+            $("#ukyear").children().removeAttr("selected");
+            $("#visadate").children().removeAttr("selected");
+            $("#visamonth").children().removeAttr("selected");
+            $("#visayear").children().removeAttr("selected");
 
         });
     });
