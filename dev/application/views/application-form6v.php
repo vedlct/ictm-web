@@ -189,8 +189,8 @@
 
                                                         <tr>
                                                     <?php } ?>
-                                                    <td ><input tabindex="10" type = "radio" required name = "check_list3" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
-                                                        <input tabindex="11" type="hidden" name="id_check_list3" value="<?php echo $EO->personalOpportunityId ?>">
+                                                    <td ><input tabindex="10" type = "radio"  required name = "check_list3" <?php if($osg->id==$EO->id){ echo "checked=checked";}?> value = "<?php echo $osg->id?>" > <?php echo $osg->subGroupTitle?>
+                                                        <input tabindex="11" type="hidden"  name="id_check_list3" value="<?php echo $EO->personalOpportunityId ?>">
                                                     </td >
                                                     <!--                                                <td ><input type = "radio" name = "check_list" value = "--><?php //echo $osg->subGroupTitle?><!--" > --><?php //echo $osg->subGroupTitle?><!--</td >-->
                                                     <?php if ($count % 2 !=0) { ?>

@@ -69,7 +69,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="startdate"  name="startdate[]">-->
 
-
+                                        <p><font color="red"> <?php echo form_error('startdate'); ?></font></p>
                                         Date:
                                         <select tabindex="5"  id="workstrdate" name="workstrdate">
                                             <?php
@@ -108,7 +108,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                     <div class="col-md-9">
 <!--                                        <input type="text" class="form-control datetimepicker" id="enddate"  name="enddate[]">-->
 
-
+                                        <p><font color="red"> <?php echo form_error('enddate'); ?></font></p>
                                         Date:
                                         <select tabindex="8"  id="workenddate" name="workenddate">
                                             <?php
@@ -157,7 +157,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
                         <div class="form-group" align="right">
-                            <div class="col-sm-offset-2 col-md-9">
+                            <div class="col-sm-offset-2 col-md-offset-3 col-md-9">
                                 <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Add experience</span></button>
                                </div>
                         </div>
@@ -377,14 +377,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         }
 
 
-        if (organisation == "") {
-            alert('Please add a Qualification');
-            return false;
-        }
-        if (positionHeld.length > 100) {
-            alert('Qualification must be less then 100 charecter');
-            return false;
-        }
+//        if (organisation == "") {
+//            alert('Please add a Qualification');
+//            return false;
+//        }
+//        if (positionHeld.length > 100) {
+//            alert('Qualification must be less then 100 charecter');
+//            return false;
+//        }
 //        }if (startdate == ""){
 //            alert('Please add a startdate');
 //            return false;
@@ -415,12 +415,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var startyear = $('#workstryear').val();
         var startmonth = parseInt(document.getElementById('workstrmonth').value)+1;
         var startdat = parseInt(document.getElementById('workstrdate').value)+1;
+        var start = "startdate";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
         //alert(dob);
-        if(validatedate(startdat, startmonth , startyear)=="false"){
+        if(validatedate(startdat, startmonth , startyear,start)=="false"){
             return false;
         }
 
@@ -432,12 +433,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var endyear = $('#workendyear').val();
 		var endmonth = parseInt(document.getElementById('workendmonth').value)+1;
 		var enddat = parseInt(document.getElementById('workenddate').value)+1;
+        var end = "enddate";
 
 		//var endatdate = new Date(endyear + "-" + endmonth + "-" + enddat);
 
 
 		//alert(dob);
-		if(validatedate(enddat, endmonth , endyear)=="false"){
+		if(validatedate1(enddat, endmonth , endyear,end)=="false"){
 			return false;
 		}
 
@@ -461,8 +463,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         {
             if (dd>ListofDays[mm-1])
             {
-                alert('Invalid date format!');
-                return "false";
+                if (start == "startdate") {
+                    alert(' Start Date is in invalid date format!');
+                    return "false";
+                }
             }
         }
         if (mm==2)
@@ -474,13 +478,58 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             }
             if ((lyear==false) && (dd>=29))
             {
-                alert('Invalid date format!');
-                return "false";
+                if (start == "startdate") {
+                    alert(' Start Date is in invalid date format!');
+                    return "false";
+                }
             }
             if ((lyear==true) && (dd>29))
             {
-                alert('Invalid date format!');
-                return "false";
+                if (start == "startdate") {
+                    alert(' Start Date is in invalid date format!');
+                    return "false";
+                }
+            }
+        }
+    }
+    function validatedate1(dd , mm , yy,end)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (end == "enddate") {
+                    alert(' End Date is in invalid date format!');
+                    return "false";
+                }
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (end == "enddate") {
+                    alert(' End Date is in invalid date format!');
+                    return "false";
+                }
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (end == "enddate") {
+                    alert(' End Date is in invalid date format!');
+                    return "false";
+                }
             }
         }
     }

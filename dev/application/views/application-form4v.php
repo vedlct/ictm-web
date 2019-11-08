@@ -144,7 +144,7 @@
                                     <div class="col-md-9">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
                                         <select tabindex="9" style="width: 100%" id="country"  name="country">
-                                            <option value="" disabled selected>Select country...</option>
+                                            <option value=""  selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                                 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
                                                 <option value="<?php echo COUNTRY[$i]?>" <?php if(!empty($f4->country) &&  $f4->country == COUNTRY[$i] ) echo 'selected = "selected"'; ?>> <?php echo COUNTRY[$i]?></option>
@@ -158,16 +158,15 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input tabindex="10" type="number" class="form-control" id="mobile" minlength="11" maxlength="20"  name="mobile" value="<?php echo $f4->mobile ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile" required  name="mobile" value="<?php echo $f4->mobile ?>" >
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3">Telephone:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3">Telephone:</label>
                                 <div class="col-md-9">
-                                    <p><font color="red"> <?php echo form_error('telephone'); ?></font></p>
 
-                                    <input tabindex="11" type="number" class="form-control" id="telephone" minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
+                                    <input tabindex="11" type="text" class="form-control"  minlength="11" maxlength="20" name="telephone"value="<?php echo $f4->telephone ?>" >
                                 </div>
                             </div>
 
@@ -185,7 +184,7 @@
                                 <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm5" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
 
-                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm4AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
@@ -251,6 +250,37 @@
     });
 
     function formvalidate() {
+//        var email1=document.getElementById("email").value;
+//        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+//        if(email1.match(mailformat))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("You have entered an invalid email address!");
+//            return false;
+//        }
+
+
+        var value = document.getElementById('mobile').value;
+        if (value.length < 11 || value.length> 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+
+        var email1=document.getElementById("email").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email1.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+
 
         var finance=$('input[name=selfFinance]:checked').val();
 
@@ -324,7 +354,7 @@
                 alert('Please enter a valid Telephone Phone number!!');
                 return false;
             }
-            if (phone.length > 50) {
+            if (phone.length < 11) {
                 alert('Mobile Phone number must be less than 50 charecter!!');
                 return false;
             }
@@ -340,4 +370,26 @@
         }
 
     }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("#email").removeAttr('value');
+            $("#name").removeAttr('value');
+            $("#relation").removeAttr('value');
+            $("#address").removeAttr('value');
+            $("#address2").removeAttr('value');
+            $("#address3").removeAttr('value');
+            $("#addressPo").removeAttr('value');
+            $("#state").removeAttr('value');
+            $("#mobile").removeAttr('value');
+            $("#city").removeAttr('value');
+            $("#telephone").removeAttr('value');
+            $("#title").children().removeAttr("selected");
+            $("#country").children().removeAttr("selected");
+
+
+        });
+    });
 </script>

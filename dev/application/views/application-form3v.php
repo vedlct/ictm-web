@@ -47,8 +47,8 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Is English your first language?<span style="color: red" class="required">*</span>:</label>
                                 <div class="col-md-9">
-                                    <input tabindex="1" type="radio" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
-                                    <input tabindex="2" type="radio" <?php if ($fLanguage=='0'){?>checked<?php }?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
+                                    <input tabindex="1" type="radio" id="firstLanguage" <?php if ($fLanguage=='1'){?>checked<?php } ?> name="firstLanguage" value="1"> Yes&nbsp;&nbsp;
+                                    <input tabindex="2" type="radio" id="firstLanguage" <?php if ($fLanguage=='0'){?>checked<?php }?> name="firstLanguage" value="0"> No&nbsp;&nbsp;
                                 </div>
                             </div>
                             <div style="display: none" id="Englishproficience" >
@@ -137,7 +137,7 @@
                             </div>
 
                             <div class="form-group" align="right">
-                                <div class="col-sm-offset-2 col-md-9">
+                                <div class="col-sm-offset-2 col-md-offset-3 col-md-9">
 
                                     <button type="submit" class="btn btn-next"><span id="update" style="color: #FFFFFF;">Add proficiency</span></button>
 

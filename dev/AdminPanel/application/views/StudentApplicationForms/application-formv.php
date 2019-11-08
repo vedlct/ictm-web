@@ -50,7 +50,7 @@
                 <div class="col-md-12">
                     <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                        <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" method="post" class="form-horizontal">
+                        <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" method="post" class="form-horizontal" onsubmit="return checkvalidation()">
 
                             <!--                        		<fieldset>-->
                             <div class="form-top">
@@ -144,9 +144,9 @@
                                         <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                         <select style="width: 100%" id="nationality" required name="nationality">
                                             <option value="" disabled selected>Select country...</option>
-                                            <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                            <?php for ($i=0;$i<count(NATIONALITY);$i++){?>
                                                 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                                <option value="<?php echo NATIONALITY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == NATIONALITY[$i])  echo 'selected = "selected"'; ?>><?php echo NATIONALITY[$i]?></option>
                                             <?php } ?>
                                         </select>
                                     </div>
@@ -225,13 +225,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
-                                        <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
-                                    </div>
-                                </div>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2" id="caddressCity">City/Town:<span style="color: red" class="required">*</span></label>
@@ -245,6 +238,14 @@
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('currentAddressState'); ?></font></p>
                                         <input tabindex="31"  type="text" class="form-control"  id="currentAddressState" name="currentAddressState" value="<?php echo $candidateInfo->currentAddressState ?>">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
+                                    <div class="col-md-10">
+                                        <p><font color="red"> <?php echo form_error('currentAddressPO'); ?></font></p>
+                                        <input type="text" class="form-control" required id="currentAddressPO" name="currentAddressPO" value="<?php echo $candidateInfo->currentAddressPo?>">
                                     </div>
                                 </div>
 
@@ -337,7 +338,6 @@
                                         <input tabindex="41"  type="text" class="form-control"  id="permanentAddressState" name="permanentAddressState" value="<?php echo $candidateInfo->permanentAddressState?>">
                                     </div>
                                 </div>
-
 
                                 <div class="form-group" id="overseasAddressPo">
                                     <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
@@ -566,7 +566,7 @@
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
                                         <input type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
-                                        <input type="radio" required name="timeOfStudy" value="E&W"  <?php if($candidateInfo->timeOfStudy=='E&W'){ echo "checked=checked";}?>> Evenings & Weekend
+                                        <input type="radio" required name="timeOfStudy" value="EW"  <?php if($candidateInfo->timeOfStudy=='EW'){ echo "checked=checked";}?>> Evenings & Weekend
                                     </div>
                                 </div>
 
@@ -589,9 +589,11 @@
                                     <div class="col-sm-offset-2 col-md-10">
                                         <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
-                                        <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
+                                        <button style="color: #fff; background-color: #841A29;" type="reset"  class="btn btn-next">Reset</button>
+                                        <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
+                                        <button formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save for Later</button>
                                         <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
-                                        <a  href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>
+<!--                                        <a  href="--><?php //echo base_url()?><!--Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>-->
 
                                     </div>
                                 </div>
@@ -653,6 +655,15 @@
             return false;
         });
     });
+</script>
+<script>
+    function checkvalidation() {
+        var value = document.getElementById('EmergencyContactMobile').value;
+        if (value.length < 11 || value.length > 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+    }
 </script>
 
 <script type="text/javascript">

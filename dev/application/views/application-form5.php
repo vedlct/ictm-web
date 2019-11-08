@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Why do you wish to do this course?<span style="color: red">*</span>:</label>
                             <div class="col-md-9">
-                                <textarea id="courseChoiceStatement" minlength="200" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
+                                <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="1"> </textarea>
                             </div>
                         </div>
 
@@ -106,6 +106,24 @@
 
     function formvalidate() {
 
+//        var value = document.getElementById('courseChoiceStatement').value;
+//        if (value.length < 200 || value.length > 3000) {
+//            alert('Please lengthen this text 200 words or more ');
+//            return false; // keep form from submitting
+//        }
+        var words = document.getElementById('courseChoiceStatement').value;
+        var wordsarray = words.split(" ");
+        var numwords = wordsarray.length;
+//        var words = $.questionField.value.split(" ").length;
+//        if(value.match(words)<200 || value.match(words)>1000){
+//            alert('Please lengthen this text 200 words or more ');
+//            return false;
+//
+//        }
+        if (numwords < 200 || numwords > 1000) {
+            alert('Please lengthen this text 200 words to 1000 words ');
+            return false; // keep form from submitting
+        }
 
         var courseChoiceStatement =  document.getElementById("courseChoiceStatement").value;
         var collegeChoiceStatement=  document.getElementById("collegeChoiceStatement").value;
@@ -132,3 +150,4 @@
         }
     }
 </script>
+

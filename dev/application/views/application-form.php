@@ -94,6 +94,7 @@
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select tabindex="4" name="dobyear" id="dobyear" required>';
+                                                print ' <option value=""  selected>Select Year</option>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -102,6 +103,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
                                                 <select tabindex="5" name="dobmonth" id="dobmonth">
+                                                    <option value=""  selected><?php echo "Select Month"?></option>
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -111,6 +113,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
                                                 <select tabindex="6" name="dobdate" id="dobdate">
+                                                    <option value=""  selected><?php echo "Select Date"?></option>
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -172,11 +175,11 @@
                                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                                 <select tabindex="15" style="width: 100%" id="nationality" required name="nationality">
                                                     <option value="" disabled selected>Select Nationality...</option>
-                                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+                                                    <?php for ($i=0;$i<count(NATIONALITY);$i++){?>
                                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                                        <option value="<?php echo COUNTRY[$i]?>"<?php
-                                                        echo set_value('nationality') == COUNTRY[$i] ? "selected" : "";
-                                                        ?>><?php echo COUNTRY[$i]?></option>
+                                                        <option value="<?php echo NATIONALITY[$i]?>"<?php
+                                                        echo set_value('nationality') == NATIONALITY[$i] ? "selected" : "";
+                                                        ?>><?php echo NATIONALITY[$i]?></option>
                                                     <?php } ?>
                                                 </select>
 
@@ -205,6 +208,7 @@
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="17" name="ppyear" id="ppyear">';
+                                                print ' <option value=""  selected>Select Year</option>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -213,6 +217,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
                                                 <select tabindex="18" tab name="ppmonth" id="ppmonth">
+                                                    <option value=""  selected><?php echo "Select Month"?></option>
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -222,6 +227,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
                                                 <select tabindex="19" name="ppdate" id="ppdate">
+                                                    <option value=""  selected><?php echo "Select Date"?></option>
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -245,6 +251,7 @@
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select tabindex="20" name="ukyear" id="ukyear">';
+                                                print ' <option value=""  selected>Select Year</option>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -253,6 +260,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
                                                 <select tabindex="21" name="ukmonth" id="ukmonth">
+                                                    <option value=""  selected><?php echo "Select Month"?></option>
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -262,6 +270,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
                                                 <select tabindex="22" name="ukdate" id="ukdate">
+                                                    <option value=""  selected><?php echo "Select Date"?></option>
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -301,6 +310,7 @@
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="24" name="visayear" id="visayear">';
+                                                print ' <option value=""  selected>Select Year</option>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -309,6 +319,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Month:
                                                 <select tabindex="25" name="visamonth" id="visamonth">
+                                                    <option value=""  selected><?php echo "Select Month"?></option>
                                                     <?php
                                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                                         echo "<option value='$monthNumber'>{$month}</option>";
@@ -318,6 +329,7 @@
                                                 &nbsp;&nbsp;&nbsp;
                                                 Date:
                                                 <select tabindex="26" name="visadate" id="visadate">
+                                                    <option value=""  selected><?php echo "Select Date"?></option>
                                                     <?php
                                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                                         echo "<option value='$dateNumber'>{$date}</option>";
@@ -406,7 +418,7 @@
                                             <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                                <input tabindex="34" type="text"  minlength="11"  maxlength="20"  class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
+                                                <input tabindex="34" type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo set_value('mobile'); ?>">
                                             </div>
                                         </div>
 
@@ -698,8 +710,8 @@
                                                 echo set_value('timeOfStudy') == 'D' ? "checked" : "";
                                                 ?> value="D"> Day&nbsp;&nbsp;
                                                 <input tabindex="62" type="radio" required name="timeOfStudy" <?php
-                                                echo set_value('timeOfStudy') == 'E&W' ? "checked" : "";
-                                                ?> value="E&W"> Evenings & Weekend
+                                                echo set_value('timeOfStudy') == 'EW' ? "checked" : "";
+                                                ?> value="EW"> Evenings & Weekend
                                           	</div>
 				                        </div>
                                         <div class="form-group">
@@ -858,6 +870,18 @@
 
             function checkvalidation() {
 
+                var mobile = document.getElementById('mobile').value;
+                if (mobile.length < 11 || mobile.length> 20) {
+                    alert('Please at least 11 digit Mobile number');
+                    return false; // keep form from submitting
+                }
+
+                var value = document.getElementById('EmergencyContactMobile').value;
+                if (value.length < 11 || value.length > 20) {
+                    alert('Please at least 11 digit Emergency Telephone/Mobile number');
+                    return false; // keep form from submitting
+                }
+
                 // if (document.getElementById('courseYear').value > 2019) {
                 //     alert("year cant be future")
                 //     return false;
@@ -882,7 +906,7 @@
                 var startyear = $('#dobyear').val();
                 var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
                 var startdat = parseInt(document.getElementById('dobdate').value)+1;
-
+                var checktype = "dob";
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
                 var today = new Date();
@@ -895,7 +919,7 @@
 
 
                 //alert(dob);
-                if(validatedate(startdat, startmonth , startyear)=="false"){
+                if(validatedate(startdat, startmonth , startyear, checktype)=="false"){
                     return false;
                 }
 
@@ -904,13 +928,13 @@
                 var startyearpp = $('#ppyear').val();
                 var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
                 var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
-
+                var passporttype ="passportExpiryDate";
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
                 //alert(dob);
-                if(validatedate(startdatpp, startmonthpp , startyearpp)=="false"){
+                if(validatedate1(startdatpp, startmonthpp , startyearpp,passporttype)=="false"){
                     return false;
                 }
 
@@ -919,13 +943,14 @@
                 var startyearvs = $('#visayear').val();
                 var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
                 var startdatvs = parseInt(document.getElementById('visadate').value)+1;
+                var visatype="visaExpiryDate";
 
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
                 //alert(dob);
-                if(validatedate(startdatvs, startmonthvs , startyearvs)=="false"){
+                if(validatedate3(startdatvs, startmonthvs , startyearvs,visatype)=="false"){
                     return false;
                 }
 
@@ -934,6 +959,7 @@
                 var startyearuk = $('#ukyear').val();
                 var startmonthuk = parseInt(document.getElementById('ukmonth').value)+1;
                 var startdatuk = parseInt(document.getElementById('ukdate').value)+1;
+                var uktype ="UkEntryDate";
 
                 //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
@@ -941,7 +967,19 @@
 
 
                 //alert(dob);
-                if(validatedate(startdatuk, startmonthuk , startyearuk)=="false"){
+                if(validatedate2(startdatuk, startmonthuk , startyearuk,uktype)=="false"){
+                    return false;
+                }
+
+                var email1=document.getElementById("email").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(email1.match(mailformat))
+                {
+                    return true;
+                }
+                else{
+                    alert("You have entered an invalid email address!");
                     return false;
                 }
 
@@ -1031,7 +1069,7 @@
                 }
             }
 
-            function validatedate(dd , mm , yy)
+            function validatedate(dd , mm , yy , checktype)
             {
                 var dd = parseInt(dd);
                 var mm  = parseInt(mm);
@@ -1043,8 +1081,10 @@
                 {
                     if (dd>ListofDays[mm-1])
                     {
-                        alert('Invalid date format!');
-                        return "false";
+                        if (checktype == "dob") {
+                            alert(' Date of Birth is in invalid date format!');
+                            return "false";
+                        }
                     }
                 }
                 if (mm==2)
@@ -1056,13 +1096,155 @@
                     }
                     if ((lyear==false) && (dd>=29))
                     {
-                        alert('Invalid date format!');
-                        return "false";
+                        if (checktype == "dob") {
+                            alert(' Date of Birth is in invalid date format!');
+                            return "false";
+                        }
                     }
                     if ((lyear==true) && (dd>29))
                     {
-                        alert('Invalid date format!');
-                        return "false";
+                        if (checktype == "dob") {
+                            alert(' Date of Birth is in invalid date format!');
+                            return "false";
+                        }
+                    }
+                }
+            }
+
+            function validatedate1(dd , mm , yy, passporttype)
+            {
+                var dd = parseInt(dd);
+                var mm  = parseInt(mm);
+                var yy = parseInt(yy);
+
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+                if (mm==1 || mm>2)
+                {
+                    if (dd>ListofDays[mm-1])
+                    {
+                        if (passporttype == "passportExpiryDate") {
+                            alert('Passport/ID Expiry Date is in invalid date format!');
+                            return "false";
+                        }
+
+                    }
+                }
+                if (mm==2)
+                {
+                    var lyear = false;
+                    if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+                    {
+                        lyear = true;
+                    }
+                    if ((lyear==false) && (dd>=29))
+                    {
+                        if (passporttype == "passportExpiryDate") {
+                            alert(' Passport/ID Expiry Date is in invalid date format!');
+                            return "false";
+                        }
+
+
+                    }
+                    if ((lyear==true) && (dd>29))
+                    {
+                        if (passporttype == "passportExpiryDate") {
+                            alert(' Passport/ID Expiry Date is in invalid date format!” ');
+                            return "false";
+                        }
+
+                    }
+                }
+            }
+
+            function validatedate2(dd , mm , yy, uktype)
+            {
+                var dd = parseInt(dd);
+                var mm  = parseInt(mm);
+                var yy = parseInt(yy);
+
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+                if (mm==1 || mm>2)
+                {
+                    if (dd>ListofDays[mm-1])
+                    {
+                        if (uktype == "UkEntryDate") {
+                            alert('UK Entry Date is in invalid date format!');
+                            return "false";
+                        }
+
+                    }
+                }
+                if (mm==2)
+                {
+                    var lyear = false;
+                    if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+                    {
+                        lyear = true;
+                    }
+                    if ((lyear==false) && (dd>=29))
+                    {
+                        if (uktype == "UkEntryDate") {
+                            alert('UK Entry Date is in invalid date format!');
+                            return "false";
+                        }
+
+
+                    }
+                    if ((lyear==true) && (dd>29))
+                    {
+                        if (uktype == "UkEntryDate") {
+                            alert('UK Entry Date is in invalid date format!');
+                            return "false";
+                        }
+
+                    }
+                }
+            }
+
+            function validatedate3(dd , mm , yy, visatype)
+            {
+                var dd = parseInt(dd);
+                var mm  = parseInt(mm);
+                var yy = parseInt(yy);
+
+                // Create list of days of a month [assume there is no leap year by default]
+                var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+                if (mm==1 || mm>2)
+                {
+                    if (dd>ListofDays[mm-1])
+                    {
+                        if (visatype == "visaExpiryDate") {
+                            alert('Visa Expiry Date is in invalid date format!');
+                            return "false";
+                        }
+
+                    }
+                }
+                if (mm==2)
+                {
+                    var lyear = false;
+                    if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+                    {
+                        lyear = true;
+                    }
+                    if ((lyear==false) && (dd>=29))
+                    {
+                        if (visatype == "visaExpiryDate") {
+                            alert('Visa Expiry Date is in invalid date format!');
+                            return "false";
+                        }
+
+
+                    }
+                    if ((lyear==true) && (dd>29))
+                    {
+                        if (visatype == "visaExpiryDate") {
+                            alert('Visa Expiry Date is in invalid date format!');
+                            return "false";
+                        }
+
                     }
                 }
             }

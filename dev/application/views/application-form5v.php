@@ -42,15 +42,15 @@
                                 <p>Step 5 / 10</p>
                             </div>
                         </div>
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/updateAapplyNow5" method="post" class="form-horizontal" onsubmit="return checkvalidation()">
 
                 <?php foreach ($PersonalStatementData as $f5) { ?>
 
                     <div class="form-bottom">
                             <div class="form-group">
-                                <label class="control-label col-md-3">Why do you wish to do this course? <br> (Minimum 200 character required)<span style="color: red">*</span>:</label>
+                                <label class="control-label col-md-3">Why do you wish to do this course?<br> (Minimum 200 words required)<span style="color: red">*</span>:</label>
                                 <div class="col-md-9">
-                                    <textarea id="courseChoiceStatement" minlength="200" maxlength="1000" required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
+                                    <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
@@ -59,7 +59,7 @@
                                 <div class="col-md-9">
 
                                     <select tabindex="2" style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
-                                        <option value="" disabled selected>Select Source...</option>
+                                        <option value=""  selected>Select Source...</option>
                                         <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
                                             <option value="<?php echo PERSONAL_STATEMENT[$i]?>"<?php if (!empty($f5->collegeChoiceStatement) && $f5->collegeChoiceStatement == PERSONAL_STATEMENT[$i])  echo 'selected = "selected"'; ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
                                         <?php } ?>
@@ -71,7 +71,7 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
-                                    <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                    <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
@@ -141,4 +141,35 @@
             return true;
         }
     }
+</script>
+
+<script>
+    function checkvalidation() {
+
+        var words = document.getElementById('courseChoiceStatement').value;
+        var wordsarray = words.split(" ");
+        var numwords = wordsarray.length;
+//        var words = $.questionField.value.split(" ").length;
+//        if(value.match(words)<200 || value.match(words)>1000){
+//            alert('Please lengthen this text 200 words or more ');
+//            return false;
+//
+//        }
+        if (numwords < 200 || numwords > 1000) {
+            alert('Please lengthen this text 200 words to 1000 words ');
+            return false; // keep form from submitting
+        }
+    }
+</script>
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+//            $("#courseChoiceStatement").removeAttr('value');
+            $('#courseChoiceStatement').val('').empty();
+            $("#collegeChoiceStatement").children().removeAttr("selected");
+
+
+
+        });
+    });
 </script>

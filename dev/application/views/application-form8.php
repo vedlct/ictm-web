@@ -39,7 +39,7 @@
         <div class="row">
             <div class="col-md-10">
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow8" method="post" class="form-horizontal">
+                <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow8" method="post" class="form-horizontal" onsubmit="return checkvalidation()>
 
 <!--                    <fieldset>-->
                         <div class="form-top">
@@ -85,16 +85,16 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Position / Job Title:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-2">Position / Job Title:</label>
                                 <div class="col-md-10">
-                                    <input tabindex="4"  type="text" class="form-control" id="jobTitle1" name="jobTitle[]" required>
+                                    <input tabindex="4"  type="text" class="form-control" id="jobTitle1" name="jobTitle[]">
                                 </div>
                             </div>
 
                                     <div class="form-group">
                                         <label class="control-label col-md-2">Telephone:<span style="color: red" class="required">*</span></label>
                                         <div class="col-md-10">
-                                            <input tabindex="5"  type="text" class="form-control" id="telephone1" minlength="11" maxlength="20" name="telephone[]" required>
+                                            <input tabindex="5"  type="text" class="form-control" id="telephone1"  name="telephone[]" required>
                                         </div>
                                     </div>
 
@@ -288,7 +288,7 @@
                     return false;
                 }
                 if (telephone1.length >20){
-                    alert('Telephone must be less then 20 charecter');
+                    alert('Telephone must be less then 20 digit');
                     return false;
                 }
                 if (email1 == ""){
@@ -506,4 +506,28 @@
             $("#TextBoxDiv" + counter).remove();
         });
     });
+</script>
+
+<script>
+    function checkvalidation() {
+
+        var value = document.getElementById('telephone1').value;
+        if (value.length < 11 || value.length > 20) {
+            alert('Please at least 11 digit Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
+
+        var email1=document.getElementById("email1").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email1.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("You have entered an invalid email address!");
+            return false;
+        }
+
+    }
 </script>

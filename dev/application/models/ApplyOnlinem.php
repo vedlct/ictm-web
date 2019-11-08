@@ -124,7 +124,7 @@ class ApplyOnlinem extends CI_Model
 
     }
 
-        public function getFinancerData($applicationId){
+    public function getFinancerData($applicationId){
 
 //        $this->db->select('selfFinance');
         $this->db->select('sourceOfFinance');
@@ -133,7 +133,7 @@ class ApplyOnlinem extends CI_Model
         $query=$this->db->get();
         return $query->result();
 
-        }
+    }
 
     public function updatApplynow4()
     {
@@ -275,7 +275,7 @@ class ApplyOnlinem extends CI_Model
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
 //            $fax = $this->input->post('fax');
-           // $AddressPO = $this->input->post('AddressPO');
+            // $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
                 'sourceOfFinance' => $selfFinance,
@@ -376,6 +376,15 @@ class ApplyOnlinem extends CI_Model
 
         $this->db->where('id', $qualificationId);
         $this->db->delete('personqualifications');
+
+
+    }
+
+    public function deleteDocument($applicationId)
+    {
+
+        $this->db->where('id', $applicationId);
+        $this->db->delete('filedocument');
 
 
     }
@@ -483,7 +492,7 @@ class ApplyOnlinem extends CI_Model
 
                     );
 
-                  //  $error = $this->db->insert('candidatelanguagetest', $data);
+                    //  $error = $this->db->insert('candidatelanguagetest', $data);
                     $insert_id = $this->db->insert_id();
 
 
@@ -724,7 +733,7 @@ class ApplyOnlinem extends CI_Model
             $telephone = $this->input->post('telephone');
             $email = $this->input->post('email');
 //            $fax = $this->input->post('fax');
-        //    $AddressPO = $this->input->post('AddressPO');
+            //    $AddressPO = $this->input->post('AddressPO');
 
             $data1 = array(
                 'sourceOfFinance' => $selfFinance,
@@ -747,7 +756,7 @@ class ApplyOnlinem extends CI_Model
                 'telephone' => $telephone,
                 'email' => $email,
 //                'fax' => $fax,
-            //    'addressPo'=>$AddressPO,
+                //    'addressPo'=>$AddressPO,
                 'fkApplicationId'=>$applicationId
 
             );
@@ -1110,8 +1119,8 @@ class ApplyOnlinem extends CI_Model
     public function updateUserInfo($data,$id){
 
 
-            $this->db->where('id', $id);
-            $error=$this->db->update('studentregistration', $data);
+        $this->db->where('id', $id);
+        $error=$this->db->update('studentregistration', $data);
 
         if (empty($error)) {
             return $this->db->error();
@@ -1152,8 +1161,8 @@ class ApplyOnlinem extends CI_Model
         $enddate = $workendyear."-".$workendmonth."-".$workenddate;
 
 
-      //  $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
-      //  $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
+        //  $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
+        //  $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));
         $experienceid = $this->input->post('experience');
 
         $data = array(
@@ -1219,6 +1228,44 @@ class ApplyOnlinem extends CI_Model
 
         $this->db->where('fkCandidateTestId', $LanguageProficiencyId);
         $this->db->delete('cadidatelanguagetestscores');
+
+
+    }
+    public function insertAllDocument($filename)
+    {
+        $title = $this->input->post('description');
+//        $filename='filename';
+
+
+        //$addressPo = $this->input->post('addressPo[]');
+
+
+
+        for ($i = 0; $i < count($title); $i++) {
+            $data = array(
+                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+                'description' => $title[$i],
+                'filename' => $filename,
+            );
+
+            $error = $this->db->insert('filedocument', $data);
+        }
+
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+            return $error = null;
+        }
+    }
+
+    public function getDocument($applicationId){
+
+        $this->db->select('id,description,filename');
+        $this->db->limit(9);
+        $this->db->where('fkApplicationId',$applicationId);
+        $this->db->from('filedocument');
+        $query=$this->db->get();
+        return $query->result();
 
 
     }

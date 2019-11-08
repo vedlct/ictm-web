@@ -40,7 +40,7 @@
             <div class="col-md-9">
                 <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                <form role="form" action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="form-horizontal" onsubmit=" return checkvalidation()">
+                <form role="form"  action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="form-horizontal" onsubmit=" return checkvalidation()">
 
                     <!--                        		<fieldset>-->
                     <div class="form-top">
@@ -58,7 +58,7 @@
                             <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                <select tabindex="1"  style="width: 100%" name="title">
+                                <select tabindex="1"  style="width: 100%" name="title" id="title">
                                     <option value=""><?php echo "Select Title"?></option>
                                     <?php for ($i=0;$i<count(Title);$i++){?>
 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
@@ -107,6 +107,7 @@
                                 ?>
                                 Date:
                                 <select tabindex="6" name="dobdate" id="dobdate">
+                                    <option value=""  selected>Select Date</option>
                                     <?php
                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                         // echo "<option value='$dateNumber'>{$date}</option>";
@@ -117,6 +118,7 @@
                                 &nbsp;
                                 Month:
                                 <select tabindex="5" name="dobmonth" id="dobmonth">
+                                    <option value=""  selected>Select Month</option>
                                     <?php
                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                         ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $dobmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
@@ -130,6 +132,7 @@
                                  $earliest_year = 1950;
                                  $latest_year = date('Y');
                                  print '<select tabindex="4"  name="dobyear" id="dobyear">';
+                                 print '<option value=""  selected>Select Year</option>';
                                  foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                  }
@@ -176,10 +179,11 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                 <select tabindex="15"  style="width: 100%" id="nationality" required name="nationality">
-                                    <option value="" disabled selected>Select Nationality...</option>
-                                    <?php for ($i=0;$i<count(COUNTRY);$i++){?>
+<!--                                    <option value="">--><?php //echo "Select Title"?><!--</option>-->
+                                    <option value=""  selected>Select Nationality...</option>
+                                    <?php for ($i=0;$i<count(NATIONALITY);$i++){?>
                                         <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                        <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
+                                        <option value="<?php echo NATIONALITY[$i]?>"<?php if (!empty($candidateInfo->nationality) && $candidateInfo->nationality == NATIONALITY[$i])  echo 'selected = "selected"'; ?>><?php echo NATIONALITY[$i]?></option>
                                     <?php } ?>
                                 </select>
                             </div>
@@ -196,7 +200,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Passport / ID Expiry Date:</label>
                             <div class="col-md-9">
-                                <p><font color="red"> <?php echo form_error('passportExpiryDate'); ?></font></p>
+                                <p><font color="red"> <?php echo form_error('pp'); ?></font></p>
 <!--                                <input type="text" class="form-control datetimepicker"  id="passportExpiryDate" name="passportExpiryDate" value="--><?php //echo $candidateInfo->passportExpiryDate ?><!--" >-->
 
 
@@ -210,6 +214,7 @@
 
                                 Date:
                                 <select tabindex="19"  name="ppdate" id="ppdate">
+                                    <option value=""  selected>Select Date</option>
                                     <?php
                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                         // echo "<option value='$dateNumber'>{$date}</option>";
@@ -220,6 +225,7 @@
                                 &nbsp;
                                 Month:
                                 <select tabindex="18"  name="ppmonth" id="ppmonth">
+                                    <option value=""  selected>Select Month</option>
                                     <?php
                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                         ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ppmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
@@ -233,6 +239,7 @@
                                 $earliest_year = 1950;
                                 $latest_year = date('Y')+6;
                                 print '<select tabindex="17"  name="ppyear" id="ppyear">';
+                                print '<option value=""  selected>Select Year</option>';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
@@ -249,7 +256,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">UK Entry Date:</label>
                             <div class="col-md-9">
-                                <p><font color="red"> <?php echo form_error('UkEntryDate'); ?></font></p>
+                                <p><font color="red"> <?php echo form_error('uk'); ?></font></p>
 <!--                                <input type="text" class="form-control datetimepicker" id="UkEntryDate" name="UkEntryDate" value="--><?php //echo $candidateInfo->ukEntryDate ?><!--">-->
 
                                 <?php
@@ -263,6 +270,7 @@
 
                                 Date:
                                 <select tabindex="22"  name="ukdate" id="ukdate">
+                                    <option value=""  selected>Select Date</option>
                                     <?php
                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                         // echo "<option value='$dateNumber'>{$date}</option>";
@@ -273,6 +281,7 @@
                                 &nbsp;
                                 Month:
                                 <select tabindex="21"  name="ukmonth" id="ukmonth">
+                                    <option value=""  selected>Select Month</option>
                                     <?php
                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                         ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $ukmonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
@@ -286,16 +295,12 @@
                                 $earliest_year = 1950;
                                 $latest_year = date('Y');
                                 print '<select tabindex="20"  name="ukyear" id="ukyear">';
+                                print ' <option value=""  selected>Select Year</option>';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
                                 print '</select>';
                                 ?>
-
-                                &nbsp;&nbsp;&nbsp;
-                                &nbsp;
-
-
 
                             </div>
                         </div>
@@ -320,7 +325,7 @@
                         <div class="form-group">
                             <label class="control-label col-md-3">Visa Expiry Date:</label>
                             <div class="col-md-9">
-                                <p><font color="red"> <?php echo form_error('visaExpiryDate'); ?></font></p>
+                                <p><font color="red"> <?php echo form_error('visa'); ?></font></p>
 <!--                                <input type="text" class="form-control datetimepicker"  id="visaExpiryDate" name="visaExpiryDate" value="--><?php //echo $candidateInfo->visaExpiryDate ?><!--">-->
                                 <?php
                                 $visa=$candidateInfo->visaExpiryDate;
@@ -332,6 +337,7 @@
 
                                 Date:
                                 <select tabindex="26"  name="visadate" id="visadate">
+                                    <option value=""  selected>Select Date</option>
                                     <?php
                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
                                         // echo "<option value='$dateNumber'>{$date}</option>";
@@ -342,6 +348,7 @@
                                 &nbsp;
                                 Month:
                                 <select tabindex="25"  name="visamonth" id="visamonth">
+                                    <option value=""  selected>Select Month</option>
                                     <?php
                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
                                         ?><option value="<?php echo $monthNumber?>" <?php if ($monthNumber == $visamonth-1) echo 'selected = "selected"'?> ><?php echo $month?></option>;<?php
@@ -355,6 +362,7 @@
                                 $earliest_year = 1950;
                                 $latest_year = date('Y')+6;
                                 print '<select tabindex="24"  name="visayear" id="visayear">';
+                                print '<option value=""  selected>Select Year</option>';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
@@ -417,7 +425,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
                                 <select tabindex="32"  style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
-                                    <option value="" disabled selected>Select country...</option>
+                                    <option value=""  selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->currentAddressCountry) && $candidateInfo->currentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
@@ -437,7 +445,7 @@
                             <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                <input tabindex="34"  type="text" minlength="11"  maxlength="20" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
+                                <input tabindex="34"  type="text" class="form-control" required id="mobile" name="mobile" value="<?php echo $candidateInfo->mobileNo ?>">
                             </div>
                         </div>
 
@@ -504,12 +512,13 @@
                             </div>
                         </div>
 
+
                         <div class="form-group" id="paddresslabelCountry">
                             <label class="control-label col-md-3" >Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
                                 <select tabindex="42"  style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
-                                    <option value="" disabled selected>Select country...</option>
+                                    <option value=""  selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
@@ -611,7 +620,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
                                 <select tabindex="51"  style="width: 100%" id="emaddressCountry" required name="emergencyContactCountry">
-                                    <option value="" disabled selected>Select country...</option>
+                                    <option value=""  selected>Select country...</option>
                                     <?php for ($i=0;$i<count(COUNTRY);$i++){?>
                                         <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($candidateInfo->emergencyContactCountry) && $candidateInfo->emergencyContactCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                     <?php } ?>
@@ -623,7 +632,7 @@
                             <label class="control-label col-md-3">Mobile/Telephone:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactMobile'); ?></font></p>
-                                <input tabindex="52"  type="text" minlength="11"  maxlength="20" class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
+                                <input tabindex="52"  type="text"  class="form-control" required id="EmergencyContactMobile" name="EmergencyContactMobile" value="<?php echo $candidateInfo->emergencyContactMobile ?>">
                             </div>
                         </div>
 
@@ -691,7 +700,7 @@
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('courseSession'); ?></font></p>
                                 <select tabindex="57"  style="width: 100%" id="courseSession" required name="courseSession">
-                                    <option value="" disabled selected>Select Session...</option>
+                                    <option value=""  selected>Select Session...</option>
                                     <?php for ($i=0;$i<count(COURSESESSION);$i++){?>
                                         <option value="<?php echo COURSESESSION[$i]?>"<?php if (!empty($candidateInfo->courseSession) && $candidateInfo->courseSession == COURSESESSION[$i])  echo 'selected = "selected"'; ?>><?php echo COURSESESSION[$i]?></option>
                                     <?php } ?>
@@ -721,16 +730,16 @@
                             <label class="control-label col-md-3">Mode of study:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('methodeOfStudy'); ?></font></p>
-                                <input tabindex="59"  type="radio" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
-                                <input tabindex="60"  type="radio" required name="methodeOfStudy" value="PT"   <?php if($candidateInfo->methodOfStudy=='PT'){ echo "checked=checked";}?>> Part Time&nbsp;&nbsp;
+                                <input tabindex="59"  type="radio" id="methodeOfStudy" required name="methodeOfStudy" value="FT"   <?php if($candidateInfo->methodOfStudy=='FT'){ echo "checked=checked";}?>> Full Time&nbsp;&nbsp;
+                                <input tabindex="60"  type="radio" id="methodeOfStudy" required name="methodeOfStudy" value="PT"   <?php if($candidateInfo->methodOfStudy=='PT'){ echo "checked=checked";}?>> Part Time&nbsp;&nbsp;
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-md-3">Time of study:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('timeOfStudy'); ?></font></p>
-                                <input tabindex="61"  type="radio" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
-                                <input tabindex="62"  type="radio" required name="timeOfStudy" value="E&W"  <?php if($candidateInfo->timeOfStudy=='E&W'){ echo "checked=checked";}?>> Evenings & Weekend
+                                <input tabindex="61"  type="radio" id="timeOfStudy" required name="timeOfStudy" value="D"    <?php if($candidateInfo->timeOfStudy=='D'){ echo "checked=checked";}?>> Day&nbsp;&nbsp;
+                                <input tabindex="62"  type="radio" id="timeOfStudy" required name="timeOfStudy" value="EW"  <?php if($candidateInfo->timeOfStudy=='EW'){ echo "checked=checked";}?>> Evenings & Weekend
                             </div>
                         </div>
 
@@ -758,7 +767,7 @@
 <!--                                <button type="submit" class="btn btn-next">Save Application</button>-->
 <!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>-->
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
-                                <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
+                                <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>                            </div>
@@ -818,39 +827,9 @@
     });
 </script>
 
+
 <script>
 
-    //            function submitedForm() {
-    //
-    //
-    //                var phone=document.getElementById("title").value;
-    //                var email=document.getElementById("facultyEmail").value;
-    //
-    //                var chk=/^[0-9]*$/;
-    //                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    //                if(!phone.match(chk)) {
-    //                    alert( 'Please enter a valid Phone number!!' );
-    //                    return false;
-    //                }
-    //                if(phone.length >45) {
-    //                    alert( 'Phone number must be less than 45 charecter!!' );
-    //                    return false;
-    //                }
-    //                if( !facultyIntroLength ) {
-    //                    alert( 'Please enter a Faculty Intro' );
-    //                    return false;
-    //                }
-    //                if(email.match(mailformat))
-    //                {
-    //                    return true;
-    //                }
-    //                else
-    //                {
-    //                    alert("You have entered an invalid email address!");
-    //                    return false;
-    //                }
-    //
-    //            }
 
     function courseAwardBody() {
 
@@ -877,38 +856,36 @@
         }
 
     }
+//
+//    function checkphonenumber() {
+//        // var x = document.getElementById('telephone');
+//        var value = document.getElementById('EmergencyContactMobile').value;
+//        if (value.length < 11) {
+//            alert('not ok');
+//            return false; // keep form from submitting
+//        }
+//
+//    }
     function checkvalidation() {
 
-
-      //   var startyear = $('#dobyear').val();
-      //   var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
-      //   var startdat = parseInt(document.getElementById('dobdate').value)+1;
-      //  //var dob = startdat+'/'+startmonth+'/'+startyear;
-      //  // var d = new Date(dob);
-	  //
-	  //
-	  //
-      //   //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
-	  //
-      //   var today = new Date();
-      //   today.setHours(0, 0, 0, 0);
-	  //
-      //   if (startdat-1 == today.getDate()-1 && startmonth-1 == today.getMonth() && startyear == today.getFullYear()){
-      //       alert("DOB cann't be Today");
-      //       return false;
-      //   }
-	  //
-	  //
-      //   //alert(dob);
-      // if(validatedate(startdat, startmonth , startyear)=="false"){
-      //       return false;
-      // }
+        var mobile = document.getElementById('mobile').value;
+        if (mobile.length < 11 || mobile.length> 20) {
+            alert('Please at least 11 digit Mobile number');
+            return false; // keep form from submitting
+        }
+        var value = document.getElementById('EmergencyContactMobile').value;
+        if (value.length < 11 || value.length> 20) {
+            alert('Please at least 11 digit Emergency Telephone/Mobile number');
+            return false; // keep form from submitting
+        }
 
 
 
         var startyear = $('#dobyear').val();
         var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
         var startdat = parseInt(document.getElementById('dobdate').value)+1;
+        var checktype = "dob";
+//        var passporttype ="passportExpiryDate";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
@@ -921,8 +898,8 @@
         }
 
 
-        //alert(dob);
-        if(validatedate(startdat, startmonth , startyear)=="false"){
+
+        if(validatedate(startdat, startmonth , startyear, checktype)=="false"){
             return false;
         }
 
@@ -931,13 +908,14 @@
         var startyearpp = $('#ppyear').val();
         var startmonthpp = parseInt(document.getElementById('ppmonth').value)+1;
         var startdatpp = parseInt(document.getElementById('ppdate').value)+1;
-
+        var passporttype = "pp";
+//        var passporttype ="passportExpiryDate";
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
         //alert(dob);
-        if(validatedate(startdatpp, startmonthpp , startyearpp)=="false"){
+        if(validatedate1(startdatpp, startmonthpp , startyearpp,passporttype)=="false"){
             return false;
         }
 
@@ -946,13 +924,14 @@
         var startyearuk = $('#ukyear').val();
         var startmonthuk = parseInt(document.getElementById('ukmonth').value)+1;
         var startdatuk = parseInt(document.getElementById('ukdate').value)+1;
+        var uktype ="uk";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
         //alert(dob);
-        if(validatedate(startdatuk, startmonthuk , startyearuk)=="false"){
+        if(validatedate2(startdatuk, startmonthuk , startyearuk,uktype)=="false"){
             return false;
         }
 
@@ -961,15 +940,32 @@
         var startyearvs = $('#visayear').val();
         var startmonthvs = parseInt(document.getElementById('visamonth').value)+1;
         var startdatvs = parseInt(document.getElementById('visadate').value)+1;
+        var visatype="visa";
 
         //var stratdate = new Date(startyear + "-" + startmonth + "-" + startdat);
 
 
 
         //alert(dob);
-        if(validatedate(startdatvs, startmonthvs , startyearvs)=="false"){
+        if(validatedate3(startdatvs, startmonthvs , startyearvs,visatype)=="false"){
             return false;
         }
+
+        var EmergencyContactEmail=document.getElementById("EmergencyContactEmail").value;
+        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(EmergencyContactEmail.match(mailformat1))
+        {
+            return true;
+        }
+        else{
+            alert("Emergency Email Address is in invalid format!");
+            return false;
+        }
+
+
+
+
 
 
     }
@@ -1059,7 +1055,7 @@
     }
 
 
-    function validatedate(dd , mm , yy)
+    function validatedate(dd , mm , yy, checktype)
     {
             var dd = parseInt(dd);
             var mm  = parseInt(mm);
@@ -1071,8 +1067,11 @@
             {
                 if (dd>ListofDays[mm-1])
                 {
-                    alert('Invalid date format!');
-                    return "false";
+                    if (checktype == "dob") {
+                        alert(' Date of Birth is in invalid date format!');
+                        return "false";
+                    }
+
                 }
             }
             if (mm==2)
@@ -1084,18 +1083,228 @@
                 }
                 if ((lyear==false) && (dd>=29))
                 {
-                    alert('Invalid date format!');
-                    return "false";
+                    if (checktype == "dob") {
+                        alert(' Date of Birth is in invalid date format!');
+                        return "false";
+                    }
+
+
                 }
                 if ((lyear==true) && (dd>29))
                 {
-                    alert('Invalid date format!');
-                    return "false";
+                    if (checktype == "dob") {
+                        alert(' Date of Birth is in invalid date format!');
+                        return "false";
+                    }
+
                 }
             }
         }
 
+    function validatedate1(dd , mm , yy, passporttype)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (passporttype == "pp") {
+                    alert('Passport/ID Expiry Date is in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (passporttype == "pp") {
+                    alert(' Passport/ID Expiry Date is in invalid date format!');
+                    return "false";
+                }
+
+
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (passporttype == "pp") {
+                    alert(' Passport/ID Expiry Date is in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+    }
+
+
+    function validatedate2(dd , mm , yy, uktype)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (uktype == "uk") {
+                    alert('UK Entry Date is in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (uktype == "uk") {
+                    alert('UK Entry Date is in invalid date format!');
+                    return "false";
+                }
+
+
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (uktype == "uk") {
+                    alert('UK Entry Date is in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+    }
+
+    function validatedate3(dd , mm , yy, visatype)
+    {
+        var dd = parseInt(dd);
+        var mm  = parseInt(mm);
+        var yy = parseInt(yy);
+
+        // Create list of days of a month [assume there is no leap year by default]
+        var ListofDays = [31,28,31,30,31,30,31,31,30,31,30,31];
+        if (mm==1 || mm>2)
+        {
+            if (dd>ListofDays[mm-1])
+            {
+                if (visatype == "visa") {
+                    alert('Visa Expiry Date is in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+        if (mm==2)
+        {
+            var lyear = false;
+            if ( (!(yy % 4) && yy % 100) || !(yy % 400))
+            {
+                lyear = true;
+            }
+            if ((lyear==false) && (dd>=29))
+            {
+                if (visatype == "visa") {
+                    alert('Visa Expiry Date is in invalid date format!');
+                    return "false";
+                }
+
+
+            }
+            if ((lyear==true) && (dd>29))
+            {
+                if (visatype == "visa") {
+                    alert('Visa Expiry Date is in invalid date format!');
+                    return "false";
+                }
+
+            }
+        }
+    }
+
 
 </script>
+
+<!--<script>-->
+<!--    function hideElement() {-->
+<!--        var firstName=document.querySelector("firstName").value;-->
+<!--//        element = document.querySelector('.container');-->
+<!--        firstName.style.visibility = 'hidden';-->
+<!--    }-->
+<!--</script>-->
+
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+
+            $("#firstName").removeAttr('value');
+            $("#surName").removeAttr('value');
+            $("#placeOfBirth").removeAttr('value');
+            $("#passportNo").removeAttr('value');
+            $("#currentAddress").removeAttr('value');
+            $("#currentAddress2").removeAttr('value');
+            $("#currentAddress3").removeAttr('value');
+            $("#currentAddressCity").removeAttr('value');
+            $("#currentAddressState").removeAttr('value');
+            $("#currentAddressPo2").removeAttr('value');
+            $("#telephone").removeAttr('value');
+            $("#mobile").removeAttr('value');
+            $("#email").removeAttr('value');
+            $("#permanentAddress").removeAttr('value');
+            $("#permanentAddress2").removeAttr('value');
+            $("#permanentAddress3").removeAttr('value');
+            $("#permanentAddressCity").removeAttr('value');
+            $("#permanentAddressState").removeAttr('value');
+            $("#overseasAddressPo2").removeAttr('value');
+            $("#EmergencyContactName").removeAttr('value');
+            $("#EmergencyContactRelation").removeAttr('value');
+            $("#emaddress").removeAttr('value');
+            $("#emaddress2").removeAttr('value');
+            $("#emaddress3").removeAttr('value');
+            $("#emaddressCity").removeAttr('value');
+            $("#emaddressState").removeAttr('value');
+            $("#emergencyContactAddressPo").removeAttr('value');
+            $("#EmergencyContactMobile").removeAttr('value');
+            $("#EmergencyContactEmail").removeAttr('value');
+            $("#awardingBody").removeAttr('value');
+            $("#courseLevel").removeAttr('value');
+            $("#ulnNo").removeAttr('value');
+            $("#ucasCourseCode").removeAttr('value');
+            $("#title").children().removeAttr("selected");
+            $("#nationality").children().removeAttr("selected");
+            $("#VisaType").children().removeAttr("selected");
+            $("#currentAddressCountry").children().removeAttr("selected");
+            $("#permanentAddressCountry").children().removeAttr("selected");
+            $("#EmergencyContactTitle").children().removeAttr("selected");
+            $("#emaddressCountry").children().removeAttr("selected");
+            $("#courseName").children().removeAttr("selected");
+            $("#courseSession").children().removeAttr("selected");
+            $("#gender").removeAttr("checked");
+            $("#genderChange").removeAttr("checked");
+            $("#methodeOfStudy").removeAttr("checked");
+            $("#timeOfStudy").removeAttr("checked");
+
+        });
+    });
+</script>
+
 
 
