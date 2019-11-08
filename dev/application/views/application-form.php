@@ -873,13 +873,13 @@
 
                 var mobile = document.getElementById('mobile').value;
                 if (mobile.length < 11 || mobile.length> 20) {
-                    alert('Please at least 11 digit Current Mobile number');
+                    alert('Please Enter at least 11 digit Current Mobile number');
                     return false; // keep form from submitting
                 }
 
                 var value = document.getElementById('EmergencyContactMobile').value;
                 if (value.length < 11 || value.length > 20) {
-                    alert('Please at least 11 digit Emergency Telephone/Mobile number');
+                    alert('Please Enter at least 11 digit Emergency Telephone/Mobile number');
                     return false; // keep form from submitting
                 }
 

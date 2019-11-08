@@ -332,7 +332,7 @@
 
         var value = document.getElementById('telephone').value;
         if (value.length < 11 || value.length > 20) {
-            alert('Please at least 11 digit Telephone/Mobile number');
+            alert('Please Enter at least 11 digit Telephone/Mobile number');
             return false; // keep form from submitting
         }
 

@@ -871,12 +871,12 @@
 
         var mobile = document.getElementById('mobile').value;
         if (mobile.length < 11 || mobile.length> 20) {
-            alert('Please at least 11 digit Current Mobile number');
+            alert('Please Enter at least 11 digit Current Mobile number');
             return false; // keep form from submitting
         }
         var value = document.getElementById('EmergencyContactMobile').value;
         if (value.length < 11 || value.length> 20) {
-            alert('Please at least 11 digit Emergency Telephone/Mobile number');
+            alert('Please Enter at least 11 digit Emergency Telephone/Mobile number');
             return false; // keep form from submitting
         }
 
@@ -1377,6 +1377,18 @@
             $("#genderChange").removeAttr("checked");
             $("#methodeOfStudy").removeAttr("checked");
             $("#timeOfStudy").removeAttr("checked");
+            $("#dobdate").children().removeAttr("selected");
+            $("#dobmonth").children().removeAttr("selected");
+            $("#dobyear").children().removeAttr("selected");
+            $("#ppdate").children().removeAttr("selected");
+            $("#ppmonth").children().removeAttr("selected");
+            $("#ppyear").children().removeAttr("selected");
+            $("#ukdate").children().removeAttr("selected");
+            $("#ukmonth").children().removeAttr("selected");
+            $("#ukyear").children().removeAttr("selected");
+            $("#visadate").children().removeAttr("selected");
+            $("#visamonth").children().removeAttr("selected");
+            $("#visayear").children().removeAttr("selected");
 
         });
     });

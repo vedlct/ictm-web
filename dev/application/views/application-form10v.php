@@ -51,7 +51,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
-                                    <label class="control-label col-md-3">Organisation:</label>
+                                    <label class="control-label col-md-3">Organization:</label>
                                     <div class="col-md-9">
 
                                         <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
