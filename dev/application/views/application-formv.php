@@ -769,8 +769,9 @@
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                 <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>                            </div>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Next</span></button>
+                            </div>
                         </div>
                     </div>
                     <!--			                    </fieldset>-->
@@ -962,6 +963,26 @@
             alert("Emergency Email Address is in invalid format!");
             return false;
         }
+//        var emtype="EmergencyContactEmail";
+//        if(validatedate4(emtype)=="true"){
+//            return true;
+//        }
+
+//        var email=document.getElementById("email").value;
+//        var emailtype="email";
+//        if(validatedate5(emailtype)=="true"){
+//            return true;
+//        }
+//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+//        if(EmergencyContactEmail.match(mailformat1))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("Emergency Email Address is in invalid format!");
+//            return false;
+//        }
 
 
 
@@ -969,6 +990,20 @@
 
 
 
+    }
+
+    function ValidateEmail(){
+        var email=document.getElementById("email").value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        if(email.match(mailformat))
+        {
+            return true;
+        }
+        else{
+            alert("Current Email Address is in invalid format!");
+            return false;
+        }
     }
 
 </script>
@@ -1240,6 +1275,46 @@
             }
         }
     }
+
+//    function validatedate4(emtype){
+//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+////        if(!emtype.match(mailformat1))
+////        {
+////            alert("Emergency Email Address is in invalid format!");
+////            return false;
+////        }
+//        if(emtype.match(mailformat1))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("Emergency Email Address is in invalid format!");
+//            return false;
+//        }
+//
+//    }
+
+//    function validatedate5(emailtype){
+//        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//
+////        if(!emailtype.match(mailformat))
+////        {
+////            alert("Current Email Address is in invalid format!");
+////            return false;
+////        }
+//
+//        if(emailtype.match(mailformat))
+//        {
+//            return true;
+//        }
+//        else{
+//            alert("Current Email Address is in invalid format!");
+//            return false;
+//        }
+//
+//
+//    }
 
 
 </script>

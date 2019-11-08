@@ -735,8 +735,8 @@
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
                                               <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
                                               <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Save for Later</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Next</span></button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                           </div>
                                         </div>
@@ -985,6 +985,20 @@
                 }
 
 
+            }
+
+            function ValidateEmail(){
+                var email=document.getElementById("email").value;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(email.match(mailformat))
+                {
+                    return true;
+                }
+                else{
+                    alert("Current Email Address is in invalid format!");
+                    return false;
+                }
             }
 
         </script>
