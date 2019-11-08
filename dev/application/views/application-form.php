@@ -90,7 +90,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select tabindex="4" name="dobyear" id="dobyear" required>';
@@ -204,7 +204,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="17" name="ppyear" id="ppyear">';
@@ -247,7 +247,7 @@
 <!--                                            	<input type="text" class="form-control datetimepicker"  id="UkEntryDate" name="UkEntryDate" value="--><?php //echo set_value('UkEntryDate'); ?><!--">-->
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y');
                                                 print '<select tabindex="20" name="ukyear" id="ukyear">';
@@ -306,7 +306,7 @@
 
                                                 Year:
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = 1950;
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="24" name="visayear" id="visayear">';
@@ -673,10 +673,11 @@
                                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
 <!--                                                <input tabindex="58" type="text" class="form-control" id="courseYear" name="courseYear" value="--><?php //echo set_value('courseYear'); ?><!--">-->
                                                 <?php
-                                                $currently_selected = date('Y');
+                                                $currently_selected = date('');
                                                 $earliest_year = date('Y');
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                                print '<option value=""  selected>Select Year</option>';
                                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
@@ -872,7 +873,7 @@
 
                 var mobile = document.getElementById('mobile').value;
                 if (mobile.length < 11 || mobile.length> 20) {
-                    alert('Please at least 11 digit Mobile number');
+                    alert('Please at least 11 digit Current Mobile number');
                     return false; // keep form from submitting
                 }
 

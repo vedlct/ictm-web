@@ -512,19 +512,6 @@
                             </div>
                         </div>
 
-<!--                        <div class="form-group" id="paddresslabelCountry">-->
-<!--                            <label class="control-label col-md-3" >Courntry:<span style="color: red" class="required">*</span></label>-->
-<!--                            <div class="col-md-9">-->
-<!--                                <p><font color="red"> --><?php //echo form_error('permanentAddressCountry'); ?><!--</font></p>-->
-<!--                                <select tabindex="42"  style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">-->
-<!--                                    <option value="" disabled selected>Select country...</option>-->
-<!--                                    --><?php //for ($i=0;$i<count(COUNTRY);$i++){?>
-<!--                                        <option value="--><?php //echo COUNTRY[$i]?><!--"--><?php //if (!empty($candidateInfo->permanentAddressCountry) && $candidateInfo->permanentAddressCountry == COUNTRY[$i])  echo 'selected = "selected"'; ?><!-->--><?php //echo COUNTRY[$i]?><!--</option>-->
-<!--                                    --><?php //} ?>
-<!--                                </select>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
                         <div class="form-group" id="paddresslabelCountry">
                             <label class="control-label col-md-3" >Courntry:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
@@ -729,6 +716,7 @@
                                 $earliest_year = date('Y');
                                 $latest_year = date('Y')+6;
                                 print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                print '<option value=""  selected>Select Year</option>';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
@@ -882,7 +870,7 @@
 
         var mobile = document.getElementById('mobile').value;
         if (mobile.length < 11 || mobile.length> 20) {
-            alert('Please at least 11 digit Mobile number');
+            alert('Please at least 11 digit Current Mobile number');
             return false; // keep form from submitting
         }
         var value = document.getElementById('EmergencyContactMobile').value;
@@ -974,6 +962,7 @@
             alert("Emergency Email Address is in invalid format!");
             return false;
         }
+
 
 
 
