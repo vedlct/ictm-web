@@ -50,7 +50,7 @@
                         <div class="form-bottom">
                             <input tabindex="1"  type="hidden" class="form-control" id="refereesId"  name="refereesId">
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:</label>
+                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <select tabindex="2"  required style="width: 100%"  id="title"  name="title">
 

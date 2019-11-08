@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionf0800u2fl3k7k60b70l98gvhvmcl1m8l" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioncc66oj9tlnjp0v6sfnq0fhtnctja40mq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessioncdhub0uukp7p7qplf85dp73n8f28aarr" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/system/ci_sessionhov3bmdd29600qs2p4o6f7fak0giqrnl" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form10.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form10.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form10v.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form10v.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form2.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form2v.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form2v.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/application/config/form_validation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/application-form8v.php" afterPath="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/system/ci_session6jj76v0l829lu1qivtm5dvodfv1jkh95" afterPath="$PROJECT_DIR$/dev/system/ci_session6jj76v0l829lu1qivtm5dvodfv1jkh95" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,40 +23,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2457">
-              <caret line="91" column="35" lean-forward="false" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-form10.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="171" column="175" lean-forward="false" selection-start-line="171" selection-start-column="175" selection-end-line="171" selection-end-column="175" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#button#0;n#a#1;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application-form10v.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10v.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="686">
-              <caret line="220" column="31" lean-forward="false" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="175" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#button#0;n#a#1;n#div#0;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ApplyOnlinem.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,8 +36,8 @@
       <file leaf-file-name="application-formv.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="512" column="30" lean-forward="false" selection-start-line="512" selection-start-column="30" selection-end-line="512" selection-end-column="30" />
+            <state relative-caret-position="365">
+              <caret line="963" column="9" lean-forward="true" selection-start-line="963" selection-start-column="9" selection-end-line="963" selection-end-column="9" />
               <folding>
                 <marker date="1573193858243" expanded="true" signature="54332:54516" ph="..." />
               </folding>
@@ -84,8 +48,8 @@
       <file leaf-file-name="ApplyOnline.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="3889" column="5" lean-forward="false" selection-start-line="3889" selection-start-column="5" selection-end-line="3916" selection-end-column="7" />
+            <state relative-caret-position="188">
+              <caret line="3134" column="54" lean-forward="false" selection-start-line="3134" selection-start-column="40" selection-end-line="3134" selection-end-column="54" />
               <folding>
                 <marker date="1573193364041" expanded="true" signature="878:1052" ph="..." />
                 <marker date="1573193364041" expanded="true" signature="1612:1786" ph="..." />
@@ -155,23 +119,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-form7.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/application-form7.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1145">
-              <caret line="121" column="76" lean-forward="false" selection-start-line="121" selection-start-column="76" selection-end-line="121" selection-end-column="76" />
-              <folding>
-                <marker date="1573125514824" expanded="false" signature="9019:9034" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application-form.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="79">
-              <caret line="482" column="91" lean-forward="false" selection-start-line="482" selection-start-column="91" selection-end-line="482" selection-end-column="91" />
+            <state relative-caret-position="214">
+              <caret line="487" column="46" lean-forward="true" selection-start-line="487" selection-start-column="46" selection-end-line="487" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -181,7 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>editApplyForm1</find>
       <find>editApplicationForm7Save</find>
       <find>editORInsertApplicationForm2</find>
       <find>getQualificationsDetails</find>
@@ -199,18 +150,19 @@
       <find>telephone</find>
       <find>EmergencyContactMobile</find>
       <find>mobile</find>
-      <find>insertapplyNow7</find>
       <find>insertAllDocument</find>
       <find>insertApplicationForm10</find>
       <find>applyNow10</find>
       <find>In</find>
-      <find>jobTitle</find>
       <find>Your data</find>
       <find>Apply-Work-Experience</find>
       <find>file</find>
       <find>email</find>
       <find>insertApplicationForm10AndNext</find>
+      <find>jobTitle</find>
+      <find>editORInsertApplicationForm8</find>
       <find>Post Code</find>
+      <find>insertapplyNow7</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -237,7 +189,6 @@
         <option value="$PROJECT_DIR$/dev/application/views/application-form7.php" />
         <option value="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form8.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
         <option value="$PROJECT_DIR$/dev/application/config/config.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form2v.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form2.php" />
@@ -246,6 +197,8 @@
         <option value="$PROJECT_DIR$/dev/application/views/application-form10.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-formv.php" />
+        <option value="$PROJECT_DIR$/dev/application/config/form_validation.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
       </list>
     </option>
   </component>
@@ -439,15 +392,15 @@
       <workItem from="1572930583008" duration="25904000" />
       <workItem from="1573017082768" duration="21741000" />
       <workItem from="1573103522105" duration="26093000" />
-      <workItem from="1573189230453" duration="4635000" />
+      <workItem from="1573189230453" duration="7000000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170059000" />
+    <option name="totallyTimeSpent" value="172424000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -481,16 +434,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20466">
-          <caret line="758" column="181" lean-forward="false" selection-start-line="758" selection-start-column="181" selection-end-line="758" selection-end-column="194" />
-          <folding>
-            <marker date="1573193858243" expanded="true" signature="54332:54516" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5832">
@@ -886,34 +829,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2457">
-          <caret line="91" column="35" lean-forward="false" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/application-form4v.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="278" column="13" lean-forward="false" selection-start-line="278" selection-start-column="13" selection-end-line="278" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2403">
-          <caret line="89" column="122" lean-forward="false" selection-start-line="89" selection-start-column="122" selection-end-line="89" selection-end-column="122" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="90" column="52" lean-forward="true" selection-start-line="90" selection-start-column="52" selection-end-line="90" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -966,10 +885,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10v.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="205" column="77" lean-forward="false" selection-start-line="205" selection-start-column="77" selection-end-line="205" selection-end-column="77" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#button#0;n#a#1;n#div#0;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="179" column="0" lean-forward="true" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#button#0;n#a#1;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="91" column="35" lean-forward="false" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/form_validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="675" column="28" lean-forward="false" selection-start-line="675" selection-start-column="28" selection-end-line="675" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8v.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="52" column="126" lean-forward="false" selection-start-line="52" selection-start-column="126" selection-end-line="52" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form8.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="86" column="31" lean-forward="false" selection-start-line="86" selection-start-column="31" selection-end-line="86" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="487" column="46" lean-forward="true" selection-start-line="487" selection-start-column="46" selection-end-line="487" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/application-form7.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1145">
-          <caret line="121" column="76" lean-forward="false" selection-start-line="121" selection-start-column="76" selection-end-line="121" selection-end-column="76" />
+        <state relative-caret-position="273">
+          <caret line="248" column="31" lean-forward="true" selection-start-line="248" selection-start-column="31" selection-end-line="248" selection-end-column="31" />
           <folding>
             <marker date="1573125514824" expanded="false" signature="9019:9034" ph="..." />
           </folding>
@@ -978,8 +957,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="3889" column="5" lean-forward="false" selection-start-line="3889" selection-start-column="5" selection-end-line="3916" selection-end-column="7" />
+        <state relative-caret-position="188">
+          <caret line="3134" column="54" lean-forward="false" selection-start-line="3134" selection-start-column="40" selection-end-line="3134" selection-end-column="54" />
           <folding>
             <marker date="1573193364041" expanded="true" signature="878:1052" ph="..." />
             <marker date="1573193364041" expanded="true" signature="1612:1786" ph="..." />
@@ -1048,38 +1027,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="171" column="175" lean-forward="false" selection-start-line="171" selection-start-column="175" selection-end-line="171" selection-end-column="175" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#button#0;n#a#1;n#div#0;n#div#2;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="686">
-          <caret line="220" column="31" lean-forward="false" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="175" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#button#0;n#a#1;n#div#0;n#div#3;n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="482" column="91" lean-forward="false" selection-start-line="482" selection-start-column="91" selection-end-line="482" selection-end-column="91" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="512" column="30" lean-forward="false" selection-start-line="512" selection-start-column="30" selection-end-line="512" selection-end-column="30" />
+        <state relative-caret-position="365">
+          <caret line="963" column="9" lean-forward="true" selection-start-line="963" selection-start-column="9" selection-end-line="963" selection-end-column="9" />
           <folding>
             <marker date="1573193858243" expanded="true" signature="54332:54516" ph="..." />
           </folding>
