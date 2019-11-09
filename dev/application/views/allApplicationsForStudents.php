@@ -67,10 +67,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                             <td><?php echo $application->title.' '.$application->firstName.' '.$application->surName ?></td>
                             <td><?php echo $application->email ?></td>
-                            <td><?php if ($application->isSubmited=='0'){echo "Not Submitted";}elseif($application->isSubmited=='1'){echo "Submitted";}elseif($application->isSubmited=='2'){echo "Cancelled";} ?></td>
+                            <td><?php if ($application->isSubmited=='3'){echo "Not Submitted";}elseif($application->isSubmited=='1'){echo "Submitted";}elseif($application->isSubmited=='2'){echo "Cancelled";} ?></td>
 
                             <td>
-                                <?php if ($application->isSubmited=='0'){?>
+                                <?php if ($application->isSubmited=='3'){?>
                                     <a class="btn" href="<?php echo base_url()?>ApplyOnline/editApplyFromStudents/<?php echo $application->id ?>"><i class="fa fa-edit"></i></a>
                                 <?php } elseif($application->isSubmited=='1'){?>
 

@@ -81,7 +81,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-4">
+                            <div class="col-md-offset-10 col-md-12">
                                 <button type="submit" class="btn btn-next" onclick="return VerifyUploadSizeIsOK()">Add File</button>
                             </div>
                         </div>
