@@ -143,7 +143,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <th>Institution</th>
                                 <th>Awarding Body</th>
                                 <th>Subject</th>
-                                <th>Complettion Year</th>
+                                <th>Completion Year</th>
                                 <th>Grade</th>
                                 <th>Action</th>
 

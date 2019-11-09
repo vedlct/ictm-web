@@ -572,7 +572,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group" id="estatelabel">
-                                            <label class="control-label col-md-3">Country/State:</label>
+                                            <label class="control-label col-md-3">County/State:</label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
                                                 <input tabindex="50" type="text" class="form-control"  id="emaddressState" value="<?php echo set_value('EmergencyContactState'); ?>" name="EmergencyContactState">
