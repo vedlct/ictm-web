@@ -2128,8 +2128,8 @@ class StudentApplication extends CI_Controller
                 );
                 if (!empty($qualificationId)) {
                     $this->StudentApplicationm->editQualificationsDetailsById($qualificationId, $data);
-                    $this->session->set_flashdata('successMessage', 'Qualification Edited Successfully');
-                    redirect('Admin/StudentApplication/editStudentApplicationWorkExperience');
+                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                    redirect('Admin/StudentApplication/manageApplication');
                 } else {
                     $data2 = array(
                         'fkApplicationId' => $this->session->userdata('studentApplicationId'),
@@ -2190,7 +2190,8 @@ class StudentApplication extends CI_Controller
             }
             else{
                 $this->StudentApplicationm->applyNow10update();
-                redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
+                $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                redirect('Admin/StudentApplication/manageApplication');
             }
         }
         else{
@@ -2364,8 +2365,8 @@ class StudentApplication extends CI_Controller
                 }else{
                     $this->data['error']=$this->StudentApplicationm->applyNow3update();
                     if (empty($this->data['error'])) {
-                        $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                        redirect('Admin/StudentApplication/editStudentApplicationFinance');
+                        $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                        redirect('Admin/StudentApplication/manageApplication');
                     } else {
                         $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                         redirect('Admin/StudentApplication/editStudentApplicationFinance');
@@ -2511,8 +2512,8 @@ class StudentApplication extends CI_Controller
                 }
             }
             if (empty($this->data['error'])) {
-                $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                redirect('Admin/StudentApplication/editStudentApplicationPersonalStatement');
+                $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                redirect('Admin/StudentApplication/manageApplication');
             } else {
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                 redirect('Admin/StudentApplication/editStudentApplicationFinance');
@@ -2603,8 +2604,8 @@ class StudentApplication extends CI_Controller
             }else {
                 $this->data['error'] = $this->StudentApplicationm->updatApplynow5();
                 if (empty($this->data['error'])) {
-                    $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                    redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
+                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                    redirect('Admin/StudentApplication/manageApplication');
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                     redirect('Admin/StudentApplication/editStudentApplicationPersonalStatement');
@@ -2828,8 +2829,8 @@ class StudentApplication extends CI_Controller
                 $this->data['error'] = $this->StudentApplicationm->updateApplyNow6personal($id, $data1);
             }
             if (empty($this->data['error'])) {
-                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+                $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                redirect('Admin/StudentApplication/manageApplication');
             } else {
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                 redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');
@@ -2844,7 +2845,9 @@ class StudentApplication extends CI_Controller
     public function editStudentApplicationDocumentUpload() // go to the apply page of selected course
     {
         if ($this->session->userdata('loggedin') == "true") {
-            $this->load->view('StudentApplicationForms/application-form7');
+            $applicationId = $this->session->userdata('studentApplicationId');
+            $this->data['document'] = $this->StudentApplicationm->getDocument($applicationId);
+            $this->load->view('StudentApplicationForms/application-form7',$this->data);
         }else{
             echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
@@ -2854,15 +2857,19 @@ class StudentApplication extends CI_Controller
     }
     public function deleteStudentFile()
     {
-        $fileName = $this->input->post('fileName');
-        $applicationId = $this->session->userdata('studentApplicationId');
-        $filePath= 'studentApplications/'.$applicationId.'/';
-        if (file_exists($filePath.$fileName)) {
-            unlink ($filePath.$fileName);
-            echo '1';
-        } else {
-            echo '0';
-        }
+//        $fileName = $this->input->post('fileName');
+//        $applicationId = $this->session->userdata('studentApplicationId');
+//        $filePath= 'studentApplications/'.$applicationId.'/';
+//        if (file_exists($filePath.$fileName)) {
+//            unlink ($filePath.$fileName);
+//            echo '1';
+//        } else {
+//            echo '0';
+//        }
+
+        $applicationId = $this->input->post("id");
+        $data = $this->StudentApplicationm->deleteDocument($applicationId);
+        $this->session->set_flashdata('successMessage', 'File Deleted Successfully');
         // echo  $filePath.$fileName;
     }
     public function insertapplyNow7()
@@ -2887,6 +2894,9 @@ class StudentApplication extends CI_Controller
                             $error[$i] = $this->upload->display_errors();
                             $data[$error[$i]];
                         }
+                        $filename= $_FILES['fileUpload']['name'];
+//// insert file name
+                        $this->data['error'] = $this->StudentApplicationm->insertAllDocument($filename);
                         $fileCount++;
                     } else {
                     }
@@ -2931,13 +2941,16 @@ class StudentApplication extends CI_Controller
                             $error[$i] = $this->upload->display_errors();
                             $data[$error[$i]];
                         }
+                        $filename= $_FILES['fileUpload']['name'];
+//// insert file name
+                        $this->data['error'] = $this->StudentApplicationm->insertAllDocument($filename);
                         $fileCount++;
                     } else {
                     }
                 }
                 if (empty($data)) {
-                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
-                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully, please comeback later to complete your application');
+                    redirect('Admin/StudentApplication/manageApplication');
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                     redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
@@ -3076,8 +3089,8 @@ class StudentApplication extends CI_Controller
                 );
                 if (!empty($refereesId)) {
                     $this->StudentApplicationm->editRefereesDetailsById($refereesId, $data);
-                    $this->session->set_flashdata('successMessage', 'Referees Edited Successfully');
-                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                    redirect('Admin/StudentApplication/manageApplication');
                 } else {
                     $data2 = array(
                         'fkApplicationId' => $this->session->userdata('studentApplicationId'),

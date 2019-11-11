@@ -57,6 +57,8 @@
                                         <li>Need to proof 5 Years Residency (If applicable) or if an EU Migrant worker (6 months’ UK payslips)</li>
                                         <li><b>Please note that all students whose first language is not English will be required to prove their proficiency in English Language to a minimum standard of CEFR Level B2 or equivalent.</b></li>
                                         <li><b>Completed application form along with copies of supporting documents will be retained by Icon College in the event of successful / unsuccessful admission.</b></li>
+                                        <li><b>FILE UPLOAD TYPE  SHOULD BE IN DOC,IMAGE(JPG,PNG,JPEG),PDF,EXCEL FORMATE.</b></li>
+                                        <li><b>MAXIMUM FILE SIZE SHOULD BE  4MB. MORE THAN 4MB FILE NOT ACCEPTABLE.</b></li>
                                     </ul>
                                 </div>
                             </div>
@@ -65,15 +67,23 @@
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-10">
-                                    <input style="width: 100%; height: 32px; border: 1px solid #bababa; padding: 0;"  type="file" class="form-control"  name="fileUpload[]" multiple>
+                                    <input style="width: 100%; height: 32px; border: 1px solid #bababa; padding: 0;"  type="file" class="form-control" id="file-upload"  name="fileUpload[]" multiple>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Description:</label>
+                                <div class="col-sm-10">
+                                    <textarea class="form-control " name="description[]" id="photoDetails[]" ></textarea>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEqualOppertunity" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Previous</button></a>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm7AndNext" class="btn btn-next">Save And Next</button>
+                                    <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
+<!--                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>-->
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm7AndNext" class="btn btn-next">Save for later</button>
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationReferences" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
@@ -81,39 +91,50 @@
                             <div id="qualificationTable">
                                 <table  class="table  table-bordered">
                                     <tr>
-                                        <th>SL</th>
                                         <th>File Name</th>
+                                        <th>Description</th>
                                         <th>Action</th>
 
                                     </tr>
-                                    <?php
-                                    $applicationId = $this->session->userdata('studentApplicationId');
-                                    $dir =   "./studentApplications/$applicationId";
-                                    $dir2 =   "../../studentApplications/$applicationId";
+                                    <?php foreach ($document as $document){?>
+                                        <tr>
 
-
-                                    // Open a directory, and read its contents
-                                    if (is_dir($dir)) {
-                                        if ($dh = opendir($dir)) {
-                                            $count = 1;
-                                            while (($file = readdir($dh)) !== false) {
-                                                if ($file != "." && $file != "..") { ?>
-                                                    <tr>
-                                                        <td><?php echo $count ?></td>
-                                                        <td>
-                                                            <a target="_blank" href="<?php echo $dir2 . "/" . $file ?>"> <?php echo $file  ?> </a>
-
-                                                        </td>
-
-                                                        <td>
-                                                            <a style="cursor: pointer" data-panel-id="<?php echo $file ?>" onclick="selectidForDelete(this)"><i class="glyphicon glyphicon-trash"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                    <?php $count++;
-                                                }
-                                            }
-                                        }
-                                    }?>
+                                            <!--                                        <td></td>-->
+                                            <td><?php echo $document->filename?></td>
+                                            <td><?php echo $document->description ?></td>
+                                            <td>
+                                                <a style="cursor: pointer" data-panel-id="<?php echo $document->id ?>" onclick="selectidForDelete(this)"><i class="glyphicon glyphicon-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+<!--                                    --><?php
+//                                    $applicationId = $this->session->userdata('studentApplicationId');
+//                                    $dir =   "./studentApplications/$applicationId";
+//                                    $dir2 =   "../../studentApplications/$applicationId";
+//
+//
+//                                    // Open a directory, and read its contents
+//                                    if (is_dir($dir)) {
+//                                        if ($dh = opendir($dir)) {
+//                                            $count = 1;
+//                                            while (($file = readdir($dh)) !== false) {
+//                                                if ($file != "." && $file != "..") { ?>
+<!--                                                    <tr>-->
+<!--                                                        <td>--><?php //echo $count ?><!--</td>-->
+<!--                                                        <td>-->
+<!--                                                            <a target="_blank" href="--><?php //echo $dir2 . "/" . $file ?><!--"> --><?php //echo $file  ?><!-- </a>-->
+<!---->
+<!--                                                        </td>-->
+<!---->
+<!--                                                        <td>-->
+<!--                                                            <a style="cursor: pointer" data-panel-id="--><?php //echo $file ?><!--" onclick="selectidForDelete(this)"><i class="glyphicon glyphicon-trash"></i></a>-->
+<!--                                                        </td>-->
+<!--                                                    </tr>-->
+<!--                                                    --><?php //$count++;
+//                                                }
+//                                            }
+//                                        }
+//                                    }?>
                                 </table>
                             </div>
 
@@ -154,26 +175,27 @@
 <script>
     function selectidForDelete(x) {
 
-        var fileName=$(x).data('panel-id');
+//        var fileName=$(x).data('panel-id');
         if (confirm('Are you sure to delete this file!')){
-
+            btn = $(x).data('panel-id');
             $.ajax({
                 type: 'POST',
                 url: '<?php echo base_url("Admin/StudentApplication/deleteStudentFile")?>',
-                data: {fileName: fileName},
+                data: {'id': btn},
                 cache: false,
                 success: function (data) {
 
+                    location.reload();
 
-                    if (data=='0'){
-
-                        alert('there is a problem with a file please contact us');
-
-                    }else if(data=='1'){
-
-                        $('#qualificationTable').load(document.URL +  ' #qualificationTable');
-
-                    }
+//                    if (data=='0'){
+//
+//                        alert('there is a problem with a file please contact us');
+//
+//                    }else if(data=='1'){
+//
+//                        $('#qualificationTable').load(document.URL +  ' #qualificationTable');
+//
+//                    }
 
 
 
