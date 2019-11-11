@@ -803,7 +803,7 @@ class StudentApplicationm extends CI_Model
     }
     public function getFinancerDataFromOthers($applicationId)
     {
-        $this->db->select('id,name,title,relation,address,address2,address3,city,state,addressPo,mobile,telephone,email');
+        $this->db->select('id,name,title,relation,address,address2,address3,city,state,addressPo,mobile,telephone,email,country');
         $this->db->where('fkApplicationId', $applicationId);
         $this->db->from('financer');
         $query = $this->db->get();

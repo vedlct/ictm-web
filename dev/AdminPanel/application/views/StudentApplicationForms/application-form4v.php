@@ -138,23 +138,20 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
+
+                                <div class="form-group" id="ecountrylabel">
+                                    <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                        <select style="width: 100%;height: 32px; border: 1px solid #bababa;" id="country"  name="country">
+                                        <select style="width: 100%" id="country" required name="country">
                                             <option value=""  selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                                <option value="<?php echo COUNTRY[$i]?>"<?php
-                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
-                                                ?>><?php echo COUNTRY[$i]?></option>
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($f4->country) && $f4->country == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                             <?php } ?>
                                         </select>
-
-
                                     </div>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
