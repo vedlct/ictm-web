@@ -41,16 +41,19 @@
 
                 <form role="form" action="<?php echo base_url()?>ApplyOnline/insertapplyNow8" method="post" class="form-horizontal" onsubmit="return checkvalidation()>
 
-<!--                    <fieldset>-->
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h3>Referees</h3>
-                            </div>
 
-                            <div class="form-top-right">
-                                <p>Step 8 / 10</p>
-                            </div>
-                        </div>
+                        <div class="form-top">
+                <div class="form-top-left">
+                    <h3>Referees</h3>
+                </div>
+
+                <div class="form-top-right">
+                    <p>Step 8 / 10</p>
+                </div>
+
+                         </div>
+
+
 
                         <div class="form-bottom">
                             <div id='TextBoxesGroup'>
@@ -188,12 +191,16 @@
                                     <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8Save" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
-                                    <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm7" ><button type="button"  class="btn ">Next</button></a>-->
+                                    <!--
                                 </div>
                             </div>
 
                         </div>
 <!--                    </fieldset>-->
+                                </div>
+                            </div>
+                        </div>
+
 
                 </form>
 

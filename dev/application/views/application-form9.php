@@ -58,10 +58,10 @@
 <!--                            --><?php //foreach ($applications as $application){?>
 <!--                                <a target="_blank" href="--><?php //echo base_url()?><!--ApplyOnline/showApplicationPdf/--><?php //echo $application->id ?><!--"><button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button></a>-->
 <!--                            --><?php //} ?>
-                            <button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button>
-<!--                            --><?php //foreach ($applications as $application){?>
-<!--                            <a class="btn" target="_blank" href="--><?php //echo base_url()?><!--ApplyOnline/showApplicationPdf/--><?php //echo $application->id ?><!--"><button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button></a>-->
-<!--                        --><?php //}?>
+<!--                            <button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button>-->
+
+                            <a class="btn" target="_blank" href="<?php echo base_url()?>ApplyOnline/showApplicationPdflast/"><button type="button" class="btn btn-next"><span style="color: #FFFFFF;">Download PDF</span></button></a>
+
 
                         </div>
 <!--                    </fieldset>-->

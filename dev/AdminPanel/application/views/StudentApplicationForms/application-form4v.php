@@ -138,23 +138,20 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Country:<span style="color: red" class="required">*</span></label>
+
+                                <div class="form-group" id="ecountrylabel">
+                                    <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
                                         <p><font color="red"> <?php echo form_error('country'); ?></font></p>
-                                        <select style="width: 100%;height: 32px; border: 1px solid #bababa;" id="country"  name="country">
-                                            <option value="" disabled selected>Select country...</option>
+                                        <select style="width: 100%" id="country" required name="country">
+                                            <option value=""  selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>
-                                                <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
-                                                <option value="<?php echo COUNTRY[$i]?>"<?php
-                                                echo set_value('country') == COUNTRY[$i] ? "selected" : "";
-                                                ?>><?php echo COUNTRY[$i]?></option>
+                                                <option value="<?php echo COUNTRY[$i]?>"<?php if (!empty($f4->country) && $f4->country == COUNTRY[$i])  echo 'selected = "selected"'; ?>><?php echo COUNTRY[$i]?></option>
                                             <?php } ?>
                                         </select>
-
-
                                     </div>
                                 </div>
+
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
@@ -189,9 +186,9 @@
                             <div style="margin-top: 20px" class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency" ><button style="color: #fff; background-color: #841A29;" type="button" class="btn btn-previous">Previous</button></a>
-
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm4AndNext" class="btn btn-next">Save And Next</button>
+                                    <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
+                                    <button style="color: #fff; background-color: #841A29;" type="reset" id="hide"  class="btn btn-next">Reset</button>
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm4AndNext" class="btn btn-next">Save For Later</button>
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationPersonalStatement" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
 
                                 </div>
@@ -331,4 +328,26 @@
             return true;
         }
     }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+            $("#email").removeAttr('value');
+            $("#name").removeAttr('value');
+            $("#relation").removeAttr('value');
+            $("#address").removeAttr('value');
+            $("#address2").removeAttr('value');
+            $("#address3").removeAttr('value');
+            $("#AddressPO").removeAttr('value');
+            $("#state").removeAttr('value');
+            $("#mobile").removeAttr('value');
+            $("#city").removeAttr('value');
+            $("#telephone").removeAttr('value');
+            $("#title").children().removeAttr("selected");
+            $("#country").children().removeAttr("selected");
+
+
+        });
+    });
 </script>

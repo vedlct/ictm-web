@@ -68,7 +68,7 @@
                                 <div class="col-md-10">
 
                                     <select style="width: 100%" id="collegeChoiceStatement" required name="collegeChoiceStatement">
-                                        <option value="" disabled selected>Select Source...</option>
+                                        <option value=""  selected>Select Source...</option>
                                         <?php for ($i=0;$i<count(PERSONAL_STATEMENT);$i++){?>
                                             <option value="<?php echo PERSONAL_STATEMENT[$i]?>"<?php if (!empty($f5->collegeChoiceStatement) && $f5->collegeChoiceStatement == PERSONAL_STATEMENT[$i])  echo 'selected = "selected"'; ?>><?php echo PERSONAL_STATEMENT[$i]?></option>
                                         <?php } ?>
@@ -80,8 +80,9 @@
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationFinance" ><button style="color: #fff; background-color: #841A29;" type="button" class="btn btn-previous">Previous</button></a>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm5AndNext" class="btn btn-next">Save And Next</button>
+                                    <button type="reset" id="hide" style="color: #fff; background-color: #841A29;" class="btn btn-next">Reset</button>
+<!--                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>-->
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm5AndNext" class="btn btn-next">Save For Later</button>
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEqualOppertunity" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>
@@ -156,4 +157,17 @@
             return true;
         }
     }
+</script>
+
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
+//            $("#courseChoiceStatement").removeAttr('value');
+            $('#courseChoiceStatement').val('').empty();
+            $("#collegeChoiceStatement").children().removeAttr("selected");
+
+
+
+        });
+    });
 </script>

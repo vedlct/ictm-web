@@ -132,8 +132,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <!--                                                                <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Admin/StudentApplication/viewApplication/<?php echo $this->session->userdata('studentApplicationId')?>" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-previous">Previous</button></a>
-                                <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
+                                <button type="reset" style="color: #fff; background-color: #841A29;" class="btn btn-next">Reset</button>
+                                <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
+<!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editORInsertApplicationForm2AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>-->
+                                <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm2AndNext" class="btn btn-next">Save For Later</button>
                                 <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationWorkExperience" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                             </div>
                         </div>

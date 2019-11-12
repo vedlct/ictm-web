@@ -421,7 +421,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-md-3" id="caddressCountry">Courntry:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-3" id="caddressCountry">Country:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentAddressCountry'); ?></font></p>
                                 <select tabindex="32"  style="width: 100%" id="currentAddressCountry" required name="currentAddressCountry">
@@ -514,7 +514,7 @@
 
 
                         <div class="form-group" id="paddresslabelCountry">
-                            <label class="control-label col-md-3" >Courntry:<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-3" >Country:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('permanentAddressCountry'); ?></font></p>
                                 <select tabindex="42"  style="width: 100%" id="permanentAddressCountry" required name="permanentAddressCountry">
@@ -600,7 +600,7 @@
                             </div>
                         </div>
                         <div class="form-group" id="estatelabel">
-                            <label class="control-label col-md-3" id="estatelabel">Country/State:</label>
+                            <label class="control-label col-md-3" id="estatelabel">County/State:</label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('EmergencyContactState'); ?></font></p>
                                 <input tabindex="50"  type="text" class="form-control"  id="emaddressState" name="EmergencyContactState" value="<?php echo $candidateInfo->emergencyContactAddressState ?>" >

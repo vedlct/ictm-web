@@ -59,6 +59,8 @@
                                     <li>Need to proof 5 Years Residency (If applicable) or if an EU Migrant worker (6 months’ UK payslips)</li>
                                     <li><b>Please note that all students whose first language is not English will be required to prove their proficiency in English Language to a minimum standard of CEFR Level B2 or equivalent.</b></li>
                                     <li><b>Completed application form along with copies of supporting documents will be retained by Icon College in the event of successful / unsuccessful admission.</b></li>
+                                    <li><b>FILE UPLOAD TYPE  SHOULD BE IN DOC,IMAGE(JPG,PNG,JPEG),PDF,EXCEL FORMATE.</b></li>
+                                    <li><b>MAXIMUM FILE SIZE SHOULD BE  4MB. MORE THAN 4MB FILE NOT ACCEPTABLE.</b></li>
                                 </ul>
                             </div>
                         </div>
@@ -79,7 +81,7 @@
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-4">
+                            <div class="col-md-offset-10 col-md-12">
                                 <button type="submit" class="btn btn-next" onclick="return VerifyUploadSizeIsOK()">Add File</button>
                             </div>
                         </div>

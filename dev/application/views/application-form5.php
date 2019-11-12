@@ -120,8 +120,8 @@
 //            return false;
 //
 //        }
-        if (numwords < 200 || numwords > 1000) {
-            alert('Please lengthen this text 200 words to 1000 words ');
+        if (numwords < 100 || numwords > 200) {
+            alert('Please lengthen this text 100 words to 200 words ');
             return false; // keep form from submitting
         }
 

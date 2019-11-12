@@ -110,8 +110,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                 <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button" class="btn btn-previous">Previous</button></a>
-                                <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/updateApplicationForm10AndNext" class="btn btn-next">Save And Next</button>
+                                <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
+                                <button type="reset" style="color: #fff; background-color: #841A29;" class="btn btn-next">Reset</button>
+<!--                                <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>-->
+                                <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/updateApplicationForm10AndNext" class="btn btn-next">Save For Later</button>
 
                                 <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>
                             </div>

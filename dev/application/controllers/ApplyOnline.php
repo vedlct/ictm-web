@@ -4120,6 +4120,49 @@ class ApplyOnline extends CI_Controller
 
 
 
+    public function showApplicationPdflast() // for last Application view
+    {
+        $applicationId = $this->session->userdata('studentApplicationId');
+        if ($this->session->userdata('loggedin') == "true")
+        {
+            $this->load->library('pdfgenerator');
+
+
+
+            $this->data['applicationDetails'] = $this->StudentApplicationPdfm->applicationDetails($applicationId);
+
+            $this->data['personalDetails'] = $this->StudentApplicationPdfm->personalDetails($applicationId);
+            $this->data['contactDetails'] = $this->StudentApplicationPdfm->contactDetails($applicationId);
+            $this->data['emmergencyContact'] = $this->StudentApplicationPdfm->emmergancyContact($applicationId);
+            $this->data['courseDetails'] = $this->StudentApplicationPdfm->courseDetails($applicationId);
+            $this->data['qualifications'] = $this->StudentApplicationPdfm->qualifications($applicationId);
+            $this->data['experience'] = $this->StudentApplicationPdfm->workExperience($applicationId);
+            $this->data['languageProficiency'] = $this->StudentApplicationPdfm->languageProficiency($applicationId);
+            $this->data['languageProficiencyTestScore'] = $this->StudentApplicationPdfm->languageProficiencyTestScore();
+            $this->data['personalstatement'] = $this->StudentApplicationPdfm->personalStatement($applicationId);
+            $this->data['finance'] = $this->StudentApplicationPdfm->finance($applicationId);
+            $this->data['referees'] = $this->StudentApplicationPdfm->referees($applicationId);
+            $this->data['equaloppurtunitiesgroup'] = $this->StudentApplicationPdfm->equalOppurtunitiesGroup();
+            $this->data['equaloppurtunitiesgroupsubgroup'] = $this->StudentApplicationPdfm->equalOppurtunitiesSubGroup();
+            $this->data['personequaloppurtunities'] = $this->StudentApplicationPdfm->personequalOppurtunities($applicationId);
+
+            $this->data['personalstatement'] = $this->StudentApplicationPdfm->personalStatement($applicationId);
+
+            $html=$this->load->view('studentsApplicationPdf/detailsForms', $this->data,true);
+
+            $filename = 'ApplicationFormPDF';
+            $this->pdfgenerator->generate($html, $filename, true, 'A4', 'portrait');
+
+        }
+
+        else{
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+        }
+    }
+
     public function menu() // get all the menu + footer
     {
         $this->data['affiliation'] = $this->Menum->getAffiliations();
