@@ -467,8 +467,11 @@
                                         <div class="form-group">        
                                           <div class="col-sm-offset-2 col-md-10">
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
-                                              <button type="submit" class="btn btn-next">Save Application</button>
-                                              <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next">Save And Next</button>
+                                              <button style="color: #fff; background-color: #841A29;margin-top: 2%;" type="reset" class="btn btn-next">Reset</button>
+                                              <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;margin-top: 2%;" type="button"  class="btn btn-next">Cancel</button></a>
+<!--                                              <button type="submit" class="btn btn-next">Save Application</button>-->
+                                              <button type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1" class="btn btn-next">Save for Later</button>
+                                              <button style="color: #fff; background-color: #841A29;margin-top: 2%;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm1AndNext" class="btn btn-next">Next</button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                           </div>
                                         </div>
