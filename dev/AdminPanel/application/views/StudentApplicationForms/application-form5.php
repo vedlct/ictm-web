@@ -71,6 +71,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <button type="button" class="btn btn-previous">Previous</button>
+                                <button style="color: #fff; background-color: #841A29;margin-top: 2%;" type="reset" class="btn btn-next">Reset</button>
                                 <button type="submit" class="btn ">Next</button>
                                 <button type="submit" class="btn btn-next">Save Application</button>
                             </div>

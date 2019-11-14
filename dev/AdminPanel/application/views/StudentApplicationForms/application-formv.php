@@ -450,7 +450,7 @@
                                 <div class="form-group" id="ecountrylabel">
                                     <label class="control-label col-md-2">Country :<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
+                                        <p><font color="re+d"> <?php echo form_error('emergencyContactCountry'); ?></font></p>
                                         <select style="width: 100%" id="emergencyContactCountry" required name="emergencyContactCountry">
                                             <option value=""  selected>Select country...</option>
                                             <?php for ($i=0;$i<count(COUNTRY);$i++){?>

@@ -2235,8 +2235,8 @@ class StudentApplication extends CI_Controller
         if ($this->session->userdata('loggedin') == "true") {
             $this->data['error']=$this->StudentApplicationm->applyNow3Insert();
             if (empty($this->data['error'])) {
-                $this->session->set_flashdata('successMessage', 'Information Saved  Successfully');
-                redirect('Admin/StudentApplication/editStudentApplicationFinance');
+                $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                redirect('Admin/StudentApplication/manageApplication');
             } else {
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                 redirect('Admin/StudentApplication/editStudentApplicationEnglishLanguageProficiency');
@@ -2719,8 +2719,8 @@ class StudentApplication extends CI_Controller
                 $this->data['error'] = $this->StudentApplicationm->insertapplyNow6personal($data1);
             }
             if (empty($this->data['error'])) {
-                $this->session->set_flashdata('successMessage', 'Information was  Successfully save');
-                redirect('Admin/StudentApplication/editStudentApplicationDocumentUpload');
+                $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                redirect('Admin/StudentApplication/manageApplication');
             } else {
                 $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
                 redirect('Admin/StudentApplication/editStudentApplicationEqualOppertunity');

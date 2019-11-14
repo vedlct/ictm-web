@@ -128,8 +128,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
 
                                     <a href="<?php echo base_url()?>Apply" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-previous">Previous</button></a>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next">Save And Next</button>
+                                    <button style="color: #fff; background-color: #841A29;margin-top: 2%;" type="reset" class="btn btn-next">Reset</button>
+<!--                                    <button style="color: #fff; background-color: #841A29;" type="submit" class="btn btn-next">Save Application</button>-->
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editORInsertApplicationForm2AndNext" class="btn btn-next">Save For Later</button>
                                     <a href="<?php echo base_url()?>Apply-Work-Experience" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Next</button></a>
                                 </div>
                             </div>

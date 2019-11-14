@@ -203,6 +203,14 @@
                 </a>
 
             </li>
+            <li class="sub-menu">
+                <a href="<?php echo base_url()?>Admin/User/newUser" class="">
+                    <i class="icon_info"></i>
+                    <span>Users</span>
+
+                </a>
+
+            </li>
 
             <li class="sub-menu">
                 <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageApplication">

@@ -412,11 +412,11 @@
                                                         }
                                                     }
                                                     else if ($q->pageType == 'Link Type'){
-                                                        if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                                        if ($this->session->userdata('loggedin') == "true" && $q->menuName != 'Login'){
                                                             ?>
-                                                            <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
-                                                        <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
-                                                            <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                                            <li><a <?php if ($q->menuName != 'Logout'){?> href="<?php echo $q->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $q->pageContent ?>" <?php } ?>><b><?php echo $q->menuName?></b></a></li>
+                                                        <?php }elseif($this->session->userdata('loggedin') != "true" && $q->menuName != 'Logout'){?>
+                                                            <li><a <?php if ($q->menuName != 'Login' ){?>href="<?php echo $q->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $q->pageContent ?>" <?php } ?>><b><?php echo $q->menuName?></b></a></li>
                                                         <?php }
                                                     } else {
                                                         if (empty($q->pageId)){
@@ -472,11 +472,11 @@
                                         }
                                     }
                                     else if ($cm->pageType == 'Link Type'){
-                                        if ($this->session->userdata('loggedin') == "true" && $tm->menuName != 'Login'){
+                                        if ($this->session->userdata('loggedin') == "true" && $cm->menuName != 'Login'){
                                             ?>
-                                            <li><a <?php if ($tm->menuName != 'Logout'){?> href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
-                                        <?php }elseif($this->session->userdata('loggedin') != "true" && $tm->menuName != 'Logout'){?>
-                                            <li><a <?php if ($tm->menuName != 'Login' ){?>href="<?php echo $tm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $tm->pageContent ?>" <?php } ?>><?php echo $tm->menuName?></a></li>
+                                            <li><a <?php if ($cm->menuName != 'Logout'){?> href="<?php echo $cm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $cm->pageContent ?>" <?php } ?>><?php echo $cm->menuName?></a></li>
+                                        <?php }elseif($this->session->userdata('loggedin') != "true" && $cm->menuName != 'Logout'){?>
+                                            <li><a <?php if ($cm->menuName != 'Login' ){?>href="<?php echo $cm->pageContent?>" target="_blank" <?php }else{?> href="<?php echo base_url() ?><?php echo $cm->pageContent ?>" <?php } ?>><?php echo $cm->menuName?></a></li>
                                         <?php }
                                     } else {
                                         if (empty($cm->pageId)){
