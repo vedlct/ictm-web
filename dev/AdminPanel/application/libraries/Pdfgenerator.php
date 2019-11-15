@@ -15,20 +15,20 @@ use Dompdf\Options;
 
 class Pdfgenerator {
 
-  public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
-  {
+    public function generate($html, $filename='', $stream=TRUE, $paper = 'A4', $orientation = "portrait")
+    {
 
-      /*for image */
-      $options = new Options();
-      $options->set('isRemoteEnabled', true);
-      $dompdf = new Dompdf($options);
+        /*for image */
+        $options = new Options();
+        $options->set('isRemoteEnabled', true);
+        $dompdf = new Dompdf($options);
 
 
-      /*----------*/
-    //$dompdf = new Dompdf();
-    $dompdf->loadHtml($html);
-    $dompdf->setPaper($paper, $orientation);
-    $dompdf->render();
+        /*----------*/
+        //$dompdf = new Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper($paper, $orientation);
+        $dompdf->render();
 
 
 
@@ -38,11 +38,11 @@ class Pdfgenerator {
 //    } else {
 //        return $dompdf->output();
 //    }
-      /*----*/
+        /*----*/
 
 
-      $dompdf->stream($filename,array('Attachment'=>false));
-  }
+        $dompdf->stream($filename,array('Attachment'=>false));
+    }
 
 
 }
