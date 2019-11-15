@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/application/config/form_validation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/routes.php" afterPath="$PROJECT_DIR$/dev/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/AlumniForms.php" afterPath="$PROJECT_DIR$/dev/application/controllers/AlumniForms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/alumni-form.php" afterPath="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
-    </list>
+    <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,8 +28,8 @@
       <file leaf-file-name="StudentApplication.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+            <state relative-caret-position="196">
+              <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
                 <marker date="1573816612873" expanded="true" signature="129402:129582" ph="..." />
                 <marker date="1573816612873" expanded="true" signature="139678:139858" ph="..." />
@@ -483,12 +475,12 @@
       <workItem from="1573560855087" duration="613000" />
       <workItem from="1573622162902" duration="674000" />
       <workItem from="1573725178651" duration="8278000" />
-      <workItem from="1573794382588" duration="18020000" />
+      <workItem from="1573794382588" duration="18226000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251127000" />
+    <option name="totallyTimeSpent" value="251333000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -945,8 +937,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="22" column="5" lean-forward="true" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+        <state relative-caret-position="196">
+          <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <marker date="1573816612873" expanded="true" signature="129402:129582" ph="..." />
             <marker date="1573816612873" expanded="true" signature="139678:139858" ph="..." />
