@@ -21,6 +21,18 @@ class StudentApplication extends CI_Controller
             redirect('Admin/Login');
         }
     }
+
+    /*  Alamni----*/
+//    public function manageAlamni() // for manage Application view
+//    {
+//        if ($this->session->userdata('type') == USER_TYPE[0])
+//        {
+//            $this->load->view('Admin/manageStudentApplication');
+//        }
+//        else{
+//            redirect('Admin/Login');
+//        }
+//    }
     /*---------datatable code --------------------- */
     public function ajax_list()
     {

@@ -83,6 +83,7 @@ $route['Feedback'] = 'OnlineForms/feedback';
 $route['SubmitFeedback'] = 'OnlineForms/SubmitFeedback';
 
 $route['Alumni'] = 'AlumniForms/alumni';
+$route['SubmitAlumni'] = 'AlumniForms/SubmitAlumni';
 
 $route['ApplyForm3'] = 'ApplyOnline/applyNow3';
 $route['ApplyForm4'] = 'ApplyOnline/applyNow4';
