@@ -1,6 +1,13 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class StudentApplicationm extends CI_Model
 {
+    ////alamni datatable//
+    var $alumnitable = 'alumniregistration';
+    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo');
+    var $alumnicolumn_order = array(null,null,null,'studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable orderable
+    var $alumnicolumn_search = array('studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable searchable
+    var $alumniorder = array('personId' => 'desc');
+    ///end
     /////////datatable//////////
     var $table = 'candidateinfo';
     var $select =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','ictmcourse.courseTitle','studentapplicationform.isSubmited');
@@ -66,6 +73,49 @@ class StudentApplicationm extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    ///Alamni
+    private function _get_alamnidatatables_query()
+    {
+        $this->db->select($this->alumniselect);
+        $this->db->from($this->alumnitable);
+        $i = 0;
+        foreach ($this->alumnicolumn_search as $item) // loop column
+        {
+            if($_POST['search']['value']) // if datatable send POST for search
+            {
+                if($i===0) // first loop
+                {
+                    $this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+                    $this->db->like($item, $_POST['search']['value']);
+                }
+                else
+                {
+                    $this->db->or_like($item, $_POST['search']['value']);
+                }
+                if(count($this->alumnicolumn_search) - 1 == $i) //last loop
+                    $this->db->group_end(); //close bracket
+            }
+            $i++;
+        }
+        if(isset($_POST['order'])) // here order processing
+        {
+            $this->db->order_by($this->alumnicolumn_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+        }
+        else if(isset($this->alumniorder))
+        {
+            $order = $this->alumniorder;
+            $this->db->order_by(key($order), $order[key($order)]);
+        }
+    }
+    function get_alamnidatatables(){
+        $this->_get_alamnidatatables_query();
+        if($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        $query = $this->db->get();
+        return $query->result();
+
+    }
+    ///end
     function count_filtered()
     {
         $this->_get_datatables_query();
@@ -78,6 +128,20 @@ class StudentApplicationm extends CI_Model
         return $this->db->count_all_results();
     }
     ///////////////////end of datatable/////////////////////////////
+    ///alamni
+
+    function alumni_count_filtered()
+    {
+        $this->_get_alamnidatatables_query();
+        $query = $this->db->get();
+        return $query->num_rows();
+    }
+    public function alumni_count_all()
+    {
+        $this->db->from($this->alumnitable);
+        return $this->db->count_all_results();
+    }
+    ///end
     ////////////////////excel//////////////
 //    function candidateinfoDetails(){
 //
@@ -441,6 +505,185 @@ class StudentApplicationm extends CI_Model
 
 
     ////end/////////
+
+    ////Alumni CSV
+    public function getAlumniInfo($personId){
+        $this->db->select('studentId','title','firstName','lastName','email','mobileNo','gender','dateOfBirth','nationality','address','postcode','courseComplete','courseStartYear','courseCompleteYear','currentStatus','currentOther','organisation','emAddress','jobTitle','startCourse','receiveInfo');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->result();
+    }
+
+     public function studentId($personId)
+     {
+         $this->db->select('studentId');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+     }
+    public function title($personId)
+    {
+        $this->db->select('title');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function firstName($personId)
+    {
+        $this->db->select('firstName');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function lastName($personId)
+    {
+        $this->db->select('lastName');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function gender($personId)
+    {
+        $this->db->select('gender');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function dateOfBirth($personId)
+    {
+        $this->db->select('dateOfBirth');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function nationality($personId)
+    {
+        $this->db->select('nationality');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function address($personId)
+    {
+        $this->db->select('address');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function postcode($personId)
+    {
+        $this->db->select('postcode');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function mobileNo($personId)
+    {
+        $this->db->select('mobileNo');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function email($personId)
+    {
+        $this->db->select('email');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function courseComplete($personId)
+    {
+        $this->db->select('courseComplete');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function courseStartYear($personId)
+    {
+        $this->db->select('courseStartYear');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function courseCompleteYear($personId)
+    {
+        $this->db->select('courseCompleteYear');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function currentStatus($personId)
+    {
+        $this->db->select('currentStatus');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function currentOther($personId)
+    {
+        $this->db->select('currentOther');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function organisation($personId)
+    {
+        $this->db->select('organisation');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function emAddress($personId)
+    {
+        $this->db->select('emAddress');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function jobTitle($personId)
+    {
+        $this->db->select('jobTitle');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function startCourse($personId)
+    {
+        $this->db->select('startCourse');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+    public function receiveInfo($personId)
+    {
+        $this->db->select('receiveInfo');
+        $this->db->where('personId =', $personId);
+        $query = $this->db->get('alumniregistration');
+        return $query->row();
+
+    }
+
+    ///end
 
     ///////////////////////
     /* for student Application edit */

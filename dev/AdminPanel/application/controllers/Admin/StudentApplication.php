@@ -23,16 +23,16 @@ class StudentApplication extends CI_Controller
     }
 
     /*  Alamni----*/
-//    public function manageAlamni() // for manage Application view
-//    {
-//        if ($this->session->userdata('type') == USER_TYPE[0])
-//        {
-//            $this->load->view('Admin/manageStudentApplication');
-//        }
-//        else{
-//            redirect('Admin/Login');
-//        }
-//    }
+    public function manageAlamni() // for manage Application view
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0])
+        {
+            $this->load->view('Admin/manageAlamni');
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
     /*---------datatable code --------------------- */
     public function ajax_list()
     {
@@ -71,6 +71,40 @@ class StudentApplication extends CI_Controller
         //output to json format
         echo json_encode($output);
     }
+    /////Alamni list
+    public function alamni_list()
+    {
+        $list = $this->StudentApplicationm->get_alamnidatatables();
+        $data = array();
+//        $no = $_POST['start'];
+        foreach ($list as $alamni) {
+//            $no++;
+            $row = array();
+//            $row[] = $no;
+            $row[] = '<input class="chk"  data-panel-id="'.$alamni->personId.'" onclick="selected_rows(this)" type="checkbox" name="selected_rows[]">';
+            $row[] = $alamni->studentId;
+            $row[] = $alamni->title.' '.$alamni->firstName.' '.$alamni->lastName;
+            $row[] = $alamni->email;
+            $row[] = $alamni->mobileNo;
+            $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewAlumniApplication/'.$alamni->personId.'"><i class="icon_pencil-edit"></i></a>
+                                                    
+                                                  ';
+
+
+            $row[] = $html;
+            $data[] = $row;
+        }
+        $output = array(
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->StudentApplicationm->alumni_count_all(),
+            "recordsFiltered" => $this->StudentApplicationm->alumni_count_filtered(),
+            "data" => $data,
+        );
+        //output to json format
+        echo json_encode($output);
+    }
+    ////end
+
     public function showApplicationPdf($applicationId) // for selected Application view
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
@@ -173,6 +207,97 @@ class StudentApplication extends CI_Controller
 //
 //        return $fileInfo;
 //    }
+
+//////Alumni csv//
+
+public function alumniFile(){
+    $productList=$this->input->post('products');
+
+    $filename = 'applicationForm_' . date('Ymd') . '.csv';
+    header("Content-Description: File Transfer");
+    header("Content-Disposition: attachment; filename=$filename");
+    header("Content-Type: application/csv; ");
+    $file = fopen('php://output', 'w');
+    $header = array("Title","First Name","Last Name","Gender","Date of Birth","Nationality","Address","Post Code"," Mobile"," E-mail","Student ID","Course complete","Course Start Year","Course Completion Year","Current Status","Other","Organisation","Address of Employer","Job Title","Course","Receive Information");
+    fputcsv($file, $header);
+//		foreach ($newlist as $line){
+//			fputcsv($file,array($line->title));
+//		}
+    foreach($_POST['products'] as $row=>$value){
+            $title=$this->StudentApplicationm->title($value);
+            $firstName=$this->StudentApplicationm->firstName($value);
+            $lastName=$this->StudentApplicationm->lastName($value);
+            $gender=$this->StudentApplicationm->gender($value);
+            $gender1 = $gender->gender;
+            if ($gender1== 'M' ){
+                $gender1= "MALE";
+            }elseif ($gender1== 'F'){
+                $gender1= "FEMALE";
+            }
+            else{
+                $gender1= "Other";
+            }
+            $dateOfBirth=$this->StudentApplicationm->dateOfBirth($value);
+            $nationality=$this->StudentApplicationm->nationality($value);
+            $address=$this->StudentApplicationm->address($value);
+            $postcode=$this->StudentApplicationm->postcode($value);
+            $mobileNo=$this->StudentApplicationm->mobileNo($value);
+            $email=$this->StudentApplicationm->email($value);
+            $studentId=$this->StudentApplicationm->studentId($value);
+            $courseComplete=$this->StudentApplicationm->courseComplete($value);
+            $courseComplete1 = $courseComplete->courseComplete;
+            if ($courseComplete1== 'B' ){
+                $courseComplete1= "Business";
+            }elseif ($courseComplete1== 'C'){
+                $courseComplete1= "Computing";
+            }
+            elseif ($courseComplete1== 'HS'){
+                $courseComplete1="Health and Social Care";
+
+            }
+            elseif ($courseComplete1== 'Travel Tourism'){
+                $courseComplete1="Travel Tourism";
+            }
+            else{
+                $courseComplete1= "Hospitality Management";
+            }
+            $courseStartYear=$this->StudentApplicationm->courseStartYear($value);
+            $courseCompleteYear=$this->StudentApplicationm->courseCompleteYear($value);
+            $currentStatus=$this->StudentApplicationm->currentStatus($value);
+            $currentOther=$this->StudentApplicationm->currentOther($value);
+            $organisation=$this->StudentApplicationm->organisation($value);
+            $emAddress=$this->StudentApplicationm->emAddress($value);
+            $jobTitle=$this->StudentApplicationm->jobTitle($value);
+            $startCourse=$this->StudentApplicationm->startCourse($value);
+            $receiveInfo=$this->StudentApplicationm->receiveInfo($value);
+            $receiveInfo1 = $receiveInfo->receiveInfo;
+            if ($receiveInfo1== 'T' ){
+                $receiveInfo1= "Telephone/Mobile";
+            }elseif ($receiveInfo1== 'E'){
+                $receiveInfo1= "By E-mail";
+            }
+            elseif ($receiveInfo1== 'P'){
+                $receiveInfo1="By Post";
+
+            }
+            else{
+                $receiveInfo1= "No thanks, I don't want to be contacted";
+            }
+
+
+//			echo $newlist;
+//            fputcsv($file,array($line->title,$line->firstName,$line->lastName,$line->gender,$line->dateOfBirth,$line->nationality,$line->address,$line->postcode,$line->mobileNo,$line->email,$line->studentId,$line->courseComplete,$line->courseStartYear,$line->courseCompleteYear,$line->currentStatus,$line->currentOther,$line->organisation,$line->emAddress,$line->jobTitle,$line->startCourse,$line->receiveInfo));
+        fputcsv($file,array($title->title,$firstName->firstName,$lastName->lastName,$gender1,$dateOfBirth->dateOfBirth,$nationality->nationality,$address->address,$postcode->postcode,$mobileNo->mobileNo,$email->email,$studentId->studentId,$courseComplete1,$courseStartYear->courseStartYear,$courseCompleteYear->courseCompleteYear,$currentStatus->currentStatus,$currentOther->currentOther,$organisation->organisation,$emAddress->emAddress,$jobTitle->jobTitle,$startCourse->startCourse,$receiveInfo1));
+
+    }
+
+    fclose($file);
+    exit;
+//        return $fileInfo;
+
+}
+
+///end
 
     public function csvFile(){
 
@@ -1713,6 +1838,21 @@ class StudentApplication extends CI_Controller
             redirect('Admin/Login');
         }
     }
+    ///Alumni Edit form//
+
+    public function viewAlumniApplication($personId) // for selected Application view
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0])
+        {
+            $this->data['alumniInfos'] = $this->StudentApplicationm->getAlumniInfo($personId);
+            $this->load->view('StudentApplicationForms/alumni-formv', $this->data);
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    ///end///
     public function getCourseAwardBody() // get Award body of selected course
     {
         $courseId=$this->input->post('courseId');

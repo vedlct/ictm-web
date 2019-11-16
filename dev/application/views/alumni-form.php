@@ -279,7 +279,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-7" style="margin-left:8%;">16.&nbsp;Name of Employer/ Organisation/College/University (if Applicable):<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-9" style="margin-left:-7%;">16.&nbsp;Name of Employer/ Organisation/College/University (if Applicable):<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -329,7 +329,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-9" style="margin-left:7%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-10" style="margin-left:1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
 
