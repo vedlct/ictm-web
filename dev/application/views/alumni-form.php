@@ -222,14 +222,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 echo set_value('courseComplete') == 'C' ? "checked" : "";
                                 ?> value="C"> Computing<br>
                                 <input tabindex="8" type="radio" required id="courseComplete" name="courseComplete" <?php
-                                echo set_value('courseComplete') == 'HS' ? "checked" : "";
-                                ?> value="HS"> Health and Social Care<br>
+                                echo set_value('courseComplete') == 'H' ? "checked" : "";
+                                ?> value="H"> Health and Social Care<br>
                                 <input tabindex="8" type="radio" required id="courseComplete" name="courseComplete" <?php
                                 echo set_value('courseComplete') == 'T' ? "checked" : "";
                                 ?> value="T"> Travel Tourism<br>
                                 <input tabindex="9" type="radio" required id="courseComplete" name="courseComplete" <?php
-                                echo set_value('courseComplete') == 'HM' ? "checked" : "";
-                                ?> value="HM"> Hospitality Management
+                                echo set_value('courseComplete') == 'M' ? "checked" : "";
+                                ?> value="M"> Hospitality Management
                             </div>
                         </div>
 
@@ -329,7 +329,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-10" style="margin-left:1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-10" style="margin-left:1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:</label>
                             </div>
                         </div>
 
@@ -347,6 +347,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 //                                ?><!-- value="F"> No thanks, I don't want to be contacted-->
                                 <input tabindex="7"  type="checkbox"  name="receiveInfo" value="T">Telephone/Mobile<br>
                                 <input tabindex="8"  type="checkbox"  name="receiveInfo" value="E" >By E-mail<br>
+                                <input tabindex="8"  type="checkbox"  name="receiveInfo" value="P" >By Post<br>
                                 <input tabindex="9"  type="checkbox"  name="receiveInfo" value="N" >No thanks, I don't want to be contacted
                             </div>
                         </div>

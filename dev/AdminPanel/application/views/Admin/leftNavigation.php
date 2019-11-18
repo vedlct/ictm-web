@@ -224,7 +224,7 @@
             <li class="sub-menu">
                 <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageAlamni">
                     <i class="icon_info"></i>
-                    <span>Manage Alamni</span>
+                    <span>Manage Alumni</span>
 
                 </a>
 

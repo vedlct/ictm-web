@@ -507,10 +507,11 @@ class StudentApplicationm extends CI_Model
     ////end/////////
 
     ////Alumni CSV
-    public function getAlumniInfo($personId){
-        $this->db->select('studentId','title','firstName','lastName','email','mobileNo','gender','dateOfBirth','nationality','address','postcode','courseComplete','courseStartYear','courseCompleteYear','currentStatus','currentOther','organisation','emAddress','jobTitle','startCourse','receiveInfo');
-        $this->db->where('personId =', $personId);
-        $query = $this->db->get('alumniregistration');
+    public function getAlumniInfo($studentAlumniId){
+        $this->db->select('*');
+        $this->db->where('personId =', $studentAlumniId);
+        $this->db->from('alumniregistration');
+        $query=$this->db->get();
         return $query->result();
     }
 

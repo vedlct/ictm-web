@@ -1844,7 +1844,12 @@ public function alumniFile(){
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $this->data['alumniInfos'] = $this->StudentApplicationm->getAlumniInfo($personId);
+            $dataSession = [
+                'studentAlumniId' => $personId,
+            ];
+            $this->session->set_userdata($dataSession);
+            $studentAlumniId=$personId;
+            $this->data['alumniInfos'] = $this->StudentApplicationm->getAlumniInfo($studentAlumniId);
             $this->load->view('StudentApplicationForms/alumni-formv', $this->data);
         }
         else{
