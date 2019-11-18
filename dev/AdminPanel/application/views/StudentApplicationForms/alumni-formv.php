@@ -229,7 +229,7 @@
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Stay Connected</h2>
                             <div class="form-group">
                                 <div class="col-md-offset-1 col-md-9">
-                                    <label class="control-label col-md-10" style="margin-left:1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:<span style="color: red" class="required">*</span></label>
+                                    <label class="control-label col-md-10" style="margin-left:1%;">If you would like to receive information from ICON College, please tick the relevant box:<span style="color: red" class="required">*</span></label>
                                 </div>
                             </div>
 
