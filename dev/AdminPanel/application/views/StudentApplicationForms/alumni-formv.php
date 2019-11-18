@@ -20,7 +20,7 @@
 
 <div class="maindiv">
     <div class="page-title full-color">
-        <div class="container">
+        <div class="container" style="background-color: #F4F4F4;">
             <div class="row">
                 <div class="col-md-12">
                     <table border="0" style="width:100%; margin-top: 30px; border: none;">
@@ -65,14 +65,14 @@
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <input type="radio"  id="title" required name="title" value="Mr" <?php if($alumniInfos->title=="Mr"){ ?> checked=checked <?php } ?> />Mr&nbsp;
-                                    <input type="radio"  id="title" required name="title" value="Miss" <?php if($alumniInfos->title=="Miss"){ ?> checked=checked <?php } ?> />Miss&nbsp;
-                                    <input type="radio"  id="title" required name="title" value="Ms" <?php if($alumniInfos->title=="Ms"){ ?> checked=checked <?php } ?> />Ms&nbsp;
-                                    <input type="radio"  id="title" required name="title" value="Mrs" <?php if($alumniInfos->title=="Mrs"){ ?> checked=checked <?php } ?> />Mrs&nbsp;
-                                    <input type="radio"  id="title" required name="title" value="Mx" <?php if($alumniInfos->title=="Mx"){ ?> checked=checked <?php } ?> />Mx&nbsp;
-                                    <input type="radio"  id="title" required name="title" value="Other" <?php if($alumniInfos->title=="Other"){ ?> checked=checked <?php } ?> />Other
+                                    <input type="radio"  id="title" required name="title" value="Mr" <?php if($alumniInfos->title=="Mr"){ ?> checked=checked <?php } ?> />&nbsp;Mr&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Miss" <?php if($alumniInfos->title=="Miss"){ ?> checked=checked <?php } ?> />&nbsp;Miss&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Ms" <?php if($alumniInfos->title=="Ms"){ ?> checked=checked <?php } ?> />&nbsp;Ms&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Mrs" <?php if($alumniInfos->title=="Mrs"){ ?> checked=checked <?php } ?> />&nbsp;Mrs&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Mx" <?php if($alumniInfos->title=="Mx"){ ?> checked=checked <?php } ?> />&nbsp;Mx&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Other" <?php if($alumniInfos->title=="Other"){ ?> checked=checked <?php } ?> />&nbsp;Other
                                 </div>
                             </div>
 
@@ -192,9 +192,9 @@
                                 <label class="control-label col-md-2">Current Status:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-4">
                                     <p><font color="red"> <?php echo form_error('currentStatus'); ?></font></p>
-                                    <input type="radio"  id="currentStatus" required name="currentStatus" value="Employed" <?php if($alumniInfos->currentStatus=="Employed"){ ?> checked=checked <?php } ?> />Employed&nbsp;
-                                    <input type="radio"  id="currentStatus" required name="currentStatus" value="Further Education" <?php if($alumniInfos->currentStatus=="Further Education"){ ?> checked=checked <?php } ?> />Further Education&nbsp;
-                                    <input type="radio"  id="currentStatus" required name="currentStatus" value="Other" <?php if($alumniInfos->currentStatus=="Other"){ ?> checked=checked <?php } ?> />Other<br>
+                                    <input type="radio"  id="currentStatus" required name="currentStatus" value="Employed" <?php if($alumniInfos->currentStatus=="Employed"){ ?> checked=checked <?php } ?> />&nbsp;Employed&nbsp;
+                                    <input type="radio"  id="currentStatus" required name="currentStatus" value="Further Education" <?php if($alumniInfos->currentStatus=="Further Education"){ ?> checked=checked <?php } ?> />&nbsp;Further Education&nbsp;
+                                    <input type="radio"  id="currentStatus" required name="currentStatus" value="Other" <?php if($alumniInfos->currentStatus=="Other"){ ?> checked=checked <?php } ?> />&nbsp;Other<br>
                                     <input  style="display:none;" type="text" name="currentOther" value="<?php echo $alumniInfos->currentOther ?>" id="currentOther"/>
                                 </div>
                             </div>

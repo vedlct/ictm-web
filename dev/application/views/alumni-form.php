@@ -41,7 +41,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                     <div class="form-bottom">
                         <div class="form-group">
-                            <label class="control-label col-md-2">PERSONAL DETAILS</label>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
                        </div>
                         <div class="form-group">
                         <div class="col-md-offset-1 col-md-9">
@@ -192,7 +192,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">COURSE DETAILS</label>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">COURSE DETAILS</h2>
                         </div>
 
                         <div class="form-group">
@@ -259,7 +259,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">CAREER DETAILS</label>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">CAREER DETAILS</h2>
                         </div>
 
                         <div class="form-group">
@@ -270,9 +270,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentStatus'); ?></font></p>
-                                <input tabindex="7" type="radio" required id="currentStatus" name="currentStatus"value="Employed">Employed <br>
-                                <input tabindex="7" type="radio" required id="currentStatus" name="currentStatus"value="Further Education">Further Education<br>
-                                <input tabindex="7" type="radio" required id="currentStatus" name="currentStatus"value="Other">Other<br>
+                                <input tabindex="7" type="radio" required id="currentStatus" name="currentStatus"value="Employed">&nbsp;Employed <br>
+                                <input tabindex="7" type="radio" required id="currentStatus" name="currentStatus"value="Further Education">&nbsp;Further Education<br>
+                                <input tabindex="7" type="radio" required id="currentStatus" name="currentStatus"value="Other">&nbsp;Other<br>
                                 <input tabindex="7" style="display:none;" type="text" name="currentOther" id="currentOther"/>
                             </div>
                         </div>
@@ -324,7 +324,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">Stay Connected</label>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">STAY CONNECTED</h2>
                         </div>
 
                         <div class="form-group">
@@ -345,10 +345,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 <!--                                <input tabindex="8" type="checkbox" required id="receiveInfo" name="receiveInfo" --><?php
 //                                echo set_value('receiveInfo') == 'P' ? "" : "";
 //                                ?><!-- value="F"> No thanks, I don't want to be contacted-->
-                                <input tabindex="7"  type="checkbox"  name="receiveInfo" value="T">Telephone/Mobile<br>
-                                <input tabindex="8"  type="checkbox"  name="receiveInfo" value="E" >By E-mail<br>
-                                <input tabindex="8"  type="checkbox"  name="receiveInfo" value="P" >By Post<br>
-                                <input tabindex="9"  type="checkbox"  name="receiveInfo" value="N" >No thanks, I don't want to be contacted
+                                <input tabindex="7"  type="checkbox"  name="receiveInfo" value="T">&nbsp;Telephone/Mobile<br>
+                                <input tabindex="8"  type="checkbox"  name="receiveInfo" value="E">&nbsp;By E-mail<br>
+                                <input tabindex="8"  type="checkbox"  name="receiveInfo" value="P">&nbsp;By Post<br>
+                                <input tabindex="9"  type="checkbox"  name="receiveInfo" value="N">&nbsp;No thanks, I don't want to be contacted
                             </div>
                         </div>
 

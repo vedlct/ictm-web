@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiongb985hvhjfssogvg3v1i6t3c7gsj9sm3" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiongb985hvhjfssogvg3v1i6t3c7gsj9sm3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/alumni-form.php" afterPath="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -58,13 +59,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alumni-form.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="alumni-form.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="231" column="42" lean-forward="false" selection-start-line="231" selection-start-column="42" selection-end-line="231" selection-end-column="42" />
+            <state relative-caret-position="216">
+              <caret line="326" column="144" lean-forward="false" selection-start-line="326" selection-start-column="144" selection-end-line="326" selection-end-column="144" />
               <folding>
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#21;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#30;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="e#17036#17042#0#HTML" expanded="true" />
+                <element signature="e#17195#17201#0#HTML" expanded="true" />
+                <element signature="e#17350#17356#0#HTML" expanded="true" />
                 <element signature="n#style#0;n#input#3;n#div#0;n#div#32;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#41;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="e#22423#22429#0#HTML" expanded="true" />
+                <element signature="e#22549#22555#0#HTML" expanded="true" />
+                <element signature="e#22668#22674#0#HTML" expanded="true" />
+                <element signature="e#22785#22791#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,13 +134,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="alumni-formv.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="alumni-formv.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="231" column="99" lean-forward="false" selection-start-line="231" selection-start-column="99" selection-end-line="231" selection-end-column="99" />
+            <state relative-caret-position="54">
+              <caret line="155" column="28" lean-forward="false" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="158" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#3592#3598#0#HTML" expanded="true" />
+                <element signature="e#3600#3606#0#HTML" expanded="true" />
+                <element signature="e#3781#3787#0#HTML" expanded="true" />
+                <element signature="e#3968#3974#0#HTML" expanded="true" />
+                <element signature="e#4155#4161#0#HTML" expanded="true" />
+                <element signature="e#4341#4347#0#HTML" expanded="true" />
+                <element signature="e#4349#4355#0#HTML" expanded="true" />
+                <element signature="e#4532#4538#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#h2#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#14998#15004#0#HTML" expanded="true" />
+                <element signature="e#15012#15018#0#HTML" expanded="true" />
+                <element signature="e#15243#15249#0#HTML" expanded="true" />
+                <element signature="e#15473#15479#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -224,9 +250,9 @@
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" />
+        <option value="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
       </list>
     </option>
   </component>
@@ -660,12 +686,12 @@
       <workItem from="1573794382588" duration="18833000" />
       <workItem from="1573818171477" duration="1999000" />
       <workItem from="1573881840014" duration="18084000" />
-      <workItem from="1574054654906" duration="16444000" />
+      <workItem from="1574054654906" duration="18015000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288467000" />
+    <option name="totallyTimeSpent" value="290038000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1031,16 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="231" column="42" lean-forward="false" selection-start-line="231" selection-start-column="42" selection-end-line="231" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#input#3;n#div#0;n#div#32;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageStudentApplication.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1099,10 +1115,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="231" column="99" lean-forward="false" selection-start-line="231" selection-start-column="99" selection-end-line="231" selection-end-column="99" />
+        <state relative-caret-position="54">
+          <caret line="155" column="28" lean-forward="false" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="158" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#3592#3598#0#HTML" expanded="true" />
+            <element signature="e#3600#3606#0#HTML" expanded="true" />
+            <element signature="e#3781#3787#0#HTML" expanded="true" />
+            <element signature="e#3968#3974#0#HTML" expanded="true" />
+            <element signature="e#4155#4161#0#HTML" expanded="true" />
+            <element signature="e#4341#4347#0#HTML" expanded="true" />
+            <element signature="e#4349#4355#0#HTML" expanded="true" />
+            <element signature="e#4532#4538#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#h2#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#14998#15004#0#HTML" expanded="true" />
+            <element signature="e#15012#15018#0#HTML" expanded="true" />
+            <element signature="e#15243#15249#0#HTML" expanded="true" />
+            <element signature="e#15473#15479#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="326" column="144" lean-forward="false" selection-start-line="326" selection-start-column="144" selection-end-line="326" selection-end-column="144" />
+          <folding>
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#21;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#30;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="e#17036#17042#0#HTML" expanded="true" />
+            <element signature="e#17195#17201#0#HTML" expanded="true" />
+            <element signature="e#17350#17356#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#input#3;n#div#0;n#div#32;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#41;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+            <element signature="e#22423#22429#0#HTML" expanded="true" />
+            <element signature="e#22549#22555#0#HTML" expanded="true" />
+            <element signature="e#22668#22674#0#HTML" expanded="true" />
+            <element signature="e#22785#22791#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
