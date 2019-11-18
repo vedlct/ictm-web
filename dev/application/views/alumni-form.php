@@ -357,7 +357,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                         </div>
 <!--                        <div style="margin-left: 140px" class="g-recaptcha" data-sitekey="--><?php //echo SITE_KEY_CONTACT?><!--"></div><br>-->
-                        <div style="margin-left: 140px" class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
+                        <div style="margin-left: 180px" class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <button type="reset" style="color: #fff;" class="btn btn-next">Reset</button>
