@@ -65,7 +65,7 @@
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="margin-left: -4%;">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
                                     <input type="radio"  id="title" required name="title" value="Mr" <?php if($alumniInfos->title=="Mr"){ ?> checked=checked <?php } ?> />&nbsp;Mr&nbsp;
                                     <input type="radio"  id="title" required name="title" value="Miss" <?php if($alumniInfos->title=="Miss"){ ?> checked=checked <?php } ?> />&nbsp;Miss&nbsp;
@@ -95,7 +95,7 @@
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Gender:</label>
-                                <div class="col-md-3">
+                                <div class="col-md-3" style="margin-left: -2%;">
                                     <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                     <input type="radio"  id="gender" name="gender" value="M" <?php if($alumniInfos->gender=='M'){ echo "checked=checked";}?>> MALE&nbsp;&nbsp;
                                     <input type="radio"  id="gender" name="gender" value="F" <?php if($alumniInfos->gender=='F'){ echo "checked=checked";}?>> FEMALE&nbsp;&nbsp;
@@ -164,7 +164,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Course complete:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-7">
+                                <div class="col-md-7" style="margin-left: -1%;">
                                     <p><font color="red"> <?php echo form_error('courseComplete'); ?></font></p>
                                     <input type="radio"  id="courseComplete" required name="courseComplete" value="B" <?php if($alumniInfos->courseComplete=='B'){ echo "checked=checked";}?>> Business&nbsp;&nbsp;
                                     <input type="radio"  id="courseComplete" required name="courseComplete" value="C" <?php if($alumniInfos->courseComplete=='C'){ echo "checked=checked";}?>> Computing&nbsp;&nbsp;
@@ -190,7 +190,7 @@
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">CAREER DETAILS</h2>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Current Status:<span style="color: red" class="required">*</span></label>
-                                <div class="col-md-4">
+                                <div class="col-md-4" style="margin-left: -4%;">
                                     <p><font color="red"> <?php echo form_error('currentStatus'); ?></font></p>
                                     <input type="radio"  id="currentStatus" required name="currentStatus" value="Employed" <?php if($alumniInfos->currentStatus=="Employed"){ ?> checked=checked <?php } ?> />&nbsp;Employed&nbsp;
                                     <input type="radio"  id="currentStatus" required name="currentStatus" value="Further Education" <?php if($alumniInfos->currentStatus=="Further Education"){ ?> checked=checked <?php } ?> />&nbsp;Further Education&nbsp;
@@ -244,7 +244,7 @@
                             </div>
 
                             <div class="form-group">
-                                    <div class="col-sm-offset-2 col-md-10">
+                                    <div class="col-sm-offset-2 col-md-10" style="margin-left: 5%;">
                                         <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
                                         <a  href="<?php echo base_url()?>Admin/StudentApplication/manageAlamni" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Back</button></a>

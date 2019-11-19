@@ -144,7 +144,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -4%;">7.&nbsp;Address:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -3%;">7.&nbsp;Address:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
                         <div class="form-group" style="margin-left: -2%;">
@@ -156,7 +156,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -2%;">8.&nbsp;Post Code:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -1%;">8.&nbsp;Post Code:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
                         <div class="form-group" style="margin-left: -2%;">
@@ -330,7 +330,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-10" style="margin-left:1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:</label>
+                                <label class="control-label col-md-10" style="margin-left:-1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:</label>
                             </div>
                         </div>
 
