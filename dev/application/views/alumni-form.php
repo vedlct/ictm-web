@@ -43,30 +43,31 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div class="form-group">
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
                        </div>
-                        <div class="form-group">
-                        <div class="col-md-offset-1 col-md-9">
-                            <label class="control-label col-md-2" style="margin-left:1%;">1.&nbsp;Title<span style="color: red" class="required">*</span></label>
-                        </div>
-                        </div>
+<!--                        <div class="form-group">-->
+<!--                        <div class="col-md-offset-1 col-md-9">-->
+<!--                            <label class="control-label col-md-2" style="margin-left:1%;">1.&nbsp;Title<span style="color: red" class="required">*</span></label>-->
+<!--                        </div>-->
+<!--                        </div>-->
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-3" style="margin-left: -2%;">1.&nbsp;Title:<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-9" style="margin-left: -2%;">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                <input tabindex="7" type="radio" required id="title" name="title"value="Mr"> Mr <br>
-                                <input tabindex="7" type="radio" required id="title" name="title"value="Miss"> Miss<br>
-                                <input tabindex="7" type="radio" required id="title" name="title"value="Ms"> Ms<br>
-                                <input tabindex="7" type="radio" required id="title" name="title"value="Mrs"> Mrs<br>
-                                <input tabindex="7" type="radio" required id="title" name="title"value="Mx"> Mx<br>
+                                <input tabindex="7" type="radio" required id="title" name="title"value="Mr"> Mr
+                                <input tabindex="7" type="radio" required id="title" name="title"value="Miss"> Miss
+                                <input tabindex="7" type="radio" required id="title" name="title"value="Ms"> Ms
+                                <input tabindex="7" type="radio" required id="title" name="title"value="Mrs"> Mrs
+                                <input tabindex="7" type="radio" required id="title" name="title"value="Mx"> Mx
                                 <input tabindex="7" type="radio" required id="title" name="title"value="Other"> Other
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3">2.&nbsp;First Name<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -2%;">2.&nbsp;First Name<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: -2%;">
                             <div class="col-md-offset-2 col-md-9">
                                 <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
                                 <input type="text" name="firstName" placeholder="Your First Name" value="<?php echo set_value('firstName');?>" class="form-control" id="firstName" maxlength="100" required>
@@ -75,11 +76,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3">3.&nbsp;Last Name<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -2%;">3.&nbsp;Last Name<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: -2%;">
                             <div class="col-md-offset-2 col-md-9">
                                 <p><font color="red"> <?php echo form_error('lastName'); ?></font></p>
                                 <input type="text" name="lastName" placeholder="Your Last Name" value="<?php echo set_value('lastName');?>" class="form-control" id="lastName" maxlength="100" required>
@@ -88,7 +89,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-2" style="margin-left:2%;">&nbsp;4.&nbsp;Gender</label>
+                                <label class="control-label col-md-2" style="margin-left: 4%;">&nbsp;4.&nbsp;Gender</label>
                             </div>
                         </div>
 
@@ -113,7 +114,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: -2%;">
                             <div class="col-md-offset-2 col-md-9">
                                 <input type="text" class="form-control datetimepicker"  id="dob" name="dateOfBirth" value="<?php echo set_value('dateOfBirth'); ?>">
                             </div>
@@ -121,10 +122,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3">6.&nbsp;Nationality:</label>
+                                <label class="control-label col-md-3" style="margin-left: -2%;">6.&nbsp;Nationality:</label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: -2%;">
                             <div class="col-md-offset-2 col-md-9">
                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                 <select style="width: 100%" id="nationality" name="nationality">
@@ -143,10 +144,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -2%;">7.&nbsp;Address:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -4%;">7.&nbsp;Address:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: -2%;">
                             <div class="col-md-offset-2 col-md-9">
                                 <p><font color="red"> <?php echo form_error('address'); ?></font></p>
                                 <input tabindex="27" type="text" class="form-control" required id="address" name="address" value="<?php echo set_value('address'); ?>">
@@ -155,10 +156,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -1%;">8.&nbsp;Post Code:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -2%;">8.&nbsp;Post Code:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" style="margin-left: -2%;">
                             <div class="col-md-offset-2 col-md-9">
                                 <p><font color="red"> <?php echo form_error('postcode'); ?></font></p>
                                 <input tabindex="29" type="text" class="form-control"  id="postcode" name="postcode" value="<?php echo set_value('postcode'); ?>">
@@ -180,7 +181,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -4%;">10.&nbsp;E-mail:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left: -3%;">10.&nbsp;E-mail:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
 
@@ -235,7 +236,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left:5%;">13.&nbsp;Course Start Year:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-3" style="margin-left:4%;">13.&nbsp;Course Start Year:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
 
@@ -248,7 +249,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-4" style="margin-left:3%;">14.&nbsp;Course Completion Year:<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-4" style="margin-left:2%;">14.&nbsp;Course Completion Year:<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -264,7 +265,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                         <div class="form-group">
                             <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-4" style="margin-left:-5%;">15.&nbsp;Current Status<span style="color: red" class="required">*</span></label>
+                                <label class="control-label col-md-4" style="margin-left:-6%;">15.&nbsp;Current Status<span style="color: red" class="required">*</span></label>
                             </div>
                         </div>
                         <div class="form-group">
@@ -356,7 +357,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
                         </div>
 <!--                        <div style="margin-left: 140px" class="g-recaptcha" data-sitekey="--><?php //echo SITE_KEY_CONTACT?><!--"></div><br>-->
-                        <div style="margin-left: 140px" class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
+                        <div style="margin-left: 180px" class="g-recaptcha" data-sitekey="<?php echo SITE_KEY_CONTACT?>"></div><br>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <button type="reset" style="color: #fff;" class="btn btn-next">Reset</button>
