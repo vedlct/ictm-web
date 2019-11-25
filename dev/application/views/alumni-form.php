@@ -40,7 +40,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                     <div class="form-bottom">
                         <div class="form-group">
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px;margin-left: 2%; text-align:left; text-decoration:underline">PERSONAL DETAILS</h2>
                         </div>
                         <!--                        <div class="form-group">-->
                         <!--                        <div class="col-md-offset-1 col-md-9">-->
@@ -49,51 +49,39 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <!--                        </div>-->
 
                         <div class="form-group">
-                            <label class="control-label col-md-3" style="margin-left: -2%;">1.&nbsp;Title:</label>
-                            <div class="col-md-9" style="margin-left: -2%;">
+                            <label class="control-label col-md-2" style="margin-left: -3%;">1.&nbsp;Title<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10" style="margin-left: 3%;">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                <input tabindex="7" type="radio"  id="title" name="title"value="Mr"> Mr
-                                <input tabindex="7" type="radio"  id="title" name="title"value="Miss"> Miss
-                                <input tabindex="7" type="radio"  id="title" name="title"value="Ms"> Ms
-                                <input tabindex="7" type="radio"  id="title" name="title"value="Mrs"> Mrs
-                                <input tabindex="7" type="radio"  id="title" name="title"value="Mx"> Mx
-                                <input tabindex="7" type="radio"  id="title" name="title"value="Other"> Other
+                                <input tabindex="7" type="radio"  id="title" required name="title"value="Mr"> Mr
+                                <input tabindex="7" type="radio"  id="title" required name="title"value="Miss"> Miss
+                                <input tabindex="7" type="radio"  id="title" required name="title"value="Ms"> Ms
+                                <input tabindex="7" type="radio"  id="title" required name="title"value="Mrs"> Mrs
+                                <input tabindex="7" type="radio"  id="title" required name="title"value="Mx"> Mx
+                                <input tabindex="7" type="radio"  id="title" required name="title"value="Other"> Other
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -2%;">2.&nbsp;First Name</label>
-                            </div>
-                        </div>
-                        <div class="form-group" style="margin-left: -2%;">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">2.&nbsp;First Name<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
-                                <input type="text" name="firstName" placeholder="Your First Name" value="<?php echo set_value('firstName');?>" class="form-control" id="firstName" maxlength="100">
+                                <input type="text" required name="firstName" placeholder="Your First Name" value="<?php echo set_value('firstName');?>" class="form-control" id="firstName" maxlength="100">
                             </div>
                         </div>
+
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -2%;">3.&nbsp;Last Name</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="margin-left: -2%;">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">3.&nbsp;Last Name<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('lastName'); ?></font></p>
-                                <input type="text" name="lastName" placeholder="Your Last Name" value="<?php echo set_value('lastName');?>" class="form-control" id="lastName" maxlength="100">
+                                <input type="text"required name="lastName" placeholder="Your Last Name" value="<?php echo set_value('lastName');?>" class="form-control" id="lastName" maxlength="100">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-2" style="margin-left: 4%;">&nbsp;4.&nbsp;Gender</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">&nbsp;4.&nbsp;Gender</label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('gender'); ?></font></p>
                                 <input tabindex="7" type="radio"  id="gender" name="gender"<?php
                                 echo set_value('gender') == 'M' ? "checked" : "";
@@ -108,24 +96,15 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3">5.&nbsp;Date of Birth:</label>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="margin-left: -2%;">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">5.&nbsp;Date of Birth</label>
+                            <div class="col-md-10">
                                 <input type="text" class="form-control datetimepicker"  id="dob" name="dateOfBirth" value="<?php echo set_value('dateOfBirth'); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -2%;">6.&nbsp;Nationality:</label>
-                            </div>
-                        </div>
-                        <div class="form-group" style="margin-left: -2%;">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">6.&nbsp;Nationality</label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('nationality'); ?></font></p>
                                 <select style="width: 100%" id="nationality" name="nationality">
                                     <option value=""  selected>Select nationality...</option>
@@ -141,200 +120,171 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             </div>
                         </div>
 
+<!--                        <div class="form-group">-->
+<!--                            <label class="control-label col-md-2">7.&nbsp;Address</label>-->
+<!--                            <div class="col-md-10">-->
+<!--                                <p><font color="red"> --><?php //echo form_error('address'); ?><!--</font></p>-->
+<!--                                <input tabindex="27" type="text" class="form-control"  id="address" name="address" value="--><?php //echo set_value('address'); ?><!--">-->
+<!--                            </div>-->
+<!--                        </div>-->
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -3%;">7.&nbsp;Address:</label>
-                            </div>
-                        </div>
-                        <div class="form-group" style="margin-left: -2%;">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">7.&nbsp;Address<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                <input tabindex="27" type="text" class="form-control"  id="address" name="address" value="<?php echo set_value('address'); ?>">
+                                <textarea required name="address" rows="4" cols="100" placeholder="Write Address" class="form-control" id="address"><?php echo set_value('address'); ?></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -1%;">8.&nbsp;Post Code:</label>
-                            </div>
-                        </div>
-                        <div class="form-group" style="margin-left: -2%;">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">8.&nbsp;Post Code<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('postcode'); ?></font></p>
-                                <input tabindex="29" type="text" class="form-control"  id="postcode" name="postcode" value="<?php echo set_value('postcode'); ?>">
+                                <input tabindex="29" type="text" class="form-control"  id="postcode" required name="postcode" value="<?php echo set_value('postcode'); ?>">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -4%;">9.&nbsp;Mobile:</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">9.&nbsp;Mobile<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('mobileNo'); ?></font></p>
-                                <input tabindex="34" type="text" class="form-control"  id="mobileNo" name="mobileNo" value="<?php echo set_value('mobileNo'); ?>">
+                                <input tabindex="34" type="text" class="form-control"  id="mobileNo" required name="mobileNo" value="<?php echo set_value('mobileNo'); ?>">
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -3%;">10.&nbsp;E-mail:</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">10.&nbsp;E-mail<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                <input tabindex="35" type="email" class="form-control"  id="email" name="email"  value="<?php echo set_value('email'); ?>" >
+                                <input tabindex="35" type="email" class="form-control"  id="email" maxlength="60" required name="email"  value="<?php echo set_value('email'); ?>" >
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">COURSE DETAILS</h2>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px;margin-left: 2%; text-align:left; text-decoration:underline">COURSE DETAILS</h2>
                         </div>
 
+
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left: -1%;">11.&nbsp;Student ID:</label>
+                            <label class="control-label col-md-2">11.&nbsp;Student ID<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('studentId'); ?></font></p>
+                                <input tabindex="34" type="number"  class="form-control" id="studentId"  name="studentId" value="<?php echo set_value('studentId'); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
-                                <input tabindex="34" type="text" class="form-control" id="studentId" name="studentId" value="<?php echo set_value('studentId'); ?>">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left:4%;">12.&nbsp;Course complete:</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">12.&nbsp;Course complete<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('courseComplete'); ?></font></p>
-                                <input tabindex="7" type="radio"  id="courseComplete" name="courseComplete"<?php
+                                <input tabindex="7" type="radio"  id="courseComplete" required name="courseComplete"<?php
                                 echo set_value('courseComplete') == 'B' ? "checked" : "";
                                 ?> value="B"> Business<br>
-                                <input tabindex="8" type="radio"  id="courseComplete" name="courseComplete" <?php
+                                <input tabindex="8" type="radio"  id="courseComplete" required name="courseComplete" <?php
                                 echo set_value('courseComplete') == 'C' ? "checked" : "";
                                 ?> value="C"> Computing<br>
-                                <input tabindex="8" type="radio"  id="courseComplete" name="courseComplete" <?php
+                                <input tabindex="8" type="radio"  id="courseComplete" required name="courseComplete" <?php
                                 echo set_value('courseComplete') == 'H' ? "checked" : "";
                                 ?> value="H"> Health and Social Care<br>
-                                <input tabindex="8" type="radio"  id="courseComplete" name="courseComplete" <?php
+                                <input tabindex="8" type="radio"  id="courseComplete" required name="courseComplete" <?php
                                 echo set_value('courseComplete') == 'T' ? "checked" : "";
                                 ?> value="T"> Travel Tourism<br>
-                                <input tabindex="9" type="radio"  id="courseComplete" name="courseComplete" <?php
+                                <input tabindex="9" type="radio"  id="courseComplete" required name="courseComplete" <?php
                                 echo set_value('courseComplete') == 'M' ? "checked" : "";
                                 ?> value="M"> Hospitality Management
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-3" style="margin-left:4%;">13.&nbsp;Course Start Year:</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">13.&nbsp;Course Start Year<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('courseStartYear'); ?></font></p>
-                                <input tabindex="29" type="text" class="form-control"  id="courseStartYear" name="courseStartYear" value="<?php echo set_value('courseStartYear'); ?>">
+                                <input tabindex="29" type="number" class="form-control"  id="courseStartYear" required name="courseStartYear" value="<?php echo set_value('courseStartYear'); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-4" style="margin-left:2%;">14.&nbsp;Course Completion Year:</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">14.&nbsp;Course Completion Year<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('courseCompleteYear'); ?></font></p>
-                                <input tabindex="29" type="text" class="form-control"  id="courseCompleteYear"  name="courseCompleteYear" value="<?php echo set_value('courseCompleteYear'); ?>">
+                                <input tabindex="29" type="number" class="form-control"  id="courseCompleteYear"  required name="courseCompleteYear" value="<?php echo set_value('courseCompleteYear'); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">CAREER DETAILS</h2>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px;margin-left: 2%; text-align:left; text-decoration:underline">CAREER DETAILS</h2>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-4" style="margin-left:-6%;">15.&nbsp;Current Status</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
-                                <p><font color="red"> <?php echo form_error('currentStatus'); ?></font></p>
-                                <input tabindex="7" type="radio"  id="currentStatus" name="currentStatus"value="Employed">&nbsp;Employed <br>
-                                <input tabindex="7" type="radio"  id="currentStatus" name="currentStatus"value="Further Education">&nbsp;Further Education<br>
-                                <input tabindex="7" type="radio"  id="currentStatus" name="currentStatus"value="Other">&nbsp;Other<br>
-                                <input tabindex="7" style="display:none;" type="text" name="currentOther" id="currentOther"/>
-                            </div>
-                        </div>
+<!--                        <div class="form-group">-->
+<!--                            <label class="control-label col-md-2">15.&nbsp;Current Status<span style="color: red" class="required">*</span></label>-->
+<!--                            <div class="col-md-10">-->
+<!--                                <p><font color="red"> --><?php //echo form_error('currentStatus'); ?><!--</font></p>-->
+<!--                                <input tabindex="7" type="radio"  id="currentStatus" required name="currentStatus"value="Employed">&nbsp;Employed <br>-->
+<!--                                <input tabindex="7" type="radio"  id="currentStatus" required name="currentStatus"value="Further Education">&nbsp;Further Education<br>-->
+<!--                                <input tabindex="7" type="radio"  id="currentStatus" required name="currentStatus"value="Other">&nbsp;Other<br>-->
+<!--                                <input tabindex="7" style="display:none;" type="text" name="currentOther" id="currentOther"/>-->
+<!--                            </div>-->
+<!--                        </div>-->
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-9" style="margin-left:-7%;">16.&nbsp;Name of Employer/ Organisation/College/University (if Applicable):</label>
+                            <label class="control-label col-md-2">15.&nbsp;Current Status<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <select tabindex="3" style="width: 100%" id="test" name="currentStatus" onchange="checkother()">
+                                    <option  value=""  selected>Select Status</option>
+                                    <option  value="Employed">Employed</option>
+                                    <option  value="Further Education">Further Education</option>
+                                    <option  value="Other">Other</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
-                                <input tabindex="34" type="text" class="form-control"  id="organisation" name="organisation" value="<?php echo set_value('organisation'); ?>">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-7" style="margin-left:-12%;">17.&nbsp;Address of Employer/College/University:</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
-                                <input tabindex="34" type="text" class="form-control"  id="emAddress" name="emAddress" value="<?php echo set_value('emAddress'); ?>">
+                        <div class="form-group" id="otherdiv" style="display: none">
+                            <label class="control-label col-md-2">Other (Please Specify):</label>
+                            <div class="col-md-10">
+                                <textarea tabindex="10" id="comment-message" name="currentOther" rows="8" tabindex="4"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-7" style="margin-left:-10%;">18.&nbsp;Job Title / Course Studying (if Applicable):</label>
+                            <label class="control-label col-md-2">16.&nbsp;Name of Employer/ Organisation/College/University (if Applicable)<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <input tabindex="34" type="text" maxlength="100" class="form-control"  id="organisation" name="organisation" value="<?php echo set_value('organisation'); ?>">
                             </div>
                         </div>
+
+
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
-                                <input tabindex="34" type="text" class="form-control"  id="jobTitle" name="jobTitle" value="<?php echo set_value('jobTitle'); ?>">
+                            <label class="control-label col-md-2">17.&nbsp;Address of Employer/College/University</label>
+                            <div class="col-md-10">
+                                <p><font color="red"> <?php echo form_error('emAddress'); ?></font></p>
+                                <textarea name="emAddress" rows="5" cols="100" placeholder="Write Address" class="form-control" id="emAddress"><?php echo set_value('emAddress'); ?></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-4" style="margin-left:4%;">19.&nbsp;Year Started of Job/Course:</label>
+                            <label class="control-label col-md-2">18.&nbsp;Job Title / Course Studying (if Applicable)<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
+                                <input tabindex="34" type="text" maxlength="100" class="form-control"  id="jobTitle" name="jobTitle" value="<?php echo set_value('jobTitle'); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">19.&nbsp;Year Started of Job/Course<span style="color: red" class="required">*</span></label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('startCourse'); ?></font></p>
-                                <input tabindex="34" type="number" class="form-control"  id="startCourse" name="startCourse" value="<?php echo set_value('startCourse'); ?>">
+                                <input tabindex="34" type="number" maxlength="9999" class="form-control"  id="startCourse" name="startCourse" value="<?php echo set_value('startCourse'); ?>">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">STAY CONNECTED</h2>
+                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px;margin-left: 2%; text-align:left; text-decoration:underline">STAY CONNECTED</h2>
                         </div>
 
-                        <div class="form-group">
-                            <div class="col-md-offset-1 col-md-9">
-                                <label class="control-label col-md-10" style="margin-left:-1%;">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box:</label>
-                            </div>
-                        </div>
 
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-9">
+                            <label class="control-label col-md-2">20.&nbsp;If you would like to receive information from ICON College, please tick the relevant box</label>
+                            <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('receiveInfo'); ?></font></p>
                                 <!--                                <input tabindex="7" type="checkbox" required id="receiveInfo" name="receiveInfo"--><?php
                                 //                                echo set_value('receiveInfo') == 'T' ? "checked" : "";
@@ -360,7 +310,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <button type="reset" style="color: #fff;" class="btn btn-next">Reset</button>
-                                <button type="submit" class="btn btn-next">Submit</button>
+                                <button type="submit" style="color: #fff;" class="btn btn-next">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -377,23 +327,39 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 <?php include("footer.php"); ?>
 <script>
-//    function submitAlumni() {
-//        var mobile = document.getElementById('mobileNo').value;
-//        if (mobile.length < 11 || mobile.length> 20) {
-//            alert('Please Enter at least 11 digit  Mobile number');
-//            return false; // keep form from submitting
-//        }
-//        var EmergencyContactEmail=document.getElementById("email").value;
-//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//        if(EmergencyContactEmail.match(mailformat1))
-//        {
-//            return true;
-//        }
-//        else{
-//            alert(" Email Address is in invalid format!");
-//            return false;
-//        }
-//    }
+    function submitAlumni() {
+        var mobile = document.getElementById('mobileNo').value;
+        if (mobile.length < 11 || mobile.length> 20) {
+            alert('Please Enter at least 11 digit  Mobile number and maximum 20 digit Mobile number');
+            return false; // keep form from submitting
+        }
+
+        var postcode = document.getElementById('postcode').value;
+        if (postcode.length> 12) {
+            alert('Please Enter PostCode Maximum Size 12');
+            return false; // keep form from submitting
+        }
+        var studentId = document.getElementById('studentId').value;
+        if (studentId.length> 6) {
+            alert('Please Enter studentId Maximum digit 999999');
+            return false; // keep form from submitting
+        }
+        var startCourse = document.getElementById('startCourse').value;
+        if (startCourse.length> 4) {
+            alert('Please Enter  Year started Maximum digit 9999');
+            return false; // keep form from submitting
+        }
+        var EmergencyContactEmail=document.getElementById("email").value;
+        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(EmergencyContactEmail.match(mailformat1))
+        {
+            return true;
+        }
+        else{
+            alert(" Email Address is in invalid format!");
+            return false;
+        }
+    }
 </script>
 <!--<script>-->
 <!--    function submitFeedback() {-->
@@ -463,6 +429,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         $('.datetimepicker').datetimepicker({
             format: 'YYYY-MM-DD'
         });
+        $( ".selector" ).datepicker({ constrainInput: false });
         $('.datetimepicker').keydown(function(e) {
             e.preventDefault();
             return false;
@@ -482,4 +449,18 @@ elseif($this->session->flashdata('successMessage')!=null){?>
             }
         });
     });
+</script>
+<script>
+    function checkother() {
+        if(document.getElementById('test').value == "Other"){
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
 </script>

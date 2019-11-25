@@ -58,9 +58,7 @@
                                     <h3>Alumni Details</h3>
                                 </div>
 
-                                <div class="form-top-right">
-                                    <p>Step 1 / 10</p>
-                                </div>
+
                             </div>
                             <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
                             <div class="form-group">

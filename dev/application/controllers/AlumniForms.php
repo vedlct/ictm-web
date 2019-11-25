@@ -36,8 +36,11 @@ class AlumniForms extends CI_Controller
             } else {
                 $this->data['error'] = $this->AlumniFormsm->sendAlumni();
                 if (empty($this->data['error'])) {
+//                    $this->session->set_flashdata('successMessage', 'Alumni given Successfully.Thank You');
+//                    redirect('Alumni');
+
                     $this->session->set_flashdata('successMessage', 'Alumni given Successfully.Thank You');
-                    redirect('Alumni');
+                    redirect('Home/index');
                 } else {
                     $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
 

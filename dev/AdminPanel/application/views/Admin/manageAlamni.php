@@ -21,7 +21,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Home</a></li>
                         <li><i class="fa fa-table"></i>Student Applications</li>
-                        <li><i class="fa fa-th-list"></i>Manage Alamni</li>
+                        <li><i class="fa fa-th-list"></i>Manage Alumni</li>
                     </ol>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <b>Manage Affiliations</b>
+                            <b>Manage Alumni</b>
                             <!--                            <span align="">-->
                             <!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
                             <!--                            </span>-->
@@ -117,7 +117,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+                "sSearch": "<span>Search by:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });
