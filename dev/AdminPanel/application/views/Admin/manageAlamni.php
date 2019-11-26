@@ -57,6 +57,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Course Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                     </tr>
                                     </thead>
@@ -65,6 +66,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <input type="checkbox" id="selectall" onClick="selectAll(this)" />Select All<br><br><br>
                             <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
 
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
@@ -110,7 +112,7 @@
 
             "columnDefs": [
                 {
-                    "targets": [5], //first column / numbering column
+                    "targets": [6], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
@@ -142,6 +144,25 @@
             selecteds.splice(index, 1);
         }
 
+    }
+
+    function selectAll(source) {
+
+        for(var i=0; i <= selecteds.length; i++) {
+            selecteds.pop(i);
+        }
+        alert(selecteds);
+
+//            $(':checkbox:checked').prop('checked',false);
+        checkboxes = document.getElementsByName('selected_rows[]');
+        for(var i in checkboxes) {
+            checkboxes[i].checked = source.checked;
+        }
+
+        /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+        $(".chk:checked").each(function () {
+            selecteds.push($(this).val());
+        });
     }
 
     //    function downloadexcel() {
@@ -305,5 +326,16 @@
     }
 
 
-
 </script>
+
+
+<!--<script>-->
+<!--    function selectAll(source) {-->
+<!--        var products=selecteds;-->
+<!--        checkboxes = document.getElementsByName('selected_rows[]');-->
+<!--        for(var i in checkboxes)-->
+<!--            checkboxes[i].checked = source.checked;-->
+<!--    }-->
+<!--</script>-->
+
+

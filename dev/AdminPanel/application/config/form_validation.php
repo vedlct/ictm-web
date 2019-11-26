@@ -1895,4 +1895,29 @@ $config = array (
         ),
 
     /* student Application form end*/
+    /*Alumni*/
+
+    'alumnis' =>
+        array (
+            array(
+                'field' => 'firstName',
+                'label' => 'First Name',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'email',
+                'label' => 'Email',
+                'rules' => 'max_length[255]|valid_email|xss_clean|htmlspecialchars',
+
+            ),
+            array(
+                'field' => 'mobileNo',
+                'label' => 'Mobile',
+                'rules' => 'max_length[45]|xss_clean|htmlspecialchars',
+
+            ),
+        ),
+
+    /*end*/
 );

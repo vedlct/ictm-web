@@ -86,8 +86,25 @@ class StudentApplication extends CI_Controller
             $row[] = $alamni->title.' '.$alamni->firstName.' '.$alamni->lastName;
             $row[] = $alamni->email;
             $row[] = $alamni->mobileNo;
+            if ($alamni->courseComplete=="H"){
+                $row[] = 'Health and Social Care';
+            }
+            elseif ($alamni->courseComplete=="B"){
+                $row[] = 'Business';
+            }
+            elseif ($alamni->courseComplete=="C"){
+                $row[] = 'Computing';
+            }
+            elseif ($alamni->courseComplete=="T"){
+                $row[] = 'Travel Tourism';
+            }
+            else{
+                $row[] = 'Hospitality Management';
+            }
+//            $row[] = $alamni->courseComplete;
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewAlumniApplication/'.$alamni->personId.'"><i class="icon_pencil-edit"></i></a>
-                                                    
+            <a class="btn" href="'. base_url().'Admin/StudentApplication/deleteAlumni/'.$alamni->personId.'"><i class="icon_trash"></i></a>
+                                          
                                                   ';
 
 
@@ -251,11 +268,11 @@ public function alumniFile(){
             }elseif ($courseComplete1== 'C'){
                 $courseComplete1= "Computing";
             }
-            elseif ($courseComplete1== 'HS'){
+            elseif ($courseComplete1== 'H'){
                 $courseComplete1="Health and Social Care";
 
             }
-            elseif ($courseComplete1== 'Travel Tourism'){
+            elseif ($courseComplete1== 'T'){
                 $courseComplete1="Travel Tourism";
             }
             else{
@@ -3271,11 +3288,96 @@ public function alumniFile(){
         $data = $this->StudentApplicationm->getRefereesDetails($refereesId);
         echo  json_encode($data);
     }
+    public function deleteAlumni($personId) // delete Faculty and his teaching Course from database
+    {
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            $this->StudentApplicationm->deletePersonId($personId);
+            $this->session->set_flashdata('successMessage','Alumni Deleted Successfully');
+            redirect('Admin/StudentApplication/manageAlamni');
+        }
+
+        else{
+            redirect('Admin/Login');
+        }
+    }
     public function deletePersonalReferees() // delete personal Referees
     {
         $refereesId = $this->input->post("id");
         $this->StudentApplicationm->deleteRefereesDetailsById($refereesId);
         $this->session->set_flashdata('successMessage', 'Referees Deleted Successfully');
+    }
+
+    public function editAlumniForm(){
+        if ($this->session->userdata('loggedin') == "true") {
+            $this->load->library('form_validation');
+            if (!$this->form_validation->run('alumnis')) {
+                $this->data['alumniInfos'] = $this->StudentApplicationm->getAlumniInfo($this->session->userdata('$studentAlumniId'));
+                $this->load->view('StudentApplicationForms/alumni-formv', $this->data);
+            }
+            else {
+                $title = $this->input->post("title");
+                $firstName= $this->input->post("firstName");
+                $lastName = $this->input->post("lastName");
+                $dateOfBirth = date('Y-m-d',strtotime($this->input->post("dateOfBirth")));
+                $gender = $this->input->post("gender");
+                $nationality = $this->input->post("nationality");
+                $address = $this->input->post("address");
+                $postcode = $this->input->post("postcode");
+                $mobileNo = $this->input->post("mobileNo");
+                $email = $this->input->post("email");
+                $studentId = $this->input->post("studentId");
+                $courseComplete = $this->input->post("courseComplete");
+                $courseStartYear = $this->input->post("courseStartYear");
+                $courseCompleteYear = $this->input->post("courseCompleteYear");
+                $currentStatus = $this->input->post("currentStatus");
+                $currentOther = $this->input->post("currentOther");
+                $organisation = $this->input->post("organisation");
+                $emAddress = $this->input->post("emAddress");
+                $jobTitle = $this->input->post("jobTitle");
+                $startCourse = $this->input->post("startCourse");
+                $receiveInfo = $this->input->post("receiveInfo");
+                $data=array(
+                    'title'=>$title,
+                    'firstName'=>$firstName,
+                    'lastName'=>$lastName,
+                    'dateOfBirth'=>$dateOfBirth,
+                    'gender'=>$gender,
+                    'nationality'=>$nationality,
+                    'address'=>$address,
+                    'postcode'=>$postcode,
+                    'mobileNo'=>$mobileNo,
+                    'email'=>$email,
+                    'studentId'=>$studentId,
+                    'courseComplete'=>$courseComplete,
+                    'courseStartYear'=>$courseStartYear,
+                    'courseCompleteYear'=>$courseCompleteYear,
+                    'currentStatus' => $currentStatus,
+                    'currentOther' => $currentOther,
+                    'organisation' => $organisation,
+                    'emAddress' => $emAddress,
+                    'jobTitle'=>$jobTitle,
+//                    'overseasAddress'=>$candidateOverseasHomeAddress,
+                    'startCourse' => $startCourse,
+                    'receiveInfo' => $receiveInfo,
+                );
+                $this->data['error']=$this->StudentApplicationm->editAlumniForm($data);
+                if (empty($this->data['error'])) {
+                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+                    redirect('Admin/StudentApplication/manageAlamni'.$this->session->userdata('$studentAlumniId'));
+
+                } else {
+                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/StudentApplication/viewAlumniApplication/'.$this->session->userdata('$studentAlumniId'));
+                }
+            }
+        }
+        else {
+            echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Admin/Login';
+                    </script>";
+        }
     }
 //    public function editStudentApplicationSubmitApplication() // go to the apply page of selected course
 //    {

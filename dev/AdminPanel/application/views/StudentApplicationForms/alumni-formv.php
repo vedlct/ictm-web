@@ -50,7 +50,7 @@
                 <div class="col-md-12" style="background-color: #F4F4F4;">
                     <?php foreach ($alumniInfos as $alumniInfos){ ?>
 
-                        <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editAlumniForm1" method="post" class="form-horizontal" onsubmit="return checkvalidation()">
+                        <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/editAlumniForm" method="post" class="form-horizontal" onsubmit="return checkvalidation()">
 
                             <!--                        		<fieldset>-->
                             <div class="form-top">
@@ -60,7 +60,7 @@
 
 
                             </div>
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">PERSONAL DETAILS</h2>
+                            <h2 style="font-weight:bold;margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">PERSONAL DETAILS</h2>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-4" style="margin-left: -4%;">
@@ -151,7 +151,7 @@
                                     <input type="email" class="form-control"  id="email" name="email" value="<?php echo $alumniInfos->email ?>">
                                 </div>
                             </div>
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">COURSE DETAILS</h2>
+                            <h2 style="font-weight:bold;margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">COURSE DETAILS</h2>
 
                             <div class="form-group">
                                 <label class="control-label col-md-2">Student ID:</label>
@@ -185,7 +185,7 @@
                                     <input type="text" class="form-control"  id="courseCompleteYear" name="courseCompleteYear" value="<?php echo $alumniInfos->courseCompleteYear ?>">
                                 </div>
                             </div>
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">CAREER DETAILS</h2>
+                            <h2 style="font-weight:bold; margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">CAREER DETAILS</h2>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Current Status:</label>
                                 <div class="col-md-4" style="margin-left: -4%;">
@@ -196,6 +196,7 @@
                                     <input  style="display:none;" type="text" name="currentOther" value="<?php echo $alumniInfos->currentOther ?>" id="currentOther"/>
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label class="control-label col-md-2">Name of Employer:</label>
                                 <div class="col-md-10">
@@ -224,15 +225,16 @@
                                     <input type="number" class="form-control"  id="startCourse" name="startCourse" value="<?php echo $alumniInfos->startCourse ?>">
                                 </div>
                             </div>
-                            <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Stay Connected</h2>
-                            <div class="form-group">
-                                <div class="col-md-offset-1 col-md-9">
-                                    <label class="control-label col-md-10" style="margin-left:1%;">If you would like to receive information from ICON College, please tick the relevant box:</label>
-                                </div>
-                            </div>
+                            <h2 style="font-weight:bold;margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">Stay Connected</h2>
+<!--                            <div class="form-group">-->
+<!--                                <div class="col-md-offset-1 col-md-9">-->
+<!--                                    <label class="control-label col-md-10" style="margin-left:1%;">If you would like to receive information from ICON College, please tick the relevant box:</label>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="form-group">
-                                <div class="col-md-offset-3 col-md-6">
+                                <label class="control-label col-md-4">If you would like to receive information from ICON College, please tick the relevant box:</label>
+                                <div class="col-md-8" style="margin-left: -7%;">
                                     <p><font color="red"> <?php echo form_error('receiveInfo'); ?></font></p>
                                     <input type="checkbox"  id="receiveInfo" name="receiveInfo" value="T" <?php if($alumniInfos->receiveInfo=='T'){ echo "checked=checked";}?>> Telephone/Mobile&nbsp;&nbsp;
                                     <input type="checkbox"  id="receiveInfo" name="receiveInfo" value="E" <?php if($alumniInfos->receiveInfo=='E'){ echo "checked=checked";}?>> By E-mail&nbsp;&nbsp;
@@ -246,6 +248,7 @@
                                         <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
 
                                         <a  href="<?php echo base_url()?>Admin/StudentApplication/manageAlamni" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Back</button></a>
+                                        <button type="submit" style="color: #fff; background-color: #841A29;" class="btn btn-next">Submit</button>
 
                                         <!--                                        <a  href="--><?php //echo base_url()?><!--Admin/StudentApplication/editStudentApplicationQualification" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Next</button></a>-->
 
@@ -299,26 +302,41 @@
 
 </html>
 
+
 <script>
-//    function checkvalidation() {
-//        var mobile = document.getElementById('mobileNo').value;
-//        if (mobile.length < 11 || mobile.length> 20) {
-//            alert('Please Enter at least 11 digit  Mobile number');
-//            return false; // keep form from submitting
-//        }
-//
-//        var EmergencyContactEmail=document.getElementById("email").value;
-//        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//
-//        if(EmergencyContactEmail.match(mailformat1))
-//        {
-//            return true;
-//        }
-//        else{
-//            alert(" Email Address is in invalid format!");
-//            return false;
-//        }
-//    }
+    function checkvalidation() {
+        var mobile = document.getElementById('mobileNo').value;
+        if (mobile.length < 11 || mobile.length> 20) {
+            alert('Please Enter at least 11 digit  Mobile number and maximum 20 digit Mobile number');
+            return false; // keep form from submitting
+        }
+
+        var postcode = document.getElementById('postcode').value;
+        if (postcode.length> 12) {
+            alert('Please Enter PostCode Maximum Size 12');
+            return false; // keep form from submitting
+        }
+        var studentId = document.getElementById('studentId').value;
+        if (studentId.length> 6) {
+            alert('Please Enter studentId Maximum digit 999999');
+            return false; // keep form from submitting
+        }
+        var startCourse = document.getElementById('startCourse').value;
+        if (startCourse.length> 4) {
+            alert('Please Enter  Year started Maximum digit 9999');
+            return false; // keep form from submitting
+        }
+        var EmergencyContactEmail=document.getElementById("email").value;
+        var mailformat1 = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(EmergencyContactEmail.match(mailformat1))
+        {
+            return true;
+        }
+        else{
+            alert(" Email Address is in invalid format!");
+            return false;
+        }
+    }
 
 </script>
 
@@ -350,6 +368,22 @@
         });
     });
 </script>
+
+<script>
+    function checkother() {
+        if(document.getElementById('test').value == "Other"){
+
+
+            document.getElementById('otherdiv').style.display = 'block';
+        }
+        else
+        {
+            document.getElementById('otherdiv').style.display = 'none';
+
+        }
+    }
+</script>
+
 
 
 
