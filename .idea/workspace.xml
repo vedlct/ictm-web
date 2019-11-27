@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionep2ulhvulr16okhjdpkn1ldhdsq6cfdg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionep2ulhvulr16okhjdpkn1ldhdsq6cfdg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/blade.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/ictm-web.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
+    <list default="true" id="49f9e44c-b7f8-4604-9fb4-3e0fa90a62fe" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_session7m0mshpq2jp2n81e03ud951639vba0de" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionhp1514fikj1l3fv1cumh3s8ksmfcposd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionme9mmohs226maigtdmg517i0h4rjk5p4" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionomhmpig4mrn32rgq0kv4811eld56s38i" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionrug1i4d7h6bip1rtq6ap6o6cpimo6sbk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session41738lpe8othghv19sqdla4mfhshs03q" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session6lcebko3fgp2cn85et889l6eias7d1t9" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionhp1514fikj1l3fv1cumh3s8ksmfcposd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionme9mmohs226maigtdmg517i0h4rjk5p4" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionep2ulhvulr16okhjdpkn1ldhdsq6cfdg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiongb985hvhjfssogvg3v1i6t3c7gsj9sm3" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiongb985hvhjfssogvg3v1i6t3c7gsj9sm3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/application/config/form_validation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/controllers/AlumniForms.php" afterPath="$PROJECT_DIR$/dev/application/controllers/AlumniForms.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/application/views/alumni-form.php" afterPath="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,108 +30,13 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StudentApplicationm.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php">
+    <leaf>
+      <file leaf-file-name="AlumniForms.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/AlumniForms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17616">
-              <caret line="978" column="22" lean-forward="false" selection-start-line="978" selection-start-column="20" selection-end-line="978" selection-end-column="22" />
+            <state relative-caret-position="-1107">
+              <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alumni-form.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="327" column="144" lean-forward="false" selection-start-line="327" selection-start-column="144" selection-end-line="327" selection-end-column="144" />
-              <folding>
-                <marker date="1574080720982" expanded="false" signature="23758:23761" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Registration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Registration.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2856">
-              <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-              <folding>
-                <marker date="1536236385540" expanded="true" signature="5703:5921" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/config/constants.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="160" column="30" lean-forward="false" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/constants.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register-ineterest.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/views/register-ineterest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="427">
-              <caret line="73" column="100" lean-forward="false" selection-start-line="73" selection-start-column="78" selection-end-line="73" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OnlineForms.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/OnlineForms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2827">
-              <caret line="197" column="20" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="copy_OnlineForms.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/copy_OnlineForms.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15336">
-              <caret line="639" column="1" lean-forward="false" selection-start-line="639" selection-start-column="1" selection-end-line="639" selection-end-column="1" />
-              <folding>
-                <marker date="1574080692177" expanded="true" signature="4028:6261" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4055:4138" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4165:6233" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4195:6205" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4224:4315" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4344:4440" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4470:4565" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4595:4686" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4716:4809" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4839:4931" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="4961:5050" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5080:5175" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5205:5296" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5326:5417" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5447:5540" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5570:5659" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5689:5780" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5810:5911" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="5941:6047" ph="..." />
-                <marker date="1574080692177" expanded="true" signature="6077:6174" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -133,18 +44,8 @@
       <file leaf-file-name="Recaptchalib.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dev/application/controllers/Recaptchalib.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-1539">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="alumni-formv.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3720">
-              <caret line="155" column="28" lean-forward="false" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="158" />
               <folding />
             </state>
           </provider>
@@ -152,99 +53,8 @@
       </file>
     </leaf>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>$f4</find>
-      <find>application-form</find>
-      <find>application-form4</find>
-      <find>editORInsertApplicationForm4AndNext</find>
-      <find>insertApplicationForm3AndNext</find>
-      <find>insertApplicationForm6AndNext</find>
-      <find>insertApplicationForm8AndNext</find>
-      <find>insertApplicationForm10AndNext</find>
-      <find>feedback</find>
-      <find>Feedback</find>
-      <find>feedbacks</find>
-      <find>checkother</find>
-      <find>editStudentApplicationEnglishLanguageProficiency</find>
-      <find>manageApplication</find>
-      <find>get_datatables</find>
-      <find>allDetails1</find>
-      <find>csvFile</find>
-      <find>allAlumni</find>
-      <find>allDe</find>
-      <find>viewApp</find>
-      <find>getAlu</find>
-      <find>get</find>
-      <find>getAlumn</find>
-      <find>viewAlumniApplication</find>
-      <find>getAlumni</find>
-      <find>getCandidateInfo</find>
-      <find>getCourseInfo</find>
-      <find>editApplicationForm1</find>
-      <find>md.sa</find>
-      <find>insertRegisterInterest</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/constants.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form3v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form6v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form4.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form4v.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form2.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form10.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form5v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form5.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form8.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form2v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-formv.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/allApplicationsForStudents.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form2v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form10v.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form10v.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form3v.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form5v.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form6v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form7.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form7.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form8v.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form4v.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form4.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form3.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-formv.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form2.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form5.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form6.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form8.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form10.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php" />
-        <option value="$PROJECT_DIR$/dev/application/config/form_validation.php" />
-        <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/AlumniForms.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/AlumniFormsm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/config.php" />
-        <option value="$PROJECT_DIR$/dev/application/config/config.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
-        <option value="$PROJECT_DIR$/dev/application/controllers/copy_OnlineForms.php" />
-      </list>
-    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -254,9 +64,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="-7" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
+    <option name="width" value="1935" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
@@ -340,163 +150,52 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ictm-web" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AdminPanel" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="js.eslint.eslintPackage" value="" />
-    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\ictm-web\dev\application\controllers" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
-      <config-file value="" />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
-      <method />
-    </configuration>
-    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpSpecConfigurationType" factoryName="PHPSpec">
-      <PhpTestRunnerSettings />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run" />
-      <scripts />
-      <node-interpreter value="project" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory />
-      <pass-parent-env>true</pass-parent-env>
-      <envs />
-      <ui />
-      <extra-mocha-options />
-      <test-kind>DIRECTORY</test-kind>
-      <test-directory />
-      <recursive>false</recursive>
-      <method />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="" />
-      <created>1572412224258</created>
+      <changelist id="49f9e44c-b7f8-4604-9fb4-3e0fa90a62fe" name="Default" comment="" />
+      <created>1574256633771</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1572412224258</updated>
-      <workItem from="1572412228067" duration="14936000" />
-      <workItem from="1572498946649" duration="10550000" />
-      <workItem from="1572511856730" duration="10844000" />
-      <workItem from="1572584727189" duration="14073000" />
-      <workItem from="1572670871186" duration="22803000" />
-      <workItem from="1572844028156" duration="18480000" />
-      <workItem from="1572930583008" duration="25904000" />
-      <workItem from="1573017082768" duration="21741000" />
-      <workItem from="1573103522105" duration="26093000" />
-      <workItem from="1573189230453" duration="15485000" />
-      <workItem from="1573293771680" duration="7821000" />
-      <workItem from="1573306837988" duration="38000" />
-      <workItem from="1573307141053" duration="1096000" />
-      <workItem from="1573449260131" duration="19442000" />
-      <workItem from="1573475391908" duration="668000" />
-      <workItem from="1573535102901" duration="3894000" />
-      <workItem from="1573540367648" duration="8752000" />
-      <workItem from="1573559625834" duration="922000" />
-      <workItem from="1573560855087" duration="613000" />
-      <workItem from="1573622162902" duration="674000" />
-      <workItem from="1573725178651" duration="8278000" />
-      <workItem from="1573794382588" duration="18833000" />
-      <workItem from="1573818171477" duration="1999000" />
-      <workItem from="1573881840014" duration="18084000" />
-      <workItem from="1574054654906" duration="18015000" />
-      <workItem from="1574079026405" duration="2261000" />
+      <updated>1574256633771</updated>
+      <workItem from="1574256635641" duration="1254000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="292299000" />
+    <option name="totallyTimeSpent" value="1254000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-7" y="-8" width="1935" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24960917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.007399577" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -512,389 +211,19 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form8v.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Recaptchalib.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="172" column="141" lean-forward="true" selection-start-line="172" selection-start-column="141" selection-end-line="172" selection-end-column="193" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form8.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="152" column="240" lean-forward="false" selection-start-line="152" selection-start-column="240" selection-end-line="152" selection-end-column="240" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="182" column="39" lean-forward="false" selection-start-line="182" selection-start-column="39" selection-end-line="182" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form10v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="115" column="137" lean-forward="true" selection-start-line="115" selection-start-column="137" selection-end-line="115" selection-end-column="192" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form10.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="101" column="144" lean-forward="false" selection-start-line="101" selection-start-column="144" selection-end-line="101" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form4v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="190" column="224" lean-forward="true" selection-start-line="190" selection-start-column="224" selection-end-line="190" selection-end-column="238" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/allApplicationsForStudents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="72" column="70" lean-forward="false" selection-start-line="72" selection-start-column="70" selection-end-line="72" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/head.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-703">
+        <state relative-caret-position="-1539">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-95">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/topNavigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-541">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="8" column="43" lean-forward="false" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Userm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Feedbackm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="47" column="93" lean-forward="false" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Feedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="309" column="0" lean-forward="false" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newFeedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form4v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="188" column="92" lean-forward="false" selection-start-line="188" selection-start-column="92" selection-end-line="188" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="299" column="51" lean-forward="false" selection-start-line="299" selection-start-column="51" selection-end-line="299" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11448">
-          <caret line="424" column="39" lean-forward="false" selection-start-line="424" selection-start-column="39" selection-end-line="430" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onlinetest/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="157" column="8" lean-forward="false" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/OnlineFormsm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/recaptcha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2322">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="85" column="50" lean-forward="false" selection-start-line="85" selection-start-column="50" selection-end-line="85" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form3.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="220" column="23" lean-forward="false" selection-start-line="220" selection-start-column="13" selection-end-line="220" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/AlumniFormsm.php" />
-    <entry file="file://$PROJECT_DIR$/dev/application/config/form_validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="149" column="36" lean-forward="true" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="464" column="46" lean-forward="true" selection-start-line="464" selection-start-column="46" selection-end-line="464" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/feedback-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form3v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="147" column="38" lean-forward="true" selection-start-line="147" selection-start-column="38" selection-end-line="147" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="357" column="43" lean-forward="false" selection-start-line="357" selection-start-column="43" selection-end-line="357" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="957" column="35" lean-forward="true" selection-start-line="957" selection-start-column="35" selection-end-line="957" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/AlumniForms.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="32" />
+        <state relative-caret-position="-1107">
+          <caret line="29" column="76" lean-forward="true" selection-start-line="29" selection-start-column="76" selection-end-line="29" selection-end-column="76" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-formv.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14280">
-          <caret line="595" column="0" lean-forward="false" selection-start-line="595" selection-start-column="0" selection-end-line="595" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="229" column="0" lean-forward="true" selection-start-line="229" selection-start-column="0" selection-end-line="229" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php" />
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageStudentApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7464">
-          <caret line="311" column="10" lean-forward="false" selection-start-line="311" selection-start-column="10" selection-end-line="311" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48144">
-          <caret line="2163" column="79" lean-forward="false" selection-start-line="2163" selection-start-column="65" selection-end-line="2163" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17616">
-          <caret line="978" column="22" lean-forward="false" selection-start-line="978" selection-start-column="20" selection-end-line="978" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3720">
-          <caret line="155" column="28" lean-forward="false" selection-start-line="155" selection-start-column="28" selection-end-line="155" selection-end-column="158" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="327" column="144" lean-forward="false" selection-start-line="327" selection-start-column="144" selection-end-line="327" selection-end-column="144" />
-          <folding>
-            <marker date="1574080720982" expanded="false" signature="23758:23761" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Recaptchalib.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Registration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2856">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <marker date="1536236385540" expanded="true" signature="5703:5921" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="160" column="30" lean-forward="false" selection-start-line="160" selection-start-column="25" selection-end-line="160" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="166" column="0" lean-forward="true" selection-start-line="166" selection-start-column="0" selection-end-line="166" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/register-ineterest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="73" column="100" lean-forward="false" selection-start-line="73" selection-start-column="78" selection-end-line="73" selection-end-column="100" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/OnlineForms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2827">
-          <caret line="197" column="20" lean-forward="false" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/copy_OnlineForms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15336">
-          <caret line="639" column="1" lean-forward="false" selection-start-line="639" selection-start-column="1" selection-end-line="639" selection-end-column="1" />
-          <folding>
-            <marker date="1574080692177" expanded="true" signature="4028:6261" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4055:4138" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4165:6233" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4195:6205" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4224:4315" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4344:4440" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4470:4565" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4595:4686" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4716:4809" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4839:4931" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="4961:5050" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5080:5175" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5205:5296" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5326:5417" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5447:5540" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5570:5659" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5689:5780" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5810:5911" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="5941:6047" ph="..." />
-            <marker date="1574080692177" expanded="true" signature="6077:6174" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>

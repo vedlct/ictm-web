@@ -136,13 +136,13 @@ $config = array (
             array(
                 'field' => 'firstName',
                 'label' => 'First Name',
-                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
 
             ),
             array(
                 'field' => 'email',
                 'label' => 'Email',
-                'rules' => 'required|max_length[255]|valid_email|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[255]|valid_email|xss_clean|htmlspecialchars',
 
             ),
             array(

@@ -102,7 +102,7 @@ class AlumniForms extends CI_Controller
             $this->data['jobTitle']=$this->input->post('jobTitle');
             $this->data['startCourse']=$this->input->post('startCourse');
             $this->data['receiveInfo']=$this->input->post('receiveInfo');
-            $this->load->view('feedback-form', $this->data);
+            $this->load->view('alumni-form', $this->data);
 
         }
     }
