@@ -167,7 +167,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">11.&nbsp;Student ID<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">11.&nbsp;Student ID</label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('studentId'); ?></font></p>
                                 <input tabindex="34" type="number"  class="form-control" id="studentId"  name="studentId" value="<?php echo set_value('studentId'); ?>">
@@ -231,7 +231,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div class="form-group">
                             <label class="control-label col-md-2">15.&nbsp;Current Status<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
-                                <select tabindex="3" style="width: 100%" id="test" name="currentStatus" onchange="checkother()">
+                                <select tabindex="3" style="width: 100%" id="test" required name="currentStatus" onchange="checkother()">
                                     <option  value=""  selected>Select Status</option>
                                     <option  value="Employed">Employed</option>
                                     <option  value="Further Education">Further Education</option>
@@ -247,9 +247,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label col-md-2">16.&nbsp;Name of Employer/ Organisation/College/University (if Applicable)<span style="color: red" class="required">*</span></label>
+                            <label class="control-label col-md-2">16.&nbsp;Name of Employer/Organisation/<br>College/University<br>(if Applicable)<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
-                                <input tabindex="34" type="text" maxlength="100" class="form-control"  id="organisation" name="organisation" value="<?php echo set_value('organisation'); ?>">
+                                <input tabindex="34" type="text" maxlength="100" class="form-control"  id="organisation" required name="organisation" value="<?php echo set_value('organisation'); ?>">
                             </div>
                         </div>
 
@@ -265,7 +265,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div class="form-group">
                             <label class="control-label col-md-2">18.&nbsp;Job Title / Course Studying (if Applicable)<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
-                                <input tabindex="34" type="text" maxlength="100" class="form-control"  id="jobTitle" name="jobTitle" value="<?php echo set_value('jobTitle'); ?>">
+                                <input tabindex="34" type="text" maxlength="100" class="form-control"  id="jobTitle" required name="jobTitle" value="<?php echo set_value('jobTitle'); ?>">
                             </div>
                         </div>
 
@@ -273,7 +273,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <label class="control-label col-md-2">19.&nbsp;Year Started of Job/Course<span style="color: red" class="required">*</span></label>
                             <div class="col-md-10">
                                 <p><font color="red"> <?php echo form_error('startCourse'); ?></font></p>
-                                <input tabindex="34" type="number" maxlength="9999" class="form-control"  id="startCourse" name="startCourse" value="<?php echo set_value('startCourse'); ?>">
+                                <input tabindex="34" type="number" maxlength="9999" class="form-control"  id="startCourse" required name="startCourse" value="<?php echo set_value('startCourse'); ?>">
                             </div>
                         </div>
 

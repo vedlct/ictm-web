@@ -103,9 +103,7 @@ class StudentApplication extends CI_Controller
             }
 //            $row[] = $alamni->courseComplete;
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewAlumniApplication/'.$alamni->personId.'"><i class="icon_pencil-edit"></i></a>
-            <a class="btn" href="'. base_url().'Admin/StudentApplication/deleteAlumni/'.$alamni->personId.'"><i class="icon_trash"></i></a>
-                                          
-                                                  ';
+            <a class="btn" href="'. base_url().'Admin/StudentApplication/deleteAlumni/'.$alamni->personId.'"><i class="icon_trash"></i></a>';
 
 
             $row[] = $html;

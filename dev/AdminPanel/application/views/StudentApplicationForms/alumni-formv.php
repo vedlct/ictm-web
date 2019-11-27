@@ -62,32 +62,32 @@
                             </div>
                             <h2 style="font-weight:bold;margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">PERSONAL DETAILS</h2>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Title:</label>
+                                <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-4" style="margin-left: -4%;">
                                     <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                    <input type="radio"  id="title"  name="title" value="Mr" <?php if($alumniInfos->title=="Mr"){ ?> checked=checked <?php } ?> />&nbsp;Mr&nbsp;
-                                    <input type="radio"  id="title"  name="title" value="Miss" <?php if($alumniInfos->title=="Miss"){ ?> checked=checked <?php } ?> />&nbsp;Miss&nbsp;
-                                    <input type="radio"  id="title"  name="title" value="Ms" <?php if($alumniInfos->title=="Ms"){ ?> checked=checked <?php } ?> />&nbsp;Ms&nbsp;
-                                    <input type="radio"  id="title"  name="title" value="Mrs" <?php if($alumniInfos->title=="Mrs"){ ?> checked=checked <?php } ?> />&nbsp;Mrs&nbsp;
-                                    <input type="radio"  id="title"  name="title" value="Mx" <?php if($alumniInfos->title=="Mx"){ ?> checked=checked <?php } ?> />&nbsp;Mx&nbsp;
-                                    <input type="radio"  id="title"  name="title" value="Other" <?php if($alumniInfos->title=="Other"){ ?> checked=checked <?php } ?> />&nbsp;Other
+                                    <input type="radio"  id="title" required name="title" value="Mr" <?php if($alumniInfos->title=="Mr"){ ?> checked=checked <?php } ?> />&nbsp;Mr&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Miss" <?php if($alumniInfos->title=="Miss"){ ?> checked=checked <?php } ?> />&nbsp;Miss&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Ms" <?php if($alumniInfos->title=="Ms"){ ?> checked=checked <?php } ?> />&nbsp;Ms&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Mrs" <?php if($alumniInfos->title=="Mrs"){ ?> checked=checked <?php } ?> />&nbsp;Mrs&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Mx" <?php if($alumniInfos->title=="Mx"){ ?> checked=checked <?php } ?> />&nbsp;Mx&nbsp;
+                                    <input type="radio"  id="title" required name="title" value="Other" <?php if($alumniInfos->title=="Other"){ ?> checked=checked <?php } ?> />&nbsp;Other
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                    <label class="control-label col-md-2">First Name:</label>
+                                    <label class="control-label col-md-2">First Name:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-10">
 <!--                                        <p><font color="red"> --><?php //echo form_error('firstName'); ?><!--</font></p>-->
-                                        <input type="text" class="form-control"  id="firstName" name="firstName" value="<?php echo $alumniInfos->firstName ?>">
+                                        <input type="text" class="form-control"  id="firstName" required name="firstName" value="<?php echo $alumniInfos->firstName ?>">
                                     </div>
                                 </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Last Name:</label>
+                                <label class="control-label col-md-2">Last Name:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <!--                                        <p><font color="red"> --><?php //echo form_error('firstName'); ?><!--</font></p>-->
-                                    <input type="text" class="form-control"  id="lastName" name="lastName" value="<?php echo $alumniInfos->lastName ?>">
+                                    <input type="text" class="form-control"  id="lastName" required name="lastName" value="<?php echo $alumniInfos->lastName ?>">
                                 </div>
                             </div>
 
@@ -122,33 +122,33 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2" id="address">Address:</label>
+                                <label class="control-label col-md-2" id="address">Address:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('address'); ?></font></p>
-                                    <input tabindex="27"  type="text" class="form-control"  id="address" name="address" value="<?php echo $alumniInfos->address ?>">
+                                    <input tabindex="27"  type="text" class="form-control"  id="address" required name="address" value="<?php echo $alumniInfos->address ?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Post Code :</label>
+                                <label class="control-label col-md-2">Post Code :<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('postcode'); ?></font></p>
-                                    <input type="text" class="form-control"  id="postcode" name="postcode" value="<?php echo $alumniInfos->postcode?>">
+                                    <input type="text" class="form-control"  id="postcode" required name="postcode" value="<?php echo $alumniInfos->postcode?>">
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Mobile:</label>
+                                <label class="control-label col-md-2">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('mobileNo'); ?></font></p>
-                                    <input type="text" class="form-control"  id="mobileNo" name="mobileNo" value="<?php echo $alumniInfos->mobileNo ?>">
+                                    <input type="text" class="form-control"  id="mobileNo" required name="mobileNo" value="<?php echo $alumniInfos->mobileNo ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">E-mail:</label>
+                                <label class="control-label col-md-2">E-mail:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('email'); ?></font></p>
-                                    <input type="email" class="form-control"  id="email" name="email" value="<?php echo $alumniInfos->email ?>">
+                                    <input type="email" class="form-control"  id="email" required name="email" value="<?php echo $alumniInfos->email ?>">
                                 </div>
                             </div>
                             <h2 style="font-weight:bold;margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">COURSE DETAILS</h2>
@@ -161,47 +161,71 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Course complete:</label>
+                                <label class="control-label col-md-2">Course complete:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-7" style="margin-left: -1%;">
                                     <p><font color="red"> <?php echo form_error('courseComplete'); ?></font></p>
-                                    <input type="radio"  id="courseComplete"  name="courseComplete" value="B" <?php if($alumniInfos->courseComplete=='B'){ echo "checked=checked";}?>> Business&nbsp;&nbsp;
-                                    <input type="radio"  id="courseComplete"  name="courseComplete" value="C" <?php if($alumniInfos->courseComplete=='C'){ echo "checked=checked";}?>> Computing&nbsp;&nbsp;
-                                    <input type="radio"  id="courseComplete"  name="courseComplete" value="H" <?php if($alumniInfos->courseComplete=='H'){ echo "checked=checked";}?>> Health and Social Care&nbsp;&nbsp;
-                                    <input type="radio"  id="courseComplete"  name="courseComplete" value="T" <?php if($alumniInfos->courseComplete=='T'){ echo "checked=checked";}?>> Travel Tourism&nbsp;&nbsp;
-                                    <input type="radio"  id="courseComplete"  name="courseComplete" value="M" <?php if($alumniInfos->courseComplete=='M'){ echo "checked=checked";}?>> Hospitality Management
+                                    <input type="radio"  id="courseComplete" required name="courseComplete" value="B" <?php if($alumniInfos->courseComplete=='B'){ echo "checked=checked";}?>> Business&nbsp;&nbsp;
+                                    <input type="radio"  id="courseComplete" required name="courseComplete" value="C" <?php if($alumniInfos->courseComplete=='C'){ echo "checked=checked";}?>> Computing&nbsp;&nbsp;
+                                    <input type="radio"  id="courseComplete" required name="courseComplete" value="H" <?php if($alumniInfos->courseComplete=='H'){ echo "checked=checked";}?>> Health and Social Care&nbsp;&nbsp;
+                                    <input type="radio"  id="courseComplete" required name="courseComplete" value="T" <?php if($alumniInfos->courseComplete=='T'){ echo "checked=checked";}?>> Travel Tourism&nbsp;&nbsp;
+                                    <input type="radio"  id="courseComplete" required name="courseComplete" value="M" <?php if($alumniInfos->courseComplete=='M'){ echo "checked=checked";}?>> Hospitality Management
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Course Start Year:</label>
+                                <label class="control-label col-md-2">Course Start Year:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('courseStartYear'); ?></font></p>
-                                    <input type="text" class="form-control"  id="courseStartYear" name="courseStartYear" value="<?php echo $alumniInfos->courseStartYear ?>">
+                                    <input type="text" class="form-control"  id="courseStartYear" required name="courseStartYear" value="<?php echo $alumniInfos->courseStartYear ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Course Completion Year:</label>
+                                <label class="control-label col-md-2">Course Completion Year:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('courseCompleteYear'); ?></font></p>
-                                    <input type="text" class="form-control"  id="courseCompleteYear" name="courseCompleteYear" value="<?php echo $alumniInfos->courseCompleteYear ?>">
+                                    <input type="text" class="form-control"  id="courseCompleteYear" required name="courseCompleteYear" value="<?php echo $alumniInfos->courseCompleteYear ?>">
                                 </div>
                             </div>
                             <h2 style="font-weight:bold; margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">CAREER DETAILS</h2>
-                            <div class="form-group">
-                                <label class="control-label col-md-2">Current Status:</label>
-                                <div class="col-md-4" style="margin-left: -4%;">
-                                    <p><font color="red"> <?php echo form_error('currentStatus'); ?></font></p>
-                                    <input type="radio"  id="currentStatus"  name="currentStatus" value="Employed" <?php if($alumniInfos->currentStatus=="Employed"){ ?> checked=checked <?php } ?> />&nbsp;Employed&nbsp;
-                                    <input type="radio"  id="currentStatus"  name="currentStatus" value="Further Education" <?php if($alumniInfos->currentStatus=="Further Education"){ ?> checked=checked <?php } ?> />&nbsp;Further Education&nbsp;
-                                    <input type="radio"  id="currentStatus"  name="currentStatus" value="Other" <?php if($alumniInfos->currentStatus=="Other"){ ?> checked=checked <?php } ?> />&nbsp;Other<br>
-                                    <input  style="display:none;" type="text" name="currentOther" value="<?php echo $alumniInfos->currentOther ?>" id="currentOther"/>
-                                </div>
-                            </div>
+<!--                            <div class="form-group">-->
+<!--                                <label class="control-label col-md-2">Current Status:</label>-->
+<!--                                <div class="col-md-4" style="margin-left: -4%;">-->
+<!--                                    <p><font color="red"> --><?php //echo form_error('currentStatus'); ?><!--</font></p>-->
+<!--                                    <input type="radio"  id="currentStatus"  name="currentStatus" value="Employed" --><?php //if($alumniInfos->currentStatus=="Employed"){ ?><!-- checked=checked --><?php //} ?><!-- />&nbsp;Employed&nbsp;-->
+<!--                                    <input type="radio"  id="currentStatus"  name="currentStatus" value="Further Education" --><?php //if($alumniInfos->currentStatus=="Further Education"){ ?><!-- checked=checked --><?php //} ?><!-- />&nbsp;Further Education&nbsp;-->
+<!--                                    <input type="radio"  id="currentStatus"  name="currentStatus" value="Other" --><?php //if($alumniInfos->currentStatus=="Other"){ ?><!-- checked=checked --><?php //} ?><!-- />&nbsp;Other<br>-->
+<!--                                    <input  style="display:none;" type="text" name="currentOther" value="--><?php //echo $alumniInfos->currentOther ?><!--" id="currentOther"/>-->
+<!--                                </div>-->
+<!--                            </div>-->
 
                             <div class="form-group">
-                                <label class="control-label col-md-2">Name of Employer:</label>
+                                <label class="control-label col-md-2">15.&nbsp;Current Status<span style="color: red" class="required">*</span></label>
+                                <div class="col-md-10">
+                                    <select tabindex="3" style="width: 100%" id="test" required name="currentStatus" onchange="checkother()">
+                                        <option  value="" disabled selected>Select Status</option>
+                                        <option  value="Employed" <?php if($alumniInfos=="Employed") echo 'selected="selected"'; ?>>Employed</option>
+                                        <option  value="Further Education" <?php if($alumniInfos=="Further Education") echo 'selected="selected"'; ?>>Further Education</option>
+                                        <option  value="Other" <?php if($alumniInfos=="Other") echo 'selected="selected"'; ?>>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group" id="otherdiv" style="display: none">
+                                <label class="control-label col-md-2">Other (Please Specify):</label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" id="currentOther" name="currentOther"  value="" type="text" required ><?php echo $alumniInfos->currentOther?></textarea>
+                                </div>
+                            </div>
+<!--                            <select name="currentStatus">-->
+<!--                                <option value="0">Please Select Option</option>-->
+<!--                                <option value="Employed" --><?php //if($alumniInfos=="Employed") echo 'selected="selected"'; ?><!-- >Employed</option>-->
+<!--                                <option value="Further Education" --><?php //if($alumniInfos=="Further Education") echo 'selected="selected"'; ?><!-- >Further Education</option>-->
+<!--                            </select>-->
+
+
+                            <div class="form-group">
+                                <label class="control-label col-md-2">Name of Employer:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('organisation'); ?></font></p>
-                                    <input type="text" class="form-control"  id="organisation" name="organisation" value="<?php echo $alumniInfos->organisation ?>">
+                                    <input type="text" class="form-control"  id="organisation" required name="organisation" value="<?php echo $alumniInfos->organisation ?>">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -212,17 +236,17 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Job Title:</label>
+                                <label class="control-label col-md-2">Job Title:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('jobTitle'); ?></font></p>
-                                    <input type="text" class="form-control"  id="jobTitle" name="jobTitle" value="<?php echo $alumniInfos->jobTitle ?>">
+                                    <input type="text" class="form-control"  id="jobTitle" required name="jobTitle" value="<?php echo $alumniInfos->jobTitle ?>">
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-2">Year Started of Job:</label>
+                                <label class="control-label col-md-2">Year Started of Job:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-10">
                                     <p><font color="red"> <?php echo form_error('startCourse'); ?></font></p>
-                                    <input type="number" class="form-control"  id="startCourse" name="startCourse" value="<?php echo $alumniInfos->startCourse ?>">
+                                    <input type="number" class="form-control"  id="startCourse" required name="startCourse" value="<?php echo $alumniInfos->startCourse ?>">
                                 </div>
                             </div>
                             <h2 style="font-weight:bold;margin-left: 2%; font-size:17px; margin-bottom:20px; text-align:left; text-decoration:underline">Stay Connected</h2>
@@ -348,6 +372,7 @@
         $('.datetimepicker').datetimepicker({
             format: 'YYYY-MM-DD'
         });
+        $( ".selector" ).datepicker({ constrainInput: false });
         $('.datetimepicker').keydown(function(e) {
             e.preventDefault();
             return false;

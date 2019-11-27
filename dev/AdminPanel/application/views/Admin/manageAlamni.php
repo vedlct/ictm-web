@@ -66,7 +66,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <input type="checkbox" id="selectall" onClick="selectAll(this)" />Select All<br><br><br>
+                            <input type="checkbox" class="chk" id="selectall1" />Select All<br><br><br>
                             <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
 
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
@@ -93,6 +93,12 @@
 </body>
 </html>
 <script>
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     var table;
     $(document).ready(function() {
         //datatables
@@ -126,11 +132,6 @@
 //        $(".dataTables_filter input").attr("placeholder", "Search By Title");
 
     });
-    $.ajaxSetup({
-        data: {
-            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
-        }
-    });
 
     var selecteds = [];
     function selected_rows(x) {
@@ -144,26 +145,57 @@
             selecteds.splice(index, 1);
         }
 
+
     }
 
-    function selectAll(source) {
+    // add multiple select / deselect functionality111
+    $("#selectall1").click(function () {
 
-        for(var i=0; i <= selecteds.length; i++) {
-            selecteds.pop(i);
+        if($('#selectall1').is(":checked")) {
+            selecteds=[];
+            checkboxes = document.getElementsByName('selected_rows[]');
+            for(var i in checkboxes) {
+                checkboxes[i].checked = 'TRUE';
+            }
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".chk:checked").each(function () {
+                btn = $(this).data('panel-id');
+                selecteds.push(btn);
+            });
+            // alert(selecteds);
+
+
         }
-        alert(selecteds);
-
-//            $(':checkbox:checked').prop('checked',false);
-        checkboxes = document.getElementsByName('selected_rows[]');
-        for(var i in checkboxes) {
-            checkboxes[i].checked = source.checked;
+        else {
+            selecteds=[];
+            $(':checkbox:checked').prop('checked',false);
         }
 
-        /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
-        $(".chk:checked").each(function () {
-            selecteds.push($(this).val());
-        });
-    }
+    });
+
+
+
+
+
+
+//    function selectAll(source) {
+//        for(var i=0; i <= selecteds.length; i++) {
+//            selecteds.pop(i);
+//        }
+//        alert(selecteds);
+//
+////            $(':checkbox:checked').prop('checked',false);
+//        checkboxes = document.getElementsByName('selected_rows[]');
+//        for(var i in checkboxes) {
+//            checkboxes[i].checked = source.checked;
+//        }
+//
+//        /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+//        $(".chk:checked").each(function () {
+//            selecteds.push($(this).val());
+//        });
+//    }
 
     //    function downloadexcel() {
     //
@@ -301,6 +333,7 @@
                     document.body.appendChild(downloadLink);
                     downloadLink.click();
                     document.body.removeChild(downloadLink);
+
                     selecteds=[];
                     $(':checkbox:checked').prop('checked',false);
                 }
@@ -324,6 +357,8 @@
             });
         }
     }
+
+
 
 
 </script>
