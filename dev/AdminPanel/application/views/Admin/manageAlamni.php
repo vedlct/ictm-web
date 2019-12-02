@@ -21,7 +21,7 @@
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="#">Home</a></li>
                         <li><i class="fa fa-table"></i>Student Applications</li>
-                        <li><i class="fa fa-th-list"></i>Manage Alamni</li>
+                        <li><i class="fa fa-th-list"></i>Manage Alumni</li>
                     </ol>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <b>Manage Affiliations</b>
+                            <b>Manage Alumni</b>
                             <!--                            <span align="">-->
                             <!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
                             <!--                            </span>-->
@@ -57,6 +57,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Course Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                     </tr>
                                     </thead>
@@ -65,6 +66,7 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <input type="checkbox" class="chk" id="selectall1" />Select All<br><br><br>
                             <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
 
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
@@ -91,6 +93,12 @@
 </body>
 </html>
 <script>
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
+    });
+
     var table;
     $(document).ready(function() {
         //datatables
@@ -110,24 +118,19 @@
 
             "columnDefs": [
                 {
-                    "targets": [5], //first column / numbering column
+                    "targets": [6], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+                "sSearch": "<span>Search by:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });
 //        $(".dataTables_filter input").attr("placeholder", "Search By Title");
 
-    });
-    $.ajaxSetup({
-        data: {
-            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
-        }
     });
 
     var selecteds = [];
@@ -142,7 +145,57 @@
             selecteds.splice(index, 1);
         }
 
+
     }
+
+    // add multiple select / deselect functionality111
+    $("#selectall1").click(function () {
+
+        if($('#selectall1').is(":checked")) {
+            selecteds=[];
+            checkboxes = document.getElementsByName('selected_rows[]');
+            for(var i in checkboxes) {
+                checkboxes[i].checked = 'TRUE';
+            }
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".chk:checked").each(function () {
+                btn = $(this).data('panel-id');
+                selecteds.push(btn);
+            });
+            // alert(selecteds);
+
+
+        }
+        else {
+            selecteds=[];
+            $(':checkbox:checked').prop('checked',false);
+        }
+
+    });
+
+
+
+
+
+
+//    function selectAll(source) {
+//        for(var i=0; i <= selecteds.length; i++) {
+//            selecteds.pop(i);
+//        }
+//        alert(selecteds);
+//
+////            $(':checkbox:checked').prop('checked',false);
+//        checkboxes = document.getElementsByName('selected_rows[]');
+//        for(var i in checkboxes) {
+//            checkboxes[i].checked = source.checked;
+//        }
+//
+//        /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+//        $(".chk:checked").each(function () {
+//            selecteds.push($(this).val());
+//        });
+//    }
 
     //    function downloadexcel() {
     //
@@ -280,6 +333,7 @@
                     document.body.appendChild(downloadLink);
                     downloadLink.click();
                     document.body.removeChild(downloadLink);
+
                     selecteds=[];
                     $(':checkbox:checked').prop('checked',false);
                 }
@@ -306,4 +360,17 @@
 
 
 
+
 </script>
+
+
+<!--<script>-->
+<!--    function selectAll(source) {-->
+<!--        var products=selecteds;-->
+<!--        checkboxes = document.getElementsByName('selected_rows[]');-->
+<!--        for(var i in checkboxes)-->
+<!--            checkboxes[i].checked = source.checked;-->
+<!--    }-->
+<!--</script>-->
+
+

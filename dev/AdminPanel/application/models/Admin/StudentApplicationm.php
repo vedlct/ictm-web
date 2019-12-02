@@ -3,7 +3,7 @@ class StudentApplicationm extends CI_Model
 {
     ////alamni datatable//
     var $alumnitable = 'alumniregistration';
-    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo');
+    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo','courseComplete');
     var $alumnicolumn_order = array(null,null,null,'studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable orderable
     var $alumnicolumn_search = array('studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable searchable
     var $alumniorder = array('personId' => 'desc');
@@ -750,6 +750,17 @@ class StudentApplicationm extends CI_Model
             }
         }
     }
+    public function editAlumniForm($data){
+        $id = $this->session->userdata('studentAlumniId');
+        $data=$this->security->xss_clean($data);
+        $this->db->where('personId', $id);
+        $error=$this->db->update('alumniregistration', $data);
+        if (empty($error)) {
+            return $this->db->error();
+        } else {
+
+        }
+    }
     public function getQualifications($applicationId){
         $this->db->select('id,qualification,institution,qualificationLevel,awardingBody,subject,completionYear,obtainResult');
         $this->db->where('fkApplicationId',$applicationId);
@@ -1413,6 +1424,14 @@ class StudentApplicationm extends CI_Model
         $this->db->where('id', $applicationId);
         $this->db->delete('filedocument');
 
+
+    }
+
+    public function deletePersonId($personId)
+    {
+
+        $this->db->where('personId',$personId);
+        $this->db->delete('alumniregistration');
 
     }
 
