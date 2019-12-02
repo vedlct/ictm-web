@@ -202,9 +202,9 @@
                                 <div class="col-md-10">
                                     <select tabindex="3" style="width: 100%" id="test" required name="currentStatus" onchange="checkother()">
                                         <option  value="" disabled selected>Select Status</option>
-                                        <option  value="Employed" <?php if($alumniInfos=="Employed") echo 'selected="selected"'; ?>>Employed</option>
-                                        <option  value="Further Education" <?php if($alumniInfos=="Further Education") echo 'selected="selected"'; ?>>Further Education</option>
-                                        <option  value="Other" <?php if($alumniInfos=="Other") echo 'selected="selected"'; ?>>Other</option>
+                                        <option  value="Employed" <?php if($alumniInfos->currentStatus=='Employed'){ echo "selected=selected";}?>>Employed</option>
+                                        <option  value="Further Education" <?php if($alumniInfos->currentStatus=='Further Education'){ echo "selected=selected";}?>>Further Education</option>
+                                        <option  value="Other" <?php if($alumniInfos->currentStatus=='Other'){ echo "selected=selected";}?>>Other</option>
                                     </select>
                                 </div>
                             </div>
