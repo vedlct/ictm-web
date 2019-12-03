@@ -45,7 +45,7 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewUser" method="POST" action="<?php echo base_url() ?>Admin/Feedback/createNewUser" onsubmit="return formvalidate()" enctype="multipart/form-data">
+                                <form class="form-validate form-horizontal" id="CreateNewUser" method="POST" action="<?php echo base_url() ?>Admin/User/createNewUser" onsubmit="return formvalidate()">
 
                                     <div class="form-group ">
                                         <label for="feedbackByName" class="control-label col-lg-2">First Name <span class="required">*</span></label>
@@ -81,6 +81,17 @@
                                             <input class="form-control" id="userPassword" name="userPassword"  value="<?php echo set_value('userPassword'); ?>" type="password" required />
                                         </div>
 
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-2">Role<span class="required">*</span></label>
+                                        <div class="col-lg-4">
+                                            <select class="form-control m-bot15" name="roleId" id="pagetype" onchange="checkPageType()" required>
+                                                <?php foreach ($page as $page){ ?>
+                                                <option value="" >Select Role</option>
+                                                <option value="<?php echo $page->roleId ?>"><?php echo $page->roleName ?></option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
                                     </div>
 
 

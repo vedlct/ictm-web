@@ -1919,5 +1919,26 @@ $config = array (
             ),
         ),
 
+    'createUser'=> array (
+
+        array(
+            'field' => 'firstName',
+            'label' => 'First Name',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+        ),
+        array(
+            'field' => 'surName',
+            'label' => 'Sure Name',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars'
+        ),
+        array(
+            'field' => 'userEmail',
+            'label' => 'Email',
+            'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
+
+        ),
+
+    ),
+
     /*end*/
 );

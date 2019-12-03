@@ -2,8 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionu3kndbcgtp94f9625v0hhm06nn2leium" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Admin_menu_rolem.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Admin_menum.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessiona39orjohfuffoja4cbj52rji30naqinf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessioncbpmv81jbtuobl13im7qrem3nap0r3rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionkmv0lpb1158jal6962anvduubooln6go" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessionu81tkhg6a45il03jf3n3gfub1emgp900" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/application/controllers/copy_OnlineForms.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_session795791cnmupqhb3ib1ra176ht7ah85of" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionegqk8hbm0ags5livhmc6ka2mehjrg3u1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiongchpdlhaibi338k8103d897t28r7cq23" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessiongd6mjnml49te86v58i8tkveggtq9scf7" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionn502i8jflamnpja3cm377sg86o519fjt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dev/system/ci_sessionr0ebbbefsmev49k880icms6ihlna8ii2" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/ictm-web.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Userm.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Userm.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessions1cv6faqo04srirk0q0skusr9vj3h47g" afterPath="$PROJECT_DIR$/dev/AdminPanel/system/ci_sessions1cv6faqo04srirk0q0skusr9vj3h47g" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +39,136 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="leftNavigation.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php">
+      <file leaf-file-name="StudentApplicationm.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="324">
-              <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Userm.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Userm.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="243">
+              <caret line="9" column="80" lean-forward="true" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menum.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Menum.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="567">
+              <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="76" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Menu.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1566">
+              <caret line="73" column="51" lean-forward="false" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageAlamni.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-342">
+              <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StudentApplication.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="3292" column="40" lean-forward="true" selection-start-line="3292" selection-start-column="40" selection-end-line="3292" selection-end-column="65" />
+              <folding>
+                <marker date="1574858180114" expanded="true" signature="136637:136817" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="146913:147093" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="147606:147786" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="151059:151239" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="154045:154225" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="154725:154917" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="155708:155888" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="156832:157012" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="158294:158474" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="159309:159489" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="160269:160449" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="163996:164176" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="167225:167405" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="169633:169813" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="171963:172143" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="174331:174511" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="175866:176046" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="176567:176747" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="177994:178174" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="179453:179627" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="180443:180623" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="183050:183224" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="185706:185880" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="188506:188686" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="191369:191549" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="192041:192221" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="195302:195482" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="197936:198116" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="199048:199228" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="202068:202248" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="205127:205307" ph="..." />
+                <marker date="1574858180114" expanded="true" signature="210037:210217" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="manageUser.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageUser.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2079">
+              <caret line="122" column="61" lean-forward="false" selection-start-line="122" selection-start-column="61" selection-end-line="122" selection-end-column="61" />
+              <folding>
+                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Feedback.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Feedback.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="864">
+              <caret line="173" column="9" lean-forward="true" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="managePage1.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -32,18 +178,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getAlu</find>
-      <find>get</find>
-      <find>getAlumn</find>
-      <find>getAlumni</find>
-      <find>getCourseInfo</find>
-      <find>verifyResponse($recaptcha)</find>
-      <find>verifyResponse</find>
-      <find>AllFormForStudents</find>
-      <find>otherdiv</find>
-      <find>comment-message</find>
-      <find>test</find>
-      <find>deleteFacultybyId</find>
       <find>viewApplication</find>
       <find>deleteFaculty</find>
       <find>editApplicationForm1</find>
@@ -62,6 +196,18 @@
       <find>selected_row</find>
       <find>selected_rows(x)</find>
       <find>selected_rows</find>
+      <find>createPage</find>
+      <find>insertPage()</find>
+      <find>createFeedback</find>
+      <find>createNewFeedback()</find>
+      <find>createNewMenu()</find>
+      <find>getPageIdNameforMenu</find>
+      <find>get_datatables()</find>
+      <find>count_all_results</find>
+      <find>ajax_list</find>
+      <find>deleteAlumni</find>
+      <find>deletePersonId($personId)</find>
+      <find>newUser</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,10 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/dev/application/views/application-form6v.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form4.php" />
-        <option value="$PROJECT_DIR$/dev/application/views/application-form4v.php" />
-        <option value="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form2.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form8v.php" />
         <option value="$PROJECT_DIR$/dev/application/views/application-form10.php" />
@@ -104,16 +246,12 @@
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form6.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form8.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form10.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php" />
         <option value="$PROJECT_DIR$/dev/application/config/routes.php" />
         <option value="$PROJECT_DIR$/dev/application/models/AlumniFormsm.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/config.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
         <option value="$PROJECT_DIR$/dev/application/config/form_validation.php" />
         <option value="$PROJECT_DIR$/dev/application/views/home.php" />
         <option value="$PROJECT_DIR$/dev/application/controllers/AlumniForms.php" />
-        <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php" />
         <option value="$PROJECT_DIR$/dev/application/config/constants.php" />
         <option value="$PROJECT_DIR$/dev/application/views/alumni-form.php" />
@@ -121,6 +259,14 @@
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php" />
         <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Pagem.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage1.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageUser.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php" />
+        <option value="$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Userm.php" />
       </list>
     </option>
   </component>
@@ -152,7 +298,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -529,7 +675,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -643,15 +789,16 @@
       <workItem from="1574922776218" duration="184000" />
       <workItem from="1575268125143" duration="656000" />
       <workItem from="1575349945780" duration="783000" />
+      <workItem from="1575352524843" duration="20668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="367148000" />
+    <option name="totallyTimeSpent" value="387816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18162839" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -684,113 +831,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Feedbackm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="47" column="93" lean-forward="false" selection-start-line="47" selection-start-column="93" selection-end-line="47" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Feedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="309" column="0" lean-forward="false" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newFeedback.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form4v.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="188" column="92" lean-forward="false" selection-start-line="188" selection-start-column="92" selection-end-line="188" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-form4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="299" column="51" lean-forward="false" selection-start-line="299" selection-start-column="51" selection-end-line="299" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/OnlineForms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="13" column="43" lean-forward="true" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/onlinetest/constants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="157" column="8" lean-forward="false" selection-start-line="157" selection-start-column="8" selection-end-line="157" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/OnlineFormsm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="97" column="0" lean-forward="true" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2322">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/models/AlumniFormsm.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="53" column="39" lean-forward="false" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/application-formv.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="957" column="35" lean-forward="true" selection-start-line="957" selection-start-column="35" selection-end-line="957" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageStudentApplication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8397">
-          <caret line="311" column="10" lean-forward="false" selection-start-line="311" selection-start-column="10" selection-end-line="311" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/recaptcha.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -890,14 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="1899" column="12" lean-forward="false" selection-start-line="1899" selection-start-column="5" selection-end-line="1899" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/controllers/AlumniForms.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1836">
@@ -983,7 +1015,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="20" column="1" lean-forward="false" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -991,15 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4131">
-          <caret line="153" column="35" lean-forward="false" selection-start-line="153" selection-start-column="35" selection-end-line="153" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,10 +1032,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="236" column="88" lean-forward="false" selection-start-line="236" selection-start-column="79" selection-end-line="236" selection-end-column="88" />
+          <folding>
+            <marker date="1574852428665" expanded="false" signature="14756:14766" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-409">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newPage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="56" column="43" lean-forward="true" selection-start-line="56" selection-start-column="43" selection-end-line="61" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="1921" column="15" lean-forward="false" selection-start-line="1921" selection-start-column="5" selection-end-line="1921" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="90" column="8" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Feedbackm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6939">
+          <caret line="365" column="13" lean-forward="true" selection-start-line="365" selection-start-column="13" selection-end-line="365" selection-end-column="13" />
+          <folding>
+            <marker date="1568802673684" expanded="true" signature="5615:5774" ph="..." />
+            <marker date="1568802673684" expanded="true" signature="9768:9945" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newMenu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="68" column="42" lean-forward="true" selection-start-line="68" selection-start-column="42" selection-end-line="68" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/alumni-formv.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="207" column="45" lean-forward="false" selection-start-line="207" selection-start-column="45" selection-end-line="207" selection-end-column="45" />
+        <state relative-caret-position="213">
+          <caret line="288" column="19" lean-forward="false" selection-start-line="288" selection-start-column="19" selection-end-line="288" selection-end-column="30" />
           <folding>
             <marker date="1574919328874" expanded="false" signature="14744:14761" ph="..." />
             <marker date="1574919328874" expanded="false" signature="15698:15711" ph="..." />
@@ -1022,10 +1105,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/newUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="90" column="118" lean-forward="false" selection-start-line="90" selection-start-column="118" selection-end-line="90" selection-end-column="118" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="291" column="90" lean-forward="false" selection-start-line="291" selection-start-column="90" selection-end-line="291" selection-end-column="90" />
+          <folding>
+            <marker date="1575364806610" expanded="true" signature="232:304" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="1329:1401" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="2089:2161" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="2875:2947" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="3712:3784" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="4526:4598" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="5320:5392" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="6151:6223" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="7632:7704" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="8413:8486" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="9184:9257" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="9963:10036" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="10742:10815" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="11566:11639" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="12373:12446" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="12862:12935" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="13350:13423" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="14486:14559" ph="SELECT * FRO... adminmenurole" />
+            <marker date="1575364806610" expanded="true" signature="14987:15060" ph="SELECT * FRO... adminmenurole" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Pagem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1701">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1575366991381" expanded="true" signature="4988:5143" ph="..." />
+            <marker date="1575366991381" expanded="true" signature="10128:10341" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1080">
+          <caret line="20" column="30" lean-forward="true" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="46" />
+          <folding>
+            <marker date="1568802450361" expanded="true" signature="7812:8103" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Feedback.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="173" column="9" lean-forward="true" selection-start-line="173" selection-start-column="9" selection-end-line="173" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/public/js/datatables/js/jquery.dataTables.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="165" column="202" lean-forward="false" selection-start-line="165" selection-start-column="202" selection-end-line="165" selection-end-column="202" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/managePage1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="131" column="58" lean-forward="true" selection-start-line="131" selection-start-column="58" selection-end-line="131" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageAlamni.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="102" column="34" lean-forward="true" selection-start-line="102" selection-start-column="34" selection-end-line="102" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2079">
+          <caret line="122" column="61" lean-forward="false" selection-start-line="122" selection-start-column="61" selection-end-line="122" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#0;n#div#0;n#section#0;n#div#0;n#div#2;n#section#0;n#section#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/StudentApplication.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="83" column="145" lean-forward="false" selection-start-line="83" selection-start-column="132" selection-end-line="83" selection-end-column="145" />
+        <state relative-caret-position="374">
+          <caret line="3292" column="40" lean-forward="true" selection-start-line="3292" selection-start-column="40" selection-end-line="3292" selection-end-column="65" />
           <folding>
             <marker date="1574858180114" expanded="true" signature="136637:136817" ph="..." />
             <marker date="1574858180114" expanded="true" signature="146913:147093" ph="..." />
@@ -1063,36 +1245,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/views/alumni-form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="236" column="88" lean-forward="false" selection-start-line="236" selection-start-column="79" selection-end-line="236" selection-end-column="88" />
-          <folding>
-            <marker date="1574852428665" expanded="false" signature="14756:14766" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/StudentApplicationm.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="5" column="117" lean-forward="false" selection-start-line="5" selection-start-column="117" selection-end-line="5" selection-end-column="117" />
+        <state relative-caret-position="324">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="74" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/home.php">
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Menum.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-409">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="567">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="76" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/leftNavigation.php">
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="73" column="51" lean-forward="false" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
-          <caret line="12" column="22" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/models/Admin/Userm.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="9" column="80" lean-forward="true" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
           <folding />
         </state>
       </provider>

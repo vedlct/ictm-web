@@ -3,6 +3,12 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
 
+<!--            --><?php $usreid =  $this->session->userdata('id') ?>
+
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '1' AND  userId = '$usreid'";
+             $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:">
                     <i class="icon_house_alt"></i>
@@ -17,7 +23,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Home/bottomBanner">Bottom Banner</a></li>
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '2' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:">
                     <i class="icon_menu"></i>
@@ -29,7 +39,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '3' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:">
                     <i class="icon_documents_alt"></i>
@@ -41,7 +55,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '4' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:" >
                     <i class="icon_documents_alt"></i>
@@ -53,6 +71,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/PageSection/managePageSection"><span>Manage Page Sections</span></a></li>
                 </ul>
             </li>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '5' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_book"></i>
@@ -64,7 +87,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Department/manageDepartment">Manage Departments</a></li>
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '6' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_book_alt"></i>
@@ -76,6 +103,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourse">Manage Courses</a></li>
                 </ul>
             </li>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '7' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_book_alt"></i>
@@ -87,6 +119,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/manageCourseSec">Manage CourseSections </a></li>
                 </ul>
             </li>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '8' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_group"></i>
@@ -100,7 +137,7 @@
 
                 </ul>
             </li>
-
+            <?php } ?>
             <!--            <li class="sub-menu">-->
             <!--                <a href="javascript:;" class="">-->
             <!--                    <i class="icon_group"></i>-->
@@ -112,6 +149,10 @@
             <!--                    <li><a class="" href="#">Manage User Roles</a></li>-->
             <!--                </ul>-->
             <!--            </li>-->
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '9' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_clock"></i>
@@ -124,7 +165,11 @@
 
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '10' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_tag"></i>
@@ -137,7 +182,11 @@
 
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '11' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_image"></i>
@@ -149,7 +198,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Album/manageAlbum">Manage Album</a></li>
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '12' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_image"></i>
@@ -161,7 +214,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Photo/managePhoto">Manage Photo</a></li>
                 </ul>
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '13' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:" class="">
                     <i class="icon_genius"></i>
@@ -173,6 +230,11 @@
                     <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/manageAffiliation">Manage Affiliations</a></li>
                 </ul>
             </li>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '14' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="javascript:;" class="">
                     <i class="icon_comment"></i>
@@ -186,6 +248,11 @@
 
                 </ul>
             </li>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '15' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
 
             <li class="sub-menu">
                 <a href="<?php echo base_url()?>Admin/RegisterInterest1/viewRI" class="">
@@ -195,6 +262,11 @@
                 </a>
 
             </li>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '16' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a href="<?php echo base_url()?>Admin/CollegeInfo/createCollegeInfo" class="">
                     <i class="icon_info"></i>
@@ -203,15 +275,40 @@
                 </a>
 
             </li>
-            <li class="sub-menu">
-                <a href="<?php echo base_url()?>Admin/User/newUser" class="">
-                    <i class="icon_info"></i>
-                    <span>Users</span>
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '17' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_comment"></i>
+                        <span>Users</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
 
-                </a>
+                        <li><a class="" href="<?php echo base_url()?>Admin/User/newUser">New Users</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/User/manageUser">Manage Role</a></li>
 
-            </li>
+                    </ul>
+                </li>
 
+
+
+<!--                <li class="sub-menu">-->
+<!--                <a href="--><?php //echo base_url()?><!--Admin/User/newUser" class="">-->
+<!--                    <i class="icon_info"></i>-->
+<!--                    <span>Users</span>-->
+<!---->
+<!--                </a>-->
+<!---->
+<!--                </li>-->
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '18' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageApplication">
                     <i class="icon_info"></i>
@@ -220,7 +317,11 @@
                 </a>
 
             </li>
-
+            <?php } ?>
+            <?php
+            $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '19' AND  userId = '$usreid'";
+            $query = $this->db->query($sql);
+            if ($query->num_rows() > 0) { ?>
             <li class="sub-menu">
                 <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageAlamni">
                     <i class="icon_info"></i>
@@ -229,7 +330,7 @@
                 </a>
 
             </li>
-
+            <?php } ?>
 <!--            <li class="sub-menu">-->
 <!--                <a href="javascript:;" class="">-->
 <!--                    <i class="icon_comment"></i>-->
