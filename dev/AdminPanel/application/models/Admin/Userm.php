@@ -131,6 +131,66 @@ class Userm extends CI_Model
 
     }
 
+    public function geteditUserData($userId)
+    {
+
+//        $this->db->where('userId', $userId);
+        $this->db->select('ictmusers.*,ictmrole.roleId','ictmrole.roleName');
+        $this->db->where('ictmusers.userId', $userId);
+        $this->db->from('ictmusers');
+        $this->db->join('ictmrole', 'ictmusers.roleId = ictmrole.roleId','left');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function editUserbyId($userId)
+    {
+        $firstName = $this->input->post("firstName");
+        $surName = $this->input->post("surName");
+        $userEmail = $this->input->post("userEmail");
+//        $userPassword= $this->input->post("userPassword");
+        $roleId= $this->input->post("roleId");
+
+
+        $data = array(
+            'firstName' => $firstName,
+            'surName' => $surName,
+            'userEmail' => $userEmail,
+//            'userPassword' => $userPassword,
+            'roleId' => $roleId,
+//            'insertedBy'=>$this->session->userdata('userEmail'),
+            'insertedDate'=>date("Y-m-d H:i:s")
+
+        );
+
+        $this->security->xss_clean($data);
+
+        $this->db->where('userId', $userId);
+        $error=$this->db->update('ictmusers', $data);
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+    }
+
+//    function is_email_available($userEmail)
+//    {
+//        $this->db->where('userEmail', $userEmail);
+//        $query = $this->db->get("ictmusers");
+//        if($query->num_rows() > 0)
+//        {
+//            return true;
+//        }
+//        else
+//        {
+//            return false;
+//        }
+//    }
+
 
 
 

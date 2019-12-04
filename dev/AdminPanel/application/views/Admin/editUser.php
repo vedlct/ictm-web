@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- view head ----->
     <?php include('head.php') ?>
-    <!-- view head  end----->
 </head>
 
 <body>
 <!-- container section start -->
 <section id="container" class="">
-    <!--top Navigation start-->
+    <!--header start-->
     <?php include ('topNavigation.php')?>
-    <!--top Navigation end-->
+    <!--header end-->
+
     <!--sidebar start-->
     <?php include('leftNavigation.php') ?>
     <!--sidebar end-->
+
     <!--main content start-->
     <section id="main-content">
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp User</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Edit User</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>User</li>
-                        <li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Create a New User</a></li>
+                        <li><i class="fa fa-files-o"></i>Edit &nbsp; User</li>
                     </ol>
                 </div>
             </div>
@@ -41,85 +41,81 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            New User
+                            Edit User
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewUser" method="POST" action="<?php echo base_url() ?>Admin/User/createNewUser" onsubmit="return checkvalidation()">
-
+                                <?php foreach ($editUserData as $euser) {?>
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/User/editUser/<?php echo $euser->userId?>"  onsubmit="return formsubmit()">
                                     <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">First Name <span class="required">*</span></label>
-                                        <div class="col-lg-4">
+                                        <label for="cname" class="control-label col-lg-2">First Name<span class="required">*</span></label>
+                                        <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
-                                            <input class="form-control" id="firstName" name="firstName"  value="<?php echo set_value('firstName'); ?>" type="text" required />
+                                            <input class="form-control" id="firstName" name="firstName"  type="text" value="<?php echo $euser->firstName;?>" required />
                                         </div>
-
-
                                     </div>
                                     <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Sure Name</label>
-                                        <div class="col-lg-4">
+                                        <label for="cname" class="control-label col-lg-2">Sure Name<span class="required">*</span></label>
+                                        <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
-                                            <input class="form-control" id="surName" name="surName"  value="<?php echo set_value('surName'); ?>" type="text"  />
+                                            <input class="form-control" id="surName" name="surName"  type="text" value="<?php echo $euser->surName;?>" required />
                                         </div>
-
-
                                     </div>
                                     <div class="form-group ">
                                         <label for="feedbackByName" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('userEmail'); ?></font></p>
-                                            <input class="form-control" id="userEmail" name="userEmail"  value="<?php echo set_value('userEmail'); ?>" type="email" required />
-<!--                                            <span id="email_result"></span>-->
+                                            <input class="form-control" id="userEmail" name="userEmail"  value="<?php echo $euser->userEmail;?>" type="email" required />
                                         </div>
 
                                     </div>
 
-                                    <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Password<span class="required">*</span></label>
-                                        <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('userPassword'); ?></font></p>
-                                            <input class="form-control" id="userPassword" name="userPassword"  value="<?php echo set_value('userPassword'); ?>" type="password" required />
-                                        </div>
+<!--                                    <div class="form-group">-->
+<!--                                        <label class="control-label col-lg-2">Role<span class="required">*</span></label>-->
+<!--                                        <div class="col-lg-10">-->
+<!--                                            <select class="form-control m-bot15" name="roleId" id="pagetype" onchange="checkPageType()" required>-->
+<!--                                                --><?php //foreach ($page as $page){ ?>
+<!--                                                    <option value="" >Select Role</option>-->
+<!--                                                    <option value="--><?php //echo $page->roleId ?><!--">--><?php //echo $page->roleName ?><!--</option>-->
+<!--                                                --><?php //} ?>
+<!--                                            </select>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
-                                    </div>
                                     <div class="form-group">
                                         <label class="control-label col-lg-2">Role<span class="required">*</span></label>
-                                        <div class="col-lg-4">
+                                        <div class="col-lg-10">
                                             <select class="form-control m-bot15" name="roleId" id="pagetype" onchange="checkPageType()" required>
                                                 <option value="" >Select Role</option>
-                                                <?php foreach ($page as $page){ ?>
-                                                <option value="<?php echo $page->roleId ?>"><?php echo $page->roleName ?></option>
+                                                <?php foreach ($page as $page) { ?>
+                                                    <option <?php if($page->roleId == "$page->roleId"){ echo 'selected="selected"'; } ?> value="<?php echo $page->roleId ?>"><?php echo $page->roleName?> </option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                     </div>
 
-
-                                    <div id="csrf">
-                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-                                    </div>
-
-                                    <div class="form-group "align="center">
+                                    <div class="form-group " align="center">
                                         <div class="col-lg-10">
                                             <input class="btn btn-success" onclick="return ValidateEmail()" type="submit" style="margin-left: 180px">
-                                            <input class="btn btn-close" type="reset" >
+                                            <input class="btn btn-close" id="hide" type="reset" >
                                         </div>
                                     </div>
 
                             </div>
-                            </form>
-                        </div>
 
+                            </form>
+                            <?php } ?>
+                        </div>
                 </div>
         </section>
         </div>
-        </div>
+
 
         <!-- page end-->
     </section>
 </section>
 <!--main content end-->
+
 <div class="text-right wrapper">
     <div class="credits">
         <a href="#">Icon College</a> by <a href="#">A2N</a>
@@ -128,19 +124,15 @@
 
 </section>
 <!-- container section end -->
+<!-- javascripts -->
 
-<?php include ('js.php')?>
+<?php include('js.php') ?>
+
 </body>
 </html>
 
 <script>
     function ValidateEmail(){
-        var userPassword = document.getElementById('userPassword').value;
-        if (userPassword.length < 6) {
-            alert('Please Enter at least 6 digit Password');
-            return false; // keep form from submitting
-        }
-
         var email=document.getElementById("userEmail").value;
         var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -155,4 +147,16 @@
     }
 </script>
 
+<script>
+    $(document).ready(function(){
+        $("#hide").click(function(){
 
+            $("#firstName").removeAttr('value');
+            $("#surName").removeAttr('value');
+            $("#userEmail").removeAttr('value');
+            $("#pagetype").children().removeAttr("selected");
+
+
+        });
+    });
+</script>

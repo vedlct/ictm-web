@@ -65,6 +65,40 @@ class User extends CI_Controller
         }
     }
 
+//    function check_email_avalibility()
+//    {
+//        if(!filter_var($_POST["userEmail"], FILTER_VALIDATE_EMAIL))
+//        {
+//            echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Invalid Email</span></label>';
+//        }
+//        else
+//        {
+//            $this->load->model("Userm");
+//            if($this->Userm->is_email_available($_POST["userEmail"]))
+//            {
+//                echo '<label class="text-danger"><span class="glyphicon glyphicon-remove"></span> Email Already register</label>';
+//            }
+//            else
+//            {
+//                echo '<label class="text-success"><span class="glyphicon glyphicon-ok"></span> Email Available</label>';
+//            }
+//        }
+//    }
+
+//    public function ajax_signup()
+//    {
+//
+//        $this->form_validation->set_rules('userEmail', 'Email',
+//            'required|is_unique[ictmusers.userEmail]');
+//        $this->form_validation->set_message('is_unique', 'The %s is already taken');
+//        if ($this->form_validation->run() == FALSE):
+//            echo 'The email is already taken.';
+//        else :
+//            unset($_POST);
+//            echo 'Available';
+//        endif;
+//    }
+
     public function manageUser()
     {
         if ($this->session->userdata('type') == USER_TYPE[0]) {
@@ -102,7 +136,7 @@ class User extends CI_Controller
             $row[] = $user->userEmail;
             $row[] = $user->roleName;
 
-            $row[] = '<a class="btn" href="'.base_url().'Admin/User/editPageShow/'.$user->userId.'"><i class="icon_pencil-edit"></i></a>
+            $row[] = '<a class="btn" href="'.base_url().'Admin/User/editUserShow/'.$user->userId.'"><i class="icon_pencil-edit"></i></a>
              <a class="btn" href="'. base_url().'Admin/User/deleteUser/'.$user->userId.'"><i class="icon_trash"></i></a>';
             $data[] = $row;
         }
@@ -125,6 +159,56 @@ class User extends CI_Controller
             redirect('Admin/User/manageUser');
         }
 
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function editUserShow($userId)
+    {
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+            $this->data['editUserData'] = $this->Userm->geteditUserData($userId);
+            $this->data['page'] = $this->Userm->getRole();
+            $this->load->view('Admin/editUser', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function editUser($userId) // for edit Event by id from database
+    {
+        $this->load->library('form_validation');
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('editUser')) {
+
+                $this->data['editUserData'] = $this->Userm->geteditUserData($userId);
+                $this->load->view('Admin/editUser', $this->data);
+            }
+
+            else
+            {
+
+                $this->data['error'] = $this->Userm->editUserbyId($userId);
+
+
+                if (empty($this->data['error'])) {
+                    $this->session->set_flashdata('successMessage','User Update Successfully');
+                    redirect('Admin/User/manageUser');
+                }
+                else
+                {
+
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/User/editUserShow/'.$userId);
+                }
+
+
+            }
+        }
         else{
             redirect('Admin/Login');
         }
