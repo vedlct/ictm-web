@@ -94,6 +94,17 @@
                                         </div>
                                     </div>
 
+                                    <div class="form-group">
+                                        <label class="control-label col-lg-2">Status<span class="required">*</span></label>
+                                        <div class="col-lg-10">
+                                            <select class="form-control m-bot15" name="usersStatus" id="usersStatus" onchange="checkPageType()" required>
+                                                <option value="" >Select Status</option>
+                                                <option  value="Active" <?php if($euser->usersStatus=='Active'){ echo "selected=selected";}?>>Active</option>
+                                                <option  value="Inactive" <?php if($euser->usersStatus=='Inactive'){ echo "selected=selected";}?>>Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group " align="center">
                                         <div class="col-lg-10">
                                             <input class="btn btn-success" onclick="return ValidateEmail()" type="submit" style="margin-left: 180px">
@@ -155,6 +166,7 @@
             $("#surName").removeAttr('value');
             $("#userEmail").removeAttr('value');
             $("#pagetype").children().removeAttr("selected");
+            $("#usersStatus").children().removeAttr("selected");
 
 
         });

@@ -1967,5 +1967,15 @@ $config = array (
 
     ),
 
+    'createRole'=> array (
+
+        array(
+            'field' => 'userId',
+            'label' => 'User',
+            'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+        ),
+
+    ),
+
     /*end*/
 );

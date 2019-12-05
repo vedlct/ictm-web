@@ -30,6 +30,21 @@ class User extends CI_Controller
         }
     }
 
+    public function assignUser()
+    {
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+            $this->data['user'] = $this->Userm->getUser();
+            $this->data['menu'] = $this->Userm->getMenu();
+            $this->load->view('Admin/assignUser',$this->data);
+
+
+        } else {
+
+            redirect('Admin/Login');
+        }
+    }
+
     public function createNewUser() // for insert new Feedback into database
     {
         $this->load->library('form_validation');
@@ -64,6 +79,54 @@ class User extends CI_Controller
             redirect('Admin/Login');
         }
     }
+
+    public function createUserRole() // for insert new Feedback into database
+    {
+        $this->load->library('form_validation');
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('createRole')) {
+
+                $this->load->view('Admin/assignUser');
+            }
+            else
+            {
+
+                $this->data['error'] =$this->Userm->createNewRole();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Role Created Successfully');
+                    redirect('Admin/User/assignUser');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+                    redirect('Admin/User/assignUser');
+                }
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+//    public function check_email()
+//    {
+//        $email = $this->input->post('userEmail');
+//        $result = $this->db->where('userEmail',$email)->get('ictmusers')->row()->userEmail;
+//        if($result == ""){
+//            echo $email;
+//        }else
+//        {
+//            echo "Email Address Already Exists";
+//        }
+//    }
+
 
 //    function check_email_avalibility()
 //    {
@@ -135,6 +198,7 @@ class User extends CI_Controller
             $row[] = $user->firstName.' '.$user->surName;
             $row[] = $user->userEmail;
             $row[] = $user->roleName;
+            $row[] = $user->usersStatus;
 
             $row[] = '<a class="btn" href="'.base_url().'Admin/User/editUserShow/'.$user->userId.'"><i class="icon_pencil-edit"></i></a>
              <a class="btn" href="'. base_url().'Admin/User/deleteUser/'.$user->userId.'"><i class="icon_trash"></i></a>';

@@ -290,6 +290,7 @@
 
                         <li><a class="" href="<?php echo base_url()?>Admin/User/newUser">New Users</a></li>
                         <li><a class="" href="<?php echo base_url()?>Admin/User/manageUser">Manage Role</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/User/assignUser">Assign Role</a></li>
 
                     </ul>
                 </li>

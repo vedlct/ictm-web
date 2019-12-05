@@ -5,7 +5,7 @@ class Userm extends CI_Model
 {
     var $table = 'ictmusers';
 
-    var $select =array('ictmusers.userId','ictmusers.roleId','ictmusers.userEmail','ictmusers.firstName','ictmusers.surName','ictmrole.roleName');
+    var $select =array('ictmusers.userId','ictmusers.roleId','ictmusers.userEmail','ictmusers.firstName','ictmusers.surName','ictmusers.usersStatus','ictmrole.roleName');
     var $column_order = array(null,'userEmail'); //set column field database for datatable orderable
     var $column_search = array('userEmail','firstName','surName' ); //set column field database for datatable searchable
     var $order = array('userId' => 'desc'); // default order
@@ -89,14 +89,17 @@ class Userm extends CI_Model
         $firstName = $this->input->post("firstName");
         $surName = $this->input->post("surName");
         $userEmail = $this->input->post("userEmail");
-        $userPassword= $this->input->post("userPassword");
+//        $userPassword= $this->input->post("userPassword");
+        $userPassword = password_hash($this->input->post("userPassword"),PASSWORD_DEFAULT);
         $roleId= $this->input->post("roleId");
+        $usersStatus= $this->input->post("usersStatus");
         $data = array(
             'firstName' => $firstName,
             'surName' => $surName,
             'userEmail' => $userEmail,
             'userPassword' => $userPassword,
             'roleId' => $roleId,
+            'usersStatus' => $usersStatus,
 //            'insertedBy'=>$this->session->userdata('userEmail'),
             'insertedDate'=>date("Y-m-d H:i:s"),
 
@@ -115,11 +118,50 @@ class Userm extends CI_Model
 
     }
 
+    public function createNewRole()             // for insert new menu into database
+    {
+        $userId = $this->input->post("userId");
+        $menuId = $this->input->post("menuId");
+        $data = array(
+            'userId' => $userId,
+            'menuId' => $menuId
+
+        );
+        $this->security->xss_clean($data);
+        $error=$this->db->insert('adminmenurole', $data);
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
+    }
+
     public function getRole()
     {
 
         $this->db->select('roleId, roleName');
         $query = $this->db->get('ictmrole');
+        return $query->result();
+    }
+
+    public function getUser()
+    {
+
+        $this->db->select('userId, userEmail');
+        $query = $this->db->get('ictmusers');
+        return $query->result();
+    }
+
+    public function getMenu()
+    {
+
+        $this->db->select('id, menuName');
+        $query = $this->db->get('adminmenu');
         return $query->result();
     }
 
@@ -150,12 +192,14 @@ class Userm extends CI_Model
         $userEmail = $this->input->post("userEmail");
 //        $userPassword= $this->input->post("userPassword");
         $roleId= $this->input->post("roleId");
+        $usersStatus= $this->input->post("usersStatus");
 
 
         $data = array(
             'firstName' => $firstName,
             'surName' => $surName,
             'userEmail' => $userEmail,
+            'usersStatus' => $usersStatus,
 //            'userPassword' => $userPassword,
             'roleId' => $roleId,
 //            'insertedBy'=>$this->session->userdata('userEmail'),

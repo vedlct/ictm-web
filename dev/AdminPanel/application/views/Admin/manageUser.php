@@ -56,6 +56,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left;"> Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left">Role</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left">Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
 
                                     </tr>
@@ -120,7 +121,7 @@
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [4], //first column / numbering column
+                    "targets": [5], //first column / numbering column
                     "orderable": false, //set not orderable
                 },
             ],

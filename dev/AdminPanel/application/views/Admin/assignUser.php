@@ -45,64 +45,27 @@
                         </header>
                         <div class="panel-body">
                             <div class="form">
-                                <form class="form-validate form-horizontal" id="CreateNewUser" method="POST" action="<?php echo base_url() ?>Admin/User/createNewUser" onsubmit="return checkvalidation()">
-
-                                    <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">First Name <span class="required">*</span></label>
-                                        <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('firstName'); ?></font></p>
-                                            <input class="form-control" id="firstName" name="firstName"  value="<?php echo set_value('firstName'); ?>" type="text" required />
-                                        </div>
+                                <form class="form-validate form-horizontal" id="CreateNewUser" method="POST" action="<?php echo base_url() ?>Admin/User/createUserRole" enctype="multipart/form-data" onsubmit="return checkvalidation()">
 
 
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Sure Name</label>
-                                        <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
-                                            <input class="form-control" id="surName" name="surName"  value="<?php echo set_value('surName'); ?>" type="text"  />
-                                        </div>
-
-
-                                    </div>
-                                    <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Email <span class="required">*</span></label>
-                                        <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('userEmail'); ?></font></p>
-                                            <input class="form-control" id="userEmail" name="userEmail"  value="<?php echo set_value('userEmail'); ?>" type="email" onkeyup="check_email();" required />
-<!--                                            <span id="email_result"></span>-->
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Password<span class="required">*</span></label>
-                                        <div class="col-lg-4">
-                                            <p><font color="red"> <?php echo form_error('userPassword'); ?></font></p>
-                                            <input class="form-control" id="userPassword" name="userPassword"  value="<?php echo set_value('userPassword'); ?>" type="password" required />
-                                        </div>
-
-                                    </div>
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2">Role<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2">User<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control m-bot15" name="roleId" id="pagetype" onchange="checkPageType()" required>
-                                                <option value="" >Select Role</option>
-                                                <?php foreach ($page as $page){ ?>
-                                                <option value="<?php echo $page->roleId ?>"><?php echo $page->roleName ?></option>
+                                            <select class="form-control m-bot15" name="userId" id="pagetype" onchange="checkPageType()" required>
+                                                <option value="" >Select User</option>
+                                                <?php foreach ($user as $user){ ?>
+                                                    <option value="<?php echo $user->userId ?>"><?php echo $user->userEmail ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2">Status<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2">User Role<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control m-bot15" name="usersStatus" id="usersStatus" onchange="checkPageType()" required>
-                                                <option value="" >Select Status</option>
-                                                <option  value="Active">Active</option>
-                                                <option  value="Inactive">Inactive</option>
-                                            </select>
+                                            <?php foreach ($menu as $menu){ ?>
+                                            <input tabindex="8"  type="checkbox"  name="menuId" value="<?php echo $menu->id ?>">&nbsp;<?php echo $menu->menuName ?><br>
+                                            <?php } ?>
                                         </div>
                                     </div>
 
