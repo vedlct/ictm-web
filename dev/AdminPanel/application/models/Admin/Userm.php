@@ -120,15 +120,73 @@ class Userm extends CI_Model
 
     public function createNewRole()             // for insert new menu into database
     {
-        $userId = $this->input->post("userId");
-        $menuId = $this->input->post("menuId");
-        $data = array(
-            'userId' => $userId,
-            'menuId' => $menuId
 
-        );
-        $this->security->xss_clean($data);
-        $error=$this->db->insert('adminmenurole', $data);
+        $userId = $this->input->post('userId');
+        $menuId = $this->input->post('menuId');
+
+        $data=array();
+        for($i=0;$i<count($menuId);$i++){
+            $data[$i]=array(
+            'menuId'=>$menuId[$i],
+            'userId'=>$userId[$i]
+//             'userId'=>$userId[$i]
+            );
+        }
+//        foreach($menuId as $key){
+//            array_push($data,array(
+//                'menuId'=>$key,
+//            ));
+//        }
+        $error = $this->db->insert_batch('adminmenurole', $data);
+//        $data1=array();
+//        foreach($userId as $key1){
+//            array_push($data1,array(
+//                'userId'=>$key1
+//            ));
+//        }
+//        $error = $this->db->insert_batch('adminmenurole', $data);
+//        $userId = $this->input->post("userId[]");
+//        $menuId = $this->input->post("menuId[]");
+//
+//        for ($i = 0; $i < count($userId); $i++) {
+//                $data = array(
+//                    'userId' => $userId[$i],
+//                    'menuId' => $menuId[$i]
+//                );
+//                $error = $this->db->insert('adminmenurole', $data);
+////                 $insert_id = $this->db->insert_id();
+//
+//        }
+//        if ( ! empty($menuId) && ! empty($userId) )
+//        {
+//            foreach ($menuId as $key => $value )
+//            {
+//                $data['menuId'] = $value;
+//                /* make sure product_rate columns is correct i just guess it*/
+//                $data['userId'] = $userId[$key];
+////                $this->ProductModel->add_products($data);
+//            }
+//
+//        }
+
+//            $data = array(
+//
+//
+//                'userId' => $userId,
+//                'menuId' => $menuId
+//
+//            );
+
+//        $i = 0;
+//        foreach($userId as $row){
+//            $data['userId'] = $userId[$i];
+//            $data['menuId'] = $menuId[$i];
+////            $this->security->xss_clean($data);
+////            $error=$this->db->insert("adminmenurole",$data);
+//            $i++;
+//        }
+//        $this->security->xss_clean($data);
+//        $error=$this->db->insert('adminmenurole', $data);
 
         if (empty($error))
         {
