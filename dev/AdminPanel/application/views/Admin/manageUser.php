@@ -57,7 +57,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left">Role</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align:left">Status</th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 8%"> Action</th>
+                                        <th style="background-color: #394A59; color: whitesmoke; text-align:left;width: 12%"> Action</th>
 
                                     </tr>
                                     </thead>

@@ -123,21 +123,39 @@ class Userm extends CI_Model
 
         $userId = $this->input->post('userId');
         $menuId = $this->input->post('menuId');
-
         $data=array();
-        for($i=0;$i<count($menuId);$i++){
-            $data[$i]=array(
-            'menuId'=>$menuId[$i],
-            'userId'=>$userId[$i]
-//             'userId'=>$userId[$i]
-            );
+        foreach($_POST['menuId'] as $row => $value){
+            $menu=$this->db->where('menuId',$value)->where('userId',$userId)->get('adminmenurole')->row('id');
+            if(empty($menu)) {
+                $data['menuId'] = $value;
+                $data['userId'] = $userId;
+                $error = $this->db->insert('adminmenurole', $data);
+            }
         }
+
+//        $data=array();
+//        for($i=0;$i<count($menuId);$i++){
+//            $data[$i]=array(
+//            'menuId'=>$menuId[$i],
+////            'userId'=>$insert_id[$i]
+//             'userId'=>$userId
+//            );
+//        }
 //        foreach($menuId as $key){
 //            array_push($data,array(
 //                'menuId'=>$key,
 //            ));
 //        }
-        $error = $this->db->insert_batch('adminmenurole', $data);
+//		if (!empty($me nuId)) {
+//			// foreach ($menu as $v_menu) {
+//
+//			foreach ($menuId as $value) {
+//				$data['menuId'] = $value;
+//				$data['userId'] = $userId;
+//				$error =$this->db->insert_batch('adminmenurole',$data);
+//				//  }
+//			}}
+
 //        $data1=array();
 //        foreach($userId as $key1){
 //            array_push($data1,array(
@@ -199,6 +217,31 @@ class Userm extends CI_Model
 
     }
 
+    public function editRole()             // edit role part
+    {
+
+        $userId = $this->input->post('userId');
+        $menuId = $this->input->post('menuId');
+        $data=array();
+        $this->db->where('userId',$userId)->delete('adminmenurole');
+        foreach($_POST['menuId'] as $row => $value){
+            $data['menuId'] = $value;
+            $data['userId'] = $userId;
+            $error = $this->db->insert('adminmenurole', $data);
+
+        }
+
+        if (empty($error))
+        {
+            return $this->db->error();
+        }
+        else
+        {
+            return $error=null;
+        }
+
+    }
+
     public function getRole()
     {
 
@@ -239,6 +282,18 @@ class Userm extends CI_Model
         $this->db->where('ictmusers.userId', $userId);
         $this->db->from('ictmusers');
         $this->db->join('ictmrole', 'ictmusers.roleId = ictmrole.roleId','left');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function geteditUserRole($userId)
+    {
+
+//        $this->db->where('userId', $userId);
+        $this->db->select('adminmenurole.*,adminmenu.id','adminmenu.menuName');
+        $this->db->where('adminmenurole.userId', $userId);
+        $this->db->from('adminmenurole');
+        $this->db->join('adminmenu', 'adminmenurole.menuId = adminmenu.id','left');
         $query = $this->db->get();
         return $query->result();
     }

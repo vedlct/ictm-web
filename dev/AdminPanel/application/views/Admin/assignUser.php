@@ -51,7 +51,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2">User<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control m-bot15" name="userId[]" id="pagetype" onchange="checkPageType()" required>
+                                            <select class="form-control m-bot15" name="userId" id="pagetype" onchange="checkPageType()" required>
                                                 <option value="" >Select User</option>
                                                 <?php foreach ($user as $user){ ?>
                                                     <option value="<?php echo $user->userId ?>"><?php echo $user->userEmail ?></option>

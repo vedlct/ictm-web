@@ -3,140 +3,140 @@
         <!-- sidebar menu start-->
         <ul class="sidebar-menu">
 
-<!--            --><?php $usreid =  $this->session->userdata('id') ?>
+            <!--            --><?php $usreid =  $this->session->userdata('id') ?>
 
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '1' AND  userId = '$usreid'";
-             $query = $this->db->query($sql);
+            $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:">
-                    <i class="icon_house_alt"></i>
-                    <span>Home</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Home/slider">Slider</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Home/verticalBar">Vertical Bar</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Home/middleBanner">Middle Banner</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Home/squreBox">Square Box</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Home/bottomBanner">Bottom Banner</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:">
+                        <i class="icon_house_alt"></i>
+                        <span>Home</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Home/slider">Slider</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Home/verticalBar">Vertical Bar</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Home/middleBanner">Middle Banner</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Home/squreBox">Square Box</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Home/bottomBanner">Bottom Banner</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '2' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:">
-                    <i class="icon_menu"></i>
-                    <span>Menu</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">New Menu</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:">
+                        <i class="icon_menu"></i>
+                        <span>Menu</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Menu/newMenu">New Menu</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Menu/manageMenu">Manage Menu</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '3' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:">
-                    <i class="icon_documents_alt"></i>
-                    <span>Pages</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">New Page</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:">
+                        <i class="icon_documents_alt"></i>
+                        <span>Pages</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Page/createPage">New Page</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Page/managePage"><span>Manage Page</span></a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '4' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:" >
-                    <i class="icon_documents_alt"></i>
-                    <span>Pages Sections</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/PageSection/createPageSection">New Sections</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/PageSection/managePageSection"><span>Manage Page Sections</span></a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:" >
+                        <i class="icon_documents_alt"></i>
+                        <span>Pages Sections</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/PageSection/createPageSection">New Sections</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/PageSection/managePageSection"><span>Manage Page Sections</span></a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '5' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_book"></i>
-                    <span>Departments</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Department/newDepartment">New Department</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Department/manageDepartment">Manage Departments</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_book"></i>
+                        <span>Departments</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Department/newDepartment">New Department</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Department/manageDepartment">Manage Departments</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '6' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_book_alt"></i>
-                    <span>Courses</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Course/createCourse">New Courses</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourse">Manage Courses</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_book_alt"></i>
+                        <span>Courses</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Course/createCourse">New Courses</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Course/manageCourse">Manage Courses</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '7' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_book_alt"></i>
-                    <span>Course Sections</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/createCourseSec">New Sections</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/manageCourseSec">Manage CourseSections </a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_book_alt"></i>
+                        <span>Course Sections</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/createCourseSec">New Sections</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/CourseSection/manageCourseSec">Manage CourseSections </a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '8' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_group"></i>
-                    <span>Faculty</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_group"></i>
+                        <span>Faculty</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
 
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">New Faculty</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Faculty/manageFaculty">Manage Faculties</a></li>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Faculty/newFaculty">New Faculty</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Faculty/manageFaculty">Manage Faculties</a></li>
 
-                </ul>
-            </li>
+                    </ul>
+                </li>
             <?php } ?>
             <!--            <li class="sub-menu">-->
             <!--                <a href="javascript:;" class="">-->
@@ -153,128 +153,128 @@
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '9' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_clock"></i>
-                    <span>Events</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">New Event</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_clock"></i>
+                        <span>Events</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Event/newEvent">New Event</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Event/manageEvent">Manage Events</a></li>
 
-                </ul>
-            </li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '10' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_tag"></i>
-                    <span>News</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/News/newNews">New News</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/News/manageNews">Manage News</a></li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_tag"></i>
+                        <span>News</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/News/newNews">New News</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/News/manageNews">Manage News</a></li>
 
-                </ul>
-            </li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '11' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_image"></i>
-                    <span>Album</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Album/newAlbum">New Album</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Album/manageAlbum">Manage Album</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_image"></i>
+                        <span>Album</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Album/newAlbum">New Album</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Album/manageAlbum">Manage Album</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '12' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_image"></i>
-                    <span>Photo</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Photo/newPhoto">New Photo</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Photo/managePhoto">Manage Photo</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_image"></i>
+                        <span>Photo</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Photo/newPhoto">New Photo</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Photo/managePhoto">Manage Photo</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '13' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:" class="">
-                    <i class="icon_genius"></i>
-                    <span>Affiliations</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
-                    <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/newAffiliation">New Affiliations</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/manageAffiliation">Manage Affiliations</a></li>
-                </ul>
-            </li>
+                <li class="sub-menu">
+                    <a href="javascript:" class="">
+                        <i class="icon_genius"></i>
+                        <span>Affiliations</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
+                        <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/newAffiliation">New Affiliations</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Affiliation/manageAffiliation">Manage Affiliations</a></li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '14' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="javascript:;" class="">
-                    <i class="icon_comment"></i>
-                    <span>Feedbacks</span>
-                    <span class="menu-arrow arrow_carrot-right"></span>
-                </a>
-                <ul class="sub">
+                <li class="sub-menu">
+                    <a href="javascript:;" class="">
+                        <i class="icon_comment"></i>
+                        <span>Feedbacks</span>
+                        <span class="menu-arrow arrow_carrot-right"></span>
+                    </a>
+                    <ul class="sub">
 
-                    <li><a class="" href="<?php echo base_url()?>Admin/Feedback/newFeedback">New Feedbacks</a></li>
-                    <li><a class="" href="<?php echo base_url()?>Admin/Feedback/manageFeedback">Manage Feedbacks</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Feedback/newFeedback">New Feedbacks</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/Feedback/manageFeedback">Manage Feedbacks</a></li>
 
-                </ul>
-            </li>
+                    </ul>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '15' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
 
-            <li class="sub-menu">
-                <a href="<?php echo base_url()?>Admin/RegisterInterest1/viewRI" class="">
-                    <i class="icon_info"></i>
-                    <span>Register Interest</span>
+                <li class="sub-menu">
+                    <a href="<?php echo base_url()?>Admin/RegisterInterest1/viewRI" class="">
+                        <i class="icon_info"></i>
+                        <span>Register Interest</span>
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '16' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a href="<?php echo base_url()?>Admin/CollegeInfo/createCollegeInfo" class="">
-                    <i class="icon_info"></i>
-                    <span>College Info</span>
+                <li class="sub-menu">
+                    <a href="<?php echo base_url()?>Admin/CollegeInfo/createCollegeInfo" class="">
+                        <i class="icon_info"></i>
+                        <span>College Info</span>
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '17' AND  userId = '$usreid'";
@@ -289,61 +289,61 @@
                     <ul class="sub">
 
                         <li><a class="" href="<?php echo base_url()?>Admin/User/newUser">New Users</a></li>
-                        <li><a class="" href="<?php echo base_url()?>Admin/User/manageUser">Manage Role</a></li>
                         <li><a class="" href="<?php echo base_url()?>Admin/User/assignUser">Assign Role</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/User/manageUser">Manage Role</a></li>
 
                     </ul>
                 </li>
 
 
 
-<!--                <li class="sub-menu">-->
-<!--                <a href="--><?php //echo base_url()?><!--Admin/User/newUser" class="">-->
-<!--                    <i class="icon_info"></i>-->
-<!--                    <span>Users</span>-->
-<!---->
-<!--                </a>-->
-<!---->
-<!--                </li>-->
+                <!--                <li class="sub-menu">-->
+                <!--                <a href="--><?php //echo base_url()?><!--Admin/User/newUser" class="">-->
+                <!--                    <i class="icon_info"></i>-->
+                <!--                    <span>Users</span>-->
+                <!---->
+                <!--                </a>-->
+                <!---->
+                <!--                </li>-->
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '18' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageApplication">
-                    <i class="icon_info"></i>
-                    <span>Manage Application</span>
+                <li class="sub-menu">
+                    <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageApplication">
+                        <i class="icon_info"></i>
+                        <span>Manage Application</span>
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
             <?php } ?>
             <?php
             $sql ="SELECT * FROM `adminmenurole` WHERE menuId = '19' AND  userId = '$usreid'";
             $query = $this->db->query($sql);
             if ($query->num_rows() > 0) { ?>
-            <li class="sub-menu">
-                <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageAlamni">
-                    <i class="icon_info"></i>
-                    <span>Manage Alumni</span>
+                <li class="sub-menu">
+                    <a class="" href="<?php echo base_url()?>Admin/StudentApplication/manageAlamni">
+                        <i class="icon_info"></i>
+                        <span>Manage Alumni</span>
 
-                </a>
+                    </a>
 
-            </li>
+                </li>
             <?php } ?>
-<!--            <li class="sub-menu">-->
-<!--                <a href="javascript:;" class="">-->
-<!--                    <i class="icon_comment"></i>-->
-<!--                    <span>Students-Apply</span>-->
-<!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
-<!--                </a>-->
-<!--                <ul class="sub">-->
-<!---->
-<!--                    <li><a class="" href="--><?php //echo base_url()?><!--Admin/StudentApplication/manageApplication">Manage Application</a></li>-->
-<!---->
-<!--                </ul>-->
-<!--            </li>-->
+            <!--            <li class="sub-menu">-->
+            <!--                <a href="javascript:;" class="">-->
+            <!--                    <i class="icon_comment"></i>-->
+            <!--                    <span>Students-Apply</span>-->
+            <!--                    <span class="menu-arrow arrow_carrot-right"></span>-->
+            <!--                </a>-->
+            <!--                <ul class="sub">-->
+            <!---->
+            <!--                    <li><a class="" href="--><?php //echo base_url()?><!--Admin/StudentApplication/manageApplication">Manage Application</a></li>-->
+            <!---->
+            <!--                </ul>-->
+            <!--            </li>-->
 
 
         </ul>

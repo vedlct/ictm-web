@@ -98,14 +98,49 @@ class User extends CI_Controller
                 if (empty($this->data['error'])) {
 
                     $this->session->set_flashdata('successMessage','Role Created Successfully');
+                    redirect('Admin/User/manageUser');
+
+
+                }
+                else
+                {
+                    $this->session->set_flashdata('errorMessage','You Cannot Access duplicate same Role!!');
                     redirect('Admin/User/assignUser');
+                }
+
+            }
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function EditUserAssign($userId) // for insert new Feedback into database
+    {
+        $this->load->library('form_validation');
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+            if (!$this->form_validation->run('createRole')) {
+
+                $this->load->view('Admin/editRole');
+            }
+            else
+            {
+
+                $this->data['error'] =$this->Userm->editRole();
+
+                if (empty($this->data['error'])) {
+
+                    $this->session->set_flashdata('successMessage','Role Created Successfully');
+                    redirect('Admin/User/manageUser');
 
 
                 }
                 else
                 {
                     $this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
-                    redirect('Admin/User/assignUser');
+                    redirect('Admin/User/editUserRole/'.$userId);
                 }
 
             }
@@ -201,6 +236,7 @@ class User extends CI_Controller
             $row[] = $user->usersStatus;
 
             $row[] = '<a class="btn" href="'.base_url().'Admin/User/editUserShow/'.$user->userId.'"><i class="icon_pencil-edit"></i></a>
+              <a class="btn" title="Manage Role" href="'.base_url().'Admin/User/editUserRole/'.$user->userId.'"><i class="icon_comment"></i></a>
              <a class="btn" href="'. base_url().'Admin/User/deleteUser/'.$user->userId.'"><i class="icon_trash"></i></a>';
             $data[] = $row;
         }
@@ -235,6 +271,22 @@ class User extends CI_Controller
             $this->data['editUserData'] = $this->Userm->geteditUserData($userId);
             $this->data['page'] = $this->Userm->getRole();
             $this->load->view('Admin/editUser', $this->data);
+
+        }
+        else{
+            redirect('Admin/Login');
+        }
+    }
+
+    public function editUserRole($userId)
+    {
+
+        if ($this->session->userdata('type') == USER_TYPE[0]) {
+            $this->data['editUserRole'] = $this->Userm->geteditUserRole($userId);
+            $this->data['menu'] = $this->Userm->getMenu();
+            $this->data['userId']=$userId;
+//			$this->data['page'] = $this->Userm->getUser();
+            $this->load->view('Admin/editRole', $this->data);
 
         }
         else{
