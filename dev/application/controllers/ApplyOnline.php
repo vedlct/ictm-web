@@ -3084,7 +3084,8 @@ class ApplyOnline extends CI_Controller
             $this->menu();
 
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
-            $applicationId = $this->session->userdata('studentApplicationId');
+			$applicationId = $this->session->userdata('studentApplicationId');
+
             $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
 
             $this->load->view('application-form7', $this->data);
@@ -3120,247 +3121,247 @@ class ApplyOnline extends CI_Controller
     public function insertapplyNow7()
     {
 
-        if ($this->session->userdata('loggedin') == "true") {
+		if ($this->session->userdata('loggedin') == "true") {
 
-            $applicatfiles = $_FILES['fileUpload']['name'];
-            $applicationId = $this->session->userdata('studentApplicationId');
-            $files = $_FILES;
-            $data = array();
-            $fileCount = 0;
-
-
-
-            if (array_filter($applicatfiles)!=null ) {
-
-                for ($i = 0; $i < count($applicatfiles); $i++) {
-
-                    if ($applicatfiles[$i] != null) {
+			$applicatfiles = $_FILES['fileUpload']['name'];
+			$applicationId = $this->session->userdata('studentApplicationId');
+			$files = $_FILES;
+			$data = array();
+			$fileCount = 0;
 
 
-                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
-                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
-                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
-                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
-                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+
+			if (array_filter($applicatfiles)!=null ) {
+
+				for ($i = 0; $i < count($applicatfiles); $i++) {
+
+					if ($applicatfiles[$i] != null) {
+
+
+						$_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+						$_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+						$_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+						$_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+						$_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
 
 //
-                        $this->load->library('upload');
+						$this->load->library('upload');
 
-                        $applicationId = $this->session->userdata('studentApplicationId');
-                        $dir =   "./AdminPanel/studentApplications/$applicationId/";
+						$applicationId = $this->session->userdata('studentApplicationId');
+						$dir =   "./AdminPanel/studentApplications/$applicationId/";
 
-                        $fcount = 0;
-                        $files = glob($dir . "*");
-                        if ($files){
-                            $fcount = count($files);
-                        }
-                        if($fcount > 9 ){
-                            $this->session->set_flashdata('errorMessage', 'cannot upload more then 10 files');
-                            redirect('ApplyForm7');
-                        }
+						$fcount = 0;
+						$files = glob($dir . "*");
+						if ($files){
+							$fcount = count($files);
+						}
+						if($fcount > 9 ){
+							$this->session->set_flashdata('errorMessage', 'cannot upload more then 10 files');
+							redirect('ApplyForm7');
+						}
 
-                        $this->upload->initialize($this->set_upload_options($applicationId));
+						$this->upload->initialize($this->set_upload_options($applicationId));
 
-                        if (!$this->upload->do_upload('fileUpload')) {
-                            $error[$i] = $this->upload->display_errors();
-                            $data[$error[$i]];
+						if (!$this->upload->do_upload('fileUpload')) {
+							$error[$i] = $this->upload->display_errors();
+							$data[$error[$i]];
 
-                        }
-                        $filename= $_FILES['fileUpload']['name'];
+						}
+						$filename= $_FILES['fileUpload']['name'];
 //// insert file name
-                        $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
-                        $fileCount++;
+						$this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
+						$fileCount++;
 
-                        if($fileCount > 9 ){
-                            $this->session->set_flashdata('errorMessage', 'cannot upload more then 10 files');
-                            redirect('ApplyForm7');
-                        }
-
-
-                    } else {
-
-                        $this->session->set_flashdata('successMessage', $fileCount . ' file is uploaded Successfully');
-                        redirect('ApplyForm7');
-
-                    }
-                }
-
-                if (empty($data)) {
-
-                    //  print_r($applicationId);
+						if($fileCount > 9 ){
+							$this->session->set_flashdata('errorMessage', 'cannot upload more then 10 files');
+							redirect('ApplyForm7');
+						}
 
 
-                    $this->session->set_flashdata('successMessage', $fileCount . ' file is uploaded Successfully');
-                    redirect('ApplyForm7');
+					} else {
+
+						$this->session->set_flashdata('successMessage', $fileCount . ' file is uploaded Successfully');
+						redirect('ApplyForm7');
+
+					}
+				}
+
+				if (empty($data)) {
+
+					//  print_r($applicationId);
 
 
-                } else {
+					$this->session->set_flashdata('successMessage', $fileCount . ' file is uploaded Successfully');
+					redirect('ApplyForm7');
 
-                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm7');
 
-                }
+				} else {
 
-            }else{
+					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					redirect('ApplyForm7');
 
-                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
-                redirect('ApplyForm7');
+				}
 
-            }
-        }else{
-            echo "<script>
+			}else{
+
+				$this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+				redirect('ApplyForm7');
+
+			}
+		}else{
+			echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
-        }
+		}
     }
     public function editApplicationForm7AndNext()
     {
 
-        if ($this->session->userdata('loggedin') == "true") {
+		if ($this->session->userdata('loggedin') == "true") {
 
-            $applicatfiles = $_FILES['fileUpload']['name'];
-            $applicationId = $this->session->userdata('studentApplicationId');
-            $files = $_FILES;
-            $data = array();
-            $fileCount = 0;
+			$applicatfiles = $_FILES['fileUpload']['name'];
+			$applicationId = $this->session->userdata('studentApplicationId');
+			$files = $_FILES;
+			$data = array();
+			$fileCount = 0;
 
-            if (array_filter($applicatfiles)!=null ) {
+			if (array_filter($applicatfiles)!=null ) {
 
-                for ($i = 0; $i < count($applicatfiles); $i++) {
+				for ($i = 0; $i < count($applicatfiles); $i++) {
 
-                    if ($applicatfiles[$i] != null) {
+					if ($applicatfiles[$i] != null) {
 
 
-                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
-                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
-                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
-                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
-                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+						$_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+						$_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+						$_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+						$_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+						$_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
 
-                        $this->load->library('upload');
+						$this->load->library('upload');
 
-                        $this->upload->initialize($this->set_upload_options($applicationId));
+						$this->upload->initialize($this->set_upload_options($applicationId));
 
-                        if (!$this->upload->do_upload('fileUpload')) {
-                            $error[$i] = $this->upload->display_errors();
-                            $data[$error[$i]];
+						if (!$this->upload->do_upload('fileUpload')) {
+							$error[$i] = $this->upload->display_errors();
+							$data[$error[$i]];
 
-                        }
-                        $filename= $_FILES['fileUpload']['name'];
+						}
+						$filename= $_FILES['fileUpload']['name'];
 //// insert file name
-                        $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
-                        $fileCount++;
+						$this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
+						$fileCount++;
 
 
-                    } else {
+					} else {
 
-                    }
-                }
+					}
+				}
 
-                if (empty($data)) {
+				if (empty($data)) {
 
 
 //                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
 //                    redirect('ApplyForm9');
-                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
-                    redirect('AllFormForStudents');
+					$this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+					redirect('AllFormForStudents');
 
 
-                } else {
+				} else {
 
-                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm7');
+					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					redirect('ApplyForm7');
 
-                }
+				}
 
-            }else{
+			}else{
 
-                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
-                redirect('ApplyForm7');
+				$this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+				redirect('ApplyForm7');
 
-            }
-        }else{
-            echo "<script>
+			}
+		}else{
+			echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
-        }
+		}
     }
 
     public function editApplicationForm7Save()
     {
 
-        if ($this->session->userdata('loggedin') == "true") {
+		if ($this->session->userdata('loggedin') == "true") {
 
-            $applicatfiles = $_FILES['fileUpload']['name'];
-            $applicationId = $this->session->userdata('studentApplicationId');
-            $files = $_FILES;
-            $data = array();
-            $fileCount = 0;
+			$applicatfiles = $_FILES['fileUpload']['name'];
+			$applicationId = $this->session->userdata('studentApplicationId');
+			$files = $_FILES;
+			$data = array();
+			$fileCount = 0;
 
-            if (array_filter($applicatfiles)!=null ) {
+			if (array_filter($applicatfiles)!=null ) {
 
-                for ($i = 0; $i < count($applicatfiles); $i++) {
+				for ($i = 0; $i < count($applicatfiles); $i++) {
 
-                    if ($applicatfiles[$i] != null) {
+					if ($applicatfiles[$i] != null) {
 
 
-                        $_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
-                        $_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
-                        $_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
-                        $_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
-                        $_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
+						$_FILES['fileUpload']['name'] = $files['fileUpload']['name'][$i];
+						$_FILES['fileUpload']['type'] = $files['fileUpload']['type'][$i];
+						$_FILES['fileUpload']['tmp_name'] = $files['fileUpload']['tmp_name'][$i];
+						$_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
+						$_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
 
-                        $this->load->library('upload');
+						$this->load->library('upload');
 
-                        $this->upload->initialize($this->set_upload_options($applicationId));
+						$this->upload->initialize($this->set_upload_options($applicationId));
 
-                        if (!$this->upload->do_upload('fileUpload')) {
-                            $error[$i] = $this->upload->display_errors();
-                            $data[$error[$i]];
+						if (!$this->upload->do_upload('fileUpload')) {
+							$error[$i] = $this->upload->display_errors();
+							$data[$error[$i]];
 
-                        }
-                        $filename= $_FILES['fileUpload']['name'];
+						}
+						$filename= $_FILES['fileUpload']['name'];
 //// insert file name
-                        $this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
+						$this->data['error'] = $this->ApplyOnlinem->insertAllDocument($filename);
 
-                        $fileCount++;
+						$fileCount++;
 
 
-                    } else {
+					} else {
 
-                    }
-                }
+					}
+				}
 
-                if (empty($data)) {
+				if (empty($data)) {
 
 
 //                    $this->session->set_flashdata('successMessage', $fileCount . ' are uploaded Successfully');
 //                    redirect('ApplyForm9');
-                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
-                    redirect('AllFormForStudents');
+					$this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+					redirect('AllFormForStudents');
 
 
-                } else {
+				} else {
 
-                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
-                    redirect('ApplyForm7');
+					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					redirect('ApplyForm7');
 
-                }
+				}
 
-            }else{
+			}else{
 
-                $this->session->set_flashdata('errorMessage', 'There was no files for Upload');
-                redirect('ApplyForm7');
+				$this->session->set_flashdata('errorMessage', 'There was no files for Upload');
+				redirect('ApplyForm7');
 
-            }
-        }else{
-            echo "<script>
+			}
+		}else{
+			echo "<script>
                     alert('Your Session has Expired ,Please Login Again');
                     window.location.href= '" . base_url() . "Login';
                     </script>";
-        }
+		}
     }
 
     //upload an image options

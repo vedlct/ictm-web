@@ -173,7 +173,7 @@
                                 <label class="control-label col-md-3">Mobile:<span style="color: red" class="required">*</span></label>
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
-                                    <input tabindex="10" type="text" class="form-control" id="mobile" required name="mobile" value="<?php echo set_value('mobile'); ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile"  name="mobile" value="<?php echo set_value('mobile'); ?>" >
                                 </div>
                             </div>
 
@@ -283,109 +283,107 @@
 
 
     function formvalidate() {
-        var value = document.getElementById('mobile').value;
-        if (value.length < 11 || value.length> 20) {
-            alert('Please at least 11 digit Telephone/Mobile number');
-            return false; // keep form from submitting
-        }
 
-        var email1=document.getElementById("email").value;
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		var finance=$('input[name=selfFinance]:checked').val();
 
-        if(email1.match(mailformat))
-        {
-            return true;
-        }
-        else{
-            alert("You have entered an invalid email address!");
-            return false;
-        }
+		if (finance != 'own'  && finance != "slc") {
 
-        var finance=$('input[name=selfFinance]:checked').val();
+			// var value = document.getElementById('mobile').value;
+			// if (value.length < 11 || value.length> 20) {
+			// 	alert('Please at least 11 digit Telephone/Mobile number');
+			// 	return false; // keep form from submitting
+			// }
+			//
 
-        if (finance != 'own'  && finance != "slc") {
 
-            var title = document.getElementById("title").value;
+			var title = document.getElementById("title");
+			var titlevalue = title.options[title.selectedIndex].value;
 
-            var email = document.getElementById("email").value;
+			if (titlevalue == ""){
+				alert("Please fill up Title");
+				return false;
+			}
 
-            var name = document.getElementById("name").value;
+			//   var email = document.getElementById("email").value;
 
-            var relation = document.getElementById("relation").value;
 
-            var address = document.getElementById("address").value;
+			var name = document.getElementById("name").value;
+			if (name == ""){
+				alert("Please fill up Name");
+				return false;
+			}
+			var relation = document.getElementById("relation").value;
+			if (relation == ""){
+				alert("Please fill up relation");
+				return false;
+			}
+			var address = document.getElementById("address").value;
+			if (address == ""){
+				alert("Please fill up address");
+				return false;
+			}
 
-            var postcode = document.getElementById("addressPo").value;
 
-            var phone = document.getElementById("mobile").value;
+			var city = document.getElementById("city").value;
+			if (city == ""){
+				alert("Please select a City");
+				return false;
+			}
+			var postcode = document.getElementById("addressPo").value;
+			if (postcode == ""){
+				alert("Please fill up Postcode");
+				return false;
+			}
+			var country = document.getElementById("country");
+			var countryvalue = country.options[country.selectedIndex].value;
+			if (countryvalue == ""){
+				alert("Please select a Country");
+				return false;
+			}
+			var phone = document.getElementById("mobile").value;
+			if (phone == ""){
+				alert("Please select a Phone");
+				return false;
+			}
+			var chk = /^[0-9]*$/;
+			if (!phone.match(chk)) {
+				alert('Please enter a valid Mobile Mobile number!!');
+				return false;
+			}
+			if (phone.length < 11) {
+				alert('Please enter a valid Mobile Mobile number!!');
+				return false;
+			}
+			var telephone = document.getElementById("telephone").value;
+			if ( telephone == ""){
+				alert("Please select a Telephone");
+				return false;
+			}
 
-            var city = document.getElementById("city").value;
+			// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-            var country = document.getElementById("country").value;
 
-            var telephone = document.getElementById("telephone").value;
+			if (!telephone.match(chk)) {
+				alert('Please enter a valid Telephone Phone number!!');
+				return false;
+			}
 
-            var chk = /^[0-9]*$/;
-            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			var email1=document.getElementById("email").value;
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-            if (title == ""){
-                alert("Please select a title");
-                return false;
-            }
-            if (name == ""){
-                alert("Please fill up Name");
-                return false;
-            }
-            if (relation == ""){
-                alert("Please fill up relation");
-                return false;
-            }
-            if (address == ""){
-                alert("Please fill up address");
-                return false;
-            }
-            if (postcode == ""){
-                alert("Please fill up Postcode");
-                return false;
-            }
-            if (city == ""){
-                alert("Please select a City");
-                return false;
-            }
-            if (country == ""){
-                alert("Please select a Country");
-                return false;
-            }
-            if (phone == ""){
-                alert("Please select a Phone");
-                return false;
-            }
-            if ( telephone == ""){
-                alert("Please select a Telephone");
-                return false;
-            }
-            if (!phone.match(chk)) {
-                alert('Please enter a valid Mobile Phone number!!');
-                return false;
-            }
-            if (!telephone.match(chk)) {
-                alert('Please enter a valid Telephone Phone number!!');
-                return false;
-            }
-            if (phone.length > 50) {
-                alert('Mobile Phone number must be less than 50 charecter!!');
-                return false;
-            }
-            if (!email.match(mailformat)) {
-                alert("You have entered an invalid email address!");
-                return false;
-            }
-            else {
-                return true;
-            }
-        }else {
-            return true;
-        }
+			if(email1.match(mailformat))
+			{
+				return true;
+			}
+			else{
+				alert("You have entered an invalid email address!");
+				return false;
+			}
+
+
+		}else {
+			return true;
+		}
     }
 </script>
 <script type="text/javascript">
