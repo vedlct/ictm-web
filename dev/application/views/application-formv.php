@@ -236,11 +236,12 @@
                                 Year:
                                 <?php
                                 $currently_selected = $ppyear;
-                                $earliest_year = 1950;
-                                $latest_year = date('Y')+6;
+								$current_year = date('Y');
+//                                $earliest_year = 1950;
+                                $latest_year = date('Y')+10;
                                 print '<select tabindex="17"  name="ppyear" id="ppyear">';
                                 print '<option value=""  selected>Select Year</option>';
-                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                foreach ( range($current_year,$latest_year) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
                                 print '</select>';
@@ -711,14 +712,14 @@
                             <label class="control-label col-md-3">Year:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-<!--                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" required value="--><?php //echo $candidateInfo->courseYear ?><!--">-->
+                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" required value="<?php echo $candidateInfo->courseYear ?>">
                                 <?php
                                 $currently_selected = $candidateInfo->courseYear;
                                 $earliest_year = date('Y');
                                 $latest_year = date('Y')+6;
                                 print '<select tabindex="58" name="courseYear" id="courseYear" required>';
                                 print '<option value=""  selected>Select Year</option>';
-                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                foreach ( range($earliest_year,$latest_year) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                 }
                                 print '</select>';

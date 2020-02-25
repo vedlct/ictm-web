@@ -1,94 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="2aaa3347-8d48-4095-bbf9-e31607b4e9e7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form2.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form2v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form2v.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form4.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5v.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_session6hh71ovh2ogakqkeog2p77d4ikg5g59n" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiona1j0utcao2d34879plfihuvoeu8vji1r" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionbd9qvjf2tteif8ei3bmqt69f668h84bs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionberb56bgai4ljt7qtvi0mb1olv89uvf5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionc5lolop6tad12a327qpbu3qr1mg404vs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionl43d60nh2fgrma4ujs0qgc5rreetj64q" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionnsqin2n62bddkbasa8a4ig0s9e0ho3tq" beforeDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/dev/composer.json</pharConfigPath>
-    <execution>
-      <executable />
-    </execution>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1XveZ11y7GsoklGEdFXJDicoigl" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
+  <component name="ProjectId" id="1YIe6wO0j9ymqX1zfGikjYA9vJ1" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../e-commerce" />
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="2aaa3347-8d48-4095-bbf9-e31607b4e9e7" name="Default Changelist" comment="" />
-      <created>1581931046261</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1581931046261</updated>
-      <workItem from="1581931047467" duration="5860000" />
-      <workItem from="1581941384298" duration="2134000" />
-      <workItem from="1582003706729" duration="11762000" />
-      <workItem from="1582109934642" duration="1210000" />
-      <workItem from="1582353851203" duration="612000" />
-      <workItem from="1582522080772" duration="12039000" />
-      <workItem from="1582616303686" duration="8039000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="740" y="279" key="FileChooserDialogImpl" timestamp="1582109944711">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="279" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582109944711" />
-    <state x="668" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1582522141704">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="668" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582522141704" />
-    <state x="2525" y="110" width="710" height="819" key="find.popup" timestamp="1582528303789">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="2525" y="110" width="710" height="819" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1582528303789" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/dev/application/views/application-form8.php</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
 </project>

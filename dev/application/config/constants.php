@@ -181,7 +181,7 @@ define("NATIONALITY",array ("Afghan", "Albanian", "Algerian","American", "Andorr
 //////////////Aplication/////////////////
 
 define("COURSESESSION",array ("February","May","September"));
-define("PERSONAL_STATEMENT",array ("Facebook","Friend","Family","News","Google"));
+define("PERSONAL_STATEMENT",array ("Facebook","Friend","Family","News","Google","Agent"));
 define("Login",array ("Login","Sigin"));
 define("Logout",array ("Logout","Sigout"));
 
