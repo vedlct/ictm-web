@@ -58,7 +58,7 @@
                             <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('title'); ?></font></p>
-                                <select tabindex="1"  style="width: 100%" name="title" id="title">
+                                <select tabindex="1"  style="width: 100%" name="title" id="title" required>
                                     <option value=""><?php echo "Select Title"?></option>
                                     <?php for ($i=0;$i<count(Title);$i++){?>
 <!--                                        <option --><?php //if ($candidateInfo->title == Title[$i]){?><!-- selected --><?php //} ?><!-- value="--><?php //echo Title[$i]?><!--">--><?php //echo Title[$i]?><!--</option>-->
@@ -106,7 +106,7 @@
                                 $dobdate = (int)$a[2];
                                 ?>
                                 Date:
-                                <select tabindex="6" name="dobdate" id="dobdate">
+                                <select tabindex="6" name="dobdate" id="dobdate" required>
                                     <option value=""  selected>Select Date</option>
                                     <?php
                                     foreach (['1', '2', '3', '4', '5', '6', '7', '8', '9', '10','11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30','31'] as $dateNumber => $date) {
@@ -117,7 +117,7 @@
                                 </select>
                                 &nbsp;
                                 Month:
-                                <select tabindex="5" name="dobmonth" id="dobmonth">
+                                <select tabindex="5" name="dobmonth" id="dobmonth" required>
                                     <option value=""  selected>Select Month</option>
                                     <?php
                                     foreach (['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'] as $monthNumber => $month) {
@@ -131,7 +131,7 @@
                                  $currently_selected = $dobyear;
                                  $earliest_year = 1950;
                                  $latest_year = date('Y');
-                                 print '<select tabindex="4"  name="dobyear" id="dobyear">';
+                                 print '<select tabindex="4"  name="dobyear" id="dobyear" required>';
                                  print '<option value=""  selected>Select Year</option>';
                                  foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -417,7 +417,7 @@
                             <label class="control-label col-md-3" id="currentAddressPo">Post Code:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
-                                <input tabindex="29"  type="text" class="form-control"  id="currentAddressPo2" name="currentAddressPo" value="<?php echo $candidateInfo->currentAddressPo ?>">
+                                <input tabindex="29"  type="text" class="form-control"  id="currentAddressPo2" name="currentAddressPo" value="<?php echo $candidateInfo->currentAddressPo ?>" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -508,7 +508,7 @@
                             <label class="control-label col-md-3" >Post Code:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
-                                <input tabindex="39"  type="text" class="form-control"  id="overseasAddressPo2" name="overseasAddressPo" value="<?php echo $candidateInfo->overseasAddressPo?>">
+                                <input tabindex="39"  type="text" class="form-control"  id="overseasAddressPo2" name="overseasAddressPo" value="<?php echo $candidateInfo->overseasAddressPo?>" required>
                             </div>
                         </div>
 
@@ -611,7 +611,7 @@
                             <label class="control-label col-md-3" id="epostalcodelabel">Post Code:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('emergencyContactAddressPo'); ?></font></p>
-                                <input tabindex="48"  type="text" class="form-control"  id="emergencyContactAddressPo" name="emergencyContactAddressPo" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>" >
+                                <input tabindex="48"  type="text" class="form-control"  id="emergencyContactAddressPo" name="emergencyContactAddressPo" value="<?php echo $candidateInfo->emergencyContactAddressPo ?>" required>
                             </div>
                         </div>
 
@@ -716,7 +716,7 @@
                                 $currently_selected = $candidateInfo->courseYear;
                                 $earliest_year = date('Y');
                                 $latest_year = date('Y')+6;
-                                print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                print '<select tabindex="58" name="courseYear" id="courseYear" required>';
                                 print '<option value=""  selected>Select Year</option>';
                                 foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -1007,20 +1007,21 @@
 
 
     }
-
-    function ValidateEmail(){
-        var email=document.getElementById("email").value;
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-        if(email.match(mailformat))
-        {
-            return true;
-        }
-        else{
-            alert("Current Email Address is in invalid format!");
-            return false;
-        }
     }
+
+    // function ValidateEmail(){
+    //     var email=document.getElementById("email").value;
+    //     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	//
+    //     if(email.match(mailformat))
+    //     {
+    //         return true;
+    //     }
+    //     else{
+    //         alert("Current Email Address is in invalid format!");
+    //         return false;
+    //     }
+    // }
 
 </script>
 <script type="text/javascript">

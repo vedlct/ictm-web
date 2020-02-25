@@ -340,8 +340,12 @@
             }
 
 			var email1=document.getElementById("email").value;
-			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
+			if ( email1 == ""){
+				alert("Please select an Email");
+				return false;
+			}
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 			if(email1.match(mailformat))
 			{
 				return true;
