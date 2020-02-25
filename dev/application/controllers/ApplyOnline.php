@@ -3084,6 +3084,14 @@ class ApplyOnline extends CI_Controller
             $this->menu();
 
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
+			$this->data['refereecount'] = $this->ApplyOnlinem->getAllRefences();
+			$refreecount =  count($this->data['refereecount']);
+			if ($refreecount < 2)
+			{
+				$this->session->set_flashdata('errorMessage', 'At least two Referees are Mandatory ');
+
+				redirect('ApplyForm8');
+			}
 			$applicationId = $this->session->userdata('studentApplicationId');
 
             $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
@@ -3441,9 +3449,17 @@ class ApplyOnline extends CI_Controller
     {
         if ($this->session->userdata('loggedin') == "true") {
 
-
+			$applicationId = $this->session->userdata('studentApplicationId');
             $this->data['error'] = $this->ApplyOnlinem->insertAllReferees();
+            $this->data['refereecount'] = $this->ApplyOnlinem->getAllRefences();
+			$refreecount =  count($this->data['refereecount']);
+			if ($refreecount < 2)
+			{ 	$this->session->set_flashdata('successMessage', 'Information was  Successfully save');
+				$this->session->set_flashdata('errorMessage', 'At least two Referees are Mandatory ');
 
+				redirect('ApplyForm8');
+			}
+		//	return ;
             if (empty($this->data['error'])) {
 
 

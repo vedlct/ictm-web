@@ -48,6 +48,7 @@
                         </div>
 
                         <div class="form-bottom">
+							<span style="color: red;font-style: italic">(*Atleast two Referees are mandatory )</span>
                             <input tabindex="1"  type="hidden" class="form-control" id="refereesId"  name="refereesId">
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
