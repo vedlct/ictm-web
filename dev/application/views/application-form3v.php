@@ -155,6 +155,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Test Name</th>
+							<th>Overall</th>
 
                             <th>Action</th>
 
@@ -182,6 +183,7 @@
                                     }
                                     ?>
                                 </td>
+								<td><?php echo $lt->overallScore ?></td>
 
                                 <td>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>

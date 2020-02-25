@@ -23,48 +23,8 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>editApplyform1</find>
-      <find>get_alamnidatatables</find>
-      <find>editAlumniForm</find>
-      <find>selectall1</find>
-      <find>selected_row</find>
-      <find>selected_rows(x)</find>
-      <find>selected_rows</find>
-      <find>createPage</find>
-      <find>insertPage()</find>
-      <find>createFeedback</find>
-      <find>createNewFeedback()</find>
-      <find>createNewMenu()</find>
-      <find>getPageIdNameforMenu</find>
-      <find>get_datatables()</find>
-      <find>count_all_results</find>
-      <find>ajax_list</find>
-      <find>deleteAlumni</find>
-      <find>deletePersonId($personId)</find>
-      <find>newUser</find>
-      <find>geteditPagaData($id)</find>
-      <find>editPageShow</find>
-      <find>updatePagaData($id)</find>
-      <find>getAllMenubyId</find>
-      <find>ValidateEmail</find>
-      <find>geteditUserData</find>
-      <find>getAllEqualOpportunity</find>
-      <find>insertApplicationForm3</find>
-      <find>applyNow3Insert</find>
-      <find>editUserRole</find>
-      <find>createNewRole</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1X6oCzTOnSuLzKDz1RcPbMakREt" />
   <component name="ProjectViewState">
@@ -158,6 +118,8 @@
       <workItem from="1580384076015" duration="1257000" />
       <workItem from="1580452844916" duration="647000" />
       <workItem from="1580456997199" duration="783000" />
+      <workItem from="1582012892714" duration="1052000" />
+      <workItem from="1582610675984" duration="17245000" />
     </task>
     <servers />
   </component>

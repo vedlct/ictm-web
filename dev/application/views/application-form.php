@@ -205,11 +205,12 @@
                                                 Year:
                                                 <?php
                                                 $currently_selected = date('');
-                                                $earliest_year = 1950;
-                                                $latest_year = date('Y')+6;
+												$current_year = date('Y');
+//                                                $earliest_year = 1950;
+                                                $latest_year = date('Y')+10;
                                                 print '<select tabindex="17" name="ppyear" id="ppyear">';
                                                 print ' <option value=""  selected>Select Year</option>';
-                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                foreach ( range($current_year,$latest_year) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
                                                 print '</select>';
@@ -678,7 +679,7 @@
                                                 $latest_year = date('Y')+6;
                                                 print '<select tabindex="58" name="courseYear" id="courseYear">';
                                                 print '<option value=""  selected>Select Year</option>';
-                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                foreach ( range( $earliest_year,$latest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
                                                 print '</select>';

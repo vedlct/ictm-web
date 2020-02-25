@@ -176,7 +176,7 @@ define("HAND_BOOK",array("ICTM_Course_Handbook_Business_RQF","ICTM_Course_Handbo
 //////////////Aplication/////////////////
 
 define("COURSESESSION",array ("February","May","September"));
-define("PERSONAL_STATEMENT",array ("Facebook","Friend","Family","News","Google"));
+define("PERSONAL_STATEMENT",array ("Facebook","Friend","Family","News","Google","Agent"));
 
 
 

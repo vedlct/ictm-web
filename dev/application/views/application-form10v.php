@@ -113,12 +113,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         ?>
 
 
-
-
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div class="form-group" id="to1">
                                     <label class="control-label col-md-3">To:</label>
                                     <div class="col-md-9">
                                         <p><font color="red"> <?php echo form_error('enddate'); ?></font></p>
@@ -159,6 +157,13 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                     </div>
                                 </div>
+								<div class="form-group" id="to1">
+									<div class="col-md-3"></div>
+									<div class="col-md-9">
+										<input type="checkbox" id="current_job" class="btn1" name="endDate" value="running">
+										<label for="vehicle1">Present</label>
+									</div>
+								</div>
 
                                 <input tabindex="9"  type="hidden" name="experience" id="experience">
                             </div>
@@ -254,6 +259,14 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 </div>
 </body>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+<script>
+
+	$(document).ready(function(){
+		$(".btn1").click(function(){
+			$("#to1").toggle();
+		});
+	});
+</script>
 
 <script type="text/javascript">
     $(function () {
@@ -401,11 +414,12 @@ elseif($this->session->flashdata('successMessage')!=null){?>
         var enddate = new Date(endyear,endmonth,enddat);
 
         //alert(stratdate)
-        if (enddate < stratdate) {
 
-            alert('Please Select StartDate and EndDate Correctly');
-            return false;
-        }
+        // if (enddate < stratdate) {
+		//
+        //     alert('Please Select StartDate and EndDate Correctly');
+        //     return false;
+        // }
 
 
 

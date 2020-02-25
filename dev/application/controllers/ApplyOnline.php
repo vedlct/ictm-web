@@ -3085,7 +3085,7 @@ class ApplyOnline extends CI_Controller
 
             $this->data['coursedata'] = $this->Coursem->getCourseTitle();
             $applicationId = $this->session->userdata('studentApplicationId');
-            $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
+//            $this->data['document'] = $this->ApplyOnlinem->getDocument($applicationId);
 
             $this->load->view('application-form7', $this->data);
 
@@ -3810,7 +3810,7 @@ class ApplyOnline extends CI_Controller
                 if (empty($this->data['error'])) {
 
 
-                    $this->session->set_flashdata('successMessage', 'Application Submited Successfully');
+                    $this->session->set_flashdata('successMessage', 'Application Submited Successfully.You can download the form in pdf and you can see the status of your application in your account home page.');
                     redirect('AllFormForStudents');
 
 
