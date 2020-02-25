@@ -62,7 +62,7 @@
 
                                 <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm4" ><button type="button"  class="btn ">Next</button></a>-->
                                 <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                 <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
 
@@ -151,3 +151,19 @@
     }
 </script>
 
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
+
+    }
+</script>

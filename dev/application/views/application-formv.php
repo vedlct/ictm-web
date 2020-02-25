@@ -531,7 +531,7 @@
 
 
 
-                        <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
+                        <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details/Next of Kin</h2>
 
                         <div class="form-group">
                             <label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
@@ -770,7 +770,7 @@
 <!--                                <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1AndNext" class="btn btn-next"> Next</button>-->
 <!--                                <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
                                 <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                <button type="button"  class="btn btn-next" onclick="getConfirmation()"><span style="color: #FFFFFF;">Cancel</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1Save" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Save for Later</span></button>
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm1AndNext" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Next</span></button>
                             </div>
@@ -829,7 +829,22 @@
         });
     });
 </script>
+<script type="text/javascript">
 
+    function getConfirmation()
+    {
+
+
+            if (confirm("Do You Want to Continue ?")) {
+                window.location.href = "<?php echo base_url()?>AllFormForStudents";
+            } else {
+               return false;
+
+            }
+
+
+    }
+</script>
 
 <script>
 

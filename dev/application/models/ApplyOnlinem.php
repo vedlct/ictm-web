@@ -1233,29 +1233,29 @@ class ApplyOnlinem extends CI_Model
     }
     public function insertAllDocument($filename)
     {
-        $title = $this->input->post('description');
+		$title = $this->input->post('description');
 //        $filename='filename';
 
 
-        //$addressPo = $this->input->post('addressPo[]');
+		//$addressPo = $this->input->post('addressPo[]');
 
 
 
-        for ($i = 0; $i < count($title); $i++) {
-            $data = array(
-                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
-                'description' => $title[$i],
-                'filename' => $filename,
-            );
+		for ($i = 0; $i < count($title); $i++) {
+			$data = array(
+				'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+				'description' => $title[$i],
+				'filename' => $filename,
+			);
 
-            $error = $this->db->insert('filedocument', $data);
-        }
+			$error = $this->db->insert('filedocument', $data);
+		}
 
-        if (empty($error)) {
-            return $this->db->error();
-        } else {
-            return $error = null;
-        }
+		if (empty($error)) {
+			return $this->db->error();
+		} else {
+			return $error = null;
+		}
     }
 
     public function getDocument($applicationId){
@@ -1265,7 +1265,14 @@ class ApplyOnlinem extends CI_Model
         $this->db->where('fkApplicationId',$applicationId);
         $this->db->from('filedocument');
         $query=$this->db->get();
-        return $query->result();
+		if($query == 1) {
+			$results = $query->result();
+			return  $results;
+		}
+		else{
+			return false;
+		}
+       // return $query->result();
 
 
     }
