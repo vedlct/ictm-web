@@ -334,22 +334,24 @@
            // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
-            if (!telephone.match(chk)) {
-                alert('Please enter a valid Telephone Phone number!!');
-                return false;
-            }
+            // if (!telephone.match(chk)) {
+            //     alert('Please enter a valid Telephone Phone number!!');
+            //     return false;
+            // }
 
-			var email1=document.getElementById("email").value;
+			var email1 = document.getElementById("email").value;
+            alert(email1);
+            return  false;
 
 			if ( email1 == ""){
 				alert("Please select an Email");
 				return false;
 			}
-			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			if(email1.match(mailformat))
-			{
-				return true;
-			}
+			// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			// if(email1.match(mailformat))
+			// {
+			// 	return true;
+			// }
 			else{
 				alert("You have entered an invalid email address!");
 				return false;
