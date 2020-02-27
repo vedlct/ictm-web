@@ -1148,18 +1148,21 @@ class ApplyOnlinem extends CI_Model
         $startdate = $workstryear."-".$workstrmonth."-".$workstrdate;
 
 //        $startdate = $this->input->post('startdate[]');
-
-        $workendyear = $this->input->post("workendyear");
-        $workendmonth = $this->input->post("workendmonth")+1;
-        $workenddate = $this->input->post("workenddate")+1;
-        if ($workendmonth < 9){
-            $workendmonth = "0".$workendmonth;
-        }
-        if ($workenddate < 9){
-            $workenddate = "0".$workenddate;
-        }
-        $enddate = $workendyear."-".$workendmonth."-".$workenddate;
-
+		$enddate = "";
+        if (($this->input->post('present') != "")){
+			$enddate = "Running";
+		}else {
+			$workendyear = $this->input->post("workendyear");
+			$workendmonth = $this->input->post("workendmonth") + 1;
+			$workenddate = $this->input->post("workenddate") + 1;
+			if ($workendmonth < 9) {
+				$workendmonth = "0" . $workendmonth;
+			}
+			if ($workenddate < 9) {
+				$workenddate = "0" . $workenddate;
+			}
+			$enddate = $workendyear . "-" . $workendmonth . "-" . $workenddate;
+		}
 
         //  $startdate = date('Y-m-d',strtotime($this->input->post('startdate')));
         //  $enddate = date('Y-m-d',strtotime($this->input->post('enddate')));

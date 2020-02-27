@@ -160,7 +160,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 								<div class="form-group" id="to1">
 									<div class="col-md-3"></div>
 									<div class="col-md-9">
-										<input type="checkbox" id="current_job" class="btn1" name="endDate" value="running">
+										<input type="checkbox" id="current_job" class="btn1" name="present" value="running">
 										<label for="vehicle1">Present</label>
 									</div>
 								</div>
