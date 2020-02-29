@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0b797102-6b7f-44e7-8b55-1759744c9c17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form10v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form10v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/controllers/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/AccountActivationReqeust.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/AccountActivationReqeust.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582634363879</updated>
-      <workItem from="1582634365028" duration="4173000" />
+      <workItem from="1582634365028" duration="15477000" />
     </task>
     <servers />
   </component>

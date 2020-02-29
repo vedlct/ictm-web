@@ -92,7 +92,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyOnline/userProfile');
 
 				}
@@ -547,7 +547,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('Apply');
 
 				}
@@ -773,7 +773,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm2');
 
 				}
@@ -997,7 +997,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm2');
 
 				}
@@ -1150,7 +1150,7 @@ class ApplyOnline extends CI_Controller
 			} else {
 
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm3');
 
 			}
@@ -1177,7 +1177,7 @@ class ApplyOnline extends CI_Controller
 			} else {
 
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm5');
 
 			}
@@ -1208,7 +1208,7 @@ class ApplyOnline extends CI_Controller
 			} else {
 
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm5');
 
 			}
@@ -1440,7 +1440,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('Apply');
 
 				}
@@ -1668,7 +1668,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm2');
 
 				}
@@ -1899,7 +1899,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm2');
 
 				}
@@ -2171,7 +2171,7 @@ class ApplyOnline extends CI_Controller
 						} else {
 
 
-							$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+							$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 							redirect('ApplyForm3');
 
 						}
@@ -2189,7 +2189,7 @@ class ApplyOnline extends CI_Controller
 					} else {
 
 
-						$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+						$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 						redirect('ApplyForm3');
 
 					}
@@ -2209,7 +2209,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm3');
 
 				}
@@ -2245,7 +2245,7 @@ class ApplyOnline extends CI_Controller
 //                } else {
 //
 //
-//                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                    $this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 //                    redirect('ApplyForm3');
 //
 //                }
@@ -2296,7 +2296,7 @@ class ApplyOnline extends CI_Controller
 					} else {
 
 
-						$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+						$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 						redirect('ApplyForm3');
 
 					}
@@ -2317,7 +2317,7 @@ class ApplyOnline extends CI_Controller
 				} else {
 
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm3');
 
 				}
@@ -2354,7 +2354,7 @@ class ApplyOnline extends CI_Controller
 //                } else {
 //
 //
-//                    $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                    $this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 //                    redirect('ApplyForm4');
 //
 //                }
@@ -2421,7 +2421,7 @@ class ApplyOnline extends CI_Controller
 			} else {
 
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm4');
 
 			}
@@ -2496,7 +2496,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm4');
 
 			}
@@ -2572,7 +2572,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm4');
 
 			}
@@ -2647,7 +2647,7 @@ class ApplyOnline extends CI_Controller
 
 				} else {
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm5');
 
 				}
@@ -2690,7 +2690,7 @@ class ApplyOnline extends CI_Controller
 
 				} else {
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm5');
 
 				}
@@ -2801,7 +2801,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm6');
 
 			}
@@ -2878,7 +2878,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm6');
 
 			}
@@ -2971,7 +2971,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm6');
 
 			}
@@ -3062,7 +3062,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm6');
 
 			}
@@ -3207,7 +3207,7 @@ class ApplyOnline extends CI_Controller
 
 				} else {
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm7');
 
 				}
@@ -3280,7 +3280,7 @@ class ApplyOnline extends CI_Controller
 
 				} else {
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm7');
 
 				}
@@ -3355,7 +3355,7 @@ class ApplyOnline extends CI_Controller
 
 				} else {
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm7');
 
 				}
@@ -3432,7 +3432,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm8');
 
 			}
@@ -3474,7 +3474,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm8');
 
 			}
@@ -3508,7 +3508,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm8');
 
 			}
@@ -3838,7 +3838,7 @@ class ApplyOnline extends CI_Controller
 
 				} else {
 
-					$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+					$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 					redirect('ApplyForm9');
 
 				}
@@ -3897,7 +3897,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('Apply-Work-Experience');
 
 			}
@@ -3925,7 +3925,7 @@ class ApplyOnline extends CI_Controller
 //
 //            } else {
 //
-//                $this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+//                $this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 //                redirect('ApplyForm3');
 //
 //            }
@@ -3953,7 +3953,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('ApplyForm3');
 
 			}
@@ -4054,7 +4054,7 @@ class ApplyOnline extends CI_Controller
 
 			} else {
 
-				$this->session->set_flashdata('errorMessage', 'Some thing Went Wrong !! Please Try Again!!');
+				$this->session->set_flashdata('errorMessage', 'please fix the erorr(s) below and submit again.');
 				redirect('AllFormForStudents');
 
 			}
