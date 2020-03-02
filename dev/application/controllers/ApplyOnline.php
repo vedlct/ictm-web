@@ -1099,6 +1099,7 @@ class ApplyOnline extends CI_Controller
 		if ($this->session->userdata('loggedin') == "true") {
 
 			$this->ApplyOnlinem->applyNow2Insert();
+			$this->session->set_flashdata('successMessage', 'Your data save successfully');
 			redirect('ApplyForm2');
 		}else{
 			echo "<script>
@@ -3994,7 +3995,7 @@ class ApplyOnline extends CI_Controller
 				}
 			}else{
 				$this->ApplyOnlinem->applyNow10update();
-				// $this->session->set_flashdata('successMessage', 'Work Experience Saved  Successfully');
+				 $this->session->set_flashdata('successMessage', 'Work Experience Saved  Successfully');
 				redirect('Apply-Work-Experience');
 			}
 		}

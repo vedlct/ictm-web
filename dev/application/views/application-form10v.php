@@ -190,7 +190,6 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div id="qualificationTable" class="table-responsive">
                             <table  class="table  table-bordered ">
                                 <tr>
-                                    <th>Id</th>
                                     <th>Organization</th>
                                     <th>PositionHeld</th>
                                     <th>Start Date</th>
@@ -200,7 +199,6 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </tr>
                                 <?php foreach ($experience as $experiences){?>
                                     <tr>
-                                        <td><?php echo $experiences->id ?></td>
                                         <td><?php echo $experiences->organization ?></td>
                                         <td><?php echo $experiences->positionHeld ?></td>
                                         <td><?php echo $experiences->startDate ?></td>

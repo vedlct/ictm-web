@@ -354,19 +354,19 @@
 				alert('Please enter a valid Mobile Mobile number!!');
 				return false;
 			}
-			var telephone = document.getElementById("telephone").value;
-			if ( telephone == ""){
-				alert("Please select a Telephone");
-				return false;
-			}
+			//var telephone = document.getElementById("telephone").value;
+			// if ( telephone == ""){
+			// 	alert("Please select a Telephone");
+			// 	return false;
+			// }
 
 			// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 
-			if (!telephone.match(chk)) {
-				alert('Please enter a valid Telephone Phone number!!');
-				return false;
-			}
+			// if (!telephone.match(chk)) {
+			// 	alert('Please enter a valid Telephone Phone number!!');
+			// 	return false;
+			// }
 
 			var email1=document.getElementById("email").value;
 			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;

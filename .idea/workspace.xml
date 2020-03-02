@@ -4,16 +4,18 @@
     <list default="true" id="0b797102-6b7f-44e7-8b55-1759744c9c17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/controllers/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/Registration.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/AccountActivationReqeust.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/AccountActivationReqeust.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form10v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form10v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form4.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form4v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form4v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5v.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/dev/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -43,11 +45,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582634363879</updated>
-      <workItem from="1582634365028" duration="15477000" />
+      <workItem from="1582634365028" duration="16381000" />
+      <workItem from="1583129629392" duration="6943000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2588" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1583129630690">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2588" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583129630689" />
   </component>
 </project>

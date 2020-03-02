@@ -325,11 +325,8 @@
 				alert('Please enter a valid Mobile Mobile number!!');
 				return false;
 			}
-            var telephone = document.getElementById("telephone").value;
-			if ( telephone == ""){
-				alert("Please select a Telephone");
-				return false;
-			}
+           // var telephone = document.getElementById("telephone").value;
+
 
            // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
@@ -340,18 +337,17 @@
             // }
 
 			var email1 = document.getElementById("email").value;
-            alert(email1);
-            return  false;
+
 
 			if ( email1 == ""){
 				alert("Please select an Email");
 				return false;
 			}
-			// var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-			// if(email1.match(mailformat))
-			// {
-			// 	return true;
-			// }
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(email1.match(mailformat))
+			{
+				return true;
+			}
 			else{
 				alert("You have entered an invalid email address!");
 				return false;
