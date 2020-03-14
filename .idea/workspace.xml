@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b797102-6b7f-44e7-8b55-1759744c9c17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/config/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/config/constants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pmsNew" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,6 +47,7 @@
       <workItem from="1583237310948" duration="622000" />
       <workItem from="1583304371723" duration="5342000" />
       <workItem from="1583487987196" duration="1201000" />
+      <workItem from="1584167164790" duration="4222000" />
     </task>
     <servers />
   </component>
