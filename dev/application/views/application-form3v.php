@@ -155,6 +155,7 @@
                         <tr>
                             <th>SL</th>
                             <th>Test Name</th>
+							<th>Overall</th>
 
                             <th>Action</th>
 
@@ -182,6 +183,7 @@
                                     }
                                     ?>
                                 </td>
+								<td><?php echo $lt->overallScore ?></td>
 
                                 <td>
                                     <a style="cursor: pointer" data-panel-id="<?php echo $lt->id ?>"  onclick="selectid(this)"><i class="fa fa-edit"></i></a>
@@ -197,7 +199,7 @@
 
                         <a href="<?php echo base_url()?>Apply-Work-Experience" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                         <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                        <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                        <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                         <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editORInsertApplicationForm3AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
 
                         <a href="<?php echo base_url()?>ApplyForm5" ><button type="button"  class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button></a>
@@ -416,5 +418,21 @@
         }else {
             $('#qualificationTable').load(document.URL +  ' #qualificationTable');
         }
+    }
+</script>
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
+
     }
 </script>

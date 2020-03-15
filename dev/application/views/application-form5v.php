@@ -50,7 +50,7 @@
                             <div class="form-group">
                                 <label class="control-label col-md-3">Why do you wish to do this course?<br> (Minimum 200 words required)<span style="color: red">*</span>:</label>
                                 <div class="col-md-9">
-                                    <textarea id="courseChoiceStatement"  required name="courseChoiceStatement" rows="8" tabindex="1"  ><?php echo $f5->courseChoiceStatement ?> </textarea>
+                                    <textarea id="courseChoiceStatement"   name="courseChoiceStatement" rows="8" tabindex="1" required  ><?php echo $f5->courseChoiceStatement ?> </textarea>
                                 </div>
                             </div>
 
@@ -72,7 +72,7 @@
                                 <div class="col-sm-offset-2 col-md-9">
                                     <a href="<?php echo base_url()?>ApplyForm3" ><button type="button" class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <button type="reset" id="hide" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm5AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
 <!--                                    <a href="--><?php //echo base_url()?><!--ApplyForm4" ><button type="button"  class="btn btn-next">Next</button></a>-->
@@ -155,8 +155,8 @@
 //            return false;
 //
 //        }
-        if (numwords < 100 || numwords > 200) {
-            alert('Please lengthen this text 100 words to 200 words ');
+        if (numwords < 200 || numwords > 1000) {
+            alert('your personal statement must be minimum 200 words and maximum 1000 words');
             return false; // keep form from submitting
         }
     }
@@ -173,3 +173,21 @@
         });
     });
 </script>
+
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
+
+    }
+</script>
+

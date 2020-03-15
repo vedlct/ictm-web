@@ -104,7 +104,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                             $currently_selected = date('');
                                             $earliest_year = 1950;
                                             $latest_year = date('Y');
-                                            print '<select tabindex="6" name="completionYear[]">';
+                                            print '<select tabindex="6" name="completionYear[]" required>';
                                             print '<option value=""  selected>Select Year</option>';
                                             foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                                 print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
@@ -147,7 +147,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                     <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
                                     <!--                                    <a href="--><?php //echo base_url()?><!--Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>-->
@@ -469,6 +469,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 //        }
     }
 
+</script>
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
+
+    }
 </script>
 
 </html>

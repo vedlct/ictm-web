@@ -205,11 +205,12 @@
                                                 Year:
                                                 <?php
                                                 $currently_selected = date('');
-                                                $earliest_year = 1950;
-                                                $latest_year = date('Y')+6;
+												$current_year = date('Y');
+//                                                $earliest_year = 1950;
+                                                $latest_year = date('Y')+10;
                                                 print '<select tabindex="17" name="ppyear" id="ppyear">';
                                                 print ' <option value=""  selected>Select Year</option>';
-                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                foreach ( range($current_year,$latest_year) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
                                                 print '</select>';
@@ -385,7 +386,7 @@
                                             <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
-                                                <input tabindex="29" type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo set_value('currentAddressPo'); ?>">
+                                                <input tabindex="29" type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo set_value('currentAddressPo'); ?>" required>
                                             </div>
                                         </div>
 
@@ -483,7 +484,7 @@
                                             <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
-                                                <input tabindex="39" type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo set_value('overseasAddressPo'); ?>">
+                                                <input tabindex="39" type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo set_value('overseasAddressPo'); ?>" required>
                                             </div>
                                         </div>
 
@@ -504,7 +505,7 @@
                                             </div>
                                         </div>
 
-                                        <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
+                                        <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details/Next of Kin</h2>
                                         
                                         <div class="form-group">
                                         	<label class="control-label col-md-3">Title:<span style="color: red" class="required">*</span></label>
@@ -583,7 +584,7 @@
                                             <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('emergencyContactAddressPo'); ?></font></p>
-                                                <input tabindex="48" type="text" class="form-control"  id="emergencyContactAddressPo" value="<?php echo set_value('emergencyContactAddressPo'); ?>" name="emergencyContactAddressPo">
+                                                <input tabindex="48" type="text" class="form-control"  id="emergencyContactAddressPo" value="<?php echo set_value('emergencyContactAddressPo'); ?>" name="emergencyContactAddressPo" required>
                                             </div>
                                         </div>
 
@@ -676,9 +677,9 @@
                                                 $currently_selected = date('');
                                                 $earliest_year = date('Y');
                                                 $latest_year = date('Y')+6;
-                                                print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                                print '<select tabindex="58" name="courseYear" id="courseYear" required>';
                                                 print '<option value=""  selected>Select Year</option>';
-                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                foreach ( range( $earliest_year,$latest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
                                                 print '</select>';
@@ -734,7 +735,7 @@
                                           <div class="col-sm-offset-2 col-md-9">
 <!--                                            <a href="--><?php //echo base_url()?><!--OnlineForms/insertApplicationForm1"> <button type="button" class="btn ">Next</button></a>-->
                                               <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                              <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                              <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next" onclick="getConfirmation()"><span style="color: #FFFFFF;">Cancel</span></button>
                                               <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1Save" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Save for Later</span></button>
                                               <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm1AndNext" class="btn btn-next" onclick="return ValidateEmail()"><span style="color: #FFFFFF;">Next</span></button>
 <!--                                              <a href="--><?php //echo base_url()?><!--ApplyForm2" ><button type="button"  class="btn btn-next">Next</button></a>-->
@@ -792,6 +793,22 @@
                     return false;
                 });
             });
+        </script>
+        <script type="text/javascript">
+
+            function getConfirmation()
+            {
+
+
+                if (confirm("Do You Want to Continue ?")) {
+                    window.location.href = "<?php echo base_url()?>AllFormForStudents";
+                } else {
+                    return false;
+
+                }
+
+
+            }
         </script>
 
         <script>
@@ -987,19 +1004,19 @@
 
             }
 
-            function ValidateEmail(){
-                var email=document.getElementById("email").value;
-                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-                if(email.match(mailformat))
-                {
-                    return true;
-                }
-                else{
-                    alert("Current Email Address is in invalid format!");
-                    return false;
-                }
-            }
+            // function ValidateEmail(){
+            //     var email=document.getElementById("email").value;
+            //     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			//
+            //     if(email.match(mailformat))
+            //     {
+            //         return true;
+            //     }
+            //     else{
+            //         alert("Current Email Address is in invalid format!");
+            //         return false;
+            //     }
+            // }
 
         </script>
 
@@ -1040,6 +1057,7 @@
                     document.getElementById('permanentAddress2').style.display = "block";
                     document.getElementById('permanentAddress3').style.display = "block";
                     document.getElementById('ppostalcodelabel').style.display = "block";
+					document.getElementById('overseasAddressPo').style.display = "block";
                     document.getElementById('permanentAddressCity').style.display = "block";
                     document.getElementById('permanentAddressState').style.display = "block";
                     document.getElementById('permanentAddressCountry').style.display = "block";

@@ -2,8 +2,123 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c69b103b-8ced-470a-b0d9-e9a9099fbeee" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/studentApplications/6/14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/studentApplications/6/Curriculam_Vitae_of_Sakib_rahman_(4).pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/AdminPanel/studentApplications/7/UK.PNG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_session2mbipl0gmpkjr38hm65f5e1uoe864pnp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_session6rrabq9rnjnqg15s3d0q0fo55lh90p1f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_session9er6l8ke8is53q449t9v4pqqb8blbfkt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_session9oqkcg72jkh2gidnqbqgb1moeiiab3f7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionb82j8dhtejogu1e0fbcjorfr9gjavjrb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessioneh3kav0gft0mr5bv0bu817f3k2nbjq6l" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionei3afahhd231l2dnnms10279ei171sbr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionmnpdugu6sk0lcg18iehhc0tpskhropog" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionoabsd9vvaclqf5rtmp7tavvvbtn8fu7r" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessions6url2ltgq02be8pcfnkvqh0hmcht1hd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionscl2nnen9fu5591bukk0jgaj5j21nige" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/ictm-web.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ictm-web.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/AdminPanel/application/config/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/AdminPanel/application/config/constants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/config/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/config/constants.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/controllers/Registration.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/Registration.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/AccountActivationReqeust.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/AccountActivationReqeust.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form10.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form10.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form10v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form10v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form2.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form2v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form2v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form3.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form3v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form3v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form4.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form4v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form4v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form5v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form5v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form6.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form6.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form6v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form6v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form7.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form7.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form7v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form7v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form8.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form8.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form8v.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form8v.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form9.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form9.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/application/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session01j372n0ldgle04bsk5eqsv1jg01q02d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session08v35l8bhjlm0kfka07ki3e4g2mkdvsc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session0ahtvns839d6d86dgv800pfkouf91bhj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session1e29lm88tc6adljhper8avm2tqhlbevb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session1j7gk4ck1sqs00v3b3ktuqmpn0rmegq7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session1jrpo4g20jgq437sjhhlpc8irtpsptq9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session1omv7oe6rqu6qaengripe7uvsg4aoc61" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session1trl3p2fdu2k0dj9f0in4m5hhiavofv8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session2a4f7jsv3s009uppk7dt30n6p9rk4tr9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session41738lpe8othghv19sqdla4mfhshs03q" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session47d3im5q9pkt44jos6du6p9fcf5i4vst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session4qilupeh61iu429dqip55snnce1n1b9a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session52r4co3epqr9mkd173r7fahudliph47s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session5k1o16pdf4urs9f66cjhi3ob1udctnrm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session5kfaemfk961mcllghi3nh8ja5dgde5oo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session5ufeib8pmrap2bmt1krsbt6o7a3j2srh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session6jj76v0l829lu1qivtm5dvodfv1jkh95" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session6lcebko3fgp2cn85et889l6eias7d1t9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session6sgub6lv6euiffomm88da31uch90qtl9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session6uq20an2jv7d4pauj1u6hvkg9bkvbnk3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session7286mau802of5k7ul08mqj7u1jre4uf3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session78f01ke5o5mag30avhpe93fnvdhratk0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session795791cnmupqhb3ib1ra176ht7ah85of" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_session7g0bm1ehkiaogsa7ulgpaoq35aqqem7e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionar46dnem9mqh5g7jc613k2vs0jntms71" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionb1pku784kcjm6e9hbu7b1a791tt1iv39" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionbi2kfn4p1silp46lm5o3r7i9ub7lbumq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessioncdr845gupvh5q3s2vqgo5aums1b3so55" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionclcbr3rnbllag2jbl0h9qc8ti5gobcsf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiond38p0sl3q1f4b422g3tof5388atkqdf2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiond6aue84qo2jm06hbip9rbki7nl8mol7s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiondl52s9tdq945h4h57jlc9heded4elhtn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiondo9v0fnssq7m2sa0335p925p2fcf7t8h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessione111blnphqu19fs4a8uhhcnncffv05fq" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessioneeivdf7p70jl3uqlcqr9r1b2c4s1222o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionegqk8hbm0ags5livhmc6ka2mehjrg3u1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionep030ntgkm1g731ssi6oqsltusguie9r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionep2ulhvulr16okhjdpkn1ldhdsq6cfdg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionf6q31i0nivc2v47c5mbm9bv13lq5j5j0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionfdv09dskq7nu3968t8sicmkbug1ocb1r" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiongb985hvhjfssogvg3v1i6t3c7gsj9sm3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiongchpdlhaibi338k8103d897t28r7cq23" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiongd6mjnml49te86v58i8tkveggtq9scf7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiongi0hf92k3ec31jli2i53uieh2261f67l" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionhp1514fikj1l3fv1cumh3s8ksmfcposd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessioni6bbk2uhjsb8v4oo0probb07qqh1ir1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionigghoeceivbao95vi82picgarppt7js4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionioggpennab2j800kp24hgjer8igp91ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionj5h0qq6o5nds00n0ii2ap5d2raimer4t" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionj811gv9ij9tp44p3vahuiefte8kr0mlf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionjpjokh0oqkc2ln8uca6f17eubcs4peaf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionm3ma4rj6eppaec8m73ecslibit2e4885" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionmc92t2amh7guegkv2cgvg6jec6o0b5ob" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionme9mmohs226maigtdmg517i0h4rjk5p4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionmj1hdnkncgdek7pp3pvkhcfj5eiedh8c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionn502i8jflamnpja3cm377sg86o519fjt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionnbev1li5vf947ka4qjl1ubf96vnhu8dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiono3ar77kani5e5hljc4enk1se438mkcb9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiono8upkmnuaufb56k60bcfqoemfbomubav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiono99ck72afnempe7st3t8svadcqbi7nq8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionoma6bh63tahn3bffuj1enqsl263ljer3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionpmmnc80anhtramlh8saj22bn5ffflntj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionqpf6ag8khguagfm930n61hnfl6omb9aa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionr0ebbbefsmev49k880icms6ihlna8ii2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionr1g7daqlllv25usgv4qq4er83ss6b3fa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionrrr54iu1rmt8pdrf671tgvtm3cheimpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionrukaj4mse7039p91e2s1ifhn7nmqj8qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessions1cv6faqo04srirk0q0skusr9vj3h47g" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionsbenlkt2ir5l2p5ul2dl9jgu24shon4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessiont7l27kdrqbjvhicrpgn2fcpkhqav8nck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionumdkaufe0blo386irpkgrt9bkbvjldu7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionv0aigo8ln1jubq12bst0r4jlv45t37j3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev/system/ci_sessionvoa173q4tr74gsshfb60hdalfado0nc5" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,46 +138,73 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/config/form_validation.php">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Email.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43318">
-              <caret line="1969" column="26" selection-start-line="1969" selection-start-column="26" selection-end-line="1969" selection-end-column="26" />
+            <state relative-caret-position="902">
+              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/StudentApplicationForms/application-form7.php">
+        <entry file="file://$PROJECT_DIR$/onlinetest/constants.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="682">
-              <caret line="31" column="107" selection-start-line="31" selection-start-column="107" selection-end-line="31" selection-end-column="136" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2332">
-              <caret line="106" column="93" selection-start-line="106" selection-start-column="93" selection-end-line="106" selection-end-column="93" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editRole.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="72" selection-start-line="72" selection-end-line="72" />
+            <state relative-caret-position="3432">
+              <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Email.php">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/Registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3484">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+            <state relative-caret-position="613">
+              <caret line="168" column="17" lean-forward="true" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/controllers/AlumniForms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1496">
+              <caret line="68" column="44" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/system/libraries/Email.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15488">
+              <caret line="704" column="5" selection-start-line="704" selection-start-column="5" selection-end-line="704" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dev/system/libraries/Form_validation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1056">
+              <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -183,9 +325,8 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1056" />
+    <option name="width" value="1931" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -215,14 +356,20 @@
               <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
               <item name="dev" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
               <item name="dev" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ictm-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ictm-web" type="462c0819:PsiDirectoryNode" />
+              <item name="dev" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+              <item name="libraries" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -232,10 +379,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="js.eslint.eslintPackage" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TravelArchitect" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
@@ -314,17 +462,23 @@
       <workItem from="1575609892044" duration="17313000" />
       <workItem from="1575874604494" duration="3006000" />
       <workItem from="1581966645600" duration="187000" />
-      <workItem from="1583256561588" duration="1072000" />
+      <workItem from="1583256561588" duration="1336000" />
+      <workItem from="1583257919922" duration="2777000" />
+      <workItem from="1583338409395" duration="1234000" />
+      <workItem from="1583356119998" duration="620000" />
+      <workItem from="1583431677559" duration="615000" />
+      <workItem from="1583520833273" duration="653000" />
+      <workItem from="1583608191289" duration="652000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="439830000" />
+    <option name="totallyTimeSpent" value="446645000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
+    <frame x="-8" y="0" width="1931" height="1047" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18589744" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19882415" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -337,7 +491,7 @@
       <window_info anchor="bottom" id="NativeScript" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" visible="true" weight="0.032502707" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" visible="true" weight="0.032822758" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -350,48 +504,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Faculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="269" column="29" lean-forward="true" selection-start-line="269" selection-start-column="29" selection-end-line="269" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/form_validation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="131" selection-start-line="131" selection-end-line="155" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/AlumniForms.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="68" column="44" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/manageFaculty.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3074">
-          <caret line="174" column="29" lean-forward="true" selection-start-line="174" selection-start-column="29" selection-end-line="174" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/controllers/Admin/Event.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="144" column="9" lean-forward="true" selection-start-line="144" selection-start-column="9" selection-end-line="144" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editEvent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2673" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/config/constants.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="316">
@@ -412,13 +524,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
           <caret line="124" column="46" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -711,6 +816,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editRole.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1584">
+          <caret line="72" selection-start-line="72" selection-end-line="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="902">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/onlinetest/constants.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3432">
+          <caret line="156" column="8" selection-start-line="156" selection-start-column="8" selection-end-line="156" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/AlumniForms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="68" column="44" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/application/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/system/libraries/Email.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15488">
+          <caret line="704" column="5" selection-start-line="704" selection-start-column="5" selection-end-line="704" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dev/system/libraries/Form_validation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/assignUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1166">
@@ -725,17 +886,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dev/AdminPanel/application/views/Admin/editRole.php">
+    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Registration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dev/application/controllers/Email.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3484">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="613">
+          <caret line="168" column="17" lean-forward="true" selection-start-line="168" selection-start-column="17" selection-end-line="168" selection-end-column="17" />
         </state>
       </provider>
     </entry>
