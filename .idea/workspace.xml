@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b797102-6b7f-44e7-8b55-1759744c9c17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/config/constants.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/config/constants.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +45,7 @@
       <workItem from="1583237310948" duration="622000" />
       <workItem from="1583304371723" duration="5342000" />
       <workItem from="1583487987196" duration="1201000" />
-      <workItem from="1584167164790" duration="4222000" />
+      <workItem from="1584167164790" duration="19798000" />
     </task>
     <servers />
   </component>
@@ -63,5 +61,9 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2588" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583304417457" />
+    <state x="2587" y="276" width="586" height="488" key="find.popup" timestamp="1584342773885">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2587" y="276" width="586" height="488" key="find.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1584342773885" />
   </component>
 </project>

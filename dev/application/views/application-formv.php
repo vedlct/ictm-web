@@ -40,9 +40,10 @@
             <div class="col-md-9">
                 <?php foreach ($candidateInfos as $candidateInfo){ ?>
 
-                <form role="form"  action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post" class="form-horizontal" onsubmit=" return checkvalidation()">
+<!--                <form   action="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm1" method="post" class="form-horizontal" onsubmit=" return checkvalidation()">-->
+					<form role="form" action="<?php echo base_url()?>ApplyOnline/editApplicationForm1" method="post"  onsubmit=" return checkvalidation()" class="form-horizontal">
 
-                    <!--                        		<fieldset>-->
+					<!--                        		<fieldset>-->
                     <div class="form-top">
                         <div class="form-top-left">
                             <h3>Personal Details</h3>
@@ -712,7 +713,7 @@
                             <label class="control-label col-md-3">Year:<span style="color: red" class="required">*</span></label>
                             <div class="col-md-9">
                                 <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" required value="<?php echo $candidateInfo->courseYear ?>">
+<!--                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" required value="--><?php //echo $candidateInfo->courseYear ?><!--">-->
                                 <?php
                                 $currently_selected = $candidateInfo->courseYear;
                                 $earliest_year = date('Y');
@@ -816,8 +817,7 @@
 </body>
 
 </html>
-<script type='text/javascript'
-        src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+<!--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>-->
 <script type="text/javascript">
     $(function () {
         $('.datetimepicker').datetimepicker({
@@ -846,7 +846,7 @@
     }
 </script>
 
-<script>
+	<script>
 
 
     function courseAwardBody() {
@@ -884,9 +884,20 @@
 //        }
 //
 //    }
+		</script>
+		<script>
     function checkvalidation() {
 
         var mobile = document.getElementById('mobile').value;
+        var email = document.getElementById('email').value;
+        var EmergencyContactEmail = document.getElementById('EmergencyContactEmail').value;
+        alert(mobile);
+        alert(email);
+        alert(EmergencyContactEmail);
+        if (email==EmergencyContactEmail){
+			alert('Personal Email and Emergency Email cannot be same');
+			return false; // keep form from submitting
+		}
         if (mobile.length < 11 || mobile.length> 20) {
             alert('Please Enter at least 11 digit Current Mobile number');
             return false; // keep form from submitting
@@ -897,7 +908,10 @@
             return false; // keep form from submitting
         }
 
-
+		if (mobile==value){
+			alert('Personal Mobile and Emergency Mobile cannot be same');
+			return false; // keep form from submitting
+		}
 
         var startyear = $('#dobyear').val();
         var startmonth = parseInt(document.getElementById('dobmonth').value)+1;
@@ -980,6 +994,15 @@
             alert("Emergency Email Address is in invalid format!");
             return false;
         }
+
+
+
+		// var email = document.getElementById('email').value;
+		// var phone = document.getElementById('mobile').value;;
+		// var emergencyEmail= document.getElementById('EmergencyContactEmail').value; ;
+		// var emergencyPhone = document.getElementById('EmergencyContactMobile').value;;
+
+
 //        var emtype="EmergencyContactEmail";
 //        if(validatedate4(emtype)=="true"){
 //            return true;
@@ -1008,7 +1031,7 @@
 
 
     }
-    }
+
 
     // function ValidateEmail(){
     //     var email=document.getElementById("email").value;
@@ -1154,12 +1177,7 @@
                 }
             }
 
-		var email = document.getElementById('email').value;
-		var phone = document.getElementById('email').value;;
-		var emergencyEmail= document.getElementById('email').value; ;
-		var emergencyPhone = document.getElementById('email').value;;
-		var ReferenceEmail = document.getElementById('email').value;;
-		var ReferenceEmail = document.getElementById('email').value;;
+
         }
 
     function validatedate1(dd , mm , yy, passporttype)
