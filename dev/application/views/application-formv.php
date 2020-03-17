@@ -1153,6 +1153,13 @@
 
                 }
             }
+
+		var email = document.getElementById('email').value;
+		var phone = document.getElementById('email').value;;
+		var emergencyEmail= document.getElementById('email').value; ;
+		var emergencyPhone = document.getElementById('email').value;;
+		var ReferenceEmail = document.getElementById('email').value;;
+		var ReferenceEmail = document.getElementById('email').value;;
         }
 
     function validatedate1(dd , mm , yy, passporttype)
