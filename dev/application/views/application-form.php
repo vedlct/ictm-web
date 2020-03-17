@@ -889,14 +889,25 @@
             function checkvalidation() {
 
                 var mobile = document.getElementById('mobile').value;
+                var email = document.getElementById('email').value;
+                var EmergencyContactEmail = document.getElementById('EmergencyContactEmail').value;
+
+                if (email==EmergencyContactEmail){
+                    alert('Personal Email and Emergency Email cannot be same');
+                    return false; // keep form from submitting
+                }
                 if (mobile.length < 11 || mobile.length> 20) {
                     alert('Please Enter at least 11 digit Current Mobile number');
                     return false; // keep form from submitting
                 }
-
                 var value = document.getElementById('EmergencyContactMobile').value;
-                if (value.length < 11 || value.length > 20) {
+                if (value.length < 11 || value.length> 20) {
                     alert('Please Enter at least 11 digit Emergency Telephone/Mobile number');
+                    return false; // keep form from submitting
+                }
+
+                if (mobile==value){
+                    alert('Personal Mobile and Emergency Mobile cannot be same');
                     return false; // keep form from submitting
                 }
 

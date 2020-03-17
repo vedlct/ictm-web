@@ -4186,6 +4186,17 @@ class ApplyOnline extends CI_Controller
 		}
 	}
 
+	public function workexpr(){
+        $applicationId = $this->session->userdata('studentApplicationId');
+        $data2 = array(
+            'workexp' => 'no',
+
+        );
+
+        $this->db->where('applicationId',$applicationId);
+        $error = $this->db->update('candidateinfo', $data2);
+    }
+
 	public function menu() // get all the menu + footer
 	{
 		$this->data['affiliation'] = $this->Menum->getAffiliations();
