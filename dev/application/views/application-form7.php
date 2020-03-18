@@ -65,6 +65,17 @@
                             </div>
                         </div>
 
+                        <div class="form-group">
+                            <label class="control-label col-md-2">File Type</label>
+                            <div class="col-md-8">
+                                <select class="form-control" name="doc_type">
+                                <option>Select File type</option>
+                               <?php for ($i=0; $i<count(doc_type);$i++){?>
+                                <option value="<?php echo doc_type[$i]?>"><?php echo doc_type[$i]?></option>
+                                    <?php }?>
+                                </select>
+                            </div>
+                        </div>
 
                         <div class="form-group">
                             <label class="control-label col-md-2">Upload file:</label>
@@ -113,15 +124,21 @@
                                 <tr>
 <!--                                    <th>SL</th>-->
                                     <th>File Name</th>
+                                    <th>File Type</th>
+                                    <th>Image</th>
                                     <th>Description</th>
                                     <th>Action</th>
 
                                 </tr>
                                 <?php foreach ($document as $document){?>
                                     <tr>
-
+                                        <?php $applicationId = $this->session->userdata('studentApplicationId');
+                                               $imagename =  $document->filename;
+                                        ?>
 <!--                                        <td></td>-->
                                         <td><?php echo $document->filename?></td>
+                                        <td><?php echo $document->doc_type?></td>
+                                        <td> <img  width="150px" height="150px" src="<?php echo base_url('AdminPanel/studentApplications/'.$applicationId.'/image/'.$imagename)?>"></td>
                                         <td><?php echo $document->description ?></td>
                                         <td>
                                             <a style="cursor: pointer" data-panel-id="<?php echo $document->id  ?>" onclick="selectidForDelete(this)"><i class="fa fa-trash"></i></a>

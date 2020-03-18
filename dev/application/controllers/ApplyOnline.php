@@ -3155,11 +3155,14 @@ class ApplyOnline extends CI_Controller
 						$_FILES['fileUpload']['error'] = $files['fileUpload']['error'][$i];
 						$_FILES['fileUpload']['size'] = $files['fileUpload']['size'][$i];
 
-//
+
+
+
 						$this->load->library('upload');
 
 						$applicationId = $this->session->userdata('studentApplicationId');
-						$dir =   "./AdminPanel/studentApplications/$applicationId/";
+                        $doc_type = $this->input->post('doc_type');
+						$dir =   './AdminPanel/studentApplications/'.$applicationId.'/'.$doc_type.'/';
 
 						$fcount = 0;
 						$files = glob($dir . "*");
@@ -3171,7 +3174,7 @@ class ApplyOnline extends CI_Controller
 							redirect('ApplyForm7');
 						}
 
-						$this->upload->initialize($this->set_upload_options($applicationId));
+						$this->upload->initialize($this->set_upload_options($applicationId.'/'.$doc_type));
 
 						if (!$this->upload->do_upload('fileUpload')) {
 							$error[$i] = $this->upload->display_errors();
@@ -3865,6 +3868,8 @@ class ApplyOnline extends CI_Controller
 			$this->data['coursedata'] = $this->Coursem->getCourseTitle();
 			$applicationId = $this->session->userdata('studentApplicationId');
 			$this->data['experience'] = $this->ApplyOnlinem->getExprerience($applicationId);
+			$this->data['workexp'] = $this->ApplyOnlinem->getWorkExpYesorNo($applicationId);
+
 			if (empty($this->data['experience'])) {
 				$this->load->view('application-form10', $this->data);
 			} else {
@@ -4186,10 +4191,11 @@ class ApplyOnline extends CI_Controller
 		}
 	}
 
-	public function workexpr(){
+	public function workexpr($workexp){
         $applicationId = $this->session->userdata('studentApplicationId');
+		//workexp = $this->input->post('workexp');
         $data2 = array(
-            'workexp' => 'no',
+            'workexp' => $workexp,
 
         );
 

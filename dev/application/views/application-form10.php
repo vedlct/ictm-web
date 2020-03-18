@@ -52,9 +52,10 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
                                     <label class="control-label col-md-3">Do you have any work Experience</label>
+
                                     <div class="col-md-6" style="margin-top: 20px">
-                                        <input  type="radio" class=""  name="workexp" value="yes" onclick="workexpfunc()"> yes
-                                        <input  type="radio" class=""    name="workexp" value="no" onclick="workexpfunc()"> No
+                                        <input  type="radio" class= ""  name="workexp" value="yes" <?php if($workexp->workexp=='yes'){ echo "checked=checked";} ?> onclick="workexpfunc()"> yes
+                                        <input  type="radio" class= ""  name="workexp" value="no" <?php if($workexp->workexp=='no'){ echo "checked=checked";}?> onclick="workexpfunc()"> No
                                     </div>
 
                                 </div>
@@ -572,12 +573,21 @@ elseif($this->session->flashdata('successMessage')!=null){?>
     function workexpfunc() {
        var x =  $('input[name="workexp"]:checked').val();
        if(x=='yes'){
-           document.getElementById('fullwork').style.display = 'block'
+           document.getElementById('fullwork').style.display = 'block';
+		   $.ajax({
+			   type:'POST',
+			   url:'<?php echo base_url("ApplyOnline/workexpr/")?>'+x,
+			   data:{},
+			   cache: false,
+			   success:function(data) {
+				  // location.reload();
+			   }
+		   });
        }else {
-           document.getElementById('fullwork').style.display = 'none'
+           document.getElementById('fullwork').style.display = 'none';
            $.ajax({
                type:'POST',
-               url:'<?php echo base_url("ApplyOnline/workexpr")?>',
+               url:'<?php echo base_url("ApplyOnline/workexpr/")?>'+x,
                data:{},
                cache: false,
                success:function(data) {
