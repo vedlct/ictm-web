@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8f47143-c6ea-46b5-9296-879bd83b1c6d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionb3gk9so7ag4uuhpiebd8sr8ff6qj7b0u" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionh4c61eokcljosvrl9sclnqtpjsdnfv0t" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dev/system/ci_sessionpkctrhtt1e5erkblsaf5gil6kv1us67u" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form10.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form10.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-formv.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-formv.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +31,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
+            <state relative-caret-position="224">
               <caret line="579" column="61" selection-start-line="579" selection-start-column="53" selection-end-line="579" selection-end-column="61" />
             </state>
           </provider>
@@ -206,18 +199,17 @@
       <option name="presentableId" value="Default" />
       <updated>1584459221692</updated>
       <workItem from="1584459226001" duration="4890000" />
-      <workItem from="1584473259115" duration="2825000" />
+      <workItem from="1584473259115" duration="3716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7715000" />
+    <option name="totallyTimeSpent" value="8606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -230,7 +222,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -303,7 +295,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dev/application/views/application-form10.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
+        <state relative-caret-position="224">
           <caret line="579" column="61" selection-start-line="579" selection-start-column="53" selection-end-line="579" selection-end-column="61" />
         </state>
       </provider>
