@@ -1279,4 +1279,19 @@ class ApplyOnlinem extends CI_Model
 
 
     }
+
+    public function getWorkExpYesorNo($applicationId){
+
+		$this->db->select('workexp');
+		$this->db->where('applicationId',$applicationId);
+		$this->db->from('candidateinfo');
+		$query=$this->db->get();
+		if($query == 1) {
+			$results = $query->row();
+			return  $results;
+		}
+		else{
+			return false;
+		}
+	}
 }
