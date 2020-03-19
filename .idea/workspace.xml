@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c8f47143-c6ea-46b5-9296-879bd83b1c6d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/config/form_validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/config/form_validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/controllers/ApplyOnline.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/models/ApplyOnlinem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dev/application/views/application-form10.php" beforeDir="false" afterPath="$PROJECT_DIR$/dev/application/views/application-form10.php" afterDir="false" />
-    </list>
+    <list default="true" id="c8f47143-c6ea-46b5-9296-879bd83b1c6d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
