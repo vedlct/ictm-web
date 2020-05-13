@@ -1237,6 +1237,7 @@ class ApplyOnlinem extends CI_Model
     public function insertAllDocument($filename)
     {
 		$title = $this->input->post('description');
+		$doc_type = $this->input->post('doc_type');
 //        $filename='filename';
 
 
@@ -1248,6 +1249,7 @@ class ApplyOnlinem extends CI_Model
 			$data = array(
 				'fkApplicationId' => $this->session->userdata('studentApplicationId'),
 				'description' => $title[$i],
+				'doc_type' => $doc_type,
 				'filename' => $filename,
 			);
 
@@ -1263,7 +1265,7 @@ class ApplyOnlinem extends CI_Model
 
     public function getDocument($applicationId){
 
-        $this->db->select('id,description,filename');
+        $this->db->select('id,description,filename, doc_type');
         $this->db->limit(9);
         $this->db->where('fkApplicationId',$applicationId);
         $this->db->from('filedocument');

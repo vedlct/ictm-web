@@ -188,3 +188,8 @@ define("Logout",array ("Logout","Sigout"));
 
 /////////////Date//////////////////////////////
 define ("Year",array ("Seminar", "Training", "Festival"));
+
+/////////doctype//////////
+
+define("doc_type",array ("Image","Academic certificates and transcripts","Work reference letter","Passport and Visa","Proof of address","Proof of 5 Years Residency"));
+
