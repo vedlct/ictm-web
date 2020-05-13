@@ -33,6 +33,17 @@ class StudentApplication extends CI_Controller
             redirect('Admin/Login');
         }
     }
+	/*---------for Manage Online Applicants -----------------------*/
+	public function onlineApplicant() // for manage Application view
+	{
+		if ($this->session->userdata('type') == USER_TYPE[0])
+		{
+			$this->load->view('Admin/manageApplicants');
+		}
+		else{
+			redirect('Admin/Login');
+		}
+	}
     /*---------datatable code --------------------- */
     public function ajax_list()
     {
@@ -101,6 +112,11 @@ class StudentApplication extends CI_Controller
             else{
                 $row[] = 'Hospitality Management';
             }
+			if ($alamni->applydate==""){
+				$row[] = '';
+			}else{
+				$row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($alamni->applydate)),1);
+			}
 //            $row[] = $alamni->courseComplete;
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewAlumniApplication/'.$alamni->personId.'"><i class="icon_pencil-edit"></i></a>
             <a class="btn" href="'. base_url().'Admin/StudentApplication/deleteAlumni/'.$alamni->personId.'"><i class="icon_trash"></i></a>';
@@ -119,7 +135,37 @@ class StudentApplication extends CI_Controller
         echo json_encode($output);
     }
     ////end
+//Applicant List
+	public function applicant_list()
+	{
+		$list = $this->StudentApplicationm->get_applicantdatatables();
+		$data = array();
+        $no = $_POST['start'];
+		foreach ($list as $applicant) {
+            $no++;
+			$row = array();
+            $row[] = $no;
+			$row[] = $applicant->firstName;
+			$row[] = $applicant->surName;
+			$row[] = $applicant->email;
+			$row[] = $applicant->type;
+//            $row[] = $alamni->courseComplete;
+//			$html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewAlumniApplication/'.$alamni->personId.'"><i class="icon_pencil-edit"></i></a>
+//            <a class="btn" href="'. base_url().'Admin/StudentApplication/deleteAlumni/'.$alamni->personId.'"><i class="icon_trash"></i></a>';
 
+
+//			$row[] = $html;
+			$data[] = $row;
+		}
+		$output = array(
+			"draw" => $_POST['draw'],
+			"recordsTotal" => $this->StudentApplicationm->applicant_count_all(),
+			"recordsFiltered" => $this->StudentApplicationm->applicant_count_filtered(),
+			"data" => $data,
+		);
+		//output to json format
+		echo json_encode($output);
+	}
     public function showApplicationPdf($applicationId) // for selected Application view
     {
         if ($this->session->userdata('type') == USER_TYPE[0])

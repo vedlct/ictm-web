@@ -118,6 +118,10 @@ define("PAGE_TYPE", array ("About Type","Health Type","Terms Type", "Static Type
 ////////// For Course ///////////////////////
 
 //define("SELECT_PAGE_TYPE", "Select Page Type");
+define("ALL_ALUMNICOURSE_TITLE", "ALL AlumniCourses");
+define("ALUMNICOURSE_TITLE", array ("B","C","H","T","M"));
+define("ALUMNICOURSE_TITLENAME", array ("Business","Computing","Health and Social Care","Travel Tourism","Hospitality Management"));
+//define("SELECT_PAGE_TYPE", "Select Page Type");
 define("ALL_COURSE_TITLE", "ALL Courses");
 define("COURSE_TITLE", array ("HND in Computing","HND in Business","HND in HealthCare Practice (Integrated Health and Social Care)", "HND in Engineering (Electrical and Electronic Engineering", "HND in International Travel and Tourism Management","HND in Hospitality Mangement"));
 /////////user type////////////

@@ -152,8 +152,8 @@ class Menu extends CI_Controller {
 //            $page = ($this->uri->segment(4)) ? $this->uri->segment(4) : 0;
 //            $this->data["menu"] = $this->Menum->getAllforManageMenu($config["per_page"], $page);
 //            $this->data["links"] = $this->pagination->create_links();
-
-                $this->load->view('Admin/manageMenu1');
+			$this->data['menuname'] = $this->Menum->getMenuIdName();
+                $this->load->view('Admin/manageMenu1',$this->data);
 
 
         }
@@ -382,4 +382,17 @@ class Menu extends CI_Controller {
 
     }
     /*------------ for callback menuTitle_check ----- end -------*/
+
+	//Check Exit Order Number
+	public function check_order()
+	{
+		$orderNumber = $this->input->post('orderNumber');
+		$result = $this->db->where('orderNumber',$orderNumber)->get('ictmmenu')->row();
+		if(empty($result)){
+			echo $orderNumber;
+		}else
+		{
+			echo "This Order Number Already Exists";
+		}
+	}
 }

@@ -12,9 +12,9 @@ class PageSection extends CI_Controller {
 
     }
 
-    public function ajax_list($id)
+    public function ajax_list()
     {
-        $list = $this->PageSectionm->get_datatables($id);
+        $list = $this->PageSectionm->get_datatables();
         $data = array();
         $no = $_POST['start'];
         foreach ($list as $pageSections) {
@@ -46,8 +46,8 @@ class PageSection extends CI_Controller {
 
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->PageSectionm->count_all($id),
-            "recordsFiltered" => $this->PageSectionm->count_filtered($id),
+            "recordsTotal" => $this->PageSectionm->count_all(),
+            "recordsFiltered" => $this->PageSectionm->count_filtered(),
             "data" => $data,
         );
         //output to json format
@@ -110,8 +110,8 @@ class PageSection extends CI_Controller {
     {
 
         if ($this->session->userdata('type') == USER_TYPE[0]) {
-
-            $this->data['pagename'] = $this->Pagem->getPageIdName();
+			$this->data['menuname'] = $this->PageSectionm->getMenuIdName();
+            $this->data['pagename'] = $this->PageSectionm->getPageIdName();
             $this->load->view('Admin/managePageSection', $this->data);
 
         } else{

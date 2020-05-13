@@ -4,18 +4,31 @@ class PageSectionm extends CI_Model
 
     /////////datatable//////////
     var $table = 'ictmpagesection';
-    var $select = array('pageSectionId','pageId','orderNumber','pageSectionTitle','pageSectionStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //specify the columns you want to fetch from table
+    var $select = array('ictmpage.pageTitle','ictmpage.pageType','ictmpagesection.pageSectionId','ictmpagesection.pageId','ictmpagesection.orderNumber','ictmpagesection.pageSectionTitle','ictmpagesection.pageSectionStatus','ictmpagesection.insertedBy','ictmpagesection.lastModifiedBy','ictmpagesection.lastModifiedDate'); //specify the columns you want to fetch from table
 //    var $column_order = array(null,'pageSectionTitle','orderNumber'); //set column field database for datatable orderable
     var $column_order = array(null,'pageSectionTitle','orderNumber','pageSectionStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
     var $column_search = array('pageSectionTitle'); //set column field database for datatable searchable
     var $order = array('pageSectionId' => 'desc'); // default order
 
-    private function _get_datatables_query($id)
+    private function _get_datatables_query()
     {
+		if($this->input->post('pageType1'))
+		{
+			$this->db->where('pageType', $this->input->post('pageType1'));
+		}
 
+		elseif ($this->input->post('parentId'))
+		{
+			$this->db->where('ictmmenu.parentId',$this->input->post('parentId'));
+		}
+		elseif ($this->input->post('pageTitle'))
+		{
+			$this->db->where('ictmpage.pageTitle',$this->input->post('pageTitle'));
+		}
         $this->db->select($this->select);
         $this->db->from($this->table);
-        $this->db->where('pageId', $id);
+		$this->db->join('ictmpage', 'ictmpage.pageId = ictmpagesection.pageId','left');
+		$this->db->join('ictmmenu', 'ictmmenu.pageId = ictmpagesection.pageId','left');
 
         $i = 0;
 
@@ -51,29 +64,29 @@ class PageSectionm extends CI_Model
         }
     }
 
-    function get_datatables($id)
-    {
-        $this->_get_datatables_query($id);
-        if($_POST['length'] != -1)
-            $this->db->limit($_POST['length'], $_POST['start']);
+	function get_datatables()
+	{
+		$this->_get_datatables_query();
 
-        $query = $this->db->get();
-        return $query->result();
-    }
+		if($_POST['length'] != -1)
+			$this->db->limit($_POST['length'], $_POST['start']);
+		$query = $this->db->get();
+		return $query->result();
+	}
 
-    function count_filtered($id)
-    {
-        $this->_get_datatables_query($id);
-        $query = $this->db->get();
-        return $query->num_rows();
-    }
+	function count_filtered()
+	{
+		$this->_get_datatables_query();
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
 
-    public function count_all($id)
-    {
-        $this->db->from($this->table);
-        $this->db->where('pageId', $id);
-        return $this->db->count_all_results();
-    }
+	public function count_all()
+	{
+		$this->db->from($this->table);
+		return $this->db->count_all_results();
+	}
+
     ///////////////////end of datatable/////////////////////////////
 
     //this will insert page section data
@@ -190,4 +203,27 @@ class PageSectionm extends CI_Model
         $query1 = $this->db->get('ictmpagesection');
         return $query1->result();
     }
+
+	/*---Parent Menu---*/
+	public function getMenuIdName()
+	{
+
+		$this->db->select('menuId, menuName');
+		$this->db->where('parentId =', null);
+		$this->db->where('pageId =', null);
+		$this->db->group_by('menuName');
+		$query = $this->db->get('ictmmenu');
+		return $query->result();
+	}
+	//this will return pageID and pageTitle
+	public function getPageIdName()
+	{
+
+		$this->db->select('pageId,pageTitle');
+		$this->db->where('pageType !=',PAGE_TYPE[3]);
+		$this->db->where('pageType !=',PAGE_TYPE[4]);
+		$this->db->group_by('pageTitle');
+		$query = $this->db->get('ictmpage');
+		return $query->result();
+	}
 }

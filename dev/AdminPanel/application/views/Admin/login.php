@@ -24,11 +24,12 @@
             </div>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
             </label>
             <button class="btn btn-primary btn-lg btn-block" type="submit" value="Login">Login</button>
-            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
-        </div>
+			<label class="checkbox">
+			<span class="pull-right"> <a href="#">If you forget your passoword, please contact System Administrator.</a></span>
+			</label>
+		</div>
       </form>
 
     </div>

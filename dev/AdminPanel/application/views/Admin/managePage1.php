@@ -43,7 +43,7 @@
                         <div id="panel" class="panel-body">
 
 
-                            <div align="center" class="col-md-8 col-sm-8">
+                            <div align="center" class="col-md-6 col-sm-6" style="margin-left: -5%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                     <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Page Title:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
@@ -56,6 +56,21 @@
                                     </div>
                                 </div>
                             </div>
+							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -7%;">
+								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Parent Menu:</label>
+									<div class="m-bot15 col-md-5 col-sm-5">
+										<select class="form-control" name="parentId" id="parentId" required>
+											<option value="" selected>Select Parent Menu</option>
+											<?php foreach ($menuname as $mn) { ?>
+												<option value="<?php echo $mn->menuId?>"><?php echo $mn->menuName?></option>
+												<?php
+											}
+											?>
+										</select>
+									</div>
+								</div>
+							</div>
 
 
                             <div class="table table-responsive" style="overflow-x: inherit">
@@ -130,6 +145,7 @@
                 "type": "POST",
                 "data": function ( data ) {
                     data.pageType1 = $('#pageType').val();
+                    data.parentId = $('#parentId').val();
 
                 }
             },
@@ -155,6 +171,11 @@
         $('#pageType').change(function(){ //button filter event click
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter
+        });
+        $('#parentId').change(function(){ //button filter event click
+            table.search("").draw(); //just redraw myTableFilter
+            table.ajax.reload();  //just reload table
+
         });
 
     });
