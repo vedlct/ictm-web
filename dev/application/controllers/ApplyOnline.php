@@ -1018,6 +1018,9 @@ class ApplyOnline extends CI_Controller
 			$this->data['coursedata'] = $this->Coursem->getCourseTitle();
 			$applicationId = $this->session->userdata('studentApplicationId');
 			$this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
+			$this->data['qualificationList'] = $this->ApplyOnlinem->getQualificationsList();
+			$this->data['qualificationSubject'] = $this->ApplyOnlinem->getQualificationsSubject();
+			$this->data['qualificationGrade'] = $this->ApplyOnlinem->getQualificationsGrade();
 			if (empty($this->data['qualification'])) {
 				$this->load->view('application-form2', $this->data);
 			} else {
@@ -1927,6 +1930,9 @@ class ApplyOnline extends CI_Controller
 
 				$applicationId = $this->session->userdata('studentApplicationId');
 				$this->data['qualification'] = $this->ApplyOnlinem->getQualifications($applicationId);
+				$this->data['qualificationList'] = $this->ApplyOnlinem->getQualificationsList();
+				$this->data['qualificationSubject'] = $this->ApplyOnlinem->getQualificationsSubject();
+				$this->data['qualificationGrade'] = $this->ApplyOnlinem->getQualificationsGrade();
 				if (empty($this->data['qualification'])) {
 					$this->load->view('application-form2', $this->data);
 				} else {
@@ -1938,24 +1944,24 @@ class ApplyOnline extends CI_Controller
 
 				$qualificationId = $this->input->post("qualificationId");
 				$qualification = $this->input->post("qualification");
-				$institution = $this->input->post("institution");
+			//	$institution = $this->input->post("institution");
 //            $startdate = $this->input->post("startdate");
 //            $enddate = $this->input->post("enddate");
 				$grade = $this->input->post("grade");
 
 				$qualificationLevel = $this->input->post("qualificationLevel");
-				$awardingBody = $this->input->post("awardingBody");
+			//	$awardingBody = $this->input->post("awardingBody");
 				$subject = $this->input->post("subject");
 				$completionYear = $this->input->post("completionYear");
 
 				$data = array(
 					'qualification' => $qualification,
-					'institution' => $institution,
+				//	'institution' => $institution,
 //                'startdate' => $startdate,
 //                'enddate' => $enddate,
 					'obtainResult' => $grade,
 					'qualificationLevel' => $qualificationLevel,
-					'awardingBody' => $awardingBody,
+				//	'awardingBody' => $awardingBody,
 					'subject' => $subject,
 					'completionYear' => $completionYear,
 				);
@@ -2007,25 +2013,25 @@ class ApplyOnline extends CI_Controller
 
 				$qualificationId = $this->input->post("qualificationId");
 				$qualification = $this->input->post("qualification");
-				$institution = $this->input->post("institution");
+			//	$institution = $this->input->post("institution");
 //            $startdate = $this->input->post("startdate");
 //            $enddate = $this->input->post("enddate");
 				$grade = $this->input->post("grade");
 
 				$qualificationLevel = $this->input->post("qualificationLevel");
-				$awardingBody = $this->input->post("awardingBody");
+			//	$awardingBody = $this->input->post("awardingBody");
 				$subject = $this->input->post("subject");
 				$completionYear = $this->input->post("completionYear");
 
 				$data = array(
 					'qualification' => $qualification,
-					'institution' => $institution,
+				//	'institution' => $institution,
 //                'startdate' => $startdate,
 //                'enddate' => $enddate,
 					'obtainResult' => $grade,
 
 					'qualificationLevel' => $qualificationLevel,
-					'awardingBody' => $awardingBody,
+				//	'awardingBody' => $awardingBody,
 					'subject' => $subject,
 					'completionYear' => $completionYear,
 
@@ -2593,6 +2599,16 @@ class ApplyOnline extends CI_Controller
 		if ($this->session->userdata('loggedin') == "true") {
 
 			$this->menu();
+//			$a = (unserialize (agentList));
+//			if (array_key_exists("SKTH1534",$a))
+//			{
+//				echo "Key exists!";
+//			}
+//			else
+//			{
+//				echo "Key does not exist!";
+//			}
+//			return ;
 			$this->data['coursedata'] = $this->Coursem->getCourseTitle();
 
 			$applicationId=$this->session->userdata('studentApplicationId');
@@ -2616,6 +2632,18 @@ class ApplyOnline extends CI_Controller
                     </script>";
 		}
 
+	}
+
+	public function getAgentName($agentcode){
+					$a = (unserialize (agentList));
+			if (array_key_exists($agentcode,$a))
+			{
+				echo $a[$agentcode];
+			}
+			else
+			{
+				echo "Agent Name not Found";
+			}
 	}
 
 	public function updateAapplyNow5()
@@ -4202,6 +4230,19 @@ class ApplyOnline extends CI_Controller
         $this->db->where('applicationId',$applicationId);
         $error = $this->db->update('candidateinfo', $data2);
     }
+
+    public function checkPersonalEmail(){
+		$applicationId = $this->session->userdata('studentApplicationId');
+		$data = $this->ApplyOnlinem->getPersonalEmail($applicationId);
+		echo json_encode($data); ;
+	}
+
+	public function checkPersonalPhone($phone){
+		$applicationId = $this->session->userdata('studentApplicationId');
+		$data = $this->ApplyOnlinem->getPersonalPhone($applicationId);
+
+		 echo json_encode($data);
+	}
 
 	public function menu() // get all the menu + footer
 	{
