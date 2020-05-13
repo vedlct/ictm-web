@@ -39,7 +39,6 @@ class Login extends CI_Controller {
                     redirect('Admin/Home');
                 }else {
 
-
                 }
             }
             else

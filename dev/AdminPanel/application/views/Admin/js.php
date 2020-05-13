@@ -1,6 +1,7 @@
 <!-- javascripts -->
 
  <script src="<?php echo base_url()?>public/js/jquery-1.12.4.js"></script>
+
 <!--<script-->
 <!--        src="https://code.jquery.com/jquery-1.12.4.min.js"-->
 <!--        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="-->

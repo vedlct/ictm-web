@@ -52,6 +52,7 @@ class AlumniFormsm extends CI_Model
             'startCourse'=>$startCourse,
             'receiveInfo'=>$receiveInfo,
             'dateOfBirth'=>$dateOfBirth,
+			'applydate'=> date('Y-m-d H:i:s'),
         );
 
         $data1=$this->security->xss_clean($data);

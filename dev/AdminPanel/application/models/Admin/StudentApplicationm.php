@@ -1,19 +1,26 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class StudentApplicationm extends CI_Model
 {
+	/////////applicant datatable//////////
+	var $applicanttable = 'candidateinfo';
+	var $applicantselect =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','ictmcourse.courseTitle','studentregistration.type','studentapplicationform.isSubmited');
+	var $applicantcolumn_order = array(null,null,null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','coursedetails.courseName','candidateinfo.applydate'); //set column field database for datatable orderable
+	var $applicantcolumn_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable searchable
+	var $applicantorder = array('id' => 'desc'); // default order
+
     ////alamni datatable//
     var $alumnitable = 'alumniregistration';
-    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo','courseComplete');
+    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo','courseComplete','applydate');
     var $alumnicolumn_order = array(null,null,null,'studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable orderable
-    var $alumnicolumn_search = array('studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable searchable
-    var $alumniorder = array('personId' => 'desc');
+    var $alumnicolumn_search = array('studentId','title','firstName','lastName','email','mobileNo','courseStartYear','courseComplete'); //set column field database for datatable searchable
+    var $alumniorder = array('applydate' => 'desc');
     ///end
     /////////datatable//////////
     var $table = 'candidateinfo';
     var $select =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','ictmcourse.courseTitle','studentapplicationform.isSubmited');
     var $column_order = array(null,null,null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','coursedetails.courseName','candidateinfo.applydate'); //set column field database for datatable orderable
-    var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate'); //set column field database for datatable searchable
-    var $order = array('id' => 'desc'); // default order
+    var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','ictmcourse.courseTitle','ictmcourse.academicYear'); //set column field database for datatable searchable
+    var $order = array('applydate' => 'desc'); // default order
     private function _get_datatables_query()
     {
         if($this->input->post('courseTitle1'))
@@ -73,9 +80,67 @@ class StudentApplicationm extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    //Applicants
+	private function _get_applicantdatatables_query()
+	{
+		if ($this->input->post('userTitle1'))
+		{
+			$this->db->where('type', $this->input->post('userTitle1'));
+		}
+
+		$this->db->select($this->applicantselect);
+		$this->db->join('studentapplicationform', 'studentapplicationform.id = candidateinfo.applicationId','left');
+		$this->db->join('coursedetails', 'coursedetails.fkApplicationId = candidateinfo.applicationId','left');
+		$this->db->join('ictmcourse', 'ictmcourse.courseId = coursedetails.courseName','left');
+		$this->db->join('studentregistration', 'studentregistration.id = studentapplicationform.studentOrAgentId','left');
+//        $this->db->where('studentapplicationform.isSubmited','1');
+		$this->db->where('studentapplicationform.isSubmited != ',2,FALSE);
+		$this->db->from($this->applicanttable);
+		$i = 0;
+		foreach ($this->applicantcolumn_search as $item) // loop column
+		{
+			if($_POST['search']['value']) // if datatable send POST for search
+			{
+				if($i===0) // first loop
+				{
+					$this->db->group_start(); // open bracket. query Where with OR clause better with bracket. because maybe can combine with other WHERE with AND.
+					$this->db->like($item, $_POST['search']['value']);
+				}
+				else
+				{
+					$this->db->or_like($item, $_POST['search']['value']);
+				}
+				if(count($this->applicantcolumn_search) - 1 == $i) //last loop
+					$this->db->group_end(); //close bracket
+			}
+			$i++;
+		}
+		if(isset($_POST['order'])) // here order processing
+		{
+			$this->db->order_by($this->applicantcolumn_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
+		}
+		else if(isset($this->applicantorder))
+		{
+			$order = $this->applicantorder;
+			$this->db->order_by(key($order), $order[key($order)]);
+		}
+	}
+	function get_applicantdatatables()
+	{
+		$this->_get_applicantdatatables_query();
+		if($_POST['length'] != -1)
+			$this->db->limit($_POST['length'], $_POST['start']);
+		$query = $this->db->get();
+		return $query->result();
+	}
+
     ///Alamni
     private function _get_alamnidatatables_query()
     {
+		if($this->input->post('courseTitle1'))
+		{
+			$this->db->where('courseComplete', $this->input->post('courseTitle1'));
+		}
         $this->db->select($this->alumniselect);
         $this->db->from($this->alumnitable);
         $i = 0;
@@ -128,7 +193,19 @@ class StudentApplicationm extends CI_Model
         return $this->db->count_all_results();
     }
     ///////////////////end of datatable/////////////////////////////
-    ///alamni
+	//Applicant
+	function applicant_count_filtered()
+	{
+		$this->_get_datatables_query();
+		$query = $this->db->get();
+		return $query->num_rows();
+	}
+	public function applicant_count_all()
+	{
+		$this->db->from($this->applicanttable);
+		return $this->db->count_all_results();
+	}
+	///alamni
 
     function alumni_count_filtered()
     {

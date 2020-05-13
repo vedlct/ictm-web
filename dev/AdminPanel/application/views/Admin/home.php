@@ -28,7 +28,7 @@
                 </div>
             </div>
             <!-- page start-->
-            Page content goes here
+            Please Select a menu from the left
             <!-- page end-->
 
         </section>
@@ -36,9 +36,9 @@
     </section>
     <!--main content end-->
 
-    <div class="text-right wrapper">
+    <div class="text-right wrapper" style="margin-top: 29%;">
         <div class="credits">
-            <a href="#">Icon College</a> by <a href="#">A2N</a>
+            <a href="#">ICON CMS Admin Panel,</a> powered by  <a href="#">A2N</a>
         </div>
     </div>
 

@@ -38,7 +38,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <b>Manage Affiliations</b>
+                            <b>Manage Applications</b>
                             <!--                            <span align="">-->
                             <!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
                             <!--                            </span>-->
@@ -106,6 +106,7 @@
                                     </tbody>
                                 </table>
                             </div>
+							<input type="checkbox" class="chk" id="selectall1" />Select All<br><br><br>
                             <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
 
                             <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn" class="btn btn-primary"><strong>Download XML</strong></button></a>
@@ -428,6 +429,32 @@
             });
         }
     }
+
+    // add multiple select / deselect functionality111
+    $("#selectall1").click(function () {
+
+        if($('#selectall1').is(":checked")) {
+            selecteds=[];
+            checkboxes = document.getElementsByName('selected_rows[]');
+            for(var i in checkboxes) {
+                checkboxes[i].checked = 'TRUE';
+            }
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".chk:checked").each(function () {
+                btn = $(this).data('panel-id');
+                selecteds.push(btn);
+            });
+            // alert(selecteds);
+
+
+        }
+        else {
+            selecteds=[];
+            $(':checkbox:checked').prop('checked',false);
+        }
+
+    });
 
 
 </script>

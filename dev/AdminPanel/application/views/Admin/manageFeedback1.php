@@ -73,8 +73,8 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">ApprovedBy </th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%">Approved Date(d-m-Y)</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left">Inserted By </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>
-                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Last Modified Date(d-m-Y) </th>
+<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left"> Last Modified By </th>-->
+<!--                                        <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Last Modified Date(d-m-Y) </th>-->
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Appear In Home</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 8%"> Action </th>
                                     </tr>
@@ -137,7 +137,7 @@
             //Set column definition initialisation properties.
             "columnDefs": [
                 {
-                    "targets": [0,4,5,6,7,8,9,10,11,12], //first column / numbering column
+                    "targets": [0,4,5,6,7,8,9,10], //first column / numbering column
                     "orderable": false , //set not orderable
                 },
             ],
