@@ -48,6 +48,7 @@
 
                         <div class="form-bottom">
                             <input type="hidden" class="form-control" id="refereesId"  name="refereesId">
+							<span style="color: red;font-style: italic">(*Atleast two Referees are mandatory )</span>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Title:</label>
                                 <div class="col-md-10">
@@ -170,8 +171,8 @@
                                     <a href="<?php echo base_url()?>Admin/StudentApplication/editStudentApplicationDocumentUpload" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn ">Previous</button></a>
                                     <button type="reset" style="color: #fff; background-color: #841A29;" class="btn btn-next">Reset</button>
                                     <a  href="<?php echo base_url()?>Admin/StudentApplication/manageApplication" ><button style="color: #fff; background-color: #841A29;" type="button"  class="btn btn-next">Cancel</button></a>
-                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm8AndNext" class="btn btn-next">Save For Later</button>
-<!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--Admin/StudentApplication/editApplicationForm8AndNext" class="btn btn-next">Save And Next</button>-->
+                                    <button style="color: #fff; background-color: #841A29;" type="submit" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm8AndHome" class="btn btn-next">Save For Later</button>
+                                    <button type="submit" style="color: #fff; background-color: #841A29;" formaction="<?php echo base_url()?>Admin/StudentApplication/editApplicationForm8AndNext" class="btn btn-next">Save</button>
 <!--                                    <a href="--><?php //echo base_url()?><!--Admin/StudentApplication/editStudentApplicationSubmitApplication" ><button type="button"  class="btn ">Next</button></a>-->
                                 </div>
                             </div>

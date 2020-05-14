@@ -1459,6 +1459,7 @@ class StudentApplicationm extends CI_Model
     public function insertAllDocument($filename)
     {
         $title = $this->input->post('description');
+		$doc_type = $this->input->post('doc_type');
 //        $filename='filename';
 
 
@@ -1466,15 +1467,16 @@ class StudentApplicationm extends CI_Model
 
 
 
-        for ($i = 0; $i < count($title); $i++) {
-            $data = array(
-                'fkApplicationId' => $this->session->userdata('studentApplicationId'),
-                'description' => $title[$i],
-                'filename' => $filename,
-            );
+		for ($i = 0; $i < count($title); $i++) {
+			$data = array(
+				'fkApplicationId' => $this->session->userdata('studentApplicationId'),
+				'description' => $title[$i],
+				'doc_type' => $doc_type,
+				'filename' => $filename,
+			);
 
-            $error = $this->db->insert('filedocument', $data);
-        }
+			$error = $this->db->insert('filedocument', $data);
+		}
 
         if (empty($error)) {
             return $this->db->error();
@@ -1484,13 +1486,26 @@ class StudentApplicationm extends CI_Model
     }
 
     public function getDocument($applicationId){
+		$this->db->select('id,description,filename, doc_type');
+		$this->db->limit(9);
+		$this->db->where('fkApplicationId',$applicationId);
+		$this->db->from('filedocument');
+		$query=$this->db->get();
+		return $query->result();
+//		if($query == 1) {
+//			$results = $query->result();
+//			return  $results;
+//		}
+//		else{
+//			return false;
+//		}
 
-        $this->db->select('id,description,filename');
-        $this->db->limit(9);
-        $this->db->where('fkApplicationId',$applicationId);
-        $this->db->from('filedocument');
-        $query=$this->db->get();
-        return $query->result();
+//        $this->db->select('id,description,filename');
+//        $this->db->limit(9);
+//        $this->db->where('fkapplication',$applicationId);
+//        $this->db->from('filedocument');
+//        $query=$this->db->get();
+//        return $query->result();
 
 
     }

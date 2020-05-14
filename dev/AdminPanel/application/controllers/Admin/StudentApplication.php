@@ -3305,11 +3305,25 @@ public function alumniFile(){
                     'email' => $email,
                     'fkCountry' => $country,
                 );
-                if (!empty($refereesId)) {
+//				$this->data['refereecount'] = $this->StudentApplicationm->getAllRefences();
+//				$refreecount =  count($this->data['refereecount']);
+//				if ($refreecount > 1)
+//				{
+//					$this->StudentApplicationm->editRefereesDetailsById($refereesId, $data);
+//					$this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+//					redirect('Admin/StudentApplication/manageApplication');
+//				}
+//				if ($refreecount < 2){
+//					$this->session->set_flashdata('errorMessage', 'At least two Referees are Mandatory ');
+//
+//					redirect('Admin/StudentApplication/editStudentApplicationReferences');
+//				}
+                if(!empty($refereesId)) {
                     $this->StudentApplicationm->editRefereesDetailsById($refereesId, $data);
-                    $this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
-                    redirect('Admin/StudentApplication/manageApplication');
-                } else {
+                    $this->session->set_flashdata('successMessage', 'Referees Updated Successfully');
+                    redirect('Admin/StudentApplication/editStudentApplicationReferences');
+                }
+                else {
                     $data2 = array(
                         'fkApplicationId' => $this->session->userdata('studentApplicationId'),
                     );
@@ -3326,6 +3340,37 @@ public function alumniFile(){
                     </script>";
         }
     }
+
+	public function editApplicationForm8AndHome() //go to Home
+	{
+		if ($this->session->userdata('loggedin') == "true") {
+
+			$this->data['refereecount'] = $this->StudentApplicationm->getAllRefences();
+			$refreecount =  count($this->data['refereecount']);
+			if ($refreecount < 2)
+			{
+				$this->session->set_flashdata('errorMessage', 'At least two Referees are Mandatory ');
+
+				redirect('Admin/StudentApplication/editStudentApplicationReferences');
+			}
+
+			else{
+				$this->session->set_flashdata('successMessage', 'Your application has been saved successfully, please comeback later to complete your application');
+				redirect('Admin/StudentApplication/manageApplication');
+			}
+
+
+
+		}else{
+			echo "<script>
+                    alert('Your Session has Expired ,Please Login Again');
+                    window.location.href= '" . base_url() . "Login';
+                    </script>";
+		}
+
+	}
+
+
     public function EditPersonalReferees()
     {
         $refereesId = $this->input->post("id");

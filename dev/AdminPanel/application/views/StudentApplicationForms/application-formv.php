@@ -358,7 +358,7 @@
 
 
 
-                                <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details</h2>
+                                <h2 style="font-weight:bold; font-size:17px; margin-bottom:20px; text-align:center; text-decoration:underline">Emergency Contact Details//Next of Kin</h2>
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Title:<span style="color: red" class="required">*</span></label>
@@ -539,13 +539,32 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>
-                                    <div class="col-md-10">
-                                        <p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
-                                        <input type="text" class="form-control" id="courseYear" name="courseYear" value="<?php echo $candidateInfo->courseYear ?>">
-                                    </div>
-                                </div>
+								<div class="form-group">
+									<label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>
+									<div class="col-md-9">
+										<p><font color="red"> <?php echo form_error('courseYear'); ?></font></p>
+										<!--                                <input tabindex="58"  type="text" class="form-control" id="courseYear" name="courseYear" required value="--><?php //echo $candidateInfo->courseYear ?><!--">-->
+										<?php
+										$currently_selected = $candidateInfo->courseYear;
+										$earliest_year = date('Y');
+										$latest_year = date('Y')+6;
+										print '<select tabindex="58" name="courseYear" id="courseYear" required>';
+										print '<option value=""  selected>Select Year</option>';
+										foreach ( range($earliest_year,$latest_year) as $i ) {
+											print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
+										}
+										print '</select>';
+										?>
+
+									</div>
+								</div>
+<!--                                <div class="form-group">-->
+<!--                                    <label class="control-label col-md-2">Year:<span style="color: red" class="required">*</span></label>-->
+<!--                                    <div class="col-md-10">-->
+<!--                                        <p><font color="red"> --><?php //echo form_error('courseYear'); ?><!--</font></p>-->
+<!--                                        <input type="text" class="form-control" id="courseYear" name="courseYear" value="--><?php //echo $candidateInfo->courseYear ?><!--">-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
                                 <div class="form-group">
                                     <label class="control-label col-md-2">Mode of study:<span style="color: red" class="required">*</span></label>
