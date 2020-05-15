@@ -163,7 +163,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+                "sSearch": "<span>Search By Application Title:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });

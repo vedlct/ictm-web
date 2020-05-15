@@ -337,5 +337,15 @@ class Menum extends CI_Model
         return $this->db->count_all("ictmmenu");
     }
 
+	/*---Parent MenuType---*/
+	public function getMenuTypeName()
+	{
+
+		$this->db->select('menuType');
+		$this->db->group_by('menuType');
+		$query = $this->db->get('ictmmenu');
+		return $query->result();
+	}
+
 
 }

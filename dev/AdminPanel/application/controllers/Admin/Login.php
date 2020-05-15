@@ -43,6 +43,7 @@ class Login extends CI_Controller {
             }
             else
             {
+//				redirect('Admin/Login');
                 echo "<script>
                     alert(' Wrong UserEmail and Password !! ');
                     window.location.href= '" . base_url() . "Admin/Login';

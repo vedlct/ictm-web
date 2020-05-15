@@ -10,7 +10,7 @@ class StudentApplicationm extends CI_Model
 
     ////alamni datatable//
     var $alumnitable = 'alumniregistration';
-    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo','courseComplete','applydate');
+    var $alumniselect =array('personId','studentId','title','firstName','lastName','email','mobileNo','courseComplete','applydate','courseStartYear');
     var $alumnicolumn_order = array(null,null,null,'studentId','title','firstName','lastName','email','mobileNo'); //set column field database for datatable orderable
     var $alumnicolumn_search = array('studentId','title','firstName','lastName','email','mobileNo','courseStartYear','courseComplete'); //set column field database for datatable searchable
     var $alumniorder = array('applydate' => 'desc');
@@ -19,7 +19,7 @@ class StudentApplicationm extends CI_Model
     var $table = 'candidateinfo';
     var $select =array('candidateinfo.id','candidateinfo.applicationId','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','ictmcourse.courseTitle','studentapplicationform.isSubmited');
     var $column_order = array(null,null,null,'studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','coursedetails.courseName','candidateinfo.applydate'); //set column field database for datatable orderable
-    var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','ictmcourse.courseTitle','ictmcourse.academicYear'); //set column field database for datatable searchable
+    var $column_search = array('candidateinfo.email','candidateinfo.mobileNo','coursedetails.courseName','studentapplicationform.studentApplicationFormId','candidateinfo.title','candidateinfo.firstName','candidateinfo.surName','candidateinfo.applydate','ictmcourse.courseTitle','ictmcourse.academicYear','coursedetails.courseYear'); //set column field database for datatable searchable
     var $order = array('applydate' => 'desc'); // default order
     private function _get_datatables_query()
     {
@@ -140,6 +140,9 @@ class StudentApplicationm extends CI_Model
 		if($this->input->post('courseTitle1'))
 		{
 			$this->db->where('courseComplete', $this->input->post('courseTitle1'));
+		}
+		elseif ($this->input->post('personId')){
+			$this->db->where('courseStartYear', $this->input->post('personId'));
 		}
         $this->db->select($this->alumniselect);
         $this->db->from($this->alumnitable);
@@ -1526,6 +1529,15 @@ class StudentApplicationm extends CI_Model
         $this->db->delete('alumniregistration');
 
     }
+	/*---Course Start Year---*/
+	public function getCourseStartYear()
+	{
+
+		$this->db->select('courseStartYear,personId');
+		$this->db->group_by('courseStartYear');
+		$query = $this->db->get('alumniregistration');
+		return $query->result();
+	}
 
     /* for student Application edit end */
 }

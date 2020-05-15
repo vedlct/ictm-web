@@ -8,7 +8,8 @@ class PageSectionm extends CI_Model
 //    var $column_order = array(null,'pageSectionTitle','orderNumber'); //set column field database for datatable orderable
     var $column_order = array(null,'pageSectionTitle','orderNumber','pageSectionStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
     var $column_search = array('pageSectionTitle'); //set column field database for datatable searchable
-    var $order = array('pageSectionId' => 'desc'); // default order
+//    var $order = array('pageSectionId' => 'desc'); // default order
+	var $order = array('orderNumber' => 'asc');
 
     private function _get_datatables_query()
     {

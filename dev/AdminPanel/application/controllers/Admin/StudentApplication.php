@@ -27,7 +27,8 @@ class StudentApplication extends CI_Controller
     {
         if ($this->session->userdata('type') == USER_TYPE[0])
         {
-            $this->load->view('Admin/manageAlamni');
+			$this->data['startYear'] = $this->StudentApplicationm->getCourseStartYear();
+            $this->load->view('Admin/manageAlamni',$this->data);
         }
         else{
             redirect('Admin/Login');

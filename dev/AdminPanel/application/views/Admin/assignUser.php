@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp User</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Assign &nbsp Role</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>User</li>
-                        <li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Create a New User</a></li>
+                        <li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Assign Role</a></li>
                     </ol>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            New User
+                            Assign Role
                         </header>
                         <div class="panel-body">
                             <div class="form">
@@ -61,7 +61,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label class="control-label col-lg-2">User Role<span class="required">*</span></label>
+                                        <label class="control-label col-lg-2">Assign Role<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <?php foreach ($menu as $menu){ ?>
                                             <input tabindex="8"  type="checkbox"  name="menuId[]" value="<?php echo $menu->id ?>">&nbsp;<?php echo $menu->menuName ?><br>

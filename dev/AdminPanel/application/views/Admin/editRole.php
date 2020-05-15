@@ -24,7 +24,7 @@
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
 						<li><i class="icon_document_alt"></i>User</li>
-						<li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Update User Role</a></li>
+						<li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Update Assign Role</a></li>
 					</ol>
 				</div>
 			</div>
@@ -41,7 +41,7 @@
 				<div class="col-lg-12">
 					<section class="panel">
 						<header class="panel-heading">
-							Update User
+							Update Assign Role
 						</header>
 						<div class="panel-body">
 							<div class="form">
@@ -50,7 +50,7 @@
                           <input type="hidden" name="userId" value="<?php echo $userId; ?>">
 
 									<div class="form-group">
-										<label class="control-label col-lg-2">User Role<span class="required">*</span></label>
+										<label class="control-label col-lg-2">Assign Role<span class="required">*</span></label>
 										<div class="col-lg-4">
 
 											<?php foreach ($menu as $menu){ ?>
