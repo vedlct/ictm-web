@@ -137,12 +137,13 @@ class StudentApplicationm extends CI_Model
     ///Alamni
     private function _get_alamnidatatables_query()
     {
+
 		if($this->input->post('courseTitle1'))
 		{
 			$this->db->where('courseComplete', $this->input->post('courseTitle1'));
 		}
-		elseif ($this->input->post('personId')){
-			$this->db->where('courseStartYear', $this->input->post('personId'));
+		elseif ($this->input->post('courseStartYear')){
+			$this->db->where('courseStartYear',$this->input->post('courseStartYear'));
 		}
         $this->db->select($this->alumniselect);
         $this->db->from($this->alumnitable);

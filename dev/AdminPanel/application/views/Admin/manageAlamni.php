@@ -61,10 +61,10 @@
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Course Start Year:</label>
 									<div class="m-bot15 col-md-5 col-sm-5">
-										<select class="form-control" name="personId" id="personId" required>
+										<select class="form-control" name="courseStartYear" id="courseStartYear" required>
 											<option value="" selected>Select Year</option>
 											<?php foreach ($startYear as $yr) { ?>
-												<option value="<?php echo $yr->personId?>"><?php echo $yr->courseStartYear?></option>
+												<option value="<?php echo $yr->courseStartYear?>"><?php echo $yr->courseStartYear?></option>
 												<?php
 											}
 											?>
@@ -140,7 +140,8 @@
                 "type": "POST",
                 "data": function ( data ) {
                     data.courseTitle1 = $('#courseTitle').val();
-                    data.personId = $('#personId').val();
+                    data.courseStartYear = $('#courseStartYear').val();
+                    // alert($('#courseStartYear').val())
                 }
             },
             //Set column definition initialisation properties.
@@ -162,7 +163,7 @@
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter
         });
-        $('#personId').change(function(){ //button filter event click
+        $('#courseStartYear').change(function(){ //button filter event click
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter
         });
