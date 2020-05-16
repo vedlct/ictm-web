@@ -386,14 +386,15 @@ class Menu extends CI_Controller {
 	//Check Exit Order Number
 	public function check_order()
 	{
+		   $menuType = $this->input->post('menuType');
+		   $orderNumber = $this->input->post('orderNumber');
+			$result = $this->db->where('menuType', $menuType)->where('orderNumber', $orderNumber)->get('ictmmenu')->row();
+			if(empty($result)){
+				echo $orderNumber;
+			}else
+			{
+				echo "This Order Number Already Exists";
+			}
 
-		$orderNumber = $this->input->post('orderNumber');
-		$result = $this->db->where('orderNumber',$orderNumber)->get('ictmmenu')->row();
-		if(empty($result)){
-			echo $orderNumber;
-		}else
-		{
-			echo "This Order Number Already Exists";
-		}
 	}
 }

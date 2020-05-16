@@ -206,11 +206,12 @@
 
     function check_order(){
         var orderNumber=$('#orderNumber').val();
-        // alert(orderNumber);
+        var menuType=$('#menuType').val();
+        // alert(menuType);
         $.ajax({
             method:"POST",
             url:"<?php echo base_url();?>Admin/Menu/check_order",
-            data:{orderNumber:orderNumber},
+            data:{orderNumber:orderNumber,menuType:menuType},
             success:function(data)
             {
                 // alert(data);
