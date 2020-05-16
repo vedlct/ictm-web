@@ -12,6 +12,14 @@
       <form class="login-form" method="post" action="<?php echo base_url()?>Admin/Login/check_user">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
+<!--			<p style="color: red">-->
+<!--				--><?php
+//				if(isset($error_message)){
+//					echo $error_message;
+//				}
+//
+//				?>
+<!--			</p>-->
             <p><font color="red"> <?php echo form_error('useremail'); ?></font></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>

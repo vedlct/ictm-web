@@ -46,7 +46,7 @@
 							<div align="center" class="col-md-6 col-sm-6" style="margin-left: -5%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Page Title:</label>
-									<div class="m-bot15 col-md-5 col-sm-5">
+									<div class="m-bot15 col-md-5 col-sm-5" style="margin-left: -5%;">
 										<select class="form-control m-bot15" name="pageType" id="pageType"  required>
 											<option value="" selected><?php echo ALL_PAGE_TYPE?></option>
 											<?php for ($i=0;$i<count(PAGE_TYPE);$i++){?>
@@ -56,10 +56,10 @@
 									</div>
 								</div>
 							</div>
-							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -7%;">
+							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -16%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Parent Menu:</label>
-									<div class="m-bot15 col-md-5 col-sm-5">
+									<div class="m-bot15 col-md-5 col-sm-5" style="margin-left: -7%;">
 										<select class="form-control" name="parentId" id="parentId" required>
 											<option value="" selected>Select Parent Menu</option>
 											<?php foreach ($menuname as $mn) { ?>
@@ -71,21 +71,21 @@
 									</div>
 								</div>
 							</div>
-<!--							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -7%;">-->
-<!--								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">-->
-<!--									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Page Title:</label>-->
-<!--									<div class="m-bot15 col-md-5 col-sm-5">-->
-<!--										<select class="form-control" name="pageTitle" id="pageTitle" required>-->
-<!--											<option value="" selected>Select Page Title</option>-->
-<!--											--><?php //foreach ($pagename as $pn) { ?>
-<!--												<option value="--><?php //echo $pn->pageId?><!--">--><?php //echo $pn->pageTitle?><!--</option>-->
-<!--												--><?php
-//											}
-//											?>
-<!--										</select>-->
-<!--									</div>-->
-<!--								</div>-->
-<!--							</div>-->
+							<div align="center"  class="col-md-3 col-sm-3" style="margin-left: -12%;">
+								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Page Title:</label>
+									<div class="m-bot15 col-md-5 col-sm-5" style="margin-left: -8%;">
+										<select class="form-control" name="pageTitle" id="pageTitle" required>
+											<option value="" selected>Select Page Title</option>
+											<?php foreach ($pagename as $pn) { ?>
+												<option value="<?php echo $pn->pageTitle?>"><?php echo $pn->pageTitle?></option>
+												<?php
+											}
+											?>
+										</select>
+									</div>
+								</div>
+							</div>
 							<div class="table table-responsive" style="overflow-x: inherit">
 
 
@@ -159,6 +159,7 @@
                 "data": function ( data ) {
                     data.pageType1 = $('#pageType').val();
                     data.parentId = $('#parentId').val();
+                    data.pageTitle = $('#pageTitle').val();
 
                 }
             },
@@ -190,11 +191,11 @@
             table.ajax.reload();  //just reload table
 
         });
-        // $('#pageTitle').change(function(){ //button filter event click
-        //     table.search("").draw(); //just redraw myTableFilter
-        //     table.ajax.reload();  //just reload table
-		//
-        // });
+        $('#pageTitle').change(function(){ //button filter event click
+            table.search("").draw(); //just redraw myTableFilter
+            table.ajax.reload();  //just reload table
+
+        });
 
     });
 

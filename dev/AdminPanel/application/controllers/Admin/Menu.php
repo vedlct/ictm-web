@@ -386,6 +386,7 @@ class Menu extends CI_Controller {
 	//Check Exit Order Number
 	public function check_order()
 	{
+
 		$orderNumber = $this->input->post('orderNumber');
 		$result = $this->db->where('orderNumber',$orderNumber)->get('ictmmenu')->row();
 		if(empty($result)){
