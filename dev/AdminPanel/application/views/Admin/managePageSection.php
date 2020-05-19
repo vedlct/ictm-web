@@ -43,9 +43,9 @@
 
 						</header>
 						<div id="panel" class="panel-body">
-							<div align="center" class="col-md-6 col-sm-6" style="margin-left: -5%;">
+							<div align="center" class="col-md-4 col-sm-4" style="margin-left: 2%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Page Title:</label>
+									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Page Type:</label>
 									<div class="m-bot15 col-md-5 col-sm-5" style="margin-left: -5%;">
 										<select class="form-control m-bot15" name="pageType" id="pageType"  required>
 											<option value="" selected><?php echo ALL_PAGE_TYPE?></option>
@@ -56,7 +56,7 @@
 									</div>
 								</div>
 							</div>
-							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -16%;">
+							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -12%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Parent Menu:</label>
 									<div class="m-bot15 col-md-5 col-sm-5" style="margin-left: -7%;">
@@ -71,7 +71,7 @@
 									</div>
 								</div>
 							</div>
-							<div align="center"  class="col-md-3 col-sm-3" style="margin-left: -12%;">
+							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -14%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Page Title:</label>
 									<div class="m-bot15 col-md-5 col-sm-5" style="margin-left: -8%;">
@@ -181,7 +181,7 @@
 
 
         });
-        $(".dataTables_filter input").attr("placeholder", "Search By Page Title");
+        $(".dataTables_filter input").attr("placeholder", "Search By Page Section Title");
         $('#pageType').change(function(){ //button filter event click
             table.ajax.reload();  //just reload table
             table.search("").draw(); //just redraw myTableFilter

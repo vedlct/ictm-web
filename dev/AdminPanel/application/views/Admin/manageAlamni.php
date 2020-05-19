@@ -155,7 +155,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search by:</span> " //search
+                "sSearch": "<span>Search by Application Title:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });

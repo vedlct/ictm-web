@@ -45,7 +45,7 @@
 
                             <div align="center" class="col-md-6 col-sm-6" style="margin-left: -5%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Search Page Title:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select Page Type:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="pageType" id="pageType"  required>
                                             <option value="" selected><?php echo ALL_PAGE_TYPE?></option>
@@ -56,7 +56,7 @@
                                     </div>
                                 </div>
                             </div>
-							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -7%;">
+							<div align="center"  class="col-md-6 col-sm-6" style="margin-left: -18%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Parent Menu:</label>
 									<div class="m-bot15 col-md-5 col-sm-5">

@@ -57,7 +57,7 @@
                                     </div>
                                 </div>
 
-							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -7%;">
+							<div align="center"  class="col-md-6 col-sm-6" style="margin-left: -18%;">
 								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
 									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Parent Menu:</label>
 									<div class="m-bot15 col-md-5 col-sm-5">
@@ -172,6 +172,7 @@
             },
             "dom": '<"top"i<"#typebar">fl>rt<"bottom"ip><"clear">'
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Menu name");
         $('#menuType').change(function(){ //button filter event click
             table.search("").draw(); //just redraw myTableFilter
             table.ajax.reload();  //just reload table
@@ -182,7 +183,6 @@
             table.ajax.reload();  //just reload table
 
         });
-        $(".dataTables_filter input").attr("placeholder", "Search By Menu Name");
 
 
 

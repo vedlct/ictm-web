@@ -45,7 +45,7 @@
                         </header>
                         <div class="panel-body ">
 
-                            <div align="center" class="col-md-3 col-sm-3">
+                            <div align="center" class="col-md-4 col-sm-4" style="margin-left: 1%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                     <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Status:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
@@ -59,9 +59,9 @@
                                 </div>
                             </div>
 
-                            <div align="center" class="col-md-3 col-sm-3">
+                            <div align="center" class="col-md-4 col-sm-4" style="margin-left: -12%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by Course:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Select Course:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="courseTitle" id="courseTitle"  required>
                                             <option value="" selected><?php echo ALL_COURSE_TITLE?></option>
@@ -72,9 +72,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div align="center" class="col-md-3 col-sm-3">
+                            <div align="center" class="col-md-4 col-sm-4" style="margin-left: -14%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by User Type:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Select User Type:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="type" id="userTitle"  required>
                                             <option value="" selected><?php echo ALL_USER_TITLE?></option>
@@ -106,12 +106,15 @@
                                     </tbody>
                                 </table>
                             </div>
+
 							<input type="checkbox" class="chk" id="selectall1" />Select All<br><br><br>
+
                             <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
+
 
                             <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn" class="btn btn-primary"><strong>Download XML</strong></button></a>
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
-                        </div>
+						</div>
 
                     </section>
                 </div>
@@ -334,6 +337,7 @@
                     /*
                      * Actually download CSV
                      */
+
                     document.body.appendChild(downloadLink);
                     downloadLink.click();
                     document.body.removeChild(downloadLink);

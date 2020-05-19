@@ -478,12 +478,22 @@ class StudentApplicationm extends CI_Model
     }
 
     public function language1($applicationId){
-        $this->db->select('firstLanguageEnglish');
-//        $this->db->join('candidatelanguagetest', 'candidatelanguagetest.fkApplicationId=candidateinfo.applicationId', 'left');
+        $this->db->select('firstLanguageEnglish','studentapplicationform.isSubmited','studentapplicationform.id');
+        //$this->db->join('studentapplicationform', 'studentapplicationform.id=candidateinfo.applicationId', 'left');
+		//$this->db->where('studentapplicationform.isSubmited != ',2,FALSE);
         $this->db->where('applicationId =', $applicationId);
         $query = $this->db->get('candidateinfo');
         return $query->row();
     }
+//isSubmited
+//	public function issubmit($applicationId){
+//		$this->db->select('isSubmited');
+//        $this->db->join('candidateinfo', 'candidateinfo.applicationId=studentapplicationform.id', 'left');
+//		$this->db->where('id =', $applicationId);
+//		$this->db->where('studentapplicationform.isSubmited != ',2,FALSE);
+//		$query = $this->db->get('studentapplicationform');
+//		return $query->row();
+//	}
     public function equalopportunity1($applicationId){
         $this->db->select('subGroupTitle');
         $this->db->join('equalopportunitysubgroup', 'equalopportunitysubgroup.id=personequalopportunity.fkEqualOpportunitySubGroupId', 'left');
@@ -1539,6 +1549,7 @@ class StudentApplicationm extends CI_Model
 		$query = $this->db->get('alumniregistration');
 		return $query->result();
 	}
+
 
     /* for student Application edit end */
 }

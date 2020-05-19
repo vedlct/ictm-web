@@ -363,85 +363,87 @@ public function alumniFile(){
 
     public function csvFile(){
 
-        $productList=$this->input->post('products');
+			$productList = $this->input->post('products');
 
-        $filename = 'applicationForm_' . date('Ymd') . '.csv';
-        header("Content-Description: File Transfer");
-        header("Content-Disposition: attachment; filename=$filename");
-        header("Content-Type: application/csv; ");
-        $file = fopen('php://output', 'w');
-        $header = array("Title", "First Name", "Surname","Date of Birth","Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1","Address Line 2","Address Line 3","Post Code","City/Town","County/State", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1","Permanent Address Line 2","Permanent Address Line 3","City/Town","County/State","Post Code", "Courntry", "Emergency Contact Name", "Emergency Contact Title", "Emergency Contact Relation", "Emergency Address Line 1","Emergency Address Line 2","Emergency Address Line 3","City/Town","Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name","Awarding Body","Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level","Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year","Grade", "Organisation", "Position Held", "Start Date", "End Date","Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail","Course Choice Statement", "College Choice Statement","Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Telephone/Mobile", "E-mail","Disability", "Ethnicity", "Religion Belief","Sexual Orientation","First Language","Tests","Listening","Reading","Writing","Speaking","Overall","Expiry Date","Other");
-        fputcsv($file, $header);
+			$filename = 'applicationForm_' . date('Ymd') . '.csv';
+			header("Content-Description: File Transfer");
+			header("Content-Disposition: attachment; filename=$filename");
+			header("Content-Type: application/csv; ");
+			$file = fopen('php://output', 'w');
+			$header = array("Title", "First Name", "Surname", "Date of Birth", "Sex", "Any Sex Change", "Place of Birth", "Nationality", "Passport No", "PP Expiry Date", "UK Entry Date", "Visa Expiry Date", "Visa Type", "Address Line 1", "Address Line 2", "Address Line 3", "Post Code", "City/Town", "County/State", "Country", "Telephone", "Mobile", "E-mail", "Fax", "Permanent Address Line 1", "Permanent Address Line 2", "Permanent Address Line 3", "City/Town", "County/State", "Post Code", "Courntry", "Emergency Contact Name", "Emergency Contact Title", "Emergency Contact Relation", "Emergency Address Line 1", "Emergency Address Line 2", "Emergency Address Line 3", "City/Town", "Country/State", "Post Code", "Country", "Emergency Mobile/Telephone", "Emergency Contact Email", "Course Name", "Awarding Body", "Course Session", "Year", "ULN No", "UCAS Course Code", "Course Level", "Mode of study", "Time of study", "Qualification Name", "Institution", "Qualification Level", "Subject", "Completion Year", "Grade", "Organisation", "Position Held", "Start Date", "End Date", "Source Of Finance", "Name", "Title", "Relation", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Mobile", "Telephone", "E-mail", "Course Choice Statement", "College Choice Statement", "Referees Name", "Title", "Institution/Company", "Position / Job Title", "Address Line 1", "Address Line 2", "Address Line 3", "City/Town", "County/State", "Post Code", "Country", "Telephone/Mobile", "E-mail", "Disability", "Ethnicity", "Religion Belief", "Sexual Orientation", "First Language", "Tests", "Listening", "Reading", "Writing", "Speaking", "Overall", "Expiry Date", "Other");
+			fputcsv($file, $header);
 //		foreach ($newlist as $line){
 //			fputcsv($file,array($line->title));
 //		}
-        foreach($_POST['products'] as $row=>$value){
-            $language = $this->StudentApplicationm->language1($value);
 
-            $language = $language->firstLanguageEnglish;
 
-            if ($language== 0 ){
-                $language= "No";
-                $line=$this->StudentApplicationm->allDetails1($value);
-                $Ethnicity = $this->StudentApplicationm->equalopportunity1($value);
+			foreach ($_POST['products'] as $row => $value) {
+				$language = $this->StudentApplicationm->language1($value);
 
-                $disability = $this->StudentApplicationm->disability1($value);
+				$language = $language->firstLanguageEnglish;
+
+				if ($language == 0) {
+					$language = "No";
+					$line = $this->StudentApplicationm->allDetails1($value);
+					$Ethnicity = $this->StudentApplicationm->equalopportunity1($value);
+
+					$disability = $this->StudentApplicationm->disability1($value);
 //
-                $religionbelief = $this->StudentApplicationm->religionbelief1($value);
+					$religionbelief = $this->StudentApplicationm->religionbelief1($value);
 //
-                $orientation = $this->StudentApplicationm->orientation1($value);
+					$orientation = $this->StudentApplicationm->orientation1($value);
 
-                $test = $this->StudentApplicationm->test1($value);
+					$test = $this->StudentApplicationm->test1($value);
 
-                $test1= $test->fkTestId;
-                if ($test1== 1 ){
-                    $test1= "IELTS";
-                }elseif ($test1== 2){
-                    $test1= "TOEFL";
-                }
-                elseif ($test1== 3){
-                    $test1= "PTE";
-                }
-                else{
-                    $test1= "Other";
-                }
+					$test1 = $test->fkTestId;
+					if ($test1 == 1) {
+						$test1 = "IELTS";
+					} elseif ($test1 == 2) {
+						$test1 = "TOEFL";
+					} elseif ($test1 == 3) {
+						$test1 = "PTE";
+					} else {
+						$test1 = "Other";
+					}
 
-                $listening = $this->StudentApplicationm->listening1($value);
+					$listening = $this->StudentApplicationm->listening1($value);
 
-                $reading = $this->StudentApplicationm->reading1($value);
-                $writing = $this->StudentApplicationm->writing1($value);
+					$reading = $this->StudentApplicationm->reading1($value);
+					$writing = $this->StudentApplicationm->writing1($value);
 
-                $speaking = $this->StudentApplicationm->speaking1($value);
+					$speaking = $this->StudentApplicationm->speaking1($value);
 
-                $overallScore = $this->StudentApplicationm->overallScore1($value);
+					$overallScore = $this->StudentApplicationm->overallScore1($value);
 
-                $expireDate = $this->StudentApplicationm->expireDate1($value);
+					$expireDate = $this->StudentApplicationm->expireDate1($value);
 
-                $other = $this->StudentApplicationm->other1($value);
+					$other = $this->StudentApplicationm->other1($value);
 
 //			echo $newlist;
-                fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressPo,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->permanentAddressCity,$line->permanentAddressState,$line->overseasAddressPo,$line->permanentAddressCountry,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->awardingBody,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$Ethnicity->subGroupTitle,$disability->subGroupTitle,$religionbelief->subGroupTitle,$orientation->subGroupTitle,$language,$test1,$listening->score,$reading->score,$writing->score,$speaking->score,$overallScore->overallScore,$expireDate->expireDate,$other->other));
+					fputcsv($file, array($line->title, $line->firstName, $line->surName, $line->dateOfBirth, $line->gender, $line->ganderChange, $line->placeOfBirth, $line->nationality, $line->passportNo, $line->passportExpiryDate, $line->ukEntryDate, $line->visaExpiryDate, $line->visaType, $line->currentAddress, $line->currentAddress2, $line->currentAddress3, $line->currentAddressPo, $line->currentAddressCity, $line->currentAddressState, $line->currentAddressCountry, $line->telephoneNo, $line->mobileNo, $line->email, $line->fax, $line->permanentAddress, $line->permanentAddress2, $line->permanentAddress3, $line->permanentAddressCity, $line->permanentAddressState, $line->overseasAddressPo, $line->permanentAddressCountry, $line->emergencyContactName, $line->emergencyContactTitle, $line->emergencyContactRelation, $line->emergencyContactAddress, $line->emergencyContactAddress2, $line->emergencyContactAddress3, $line->emergencyContactAddressCity, $line->emergencyContactAddressState, $line->emergencyContactAddressPo, $line->emergencyContactCountry, $line->emergencyContactMobile, $line->emergencyContactEmail, $line->courseName, $line->awardingBody, $line->courseSession, $line->courseYear, $line->ulnNo, $line->ucasCourseCode, $line->courseLevel, $line->methodOfStudy, $line->timeOfStudy, $line->qualification, $line->institution, $line->qualificationLevel, $line->subject, $line->completionYear, $line->obtainResult, $line->organization, $line->positionHeld, $line->startDate, $line->endDate, $line->sourceOfFinance, $line->name, $line->title, $line->relation, $line->address, $line->address2, $line->address3, $line->city, $line->state, $line->addressPo, $line->country, $line->mobile, $line->telephone, $line->email, $line->courseChoiceStatement, $line->collegeChoiceStatement, $line->name, $line->title, $line->workingCompany, $line->jobTitle, $line->address, $line->address2, $line->address3, $line->city, $line->state, $line->postCode, $line->fkCountry, $line->contactNo, $line->email, $Ethnicity->subGroupTitle, $disability->subGroupTitle, $religionbelief->subGroupTitle, $orientation->subGroupTitle, $language, $test1, $listening->score, $reading->score, $writing->score, $speaking->score, $overallScore->overallScore, $expireDate->expireDate, $other->other));
 
-            }
-            else{
-                $language= "Yes";
-                $line=$this->StudentApplicationm->allDetails1($value);
-                $Ethnicity = $this->StudentApplicationm->equalopportunity1($value);
+				} else {
+					$language = "Yes";
+					$line = $this->StudentApplicationm->allDetails1($value);
+					$Ethnicity = $this->StudentApplicationm->equalopportunity1($value);
 
-                $disability = $this->StudentApplicationm->disability1($value);
+					$disability = $this->StudentApplicationm->disability1($value);
 //
-                $religionbelief = $this->StudentApplicationm->religionbelief1($value);
+					$religionbelief = $this->StudentApplicationm->religionbelief1($value);
 //
-                $orientation = $this->StudentApplicationm->orientation1($value);
-                fputcsv($file,array($line->title,$line->firstName,$line->surName,$line->dateOfBirth,$line->gender,$line->ganderChange,$line->placeOfBirth,$line->nationality,$line->passportNo,$line->passportExpiryDate,$line->ukEntryDate,$line->visaExpiryDate,$line->visaType,$line->currentAddress,$line->currentAddress2,$line->currentAddress3,$line->currentAddressPo,$line->currentAddressCity,$line->currentAddressState,$line->currentAddressCountry,$line->telephoneNo,$line->mobileNo,$line->email,$line->fax,$line->permanentAddress,$line->permanentAddress2,$line->permanentAddress3,$line->permanentAddressCity,$line->permanentAddressState,$line->overseasAddressPo,$line->permanentAddressCountry,$line->emergencyContactName,$line->emergencyContactTitle,$line->emergencyContactRelation,$line->emergencyContactAddress,$line->emergencyContactAddress2,$line->emergencyContactAddress3,$line->emergencyContactAddressCity,$line->emergencyContactAddressState,$line->emergencyContactAddressPo,$line->emergencyContactCountry,$line->emergencyContactMobile,$line->emergencyContactEmail,$line->courseName,$line->awardingBody,$line->courseSession,$line->courseYear,$line->ulnNo,$line->ucasCourseCode,$line->courseLevel,$line->methodOfStudy,$line->timeOfStudy,$line->qualification,$line->institution,$line->qualificationLevel,$line->subject,$line->completionYear,$line->obtainResult,$line->organization,$line->positionHeld,$line->startDate,$line->endDate,$line->sourceOfFinance,$line->name,$line->title,$line->relation,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->addressPo,$line->country,$line->mobile,$line->telephone,$line->email,$line->courseChoiceStatement,$line->collegeChoiceStatement,$line->name,$line->title,$line->workingCompany,$line->jobTitle,$line->address,$line->address2,$line->address3,$line->city,$line->state,$line->postCode,$line->fkCountry,$line->contactNo,$line->email,$Ethnicity->subGroupTitle,$disability->subGroupTitle,$religionbelief->subGroupTitle,$orientation->subGroupTitle,$language));
+					$orientation = $this->StudentApplicationm->orientation1($value);
+					fputcsv($file, array($line->title, $line->firstName, $line->surName, $line->dateOfBirth, $line->gender, $line->ganderChange, $line->placeOfBirth, $line->nationality, $line->passportNo, $line->passportExpiryDate, $line->ukEntryDate, $line->visaExpiryDate, $line->visaType, $line->currentAddress, $line->currentAddress2, $line->currentAddress3, $line->currentAddressPo, $line->currentAddressCity, $line->currentAddressState, $line->currentAddressCountry, $line->telephoneNo, $line->mobileNo, $line->email, $line->fax, $line->permanentAddress, $line->permanentAddress2, $line->permanentAddress3, $line->permanentAddressCity, $line->permanentAddressState, $line->overseasAddressPo, $line->permanentAddressCountry, $line->emergencyContactName, $line->emergencyContactTitle, $line->emergencyContactRelation, $line->emergencyContactAddress, $line->emergencyContactAddress2, $line->emergencyContactAddress3, $line->emergencyContactAddressCity, $line->emergencyContactAddressState, $line->emergencyContactAddressPo, $line->emergencyContactCountry, $line->emergencyContactMobile, $line->emergencyContactEmail, $line->courseName, $line->awardingBody, $line->courseSession, $line->courseYear, $line->ulnNo, $line->ucasCourseCode, $line->courseLevel, $line->methodOfStudy, $line->timeOfStudy, $line->qualification, $line->institution, $line->qualificationLevel, $line->subject, $line->completionYear, $line->obtainResult, $line->organization, $line->positionHeld, $line->startDate, $line->endDate, $line->sourceOfFinance, $line->name, $line->title, $line->relation, $line->address, $line->address2, $line->address3, $line->city, $line->state, $line->addressPo, $line->country, $line->mobile, $line->telephone, $line->email, $line->courseChoiceStatement, $line->collegeChoiceStatement, $line->name, $line->title, $line->workingCompany, $line->jobTitle, $line->address, $line->address2, $line->address3, $line->city, $line->state, $line->postCode, $line->fkCountry, $line->contactNo, $line->email, $Ethnicity->subGroupTitle, $disability->subGroupTitle, $religionbelief->subGroupTitle, $orientation->subGroupTitle, $language));
 
-            }
+				}
 
 
-        }
+			}
 
-        fclose($file);
-        exit;
+			fclose($file);
+			exit;
+
+
+
 //        return $fileInfo;
     }
 

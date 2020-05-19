@@ -150,6 +150,60 @@ class User extends CI_Controller
         }
     }
 
+	public function EditAssignRole($userId) // for insert new Feedback into database
+	{
+		$this->load->library('form_validation');
+
+		if ($this->session->userdata('type') == USER_TYPE[0]) {
+
+			if (!$this->form_validation->run('createRole')) {
+
+				$this->load->view('Admin/updateAssign');
+			}
+			else
+			{
+
+				$this->data['error'] =$this->Userm->editRole();
+
+				if (empty($this->data['error'])) {
+
+					$this->session->set_flashdata('successMessage','Role Created Successfully');
+					redirect('Admin/User/manageUser');
+//					$this->load->view('Admin/assignUser');
+
+
+				}
+				else
+				{
+					$this->session->set_flashdata('errorMessage','Some thing Went Wrong !! Please Try Again!!');
+					redirect('Admin/User/editUserRole/'.$userId);
+				}
+
+			}
+		}
+		else{
+			redirect('Admin/Login');
+		}
+	}
+
+	public function showUserRole($userId){
+
+		if ($this->session->userdata('type') == USER_TYPE[0]) {
+			$this->data['editUserRole'] = $this->Userm->geteditUserRole($userId);
+			$this->data['menu'] = $this->Userm->getMenu();
+			$this->data['userId']=$userId;
+//            $id = $this->input->post("id");
+//            $this->data['pagedata'] = $this->PageSectionm->get_pageSecdata($id);
+//			$this->data["id"]=$id;
+			$this->load->view('Admin/updateAssign', $this->data);
+
+		} else{
+			redirect('Admin/Login');
+		}
+
+	}
+
+
 //    public function check_email()
 //    {
 //        $email = $this->input->post('userEmail');

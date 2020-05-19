@@ -69,7 +69,7 @@
                                         <label for="feedbackByName" class="control-label col-lg-2">Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('userEmail'); ?></font></p>
-                                            <input class="form-control" id="userEmail" name="userEmail"  value="<?php echo set_value('userEmail'); ?>" type="email" onkeyup="check_email();" required />
+                                            <input class="form-control" id="userEmail" name="userEmail"  type="email" onkeyup="check_email();" required />
 <!--                                            <span id="email_result"></span>-->
                                         </div>
 
@@ -79,7 +79,7 @@
                                         <label for="feedbackByName" class="control-label col-lg-2">Password<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('userPassword'); ?></font></p>
-                                            <input class="form-control" id="userPassword" name="userPassword"  value="<?php echo set_value('userPassword'); ?>" type="password" required />
+                                            <input class="form-control" id="userPassword" name="userPassword"  type="password" required />
                                         </div>
 
                                     </div>
