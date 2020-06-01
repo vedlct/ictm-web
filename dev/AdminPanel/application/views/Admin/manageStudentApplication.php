@@ -98,6 +98,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Course Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date</th>
+										<th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submited Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%"> Action </th>
                                     </tr>
                                     </thead>
@@ -114,6 +115,7 @@
 
                             <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn" class="btn btn-primary"><strong>Download XML</strong></button></a>
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
+							<br><span>(Only Submited Form Download Are Available For CSV And XML File)</span>
 						</div>
 
                     </section>

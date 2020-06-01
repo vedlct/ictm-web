@@ -66,6 +66,12 @@ class StudentApplication extends CI_Controller
             }else{
                 $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($application->applydate)),1);
             }
+			if ($application->isSubmited=="3"){
+				$row[] = 'Not Submited';
+			}
+			elseif ($application->isSubmited=="1"){
+				$row[] = 'Submited';
+			}
             $html = '<a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/viewApplication/'.$application->applicationId.'"><i class="icon_pencil-edit"></i></a>
                                                     
                                                     <a class="btn" target="_blank" href="'. base_url().'Admin/StudentApplication/showApplicationPdf/'.$application->applicationId.'"><i class="fa fa-file-pdf-o"></i></a>';
