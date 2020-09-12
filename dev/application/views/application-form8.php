@@ -188,7 +188,7 @@
                                 <div class="col-sm-offset-2 col-md-10">
                                     <a href="<?php echo base_url()?>ApplyForm6" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8Save" class="btn btn-next"><span style="color: #FFFFFF;">Save For Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm8AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
                                     <!--
@@ -535,6 +535,22 @@
             alert("You have entered an invalid email address!");
             return false;
         }
+
+    }
+</script>
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
 
     }
 </script>

@@ -89,7 +89,7 @@
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-10">
                                 <a href="<?php echo base_url()?>ApplyForm8" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
-                                <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                 <!--                                    <button type="submit" class="btn btn-next">Save Application</button>-->
                                 <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/editApplicationForm7Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for later</span></button>
                                 <!--                                    <button type="submit" formaction="--><?php //echo base_url()?><!--ApplyOnline/editApplicationForm7AndNext" class="btn btn-next">Next</button>-->
@@ -262,4 +262,20 @@
         }
         return true;
     } // function VerifyUploadSizeIsOK()
+</script>
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
+
+    }
 </script>

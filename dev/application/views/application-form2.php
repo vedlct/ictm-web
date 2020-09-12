@@ -147,7 +147,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
                                     <a href="<?php echo base_url()?>Apply" ><button type="button"  class="btn btn-previous"><span style="color: #FFFFFF;">Previous</span></button></a>
                                     <button type="reset" class="btn btn-next"><span style="color: #FFFFFF;">Reset</span></button>
-                                    <button type="submit" formaction="<?php echo base_url()?>AllFormForStudents" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
+                                    <button type="button"  onclick="getConfirmation()" class="btn btn-next"><span style="color: #FFFFFF;">Cancel</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2Save" class="btn btn-next"><span style="color: #FFFFFF;">Save for Later</span></button>
                                     <button type="submit" formaction="<?php echo base_url()?>ApplyOnline/insertApplicationForm2AndNext" class="btn btn-next"><span style="color: #FFFFFF;">Next</span></button>
                                     <!--                                    <a href="--><?php //echo base_url()?><!--Apply-Work-Experience" ><button type="button"  class="btn btn-next">Next</button></a>-->
@@ -469,6 +469,22 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 //        }
     }
 
+</script>
+<script type="text/javascript">
+
+    function getConfirmation()
+    {
+
+
+        if (confirm("Do You Want to Continue ?")) {
+            window.location.href = "<?php echo base_url()?>AllFormForStudents";
+        } else {
+            return false;
+
+        }
+
+
+    }
 </script>
 
 </html>
