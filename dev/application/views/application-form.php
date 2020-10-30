@@ -205,11 +205,12 @@
                                                 Year:
                                                 <?php
                                                 $currently_selected = date('');
-                                                $earliest_year = 1950;
-                                                $latest_year = date('Y')+6;
+												$current_year = date('Y');
+//                                                $earliest_year = 1950;
+                                                $latest_year = date('Y')+10;
                                                 print '<select tabindex="17" name="ppyear" id="ppyear">';
                                                 print ' <option value=""  selected>Select Year</option>';
-                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                foreach ( range($current_year,$latest_year) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
                                                 print '</select>';
@@ -385,7 +386,7 @@
                                             <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('currentAddressPo'); ?></font></p>
-                                                <input tabindex="29" type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo set_value('currentAddressPo'); ?>">
+                                                <input tabindex="29" type="text" class="form-control"  id="currentAddressPo" name="currentAddressPo" value="<?php echo set_value('currentAddressPo'); ?>" required>
                                             </div>
                                         </div>
 
@@ -483,7 +484,7 @@
                                             <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('overseasAddressPo'); ?></font></p>
-                                                <input tabindex="39" type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo set_value('overseasAddressPo'); ?>">
+                                                <input tabindex="39" type="text" class="form-control"  id="overseasAddressPo" name="overseasAddressPo" value="<?php echo set_value('overseasAddressPo'); ?>" required>
                                             </div>
                                         </div>
 
@@ -583,7 +584,7 @@
                                             <label class="control-label col-md-3">Post Code:<span style="color: red" class="required">*</span></label>
                                             <div class="col-md-9">
                                                 <p><font color="red"> <?php echo form_error('emergencyContactAddressPo'); ?></font></p>
-                                                <input tabindex="48" type="text" class="form-control"  id="emergencyContactAddressPo" value="<?php echo set_value('emergencyContactAddressPo'); ?>" name="emergencyContactAddressPo">
+                                                <input tabindex="48" type="text" class="form-control"  id="emergencyContactAddressPo" value="<?php echo set_value('emergencyContactAddressPo'); ?>" name="emergencyContactAddressPo" required>
                                             </div>
                                         </div>
 
@@ -676,9 +677,9 @@
                                                 $currently_selected = date('');
                                                 $earliest_year = date('Y');
                                                 $latest_year = date('Y')+6;
-                                                print '<select tabindex="58" name="courseYear" id="courseYear">';
+                                                print '<select tabindex="58" name="courseYear" id="courseYear" required>';
                                                 print '<option value=""  selected>Select Year</option>';
-                                                foreach ( range( $latest_year, $earliest_year ) as $i ) {
+                                                foreach ( range( $earliest_year,$latest_year ) as $i ) {
                                                     print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';
                                                 }
                                                 print '</select>';
@@ -888,14 +889,25 @@
             function checkvalidation() {
 
                 var mobile = document.getElementById('mobile').value;
+                var email = document.getElementById('email').value;
+                var EmergencyContactEmail = document.getElementById('EmergencyContactEmail').value;
+
+                if (email==EmergencyContactEmail){
+                    alert('Personal Email and Emergency Email cannot be same');
+                    return false; // keep form from submitting
+                }
                 if (mobile.length < 11 || mobile.length> 20) {
                     alert('Please Enter at least 11 digit Current Mobile number');
                     return false; // keep form from submitting
                 }
-
                 var value = document.getElementById('EmergencyContactMobile').value;
-                if (value.length < 11 || value.length > 20) {
+                if (value.length < 11 || value.length> 20) {
                     alert('Please Enter at least 11 digit Emergency Telephone/Mobile number');
+                    return false; // keep form from submitting
+                }
+
+                if (mobile==value){
+                    alert('Personal Mobile and Emergency Mobile cannot be same');
                     return false; // keep form from submitting
                 }
 
@@ -1003,19 +1015,19 @@
 
             }
 
-            function ValidateEmail(){
-                var email=document.getElementById("email").value;
-                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-                if(email.match(mailformat))
-                {
-                    return true;
-                }
-                else{
-                    alert("Current Email Address is in invalid format!");
-                    return false;
-                }
-            }
+            // function ValidateEmail(){
+            //     var email=document.getElementById("email").value;
+            //     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			//
+            //     if(email.match(mailformat))
+            //     {
+            //         return true;
+            //     }
+            //     else{
+            //         alert("Current Email Address is in invalid format!");
+            //         return false;
+            //     }
+            // }
 
         </script>
 
@@ -1056,6 +1068,7 @@
                     document.getElementById('permanentAddress2').style.display = "block";
                     document.getElementById('permanentAddress3').style.display = "block";
                     document.getElementById('ppostalcodelabel').style.display = "block";
+					document.getElementById('overseasAddressPo').style.display = "block";
                     document.getElementById('permanentAddressCity').style.display = "block";
                     document.getElementById('permanentAddressState').style.display = "block";
                     document.getElementById('permanentAddressCountry').style.display = "block";
@@ -1140,6 +1153,9 @@
                         }
                     }
                 }
+
+
+
             }
 
             function validatedate1(dd , mm , yy, passporttype)

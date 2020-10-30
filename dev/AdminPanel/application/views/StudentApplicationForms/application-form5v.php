@@ -51,7 +51,7 @@
                                 <p>Step 6 / 10</p>
                             </div>
                         </div>
-                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/updateAapplyNow5" method="post" class="registration-form form-horizontal">
+                <form role="form" action="<?php echo base_url()?>Admin/StudentApplication/updateAapplyNow5" method="post" class="registration-form form-horizontal" onsubmit="return checkvalidation()">
 
                 <?php foreach ($PersonalStatementData as $f5) { ?>
 
@@ -155,6 +155,25 @@
         else
         {
             return true;
+        }
+    }
+</script>
+
+<script>
+    function checkvalidation() {
+
+        var words = document.getElementById('courseChoiceStatement').value;
+        var wordsarray = words.split(" ");
+        var numwords = wordsarray.length;
+//        var words = $.questionField.value.split(" ").length;
+//        if(value.match(words)<200 || value.match(words)>1000){
+//            alert('Please lengthen this text 200 words or more ');
+//            return false;
+//
+//        }
+        if (numwords < 200 || numwords > 1000) {
+            alert('your personal statement must be minimum 200 words and maximum 1000 words');
+            return false; // keep form from submitting
         }
     }
 </script>

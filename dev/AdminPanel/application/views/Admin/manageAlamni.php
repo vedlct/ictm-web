@@ -44,7 +44,34 @@
                             <!--                            </span>-->
                         </header>
                         <div class="panel-body ">
-
+							<div align="center" class="col-md-4 col-sm-4">
+								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by Course:</label>
+									<div class="m-bot15 col-md-6 col-sm-6">
+										<select class="form-control m-bot15" name="courseComplete" id="courseTitle"  required>
+											<option value="" selected><?php echo ALL_ALUMNICOURSE_TITLE?></option>
+											<?php for ($i=0;$i<count(ALUMNICOURSE_TITLE);$i++){?>
+												<option value="<?php echo ALUMNICOURSE_TITLE[$i]?>"><?php echo ALUMNICOURSE_TITLENAME[$i]?></option>
+											<?php } ?>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div align="center"  class="col-md-4 col-sm-4" style="margin-left: -7%;">
+								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Course Start Year:</label>
+									<div class="m-bot15 col-md-5 col-sm-5">
+										<select class="form-control" name="courseStartYear" id="courseStartYear" required>
+											<option value="" selected>Select Year</option>
+											<?php foreach ($startYear as $yr) { ?>
+												<option value="<?php echo $yr->courseStartYear?>"><?php echo $yr->courseStartYear?></option>
+												<?php
+											}
+											?>
+										</select>
+									</div>
+								</div>
+							</div>
 
                             <div class="table table-responsive" style="overflow-x: inherit">
                                 <table class="table  table-advance  table-bordered table-hover" id="myTable">
@@ -58,6 +85,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Email</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Course Name</th>
+										<th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%"> Action </th>
                                     </tr>
                                     </thead>
@@ -111,7 +139,9 @@
                 "url": "<?php echo base_url('Admin/StudentApplication/alamni_list')?>",
                 "type": "POST",
                 "data": function ( data ) {
-
+                    data.courseTitle1 = $('#courseTitle').val();
+                    data.courseStartYear = $('#courseStartYear').val();
+                    // alert($('#courseStartYear').val())
                 }
             },
             //Set column definition initialisation properties.
@@ -125,12 +155,26 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search by:</span> " //search
+                "sSearch": "<span>Search by Application Title:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });
+        $('#courseTitle').change(function(){ //button filter event click
+            table.ajax.reload();  //just reload table
+            table.search("").draw(); //just redraw myTableFilter
+        });
+        $('#courseStartYear').change(function(){ //button filter event click
+            table.ajax.reload();  //just reload table
+            table.search("").draw(); //just redraw myTableFilter
+        });
 //        $(".dataTables_filter input").attr("placeholder", "Search By Title");
 
+    });
+
+    $.ajaxSetup({
+        data: {
+            '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>'
+        }
     });
 
     var selecteds = [];

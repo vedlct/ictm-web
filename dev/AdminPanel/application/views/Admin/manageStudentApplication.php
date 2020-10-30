@@ -38,14 +38,14 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            <b>Manage Affiliations</b>
+                            <b>Manage Applications</b>
                             <!--                            <span align="">-->
                             <!--                                <a href="--><?php //echo base_url()?><!--Admin/Affiliation/newAffiliation"><button class="btn btn-sm"style="float: right; height: 26px; margin-top: 3px; background-color: #00A8FF;color: whitesmoke;"><b>New Affiliation</b></button></a>-->
                             <!--                            </span>-->
                         </header>
                         <div class="panel-body ">
 
-                            <div align="center" class="col-md-3 col-sm-3">
+                            <div align="center" class="col-md-4 col-sm-4" style="margin-left: 1%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                     <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Status:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
@@ -59,9 +59,9 @@
                                 </div>
                             </div>
 
-                            <div align="center" class="col-md-3 col-sm-3">
+                            <div align="center" class="col-md-4 col-sm-4" style="margin-left: -12%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by Course:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Select Course:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="courseTitle" id="courseTitle"  required>
                                             <option value="" selected><?php echo ALL_COURSE_TITLE?></option>
@@ -72,9 +72,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div align="center" class="col-md-3 col-sm-3">
+                            <div align="center" class="col-md-4 col-sm-4" style="margin-left: -14%;">
                                 <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
-                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Filter by User Type:</label>
+                                    <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Select User Type:</label>
                                     <div class="m-bot15 col-md-5 col-sm-5">
                                         <select class="form-control m-bot15" name="type" id="userTitle"  required>
                                             <option value="" selected><?php echo ALL_USER_TITLE?></option>
@@ -98,6 +98,7 @@
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 10%">Mobile No</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Course Name</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submit Date</th>
+										<th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%">Submited Status</th>
                                         <th style="background-color: #394A59; color: whitesmoke; text-align: left;width: 15%"> Action </th>
                                     </tr>
                                     </thead>
@@ -106,11 +107,16 @@
                                     </tbody>
                                 </table>
                             </div>
+
+							<input type="checkbox" class="chk" id="selectall1" />Select All<br><br><br>
+
                             <button onclick="downloadexcel()" type="btn" class="btn btn-primary"><strong>Download CSV</strong></button>
+
 
                             <a class="btn" title="XML" href="<?php echo base_url() ?>public/xml/ApplicationForm.xml?dummy=dummy" download><button onclick="downloadxml()" type="btn" class="btn btn-primary"><strong>Download XML</strong></button></a>
                             <!--                            <a  onclick="downloadexcel()" download> <button class="btn btn-danger">Download Excel</button></a>-->
-                        </div>
+							<br><span>(Only Submited Form Download Are Available For CSV And XML File)</span>
+						</div>
 
                     </section>
                 </div>
@@ -162,7 +168,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Affiliation Title:</span> " //search
+                "sSearch": "<span>Search By Application Title:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">'
         });
@@ -333,6 +339,7 @@
                     /*
                      * Actually download CSV
                      */
+
                     document.body.appendChild(downloadLink);
                     downloadLink.click();
                     document.body.removeChild(downloadLink);
@@ -428,6 +435,32 @@
             });
         }
     }
+
+    // add multiple select / deselect functionality111
+    $("#selectall1").click(function () {
+
+        if($('#selectall1').is(":checked")) {
+            selecteds=[];
+            checkboxes = document.getElementsByName('selected_rows[]');
+            for(var i in checkboxes) {
+                checkboxes[i].checked = 'TRUE';
+            }
+
+            /* look for all checkboes that have a class 'chk' attached to it and check if it was checked */
+            $(".chk:checked").each(function () {
+                btn = $(this).data('panel-id');
+                selecteds.push(btn);
+            });
+            // alert(selecteds);
+
+
+        }
+        else {
+            selecteds=[];
+            $(':checkbox:checked').prop('checked',false);
+        }
+
+    });
 
 
 </script>

@@ -171,7 +171,7 @@
                                             if (empty($il->pageId)){
                                                 ?> <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url()?>page-not-found"><?php echo $il->menuName?></a></li> <?php
                                             }else {
-                                                ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $il->pageId ?>" target="_blank"><?php echo $il->menuName ?></a> </li> <?php
+                                                ?><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1306"><a href="<?php echo base_url() ?>Page/<?php echo $il->pageId ?>"target="_blank"><?php echo $il->menuName ?></a> </li> <?php
                                             }
                                         }
                                     }

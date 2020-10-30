@@ -290,7 +290,7 @@
 
                         <li><a class="" href="<?php echo base_url()?>Admin/User/newUser">New Users</a></li>
                         <li><a class="" href="<?php echo base_url()?>Admin/User/assignUser">Assign Role</a></li>
-                        <li><a class="" href="<?php echo base_url()?>Admin/User/manageUser">Manage Role</a></li>
+                        <li><a class="" href="<?php echo base_url()?>Admin/User/manageUser">Manage User</a></li>
 
                     </ul>
                 </li>
@@ -332,6 +332,19 @@
 
                 </li>
             <?php } ?>
+			<?php
+			$sql ="SELECT * FROM `adminmenurole` WHERE menuId = '20' AND  userId = '$usreid'";
+			$query = $this->db->query($sql);
+			if ($query->num_rows() > 0) { ?>
+				<li class="sub-menu">
+					<a class="" href="<?php echo base_url()?>Admin/StudentApplication/onlineApplicant">
+						<i class="icon_info"></i>
+						<span>Online Applicants</span>
+
+					</a>
+
+				</li>
+			<?php } ?>
             <!--            <li class="sub-menu">-->
             <!--                <a href="javascript:;" class="">-->
             <!--                    <i class="icon_comment"></i>-->

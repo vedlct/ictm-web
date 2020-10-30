@@ -63,7 +63,17 @@
                                 </div>
                             </div>
 
-
+							<div class="form-group">
+								<label class="control-label col-md-2">File Type</label>
+								<div class="col-md-10">
+									<select class="form-control" name="doc_type">
+										<option>Select File type</option>
+										<?php for ($i=0; $i<count(doc_type);$i++){?>
+											<option value="<?php echo doc_type[$i]?>"><?php echo doc_type[$i]?></option>
+										<?php }?>
+									</select>
+								</div>
+							</div>
                             <div class="form-group">
                                 <label class="control-label col-md-2">Upload file:</label>
                                 <div class="col-md-10">
@@ -77,6 +87,11 @@
                                     <textarea class="form-control " name="description[]" id="photoDetails[]" ></textarea>
                                 </div>
                             </div>
+							<div class="form-group">
+								<div class="col-md-offset-10 col-md-12">
+									<button type="submit" style="color: #fff; background-color: #841A29;" class="btn btn-next" onclick="return VerifyUploadSizeIsOK()">Add File</button>
+								</div>
+							</div>
 
                             <div class="form-group">
                                 <div class="col-sm-offset-2 col-md-10">
@@ -92,15 +107,22 @@
                                 <table  class="table  table-bordered">
                                     <tr>
                                         <th>File Name</th>
+										<th>File Type</th>
+										<th>Image</th>
                                         <th>Description</th>
                                         <th>Action</th>
 
                                     </tr>
                                     <?php foreach ($document as $document){?>
                                         <tr>
+											<?php $applicationId = $this->session->userdata('studentApplicationId');
+											$imagename =  $document->filename;
+											?>
 
                                             <!--                                        <td></td>-->
                                             <td><?php echo $document->filename?></td>
+											<td><?php echo $document->doc_type?></td>
+											<td> <img  width="150px" height="150px" src="<?php echo base_url('AdminPanel/studentApplications/'.$applicationId.'/image/'.$imagename)?>"></td>
                                             <td><?php echo $document->description ?></td>
                                             <td>
                                                 <a style="cursor: pointer" data-panel-id="<?php echo $document->id ?>" onclick="selectidForDelete(this)"><i class="glyphicon glyphicon-trash"></i></a>
@@ -206,4 +228,21 @@
 
 
     }
+
+</script>
+
+<script type="text/javascript">
+    function VerifyUploadSizeIsOK()
+    {
+        /* Attached file size check. Will Bontrager Software LLC, https://www.willmaster.com */
+        var UploadFieldID = "file-upload";
+        var MaxSizeInBytes = 5097152;
+        var fld = document.getElementById(UploadFieldID);
+        if( fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes )
+        {
+            alert("The file size must be no more than " + parseInt(MaxSizeInBytes/1024/1024) + "MB");
+            return false;
+        }
+        return true;
+    } // function VerifyUploadSizeIsOK()
 </script>

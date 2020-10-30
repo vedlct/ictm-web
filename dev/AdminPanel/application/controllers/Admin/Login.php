@@ -39,11 +39,12 @@ class Login extends CI_Controller {
                     redirect('Admin/Home');
                 }else {
 
-
                 }
             }
             else
             {
+//				$data['error_message'] = 'Wrong UserEmail and Password !! ';
+//				$this->load->view('Admin/login',$data);
                 echo "<script>
                     alert(' Wrong UserEmail and Password !! ');
                     window.location.href= '" . base_url() . "Admin/Login';

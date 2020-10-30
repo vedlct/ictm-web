@@ -115,18 +115,18 @@ class Feedback extends CI_Controller
             }
             $row[] = $customers->insertedBy;
 
-            if ($customers->lastModifiedBy==""){
-                $row[] = "Never Modified";
-
-            }else{
-                $row[] = $customers->lastModifiedBy;
-            }
-            if ($customers->lastModifiedDate==""){
-                $row[] = "Never Modified";
-
-            }else{
-                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($customers->lastModifiedDate)),1);
-            }
+//            if ($customers->lastModifiedBy==""){
+//                $row[] = "Never Modified";
+//
+//            }else{
+//                $row[] = $customers->lastModifiedBy;
+//            }
+//            if ($customers->lastModifiedDate==""){
+//                $row[] = "Never Modified";
+//
+//            }else{
+//                $row[] = preg_replace("/ /","<br>",date('d-m-Y h:i A',strtotime($customers->lastModifiedDate)),1);
+//            }
             if ($customers->feedbackApprove == SELECT_APPROVE[0]){
 
                 if ($customers->homeStatus === SELECT_APPROVE[0]){

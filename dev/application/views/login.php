@@ -43,7 +43,7 @@
                                         4. Your account will be confirmed and you will be logged in.<br>
                                         5. Now, Apply for a course at ICON College.</p>
                                         
-                                        <a href="<?php echo base_url()?>/Registration""><button type="button" class="btn btn-next">Create Account</button></a>
+                                        <a href="<?php echo base_url()?>Registration"><button type="button" class="btn btn-next">Create Account</button></a>
                                         </div>
 <!--			                    </fieldset>		                    -->
 		                    </form>

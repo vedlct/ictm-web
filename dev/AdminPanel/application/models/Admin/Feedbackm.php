@@ -6,9 +6,9 @@ class Feedbackm extends CI_Model
     /////////datatable//////////
     var $table = 'ictmfeedback';
 //    var $column_order = array('feedbackId,feedbackByName,feedbackByProfession,feedbackSource,feedbackApprove,feedbackApprovedBy,feedbackApprovedDate,feedbackStatus,homeStatus,insertedBy,lastModifiedBy,lastModifiedDate'); //set column field database for datatable orderable
-    var $column_order = array('feedbackId','feedbackByName','feedbackByEmail','feedbackSource','feedbackApprove','feedbackApprovedBy','feedbackApprovedDate','feedbackStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
+    var $column_order = array('feedbackId','insertedDate','feedbackByName','feedbackByEmail','feedbackSource','feedbackApprove','feedbackApprovedBy','feedbackApprovedDate','feedbackStatus','homeStatus','insertedBy','lastModifiedBy','lastModifiedDate'); //set column field database for datatable orderable
     var $column_search = array('feedbackByName','feedbackByEmail','feedbackSource'); //set column field database for datatable searchable
-    var $order = array('feedbackId' =>'desc'); // default order
+    var $order = array('insertedDate' =>'desc'); // default order
 
     private function _get_datatables_query()
     {

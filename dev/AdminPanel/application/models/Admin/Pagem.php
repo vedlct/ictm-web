@@ -6,7 +6,7 @@ class Pagem extends CI_Model
     /////////datatable//////////
     var $table = 'ictmpage ';
 
-    var $select =array('pageId','pageTitle','pageType','pageStatus','insertedBy','lastModifiedBy','lastModifiedDate');
+    var $select =array('ictmpage.pageId','ictmpage.pageTitle','ictmpage.pageType','ictmpage.pageStatus','ictmpage.insertedBy','ictmpage.lastModifiedBy','ictmpage.lastModifiedDate');
     var $column_order = array(null,'pageTitle','pageType'); //set column field database for datatable orderable
     var $column_search = array('pageTitle' ); //set column field database for datatable searchable
     var $order = array('pageId' => 'desc'); // default order
@@ -17,12 +17,16 @@ class Pagem extends CI_Model
         {
             $this->db->where('pageType', $this->input->post('pageType1'));
         }
+		elseif ($this->input->post('parentId'))
+		{
+			$this->db->where('ictmmenu.parentId',$this->input->post('parentId'));
+		}
 
 
         $this->db->select($this->select);
         $this->db->from($this->table);
 //        $this->db->join('ictmmenu menu', 'm.parentId = menu.menuId','left');
-//        $this->db->join('ictmpage p', 'm.pageId = p.pageId','left');
+        $this->db->join('ictmmenu', 'ictmmenu.pageId = ictmpage.pageId','left');
 
 
 
@@ -200,6 +204,18 @@ class Pagem extends CI_Model
         $query = $this->db->get('ictmpage');
         return $query->result();
     }
+
+	/*---Parent Menu---*/
+	public function getMenuIdName()
+	{
+
+		$this->db->select('menuId, menuName');
+		$this->db->where('parentId =', null);
+		$this->db->where('pageId =', null);
+		$this->db->group_by('menuName');
+		$query = $this->db->get('ictmmenu');
+		return $query->result();
+	}
 
 
      //this will return all page data for manage page

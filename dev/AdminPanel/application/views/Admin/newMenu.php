@@ -98,8 +98,9 @@
                                         <label for="menuTitle" class="control-label col-lg-2">Order Number<span class="required">*</span></label>
                                         <div class="col-lg-10">
                                             <p><font color="red"> <?php echo form_error('orderNumber'); ?></font></p>
-                                            <input class="form-control" id="orderNumber" name="orderNumber"  value="<?php echo set_value('orderNumber'); ?>" type="text" required />
-                                        </div>
+                                            <input class="form-control" id="orderNumber" name="orderNumber" onkeyup="check_order();"  value="<?php echo set_value('orderNumber'); ?>" type="number" required />
+											<div id="msg"></div>
+										</div>
                                     </div>
 
                                     <div class="form-group">
@@ -201,6 +202,27 @@
         {
             return true;
         }
+    }
+
+    function check_order(){
+        var orderNumber=$('#orderNumber').val();
+        var menuType=$('#menuType').val();
+        // alert(menuType);
+        $.ajax({
+            method:"POST",
+            url:"<?php echo base_url();?>Admin/Menu/check_order",
+            data:{orderNumber:orderNumber,menuType:menuType},
+            success:function(data)
+            {
+                // alert(data);
+                if(data === "This Order Number Already Exists"){
+                    $("#msg").html(data);
+                }else
+                {
+                    $("#msg").html(data);
+                }
+            }
+        });
     }
 
 </script>

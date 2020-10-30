@@ -11,7 +11,7 @@
                 <div class="breadcrumbs">
                     <ul>
                         <li class="home"><a href="<?php echo base_url()?>Home">Home </a></li>
-                        <li>\ Application Form</li>
+                        <li>\ Application Form </li>
                     </ul>
                 </div>
             </div><!-- /.col-md-12 -->
@@ -37,13 +37,15 @@
 
                         <div class="form-top">
                             <div class="form-top-left">
-                                <h3>Finance </h3>
+                                <h3>Finance  </h3>
                             </div>
 
                             <div class="form-top-right">
                                 <p>Step 6 / 10</p>
                             </div>
                         </div>
+
+
                 <?php foreach ($Financer as $f4) { ?>
 
                     <form role="form" action="<?php echo base_url()?>ApplyOnline/updateInfoApply4" method="post" class="form-horizontal" onsubmit="return formvalidate()">
@@ -139,6 +141,7 @@
                                     </div>
                                 </div>
 
+
                                 <div class="form-group">
                                     <label class="control-label col-md-3">Country:<span style="color: red" class="required">*</span></label>
                                     <div class="col-md-9">
@@ -158,7 +161,7 @@
                                 <div class="col-md-9">
                                     <p><font color="red"> <?php echo form_error('mobile'); ?></font></p>
 
-                                    <input tabindex="10" type="text" class="form-control" id="mobile" required  name="mobile" value="<?php echo $f4->mobile ?>" >
+                                    <input tabindex="10" type="text" class="form-control" id="mobile"   name="mobile" value="<?php echo $f4->mobile ?>" >
                                 </div>
                             </div>
 
@@ -195,7 +198,9 @@
 
                         </div>
                 </form>
-            <?php } ?>
+
+            <?php break;
+                } ?>
 
 
 
@@ -250,121 +255,106 @@
     });
 
     function formvalidate() {
-//        var email1=document.getElementById("email").value;
-//        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-//
-//        if(email1.match(mailformat))
-//        {
-//            return true;
-//        }
-//        else{
-//            alert("You have entered an invalid email address!");
-//            return false;
-//        }
-
-
-        var value = document.getElementById('mobile').value;
-        if (value.length < 11 || value.length> 20) {
-            alert('Please at least 11 digit Telephone/Mobile number');
-            return false; // keep form from submitting
-        }
-
-        var email1=document.getElementById("email").value;
-        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-        if(email1.match(mailformat))
-        {
-            return true;
-        }
-        else{
-            alert("You have entered an invalid email address!");
-            return false;
-        }
-
 
         var finance=$('input[name=selfFinance]:checked').val();
 
         if (finance != 'own'  && finance != "slc") {
 
+			// var value = document.getElementById('mobile').value;
+			// if (value.length < 11 || value.length> 20) {
+			// 	alert('Please at least 11 digit Telephone/Mobile number');
+			// 	return false; // keep form from submitting
+			// }
+			//
 
-            var title = document.getElementById("title").value;
 
-            var email = document.getElementById("email").value;
+            var title = document.getElementById("title");
+			var titlevalue = title.options[title.selectedIndex].value;
+
+			if (titlevalue == ""){
+				alert("Please fill up Title");
+				return false;
+			}
+
+         //   var email = document.getElementById("email").value;
+
 
             var name = document.getElementById("name").value;
-
+			if (name == ""){
+				alert("Please fill up Name");
+				return false;
+			}
             var relation = document.getElementById("relation").value;
-
+			if (relation == ""){
+				alert("Please fill up relation");
+				return false;
+			}
             var address = document.getElementById("address").value;
+			if (address == ""){
+				alert("Please fill up address");
+				return false;
+			}
 
-            var postcode = document.getElementById("addressPo").value;
-
-            var phone = document.getElementById("mobile").value;
 
             var city = document.getElementById("city").value;
+			if (city == ""){
+				alert("Please select a City");
+				return false;
+			}
+			var postcode = document.getElementById("addressPo").value;
+			if (postcode == ""){
+				alert("Please fill up Postcode");
+				return false;
+			}
+            var country = document.getElementById("country");
+			var countryvalue = country.options[country.selectedIndex].value;
+			if (countryvalue == ""){
+				alert("Please select a Country");
+				return false;
+			}
+			var phone = document.getElementById("mobile").value;
+			if (phone == ""){
+				alert("Please select a Phone");
+				return false;
+			}
+			var chk = /^[0-9]*$/;
+			if (!phone.match(chk)) {
+				alert('Please enter a valid Mobile Mobile number!!');
+				return false;
+			}
+			if (phone.length < 11) {
+				alert('Please enter a valid Mobile Mobile number!!');
+				return false;
+			}
+           // var telephone = document.getElementById("telephone").value;
 
-            var country = document.getElementById("country").value;
 
-            var telephone = document.getElementById("telephone").value;
+           // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-            var chk = /^[0-9]*$/;
-            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-            if (title == ""){
-                alert("Please select a title");
-                return false;
-            }
-            if (name == ""){
-                alert("Please fill up Name");
-                return false;
-            }
-            if (relation == ""){
-                alert("Please fill up relation");
-                return false;
-            }
-            if (address == ""){
-                alert("Please fill up address");
-                return false;
-            }
-            if (postcode == ""){
-                alert("Please fill up Postcode");
-                return false;
-            }
-            if (city == ""){
-                alert("Please select a City");
-                return false;
-            }
-            if (country == ""){
-                alert("Please select a Country");
-                return false;
-            }
-            if (phone == ""){
-                alert("Please select a Phone");
-                return false;
-            }
-            if ( telephone == ""){
-                alert("Please select a Telephone");
-                return false;
-            }
-            if (!phone.match(chk)) {
-                alert('Please enter a valid Mobile Phone number!!');
-                return false;
-            }
-            if (!telephone.match(chk)) {
-                alert('Please enter a valid Telephone Phone number!!');
-                return false;
-            }
-            if (phone.length < 11) {
-                alert('Mobile Phone number must be less than 50 charecter!!');
-                return false;
-            }
-            if (!email.match(mailformat)) {
-                alert("You have entered an invalid email address!");
-                return false;
-            }
-            else {
-                return true;
-            }
+            // if (!telephone.match(chk)) {
+            //     alert('Please enter a valid Telephone Phone number!!');
+            //     return false;
+            // }
+
+			var email1 = document.getElementById("email").value;
+
+
+			if ( email1 == ""){
+				alert("Please select an Email");
+				return false;
+			}
+			var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if(email1.match(mailformat))
+			{
+				return true;
+			}
+			else{
+				alert("You have entered an invalid email address!");
+				return false;
+			}
+
+
         }else {
             return true;
         }
@@ -408,4 +398,6 @@
 
 
     }
+
 </script>
+

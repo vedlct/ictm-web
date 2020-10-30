@@ -6,10 +6,10 @@ class Menum extends CI_Model
     /////////datatable//////////
     var $table = 'ictmmenu m';
 
-    var $select =array('m.menuId','m.menuName','m.menuType','m.menuStatus','m.orderNumber','m.insertedBy','m.lastModifiedBy','m.lastModifiedDate','menu.menuName as submenu','p.pageTitle');
+    var $select =array('m.parentId','m.menuId','m.menuName','m.menuType','m.menuStatus','m.orderNumber','m.insertedBy','m.lastModifiedBy','m.lastModifiedDate','menu.menuName as submenu','p.pageTitle');
     var $column_order = array(null,'m.menuName','m.orderNumber'); //set column field database for datatable orderable
     var $column_search = array('m.menuName' ); //set column field database for datatable searchable
-    var $order = array('m.menuId' => 'desc'); // default order
+    var $order = array('m.orderNumber' => 'asc'); // default order
 
     private function _get_datatables_query()
     {
@@ -17,6 +17,10 @@ class Menum extends CI_Model
         {
             $this->db->where('m.menuType', $this->input->post('menuType'));
         }
+        elseif ($this->input->post('parentId'))
+		{
+			$this->db->where('m.parentId',$this->input->post('parentId'));
+		}
 
 
         $this->db->select($this->select);
@@ -147,6 +151,18 @@ class Menum extends CI_Model
         $query = $this->db->get('ictmmenu');
         return $query->result();
     }
+
+    /*---Parent Menu---*/
+	public function getMenuIdName()
+	{
+
+		$this->db->select('menuId, menuName');
+		$this->db->where('parentId =', null);
+		$this->db->where('pageId =', null);
+		$this->db->group_by('menuName');
+		$query = $this->db->get('ictmmenu');
+		return $query->result();
+	}
 
      /*----------- check MenuTitle Uniqueness Per MenuType ----------------*/
     public function checkMenuTitleUniquePerMenuType($menuTitle,$menuType)
@@ -320,6 +336,16 @@ class Menum extends CI_Model
     public function record_count() {
         return $this->db->count_all("ictmmenu");
     }
+
+	/*---Parent MenuType---*/
+	public function getMenuTypeName()
+	{
+
+		$this->db->select('menuType');
+		$this->db->group_by('menuType');
+		$query = $this->db->get('ictmmenu');
+		return $query->result();
+	}
 
 
 }

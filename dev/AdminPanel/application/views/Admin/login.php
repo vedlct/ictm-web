@@ -12,6 +12,14 @@
       <form class="login-form" method="post" action="<?php echo base_url()?>Admin/Login/check_user">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
+<!--			<p style="color: red">-->
+<!--				--><?php
+//				if(isset($error_message)){
+//					echo $error_message;
+//				}
+//
+//				?>
+<!--			</p>-->
             <p><font color="red"> <?php echo form_error('useremail'); ?></font></p>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
@@ -24,11 +32,12 @@
             </div>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
-                <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
             </label>
             <button class="btn btn-primary btn-lg btn-block" type="submit" value="Login">Login</button>
-            <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button>
-        </div>
+			<label class="checkbox">
+			<span class="pull-right"> <a href="#">If you forget your passoword, please contact System Administrator.</a></span>
+			</label>
+		</div>
       </form>
 
     </div>

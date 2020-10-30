@@ -57,7 +57,7 @@
 
                                     </div>
                                     <div class="form-group ">
-                                        <label for="feedbackByName" class="control-label col-lg-2">Sure Name</label>
+                                        <label for="feedbackByName" class="control-label col-lg-2">Sure Name<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('surName'); ?></font></p>
                                             <input class="form-control" id="surName" name="surName"  value="<?php echo set_value('surName'); ?>" type="text"  />
@@ -69,7 +69,7 @@
                                         <label for="feedbackByName" class="control-label col-lg-2">Email <span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('userEmail'); ?></font></p>
-                                            <input class="form-control" id="userEmail" name="userEmail"  value="<?php echo set_value('userEmail'); ?>" type="email" onkeyup="check_email();" required />
+                                            <input class="form-control" id="userEmail" name="userEmail"  type="email" onkeyup="check_email();" required />
 <!--                                            <span id="email_result"></span>-->
                                         </div>
 
@@ -79,7 +79,7 @@
                                         <label for="feedbackByName" class="control-label col-lg-2">Password<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <p><font color="red"> <?php echo form_error('userPassword'); ?></font></p>
-                                            <input class="form-control" id="userPassword" name="userPassword"  value="<?php echo set_value('userPassword'); ?>" type="password" required />
+                                            <input class="form-control" id="userPassword" name="userPassword"  type="password" required />
                                         </div>
 
                                     </div>
@@ -164,6 +164,18 @@
             return false;
         }
     }
+    function checkvalidation() {
+
+        var words = document.getElementById('surName').value;
+        var wordsarray = words.split(" ");
+        var numwords = wordsarray.length;
+
+        if (numwords < 0 || numwords > 1) {
+            alert('Sur Name use Single word');
+            return false; // keep form from submitting
+        }
+    }
+
 </script>
 
 

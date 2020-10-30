@@ -20,11 +20,11 @@
         <section class="wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h3 class="page-header"><i class="fa fa-files-o"></i> New &nbsp User</h3>
+                    <h3 class="page-header"><i class="fa fa-files-o"></i> Assign &nbsp Role</h3>
                     <ol class="breadcrumb">
                         <li><i class="fa fa-home"></i><a href="<?php echo base_url()?>Admin/Home">Home</a></li>
                         <li><i class="icon_document_alt"></i>User</li>
-                        <li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Create a New User</a></li>
+                        <li><i class="fa fa-files-o"></i><a href="<?php echo base_url()?>/Admin/User/newUser">Assign Role</a></li>
                     </ol>
                 </div>
             </div>
@@ -41,7 +41,7 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            New User
+                            Assign Role
                         </header>
                         <div class="panel-body">
                             <div class="form">
@@ -51,17 +51,17 @@
                                     <div class="form-group">
                                         <label class="control-label col-lg-2">User<span class="required">*</span></label>
                                         <div class="col-lg-4">
-                                            <select class="form-control m-bot15" name="userId" id="pagetype" onchange="checkPageType()" required>
+                                            <select class="form-control m-bot15" name="userId" id="userId" onchange="userMenu()" required>
                                                 <option value="" >Select User</option>
                                                 <?php foreach ($user as $user){ ?>
-                                                    <option value="<?php echo $user->userId ?>"><?php echo $user->userEmail ?></option>
+                                                    <option  value="<?php echo $user->userId ?>"><?php echo $user->userEmail ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
                                     </div>
 
-                                    <div class="form-group">
-                                        <label class="control-label col-lg-2">User Role<span class="required">*</span></label>
+                                    <div class="form-group" id="tableid" style="display: none">
+                                        <label class="control-label col-lg-2">Assign Role<span class="required">*</span></label>
                                         <div class="col-lg-4">
                                             <?php foreach ($menu as $menu){ ?>
                                             <input tabindex="8"  type="checkbox"  name="menuId[]" value="<?php echo $menu->id ?>">&nbsp;<?php echo $menu->menuName ?><br>
@@ -70,16 +70,16 @@
                                     </div>
 
 
-                                    <div id="csrf">
-                                        <input type="hidden"  name="<?php echo $this->security->get_csrf_token_name();?>" value="<?php echo $this->security->get_csrf_hash();?>">
-                                    </div>
+<!--                                    <div id="csrf">-->
+<!--                                        <input type="hidden"  name="--><?php //echo $this->security->get_csrf_token_name();?><!--" value="--><?php //echo $this->security->get_csrf_hash();?><!--">-->
+<!--                                    </div>-->
 
-                                    <div class="form-group "align="center">
-                                        <div class="col-lg-10">
-                                            <input class="btn btn-success" onclick="return ValidateEmail()" type="submit" style="margin-left: 180px">
-                                            <input class="btn btn-close" type="reset" >
-                                        </div>
-                                    </div>
+<!--                                    <div class="form-group "align="center">-->
+<!--                                        <div class="col-lg-10">-->
+<!--                                            <input class="btn btn-success" onclick="return ValidateEmail()" type="submit" style="margin-left: 180px">-->
+<!--                                            <input class="btn btn-close" type="reset" >-->
+<!--                                        </div>-->
+<!--                                    </div>-->
 
                             </div>
                             </form>
@@ -94,7 +94,7 @@
     </section>
 </section>
 <!--main content end-->
-<div class="text-right wrapper">
+<div class="text-right wrapper" style="margin-top: 25%;">
     <div class="credits">
         <a href="#">Icon College</a> by <a href="#">A2N</a>
     </div>
@@ -127,7 +127,44 @@
             return false;
         }
     }
-</script>
 
+//    function userMenu() {
+//        var x = document.getElementById("userId").value;
+//        $.ajax({
+//            type:'GET',
+//            url:'<?php //echo base_url("Admin/User/showMenu/")?>//'+x,
+//            success: function (data) {
+////                    data.forEach(function(element) {
+////                        console.log(data.length);
+////                    });
+//            for (i = 0; i < data.length; i++) {
+////                        text += cars[i] + "<br>";
+////                        console.log(data[i].cityName);
+//                $("#menuId").append("<input type='checkbox' value='"+data[i].id+"'>"+data[i].menuName+"</input>");
+//            }
+//        },
+//    });
+//    }
+
+
+    function userMenu() {
+        var x = document.getElementById('userId').value;
+
+        $.ajax({
+            type:'POST',
+            url:'<?php echo base_url("Admin/User/showUserRole/")?>'+x,
+            data:{},
+            cache: false,
+            success:function(data)
+            {
+                $('#tableid').html(data);
+            }
+        });
+
+        document.getElementById("tableid").style.display ="block";
+    }
+
+
+</script>
 
 

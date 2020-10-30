@@ -1,5 +1,12 @@
 <?php include("header.php"); ?>
-
+<style>
+	@media only screen and (min-width: 991px) {
+	.course-list-col{
+	min-height:270px; 
+	max-height: 300px;
+	}
+	}
+</style>
 <div class="page-title full-color">
     <div class="container">
         <div class="row">
@@ -24,7 +31,7 @@
 
 
             <?php foreach ($departmentname as $dp) { ?>
-                <div class="col-md-6">
+                <div class="col-md-6 course-list-col">
                     <div class="post-item row">
                         <div class="col-md-6 col-sm-12">
                             <div class="content-pad">
@@ -38,7 +45,7 @@
                                         </a>
                                     <?php } else { ?>
                                         <a href="<?php echo base_url()?>department/<?php echo $dp->departmentId?>">
-                                            <img src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/<?php echo $dp->departmentImage; ?>" alt="image">
+                                            <img  style="height:200px; object-fit:cover" src="<?php echo base_url() ?><?php echo FOLDER_NAME ?>/images/departmentImages/<?php echo $dp->departmentImage; ?>" alt="image">
                                             <span class="thumbnail-overlay">Academic Year <?php echo date("Y")-1 . "-" .date("Y");?></span>
                                         </a>
                                     <?php } ?>
@@ -56,7 +63,7 @@
                                     foreach ($coourselist as $cl){
                                         if ( $cl->departmentId == $dp->departmentId ){ ?>
                                             <div style= "margin-top: -12px" class="shortcode-blog-excerpt"><strong style="font-size: 14px;"><a href="<?php echo base_url()?>course-details/<?php echo $cl->courseId?>">
-                                                        <?php echo $cl->courseTitle ?></a></strong></div>
+                                                       <i class="fa fa-angle-double-right" aria-hidden="true"></i> <?php echo $cl->courseTitle ?></a></strong></div>
                                         <?php } } ?>
 
                                 </div>

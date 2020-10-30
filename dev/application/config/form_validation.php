@@ -246,13 +246,13 @@ $config = array (
             array(
                 'field' => 'address2',
                 'label' => 'Address Line 2',
-                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[1000]|xss_clean|htmlspecialchars',
 
             ),
             array(
                 'field' => 'address3',
                 'label' => 'Address Line 3',
-                'rules' => 'max_length[100]|xss_clean|htmlspecialchars',
+                'rules' => 'max_length[1000]|xss_clean|htmlspecialchars',
 
             ),
             array(
@@ -787,24 +787,14 @@ $config = array (
 
             ),
 
-            array(
-                'field' => 'awardingBody',
-                'label' => 'Awarding Body',
-                'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
-            ),
             array(
                 'field' => 'subject',
                 'label' => 'Subject',
                 'rules' => 'required|max_length[255]|xss_clean|htmlspecialchars',
 
             ),
-            array(
-                'field' => 'institution',
-                'label' => 'Name of Institution',
-                'rules' => 'required|max_length[100]|xss_clean|htmlspecialchars',
 
-            ),
             array(
                 'field' => 'completionYear',
                 'label' => 'Completion Year',

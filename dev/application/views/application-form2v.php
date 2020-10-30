@@ -103,7 +103,7 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                         $currently_selected = date('');
                                         $earliest_year = 1950;
                                         $latest_year = date('Y');
-                                        print '<select tabindex="2" id="completionYear" name="completionYear">';
+                                        print '<select tabindex="2" id="completionYear" name="completionYear" required>';
                                         print '<option value=""  selected>Select Year</option>';
                                         foreach ( range( $latest_year, $earliest_year ) as $i ) {
                                             print '<option value="'.$i.'"'.($i == $currently_selected ? ' selected="selected"' : '').'>'.$i.'</option>';

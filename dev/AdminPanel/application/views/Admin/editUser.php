@@ -46,7 +46,7 @@
                         <div class="panel-body">
                             <div class="form">
                                 <?php foreach ($editUserData as $euser) {?>
-                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/User/editUser/<?php echo $euser->userId?>"  onsubmit="return formsubmit()">
+                                <form class="form-validate form-horizontal" id="feedback_form" method="post"  action="<?php echo base_url()?>Admin/User/editUser/<?php echo $euser->userId?>"  onsubmit="return checkvalidation()">
                                     <div class="form-group ">
                                         <label for="cname" class="control-label col-lg-2">First Name<span class="required">*</span></label>
                                         <div class="col-lg-10">
@@ -154,6 +154,17 @@
         else{
             alert("Email Address is in invalid format!");
             return false;
+        }
+    }
+    function checkvalidation() {
+
+        var words = document.getElementById('surName').value;
+        var wordsarray = words.split(" ");
+        var numwords = wordsarray.length;
+
+        if (numwords < 0 || numwords > 1) {
+            alert('Sur Name use Single word');
+            return false; // keep form from submitting
         }
     }
 </script>

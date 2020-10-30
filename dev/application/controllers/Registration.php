@@ -130,7 +130,8 @@ class Registration extends CI_Controller {
 
                 if (!empty($this->data['userId'])) {
 
-                    $this->data['info']=array('email'=>$email,'token'=>$activationToken ,'userId'=>$this->data['userId']);
+                    $this->data['info']=array('email'=>$email,'token'=>$activationToken ,'userId'=>$this->data['userId'],
+						'title'=>$title,'firstname'=>$firstname,'surname'=>$surname,);
 
                     $this->load->helper(array('email'));
                     $this->load->library(array('email'));
@@ -138,7 +139,7 @@ class Registration extends CI_Controller {
                     $this->email->set_mailtype("html");
                     $this->email->from('noreply@iconcollege.ac.uk','Icon College');
                     $this->email->to($email);
-                    $this->email->subject('Account Activation Reqeust');
+                    $this->email->subject('Activate your ICON College online application');
                     $message = $this->load->view('AccountActivationReqeust', $this->data,true);
                     $this->email->message($message);
                     $this->email->send();
@@ -157,7 +158,9 @@ class Registration extends CI_Controller {
 
 
 
-                    $this->session->set_flashdata('successMessage','Registration completed Successfully Please Activate Your Acount via email');
+                    $this->session->set_flashdata('successMessage','Your Account Registration has been completed, now you need to activate your account before login.
+
+					<br>Please check your email and Activate Your Account to get started. if you have any problem , please contact us.');
                     redirect('Login');
 
 

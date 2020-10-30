@@ -2,7 +2,12 @@
 <?php $this->load->view('Admin/head.php'); ?>
 <!-- for Application Form -->
 <link rel="stylesheet" href="<?php echo base_url()?>public/css/application-form-style.css">
-
+<style>
+	button, select {
+		text-transform: none;
+		height: 35px;
+	}
+</style>
 
 <div class="page-title full-color">
     <div class="container">

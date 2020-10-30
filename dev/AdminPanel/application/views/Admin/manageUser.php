@@ -128,7 +128,7 @@
 
             //for change search name
             "oLanguage": {
-                "sSearch": "<span>Search By Page Title:</span> " //search
+                "sSearch": "<span>Search By Assign Role:</span> " //search
             },
             "dom": '<"top"ifl>rt<"bottom"ip><"clear">',
 

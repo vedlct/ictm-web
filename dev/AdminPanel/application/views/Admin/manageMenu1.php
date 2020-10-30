@@ -43,7 +43,7 @@
                         <div id="panel" class="panel-body">
 
 
-                                <div align="center"  class="col-md-8 col-sm-8">
+                                <div align="center"  class="col-md-6 col-sm-6" style="margin-left: -5%;">
                                     <div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
                                         <label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4"> Select Menu type:</label>
                                         <div class="m-bot15 col-md-5 col-sm-5">
@@ -56,6 +56,22 @@
                                         </div>
                                     </div>
                                 </div>
+
+							<div align="center"  class="col-md-6 col-sm-6" style="margin-left: -18%;">
+								<div style="position: absolute;left: 28%;top: 46px;width: 90%;" class="divcnter">
+									<label style="text-align: right" for="menuType" class="control-label col-md-4 col-sm-4">Parent Menu:</label>
+									<div class="m-bot15 col-md-5 col-sm-5">
+										<select class="form-control" name="parentId" id="parentId" required>
+											<option value="" selected>Select Parent Menu</option>
+											<?php foreach ($menuname as $mn) { ?>
+												<option value="<?php echo $mn->menuId?>"><?php echo $mn->menuName?></option>
+												<?php
+											}
+											?>
+										</select>
+									</div>
+								</div>
+							</div>
 
                             <div class="table table-responsive" style="overflow-x: inherit">
 
@@ -135,6 +151,7 @@
                 "type": "POST",
                 "data": function ( data ) {
                     data.menuType = $('#menuType').val();
+                    data.parentId = $('#parentId').val();
 
                 }
             },
@@ -155,12 +172,17 @@
             },
             "dom": '<"top"i<"#typebar">fl>rt<"bottom"ip><"clear">'
         });
+        $(".dataTables_filter input").attr("placeholder", "Search By Menu name");
         $('#menuType').change(function(){ //button filter event click
             table.search("").draw(); //just redraw myTableFilter
             table.ajax.reload();  //just reload table
 
         });
-        $(".dataTables_filter input").attr("placeholder", "Search By Menu Name");
+        $('#parentId').change(function(){ //button filter event click
+            table.search("").draw(); //just redraw myTableFilter
+            table.ajax.reload();  //just reload table
+
+        });
 
 
 
@@ -189,6 +211,36 @@
         }
         else {
             window.location="<?php echo base_url()?>Admin/Menu/ManageMenu";
+        }
+    }
+
+    function selectid(x) {
+
+        var btn =  document.getElementById("menuType").value;
+
+        if (btn == ""){
+            alert("Select a valid Menu Type");
+        }
+        else
+        {
+            if (btn != '<?php echo MENU_TYPE[1]?>'){
+                document.getElementById("parentMenuDiv").style.display = "none";
+            }
+            else{
+                document.getElementById("parentMenuDiv").style.display = "block";
+            }
+            $.ajax({
+                type:'POST',
+                url:'<?php echo base_url("Admin/Menu/getMenuLevel/")?>'+btn,
+                data:{'type': btn},
+                cache: false,
+                success:function(data) {
+
+                    document.getElementById("parentId").innerHTML = data;
+                    $('#csrf').load(document.URL +  ' #csrf');
+
+                }
+            });
         }
     }
 

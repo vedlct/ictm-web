@@ -51,6 +51,16 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                         <div id='TextBoxesGroup'>
                             <div id="TextBoxDiv1" >
                                 <div class="form-group">
+                                    <label class="control-label col-md-3">Do you have any work Experience</label>
+
+                                    <div class="col-md-6" style="margin-top: 20px">
+                                        <input  type="radio" class= ""  name="workexp" value="yes" <?php if($workexp->workexp=='yes'){ echo "checked=checked";} ?> onclick="workexpfunc()"> yes
+                                        <input  type="radio" class= ""  name="workexp" value="no" <?php if($workexp->workexp=='no'){ echo "checked=checked";}?> onclick="workexpfunc()"> No
+                                    </div>
+
+                                </div>
+                                <div id="fullwork" style="display: none">
+                                <div class="form-group">
                                     <label class="control-label col-md-3">Organisation / Regulatory Body:</label>
                                     <div class="col-md-9">
                                         <input tabindex="1"  type="text" class="form-control" maxlength="100" id="organisation"  name="organisation[]">
@@ -146,8 +156,9 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 </div>
 
 
-                            </div>
-                        </div>
+
+
+
 
 <!--                        <div class="form-group">-->
 <!--                            <div class="col-sm-offset-2 col-md-9">-->
@@ -164,6 +175,11 @@ elseif($this->session->flashdata('successMessage')!=null){?>
                                 <button type="submit" class="btn btn-next"><span style="color: #FFFFFF;">Add experience</span></button>
                                </div>
                         </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!--                        finish div-->
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-md-9">
                                 <!--                                    <button type="button" class="btn btn-previous">Add New Work Experience</button><br><br>-->
@@ -553,4 +569,33 @@ elseif($this->session->flashdata('successMessage')!=null){?>
 
 
     }
+
+
+    function workexpfunc() {
+       var x =  $('input[name="workexp"]:checked').val();
+       if(x=='yes'){
+           document.getElementById('fullwork').style.display = 'block';
+		   $.ajax({
+			   type:'POST',
+			   url:'<?php echo base_url("ApplyOnline/workexpr/")?>'+x,
+			   data:{},
+			   cache: false,
+			   success:function(data) {
+				  // location.reload();
+			   }
+		   });
+       }else {
+           document.getElementById('fullwork').style.display = 'none';
+           $.ajax({
+               type:'POST',
+               url:'<?php echo base_url("ApplyOnline/workexpr/")?>'+x,
+               data:{},
+               cache: false,
+               success:function(data) {
+                   location.reload();
+               }
+           });
+       }
+    }
 </script>
+

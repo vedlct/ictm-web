@@ -5,6 +5,7 @@
  * Date: 5/31/2019
  * Time: 11:54 AM
  */
+ /*
 function redirect_ssl() {
 $CI =& get_instance();
     $class = $CI->router->fetch_class();
@@ -20,3 +21,4 @@ $CI =& get_instance();
         if ($_SERVER['SERVER_PORT'] == 443) redirect($CI->uri->uri_string());
     }
 }
+*/
