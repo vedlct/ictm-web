@@ -41,7 +41,14 @@ class Page extends CI_Controller {
                 $this->data['healthdata']= $this->PageSectionm->getPageData($id);
                 $this->load->view('health-safety', $this->data);
 
-            } else if ($pt->pageType == 'Terms Type'){
+            }
+			else if ($pt->pageType == 'Simple Type') {
+
+
+				$this->data['simpletype']= $this->PageSectionm->getPageData($id);
+				$this->load->view('simple-type', $this->data);
+
+			}else if ($pt->pageType == 'Terms Type'){
 
 
                 $this->data['termsdata']= $this->PageSectionm->getPageData($id);

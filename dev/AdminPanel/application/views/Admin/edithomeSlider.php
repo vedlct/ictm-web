@@ -75,6 +75,7 @@
 
                                     </div>
 
+
                                     <div class="form-group col-sm-12">
 
                                         <label for="sliderImage" class="control-label col-sm-2">Slider Image 2</label>

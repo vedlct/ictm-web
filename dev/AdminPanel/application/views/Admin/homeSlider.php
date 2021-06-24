@@ -73,6 +73,17 @@
                                         </div>
 
                                     </div>
+									<div class="form-group col-sm-12">
+
+										<label for="text1" class="control-label col-sm-2">Slider Link 1<span class="required">*</span></label>
+										<div class="col-sm-10">
+
+											<input type="text" class="form-control " name="link1" id="link1" placeholder="share your Link" maxlength="255" required><?php echo set_value('link1'); ?>
+
+
+										</div>
+
+									</div>
 
                                     <div class="form-group col-sm-12">
 
